@@ -1744,7 +1744,7 @@ focus_tree = {
 	focus = {
 		id = ncr_support_hayes
 		icon = GFX_goal_NCR_Hayes_Canditate
-		cost = 30
+		cost = 15
 		search_filters = { FOCUS_FILTER_INTERNAL_AFFAIRS }
 		available = {
 			NOT = { has_country_flag = ncr_crisis }
@@ -1767,7 +1767,7 @@ focus_tree = {
 	focus = {
 		id = ncr_judiciary_act
 		icon = GFX_goal_NCR_Hayes_Justice
-		cost = 30
+		cost = 15
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY }
 		available = {
 			NOT = { has_country_flag = ncr_crisis }
@@ -1786,7 +1786,7 @@ focus_tree = {
 	focus = {
 		id = ncr_schooling
 		icon = GFX_goal_NCR_Hayes_Reading
-		cost = 30
+		cost = 15
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY }
 		available = {
 			NOT = { has_country_flag = ncr_crisis }
@@ -1809,7 +1809,7 @@ focus_tree = {
 	focus = {
 		id = ncr_baseball_leagues
 		icon = GFX_goal_NCR_Hayes_Batter
-		cost = 30
+		cost = 15
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY }
 		available = {
 			NOT = { has_country_flag = ncr_crisis }
@@ -1828,7 +1828,7 @@ focus_tree = {
 	focus = {
 		id = ncr_tariffs
 		icon = GFX_goal_NCR_Hayes_Free_Trade
-		cost = 30
+		cost = 15
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY }
 		available = {
 			has_country_flag = ncr_vote_no_confidence
@@ -1857,7 +1857,7 @@ focus_tree = {
 	focus = {
 		id = ncr_war_on_redding
 		icon = GFX_goal_NCR_Hayes_Taxes
-		cost = 30
+		cost = 15
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY }
 		available = {
 			NOT = { has_country_flag = ncr_crisis }
@@ -2460,335 +2460,11 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = ncr_shi_kimball_1
-		icon = GFX_goal_NCR_Shi_Good_Bear
-		cost = 30
-		available = {
-			NOT = { has_country_flag = ncr_crisis }
-			has_completed_focus = ncr_kimball_vindication
-			NAT = {
-				exists = no
-			}
-		}
-		bypass = {
-			SHI = {
-				exists = no
-			}
-		}
-		prerequisite = {
-			focus = ncr_shi_business
-		}
-		x = -1
-		y = 1
-		relative_position_id = ncr_shi_business
-		completion_reward = {
-			if = {
-				limit = {
-					NCR = {
-						owns_state = 548
-					}
-				}
-				SHI = {
-					add_stability = -0.05
-					add_popularity = {
-						ideology = ruler
-						popularity = 0.05
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					SHI = {
-						owns_state = 548
-					}
-				}
-				add_stability = -0.05
-				SHI = {
-					add_popularity = {
-						ideology = ruler
-						popularity = 0.05
-					}
-				}
-			}
-			else = {
-				add_stability = -0.05
-				SHI = {
-					add_stability = -0.05
-					add_popularity = {
-						ideology = ruler
-						popularity = 0.05
-					}
-				}
-			}
-		}
-	}
-	focus = {
-		id = ncr_shi_kimball_2
-		icon = GFX_goal_NCR_Shi_Honey
-		cost = 30
-		available = {
-			NOT = { has_country_flag = ncr_crisis }
-			has_completed_focus = ncr_kimball_vindication
-		}
-		prerequisite = {
-			focus = ncr_shi_kimball_1
-		}
-		bypass = {
-			SHI = {
-				exists = no
-			}
-		}
-		x = 0
-		y = 1
-		relative_position_id = ncr_shi_kimball_1
-		completion_reward = {
-			if = {
-				limit = {
-					NCR = {
-						owns_state = 548
-					}
-				}
-				SHI = {
-					add_stability = -0.1
-					add_popularity = {
-						ideology = ruler
-						popularity = 0.1
-					}
-					swap_ideas = {
-						remove_idea = ncr_sphere
-						add_idea = ncr_sphere2
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					SHI = {
-						owns_state = 548
-					}
-				}
-				add_stability = -0.1
-				SHI = {
-					add_popularity = {
-						ideology = ruler
-						popularity = 0.1
-					}
-				}
-			}
-			else = {
-				add_stability = -0.1
-				SHI = {
-					add_stability = -0.1
-					add_popularity = {
-						ideology = ruler
-						popularity = 0.1
-					}
-				}
-			}
-		}
-	}
-	focus = {
-		id = ncr_shi_murphy_1
-		icon = GFX_goal_NCR_Murphy_Shi_Ranger
-		cost = 30
-		available = {
-			NOT = { has_country_flag = ncr_crisis }
-			has_completed_focus = ncr_new_hand_on_the_tiller
-			NAT = {
-				exists = no
-			}
-		}
-		prerequisite = {
-			focus = ncr_shi_business
-		}
-		bypass = {
-			SHI = {
-				exists = no
-			}
-		}
-		x = 1
-		y = 1
-		relative_position_id = ncr_shi_business
-		completion_reward = {
-			if = {
-				limit = {
-					NCR = {
-						owns_state = 548
-					}
-				}
-				SHI = {
-					add_stability = -0.15
-				}
-			}
-			else_if = {
-				limit = {
-					SHI = {
-						owns_state = 548
-					}
-				}
-				SHI = {
-					every_owned_state = {
-						limit = {
-							OR = {
-								is_core_of = NAT
-							}
-						}
-					add_resistance = 35
-					}
-				}
-			}
-			else = {
-				SHI = {
-					add_stability = -0.1
-				}
-			}
-		}
-	}
-	focus = {
-		id = ncr_shi_murphy_2
-		icon = GFX_goal_NCR_Murphy_Ranger_Flag
-		cost = 30
-		search_filters = { FOCUS_FILTER_ANNEXATION }
-		available = {
-			NOT = { has_country_flag = ncr_crisis }
-			has_completed_focus = ncr_new_hand_on_the_tiller
-		}
-		prerequisite = {
-			focus = ncr_shi_murphy_1
-		}
-		bypass = {
-			SHI = {
-				OR = {
-					all_core_land_owned_by_prev_sphere = yes
-					exists = no
-				}
-			}
-		}
-		x = 0
-		y = 1
-		will_lead_to_war_with = SHI
-		relative_position_id = ncr_shi_murphy_1
-		completion_reward = {
-			if = {
-				limit = {
-					NCR = {
-						owns_state = 548
-					}
-				}
-				add_stability = -0.15
-				SHI = {
-					NCR = {
-						grant_wargoals_on_core_states_of_prev = yes
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					SHI = {
-						owns_state = 548
-					}
-				}
-				custom_effect_tooltip = ncr_navarro_rising_tt
-				hidden_effect = {
-					puppet = NAT
-					NAT = {
-						transfer_state = 56
-						transfer_state = 353
-						load_oob = NCR_Navarro_Rangers
-						declare_war_on = {
-							target = SHI
-							type = annex_everything
-						}
-					}
-					declare_war_on = {
-						target = SHI
-						type = annex_everything
-					}
-					56 = {
-						teleport_armies = {
-							limit = {
-								original_tag = SHI
-							}
-							to_province = 2422
-						}
-					}
-					353 = {
-						teleport_armies = {
-							limit = {
-								original_tag = SHI
-							}
-							to_province = 2422
-						}
-					}
-				}
-			}
-			else = {
-				SHI = {
-					NCR = {
-						grant_wargoals_on_core_states_of_prev = yes
-					}
-				}
-			}
-		}
-	}
-	focus = {
-		id = ncr_shi_enemy
-		icon = GFX_goal_NCR_Shi_Shoot
-		cost = 30
-		search_filters = { FOCUS_FILTER_ANNEXATION }
-		available = {
-			NOT = { has_country_flag = ncr_crisis }
-			OR = {
-				SHI = {
-					has_completed_focus = shi_resolve_power_struggle
-					NOT = {
-						has_government = ruler
-					}
-				}
-			}
-		}
-		mutually_exclusive = {
-			focus = ncr_shi_ally
-		}
-		bypass = {
-			SHI = {
-				OR = {
-					all_core_land_owned_by_prev_sphere = yes
-					exists = no
-				}
-			}
-		}
-		will_lead_to_war_with = SHI
-		prerequisite = {
-			focus = ncr_shi_murphy_2
-			focus = ncr_shi_kimball_2
-		}
-		x = -2
-		y = 1
-		relative_position_id = ncr_shi_murphy_2
-		completion_reward = {
-			SHI = {
-				NCR = {
-					grant_wargoals_on_core_states_of_prev = yes
-				}
-			}
-		}
-	}
-
-	focus = {
 		id = ncr_shi_ally
 		icon = GFX_goal_NCR_Shi_Handshake
 		cost = 30
 		available = {
 			NOT = { has_country_flag = ncr_crisis }
-			has_completed_focus = ncr_kimball_vindication
-			SHI = {
-				has_completed_focus = shi_resolve_power_struggle
-				has_government = ruler
-				is_subject = no
-			}
-		}
-		mutually_exclusive = {
-			focus = ncr_shi_enemy
 		}
 		bypass = {
 			SHI = {
@@ -2796,12 +2472,11 @@ focus_tree = {
 			}
 		}
 		prerequisite = {
-			focus = ncr_shi_murphy_2
-			focus = ncr_shi_kimball_2
+			focus = ncr_shi_business
 		}
 		x = 0
 		y = 1
-		relative_position_id = ncr_shi_murphy_2
+		relative_position_id = ncr_shi_business
 		completion_reward = {
 			SHI = {
 				invite_to_new_california = yes
@@ -2862,7 +2537,7 @@ focus_tree = {
 	focus = {
 		id = ncr_rapid_boat
 		icon = GFX_goal_generic_boat
-		cost = 30
+		cost = 15
 		available = {
 			NOT = { has_country_flag = ncr_crisis }
 		}
@@ -2894,7 +2569,7 @@ focus_tree = {
 	focus = {
 		id = ncr_southern_fleet
 		icon = GFX_goal_NCR_Seabear
-		cost = 30
+		cost = 15
 		available = {
 			NOT = { has_country_flag = ncr_crisis }
 		}
@@ -2911,7 +2586,7 @@ focus_tree = {
 	focus = {
 		id = ncr_deep_ocean_warfare
 		icon = GFX_goal_NCR_Rebuild_the_13
-		cost = 30
+		cost = 15
 		available = {
 			NOT = { has_country_flag = ncr_crisis }
 		}
@@ -2932,7 +2607,7 @@ focus_tree = {
 	focus = {
 		id = ncr_naval_extensions
 		icon = GFX_goal_NCR_Bastion_By_the_Sea
-		cost = 30
+		cost = 15
 		available = {
 			NOT = { has_country_flag = ncr_crisis }
 		}
@@ -2955,7 +2630,7 @@ focus_tree = {
 	focus = {
 		id = ncr_setting_sun_navies_rule
 		icon = GFX_goal_generic_boat_battleship
-		cost = 30
+		cost = 15
 		available = {
 			NOT = { has_country_flag = ncr_crisis }
 		}
@@ -2970,6 +2645,9 @@ focus_tree = {
 		relative_position_id = ncr_naval_extensions
 
 		completion_reward = {
+			set_technology = {
+				naval_tech_level_scientific = 1
+			}
 			custom_effect_tooltip = ncr_setting_sun_navies_awesome_tt
 			navy_experience = 50
 		}
@@ -3177,15 +2855,15 @@ focus = {
 			limit = {
 				is_core_of = BVC
 			}
-			add_extra_state_shared_building_slots = 2
+			add_extra_state_shared_building_slots = 4
 			add_building_construction = {
 				type = infrastructure
-				level = 1
+				level = 2
 				instant_build = yes
 			}
 			add_building_construction = {
 				type = industrial_complex
-				level = 1
+				level = 2
 				instant_build = yes
 			}
 		}
@@ -8242,6 +7920,15 @@ focus = {
 		completion_reward = {
 			# Skips Complacent Hegemony, Rural Revitalization and Awakening Giant
 			add_research_slot = 1
+			every_state = {
+                limit = {
+                    OR = {
+                        is_core_of = CES
+                        is_core_of = LAC
+                    }
+                }
+                add_core_of = NCR
+            }
 			if = {
 				limit = {
 					has_idea = ncr_war_exhausted_economy

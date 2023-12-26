@@ -76,6 +76,8 @@ ideas = {
 				army_attack_factor = 0.05
 				land_reinforce_rate = 0.05
 				weekly_manpower = 5
+				special_forces_min = 40
+				special_forces_cap = 0.05
 			}
 			targeted_modifier = {
                 tag = NCR
@@ -119,6 +121,8 @@ ideas = {
 				land_reinforce_rate = 0.07
 				weekly_manpower = 5
 				army_org_factor = 0.02
+				special_forces_min = 60
+				special_forces_cap = 0.1
 			}
 			targeted_modifier = {
                 tag = NCR
@@ -140,6 +144,8 @@ ideas = {
 				land_reinforce_rate = 0.05
 				weekly_manpower = 5
 				production_speed_bunker_factor = 0.15
+				special_forces_min = 60
+				special_forces_cap = 0.1
 			}
 			targeted_modifier = {
                 tag = NCR

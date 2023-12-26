@@ -1456,6 +1456,7 @@ ideas = {
 				send_volunteers_tension = -1
 				diplomacy_distance_factor = 0.25
 				special_forces_min = 10
+				special_forces_cap = 0.1
 			}
 		}
 
@@ -1476,6 +1477,7 @@ ideas = {
 				send_volunteers_tension = -1
 				diplomacy_distance_factor = 0.25
 				special_forces_min = 30
+				special_forces_cap = 0.2
 				decryption = 1.5
 				civilian_intel_factor = 0.2
 				army_intel_factor = 0.2
