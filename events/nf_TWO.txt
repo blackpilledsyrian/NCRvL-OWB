@@ -103,21 +103,44 @@ country_event = {
 			set_temp_variable = { development_to_add = 1 }
 			add_development_to_node = yes
 		}
+		every_owned_state = {
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 3
+		}
 		set_temp_variable = { caps_to_add = 250 }
 		add_caps = yes
 	}
 	option = {
 		name = nf_two.4.b # Powerful
 
-		set_technology = {
-			chariot_vehicle_tech = 1
+		every_owned_state = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
 		}
 	}
 	option = {
 		name = nf_two.4.c # Civilized
 
-		set_technology = {
-			support_tech_level_settler = 1
+		every_owned_state = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
 		}
 	}
 }

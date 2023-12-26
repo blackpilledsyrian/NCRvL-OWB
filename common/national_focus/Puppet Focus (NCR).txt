@@ -831,6 +831,9 @@ focus_tree = {
         }
         relative_position_id = BJS_promote_the_old_crews
         completion_reward = {
+            set_technology = {
+                naval_tech_level_scientific = 1
+            }
             add_resource = {
                 type = energy
                 amount = 6

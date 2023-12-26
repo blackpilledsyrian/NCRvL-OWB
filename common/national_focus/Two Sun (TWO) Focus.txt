@@ -127,7 +127,7 @@ focus_tree = {
 	focus = {
 		id = two_scavenging_1
 		icon = GFX_icon_steel
-		cost = 30
+		cost = 15
 		x = -3
 		y = 1
 		relative_position_id = two_the_roads
@@ -146,7 +146,7 @@ focus_tree = {
 	focus = {
 		id = two_scavenging_2
 		icon = GFX_goal_generic_circuit_adv
-		cost = 30
+		cost = 15
 		x = 0
 		y = 1
 		relative_position_id = two_scavenging_1
@@ -165,7 +165,7 @@ focus_tree = {
 	focus = {
 		id = two_industry_1
 		icon = GFX_goal_generic_production
-		cost = 30
+		cost = 15
 		x = -1
 		y = 1
 		relative_position_id = two_the_roads
@@ -183,7 +183,7 @@ focus_tree = {
 	focus = {
 		id = two_industry_2
 		icon = GFX_icon_two_furance
-		cost = 30
+		cost = 15
 		x = 0
 		y = 1
 		relative_position_id = two_industry_1
@@ -197,7 +197,7 @@ focus_tree = {
 	focus = {
 		id = two_nogales_water
 		icon = GFX_goal_generic_water
-		cost = 30
+		cost = 15
 		x = 1
 		y = 1
 		relative_position_id = two_the_roads
@@ -216,7 +216,7 @@ focus_tree = {
 	focus = {
 		id = two_nogales_farms
 		icon = GFX_goal_food_razor_grain
-		cost = 30
+		cost = 15
 		x = 0
 		y = 1
 		relative_position_id = two_nogales_water
@@ -247,7 +247,7 @@ focus_tree = {
 	focus = {
 		id = two_tombstone_garages
 		icon = GFX_goal_generic_supplies_focus
-		cost = 30
+		cost = 15
 		x = 3
 		y = 1
 		relative_position_id = two_the_roads
@@ -278,7 +278,7 @@ focus_tree = {
 	focus = {
 		id = two_hilltop_garages
 		icon = GFX_goal_CES_Industry_TS_Garage
-		cost = 30
+		cost = 15
 		x = 0
 		y = 1
 		relative_position_id = two_tombstone_garages
@@ -309,7 +309,7 @@ focus_tree = {
 	focus = {
 		id = two_explotation
 		icon = GFX_icon_two_industrialisation
-		cost = 30
+		cost = 15
 		x = 0
 		y = 3
 		relative_position_id = two_the_roads
@@ -634,7 +634,7 @@ focus_tree = {
 	focus = {
 		id = two_chop_shop
 		icon = GFX_icon_chopshop
-		cost = 30
+		cost = 15
 		x = -6
 		y = 1
 		relative_position_id = two_race_start
@@ -658,7 +658,7 @@ focus_tree = {
 	focus = {
 		id = two_chop_shop_caps
 		icon = GFX_icon_caps
-		cost = 30
+		cost = 15
 		x = 0
 		y = 1
 		relative_position_id = two_chop_shop
@@ -683,7 +683,7 @@ focus_tree = {
 	focus = {
 		id = two_chop_shop_hire
 		icon = GFX_icon_chop_shop_guy
-		cost = 30
+		cost = 15
 		x = 0
 		y = 1
 		relative_position_id = two_chop_shop_caps
@@ -707,7 +707,7 @@ focus_tree = {
 	focus = {
 		id = two_boxes
 		icon = GFX_icon_tools_round
-		cost = 30
+		cost = 15
 		x = 0
 		y = 1
 		relative_position_id = two_chop_shop_hire
@@ -861,10 +861,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_ideas = two_tracks_idea
-			swap_ideas = {
-				remove_idea = two_great_race_prep_idea
-				add_idea = two_great_race_prep_idea_2
-			}
 			hidden_effect = {
 				remove_dynamic_modifier = {
 					modifier = two_tracks_dynamic_modifier
@@ -1064,7 +1060,7 @@ focus_tree = {
 	focus = {
 		id = two_doctrine_1
 		icon = GFX_goal_CES_Two_Cannonball
-		cost = 30
+		cost = 15
 		x = 0
 		y = 1
 		relative_position_id = two_masters_of_motor
@@ -1083,7 +1079,7 @@ focus_tree = {
 	focus = {
 		id = two_doctrine_2
 		icon = GFX_icon_two_wargoal_tonk
-		cost = 30
+		cost = 15
 		x = 0
 		y = 1
 		relative_position_id = two_doctrine_1
@@ -1100,7 +1096,7 @@ focus_tree = {
 	focus = {
 		id = two_doctrine_3
 		icon = GFX_KHA_focus_planning
-		cost = 30
+		cost = 15
 		x = 0
 		y = 2
 		relative_position_id = two_doctrine_2
@@ -1825,6 +1821,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			set_technology = {
+				chariot_vehicle_tech = 1
 				ces_two_tech = 1
 			}
 			add_political_power = 100
@@ -2028,25 +2025,11 @@ focus_tree = {
 			focus = two_rule_cow
 		}
 		completion_reward = {
-			set_temp_variable = { core_cost_var = -0.75 }
-			COW = { ROOT = { decrease_coring_cost_for_prev_cores = yes } } # This doesn't fucking work for some reason so using it for tooltip only
 			every_owned_state = {
 				limit = {
 					is_core_of = COW
 				}
-				set_variable = { coring_cost_targeted_state_factor@ROOT = core_cost_var }
-				add_state_modifier = { modifier = { local_required_required_infrastructure_for_coring = -1 } }
-			}
-			if = {
-				limit = { is_ai = yes }
-				hidden_effect = {
-					every_owned_state = {
-						limit = {
-							is_core_of = COW
-						}
-						add_core_of = ROOT
-					}
-				}
+				add_core_of = TWO
 			}
 		}
 	}
@@ -2155,49 +2138,11 @@ focus_tree = {
 			focus = two_ton_secrets
 		}
 		completion_reward = {
-			set_temp_variable = { core_cost_var = -0.75 }
-			TON = { ROOT = { decrease_coring_cost_for_prev_cores = yes } } # This doesn't fucking work for some reason so using it for tooltip only
 			every_owned_state = {
 				limit = {
 					is_core_of = TON
 				}
-				set_variable = { coring_cost_targeted_state_factor@ROOT = core_cost_var }
-				add_state_modifier = { modifier = { local_required_required_infrastructure_for_coring = -1 } }
-			}
-			if = {
-				limit = { is_ai = yes }
-				hidden_effect = {
-					every_owned_state = {
-						limit = {
-							is_core_of = TON
-						}
-						add_core_of = ROOT
-					}
-				}
-			}
-		}
-	}
-	focus = {
-		id = two_gente_question
-		icon = GFX_goal_gdh_shield
-		cost = 30
-		x = 0
-		y = 1
-		relative_position_id = two_cores_ton
-		available = {
-			date > 2279.1.1
-		}
-		bypass = {
-			is_not_caesars_legion_member = no
-		}
-		prerequisite = {
-			focus = two_cores_ton
-		}
-		completion_reward = {
-			CES = {
-				country_event = {
-					id = nf_two.9
-				}
+				add_core_of = ROOT
 			}
 		}
 	}
@@ -2205,24 +2150,16 @@ focus_tree = {
 		id = two_gente_trade
 		icon = GFX_goal_CES_Gente_Two_Friends
 		cost = 30
-		x = 3
+		x = 0
 		y = 1
-		relative_position_id = two_gente_question
-		available = {
-			OR = {
-				GDH = {
-					is_in_faction_with = TWO
-				}
-				has_country_flag = two_gdh_friendship
-			}
-		}
+		relative_position_id = two_cores_ton
 		prerequisite = {
-			focus = two_gente_question
-		}
-		mutually_exclusive = {
-			focus = two_gente_annex
+			focus = two_cores_ton
 		}
 		completion_reward = {
+			CES = {
+				end_puppet = TWO
+			}
 			516 = {
 				set_temp_variable = { development_to_add = 2.0 }
 				add_development_to_node = yes
@@ -2241,21 +2178,11 @@ focus_tree = {
 		}
 		completion_reward = {
 			297 = {
-				if = {
-					limit = {
-						is_valid_state_for_2_dockyards = yes
-					}
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = dockyard
-						level = 2
-						instant_build = yes
-					}
-				}
-				set_building_level = {
-					type = naval_base
-					level = 10
-					province = 3151
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = electricity_generator
+					level = 2
+					instant_build = yes
 				}
 				add_resource = {
 					type = energy
@@ -2263,6 +2190,12 @@ focus_tree = {
 				}
 			}
 			471 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = electricity_generator
+					level = 2
+					instant_build = yes
+				}
 				add_resource = {
 					type = water
 					amount = 8
@@ -2286,10 +2219,10 @@ focus_tree = {
 					limit = {
 						is_valid_state_for_2_arms_factories = yes
 					}
-					add_extra_state_shared_building_slots = 2
+					add_extra_state_shared_building_slots = 4
 					add_building_construction = {
 						type = arms_factory
-						level = 2
+						level = 4
 						instant_build = yes
 					}
 				}
@@ -2299,10 +2232,10 @@ focus_tree = {
 					limit = {
 						is_valid_state_for_2_arms_factories = yes
 					}
-					add_extra_state_shared_building_slots = 2
+					add_extra_state_shared_building_slots = 4
 					add_building_construction = {
 						type = arms_factory
-						level = 2
+						level = 4
 						instant_build = yes
 					}
 				}
@@ -2322,7 +2255,7 @@ focus_tree = {
 		completion_reward = {
 			add_equipment_to_stockpile = {
 				type = gauss_equipment_2 # change
-				amount = 400
+				amount = 1000
 				producer = USA
 			}
 			GDH = {
@@ -2348,25 +2281,19 @@ focus_tree = {
 			focus = two_gente_trade_arms
 		}
 		completion_reward = {
-			random_owned_state = {
-				limit = {
-					is_valid_state_for_3_civilian_factories = yes
-				}
-				add_extra_state_shared_building_slots = 3
+			247 = {
+				add_extra_state_shared_building_slots = 6
 				add_building_construction = {
 					type = industrial_complex
-					level = 3
+					level = 6
 					instant_build = yes
 				}
 			}
-			random_owned_state = {
-				limit = {
-					is_valid_state_for_3_civilian_factories = yes
-				}
-				add_extra_state_shared_building_slots = 3
+			477 = {
+				add_extra_state_shared_building_slots = 6
 				add_building_construction = {
 					type = industrial_complex
-					level = 3
+					level = 6
 					instant_build = yes
 				}
 			}
@@ -2391,6 +2318,7 @@ focus_tree = {
 		completion_reward = {
 			set_technology = {
 				infantry_tech_level_settler = 1
+				support_tech_level_settler = 1
 			}
 		}
 	}
@@ -2419,129 +2347,6 @@ focus_tree = {
 				add_resource = {
 					type = circuitry
 					amount = 15
-				}
-			}
-		}
-	}
-	focus = {
-		id = two_gente_annex
-		icon = GFX_icon_two_GDH_fire
-		cost = 30
-		x = -3
-		y = 1
-		relative_position_id = two_gente_question
-		available = {
-			hidden_trigger = {
-				has_country_flag = two_ces_allow_gente_annexation
-			}
-		}
-		prerequisite = {
-			focus = two_gente_question
-		}
-		mutually_exclusive = {
-			focus = two_gente_trade
-		}
-		completion_reward = {
-			declare_war_on = {
-				target = GDH
-				type = annex_everything
-			}
-		}
-	}
-	focus = {
-		id = two_gente_annex_road
-		icon = GFX_icon_two_canyon_road
-		cost = 30
-		x = 0
-		y = 1
-		relative_position_id = two_gente_annex
-		prerequisite = {
-			focus = two_gente_annex
-		}
-		available = {
-			GDH = {
-				all_core_land_owned_by_prev_sphere = yes
-			}
-		}
-		completion_reward = {
-			516 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			588 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			477 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			471 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-	}
-	focus = {
-		id = two_gente_annex_mask
-		icon = GFX_icon_two_suneater
-		cost = 30
-		x = 0
-		y = 1
-		relative_position_id = two_gente_annex_road
-		prerequisite = {
-			focus = two_gente_annex_road
-		}
-		completion_reward = {
-			TWO = {
-				country_event = {
-					id = nf_two.11
-				}
-			}
-		}
-	}
-	focus = {
-		id = two_gente_cores # 3 sun or smth
-		icon = GFX_icon_two_three_suns_2
-		cost = 60
-		x = 0
-		y = 1
-		relative_position_id = two_gente_annex_mask
-		prerequisite = {
-			focus = two_gente_annex_mask
-		}
-		completion_reward = {
-			set_cosmetic_tag = TWO_sonora_equitatae
-			set_temp_variable = { core_cost_var = -0.75 }
-			GDH = { ROOT = { decrease_coring_cost_for_prev_cores = yes } } # This doesn't fucking work for some reason so using it for tooltip only
-			every_owned_state = {
-				limit = {
-					is_core_of = GDH
-				}
-				set_variable = { coring_cost_targeted_state_factor@ROOT = core_cost_var }
-				add_state_modifier = { modifier = { local_required_required_infrastructure_for_coring = -1 } }
-			}
-			if = {
-				limit = { is_ai = yes }
-				hidden_effect = {
-					every_owned_state = {
-						limit = {
-							is_core_of = GDH
-						}
-						add_core_of = ROOT
-					}
 				}
 			}
 		}
