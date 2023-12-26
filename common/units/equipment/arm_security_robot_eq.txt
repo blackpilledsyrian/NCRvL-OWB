@@ -1,0 +1,89 @@
+equipments = {
+
+	security_robot_equipment = {
+		year = 1934
+
+		is_archetype = yes
+		is_convertable = yes
+		picture = archetype_heavy_robot_equipment
+		is_buildable = no
+		type = armor
+		group_by = archetype
+
+		interface_category = interface_category_armor
+
+		upgrades = {
+			#pa_redundancy_upgrade
+			#pa_production_upgrade
+			#pa_plating_upgrade
+			#pa_shock_upgrade
+			#pa_servo_motion_upgrade
+			#rob_brain_upgrade
+		}
+
+		#Misc Abilities
+		maximum_speed = 5.5
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 1
+		breakthrough = 1
+		hardness = 0.1
+		armor_value = 1
+
+		fuel_consumption = 0.4
+
+		#Offensive Abilities
+		soft_attack = 1
+		hard_attack = 1
+		ap_attack = 1
+		air_attack = 0
+
+		#Space taken in convoy
+		lend_lease_cost = 10
+
+		build_cost_ic = 6
+		resources = {
+		}
+
+	}
+
+	security_robot_securitron_equipment_1 = {
+		year = 1941
+
+		archetype = security_robot_equipment
+		priority = 12
+		visual_level = 1
+		is_convertable = yes
+
+		#Misc Abilities
+		maximum_speed = 5.5
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 14
+		breakthrough = 5.5
+		hardness = 0.45
+		armor_value = 30
+		suppression = 1.5
+
+		fuel_consumption = 0.4
+
+		#Offensive Abilities
+		soft_attack = 10
+		hard_attack = 10
+		ap_attack = 20
+		air_attack = 1.5
+
+		#Space taken in convoy
+		lend_lease_cost = 10
+
+		build_cost_ic = 24.5
+		resources = {
+			metal = 2
+			composites = 1
+			circuitry = 1
+			advanced = 1
+		}
+	}
+}

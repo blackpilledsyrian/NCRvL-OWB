@@ -1,0 +1,131 @@
+﻿division_template = {
+	name = "Militia Force"
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+		militia = { x = 2 y = 0 }
+		militia = { x = 2 y = 1 }
+	}
+}
+
+
+division_template = {
+	name = "Elite Rangers"
+
+	regiments = {
+		spec_ops = { x = 0 y = 0 }
+		spec_ops = { x = 0 y = 1 }
+		spec_ops = { x = 1 y = 0 }
+		spec_ops = { x = 1 y = 1 }
+	}
+	support = {
+		anti_tank_company = { x = 0 y = 0 }
+		recon_company = { x = 1 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Rangers"
+	is_locked = yes
+	regiments = {
+		police_infantry = { x = 0 y = 0 }
+		police_infantry = { x = 0 y = 1 }
+		police_infantry = { x = 0 y = 2 }
+		police_infantry = { x = 1 y = 0 }
+		police_infantry = { x = 1 y = 1 }
+		police_infantry = { x = 1 y = 2 }
+		police_infantry = { x = 2 y = 0 }
+		police_infantry = { x = 2 y = 1 }
+		police_infantry = { x = 2 y = 2 }
+		police_infantry = { x = 3 y = 0 }
+		police_infantry = { x = 3 y = 1 }
+		police_infantry = { x = 3 y = 2 }
+		demolitions_infantry = { x = 4 y = 0 }
+		demolitions_infantry = { x = 4 y = 1 }
+	}
+	support = {
+		anti_tank_company = { x = 0 y = 0 }
+		logistics_company = { x = 1 y = 0 }
+		demolitions_support = { x = 2 y = 0 }
+		fireteam_support = { x = 3 y = 0 }
+		anti_air_support = { x = 4 y = 0 }
+	}
+	priority = 1
+}
+
+division_template = {
+	name = "Wasteland Rangers"
+	regiments = {
+		police_infantry = { x = 0 y = 0 }
+		police_infantry = { x = 0 y = 1 }
+		police_infantry = { x = 0 y = 2 }
+		police_infantry = { x = 1 y = 0 }
+		police_infantry = { x = 1 y = 1 }
+		police_infantry = { x = 1 y = 2 }
+	}
+	support = {
+		anti_tank_company = { x = 0 y = 0 }
+	}
+	priority = 1
+}
+
+units = {
+	division = {
+		name = "1st Elite Rangers"
+		location = 1589
+		division_template = "Elite Rangers"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Snake's Rangers"
+		location = 9645
+		division_template = "Rangers"
+		start_experience_factor = 1
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "1st Rangers"
+		location = 9645
+		division_template = "Wasteland Rangers"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "2nd Rangers"
+		location = 8743
+		division_template = "Wasteland Rangers"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "3rd Rangers"
+		location = 5021
+		division_template = "Wasteland Rangers"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+	}
+}
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = ballistic_equipment_1
+			creator = "DES"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = spec_ops_equipment_2
+			creator = "DES"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+}

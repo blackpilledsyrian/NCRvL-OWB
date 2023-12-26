@@ -1,0 +1,158 @@
+﻿capital = 203
+oob = "NAV_2275"
+set_technology = {
+	basic_supply_transport_tech = 1
+	infantry_tech_level_tribal = 1
+	infantry_tech_level_settler = 1
+	special_forces_tech_level_tribal = 1
+	special_forces_tech_level_settler = 1
+	special_forces_tech_level_scientific = 1
+	support_tech_level_tribal = 1
+	support_tech_level_settler = 1
+	vehicles_tech_level_tribal = 1
+	vehicles_tech_level_settler = 1
+	robotics_tech_level_tribal = 1
+	robotics_tech_level_settler = 1
+	air_tech_level_tribal = 1
+	air_tech_level_settler = 1
+	naval_tech_level_tribal = 1
+	naval_tech_level_settler = 1
+	tools_tech_level_tribal = 1
+	tools_tech_level_settler = 1
+	habitation_tech_level_tribal = 1
+	habitation_tech_level_settler = 1
+	exploitation_tech_level_tribal = 1
+	exploitation_tech_level_settler = 1
+	electronics_tech_level_tribal = 1
+	electronics_tech_level_settler = 1
+	electronics_tech_level_scientific = 1
+	tribal_civilization = 1
+	settled_civilization = 1
+	tool_engineering = 1
+	standard_weaponry_tech = 1
+	melee_weaponry_tech_1 = 1
+	ballistic_weaponry_tech_1 = 1
+	support_weaponry = 1
+	demolitions_weaponry_tech = 1
+	fireteam_weaponry_tech = 1
+	spec_ops_equipment_tech_1 = 1
+	spec_ops_equipment_tech_2 = 1
+	communication_engineering = 1
+	encryption = 1
+	encryption_1 = 1
+	decryption = 1
+	decryption_1 = 1
+	electronic_engineering = 1
+	electronic_engineering_1 = 1
+	electronic_engineering_2 = 1
+	communication_engineering_1 = 1
+	communication_engineering_2 = 1
+	glider_tech = 1
+	terror_tactics = 1
+	decisive_engagement_doctrine = 1
+	ces_navajo_skin_walkers_tech = 1
+	ces_navajo_scouts_tech = 1
+}
+
+set_variable = {
+	NAV_resistance = 2
+}
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		nautics_tech_1 = 1
+		light_navy_hull_tech_1 = 1
+		waterproof_sealing_tech = 1
+		naval_invasion_tech_1 = 1
+	}
+}
+
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "Man the Guns"
+		}
+	}
+	set_technology = {
+		basic_supply_transport_tech = 1
+		nautics_tech_non_mtg_1 = 1
+		light_navy_hull_tech_non_mtg_1 = 1
+		waterproof_sealing_tech_non_mtg = 1
+		naval_invasion_tech_non_mtg_1 = 1
+	}
+}
+
+set_stability = 0.4
+set_war_support = 0.45
+set_convoys = 70
+set_research_slots = 4
+set_country_flag = is_settler_nation
+set_country_flag = has_unique_manpower_law
+set_country_flag = grand_doctrine_ai
+set_country_flag = grand_infantry_doctrine_ai
+set_country_flag = is_arizona_nation
+
+set_politics = {
+	ruling_party = ruler
+	elections_allowed = no
+}
+
+set_popularities = {
+	people = 0
+	elites = 0
+	intellectuals = 0
+	ruler = 100
+}
+
+add_ideas = {
+	nav_pathfinders	# Don't remove this if you can help it, it can be swapped with another idea via a Legion focus
+	NAV_legionem_foederati
+	training_law_wasteland
+	free_trade
+	navajo_silversmith_companies
+	partial_economic_mobilisation
+}
+hidden_effect = {
+	add_ideas = tech_air_production_nerf_idea
+}
+recruit_character = NAV_chief_hashkeh_naabaah
+recruit_character = NAV_niyol_tsinajinnie
+recruit_character = NAV_dighin_sani
+recruit_character = NAV_chester_sani
+recruit_character = NAV_sicheii
+recruit_character = NAV_tsela
+recruit_character = NAV_bidziil
+recruit_character = NAV_hokee
+recruit_character = NAV_sialea_lea
+recruit_character = NAV_free_man
+
+if = {
+	limit = {
+		can_use_autonomy_system = yes
+	}
+	CES = {
+		NAV = {
+			become_puppet = yes
+		}
+		set_autonomy = {
+			target = NAV
+			autonomy_state = autonomy_client_tribe
+		}
+	}
+}
+
+if = {
+	limit = {
+		can_use_autonomy_system = no
+	}
+	CES = {
+		NAV = {
+			become_puppet = yes
+		}
+	}
+}
+
+add_to_tech_sharing_group = legion_research_pact

@@ -1,0 +1,32 @@
+state = {
+	id = 107
+	name = "STATE_107"
+	resources={
+		metal = 6
+		composites = 4
+	}
+
+	history={
+		owner = BVC
+		add_core_of = BVC
+		victory_points = {
+			5789 20
+		}
+		buildings = {
+			infrastructure = 5
+			arms_factory = 1
+			industrial_complex = 2
+			air_base = 1
+
+			5791 = { naval_base = 1 }
+		}
+
+	}
+
+	provinces={
+		5789 5791 5792 5793 5801 5808 5809
+	}
+	manpower=30000
+	buildings_max_level_factor=1.000
+	state_category=large_city
+}

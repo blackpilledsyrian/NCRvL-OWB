@@ -1,0 +1,23 @@
+state={
+	id=1364
+	name="STATE_1364"
+	provinces={
+		14972 14973 14974 14975 14976 14981 14982 14985 14988 14989
+	}
+	resources = {
+		water = 4
+		energy = 4
+		metal = 4
+	}
+	history = {
+		victory_points = {
+			14988 5
+		}
+		buildings = {
+			infrastructure = 2
+		}
+	}
+	state_category = pastoral
+	manpower = 971
+	buildings_max_level_factor=1.000
+}

@@ -1,0 +1,28 @@
+state = {
+	id = 1023
+	name = "STATE_1023"
+	manpower = 18600
+	state_category = city
+
+	resources = {
+		water = 6
+		metal = 6
+		energy = 4
+	}
+
+	history = {
+		victory_points = {
+			12838 10
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 4
+			arms_factory = 1
+			12842 = { naval_base = 1 }
+		}
+	}
+
+	provinces = {
+		12837 12846 12843 12832 12827 12808 12821 12838 12842 12848
+	}
+}

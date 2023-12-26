@@ -1,0 +1,1468 @@
+
+### Historic
+
+shared_focus = {
+	id = gentribal_gods
+	icon = GFX_goal_death_or_glory
+	cost = 7
+	x = 8
+	y = 0
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_gods entered"
+		}
+		country_event = { id = nf_tribal.1 }
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_gods exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_legend
+	icon = GFX_goal_generic_wizard_hat
+	cost = 7
+	prerequisite = {
+		focus = gentribal_gods
+	}
+	x = 0
+	y = 1
+	relative_position_id = gentribal_gods
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_legend entered"
+		}
+		country_event = { id = nf_tribal.2 }
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_legend exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_era
+	icon = GFX_goal_generic_ideological_fury_focus
+	cost = 7
+	prerequisite = {
+		focus = gentribal_legend
+	}
+	x = 0
+	y = 1
+	relative_position_id = gentribal_legend
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_era entered"
+		}
+		country_event = { id = nf_tribal.3 }
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_era exited"
+		}
+		unlock_all_available_generic_branches = yes
+	}
+}
+
+### Tribal Defense
+shared_focus = {
+	id = gentribal_defense
+	icon = GFX_goal_generic_military_sphere
+	cost = 60
+	available = {
+		has_country_flag = unlocked_all_available_generic_focus_branches
+	}
+	x = 1
+	y = 3
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_defense entered"
+		}
+		add_ideas = tribal_defence
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_defense exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_cult
+	icon = GFX_goal_generic_spartan_legacy
+	cost = 60
+	prerequisite = {
+		focus = gentribal_defense
+	}
+	x = -1
+	y = 1
+	relative_position_id = gentribal_defense
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_cult entered"
+		}
+		custom_effect_tooltip = gentribal_cult_tt
+		hidden_effect = { set_technology = { warriorcult = 1 } }
+		army_experience = 15
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_cult exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_pathfinders
+	icon = GFX_goal_generic_tomahawk_2
+	cost = 60
+	prerequisite = {
+		focus = gentribal_cult
+	}
+	x = 0
+	y = 1
+	relative_position_id = gentribal_cult
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_pathfinders entered"
+		}
+		custom_effect_tooltip = gentribal_pathfinders_tt
+		hidden_effect = { set_technology = { pathfinders = 1 } }
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_pathfinders exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_youth
+	icon = GFX_goal_generic_teddy
+	cost = 60
+	prerequisite = {
+		focus = gentribal_pathfinders
+	}
+	x = 0
+	y = 1
+	relative_position_id = gentribal_pathfinders
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_youth entered"
+		}
+		add_ideas = tribalyouth
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_youth exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_tradition
+	icon = GFX_goal_generic_spear
+	cost = 60
+	prerequisite = {
+		focus = gentribal_defense
+	}
+	x = 1
+	y = 1
+	relative_position_id = gentribal_defense
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_tradition entered"
+		}
+		add_ideas = tribal_tradition
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_tradition exited"
+		}
+	}
+}
+
+shared_focus = {
+	id = gentribal_martialarts
+	icon = GFX_goal_tribal_generic
+	cost = 60
+	prerequisite = {
+		focus = gentribal_tradition
+	}
+	x = 0
+	y = 1
+	relative_position_id = gentribal_tradition
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_martialarts entered"
+		}
+		custom_effect_tooltip = gentribal_martialarts_tt
+		hidden_effect = { set_technology = { clanfightingstyles = 1 } }
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_martialarts exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_champions
+	icon = GFX_KHA_focus_support_orange
+	cost = 60
+	prerequisite = {
+		focus = gentribal_martialarts
+	}
+	x = 0
+	y = 1
+	relative_position_id = gentribal_martialarts
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_champions entered"
+		}
+		add_ideas = tribalchamps
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_champions exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_healing
+	icon = GFX_goal_TTM_Golden_Fruit
+	cost = 60
+	prerequisite = {
+		focus = gentribal_champions
+	}
+	x = -1
+	y = 1
+	relative_position_id = gentribal_champions
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_healing entered"
+		}
+		add_ideas = healingpowder
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_healing exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_secrets
+	icon = GFX_goal_CHC_an_army_of_healers
+	cost = 60
+	prerequisite = {
+		focus = gentribal_healing
+	}
+	x = 0
+	y = 1
+	relative_position_id = gentribal_healing
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_secrets entered"
+		}
+		add_ideas = tribalsecrets
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_secrets exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_muster
+	icon = GFX_goal_PLS_Drums_of_War
+	cost = 60
+	prerequisite = {
+		focus = gentribal_champions
+	}
+	x = 1
+	y = 1
+	relative_position_id = gentribal_champions
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_muster entered"
+		}
+		add_ideas = tribalmuster
+		random_owned_controlled_state = {
+			limit = {
+				is_valid_state_for_2_arms_factories = yes
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_muster exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_nomads
+	icon = GFX_goal_TIM_patch_horsemanship
+	cost = 60
+	prerequisite = {
+		focus = gentribal_muster
+	}
+	x = 0
+	y = 1
+	relative_position_id = gentribal_muster
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_nomads entered"
+		}
+		custom_effect_tooltip = gentribal_nomads_tt
+		hidden_effect = { set_technology = { nomadsoul = 1 } }
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_nomads exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_houndmasters
+	icon = GFX_goal_CES_burned_dog
+	cost = 60
+	prerequisite = {
+		focus = gentribal_nomads
+	}
+	x = -2
+	y = 1
+	relative_position_id = gentribal_nomads
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_houndmasters entered"
+		}
+		add_ideas = tribalhoundmasters
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_houndmasters exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_dogs
+	icon = GFX_goal_TIM_patch_dog_care
+	cost = 60
+	prerequisite = {
+		focus = gentribal_houndmasters
+	}
+	x = 0
+	y = 1
+	relative_position_id = gentribal_houndmasters
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_dogs entered"
+		}
+		custom_effect_tooltip = gentribal_dogs_tt
+		hidden_effect = { set_technology = { mansbestfriend = 1 } }
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_dogs exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_skirmish
+	icon = GFX_goal_TTM_Border
+	cost = 60
+	prerequisite = {
+		focus = gentribal_nomads
+	}
+	x = 0
+	y = 1
+	relative_position_id = gentribal_nomads
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_skirmish entered"
+		}
+		add_ideas = tribalskirmish
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_skirmish exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_bodyguards
+	icon = GFX_goal_ITZ_an_elite_force
+	cost = 60
+	prerequisite = {
+		focus = gentribal_skirmish
+	}
+	available = {
+		has_tech = unit_training_tech_3
+		has_tech = hardening_armour_tech
+	}
+	x = 0
+	y = 1
+	relative_position_id = gentribal_skirmish
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_bodyguards entered"
+		}
+		custom_effect_tooltip = gentribal_bodyguards_tt
+		if = {
+			limit = {
+				NOT = { has_tech = unit_training_tech_4 }
+			}
+			set_technology = { unit_training_tech_4 = 1 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_tech = unit_training_tech_5 }
+			}
+			set_technology = { unit_training_tech_5 = 1 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_tech = unit_training_tech_6 }
+			}
+			set_technology = { unit_training_tech_6 = 1 }
+		}
+		else = {
+			add_tech_bonus = {
+				uses = 1
+				bonus = 0.25
+				category = infantry_tech_category
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_tech = spec_ops_equipment_tech_3 }
+			}
+			set_technology = { spec_ops_equipment_tech_3 = 1 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_tech = ballistic_fibre_tech }
+			}
+			set_technology = { ballistic_fibre_tech = 1 }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_tech = spec_ops_equipment_tech_4 }
+			}
+			set_technology = { spec_ops_equipment_tech_4 = 1 }
+		}
+		else = {
+			add_tech_bonus = {
+				uses = 1
+				bonus = 0.25
+				category = infantry_tech_category
+			}
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_bodyguards exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_noct
+	icon = GFX_goal_pal_take_back_the_night
+	cost = 60
+	prerequisite = {
+		focus = gentribal_nomads
+	}
+	x = 2
+	y = 1
+	relative_position_id = gentribal_nomads
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_noct entered"
+		}
+		custom_effect_tooltip = gentribal_noct_tt
+		hidden_effect = { set_technology = { noctwarriors = 1 } }
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_noct exited"
+		}
+	}
+}
+
+
+### Tribal Reformation
+shared_focus = {
+	id = gentribal_tribe
+	icon = GFX_KHA_focus_tribal_spirit
+	cost = 60
+	available = {
+		has_country_flag = unlocked_all_available_generic_focus_branches
+	}
+	x = 8
+	y = 3
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_tribe entered"
+		}
+		add_political_power = 100
+		army_experience = 25
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_tribe exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_war
+	icon = GFX_KHA_focus_blood_god
+	cost = 60
+	prerequisite = {
+		focus = gentribal_tribe
+	}
+	mutually_exclusive = {
+		focus = gentribal_shaman
+		focus = gentribal_highchief
+		focus = gentribal_elder
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = { has_government = elites }
+		}
+	}
+	x = -3
+	y = 1
+	relative_position_id = gentribal_tribe
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_war entered"
+		}
+		add_ideas = war_chief1
+		add_political_power = 60
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_war exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_rise
+	icon = GFX_KHA_focus_propose_plan
+	cost = 60
+	prerequisite = {
+		focus = gentribal_war
+	}
+	x = 0
+	y = 1
+	relative_position_id = gentribal_war
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_rise entered"
+		}
+		army_experience = 50
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_rise exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_realm
+	icon = GFX_KHA_focus_rum
+	cost = 60
+	prerequisite = {
+		focus = gentribal_rise
+	}
+	x = 0
+	y = 1
+	relative_position_id = gentribal_rise
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_realm entered"
+		}
+		swap_ideas = {
+			remove_idea = war_chief1
+			add_idea = war_chief2
+		}
+		set_politics = { ruling_party = elites elections_allowed = no }
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_realm exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_shaman
+	icon = GFX_goal_tribal_dog_symbl
+	cost = 60
+	prerequisite = {
+		focus = gentribal_tribe
+	}
+	mutually_exclusive = {
+		focus = gentribal_elder
+		focus = gentribal_war
+		focus = gentribal_highchief
+	}
+	x = -1
+	y = 1
+	relative_position_id = gentribal_tribe
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = { has_government = intellectuals }
+		}
+	}
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_shaman entered"
+		}
+		add_ideas = high_shaman
+		add_political_power = 60
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_shaman exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_holywar
+	icon = GFX_goal_HEA_focus_tribals
+	cost = 60
+	prerequisite = {
+		focus = gentribal_shaman
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = { has_government = intellectuals }
+		}
+	}
+	x = 0
+	y = 1
+	relative_position_id = gentribal_shaman
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_holywar entered"
+		}
+		add_ideas = tribalfervor
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_holywar exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_holyorg
+	icon = GFX_goal_NCN_Hands_Of_God
+	cost = 60
+	prerequisite = {
+		focus = gentribal_holywar
+	}
+	x = 0
+	y = 1
+	relative_position_id = gentribal_holywar
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_holyorg entered"
+		}
+		custom_effect_tooltip = gentribal_holyorg_tt
+		hidden_effect = { set_technology = { tribalholyorg = 1 } }
+		set_politics = { ruling_party = intellectuals elections_allowed = no }
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_holyorg exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_elder
+	icon = GFX_goal_CES_Amnesty_Old
+	cost = 60
+	prerequisite = {
+		focus = gentribal_tribe
+	}
+	mutually_exclusive = {
+		focus = gentribal_highchief
+		focus = gentribal_shaman
+		focus = gentribal_war
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = { has_government = people }
+		}
+	}
+	x = 1
+	y = 1
+	relative_position_id = gentribal_tribe
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_elder entered"
+		}
+		add_ideas = elder1
+		add_political_power = 60
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_elder exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_council
+	icon = GFX_goal_CES_Lucius_Council
+	cost = 60
+	prerequisite = {
+		focus = gentribal_elder
+	}
+	x = 0
+	y = 1
+	relative_position_id = gentribal_elder
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_council entered"
+		}
+		swap_ideas = {
+			remove_idea = elder1
+			add_idea = elder2
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_council exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_migrate
+	icon = GFX_KHA_focus_trade_ncr
+	cost = 60
+	prerequisite = {
+		focus = gentribal_council
+	}
+	x = 0
+	y = 1
+	relative_position_id = gentribal_council
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_migrate entered"
+		}
+		swap_ideas = {
+			remove_idea = elder2
+			add_idea = elder3
+		}
+		set_politics = { ruling_party = people elections_allowed = no }
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_migrate exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_highchief
+	icon = GFX_goal_pal_pr_shoshone
+	cost = 60
+	prerequisite = {
+		focus = gentribal_tribe
+	}
+	mutually_exclusive = {
+		focus = gentribal_elder
+		focus = gentribal_shaman
+		focus = gentribal_war
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = { has_government = ruler }
+		}
+	}
+	x = 3
+	y = 1
+	relative_position_id = gentribal_tribe
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_highchief entered"
+		}
+		add_ideas = highchief1
+		add_political_power = 60
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_highchief exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_chief
+	icon = GFX_goal_pal_the_league
+	cost = 60
+	prerequisite = {
+		focus = gentribal_highchief
+	}
+	x = 0
+	y = 1
+	relative_position_id = gentribal_highchief
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_chief entered"
+		}
+		swap_ideas = {
+			remove_idea = highchief1
+			add_idea = highchief2
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_chief exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_duty
+	icon = GFX_goal_pal_pr_riper
+	cost = 60
+	prerequisite = {
+		focus = gentribal_chief
+	}
+	x = 0
+	y = 1
+	relative_position_id = gentribal_chief
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_duty entered"
+		}
+		swap_ideas = {
+			remove_idea = highchief2
+			add_idea = highchief3
+		}
+		set_politics = { ruling_party = ruler elections_allowed = no }
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_duty exited"
+		}
+	}
+}
+
+
+### The Growing Village
+shared_focus = {
+	id = gentribal_village
+	icon = GFX_goal_generic_teepee
+	cost = 60
+	available = {
+		has_country_flag = unlocked_all_available_generic_focus_branches
+	}
+	x = 16
+	y = 3
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_village entered"
+		}
+		random_owned_controlled_state = {
+			limit = {
+				is_valid_state_for_civilian_factory = yes
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+			add_resource = {
+				type = water
+				amount = 1
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				is_valid_state_for_arms_factory = yes
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+			add_resource = {
+				type = metal
+				amount = 1
+			}
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_village exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_elders
+	icon = GFX_goal_generic_in_control
+	cost = 60
+	prerequisite = {
+		focus = gentribal_village
+	}
+	x = -1
+	y = 1
+	relative_position_id = gentribal_village
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_elders entered"
+		}
+		add_ideas = elders
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_elders exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_unity
+	icon = GFX_goal_TTM_Defending_Our_Ideals
+	cost = 60
+	prerequisite = {
+		focus = gentribal_elders
+	}
+	x = -1
+	y = 1
+	relative_position_id = gentribal_elders
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_unity entered"
+		}
+		add_ideas = tribalunity
+		add_political_power = 25
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_unity exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_city
+	icon = GFX_goal_TTM_Temple
+	cost = 60
+	prerequisite = {
+		focus = gentribal_unity
+	}
+	x = -1
+	y = 1
+	relative_position_id = gentribal_unity
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_city entered"
+		}
+		set_temp_variable = { caps_to_add = 125 }
+		add_caps = yes
+		random_owned_controlled_state = {
+			limit = {
+				is_valid_state_for_civilian_factory = yes
+			}
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_city exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_factions
+	icon = GFX_goal_TTM_Fruit
+	cost = 60
+	prerequisite = {
+		focus = gentribal_city
+	}
+	x = -1
+	y = 1
+	relative_position_id = gentribal_city
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_factions entered"
+		}
+		#set_rule = { can_create_factions = yes }
+		add_ideas = tribalfactions
+		add_political_power = 100
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_factions exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_deathpowder
+	icon = GFX_goal_TTM_Fire_2
+	cost = 60
+	prerequisite = {
+		focus = gentribal_factions
+	}
+	available = {
+		OR = {
+			has_tech = flamer_demolitions_weaponry_tech_2
+			has_tech = explosive_demolitions_weaponry_tech_2
+		}
+	}
+	x = -1
+	y = 1
+	relative_position_id = gentribal_factions
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_deathpowder entered"
+		}
+		if = {
+			limit = {
+				NOT = {
+					AND = {
+						has_tech = flamer_demolitions_weaponry_tech_2
+						has_tech = explosive_demolitions_weaponry_tech_2
+					}
+				}
+			}
+			custom_effect_tooltip = an_explosion_in_understanding_tt
+		}
+		if = {
+			limit = {
+				has_tech = flamer_demolitions_weaponry_tech_2
+			}
+			set_technology = {
+				flamer_demolitions_weaponry_tech_3 = 1
+			}
+		}
+		if = {
+			limit = {
+				has_tech = explosive_demolitions_weaponry_tech_2
+			}
+			set_technology = {
+				explosive_demolitions_weaponry_tech_3 = 1
+			}
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_deathpowder exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_fragprod
+	icon = GFX_goal_assembly_li
+	cost = 60
+	prerequisite = {
+		focus = gentribal_deathpowder
+	}
+	x = 0
+	y = 1
+	relative_position_id = gentribal_deathpowder
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_fragprod entered"
+		}
+		add_ideas = tribalfragprod
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_fragprod exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_trade
+	icon = GFX_goal_brahmin_deals
+	cost = 60
+	prerequisite = {
+		focus = gentribal_factions
+	}
+	available = {
+		has_tech = warrior_equipment
+	}
+	x = 1
+	y = 1
+	relative_position_id = gentribal_factions
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_trade entered"
+		}
+		set_technology = { ballistic_weaponry_tech_2 = 1 }
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_trade exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_outsiders
+	icon = GFX_goal_generic_focus_magazine_backwood_get_off_my_lawn
+	cost = 60
+	prerequisite = {
+		focus = gentribal_trade
+	}
+	x = 0
+	y = 1
+	relative_position_id = gentribal_trade
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_outsiders entered"
+		}
+		custom_effect_tooltip = gentribal_outsiders_tt
+		hidden_effect = { set_technology = { outsiderways = 1 } }
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_outsiders exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_agreement
+	icon = GFX_goal_TTM_Nursery
+	cost = 60
+	prerequisite = {
+		focus = gentribal_city
+	}
+	x = 2
+	y = 1
+	relative_position_id = gentribal_city
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_agreement entered"
+		}
+		set_temp_variable = { caps_to_add = 125 }
+		add_caps = yes
+		add_ideas = outsideragreement
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_agreement exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_tradepost
+	icon = GFX_goal_generic_brahmin_trade
+	cost = 60
+	prerequisite = {
+		focus = gentribal_agreement
+	}
+	x = 0
+	y = 1
+	relative_position_id = gentribal_agreement
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_tradepost entered"
+		}
+		set_temp_variable = { caps_to_add = 50 }
+		add_caps = yes
+		random_owned_controlled_state = {
+			limit = {
+				is_valid_state_for_civilian_factory = yes
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				is_valid_state_for_arms_factory = yes
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_tradepost exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_volunteers
+	icon = GFX_goal_TTM_Tribal_Vault_Girl
+	cost = 60
+	prerequisite = {
+		focus = gentribal_tradepost
+	}
+	x = 0
+	y = 1
+	relative_position_id = gentribal_tradepost
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_volunteers entered"
+		}
+		add_ideas = tribal_volunteers
+		set_rule = { can_send_volunteers = yes }
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_volunteers exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_mercs
+	icon = GFX_goal_TTM_Wild
+	cost = 60
+	prerequisite = {
+		focus = gentribal_volunteers
+	}
+	x = 0
+	y = 1
+	relative_position_id = gentribal_volunteers
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_mercs entered"
+		}
+		swap_ideas = {
+			remove_idea = tribal_volunteers
+			add_idea = tribal_mercenaries
+		}
+		add_ai_strategy = {
+			type = send_volunteers_desire
+			id = ROOT
+			value = 900
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_mercs exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_slipperyenemies
+	icon = GFX_goal_TTM_thicc_Vault_Girl
+	cost = 60
+	prerequisite = {
+		focus = gentribal_mercs
+	}
+	x = -1
+	y = 1
+	relative_position_id = gentribal_mercs
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_slipperyenemies entered"
+		}
+		set_temp_variable = { caps_to_add = 200 }
+		add_caps = yes
+		add_ideas = slipperyenemies
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_slipperyenemies exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_immortals
+	icon = GFX_goal_TTM_Breaker_Of_Chains
+	cost = 60
+	prerequisite = {
+		focus = gentribal_mercs
+	}
+	x = 1
+	y = 1
+	relative_position_id = gentribal_mercs
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_immortals entered"
+		}
+		custom_effect_tooltip = gentribal_immortals_tt
+		hidden_effect = { set_technology = { tribalimmortals = 1 } }
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_immortals exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_lands
+	icon = GFX_goal_generic_nature_tree
+	cost = 60
+	prerequisite = {
+		focus = gentribal_village
+	}
+	x = 1
+	y = 1
+	relative_position_id = gentribal_village
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_lands entered"
+		}
+		add_ideas = sacredlands
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_lands exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_gifts
+	icon = GFX_goal_lurker_offer_muttfruit
+	cost = 60
+	prerequisite = {
+		focus = gentribal_lands
+	}
+	x = 0
+	y = 1
+	relative_position_id = gentribal_lands
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_gifts entered"
+		}
+		custom_effect_tooltip = gentribal_gifts_tt
+		hidden_effect = { set_technology = { sacredgifts = 1 } }
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_gifts exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_spirits
+	icon = GFX_goal_TTM_3
+	cost = 60
+	prerequisite = {
+		focus = gentribal_gifts
+	}
+	x = 0
+	y = 1
+	relative_position_id = gentribal_gifts
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_spirits entered"
+		}
+		add_research_slot = 1
+		add_ideas = spirits
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_spirits exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_warpaint
+	icon = GFX_goal_TTM_Paintbrush
+	cost = 60
+	prerequisite = {
+		focus = gentribal_spirits
+	}
+	x = 0
+	y = 1
+	relative_position_id = gentribal_spirits
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_warpaint entered"
+		}
+		custom_effect_tooltip = gentribal_warpaint_tt
+		hidden_effect = { set_technology = { tribalwarpaint = 1 } }
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_warpaint exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_numbers
+	icon = GFX_goal_generic_bloody_sacrifice
+	cost = 60
+	prerequisite = {
+		focus = gentribal_warpaint
+	}
+	x = 0
+	y = 1
+	relative_position_id = gentribal_warpaint
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_numbers entered"
+		}
+		custom_effect_tooltip = gentribal_numbers_tt
+		hidden_effect = { set_technology = { tribalnumbers = 1 } }
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_numbers exited"
+		}
+	}
+
+}
+shared_focus = {
+	id = gentribal_wasteland
+	icon = GFX_goal_arr_sulik_ways
+	cost = 60
+	prerequisite = {
+		focus = gentribal_numbers
+	}
+	x = 0
+	y = 1
+	relative_position_id = gentribal_numbers
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_wasteland entered"
+		}
+		add_ideas = tribalwasteland
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_wasteland exited"
+		}
+	}
+}
+shared_focus = {
+	id = gentribal_wardrums
+	icon = GFX_goal_arr_tribal_weapons
+	cost = 60
+	prerequisite = {
+		focus = gentribal_wasteland
+	}
+	x = 0
+	y = 1
+	relative_position_id = gentribal_wasteland
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_wardrums entered"
+		}
+		add_ideas = tribaldrums
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] gentribal_wardrums exited"
+		}
+	}
+}

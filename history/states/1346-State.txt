@@ -1,0 +1,22 @@
+state={
+	id=1346
+	name="STATE_1346"
+	provinces={
+		14909 14910 14918 14919
+	}
+	resources = {
+		energy = 2
+		metal = 12
+	}
+	history = {
+		victory_points = {
+			14919 10
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+		}
+	}
+	state_category = town
+	manpower = 1112
+}

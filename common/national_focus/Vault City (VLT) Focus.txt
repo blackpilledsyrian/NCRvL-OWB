@@ -1,0 +1,1948 @@
+focus_tree = {
+	id = vault_city_nf
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = VLT
+		}
+	}
+	default = no
+	focus = {
+		id = vlt_all_clear
+		icon = GFX_goal_vlt_all_clear_new
+		cost = 7
+		x = 15
+		y = 0
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] vlt_all_clear entered"
+			}
+			country_event = {
+				id = nf_vault_city.1
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] vlt_all_clear exited"
+			}
+		}
+	}
+	focus = {
+		id = vlt_gecko_friends
+		icon = GFX_goal_vlt_our_friends_in_gecko
+		cost = 7
+		prerequisite = {
+			focus = vlt_all_clear
+		}
+		x = 0
+		y = 1
+		relative_position_id = vlt_all_clear
+		completion_reward = {
+
+			country_event = {
+				id = nf_vault_city.2
+			}
+		}
+	}
+	focus = {
+		id = vlt_the_outside_world
+		icon = GFX_goal_pal_the_test
+		cost = 7
+		prerequisite = {
+			focus = vlt_gecko_friends
+		}
+		x = 0
+		y = 1
+		relative_position_id = vlt_gecko_friends
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] vlt_the_outside_world entered"
+			}
+			country_event = {
+				id = nf_vault_city.3
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] vlt_the_outside_world exited"
+			}
+		}
+	}
+	focus = {
+		id = vlt_presence_bear
+		icon = GFX_goal_TTM_NCR_Flag
+		cost = 7
+		prerequisite = {
+			focus = vlt_the_outside_world
+		}
+		x = 0
+		y = 1
+		relative_position_id = vlt_the_outside_world
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] vlt_presence_bear entered"
+			}
+			country_event = {
+				id = nf_vault_city.4
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] vlt_presence_bear exited"
+			}
+		}
+	}
+	focus = {
+		id = vlt_end_of_a_term
+		icon = GFX_goal_vlt_selection_focus
+		cost = 30
+		prerequisite = {
+			focus = vlt_presence_bear
+		}
+		x = 0
+		y = 1
+		relative_position_id = vlt_presence_bear
+		completion_reward = {
+			news_event = {
+				id = nf_vault_city.13
+			}
+			# This screws the mechanic up since an event before this can modify popularity, meaning a candidate can win even though the ideology is 50/50.
+			# Popularity is now set to 50/50 at gamestart as of 4.2.4 @Tran
+			# hidden_effect = {
+			# 	set_popularities = {
+			# 		intellectuals = 50
+			# 		people = 50
+			# 		elites = 0
+			# 		ruler = 0
+			# 	}
+			# }
+		}
+	}
+	focus = {
+		id = vlt_election_garrison
+		icon = GFX_goal_NCR_Standards
+		cost = 15
+		prerequisite = {
+			focus = vlt_end_of_a_term
+		}
+		available = {
+			has_country_flag = vlt_selection_has_not_happened
+		}
+		x = 6
+		y = 1
+		relative_position_id = vlt_end_of_a_term
+		completion_reward = {
+			army_experience = 15
+			add_to_variable = { CitizenLeague = 1 }
+			hidden_effect = {
+				add_popularity = {
+					ideology = people
+					popularity = 0.05
+				}
+			}
+			custom_effect_tooltip = maier_support_tt
+		}
+	}
+	focus = {
+		id = vlt_election_reno_trade
+		icon = GFX_goal_chem_super_stim
+		cost = 15
+		prerequisite = {
+			focus = vlt_end_of_a_term
+		}
+		available = {
+			has_country_flag = vlt_selection_has_not_happened
+		}
+		x = 4
+		y = 1
+		relative_position_id = vlt_end_of_a_term
+		completion_reward = {
+			336 = {
+				add_resource = {
+					type = composites
+					amount = 5
+				}
+			}
+			effect_tooltip = {
+				set_temp_variable = { trade_route_selector_target = 285.id }
+				set_temp_variable = { node_map_selector = 291.id }
+				create_trade_route_between = yes
+			}
+			hidden_effect = {
+				set_variable = { trade_route_selector_target = 285.id }
+				set_variable = { node_map_selector = 291.id }
+				create_trade_route_between = yes
+			}
+			add_to_variable = { CitizenLeague = 1 }
+			hidden_effect = {
+				add_popularity = {
+					ideology = people
+					popularity = 0.05
+				}
+			}
+			custom_effect_tooltip = maier_support_tt
+		}
+	}
+	focus = {
+		id = vlt_election_legalize
+		icon = GFX_goal_generic_wine
+		cost = 15
+		prerequisite = {
+			focus = vlt_end_of_a_term
+		}
+		available = {
+			has_country_flag = vlt_selection_has_not_happened
+		}
+		x = 2
+		y = 1
+		relative_position_id = vlt_end_of_a_term
+		completion_reward = {
+			set_temp_variable = {
+				caps_to_add = 50
+			}
+			add_caps = yes
+			add_to_variable = { CitizenLeague = 1 }
+			hidden_effect = {
+				add_popularity = {
+					ideology = people
+					popularity = 0.05
+				}
+			}
+			custom_effect_tooltip = maier_support_tt
+		}
+	}
+	focus = {
+		id = vlt_election_immigrants
+		icon = GFX_goal_enc_welcome_vlt_citizens
+		cost = 15
+		prerequisite = {
+			focus = vlt_end_of_a_term
+		}
+		available = {
+			has_country_flag = vlt_selection_has_not_happened
+		}
+		x = 7
+		y = 2
+		relative_position_id = vlt_end_of_a_term
+		completion_reward = {
+			add_manpower = 300
+			add_to_variable = { CitizenLeague = 1 }
+			hidden_effect = {
+				add_popularity = {
+					ideology = people
+					popularity = 0.05
+				}
+			}
+			custom_effect_tooltip = maier_support_tt
+		}
+	}
+	focus = {
+		id = vlt_election_support_guard
+		icon = GFX_goal_generic_helm_vault_2
+		cost = 15
+		prerequisite = {
+			focus = vlt_end_of_a_term
+		}
+		available = {
+			has_country_flag = vlt_selection_has_not_happened
+		}
+		x = 5
+		y = 2
+		relative_position_id = vlt_end_of_a_term
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_to_variable = { CitizenLeague = 1 }
+			hidden_effect = {
+				add_popularity = {
+					ideology = people
+					popularity = 0.05
+				}
+			}
+			custom_effect_tooltip = maier_support_tt
+		}
+	}
+	focus = {
+		id = vlt_election_mutant_threat
+		icon = GFX_goal_WBH_mutant_purge
+		cost = 15
+		prerequisite = {
+			focus = vlt_end_of_a_term
+		}
+		available = {
+			has_country_flag = vlt_selection_has_not_happened
+		}
+		x = 3
+		y = 2
+		relative_position_id = vlt_end_of_a_term
+		completion_reward = {
+			add_war_support = 0.10
+			add_to_variable = { CitizenLeague = 1 }
+			hidden_effect = {
+				add_popularity = {
+					ideology = people
+					popularity = 0.05
+				}
+			}
+			custom_effect_tooltip = maier_support_tt
+			add_to_variable = { mutant_hate = 1 }
+		}
+	}
+	focus = {
+		id = vlt_election_wasteland_workshop
+		icon = GFX_goal_generic_vault_tec_workshop
+		cost = 15
+		prerequisite = {
+			focus = vlt_end_of_a_term
+		}
+		available = {
+			has_country_flag = vlt_selection_has_not_happened
+		}
+		x = -2
+		y = 1
+		relative_position_id = vlt_end_of_a_term
+		completion_reward = {
+			291 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			add_to_variable = { OldGuardParty = 1 }
+			hidden_effect = {
+				add_popularity = {
+					ideology = intellectuals
+					popularity = 0.05
+				}
+			}
+			custom_effect_tooltip = lynette_support_tt
+		}
+	}
+	focus = {
+		id = vlt_election_courtyard_supermutants
+		icon = GFX_goal_NEW_Super_Mutant_Technician
+		cost = 15
+		prerequisite = {
+			focus = vlt_end_of_a_term
+		}
+		available = {
+			has_country_flag = vlt_selection_has_not_happened
+		}
+		x = -4
+		y = 1
+		relative_position_id = vlt_end_of_a_term
+		completion_reward = {
+			339 = {
+				add_resource = {
+					type = metal
+					amount = 3
+				}
+			}
+			add_to_variable = { OldGuardParty = 1 }
+			hidden_effect = {
+				add_popularity = {
+					ideology = intellectuals
+					popularity = 0.05
+				}
+			}
+			custom_effect_tooltip = lynette_support_tt
+		}
+	}
+	focus = {
+		id = vlt_election_wasteland_scholars
+		icon = GFX_goal_uoa_book
+		cost = 15
+		prerequisite = {
+			focus = vlt_end_of_a_term
+		}
+		available = {
+			has_country_flag = vlt_selection_has_not_happened
+		}
+		x = -6
+		y = 1
+		relative_position_id = vlt_end_of_a_term
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+			add_to_variable = { OldGuardParty = 1 }
+			hidden_effect = {
+				add_popularity = {
+					ideology = intellectuals
+					popularity = 0.05
+				}
+			}
+			custom_effect_tooltip = lynette_support_tt
+		}
+	}
+	focus = {
+		id = vlt_election_new_generation
+		icon = GFX_goal_enc_screening
+		cost = 15
+		prerequisite = {
+			focus = vlt_end_of_a_term
+		}
+		available = {
+			has_country_flag = vlt_selection_has_not_happened
+		}
+		x = -3
+		y = 2
+		relative_position_id = vlt_end_of_a_term
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.4
+				uses = 1
+				category = extraction_category
+			}
+			add_to_variable = { OldGuardParty = 1 }
+			hidden_effect = {
+				add_popularity = {
+					ideology = intellectuals
+					popularity = 0.05
+				}
+			}
+			custom_effect_tooltip = lynette_support_tt
+		}
+	}
+	focus = {
+		id = vlt_election_california_girls
+		icon = GFX_goal_enc_ncr_dollar
+		cost = 15
+		prerequisite = {
+			focus = vlt_end_of_a_term
+		}
+		available = {
+			has_country_flag = vlt_selection_has_not_happened
+		}
+		x = -5
+		y = 2
+		relative_position_id = vlt_end_of_a_term
+		completion_reward = {
+			set_temp_variable = {
+				caps_to_add = 25
+			}
+			add_caps = yes
+			336 = {
+				add_resource = {
+					type = advanced
+					amount = 3
+				}
+			}
+			add_to_variable = { OldGuardParty = 1 }
+			hidden_effect = {
+				add_popularity = {
+					ideology = intellectuals
+					popularity = 0.05
+				}
+			}
+			custom_effect_tooltip = lynette_support_tt
+		}
+	}
+	focus = {
+		id = vlt_election_new_entertainment
+		icon = GFX_goal_generic_grognak
+		cost = 15
+		prerequisite = {
+			focus = vlt_end_of_a_term
+		}
+		available = {
+			has_country_flag = vlt_selection_has_not_happened
+		}
+		x = -7
+		y = 2
+		relative_position_id = vlt_end_of_a_term
+		completion_reward = {
+			add_stability = 0.10
+			add_to_variable = { OldGuardParty = 1 }
+			hidden_effect = {
+				add_popularity = {
+					ideology = intellectuals
+					popularity = 0.05
+				}
+			}
+			custom_effect_tooltip = lynette_support_tt
+		}
+	}
+
+	focus = {
+		id = vlt_the_election_of_2275
+		icon = GFX_goal_enc_vault_open
+		cost = 7
+		prerequisite = {
+			focus = vlt_election_garrison
+			focus = vlt_election_reno_trade
+			focus = vlt_election_legalize
+			focus = vlt_election_immigrants
+			focus = vlt_election_support_guard
+			focus = vlt_election_mutant_threat
+			focus = vlt_election_wasteland_workshop
+			focus = vlt_election_courtyard_supermutants
+			focus = vlt_election_wasteland_scholars
+			focus = vlt_election_new_generation
+			focus = vlt_election_california_girls
+			focus = vlt_election_new_entertainment
+		}
+		available = {
+			date > 2275.07.01
+			always = no
+		}
+		x = 0
+		y = 3
+		relative_position_id = vlt_end_of_a_term
+		completion_reward = {
+			custom_effect_tooltip = unlock_automatically_tt
+		}
+	}
+	focus = {
+		id = vlt_a_second_term
+		icon = GFX_goal_BOS_generic_research
+		cost = 7
+		prerequisite = {
+			focus = vlt_the_election_of_2275
+		}
+		available = {
+			has_country_flag = vlt_lynette_win
+		}
+		x = -4
+		y = 1
+		relative_position_id = vlt_the_election_of_2275
+		completion_reward = {
+			custom_effect_tooltip = unlock_automatically_tt
+		}
+	}
+	focus = {
+		id = vlt_a_long_time_coming
+		icon = GFX_goal_enc_accept_ghouls
+		cost = 45
+		prerequisite = {
+			focus = vlt_a_second_term
+		}
+		x = 2
+		y = 1
+		relative_position_id = vlt_a_second_term
+		completion_reward = {
+			news_event = nf_vault_city.20
+			### unlocks a new advisor, Festus, the Ghoul Doctor from Fallout 2.
+		}
+	}
+
+	focus = {
+		id = vlt_gecko_aid
+		icon = GFX_goal_generic_protectron_conceptart_construction
+		cost  = 45
+		prerequisite = {
+			focus = vlt_a_long_time_coming
+		}
+		x = -1
+		y = 1
+		relative_position_id = vlt_a_long_time_coming
+		completion_reward = {
+			set_temp_variable = { vlt_gecko_manpower_var_modify = 0.1 }
+			set_temp_variable = { vlt_gecko_construction_var_modify = 0.1 }
+			vlt_gecko_power_plant_change = yes
+			339 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = vlt_gecko_aid_medical
+		icon = GFX_goal_generic_protectron_conceptart_medic
+		cost  = 45
+		prerequisite = {
+			focus = vlt_a_long_time_coming
+		}
+		x = 1
+		y = 1
+		relative_position_id = vlt_a_long_time_coming
+		completion_reward = {
+			set_temp_variable = { vlt_gecko_manpower_var_modify = 0.1 }
+			set_temp_variable = { vlt_gecko_construction_var_modify = 0.1 }
+			vlt_gecko_power_plant_change = yes
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = support_medical_tech_category
+			}
+		}
+	}
+
+
+
+	focus = {
+		id = vlt_ghoul_immigrants
+		icon = GFX_goal_pal_salt_the_earth
+		cost  = 45
+		prerequisite = {
+			focus = vlt_gecko_aid_medical
+		}
+		prerequisite = {
+			focus = vlt_gecko_aid
+		}
+		x = -1
+		y = 1
+		relative_position_id = vlt_gecko_aid_medical
+		completion_reward = {
+			set_temp_variable = { vlt_gecko_manpower_var_modify = 0.1 }
+			set_temp_variable = { vlt_gecko_construction_var_modify = 0.1 }
+			vlt_gecko_power_plant_change = yes
+			339 = {
+				set_temp_variable = {
+					pop_add = 5000
+				}
+				add_state_population_no_state_name = yes
+			}
+		}
+	}
+
+	focus = {
+		id = vlt_gecko_boom
+		icon = GFX_goal_generic_workshop
+		cost  = 45
+		prerequisite = {
+			focus = vlt_ghoul_immigrants
+		}
+
+		x = 01
+		y = 1
+		relative_position_id = vlt_ghoul_immigrants
+		completion_reward = {
+			set_temp_variable = { vlt_gecko_manpower_var_modify = 0.1 }
+			set_temp_variable = { vlt_gecko_construction_var_modify = 0.1 }
+			vlt_gecko_power_plant_change = yes
+			339 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = vlt_science_nerds
+		icon = GFX_goal_uoa_holotape
+		cost  = 45
+		prerequisite = {
+			focus = vlt_a_second_term
+		}
+		x = -2
+		y = 1
+		relative_position_id = vlt_a_second_term
+		completion_reward = {
+			291 = {
+				add_resource = {
+					type = composites
+					amount = 3
+				}
+				add_resource = {
+					type = circuitry
+					amount = 3
+				}
+				add_resource = {
+					type = advanced
+					amount = 3
+				}
+			}
+		}
+	}
+	focus = {
+		id = vlt_amenities_exports
+		icon = GFX_goal_generic_pip_2000_vi_1
+		cost = 60
+		prerequisite = {
+			focus = vlt_a_second_term
+		}
+		x = 0
+		y = 1
+		relative_position_id = vlt_a_second_term
+		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 3 }
+		}
+	}
+	focus = {
+		id = vlt_servants_friends
+		icon = GFX_goal_enc_model_communities
+		cost  = 45
+		prerequisite = {
+			focus = vlt_science_nerds
+		}
+		x = -1
+		y = 1
+		relative_position_id = vlt_science_nerds
+		completion_reward = {
+			add_ideas = servant_class
+		}
+	}
+	focus = {
+		id = vlt_servants_friends2
+		icon = GFX_goal_generic_slave_collars
+		cost  = 45
+		prerequisite = {
+			focus = vlt_servants_friends
+		}
+		x = 0
+		y = 1
+		relative_position_id = vlt_servants_friends
+		completion_reward = {
+			set_temp_variable = {
+				caps_to_add = 175
+			}
+			add_caps = yes
+		}
+	}
+	focus = {
+		id = vlt_automated_helpers
+		icon = GFX_goal_enc_eyebot
+		cost  = 45
+		prerequisite = {
+			focus = vlt_servants_friends2
+		}
+		x = -1
+		y = 1
+		relative_position_id = vlt_servants_friends2
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = support_robot_tech_category
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = combat_robot_tech_category
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = cnc_robot_tech_category
+			}
+		}
+	}
+
+	focus = {
+		id = vlt_industry_buffs
+		icon = GFX_goal_pal_industry_plans
+		cost  = 45
+		prerequisite = {
+			focus = vlt_science_nerds
+		}
+		x = 1
+		y = 1
+		relative_position_id = vlt_science_nerds
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 2
+				category = tool_tech
+			}
+			add_political_power = -25
+		}
+	}
+
+	focus = {
+		id = vlt_information_office
+		icon = GFX_goal_uoa_book
+		cost  = 45
+		prerequisite = {
+			focus = vlt_industry_buffs
+		}
+		x = 0
+		y = 1
+		relative_position_id = vlt_industry_buffs
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.50
+				uses = 2
+				category = industry
+			}
+		}
+	}
+
+
+	focus = {
+		id = vlt_enclave_scientists_heeh
+		icon = GFX_goal_NEW_Enclave_Technician
+		cost  = 45
+		prerequisite = {
+			focus = vlt_information_office
+		}
+		x = -1
+		y = 1
+		relative_position_id = vlt_information_office
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = vault_remnants_advisors
+				add_idea = enclavetechnician
+			}
+		}
+	}
+
+
+	focus = {
+		id = vlt_ultracite_sorry_garn
+		icon = GFX_goal_generic_industrial_ultracite
+		cost  = 45
+		prerequisite = {
+			focus = vlt_information_office
+		}
+		prerequisite = {
+			focus = vlt_servants_friends2
+		}
+		prerequisite = {
+			focus = vlt_ghoul_immigrants
+		}
+		x = 2
+		y = 1
+
+		relative_position_id = vlt_information_office
+		completion_reward = {
+			set_temp_variable = { vlt_gecko_manpower_var_modify = 0.1 }
+			set_temp_variable = { vlt_gecko_construction_var_modify = 0.1 }
+			vlt_gecko_power_plant_change = yes
+			country_event = nf_vault_city.21
+		}
+	}
+
+
+	focus = {
+		id = vlt_nevada_pact_baby
+		icon = GFX_goal_enc_big_MT_restored_nevada
+		cost  = 45
+		available = {
+			is_subject = no
+		}
+		prerequisite = {
+			focus = vlt_enclave_scientists_heeh
+			focus = vlt_automated_helpers
+		}
+		prerequisite = {
+			focus = vlt_ultracite_sorry_garn
+			focus = vlt_gecko_boom
+		}
+		x = -1
+		y = 1
+		relative_position_id = vlt_ultracite_sorry_garn
+		completion_reward = {
+			create_or_join_nevada_pact = yes
+			add_to_tech_sharing_group = vault_city_research_pact
+			news_event = nf_vault_city.26
+		}
+	}
+	focus = {
+		id = vlt_automated_helpers2
+		icon = GFX_goal_generic_focus_magazine_tesla_robots_rule
+		cost  = 45
+		prerequisite = {
+			focus = vlt_nevada_pact_baby
+		}
+		x = -2
+		y = 1
+		relative_position_id = vlt_nevada_pact_baby
+		completion_reward = {
+			add_ideas = vault_automated_security
+		}
+	}
+	focus = {
+		id = vlt_automated_helpers3
+		icon = GFX_goal_generic_protectron_conceptart_default
+		cost  = 45
+		prerequisite = {
+			focus = vlt_automated_helpers2
+		}
+		x = 0
+		y = 1
+		relative_position_id = vlt_automated_helpers2
+		completion_reward = {
+			add_equipment_to_stockpile = { type = support_robot_two_legs_equipment_3 amount = 100 producer = USA }
+			swap_ideas = {
+				remove_idea = vault_automated_security
+				add_idea = vault_automated_security_2
+			}
+		}
+	}
+
+
+	focus = {
+		id = vlt_cyclops_tribe
+		icon = GFX_goal_VLT_cyc_war_dec
+		cost  = 45
+		prerequisite = {
+			focus = vlt_nevada_pact_baby
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			CYC = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		x = 0
+		y = 1
+		relative_position_id = vlt_nevada_pact_baby
+		completion_reward = {
+			CYC = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = vlt_breadbasket
+		icon = GFX_goal_yum_yum_foodies_in_my_tum_tum
+		cost  = 45
+		prerequisite = {
+			focus = vlt_cyclops_tribe
+		}
+		x = 0
+		y = 1
+		available = {
+			CYC = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = vlt_cyclops_tribe
+		completion_reward = {
+			612 = {
+				add_resource = {
+					type = water
+					amount = 5
+				}
+			}
+			if = {
+				limit = {
+					CYC = {
+						is_puppet_of = VLT
+					}
+				}
+				612 = {
+					add_resource = {
+						type = water
+						amount = 5
+					}
+				}
+				hidden_effect = {
+					add_tech_bonus = {
+						bonus = 1
+						uses = 2
+						category = agriculture_tech
+					}
+				}
+			}
+			custom_effect_tooltip = vlt_breadbasket_tt
+			effect_tooltip = {
+				add_tech_bonus = {
+					bonus = 1
+					uses = 2
+					category = agriculture_tech
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = vlt_PAL_attack
+		icon = GFX_goal_pal_cannibal_followup_raider
+		cost  = 45
+		prerequisite = {
+			focus = vlt_breadbasket
+		}
+		prerequisite = {
+			focus = vlt_automated_helpers3
+		}
+		bypass = {
+			VIP = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		x = -1
+		y = 1
+		relative_position_id = vlt_breadbasket
+		completion_reward = {
+			VIP = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = vlt_PAL_free
+		icon = GFX_goal_ancient_wealth
+		cost  = 45
+		prerequisite = {
+			focus = vlt_PAL_attack
+		}
+		x = 0
+		y = 1
+		available = {
+			VIP = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = vlt_PAL_attack
+		completion_reward = {
+			291 = {
+				set_temp_variable = {
+					development_to_add = 2
+				}
+				add_development_to_node = yes
+				add_state_modifier = {
+					modifier = {
+						caps_node_base_modifier = 0.2
+					}
+				}
+			}
+			if = {
+				limit = {
+					VIP = {
+						is_puppet_of = VLT
+					}
+				}
+				VIP = { add_research_slot = 1 }
+			}
+			custom_effect_tooltip = VLT_PAL_free_tt
+		}
+	}
+	focus = {
+		id = vlt_better_in_our_hands
+		icon = GFX_goal_GDH_golden_gun
+		cost  = 45
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		prerequisite = {
+			focus = vlt_nevada_pact_baby
+		}
+		bypass = {
+			PAL = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		x = 2
+		y = 1
+		relative_position_id = vlt_nevada_pact_baby
+		completion_reward = {
+			PAL = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = vlt_gold_mine
+		icon = GFX_generic_gold_bars
+		cost  = 45
+		available = {
+			PAL = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		prerequisite = {
+			focus = vlt_better_in_our_hands
+		}
+		x = 0
+		y = 1
+		relative_position_id = vlt_better_in_our_hands
+		completion_reward = {
+			if = {
+				limit = {
+					PAL = { is_in_faction_with = VLT }
+				}
+				223 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_resource = {
+						type = advanced
+						amount = 4
+					}
+				}
+				hidden_effect = {
+					291 = {
+						add_building_construction = {
+							type = industrial_complex
+							level = 1
+							instant_build = yes
+						}
+						add_resource = {
+							type = advanced
+							amount = 4
+						}
+					}
+				}
+			}
+			else = {
+				223 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_resource = {
+						type = advanced
+						amount = 4
+					}
+				}
+			}
+			custom_effect_tooltip = vlt_gold_mine_tt
+			effect_tooltip = {
+				291 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_resource = {
+						type = advanced
+						amount = 4
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = vlt_cute_racoons
+		icon = GFX_goal_sln_history
+		cost  = 45
+		available = {
+			PAL = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		prerequisite = {
+			focus = vlt_better_in_our_hands
+		}
+		x = 2
+		y = 1
+		relative_position_id = vlt_better_in_our_hands
+		completion_reward = {
+			if = {
+				limit = {
+					SLN = { exists = yes }
+				}
+				SLN = { country_event = nf_vault_city.27 }
+			}
+			else = {
+				activate_targeted_decision = {
+					target = SLN
+					decision = demand_stolen_territory
+				}
+			}
+		}
+	}
+	focus = {
+		id = vlt_racoons_yay
+		icon = GFX_goal_generic_scyscrapers_prewar
+		cost  = 45
+		prerequisite = {
+			focus = vlt_cute_racoons
+		}
+		available = {
+			SLN = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		x = -1
+		y = 1
+		relative_position_id = vlt_cute_racoons
+		completion_reward = {
+			if = {
+				limit = {
+					SLN = { is_in_faction_with = VLT }
+				}
+				598 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+					add_resource = {
+						type = metal
+						amount = 5
+					}
+				}
+				hidden_effect = {
+					336 = {
+						add_building_construction = {
+							type = arms_factory
+							level = 1
+							instant_build = yes
+						}
+						add_resource = {
+							type = metal
+							amount = 5
+						}
+					}
+				}
+			}
+			else = {
+				598 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+					add_resource = {
+						type = metal
+						amount = 5
+					}
+				}
+			}
+			custom_effect_tooltip = vlt_racoons_yay_tt
+			effect_tooltip = {
+				336 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+					add_resource = {
+						type = metal
+						amount = 5
+					}
+				}
+			}
+		}
+	}
+
+
+	focus = {
+		id = vlt_arroyo_yay
+		icon = GFX_goal_BOS_seize_arroyo
+		cost  = 45
+
+		prerequisite = {
+			focus = vlt_nevada_pact_baby
+		}
+		bypass = {
+			OR = {
+				ARR = { exists = no }
+				has_war_with = VLT
+			}
+		}
+		x = -4
+		y = 1
+		relative_position_id = vlt_nevada_pact_baby
+		completion_reward = {
+			### Faction Invite
+			custom_effect_tooltip = vlt_arroyo_yay_tt
+			ARR = { country_event = nf_vault_city.32 }
+
+		}
+	}
+	focus = {
+		id = vlt_arroyo_experiences
+		icon = GFX_goal_enc_reform_the_tribes
+		cost  = 45
+		available = {
+			has_country_flag = ARR_citizenship
+		}
+		prerequisite = {
+			focus = vlt_arroyo_yay
+		}
+		x = 0
+		y = 1
+		relative_position_id = vlt_arroyo_yay
+		completion_reward = {
+			army_experience = 50
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = infantry_tech_category
+			}
+		}
+	}
+	focus = {
+		id = vlt_implants
+		icon = GFX_goal_generic_cyborg
+		cost  = 45
+		prerequisite = {
+			focus = vlt_automated_helpers3
+			focus = vlt_arroyo_experiences
+		}
+		x = 1
+		y = 1
+		relative_position_id = vlt_arroyo_experiences
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.50
+				uses = 3
+				category = implant_tech
+			}
+		}
+	}
+	focus = {
+		id = vlt_nevada_air_force
+		icon = GFX_goal_enc_robco_reborn
+		cost  = 45
+		prerequisite = {
+			focus = vlt_implants
+		}
+		x = -2
+		y = 1
+		relative_position_id = vlt_implants
+		completion_reward = {
+			add_equipment_to_stockpile = { type = cnc_robot_equipment_2 amount = 100 producer = USA }
+			set_technology = {
+				robotics_tech_level_scientific = 1
+				sentinel_unit_tech = 1
+			}
+		}
+	}
+	focus = {
+		id = vlt_puppet_slags
+		icon = GFX_goal_generic_free_states_soldier
+		cost  = 45
+		available = {		}
+		bypass = {
+			SHO = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		prerequisite = {
+			focus = vlt_implants
+		}
+		x = 0
+		y = 1
+		relative_position_id = vlt_implants
+		completion_reward = {
+			SHO = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = vlt_reno_yay
+		icon = GFX_goal_NEW_generic_reno
+		cost  = 45
+		available = {
+			OR = {
+				AND = {
+					is_neighbor_of = NEW
+					NEW = {
+						has_completed_focus = new_renoproclamation
+					}
+				}
+				NEW = { exists = no }
+			}
+		}
+		prerequisite = {
+			focus = vlt_gold_mine
+		}
+		prerequisite = {
+			focus = vlt_breadbasket
+		}
+		bypass = {
+			NEW = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		x = 1
+		y = 1
+		relative_position_id = vlt_breadbasket
+		completion_reward = {
+			if = {
+				limit = {
+					NEW = {
+						exists = yes
+						is_puppet = no
+					}
+				}
+				country_event = nf_vault_city.30
+			}
+			else = {
+				activate_targeted_decision = {
+					target = NEW
+					decision = demand_stolen_territory
+				}
+			}
+		}
+	}
+	focus = {
+		id = vlt_tv_town_ours
+		icon = GFX_goal_generic_terminal_1
+		cost  = 45
+		available = {
+			OR = {
+                controls_state = 945
+                any_other_country = {
+                    controls_state = 945
+                    is_subject_of = VLT
+                }
+				AND = {
+					is_in_faction_with = NCR
+					any_other_country = {
+						controls_state = 945
+						OR = {
+							tag = NCR
+							is_in_faction_with = NCR
+							is_subject_of = NCR
+						}
+					}
+				}
+            }
+		}
+		prerequisite = {
+			focus = vlt_reno_yay
+		}
+		x = 2
+		y = 1
+		relative_position_id = vlt_reno_yay
+		completion_reward = {
+			add_research_slot = 1
+
+		}
+	}
+	focus = {
+		id = vlt_puppet_yakuza
+		icon = GFX_goal_generic_war_focus
+		cost  = 45
+		available = {
+		}
+		bypass = {
+			CHE = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		prerequisite = {
+			focus = vlt_reno_yay
+		}
+		x = 0
+		y = 1
+		relative_position_id = vlt_reno_yay
+		completion_reward = {
+			CHE = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = vlt_ncr_rejoin
+		icon = GFX_goal_NCR_Propaganda_3
+		cost  = 45
+		available = {
+			OR = {
+				478 = {
+					CONTROLLER = {
+						OR = {
+							tag = VLT
+							is_in_faction_with = VLT
+							tag = NCR
+							is_in_faction_with = NCR
+						}
+					}
+				}
+				945 = {
+					CONTROLLER = {
+						OR = {
+							tag = VLT
+							is_in_faction_with = VLT
+							tag = NCR
+							is_in_faction_with = NCR
+						}
+					}
+				}
+			}
+		}
+		prerequisite = {
+			focus = vlt_tv_town_ours
+			focus = vlt_PAL_free
+			focus = vlt_nevada_air_force
+		}
+		x = -4
+		y = 1
+		relative_position_id = vlt_tv_town_ours
+		completion_reward = {
+			every_country = {
+				limit = {
+					is_nevada_pact_member = yes
+				}
+				leave_nevada_pact = yes
+			}
+			create_or_join_new_california = yes
+			hidden_effect = {
+				every_country = {
+					limit = {
+						OR = {
+							is_neighbor_of = NCR
+							is_neighbor_of = VLT
+							news_is_west_tag = yes
+						}
+					}
+					news_event = { id = news_cali.19 hours = 6 random_hours = 3 }
+				}
+			}
+		}
+		ai_will_do = {
+			modifier = {
+				factor = 100
+				country_exists = NCR
+				NOT = { has_country_flag = ncr_crisis }
+			}
+		}
+	}
+	focus = {
+		id = vlt_no_need_for_passports
+		icon = GFX_goal_uoa_book
+		cost  = 45
+		available = {
+			CYC = {
+				is_puppet_of = VLT
+			}
+			PAL = {
+				is_puppet_of = VLT
+			}
+			SLN = {
+				is_puppet_of = VLT
+			}
+			VIP = {
+				is_puppet_of = VLT
+			}
+			CHE = {
+				is_puppet_of = VLT
+			}
+			SHO = {
+				is_puppet_of = VLT
+			}
+		}
+		prerequisite = {
+			focus = vlt_tv_town_ours
+			focus = vlt_PAL_free
+			focus = vlt_nevada_air_force
+		}
+		x = 2
+		y = 0
+		relative_position_id = vlt_ncr_rejoin
+		completion_reward = {
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = CYC
+						is_core_of = PAL
+						is_core_of = SLN
+						is_core_of = VIP
+						is_core_of = CHE
+						is_core_of = SHO
+					}
+				}
+				set_state_flag = do_not_exodus
+				add_core_of = VLT
+			}
+			annex_country = {
+				target = CYC
+				transfer_troops = yes
+			}
+			annex_country = {
+				target = PAL
+				transfer_troops = yes
+			}
+			annex_country = {
+				target = SLN
+				transfer_troops = yes
+			}
+			annex_country = {
+				target = VIP
+				transfer_troops = yes
+			}
+			annex_country = {
+				target = CHE
+				transfer_troops = yes
+			}
+			annex_country = {
+				target = SHO
+				transfer_troops = yes
+			}
+		}
+		ai_will_do = {
+			modifier = {
+				factor = 100
+			}
+		}
+	}
+	focus = {
+		id = vlt_fate_garrison
+		icon = GFX_goal_NCR_Petersonswar
+		cost = 7
+		prerequisite = {
+			focus = vlt_the_election_of_2275
+		}
+		available = {
+			has_country_flag = vlt_first_citizen_selected
+		}
+		x = 3
+		y = 1
+		relative_position_id = vlt_the_election_of_2275
+		completion_reward = {
+			if = {
+				limit = {
+					has_country_leader = {
+						name = "First Citizen Lynette"
+						ruling_only = yes
+					}
+				}
+				VLT = { country_event = nf_vault_city.14 }
+
+			}
+			if = {
+				limit = {
+					has_country_leader = {
+						name = "Security Chief Maier"
+						ruling_only = yes
+					}
+				}
+				VLT = { news_event = nf_vault_city.15 }
+			}
+		}
+	}
+
+	focus = {
+		id = vlt_army_we_need_one
+		icon = GFX_goal_generics_vault_tec_equipment
+		cost  = 45
+		prerequisite = {
+			focus = vlt_fate_garrison
+		}
+		x = 0
+		y = 1
+		relative_position_id = vlt_fate_garrison
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						AND = {
+							is_in_home_area = yes
+							NOT = { is_capital = yes }
+						}
+						NOT = {
+							OWNER = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_equipment_to_stockpile = { type = ballistic_equipment_1 amount = 500 producer = USA }
+		}
+	}
+	focus = {
+		id = vlt_vault_storage
+		icon = GFX_goal_generic_advanced_ammo
+		cost  = 45
+		prerequisite = {
+			focus = vlt_army_we_need_one
+		}
+		x = 0
+		y = 1
+		relative_position_id = vlt_army_we_need_one
+		completion_reward = {
+			add_offsite_building = { type = arms_factory level = 2 }
+			add_equipment_to_stockpile = { type = ballistic_equipment_1 amount = 250 producer = USA }
+		}
+	}
+	focus = {
+		id = vlt_redefining_the_guard
+		icon = GFX_goal_generic_helm_vault_2
+		cost  = 45
+		prerequisite = {
+			focus = vlt_vault_storage
+		}
+		x = 0
+		y = 1
+		relative_position_id = vlt_vault_storage
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = enforcer_tech_category
+			}
+			add_equipment_to_stockpile = { type = heavy_infantry_equipment_2 amount = 500 producer = USA }
+			army_experience = 15
+		}
+	}
+	focus = {
+		id = vlt_a_proper_army
+		icon = GFX_goal_generic_helm_army_2_alt
+		cost  = 60
+		prerequisite = {
+			focus = vlt_redefining_the_guard
+		}
+		x = -2
+		y = 1
+		relative_position_id = vlt_redefining_the_guard
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = cat_land_doctrine
+			}
+			add_manpower = 500
+		}
+	}
+	focus = {
+		id = vlt_the_bears_arms
+		icon = GFX_goal_enc_nevada_reborn
+		cost  = 60
+		prerequisite = {
+			focus = vlt_a_proper_army
+		}
+		available = {
+			is_new_california_member = yes
+		}
+		x = -1
+		y = 1
+		available = {
+			has_idea = ncr_advisors
+		}
+		relative_position_id = vlt_a_proper_army
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ncr_advisors
+				add_idea = ncr_shield_nevada
+			}
+		}
+	}
+	focus = {
+		id = vlt_ncr_joins_research_pact
+		icon = GFX_goal_enc_nevada_constitution
+		cost  = 60
+		prerequisite = {
+			focus = vlt_the_bears_arms
+		}
+		prerequisite = {
+			focus = vlt_nevada_pact_baby
+		}
+		available = {
+			is_new_california_member = yes
+		}
+		x = 0
+		y = 1
+		relative_position_id = vlt_the_bears_arms
+		completion_reward = {
+			every_country = {
+				limit = {
+					is_new_california_member = yes
+				}
+				news_event = nf_vault_city.40
+			}
+		}
+	}
+	focus = {
+		id = vlt_the_patrolmen
+		icon = GFX_goal_generic_helm_vault_2
+		cost = 60
+		prerequisite = {
+			focus = vlt_redefining_the_guard
+		}
+		x = 0
+		y = 1
+		relative_position_id = vlt_redefining_the_guard
+		completion_reward = {
+			add_ideas = vlt_expanded_patrols
+		}
+	}
+	focus = {
+		id = vlt_woop_woop_thats_the_sound_of_da_police
+		icon = GFX_goal_generic_protectron_conceptart_police
+		cost = 60
+		prerequisite = {
+			focus = vlt_redefining_the_guard
+		}
+		x = 2
+		y = 1
+		relative_position_id = vlt_redefining_the_guard
+		completion_reward = {
+			set_technology = {
+				dog_equipment_tech_1 = 1
+				warden_doggos_tech = 1
+			}
+			add_ideas = vlt_police_equipment
+		}
+	}
+	focus = {
+		id = vlt_lessons_old_ways
+		icon = GFX_goal_enc_new_generation_officers
+		cost = 60
+		prerequisite = {
+			focus = vlt_fate_garrison
+		}
+		x = 2
+		y = 1
+		relative_position_id = vlt_fate_garrison
+		completion_reward = {
+			add_war_support = 0.075
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = cat_land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = vlt_last_best_hope
+		icon = GFX_goal_enc_radio_military
+		cost = 60
+		prerequisite = {
+			focus = vlt_lessons_old_ways
+		}
+		x = 0
+		y = 1
+		relative_position_id = vlt_lessons_old_ways
+		completion_reward = {
+			add_war_support = 0.075
+			add_political_power = 75
+		}
+	}
+
+	focus = {
+		id = vlt_van_graffs
+		icon = GFX_goal_MOJ_closedown_van_graffs
+		cost = 60
+		prerequisite = {
+			focus = vlt_fate_garrison
+		}
+		x = -2
+		y = 1
+		relative_position_id = vlt_fate_garrison
+		completion_reward = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 750
+				}
+			}
+			else = {
+				random_owned_state = {
+					limit = {
+						is_in_array = {
+							array = ROOT.state_controlled_nodes
+							value = THIS
+						}
+					}
+					set_temp_variable = { org_selector = 3 }
+					organization_add_to_node = yes
+					set_temp_variable = { org_selector = 3 }
+					set_temp_variable = { org_influence_amount = 15 }
+					organization_add_influence = yes
+				}
+				set_country_flag = enticed_org_3
+			}
+			NEW = { country_event = nf_vault_city.35 }
+		}
+	}
+	focus = {
+		id = vlt_power_armor_training
+		icon = GFX_goal_generic_focus_vault_tec_power_armor
+		cost = 60
+		prerequisite = {
+			focus = vlt_van_graffs
+		}
+		x = 0
+		y = 1
+		relative_position_id = vlt_van_graffs
+		completion_reward = {
+			set_technology = {
+				power_armour_tech_level_scientific = 1
+				texas_brotherhood_pa_tech = 1
+			}
+			add_tech_bonus = {
+				bonus = 0.4
+				uses = 3
+				category = power_armor_tech_category
+			}
+		}
+	}
+}

@@ -1,0 +1,29 @@
+state = {
+	id = 12
+	name = "STATE_12"
+	manpower = 8574
+	state_category = town
+
+	resources = {
+		energy = 2
+		metal = 3
+		water = 6
+	}
+
+	history = {
+		owner = VEG
+		add_core_of = VEG
+		victory_points = {
+			8550 10
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+		}
+		#add_extra_state_shared_building_slots = 2 #Why tho?
+	}
+
+	provinces = {
+		8547 3245 8550 3232
+	}
+}

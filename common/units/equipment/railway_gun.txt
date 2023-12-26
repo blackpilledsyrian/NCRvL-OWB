@@ -1,0 +1,42 @@
+equipments = {
+
+	railway_gun_equipment = {
+		year = 2275
+
+		is_archetype = yes
+		picture = archetype_artillery_equipment		
+		type = railway_gun
+		group_by = archetype
+		is_buildable = no
+		can_license = no
+		
+		interface_category = interface_category_land
+		
+		active = yes
+
+		#Misc Abilities
+		reliability = 0.8
+		maximum_speed = 5
+
+		#Offensive Abilities
+		railway_gun_attack = 25
+		
+		manpower = 1000
+	}
+
+	railway_gun_equipment_1 = {
+		year = 2275
+
+		archetype = railway_gun_equipment
+		priority = 50
+		visual_level = 0
+		active = no
+		is_buildable = no
+		can_license = no
+
+		build_cost_ic = 1000.0
+		resources = {
+			metal = 1
+		}		
+	}
+}

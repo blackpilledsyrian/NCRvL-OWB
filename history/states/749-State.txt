@@ -1,0 +1,26 @@
+state = {
+	id = 749
+	name = "STATE_749"
+	resources={
+		metal=4.000
+	}
+
+	history={
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+
+		}
+		victory_points = {
+			9545 10
+		}
+
+	}
+
+	provinces={
+		756 773 1632 2648 3201 3237 5455 6607 6610 6615 6723 6728 7047 8752 8961 8972 9001 9097 9125 9128 9136 9164 9482 9544 9545 9546
+	}
+	manpower=25000
+	buildings_max_level_factor=1.000
+	state_category=shanty
+}

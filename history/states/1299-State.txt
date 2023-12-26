@@ -1,0 +1,36 @@
+state={
+	id=1299
+	name="STATE_1299"
+	provinces={
+		13533 13536 13537 13539 13540 13541 13542 13543 13544 13545
+	}
+	resources = {
+		metal = 2
+	}
+	history={
+		victory_points = {
+			13539 5
+		}
+		buildings = {
+			infrastructure = 3
+			13542 = {
+				bunker = 1
+			}
+			13536 = {
+				bunker = 1
+			}
+			13539 = {
+				bunker = 1
+			}
+			13533 = {
+				bunker = 1
+			}
+			13544 = {
+				bunker = 1
+			}
+		}
+	}
+	state_category = rural
+	manpower = 1100
+	buildings_max_level_factor=1.000
+}

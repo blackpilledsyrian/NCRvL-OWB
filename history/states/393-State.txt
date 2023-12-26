@@ -1,0 +1,29 @@
+state = {
+	id = 393
+	name = "STATE_393"
+	manpower = 1393
+	state_category = rural
+
+	resources = {
+		energy = 4
+	}
+
+	history = {
+		victory_points = {
+			12 5
+		}
+		victory_points = {
+			8512 3
+		}
+		victory_points = {
+			12421 3
+		}
+		buildings = {
+			infrastructure = 1
+		}
+	}
+
+	provinces = {
+		12 2221 2228 2229 2364 2548 2642 8512 12410 12414 12415 12416 12420 12421 12423 12425
+	}
+}

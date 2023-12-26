@@ -1,0 +1,2341 @@
+reduce_rejection_automation = {
+	if = {
+		limit = {
+			has_idea = national_spirit_rejection_of_automation
+		}
+		swap_ideas = {
+			remove_idea = national_spirit_rejection_of_automation
+			add_idea = national_spirit_rejection_of_automation1
+		}
+	}
+	if = {
+		limit = {
+			has_idea = national_spirit_rejection_of_automation1
+		}
+		swap_ideas = {
+			remove_idea = national_spirit_rejection_of_automation1
+			add_idea = national_spirit_rejection_of_automation2
+		}
+	}
+	if = {
+		limit = {
+			has_idea = national_spirit_rejection_of_automation2
+		}
+		swap_ideas = {
+			remove_idea = national_spirit_rejection_of_automation2
+			add_idea = national_spirit_rejection_of_automation3
+		}
+	}
+}
+
+reduce_legionary_state = {
+	if = {
+		limit = {
+			has_idea = legionary_state
+		}
+		swap_ideas = {
+			remove_idea = legionary_state
+			add_idea = legionary_state1
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = legionary_state1
+		}
+		swap_ideas = {
+			remove_idea = legionary_state1
+			add_idea = legionary_state2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = legionary_state2
+		}
+		swap_ideas = {
+			remove_idea = legionary_state2
+			add_idea = legionary_state3
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = legionary_state3
+		}
+		swap_ideas = {
+			remove_idea = legionary_state3
+			add_idea = legionary_state4
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = legionary_state4
+		}
+		swap_ideas = {
+			remove_idea = legionary_state4
+			add_idea = legionary_state5
+		}
+	}
+	else = {
+		swap_ideas = {
+			remove_idea = legionary_state5
+			add_idea = legionary_state6
+		}
+	}
+}
+
+lucius_breaks_off = {
+	LUC = {
+		create_new_owb_country = yes
+		country_event = nf_legion.92
+		transfer_legion_ideas_civil_war = yes
+	}
+	LUC = {
+		load_focus_tree = { tree = legion_focus_tree keep_completed = yes }
+	}
+	LUC = {
+		create_or_join_lucius_legion = yes
+		#if = {
+		#	limit = {
+		#		NAV = {
+		#			is_puppet = yes
+		#			exists = yes
+		#		}
+		#	}
+		#	NAV = {
+		#		become_puppet = yes
+		#	}
+		#}
+		setup_legion_revolter = yes
+		set_cosmetic_tag = CES_lucius_legion
+		set_country_flag = slavery_allowed
+		set_country_flag = manpower_laws_hidden
+		set_country_flag = slave_society
+		set_country_flag = bans_drugs
+		set_country_flag = has_unique_manpower_law
+		CES = {
+			CES_lucius = {
+				set_nationality = LUC
+			}
+		}
+		promote_character = CES_lucius
+	}
+	every_state = {
+		limit = {
+			is_core_of = CES
+		}
+		add_core_of = LUC
+	}
+	if = {
+		limit = {
+			controls_state = 386
+		}
+		LUC = {
+			transfer_state = 386
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 381
+		}
+		LUC = {
+			transfer_state = 381
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 438
+		}
+		LUC = {
+			transfer_state = 438
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 317
+		}
+		LUC = {
+			transfer_state = 317
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 596
+		}
+		LUC = {
+			transfer_state = 596
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 349
+		}
+		LUC = {
+			transfer_state = 349
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 130
+		}
+		LUC = {
+			transfer_state = 130
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 553
+		}
+		LUC = {
+			transfer_state = 553
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 359
+		}
+		LUC = {
+			transfer_state = 359
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 49
+		}
+		LUC = {
+			transfer_state = 49
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 33
+		}
+		LUC = {
+			transfer_state = 33
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 604
+		}
+		LUC = {
+			transfer_state = 604
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 349
+		}
+		LUC = {
+			transfer_state = 349
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 242
+		}
+		LUC = {
+			transfer_state = 242
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 388
+		}
+		LUC = {
+			transfer_state = 388
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 520
+		}
+		LUC = {
+			transfer_state = 520
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 483
+		}
+		LUC = {
+			transfer_state = 438
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 597
+		}
+		LUC = {
+			transfer_state = 597
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 212
+		}
+		LUC = {
+			transfer_state = 212
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 483
+		}
+		LUC = {
+			transfer_state = 483
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 582
+		}
+		LUC = {
+			transfer_state = 582
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 427
+		}
+		LUC = {
+			transfer_state = 427
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 402
+		}
+		LUC = {
+			transfer_state = 402
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 439
+		}
+		LUC = {
+			transfer_state = 439
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 164
+		}
+		LUC = {
+			transfer_state = 164
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 85
+		}
+		LUC = {
+			transfer_state = 85
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 124
+		}
+		LUC = {
+			transfer_state = 124
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 85
+		}
+		LUC = {
+			transfer_state = 85
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 608
+		}
+		LUC = {
+			transfer_state = 608
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 498
+		}
+		LUC = {
+			transfer_state = 498
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 144
+		}
+		LUC = {
+			transfer_state = 144
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 175
+		}
+		LUC = {
+			transfer_state = 175
+		}
+	}
+	LUC = {
+		set_country_flag = CES_lucius_legion_flag
+		set_politics = {
+			ruling_party = ruler
+		}
+		set_popularities = {
+			ruler = 70
+			people = 15
+			elites = 10
+			intellectuals = 5
+		}
+		set_party_name = {
+			ideology = ruler
+			long_name = "The Old Guard"
+			name = "True to Caesar"
+		}
+		set_capital = { state = 529 }
+		set_stability = 0.6
+		set_war_support = 0.5
+		CES = {
+			CES_lucius = {
+				set_nationality = LUC
+			}
+		}
+		promote_character = CES_lucius
+	}
+}
+
+malpais_breaks_off = {
+	MAL = {
+		create_new_owb_country = yes
+	}
+	MAL = {
+		load_focus_tree = { tree = legion_focus_tree keep_completed = yes }
+		transfer_legion_ideas_civil_war = yes
+	}
+	MAL = {
+		create_or_join_malpais_legion = yes
+		setup_legion_revolter = yes
+		set_country_flag = slavery_allowed
+		set_country_flag = manpower_laws_hidden
+		set_country_flag = slave_society
+		set_country_flag = bans_drugs
+		set_country_flag = has_unique_manpower_law
+		CES = {
+			CES_malpais = {
+				set_nationality = MAL
+			}
+		}
+		promote_character = CES_malpais
+	}
+	every_state = {
+		limit = {
+			is_core_of = CES
+		}
+		add_core_of = MAL
+	}
+	if = {
+		limit = {
+			controls_state = 563
+		}
+		MAL = {
+			transfer_state = 563
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 522
+		}
+		MAL = {
+			transfer_state = 522
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 633
+		}
+		MAL = {
+			transfer_state = 633
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 411
+		}
+		MAL = {
+			transfer_state = 411
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 431
+		}
+		MAL = {
+			transfer_state = 431
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 632
+		}
+		MAL = {
+			transfer_state = 632
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 501
+		}
+		MAL = {
+			transfer_state = 501
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 538
+		}
+		MAL = {
+			transfer_state = 538
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 232
+		}
+		MAL = {
+			transfer_state = 232
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 362
+		}
+		MAL = {
+			transfer_state = 362
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 501
+		}
+		MAL = {
+			transfer_state = 501
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 631
+		}
+		MAL = {
+			transfer_state = 631
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 244
+		}
+		MAL = {
+			transfer_state = 244
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 296
+		}
+		MAL = {
+			transfer_state = 296
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 482
+		}
+		MAL = {
+			transfer_state = 482
+		}
+	}
+	MAL = {
+		set_country_flag = CES_malpais_legion_flag
+		set_politics = {
+			ruling_party = ruler
+		}
+		set_popularities = {
+			ruler = 70
+			people = 15
+			elites = 10
+			intellectuals = 5
+		}
+		set_party_name = {
+			ideology = ruler
+			long_name = "Malpais' Loyalists"
+			name = "The Legion Loyalists"
+		}
+		set_capital = { state = 266 }
+		set_stability = 0.6
+		set_war_support = 0.5
+		CES = {
+			CES_malpais = {
+				set_nationality = MAL
+			}
+		}
+		promote_character = CES_malpais
+	}
+}
+
+vulpes_breaks_off = {
+	VLP = {
+		create_new_owb_country = yes
+	}
+	VLP = {
+		load_focus_tree = { tree = legion_focus_tree keep_completed = yes }
+		transfer_legion_ideas_civil_war = yes
+	}
+	VLP = {
+		create_or_join_vulpes_legion = yes
+		if = {
+			limit = {
+				TWO = {
+					exists = yes
+				}
+			}
+			TWO = {
+				create_or_join_vulpes_legion = yes
+			}
+		}
+		setup_legion_revolter = yes
+		set_country_flag = slavery_allowed
+		set_country_flag = manpower_laws_hidden
+		set_country_flag = slave_society
+		set_country_flag = bans_drugs
+		set_country_flag = has_unique_manpower_law
+		CES = {
+			CES_vulpes = {
+				set_nationality = VLP
+			}
+			CES_fantasticus = {
+				set_nationality = VLP
+			}
+		}
+		promote_character = CES_vulpes
+		if = {
+			limit = {
+				417 = {
+					OWNER = {
+						original_tag = CES
+					}
+				}
+			}
+			country_event = {
+				id = nf_legion.134
+				days = 3
+			}
+		}
+	}
+	every_state = {
+		limit = {
+			is_core_of = CES
+		}
+		add_core_of = VLP
+	}
+	if = {
+		limit = {
+			controls_state = 289
+			controls_state = 88
+		}
+		VLP = {
+			transfer_state = 289
+			transfer_state = 88
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 275
+			controls_state = 248
+		}
+		VLP = {
+			transfer_state = 275
+			transfer_state = 248
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 114
+			controls_state = 35
+			controls_state = 502
+		}
+		VLP = {
+			transfer_state = 114
+			transfer_state = 35
+			transfer_state = 502
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 442
+		}
+		VLP = {
+			transfer_state = 442
+		}
+	}
+	if = {
+		limit = {
+			any_controlled_state = {
+				is_core_of = RBD
+			}
+		}
+		every_controlled_state = {
+			limit = {
+				is_core_of = RBD
+			}
+			VLP = {
+				transfer_state = PREV
+			}
+		}
+	}
+	VLP = {
+		set_country_flag = CES_vulpes_legion_flag
+		set_politics = {
+			ruling_party = ruler
+		}
+		set_popularities = {
+			ruler = 70
+			people = 15
+			elites = 10
+			intellectuals = 5
+		}
+		set_party_name = {
+			ideology = ruler
+			long_name = "Vulpes' Loyalists"
+			name = "Wolves"
+		}
+		set_capital = { state = 289 }
+		set_stability = 0.6
+		set_war_support = 0.5
+		CES = {
+			CES_vulpes = {
+				set_nationality = VLP
+			}
+		}
+		promote_character = CES_vulpes
+	}
+}
+
+aurelian_breaks_off = {
+	AUR = {
+		create_new_owb_country = yes
+	}
+	AUR = {
+		load_focus_tree = { tree = legion_focus_tree keep_completed = yes }
+		transfer_legion_ideas_civil_war = yes
+	}
+	AUR = {
+		create_or_join_aurelius_legion = yes
+		if = {
+			limit = {
+				GDH = {
+					exists = yes
+					has_completed_focus = gdh_profit
+				}
+			}
+			GDH = {
+				create_or_join_aurelius_legion = yes
+			}
+		}
+		setup_legion_revolter = yes
+		set_country_flag = slavery_allowed
+		set_country_flag = manpower_laws_hidden
+		set_country_flag = slave_society
+		set_country_flag = bans_drugs
+		set_country_flag = has_unique_manpower_law
+		CES = {
+			CES_aurelius = {
+				set_nationality = AUR
+			}
+		}
+		promote_character = CES_aurelius
+	}
+	every_state = {
+		limit = {
+			is_core_of = CES
+		}
+		add_core_of = AUR
+	}
+	if = {
+		# If CES owns its core territory
+		limit = {
+			controls_state = 520
+		}
+		every_controlled_state = {
+			limit = {
+				OR = {
+					state = 518
+					state = 519
+				}
+			}
+			AUR = {
+				transfer_state = PREV
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 330
+				controls_state = 335
+			}
+			AUR = {
+				transfer_state = 330
+				transfer_state = 335
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 207
+				controls_state = 94
+				controls_state = 318
+			}
+			AUR = {
+				transfer_state = 207
+				transfer_state = 94
+				transfer_state = 318
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 207
+				controls_state = 94
+				controls_state = 318
+			}
+			AUR = {
+				transfer_state = 207
+				transfer_state = 94
+				transfer_state = 318
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 62
+				controls_state = 516
+				controls_state = 247
+				controls_state = 283
+				controls_state = 297
+				controls_state = 588
+			}
+			AUR = {
+				transfer_state = 62
+				transfer_state = 516
+				transfer_state = 247
+				transfer_state = 283
+				transfer_state = 297
+				transfer_state = 588
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 335
+				controls_state = 330
+				controls_state = 2
+				controls_state = 444
+			}
+			AUR = {
+				transfer_state = 335
+				transfer_state = 330
+				transfer_state = 2
+				transfer_state = 444
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 395
+				controls_state = 517
+				controls_state = 146
+			}
+			AUR = {
+				transfer_state = 335
+				transfer_state = 330
+				transfer_state = 2
+				transfer_state = 444
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 93
+			}
+			AUR = {
+				transfer_state = 93
+			}
+		}
+	}
+	AUR = {
+		set_country_flag = CES_aurelian_legion_flag
+		set_politics = {
+			ruling_party = ruler
+		}
+		set_popularities = {
+			ruler = 70
+			people = 15
+			elites = 10
+			intellectuals = 5
+		}
+		set_party_name = {
+			ideology = ruler
+			long_name = "Aurelian's Loyalists"
+			name = "Aurelians"
+		}
+		set_capital = { state = 518 }
+		set_stability = 0.6
+		set_war_support = 0.5
+		CES = {
+			CES_aurelius = {
+				set_nationality = AUR
+			}
+		}
+		promote_character = CES_aurelius
+	}
+}
+
+caius_breaks_off_lanius = {
+	CES = {
+		every_owned_state = {
+			limit = {
+				is_core_of = LAC
+			}
+			set_state_flag = do_not_exodus
+			CAU = { transfer_state = PREV }
+			clr_state_flag = do_not_exodus
+		}
+	}
+	CAU = {
+		create_or_join_hades_legion = yes
+		RES = {
+			create_or_join_hades_legion = yes
+		}
+		create_new_owb_country = yes
+		load_focus_tree = { tree = legion_focus_tree keep_completed = yes }
+		transfer_legion_ideas_civil_war = yes
+		set_country_flag = CES_caius_flag
+		set_country_flag = slavery_allowed
+		set_country_flag = manpower_laws_hidden
+		set_country_flag = slave_society
+		set_country_flag = bans_drugs
+		set_country_flag = has_unique_manpower_law
+		set_politics = {
+			ruling_party = ruler
+		}
+		set_popularities = {
+			ruler = 70
+			people = 15
+			elites = 10
+			intellectuals = 5
+		}
+		set_party_name = {
+			ideology = ruler
+			long_name = "The Cult of Hades"
+			name = "Hades"
+		}
+		set_capital = { state = 5 }
+		set_stability = 0.6
+		set_war_support = 0.5
+		CES = {
+			CES_caius_drusus = {
+				set_nationality = CAU
+			}
+		}
+		promote_character = CES_caius_drusus
+	}
+	every_state = {
+		limit = {
+			is_core_of = CES
+		}
+		add_core_of = CAU
+	}
+}
+
+caius_breaks_off_malpais = {
+	CAU = {
+		create_new_owb_country = yes
+	}
+	CAU = {
+		load_focus_tree = { tree = legion_focus_tree keep_completed = yes }
+		transfer_legion_ideas_civil_war = yes
+		create_or_join_hades_legion = yes
+		RES = {
+			create_or_join_hades_legion = yes
+		}
+	}
+	CAU = {
+		setup_legion_revolter = yes
+		set_country_flag = slavery_allowed
+		set_country_flag = manpower_laws_hidden
+		set_country_flag = slave_society
+		set_country_flag = bans_drugs
+		set_country_flag = has_unique_manpower_law
+		CES = {
+			CES_caius_drusus = {
+				set_nationality = CAU
+			}
+		}
+		promote_character = CES_caius_drusus
+	}
+	every_state = {
+		limit = {
+			is_core_of = CES
+		}
+		add_core_of = CAU
+	}
+	if = {
+		limit = {
+			controls_state = 563
+		}
+		CAU = {
+			transfer_state = 563
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 522
+		}
+		CAU = {
+			transfer_state = 522
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 633
+		}
+		CAU = {
+			transfer_state = 633
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 411
+		}
+		CAU = {
+			transfer_state = 411
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 431
+		}
+		CAU = {
+			transfer_state = 431
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 632
+		}
+		CAU = {
+			transfer_state = 632
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 501
+		}
+		CAU = {
+			transfer_state = 501
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 538
+		}
+		CAU = {
+			transfer_state = 538
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 232
+		}
+		CAU = {
+			transfer_state = 232
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 362
+		}
+		CAU = {
+			transfer_state = 362
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 501
+		}
+		CAU = {
+			transfer_state = 501
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 631
+		}
+		CAU = {
+			transfer_state = 631
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 244
+		}
+		CAU = {
+			transfer_state = 244
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 296
+		}
+		CAU = {
+			transfer_state = 296
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 482
+		}
+		CAU = {
+			transfer_state = 482
+		}
+	}
+	CAU = {
+		set_country_flag = CES_caius_flag
+		set_politics = {
+			ruling_party = ruler
+		}
+		set_popularities = {
+			ruler = 70
+			people = 15
+			elites = 10
+			intellectuals = 5
+		}
+		set_party_name = {
+			ideology = ruler
+			long_name = "The Cult of Hades"
+			name = "Hades"
+		}
+		set_capital = { state = 266 }
+		set_stability = 0.6
+		set_war_support = 0.5
+		CES = {
+			CES_caius_drusus = {
+				set_nationality = CAU
+			}
+		}
+		promote_character = CES_caius_drusus
+	}
+}
+
+lanius_breaks_off = {
+	CES = {
+		every_owned_state = {
+			limit = {
+				is_core_of = LAC
+			}
+			set_state_flag = do_not_exodus
+			LAN = { transfer_state = PREV }
+			clr_state_flag = do_not_exodus
+		}
+	}
+	LAN = {
+		create_new_owb_country = yes
+		load_focus_tree = { tree = legion_focus_tree keep_completed = yes }
+		transfer_legion_ideas_civil_war = yes
+		set_country_flag = CES_lanius_legion_flag
+		set_country_flag = slavery_allowed
+		set_country_flag = manpower_laws_hidden
+		set_country_flag = slave_society
+		set_country_flag = bans_drugs
+		set_country_flag = has_unique_manpower_law
+		set_politics = {
+			ruling_party = ruler
+		}
+		set_popularities = {
+			ruler = 70
+			people = 15
+			elites = 10
+			intellectuals = 5
+		}
+		create_or_join_lanius_legion = yes
+		if = {
+			limit = {
+				LAC = {
+					has_completed_focus = lac_hire_iron_alliance
+				}
+				IRN = {
+					owns_state = 490
+				}
+			}
+            IRN = {
+                create_or_join_lanius_legion = yes
+            }
+		}
+		set_capital = { state = 5 }
+		set_stability = 0.6
+		set_war_support = 0.5
+		CES = {
+			CES_Lanius = {
+				set_nationality = LAN
+			}
+		}
+		retire_country_leader = yes
+		add_country_leader_role = {
+			character = CES_Lanius
+			promote_leader = yes
+			country_leader = {
+				ideology = benevolent_dictatorship
+				desc = LAC_LANIUS_DESC
+				traits = {
+					lac_frontier_justice
+				}
+				expire = "3000.01.01.01"
+			}
+		}
+		CES = {
+			LAC_centurion_flabius = {
+				set_nationality = LAN
+			}
+		}
+		CES = {
+			LAC_centurion_nicodemus = {
+				set_nationality = LAN
+			}
+		}
+	}
+	every_state = {
+		limit = {
+			is_core_of = CES
+		}
+		add_core_of = LAN
+	}
+}
+
+transfer_legion_ideas_civil_war = {
+	if = {
+		limit = {
+			CES = {
+				has_idea = ces_tribute_to_hades
+			}
+		}
+		add_ideas = ces_tribute_to_hades
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = southern_friends
+			}
+		}
+		add_ideas = southern_friends
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = library
+			}
+		}
+		add_ideas = library
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = via_militaris
+			}
+		}
+		add_ideas = via_militaris
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = via_militaris_2
+			}
+		}
+		add_ideas = via_militaris_2
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = via_militaris_3
+			}
+		}
+		add_ideas = via_militaris_3
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = manumissio
+			}
+		}
+		add_ideas = manumissio
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = manumissio2
+			}
+		}
+		add_ideas = manumissio2
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = manumissio1
+			}
+		}
+		add_ideas = manumissio1
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = manumissio3
+			}
+		}
+		add_ideas = manumissio3
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = manumissio4
+			}
+		}
+		add_ideas = manumissio4
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = national_spirit_rejection_of_automation
+			}
+		}
+		add_ideas = national_spirit_rejection_of_automation
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = national_spirit_rejection_of_automation1
+			}
+		}
+		add_ideas = national_spirit_rejection_of_automation1
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = national_spirit_rejection_of_automation2
+			}
+		}
+		add_ideas = national_spirit_rejection_of_automation2
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = national_spirit_rejection_of_automation3
+			}
+		}
+		add_ideas = national_spirit_rejection_of_automation3
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = legionary_state
+			}
+		}
+		add_ideas = legionary_state
+	}
+
+	if = {
+		limit = {
+			CES = {
+				has_idea = legionary_state1
+			}
+		}
+		add_ideas = legionary_state1
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = legionary_state2
+			}
+		}
+		add_ideas = legionary_state2
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = legionary_state3
+			}
+		}
+		add_ideas = legionary_state3
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = legionary_state4
+			}
+		}
+		add_ideas = legionary_state4
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = legionary_state5
+			}
+		}
+		add_ideas = legionary_state5
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = state_of_legion
+			}
+		}
+		add_ideas = state_of_legion
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = ces_legionary_glory
+			}
+		}
+		add_ideas = ces_legionary_glory
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = ces_primus_glory_idea
+			}
+		}
+		add_ideas = ces_primus_glory_idea
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = ces_legionary_inger_idea
+			}
+		}
+		add_ideas = ces_legionary_inger_idea
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = ces_inger_funding_idea
+			}
+		}
+		add_ideas = ces_inger_funding_idea
+	}
+
+	if = {
+		limit = {
+			CES = {
+				has_idea = ces_moroni_horns_idea
+			}
+		}
+		add_ideas = ces_moroni_horns_idea
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = CES_malpais_power_support
+			}
+		}
+		add_ideas = CES_malpais_power_support
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = CES_fire_fuel_idea
+			}
+		}
+		add_ideas = CES_fire_fuel_idea
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = CES_legionary_support_idea
+			}
+		}
+		add_ideas = CES_legionary_support_idea
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = ces_decanius_glory_idea
+			}
+		}
+		add_ideas = ces_decanius_glory_idea
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = ces_auxiliaries_idea
+			}
+		}
+		add_ideas = ces_auxiliaries_idea
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = ces_auxiliaries_integration
+			}
+		}
+		add_ideas = ces_auxiliaries_integration
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = ces_lessons_haskhesh_idea
+			}
+		}
+		add_ideas = ces_lessons_haskhesh_idea
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = ces_auxiliary_supremacy_idea
+			}
+		}
+		add_ideas = ces_auxiliary_supremacy_idea
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = ces_frumentarii_guide_idea
+			}
+		}
+		add_ideas = ces_frumentarii_guide_idea
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = ces_frumentarii_infiltrator_idea
+			}
+		}
+		add_ideas = ces_frumentarii_infiltrator_idea
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = ces_frumentarii_drilmasters_idea
+			}
+		}
+		add_ideas = ces_frumentarii_drilmasters_idea
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = ces_frumentarii_generals_idea
+			}
+		}
+		add_ideas = ces_frumentarii_generals_idea
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = ces_centurion_glory_idea
+			}
+		}
+		add_ideas = ces_centurion_glory_idea
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = roman_citizens
+			}
+		}
+		add_ideas = roman_citizens
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = roman_citizens2
+			}
+		}
+		add_ideas = roman_citizens2
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = ces_tithes
+			}
+		}
+		add_ideas = ces_tithes
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = ces_tithes1
+			}
+		}
+		add_ideas = ces_tithes1
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = ces_aequitas_idea
+			}
+		}
+		add_ideas = ces_aequitas_idea
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = ces_fortress_arizona
+			}
+		}
+		add_ideas = ces_fortress_arizona
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = ces_fortress_arizona1
+			}
+		}
+		add_ideas = ces_fortress_arizona1
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = cultofmars
+			}
+		}
+		add_ideas = cultofmars
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = cultofmars1
+			}
+		}
+		add_ideas = cultofmars1
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = cultofmars2
+			}
+		}
+		add_ideas = cultofmars2
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = cultofmars3
+			}
+		}
+		add_ideas = cultofmars3
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = cultofmars4
+			}
+		}
+		add_ideas = cultofmars4
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = frumentarii_advisors
+			}
+		}
+		add_ideas = frumentarii_advisors
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = ces_desert_idea
+			}
+		}
+		add_ideas = ces_desert_idea
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = ces_frumentarii_officers_idea
+			}
+		}
+		add_ideas = ces_frumentarii_officers_idea
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = ces_tip_of_spear_idea
+			}
+		}
+		add_ideas = ces_tip_of_spear_idea
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = ces_vulpes_guard_idea
+			}
+		}
+		add_ideas = ces_vulpes_guard_idea
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = CES_urban_legionaries_idea
+			}
+		}
+		add_ideas = CES_urban_legionaries_idea
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = CES_armories_gente_idea
+			}
+		}
+		add_ideas = CES_armories_gente_idea
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = ces_canis_latrans_idea
+			}
+		}
+		add_ideas = ces_canis_latrans_idea
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = legion_tribute_idea_navajo
+			}
+		}
+		add_ideas = legion_tribute_idea_navajo
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = legion_tribute_idea_hopi
+			}
+		}
+		add_ideas = legion_tribute_idea_hopi
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = two_speedway_toll
+			}
+		}
+		add_ideas = two_speedway_toll
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = two_oval_tithe_idea
+			}
+		}
+		add_ideas = two_oval_tithe_idea
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = nav_pathfinders
+			}
+		}
+		add_ideas = nav_pathfinders
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = nav_pathfinders2
+			}
+		}
+		add_ideas = nav_pathfinders2
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = nav_pathfinders_encryption
+			}
+		}
+		add_ideas = nav_pathfinders_encryption
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = legion_training
+			}
+		}
+		add_ideas = legion_training
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = two_sun_cliens
+			}
+		}
+		add_ideas = two_sun_cliens
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = two_sun_cliens2
+			}
+		}
+		add_ideas = two_sun_cliens2
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = legion_chariots_of_gods
+			}
+		}
+		add_ideas = legion_chariots_of_gods
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = ces_scribes_slaves
+			}
+		}
+		add_ideas = ces_scribes_slaves
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = CES_code_talkers
+			}
+		}
+		add_ideas = CES_code_talkers
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = legion_slave_trade
+			}
+		}
+		add_ideas = legion_slave_trade
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = legion_nf_numeri
+			}
+		}
+		add_ideas = legion_nf_numeri
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = legion_nf_lay_of_the_land
+			}
+		}
+		add_ideas = legion_nf_lay_of_the_land
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = legion_nf_legionary_grit
+			}
+		}
+		add_ideas = legion_nf_legionary_grit
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = legion_nf_praetorian
+			}
+		}
+		add_ideas = legion_nf_praetorian
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = legion_nf_meritocracy
+			}
+		}
+		add_ideas = legion_nf_meritocracy
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = legion_nf_legionary_blacksmiths
+			}
+		}
+		add_ideas = legion_nf_legionary_blacksmiths
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = legion_nf_enslaved_scribes
+			}
+		}
+		add_ideas = legion_nf_enslaved_scribes
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = legion_nf_gladiator
+			}
+		}
+		add_ideas = legion_nf_gladiator
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = ces_new_generation_idea
+			}
+		}
+		add_ideas = ces_new_generation_idea
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = legion_nf_worthy_foe
+			}
+		}
+		add_ideas = legion_nf_worthy_foe
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = legion_nf_servus
+			}
+		}
+		add_ideas = legion_nf_servus
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = ces_infinite_armies
+			}
+		}
+		add_ideas = ces_infinite_armies
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = legion_nf_freemen
+			}
+		}
+		add_ideas = legion_nf_freemen
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = legion_nf_foundries_of_mars
+			}
+		}
+		add_ideas = legion_nf_foundries_of_mars
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = legion_nf_pax_per_bellum
+			}
+		}
+		add_ideas = legion_nf_pax_per_bellum
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = legion_nf_child_soldiers
+			}
+		}
+		add_ideas = legion_nf_child_soldiers
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = legion_nf_hoover_dam
+			}
+		}
+		add_ideas = legion_nf_hoover_dam
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = legion_nf_weapon_maintenance
+			}
+		}
+		add_ideas = legion_nf_weapon_maintenance
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = ces_long_war_idea
+			}
+		}
+		add_ideas = ces_long_war_idea
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = CES_modern_triarii_idea
+			}
+		}
+		add_ideas = CES_modern_triarii_idea
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = CES_vulcan_legion_idea
+			}
+		}
+		add_ideas = CES_vulcan_legion_idea
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = CES_vulcan_legion_idea_2
+			}
+		}
+		add_ideas = CES_vulcan_legion_idea_2
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = CES_vulcan_legion_idea_3
+			}
+		}
+		add_ideas = CES_vulcan_legion_idea_3
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = CES_vulcan_chariots_idea
+			}
+		}
+		add_ideas = CES_vulcan_chariots_idea
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = CES_vulcan_chariots_idea_2
+			}
+		}
+		add_ideas = CES_vulcan_chariots_idea_2
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = CES_vulcan_chariots_idea_3
+			}
+		}
+		add_ideas = CES_vulcan_chariots_idea_3
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = legion_nf_unit_tactics
+			}
+		}
+		add_ideas = legion_nf_unit_tactics
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = legion_nf_explosives_creation
+			}
+		}
+		add_ideas = legion_nf_explosives_creation
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = legion_nf_ridgers_pyre
+			}
+		}
+		add_ideas = legion_nf_ridgers_pyre
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = legion_nf_kaibab_crucifiction
+			}
+		}
+		add_ideas = legion_nf_kaibab_crucifiction
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = legion_nf_profligate_destruction
+			}
+		}
+		add_ideas = legion_nf_profligate_destruction
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = legion_nf_divide_et_impera
+			}
+		}
+		add_ideas = legion_nf_divide_et_impera
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = infiltrate_ncr_resistance
+			}
+		}
+		add_ideas = infiltrate_ncr_resistance
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = infiltrate_ncr
+			}
+		}
+		add_ideas = infiltrate_ncr
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = legion_nf_decimatio
+			}
+		}
+		add_ideas = legion_nf_decimatio
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = national_spirit_we_love_lasers
+			}
+		}
+		add_ideas = national_spirit_we_love_lasers
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = national_spirit_teutonic_knights
+			}
+		}
+		add_ideas = national_spirit_teutonic_knights
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = national_spirit_engineering
+			}
+		}
+		add_ideas = national_spirit_engineering
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = national_spirit_research
+			}
+		}
+		add_ideas = national_spirit_research
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = ces_ever_evolving_idea
+			}
+		}
+		add_ideas = ces_ever_evolving_idea
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = cultofmars_principes
+			}
+		}
+		add_ideas = cultofmars_principes
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = legion_select_few1
+			}
+		}
+		add_ideas = legion_select_few1
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = cultofmars_triplex
+			}
+		}
+		add_ideas = cultofmars_triplex
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = legion_select_few2
+			}
+		}
+		add_ideas = legion_select_few2
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = CES_healthy_ghouls
+			}
+		}
+		add_ideas = CES_healthy_ghouls
+	}
+	if = {
+		limit = {
+			CES = {
+				has_idea = CES_gila_navigators
+			}
+		}
+		add_ideas = CES_gila_navigators
+	}
+}
+
+declare_war_between_break_aways = {
+	if = {
+		limit = {
+			AUR = { exists = yes }
+		}
+		AUR = {
+			declare_war_on = {
+				target = VLP
+				type = civil_war
+			}
+			add_civil_war_target = VLP
+			declare_war_on = {
+				target = LUC
+				type = civil_war
+			}
+			add_civil_war_target = LUC
+			if = {
+				limit = {
+					country_exists = MAL
+				}
+				declare_war_on = {
+					target = MAL
+					type = civil_war
+				}
+				add_civil_war_target = MAL
+			}
+			if = {
+				limit = {
+					country_exists = CAU
+				}
+				declare_war_on = {
+					target = CAU
+					type = civil_war
+				}
+				add_civil_war_target = CAU
+			}
+			if = {
+				limit = {
+					country_exists = LAN
+				}
+				declare_war_on = {
+					target = LAN
+					type = civil_war
+				}
+				add_civil_war_target = LAN
+			}
+		}
+	}
+	if = {
+		limit = {
+			VLP = { exists = yes }
+		}
+		VLP = {
+			add_civil_war_target = AUR
+			declare_war_on = {
+				target = LUC
+				type = civil_war
+			}
+			add_civil_war_target = LUC
+			if = {
+				limit = {
+					country_exists = MAL
+				}
+				declare_war_on = {
+					target = MAL
+					type = civil_war
+				}
+				add_civil_war_target = MAL
+			}
+			if = {
+				limit = {
+					country_exists = CAU
+				}
+				declare_war_on = {
+					target = CAU
+					type = civil_war
+				}
+				add_civil_war_target = CAU
+			}
+			if = {
+				limit = {
+					country_exists = LAN
+				}
+				declare_war_on = {
+					target = LAN
+					type = civil_war
+				}
+				add_civil_war_target = LAN
+			}
+		}
+	}
+	if = {
+		limit = {
+			LUC = { exists = yes }
+		}
+		LUC = {
+			if = {
+				limit = {
+					country_exists = MAL
+				}
+				declare_war_on = {
+					target = MAL
+					type = civil_war
+				}
+				add_civil_war_target = MAL
+			}
+			if = {
+				limit = {
+					country_exists = CAU
+				}
+				declare_war_on = {
+					target = CAU
+					type = civil_war
+				}
+				add_civil_war_target = CAU
+			}
+			if = {
+				limit = {
+					country_exists = LAN
+				}
+				declare_war_on = {
+					target = LAN
+					type = civil_war
+				}
+				add_civil_war_target = LAN
+			}
+		}
+	}
+	if = {
+		limit = {
+			MAL = {
+				exists = yes
+			}
+		}
+		MAL = {
+			if = {
+				limit = {
+					country_exists = CAU
+				}
+				declare_war_on = {
+					target = CAU
+					type = civil_war
+				}
+				add_civil_war_target = CAU
+			}
+			if = {
+				limit = {
+					country_exists = LAN
+				}
+				declare_war_on = {
+					target = LAN
+					type = civil_war
+				}
+				add_civil_war_target = LAN
+			}
+		}
+	}
+}

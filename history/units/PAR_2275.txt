@@ -1,0 +1,147 @@
+﻿division_template = {
+	name = "Militia Force"
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Tribal Infantry"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+	}
+}
+division_template = {
+	name = "Painted Red"
+	regiments = {
+		heavy_infantry = { x = 0 y = 0 }
+		heavy_infantry = { x = 0 y = 1 }
+		heavy_infantry = { x = 0 y = 2 }
+		heavy_infantry = { x = 1 y = 0 }
+		heavy_infantry = { x = 1 y = 1 }
+		heavy_infantry = { x = 2 y = 0 }
+		heavy_infantry = { x = 2 y = 1 }
+		heavy_infantry = { x = 2 y = 2 }
+		heavy_infantry = { x = 3 y = 0 }
+		heavy_infantry = { x = 3 y = 1 }
+		heavy_infantry = { x = 3 y = 2 }
+	}
+}
+units = {
+
+	division = {
+		name = "Chalk Walkers"
+		location = 2987
+		division_template = "Tribal Infantry"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Painted Runners"
+		location = 2987
+		division_template = "Tribal Infantry"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Dye Grinders"
+		location = 2860
+		division_template = "Tribal Infantry"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Bucket Mixers"
+		location = 2860
+		division_template = "Tribal Infantry"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Carvers"
+		location = 12221
+		division_template = "Tribal Infantry"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Sculpters"
+		location = 12221
+		division_template = "Tribal Infantry"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Impressionables"
+		location = 5660
+		division_template = "Tribal Infantry"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Unimpressionables"
+		location = 5660
+		division_template = "Tribal Infantry"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Bloody Hunters"
+		location = 12224
+		division_template = "Tribal Infantry"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Mound Walkers"
+		location = 12241
+		division_template = "Tribal Infantry"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Dyed Blood's Painted Red"
+		location = 12241
+		division_template = "Painted Red"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Dyed Blood's Painted Black"
+		location = 12241
+		division_template = "Painted Red"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+}
+
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = melee_equipment_2
+			creator = "PAR"
+		}
+		requested_factories = 2
+		progress = 1.0
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = heavy_infantry_equipment_1
+			creator = "PAR"
+		}
+		requested_factories = 1
+		progress = 1.0
+		efficiency = 100
+	}
+}

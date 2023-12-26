@@ -1,0 +1,39 @@
+state = {
+	id = 755
+	name = "STATE_755"
+	manpower = 57840
+	state_category = town
+
+	resources = {
+		water = 12
+		circuitry = 4
+		composites = 5
+		metal = 4
+		advanced = 4
+		energy = 17
+	}
+
+	history = {
+		victory_points = {
+			9595 10
+		}
+		victory_points = {
+			9600 3
+		}
+		victory_points = {
+			11195 25
+		}
+		buildings = {
+			infrastructure = 4
+			arms_factory = 3
+			industrial_complex = 1
+			9590 = {
+				naval_base = 5
+			}
+		}
+	}
+
+	provinces = {
+		743 8595 9397 9413 9448 9453 9458 9533 9534 9582 9587 9590 9591 9595 9598 9599 9600 10707 10709 10710 11134 11150 11151 11158 11161 11164 11168 11173 11177 11183 11186 11191 11195 11199 11200 11209 11210 11218 11219 11222 11234
+	}
+}

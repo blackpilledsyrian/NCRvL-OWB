@@ -1,0 +1,1417 @@
+﻿add_namespace = nf_reno
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_reno.1" }
+	id = nf_reno.1
+	title = nf_reno.1.t
+	desc = nf_reno.1.d
+	picture = GFX_event_new_reno_sign
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_reno.1.a
+
+		add_manpower = 500
+
+		285 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+
+	option = {
+		name = nf_reno.1.b
+
+		add_ideas = casinofunding
+
+		285 = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+
+	option = {
+		name = nf_reno.1.c
+
+		add_ideas = militaryoutposts
+
+		285 = {
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	id = nf_reno.2
+	title = nf_reno.2.t
+	desc = nf_reno.2.d
+	picture = GFX_event_new_reno_3
+	is_triggered_only = yes
+
+	option = {
+		name = nf_reno.2.a
+
+		add_ideas = citybrothels
+		614 = {
+			set_temp_variable = { pop_add = 3500 }
+			add_state_population_no_state_name = yes
+		}
+	}
+
+	option = {
+		name = nf_reno.2.b
+
+		add_ideas = washoecasino
+		if = {
+			limit = {
+				has_game_rule = {
+					rule = caps_system_toggle
+					option = ENABLED
+				}
+			}
+			set_temp_variable = { caps_to_add = 150 }
+			add_caps = yes
+		}
+		else = {
+			add_resource = {
+				type = metal
+				amount = 4
+				state = 285
+			}
+		}
+	}
+
+	option = {
+		name = nf_reno.2.c
+
+		add_ideas = renogangs
+
+		add_war_support = 0.05
+	}
+}
+
+news_event = {
+	id = nf_reno.3 #The Wrights Come Out on Top
+	title = nf_reno.3.t
+	desc = nf_reno.3.d
+	picture = GFX_event_new_reno
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_reno.3.a
+		set_politics = {
+			ruling_party = intellectuals
+			elections_allowed = no
+		}
+		hidden_effect = {
+			set_cosmetic_tag = NEW_Wright
+			every_country = {
+				limit = {
+					OR = {
+						is_neighbor_of = NCR
+						is_neighbor_of = NEW
+						news_is_west_tag = yes
+					}
+				}
+			news_event = { id = news_cali.10 hours = 6 random_hours = 3 }
+			}
+		}
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_reno.5" }
+	id = nf_reno.5
+	title = nf_reno.5.t
+	desc = nf_reno.5.d
+	picture = GFX_event_new_reno
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_reno.5.a
+
+		add_equipment_to_stockpile = {
+			type = light_motorized_equipment_1
+			amount = 200
+			producer = USA
+		}
+		add_ideas = chopshop
+		285 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+
+	option = {
+		name = nf_reno.5.b
+
+		add_war_support = 0.05
+
+		285 = {
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+
+	option = {
+		name = nf_reno.5.c
+
+		add_equipment_to_stockpile = { type = ballistic_equipment_2 amount = 600 producer = USA }
+		add_tech_bonus = {
+			bonus = 0.75
+			uses = 1
+			category = ballistic_weaponry_tech_category
+		}
+		285 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_reno.6" }
+	id = nf_reno.6
+	title = nf_reno.6.t
+	desc = nf_reno.6.d
+	picture = GFX_report_event_fascist_speech
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_reno.6.a
+
+		add_ideas = deal1
+	}
+
+	option = {
+		name = nf_reno.6.b
+
+		add_ideas = deal2
+	}
+
+	option = {
+		name = nf_reno.6.c
+
+		add_ideas = deal3
+	}
+
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_reno.7" }
+	id = nf_reno.7
+	title = nf_reno.7.t
+	desc = nf_reno.7.d
+	picture = GFX_report_event_fascist_speech
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_reno.7.a
+		ai_chance = {
+			base = 1
+
+			modifier = {
+				factor = 0
+				OR = {
+					NEW_has_ai_behavior_ncr = yes
+					NEW_has_ai_behavior_nevada_pact = yes
+					NEW_has_ai_behavior_thradd = yes
+				}
+			}
+		}
+
+		set_politics = {
+			ruling_party = elites
+			elections_allowed = no
+		}
+	}
+
+	option = {
+		name = nf_reno.7.b
+
+		ai_chance = {
+			base = 1
+
+			modifier = {
+				factor = 0
+				OR = {
+					NEW_has_ai_behavior_enclave = yes
+					NEW_has_ai_behavior_ncr = yes
+					NEW_has_ai_behavior_nevada_pact = yes
+				}
+			}
+		}
+
+		set_politics = {
+			ruling_party = intellectuals
+			elections_allowed = no
+		}
+	}
+
+	option = {
+		name = nf_reno.7.c
+
+		ai_chance = {
+			base = 1
+
+			modifier = {
+				factor = 0
+				OR = {
+					NEW_has_ai_behavior_enclave = yes
+					NEW_has_ai_behavior_thradd = yes
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nf_reno.7.e
+
+		ai_chance = {
+			factor = 16
+
+			modifier = {
+				factor = 0
+				OR = {
+					NEW_has_ai_behavior_enclave = yes
+					NEW_has_ai_behavior_ncr = yes
+					NEW_has_ai_behavior_thradd = yes
+				}
+			}
+		}
+
+		set_politics = {
+			ruling_party = ruler
+			elections_allowed = no
+		}
+	}
+
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_reno.8" }
+	id = nf_reno.8
+	title = nf_reno.8.t
+	desc = nf_reno.8.d
+	picture = GFX_report_event_fascist_speech
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_reno.8.a
+		trigger = {
+			NEW = {
+				NOT = {
+					has_country_flag = new_brokentakeoverflag
+				}
+			}
+		}
+		NEW = {
+			KLA = {
+				become_puppet = yes
+				set_politics = {
+					ruling_party = elites
+				}
+				set_political_party = {
+					ideology = elites
+					popularity = 100
+				}
+			}
+		}
+		57 = {
+			if = {
+				limit = {
+					is_valid_state_for_3_civilian_factories = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					is_valid_state_for_3_civilian_factories = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nf_reno.8.b
+
+	}
+	option = {
+		name = nf_reno.8.c
+		trigger = {
+			NEW = {
+				has_country_flag = new_brokentakeoverflag
+			}
+		}
+		NEW = {
+			KLA = { become_puppet = yes }
+		}
+		set_state_owner = 585
+	}
+
+}
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_reno.9 #Troll Warren receives an invitation to join Master's Army#" }
+	id = nf_reno.9 #Troll Warren receives an invitation to join Master's Army#
+	title = nf_reno.9.t
+	desc = nf_reno.9.d
+	picture = GFX_report_event_fascist_speech
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_reno.9.a
+
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 0
+				check_variable = { TRL.opinion@NEW < 0 }
+			}
+		}
+
+		join_from_faction = yes
+		NEW = {
+			country_event = nf_reno.10
+		}
+	}
+
+	option = {
+		name = nf_reno.9.b
+
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 0
+				check_variable = { TRL.opinion@NEW > 0 }
+			}
+		}
+
+		NEW = {
+			country_event = nf_reno.11
+		}
+	}
+}
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_reno.10 #Troll Warren accepts our invitation#" }
+	id = nf_reno.10 #Troll Warren accepts our invitation#
+	title = nf_reno.10.t
+	desc = nf_reno.10.d
+	picture = GFX_report_event_fascist_speech
+
+	is_triggered_only = yes
+	option = {
+		name = nf_reno.10.a
+	}
+}
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_reno.11 #Troll Warren rejects our invitation(we are very angry now)#" }
+	id = nf_reno.11 #Troll Warren rejects our invitation(we are very angry now)#
+	title = nf_reno.11.t
+	desc = nf_reno.11.d
+	picture = GFX_report_event_fascist_speech
+
+	is_triggered_only = yes
+
+	option = {
+
+		name = nf_reno.11.a
+		NEW = {
+			create_wargoal = {
+				type = annex_everything
+				target = TRL
+			}
+		}
+	}
+}
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_reno.12 #Vault City receives an invitation to join Master's Army#" }
+	id = nf_reno.12 #Vault City receives an invitation to join Master's Army#
+	title = nf_reno.12.t
+	desc = nf_reno.12.d
+	picture = GFX_report_event_fascist_speech
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_reno.12.a
+
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 0
+				check_variable = { VLT.opinion@NEW < 0 }
+			}
+		}
+
+		join_from_faction = yes
+		NEW = {
+			country_event = nf_reno.13
+		}
+	}
+
+	option = {
+		name = nf_reno.12.b
+
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 0
+				check_variable = { VLT.opinion@NEW > 0 }
+			}
+		}
+
+		NEW = {
+			country_event = nf_reno.14
+		}
+	}
+}
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_reno.13 #Vault City accepts our invitation#" }
+	id = nf_reno.13 #Vault City accepts our invitation#
+	title = nf_reno.13.t
+	desc = nf_reno.13.d
+	picture = GFX_report_event_fascist_speech
+
+	is_triggered_only = yes
+	option = {
+		name = nf_reno.13.a
+	}
+}
+
+country_event = { #Vault City declines our invitation#
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_reno.14" }
+	id = nf_reno.14
+	title = nf_reno.14.t
+	desc = nf_reno.14.d
+	picture = GFX_report_event_fascist_speech
+
+	is_triggered_only = yes
+
+	option = {
+
+		name = nf_reno.14.a
+		NEW = {
+			create_wargoal = {
+				type = annex_everything
+				target = VLT
+			}
+		}
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_reno.15 #Cult of Unity#" }
+	id = nf_reno.15 #Cult of Unity#
+	title = nf_reno.15.t
+	desc = nf_reno.15.d
+	picture = GFX_report_event_fascist_speech
+
+	is_triggered_only = yes
+
+	option = {
+
+		name = nf_reno.15.a
+
+		NEW = {
+			add_war_support = 0.10
+		}
+	}
+
+	option = {
+
+		name = nf_reno.15.b
+
+		NEW = {
+			custom_effect_tooltip = thraddunity_tt
+			hidden_effect = {
+				load_oob = thraddunity
+			}
+			add_ideas = cultmutants
+		}
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_reno.16 #Mission to Vault City, Enclave#" }
+	id = nf_reno.16 #Mission to Vault City, Enclave#
+	title = nf_reno.16.t
+	desc = nf_reno.16.d
+	picture = GFX_report_event_fascist_speech
+
+	is_triggered_only = yes
+
+	option = { #Say Yes#
+		name = nf_reno.16.a
+
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 0
+				check_variable = { VLT.opinion@NEW < 0 }
+			}
+		}
+
+		join_from_faction = yes
+		NEW = {
+			country_event = nf_reno.17
+		}
+	}
+
+	option = { #Say No#
+		name = nf_reno.16.b
+
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 0
+				check_variable = { VLT.opinion@NEW > 0 }
+			}
+		}
+
+		NEW = {
+			country_event = nf_reno.18
+		}
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_reno.17 #Vault City Accepts Our Offer#" }
+	id = nf_reno.17 #Vault City Accepts Our Offer#
+	title = nf_reno.17.t
+	desc = nf_reno.17.d
+	picture = GFX_report_event_fascist_speech
+
+	is_triggered_only = yes
+	option = {
+		name = nf_reno.17.a
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_reno.18 #Vault City Rejects Our Offer#" }
+	id = nf_reno.18 #Vault City Rejects Our Offer#
+	title = nf_reno.18.t
+	desc = nf_reno.18.d
+	picture = GFX_report_event_fascist_speech
+
+	is_triggered_only = yes
+	option = {
+
+		name = nf_reno.18.a
+
+		NEW = {
+			create_wargoal = {
+				type = annex_everything
+				target = VLT
+			}
+		}
+	}
+}
+
+# News event about Thradd's takeover.
+news_event = {
+	id = nf_reno.19
+	title = nf_reno.19.t
+	desc = nf_reno.19.d
+	picture = GFX_event_NEW_thradds_coup_thabitha
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_reno.19.a
+	}
+}
+
+# Country event warning non-mutant neighbors of Thradd's takeover.
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_reno.20" }
+	id = nf_reno.20
+	title = nf_reno.20.t
+	desc = nf_reno.20.d
+	picture = GFX_event_NEW_thradds_coup
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_reno.20.a
+	}
+}
+# vim: set ft=pdx ts=2 sw=2 tw=79 :
+
+
+country_event = {
+	id = nf_reno.21
+	title = nf_reno.21.t
+	desc = nf_reno.21.d
+	picture = GFX_event_new_reno2
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_reno.21.a
+		set_politics = {
+			ruling_party = intellectuals
+			elections_allowed = no
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				OR = {
+					NEW_has_ai_behavior_bishop = yes
+					NEW_has_ai_behavior_thradd = yes
+				}
+				factor = 0
+			}
+		}
+	}
+	option = {
+		name = nf_reno.21.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				OR = {
+					NEW_has_ai_behavior_wright = yes
+					NEW_has_ai_behavior_thradd = yes
+				}
+				factor = 0
+			}
+		}
+	}
+}
+
+### Jet
+news_event = {
+	id = nf_reno.22
+	title = nf_reno.22.t
+	desc = nf_reno.22.d
+	picture = GFX_event_enc_drugs
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_reno.22.a
+		add_ideas = smooching_bad
+		TDN = { add_ideas = smooching_good}
+	}
+}
+
+### Jet
+news_event = {
+	id = nf_reno.23
+	title = nf_reno.23.t
+	desc = nf_reno.23.d
+	picture = GFX_event_enc_drugs
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_reno.22.a
+		add_ideas = smooching_bad
+		TDN = { add_ideas = smooching_good}
+	}
+}
+
+
+news_event = {
+	id = nf_reno.24
+	title = nf_ren.24.t
+	desc = nf_reno.24.d
+	picture = GFX_event_enc_drugs
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_reno.22.a
+		add_ideas = smooching_bad
+		NEW = { add_ideas = smooching_good}
+	}
+}
+
+news_event = {
+	id = nf_reno.25 #The Bishops Prevail
+	title = nf_reno.25.t
+	desc = nf_reno.25.d
+	picture = GFX_event_new_reno
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_reno.25.a
+		285 = {
+				set_temp_variable = {
+				development_to_add = 2
+				}
+				add_development_to_node = yes
+				add_state_modifier = {
+					modifier = {
+					caps_node_base_modifier = 0.35
+					}
+				}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					OR = {
+						is_neighbor_of = NCR
+						is_neighbor_of = NEW
+						news_is_west_tag = yes
+					}
+				}
+			news_event = { id = news_cali.9 hours = 6 random_hours = 3 }
+			}
+		}
+		set_politics = {
+			ruling_party = people
+			elections_allowed = no
+		}
+		add_stability = 0.05
+	}
+}
+
+news_event = {
+	id = nf_reno.26 #Van Graffs
+	title = nf_reno.26.t
+	desc = nf_reno.26.d
+	picture = GFX_event_new_van_graffs
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_reno.26.a
+		set_politics = {
+			ruling_party = ruler
+			elections_allowed = no
+		}
+		set_cosmetic_tag = NEW_van_graffs
+		hidden_effect = {
+			every_country = {
+				limit = {
+					OR = {
+						is_neighbor_of = NCR
+						is_neighbor_of = NEW
+						news_is_west_tag = yes
+					}
+				}
+				news_event = { id = news_cali.12 hours = 6 random_hours = 3 }
+			}
+		}
+	}
+}
+
+
+### Tourist season result
+news_event = {
+	id = nf_reno.50
+	title = nf_reno.50.t
+	desc = nf_reno.50.d
+	picture = GFX_event_radio_new_vegas
+
+	is_triggered_only = yes
+	immediate = {
+		set_variable = { pop_income_tourist = 0 }
+		set_temp_variable = { pop_income_tourist_temp = tourists }
+		divide_temp_variable = { pop_income_tourist_temp = 500 }
+		set_variable = { pop_income_tourist = pop_income_tourist_temp }
+	}
+
+	option = {
+		name = nf_reno.50.a
+		if = {
+			limit = {
+				tag = NEW
+				OR = {
+					check_variable = { NEW.tourists > VEG.tourists }
+					NOT = {
+						country_exists = VEG
+					}
+				}
+			}
+			set_temp_variable = { tourists_count = tourists }
+			multiply_temp_variable = { tourists_count = 15 }
+			custom_effect_tooltip = more_profit_from_tourists
+		}
+		else_if = {
+			limit = {
+				tag = NEW
+				country_exists = VEG
+				check_variable = { NEW.tourists < VEG.tourists }
+			}
+			set_temp_variable = { tourists_count = tourists }
+			multiply_temp_variable = { tourists_count = 10 }
+			custom_effect_tooltip = less_profit_from_tourists
+		}
+		if = {
+			limit = {
+				tag = VEG
+				OR = {
+					check_variable = { NEW.tourists < VEG.tourists }
+					NOT = {
+						country_exists = NEW
+					}
+				}
+			}
+			set_temp_variable = { tourists_count = tourists }
+			multiply_temp_variable = { tourists_count = 15 }
+			custom_effect_tooltip = more_profit_from_tourists
+		}
+		else_if = {
+			limit = {
+				tag = VEG
+				country_exists = NEW
+				check_variable = { NEW.tourists > VEG.tourists }
+			}
+			set_temp_variable = { tourists_count = tourists }
+			multiply_temp_variable = { tourists_count = 10 }
+			custom_effect_tooltip = less_profit_from_tourists
+		}
+		if = {
+			limit = {
+				check_variable = { tourists > 4 }
+			}
+			set_temp_variable = { tourists_count_2 = tourists }
+			multiply_temp_variable  = { tourists_count_2 = 0.25 }
+			round_temp_variable = tourists_count_2
+			subtract_from_variable = { tourists = tourists_count_2 }
+			custom_effect_tooltip = lose_25_percent_tourists
+		}
+		set_temp_variable = { caps_to_add = tourists_count }
+		add_caps = yes
+		round_variable = tourists
+		if = {
+			limit = {
+				NOT = {
+					has_dynamic_modifier = {
+						modifier = tourism_monthly_pop_modifier
+					}
+				}
+			}
+			add_dynamic_modifier = { modifier = tourism_monthly_pop_modifier }
+		}
+		else = {
+			hidden_effect = {
+				add_dynamic_modifier = { modifier = tourism_monthly_pop_modifier }
+			}
+		}
+		set_temp_variable = { development_to_add = 0.1 }
+		random_owned_controlled_state = {
+			limit = {
+				has_state_flag = main_node_@ROOT
+			}
+			add_development_to_node = yes
+			set_state_flag = {
+				flag = recently_developed_node
+				days = 90
+				value = 1
+			}
+		}
+	}
+}
+
+### Vegas Or Reno launched an enormous advertising campaign
+news_event = {
+	id = nf_reno.51
+	title = nf_reno.51.t
+	desc = {
+		text = nf_reno.51.veg.d
+		trigger = {
+			VEG = {
+				has_country_flag = VEG_enorm_ad
+			}
+		}
+	}
+	desc = {
+		text = nf_reno.51.ren.d
+		trigger = {
+			NEW = {
+				has_country_flag = NEW_enorm_ad
+			}
+		}
+	}
+	picture = GFX_event_radio_new_vegas
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_reno.51.a
+		trigger = {
+			NOT = {
+				tag = VEG
+				tag = NEW
+			}
+		}
+	}
+	option = {
+		name = nf_reno.51.b
+		trigger = {
+			VEG = {
+				has_country_flag = VEG_enorm_ad
+			}
+			tag = VEG
+		}
+	}
+	option = {
+		name = nf_reno.51.f
+		trigger = {
+			NEW = {
+				has_country_flag = NEW_enorm_ad
+			}
+			tag = NEW
+		}
+	}
+	option = {
+		name = nf_reno.51.c
+		trigger = {
+			VEG = {
+				has_country_flag = VEG_enorm_ad
+			}
+			tag = NEW
+		}
+	}
+	option = {
+		name = nf_reno.51.e
+		trigger = {
+			NEW = {
+				has_country_flag = NEW_enorm_ad
+			}
+			tag = VEG
+		}
+	}
+}
+
+######## Broken Brothers
+country_event = {
+	id = nf_reno.27 #The Incident
+	title = nf_reno.27.t
+	desc = nf_reno.27.d
+	picture = GFX_event_generic_nuclear_explosion
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_reno.27.a
+		#trigger = {
+		#	NOT = {
+		#		has_country_flag = new_vangraffdealflag
+		#	}
+		#}
+		set_politics = {
+			ruling_party = elites
+			elections_allowed = no
+		}
+		retire_country_leader = yes
+
+		hidden_effect = {
+			set_popularities = {
+				people = 0
+				elites = 100
+				intellectuals = 0
+				ruler = 0
+			}
+		}
+		add_country_leader_role = {
+			character = NEW_thradd_the_immortal
+			promote_leader = yes
+			country_leader = {
+				desc = NEW_THRADD_DESC
+				ideology = survivalism
+				expire = "3000.01.01.01"
+				id = -1
+			}
+		}
+		hidden_effect = {
+			retire_character = NEW_mama_van_graff
+			retire_character = NEW_mason_salvatore
+			retire_character = NEW_christopher_wright
+			retire_character = NEW_mr_bishop
+			every_country = {
+				limit = {
+					OR = {
+						is_neighbor_of = NCR
+						is_neighbor_of = NEW
+						news_is_west_tag = yes
+					}
+				}
+				news_event = { id = nf_reno.31 hours = 6 random_hours = 3 }
+			}
+		}
+		set_country_flag = new_brokentakeoverflag
+		unlock_national_focus = new_renoproclamation
+		set_cosmetic_tag = NEW_BROKEN
+		set_country_flag = is_super_mutant_nation
+	}
+	#option = {
+	#	name = nf_reno.27.b
+	#	trigger = {
+	#		has_country_flag = new_vangraffdealflag
+	#	}
+    #
+	#	hidden_effect = {
+	#		country_event = nf_reno.31
+	#		retire_character = NEW_mason_salvatore
+	#		retire_character = NEW_christopher_wright
+	#		retire_character = NEW_mr_bishop
+	#		retire_country_leader = yes
+	#		add_country_leader_role = {
+	#			character = NEW_thradd_the_immortal
+	#			promote_leader = yes
+	#			country_leader = {
+	#				desc = NEW_THRADD_DESC
+	#				ideology = tribal_council
+	#				expire = "3000.01.01.01"
+	#				id = -1
+	#			}
+	#		}
+	#		add_country_leader_role = {
+	#			character = NEW_thradd_the_immortal
+	#			promote_leader = yes
+	#			country_leader = {
+	#				desc = NEW_THRADD_DESC
+	#				ideology = ideocracy
+	#				expire = "3000.01.01.01"
+	#				id = -1
+	#			}
+	#		}
+	#		add_country_leader_role = {
+	#			character = NEW_thradd_the_immortal
+	#			promote_leader = yes
+	#			country_leader = {
+	#				desc = NEW_THRADD_DESC
+	#				ideology = chieftain
+	#				expire = "3000.01.01.01"
+	#				id = -1
+	#			}
+	#		}
+	#		set_politics = {
+	#			ruling_party = elites
+	#			elections_allowed = no
+	#		}
+	#		set_popularities = {
+	#			people = 0
+	#			elites = 100
+	#			intellectuals = 0
+	#			ruler = 0
+	#		}
+	#	}
+	#	clr_country_flag = new_vangraffdealflag
+	#	unlock_national_focus = new_renoproclamation
+	#}
+}
+
+country_event = {
+	id = nf_reno.28 #Deal with the Van Graffs
+	title = nf_reno.28.t
+	desc = nf_reno.28.d
+	picture = GFX_event_sub_generic_reactor_1
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_reno.28.a
+		add_stability = 0.05
+		614 = {
+			add_resource = {
+				type = circuitry
+				amount = 4
+			}
+		}
+	}
+#	option = {
+#		name = nf_reno.28.b
+#		add_resource = {
+#				type = energy
+#				amount = -3
+#				state = 614
+#		}
+#		add_stability = -0.05
+#		custom_effect_tooltip = new_broken_mercenariesvangraffs_tt
+ #       hidden_effect = {
+#			division_template = {
+#				name = "Van Graff Mercenaries"
+#				regiments = {
+#					infantry = { x = 0 y = 0 }
+#					infantry = { x = 0 y = 1 }
+#					infantry = { x = 1 y = 0 }
+#					infantry = { x = 1 y = 1 }
+#					infantry = { x = 2 y = 0 }
+#					infantry = { x = 2 y = 1 }
+#				}
+#			}
+#			285 = {
+#				create_unit = {
+#					division = "name = \"Jonas' Marauders\" division_template = \"Van Graff Mercenaries\" start_experience_factor = 0.75 start_equipment_factor = 1.0 force_equipment_variants = { energy_equipment_3 = { owner = \"USA\" }}"
+#					owner = NEW
+#					allow_spawning_on_enemy_provs = no
+#					count = 1
+#				}
+#			}
+#			set_country_flag = new_vangraffdealflag
+#		}
+#	}
+}
+country_event = {
+	id = nf_reno.29 #The Offer (of puppeting)
+	title = nf_reno.29.t
+	desc = nf_reno.29.d
+	picture = GFX_event_generic_caravan
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_reno.29.a
+		NEW = {
+			puppet = SLA
+		}
+		SLA = {
+			set_state_owner = 585
+		}
+	}
+	option = {
+		name = nf_reno.29.b
+		SLA = {
+			NEW = {
+				grant_wargoals_on_core_states_of_prev = yes
+			}
+		}
+	}
+}
+country_event = {
+	id = nf_reno.30 #Toxic Caves
+	title = nf_reno.30.t
+	desc = nf_reno.30.d
+	picture = GFX_event_ach_hood_entrance
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_reno.30.a
+		add_resource = {
+			type = energy
+			amount = 10
+			state = 614
+		}
+		251 = {
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+}
+news_event = {
+	id = nf_reno.31 #A Broken Brother
+	title = nf_reno.31.t
+	desc = nf_reno.31.d
+	picture = GFX_event_new_reno
+
+	is_triggered_only = yes
+
+	option = {
+		trigger = {
+			TAG = NEW
+		}
+		name = nf_reno.31.a
+	}
+	option = {
+		trigger = {
+			NOT = {
+				TAG = NEW
+			}
+			is_in_faction_with = NCR
+		}
+		name = nf_reno.31.b
+	}
+	option = {
+		trigger = {
+			NOT = {
+				TAG = NEW
+				is_in_faction_with = NCR
+			}
+		}
+		name = nf_reno.31.c
+	}
+}
+country_event = {
+	id = nf_reno.32 #New Reno offers cooperation (to Vault City)
+	title = nf_reno.32.t
+	desc = nf_reno.32.d
+	picture = GFX_event_new_reno2
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_reno.32.a
+		NEW = {
+			create_or_join_nevada_pact = yes
+		}
+	}
+	option = {
+		name = nf_reno.32.b
+		NEW = {
+			country_event = nf_reno.33
+		}
+	}
+}
+country_event = {
+	id = nf_reno.33 #Vault City Declines
+	title = nf_reno.33.t
+	desc = nf_reno.33.d
+	picture = GFX_event_new_reno2
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_reno.33.a
+	}
+}
+country_event = {
+	id = nf_reno.34 #New Reno offers cooperation (to Arroyo)
+	title = nf_reno.34.t
+	desc = nf_reno.34.d
+	picture = GFX_event_new_reno2
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_reno.34.a
+		ARR = {
+			create_or_join_nevada_pact = yes
+		}
+	}
+	option = {
+		name = nf_reno.34.b
+		NEW = {
+			country_event = nf_reno.35
+		}
+	}
+}
+country_event = {
+	id = nf_reno.35 #Arroyo Declines
+	title = nf_reno.35.t
+	desc = nf_reno.35.d
+	picture = GFX_event_new_reno2
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_reno.35.a
+	}
+}
+country_event = {
+	id = nf_reno.36 #The Future of New Reno
+	title = nf_reno.36.t
+	desc = nf_reno.36.d
+	picture = GFX_event_new_reno2
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_reno.36.a
+		trigger = {
+			NOT = {
+				has_country_flag = friendship_with_fault_city
+			}
+		}
+		complete_national_focus = new_brokenrejecthumanity
+	}
+	option = {
+		name = nf_reno.36.b
+		trigger = {
+			NOT = {
+				has_country_flag = friendship_with_fault_city
+			}
+		}
+		complete_national_focus = new_brokenreturntosymbiosis
+	}
+	option = {
+		name = nf_reno.36.c
+		trigger = {
+			has_country_flag = friendship_with_fault_city
+		}
+		add_political_power = 50
+	}
+}
+
+country_event = {
+	id = nf_reno.37 #Ghoul Marriage
+	title = nf_reno.37.t
+	desc = nf_reno.37.d
+	picture = GFX_event_ghouls
+
+	is_triggered_only = yes
+
+	option = {
+		trigger = {
+			tag = VLT
+			has_government = people
+		}
+			name = nf_reno.37.a
+		add_opinion_modifier = {
+			target = NEW
+			modifier = hates_ghoul_marriage
+		}
+	}
+	option = {
+		name = nf_reno.37.b
+		add_opinion_modifier = {
+			target = NEW
+			modifier = hates_ghoul_marriage
+		}
+	}
+	option = {
+		name = nf_reno.37.c
+		add_opinion_modifier = {
+			target = NEW
+			modifier = likes_ghoul_marriage
+		}
+	}
+	option = {
+		name = nf_reno.37.e
+		add_opinion_modifier = {
+			target = NEW
+			modifier = likes_ghoul_marriage
+		}
+	}
+}

@@ -1,0 +1,21 @@
+state={
+	id=1241
+	name="STATE_1241"
+	provinces={
+		13647 13653 13655 13656 13657 13658 13659
+	}
+	history={
+		victory_points = {
+			13657 10
+		}
+		buildings = {
+			infrastructure = 4
+		}
+	}
+	resources = {
+		metal = 6
+	}
+	state_category = shanty
+	manpower = 4100
+	buildings_max_level_factor=1.000
+}

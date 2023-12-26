@@ -1,0 +1,31 @@
+state = {
+	id = 14
+	name = "STATE_14"
+	manpower = 3500
+	state_category = large_town
+
+	resources = {
+		metal = 4
+		circuitry = 4
+		water = 3
+	}
+
+	history = {
+		victory_points = {
+			3705 10
+		}
+		buildings = {
+			infrastructure = 3
+			dockyard = 2
+			industrial_complex = 1
+			air_base = 1
+			3705 = {
+				naval_base = 2
+			}
+		}
+	}
+
+	provinces = {
+		10470 3705 3717 3745 3704 3718 8485 7423 3702 3706 4400
+	}
+}

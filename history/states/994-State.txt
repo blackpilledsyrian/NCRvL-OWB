@@ -1,0 +1,27 @@
+state={
+	id=994
+	name="STATE_994"
+
+	resources = {
+		circuitry = 4
+		advanced = 3
+	}
+
+	history={
+		victory_points = {
+			3975 5
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 1
+		}
+	}
+
+	provinces={
+		3725 2567 2157 3975 7424 7430 3746 3697 7425
+	}
+	manpower = 8552
+	state_category = shanty
+	buildings_max_level_factor=1.000
+}

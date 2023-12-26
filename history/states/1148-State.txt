@@ -1,0 +1,22 @@
+state={
+	id=1148
+	name="STATE_1148"
+	provinces={
+		14271 14275 14278 14279
+	}
+	resources = {
+		circuitry = 7
+	}
+	history = {
+		victory_points = {
+			14271 5
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+		}
+	}
+	state_category = shanty
+	manpower = 51
+	buildings_max_level_factor=1.000
+}

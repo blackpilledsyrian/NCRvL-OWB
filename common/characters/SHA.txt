@@ -1,0 +1,204 @@
+characters = {
+	SHA_shale = {
+		name = SHA_SHALE_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Shale_Animated
+			}
+		}
+		country_leader = {
+			desc = SHA_SHALE_DESC
+			ideology = warlordship
+			traits = {
+				isolationist
+			}
+			expire = "3000.01.01.01"
+			id = -1
+		}
+		field_marshal = {
+			traits = {
+				desert_fox
+				strong_trait
+				perceptive_trait
+				bruiser_trait
+				warchief_trait
+			}
+			skill = 5
+			attack_skill = 5
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}
+	SHA_gond_scourge = {
+		name = SHA_GOND_SCOURGE_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Supermutant_Generic_1
+			}
+		}
+		country_leader = {
+			desc = SHA_GOND_SCOURGE_DESC
+			ideology = theodemocracy
+			expire = "2282.1.1.12"
+			id = -1
+		}
+	}
+	SHA_neil_sandman = {
+		name = SHA_NEIL_SANDMAN_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Supermutant_Generic_3
+			}
+		}
+		country_leader = {
+			desc = SHA_NEIL_SANDMAN_DESC
+			ideology = meritocracy
+			traits = {
+				war_industrialist
+			}
+			expire = "2286.1.1.12"
+			id = -1
+		}
+	}
+	SHA_erkal_ripper = {
+		name = SHA_ERKAL_RIPPER_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Supermutant_Generic_4
+			}
+		}
+		country_leader = {
+			desc = SHA_ERKAL_RIPPER_DESC
+			ideology = militarist_oligarchy
+			traits = {
+				war_industrialist
+			}
+			expire = "2289.1.1.12"
+			id = -1
+		}
+	}
+	SHA_conquerer_cwick = {
+		name = SHA_conquerer_cwick_name
+		portraits = {
+			army = {
+				large = GFX_Portrait_SHA_general_1
+			}
+		}
+		corps_commander = {
+			traits = {
+				strong_trait
+				intelligent_trait
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
+		}
+	}
+	SHA_masticator = {
+		name = SHA_masticator_name
+		portraits = {
+			army = {
+				large = GFX_Portrait_SHA_general_2
+			}
+		}
+		corps_commander = {
+			traits = {
+				strong_trait
+				intelligent_trait
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
+	SHA_battlemasta = {
+		name = SHA_battlemasta_name
+		portraits = {
+			army = {
+				small = GFX_idea_peon_tusk_hell_minister
+			}
+			civilian = {
+				small = GFX_idea_peon_tusk_hell_minister
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = SHA_battlemasta_high_command
+			ledger = army
+			allowed = {
+				original_tag = SHA
+			}
+			available = {
+				has_completed_focus = shale_planning_against_the_paladins
+			}
+			on_add = {
+				ROOT = {
+					add_ideas = battlemasta_trait
+				}
+			}
+			on_remove = {
+				ROOT = {
+					remove_ideas = battlemasta_trait
+				}
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	SHA_thumbface = {
+		name = SHA_thumbface_name
+		portraits = {
+			army = {
+				small = GFX_idea_monster_in_the_woods_minister
+			}
+			civilian = {
+				small = GFX_idea_monster_in_the_woods_minister
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = SHA_thumbface_high_command
+			ledger = army
+			allowed = {
+				original_tag = SHA
+			}
+			available = {
+				has_completed_focus = shale_defending_against_the_monster
+			}
+			on_add = {
+				ROOT = {
+					add_ideas = thumbface_trait
+				}
+			}
+			on_remove = {
+				ROOT = {
+					remove_ideas = thumbface_trait
+				}
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	SHA_calix = {
+		name = SHA_calix_name
+		portraits = {
+			army = {
+				large = GFX_Portrait_SHA_calix_animated
+				#small = gfx_sprite_type_name_or_file_path
+			}
+			civilian = {
+				large = GFX_Portrait_SHA_calix_animated
+				#small = gfx_sprite_type_name_or_file_path
+			}
+		}
+	}
+}

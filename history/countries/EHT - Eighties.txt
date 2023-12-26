@@ -1,0 +1,192 @@
+﻿capital = 478
+#oob = "EHT_2275" #Handled by gamerule
+
+set_technology = {
+	basic_supply_transport_tech = 1
+	infantry_tech_level_tribal = 1
+	infantry_tech_level_settler = 1
+	#infantry_tech_level_scientific = 1
+	support_tech_level_tribal = 1
+	support_tech_level_settler = 1
+	#support_tech_level_scientific = 1
+	special_forces_tech_level_tribal = 1
+	#special_forces_tech_level_settler = 1
+	#special_forces_tech_level_scientific = 1
+	vehicles_tech_level_tribal = 1
+	vehicles_tech_level_settler = 1
+	#vehicles_tech_level_scientific = 1
+	air_tech_level_tribal = 1
+	#air_tech_level_settler = 1
+	#air_tech_level_scientific = 1
+	naval_tech_level_tribal = 1
+	#naval_tech_level_settler = 1
+	#naval_tech_level_scientific = 1
+	tools_tech_level_tribal = 1
+	tools_tech_level_settler = 1
+	#tools_tech_level_scientific = 1
+	habitation_tech_level_tribal = 1
+	habitation_tech_level_settler = 1
+	#habitation_tech_level_scientific = 1
+	exploitation_tech_level_tribal = 1
+	#exploitation_tech_level_settler = 1
+	#exploitation_tech_level_scientific = 1
+	electronics_tech_level_tribal = 1
+	#electronics_tech_level_settler = 1
+	#electronics_tech_level_scientific = 1
+	tribal_tech_visibility_tech = 1
+	mobile_weapons_vehicle_tech = 1
+	tribal_tech_access_tech = 1
+	tool_engineering = 1
+	standard_weaponry_tech = 1
+	melee_weaponry_tech_1 = 1
+	support_weaponry = 1
+	demolitions_weaponry_tech = 1
+	anti_tank_equipment_tech_1 = 1
+	fireteam_weaponry_tech = 1
+	recon_company_tech_1 = 1
+	recon_company_tech_2 = 1
+	mobile_recon_vehicle_tech = 1
+	tracks_vehicle_tech_1 = 1
+	tank_equipment_vehicle_tech_1 = 1
+	light_motorized_equipment_vehicle_tech_2 = 1
+	ballistic_weaponry_tech_1 = 1
+	bike_tech_1 = 1
+	motorisation_vehicle_tech = 1
+	light_motorized_equipment_vehicle_tech_1 = 1
+	safety_hatches_vehicle_tech = 1
+	raider_reckless_aggression = 1
+	grand_army = 1
+}
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		nautics_tech_1 = 1
+		light_navy_hull_tech_1 = 1
+		waterproof_sealing_tech = 1
+		naval_invasion_tech_1 = 1
+	}
+}
+
+if = {
+	limit = {
+		NOT = { has_dlc = "Man the Guns" }
+	}
+	set_technology = {
+		nautics_tech_non_mtg_1 = 1
+		light_navy_hull_tech_non_mtg_1 = 1
+		waterproof_sealing_tech_non_mtg = 1
+		naval_invasion_tech_non_mtg_1 = 1
+	}
+}
+
+set_stability = 0.55
+set_war_support = 0.65
+set_convoys = 10
+set_research_slots = 3
+
+set_country_flag = is_raider_nation
+set_country_flag = is_utah_nation
+
+set_country_flag = unique_advisor_set
+
+74 = { add_claim_by = EHT }
+303 = { add_claim_by = EHT }
+436 = { add_claim_by = EHT }
+354 = { add_claim_by = EHT }
+576 = { add_claim_by = EHT }
+484 = { add_claim_by = EHT }
+384 = { add_claim_by = EHT }
+628 = { add_claim_by = EHT }
+953 = { add_claim_by = EHT }
+954 = { add_claim_by = EHT }
+
+reverse_add_opinion_modifier = { target = NCR modifier = eht_devils_of_utah }
+reverse_add_opinion_modifier = { target = NEW modifier = eht_devils_of_utah }
+reverse_add_opinion_modifier = { target = VLT modifier = eht_devils_of_utah }
+reverse_add_opinion_modifier = { target = PAL modifier = eht_devils_of_utah }
+
+set_politics = {
+	ruling_party = elites
+	elections_allowed = no
+}
+
+set_popularities = {
+	people = 0
+	elites = 80
+	intellectuals = 0
+	ruler = 20
+}
+
+set_country_flag = slavery_allowed
+set_country_flag = grand_doctrine_ai
+set_country_flag = grand_motorized_doctrine_ai
+
+set_variable = { never_return_stolen_territory = 1 }
+
+add_ideas = {
+	roaring_machines
+	EHT_idea_terror_of_long_80
+	#slavers_idea_2
+	raider_bands
+	undesirables_law_raider
+	EHT_the_devils_of_utah
+	EHT_the_sacred_garage
+	partial_economic_mobilisation
+}
+
+recruit_character = EHT_FLAGMAN
+recruit_character = EHT_THUNDERBIRD
+recruit_character = EHT_FURIOSA
+recruit_character = EHT_MAJOR_KALASHNIKOV
+recruit_character = EHT_GUTGASH
+recruit_character = EHT_CAPTAIN_JEDEDIAH
+recruit_character = EHT_MASTER_BLASTER
+recruit_character = EHT_ANGRY_ALVIN
+recruit_character = EHT_TOECUTTER
+recruit_character = EHT_JEET
+recruit_character = EHT_DEEPDOG
+recruit_character = EHT_BIG_BEAR
+recruit_character = EHT_DAVISON
+recruit_character = EHT_WINDWAKER
+recruit_character = EHT_STONEFOOT
+recruit_character = EHT_QUEEN_OF_QUINN
+recruit_character = EHT_ADMINISTRATOR_BREEN
+recruit_character = EHT_WEZ
+recruit_character = EHT_PAPPAGALLO
+recruit_character = EHT_LORD_HUMUNGUS
+recruit_character = EHT_LITTLE_BEAR
+recruit_character = EHT_MECHA_NICK
+recruit_character = EHT_TOADIE
+recruit_character = EHT_BLACKFINGER
+recruit_character = EHT_NOE
+recruit_character = EHT_HANGNAIL
+
+create_dynamic_country = {
+	original_tag = EHT
+	set_country_flag = EHT_thunderbird_lord
+	set_country_flag = is_raider_nation
+	set_country_flag = is_utah_nation
+	set_country_flag = slavery_allowed
+	set_country_flag = grand_doctrine_ai
+	set_country_flag = grand_motorized_doctrine_ai
+	set_country_flag = no_generic_advisor
+	set_country_flag = no_generic_theorist
+	set_country_flag = no_generic_chief
+	set_country_flag = no_generic_high_command
+	set_politics = {
+		ruling_party = ruler
+	}
+	set_cosmetic_tag = EHT_THN
+	set_research_slots = 4
+	reserve_dynamic_country = yes
+}
+
+random_character = {
+	limit = {
+		is_character = EHT_thunderbird
+	}
+	save_global_event_target_as = EHT_thunderbird_target
+}

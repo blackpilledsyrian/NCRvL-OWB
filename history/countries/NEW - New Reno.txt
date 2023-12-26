@@ -1,0 +1,126 @@
+﻿capital = 285
+oob = "NEW_2275"
+
+set_technology = {
+	basic_supply_transport_tech = 1
+	infantry_tech_level_tribal = 1
+	infantry_tech_level_settler = 1
+	#infantry_tech_level_scientific = 1
+	support_tech_level_tribal = 1
+	support_tech_level_settler = 1
+	#support_tech_level_scientific = 1
+	special_forces_tech_level_tribal = 1
+	special_forces_tech_level_settler = 1
+	#special_forces_tech_level_scientific = 1
+	power_armour_tech_level_tribal = 1
+	power_armour_tech_level_settler = 1
+	#power_armour_tech_level_scientific = 1
+	vehicles_tech_level_tribal = 1
+	vehicles_tech_level_settler = 1
+	#vehicles_tech_level_scientific = 1
+	robotics_tech_level_tribal = 1
+	robotics_tech_level_settler = 1
+	#robotics_tech_level_scientific = 1
+	air_tech_level_tribal = 1
+	air_tech_level_settler = 1
+	#air_tech_level_scientific = 1
+	naval_tech_level_tribal = 1
+	naval_tech_level_settler = 1
+	#naval_tech_level_scientific = 1
+	tools_tech_level_tribal = 1
+	tools_tech_level_settler = 1
+	#tools_tech_level_scientific = 1
+	habitation_tech_level_tribal = 1
+	habitation_tech_level_settler = 1
+	#habitation_tech_level_scientific = 1
+	exploitation_tech_level_tribal = 1
+	exploitation_tech_level_settler = 1
+	#exploitation_tech_level_scientific = 1
+	electronics_tech_level_tribal = 1
+	electronics_tech_level_settler = 1
+	#electronics_tech_level_scientific = 1
+	standard_weaponry_tech = 1
+	melee_weaponry_tech_1 = 1
+	tribal_civilization = 1
+	settled_civilization = 1
+	support_weaponry = 1
+	logistics_company_tech_1 = 1
+	fireteam_weaponry_tech = 1
+	demolitions_weaponry_tech = 1
+	anti_tank_equipment_tech_1 = 1
+	bike_tech_1 = 1
+	motorisation_vehicle_tech = 1
+	pre_construction_industry_tech = 1
+	heavy_motorized_equipment_vehicle_tech_1 = 1
+	ballistic_weaponry_tech_1 = 1
+	heavy_infantry_tech_1 = 1
+	heavy_infantry_tech_2 = 1
+	heavy_infantry_tech_3 = 1
+	grand_army = 1
+}
+
+set_stability = 0.45
+set_war_support = 0.4
+set_research_slots = 4
+
+set_politics = {
+	ruling_party = people
+	elections_allowed = no
+}
+
+set_popularities = {
+	people = 40
+	elites = 20
+	intellectuals = 20
+	ruler = 20
+}
+add_ideas = {
+	NEW_a_city_of_sin
+	chems_legalised
+	# slavers_idea_2
+	ncr_sphere
+	currencyncrdollar
+}
+
+set_country_flag = has_unique_car_restoration_company
+set_country_flag = is_nevada_nation
+# Doctrine flag is sometimes changed when the gamerules/default path weights are applied so they can depend on New Reno's path. Before editing these, check the game rule on actions file
+set_country_flag = grand_doctrine_ai
+set_country_flag = grand_infantry_doctrine_ai
+
+recruit_character = NEW_mr_bishop
+recruit_character = NEW_christopher_wright
+recruit_character = NEW_thradd_the_immortal
+recruit_character = NEW_colonel_jalabert
+recruit_character = NEW_tobias_halvorsen
+# recruit_character = NEW_daisy_whitman
+#recruit_character = NEW_orion_moreno # this character does not exist
+recruit_character = NEW_skynet
+recruit_character = NEW_pablo
+recruit_character = NEW_runs_with_hatred
+recruit_character = NEW_pit_master_frazz
+recruit_character = NEW_karm_the_brilliant
+recruit_character = NEW_snookie
+recruit_character = NEW_sanders
+recruit_character = NEW_jagged_jimmy_j
+recruit_character = NEW_liam_eldridge
+recruit_character = NEW_tommy_the_balls
+recruit_character = NEW_enrico_savinelli
+recruit_character = NEW_dan_mcgrew
+recruit_character = NEW_mark_torrance
+recruit_character = NEW_cody
+recruit_character = NEW_phil
+recruit_character = NEW_raul
+recruit_character = NEW_quincy
+recruit_character = NEW_tiaret_van_graff
+recruit_character = NEW_ol_crookshanks
+recruit_character = NEW_judah_kreger
+recruit_character = NEW_mama_van_graff
+recruit_character = NEW_elder_rutherford
+recruit_character = NEW_united_families
+recruit_character = NEW_hassan
+recruit_character = NEW_kieva_nanjimi
+recruit_character = NEW_mockingbird
+recruit_character = NEW_jean_baptise
+recruit_character = NEW_big_shot_bob
+recruit_character = NEW_ferath

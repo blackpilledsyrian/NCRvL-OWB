@@ -1,0 +1,1465 @@
+﻿#######################
+# Attis Army events   #
+#  Scripted by Zusk   #
+#######################
+
+add_namespace = nf_attis
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_attis.1" }
+	id = nf_attis.1
+	title = nf_attis.1.t
+	desc = nf_attis.1.d
+	picture = GFX_event_attis_1
+	is_triggered_only = yes
+
+	option = {
+		name = nf_attis.1.a
+		army_experience = 10
+	}
+
+	option = {
+		name = nf_attis.1.b
+		add_stability = 0.05
+	}
+
+	option = {
+		name = nf_attis.1.c
+		add_war_support = 0.05
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_attis.2" }
+	id = nf_attis.2
+	title = nf_attis.2.t
+	desc = {
+		text = nf_attis.2.d.sha
+		trigger = {
+			original_tag = SHA
+		}
+	}
+	desc = {
+		text = nf_attis.2.d.uoa
+		trigger = {
+			original_tag = UOA
+		}
+	}
+	desc = {
+		text = nf_attis.2.d.imo
+		trigger = {
+			original_tag = IMO
+		}
+	}
+	picture = GFX_event_attis_2
+	is_triggered_only = yes
+
+	option = {
+		name = nf_attis.2.a
+		random_owned_state = {
+			limit = {
+				is_valid_state_for_civilian_factory = yes
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 1
+		}
+	}
+
+	option = {
+		name = nf_attis.2.b
+		random_owned_state = {
+			limit = {
+				is_valid_state_for_arms_factory = yes
+			}
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 1
+		}
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_attis.3" }
+	id = nf_attis.3
+	title = nf_attis.3.t
+	desc = {
+		text = nf_attis.3.d.sha
+		trigger = {
+			original_tag = SHA
+		}
+	}
+	desc = {
+		text = nf_attis.3.d.uoa
+		trigger = {
+			original_tag = UOA
+		}
+	}
+	desc = {
+		text = nf_attis.3.d.imo
+		trigger = {
+			original_tag = IMO
+		}
+	}
+	picture = GFX_event_attis_1
+	is_triggered_only = yes
+
+	option = {
+		name = nf_attis.3.a.sha
+		trigger = {
+			original_tag = SHA
+		}
+		add_country_leader_trait = attis_loyal_general
+	}
+
+	option = {
+		name = nf_attis.3.a.uoa
+		trigger = {
+			original_tag = UOA
+		}
+		add_country_leader_trait = attis_mayor_of_austin
+	}
+
+	option = {
+		name = nf_attis.3.a.imo
+		trigger = {
+			original_tag = IMO
+		}
+		add_country_leader_trait = attis_mastersmith
+	}
+}
+
+#Shale hard mode choice
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_attis.4" }
+	id = nf_attis.4
+	title = nf_attis.4.t
+	desc = nf_attis.4.d
+	picture = GFX_event_ach_hood_progress
+	is_triggered_only = yes
+
+	option = {
+		name = nf_attis.4.a
+		#Hard mode
+		custom_effect_tooltip = calix_warning_tt
+		hidden_effect = {
+			add_field_marshal_role = {
+				character = SHA_calix
+				traits = {
+					charismatic_trait
+					perceptive_trait
+					intelligent_trait
+					calix_friendly_helper
+				}
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+				legacy_id = -1
+			}
+			SHA_calix = {
+				unit_leader_event = nf_attis.5
+			}
+		}
+	}
+
+	option = { # Back out of hard mode!
+		name = nf_attis.4.b
+		add_ideas = shoptec_consumer_protocls
+	}
+}
+
+unit_leader_event = {
+	id = nf_attis.5
+	title = nf_attis.5.t
+	desc = nf_attis.5.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_attis.5.a
+		hidden_effect = {
+			country_event = {
+				id = nf_attis.6
+				days = 30
+			}
+		}
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_attis.6" }
+	id = nf_attis.6
+	hidden = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				SHA_calix = {
+					is_unit_leader = yes
+				}
+			}
+			country_event = {
+				id = nf_attis.6
+				days = 30
+			}
+			random_list = {
+				50 = {
+					clr_country_flag = shale_calix_rng_skip
+					SHA_calix = {
+						unit_leader_event = nf_attis.7
+					}
+				}
+				50 = {
+					modifier = {
+						factor = 0
+						has_country_flag = shale_calix_rng_skip
+						NOT = { has_country_flag = shale_secret_path_started } #CALIX gets harder on the secret path
+					}
+					set_country_flag = shale_calix_rng_skip
+				}
+			}
+		}
+	}
+}
+
+unit_leader_event = {
+	id = nf_attis.7
+	hidden = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				has_war = no
+			}
+			random_list = {
+				#PP
+				20 = {
+					SHA_calix = { unit_leader_event = nf_attis.8 }
+				}
+				#Metal
+				20 = {
+					modifier = {
+						factor = 0
+						NOT = {
+							any_owned_state = {
+								has_resources_amount = {
+									resource = metal
+									amount > 6
+								}
+							}
+						}
+					}
+					SHA_calix = { unit_leader_event = nf_attis.9 }
+				}
+				#Civilian Factory
+				20 = {
+					modifier = {
+						factor = 0
+						NOT = {
+							any_owned_state = {
+								industrial_complex > 1 #Dont delete their last civie
+							}
+						}
+					}
+					SHA_calix = { unit_leader_event = nf_attis.10 }
+				}
+				#Stability
+				20 = {
+					modifier = {
+						factor = 0
+						has_stability < 0.2
+					}
+					SHA_calix = { unit_leader_event = nf_attis.11 }
+				}
+				#Research Slot
+				20 = {
+					modifier = {
+						factor = 0
+						OR = {
+							NOT = { has_completed_focus = shale_striking_eden }
+							has_country_flag = sha_calix_reduced_research_slots
+						}
+					}
+					set_country_flag = sha_calix_reduced_research_slots
+					SHA_calix = { unit_leader_event = nf_attis.12 }
+				}
+			}
+		}
+		else = {
+			random_list = {
+				#Arms Factory
+				20 = {
+					modifier = {
+						factor = 0
+						NOT = {
+							any_owned_state = {
+								arms_factory > 1 #Dont delete their last arms factory
+							}
+						}
+					}
+					SHA_calix = { unit_leader_event = nf_attis.13 }
+				}
+				20 = {
+					SHA_calix = { unit_leader_event = nf_attis.14 }
+				}
+				20 = {
+					SHA_calix = { unit_leader_event = nf_attis.15 }
+				}
+				20 = {
+					modifier = {
+						factor = 0
+						SHA_calix = {
+							is_army_leader = no
+						}
+					}
+					SHA_calix = { unit_leader_event = nf_attis.17 }
+				}
+				20 = {
+					modifier = {
+						factor = 0
+						OR = {
+							NOT = { has_completed_focus = shale_striking_eden }
+							has_country_flag = sha_calix_teleported_armies
+						}
+					}
+					set_country_flag = sha_calix_teleported_armies
+					SHA_calix = { unit_leader_event = nf_attis.18 }
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nf_attis.6.a
+	}
+}
+
+#Political Power
+unit_leader_event = {
+	id = nf_attis.8
+	title = nf_attis.payment.t
+	desc = nf_attis.8.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_attis.payment.a
+		boost_general_stats = yes
+		FROM.FROM = {
+			set_temp_variable = { pp = political_power }
+			divide_temp_variable = { pp = -6 }
+			add_to_temp_variable = { pp = -100 }
+			add_political_power = pp
+		}
+	}
+}
+
+#Metal
+unit_leader_event = {
+	id = nf_attis.9
+	title = nf_attis.payment.t
+	desc = nf_attis.9.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_attis.payment.a
+		boost_general_stats = yes
+		FROM.FROM = {
+			random_controlled_state = {
+				limit = {
+					has_resources_amount = {
+						resource = metal
+						amount > 6
+					}
+				}
+				set_temp_variable = { temp_metal = resource@metal }
+				divide_temp_variable = { temp_metal = 3 }
+				multiply_temp_variable = { temp_metal = -1 }
+				round_variable = temp_metal
+				add_resource = {
+					type = metal
+					amount = temp_metal
+				}
+			}
+		}
+	}
+}
+
+#Civilian Factory
+unit_leader_event = {
+	id = nf_attis.10
+	title = nf_attis.payment.t
+	desc = nf_attis.10.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_attis.payment.a
+		boost_general_stats = yes
+		FROM.FROM = {
+			random_controlled_state = {
+				limit = {
+					industrial_complex > 1
+				}
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}
+			}
+		}
+	}
+}
+
+#Stability
+unit_leader_event = {
+	id = nf_attis.11
+	title = nf_attis.payment.t
+	desc = nf_attis.11.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_attis.payment.a
+		boost_general_stats = yes
+		FROM.FROM = {
+			add_stability = -0.1
+		}
+	}
+}
+
+#Research Slots
+unit_leader_event = {
+	id = nf_attis.12
+	title = nf_attis.payment.t
+	desc = nf_attis.12.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_attis.payment.a
+		boost_general_stats = yes
+		FROM.FROM = {
+			add_research_slot = -1
+		}
+	}
+}
+
+
+#Arms Factory
+unit_leader_event = {
+	id = nf_attis.13
+	title = nf_attis.payment.t
+	desc = nf_attis.13.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_attis.payment.a
+		boost_general_stats = yes
+		FROM.FROM = {
+			random_controlled_state = {
+				limit = {
+					arms_factory > 1
+				}
+				remove_building = {
+					type = arms_factory
+					level = 1
+				}
+			}
+		}
+	}
+}
+
+#Army Attack
+unit_leader_event = {
+	id = nf_attis.14
+	title = nf_attis.payment.t
+	desc = nf_attis.14.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_attis.payment.a
+		boost_general_stats = yes
+		FROM.FROM = {
+			if = {
+				limit = {
+					has_idea = calix_aggression_supression
+				}
+				modify_timed_idea = {
+					idea = calix_aggression_supression
+					days = 20
+				}
+			}
+			else = {
+				add_timed_idea = {
+					idea = calix_aggression_supression
+					days = 20
+				}
+			}
+		}
+	}
+}
+
+#Army Speed
+unit_leader_event = {
+	id = nf_attis.15
+	title = nf_attis.payment.t
+	desc = nf_attis.15.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_attis.payment.a
+		boost_general_stats = yes
+		FROM.FROM = {
+			if = {
+				limit = {
+					has_idea = calix_speed_supression
+				}
+				modify_timed_idea = {
+					idea = calix_speed_supression
+					days = 20
+				}
+			}
+			else = {
+				add_timed_idea = {
+					idea = calix_speed_supression
+					days = 20
+				}
+			}
+		}
+	}
+}
+
+#Manpower
+unit_leader_event = {
+	id = nf_attis.16
+	title = nf_attis.payment.t
+	desc = nf_attis.16.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_attis.payment.a
+		boost_general_stats = yes
+		FROM.FROM = {
+			set_temp_variable = { temp_manpower = manpower }
+			divide_temp_variable = { temp_manpower = -4 }
+			round_variable = temp_manpower
+			add_manpower = temp_manpower
+		}
+	}
+}
+
+#Retire a random unit leader
+unit_leader_event = {
+	id = nf_attis.17
+	title = nf_attis.payment.t
+	desc = nf_attis.17.d
+
+	is_triggered_only = yes
+	immediate = {
+		random_army_leader = {
+			limit = {
+				NOT = {
+					OR = {
+						is_character = SHA_calix
+						is_character = SHA_shale
+					}
+				}
+			}
+			save_event_target_as = temp_leader
+		}
+	}
+	option = {
+		name = nf_attis.payment.a
+		boost_general_stats = yes
+		event_target:temp_leader = {
+			retire = yes
+		}
+	}
+}
+
+#Teleport Armies
+unit_leader_event = {
+	id = nf_attis.18
+	title = nf_attis.payment.t
+	desc = nf_attis.18.d
+
+	is_triggered_only = yes
+	immediate = {
+		every_state = {
+			limit = {
+				owner = {
+					OR = {
+						has_war_with = SHA
+						original_tag = SHA
+					}
+				}
+			}
+			teleport_armies = {
+				limit = {
+					original_tag = SHA
+				}
+			}
+		}
+	}
+	option = {
+		name = nf_attis.payment.a
+		boost_general_stats = yes
+		custom_effect_tooltip = shale_calix_tp_tt
+	}
+}
+
+unit_leader_event = {
+	id = nf_attis.19
+	title = nf_attis.payment.t
+	desc = nf_attis.19.d
+
+	is_triggered_only = yes
+	immediate = {
+		set_country_flag = calix_blocked_carbon_war
+	}
+	option = {
+		name = nf_attis.19.a
+		custom_effect_tooltip = nf_attis.19.tt
+	}
+}
+
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_attis.20" }
+	id = nf_attis.20
+	title = nf_attis.20.t
+	desc = nf_attis.20.d
+	picture = GFX_event_TRL_mariposa_reborn
+	is_triggered_only = yes
+
+	option = {
+		name = nf_attis.20.a
+		add_country_leader_trait = mournful
+		if = {
+			limit = {
+				SHA_calix = {
+					is_unit_leader = yes
+				}
+			}
+			hidden_effect = {
+				SHA_calix = {
+					unit_leader_event = {
+						id = nf_attis.21
+						days = 2
+					}
+				}
+			}
+		}
+	}
+}
+
+unit_leader_event = {
+	id = nf_attis.21
+	title = nf_attis.21.t
+	desc = nf_attis.21.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_attis.21.a
+		add_stability = -0.2
+		custom_effect_tooltip = shale_secret_path_tt
+		set_country_flag = shale_secret_path_started
+	}
+	option = {
+		name = nf_attis.21.b
+		add_stability = 0.1
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_attis.22" }
+	id = nf_attis.22
+	title = nf_attis.22.t
+	desc = {
+		text = nf_attis.22.d.sha
+		trigger = {
+			original_tag = SHA
+		}
+	}
+	desc = {
+		text = nf_attis.22.d.uoa
+		trigger = {
+			original_tag = UOA
+		}
+	}
+	desc = {
+		text = nf_attis.22.d.imo
+		trigger = {
+			original_tag = IMO
+		}
+	}
+	picture = GFX_event_attis_super_mutant_rumble
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { original_tag = UOA }
+					UOA = {
+						exists = yes
+						NOT = { is_subject_of = ROOT }
+					}
+				}
+				declare_war_on = {
+					target = UOA
+					type = annex_everything
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = { original_tag = UOA }
+				}
+				UOA = {
+					ROOT = {
+						grant_wargoals_on_core_states_of_prev = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = { original_tag = IMO }
+					IMO = {
+						exists = yes
+						NOT = { is_subject_of = ROOT }
+					}
+				}
+				declare_war_on = {
+					target = IMO
+					type = annex_everything
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = { original_tag = IMO }
+				}
+				IMO = {
+					ROOT = {
+						grant_wargoals_on_core_states_of_prev = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = { original_tag = SHA }
+					SHA = {
+						exists = yes
+						NOT = { is_subject_of = ROOT }
+					}
+				}
+				declare_war_on = {
+					target = SHA
+					type = annex_everything
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = { original_tag = SHA }
+				}
+				SHA = {
+					ROOT = {
+						grant_wargoals_on_core_states_of_prev = yes
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nf_attis.22.a.sha
+		trigger = {
+			original_tag = SHA
+		}
+	}
+
+	option = {
+		name = nf_attis.22.a.uoa
+		trigger = {
+			original_tag = UOA
+		}
+	}
+
+	option = {
+		name = nf_attis.22.a.imo
+		trigger = {
+			original_tag = IMO
+		}
+	}
+}
+
+
+unit_leader_event = {
+	id = nf_attis.23
+	title = nf_attis.23.t
+	desc = nf_attis.23.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_attis.23.a
+		custom_effect_tooltip = nf_attis.23.tt
+	}
+}
+
+unit_leader_event = {
+	id = nf_attis.24
+	title = nf_attis.24.t
+	desc = nf_attis.24.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_attis.24.a
+		custom_effect_tooltip = nf_attis.24.refuse.tt
+		hidden_effect = {
+			SHA_calix = {
+				unit_leader_event = nf_attis.25
+			}
+		}
+	}
+	option = {
+		name = nf_attis.24.b
+		custom_effect_tooltip = nf_attis.24.accept.tt
+		country_event = nf_attis.26
+	}
+}
+
+unit_leader_event = {
+	id = nf_attis.25
+	title = nf_attis.24.t
+	desc = nf_attis.25.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_attis.25.a
+		custom_effect_tooltip = nf_attis.25.dismantle.tt
+		set_country_flag = shale_calix_dismantled_flag
+		hidden_effect = {
+			SHA_calix = {
+				retire = yes
+			}
+		}
+	}
+
+	option = {
+		name = nf_attis.25.b
+		custom_effect_tooltip = nf_attis.24.accept.tt
+		country_event = nf_attis.26
+	}
+}
+
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_attis.26" }
+	id = nf_attis.26
+	title = nf_attis.26.t
+	desc = nf_attis.26.d
+	picture = GFX_event_TRL_mariposa_reborn
+	is_triggered_only = yes
+
+	option = {
+		name = nf_attis.26.a
+		add_stability = -0.10
+		every_state = {
+			limit = {
+				state = 677
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 10
+			}
+		}
+		custom_effect_tooltip = nf_attis.25.dismantle.tt
+		set_country_flag = shale_calix_dismantled_flag
+		hidden_effect = {
+			SHA_calix = {
+				retire = yes
+			}
+		}
+		ai_chance = {
+			factor = 0	# No use turning back now for AI
+		}
+	}
+	option = {
+		name = nf_attis.26.b
+		custom_effect_tooltip = nf_attis.26.b.tt
+		add_timed_idea = {
+			idea = the_final_purchase
+			days = 100
+		}
+	}
+}
+
+unit_leader_event = {
+	id = nf_attis.27
+	title = nf_attis.27.t
+	desc = nf_attis.27.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_attis.27.a
+		add_stability = -0.5
+		every_state = {
+			limit = {
+				state = 677
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 10
+			}
+		}
+		custom_effect_tooltip = nf_attis.25.dismantle.tt
+		set_country_flag = shale_calix_dismantled_flag
+		hidden_effect = {
+			SHA_calix = {
+				retire = yes
+			}
+		}
+		ai_chance = {
+			factor = 0	# No use turning back now for AI
+		}
+	}
+
+	option = {
+		name = nf_attis.27.b
+		custom_effect_tooltip = nf_attis.24.accept.tt
+		country_event = nf_attis.28
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_attis.28" }
+	id = nf_attis.28
+	title = nf_attis.28.t
+	desc = nf_attis.28.d
+	picture = GFX_event_animated_sha_secret
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			remove_country_leader_trait = mournful
+			remove_country_leader_trait = attis_loyal_general
+			set_country_leader_name = {
+				name = "Cerberus"
+			}
+			set_country_leader_portrait = {
+				portrait = "GFX_Portrait_SHA_secret_animated"
+			}
+			set_country_leader_description = {
+				desc = "SHA_secret_desc"
+			}
+			set_cosmetic_tag = SHA_cosmetic
+			set_country_flag = do_not_spread_followers_to_this_tag
+			hidden_effect = {
+				SHA_calix = {
+					retire = yes
+				}
+			}
+			mark_focus_tree_layout_dirty = yes #Loads in a lil focus branchy owo
+			scoped_sound_effect = attis_speech
+		}
+	}
+
+	option = {
+		name = nf_attis.28.a
+		custom_effect_tooltip = nf_attis.28.tt
+		add_country_leader_trait = calix_cunning
+		add_country_leader_trait = attis_aggression
+		add_country_leader_trait = shale_sedulousness
+		set_variable = { sha_secret_manpower_var = 10 }
+		set_variable = { sha_secret_core_var = 0.01 }
+		add_dynamic_modifier = { modifier = shale_secret_dynamic_modifier }
+		force_update_dynamic_modifier = yes
+		if = {
+			limit = {
+				owns_state = 677
+			}
+			set_capital = { state = 677 }
+			if = {
+				limit = {
+					677 = {
+						NOT = {
+							is_core_of = SHA
+						}
+					}
+				}
+				677 = { add_core_of = SHA }
+			}
+		}
+		every_owned_state = {
+			limit = {
+				is_capital = no
+				is_core_of = SHA
+			}
+			remove_core_of = SHA
+		}
+	}
+}
+
+#GetBorderWarMenuAttackerWinEvent
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_attis.29" }
+	id = nf_attis.29
+	title = nf_attis.29.t
+	desc = nf_attis.29.d
+	picture = GFX_event_KHA_bitter_springs_massacre
+	is_triggered_only = yes
+
+	immediate = {
+		save_event_target_as = our_country
+		FROM = { save_event_target_as = our_state }
+		FROM.FROM = { save_event_target_as = their_country }
+		FROM.FROM.FROM = { save_event_target_as = their_state }
+	}
+
+	option = {
+		name = nf_attis.29.a
+		event_target:their_state = {
+			remove_core_of = event_target:their_country
+			remove_claim_by = event_target:their_country
+			if = {
+				limit = {
+					is_core_of = RRG
+				}
+				remove_core_of = RRG
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 2
+			}
+		}
+		event_target:our_country = {
+			transfer_state = event_target:their_state
+			add_war_support = 0.05
+		}
+	}
+}
+
+#GetBorderWarMenuAttackerLoseEvent
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_attis.30" }
+	id = nf_attis.30
+	title = nf_attis.30.t
+	desc = nf_attis.30.d
+	picture = GFX_event_KHA_bitter_springs_massacre
+	is_triggered_only = yes
+
+	immediate = {
+		save_event_target_as = our_country
+		FROM = { save_event_target_as = our_state }
+		FROM.FROM = { save_event_target_as = their_country }
+		FROM.FROM.FROM = { save_event_target_as = their_state }
+	}
+
+	option = {
+		name = nf_attis.30.a
+		event_target:our_country = {
+			add_political_power = -150
+			army_experience = 10
+		}
+		event_target:their_state = {
+			damage_building = {
+				type = infrastructure
+				damage = 2
+			}
+		}
+	}
+}
+
+#GetBorderWarMenuAttackerCancelEvent
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_attis.31" }
+	id = nf_attis.31
+	is_triggered_only = yes
+	hidden = yes #Cancelling shouldn't give a pop up in this case
+
+	immediate = {
+		save_event_target_as = our_country
+		FROM = { save_event_target_as = our_state }
+		FROM.FROM = { save_event_target_as = their_country }
+		FROM.FROM.FROM = { save_event_target_as = their_state }
+	}
+
+}
+
+#GetBorderWarMenuDefenderWinEvent
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_attis.32" }
+	id = nf_attis.32
+	title = nf_attis.32.t
+	desc = nf_attis.32.d
+	picture = GFX_event_KHA_bitter_springs_massacre
+	is_triggered_only = yes
+
+	immediate = {
+		save_event_target_as = our_country
+		FROM = { save_event_target_as = our_state }
+		FROM.FROM = { save_event_target_as = their_country }
+		FROM.FROM.FROM = { save_event_target_as = their_state }
+	}
+
+	option = {
+		name = nf_attis.32.a
+		event_target:our_country = {
+			add_war_support = 0.05
+			army_experience = 10
+		}
+	}
+}
+
+#GetBorderWarMenuDefenderLoseEvent
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_attis.33" }
+	id = nf_attis.33
+	title = nf_attis.33.t
+	desc = nf_attis.33.d
+	picture = GFX_event_KHA_bitter_springs_massacre
+	is_triggered_only = yes
+
+	immediate = {
+		save_event_target_as = our_country
+		FROM = { save_event_target_as = our_state }
+		FROM.FROM = { save_event_target_as = their_country }
+		FROM.FROM.FROM = { save_event_target_as = their_state }
+	}
+
+	option = {
+		name = nf_attis.33.a
+		event_target:our_country = {
+			add_war_support = -0.05
+			add_political_power = -150
+		}
+	}
+}
+#GetBorderWarMenuDefenderCancelEvent
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_attis.34" }
+	id = nf_attis.34
+	is_triggered_only = yes
+	hidden = yes #Cancelling shouldn't give a pop up in this case
+
+	immediate = {
+		save_event_target_as = our_country
+		FROM = { save_event_target_as = our_state }
+		FROM.FROM = { save_event_target_as = their_country }
+		FROM.FROM.FROM = { save_event_target_as = their_state }
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_attis.35" }
+	id = nf_attis.35
+	title = nf_attis.35.t
+	desc = nf_attis.35.d
+	is_triggered_only = yes
+
+	option = {
+		name = nf_attis.35.a
+		every_state = {
+			limit = {
+				is_core_of = UOA
+			}
+			set_state_flag = do_not_exodus
+			add_core_of = TEX
+			remove_core_of = UOA
+			remove_claim_by = UOA
+		}
+		set_technology = { super_mutant_aux_infantry_tech = 1 }
+		UOA = {
+            every_unit_leader = {
+                set_nationality = TEX
+            }
+            every_navy_leader = {
+                set_nationality = TEX
+            }
+			transfer_navy = { target = TEX }
+		}
+		annex_country = {
+			target = UOA
+			transfer_troops = yes
+		}
+		every_state = {
+			limit = {
+				is_core_of = TEX
+				has_state_flag = do_not_exodus
+			}
+			clr_state_flag = do_not_exodus
+		}
+	}
+}
+
+unit_leader_event = {
+	id = nf_attis.36
+	title = nf_attis.36.t
+	desc = nf_attis.36.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_attis.36.a
+		add_command_power = 20
+		army_experience = 20
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_attis.37" }
+	id = nf_attis.37
+	title = nf_attis.37.t
+	desc = nf_attis.37.d
+	picture = GFX_event_generic_raider_1
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			924 = {
+				teleport_armies = {
+					to_province = 11499
+				}
+			}
+			set_equipment_fraction = 0.8
+			#start_civil_war = {
+			#	ideology = ruler
+			#	size = 0
+			#	states = { 924 }
+			#	keep_unit_leaders_trigger = { always = yes }
+			#}
+			set_nationality = {
+				target_country = CRH
+				character = UOA_lieutenant_crusher
+			}
+			CRH = {
+				create_new_owb_country = yes
+				924 = {
+					transfer_state_to = CRH
+				}
+				set_country_flag = UOA_crusher_tag
+				set_country_flag = super_mutant_doctrine_ai
+				set_country_flag = is_super_mutant_nation
+				set_country_flag = has_unique_manpower_law
+				load_focus_tree = {
+					tree = attis_army_nf
+				}
+				add_field_marshal_role = {
+					character = UOA_lieutenant_crusher
+					traits = {
+						warchief_trait
+						strong_trait
+						enduring_trait
+						urban_assault_specialist
+					}
+					skill = 5
+					attack_skill = 6
+					defense_skill = 2
+					planning_skill = 2
+					logistics_skill = 2
+				}
+				add_ideas = uoa_crusher_join_sha
+				add_ideas = attis_army_remnants_idea
+				load_oob = uoa_crusher_oob
+				promote_character = UOA_lieutenant_crusher
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 800
+				}
+				add_ideas = uoa_crusher_join_sha
+				add_ideas = attis_army_remnants_idea
+				declare_war_on = {
+					target = UOA
+					type = annex_everything
+				}
+			}
+			#random_other_country = {
+			#	limit = {
+			#		original_tag = UOA
+			#		NOT = { tag = UOA }
+			#	}
+			#	add_ideas = uoa_crusher_join_sha
+			#	add_ideas = attis_army_remnants_idea
+			#	promote_character = UOA_lieutenant_crusher
+			#	load_focus_tree = {
+			#		tree = raider_generic
+			#	}
+			#	load_oob = uoa_crusher_oob
+			#	add_equipment_to_stockpile = {
+			#		type = infantry_equipment
+			#		amount = 800
+			#	}
+			#	create_new_owb_country = yes
+			#}
+		}
+	}
+
+	option = {
+		name = nf_attis.37.a
+	}
+
+	option = {
+		name = nf_attis.37.b
+		random_other_country = {
+			limit = {
+				original_tag = UOA
+				NOT = { tag = UOA }
+			}
+			change_tag_from = PREV
+		}
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_attis.38" }
+	id = nf_attis.38
+	title = nf_attis.38.t
+	desc = nf_attis.38.d
+	picture = GFX_event_generic_raider_1
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_attis.38.a
+		FROM = {
+			become_puppet = yes
+		}
+	}
+	option = {
+		name = nf_attis.38.b
+	}
+}
+
+unit_leader_event = {
+	id = nf_attis.39
+	title = nf_attis.39.t
+	desc = nf_attis.39.d
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			#Most important effect here
+			THIS = { set_leader_portrait = "GFX_Portrait_SHA_calix_prime_animated" }
+
+			#Guess what? To get the 'set_leader_portrait' command to work in Husky you need to create a unit leader at the same time as you do it, so the 'select a commander' gui updates right.
+			#Some time after 10/5/2020 try removing this line and seeing if the portrait updates correctly.
+			#I want to blow my brains out - Zusk
+			# create_corps_commander = {
+			# 	name = "Dumdum"
+			# 	picture = GFX_Portrait_SHA_general_3
+			# 	skill = 1
+			# 	attack_skill = 1
+			# 	defense_skill = 1
+			# 	planning_skill = 1
+			# 	logistics_skill = 1
+			# 	traits = { charismatic_trait }
+			# }
+		}
+	}
+
+	option = {
+		name = nf_attis.39.a
+		add_research_slot = 1
+	}
+}
+country_event = { #revolt
+	id = nf_attis.40
+	title = nf_attis.40.t
+	desc = nf_attis.40.d
+	picture = GFX_event_generic_raider_1
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_attis.40.a
+		add_war_support = 0.1
+		army_experience = 25
+	}
+}
+
+country_event = { #end of the war
+	id = nf_attis.41
+	title = nf_attis.41.t
+	desc = nf_attis.41.d
+	#picture =
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_attis.41.a
+	}
+}
+
+country_event = { #focus end of war
+	id = nf_attis.42
+	title = nf_attis.42.t
+	desc = nf_attis.42.d
+	#picture =
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_attis.42.a
+		set_stability = 0.0
+		add_ideas = cru_crush_idea
+	}
+}
+
+country_event = { #plants
+	id = nf_attis.43
+	title = nf_attis.43.t
+	desc = nf_attis.43.d
+	#picture =
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_attis.43.a
+	}
+}
+
+country_event = { #nightkin
+	id = nf_attis.44
+	title = nf_attis.44.t
+	desc = nf_attis.44.d
+	#picture =
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_attis.44.a
+	}
+}
+
+country_event = {
+	id = nf_attis.45
+	title = nf_attis.45.t
+	desc = nf_attis.45.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_attis.45.a
+	}
+}

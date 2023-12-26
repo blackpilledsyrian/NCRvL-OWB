@@ -1,0 +1,1584 @@
+﻿add_namespace = nf_shi
+
+# Zusk - these first two events fire if a target country starts to discover a shi cell
+# Feel free to change the ids if you want, just also change them in operations_shi.txt
+
+country_event = {
+	id = nf_shi.1
+	title = nf_shi.1.t
+	desc = nf_shi.1.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_shi.1.a
+		set_temp_variable = { caps_to_add = -15 }
+		add_caps = yes
+		hidden_effect = {
+			country_event = {
+				id = nf_shi.2
+				days = 10
+			}
+		}
+	}
+	option = {
+		name = nf_shi.1.b
+	}
+}
+
+country_event = {
+	id = nf_shi.2
+	title = nf_shi.2.t
+	desc = nf_shi.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_shi.2.a
+		set_temp_variable = { caps_to_add = -45 }
+		add_caps = yes
+		hidden_effect = {
+			SHI = {
+				country_event = {
+					id = nf_shi.3
+				}
+			}
+			random_list = {
+				75 = {
+					country_event = {
+						id = nf_shi.5
+						days = 25
+					}
+				}
+				25 = {
+					country_event = {
+						id = nf_shi.4
+						days = 25
+					}
+				}
+			}
+			random_list = {
+				75 = {
+					country_event = {
+						id = nf_shi.5
+						days = 50
+					}
+				}
+				25 = {
+					country_event = {
+						id = nf_shi.4
+						days = 50
+					}
+				}
+			}
+			random_list = {
+				75 = {
+					country_event = {
+						id = nf_shi.5
+						days = 75
+					}
+				}
+				25 = {
+					country_event = {
+						id = nf_shi.4
+						days = 75
+					}
+				}
+			}
+			country_event = {
+				id = nf_shi.6
+				days = 100
+			}
+		}
+	}
+	option = {
+		name = nf_shi.2.b
+	}
+}
+
+country_event = {
+	id = nf_shi.3
+	title = nf_shi.3.t
+	desc = nf_shi.3.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_shi.3.a
+		add_political_power = -75
+		FROM = {
+			clr_country_flag = shi_cell
+		}
+		custom_effect_tooltip = shi_cell_abandon_tt
+	}
+	option = {
+		name = nf_shi.3.b
+	}
+}
+
+country_event = {
+	id = nf_shi.4
+	title = nf_shi.4.t
+	desc = nf_shi.4.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_shi.4.a
+		set_temp_variable = { caps_to_add = -15 }
+		add_caps = yes
+	}
+	option = {
+		name = nf_shi.4.b
+		set_country_flag = shi_investigation_failed
+	}
+}
+
+country_event = {
+	id = nf_shi.5
+	title = nf_shi.5.t
+	desc = nf_shi.5.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_shi.5.a
+	}
+}
+
+country_event = {
+	id = nf_shi.6
+	title = nf_shi.6.t
+	desc = {
+		trigger = {
+			NOT = {
+				has_country_flag = shi_investigation_failed
+			}
+		}
+		text = nf_shi.6.da
+	}
+	desc = {
+		trigger = {
+			has_country_flag = shi_investigation_failed
+		}
+		text = nf_shi.6.db
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		trigger = {
+			NOT = {
+				has_country_flag = shi_investigation_failed
+			}
+		}
+		name = nf_shi.6.a
+		clr_country_flag = shi_cell
+		set_country_flag = shi_expelled
+		SHI = {
+			country_event = {
+				id = nf_shi.7
+			}
+		}
+	}
+
+	option = {
+		trigger = {
+			has_country_flag = shi_investigation_failed
+		}
+		name = nf_shi.6.b
+		clr_country_flag = shi_investigation_failed
+	}
+}
+
+country_event = {
+	id = nf_shi.7
+	title = nf_shi.7.t
+	desc = nf_shi.7.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_shi.7.a
+		add_political_power = -100
+		set_temp_variable = { caps_to_add = -35 }
+		add_caps = yes
+	}
+}
+
+
+
+country_event = {
+	id = nf_shi.8
+	title = nf_shi.8.t
+	desc = nf_shi.8.d
+	picture = GFX_event_SHI_good
+	is_triggered_only = yes
+
+	option = {
+		name = nf_shi.8.a
+		add_tech_bonus = {
+			bonus = 0.25
+			uses = 4
+			category = naval_tech_category
+		}
+	}
+	option = {
+		name = nf_shi.8.b
+		add_political_power = 100
+		set_temp_variable = { caps_to_add = 25 }
+		add_caps = yes
+	}
+}
+
+
+country_event = {
+	id = nf_shi.9
+	title = nf_shi.9.t
+	desc = nf_shi.9.d
+	picture = GFX_event_SHI_good
+	is_triggered_only = yes
+
+	option = {
+		name = nf_shi.9.a
+		army_experience = 50
+	}
+	option = {
+		name = nf_shi.9.b
+		add_tech_bonus = {
+			bonus = 0.7
+			uses = 2
+			category = computing_tech
+		}
+	}
+}
+
+country_event = {
+	id = nf_shi.10
+	title = nf_shi.10.t
+	desc = nf_shi.10.d
+	picture = GFX_event_ncr_trenches
+	is_triggered_only = yes
+
+	option = {
+		name = nf_shi.10.a
+		ai_chance = {
+			modifier = {
+				OR = {
+					SHI_has_ai_behavior_independent = yes
+					SHI_has_ai_behavior_bos = yes
+				}
+				factor = 0
+			}
+		}
+		add_popularity = {
+			ideology = ruler
+			popularity = 0.05
+		}
+		add_ideas = shi_farming_clearances
+	}
+	option = {
+		name = nf_shi.10.b
+		ai_chance = {
+			modifier = {
+				OR = {
+					SHI_has_ai_behavior_ncr = yes
+					SHI_has_ai_behavior_bos = yes
+				}
+				factor = 0
+			}
+		}
+		add_popularity = {
+			ideology = elites
+			popularity = 0.10
+		}
+		add_equipment_to_stockpile = {
+			type = energy_equipment_4
+			amount = 250
+			producer = USA
+		}
+	}
+}
+
+
+
+country_event = {
+	id = nf_shi.11
+	title = nf_shi.11.t
+	desc = nf_shi.11.d
+	picture = GFX_event_SHI_shitown
+	is_triggered_only = yes
+
+	option = {
+		name = nf_shi.11.a
+		ai_chance = {
+			modifier = {
+				OR = {
+					SHI_has_ai_behavior_ncr = yes
+					SHI_has_ai_behavior_bos = yes
+				}
+				factor = 0
+			}
+		}
+		add_popularity = {
+			ideology = elites
+			popularity = 0.05
+		}
+		swap_ideas = {
+			remove_idea = shi_two_schools
+			add_idea = shi_two_schools_1b
+		}
+		add_war_support = 0.1
+	}
+	option = {
+		name = nf_shi.11.b
+		ai_chance = {
+			modifier = {
+				OR = {
+					SHI_has_ai_behavior_independent = yes
+					SHI_has_ai_behavior_bos = yes
+				}
+				factor = 0
+			}
+		}
+		add_popularity = {
+			ideology = ruler
+			popularity = 0.10
+		}
+		swap_ideas = {
+			remove_idea = shi_two_schools
+			add_idea = shi_two_schools_1a
+		}
+		add_equipment_to_stockpile = {
+			type = energy_equipment_4
+			amount = 500
+			producer = USA
+		}
+	}
+	option = {
+		name = nf_shi.11.c
+		ai_chance = {
+			modifier = {
+				OR = {
+					SHI_has_ai_behavior_ncr = yes
+					SHI_has_ai_behavior_independent = yes
+				}
+				factor = 0
+			}
+		}
+		add_popularity = {
+			ideology = intellectuals
+			popularity = 0.20
+		}
+		swap_ideas = {
+			remove_idea = shi_two_schools
+			add_idea = shi_two_schools_1c
+		}
+		add_political_power = 100
+		add_command_power = 50
+	}
+}
+
+news_event = {
+	id = nf_shi.12
+	title = nf_shi.12.t
+	desc = nf_shi.12.d
+	picture = GFX_event_SHI_shitown
+	is_triggered_only = yes
+
+	option = {
+		name = nf_shi.12.a
+		add_equipment_to_stockpile = {
+			type = energy_equipment_3
+			amount = 150
+			producer = USA
+		}
+	}
+}
+
+
+news_event = {
+	id = nf_shi.13
+	title = nf_shi.13.t
+	desc = nf_shi.13.d
+	picture = GFX_event_SHI_shitown
+	is_triggered_only = yes
+
+	option = {
+		name = nf_shi.13.a
+		set_temp_variable = { caps_to_add = -15 }
+		add_caps = yes
+		SHI = {
+			set_temp_variable = { caps_to_add = 15 }
+			add_caps = yes
+		}
+		add_political_power = 10
+	}
+}
+
+country_event = {
+	id = nf_shi.14
+	title = nf_shi.14.t
+	desc = nf_shi.14.d
+	picture = GFX_event_SHI_shitown
+	is_triggered_only = yes
+
+	option = {
+		name = nf_shi.14.a
+		ai_chance = {
+			modifier = {
+				OR = {
+					SHI_has_ai_behavior_independent = yes
+					SHI_has_ai_behavior_bos = yes
+				}
+				factor = 0
+			}
+		}
+		add_popularity = {
+			ideology = ruler
+			popularity = 0.05
+		}
+		add_war_support = 0.05
+		add_manpower = 1500
+	}
+	option = {
+		name = nf_shi.14.b
+		ai_chance = {
+			modifier = {
+				OR = {
+					SHI_has_ai_behavior_ncr = yes
+					SHI_has_ai_behavior_bos = yes
+				}
+				factor = 0
+			}
+		}
+		add_popularity = {
+			ideology = elites
+			popularity = 0.10
+		}
+		add_stability = 0.1
+	}
+	option = {
+		name = nf_shi.14.c
+		ai_chance = {
+			modifier = {
+				OR = {
+					SHI_has_ai_behavior_ncr = yes
+					SHI_has_ai_behavior_independent = yes
+				}
+				factor = 0
+			}
+		}
+		add_popularity = {
+			ideology = intellectuals
+			popularity = 0.20
+		}
+		army_experience = 75
+		air_experience = 25
+	}
+}
+
+
+country_event = {
+	id = nf_shi.15
+	title = nf_shi.15.t
+	desc = nf_shi.15.d
+	picture = GFX_event_SHI_shitown
+	is_triggered_only = yes
+
+	option = {
+		name = nf_shi.15.a
+		ai_chance = {
+			modifier = {
+				OR = {
+					SHI_has_ai_behavior_independent = yes
+					SHI_has_ai_behavior_bos = yes
+				}
+				factor = 0
+			}
+		}
+		add_popularity = {
+			ideology = ruler
+			popularity = 0.05
+		}
+		add_tech_bonus = {
+			bonus = 0.70
+			uses = 2
+			category = industry_specialisation_category
+		}
+	}
+	option = {
+		name = nf_shi.15.b
+		ai_chance = {
+			modifier = {
+				OR = {
+					SHI_has_ai_behavior_ncr = yes
+					SHI_has_ai_behavior_bos = yes
+				}
+				factor = 0
+			}
+		}
+		add_popularity = {
+			ideology = elites
+			popularity = 0.10
+		}
+		add_tech_bonus = {
+			bonus = 0.70
+			uses = 2
+			category = infantry_tech_category
+		}
+
+	}
+	option = {
+		name = nf_shi.15.c
+		ai_chance = {
+			modifier = {
+				OR = {
+					SHI_has_ai_behavior_ncr = yes
+					SHI_has_ai_behavior_independent = yes
+				}
+				factor = 0
+			}
+		}
+		add_popularity = {
+			ideology = intellectuals
+			popularity = 0.20
+		}
+		add_tech_bonus = {
+			bonus = 0.70
+			uses = 2
+			category = electronics
+		}
+	}
+}
+
+
+
+
+country_event = {
+	id = nf_shi.16
+	title = nf_shi.16.t
+	desc = nf_shi.16.d
+	picture = GFX_event_SHI_shitown
+	is_triggered_only = yes
+
+	option = {
+		name = nf_shi.16.a
+		ai_chance = {
+			modifier = {
+				OR = {
+					SHI_has_ai_behavior_independent = yes
+					SHI_has_ai_behavior_bos = yes
+				}
+				factor = 0
+			}
+		}
+		add_popularity = {
+			ideology = ruler
+			popularity = 0.05
+		}
+		random_owned_state = {
+			limit = {
+				is_valid_state_for_3_arms_factories = yes
+			}
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = dockyard
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+	option = {
+		name = nf_shi.16.b
+		ai_chance = {
+			modifier = {
+				OR = {
+					SHI_has_ai_behavior_ncr = yes
+					SHI_has_ai_behavior_bos = yes
+				}
+				factor = 0
+			}
+		}
+		add_popularity = {
+			ideology = elites
+			popularity = 0.10
+		}
+		set_variable = { coring_cost_country_factor = -0.25 }
+		custom_effect_tooltip = shi_25_percent_core_cost_reduction_tt
+	}
+	option = {
+		name = nf_shi.16.c
+		ai_chance = {
+			modifier = {
+				OR = {
+					SHI_has_ai_behavior_ncr = yes
+					SHI_has_ai_behavior_independent = yes
+				}
+				factor = 0
+			}
+		}
+		add_popularity = {
+			ideology = intellectuals
+			popularity = 0.10
+		}
+		set_temp_variable = { caps_to_add = 225 }
+		add_caps = yes
+	}
+}
+
+country_event = {
+	id = nf_shi.18
+	title = nf_shi.18.t
+	desc = nf_shi.18.d
+	picture = GFX_event_SHI_shitown
+	is_triggered_only = yes
+
+	option = {
+		name = nf_shi.18.a
+		ai_chance = {
+			modifier = {
+				OR = {
+					SHI_has_ai_behavior_independent = yes
+					SHI_has_ai_behavior_bos = yes
+				}
+				factor = 0
+			}
+		}
+		add_popularity = {
+			ideology = ruler
+			popularity = 0.05
+		}
+		if = {
+			limit = { has_idea = shi_two_schools_1a }
+			swap_ideas = { remove_idea = shi_two_schools_1a add_idea = shi_two_schools_1a_2a }
+		}
+		else_if = {
+			limit = { has_idea = shi_two_schools_1b }
+			swap_ideas = { remove_idea = shi_two_schools_1b add_idea = shi_two_schools_1b_2a }
+		}
+		else = {
+			swap_ideas = { remove_idea = shi_two_schools_1c add_idea = shi_two_schools_1c_2a }
+		}
+		add_tech_bonus = {
+			bonus = 0.70
+			uses = 2
+			category = tool_tech
+		}
+	}
+	option = {
+		name = nf_shi.18.b
+		ai_chance = {
+			modifier = {
+				OR = {
+					SHI_has_ai_behavior_ncr = yes
+					SHI_has_ai_behavior_bos = yes
+				}
+				factor = 0
+			}
+		}
+		add_popularity = {
+			ideology = elites
+			popularity = 0.10
+		}
+		if = {
+			limit = { has_idea = shi_two_schools_1a }
+			swap_ideas = { remove_idea = shi_two_schools_1a add_idea = shi_two_schools_1a_2b }
+		}
+		else_if = {
+			limit = { has_idea = shi_two_schools_1b }
+			swap_ideas = { remove_idea = shi_two_schools_1b add_idea = shi_two_schools_1b_2b }
+		}
+		else = {
+			swap_ideas = { remove_idea = shi_two_schools_1c add_idea = shi_two_schools_1c_2b }
+		}
+		add_political_power = 150
+	}
+	option = {
+		name = nf_shi.18.c
+		ai_chance = {
+			modifier = {
+				OR = {
+					SHI_has_ai_behavior_ncr = yes
+					SHI_has_ai_behavior_independent = yes
+				}
+				factor = 0
+			}
+		}
+		add_popularity = {
+			ideology = intellectuals
+			popularity = 0.10
+		}
+		if = {
+			limit = { has_idea = shi_two_schools_1a }
+			swap_ideas = { remove_idea = shi_two_schools_1a add_idea = shi_two_schools_1a_2c }
+		}
+		else_if = {
+			limit = { has_idea = shi_two_schools_1b }
+			swap_ideas = { remove_idea = shi_two_schools_1b add_idea = shi_two_schools_1b_2c }
+		}
+		else = {
+			swap_ideas = { remove_idea = shi_two_schools_1c add_idea = shi_two_schools_1c_2c }
+		}
+		163 = {
+			add_extra_state_shared_building_slots = 4
+			add_resource = {
+				type = composites
+				amount = 4
+			}
+			add_resource = {
+				type = advanced
+				amount = 4
+			}
+		}
+	}
+}
+
+
+country_event = {
+	id = nf_shi.17
+	title = nf_shi.17.t
+	desc = nf_shi.17.d
+	picture = GFX_event_SHI_shitown
+	is_triggered_only = yes
+
+	option = {
+		name = nf_shi.17.a
+		# Remove remaining shi_two_schools spirit variations
+		if = {
+			limit = { has_idea = shi_two_schools_1a_2a }
+			remove_ideas = shi_two_schools_1a_2a
+		}
+		else_if = {
+			limit = { has_idea = shi_two_schools_1a_2b }
+			remove_ideas = shi_two_schools_1a_2b
+		}
+		else_if = {
+			limit = { has_idea = shi_two_schools_1a_2c }
+			remove_ideas = shi_two_schools_1a_2c
+		}
+		else_if = {
+			limit = { has_idea = shi_two_schools_1b_2a }
+			remove_ideas = shi_two_schools_1b_2a
+		}
+		else_if = {
+			limit = { has_idea = shi_two_schools_1b_2b }
+			remove_ideas = shi_two_schools_1b_2b
+		}
+		else_if = {
+			limit = { has_idea = shi_two_schools_1b_2c }
+			remove_ideas = shi_two_schools_1b_2c
+		}
+		else_if = {
+			limit = { has_idea = shi_two_schools_1c_2a }
+			remove_ideas = shi_two_schools_1c_2a
+		}
+		else_if = {
+			limit = { has_idea = shi_two_schools_1c_2b }
+			remove_ideas = shi_two_schools_1c_2b
+		}
+		else = {
+			remove_ideas = shi_two_schools_1c_2c
+		}
+		custom_effect_tooltip = spacer_tt
+		# Ideology Specific Effects
+		if  = {
+			limit = {
+				intellectuals > party_popularity@elites
+				intellectuals > party_popularity@ruler
+				intellectuals > party_popularity@people
+			}
+			set_country_flag = san_francisco_chapter_established
+			set_cosmetic_tag = SHI_BOS
+			set_politics = { ruling_party = intellectuals elections_allowed = no }
+			NCR = {
+				diplomatic_relation = {
+					country = SHI
+					relation = guarantee
+					active = no
+				}
+			}
+			hidden_effect = {
+				every_country = {
+					limit = {
+						OR = {
+							is_neighbor_of = NCR
+							is_neighbor_of = SHI
+							is_neighbor_of = MOT
+							news_is_west_tag = yes
+						}
+					}
+					news_event = { id = news_cali.6 hours = 6 random_hours = 3 }
+				}
+			}
+		}
+		else_if  = {
+			limit = {
+				elites > party_popularity@intellectuals
+				elites > party_popularity@ruler
+				elites > party_popularity@people
+			}
+			set_politics = { ruling_party = elites elections_allowed = no }
+			custom_effect_tooltip = spacer_tt
+			custom_effect_tooltip = AKIGAHAI_TT
+			hidden_effect = {
+				create_corps_commander = {
+					name = "Akigahai"
+					picture = GFX_Portrait_SHI_leader
+					traits = { perceptive_trait intelligent_trait charismatic_trait }
+					skill = 4
+					attack_skill = 3
+					defense_skill = 1
+					planning_skill = 3
+					logistics_skill = 3
+				}
+				every_country = {
+					limit = {
+						OR = {
+							is_neighbor_of = NCR
+							is_neighbor_of = SHI
+							is_neighbor_of = MOT
+							news_is_west_tag = yes
+						}
+					}
+					news_event = { id = news_cali.5 hours = 6 random_hours = 3 }
+				}
+			}
+			NCR = {
+				diplomatic_relation = {
+					country = SHI
+					relation = guarantee
+					active = no
+				}
+			}
+		}
+		else_if  = {
+			limit = {
+				ruler > party_popularity@elites
+				ruler > party_popularity@intellectuals
+				ruler > party_popularity@people
+			}
+			add_political_power = 200
+			add_ideas = united_kingdom_shi
+			#set_cosmetic_tag = SHI_NCR
+			# create_or_join_new_california = yes	#NOTE# wanted the choice to be made by focus
+			create_corps_commander = {
+				name = "Lo Pan"
+				picture = GFX_Portrait_SHI_lo_pan
+				traits = { strong_trait perceptive_trait enduring_trait agile_trait }
+				skill = 2
+				attack_skill = 2
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+			hidden_effect = {
+				every_country = {
+					limit = {
+						OR = {
+							is_neighbor_of = NCR
+							is_neighbor_of = SHI
+							is_neighbor_of = MOT
+							news_is_west_tag = yes
+						}
+					}
+					news_event = { id = news_cali.4 hours = 6 random_hours = 3 }
+				}
+			}
+		}
+		else = {
+			add_political_power = 200	# Backup effect in case something goes wrong, shouldn't be possible for all the above limits to be false otherwise
+		}
+	}
+}
+
+#NCR white peace
+country_event = { #ask for peace
+	id = nf_shi.19
+	title = nf_shi.19.t
+	desc = nf_shi.19.d
+	picture = GFX_event_ncr_trenches
+	is_triggered_only = yes
+
+	option = {
+		name = nf_shi.19.a
+		trigger = {
+			has_government = elites
+		}
+		add_timed_idea = {
+			idea = shi_ncr_offense
+			days = 180
+		}
+		NCR = {country_event = nf_shi.20}
+	}
+	option = {
+		name = nf_shi.19.b
+		trigger = {
+			has_government = ruler
+		}
+		add_tech_bonus = {
+			bonus = 0.4
+			uses = 1
+			category = cat_land_doctrine	#NOTE# should give bonus to land doctrine
+		}
+		NCR = {country_event = nf_shi.20}
+	}
+	option = {
+		name = nf_shi.19.c
+		trigger = {
+			has_government = intellectuals
+		}
+		add_timed_idea = {
+			idea = shi_ncr_defense
+			days = 180
+		}
+		NCR = {country_event = nf_shi.20}
+	}
+}
+
+country_event = { #Inform NCR
+	id = nf_shi.20
+	title = nf_shi.20.t
+	desc = nf_shi.20.d
+	picture = GFX_event_ncr_battle
+	is_triggered_only = yes
+
+	option = {
+		name = nf_shi.20.a
+		add_war_support = -0.05
+	}
+}
+
+country_event = { #The Peace
+	id = nf_shi.21
+	title = nf_shi.21.t
+	desc = nf_shi.21.d
+	picture = GFX_event_ncr_settlers
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit ={
+					NOT = { has_global_flag = shi_ncr_wp }
+					#NOT = { has_country_flag = shi_emperor_accend }
+					NCR = { exists = yes}
+					SHI = { exists = yes
+							NOT = {is_subject = yes}} #NOTE# correct format?
+				}
+				set_global_flag = shi_ncr_wp
+				if = {
+					limit = {
+						NAT = { exists = yes}
+						548 = { is_controlled_by = SHI }	#NOTE# IDK if this is correct format
+					}
+					SHI = {
+						annex_country = {	#NOTE# correct format is this
+							target = NAT
+						}
+					}
+				}
+				else_if = {	#NOTE# elseif is incorrect
+					limit = {
+						#NAT = { exists = no}
+						548 = { is_controlled_by = SHI }	#NOTE# this is correct format
+					}
+					every_state = {
+						limit = {
+							is_core_of = NAT
+						}
+						SHI = { transfer_state = PREV }
+					}
+				}
+				else_if = {
+					limit = {
+						548 = {
+							is_controlled_by = NAT
+							owner = { tag = SHI }
+						}
+					}
+					every_state = {
+						limit = {
+							is_core_of = NAT
+						}
+						NAT = { transfer_state = PREV }	#NOTE# should give NAT Navarro territories back if they occupy Navarro
+					}
+				}
+				else_if = {
+					limit = {
+						548 = {
+							is_controlled_by = NCR
+							owner = { tag = SHI }
+						}
+					}
+					every_state = {
+						limit = {
+							is_core_of = NAT
+						}
+						NCR = { transfer_state = PREV }	#NOTE# should give NCR Navarro territories back if they occupy Navarro
+					}
+				}
+				if = {
+					limit = {
+						312 = { is_controlled_by = SHI}	#NOTE# North Diablo Range
+				#		13 = { is_controlled_by = SHI}
+					}
+					SHI = { transfer_state = 312
+						transfer_state = 433	#NOTE# North Lucia Range
+					}
+				}
+				every_country = {
+					limit = {
+						has_war_with = SHI
+					}
+					white_peace = SHI
+					set_truce = {
+						target = SHI
+						days = 500
+					}
+				}
+				#NCR = {		#NOTE# to remove claims
+					every_state = {
+						limit = {
+							is_core_of = SHI
+							is_claimed_by = NCR
+						}
+						remove_claim_by = NCR	#NOTE# should remove NCR claim, PREV did not work
+					}
+				#}
+				set_truce = {
+					target = NCR
+					days = 500
+				}
+			}
+		}
+	}
+	option = {
+		name = nf_shi.21.a
+		add_war_support = -0.10
+		add_stability = 0.10
+		if = {
+			limit = {
+				NOT = { is_subject = yes}
+				SHI = {exists = yes}
+			}
+			NCR = {country_event = nf_shi.22}
+		}
+	}
+}
+country_event = { #Peace reaction NCR
+	id = nf_shi.22
+	title = nf_shi.22.t
+	desc = nf_shi.22.d
+	picture = GFX_event_SHI_good
+	is_triggered_only = yes
+
+	option = {
+		name = nf_shi.22.a
+		add_war_support = -0.05
+	}
+}
+country_event = { #Request for aid responce
+	id = nf_shi.23
+	title = nf_shi.23.t
+	desc = nf_shi.23.d
+	picture = GFX_event_shi_bos_chapter
+	is_triggered_only = yes
+
+	option = {
+		name = nf_shi.23.a
+		set_country_flag = shi_bos_smuggling	#NOTE# screw it, just do it via decisions
+	}
+}
+country_event = { #Good aid
+	id = nf_shi.24
+	title = nf_shi.24.t
+	desc = nf_shi.24.d
+	picture = GFX_event_BOS_our_interim
+	is_triggered_only = yes
+
+	option = {
+		name = nf_shi.24.a
+		add_political_power = 20
+		add_war_support = 0.1
+	}
+}
+country_event = { #Bad aid
+	id = nf_shi.25
+	title = nf_shi.25.t
+	desc = nf_shi.25.d
+	picture = GFX_event_BOS_bunker_door
+	is_triggered_only = yes
+
+	option = {
+		name = nf_shi.25.a
+		add_political_power = -20
+		set_temp_variable = { caps_to_add = 50 }
+		add_caps = yes
+	}
+}
+
+#San Fransisco Developmnent
+country_event = {
+	id = nf_shi.26
+	title = nf_shi.26.t
+	desc = nf_shi.26.d
+	picture = GFX_event_SHI_good
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				wild_wasteland = yes
+			}
+			hidden_effect = {
+				country_event = {
+					id = nf_shi.29
+					days = 30
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nf_shi.26.a
+		add_tech_bonus = {
+			bonus = 0.4
+			uses = 8
+			category = vehicle_tech_category
+		}
+		set_technology = {
+			vehicles_tech_level_settler = 1
+		}
+	}
+	option = {
+		name = nf_shi.26.b
+		add_tech_bonus = {
+			#name = doctrine_bonus
+			bonus = 0.6
+			uses = 4
+			category = air_tech_category
+		}
+		set_technology = {
+			air_tech_level_scientific = 1
+		}
+	}
+	option = {
+		name = nf_shi.26.c
+		add_tech_bonus = {
+			#name = doctrine_bonus
+			bonus = 0.4
+			uses = 8
+			category = robotics_tech_category
+		}
+		set_technology = {
+			robotics_tech_level_tribal = 1
+			robotics_tech_level_settler = 1
+		}
+	}
+}
+#Rangers Event
+country_event = {
+	id = nf_shi.27
+	title = nf_shi.27.t
+	desc = nf_shi.27.d
+	picture = GFX_event_NCR_night
+	fire_only_once = yes
+
+	trigger = {
+		tag = SHI
+		NCR = {
+			focus_progress = {
+				focus = ncr_shi_murphy_1
+				progress > 0.1			#NOTE# did not trigger
+			}
+		}
+		548 = {is_controlled_by = SHI}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		56 = {set_demilitarized_zone = yes}
+		353 = {set_demilitarized_zone = yes}
+	}
+	option = {
+		name = nf_shi.27.a
+	}
+}
+#Shi Redemption
+country_event = {
+	id = nf_shi.28
+	title = nf_shi.28.t
+	desc = nf_shi.28.d
+	picture = GFX_event_SHI_shitown
+	#is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		tag = SHI
+		has_global_flag = shi_ncr_wp
+		has_idea = shi_dojo_truce
+		is_ally_with = NCR
+	}
+
+	mean_time_to_happen = { days = 16 }
+
+	option = {
+		name = nf_shi.28.a
+		remove_ideas = shi_dojo_truce
+		if = {
+			limit = {
+				NOT = {
+					has_cosmetic_tag = SHI_NCR
+				}
+			}
+			set_cosmetic_tag = SHI_NCR
+		}
+		add_political_power = -300
+		set_party_name = { ideology = elites  name = "The True Serpent School" long_name = "The True Serpent School" }
+	}
+}
+country_event = {
+	id = nf_shi.29
+	title = nf_shi.29.t
+	desc = nf_shi.29.d
+	picture = GFX_event_sub_generic_megaton_bomb
+	is_triggered_only = yes
+
+
+	option = {
+		name = nf_shi.29.a
+		add_war_support = -0.1
+		163 = {
+			add_extra_state_shared_building_slots = 1
+		}
+	}
+}
+
+
+add_namespace = nf_shi_april
+
+country_event = {
+	id = nf_shi_april.1
+	title = nf_shi_april.1.t
+	desc = nf_shi_april.1.d
+	picture = GFX_event_SHI_shitown
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = nf_shi_april.1.a
+		hidden_effect = {
+			remove_country_leader_role = {
+				character = SHI_liang_ye
+				ideology = militarist_oligarchy
+			}
+			SHI = {
+				promote_character = SHI_Norton
+				promote_character = {
+					character = SHI_Norton
+					Ideology = feudalism
+				}
+			}
+			set_politics = {
+				ruling_party = elites
+				elections_allowed = no
+			}
+			set_political_party = {
+				ideology = elites
+				popularity = 82
+			}
+			set_cosmetic_tag = SHI_Norton
+			load_focus_tree = shi_april_tree
+		}
+	}
+}
+country_event = {
+    id = nf_shi_april.2
+    title = nf_shi_april.2.t
+    desc = nf_shi_april.2.d
+	picture = GFX_event_BRK_village_raid
+    trigger = {
+        tag = SHI
+		has_completed_focus = shi_golden_monarch
+		has_stability > 0.90
+		NOT = {
+			has_country_flag = norton_cured
+		}
+    }
+    mean_time_to_happen = { days = 45 }
+    option = {
+        name = nf_shi_april.2.a
+		add_stability = -0.10
+    }
+}
+country_event = {
+    id = nf_shi_april.3
+    title = nf_shi_april.3.t
+	desc = nf_shi_april.3.d
+	picture = GFX_event_BRK_village_raid
+    trigger = {
+        tag = SHI
+		has_completed_focus = shi_golden_monarch
+		has_stability > 0.60
+		NOT = {
+			has_stability > 0.90
+		}
+		NOT = {
+			has_country_flag = norton_cured
+		}
+    }
+    fire_only_once = no
+    mean_time_to_happen = { days = 45 }
+    option = {
+        name = nf_shi_april.3.a
+
+		add_stability = -0.05
+    }
+}
+country_event = {
+    id = nf_shi_april.4
+    title = nf_shi_april.4.t
+    desc = nf_shi_april.4.d
+	picture = GFX_event_BRK_village_raid
+    trigger = {
+        tag = SHI
+		has_completed_focus = shi_golden_monarch
+		has_stability > 0.50
+		NOT = {
+			has_stability > 0.60
+		}
+		NOT = {
+			has_country_flag = norton_cured
+		}
+    }
+    fire_only_once = no
+    mean_time_to_happen = { days = 45 }
+    option = {
+        name = nf_shi_april.4.a
+
+		add_stability = -0.01
+    }
+}
+country_event = {
+    id = nf_shi_april.5
+    title = nf_shi_april.5.t
+    desc = nf_shi_april.5.d
+	picture = GFX_event_KHA_vault_22_sign
+    trigger = {
+        tag = SHI
+    }
+    fire_only_once = yes
+	is_triggered_only = yes
+    option = {
+        name = nf_shi_april.5.a
+
+
+    }
+}
+country_event = {
+    id = nf_shi_april.6
+    title = nf_shi_april.6.t
+    desc = nf_shi_april.6.d
+	picture = GFX_event_clk_tardis
+    trigger = {
+        tag = SHI
+    }
+    fire_only_once = yes
+	is_triggered_only = yes
+    option = {
+        name = nf_shi_april.6.a
+
+
+    }
+}
+country_event = {
+    id = nf_shi_april.7
+    title = nf_shi_april.7.t
+    desc = nf_shi_april.7.d
+	picture = GFX_event_ghoul
+    trigger = {
+        tag = SHI
+    }
+    fire_only_once = yes
+	is_triggered_only = yes
+    option = {
+        name = nf_shi_april.7.a
+
+		set_country_leader_portrait = {
+			ideology = elites
+			portrait = GFX_Portrait_SHI_ghoul_Nortan
+		}
+    }
+}
+country_event = {
+    id = nf_shi_april.8
+    title = nf_shi_april.8.t
+    desc = nf_shi_april.8.d
+	picture = GFX_event_daughters_of_hecate
+    trigger = {
+        tag = SHI
+		any_neighbor_country = {
+			has_country_leader = {
+				character = TAR_tar
+				ruling_only = yes
+			}
+		}
+		NOT = {
+			has_country_flag = norton_cured
+		}
+    }
+    fire_only_once = yes
+	is_triggered_only = no
+    option = {
+        name = nf_shi_april.8.a
+
+
+    }
+}
+country_event = {
+    id = nf_shi_april.9
+    title = nf_shi_april.9.t
+    desc = nf_shi_april.9.d
+	picture = GFX_event_HEA_shadowy_cabal
+    trigger = {
+        tag = SHI
+    }
+    fire_only_once = yes
+	is_triggered_only = yes
+    option = {
+        name = nf_shi_april.9.a
+		set_country_flag = norton_cured
+
+    }
+	option = {
+        name = nf_shi_april.9.b
+
+		USA = {
+			annex_country = {
+				target = SHI
+				transfer_troops = yes
+			}
+		}
+
+    }
+}
+country_event = {
+    id = nf_shi_april.10
+    title = nf_shi_april.10.t
+    desc = nf_shi_april.10.d
+	picture = GFX_event_event_auto_doc
+    trigger = {
+        tag = SHI
+		owns_state = 193
+		NOT = {
+			has_country_flag = norton_cured
+		}
+    }
+    fire_only_once = yes
+	is_triggered_only = yes
+    option = {
+        name = nf_shi_april.10.a
+		set_country_flag = norton_cured
+    }
+	option = {
+        name = nf_shi_april.10.b
+    }
+	option = {
+        name = nf_shi_april.10.c
+		add_ideas = shi_arcade_gannon
+    }
+}
+country_event = {
+    id = nf_shi_april.11
+    title = nf_shi_april.11.t
+    desc = nf_shi_april.11.desc
+	picture = GFX_fall_shady_sands
+    trigger = {
+        tag = SHI
+    }
+    fire_only_once = yes
+	is_triggered_only = yes
+    option = {
+        name = nf_shi_april.11.a
+		163 = {
+			add_extra_state_shared_building_slots = 8
+			add_building_construction = {
+				type = industrial_complex
+				level = 4
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = arms_factory
+				level = 4
+				instant_build = yes
+			}
+		}
+    }
+	option = {
+        name = nf_shi_april.11.b
+		253 = {
+			add_extra_state_shared_building_slots = 8
+			add_building_construction = {
+				type = industrial_complex
+				level = 4
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = arms_factory
+				level = 4
+				instant_build = yes
+			}
+		}
+		set_capital = {state = 253}
+    }
+	option = {
+        name = nf_shi_april.11.c
+		70 = {
+			add_extra_state_shared_building_slots = 8
+			add_building_construction = {
+				type = industrial_complex
+				level = 4
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = arms_factory
+				level = 4
+				instant_build = yes
+			}
+		}
+		set_capital = {state = 70}
+    }
+	option = {
+        name = nf_shi_april.11.d
+		135 = {
+			add_extra_state_shared_building_slots = 8
+			add_building_construction = {
+				type = industrial_complex
+				level = 4
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = arms_factory
+				level = 4
+				instant_build = yes
+			}
+		}
+		set_capital = {state = 135}
+    }
+}

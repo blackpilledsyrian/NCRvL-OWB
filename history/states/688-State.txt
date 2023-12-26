@@ -1,0 +1,32 @@
+state = {
+	id = 688
+	name = "STATE_688"
+	resources={
+		metal = 4
+		circuitry = 8
+		energy = 2
+		composites = 5
+	}
+
+	history={
+		victory_points = {
+			9542 15
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 2
+			9542 = {
+				naval_base = 2
+			}
+		}
+
+	}
+
+	provinces={
+		759 4949 9476 9487 9491 9542 10715 11247 11250 11253 11258 11264 11275
+	}
+	manpower=28000
+	buildings_max_level_factor=1.000
+	state_category=large_town
+}

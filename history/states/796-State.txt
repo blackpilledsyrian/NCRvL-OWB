@@ -1,0 +1,40 @@
+state = {
+	id = 796
+	name = "STATE_796"
+	manpower = 42468
+	state_category = large_city
+
+	resources = {
+		water = 4
+		metal = 8
+		energy = 8
+		circuitry = 4
+	}
+
+	history = {
+		owner = TAA
+		add_core_of = TAA
+		victory_points = {
+			9707 3
+		}
+		victory_points = {
+			9714 3
+		}
+		victory_points = {
+			9715 20
+		}
+		victory_points = {
+			9725 3
+		}
+		buildings = {
+			infrastructure = 6
+			arms_factory = 4
+			industrial_complex = 2
+			9707 = { naval_base = 1 }
+		}
+	}
+
+	provinces = {
+		9702 9703 9704 9707 9708 9710 9712 9714 9715 9717 9719 9721 9722 9725 9729 11452
+	}
+}

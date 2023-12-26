@@ -1,0 +1,27 @@
+state = {
+	id = 595
+	name = "STATE_595"
+	manpower = 4595
+	state_category = shanty
+
+	history = {
+		victory_points = {
+			4521 5
+		}
+		victory_points = {
+			1402 3
+		}
+		buildings = {
+			infrastructure = 1
+			air_base = 1
+			arms_factory = 1
+			industrial_complex = 1
+			4512 = { naval_base = 1 }
+		}
+		add_extra_state_shared_building_slots = 1
+	}
+
+	provinces = {
+		1402 1407 1436 2184 2187 2188 2507 4222 4512 4520 4521 4527 4528 4529 4532 4570 7195 8327
+	}
+}

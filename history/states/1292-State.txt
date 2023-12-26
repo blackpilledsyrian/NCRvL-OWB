@@ -1,0 +1,24 @@
+
+state={
+	id=1292
+	name="STATE_1292"
+	provinces={
+		13513 13514 13515 13517 13518 13523 13524 13525 13526 13527 13529 13530
+	}
+	resources = {
+		water = 16
+		metal = 14
+	}
+	history = {
+		victory_points = {
+			13524 5
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+		}
+	}
+	state_category = large_town
+	manpower = 4800
+	local_supplies=0.000
+}

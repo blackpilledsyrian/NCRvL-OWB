@@ -1,0 +1,26 @@
+state = {
+	id = 18
+	name = "STATE_18"
+	resources={
+		water = 2
+		metal = 2
+	}
+
+	history={
+		victory_points = {
+			1946 5
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 3
+			arms_factory = 1
+		}
+	}
+
+	provinces = {
+		1479 1946 2514 4057 4058 4059 4060 4061 4062 4064 4460 4551 7167 7168 7175 8536
+	}
+	manpower=6791
+	buildings_max_level_factor=1.000
+	state_category=city
+}

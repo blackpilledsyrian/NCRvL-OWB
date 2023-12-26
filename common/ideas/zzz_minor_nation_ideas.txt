@@ -1,0 +1,3562 @@
+ideas = {
+    country = {
+        ##########################
+        ##### SHARED GENERIC IDEAS
+        ##########################
+        ######
+        # MOS
+        ######
+        okc_savages = {
+            picture = savage_idea
+            allowed = {
+                always = no
+            }
+            modifier = {
+                breakthrough_factor = 0.05
+                boost_resistance_factor = 0.25
+                required_garrison_factor = -0.25
+                resistance_damage_to_garrison = -0.2
+                civilian_intel_to_others = 10
+                navy_intel_to_others = 10
+                army_intel_to_others = 10
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            removal_cost = -1
+        }
+        sun_victors_against_pallus = {
+            picture = pantheon_lon
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            equipment_bonus = {
+                chariot_equipment = {
+                    build_cost_ic = -0.15
+                    soft_attack = 0.15
+                    instant = yes
+                }
+            }
+        }
+        MOS_one_of_two = {
+            picture = KHA_a_new_silk_road
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                caps_flat_income_modifier = 5
+                consumer_goods_expected_value = -0.05
+            }
+        }
+        NAT_baron_funding = {
+            picture = flag_BAR
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            equipment_bonus = {
+                infantry_equipment = {
+                    build_cost_ic = -0.15
+                    instant = yes
+                }
+            }
+            modifier = {
+                consumer_goods_expected_value = -0.05
+                army_defence_factor = 0.05
+                experience_gain_army_factor = -0.3
+                conscription = 0.05
+                caps_flat_income_modifier = 3
+            }
+        }
+        NAT_unstable_region = {
+            picture = red_moon
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            cancel = {
+                is_puppet = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                stability_factor = -0.30
+                justify_war_goal_time = 2.00
+                political_power_factor = -0.10
+                army_fuel_consumption_factor = 0.15
+            }
+        }
+        PAC_traditions = {
+            picture = propaganda_drinking
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                stability_factor = 0.05
+                political_power_factor = 0.05
+            }
+        }
+        FOU_trading_crossroad = {
+            picture = MOJ_idea_vending_machines
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                consumer_goods_expected_value = -0.05
+                caps_income_modifier = 0.10
+                caps_flat_income_modifier = 15
+            }
+        }
+        GRD_worshiping_technology = {
+            picture = officer_holotapes
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                research_speed_factor = 0.10
+                stability_factor = -0.10
+                war_support_factor = 0.05
+                local_resources_factor = 0.10
+            }
+        }
+        TOF_powder_gangers = {
+            picture = KHA_overwhelming_firepower
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                exodus_national_appeal = -0.1
+            }
+            equipment_bonus = {
+                demolitions_equipment = {
+                    soft_attack = 0.15
+                    hard_attack = 0.15
+                    instant = yes
+                }
+            }
+        }
+        PAS_defending_the_passes = {
+            picture = recruitment_pistol
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                production_speed_bunker_factor = 0.05
+                production_speed_coastal_bunker_factor = 0.05
+                army_core_defence_factor = 0.05
+                conscription_factor = -0.15
+                caps_income_modifier = 0.15
+            }
+        }
+		RHO_raiders_of_lost_space_center = {
+			picture = generic_spaceman
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				army_core_defence_factor = 0.10
+				conscription_factor = 0.1
+				war_support_factor = 0.10
+				war_stability_factor = 0.20
+				custom_modifier_tooltip = RHO_raiders_of_lost_space_center_tt
+			}
+		}
+		RHO_raiders_of_arizona = {
+			picture = generic_raider_thing
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				army_core_defence_factor = 0.10
+				army_core_attack_factor = 0.10
+				conscription_factor = 0.25
+				war_support_factor = 0.20
+				war_stability_factor = 0.30
+				attrition = -0.1
+				custom_modifier_tooltip = RHO_raiders_of_arizona_tt
+			}
+		}
+        #########
+        ##### UFO
+        #########
+        # National spirit fot Zetans #
+        zetan = {
+            picture = generic_infantry_bonus
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                ai_focus_aggressive_factor = 0.5
+                ai_get_ally_desire_factor = -100
+                elites_drift = 0.50
+                drift_defence_factor = 0.50
+                recon_factor = 0.40
+                army_org = 15
+                army_morale_factor = 0.40
+                resistance_damage_to_garrison = 0.75
+                decryption_factor = 0.40
+                encryption_factor = 0.2
+                attrition = 0.05
+                heat_attrition_factor = 0.05
+                supply_consumption_factor = -0.05
+                out_of_supply_factor = 0.1
+                air_ace_generation_chance_factor = -2
+                air_accidents_factor = -0.50
+                production_factory_max_efficiency_factor = 0.25
+                line_change_production_efficiency_factor = 0.25
+                local_resources_factor = 0.90
+                production_factory_start_efficiency_factor = 0.15
+                production_factory_efficiency_gain_factor = 0.15
+                min_export = -1
+                research_speed_factor =0.45
+                justify_war_goal_time = -0.7
+                war_support_factor = 0.9
+                stability_factor = 0.9
+                conscription_factor = -0.6
+                industrial_capacity_dockyard = 2
+                navy_max_range_factor = 2
+                naval_hit_chance = 0.6
+            }
+        }
+        ######
+        # EDN
+        ######
+        the_corpse = {
+            picture = corrupted_geck
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                MONTHLY_POPULATION = -0.1
+                stability_factor = -0.1
+                production_speed_buildings_factor = -0.1
+                conscription = 0.075 #Eden starts with tiny state manpower, this really helps em out
+                exodus_national_appeal = -0.05
+            }
+        }
+        ### TLT
+        river_trade = {
+            picture = generic_hat_sea_cpt
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                production_speed_buildings_factor = 0.1
+                exodus_national_appeal = 0.05
+                country_resource_water = 5
+                country_resource_metal = 5
+            }
+        }
+        ######
+        # STR
+        ######
+        str_watchers_of_the_stars = {
+            picture = str_watchers_of_the_stars
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                stability_factor = -0.15
+                air_doctrine_cost_factor = 0.15
+            }
+            research_bonus = {
+                air_tech_category = 0.15
+            }
+        }
+        ######
+        # DSP
+        ######
+        highwaymen_of_louisiana = {
+            picture = itz_idea_icdeb
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                army_speed_factor = 0.05
+            }
+            research_bonus = {
+                bike_tech_category = 0.08
+            }
+        }
+        ######
+        # GAM
+        ######
+        chains_across_the_rivers = {
+            picture = gam_chains_across_the_rivers
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                convoy_raiding_efficiency_factor = 0.15
+                local_resources_factor = 0.08
+            }
+        }
+        ######
+        # SYN
+        ######
+        syilx_council_of_eight = {
+            picture = generic_religion
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                political_power_factor = 0.05
+                conscription_factor = 0.06
+                army_core_defence_factor = 0.1
+            }
+        }
+        syilx_captikwl = {
+            picture = generic_compass
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                local_resources_factor = 0.12
+                research_speed_factor = 0.04
+            }
+        }
+        ######
+        # HAI
+        ######
+        hai_raven_and_eagle = {
+            picture = hai_raven_and_eagle
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                stability_factor = 0.05
+                monthly_population = 0.12
+                local_resources_factor = 0.08
+            }
+        }
+        hai_whaling_chiefs = {
+            picture = hai_whale
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                caps_flat_income_modifier = 8
+                ships_at_battle_start = 0.1
+                spotting_chance = 0.08
+            }
+        }
+        ######
+        # SLE
+        ######
+        bomb_station_02 = {
+            picture = generic_bomb_space_station
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                global_building_slots_factor = 0.1
+                production_speed_buildings_factor = 0.05
+                research_speed_factor = 0.05
+            }
+        }
+        SLE_followers_of_presper = {
+            picture = generic_atom
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            research_bonus = {
+                energy_weaponry_tech_category = 0.35
+            }
+            equipment_bonus = {
+                demolitions_equipment = {
+                    soft_attack = 0.15
+                    hard_attack = 0.25
+                    instant = yes
+                }
+            }
+            targeted_modifier = {
+                tag = NCR
+                defense_bonus_against = 0.05
+                attack_bonus_against = 0.05
+            }
+            targeted_modifier = {
+                tag = MOT
+                defense_bonus_against = 0.05
+                attack_bonus_against = 0.05
+            }
+            targeted_modifier = {
+                tag = BAG
+                defense_bonus_against = 0.05
+                attack_bonus_against = 0.05
+            }
+        }
+        ######
+        # MLE
+        ######
+        wickiup_nomads = {
+            picture = generic_backpack
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                army_org_regain = 0.08
+                global_building_slots_factor = -0.15
+                production_speed_buildings_factor = 0.1
+                exodus_nomadicity = 0.2
+            }
+        }
+        guerilla_legacy = {
+            picture = generic_improv_barricade
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                army_core_defence_factor = 0.05
+                war_support_factor = 0.075
+            }
+        }
+        ######
+        # UIN
+        ######
+        uin_ute_heritage = {
+            picture = mountain_gods
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                political_power_factor = 0.05
+                stability_factor = 0.05
+            }
+        }
+        uin_eagle_rock_airfield = {
+            picture = TIM_patch_bird_study
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            research_bonus = {
+                air_tech_category = 0.08
+            }
+            modifier = {
+                air_doctrine_cost_factor = 0.08
+            }
+        }
+        ######
+        # PAR
+        ######
+        warriors_of_the_rock = {
+            picture = generic_blood
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                monthly_population = -0.5
+                mobilization_speed = 0.3
+                training_time_factor = -0.3
+                war_support_factor = 0.3
+                experience_gain_army_factor = 0.3
+                experience_gain_army = 0.3
+                justify_war_goal_time = -0.3
+            }
+        }
+        ancestral_mesa_paintings = {
+            picture = par_the_mesa
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            equipment_bonus = {
+                infantry_equipment = {
+                    build_cost_ic = -0.1
+                    instant = yes
+                }
+            }
+            research_bonus = {
+                tribal_tech_category = 0.05
+            }
+        }
+        ######
+        # GRH
+        ######
+        grh_eyes_south = {
+            picture = generic_raider_1
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                join_faction_tension = 1.0
+                ai_get_ally_desire_factor = -500
+                ai_focus_defense_factor = 0.4
+                guarantee_tension = 0.75
+            }
+        }
+        grh_guardian_of_north_america = {
+            picture = generic_medal
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                war_support_factor = 0.05
+                army_leader_start_defense_level = 1
+                political_power_factor = 0.15
+                conscription = 0.03
+            }
+        }
+        ######
+        # LUB
+        ######
+        lub_ghoul_human_tensions = {
+            picture = ghoul_recruitment
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                stability_factor = -0.05
+                conscription_factor = -0.1
+                army_org_factor = -0.03
+            }
+        }
+        ######
+        # ASF
+        ######
+        asf_the_memorabilia = {
+            picture = generic_bible
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                research_speed_factor = 0.04
+                stability_factor = 0.05
+            }
+        }
+        asf_legacy_of_saint_leibowitz = {
+            picture = generic_religion
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                max_dig_in_factor = 0.03
+                army_speed_factor = 0.03
+                surrender_limit = -0.15
+            }
+        }
+        ######
+        # WHD
+        ######
+        whd_chinese_remnants = {
+            picture = generic_red_star
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = no
+            }
+            modifier = {
+                research_speed_factor = 0.1
+                stability_factor = -0.1
+            }
+        }
+        ######
+        # WHI
+        ######
+        whi_burden_of_a_nation = {
+            picture = generic_folder
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                stability_factor = -0.05
+                political_power_factor = -0.06
+                conscription_factor = 0.04
+            }
+        }
+        whi_bitter_resistance = {
+            picture = generic_backpack
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                war_support_factor = 0.1
+                exodus_national_appeal = 0.12
+                exodus_nomadicity = 0.10
+            }
+            targeted_modifier = {
+                tag = KAM
+                defense_bonus_against = 0.08
+            }
+        }
+        ######
+        # KAM
+        ######
+        kam_sourge_of_the_whiteout = {
+            picture = generic_service_rifle
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                ai_focus_aggressive_factor = 20
+                exodus_occupier_appeal = -0.2
+                army_attack_factor = 0.07
+                attrition = -0.03
+            }
+        }
+        ######
+        # DRE
+        ######
+        dre_mining_economy = {
+            picture = generic_pickaxe
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                consumer_goods_expected_value = -0.02
+                local_resources_factor = 0.08
+            }
+            equipment_bonus = {
+                support_robot = {
+                    build_cost_ic = -0.05
+                    instant = yes
+                }
+            }
+        }
+		dre_victorian_naval_attache = {
+			picture = VIC_naval_support
+			removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+			modifier = {
+                experience_gain_navy = 0.05
+                naval_doctrine_cost_factor = -0.1
+				naval_coordination = 0.1
+            }
+		}
+        ######
+        # EDA
+        ######
+        EDA_ufo_defense = {
+            picture = generic_ufo_idea
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                research_speed_factor = 0.2
+            }
+            targeted_modifier = {
+                tag = ZAP
+                defense_bonus_against = 0.10
+            }
+            targeted_modifier = {
+                tag = DSL
+                defense_bonus_against = 0.10
+            }
+            targeted_modifier = {
+                tag = HXL
+                defense_bonus_against = 0.10
+            }
+            targeted_modifier = {
+                tag = SHI
+                defense_bonus_against = 0.10
+            }
+        }
+        EDA_secrets = {
+            picture = generic_technical_doc
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                compliance_gain = 0.06
+            }
+        }
+        ######
+        # VIC
+        ######
+        vic_strait_of_georgia_defence_fleet = {
+            picture = generic_sea_cpt
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                spotting_chance = 0.12
+                naval_speed_factor = 0.1
+                navy_max_range_factor = -0.1
+            }
+        }
+        vic_cascadian_heriatge = {
+            picture = generic_backpack
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                custom_modifier_tooltip = can_form_cascadia_tt
+            }
+        }
+        ######
+        # RAP
+        ######
+        rap_fiercely_independent = {
+            picture = generic_military_draft2
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                army_morale_factor = 0.025
+                army_core_defence_factor = 0.05
+                war_support_factor = 0.1
+            }
+        }
+        rap_riding_the_white_water = {
+            picture = generic_sea_cpt
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                naval_coordination = 0.08
+                convoy_raiding_efficiency_factor = 0.1
+            }
+        }
+        ######
+        # RAP
+        ######
+        # changed the file with TWO's ideas
+        ######
+        # PER
+        ######
+        per_thrill_of_the_hunt = {
+            picture = generic_backpack
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                army_speed_factor = 0.05
+                spotting_chance = 0.1
+                max_dig_in_factor = -0.25
+            }
+        }
+        per_stalking_man = {
+            picture = generic_devil
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                army_attack_factor = 0.04
+                conscription_factor = 0.08
+                exodus_occupier_appeal = -0.08
+            }
+        }
+        ######
+        # TVR
+        ######
+        tvr_protected_by_the_rio_lerma = {
+            picture = generic_coast_guard
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                exodus_national_appeal = 0.15
+                navy_screen_attack_factor = 0.06
+                navy_screen_defence_factor = 0.12
+            }
+            targeted_modifier = {
+                tag = ATE
+                defense_bonus_against = 0.04
+            }
+        }
+        tvr_the_merchant_class = {
+            picture = generic_weapons_bench
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                consumer_goods_expected_value = -0.04
+                economy_cost_factor = -0.15
+                min_export = 0.02
+            }
+        }
+        ######
+        # YAK
+        ######
+        yak_the_forest_of_the_elders = {
+            picture = generic_shovel
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                production_speed_buildings_factor = 0.06
+                stability_factor = 0.1
+            }
+        }
+        yak_living_from_the_land = {
+            picture = generic_backpack
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                exodus_nomadicity = 0.3
+                attrition = -0.02
+                no_supply_grace = 24
+                out_of_supply_factor = -0.06
+            }
+        }
+        ######
+        # TCA
+        ######
+        tca_a_temporary_mandate = {
+            picture = generic_compass
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                exodus_occupier_appeal = 0.2
+                political_power_factor = -0.2
+                war_support_factor = 0.15
+                conscription_factor = 0.05
+                custom_modifier_tooltip = tca_a_temporary_mandate_tt
+            }
+        }
+        wbh_tca_split = {
+            picture = brotherhood_seattle
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            cancel = {
+                if = {
+                    limit = { original_tag = TCA }
+                    TCA = {
+                        WBH = {
+                            all_core_land_owned_by_prev_sphere = yes
+                        }
+                    }
+                }
+                else_if = {
+                    limit = { original_tag = WBH }
+                    WBH = {
+                        TCA = {
+                            all_core_land_owned_by_prev_sphere = yes
+                        }
+                    }
+                }
+            }
+            modifier = {
+                political_power_factor = -0.15
+                trade_opinion_factor = -0.2
+                experience_loss_factor = 0.25
+                research_speed_factor = -0.1
+                custom_modifier_tooltip = wbh_tca_split_tt
+            }
+        }
+        tca_brotherhood_exiles = {
+            picture = brotherhood_logistics
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                research_speed_factor = 0.04
+                dig_in_speed_factor = 0.075
+                production_speed_bunker_factor = 0.15
+            }
+        }
+        tca_glorious_purpose = {
+            picture = brotherhood_drill_sergeants
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                research_speed_factor = 0.04
+                dig_in_speed_factor = 0.075
+                production_speed_bunker_factor = 0.15
+                conscription = 0.03
+            }
+            equipment_bonus = {
+                power_armor_equipment = {
+                    build_cost_ic = -0.02
+                    maximum_speed = 0.05
+                    instant = yes
+                }
+            }
+        }
+        tca_glorious_purpose_2 = {
+            name = tca_glorious_purpose
+            picture = brotherhood_drill_sergeants
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                research_speed_factor = 0.04
+                dig_in_speed_factor = 0.075
+                production_speed_bunker_factor = 0.15
+                conscription = 0.03
+            }
+            equipment_bonus = {
+                power_armor_equipment = {
+                    build_cost_ic = -0.05
+                    breakthrough = 0.1
+                    maximum_speed = 0.1
+                    instant = yes
+                }
+            }
+        }
+        tca_brotherhood_reforged = {
+            picture = generic_compass
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                stability_factor = 0.05
+                war_support_factor = 0.15
+                conscription_factor = 0.05
+            }
+            equipment_bonus = {
+                power_armor_equipment = {
+                    build_cost_ic = -0.04
+                    maximum_speed = 0.02
+                    instant = yes
+                }
+            }
+        }
+        tca_wardens_of_the_white = {
+            picture = generic_backpack
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                attrition = -0.02
+            }
+            equipment_bonus = {
+                spec_ops_equipment = {
+                    maximum_speed = 0.05
+                    soft_attack = 0.08
+                    instant = yes
+                }
+            }
+        }
+        tca_protectors_of_the_north = {
+            picture = generic_compass
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                army_core_defence_factor = 0.06
+                stability_factor = 0.1
+                war_support_factor = 0.15
+                conscription_factor = 0.1
+            }
+        }
+        ######
+        # TOC
+        ######
+        toc_legacy_of_vault_100 = {
+            picture = generic_vault_door
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                consumer_goods_expected_value = -0.04
+                stability_factor = 0.1
+            }
+            research_bonus = {
+                industry = 0.06
+                construction_category = 0.06
+            }
+        }
+        toc_the_last_homely_house = {
+            picture = generic_recon
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                monthly_population = 0.075
+                local_resources_factor = 0.1
+                army_speed_factor = 0.035
+            }
+        }
+        toc_memories_of_a_future_past = {
+            picture = generic_mr_gutsy
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                research_speed_factor = 0.04
+                production_speed_buildings_factor = 0.075
+                custom_modifier_tooltip = toc_memories_of_a_future_past_tt
+            }
+        }
+        ######
+        # ROT
+        ######
+        rot_legacy_of_vault_100 = {
+            picture = generic_vault_door
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                army_core_defence_factor = 0.05
+                war_support_factor = 0.15
+                production_speed_arms_factory_factor = 0.15
+                production_speed_industrial_complex_factor = -0.1
+            }
+        }
+        rot_eternal_quest = {
+            picture = generic_flamer
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            equipment_bonus = {
+                demolitions_equipment = {
+                    build_cost_ic = -0.08
+                    soft_attack = 0.065
+                    hard_attack = 0.035
+                    instant = yes
+                }
+            }
+            modifier = {
+                custom_modifier_tooltip = rot_eternal_quest_tt
+                ai_focus_aggressive_factor = 0.4
+                exodus_occupier_appeal = -0.25
+                trade_opinion_factor = -0.05
+            }
+        }
+        ######
+        # FIE
+        ######
+        fie_drug_monopoly = {
+            picture = generic_devil
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                evolution_income_source_modifier_2 = 0.1
+                political_power_factor = 0.08
+                war_support_factor = 0.1
+            }
+        }
+        fie_strength_in_numbers = {
+            picture = generic_military_draft2
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                conscription_factor = 0.08
+                army_attack_factor = 0.035
+                caps_raider_self_bonus = 0.08
+                exodus_national_appeal = 0.03
+            }
+        }
+        ######
+        # COW
+        ######
+        cow_remnants_of_rangers = {
+            picture = COW_arizona_ranger
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                special_forces_training_time_factor = -0.15
+                special_forces_attack_factor = 0.05
+                special_forces_defence_factor = 0.05
+                special_forces_min = 40
+                special_forces_cap = 0.05
+
+            }
+        }
+        cow_reformed_corps = {
+            picture = COW_arizona_ranger
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                war_support_factor = 0.05
+                special_forces_training_time_factor = -0.2
+                special_forces_attack_factor = 0.1
+                special_forces_defence_factor = 0.1
+                special_forces_min = 100
+                special_forces_cap = 0.1
+            }
+        }
+        cow_bastion_of_liberty = {
+            picture = generic_democratic_drift_bonus
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            targeted_modifier = {
+                tag = CES
+                attack_bonus_against = 0.05
+                defense_bonus_against = 0.05
+            }
+            modifier = {
+                exodus_national_appeal = 0.15
+                conscription_factor = 0.1
+                stability_factor = 0.1
+                army_leader_start_defense_level = 1
+            }
+        }
+        cow_legion_resistance = {
+        picture = legion_crucifixion
+            allowed = {
+                always = no
+            }
+            available = {
+                520 = {
+                    is_owned_by = COW
+                }
+            }
+            removal_cost = -1
+            modifier = {
+                stability_factor = -0.2
+                war_support_factor	= 0.1
+                political_power_factor	= -0.10
+                weekly_manpower = -15
+                resistance_damage_to_garrison = 0.25
+                stability_weekly_factor = 0.0025
+            }
+        }
+        ######
+        # KLA
+        ######
+        KLA_gecko_abundance = {
+            picture = generic_backpack
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                weekly_manpower = -1
+                caps_flat_income_modifier = 5
+                army_leader_start_planning_level = 1
+            }
+        }
+        KLA_professional_trappers = {
+            picture = generic_shovel
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                exodus_nomadicity = 0.15
+                resistance_damage_to_garrison_on_our_occupied_states = 0.35
+            }
+            equipment_bonus = {
+                support_equipment = {
+                    build_cost_ic = -0.05
+                    reliability_factor = 0.15
+                    instant = yes
+                }
+            }
+        }
+        ######
+        # PMR
+        ######
+        PMR_slaves_and_drugs = {
+            picture = brk_slavery_3
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                consumer_goods_expected_value = 0.03
+                caps_flat_income_modifier = 12
+            }
+        }
+        PMR_wannabe_criminal_empire = {
+            picture = generic_devil
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                conscription = 0.02
+                army_morale_factor = 0.025
+            }
+        }
+        ######
+        # BEL
+        ######
+        bel_bellingham_for_battle = {
+            picture = bel_bellingham_for_battle
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            targeted_modifier = { tag = WBH attack_bonus_against = 0.15 }
+            targeted_modifier = { tag = BRK attack_bonus_against = 0.15 }
+            modifier = {
+                conscription = 0.05
+            }
+        }
+        bel_spirit_of_liberty = {
+            picture = generic_democratic_drift_bonus
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                exodus_national_appeal = 0.1
+                stability_factor = 0.15
+                defensive_war_stability_factor = 0.25
+                army_core_defence_factor = 0.15
+            }
+        }
+        ######
+        # BLP / BVC
+        ######
+        baja_banditos = {
+            picture = generic_raider_2
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                caps_flat_income_modifier = 12
+                consumer_goods_expected_value = -0.02
+                army_speed_factor = -0.1
+                army_defence_factor = -0.25
+                army_attack_factor = 0.15
+                conscription = -0.03
+                max_planning = 0.1
+                attrition = -0.1
+            }
+        }
+        baja_banditos_united = {
+            picture = generic_raider_2
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                caps_flat_income_modifier = 12
+                consumer_goods_expected_value = -0.05
+                army_speed_factor = 0.05
+                army_defence_factor = 0.05
+                army_attack_factor = 0.10
+                conscription = 0.02
+                max_planning = 0.1
+                attrition = -0.2
+            }
+        }
+        blp_procurement_specialists = {
+            picture = generic_democratic_drift_bonus
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                local_resources_factor = 0.1
+                trade_opinion_factor = 0.25
+            }
+            research_bonus = {
+                extraction_category = 0.05
+            }
+        }
+        bvc_expert_smugglers = {
+            picture = generic_democratic_drift_bonus
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                recon_factor = 0.1
+                army_core_defence_factor = 0.05
+            }
+            equipment_bonus = {
+                infantry_equipment = {
+                    build_cost_ic = -0.05
+                    instant = yes
+                }
+            }
+        }
+        ######
+        # OLY
+        ######
+        oly_park_legacy = {
+            picture = generic_compass
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                recon_factor = 0.04
+                army_speed_factor = 0.04
+            }
+        }
+        oly_nomadic_traditions = {
+            picture = generic_backpack
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                exodus_nomadicity = 0.25
+                production_speed_arms_factory_factor = 0.1
+                production_factory_efficiency_gain_factor = 0.1
+                production_factory_max_efficiency_factor = -0.15
+            }
+        }
+        oly_diplomatic_isolation = {
+            picture = generic_radio_pack
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                cant_sent_volunteers_to_this_country = 1
+                diplomacy_distance_factor = -0.5
+                trade_opinion_factor = -0.2
+                army_morale_factor = -0.15
+            }
+        }
+        ######
+        # PEC
+        ######
+        pec_animal_husbandry = {
+            picture = generic_brahmin
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                monthly_population = 0.15
+                caps_flat_income_modifier = 4
+            }
+            research_bonus = {
+                agriculture_tech = 0.06
+            }
+        }
+        pec_rancher_culture = {
+            picture = brahmin_baron
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                exodus_nomadicity = 0.25
+                army_speed_factor = 0.04
+                production_speed_buildings_factor = 0.08
+                conscription = 0.02
+            }
+        }
+        ######
+        # UMB
+        ######
+        umb_spiritual_guidance = {
+            picture = generic_religion
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                political_power_factor = 0.12
+                conscription = 0.035
+            }
+        }
+        umb_arroyo_trade = {
+            picture = generic_backpack
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                research_speed_factor = 0.03
+                consumer_goods_expected_value = -0.04
+                caps_flat_income_modifier = 4
+            }
+        }
+        ######
+        # TON
+        ######
+        ton_expert_cultivators = {
+            picture = generic_shovel
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                monthly_population = 0.15
+                production_speed_industrial_complex_factor = 0.1
+            }
+            research_bonus = {
+                agriculture_tech = 0.08
+            }
+        }
+        ton_seven_stars = {
+            picture = generic_pp_unity_bonus
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                army_core_defence_factor = 0.06
+                stability_factor = 0.05
+                political_power_factor = 0.15
+            }
+        }
+        ######
+        # SHO
+        ######
+        sho_outcasts_once_again = {
+            picture = generic_backpack
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                exodus_nomadicity = 0.25
+                production_factory_efficiency_gain_factor = -0.1
+                war_support_factor = 0.2
+                stability_factor = -0.1
+                army_attack_factor = 0.04
+				custom_modifier_tooltip = SHO_pathfinder_tt
+            }
+        }
+        sho_back_home = {
+            picture = generic_backpack
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                war_support_factor = 0.2
+                stability_factor = 0.1
+                army_attack_factor = 0.04
+                army_core_defence_factor = 0.06
+				custom_modifier_tooltip = SHO_pathfinder_tt
+            }
+        }
+        sho_snake_river_teachings = {
+            picture = generic_coast_guard
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                monthly_population = 0.1
+                naval_speed_factor = 0.05
+                amphibious_invasion = 0.1
+            }
+        }
+		#####
+		# CHE
+		#####
+		che_what_remains_of_the_trainyard = {
+            picture = generic_scrap_kit
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+				equipment_capture_factor = 0.1
+				country_resource_metal = 15
+				country_resource_circuitry = 10
+				global_building_slots_factor = -0.1
+            }
+        }
+        #####
+        # SC)
+        ######
+        bizaare_market = {
+            picture = circus_tent
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                civilian_intel_to_others = 10
+                production_speed_buildings_factor = 0.05
+                exodus_national_appeal = 0.05
+                country_resource_water = 5
+                country_resource_metal = 5
+            }
+        }
+        ######
+        # ROS
+        ######
+        ros_bless_the_rains_down = {
+            picture = HEA_idea_boilers_of_justice
+            removal_cost = -1
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                country_resource_water = 10
+                caps_flat_income_modifier = 3
+            }
+        }
+        ros_ecologist_legacy = {
+            picture = TIM_patch_enviromental_science
+            removal_cost = -1
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                supply_consumption_factor = -0.1
+                research_speed_factor = 0.05
+                production_factory_max_efficiency_factor = -0.1
+            }
+        }
+        ros_secrets_of_the_steam = {
+            picture = HEA_idea_blessing_of_steam
+            removal_cost = -1
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                research_speed_factor = 0.10
+                production_factory_max_efficiency_factor = 0.1
+                production_speed_electricity_generator_factor = 0.20
+            }
+        }
+        ######
+        # MOS
+        ######
+        mos_storms_of_the_divide = {
+            picture = pantheon_lon
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                army_core_defence_factor = 0.2
+                army_core_attack_factor = 0.05
+                attrition = 0.1
+            }
+        }
+        mos_old_world_heritage = {
+            picture = generic_trifold
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                research_speed_factor = 0.03
+                stability_factor = 0.03
+            }
+        }
+        ######
+        # TDN
+        ######
+        tdn_wannabe_drug_empire = {
+            picture = KHA_a_new_silk_road
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                improve_relations_maintain_cost_factor = 0.15
+                production_speed_infrastructure_factor = 0.075
+                consumer_goods_expected_value = -0.06
+            }
+        }
+        tdn_legacy_of_reno_days = {
+            picture = generic_devil
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                stability_factor = -0.1
+				caps_flat_income_modifier = 5
+                research_speed_factor = 0.02
+            }
+            equipment_bonus = {
+                support_equipment = {
+                    build_cost_ic = -0.1
+                }
+            }
+        }
+        ######
+        # HGH
+        ######
+        hgh_flatland_fleetfoot = {
+            picture = generic_backpack
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                army_core_defence_factor = 0.04
+                army_speed_factor = 0.07
+            }
+            research_bonus = {
+                agriculture_tech = 0.1
+                spec_force_equipment_tech_category = -0.1
+            }
+        }
+        hgh_craters_of_the_moon = {
+            picture = generic_bomb_space_station
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                stability_factor = 0.05
+                war_support_factor = 0.05
+                caps_flat_income_modifier = 4
+            }
+        }
+        RBT_femur_breakers = {
+            picture = generic_improv_barricade
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                army_org_regain = 0.06
+                army_attack_factor = 0.03
+                monthly_population = -0.1
+            }
+        }
+        CCW_dont_walk_the_bone_road = {
+            picture = BDT_realm_of_bone
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                army_core_defence_factor = 0.10
+                recon_factor = 0.10
+                attrition = -0.10
+            }
+        }
+        CHE_addiction_fueled_fights = {
+            picture = KHA_drugged_up
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                monthly_population = 0.15
+                army_attack_factor = 0.05
+                caps_raider_self_bonus = 0.15
+                political_power_factor = -0.15
+                war_support_factor = -0.25
+                consumer_goods_expected_value = 0.07
+            }
+        }
+        EAS_control_of_the_i80 = {
+            picture = lns_lubbock_expedition
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            targeted_modifier = {
+                tag = EHT
+                defense_bonus_against = -0.10
+                attack_bonus_against = -0.10
+            }
+            modifier = {
+                monthly_population = 0.10
+                political_power_factor = 0.10
+                consumer_goods_expected_value = -0.06
+            }
+        }
+        EAS_the_quarries_of_eastport = {
+            picture = generic_pickaxe
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            modifier = {
+                local_resources_factor = 0.10
+            }
+        }
+        SKY_a_home_like_no_other = {
+            picture = generic_restricted
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            research_bonus = {
+                air_tech_category = 0.2
+                power_armor_tech_category = 0.15
+                energy_weaponry_tech_category = 0.15
+            }
+            modifier = {
+                local_resources_factor = 0.10
+                army_core_attack_factor = -0.10
+                army_core_defence_factor = -0.10
+            }
+        }
+        SOR_zion_trails = {
+            picture = happy_trails
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            modifier = {
+                caps_flat_income_modifier = 5
+                army_speed_factor = 0.02
+                consumer_goods_expected_value = -0.03
+            }
+        }
+        DEA_mormon_tactics = {
+            picture = pantheon_ncn
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            modifier = {
+                dig_in_speed_factor = 0.05
+                conscription_factor = 0.025
+                army_morale_factor = 0.035
+                surrender_limit = 0.25
+                max_surrender_limit_offset = 0.05
+            }
+        }
+        GRA_grabbing_in_raids = {
+            picture = generic_slave_collar
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            modifier = {
+                caps_raider_self_bonus = 0.15
+                army_speed_factor = 0.20
+                army_defence_factor = -0.10
+            }
+        }
+        RUB_the_red_jewels = {
+            picture = caps_crown_jewel
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            modifier = {
+                consumer_goods_expected_value = -0.03
+                local_resources_factor = 0.05
+            }
+        }
+        RIP_rip_and_tear = {
+            picture = generic_mutant_head_smashed
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            modifier = {
+                attrition = -0.12
+                war_support_factor = 0.06
+                monthly_population = -0.3
+                out_of_supply_factor = -0.3
+            }
+        }
+        TOB_bone_wielders = {
+            picture = pantheon_sor
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            modifier = {
+                army_morale_factor = 0.1
+            }
+            equipment_bonus = {
+                infantry_equipment = {
+                    build_cost_ic = -0.15
+                    soft_attack = -0.10
+                    reliability = -0.15
+                    instant = yes
+                }
+            }
+        }
+        DRY_deep_underground = {
+            picture = generic_helm_mining
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            modifier = {
+                local_resources_factor = 0.15
+                army_core_defence_factor = 0.05
+                army_attack_factor = -0.10
+            }
+        }
+        WHD_the_hangdogs_will_be_put_down = {
+            picture = ncn_sneering_imperialist
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            targeted_modifier = {
+                tag = HAN
+                defense_bonus_against = 0.07
+                attack_bonus_against = 0.07
+            }
+            modifier = {
+                war_support_factor = 0.2
+                attrition = -0.1
+            }
+        }
+        FOR_salvaging_experience = {
+            picture = generic_scrap_kit
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                local_resources_factor = 0.25
+                army_core_defence_factor = 0.05
+            }
+        }
+        INR_forgotten_exiles = {
+            picture = generic_box
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                stability_factor = -0.03
+                army_speed_factor = 0.07
+                army_core_defence_factor = 0.03
+            }
+        }
+        SCO_western_experience = {
+            picture = followers_card
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            equipment_bonus = {
+                support_equipment = {
+                    build_cost_ic = -0.05
+                    instant = yes
+                }
+            }
+            modifier = {
+                army_org_factor = 0.075
+            }
+        }
+        CLJ_explosive_lust = {
+            picture = generic_mutant_head_smashed
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            equipment_bonus = {
+                demolitions_equipment = {
+                    soft_attack = 0.15
+                    hard_attack = 0.15
+                    instant = yes
+                }
+            }
+            modifier = {
+                army_attack_factor = 0.05
+            }
+        }
+        PNT_wilson_research_facility = {
+            picture = generic_book_science
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                research_speed_factor = 0.075
+                army_core_defence_factor = 0.03
+            }
+        }
+        SUF_love_of_the_bomb = {
+            picture = los_the_church_of_the_lost
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            equipment_bonus = {
+                demolitions_equipment = {
+                    soft_attack = 0.10
+                    hard_attack = 0.10
+                    build_cost_ic = -0.05
+                    instant = yes
+                }
+            }
+            modifier = {
+                army_core_attack_factor = 0.05
+                army_core_defence_factor = 0.05
+            }
+        }
+        CAR_just_let_me_grill = {
+            picture = generic_diagnostic
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                attrition = -0.15
+                consumer_goods_expected_value = -0.03
+                MONTHLY_POPULATION = -0.15
+            }
+        }
+        TPM_legacy_of_enforcement = {
+            picture = generic_sheriff
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                consumer_goods_expected_value = -0.03
+                army_speed_factor = 0.05
+                out_of_supply_factor = -0.10
+                training_time_army_factor = 0.15
+                political_power_factor = -0.10
+            }
+        }
+        BAM_canning_our_food = {
+            picture = generic_caps
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                caps_flat_income_modifier = 2
+                industrial_capacity_factory = 0.02
+                production_factory_efficiency_gain_factor = 0.02
+                consumer_goods_expected_value = -0.05
+            }
+        }
+        ASS_hit_and_runner_blades = {
+            picture = TIM_patch_skating
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                army_attack_factor = 0.10
+                army_speed_factor = 0.15
+                army_defence_factor = -0.15
+            }
+        }
+        TUB_live_on_air = {
+            picture = usa_magic
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                political_power_factor = 0.1
+                caps_flat_income_modifier = 5
+            }
+        }
+        RBD_ranching_lifestyle = {
+            picture = brahmin_baron
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            research_bonus = {
+                agriculture_tech = 0.03
+            }
+            modifier = {
+                conscription = 0.01
+                industrial_capacity_factory = 0.05
+                production_factory_efficiency_gain_factor = 0.05
+                consumer_goods_expected_value = -0.05
+                caps_flat_income_modifier = 3
+            }
+        }
+        LGS_the_last_mexican_democracy = {
+            picture = recruitment_cowboy
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            cancel = {
+                LGS = {
+                    is_subject_of = CES
+                }
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                conscription_factor = 0.10
+                political_power_factor = 0.05
+                army_core_defence_factor = 0.05
+                army_core_attack_factor = 0.05
+            }
+        }
+        BOO_the_guns_of_nellis = {
+            picture = MOJ_saturnite
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            equipment_bonus = {
+                demolitions_equipment = {
+                    soft_attack = 0.15
+                    hard_attack = 0.15
+                    instant = yes
+                }
+            }
+            modifier = {
+                army_core_attack_factor = 0.05
+                army_core_defence_factor = 0.05
+                army_morale_factor = 0.10
+            }
+        }
+        FRI_the_rails_of_frisco = {
+            picture = generic_train
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                production_speed_infrastructure_factor = 0.10
+                army_speed_factor = 0.10
+            }
+        }
+        JCT_our_slice_of_paradise = {
+            picture = generic_rad_iv
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                stability_factor = 0.15
+                army_core_defence_factor = 0.10
+                army_core_attack_factor = 0.10
+            }
+        }
+        TWI_the_bloodiest_tribe = {
+            picture = apocalypse_now
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                army_attack_factor =  0.05
+                army_core_defence_factor = 0.10
+                army_core_attack_factor = 0.10
+                stability_factor = -0.10
+                war_support_factor = 0.10
+            }
+        }
+        PHR_the_phoenix_rises = {
+            picture = bel_bellingham_for_battle
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                army_core_defence_factor = 0.10
+                army_core_attack_factor = 0.10
+                stability_factor = 0.10
+                war_support_factor = 0.05
+                conscription_factor = 0.05
+                caps_income_modifier = 0.05
+            }
+        }
+        FLA_an_economic_powerhouse = {
+            picture = legion_smiths
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                industrial_capacity_factory = 0.075
+                production_factory_efficiency_gain_factor = 0.075
+                consumer_goods_expected_value = -0.05
+                caps_income_modifier = 0.15
+            }
+        }
+        FLA_pretorian_remnants = {
+            picture = centurions
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                army_core_attack_factor = 0.10
+                army_core_defence_factor = 0.10
+                conscription_factor = -0.25
+                training_time_army_factor = 0.25
+            }
+        }
+        HUA_hold_against_outsiders = {
+            picture = itz_manpower_law_4
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                army_core_defence_factor = 0.25
+                army_defence_factor = 0.15
+            }
+        }
+        BLK_the_remnants_of_the_legion = {
+            picture = pantheon_legion
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                army_attack_factor = 0.05
+                war_support_factor = 0.15
+                industrial_capacity_factory = 0.10
+                army_morale_factor = 0.15
+                conscription = 0.05
+            }
+        }
+        WAP_baan_baaha = {
+            picture = generic_naval_invasion
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                conscription = 0.04
+                mobilization_speed = 0.08
+                army_org_regain = 0.08
+            }
+        }
+        WAP_dzilghaaa = {
+            picture = mountain_gods
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                # Bugged in country scopes, blame PDX
+                # terrain_penalty_reduction = 0.10
+                heat_attrition = -0.3
+                acclimatization_hot_climate_gain_factor = 0.15
+            }
+        }
+        TSI_the_road_runners = {
+            picture = horsie
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            equipment_bonus = {
+                motorized_equipment = {
+                    build_cost_ic = -0.15
+                    reliability = 0.05
+                    instant = yes
+                }
+            }
+            modifier = {
+                army_speed_factor = 0.15
+            }
+        }
+        RSR_the_rio_grande_pitstop = {
+            picture = VEG_Wealthy_Clientele
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                consumer_goods_expected_value = -0.10
+                caps_flat_income_modifier = 5
+            }
+        }
+        NOE_a_nomadic_pact = {
+            picture = generic_peace_2
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                war_support_factor = -0.10
+                stability_factor = 0.05
+                army_speed_factor = 0.10
+                justify_war_goal_time = 0.10
+            }
+        }
+        WEN_oasis_hotsprings = {
+            picture = generic_soap
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                consumer_goods_expected_value = -0.03
+                stability_factor = 0.10
+                caps_flat_income_modifier = 5
+                enemy_justify_war_goal_time = -0.15
+            }
+        }
+        MRA_disunited_efforts = {
+            picture = generic_raids
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                army_defence_factor = -0.10
+                army_attack_factor = 0.10
+                caps_flat_income_modifier = 3
+            }
+        }
+        UTO_a_nightkins_ravings = {
+            picture = usa_magic
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                political_power_factor = 0.25
+                army_core_defence_factor = 0.10
+                army_core_attack_factor = 0.10
+                enemy_justify_war_goal_time = -0.15
+            }
+        }
+        HRO_ussa_headquarters = {
+            picture = generic_helm_space
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            research_bonus = {
+                energy_weaponry_tech_category = 0.02
+                power_armor_tech_category = 0.02
+                air_tech_category = 0.20
+            }
+            modifier = {
+                research_speed_factor = 0.10
+                consumer_goods_expected_value = -0.02
+                enemy_justify_war_goal_time = -0.25
+            }
+        }
+        ENT_the_red_menace = {
+            picture = two_hellsbells
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            targeted_modifier = {
+                tag = BGR
+                defense_bonus_against = 0.05
+                attack_bonus_against = 0.05
+            }
+            modifier = {
+                war_support_factor = 0.25
+                stability_factor = -0.05
+            }
+        }
+        WHC_centralized_authority = {
+            picture = generic_chinese_hat
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                political_power_factor = 0.15
+            }
+        }
+        IRC_stable_trading_network = {
+            picture = generic_open_trade
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                caps_income_modifier = 0.10
+                stability_factor = 0.10
+            }
+        }
+        VER_experience_of_the_brigade = {
+            picture = generic_chinese_spec_training
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                army_attack_factor = 0.05
+                army_defence_factor = 0.05
+                experience_gain_army = 0.05
+            }
+        }
+        STA_two_family_rule = {
+            picture = family_stipend_icon
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                political_power_factor = -0.10
+                stability_factor = 0.20
+            }
+        }
+        NIT_memories_of_horror = {
+            picture = flag_USA
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            targeted_modifier = {
+                tag = MCA
+                attack_bonus_against = 0.10
+                defense_bonus_against = 0.15
+            }
+            targeted_modifier = {
+                tag = COM
+                attack_bonus_against = 0.10
+                defense_bonus_against = 0.15
+            }
+            modifier = {
+                war_support_factor = 0.10
+            }
+        }
+        HVR_overlooked = {
+            picture = generic_dice
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                political_power_factor = 0.1
+                army_core_defence_factor = -0.05
+                caps_income_modifier = 0.15
+            }
+        }
+        STM_sky_war = {
+            picture = pls_jupiter_icon
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                air_accidents_factor = -0.5
+                air_agility_factor = 0.20
+                air_cas_efficiency = 0.10
+                production_factory_efficiency_gain_factor = -0.2
+            }
+        }
+        ROS_illusion_of_danger = {
+            picture = chinese_manpower_law_4
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                war_support_factor = 0.15
+                army_core_defence_factor = 0.10
+                army_core_attack_factor = 0.10
+                max_dig_in_factor = 0.15
+                enemy_justify_war_goal_time = 0.25
+                exodus_national_appeal = -0.25
+            }
+        }
+        MET_cybernatics_son = {
+            picture = propaganda_cyborg
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                research_speed_factor = 0.1
+                army_attack_factor = 0.1
+                army_fuel_consumption_factor = 0.3
+                army_leader_cost_factor = 0.3
+                conscription_factor = -0.1
+                max_planning = -0.05
+            }
+        }
+        CPK_stand_your_ground = {
+            picture = recruitment_shotgun
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                stability_factor = 0.1
+                army_core_defence_factor = 0.15
+                local_resources_factor = 0.15
+            }
+        }
+        CPK_traders_fee = {
+            picture = generic_honey
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                exodus_national_appeal = 0.15
+                caps_flat_income_modifier = 5
+            }
+        }
+        HST_sound_of_music = {
+            picture = usa_magic
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                enemy_justify_war_goal_time = 0.15
+                political_power_factor = 0.05
+                stability_factor = 0.05
+            }
+        }
+        UNB_seeking_the_sky = {
+            picture = generic_spudnik
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            research_bonus = {
+                air_tech_category = 0.15
+            }
+            modifier = {
+                army_core_attack_factor = -0.10
+            }
+        }
+        BAT_mercenary_force = {
+            picture = generic_helm_army
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                army_morale_factor = 0.10
+                send_volunteer_size = 4
+                caps_flat_income_modifier = 3
+            }
+        }
+        PAP_batfords_betrayal = {
+            picture = generic_toy_soldier
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                army_morale_factor = -0.10
+                naval_attrition = -0.10
+                naval_enemy_fleet_size_ratio_penalty_factor = 0.15
+                naval_damage_factor = 0.20
+            }
+        }
+        NUN_northern_suppliers = {
+            picture = generic_radio_pack
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                weekly_manpower = 5
+                send_volunteer_size = 9
+                research_speed_factor = 0.25
+                production_speed_buildings_factor = -0.25
+            }
+        }
+        DMM_shady_dealing = {
+            picture = propaganda_mob
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                consumer_goods_expected_value = 0.03
+                out_of_supply_factor = -0.10
+                local_resources_factor = 0.03
+            }
+        }
+        ARB_manitoban_funding = {
+            picture = propaganda_flannel
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                caps_expense_modifier = -0.15
+                army_morale_factor = 0.05
+                army_leader_cost_factor = 0.10
+            }
+        }
+        GIM_forging_masters = {
+            picture = rejection_of_automation
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                production_factory_efficiency_gain_factor = 0.15
+                production_factory_max_efficiency_factor = 0.1
+                production_speed_buildings_factor = -0.15
+                fuel_gain_factor = -0.3
+            }
+        }
+        NEU_neutral_response = {
+            picture = economy_true_man_flynn
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                political_power_factor = 0.15
+                exodus_national_appeal = 0.50
+            }
+        }
+        RMM_independance = {
+            picture = economy_trophy
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            targeted_modifier = {
+                tag = BGC
+                defense_bonus_against = 0.05
+                attack_bonus_against = 0.05
+            }
+            modifier = {
+                army_leader_start_planning_level = 2
+            }
+        }
+        BGC_the_lost_duchess = {
+            picture = HEA_idea_one_prophet
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                minimum_training_level = 0.35
+                army_morale_factor = 0.15
+                conscription = 0.04
+            }
+        }
+        DUK_mounties = {
+            picture = propaganda_mountie
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                special_forces_min = 20
+                army_attack_factor = 0.10
+                army_defence_factor = 0.10
+            }
+        }
+        ATM_deluge_of_fire = {
+            picture = apocalypse_now
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                justify_war_goal_time = -0.20
+                war_support_factor = 0.1
+                conscription_factor = 0.15
+                enemy_justify_war_goal_time = -0.35
+            }
+        }
+        KAM_kitted_raiders = {
+            picture = lns_merc_owc
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                army_defence_factor = 0.05
+                army_morale_factor = 0.025
+            }
+        }
+        WHI_nomads_of_nowhere = {
+            picture = generic_recon
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                army_speed_factor = 0.15
+                production_speed_buildings_factor = -0.15
+                consumer_goods_expected_value = -0.05
+            }
+        }
+        DRE_valentine_milita = {
+            picture = generic_helm_marine
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                army_core_defence_factor = 0.15
+                army_core_attack_factor = 0.05
+                army_fuel_consumption_factor = 0.10
+                army_morale_factor = 0.05
+            }
+        }
+        EDN_brotherhood_knowlege = {
+            picture = navarro_scout_camp
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            research_bonus = {
+                energy_weaponry_tech_category = 0.05
+                cat_land_doctrine = 0.10
+            }
+            modifier = {
+                research_speed_factor = 0.03
+                army_core_attack_factor = 0.05
+                army_core_defence_factor = 0.10
+            }
+        }
+        HGH_the_temples_of_nicea = {
+            picture = MOJ_idea_incorporate_the_followers
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                political_power_factor = 0.15
+                consumer_goods_expected_value = -0.05
+                conscription_factor = 0.03
+            }
+        }
+        ANO_gods_chosen = {
+            picture = HEA_idea_general_staff
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            targeted_modifier = {
+                tag = HEA
+                attack_bonus_against = 0.05
+            }
+            targeted_modifier = {
+                tag = NCN
+                attack_bonus_against = 0.05
+            }
+            targeted_modifier = {
+                tag = HGH
+                attack_bonus_against = 0.05
+            }
+            targeted_modifier = {
+                tag = MUR
+                attack_bonus_against = 0.05
+            }
+            modifier = {
+                political_power_factor = 0.03
+                army_attack_factor = 0.05
+                army_defence_factor = 0.05
+                training_time_army_factor = 0.10
+            }
+        }
+        MUR_reformist_principles = {
+            picture = HEA_idea_tribals
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                weekly_manpower = 10
+                army_morale_factor = 0.05
+                stability_factor = 0.10
+            }
+        }
+        LON_effects_of_paranoia = {
+            picture = generic_raids
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                army_core_attack_factor = 0.10
+                army_core_defence_factor = 0.10
+                army_morale_factor = -0.10
+            }
+        }
+        UOA_beacon_of_rights = {
+            picture = pls_eagle
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            cancel = {
+                has_country_flag = UOA_crusher_tag
+            }
+            modifier = {
+                monthly_population = 0.15
+                stability_factor = 0.1
+                army_attack_factor = -0.05
+                army_core_attack_factor = -0.15
+                army_defence_factor = -0.05
+                army_core_defence_factor = -0.15
+            }
+        }
+        IMO_juggernauts_of_texas = {
+            picture = generic_pa_raider
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            equipment_bonus = {
+                infantry_equipment = {
+                    # hardness = 0.5    # Goodnight sweet prince
+                    defense = 0.10
+                    soft_attack = 0.05
+                    hard_attack = 0.05
+                    instant = yes
+                }
+            }
+            modifier = {
+                production_factory_efficiency_gain_factor = 0.05
+            }
+        }
+        #########
+        ##### ROB
+        #########
+        machine_commune = {
+            picture = tnk_roboscorpion
+
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            removal_cost = -1
+            modifier = {
+                enemy_justify_war_goal_time = 0.2
+				justify_war_goal_time = 0.2
+                army_attack_factor = -0.1
+                army_defence_factor = -0.1
+                weekly_manpower = 3
+				custom_modifier_tooltip = machine_commune_tt
+            }
+        }
+        coring_manpower_fix = {
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            removal_cost = -1
+
+            modifier = {
+                conscription = 0.01
+            }
+        }
+        research_bonus = {
+            picture = generic_research_bonus
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                research_speed_factor =0.05
+            }
+        }
+        #############################
+        # National spirit for Nukes #
+        #############################
+        apocalypse_now = {
+            picture = apocalypse_now
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            removal_cost = -1
+            modifier = {
+                army_attack_factor = -0.05
+                army_defence_factor = -0.05
+                army_org_factor = -0.05
+                conscription_factor = -0.1
+            }
+        }
+
+        neutrality_owb = {
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            removal_cost = -1
+            modifier = {
+                join_faction_tension = 1.0
+                ai_get_ally_desire_factor = -500
+                send_volunteers_tension = 1.0
+                guarantee_tension = 1.0
+            }
+        }
+        #######################
+        ### Minor Ideas for 5.0
+        #######################
+        river_league = {
+            picture = generic_build_ships
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                political_power_factor = 0.05
+                conscription_factor = -0.2
+                caps_flat_income_modifier = 5
+                industrial_capacity_dockyard = 0.1
+                army_attack_factor = -0.05
+            }
+            equipment_bonus = {
+                ship_hull_light = {
+                    instant = yes
+                    build_cost_ic = -0.1
+                }
+            }
+        }
+        bis_german_heritage = {
+            picture = generic_suppressed_pistol
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            research_bonus = {
+                infantry_tech_category = 0.05
+            }
+            equipment_bonus = {
+                infantry_equipment = {
+                    build_cost_ic = -0.04
+                    instant = yes
+                }
+            }
+        }
+
+        jackson_family_ties = {
+            picture = generic_raider_1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                conscription_factor = -0.03
+                army_attack_factor = 0.05
+                army_morale_factor = 0.05
+            }
+        }
+
+        ruminator_book = {
+            picture = cho_book_nuka_cola
+            removal_cost = -1
+            allowed = {
+                always = no
+                }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                stability_factor = 0.06
+                monthly_population = 0.12
+            }
+        }
+        metal_salvaged_corpses = {
+            picture = generic_scrap_kit
+            removal_cost = -1
+            allowed = {
+                always = no
+                }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                country_resource_energy = 10
+                country_resource_composites = 6
+                country_resource_circuitry = 8
+                country_resource_advanced = 6
+                caps_income_modifier = -0.25
+            }
+        }
+        crop_rotation = {
+            picture = generic_corn
+            removal_cost = -1
+            allowed = {
+                always = no
+                }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                country_resource_water = 10
+                monthly_population = 0.05
+            }
+            research_bonus = {
+                agriculture_tech = 0.1
+            }
+        }
+
+        strath_china_ideology = {
+            picture = generic_chinese_pin
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                conscription_factor = 0.05
+                army_org_factor = -0.08
+                war_support_factor = 0.09
+                stability_factor = -0.09
+                army_core_defence_factor = 0.05
+            }
+        }
+
+        vermillion_china_ideology = {
+            picture = generic_chinese_rifle
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                army_org_factor = 0.08
+                war_stability_factor = 0.2
+            }
+        }
+        stc_five_year_plan = {
+            picture = generic_atom
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                production_factory_efficiency_gain_factor = -0.15
+                production_factory_max_efficiency_factor = 0.05
+                consumer_goods_expected_value = 0.05
+                production_speed_industrial_complex_factor = 0.15
+            }
+        }
+        stc_mass_mobilization_idea = {
+            picture = generic_atom
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                training_time_factor = -0.10
+                conscription_factor = 0.05
+                stability_factor = -0.03
+            }
+        }
+        stc_mass_mobilization_1 = {
+            picture = generic_atom
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                training_time_factor = -0.15
+                conscription_factor = 0.05
+                stability_factor = -0.03
+                experience_gain_army_factor = 0.20
+            }
+        }
+        stc_desperate = {
+            picture = generic_atom
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                training_time_factor = -0.10
+                minimum_training_level = -0.15
+                stability_factor = -0.03
+                mobilization_speed = 0.30
+            }
+        }
+        stc_cult_personality = {
+            picture = generic_red_star
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                war_support_factor = 0.1
+                command_power_gain = 0.2
+            }
+        }
+        four_year_plan = {
+            picture = generic_atom
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                production_factory_efficiency_gain_factor = -0.05
+                production_factory_max_efficiency_factor = 0.05
+                consumer_goods_expected_value = 0.02
+                production_speed_industrial_complex_factor = 0.05
+                production_speed_arms_factory_factor = 0.15
+            }
+
+        }
+        bgr_robobrain_factory = {
+            picture = generic_protectron_silver
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                custom_modifier_tooltip = bgr_robobrain_factory_tt
+            }
+            equipment_bonus = {
+                support_robot = {
+                    build_cost_ic = -0.05
+                    instant = yes
+                }
+                combat_robot_equipment = {
+                    build_cost_ic = -0.05
+                    instant = yes
+                }
+            }
+        }
+        historian_presence = {
+            picture = generic_corn
+            removal_cost = -1
+            allowed = {
+                always = no
+                }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                country_resource_water = 2
+            }
+            research_bonus = {
+                agriculture_tech = 0.1
+                consumer_goods_expected_value = 0.05
+            }
+        }
+
+
+    }
+}

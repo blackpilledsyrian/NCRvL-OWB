@@ -1,0 +1,396 @@
+sub_units = {
+
+	fireteam_support = {
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		active = yes
+		affects_speed = no
+
+		type = {
+			infantry
+			support
+		}
+
+		group = support
+
+		categories = {
+			category_army
+			category_support
+			category_combat_support
+			category_fireteams
+		}
+
+		max_strength = 10
+		max_organisation = 10
+		default_morale = 0.15
+		manpower = 15 # 500
+		training_time = 120
+		soft_attack = -0.20
+		hard_attack = -0.20
+		defense = -0.20
+		breakthrough = -0.20
+		air_attack = -0.20
+		weight = 0.1
+		supply_consumption = 0.25
+
+		essential = {
+			fireteam_equipment
+		}
+
+		need = {
+			fireteam_equipment = 15
+		}
+
+		can_be_parachuted = yes
+	}
+
+	demolitions_support = {
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 100
+		active = yes
+		affects_speed = no
+		can_be_parachuted = yes
+
+		type = {
+			infantry
+			support
+		}
+
+		group = support
+
+		categories = {
+			category_army
+			category_support
+			category_combat_support
+			category_demolitions
+		}
+
+		max_strength = 10
+		max_organisation = 10
+		default_morale = 0.15
+		manpower = 15 # 500
+		training_time = 120
+		soft_attack = -0.20
+		hard_attack = -0.20
+		defense = -0.20
+		breakthrough = -0.20
+		weight = 0.1
+		supply_consumption = 0.25
+
+		essential = {
+			demolitions_equipment
+		}
+
+		need = {
+			demolitions_equipment = 15
+		}
+
+	}
+
+	anti_air_support = {
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		active = yes
+		affects_speed = no
+
+		type = {
+			infantry
+			support
+		}
+
+		group = support
+
+		categories = {
+			category_army
+			category_support
+			category_combat_support
+		}
+
+		max_strength = 10
+		max_organisation = 10
+		default_morale = 0.15
+		manpower = 15 # 500
+		training_time = 120
+		weight = 0.1
+		supply_consumption = 0.45
+
+		essential = {
+			anti_air_equipment
+		}
+
+		need = {
+			anti_air_equipment = 15
+		}
+
+		can_be_parachuted = yes
+
+	}
+
+	anti_tank_company = {
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		active = yes
+		affects_speed = no
+
+		type = {
+			infantry
+			support
+		}
+
+		group = support
+
+		categories = {
+			category_army
+			category_support
+			category_combat_support
+			category_anti_tank
+		}
+
+		max_strength = 10
+		max_organisation = 10
+		default_morale = 0.15
+		manpower = 15 # 500
+		training_time = 120
+		weight = 0.1
+		supply_consumption = 0.25
+
+		essential = {
+			anti_tank_equipment
+		}
+
+		need = {
+			anti_tank_equipment = 15
+		}
+
+		can_be_parachuted = yes
+	}
+
+	dog_company = {
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		active = yes
+		affects_speed = no
+
+		type = {
+			infantry
+			support
+		}
+
+		group = support
+
+		categories = {
+			category_army
+			category_support
+			category_combat_support
+		}
+
+		max_strength = 10
+		max_organisation = 15
+		default_morale = 0.2
+		manpower = 15 # 500
+		training_time = 60
+		soft_attack = 0.1
+		suppression = 2
+		weight = 0.1
+		supply_consumption = 0.25
+
+		essential = {
+			dogs_equipment
+		}
+
+		need = {
+			dogs_equipment = 15
+		}
+
+		can_be_parachuted = yes
+
+		forest = {
+			movement = 0.05
+			attack = 0.05
+		}
+		forest = {
+			movement = 0.05
+			attack = 0.05
+		}
+		marsh = {
+			movement = 0.05
+			attack = 0.05
+		}
+		hills = {
+			movement = 0.05
+			attack = 0.05
+		}
+		mountain = {
+			movement = 0.05
+			attack = 0.05
+		}
+		plains = {
+			movement = 0.05
+			attack = 0.05
+		}
+		desert = {
+			movement = 0.05
+			attack = 0.05
+		}
+	}
+
+	power_armour_support = {
+		sprite = infantry
+		map_icon_category = infantry
+		affects_speed = no
+
+		priority = 0
+		active = no
+
+		type = {
+			infantry
+			support
+		}
+
+		group = support
+
+		categories = {
+			category_army
+			category_support
+			category_combat_support
+			# Name is deceptive, this is Heavy Special Forces and PA Support is not a special forces unit
+			# category_power_armour
+		}
+
+		max_strength = 20
+		max_organisation = 15
+		default_morale = 0.2
+		manpower = 15 # 300
+		training_time = 150
+		weight = 0.4
+		supply_consumption = 0.5
+
+		need = {
+			power_armor_equipment = 15
+		}
+
+		essential = {
+			power_armor_equipment
+		}
+
+		can_be_parachuted = yes
+
+		mountain = {
+			movement = -0.05
+		}
+		marsh = {
+			movement = -0.05
+		}
+		jungle = {
+			movement = -0.05
+		}
+		urban = {
+			attack = 0.1
+			defence = 0.1
+			movement = 0.1
+		}
+		fort = {
+			attack = 0.1
+			defence = 0.1
+			movement = 0.1
+		}
+	}
+
+	cybernetic_support = {
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 500
+		active = no
+		affects_speed = no
+
+		type = {
+			infantry
+			support
+		}
+
+		group = support
+
+		categories = {
+			category_implant
+		}
+
+		max_strength = 0
+		max_organisation = 0
+		manpower = 0 # 300
+		training_time = 30
+		weight = 0.0
+		supply_consumption = 0.00
+
+		essential = {
+			implant_equipment
+		}
+
+		need = {
+			implant_equipment = 4
+		}
+
+		can_be_parachuted = yes
+	}
+
+	plant_support = {
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 300
+		active = no
+		affects_speed = no
+
+		type = {
+			infantry
+			support
+		}
+
+		group = support
+
+		categories = {
+			category_army
+			category_support
+			category_combat_support
+		}
+
+		max_strength = 15
+		max_organisation = 40
+		manpower = 15 # 300
+		training_time = 150
+		weight = 0.2
+		supply_consumption = 0
+
+		air_attack = -1
+
+		essential = {
+			support_equipment
+		}
+
+		need = {
+			infantry_equipment = 8
+			support_equipment = 15
+		}
+
+		can_be_parachuted = yes
+
+		jungle = {
+			attack = 0.2
+			defence = 0.2
+		}
+		forest = {
+			attack = 0.2
+			defence = 0.2
+		}
+		marsh = {
+			attack = 0.2
+			defence = 0.2
+		}
+	}
+}

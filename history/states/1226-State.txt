@@ -1,0 +1,21 @@
+state={
+	id=1226
+	name="STATE_1226"
+	provinces={
+		13873 13874 13879 13880 13893 13897
+	}
+	history={
+		victory_points = {
+			13880 5
+		}
+		buildings = {
+			infrastructure = 4
+		}
+	}
+	resources = {
+		water = 6
+	}
+	state_category = enclave
+	manpower = 110
+	buildings_max_level_factor=1.000
+}

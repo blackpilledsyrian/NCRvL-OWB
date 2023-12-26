@@ -1,0 +1,16 @@
+state = {
+	id = 45
+	name = "STATE_45"
+	manpower = 14
+	state_category = rural
+
+	history = {
+		owner = MOS
+		add_core_of = MOS
+	}
+
+	provinces = {
+		5076
+	}
+	impassable = yes
+}

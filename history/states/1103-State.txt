@@ -1,0 +1,29 @@
+
+state={
+	id=1103
+	name="STATE_1103"
+	resources={
+		water=4.000
+		energy=4.000
+		metal=8.000
+	}
+
+	history={
+		victory_points = {
+			15056 5
+		}
+		buildings = {
+			infrastructure = 2
+
+		}
+
+	}
+
+	provinces={
+		15045 15046 15055 15056 15058 20280
+	}
+	manpower=981
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+}

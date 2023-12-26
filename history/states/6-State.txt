@@ -1,0 +1,26 @@
+state = {
+	id = 6
+	name = "STATE_6"
+	manpower=1401
+	buildings_max_level_factor=1.000
+	state_category=rural
+
+	resources={
+		water = 3
+	}
+
+	history={
+		victory_points = {
+			3749 5
+		}
+		buildings = {
+			infrastructure = 1
+
+		}
+
+	}
+
+	provinces = {
+		2474 2564 3721 3727 3747 3749 3983 3984 7247 7251
+	}
+}

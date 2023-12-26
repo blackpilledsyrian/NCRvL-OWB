@@ -1,0 +1,28 @@
+state = {
+	id = 452
+	name = "STATE_452"
+	manpower = 7452
+	state_category = large_town
+
+	resources = {
+		metal = 4
+	}
+
+	history = {
+		owner = TOB
+		add_core_of = TOB
+		victory_points = {
+			1836 10
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			industrial_complex = 2
+			7464 = { naval_base = 1 }
+		}
+	}
+
+	provinces = {
+		1836 3100 6736 6737 6738 7464 7466
+	}
+}

@@ -1,0 +1,37 @@
+state={
+	id=653
+	resources = {
+		energy = 8
+		composites = 6
+		circuitry = 4
+	}
+	history={
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 2
+			arms_factory = 5
+			7340 = {
+				bunker = 2
+			}
+			8635 = {
+				bunker = 1
+			}
+		}
+		victory_points = {
+			7504 20
+		}
+		victory_points = {
+			7340 10
+		}
+		victory_points = {
+			8635 5
+		}
+	}
+	name = "STATE_653"
+	provinces={
+		7363 684 7502 2558 7504 7340 8636 34 8635
+	}
+	manpower = 22468
+	state_category = large_city
+	buildings_max_level_factor=1.000
+}

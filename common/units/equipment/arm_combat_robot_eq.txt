@@ -1,0 +1,193 @@
+	equipments = {
+
+	combat_robot_equipment = {
+		is_archetype = yes
+		is_convertable = yes
+		picture = archetype_heavy_robot_equipment
+		is_buildable = no
+		type = armor
+		group_by = archetype
+
+		interface_category = interface_category_armor
+
+		upgrades = {
+			#pa_redundancy_upgrade
+			#pa_production_upgrade
+			#pa_plating_upgrade
+			#pa_shock_upgrade
+			#pa_servo_motion_upgrade
+			#rob_brain_upgrade
+		}
+
+		#Misc Abilities
+		maximum_speed = 5
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 2
+		breakthrough = 6
+		hardness = 0.65
+		armor_value = 30
+
+		fuel_consumption = 0.7
+
+		#Offensive Abilities
+		soft_attack = 9
+		hard_attack = 9
+		ap_attack = 15
+		air_attack = 2
+
+		#Space taken in convoy
+		lend_lease_cost = 10
+
+		build_cost_ic = 16
+		resources = {
+		}
+
+	}
+
+	combat_robot_equipment_1 = {
+		archetype = combat_robot_equipment
+		priority = 10
+		visual_level = 0
+		is_convertable = yes
+
+		#Misc Abilities
+		maximum_speed = 4
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 6
+		breakthrough = 13
+		hardness = 0.65
+		armor_value = 30
+
+		fuel_consumption = 0.6
+
+		#Offensive Abilities
+		soft_attack = 13
+		hard_attack = 9.5
+		ap_attack = 20
+		air_attack = 1
+
+		#Space taken in convoy
+		lend_lease_cost = 10
+
+		build_cost_ic = 16
+		resources = {
+			metal = 3
+			circuitry = 2
+			energy = 1
+		}
+	}
+
+	combat_robot_equipment_2 = {
+		archetype = combat_robot_equipment
+		parent = combat_robot_equipment_1
+		priority = 20
+		visual_level = 3
+		is_convertable = yes
+
+		#Misc Abilities
+		maximum_speed = 4
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 7.5
+		breakthrough = 16
+		hardness = 0.7
+		armor_value = 40
+
+		fuel_consumption = 0.7
+
+		#Offensive Abilities
+		soft_attack = 16
+		hard_attack = 12
+		ap_attack = 25
+		air_attack = 1.5
+
+		#Space taken in convoy
+		lend_lease_cost = 10
+
+		build_cost_ic = 21
+		resources = {
+			metal = 3
+			composites = 1
+			advanced = 1
+			energy = 2
+		}
+	}
+
+	combat_robot_equipment_3 = {
+		archetype = combat_robot_equipment
+		parent = combat_robot_equipment_2
+		priority = 30
+		visual_level = 4
+		is_convertable = yes
+
+		#Misc Abilities
+		maximum_speed = 4
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 9
+		breakthrough = 19
+		hardness = 0.75
+		armor_value = 50
+
+		fuel_consumption = 0.8
+
+		#Offensive Abilities
+		soft_attack = 19
+		hard_attack = 14.5
+		ap_attack = 30
+		air_attack = 2
+
+		#Space taken in convoy
+		lend_lease_cost = 10
+
+		build_cost_ic = 27
+		resources = {
+			metal = 3
+			composites = 2
+			advanced = 1
+			energy = 3
+		}
+	}
+
+	combat_robot_pacification_equipment = {
+		archetype = combat_robot_equipment
+		parent = combat_robot_equipment_3
+		priority = 25
+		visual_level = 7
+		is_convertable = yes
+
+		#Misc Abilities
+		maximum_speed = 5
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 6
+		breakthrough = 18
+		hardness = 0.3
+		armor_value = 20
+
+		fuel_consumption = 2
+
+		#Offensive Abilities
+		soft_attack = 19
+		hard_attack = 9
+		ap_attack = 10
+		air_attack = 0
+
+		#Space taken in convoy
+		lend_lease_cost = 10
+
+		build_cost_ic = 12
+		resources = {
+			composites = 4
+			advanced = 4
+			energy = 4
+		}
+	}
+}

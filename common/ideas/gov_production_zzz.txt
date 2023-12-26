@@ -1,0 +1,1746 @@
+ideas = {
+
+###############################
+# Pre-War Designs
+###############################
+	engineering_firm = {
+		designer = yes
+		robco = {
+			picture = robco
+			allowed = {
+				NOT = { has_country_flag = no_generic_manufacturer }
+			}
+			available = {
+				OR = {
+					original_tag = VEG
+					has_tech = robco_unlock_tech
+				}
+			}
+			research_bonus = {
+				robotics_tech_category = 0.15
+				electronics = 0.05
+			}
+			traits = { pre_war_robot_manufacturer }
+			ai_will_do = {
+				modifier = {
+					factor = 0
+					NOT = {
+						has_tech = robot_protectron_equipment_tech_1
+						has_tech = robot_handy_equipment_tech_1
+					}
+				}
+			}
+		}
+		general_atomics = {
+			picture = general_atomics
+			allowed = {
+				NOT = { has_country_flag = no_generic_manufacturer }
+			}
+			available = {
+				has_tech = general_atomics_unlock_tech
+			}
+			research_bonus = {
+				robotics_tech_category = 0.15
+				building_tech = 0.05
+				tool_tech = 0.05
+			}
+			traits = { pre_war_robot_manufacturer_2 }
+			ai_will_do = {
+				modifier = {
+					factor = 0
+					NOT = {
+						has_tech = robot_protectron_equipment_tech_1
+						has_tech = robot_handy_equipment_tech_1
+					}
+				}
+			}
+		}
+		stent_security_solutions = {
+			picture = stent_security_solutions
+			allowed = {
+				NOT = { has_country_flag = no_generic_manufacturer }
+			}
+			available = {
+				has_tech = stent_security_solutions_unlock_tech
+			}
+			research_bonus = {
+				ballistic_weaponry_tech_category = 0.15
+				melee_weaponry_tech_category = 0.15
+			}
+			traits = { weapon_manufacturer_pre_war }
+			ai_will_do = {
+				base = 1
+				modifier = {
+					factor = 0.5
+					has_country_flag = infantry_energy_ai
+				}
+			}
+		}
+		wattz_company = {
+			picture = wattz_company
+			allowed = {
+				NOT = { has_country_flag = no_generic_manufacturer }
+			}
+			available = {
+				has_tech = wattz_company_unlock_tech
+			}
+			research_bonus = {
+				energy_weaponry_tech_category = 0.15
+			}
+			traits = { energy_weapon_manufacturer_pre_war }
+			ai_will_do = {
+				base = 1
+				modifier = {
+					factor = 0.5
+					OR = {
+						has_country_flag = infantry_melee_ai
+						has_country_flag = infantry_ballistic_ai
+					}
+				}
+			}
+		}
+		handhtools = {
+			picture = hh
+			allowed = {
+				NOT = { has_country_flag = no_generic_manufacturer }
+			}
+			available = {
+				has_tech = handhtools_unlock_tech
+			}
+			research_bonus = {
+				industry = 0.15
+			}
+			traits = { industrial_construction_company_pre_war }
+		}
+		poseidon = {
+			picture = poseidon
+			allowed = {
+				NOT = { has_country_flag = no_generic_manufacturer }
+			}
+			available = {
+				has_tech = poseidon_unlock_tech
+			}
+			research_bonus = {
+				electronics = 0.15
+			}
+			traits = { electronics_concern_pre_war }
+		}
+		bloomfield_space_center = {
+			picture = rocket_facility
+			allowed = {
+				NOT = { has_country_flag = no_generic_manufacturer }
+			}
+			available = {
+				owns_state = 381
+				NOT = { tag = CES }
+			}
+			research_bonus = {
+				air_tech_category = 0.15
+			}
+			modifier = {
+				recon_factor = 0.15
+			}
+			ai_will_do = {
+				modifier = {
+					factor = 0
+					NOT = { has_tech = air_tech_level_settler }
+				}
+			}
+		}
+
+		boulder_dome = {
+			picture = boulder_dome
+			allowed = {
+				NOT = { has_country_flag = no_generic_manufacturer }
+			}
+			available = {
+				owns_state = 568
+			}
+			research_bonus = {
+				support_medical_tech_category = 0.15
+				building_tech = 0.15
+			}
+			modifier = {
+				research_speed_factor = 0.05
+			}
+		}
+
+		lockreed = {
+			picture = lockreed
+			allowed = {
+				NOT = { has_country_flag = no_generic_manufacturer }
+			}
+			available = {
+				OR = {
+					has_tech = lockreed_unlock_tech
+					owns_state = 84
+				}
+			}
+			research_bonus = {
+				air_equipment_tech_category = 0.15
+			}
+			traits = { fighter_manufacturer_pre_war }
+			ai_will_do = {
+				modifier = {
+					factor = 0
+					NOT = { has_tech = air_tech_level_settler }
+				}
+			}
+		}
+		arcjetsystems = {
+			allowed = {
+				NOT = { has_country_flag = no_generic_manufacturer }
+			}
+			available = {
+				has_tech = arcjetsystems_unlock_tech
+			}
+			research_bonus = {
+				air_equipment_tech_category = 0.15
+			}
+			traits = { cas_bomber_manufacturer_pre_war }
+			ai_will_do = {
+				modifier = {
+					factor = 0
+					NOT = { has_tech = air_tech_level_settler }
+				}
+			}
+		}
+		westtek = {
+			allowed = {
+				NOT = { has_country_flag = no_generic_manufacturer }
+			}
+			available = {
+				has_tech = westtek_unlock_tech
+			}
+			research_bonus = {
+				power_armor_tech_category = 0.15
+			}
+			traits = { pre_war_power_armor_manufacturer }
+			ai_will_do = {
+				modifier = {
+					factor = 0
+					NOT = { has_tech = power_armour_tech_level_settler }
+				}
+			}
+		}
+	}
+###############################
+# Major Businesses
+###############################
+
+#### Settler Generics
+	construction_firm = {
+		designer = yes
+		lock_and_load_company = {
+			picture = lock_and_load_company
+			allowed = {
+				is_mexican_nation_allowed_block = no
+				NOT = {
+					is_nation_with_no_generic_manufacturer = yes
+					has_unique_weapon_producer = yes
+				}
+			}
+			# Redundant due to above allowed block @Tran
+			# visible = {
+			# 	NOT = {
+			# 		OR = {
+			# 			has_country_flag = no_generic_manufacturer
+			# 			has_unique_weapon_producer = yes
+			# 		}
+			# 	}
+			# }
+			research_bonus = {
+				ballistic_weaponry_tech_category = 0.15
+			}
+			traits = { weapon_manufacturer }
+			ai_will_do = {
+				base = 1
+				modifier = {
+					factor = 0.5
+					OR = {
+						has_country_flag = infantry_melee_ai
+						has_country_flag = infantry_energy_ai
+					}
+				}
+			}
+		}
+		oh_no_arms = {
+
+			picture = oh_no_arms
+			allowed = {
+				is_mexican_nation_allowed_block = no
+				NOT = {
+					is_nation_with_no_generic_manufacturer = yes
+					has_unique_cheap_weapon_producer = yes
+				}
+			}
+			# Redundant due to above allowed block @Tran
+			# visible = {
+			# 	NOT = {
+			# 		OR = {
+			# 			has_country_flag = no_generic_manufacturer
+			# 			has_unique_cheap_weapon_producer = yes
+			# 		}
+			# 	}
+			# }
+			research_bonus = {
+				infantry_weapons_tech_category = 0.15
+			}
+			traits = { cheap_weapon_manufacturer }
+		}
+		van_graffs = {
+			# TODO replace with settler variant. uses MOJ for now
+			picture = vangraffs
+
+			allowed = {
+				is_mexican_nation_allowed_block = no
+				NOT = {
+					is_nation_with_no_generic_manufacturer = yes
+					has_unique_energy_weapon_producer = yes
+				}
+			}
+			# Redundant due to above allowed block @Tran
+			# visible = {
+			# 	NOT = {
+			# 		OR = {
+			# 			has_country_flag = no_generic_manufacturer
+			# 			has_unique_energy_weapon_producer = yes
+			# 		}
+			# 	}
+			# }
+			research_bonus = {
+				energy_weaponry_tech_category = 0.15
+			}
+
+			traits = { energy_weapon_manufacturer }
+			ai_will_do = {
+				base = 1
+				modifier = {
+					factor = 0.5
+					OR = {
+						has_country_flag = infantry_melee_ai
+						has_country_flag = infantry_ballistic_ai
+					}
+				}
+			}
+		}
+		smiths_company = {
+			picture = smiths_company
+			allowed = {
+				is_mexican_nation_allowed_block = no
+				NOT = {
+					is_nation_with_no_generic_manufacturer = yes
+				}
+			}
+			# Redundant due to above allowed block @Tran
+			# visible = {
+			# 	NOT = {
+			# 		OR = {
+			# 			has_country_flag = no_generic_manufacturer
+			# 			has_unique_weapon_producer = yes
+			# 		}
+			# 	}
+			# }
+			research_bonus = {
+				melee_weaponry_tech_category = 0.15
+			}
+			traits = { melee_weapon_manufacturer }
+			ai_will_do = {
+				base = 1
+				modifier = {
+					factor = 0.5
+					OR = {
+						has_country_flag = infantry_energy_ai
+						has_country_flag = infantry_ballistic_ai
+					}
+				}
+			}
+		}
+		oh_no_explosives = {
+			picture = oh_no_explosives
+			allowed = {
+				is_mexican_nation_allowed_block = no
+				NOT = {
+					is_nation_with_no_generic_manufacturer = yes
+					has_unique_explosives_producer = yes
+				}
+			}
+			# Redundant due to above allowed block @Tran
+			# visible = {
+			# 	NOT = {
+			# 		OR = {
+			# 			has_country_flag = no_generic_manufacturer
+			# 			has_unique_explosives_producer = yes
+			# 		}
+			# 	}
+			# }
+			research_bonus = {
+				support_demolitions_tech_category = 0.15
+			}
+			traits = { explosive_weapon_manufacturer }
+		}
+		greasers = {
+			picture = greasers
+			allowed = {
+				is_mexican_nation_allowed_block = no
+				NOT = {
+					is_nation_with_no_generic_manufacturer = yes
+					has_unique_power_armor_producer = yes
+				}
+			}
+			# Redundant due to above allowed block @Tran
+			# visible = {
+			# 	NOT = {
+			# 		OR = {
+			# 			has_country_flag = no_generic_manufacturer
+			# 			has_unique_power_armor_producer = yes
+			# 		}
+			# 	}
+			# }
+			research_bonus = {
+				power_armor_tech_category = 0.15
+			}
+			traits = { power_armor_manufacturer }
+			ai_will_do = {
+				modifier = {
+					factor = 0
+					NOT = { has_tech = power_armour_tech_level_settler }
+				}
+			}
+		}
+		steel_soldiers = {
+			picture = steel_soldiers
+			allowed = {
+				is_mexican_nation_allowed_block = no
+				NOT = {
+					is_nation_with_no_generic_manufacturer = yes
+					has_unique_robot_producer = yes
+				}
+			}
+			# Redundant due to above allowed block @Tran
+			# visible = {
+			# 	NOT = {
+			# 		OR = {
+			# 			has_country_flag = no_generic_manufacturer
+			# 			has_unique_robot_producer = yes
+			# 		}
+			# 	}
+			# }
+			research_bonus = {
+				robotics_tech_category = 0.15
+			}
+			traits = { robot_manufacturer }
+			ai_will_do = {
+				modifier = {
+					factor = 0
+					NOT = {
+						has_tech = robot_protectron_equipment_tech_1
+						has_tech = robot_handy_equipment_tech_1
+					}
+				}
+			}
+		}
+		docs_company = {
+			picture = docs_company
+			allowed = {
+				is_mexican_nation_allowed_block = no
+				NOT = {
+					is_nation_with_no_generic_manufacturer = yes
+					has_unique_medical_company = yes
+				}
+			}
+			# Redundant due to above allowed block @Tran
+			# visible = {
+			# 	NOT = {
+			# 		OR = {
+			# 			has_country_flag = no_generic_manufacturer
+			# 			has_unique_medical_comapny = yes
+			# 		}
+			# 	}
+			# }
+			research_bonus = {
+				support_medical_tech_category = 0.15
+			}
+			traits = { medical_company }
+			on_add = {
+				if = {
+					limit = {
+						OR = {
+							original_tag = TAR
+							original_tag = CRZ
+							original_tag = UIN
+						}
+						has_idea = sickness_of_soot
+					}
+					set_temp_variable = { soot_recovery_boost = 0.25 }
+					boost_sickness_of_soot_recovery_rate = yes
+				}
+			}
+			on_remove = {
+				if = {
+					limit = {
+						OR = {
+							original_tag = TAR
+							original_tag = CRZ
+							original_tag = UIN
+						}
+						has_idea = sickness_of_soot
+					}
+					set_temp_variable = { soot_recovery_boost = -0.25 }
+					boost_sickness_of_soot_recovery_rate = yes
+					custom_effect_tooltip = spacer_tt
+				}
+			}
+		}
+		junkwalls_and_more = {
+			picture = stuff_to_shoot_from_inc
+			allowed = {
+				is_mexican_nation_allowed_block = no
+				NOT = {
+					is_nation_with_no_generic_manufacturer = yes
+					has_unique_defense_construction_company = yes
+				}
+			}
+			# Redundant due to above allowed block @Tran
+			# visible = {
+			# 	NOT = {
+			# 		OR = {
+			# 			has_country_flag = no_generic_manufacturer
+			# 			has_unique_defense_construction_company = yes
+			# 		}
+			# 	}
+			# }
+			research_bonus = {
+				habitation_category = 0.15
+			}
+			traits = { defenses_construction_company }
+		}
+		tulchinsky_engineering = {
+			picture = tulchinsky_engineering
+			allowed = {
+				is_mexican_nation_allowed_block = no
+				NOT = {
+					is_nation_with_no_generic_manufacturer = yes
+					has_unique_industrial_construction_company = yes
+				}
+			}
+			# Redundant due to above allowed block @Tran
+			# visible = {
+			# 	NOT = {
+			# 		OR = {
+			# 			has_country_flag = no_generic_manufacturer
+			# 			has_unique_industrial_construction_company = yes
+			# 		}
+			# 	}
+			# }
+			research_bonus = {
+				electronics = 0.15
+			}
+			traits = { industrial_construction_company }
+			ai_will_do = {
+				base = 1
+				modifier = {
+					factor = 1.5
+					has_tech = electronics_tech_level_settler
+				}
+			}
+		}
+		freemans_fixers = {
+			picture = freemans_fixers
+			allowed = {
+				is_mexican_nation_allowed_block = no
+				NOT = {
+					is_nation_with_no_generic_manufacturer = yes
+					has_unique_infrastructure_construction_company = yes
+				}
+			}
+			# Redundant due to above allowed block @Tran
+			# visible = {
+			# 	NOT = {
+			# 		OR = {
+			# 			has_country_flag = no_generic_manufacturer
+			# 			has_unique_infrastructure_construction_company = yes
+			# 		}
+			# 	}
+			# }
+			research_bonus = {
+				tool_tech = 0.15
+			}
+			traits = { infrastructure_construction_company }
+		}
+		golden_gecko = {
+			picture = golden_gecko
+			allowed = {
+				is_mexican_nation_allowed_block = no
+				NOT = {
+					is_nation_with_no_generic_manufacturer = yes
+					has_unique_entertainment_company = yes
+				}
+			}
+			# Redundant due to above allowed block @Tran
+			# visible = {
+			# 	NOT = {
+			# 		OR = {
+			# 			has_country_flag = no_generic_manufacturer
+			# 			has_unique_entertainment_company = yes
+			# 		}
+			# 	}
+			# }
+			# research_bonus = {
+
+			# }
+			traits = { entertainment_company }
+			ai_will_do = {
+				factor = 10
+				modifier = {
+					factor = 2
+					tag = NCR
+					has_stability < 0.6
+				}
+			}
+		}
+		friendly_lending_company_advisor = {
+			picture = grant_c_hayes_advisor
+			allowed = {
+				original_tag = NCR
+			}
+			available = {
+				has_completed_focus = ncr_permanent_hub_advisors
+			}
+			modifier = {
+				stability_factor = 0.1
+				production_speed_industrial_complex_factor = 0.1
+			}
+			ai_will_do = {
+				factor = 13		# Very strong and NCR needs stability
+			}
+		}
+
+    ### TODO WHT unique comapny. move to seperate file later
+
+	happy_trails_caravan_company = {
+		picture = happy_trails
+		allowed = {
+			OR = {
+				original_tag = WHT
+				original_tag = NCN
+				original_tag = EHT
+			}
+		}
+		# Redundant due to above allowed block @Tran
+		# visible = {
+		# 	original_tag = WHT
+		# }
+		available = {
+			if = {
+				limit = {
+					original_tag = WHT
+				}
+				has_completed_focus = WHT_happy_trails_caravan
+			}
+			else_if = {
+				limit = {
+					original_tag = NCN
+				}
+				has_completed_focus = NCN_bargain_with_utah_traders
+			}
+			else_if = {
+				limit = {
+					original_tag = EHT
+				}
+				OR = {
+					AND = {
+						has_completed_focus = EHT_empire_salt
+						is_in_faction_with = WHT
+						WHT = { has_completed_focus = WHT_happy_trails_caravan }
+					}
+					AND = {
+						has_completed_focus = EHT_join_mormon_alliance
+						is_in_faction_with = NCN
+						NCN = { has_completed_focus = NCN_bargain_with_utah_traders }
+					}
+				}
+			}
+		}
+		modifier = {
+			caps_flat_income_modifier = 5
+		}
+		traits = { caravan_company }
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	happy_harry = {
+		picture = company_happy_harry
+		allowed = {
+			original_tag = VLT
+		}
+		research_bonus = {
+			ballistic_weaponry_tech_category = 0.15
+		}
+		traits = { weapon_manufacturer }
+	}
+	servant_allocation_center = {
+		picture = company_servant_allocation_center
+		allowed = {
+			original_tag = VLT
+		}
+		available = {
+			NOT = {
+				has_completed_focus = vlt_new_servant_allocation_center
+			}
+		}
+		visible = {
+			NOT = {
+				has_completed_focus = vlt_new_servant_allocation_center
+			}
+		}
+		research_bonus = {
+			habitation_category = 0.15
+		}
+		traits = { infrastructure_construction_company }
+	}
+	work_allocation_center = {
+		picture = company_work_allocation_center
+		allowed = {
+			original_tag = VLT
+		}
+		available = {
+			has_completed_focus = vlt_new_servant_allocation_center
+		}
+		visible = {
+			has_completed_focus = vlt_new_servant_allocation_center
+		}
+		research_bonus = {
+			habitation_category = 0.15
+		}
+		traits = { vlt_infrastructure_construction_company }
+	}
+	parlor_room = {
+		picture = company_parlor_room
+		allowed = {
+			original_tag = VLT
+		}
+		# research_bonus = {
+
+		# }
+		traits = { entertainment_company }
+	}
+	carma_ver = {
+		picture = carma
+		allowed = {
+			original_tag = VER
+		}
+		cost = 250
+		research_bonus = {
+			ballistic_weaponry_tech_category = 0.125
+		}
+		equipment_bonus = {
+			infantry_equipment = {
+				build_cost_ic = 0.30
+				soft_attack = 0.10
+				ap_attack = 0.10
+				defense = 0.10
+				reliability = 0.05
+				instant = yes
+			}
+		}
+	}
+	knighlty_armaments = {
+		picture = company_knightly_armaments
+		allowed = {
+			is_brotherhood_nation_allowed_block = yes
+		}
+		available = {
+			is_brotherhood_nation = yes
+		}
+		visible = {
+			is_brotherhood_nation = yes
+		}
+		research_bonus = {
+			power_armor_tech_category = 0.15
+		}
+		traits = { bos_power_armor_manufacturer }
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 2
+				has_country_flag = power_armor_doctrine_ai
+			}
+		}
+	}
+	STR_internal_focus = {
+		picture = generic_industrial_concern_2
+
+		allowed = {
+			OR = {
+				original_tag = STC
+			}
+		}
+
+		available = {
+			has_completed_focus = str_deal_with_three_rivers_hostility
+		}
+
+		visible = {
+
+		}
+
+		cost = 100
+
+		traits = { industrial_construction_company }
+
+		modifier = {
+			caps_income_modifier = -0.10
+		}
+	}
+	STC_arms_plant = {
+		picture = generic_industrial_concern_2
+		allowed = {
+			OR = {
+				original_tag = STC
+				original_tag = WPG
+			}
+		}
+		visible = {
+
+		}
+		available = {
+			OR = {
+				has_completed_focus = str_deal_with_three_rivers
+				tag = WPG
+			}
+		}
+		research_bonus = {
+			ballistic_weaponry_tech_category = 0.15
+		}
+
+		equipment_bonus = {
+			infantry_equipment = {
+				build_cost_ic = -0.07
+				instant = yes
+			}
+		}
+		traits = {
+			weapon_manufacturer
+		}
+	}
+	men_at_arms = {
+		picture = designer_men_at_arms
+		allowed = {
+			OR = {
+				original_tag = VIC
+				original_tag = PMR
+				original_tag = KAM
+				original_tag = WHI
+				original_tag = DRE
+				original_tag = TOC
+				original_tag = ROT
+				original_tag = OLY
+				original_tag = YAK
+			}
+		}
+		modifier = {
+			training_time_army_factor = 0.05
+			army_leader_start_logistics_level = 1
+			army_leader_start_planning_level = 1
+		}
+	}
+	warden_remnants = {
+		picture = designer_wardens
+		allowed = {
+			OR = {
+				original_tag = VIC
+				original_tag = PMR
+				original_tag = KAM
+				original_tag = WHI
+				original_tag = DRE
+				original_tag = TOC
+				original_tag = ROT
+				original_tag = OLY
+				original_tag = YAK
+			}
+		}
+		modifier = {
+			training_time_army_factor = -0.05
+		}
+		research_bonus = {
+			infantry_tech_category = 0.10
+		}
+		equipment_bonus = {
+			heavy_infantry_equipment = {
+				build_cost_ic = -0.10
+				instant = yes
+			}
+		}
+	}
+	legion_railway = {
+		picture = legion_smiths
+		available = {
+			CES = { has_country_flag = ces_builds_railroads }
+		}
+		visible = {
+			OR = {
+				tag = CES
+				is_in_faction_with = CES
+			}
+		}
+		cost = 75
+		removal_cost = 10
+		on_add = {
+			set_temp_variable = { removal_cost = 10 }
+			custom_effect_tooltip = remove_cost_tooltip
+		}
+		traits = { infrastructure_construction_company }
+	}
+	ces_mojave_tribute = {
+		picture = legion_smiths
+		available = {
+			has_completed_focus = ces_go_the_spoils
+		}
+		allowed = {
+			OR = {
+				tag = CES
+				tag = LAC
+			}
+		}
+		cost = 75
+		removal_cost = 10
+		on_add = {
+			set_temp_variable = { removal_cost = 10 }
+			custom_effect_tooltip = remove_cost_tooltip
+		}
+		modifier = {
+			consumer_goods_expected_value = -0.02
+			caps_income_modifier = 0.15
+		}
+	}
+	ces_slaves = {
+		picture = KHA_ourown_slave_trade
+		available = {
+			if = {
+				limit = { tag = LAC }
+				has_completed_focus = lac_slave_markets_taos
+				OR = {
+					has_completed_focus = lac_triumphant_campaign
+					AND = {
+						has_completed_focus = lac_good_boy_puppet
+						CES = {
+							has_completed_focus = ces_legionary_corps
+						}
+					}
+				}
+			}
+			else = {
+				has_completed_focus = ces_legionary_corps
+			}
+		}
+		allowed = {
+			OR = {
+				tag = CES
+				tag = LAC
+			}
+		}
+		cost = 150
+		removal_cost = 10
+		on_add = {
+			set_temp_variable = { removal_cost = 10 }
+			custom_effect_tooltip = remove_cost_tooltip
+		}
+		modifier = {
+			civilian_intel_factor = 0.1
+		}
+		traits = { slavery_offices }
+	}
+	lady_lasers = {
+		picture = lady_lasers_manufacturer
+		allowed = {
+			is_mexican_nation_allowed_block = yes
+			NOT = {
+				is_nation_with_no_generic_manufacturer = yes
+			}
+		}
+		# Redundant due to above allowed block @Tran
+		# visible = {
+		# 	NOT = {
+		# 		has_country_flag = no_generic_manufacturer
+		# 		tag = TLA
+		# 		tag = ZAP
+		# 		tag = ARM
+		# 		tag = MAX
+		# 		tag = MOC
+		# 	}
+		# }
+		traits = { energy_weapon_manufacturer }
+		research_bonus = {
+			energy_weaponry_tech_category = 0.15
+		}
+	}
+	gente_arms = {
+		picture = gdh_weapons
+		allowed = {
+			is_mexican_nation_allowed_block = yes
+			NOT = {
+				is_nation_with_no_generic_manufacturer = yes
+				has_unique_weapon_producer = yes
+			}
+		}
+		# Redundant due to above allowed block @Tran
+		# visible = {
+		# 	NOT = {
+		# 		OR = {
+		# 			has_country_flag = no_generic_manufacturer
+		# 			has_unique_weapon_producer = yes
+		# 		}
+		# 	}
+		# }
+		available = {
+			OR = {
+				tag = BVC
+				tag = GDH
+			}
+		}
+		research_bonus = {
+			ballistic_weaponry_tech_category = 0.2
+		}
+		traits = { weapon_manufacturer }
+	}
+	xiuhcoatl_inc = {
+		picture = xiuhcoatl
+		allowed = {
+			is_mexican_nation_allowed_block = yes
+		}
+
+		research_bonus = {
+			infantry_weapons_tech_category = 0.15
+		}
+
+		traits = { xiuhcoatl_manufacturer1 }
+
+	}
+	cartel_rejects = {
+		picture = cartel_nation
+		allowed = {
+			is_mexican_nation_allowed_block = yes
+			NOT = {
+				is_nation_with_no_generic_manufacturer = yes
+				has_unique_cheap_weapon_producer = yes
+			}
+		}
+		# Redundant due to above allowed block @Tran
+		# visible = {
+		# 	NOT = {
+		# 		OR = {
+		# 			has_country_flag = no_generic_manufacturer
+		# 			has_unique_cheap_weapon_producer = yes
+		# 		}
+		# 	}
+		# }
+		available = {
+			OR = {
+				tag = BVC
+				tag = GDH
+			}
+		}
+		research_bonus = {
+			infantry_weapons_tech_category = 0.15
+		}
+		traits = { cheap_weapon_manufacturer }
+	}
+	farias_outpost = {
+		picture = generic_mr_gutsy
+		allowed = {
+			is_mexican_nation_allowed_block = yes
+			NOT = {
+				is_nation_with_no_generic_manufacturer = yes
+				has_unique_robot_producer = yes
+			}
+		}
+		# Redundant due to above allowed block @Tran
+		# visible = {
+		# 	NOT = {
+		# 		OR = {
+		# 			has_country_flag = no_generic_manufacturer
+		# 			has_unique_robot_producer = yes
+		# 		}
+		# 	}
+		# }
+		available = {
+			OR = {
+				tag = BVC
+				tag = GDH
+			}
+		}
+		research_bonus = {
+			robotics_tech_category = 0.15
+		}
+		traits = { robot_manufacturer }
+	}
+	cost_corp_pharmaceuticals = {
+		picture = caf_logo
+		allowed = {
+			is_mexican_nation_allowed_block = yes
+			NOT = {
+				is_nation_with_no_generic_manufacturer = yes
+				has_unique_medical_company = yes
+			}
+		}
+		# Redundant due to above allowed block @Tran
+		# visible = {
+		# 	NOT = {
+		# 		OR = {
+		# 			has_country_flag = no_generic_manufacturer
+		# 			has_unique_medical_comapny = yes
+		# 		}
+		# 	}
+		# }
+		available = {
+			OR = {
+				tag = BVC
+				tag = GDH
+			}
+		}
+		research_bonus = {
+			support_medical_tech_category = 0.15
+		}
+		traits = { medical_company }
+	}
+	tzotzil_detachment = {
+		picture = tzotzil_detachment
+		allowed = {
+			is_mexican_nation_allowed_block = yes
+			NOT = {
+				is_nation_with_no_generic_manufacturer = yes
+				has_unique_defense_construction_company = yes
+			}
+		}
+		# Redundant due to above allowed block @Tran
+		# visible = {
+		# 	NOT = {
+		# 		OR = {
+		# 			has_country_flag = no_generic_manufacturer
+		# 			has_unique_defense_construction_company = yes
+		# 		}
+		# 	}
+		# }
+		available = {
+			OR = {
+				tag = BVC
+				tag = GDH
+			}
+		}
+		research_bonus = {
+			habitation_category = 0.15
+		}
+		traits = { defenses_construction_company }
+	}
+
+
+	viceroyalty_branch_office = {
+		picture = viceroyalty_branch_office
+		allowed = {
+			is_mexican_nation_allowed_block = yes
+			NOT = {
+				is_nation_with_no_generic_manufacturer = yes
+				has_unique_industrial_construction_company = yes
+			}
+		}
+		# Redundant due to above allowed block @Tran
+		# visible = {
+		# 	NOT = {
+		# 		OR = {
+		# 			has_country_flag = no_generic_manufacturer
+		# 			has_unique_industrial_construction_company = yes
+		# 		}
+		# 	}
+		# }
+		available = {
+			OR = {
+				tag = BVC
+				tag = GDH
+			}
+		}
+		research_bonus = {
+
+		}
+		traits = { economic_finances_company }
+	}
+
+	petro_chico_reserve = {
+		picture = petro_chico_inc
+		allowed = {
+			is_mexican_nation_allowed_block = yes
+			NOT = {
+				is_nation_with_no_generic_manufacturer = yes
+				has_unique_industrial_construction_company = yes
+			}
+		}
+		# Redundant due to above allowed block @Tran
+		# visible = {
+		# 	NOT = {
+		# 		OR = {
+		# 			has_country_flag = no_generic_manufacturer
+		# 			has_unique_industrial_construction_company = yes
+		# 		}
+		# 	}
+		# }
+		available = {
+			OR = {
+				tag = BVC
+				tag = GDH
+			}
+		}
+		research_bonus = {
+
+		}
+		traits = { fuel_company }
+	}
+
+	tohono_advisory = {
+		picture = tohono_advisory
+		allowed = {
+			is_mexican_nation_allowed_block = yes
+			NOT = {
+				is_nation_with_no_generic_manufacturer = yes
+				has_unique_infrastructure_construction_company = yes
+			}
+		}
+		# Redundant due to above allowed block @Tran
+		# visible = {
+		# 	NOT = {
+		# 		OR = {
+		# 			has_country_flag = no_generic_manufacturer
+		# 			has_unique_infrastructure_construction_company = yes
+		# 		}
+		# 	}
+		# }
+		available = {
+			OR = {
+				tag = BVC
+				tag = GDH
+			}
+		}
+		research_bonus = {
+			electronics = 0.15
+		}
+		traits = { industrial_construction_company }
+	}
+	costa_corp = {
+		picture = caf_logo
+		allowed = {
+			is_mexican_nation_allowed_block = yes
+			NOT = {
+				is_nation_with_no_generic_manufacturer = yes
+				has_unique_entertainment_company = yes
+			}
+		}
+		# Redundant due to above allowed block @Tran
+		# visible = {
+		# 	NOT = {
+		# 		OR = {
+		# 			has_country_flag = no_generic_manufacturer
+		# 			has_unique_entertainment_company = yes
+		# 		}
+		# 	}
+		# }
+		available = {
+			OR = {
+				tag = BVC
+				tag = GDH
+			}
+		}
+		research_bonus = {
+
+		}
+		traits = { entertainment_company }
+	}
+	new_reno_arms_company = {
+		picture = company_new_reno_arms
+		allowed = {
+			OR = {
+				original_tag = NEW
+				original_tag = EHT
+			}
+		}
+		available = {
+			if = {
+				limit = {
+					original_tag = EHT
+				}
+				has_completed_focus = EHT_new_reno
+			}
+		}
+		research_bonus = {
+			ballistic_weaponry_tech_category = 0.15
+		}
+		traits = { weapon_manufacturer_reno }
+	}
+	renescos_pharmacy_company = {
+		picture = company_renoscos
+		allowed = {
+			original_tag = NEW
+		}
+		modifier = {
+			caps_expense_modifier = -0.1
+		}
+		research_bonus = {
+			support_medical_tech_category = 0.15
+		}
+		traits = { medical_company }
+	}
+	the_golden_globes = {
+		picture = golden_globes
+		cost = 69
+
+		allowed = {
+			original_tag = NEW
+		}
+		research_bonus = {
+
+		}
+		traits = { entertainment_company }
+		ai_will_do = {
+			factor = 30		# Major Business weights wind up far smaller than the average when the AI makes evaluations
+		}
+	}
+	coral_shapers = {
+		picture = company_coral_shapers
+		allowed = {
+			OR = {
+				original_tag = MLT
+				original_tag = DIS
+			}
+		}
+		traits = { industrial_construction_company }
+	}
+	sub_level_2 = {
+		picture = company_sub_level_2
+		allowed = {
+			original_tag = RES
+		}
+		cost = 150
+		research_bonus = {
+			construction_category = 0.15
+		}
+		traits = { res_industrial_construction_company }
+	}
+	high_noon_inc = {
+
+		picture = high_noon_arms
+
+		allowed = {
+			tag = RRG
+		}
+		research_bonus = {
+			infantry_weapons_tech_category = 0.10
+		}
+
+		traits = { high_noon_manufacturer }
+
+	}
+	red_888 = {
+		picture = company_red888
+		allowed = {
+			original_tag = SHI
+		}
+		research_bonus = {
+			ballistic_weaponry_tech_category = 0.15
+		}
+		modifier = {
+			modifier_army_sub_unit_infantry_attack_factor = 0.05
+		}
+		traits = { weapon_manufacturer }
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	petro_chico_rails = {
+
+		picture = petro_chico_rails
+
+		allowed = {
+			OR = {
+				tag = TLA
+				tag = ZAP
+				tag = ARM
+				tag = MAX
+				tag = MOC
+				tag = PET
+			}
+		}
+
+		research_bonus = {
+			industry = 0.15
+		}
+
+		traits = { industrial_concern }
+
+		modifier = {
+		}
+	}
+	petro_chico_inc = {
+
+		picture = petro_chico_inc
+
+		allowed = {
+			OR = {
+				tag = TLA
+				tag = ZAP
+				tag = ARM
+				tag = MAX
+				tag = MOC
+				tag = PET
+			}
+		}
+
+		research_bonus = {
+			support_tech_category = 0.15
+		}
+
+		traits = { support_equipment_manufacturer }
+	}
+	silver_rush = {
+		picture = company_silver_rush
+		allowed = {
+			original_tag = VEG
+		}
+		traits = { energy_weapon_manufacturer }
+		research_bonus = {
+			energy_weaponry_tech_category = 0.10
+		}
+	}
+	new_vegas_clinic = {
+		picture = company_nv_clinic
+		allowed = {
+			original_tag = VEG
+		}
+		research_bonus = {
+			support_medical_tech_category = 0.1
+		}
+		traits = { medical_company }
+	}
+
+}
+
+###############################
+# Vehicle Companies
+###############################
+	vehicle_restoration_advisor = {
+		designer = yes
+
+		angoryarmor = {
+			allowed = {
+				NOT = {
+					is_nation_with_no_generic_manufacturer = yes
+					has_unique_apc_restoration_company = yes
+				}
+				is_mexican_nation_allowed_block = no
+			}
+			# Redundant due to above allowed block @Tran
+			# visible = {
+			# 	NOT = {
+			# 		OR = {
+			# 			has_country_flag = no_generic_manufacturer
+			# 			has_unique_apc_restoration_company = yes
+			# 		}
+			# 	}
+			# }
+			research_bonus = {
+				truck_tech_category = 0.15
+			}
+			traits = { apc_manufacturer }
+		}
+
+		timstanks = {
+			allowed = {
+				NOT = {
+					is_nation_with_no_generic_manufacturer = yes
+					has_unique_tank_restoration_company = yes
+				}
+				is_mexican_nation_allowed_block = no
+			}
+			# Redundant due to above allowed block @Tran
+			# visible = {
+			# 	NOT = {
+			# 		OR = {
+			# 			has_country_flag = no_generic_manufacturer
+			# 			has_unique_tank_restoration_company = yes
+			# 		}
+			# 	}
+			# }
+			research_bonus = {
+				tank_tech_category = 0.15
+			}
+			traits = { timstanks_manufacturer }
+			ai_will_do = {
+				modifier = {
+					factor = 0
+					NOT = { has_tech = tank_equipment_vehicle_tech_1 }
+				}
+			}
+		}
+		wheelmothers_garage = {
+			picture = wheelmothers_garage
+			allowed = {
+				NOT = {
+					is_nation_with_no_generic_manufacturer = yes
+					has_unique_car_restoration_company = yes
+				}
+				is_mexican_nation_allowed_block = no
+			}
+			# Redundant due to above allowed block @Tran
+			# visible = {
+			# 	NOT = {
+			# 		OR = {
+			# 			has_country_flag = no_generic_manufacturer
+			# 			has_unique_car_restoration_company = yes
+			# 		}
+			# 	}
+			# }
+			research_bonus = {
+				car_tech_category = 0.15
+			}
+			traits = { car_manufacturer }
+		}
+		ratch_cars_company = {
+			picture = wheelmothers_garage
+			allowed = {
+				OR = {
+					original_tag = NCR
+					original_tag = NEW
+					original_tag = EHT
+				}
+			}
+			available = {
+				if = {
+					limit = {
+						original_tag = NCR
+					}
+					has_completed_Focus = ncr_spear_chop_shop
+					NOT = {
+						has_war_with = NEW
+					}
+				}
+				else_if = {
+					limit = {
+						original_tag = EHT
+					}
+					has_completed_focus = EHT_core_reno
+				}
+			}
+			# equipment_bonus = {
+			# 	motorized_equipment = {
+			# 		reliability = 0.05
+			# 		armor_value = 0.05
+			# 		instant = yes
+			# 	}
+			# }
+			research_bonus = {
+				car_tech_category = 0.15
+			}
+			traits = { car_manufacturer_ncr }
+		}
+	}
+
+###############################
+# Navy Companies
+###############################
+	navy_restoration_advisor = {
+		designer = yes
+		canoeoe = {
+			allowed = {
+				NOT = {
+					is_nation_with_no_generic_manufacturer = yes
+					has_unique_light_ship_restoration_company = yes
+				}
+				is_mexican_nation_allowed_block = no
+			}
+			# Redundant due to above allowed block @Tran
+			# visible = {
+			# 	NOT = {
+			# 		OR = {
+			# 			has_country_flag = no_generic_manufacturer
+			# 			has_unique_light_ship_restoration_company = yes
+			# 		}
+			# 	}
+			# }
+			research_bonus = {
+				naval_light_hull_tech_category = 0.15
+			}
+			traits = { light_ship_manufacturer }
+			ai_will_do = {
+				modifier = {
+					factor = 0
+					num_of_naval_factories < 5
+				}
+			}
+		}
+
+		billsbattleships = {
+			allowed = {
+				NOT = {
+					is_nation_with_no_generic_manufacturer = yes
+					has_unique_heavy_ship_restoration_company = yes
+				}
+				is_mexican_nation_allowed_block = no
+			}
+			# Redundant due to above allowed block @Tran
+			# visible = {
+			# 	NOT = {
+			# 		OR = {
+			# 			has_country_flag = no_generic_manufacturer
+			# 			has_unique_heavy_ship_restoration_company = yes
+			# 		}
+			# 	}
+			# }
+			research_bonus = {
+				naval_heavy_hull_tech_category = 0.15
+			}
+			traits = { heavy_ship_manufacturer }
+			ai_will_do = {
+				modifier = {
+					factor = 0
+					num_of_naval_factories < 5
+				}
+			}
+		}
+	}
+###############################
+# Aircraft Companies
+###############################
+	aircraft_restoration_advisor = {
+		designer = yes
+		air_aces = {
+			picture = air_aces
+			allowed = {
+				NOT = {
+					is_nation_with_no_generic_manufacturer = yes
+					has_unique_plane_restoration_company = yes
+				}
+				is_mexican_nation_allowed_block = no
+			}
+			# Redundant due to above allowed block @Tran
+			# visible = {
+			# 	NOT = {
+			# 		OR = {
+			# 			has_country_flag = no_generic_manufacturer
+			# 			has_unique_plane_restoration_company = yes
+			# 		}
+			# 	}
+			# }
+
+			research_bonus = {
+				fighter_tech_category = 0.15
+			}
+			traits = { light_aircraft_manufacturer }
+		}
+		victoriaflyers = {
+			allowed = {
+				NOT = {
+					is_nation_with_no_generic_manufacturer = yes
+					has_unique_plane_restoration_company = yes
+				}
+				is_mexican_nation_allowed_block = no
+			}
+			# Redundant due to above allowed block @Tran
+			# visible = {
+			# 	NOT = {
+			# 		OR = {
+			# 			has_country_flag = no_generic_manufacturer
+			# 			has_unique_plane_restoration_company = yes
+			# 		}
+			# 	}
+			# }
+			research_bonus = {
+				cas_bomber_tech_category = 0.15
+			}
+			traits = { cas_bomber_manufacturer }
+		}
+		brother_bomb = {
+			allowed = {
+				NOT = {
+					is_nation_with_no_generic_manufacturer = yes
+					has_unique_plane_restoration_company = yes
+				}
+				is_mexican_nation_allowed_block = no
+			}
+			# Redundant due to above allowed block @Tran
+			# visible = {
+			# 	NOT = {
+			# 		OR = {
+			# 			has_country_flag = no_generic_manufacturer
+			# 			has_unique_plane_restoration_company = yes
+			# 		}
+			# 	}
+			# }
+			research_bonus = {
+				bomber_tech_category = 0.15
+			}
+			traits = { strat_bomber_manufacturer }
+			ai_will_do = {
+				modifier = {
+					factor = 0
+					NOT = { has_tech = strat_bomber_tech_1 }
+				}
+			}
+		}
+		sky_freight = {
+			allowed = {
+				NOT = {
+					is_nation_with_no_generic_manufacturer = yes
+					has_unique_plane_restoration_company = yes
+				}
+				is_mexican_nation_allowed_block = no
+			}
+			# Redundant due to above allowed block @Tran
+			# visible = {
+			# 	NOT = {
+			# 		OR = {
+			# 			has_country_flag = no_generic_manufacturer
+			# 			has_unique_plane_restoration_company = yes
+			# 		}
+			# 	}
+			# }
+			research_bonus = {
+				cargo_air_tech_category = 0.15
+			}
+			traits = { cargo_plane_manufacturer }
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		best_blimps = {
+			allowed = {
+				NOT = {
+					is_nation_with_no_generic_manufacturer = yes
+					has_unique_plane_restoration_company = yes
+				}
+				is_mexican_nation_allowed_block = no
+			}
+			# Redundant due to above allowed block @Tran
+			# visible = {
+			# 	NOT = {
+			# 		OR = {
+			# 			has_country_flag = no_generic_manufacturer
+			# 			has_unique_plane_restoration_company = yes
+			# 		}
+			# 	}
+			# }
+			research_bonus = {
+				blimp_tech_category = 0.15
+			}
+			traits = { blimp_manufacturer }
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 1
+					OR = {
+						original_tag = EAG
+						original_tag = MXC
+					}
+				}
+			}
+		}
+	}
+}
+

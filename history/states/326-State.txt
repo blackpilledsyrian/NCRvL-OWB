@@ -1,0 +1,33 @@
+state = {
+	id = 326
+	name = "STATE_326"
+	manpower = 27326
+	state_category = town
+
+	resources = {
+		composites = 6
+		circuitry = 2
+		metal = 4
+		water = 1
+	}
+
+	history = {
+		owner = WHT
+		add_core_of = WHT
+		victory_points = {
+			3567 10
+		}
+		victory_points = {
+			3410 5
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 4
+			air_base = 1
+		}
+	}
+
+	provinces = {
+		1577 3368 3369 3409 3410 3511 3512 3513 3514 3515 3567 3569 3571 8903
+	}
+}

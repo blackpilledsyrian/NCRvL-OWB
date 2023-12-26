@@ -1,0 +1,26 @@
+state = {
+	id = 140
+	name = "STATE_140"
+
+	resources = {
+		metal = 6
+	}
+
+	history={
+		victory_points = {
+			4465 5
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			industrial_complex = 1
+		}
+	}
+
+	provinces = {
+		2506 4204 4207 4208 4210 4358 4462 4464 4465 4466 4487
+	}
+	manpower=17000
+	buildings_max_level_factor=1.000
+	state_category= city
+}

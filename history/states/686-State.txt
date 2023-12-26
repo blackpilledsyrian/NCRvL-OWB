@@ -1,0 +1,22 @@
+state = {
+	id = 686
+	name = "STATE_686"
+
+	history={
+		victory_points = {
+			9495 5
+		}
+		buildings = {
+			infrastructure = 2
+
+		}
+
+	}
+
+	provinces={
+		2276 9493 9495 9497 10732 11269 11280 11281
+	}
+	manpower=6071
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

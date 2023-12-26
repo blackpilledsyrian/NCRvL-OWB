@@ -1,0 +1,232 @@
+﻿capital = 307
+oob = "DES_2275"
+
+set_technology = {
+	basic_supply_transport_tech = 1
+	infantry_tech_level_tribal = 1
+	infantry_tech_level_settler = 1
+	infantry_tech_level_scientific = 1
+	support_tech_level_tribal = 1
+	support_tech_level_settler = 1
+	support_tech_level_scientific = 1
+	special_forces_tech_level_tribal = 1
+	special_forces_tech_level_settler = 1
+	special_forces_tech_level_scientific = 1
+	#power_armour_tech_level_tribal = 1
+	#power_armour_tech_level_settler = 1
+	#power_armour_tech_level_scientific = 1
+	vehicles_tech_level_tribal = 1
+	#vehicles_tech_level_settler = 1
+	#vehicles_tech_level_scientific = 1
+	robotics_tech_level_tribal = 1
+	#robotics_tech_level_settler = 1
+	#robotics_tech_level_scientific = 1
+	air_tech_level_tribal = 1
+	#air_tech_level_settler = 1
+	#air_tech_level_scientific = 1
+	naval_tech_level_tribal = 1
+	#naval_tech_level_settler = 1
+	#naval_tech_level_scientific = 1
+	tools_tech_level_tribal = 1
+	tools_tech_level_settler = 1
+	#tools_tech_level_scientific = 1
+	habitation_tech_level_tribal = 1
+	habitation_tech_level_settler = 1
+	#habitation_tech_level_scientific = 1
+	exploitation_tech_level_tribal = 1
+	exploitation_tech_level_settler = 1
+	#exploitation_tech_level_scientific = 1
+	electronics_tech_level_tribal = 1
+	electronics_tech_level_settler = 1
+	#electronics_tech_level_scientific = 1
+	tribal_civilization = 1
+	settled_civilization = 1
+	resource_generator_tech = 1
+	standard_weaponry_tech = 1
+	ballistic_weaponry_tech_1 = 1
+	#ballistic_weaponry_tech_2 = 1
+	#basic_infantry_equipment = 1
+	melee_weaponry_tech_1 = 1
+	support_weaponry = 1
+	bike_tech_1 = 1
+	#motorisation_vehicle_tech = 1
+	#light_motorized_equipment_vehicle_tech_1 = 1
+	special_forces_perk_tech_1 = 1
+	spec_ops_equipment_tech_1 = 1
+	spec_ops_equipment_tech_2 = 1
+	anti_tank_equipment_tech_1 = 1
+	demolitions_weaponry_tech = 1
+	fireteam_weaponry_tech = 1
+	logistics_company_tech_1 = 1
+	unit_training_tech_1 = 1
+	unit_training_tech_2 = 1
+	unit_training_tech_3 = 1
+	unit_training_tech_4 = 1
+	aa_fireteam_equipment_tech = 1
+	warrior_equipment = 1
+	logistics_company_tech_1 = 1
+	recon_company_tech_1 = 1
+	#Police infantry
+	police_infantry_tech = 1
+	tbh_lawkeepers_tech_1 = 1
+	tbh_lawkeepers_tech_2 = 1
+	tbh_lawkeepers_tech_3 = 1
+	resource_generator_water_tech_1 = 1
+	grand_army = 1
+	tactics_doctrine_tech = 1
+}
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		nautics_tech_1 = 1
+		light_navy_hull_tech_1 = 1
+		waterproof_sealing_tech = 1
+	}
+}
+if = {
+	limit = {
+		NOT = { has_dlc = "Man the Guns" }
+	}
+	set_technology = {
+		nautics_tech_non_mtg_1 = 1
+		light_navy_hull_tech_non_mtg_1 = 1
+		waterproof_sealing_tech_non_mtg = 1
+	}
+}
+
+set_stability = 0.35
+set_war_support = 0.4
+set_research_slots = 5
+set_country_flag = is_nevada_nation
+set_country_flag = grand_doctrine_ai
+set_country_flag = grand_infantry_doctrine_ai
+set_country_flag = spec_ops_doctrine_ai
+
+set_politics = {
+	ruling_party = ruler
+	elections_allowed = no
+}
+
+set_popularities = {
+	people = 20
+	elites = 0
+	intellectuals = 0
+	ruler = 80
+}
+
+476 = { add_claim_by = DES }
+371 = { add_claim_by = DES }
+92 = { add_claim_by = DES }
+187 = { add_claim_by = DES }
+201 = { add_claim_by = DES }
+389 = { add_claim_by = DES }
+333 = { add_claim_by = DES }
+75 = { add_claim_by = DES }
+463 = { add_claim_by = DES }
+
+add_ideas = {
+	until_dismissal_conscription
+	tot_economic_mobilisation
+	DES_wasteland_preparedness
+	DES_ranger_treaty_defied
+}
+
+recruit_character = DES_rogue_ranger
+recruit_character = DES_snake_vargas
+recruit_character = DES_hell_razor
+recruit_character = DES_thrasher_sagarra
+recruit_character = DES_angela_deth
+recruit_character = DES_veteran_ranger_holstadt
+recruit_character = DES_elias_wordsworth
+recruit_character = DES_kai_cooke
+recruit_character = DES_jane_maddocks
+recruit_character = DES_doctor_verdrehtnerv
+recruit_character = DES_randy_aldgate
+recruit_character = DES_patrick_fitzpatrick
+recruit_character = DES_scribe_theresa_brown
+recruit_character = DES_tycho_jr_jr
+recruit_character = DES_veteran_ranger_trippy
+recruit_character = DES_charming_jack
+recruit_character = DES_mark_anderson
+recruit_character = DES_koal_morales
+recruit_character = DES_frederica_mercury
+recruit_character = DES_veteran_ranger_rigby
+recruit_character = DES_herschel_smith
+recruit_character = DES_mr_manners
+recruit_character = DES_john_ashbourne
+recruit_character = DES_the_way_of_the_ranger
+recruit_character = DES_tycho_senior_jr
+recruit_character = DES_dexter_cunningham
+recruit_character = DES_henry_dundy
+recruit_character = DES_rusty_shackleford
+
+add_opinion_modifier = {
+	target = SOK
+	modifier = des_rogue_ranger_hates_quote_bad_guys_quote
+}
+add_opinion_modifier = {
+	target = TOF
+	modifier = des_rogue_ranger_hates_quote_bad_guys_quote
+}
+add_opinion_modifier = {
+	target = GRD
+	modifier = des_rogue_ranger_hates_quote_bad_guys_quote
+}
+add_opinion_modifier = {
+	target = TVT
+	modifier = des_rogue_ranger_hates_quote_bad_guys_quote
+}
+add_opinion_modifier = {
+	target = YKZ
+	modifier = des_rogue_ranger_hates_quote_bad_guys_quote
+}
+add_opinion_modifier = {
+	target = JAC
+	modifier = des_rogue_ranger_hates_quote_bad_guys_quote
+}
+add_opinion_modifier = {
+	target = VIP
+	modifier = des_rogue_ranger_hates_quote_bad_guys_quote
+}
+add_opinion_modifier = {
+	target = NEW
+	modifier = des_rogue_ranger_hates_quote_bad_guys_quote
+}
+add_opinion_modifier = {
+	target = NCR
+	modifier = des_rogue_ranger_hates_quote_bad_guys_quote
+}
+add_opinion_modifier = {
+	target = CES
+	modifier = des_rogue_ranger_hates_quote_bad_guys_quote
+}
+add_opinion_modifier = {
+	target = WBH
+	modifier = des_rogue_ranger_hates_quote_bad_guys_quote
+}
+add_opinion_modifier = {
+	target = BOS
+	modifier = des_rogue_ranger_hates_quote_bad_guys_quote
+}
+
+add_manpower = 200	# Low MP in states at start, just a minor bump
+
+#Ranger divisions use it
+add_equipment_to_stockpile = {
+	type = support_equipment_1
+	amount = 175
+	producer = USA
+}
+add_equipment_to_stockpile = {
+	type = anti_tank_equipment_1
+	amount = 75
+	producer = USA
+}
+add_equipment_to_stockpile = {
+	type = ballistic_equipment_1
+	amount = 75
+	producer = USA
+}

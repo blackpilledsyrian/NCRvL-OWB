@@ -1,0 +1,7 @@
+MP_mod_decisions = {
+	allowed = {
+		is_ai = no
+	}
+	priority = 170
+	visible_when_empty = yes
+}

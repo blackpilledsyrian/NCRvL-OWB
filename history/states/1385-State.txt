@@ -1,0 +1,24 @@
+
+state={
+	id=1385
+	name="STATE_1385"
+	resources={
+		water = 2
+	}
+
+	history={
+		buildings = {
+			infrastructure = 6
+		}
+		victory_points = {
+			16427 5
+		}
+	}
+
+	provinces={
+		2360 4245 16396 16425 16426 16427 16428 16429 16430
+	}
+	manpower=2160
+	buildings_max_level_factor=1.000
+	state_category=town
+}

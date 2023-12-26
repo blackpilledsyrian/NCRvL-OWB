@@ -1,0 +1,30 @@
+state = {
+	id = 744
+	name = "STATE_744"
+	resources={
+		water=3.000
+		metal=4.000
+	}
+
+	history={
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			industrial_complex = 1
+			779 = {
+				naval_base = 1
+			}
+		}
+		victory_points = {
+			3017 10
+		}
+		add_extra_state_shared_building_slots = 2
+	}
+
+	provinces={
+		765 775 779 781 926 963 977 1135 2447 3017 3020 3137 3419 6390 6400 6446 6816 7780 8808 8816 8817 8821 8823 8941 8953 8955 8962 9046 9054 9142 9148 9186 9294 9510 12345
+	}
+	manpower=9100
+	buildings_max_level_factor=1.000
+	state_category=shanty
+}

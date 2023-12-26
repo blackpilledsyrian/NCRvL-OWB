@@ -1,0 +1,37 @@
+state={
+	id=1244
+	name="STATE_1244"
+	provinces={
+		14697 14698 14699 14700 14701 15027 15028 15041 15042
+	}
+	history={
+		victory_points = {
+			15027 5
+		}
+		victory_points = {
+			14699 3
+		}
+		buildings = {
+			infrastructure = 3
+			14699 = {
+				naval_base = 1
+				bunker = 2
+			}
+			14698= {
+				coastal_bunker = 2
+			}
+			15027 = {
+				bunker = 2
+			}
+			15028 = {
+				bunker = 2
+			}
+		}
+	}
+	resources = {
+		water = 6
+	}
+	state_category = pastoral
+	manpower = 112
+	buildings_max_level_factor=1.000
+}

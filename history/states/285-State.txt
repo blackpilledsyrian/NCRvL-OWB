@@ -1,0 +1,38 @@
+state = {
+	id = 285
+	name = "STATE_285"
+	manpower = 72500
+	state_category = prewar_megacity
+
+	resources = {
+		water = 6
+		metal = 5
+		energy = 10
+		circuitry = 4
+		composites = 4
+	}
+
+	history = {
+		owner = NEW
+		add_core_of = NEW
+		victory_points = {
+			9139 35
+		}
+		victory_points = {
+			9130 25
+		}
+		victory_points = {
+			8809 5
+		}
+		buildings = {
+			infrastructure = 6
+			arms_factory = 2
+			industrial_complex = 8
+			air_base = 1
+		}
+	}
+
+	provinces = {
+		4886 4947 8756 8757 8802 8809 9126 9130 9132 9139 9140 9144 9147 9153 9154 9159
+	}
+}

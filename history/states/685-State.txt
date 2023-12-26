@@ -1,0 +1,26 @@
+state = {
+	id = 685
+	name = "STATE_685"
+	resources={
+		water = 2
+		metal = 4
+	}
+
+	history={
+		victory_points = {
+			9481 10
+		}
+		buildings = {
+			infrastructure = 2
+
+		}
+
+	}
+
+	provinces={
+		755 9474 9479 9481 11239 11244 11246 11248 11249 11251 11256
+	}
+	manpower=24570
+	buildings_max_level_factor=1.000
+	state_category=shanty
+}

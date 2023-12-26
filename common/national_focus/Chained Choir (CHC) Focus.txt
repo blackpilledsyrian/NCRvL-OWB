@@ -1,0 +1,2927 @@
+#Chained Choir#
+#Praytell! Do you hear the choir sing? Does it cast it's song to your ears, or to your mind's eye?#
+#Shudderfly, Lusa and Violet.#
+
+focus_tree = {
+	id = chained_choir_nf
+	country = {
+		factor = 0
+		modifier = {
+			add = 0
+			tag = CHC
+		}
+	}
+	default = no
+	focus = {
+		id = CHC_history_1
+		icon = GFX_goal_psyker_injection
+		cost = 7
+		x = 15
+		y = 0
+		completion_reward = {
+			country_event = nf_chc.1
+			if = {
+				limit = {
+					is_ai = no
+				}
+				hidden_effect = {
+					scoped_play_song = lusa_chc_ambience
+				}
+			}
+		}
+	}
+	focus = {
+		id = CHC_history_2
+		icon = GFX_goal_pal_exploit_countryside
+		cost = 7
+		x = 0
+		y = 1
+		prerequisite = { focus = CHC_history_1 }
+		relative_position_id = CHC_history_1
+		completion_reward = {
+			country_event = nf_chc.2
+		}
+	}
+	focus = {
+		id = CHC_history_3
+		icon = GFX_goal_psyker_voodoo_doll
+		cost = 7
+		x = 0
+		y = 2
+		prerequisite = { focus = CHC_history_2 }
+		relative_position_id = CHC_history_1
+		completion_reward = {
+			country_event = nf_chc.3
+		}
+	}
+	focus = {
+		id = CHC_history_4
+		icon = GFX_goal_psyker_ascension
+		cost = 7
+		x = 0
+		y = 3
+		prerequisite = { focus = CHC_history_3 }
+		relative_position_id = CHC_history_1
+		completion_reward = {
+			country_event = nf_chc.4
+			country_event = {
+				id = nf_chc.13
+				days = 15
+			}
+		}
+	}
+	focus = {
+		id = CHC_rally_the_thralls
+		icon = GFX_goal_CHC_rally_the_possessed
+		cost = 45
+		x = 1
+		y = 4
+		prerequisite = { focus = CHC_history_4 }
+		relative_position_id = CHC_history_1
+		completion_reward = {
+			add_manpower = 700
+			add_war_support = 0.05
+		}
+	}
+	focus = {
+		id = CHC_equip_the_thralls
+		icon = GFX_goal_CHC_equip_the_possessed
+		cost = 45
+		x = -1
+		y = 4
+		prerequisite = { focus = CHC_history_4 }
+		relative_position_id = CHC_history_1
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = ballistic_equipment_1
+				amount = 1000
+				producer = USA
+			}
+		}
+	}
+	focus = {
+		id = CHC_attack_the_guard
+		icon = GFX_goal_generic_focus_magazine_gunsandbullets_gun_laws
+		cost = 45
+		x = 0
+		y = 5
+		prerequisite = { focus = CHC_rally_the_thralls }
+		prerequisite = { focus = CHC_equip_the_thralls }
+		will_lead_to_war_with = TLP
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			OR = {
+				has_war_with = TLP
+				TLP = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+		}
+		relative_position_id = CHC_history_1
+		completion_reward = {
+			TLP = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+	focus = { ## Central Line
+		id = CHC_everything_for_the_spirit
+		icon = GFX_goal_ghoul_generic_body
+		cost = 45
+		x = -1
+		y = 6
+		prerequisite = { focus = CHC_attack_the_guard }
+		available = {
+			TLP = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = CHC_history_1
+		mutually_exclusive = {
+			focus = CHC_undying_slaves
+		}
+		completion_reward = {
+			615 = { add_manpower = -767 }
+			616 = { add_manpower = -7840 }
+			add_resource = {
+				type = metal
+				amount = 6
+				state = 889
+			}
+			add_war_support = .05
+			890 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+	focus = {
+		id = CHC_undying_slaves
+		icon = GFX_goal_enc_slave_labour_collars
+		cost = 45
+		x = 1
+		y = 6
+		prerequisite = { focus = CHC_attack_the_guard }
+		available = {
+			TLP = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = CHC_history_1
+		mutually_exclusive = {
+			focus = CHC_everything_for_the_spirit
+		}
+		completion_reward = {
+			615 = { add_manpower = -220 }
+			616 = { add_manpower = -2630 }
+			889 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+	focus = {
+		id = CHC_spread_our_taint ## Should Fire Event
+		icon = GFX_goal_VEG_Thorn
+		cost = 45
+		x = 0
+		y = 7
+		prerequisite = { focus = CHC_attack_the_guard }
+		prerequisite = { focus = CHC_everything_for_the_spirit focus = CHC_undying_slaves}
+		available = {
+			TLP = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = CHC_history_1
+		completion_reward = {
+			TLP = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			country_event = nf_chc.91
+		}
+	}
+	focus = {
+		id = CHC_catch_the_guardsmen
+		icon = GFX_goal_ghouls_suck
+		cost = 20
+		x = -1
+		y = 8
+		prerequisite = {
+			focus = CHC_spread_our_taint
+		}
+		prerequisite = {
+			focus = CHC_undying_slaves
+			focus = CHC_everything_for_the_spirit
+		}
+		relative_position_id = CHC_history_1
+		mutually_exclusive = {
+			focus = CHC_catch_the_civilians
+		}
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = ballistic_equipment_2
+				amount = 423
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = ballistic_fireteam_equipment_2
+				amount = 237
+				producer = USA
+			}
+			set_temp_variable = { caps_to_add = 25 }
+            add_caps = yes
+		}
+	}
+	focus = {
+		id = CHC_catch_the_civilians
+		icon = GFX_goal_NCR_openlong15
+		cost = 20
+		x = 1
+		y = 8
+		prerequisite = {
+			focus = CHC_spread_our_taint
+		}
+		prerequisite = {
+			focus = CHC_undying_slaves
+			focus = CHC_everything_for_the_spirit
+		}
+		relative_position_id = CHC_history_1
+		mutually_exclusive = {
+			focus = CHC_catch_the_guardsmen
+		}
+		completion_reward = {
+			set_temp_variable = { caps_to_add = 35 }
+            add_caps = yes
+			add_manpower = 324
+			add_resource = {
+				type = water
+				amount = 5
+				state = 616
+			}
+		}
+	}
+	focus = {
+		id = CHC_the_bounty_of_the_guard
+		icon = GFX_goal_NEW_Sierra_Army_Depot
+		cost = 20
+		x = 0
+		y = 9
+		prerequisite = { focus = CHC_spread_our_taint }
+		prerequisite = {
+			focus = CHC_catch_the_civilians
+			focus = CHC_catch_the_guardsmen
+		}
+		relative_position_id = CHC_history_1
+		completion_reward = {
+			add_resource = {
+				type = advanced
+				amount = 9
+				state = 616
+			}
+			616 = {
+				remove_building = {
+					type = bunker2
+					level = 1
+					province = 2342
+				}
+				remove_building = {
+					type = coastal_bunker
+					level = 2
+					province = 2342
+				}
+			}
+		}
+	}
+	focus = {
+		id = CHC_the_psychic_council
+		icon = GFX_goal_generic_psyker
+		cost = 45
+		x = 0
+		y = 10
+		prerequisite = {
+			focus = CHC_catch_the_civilians
+			focus = CHC_catch_the_guardsmen
+		}
+		prerequisite = { focus = CHC_the_bounty_of_the_guard }
+		available = {
+			has_completed_focus = CHC_will_to_power
+			has_completed_focus = CHC_double_arms_production
+		}
+		relative_position_id = CHC_history_1
+		completion_reward = {
+			if = {
+				limit = {
+					people > 0.60
+				}
+				country_event = nf_chc.8
+			}
+			else_if = {
+				limit = {
+					people < 0.60
+				}
+				country_event = nf_chc.9
+			}
+		}
+	}
+	focus = { ## Left Line
+		id = CHC_fortify_scrappers_pass
+		icon = GFX_goal_lac_army_testudo
+		cost = 45
+		x = -3
+		y = 6
+		prerequisite = { focus = CHC_attack_the_guard }
+		relative_position_id = CHC_history_1
+		completion_reward = {
+			890 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 12215
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 2753
+				}
+			}
+		}
+	}
+	focus = {
+		id = CHC_will_to_power ## Should fire event
+		icon = GFX_goal_psyker_power
+		cost = 45
+		x = -3
+		y = 7
+		prerequisite = { focus = CHC_fortify_scrappers_pass }
+		prerequisite = { focus = CHC_thralls_into_the_mines }
+		relative_position_id = CHC_history_1
+		completion_reward = {
+			random_owned_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			country_event = {
+				id = nf_chc.6
+			}
+		}
+	}
+	focus = {
+		id = CHC_thralls_into_the_mines ## Should Fire Event
+		icon = GFX_goal_CHC_thralls_into_the_mines
+		cost = 45
+		x = -5
+		y = 6
+		prerequisite = { focus = CHC_attack_the_guard }
+		relative_position_id = CHC_history_1
+		completion_reward = {
+			add_timed_idea = {
+				idea = CHC_thralls_in_mines
+				days = 180
+			}
+			country_event = {
+				id = nf_chc.7
+			}
+		}
+	}
+	focus = { ## Right Line
+		id = CHC_salvage_irradiated_equipment
+		icon = GFX_goal_BOS_generic_research
+		cost = 45
+		x = 3
+		y = 6
+		prerequisite = { focus = CHC_attack_the_guard }
+		relative_position_id = CHC_history_1
+		completion_reward = {
+			add_tech_bonus = {
+				name = industry_bonus
+				bonus = 0.66
+				uses = 1
+				category = industry
+			}
+		}
+	}
+	focus = {
+		id = CHC_rally_the_dowagers ## Should fire Event
+		icon = GFX_goal_generic_psyker
+		cost = 45
+		x = 5
+		y = 6
+		prerequisite = { focus = CHC_attack_the_guard }
+		relative_position_id = CHC_history_1
+		completion_reward = {
+			add_political_power = 85
+			add_stability = 0.075
+			country_event = {
+				id = nf_chc.10
+			}
+		}
+	}
+	focus = {
+		id = CHC_double_arms_production ## Should Fire Event
+		icon = GFX_goal_CHC_double_arms_production
+		cost = 45
+		x = 3
+		y = 7
+		prerequisite = { focus = CHC_salvage_irradiated_equipment }
+				prerequisite = { focus = CHC_rally_the_dowagers }
+		relative_position_id = CHC_history_1
+		completion_reward = {
+			add_timed_idea = {
+				idea = CHC_cheap_guns
+				days = 180
+			}
+			country_event = {
+				id = nf_chc.5
+			}
+		}
+	}
+	focus = {
+		id = CHC_seize_the_stretch
+		icon = GFX_goal_CHC_scrap1
+		cost = 45
+		x = 1
+		y = 1
+		bypass = {
+			SCA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		prerequisite = { focus = CHC_the_psychic_council }
+		available = {
+			has_army_manpower = {
+				size > 1000
+			}
+		}
+		allow_branch = {
+			has_country_flag = CHC_evil_wins
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			SCA = {
+				add_stability = -0.05
+			}
+			CHC = {
+				transfer_state = 886
+			}
+			add_war_support = 0.05
+		}
+	}
+	focus = {
+		id = CHC_utilizing_townsfolk
+		icon = GFX_goal_CHC_Peasant
+		cost = 45
+		x = -5
+		y = 1
+		prerequisite = {
+			focus = CHC_the_psychic_council
+		}
+		allow_branch = {
+			has_country_flag = CHC_evil_wins
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			random_owned_state = {
+				if = {
+					limit = {
+						is_valid_state_for_4_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			country_event = {
+			id = nf_chc.21
+			}
+		}
+	}
+	focus = {
+		id = CHC_industry_knowledge
+		icon = GFX_goal_CHC_minds
+		cost = 45
+		x = -7
+		y = 1
+		prerequisite = {
+			focus = CHC_the_psychic_council
+		}
+		allow_branch = {
+			has_country_flag = CHC_evil_wins
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			add_tech_bonus = {
+				name = chc_research_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+			add_tech_bonus = {
+				name = chc_research_bonus
+				uses = 1
+				bonus = 0.50
+				category = cat_land_doctrine
+			}
+		}
+	}
+	focus = {
+		id = CHC_power_plant
+		icon = GFX_goal_CHC_generators
+		cost = 45
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = CHC_industry_knowledge
+			focus = CHC_utilizing_townsfolk
+		}
+		allow_branch = {
+			has_country_flag = CHC_evil_wins
+		}
+		relative_position_id = CHC_industry_knowledge
+		completion_reward = {
+			random_owned_state = {
+				add_resource = {
+					type = energy
+					amount = 12
+				}
+			}
+		}
+	}
+	focus = {
+		id = CHC_insert_four_hundredth_focus_in_the_game_named_weird_science_here
+		icon = GFX_goal_CHC_science
+		cost = 45
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = CHC_industry_knowledge
+		}
+		prerequisite = {
+			focus = CHC_utilizing_townsfolk
+		}
+		allow_branch = {
+			has_country_flag = CHC_evil_wins
+		}
+		relative_position_id = CHC_industry_knowledge
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = CHC_gather_what_they_must
+		icon = GFX_goal_CHC_workers
+		cost = 45
+		x = 5
+		y = 1
+		prerequisite = {
+			focus = CHC_the_psychic_council
+		}
+		allow_branch = {
+			has_country_flag = CHC_evil_wins
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			random_owned_state = {
+				add_resource = {
+					type = metal
+					amount = 6
+				}
+			}
+			add_ideas = CHC_mindslaves_picking_shit_off_the_ground_cool
+		}
+	}
+	focus = {
+		id = CHC_the_old_facility
+		icon = GFX_goal_CHC_factory
+		cost = 45
+		x = 7
+		y = 1
+		prerequisite = {
+			focus = CHC_the_psychic_council
+		}
+		allow_branch = {
+			has_country_flag = CHC_evil_wins
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 3
+			}
+			add_offsite_building = {
+				type = arms_factory
+				level = 1
+			}
+		}
+	}
+	focus = {
+		id = CHC_open_your_minds_eye
+		icon = GFX_goal_CHC_water
+		cost = 45
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = CHC_the_old_facility
+		}
+		prerequisite = {
+			focus = CHC_gather_what_they_must
+		}
+		allow_branch = {
+			has_country_flag = CHC_evil_wins
+		}
+		relative_position_id = CHC_gather_what_they_must
+		completion_reward = {
+			add_timed_idea = {
+				idea = CHC_the_floods_of_agartha
+				days = 365
+			}
+			add_stability = .075
+			}
+	}
+	focus = {
+		id = CHC_we_need_MONEY_to_buy_DRUGS
+		icon = GFX_goal_CHC_gold
+		cost = 45
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = CHC_the_old_facility
+			focus = CHC_gather_what_they_must
+		}
+		allow_branch = {
+			has_country_flag = CHC_evil_wins
+		}
+		relative_position_id = CHC_the_old_facility
+		completion_reward = {
+			set_temp_variable = {
+				caps_to_add = 150
+			}
+			add_caps = yes
+			country_event = {
+				id = nf_chc.25
+			}
+		}
+	}
+	focus = {
+		id = CHC_bruisers_army
+		icon = GFX_goal_CHC_bruiser
+		cost = 45
+		x = -3
+		y = 1
+		allow_branch = {
+			has_country_flag = CHC_evil_wins
+		}
+		prerequisite = { focus = CHC_the_psychic_council }
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			custom_effect_tooltip = CHC_bruisers_army_tt
+			add_offsite_building = {
+				type = arms_factory
+				level = 1
+			}
+		}
+	}
+	focus = {
+		id = CHC_reorganizing_the_possessed
+		icon = GFX_goal_CHC_soldier
+		cost = 45
+		x = 3
+		y = 1
+		allow_branch = {
+			has_country_flag = CHC_evil_wins
+		}
+		prerequisite = { focus = CHC_the_psychic_council }
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			add_ideas = CHC_possessed_caste_system
+			set_technology = {
+				support_tech_level_settler = 1
+			}
+		}
+	}
+	focus = {
+		id = CHC_attack_scrappers_compact
+		icon = GFX_goal_CHC_scrap
+		cost = 45
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			SCA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		x = 2
+		y = 1
+		prerequisite = { focus = CHC_seize_the_stretch }
+		allow_branch = {
+			has_country_flag = CHC_evil_wins
+		}
+		relative_position_id = CHC_seize_the_stretch
+		completion_reward = {
+			SCA = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = CHC_core_the_stretch
+		icon = GFX_goal_CHC_stretch
+		cost = 45
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = CHC_attack_scrappers_compact
+		}
+		mutually_exclusive = {
+			focus = CHC_core_corroded_fields
+		}
+		available = {
+			owns_state = 886
+		}
+		allow_branch = {
+			has_country_flag = CHC_evil_wins
+		}
+		relative_position_id = CHC_attack_scrappers_compact
+		completion_reward = {
+			country_event = {
+				id = nf_chc.22
+			}
+			add_state_core = 886
+		}
+	}
+	focus = {
+		id = CHC_stretch_resources
+		icon = GFX_goal_CHC_stretch_factory
+		cost = 45
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = CHC_core_the_stretch
+		}
+		available = {
+			SCA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		allow_branch = {
+			has_country_flag = CHC_evil_wins
+		}
+		relative_position_id = CHC_core_the_stretch
+		completion_reward = {
+			add_offsite_building = {
+				type = industrial_complex
+				level = 2
+			}
+			887 = {
+				add_compliance = 30
+			}
+			set_technology = {
+				exploitation_tech_level_settler = 1
+			}
+		}
+	}
+	focus = {
+		id = CHC_core_corroded_fields
+		icon = GFX_goal_CHC_field
+		cost = 45
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = CHC_attack_scrappers_compact
+		}
+		mutually_exclusive = {
+			focus = CHC_core_the_stretch
+		}
+		available = {
+			SCA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		allow_branch = {
+			has_country_flag = CHC_evil_wins
+		}
+		relative_position_id = CHC_attack_scrappers_compact
+		completion_reward = {
+			country_event = {
+				id = nf_chc.22
+			}
+			add_state_core = 887
+		}
+	}
+	focus = {
+		id = CHC_corroded_fields_resources
+		icon = GFX_goal_CHC_field_factory
+		cost = 45
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = CHC_core_corroded_fields
+		}
+		available = {
+			SCA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		allow_branch = {
+			has_country_flag = CHC_evil_wins
+		}
+		relative_position_id = CHC_core_corroded_fields
+		completion_reward = {
+			add_offsite_building = {
+				type = arms_factory
+				level = 2
+			}
+			886 = {
+				add_compliance = 30
+			}
+			set_technology = {
+				exploitation_tech_level_settler = 1
+			}
+		}
+	}
+	focus = {
+		id = CHC_the_scream_ability
+		icon = GFX_goal_CHC_gift
+		cost = 45
+		x = -1
+		y = 1
+		prerequisite = { focus = CHC_the_psychic_council }
+		allow_branch = {
+			has_country_flag = CHC_evil_wins
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			custom_effect_tooltip = CHC_scream_tt
+			hidden_effect = {
+				set_country_flag = CHC_the_scream_bad_flag
+			}
+		}
+	}
+	focus = {
+		id = CHC_melody_idea
+		icon = GFX_goal_CHC_note
+		cost = 45
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = CHC_the_scream_ability
+		}
+		prerequisite = {
+			focus = CHC_seize_the_stretch
+		}
+		allow_branch = {
+			has_country_flag = CHC_evil_wins
+		}
+		relative_position_id = CHC_the_scream_ability
+		completion_reward = {
+			add_ideas = CHC_slaves_to_a_melody
+			country_event = {
+				id = nf_chc.26
+			}
+		}
+	}
+	focus = {
+		id = CHC_attack_painted_rock
+		icon = GFX_goal_CHC_painted_rock
+		cost = 45
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			PAR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		x = -2
+		y = 1
+		prerequisite = { focus = CHC_the_scream_ability }
+		allow_branch = {
+			has_country_flag = CHC_evil_wins
+		}
+		relative_position_id = CHC_the_scream_ability
+		completion_reward = {
+			PAR = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = CHC_core_guymon_junction
+		icon = GFX_goal_CHC_red_stone
+		cost = 45
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = CHC_attack_painted_rock
+		}
+		mutually_exclusive = {
+			focus = CHC_core_sperman
+		}
+		available = {
+			PAR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		allow_branch = {
+			has_country_flag = CHC_evil_wins
+		}
+		relative_position_id = CHC_attack_painted_rock
+		completion_reward = {
+			add_state_core = 891
+			country_event = {
+				id = nf_chc.20
+			}
+		}
+	}
+	focus = {
+		id = CHC_guymon_resources
+		icon = GFX_goal_CHC_red_stone_shock
+		cost = 45
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = CHC_core_guymon_junction
+		}
+		available = {
+			PAR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		allow_branch = {
+			has_country_flag = CHC_evil_wins
+		}
+		relative_position_id = CHC_core_guymon_junction
+		completion_reward = {
+			add_offsite_building = {
+				type = arms_factory
+				level = 1
+			}
+			938 = {
+				add_compliance = 30
+			}
+			891 = {
+				add_resource = {
+					type = energy
+					amount = 4
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+	focus = {
+		id = CHC_core_sperman
+		icon = GFX_goal_CHC_spear
+		cost = 45
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = CHC_attack_painted_rock
+		}
+		mutually_exclusive = {
+			focus = CHC_core_guymon_junction
+		}
+		available = {
+			PAR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		allow_branch = {
+			has_country_flag = CHC_evil_wins
+		}
+		relative_position_id = CHC_attack_painted_rock
+		completion_reward = {
+			add_state_core = 938
+			country_event = {
+				id = nf_chc.20
+			}
+		}
+	}
+	focus = {
+		id = CHC_sperman_resources
+		icon = GFX_goal_CHC_bounty
+		cost = 45
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = CHC_core_sperman
+		}
+		available = {
+			PAR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		allow_branch = {
+			has_country_flag = CHC_evil_wins
+		}
+		relative_position_id = CHC_core_sperman
+		completion_reward = {
+			add_offsite_building = {
+				type = industrial_complex
+				level = 1
+			}
+			891 = {
+				add_compliance = 30
+			}
+			938 = {
+				add_resource = {
+					type = composites
+					amount = 4
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+	focus = {
+		id = CHC_the_possessed_rally
+		icon = GFX_goal_CHC_thralls
+		cost = 45
+		x = 3
+		y = 2
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		prerequisite = {
+			focus = CHC_attack_painted_rock
+		}
+		prerequisite = {
+			focus = CHC_attack_scrappers_compact
+		}
+		allow_branch = {
+			has_country_flag = CHC_evil_wins
+		}
+		relative_position_id = CHC_attack_painted_rock
+		completion_reward = {
+			add_timed_idea = {
+				idea = CHC_more_shall_feed_the_fire
+				days = 120
+			}
+			custom_effect_tooltip = "The Great Federation will prepare for what is to pass...and we will gather strength. After that, we will strike!"
+			hidden_effect = {
+				country_event = {
+					id = nf_chc.14
+					days = 60
+				}
+				CMC = {
+					country_event = nf_chc.15
+				}
+				CHO = {
+					country_event = nf_chc.15
+				}
+				CHR = {
+					country_event = nf_chc.15
+				}
+			}
+		}
+	}
+	focus = {
+		id = CHC_preparing_for_mother_1
+		icon = GFX_goal_CHC_notes
+		cost = 30
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = CHC_the_possessed_rally
+		}
+		available = {
+			869 = {
+				is_owned_by = CHC
+			}
+		}
+		allow_branch = {
+			has_country_flag = CHC_evil_wins
+		}
+		relative_position_id = CHC_the_possessed_rally
+		completion_reward = {
+			add_stability = 0.05
+			add_war_support = 0.05
+			add_political_power = 50
+			869 = { add_manpower = -10000 }
+			add_state_core = 869
+		}
+	}
+	focus = {
+		id = CHC_preparing_for_mother_2
+		icon = GFX_goal_CHC_mother
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = CHC_the_possessed_rally
+		}
+		available = {
+			617 = {
+				is_owned_by = CHC
+			}
+		}
+		allow_branch = {
+			has_country_flag = CHC_evil_wins
+		}
+		relative_position_id = CHC_the_possessed_rally
+		completion_reward = {
+			add_research_slot = 1
+			617 = { add_manpower = -10000 }
+			add_state_core = 617
+		}
+	}
+	focus = {
+		id = CHC_preparing_for_mother_3
+		icon = GFX_goal_CHC_rally_the_possessed
+		cost = 30
+		x = 2
+		y = 1
+		prerequisite = {
+			focus = CHC_the_possessed_rally
+		}
+		available = {
+			883 = {
+				is_owned_by = CHC
+			}
+		}
+		allow_branch = {
+			has_country_flag = CHC_evil_wins
+		}
+		relative_position_id = CHC_the_possessed_rally
+		completion_reward = {
+			set_temp_variable = { caps_to_add = 90 }
+            add_caps = yes
+			883 = { add_manpower = -10000 }
+			add_state_core = 883
+		}
+	}
+	focus = {
+		id = CHC_summon_mother
+		icon = GFX_goal_CHC_cultists
+		cost = 15
+		x = 0
+		y = 3
+		prerequisite = {
+			focus = CHC_preparing_for_mother_1
+		}
+		prerequisite = {
+			focus = CHC_preparing_for_mother_2
+		}
+		prerequisite = {
+			focus = CHC_preparing_for_mother_3
+		}
+		allow_branch = {
+			has_country_flag = CHC_evil_wins
+		}
+		relative_position_id = CHC_the_possessed_rally
+		completion_reward = {
+			country_event = nf_chc.6661
+			if = {
+				limit = {
+					is_ai = no
+				}
+			}
+			custom_effect_tooltip = "This will unlock the final act of the tree!"
+		}
+	}
+	focus = {
+		id = CHC_attack_the_lodge
+		icon = GFX_goal_CHC_Cortez_Last_Lodge
+		cost = 45
+		x = 1
+		y = 1
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		prerequisite = {
+			focus = CHC_summon_mother
+		}
+		available = {
+		}
+		allow_branch = {
+			has_country_flag = CHC_mother_lives
+		}
+		relative_position_id = CHC_summon_mother
+		completion_reward = {
+			TLL = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = CHC_secrets_of_the_lodge
+		icon = GFX_goal_CHC_Sextant
+		cost = 45
+		x = 1
+		y = 2
+		prerequisite = {
+			focus = CHC_attack_the_lodge
+		}
+		available = {
+			owns_state = 902
+		}
+		allow_branch = {
+			has_country_flag = CHC_mother_lives
+		}
+		relative_position_id = CHC_summon_mother
+		completion_reward = {
+			add_ideas = CHC_lodge_secrets
+			902 = { add_manpower = -7500 }
+		}
+	}
+	focus = {
+		id = CHC_invade_tubeheads
+		icon = GFX_goal_CHC_Tubeheads
+		cost = 45
+		x = -1
+		y = 1
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		prerequisite = {
+			focus = CHC_summon_mother
+		}
+		available = {
+		}
+		allow_branch = {
+			has_country_flag = CHC_mother_lives
+		}
+		relative_position_id = CHC_summon_mother
+		completion_reward = {
+			TUB = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = CHC_dead_air_focus
+		icon = GFX_goal_CHC_Micro
+		cost = 45
+		x = -1
+		y = 2
+		prerequisite = {
+			focus = CHC_invade_tubeheads
+		}
+		available = {
+			owns_state = 900
+		}
+		allow_branch = {
+			has_country_flag = CHC_mother_lives
+		}
+		relative_position_id = CHC_summon_mother
+		completion_reward = {
+			add_ideas = CHC_dead_air
+			900 = { add_manpower = -5000 }
+		}
+	}
+	focus = {
+		id = CHC_march_on_dallas
+		icon = GFX_goal_CHC_Texas
+		cost = 45
+		x = 0
+		y = 3
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		prerequisite = {
+			focus = CHC_dead_air_focus
+		}
+		prerequisite = {
+			focus = CHC_secrets_of_the_lodge
+		}
+		available = {
+		}
+		allow_branch = {
+			has_country_flag = CHC_mother_lives
+		}
+		relative_position_id = CHC_summon_mother
+		completion_reward = {
+			TBH = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = CHC_the_palace
+		icon = GFX_goal_CHC_Palace
+		cost = 45
+		x = 0
+		y = 4
+		prerequisite = {
+			focus = CHC_march_on_dallas
+		}
+		available = {
+			owns_state = 892
+		}
+		allow_branch = {
+			has_country_flag = CHC_mother_lives
+		}
+		relative_position_id = CHC_summon_mother
+		completion_reward = {
+			set_major = yes
+			set_cosmetic_tag = CHC_Domain_of_the_Matriarch
+			set_province_name = {
+				id = 11964
+				name = "The Matriarch's Palace"
+			}
+			892 = { add_manpower = 5000 }
+			892 = {
+				add_extra_state_shared_building_slots = 4
+			}
+			set_capital = {state = 892}
+			add_state_core = 892
+			add_victory_points = {
+				province = 11964
+				value = 10
+			}
+			add_political_power = 50
+			add_stability = 0.1
+			country_event = nf_chc.103
+		}
+	}
+
+	##Evil army branch
+	focus = {
+		id = CHC_rage_for_the_machine
+		icon = GFX_goal_CHC_madness
+		cost = 30
+		x = -7
+		y = -3
+		prerequisite = {
+		}
+		available = {
+			has_completed_focus = CHC_the_psychic_council
+		}
+		allow_branch = {
+			has_country_flag = CHC_evil_wins
+		}
+		relative_position_id = CHC_summon_mother
+		completion_reward = {
+			add_ideas = CHC_doctrinal_anger
+		}
+	}
+	focus = {
+		id = CHC_battle_psykers_focus
+		icon = GFX_goal_CHC_mind
+		cost = 30
+		x = -8
+		y = -2
+		prerequisite = {
+			focus = CHC_rage_for_the_machine
+		}
+		available = {
+		}
+		allow_branch = {
+			has_country_flag = CHC_evil_wins
+		}
+		relative_position_id = CHC_summon_mother
+		completion_reward = {
+			add_ideas = CHC_battle_psykers
+		}
+	}
+	focus = {
+		id = CHC_levy_the_masses_focus
+		icon = GFX_goal_CHC_masses
+		cost = 30
+		x = -6
+		y = -2
+		prerequisite = {
+			focus = CHC_rage_for_the_machine
+		}
+		available = {
+		}
+		allow_branch = {
+			has_country_flag = CHC_evil_wins
+		}
+		relative_position_id = CHC_summon_mother
+		completion_reward = {
+			add_ideas = CHC_levy_the_masses
+			add_manpower = 100
+		}
+	}
+	focus = {
+		id = CHC_thralldom_for_guards
+		icon = GFX_goal_CHC_guard
+		cost = 30
+		x = -6
+		y = -1
+		prerequisite = {
+			focus = CHC_levy_the_masses_focus
+		}
+		available = {
+		}
+		allow_branch = {
+			has_country_flag = CHC_evil_wins
+		}
+		relative_position_id = CHC_summon_mother
+		completion_reward = {
+			hidden_effect = { load_OOB = returnedguardsmen }
+			custom_effect_tooltip = "Three units of fully equipped Guardsmen will join you!"
+		}
+	}
+	focus = {
+		id = CHC_mastering_special_forces
+		icon = GFX_goal_CHC_warrior
+		cost = 30
+		x = -8
+		y = -1
+		prerequisite = {
+			focus = CHC_battle_psykers_focus
+		}
+		available = {
+		}
+		allow_branch = {
+			has_country_flag = CHC_evil_wins
+		}
+		relative_position_id = CHC_summon_mother
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = CHC_battle_psykers
+				add_idea = CHC_battle_psykers_2
+			}
+		}
+	}
+	focus = {
+		id = CHC_mastering_special_forces_2
+		icon = GFX_goal_CHC_special
+		cost = 30
+		x = -7
+		y = 0
+		prerequisite = {
+			focus = CHC_thralldom_for_guards
+		}
+		prerequisite = {
+			focus = CHC_mastering_special_forces
+		}
+		available = {
+		}
+		allow_branch = {
+			has_country_flag = CHC_evil_wins
+		}
+		relative_position_id = CHC_summon_mother
+		completion_reward = {
+			set_technology = {
+				special_forces_tech_level_scientific = 1
+			}
+		}
+	}
+	####This is the good friendly stuff.
+	focus = {
+		id = CHC_alone_in_the_world
+		icon = GFX_goal_CHC_a_solo_act
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = { focus = CHC_the_psychic_council }
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		mutually_exclusive = {
+			focus = CHC_our_friends_in_maxson
+		}
+		completion_reward = {
+			add_political_power = 100
+			add_war_support = 0.05
+		}
+	}
+	focus = {
+		id = CHC_our_friends_in_maxson
+		icon = GFX_goal_CHC_a_duet_of_steel
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = { focus = CHC_the_psychic_council }
+		available = {
+			MXC = {
+                exists = yes
+            }
+			MXC = {
+				is_subject = no
+			}
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		mutually_exclusive = {
+			focus = CHC_alone_in_the_world
+		}
+		completion_reward = {
+			MXC = {
+				create_faction = "Song of Steel"
+				add_to_faction = CHC
+			}
+			add_stability = 0.1
+			country_event = nf_chc.84
+		}
+	}
+	focus = {
+		id = CHC_musical_harmony
+		icon = GFX_goal_CHC_musical_harmony
+		cost = 30
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = CHC_our_friends_in_maxson
+			focus = CHC_alone_in_the_world
+		}
+		available = {
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			custom_effect_tooltip = chcgoodpowerunlocked_tt
+		}
+	}
+	focus = {
+		id = CHC_to_kill_a_god
+		icon = GFX_goal_CHC_to_kill_a_god
+		cost = 30
+		x = 2
+		y = 2
+		prerequisite = {
+			focus = CHC_our_friends_in_maxson
+			focus = CHC_alone_in_the_world
+		}
+		available = {
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			country_event = nf_chc.71
+		}
+	}
+	focus = {
+		id = CHC_remove_the_supporters
+		icon = GFX_goal_CHC_exile_mothers_supporters
+		cost = 30
+		x = -2
+		y = 2
+		prerequisite = {
+			focus = CHC_our_friends_in_maxson
+			focus = CHC_alone_in_the_world
+		}
+		available = {
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			add_stability = -0.10
+			890 = { add_manpower = -327 }
+			add_political_power = 100
+		}
+	}
+	###Left Line
+	focus = {
+		id = CHC_ties_with_maxson
+		icon = GFX_goal_CHC_ties_with_maxson
+		cost = 45
+		x = -4
+		y = 3
+		prerequisite = { focus = CHC_remove_the_supporters }
+		prerequisite = { focus = CHC_musical_harmony }
+		prerequisite = { focus = CHC_to_kill_a_god }
+		available = {
+			is_in_faction_with = MXC
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			country_event = nf_chc.101
+			add_ideas = chc_idea_maxson_choir_trade
+			set_temp_variable = { caps_to_add = 30 }
+            add_caps = yes
+			MXC = {
+				add_ideas = chc_idea_maxson_choir_trade
+				set_temp_variable = { caps_to_add = 30 }
+				add_caps = yes
+			}
+		}
+	}
+	focus = {
+		id = CHC_exchange_technical_information
+		icon = GFX_goal_CHC_an_exchange_of_information
+		cost = 45
+		x = -6
+		y = 3
+		prerequisite = { focus = CHC_remove_the_supporters }
+		prerequisite = { focus = CHC_musical_harmony }
+		prerequisite = { focus = CHC_to_kill_a_god }
+		available = {
+			is_in_faction_with = MXC
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			add_tech_bonus = {
+				name = chc_electronics_bonus
+				bonus = 0.5
+				uses = 1
+                category = industry
+				category = electronics
+			}
+			set_technology = {
+				tools_tech_level_settler = 1
+			}
+		}
+	}
+	focus = {
+		id = CHC_cooperate_on_civilian_manufacturing
+		icon = GFX_goal_CHC_to_build_the_future
+		cost = 45
+		x = -5
+		y = 4
+		prerequisite = { focus = CHC_ties_with_maxson }
+		available = {
+			owns_state = 891
+			is_in_faction_with = MXC
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			891 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			208 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			add_ideas = CHC_construction_corps
+			MXC = {
+				add_ideas = CHC_construction_corps
+			}
+		}
+	}
+	focus = {
+		id = CHC_cooperate_on_defense
+		icon = GFX_goal_CHC_the_art_of_mutual_defense
+		cost = 45
+		x = -7
+		y = 4
+		prerequisite = { focus = CHC_exchange_technical_information }
+		available = {
+			owns_state = 891
+			is_in_faction_with = MXC
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			891 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			208 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			add_ideas = CHC_talent_exchange
+			MXC = {
+				add_ideas = CHC_talent_exchange
+			}
+		}
+	}
+	focus = {
+		id = CHC_brotherhood_weaponry
+		icon = GFX_goal_CHC_brotherhood_weaponry
+		cost = 45
+		x = -8
+		y = 5
+		prerequisite = { focus = CHC_cooperate_on_defense }
+		available = {
+			owns_state = 616
+			is_in_faction_with = MXC
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		mutually_exclusive = {
+			focus = CHC_brotherhood_industry
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			add_research_slot = 1
+			set_technology = {
+				infantry_tech_level_scientific = 1
+			}
+			add_resource = {
+				type = advanced
+				amount = -8
+				state = 616
+			}
+			add_resource = {
+				type = advanced
+				amount = 8
+				state = 412
+			}
+		}
+	}
+	focus = {
+		id = CHC_brotherhood_industry
+		icon = GFX_goal_CHC_brotherhood_industry
+		cost = 45
+		x = -6
+		y = 5
+		prerequisite = { focus = CHC_cooperate_on_civilian_manufacturing }
+		available = {
+			owns_state = 616
+			is_in_faction_with = MXC
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		mutually_exclusive = {
+			focus = CHC_brotherhood_weaponry
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			add_research_slot = 1
+			set_technology = {
+				tools_tech_level_scientific = 1
+			}
+			add_resource = {
+				type = advanced
+				amount = -8
+				state = 616
+			}
+			add_resource = {
+				type = advanced
+				amount = 8
+				state = 412
+			}
+		}
+	}
+	### Right Line
+	focus = {
+		id = CHC_water_from_the_arkansas
+		icon = GFX_goal_CHC_quench_the_thrist
+		cost = 45
+		x = 4
+		y = 3
+		prerequisite = { focus = CHC_to_kill_a_god }
+		prerequisite = { focus = CHC_musical_harmony }
+		prerequisite = { focus = CHC_remove_the_supporters }
+		available = {
+			has_completed_focus = CHC_draft_acapella_plans
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			add_resource = {
+				type = water
+				amount = 5
+				state = 616
+			}
+			add_resource = {
+				type = water
+				amount = 3
+				state = 103
+			}
+			add_resource = {
+				type = water
+				amount = 3
+				state = 869
+			}
+			add_resource = {
+				type = water
+				amount = 3
+				state = 617
+			}
+			set_temp_variable = { caps_to_add = 60 }
+            add_caps = yes
+		}
+	}
+	focus = {
+		id = CHC_have_power_will_share
+		icon = GFX_goal_CHC_have_power_will_share
+		cost = 45
+		x = 5
+		y = 4
+		prerequisite = { focus = CHC_water_from_the_arkansas }
+		available = {
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			add_resource = {
+				type = energy
+				amount = 3
+				state = 616
+			}
+			add_resource = {
+				type = energy
+				amount = 3
+				state = 615
+			}
+			add_resource = {
+				type = energy
+				amount = 3
+				state = 890
+			}
+			add_resource = {
+				type = energy
+				amount = 3
+				state = 889
+			}
+			add_resource = {
+				type = energy
+				amount = 3
+				state = 869
+			}
+			add_resource = {
+				type = energy
+				amount = 3
+				state = 617
+			}
+			set_temp_variable = { caps_to_add = 80 }
+            add_caps = yes
+			country_event = nf_chc.81
+		}
+	}
+	focus = {
+		id = CHC_return_the_people
+		icon = GFX_goal_CHC_return_the_people
+		cost = 45
+		x = 6
+		y = 5
+		prerequisite = { focus = CHC_have_power_will_share }
+		available = {
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			616 = {
+				add_manpower = 2364
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			615 = {
+				add_manpower = 567
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = CHC_defensive_works
+		icon = GFX_goal_CHC_defensive_works
+		cost = 45
+		x = 6
+		y = 3
+		prerequisite = { focus = CHC_to_kill_a_god }
+		prerequisite = { focus = CHC_musical_harmony }
+		prerequisite = { focus = CHC_remove_the_supporters }
+		available = {
+			has_completed_focus = CHC_draft_acapella_plans
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			889 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+				}
+			}
+			890 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = CHC_protect_whats_ours
+		icon = GFX_goal_CHC_stand_and_deliver
+		cost = 45
+		x = 7
+		y = 4
+		prerequisite = { focus = CHC_defensive_works }
+		available = {
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			889 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			add_equipment_to_stockpile = {
+				type = ballistic_equipment_3
+				amount = 250
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 75
+				producer = USA
+			}
+		}
+	}
+	focus = {
+		id = CHC_return_the_guardsmen
+		icon = GFX_goal_CHC_return_the_guardsmen
+		cost = 45
+		x = 8
+		y = 5
+		prerequisite = { focus = CHC_protect_whats_ours }
+		available = {
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			add_manpower = 500
+			add_war_support = 0.02
+			hidden_effect = { load_OOB = returnedguardsmen }
+			custom_effect_tooltip = "Three units of fully equipped Guardsmen will join you!"
+		}
+	}
+	###Middle Line
+	focus = {
+		id = CHC_study_project_acapella
+		icon = GFX_goal_CHC_study_project_ACAPELLA
+		cost = 45
+		x = 1
+		y = 3
+		prerequisite = { focus = CHC_to_kill_a_god }
+		prerequisite = { focus = CHC_musical_harmony }
+		prerequisite = { focus = CHC_remove_the_supporters }
+		available = {
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			country_event = nf_chc.72
+		}
+	}
+	focus = {
+		id = CHC_respect_for_nature
+		icon = GFX_goal_CHC_respect_for_nature
+		cost = 45
+		x = -1
+		y = 3
+		prerequisite = { focus = CHC_to_kill_a_god }
+		prerequisite = { focus = CHC_musical_harmony }
+		prerequisite = { focus = CHC_remove_the_supporters }
+		available = {
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			add_ideas = CHC_respect_for_nature
+			country_event = nf_chc.79
+
+		}
+	}
+	focus = {
+		id = CHC_the_issue_of_painted_rock
+		icon = GFX_goal_CHC_the_issue_of_painted_rock
+		cost = 45
+		x = -3
+		y = 4
+		prerequisite = { focus = CHC_study_project_acapella }
+		prerequisite = { focus = CHC_respect_for_nature }
+		available = {
+			has_completed_focus = CHC_draft_acapella_plans
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			PAR = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			add_war_support = 0.05
+			country_event = nf_chc.80
+		}
+	}
+	focus = {
+		id = CHC_secure_spearman
+		icon = GFX_goal_CHC_secure_spearman
+		cost = 45
+		x = -2
+		y = 5
+		prerequisite = { focus = CHC_the_issue_of_painted_rock }
+		available = {
+			owns_state = 938
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		mutually_exclusive = {
+			focus = CHC_secure_guymon_junction
+		}
+		completion_reward = {
+			add_state_core = 938
+			938 = { add_manpower = 637 }
+			country_event = nf_chc.83
+		}
+	}
+	focus = {
+		id = CHC_build_local_industry
+		icon = GFX_goal_CHC_build_local_industry
+		cost = 45
+		x = -2
+		y = 6
+		prerequisite = { focus = CHC_secure_spearman }
+		available = {
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			add_offsite_building = {
+				type = industrial_complex
+				level = 2
+			}
+			938 = {
+				add_extra_state_shared_building_slots = 2
+			}
+			891 = {
+				add_compliance = 30
+			}
+		}
+	}
+	focus = {
+		id = CHC_secure_guymon_junction
+		icon = GFX_goal_CHC_red_stone
+		cost = 45
+		x = -4
+		y = 5
+		prerequisite = { focus = CHC_the_issue_of_painted_rock }
+		available = {
+			owns_state = 891
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		mutually_exclusive = {
+			focus = CHC_secure_spearman
+		}
+		completion_reward = {
+			add_state_core = 891
+			891 = { add_manpower = 728 }
+			country_event = nf_chc.83
+		}
+	}
+	focus = {
+		id = CHC_hire_weaponsmiths
+		icon = GFX_goal_CHC_hire_local_artisans
+		cost = 45
+		x = -4
+		y = 6
+		prerequisite = { focus = CHC_secure_guymon_junction }
+		available = {
+			owns_state = 891
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			add_offsite_building = {
+				type = arms_factory
+				level = 2
+			}
+			891 = {
+				add_extra_state_shared_building_slots = 2
+			}
+			938 = {
+				add_compliance = 30
+			}
+		}
+	}
+	focus = {
+		id = CHC_buy_parts_from_scrappers
+		icon = GFX_goal_CHC_buy_parts_from_scrappers
+		cost = 45
+		x = 3
+		y = 4
+		prerequisite = { focus = CHC_study_project_acapella }
+		prerequisite = { focus = CHC_respect_for_nature }
+		available = {
+			has_completed_focus = CHC_draft_acapella_plans
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		bypass = {
+			SCA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			country_event = nf_chc.75
+		}
+	}
+	focus = {
+		id = CHC_a_fine_deal
+		icon = GFX_goal_CHC_a_fine_deal
+		cost = 45
+		x = 2
+		y = 5
+		prerequisite = { focus = CHC_buy_parts_from_scrappers }
+		available = {
+			has_country_flag = goodscrappersflag
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			custom_effect_tooltip = CHC_parts_acquired_tt
+		}
+	}
+	focus = {
+		id = CHC_healthy_trading
+		icon = GFX_goal_CHC_healthy_trading
+		cost = 45
+		x = 2
+		y = 6
+		prerequisite = { focus = CHC_a_fine_deal }
+		available = {
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			custom_effect_tooltip = CHC_trading_starts_tt
+		}
+	}
+	focus = {
+		id = CHC_draft_acapella_plans
+		icon = GFX_goal_CHC_draft_plans_for_acapella
+		cost = 45
+		x = 0
+		y = 4
+		prerequisite = { focus = CHC_respect_for_nature }
+		prerequisite = { focus = CHC_study_project_acapella }
+		available = {
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			add_research_slot = 1
+			country_event = nf_chc.73
+		}
+	}
+	focus = {
+		id = CHC_renovate_fort_supply
+		icon = GFX_goal_CHC_renovate_fort_supply
+		cost = 75
+		x = 0
+		y = 6
+		prerequisite = { focus = CHC_draft_acapella_plans }
+		available = {
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			country_event = nf_chc.74
+			add_victory_points = {
+				province = 12237
+				value = 10
+			}
+			889 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = anti_air_building
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker2
+					level = 2
+					instant_build = yes
+					province = 12237
+				}
+				add_extra_state_shared_building_slots = 4
+				set_state_name = "Fort Hope"
+			}
+			set_province_name = {
+				id = 12237
+				name = "Fort Hope"
+			}
+		}
+	}
+	focus = {
+		id = CHC_build_the_amplifier
+		icon = GFX_goal_CHC_build_the_amplifier
+		cost = 80
+		x = 0
+		y = 8
+		prerequisite = { focus = CHC_renovate_fort_supply }
+		prerequisite = {
+			focus = CHC_hire_weaponsmiths
+			focus = CHC_build_local_industry
+		}
+		prerequisite = {
+			focus = CHC_settle_chickasha
+			focus = CHC_settle_the_stretch
+		}
+		available = {
+			has_country_flag = scrapperparts
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			CWB = { country_event = nf_chc.77 }
+			add_political_power = 60
+			custom_effect_tooltip = cypherwarning
+		}
+	}
+	focus = {
+		id = CHC_activate_project_acapella
+		icon = GFX_goal_CHC_activate_project_acapella
+		cost = 30
+		x = 0
+		y = 9
+		prerequisite = { focus = CHC_build_the_amplifier }
+		available = {
+			CWB = {
+                exists = no
+            }
+			has_completed_focus = CHC_return_the_people
+			has_completed_focus = CHC_return_the_guardsmen
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			country_event = nf_chc.78
+		}
+	}
+	focus = {
+		id = CHC_enlighten_the_cyphers
+		icon = GFX_goal_CHC_enlighten_the_cyphers
+		cost = 45
+		x = 1
+		y = 10
+		prerequisite = { focus = CHC_activate_project_acapella }
+		available = {
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			add_resource = {
+				type = advanced
+				amount = 4
+				state = 937
+			}
+			add_state_core = 937
+			937 = {
+				add_manpower = 543
+			}
+			add_ideas = chcpreservedknowledge
+		}
+	}
+	focus = {
+		id = CHC_the_eagles_nest
+		icon = GFX_goal_CHC_the_eagles_nest
+		cost = 45
+		x = 1
+		y = 11
+		prerequisite = { focus = CHC_enlighten_the_cyphers }
+		available = {
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			108 = {
+				add_manpower = 230
+				add_building_construction = {
+					type = air_base
+					level = 4
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = air_tech
+				bonus = 0.50
+				uses = 2
+				category = air_tech_category
+			}
+		}
+	}
+	focus = {
+		id = CHC_an_end_to_cults
+		icon = GFX_goal_CHC_an_end_to_cults
+		cost = 45
+		x = -1
+		y = 10
+		prerequisite = { focus = CHC_activate_project_acapella }
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			TLL = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			add_war_support = 0.05
+		}
+	}
+	focus = {
+		id = CHC_spread_the_music
+		icon = GFX_goal_CHC_spread_the_music
+		cost = 45
+		x = -1
+		y = 11
+		prerequisite = { focus = CHC_an_end_to_cults }
+		available = {
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			custom_effect_tooltip = chcspreadthemusic
+			hidden_effect = {
+				898 = {
+					add_manpower = 5000
+					add_extra_state_shared_building_slots = 2
+				}
+				899 = {
+					add_manpower = 2500
+					add_extra_state_shared_building_slots = 2
+				}
+				902 = {
+					add_manpower = 2500
+					add_extra_state_shared_building_slots = 2
+				}
+				add_resource = {
+					type = circuitry
+					amount = 4
+					state = 898
+				}
+				add_resource = {
+					type = water
+					amount = 3
+					state = 899
+				}
+				add_resource = {
+					type = metal
+					amount = 4
+					state = 899
+				}
+				add_resource = {
+					type = metal
+					amount = 1
+					state = 902
+				}
+				add_resource = {
+					type = water
+					amount = 1
+					state = 902
+				}
+			}
+		}
+	}
+	focus = {
+		id = CHC_the_elysian_plains
+		icon = GFX_goal_CHC_the_elysian_plains
+		cost = 45
+		x = 0
+		y = 12
+		prerequisite = { focus = CHC_spread_the_music }
+		prerequisite = { focus = CHC_the_eagles_nest }
+		available = {
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			#set_major = yes
+			set_cosmetic_tag = CHC_Empyrean_Domain
+			set_province_name = {
+				id = 12185
+				name = "The Temple of Gaia"
+			}
+			886 = { add_manpower = 7500 }
+			886 = {
+				add_extra_state_shared_building_slots = 5
+			}
+			set_capital = {state = 886 }
+			add_victory_points = {
+				province = 12185
+				value = 20
+			}
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = CHC_cheated_scammed_and_robbed
+		icon = GFX_goal_CHC_cheated_scammed_robbed
+		cost = 45
+		x = 4
+		y = 5
+		prerequisite = { focus = CHC_buy_parts_from_scrappers }
+		available = {
+			has_country_flag = badscrappersflag
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		bypass = {
+			SCA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			SCA = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			add_war_support = 0.05
+			add_stability = -0.05
+		}
+	}
+	focus = {
+		id = CHC_scour_corroded_fields
+		icon = GFX_goal_CHC_scour_corroded_fields
+		cost = 45
+		x = 4
+		y = 6
+		prerequisite = { focus = CHC_buy_parts_from_scrappers }
+		available = {
+			owns_state = 887
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			set_country_flag = scrapperparts
+			add_resource = {
+				type = advanced
+				amount = -4
+				state = 889
+			}
+			add_resource = {
+				type = circuitry
+				amount = -4
+				state = 889
+			}
+			add_resource = {
+				type = metal
+				amount = -15
+				state = 889
+			}
+			add_state_core = 887
+			custom_effect_tooltip = CHC_parts_acquired_tt
+		}
+	}
+	focus = {
+		id = CHC_settle_the_stretch
+		icon = GFX_goal_CHC_settle_the_stretch
+		cost = 45
+		x = 3
+		y = 7
+		prerequisite = { focus = CHC_scour_corroded_fields }
+		available = {
+			owns_state = 886
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		mutually_exclusive = {
+			focus = CHC_settle_chickasha
+		}
+		completion_reward = {
+			add_state_core = 886
+			add_offsite_building = {
+				type = industrial_complex
+				level = 2
+			}
+			add_resource = {
+				type = composites
+				amount = 4
+				state = 886
+			}
+			886 = {
+				add_extra_state_shared_building_slots = 2
+				add_manpower = 534
+			}
+			country_event = nf_chc.82
+		}
+	}
+	focus = {
+		id = CHC_settle_chickasha
+		icon = GFX_goal_CHC_settle_chickasha
+		cost = 45
+		x = 5
+		y = 7
+		prerequisite = { focus = CHC_scour_corroded_fields }
+		available = {
+			owns_state = 888
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		mutually_exclusive = {
+			focus = CHC_settle_the_stretch
+		}
+		completion_reward = {
+			add_state_core = 888
+			add_offsite_building = {
+				type = arms_factory
+				level = 1
+			}
+			add_resource = {
+				type = circuitry
+				amount = 12
+				state = 888
+			}
+			888 = {
+				add_extra_state_shared_building_slots = 2
+				add_manpower = 674
+			}
+			country_event = nf_chc.82
+		}
+	}
+	####Good friendly army stuff
+	focus = {
+		id = CHC_support_the_brotherhood
+		icon = GFX_goal_CHC_support_the_brotherhood
+		cost = 45
+		x = -7
+		y = 7
+		available = {
+			has_completed_focus = CHC_our_friends_in_maxson
+		}
+		bypass = {
+			NOT = {
+				country_exists = MXC
+			}
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		mutually_exclusive = {
+			focus = CHC_fight_for_ourselves
+		}
+		completion_reward = {
+			country_event = nf_chc.102
+			add_ideas = brotherhood_support
+			MXC = { add_ideas = hummingbird_support }
+			army_experience = 15
+		}
+	}
+	focus = {
+		id = CHC_recruits_for_maxson
+		icon = GFX_goal_CHC_recruits_for_maxson
+		cost = 45
+		x = -9
+		y = 8
+		prerequisite = { focus = CHC_support_the_brotherhood }
+		available = {
+			has_completed_focus = CHC_our_friends_in_maxson
+		}
+		bypass = {
+			NOT = {
+				country_exists = MXC
+			}
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			MXC = {
+				add_manpower = 230
+			}
+			set_temp_variable = { caps_to_add = 65 }
+            add_caps = yes
+			hidden_effect = {
+				MXC = { load_oob = chchummingbird_mercs }
+			}
+		}
+	}
+	focus = {
+		id = CHC_maxson_army_drills
+		icon = GFX_goal_CHC_maxson_army_drills
+		cost = 45
+		x = -8
+		y = 9
+		prerequisite = { focus = CHC_recruits_for_maxson }
+		available = {
+			has_completed_focus = CHC_our_friends_in_maxson
+		}
+		bypass = {
+			NOT = {
+				country_exists = MXC
+			}
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			add_ideas = drilling_with_maxson
+			MXC = { add_ideas = drilling_with_maxson }
+		}
+	}
+	focus = {
+		id = CHC_fight_for_ourselves
+		icon = GFX_goal_CHC_fight_for_the_self
+		cost = 45
+		x = -5
+		y = 7
+		available = {
+			has_completed_focus = CHC_alone_in_the_world
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		mutually_exclusive = {
+			focus = CHC_support_the_brotherhood
+		}
+		completion_reward = {
+			add_ideas = independant_army
+			army_experience = 15
+		}
+	}
+	focus = {
+		id = CHC_all_for_guns
+		icon = GFX_goal_CHC_all_for_guns
+		cost = 45
+		x = -3
+		y = 8
+		prerequisite = { focus = CHC_fight_for_ourselves }
+		available = {
+			has_completed_focus = CHC_fight_for_ourselves
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			hidden_effect = {
+				load_OOB = chchummingbirdmilitia
+			}
+			army_experience = 10
+			custom_effect_tooltip = chcnewmilitia
+		}
+	}
+	focus = {
+		id = CHC_and_guns_for_all
+		icon = GFX_goal_CHC_and_guns_for_all
+		cost = 45
+		x = -4
+		y = 9
+		prerequisite = { focus = CHC_all_for_guns }
+		available = {
+			has_completed_focus = CHC_fight_for_ourselves
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			add_ideas = cheapgunshum
+		}
+	}
+	focus = {
+		id = CHC_an_army_of_healers
+		icon = GFX_goal_CHC_an_army_of_healers
+		cost = 45
+		x = -5
+		y = 8
+		prerequisite = {
+			focus = CHC_support_the_brotherhood
+			focus = CHC_fight_for_ourselves
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			add_ideas = chcarmyofhealers
+		}
+	}
+	focus = {
+		id = CHC_to_see_the_world
+		icon = GFX_goal_CHC_to_see_the_world
+		cost = 45
+		x = -7
+		y = 8
+		prerequisite = {
+			focus = CHC_support_the_brotherhood
+			focus = CHC_fight_for_ourselves
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			add_ideas = chctoseetheworld
+		}
+	}
+	focus = {
+		id = CHC_peacekeeper_tactics
+		icon = GFX_goal_CHC_peacekeeper_tactics
+		cost = 45
+		x = -6
+		y = 9
+		prerequisite = {
+			focus = CHC_support_the_brotherhood
+			focus = CHC_fight_for_ourselves
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			custom_effect_tooltip = chcnewforcers
+			hidden_effect = {
+				load_OOB = chcpeacekeepers
+			}
+			add_ideas = chcpeacekeepersidea
+		}
+	}
+	focus = {
+		id = CHC_in_defense_of_humanity
+		icon = GFX_goal_CHC_in_the_defense_of_humanity
+		cost = 45
+		x = -6
+		y = 10
+		prerequisite = {
+			focus = CHC_and_guns_for_all
+			focus = CHC_maxson_army_drills
+		}
+		prerequisite = { focus = CHC_to_see_the_world }
+		prerequisite = { focus = CHC_an_army_of_healers }
+		prerequisite = { focus = CHC_peacekeeper_tactics }
+		available = {
+		}
+		allow_branch = {
+			has_country_flag = CHC_good_prevails
+		}
+		relative_position_id = CHC_the_psychic_council
+		completion_reward = {
+			remove_ideas = CHC_pacifist_military
+			hidden_effect = {
+				add_ideas = chcindefenseofhumanity
+				remove_ideas = {
+					chcpeacekeepersidea
+					chcarmyofhealers
+					chctoseetheworld
+				}
+			}
+			custom_effect_tooltip = oro_best_brightest
+			army_experience = 25
+		}
+	}
+}

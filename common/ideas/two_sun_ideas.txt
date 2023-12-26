@@ -1,0 +1,789 @@
+ideas = {
+	country = {
+		# Duplicate ideas @CGS
+		# two_worship_of_nas = {
+		# 	picture = generic_religion
+		# 	removal_cost = -1
+		# 	allowed = {
+		# 		always = no
+		# 	}
+		# 	allowed_civil_war = {
+		# 		always = yes
+		# 	}
+		# 	modifier = {
+		# 		army_speed_factor = 0.03
+		# 		stability_factor = 0.1
+		# 		mobilization_speed = 0.15
+		# 	}
+		# }
+		# two_masters_of_the_motor = {
+		# 	picture = generic_scrap_kit
+		# 	allowed = {
+		# 		always = no
+		# 	}
+		# 	allowed_civil_war = {
+		# 		always = yes
+		# 	}
+		# 	modifier = {
+		# 		army_fuel_consumption_factor = -0.1
+		# 	}
+		# 	equipment_bonus = {
+		# 		motorized_equipment = {
+		# 			build_cost_ic = -0.08
+		# 		}
+		# 		apc_equipment = {
+		# 			build_cost_ic = -0.08
+		# 		}
+		# 	}
+		# }
+		two_tucson_sci = {
+			picture = book_of_science_icon
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				research_speed_factor = 0.04
+			}
+		}
+		two_tucson_road = {
+			picture = two_cars
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				army_speed_factor = 0.05
+				production_speed_infrastructure_factor = 0.05
+			}
+		}
+		two_tucson_arms = {
+			picture = pile_of_guns
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			research_bonus = {
+				infantry_weapons_tech_category = 0.15
+			}
+		}
+		two_worship_of_nas = {
+			picture = two_temple
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				political_power_gain = 0.1
+				stability_factor = 0.1
+				mobilization_speed = 0.15
+				army_org_factor = 0.1
+			}
+		}
+		two_worship_of_nas2 = {
+			picture = two_temple
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				political_power_gain = 0.1
+				stability_factor = 0.1
+				mobilization_speed = 0.15
+				army_org_factor = 0.1
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+				army_speed_factor = 0.05
+			}
+		}
+		two_demon_priest = {
+			picture = two_stash
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				local_resources_factor = 0.1
+			}
+		}
+		two_demon_mechanic = {
+			picture = two_gear_and_wrench
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.05
+				production_factory_max_efficiency_factor = 0.05
+			}
+		}
+		two_demon_racer = {
+			picture = red_helmet
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				army_speed_factor = 0.05
+				org_loss_when_moving = -0.05
+			}
+		}
+		two_masters_of_the_motor = {
+			picture = engine_icon
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				army_fuel_consumption_factor = -0.2
+			}
+			equipment_bonus = {
+				motorized_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+			}
+		}
+
+		two_four_stroke_miracle = {
+			picture = two_motors
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			equipment_bonus = {
+				motorized_equipment = {
+					breakthrough = 0.15
+					reliability = 0.05
+					instant = yes
+				}
+			}
+		}
+
+		two_masters_of_the_motor_a = {
+			picture = engine_icon
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				army_fuel_consumption_factor = -0.2
+			}
+			equipment_bonus = {
+				motorized_equipment = {
+					build_cost_ic = -0.1
+				}
+			}
+		}
+
+		two_masters_of_the_motor_b = {
+			picture = engine_icon
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				army_fuel_consumption_factor = -0.2
+			}
+			equipment_bonus = {
+				motorized_equipment = {
+					build_cost_ic = -0.05
+					armor_value = 0.05
+					maximum_speed = 0.05
+					instant = yes
+				}
+			}
+		}
+
+		two_masters_of_the_motor_2 = {
+			picture = engine_icon
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				army_fuel_consumption_factor = -0.2
+			}
+			equipment_bonus = {
+				motorized_equipment = {
+					build_cost_ic = -0.1
+					armor_value = 0.05
+					maximum_speed = 0.05
+					instant = yes
+				}
+			}
+		}
+		two_ton_secrets_idea = {
+			picture = generic_shovel
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				monthly_population = 0.15
+				production_speed_industrial_complex_factor = 0.1
+			}
+			research_bonus = {
+				agriculture_tech = 0.08
+			}
+		}
+		two_remnants_of_rangers = {
+			picture = generic_ranger_helm
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			equipment_bonus = {
+				spec_ops_equipment = {
+					soft_attack = 0.05
+					hard_attack = 0.05
+					maximum_speed = 0.15
+					instant = yes
+				}
+			}
+		}
+		two_gen_3_sun_pact = {
+			picture = two_3_suns
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				consumer_goods_expected_value = -0.03
+			}
+		}
+		two_slave_trade_idea = {
+			picture = slaving_bastards
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				local_resources_factor = 0.05
+			}
+		}
+		two_supply_idea = {
+			picture = two_stash
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				no_supply_grace = 24.0
+				truck_attrition_factor = -0.25
+				supply_node_range = 0.1
+			}
+		}
+		two_motorized_production_1 = {
+			picture = two_gears
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			equipment_bonus = {
+				motorized_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+		two_motorized_production_2a = {
+			picture = two_gears
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			equipment_bonus = {
+				motorized_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+			modifier = {
+				global_building_slots_factor = 0.1
+			}
+		}
+		two_motorized_production_2b = {
+			picture = two_gears
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			equipment_bonus = {
+				motorized_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+			modifier = {
+				production_speed_arms_factory_factor = 0.05
+				conversion_cost_civ_to_mil_factor = -0.1
+			}
+		}
+		two_motorized_production_2 = {
+			picture = two_gears
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			equipment_bonus = {
+				motorized_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+			modifier = {
+				global_building_slots_factor = 0.1
+				production_speed_arms_factory_factor = 0.05
+				conversion_cost_civ_to_mil_factor = -0.1
+			}
+		}
+		two_motorized_production_3 = {
+			picture = two_gears
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			equipment_bonus = {
+				motorized_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+			modifier = {
+				global_building_slots_factor = 0.1
+				production_speed_arms_factory_factor = 0.05
+				conversion_cost_civ_to_mil_factor = -0.1
+				production_factory_max_efficiency_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.05
+				line_change_production_efficiency_factor = 0.1
+			}
+		}
+		two_tank_stats = {
+			picture = generic_armor
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			equipment_bonus = {
+				tank_equipment = {
+					reliability = 0.1
+					maximum_speed = 0.1
+					instant = yes
+				}
+			}
+		}
+		# industry
+		two_factories_idea = {
+			picture = generic_central_management
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.05
+				production_factory_start_efficiency_factor = 0.05
+			}
+		}
+		two_great_race_prep_idea = {
+			picture = generic_production_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_speed_infrastructure_factor = 1
+			}
+		}
+		two_great_race_prep_idea_2 = {
+			picture = generic_production_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_speed_infrastructure_factor = 0.1
+			}
+		}
+		two_chop_shop_idea = {
+			picture = company_chop_shop
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				caps_country_trade_modifier = 0.1
+			}
+		}
+		two_invitations_gdh_idea = {
+			picture = generic_bos_captain_hat
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				# Bugged in country scopes, blame PDX
+				# terrain_penalty_reduction = 0.1
+				org_loss_at_low_org_factor = -0.05
+				attrition = -0.2
+			}
+		}
+		two_invitations_new_idea = {
+			picture = generic_infantry_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_org_factor = 0.1
+			}
+		}
+		two_invitations_imo_idea = {
+			picture = generic_armor
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				tank_equipment = {
+					soft_attack = 0.1
+					breakthrough = 0.1
+					instant = yes
+				}
+			}
+		}
+		two_invitations_eht_idea = {
+			picture = generic_nuka_truck
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				fuel_gain_factor = 0.1
+				fuel_gain_factor_from_states = 0.25
+			}
+		}
+		two_invitations_idea = {
+			picture = generic_nuka_truck
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				# Bugged in country scopes, blame PDX
+				# terrain_penalty_reduction = 0.1
+				org_loss_at_low_org_factor = -0.05
+				attrition = -0.2
+				army_org_factor = 0.1
+				fuel_gain_factor = 0.1
+				fuel_gain_factor_from_states = 0.25
+			}
+
+			equipment_bonus = {
+				tank_equipment = {
+					soft_attack = 0.1
+					breakthrough = 0.1
+					instant = yes
+				}
+			}
+		}
+		# Preparation bonuses
+		two_preparation_idea_1 = {
+			picture = two_helmet_and_wrench
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				country_resource_circuitry = 1
+				country_resource_advanced = 1
+				war_support_factor = 0.02
+				stability_factor = 0.01
+			}
+		}
+		two_preparation_idea_2 = {
+			picture = two_helmet_and_wrench
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				country_resource_circuitry = 2
+				country_resource_advanced = 2
+				war_support_factor = 0.04
+				stability_factor = 0.02
+			}
+		}
+		two_preparation_idea_3 = {
+			picture = two_helmet_and_wrench
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				country_resource_circuitry = 4
+				country_resource_advanced = 4
+				war_support_factor = 0.06
+				stability_factor = 0.03
+			}
+		}
+		two_preparation_idea_4 = {
+			picture = two_helmet_and_wrench
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				country_resource_circuitry = 6
+				country_resource_advanced = 6
+				war_support_factor = 0.08
+				stability_factor = 0.04
+			}
+		}
+		two_preparation_idea_5 = {
+			picture = two_helmet_and_wrench
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				country_resource_circuitry = 9
+				country_resource_advanced = 9
+				war_support_factor = 0.1
+				stability_factor = 0.05
+			}
+		}
+		two_preparation_idea_6 = {
+			picture = two_helmet_and_wrench
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				country_resource_circuitry = 12
+				country_resource_advanced = 12
+				war_support_factor = 0.12
+				stability_factor = 0.06
+			}
+		}
+
+		two_great_race_winner_idea = {
+			picture = two_trophy
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				war_support_factor = 0.1
+				stability_factor = 0.1
+				army_speed_factor = 0.05
+				planning_speed = 0.1
+				motorized_attack_factor = 0.05
+				motorized_defence_factor = 0.05
+			}
+		}
+
+		two_tracks_idea = {
+			#picture =
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				trade_opinion_factor = 0.3
+				industrial_capacity_factory = 0.3
+			}
+		}
+
+		two_thunder_bringers = {
+			picture = generic_vehicle_great_war_tank
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			# This is high because Two Sun isn't able to pump out tanks in large quantities easily, don't just copy paste this elsewhere at these values recklessly @Tran
+			equipment_bonus = {
+				tank_equipment = {
+					soft_attack = 0.05
+					hard_attack = 0.15
+					ap_attack = 0.15
+					instant = yes
+				}
+			}
+		}
+	}
+}

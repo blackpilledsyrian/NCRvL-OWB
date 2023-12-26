@@ -1,0 +1,22 @@
+state = {
+	id = 36
+	name = "STATE_36"
+
+	history={
+		victory_points = {
+			10057 5
+		}
+		buildings = {
+			infrastructure = 2
+
+		}
+
+	}
+
+	provinces={
+		10057
+	}
+	manpower=7000
+	buildings_max_level_factor=1.000
+	state_category=tiny_island
+}

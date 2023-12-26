@@ -1,0 +1,29 @@
+state = {
+	id = 90
+	name = "STATE_90"
+	manpower = 41000
+	state_category = large_town
+	resources = {
+		water = 4
+		metal = 4
+	}
+
+
+	history = {
+		owner = TOB
+		add_core_of = TOB
+		victory_points = {
+			6619 10
+		}
+		buildings = {
+			infrastructure = 5
+			arms_factory = 1
+			industrial_complex = 2
+			dockyard = 2
+		}
+	}
+
+	provinces = {
+		1587 2500 6619 6649 7462 7463
+	}
+}

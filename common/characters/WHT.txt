@@ -1,0 +1,90 @@
+characters = {
+	WHT_salt_upon_wounds = {
+		name = WHT_SALT_UPON_WOUNDS_NAME
+		portraits = {
+			army = {
+				large = GFX_Portrait_WHT_salt
+				#small = gfx_sprite_type_name_or_file_path
+			}
+			civilian = {
+				large = GFX_Portrait_WHT_salt
+				#small = gfx_sprite_type_name_or_file_path
+			}
+		}
+		corps_commander = {
+			traits = {
+				strong_trait
+				agile_trait
+				enduring_trait
+				hill_fighter
+				desert_fox
+				trait_mountaineer
+			}
+			skill = 6
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+			legacy_id = -1
+		}
+		country_leader = {
+			desc = WHT_SALT_UPON_WOUNDS_DESC
+			ideology = tribalism
+			traits = {
+				warmonger
+			}
+			expire = "3000.01.01.01"
+			id = -1
+		}
+		country_leader = {
+			desc = WHT_SALT_UPON_WOUNDS_DESC
+			ideology = chieftain
+			traits = {
+				warmonger
+			}
+			expire = "3000.01.01.01"
+			id = -1
+		}
+		country_leader = {
+			desc = WHT_SALT_UPON_WOUNDS_DESC
+			ideology = ideocracy
+			traits = {
+				warmonger
+			}
+			expire = "3000.01.01.01"
+			id = -1
+		}
+	}
+	WHT_balm_upon_wounds = {
+		name = WHT_BALM_UPON_WOUNDS_NAME
+		portraits = {
+			army = {
+				large = GFX_Portrait_WHT_salt
+				#small = gfx_sprite_type_name_or_file_path
+			}
+			civilian = {
+				large = GFX_Portrait_WHT_salt
+				#small = gfx_sprite_type_name_or_file_path
+			}
+		}
+		country_leader = {
+			desc = WHT_BALM_UPON_WOUNDS_DESC
+			ideology = tribal_council
+			expire = "3000.01.01.01"
+			id = -1
+		}
+	}
+	WHT_tears_in_the_rain = {
+		name = WHT_tears_in_the_rain_name
+		portraits = {
+			army = {
+				large = GFX_Portrait_Tribal_Generic_6
+				#small = gfx_sprite_type_name_or_file_path
+			}
+			civilian = {
+				large = GFX_Portrait_Tribal_Generic_6
+				#small = gfx_sprite_type_name_or_file_path
+			}
+		}
+	}
+}

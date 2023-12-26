@@ -1,0 +1,73 @@
+characters = {
+	TIM_bear_bunyan = {
+		name = "Bear Bunyan"
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_TIM_bear_bunyan
+			}
+		}
+		corps_commander = {
+			traits = {
+				bruiser_trait
+				strong_trait
+				enduring_trait
+				trait_mountaineer
+				ranger
+			}
+			skill = 5
+			attack_skill = 2
+			defense_skill = 4
+			planning_skill = 2
+			logistics_skill = 4
+		}
+		country_leader = {
+			desc = TIM_bear_bunyan_desc
+			ideology = commune
+			traits = {
+				popular_figurehead
+				silent_workhorse
+				expert_negotiator
+				quartermaster_general
+				compassionate_gentleman
+			}
+			expire = "3000.01.01.01"
+			id = -1
+		}
+		country_leader = {
+			ideology = technocracy
+			traits = {
+				popular_figurehead
+				silent_workhorse
+				expert_negotiator
+				quartermaster_general
+				compassionate_gentleman
+			}
+			expire = "2291.1.1.12"
+			id = -1
+		}
+		country_leader = {
+			ideology = tribalism
+			traits = {
+				popular_figurehead
+				silent_workhorse
+				expert_negotiator
+				quartermaster_general
+				compassionate_gentleman
+		}
+			expire = "2289.1.1.12"
+			id = -1
+		}
+		country_leader = {
+			ideology = indifferent_despotism
+			traits = {
+				popular_figurehead
+				silent_workhorse
+				expert_negotiator
+				quartermaster_general
+				compassionate_gentleman
+			}
+			expire = "2287.1.1.12"
+			id = -1
+		}
+	}
+}

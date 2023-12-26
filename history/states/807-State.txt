@@ -1,0 +1,24 @@
+state = {
+	id = 807
+	name = "STATE_807"
+
+	history={
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 2
+			arms_factory = 1
+
+		}
+		victory_points = {
+			10303 20
+		}
+
+	}
+
+	provinces={
+		10188 10219 10244 10256 10303 10318 10359
+	}
+	manpower=64260
+	buildings_max_level_factor=1.000
+	state_category=town
+}

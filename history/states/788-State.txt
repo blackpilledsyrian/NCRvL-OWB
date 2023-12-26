@@ -1,0 +1,31 @@
+state = {
+	id = 788
+	name = "STATE_788"
+	resources={
+		metal = 12
+		circuitry = 2
+	}
+
+	history={
+		buildings = {
+			infrastructure = 5
+			arms_factory = 2
+			industrial_complex = 2
+			dockyard = 2
+			10817 = {
+				naval_base = 2
+			}
+		}
+		victory_points = {
+			9325 20
+		}
+
+	}
+
+	provinces={
+		711 9325 9339 10775 10783 10784 10788 10789 10790 10797 10802 10808 10813 10817 10818 10926
+	}
+	manpower=85000
+	buildings_max_level_factor=1.000
+	state_category=city
+}

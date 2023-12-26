@@ -1,0 +1,1342 @@
+focus_tree = {
+	id = tlp_nf
+	country = {
+		factor = 0
+		modifier = {
+			add = 0
+			tag = TLP
+		}
+	}
+	default = no
+
+	focus = {
+		id = tlp_born_to_feel
+		icon = GFX_goal_RRG_usa_industry
+		cost = 7
+		x = 10
+		y = 0
+		available = {
+		}
+
+		completion_reward = {
+			country_event = nf_tlp.1
+		}
+	}
+	focus = {
+		id = tlp_fortunate_son
+		icon = GFX_goal_usa_construction_usa
+		cost = 7
+		x = 0
+		y = 1
+		relative_position_id = tlp_born_to_feel
+		prerequisite = {
+			focus = tlp_born_to_feel
+		}
+
+		completion_reward = {
+			country_event = nf_tlp.2
+		}
+	}
+	focus = {
+		id = tlp_paint_it_black
+		icon = GFX_goal_ENC_laser_weapons_reform
+		cost = 7
+		x = 0
+		y = 2
+		relative_position_id = tlp_born_to_feel
+		prerequisite = {
+			focus = tlp_fortunate_son
+		}
+
+		completion_reward = {
+			country_event = nf_tlp.3
+			hidden_effect = {
+				country_event = {
+					id = nf_tlp.4
+					days = 40
+				}
+			}
+		}
+	}
+	focus = {
+		id = tlp_prelude_to_chc_1
+		icon = GFX_goal_NEW_Sierra_Army_Depot
+		cost = 60
+		x = -1
+		y = 1
+		relative_position_id = tlp_paint_it_black
+		prerequisite = {
+			focus = tlp_paint_it_black
+		}
+		available = {
+		}
+
+		completion_reward = {
+			add_offsite_building = {
+				type = arms_factory
+				level = 1
+			}
+			add_equipment_to_stockpile = {
+				type = ballistic_equipment_2
+				amount = 750
+				producer = USA
+			}
+		}
+	}
+	focus = {
+		id = tlp_prelude_to_chc_2
+		icon = GFX_goal_generic_helm_army
+		cost = 60
+		x = 1
+		y = 1
+		relative_position_id = tlp_paint_it_black
+		prerequisite = {
+			focus = tlp_paint_it_black
+		}
+		available = {
+		}
+
+		completion_reward = {
+			add_stability = -0.1
+			add_offsite_building = {
+				type = arms_factory
+				level = 1
+			}
+			add_manpower = 1600
+		}
+	}
+	focus = {
+		id = tlp_stop_the_music
+		icon = GFX_goal_psyker_power
+		cost = 60
+		x = 0
+		y = 2
+		relative_position_id = tlp_paint_it_black
+		prerequisite = {
+			focus = tlp_prelude_to_chc_1
+		}
+		prerequisite = {
+			focus = tlp_prelude_to_chc_2
+		}
+		will_lead_to_war_with = CHC
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			OR = {
+				has_war_with = CHC
+				CHC = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+		}
+		completion_reward = {
+			CHC = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = tlp_resource_salvage
+		icon = GFX_goal_imo_toolbox
+		cost = 60
+		x = -2
+		y = 1
+		relative_position_id = tlp_stop_the_music
+		prerequisite = {
+			focus = tlp_stop_the_music
+		}
+		available = {
+		}
+
+		completion_reward = {
+            add_timed_idea = {
+                idea = tlp_resource_salvage
+                days = 365
+            }
+		}
+	}
+	focus = {
+		id = tlp_it_aint_me
+		icon = GFX_goal_generic_tobacco_agriculture
+		cost = 60
+		x = -4
+		y = 1
+		relative_position_id = tlp_stop_the_music
+		prerequisite = {
+			focus = tlp_stop_the_music
+		}
+		available = {
+		}
+
+		completion_reward = {
+			army_experience = 25
+		}
+	}
+	focus = {
+		id = tlp_fireteam_1
+		icon = GFX_goal_generic_flamer
+		cost = 60
+		x = -3
+		y = 2
+		relative_position_id = tlp_stop_the_music
+		prerequisite = {
+			focus = tlp_resource_salvage
+		}
+		prerequisite = {
+			focus = tlp_it_aint_me
+		}
+		available = {
+		}
+
+		completion_reward = {
+			add_ideas = tlp_fireteam_1
+		}
+	}
+	focus = {
+		id = tlp_navy_salvage
+		icon = GFX_goal_NCR_River_Patrols
+		cost = 60
+		x = 2
+		y = 1
+		relative_position_id = tlp_stop_the_music
+		prerequisite = {
+			focus = tlp_stop_the_music
+		}
+		available = {
+		}
+
+		completion_reward = {
+			navy_experience = 15
+			615 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_dockyards = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 12283
+				}
+			}
+		}
+	}
+	focus = {
+		id = tlp_equipment_salvage
+		icon = GFX_goal_imo_ammobox
+		cost = 60
+		x = 4
+		y = 1
+		relative_position_id = tlp_stop_the_music
+		prerequisite = {
+			focus = tlp_stop_the_music
+		}
+		available = {
+		}
+
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = flamer_demolitions_equipment_2
+				amount = 250
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 250
+				producer = USA
+			}
+		}
+	}
+	focus = {
+		id = tlp_fireteam_2
+		icon = GFX_goal_generic_flamer_fuel
+		cost = 60
+		x = 3
+		y = 2
+		relative_position_id = tlp_stop_the_music
+		prerequisite = {
+			focus = tlp_navy_salvage
+		}
+		prerequisite = {
+			focus = tlp_equipment_salvage
+		}
+		available = {
+		}
+
+		completion_reward = {
+			add_ideas = tlp_fireteam_2
+		}
+	}
+	focus = {
+		id = tlp_integrate_chc
+		icon = GFX_goal_psyker_self_management
+		cost = 60
+		x = 0
+		y = 1
+		relative_position_id = tlp_stop_the_music
+		prerequisite = {
+			focus = tlp_stop_the_music
+		}
+		available = {
+			CHC = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			hidden_effect = {
+				country_event = nf_tlp.5
+				TLP_force_commander_nguyen = {
+					unit_leader_event = {
+						id = nf_tlp_leader.1
+						days = 6
+					}
+				}
+			}
+			CHC = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = tlp_memphis
+		icon = GFX_goal_ORO_Pyramid
+		cost = 60
+		x = -1
+		y = 1
+		relative_position_id = tlp_integrate_chc
+		mutually_exclusive = {
+			focus = tlp_chorus_in_twine
+		}
+		prerequisite = {
+			focus = tlp_integrate_chc
+		}
+		available = {
+		}
+
+		completion_reward = {
+            set_temp_variable = { caps_to_add = 100 }
+            add_caps = yes
+		}
+	}
+	focus = {
+		id = tlp_chorus_in_twine
+		icon = GFX_goal_psyker_knowledge
+		cost = 60
+		x = 1
+		y = 1
+		relative_position_id = tlp_integrate_chc
+		mutually_exclusive = {
+			focus = tlp_memphis
+		}
+		prerequisite = {
+			focus = tlp_integrate_chc
+		}
+		available = {
+		}
+
+		completion_reward = {
+			add_ideas = tlp_chorus_in_twine
+		}
+	}
+	focus = {
+		id = tlp_star_spangled_eyes
+		icon = GFX_goal_NCR_Drummonds_Army
+		cost = 60
+		x = 0
+		y = 2
+		relative_position_id = tlp_integrate_chc
+		prerequisite = {
+			focus = tlp_memphis
+			focus = tlp_chorus_in_twine
+		}
+		available = {
+		}
+
+		completion_reward = {
+			add_country_leader_trait = oklahoma_patriot
+			add_political_power = 100
+		}
+	}
+	focus = {
+		id = tlp_civs_1
+		icon = GFX_goal_generic_train_1
+		cost = 60
+		x = -8
+		y = 1
+		relative_position_id = tlp_star_spangled_eyes
+		prerequisite = {
+			focus = tlp_star_spangled_eyes
+		}
+		available = {
+		}
+
+		completion_reward = {
+			615 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			616 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = 1
+			}
+		}
+	}
+	focus = {
+		id = tlp_civs_2
+		icon = GFX_goal_generic_handy_fuel
+		cost = 60
+		x = -1
+		y = 1
+		relative_position_id = tlp_civs_1
+		prerequisite = {
+			focus = tlp_civs_1
+		}
+		available = {
+		}
+
+		completion_reward = {
+			add_political_power = 50
+			add_offsite_building = {
+				type = industrial_complex
+				level = 1
+			}
+		}
+	}
+	focus = {
+		id = tlp_civs_3
+		icon = GFX_goal_generic_cart
+		cost = 60
+		x = 1
+		y = 1
+		relative_position_id = tlp_civs_1
+		prerequisite = {
+			focus = tlp_civs_1
+		}
+		available = {
+		}
+
+		completion_reward = {
+			add_offsite_building = {
+				type = industrial_complex
+				level = 2
+			}
+		}
+	}
+	focus = {
+		id = tlp_mils_1
+		icon = GFX_goal_generic_tool_cabinet
+		cost = 60
+		x = -4
+		y = 1
+		relative_position_id = tlp_star_spangled_eyes
+		prerequisite = {
+			focus = tlp_star_spangled_eyes
+		}
+		available = {
+		}
+
+		completion_reward = {
+			army_experience = 20
+			add_offsite_building = {
+				type = arms_factory
+				level = 1
+			}
+		}
+	}
+	focus = {
+		id = tlp_mils_2
+		icon = GFX_goal_generic_ammo_boxes_focus
+		cost = 60
+		x = -6
+		y = 1
+		relative_position_id = tlp_star_spangled_eyes
+		prerequisite = {
+			focus = tlp_star_spangled_eyes
+		}
+		available = {
+		}
+
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = ballistic_equipment_3
+				amount = 250
+				producer = USA
+			}
+			add_offsite_building = {
+				type = arms_factory
+				level = 1
+			}
+		}
+	}
+	focus = {
+		id = tlp_mils_3
+		icon = GFX_goal_generic_advanced_firearms_focus
+		cost = 60
+		x = -5
+		y = 2
+		relative_position_id = tlp_star_spangled_eyes
+		prerequisite = {
+			focus = tlp_mils_1
+		}
+		prerequisite = {
+			focus = tlp_mils_2
+		}
+		available = {
+		}
+
+		completion_reward = {
+			add_offsite_building = {
+				type = arms_factory
+				level = 2
+			}
+		}
+	}
+	focus = {
+		id = tlp_industry
+		icon = GFX_goal_generic_contraptions_girl
+		cost = 60
+		x = -2
+		y = 1
+		relative_position_id = tlp_mils_3
+		prerequisite = {
+			focus = tlp_mils_3
+		}
+		prerequisite = {
+			focus = tlp_civs_3
+		}
+		prerequisite = {
+			focus = tlp_civs_2
+		}
+		available = {
+		}
+
+		completion_reward = {
+			add_offsite_building = {
+				type = industrial_complex
+				level = 2
+			}
+			add_offsite_building = {
+				type = arms_factory
+				level = 2
+			}
+		}
+	}
+	focus = {
+		id = tlp_resource_1
+		icon = GFX_goal_generic_backpack
+		cost = 60
+		x = 4
+		y = 1
+		relative_position_id = tlp_star_spangled_eyes
+		prerequisite = {
+			focus = tlp_star_spangled_eyes
+		}
+		available = {
+		}
+
+		completion_reward = {
+			add_ideas = tlp_resource_1
+		}
+	}
+	focus = {
+		id = tlp_resource_2
+		icon = GFX_goal_generic_dynomite_1
+		cost = 60
+		x = 6
+		y = 1
+		relative_position_id = tlp_star_spangled_eyes
+		prerequisite = {
+			focus = tlp_star_spangled_eyes
+		}
+		available = {
+		}
+
+		completion_reward = {
+			add_ideas = tlp_resource_2
+		}
+	}
+	focus = {
+		id = tlp_resource_3
+		icon = GFX_goal_generic_helm_firemans
+		cost = 60
+		x = 5
+		y = 2
+		relative_position_id = tlp_star_spangled_eyes
+		prerequisite = {
+			focus = tlp_resource_1
+		}
+		prerequisite = {
+			focus = tlp_resource_2
+		}
+		available = {
+		}
+
+		completion_reward = {
+			remove_ideas = tlp_resource_1
+			remove_ideas = tlp_resource_2
+			add_ideas = tlp_resource_3
+		}
+	}
+	focus = {
+		id = tlp_manpower_1
+		icon = GFX_goal_bottlecap
+		cost = 60
+		x = 8
+		y = 1
+		relative_position_id = tlp_star_spangled_eyes
+		prerequisite = {
+			focus = tlp_star_spangled_eyes
+		}
+		available = {
+		}
+
+		completion_reward = {
+            set_temp_variable = { caps_to_add = 100 }
+            add_caps = yes
+		}
+	}
+	focus = {
+		id = tlp_manpower_2
+		icon = GFX_goal_generic_smooch_focus
+		cost = 60
+		x = 7
+		y = 2
+		relative_position_id = tlp_star_spangled_eyes
+		prerequisite = {
+			focus = tlp_manpower_1
+		}
+		available = {
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_idea = chems_banned }
+				swap_ideas = {
+					remove_idea = chems_banned
+					add_idea = chems_legalised
+				}
+			}
+			add_tech_bonus = {
+				name = tlp_manpower_2
+				bonus = 1
+				uses = 1
+				category = support_tech_category
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 100
+				producer = USA
+			}
+		}
+	}
+	focus = {
+		id = tlp_manpower_3
+		icon = GFX_goal_generic_guitar
+		cost = 60
+		x = 9
+		y = 2
+		relative_position_id = tlp_star_spangled_eyes
+		prerequisite = {
+			focus = tlp_manpower_1
+		}
+		available = {
+		}
+
+		completion_reward = {
+            add_timed_idea = {
+                idea = tlp_manpower_3
+                days = 365
+            }
+		}
+	}
+	focus = {
+		id = tlp_men_and_metal
+		icon = GFX_goal_generic_mistress_of_mystery
+		cost = 60
+		x = 7
+		y = 3
+		relative_position_id = tlp_star_spangled_eyes
+		prerequisite = {
+			focus = tlp_manpower_2
+		}
+		prerequisite = {
+			focus = tlp_manpower_3
+		}
+		prerequisite = {
+			focus = tlp_resource_3
+		}
+		available = {
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = tlp_resource_3
+				add_idea = tlp_resource_4
+			}
+			add_manpower = 500
+		}
+	}
+	focus = {
+		id = tlp_likeminded_individuals
+		icon = GFX_goal_generic_esp_plasma
+		cost = 60
+		x = -2
+		y = 1
+		relative_position_id = tlp_star_spangled_eyes
+		prerequisite = {
+			focus = tlp_star_spangled_eyes
+		}
+		available = {
+		}
+
+		completion_reward = {
+			add_corps_commander_role = {
+				character = TLP_moe_antonius
+				traits = {
+					enduring_trait
+					agile_trait
+					pain_train_trait
+				}
+				skill = 3
+				attack_skill = 2
+				defense_skill = 3
+				planning_skill = 2
+				logistics_skill = 1
+				legacy_id = -1
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_tech = power_armour_tech_level_tribal
+					}
+				}
+				set_technology = { power_armour_tech_level_tribal = 1 }
+			}
+			set_technology = { power_armour_tech_level_settler = 1 }
+		}
+	}
+	focus = {
+		id = tlp_calling_in_a_favour
+		icon = GFX_goal_BOS_forbidden_secrets
+		cost = 60
+		x = -1
+		y = 1
+		relative_position_id = tlp_likeminded_individuals
+		prerequisite = {
+			focus = tlp_likeminded_individuals
+		}
+		available = {
+			has_tech = stripped_pa_tech
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 3
+				category = power_armor_tech_category
+			}
+			add_equipment_to_stockpile = {
+				type = enclave_power_armour_equipment_2
+				amount = 20
+				producer = USA
+			}
+			hidden_effect = {
+				load_oob = tlp_apa
+			}
+			custom_effect_tooltip = tlp_apa_recruit
+		}
+	}
+	focus = {
+		id = tlp_loyalists_among_the_smoothskins
+		icon = GFX_goal_generic_regular_firearms_focus
+		cost = 60
+		x = 2
+		y = 1
+		relative_position_id = tlp_star_spangled_eyes
+		prerequisite = {
+			focus = tlp_star_spangled_eyes
+		}
+		available = {
+		}
+
+		completion_reward = {
+			add_corps_commander_role = {
+				character = TLP_wallace_andrews
+				traits = {
+					enduring_trait
+					agile_trait
+				}
+				skill = 3
+				attack_skill = 3
+				defense_skill = 2
+				planning_skill = 2
+				logistics_skill = 1
+				legacy_id = -1
+			}
+			add_manpower = 1000
+		}
+	}
+	focus = {
+		id = tlp_andrews_boys
+		icon = GFX_goal_NEW_american_pmc
+		cost = 60
+		x = 1
+		y = 1
+		relative_position_id = tlp_loyalists_among_the_smoothskins
+		prerequisite = {
+			focus = tlp_loyalists_among_the_smoothskins
+		}
+		available = {
+			OR = {
+				has_tech = energy_weaponry_tech_2
+				has_tech = ballistic_weaponry_tech_2
+			}
+		}
+
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = ballistic_equipment_4
+				amount = 600
+				producer = USA
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				ahead_reduction = 1
+				category = infantry_tech_category
+			}
+		}
+	}
+	focus = {
+		id = tlp_a_night_to_remember
+		icon = GFX_goal_cmc_going_to_the_river
+		cost = 60
+		x = 0
+		y = 2
+		relative_position_id = tlp_star_spangled_eyes
+		prerequisite = {
+			focus = tlp_likeminded_individuals
+		}
+		prerequisite = {
+			focus = tlp_loyalists_among_the_smoothskins
+		}
+		available = {
+			date > 2278.1.1
+			country_exists = CMC
+			NOT = { has_war_with = CMC }
+		}
+
+		completion_reward = {
+			country_event = nf_tlp.7
+			hidden_effect = {
+				TLP_force_commander_nguyen = {
+					unit_leader_event = {
+						id = nf_tlp_leader.2
+						days = 6
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = tlp_put_it_on_my_tab
+		icon = GFX_goal_generic_ritas_cafe
+		cost = 60
+		x = -2
+		y = 1
+		relative_position_id = tlp_a_night_to_remember
+		prerequisite = {
+			focus = tlp_a_night_to_remember
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = we_are_having_a_party_tlp
+				always = no
+			}
+		}
+
+		completion_reward = {
+			CMC = {
+				set_temp_variable = { caps_to_add = -1 }
+				add_caps = yes
+			}
+		}
+	}
+	focus = {
+		id = tlp_the_greatest_party_ever_held
+		icon = GFX_goal_generic_nuka_girl_2
+		cost = 60
+		x = 0
+		y = 1
+		relative_position_id = tlp_a_night_to_remember
+		prerequisite = {
+			focus = tlp_a_night_to_remember
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = we_are_having_a_party_tlp
+				always = no
+			}
+		}
+
+		completion_reward = {
+			CMC = {
+				set_temp_variable = { caps_to_add = -3 }
+				add_caps = yes
+			}
+		}
+	}
+	focus = {
+		id = tlp_getting_wasted
+		icon = GFX_goal_pal_drug_the_dumb
+		cost = 60
+		x = 2
+		y = 1
+		relative_position_id = tlp_a_night_to_remember
+		prerequisite = {
+			focus = tlp_a_night_to_remember
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = we_are_having_a_party_tlp
+				always = no
+			}
+		}
+
+		completion_reward = {
+			CMC = {
+				set_temp_variable = { caps_to_add = -2 }
+				add_caps = yes
+			}
+		}
+	}
+	focus = {
+		id = tlp_banned_for_life
+		icon = GFX_goal_cmc_a_night_to_remember
+		cost = 60
+		x = 0
+		y = 2
+		relative_position_id = tlp_a_night_to_remember
+		select_effect = {
+			if = {
+				limit = {
+					country_exists = CMC
+				}
+				CMC = {
+					country_event = nf_tlp.12
+				}
+			}
+			TLP_force_commander_nguyen = {
+				unit_leader_event = {
+					id = nf_tlp_leader.3
+					days = 6
+				}
+			}
+		}
+		bypass = {
+			OR = {
+				AND = {
+					has_war_with = CMC
+					has_war_with = CHO
+					has_war_with = CHR
+				}
+				AND = {
+					CHR = {
+						all_core_land_owned_by_prev_sphere = yes
+					}
+					CHO = {
+						all_core_land_owned_by_prev_sphere = yes
+					}
+					CMC = {
+						all_core_land_owned_by_prev_sphere = yes
+					}
+				}
+			}
+		}
+		will_lead_to_war_with = CMC
+		will_lead_to_war_with = CHR
+		will_lead_to_war_with = CHO
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = tlp_banned_for_life_tt
+					has_country_flag = tlp_banned_from_big_spend
+				}
+				NOT = { country_exists = CMC }
+			}
+		}
+		completion_reward = {
+			CMC = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			CHR = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			CHO = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = tlp_cherokee_advisors
+		icon = GFX_goal_gpf_scientific_advisor
+		cost = 60
+		x = -2
+		y = 1
+		relative_position_id = tlp_banned_for_life
+		prerequisite = {
+			focus = tlp_banned_for_life
+		}
+		available = {
+			CHR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			CHR = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = tlp_equipment_upkeep_advice
+		icon = GFX_goal_generic_vidya
+		cost = 60
+		x = -1
+		y = 1
+		relative_position_id = tlp_cherokee_advisors
+		prerequisite = {
+			focus = tlp_cherokee_advisors
+		}
+		available = {
+		}
+
+		completion_reward = {
+			set_technology = { support_tech_level_scientific = 1 }
+		}
+	}
+	focus = {
+		id = tlp_cherokee_schematics
+		icon = GFX_goal_chr_hellion
+		cost = 60
+		x = 1
+		y = 1
+		relative_position_id = tlp_cherokee_advisors
+		prerequisite = {
+			focus = tlp_cherokee_advisors
+		}
+		available = {
+		}
+
+		completion_reward = {
+			set_technology = {
+				air_tech_level_scientific = 1
+				vertibird_unlock_tech = 1
+			}
+			custom_effect_tooltip = vertibirds_research_tt
+		}
+	}
+	focus = {
+		id = tlp_choctaw_friendship
+		icon = GFX_goal_gpf_cultural_advisor
+		cost = 60
+		x = 2
+		y = 1
+		relative_position_id = tlp_banned_for_life
+		prerequisite = {
+			focus = tlp_banned_for_life
+		}
+		available = {
+			CHO = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			CHO = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = tlp_stories_of_the_mother_mounds
+		icon = GFX_goal_cho_storytellers
+		cost = 60
+		x = -1
+		y = 1
+		relative_position_id = tlp_choctaw_friendship
+		prerequisite = {
+			focus = tlp_choctaw_friendship
+		}
+		available = {
+		}
+
+		completion_reward = {
+            set_technology = {
+				naval_tech_level_settler = 1
+			}
+		}
+	}
+	focus = {
+		id = tlp_pit
+		icon = GFX_goal_gpf_the_pit
+		cost = 60
+		x = 1
+		y = 1
+		relative_position_id = tlp_choctaw_friendship
+		prerequisite = {
+			focus = tlp_choctaw_friendship
+		}
+		available = {
+			CHO = {
+				OR = {
+					exists = no
+					has_completed_focus = fp_reopen_the_PIT
+				}
+			}
+		}
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = tlp_the_big_spend
+		icon = GFX_goal_cmc_family_business
+		cost = 60
+		x = 0
+		y = 1
+		relative_position_id = tlp_banned_for_life
+		prerequisite = {
+			focus = tlp_banned_for_life
+		}
+		available = {
+			CMC = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			CMC = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = tlp_the_hard_working_state
+		icon = GFX_goal_generic_patty_cheesecake
+		cost = 60
+		x = 0
+		y = 3
+		relative_position_id = tlp_banned_for_life
+		prerequisite = {
+			focus = tlp_banned_for_life
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = is_oklahoma
+				has_cosmetic_tag = state_oklahoma
+			}
+		}
+
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+	focus = {
+		id = tlp_consolidate_the_scrappers
+		icon = GFX_goal_generic_scrap_metal
+		cost = 60
+		x = -3
+		y = 1
+		relative_position_id = tlp_the_hard_working_state
+		prerequisite = {
+			focus = tlp_the_hard_working_state
+		}
+		will_lead_to_war_with = SCA
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+			OR = {
+				is_neighbor_of = SCA
+				NOT = { country_exists = SCA }
+			}
+		}
+		bypass = {
+			SCA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			SCA = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = tlp_subjugate_the_cyphers
+		icon = GFX_goal_TTM_Tribal_Vault_Girl
+		cost = 60
+		x = -1
+		y = 1
+		relative_position_id = tlp_the_hard_working_state
+		prerequisite = {
+			focus = tlp_the_hard_working_state
+		}
+		will_lead_to_war_with = CWB
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+			OR = {
+				is_neighbor_of = CWB
+				NOT = { country_exists = CWB }
+			}
+		}
+		bypass = {
+			CWB = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			CWB = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = tlp_consolidate_painted_rock
+		icon = GFX_goal_generic_f76_player2
+		cost = 60
+		x = 3
+		y = 1
+		relative_position_id = tlp_the_hard_working_state
+		prerequisite = {
+			focus = tlp_the_hard_working_state
+		}
+		will_lead_to_war_with = PAR
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+			OR = {
+				is_neighbor_of = PAR
+				NOT = { country_exists = PAR }
+			}
+		}
+		bypass = {
+			PAR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			PAR = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = tlp_subjugate_the_last_lodge
+		icon = GFX_goal_TTM_Nursery
+		cost = 60
+		x = 1
+		y = 1
+		relative_position_id = tlp_the_hard_working_state
+		prerequisite = {
+			focus = tlp_the_hard_working_state
+		}
+		will_lead_to_war_with = TLL
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+			OR = {
+				is_neighbor_of = TLL
+				NOT = { country_exists = TLL }
+			}
+		}
+		bypass = {
+			TLL = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			TLL = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = tlp_the_states_first_election
+		icon = GFX_goal_TTM_Defending_Our_Ideals
+		cost = 60
+		x = 0
+		y = 2
+		relative_position_id = tlp_the_hard_working_state
+		prerequisite = {
+			focus = tlp_consolidate_the_scrappers
+		}
+		prerequisite = {
+			focus = tlp_subjugate_the_cyphers
+		}
+		prerequisite = {
+			focus = tlp_subjugate_the_last_lodge
+		}
+		prerequisite = {
+			focus = tlp_consolidate_painted_rock
+		}
+		will_lead_to_war_with = TLL
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+			TLL = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			CWB = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			SCA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			PAR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			country_event = nf_tlp.6
+		}
+	}
+}

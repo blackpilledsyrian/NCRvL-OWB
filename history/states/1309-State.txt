@@ -1,0 +1,35 @@
+
+state={
+	id=1309
+	name="STATE_1309"
+	resources={
+		water=2.000
+	}
+
+	history={
+		victory_points = {
+			13471 5
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 2
+			arms_factory = 2
+			13408 = {
+				naval_base = 3
+
+			}
+			infrastructure = 3
+			industrial_complex = 1
+
+		}
+
+	}
+
+	provinces={
+		13408 13411 13442 13443 13444 13462 13463 13464 13471 13476 13479 13480 21078
+	}
+	manpower=6405
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
+}

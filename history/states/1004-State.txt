@@ -1,0 +1,43 @@
+state={
+	id=1004
+	name="STATE_1004"
+
+	resources = {
+		metal = 4
+		circuitry = 3
+		energy = 2
+	}
+
+	history={
+		buildings = {
+			infrastructure = 4
+			arms_factory = 2
+			industrial_complex = 2
+			3799 = {
+				bunker = 1
+			}
+			2103 = {
+				bunker = 1
+			}
+			7349 = {
+				bunker2 = 1
+			}
+		}
+		victory_points = {
+			3628 10
+		}
+		victory_points = {
+			2103 5
+		}
+		victory_points = {
+			7349 20
+		}
+	}
+
+	provinces={
+		3628 2119 7349 3799 2103 3792 2107 2130
+	}
+	manpower = 20650
+	state_category = city
+	buildings_max_level_factor=1.000
+}

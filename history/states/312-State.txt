@@ -1,0 +1,22 @@
+state = {
+	id = 312
+	name = "STATE_312"
+	manpower = 15312
+	state_category = rural
+
+	history = {
+		owner = SHI
+		add_core_of = SHI
+		victory_points = {
+			5041 10
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+		}
+	}
+
+	provinces = {
+		986 1027 1603 1773 1774 2457 3298 3299 3300 4607 4611 4728 4729 4730 4731 4732 4733 4796 4832 4833 4839 5041 5047 5048 5049 5050 6668
+	}
+}

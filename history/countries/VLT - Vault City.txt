@@ -1,0 +1,169 @@
+﻿capital = 291
+oob = "VLT_2275"
+
+set_technology = {
+	basic_supply_transport_tech = 1
+	infantry_tech_level_tribal = 1
+	infantry_tech_level_settler = 1
+	#infantry_tech_level_scientific = 1
+	support_tech_level_tribal = 1
+	support_tech_level_settler = 1
+	support_tech_level_scientific = 1
+	special_forces_tech_level_tribal = 1
+	special_forces_tech_level_settler = 1
+	#special_forces_tech_level_scientific = 1
+	power_armour_tech_level_settler = 1
+	power_armour_tech_level_scientific = 1
+	vehicles_tech_level_tribal = 1
+	vehicles_tech_level_settler = 1
+	#vehicles_tech_level_scientific = 1
+	robotics_tech_level_tribal = 1
+	robotics_tech_level_settler = 1
+	#robotics_tech_level_scientific = 1
+	air_tech_level_tribal = 1
+	air_tech_level_settler = 1
+	#air_tech_level_scientific = 1
+	naval_tech_level_tribal = 1
+	naval_tech_level_settler = 1
+	#naval_tech_level_scientific = 1
+	tools_tech_level_tribal = 1
+	tools_tech_level_settler = 1
+	tools_tech_level_scientific = 1
+	habitation_tech_level_tribal = 1
+	habitation_tech_level_settler = 1
+	habitation_tech_level_scientific = 1
+	exploitation_tech_level_tribal = 1
+	exploitation_tech_level_settler = 1
+	exploitation_tech_level_scientific = 1
+	electronics_tech_level_tribal = 1
+	electronics_tech_level_settler = 1
+	electronics_tech_level_scientific = 1
+	melee_weaponry_tech_1 = 1
+	standard_weaponry_tech = 1
+	ballistic_weaponry_tech_1 = 1
+	robot_makeshift_automatons_tech = 1
+	robot_fission_batteries_tech = 1
+	robot_protectron_equipment_tech_1 = 1
+	robot_command_equipment_tech_1 = 1
+	basic_industry_tech = 1
+	tool_engineering = 1
+	maketool_engineering_1 = 1
+	pre_construction_industry_tech = 1
+	construction_industry_tech_1 = 1
+	construction_industry_tech_2 = 1
+	extraction_industry_tech_1 = 1
+	habitation_industry_tech_1 = 1
+	extraction_industry_tech_2 = 1
+	habitation_industry_tech_2 = 1
+	resource_generator_tech = 1
+	resource_generator_water_tech_1 = 1
+	resource_generator_power_tech_1 = 1
+	resource_generator_metal_tech_1 = 1
+	vault_industry_tech = 1
+	implant_tech_visibility_tech = 1
+	support_weaponry = 1
+	maintenance_company_tech_1 = 1
+	med_company_tech_1 = 1
+	med_company_tech_2 = 1
+	med_company_tech_3 = 1
+	med_company_tech_4 = 1
+	automated_warfare = 1
+	implant_tech_access_tech = 1
+}
+
+set_stability = 0.5
+set_war_support = 0.2
+set_research_slots = 5
+set_country_flag = is_vault_tec_nation
+set_country_flag = is_nevada_nation
+#Vault City's doctrine flags can be done in the gamerule startup file in the future once they have AI path weights, meaning they can depend on the leader
+set_country_flag = grand_doctrine_ai
+set_country_flag = grand_infantry_doctrine_ai
+
+set_politics = {
+	ruling_party = intellectuals
+	elections_allowed = no
+}
+
+# Don't change these randomly, they're tied to the election variables
+set_popularities = {
+	people = 50
+	elites = 0
+	intellectuals = 50
+	ruler = 0
+}
+
+set_country_flag = vlt_selection_has_not_happened
+set_country_flag = generic_decisions_disabled
+
+add_ideas = {
+	marvels_of_vault_city
+	indentured_servitude
+	ncrsubjugation
+	outsider_law_none
+	ncr_sphere
+	currencyncrdollar
+}
+
+
+#Gecko Power Plant Setup
+
+set_variable = { vlt_gecko_power_var = 15 }
+set_variable = { vlt_gecko_manpower_var = -1 }
+set_variable = { vlt_gecko_construction_var = -1 }
+
+339 = {
+	add_dynamic_modifier = { modifier = vlt_gecko_powerplant }
+}
+
+country_event = {
+	id = nf_vault_city.5
+	days = 181
+}
+add_timed_idea = {
+	idea = vault_city_election
+	days = 181
+}
+add_equipment_to_stockpile = {
+	type = enclave_power_armour_equipment_1
+	amount = 25
+	producer = USA
+}
+
+# Country Leaders
+recruit_character = VLT_first_citizen_lynette
+recruit_character = VLT_security_chief_maier
+recruit_character = VLT_gordon_of_gecko
+recruit_character = VLT_the_brain
+recruit_character = VLT_council_of_citizens
+
+# Unit Leaders
+recruit_character = VLT_chad_rannor
+recruit_character = VLT_security_chief_wallace
+recruit_character = VLT_braelynn_christopherson
+
+# Other
+recruit_character = VLT_festus
+
+# Advisors
+recruit_character = VLT_dweller_albert
+recruit_character = VLT_dweller_hubert
+recruit_character = VLT_dweller_edmund
+recruit_character = VLT_dweller_francis
+recruit_character = VLT_dweller_douglas
+recruit_character = VLT_dweller_ian
+recruit_character = VLT_dweller_cyril
+recruit_character = VLT_dweller_donald
+recruit_character = VLT_dweller_nigel
+recruit_character = VLT_dweller_elena
+recruit_character = VLT_dweller_isaiah
+recruit_character = VLT_dweller_adam
+
+recruit_character = VLT_joseph_williamson
+recruit_character = VLT_reuben_baxter
+recruit_character = VLT_skeeter
+recruit_character = VLT_wooz
+recruit_character = VLT_virgie
+
+recruit_character = VLT_citizen_gracchi
+recruit_character = VLT_zomak

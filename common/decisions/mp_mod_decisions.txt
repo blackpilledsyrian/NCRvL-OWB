@@ -1,0 +1,995 @@
+# Annex decisions
+MP_mod_decisions = {
+	caesar_annex_lanius = {
+		visible = {
+			original_tag = CES
+		}
+		available = {
+			date > 2278.1.1
+			LAC = { is_ai = yes }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			LAC = {
+				annex_country = {
+					target = SUF
+					transfer_troops = no
+				}
+				annex_country = {
+					target = EDA
+					transfer_troops = no
+				}
+				annex_country = {
+					target = MES
+					transfer_troops = no
+				}
+				annex_country = {
+					target = ASF
+					transfer_troops = no
+				}
+				annex_country = {
+					target = EXE
+					transfer_troops = no
+				}
+				annex_country = {
+					target = SUN
+					transfer_troops = no
+				}
+				annex_country = {
+					target = TTM
+					transfer_troops = no
+				}
+				annex_country = {
+					target = PEC
+					transfer_troops = no
+				}
+				annex_country = {
+					target = MXC
+					transfer_troops = no
+				}
+				annex_country = {
+					target = SCO
+					transfer_troops = no
+				}
+				annex_country = {
+					target = HAN
+					transfer_troops = no
+				}
+				annex_country = {
+					target = ROB
+					transfer_troops = no
+				}
+				complete_national_focus = lac_hire_iron_alliance
+				complete_national_focus = lac_brought_to_heel
+				complete_national_focus = lac_the_march_west
+			}
+		}
+	}
+	legion_annex_navajo = {
+		visible = {
+			or = {
+				original_tag = CES
+				original_tag = RES
+			}
+		}
+		available = {
+			date > 2278.1.1
+			NAV = { is_ai = yes }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			annex_country = {
+				target = NAV
+				transfer_troops = yes
+			}
+			annex_country = {
+				target = PNT
+				transfer_troops = no
+			}
+			annex_country = {
+				target = FOR
+				transfer_troops = no
+			}
+			annex_country = {
+				target = INR
+				transfer_troops = no
+			}
+			annex_country = {
+				target = CLJ
+				transfer_troops = no
+			}
+			every_state = {
+				limit = {
+					is_core_of = NAV
+				}
+				add_compliance = 50
+				add_resistance_target = -20
+			}
+		}
+	}
+	legion_annex_twosun = {
+		visible = {
+			or = {
+				original_tag = CES
+				original_tag = GDH
+			}
+		}
+		available = {
+			date > 2277.1.1
+			TWO = { is_ai = yes }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			annex_country = {
+				target = TWO
+				transfer_troops = yes
+			}
+			annex_country = {
+				target = COW
+				transfer_troops = no
+			}
+			annex_country = {
+				target = TON
+				transfer_troops = no
+			}
+			every_state = {
+				limit = {
+					or = {
+						is_core_of = TWO
+						is_core_of = COW
+						is_core_of = TON
+					}
+				}
+				add_compliance = 50
+				add_resistance_target = -20
+			}
+		}
+	}
+	legion_annex_gente = {
+		visible = {
+			or = {
+				original_tag = CES
+				original_tag = TWO
+			}
+		}
+		available = {
+			date > 2276.1.1
+			GDH = { is_ai = yes }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			annex_country = {
+				target = GDH
+				transfer_troops = yes
+			}
+			every_state = {
+				limit = {
+					is_core_of = GDH
+				}
+				add_compliance = 50
+				add_resistance_target = -20
+			}
+		}
+	}
+	legion_annex_res = {
+		visible = {
+			or = {
+				original_tag = CES
+			}
+		}
+		available = {
+			date > 2277.1.1
+			RES = { is_ai = yes }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			annex_country = {
+				target = RES
+				transfer_troops = yes
+			}
+			every_state = {
+				limit = {
+					is_core_of = RES
+				}
+				add_compliance = 50
+				add_resistance_target = -20
+			}
+		}
+	}
+	legion_annex_iron_alliance = {
+		visible = {
+			or = {
+				original_tag = CES
+				original_tag = LAC
+			}
+		}
+		available = {
+			date > 2278.7.1
+			IRN = { is_ai = yes }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			annex_country = {
+				target = IRN
+				transfer_troops = yes
+			}
+			annex_country = {
+				target = BAG
+				transfer_troops = no
+			}
+			annex_country = {
+				target = WHD
+				transfer_troops = no
+			}
+			annex_country = {
+				target = LUM
+				transfer_troops = no
+			}
+			annex_country = {
+				target = GLW
+				transfer_troops = no
+			}
+			annex_country = {
+				target = YMP
+				transfer_troops = no
+			}
+			annex_country = {
+				target = TOB
+				transfer_troops = no
+			}
+			annex_country = {
+				target = DRY
+				transfer_troops = no
+			}
+			annex_country = {
+				target = TTM
+				transfer_troops = no
+			}
+			every_state = {
+				limit = {
+					is_core_of = IRN
+				}
+				add_compliance = 50
+				add_resistance_target = -20
+			}
+		}
+	}
+	legion_annex_oklohoma = {
+		visible = {
+			or = {
+				original_tag = CES
+				original_tag = LAC
+			}
+		}
+		available = {
+			date > 2278.7.1
+			PAR = { is_ai = yes }
+			CWB = { is_ai = yes }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			annex_country = {
+				target = PAR
+				transfer_troops = yes
+			}
+			annex_country = {
+				target = CWB
+				transfer_troops = yes
+			}
+			annex_country = {
+				target = CHC
+				transfer_troops = no
+			}
+			annex_country = {
+				target = SCA
+				transfer_troops = no
+			}
+			annex_country = {
+				target = CHO
+				transfer_troops = no
+			}
+			annex_country = {
+				target = CMC
+				transfer_troops = no
+			}
+			annex_country = {
+				target = CHR
+				transfer_troops = no
+			}
+			annex_country = {
+				target = TLP
+				transfer_troops = no
+			}
+			every_state = {
+				limit = {
+					or = {
+						is_core_of = PAR
+						is_core_of = CWB
+					}
+				}
+				add_compliance = 50
+				add_resistance_target = -20
+			}
+		}
+	}
+	legion_annex_texas = {
+		visible = {
+			or = {
+				original_tag = CES
+			}
+		}
+		available = {
+			date > 2279.1.1
+			LAC = { has_completed_focus = lac_the_march_west }
+			IMO = { is_ai = yes }
+			SHA = { is_ai = yes }
+			UOA = { is_ai = yes }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			annex_country = {
+				target = IMO
+				transfer_troops = yes
+			}
+			annex_country = {
+				target = SHA
+				transfer_troops = yes
+			}
+			annex_country = {
+				target = UOA
+				transfer_troops = no
+			}
+			annex_country = {
+				target = TBH
+				transfer_troops = no
+			}
+			annex_country = {
+				target = ACH
+				transfer_troops = no
+			}
+			annex_country = {
+				target = LNS
+				transfer_troops = no
+			}
+			annex_country = {
+				target = LOS
+				transfer_troops = no
+			}
+			annex_country = {
+				target = CBN
+				transfer_troops = no
+			}
+			annex_country = {
+				target = EDN
+				transfer_troops = no
+			}
+			annex_country = {
+				target = TAA
+				transfer_troops = no
+			}
+			annex_country = {
+				target = PER
+				transfer_troops = no
+			}
+			annex_country = {
+				target = HRO
+				transfer_troops = no
+			}
+			annex_country = {
+				target = LUB
+				transfer_troops = no
+			}
+			annex_country = {
+				target = TLL
+				transfer_troops = no
+			}
+			annex_country = {
+				target = TUB
+				transfer_troops = no
+			}
+			annex_country = {
+				target = CAR
+				transfer_troops = no
+			}
+			annex_country = {
+				target = ASS
+				transfer_troops = no
+			}
+			annex_country = {
+				target = DSP
+				transfer_troops = no
+			}
+			annex_country = {
+				target = GAM
+				transfer_troops = no
+			}
+			annex_country = {
+				target = TPM
+				transfer_troops = no
+			}
+
+			every_state = {
+				limit = {
+					or = {
+						is_core_of = SHA
+						is_core_of = IMO
+					}
+				}
+				add_compliance = 50
+				add_resistance_target = -20
+			}
+		}
+	}
+	legion_annex_white_legs = {
+		visible = {
+			or = {
+				original_tag = CES
+				original_tag = EHT
+			}
+		}
+		available = {
+			date > 2278.7.1
+			WHT = { is_ai = yes }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			annex_country = {
+				target = WHT
+				transfer_troops = yes
+			}
+			annex_country = {
+				target = SOR
+				transfer_troops = no
+			}
+			annex_country = {
+				target = TAR
+				transfer_troops = no
+			}
+			annex_country = {
+				target = DEA
+				transfer_troops = no
+			}
+			annex_country = {
+				target = CRZ
+				transfer_troops = no
+			}
+			annex_country = {
+				target = UIN
+				transfer_troops = no
+			}
+			annex_country = {
+				target = NCN
+				transfer_troops = no
+			}
+			annex_country = {
+				target = LON
+				transfer_troops = no
+			}
+			annex_country = {
+				target = CLK
+				transfer_troops = no
+			}
+			every_state = {
+				limit = {
+					is_core_of = WHT
+				}
+				add_compliance = 50
+				add_resistance_target = -20
+			}
+		}
+	}
+	legion_annex_eighties = {
+		visible = {
+			or = {
+				original_tag = CES
+				original_tag = WHT
+			}
+		}
+		available = {
+			date > 2278.7.1
+			EHT = { is_ai = yes }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			annex_country = {
+				target = EHT
+				transfer_troops = yes
+			}
+			annex_country = {
+				target = RUB
+				transfer_troops = no
+			}
+			annex_country = {
+				target = RIP
+				transfer_troops = no
+			}
+			annex_country = {
+				target = EAS
+				transfer_troops = no
+			}
+			annex_country = {
+				target = HAM
+				transfer_troops = no
+			}
+			annex_country = {
+				target = MUR
+				transfer_troops = no
+			}
+			annex_country = {
+				target = ANO
+				transfer_troops = no
+			}
+			annex_country = {
+				target = GRA
+				transfer_troops = no
+			}
+			every_state = {
+				limit = {
+					is_core_of = EHT
+				}
+				add_compliance = 50
+				add_resistance_target = -20
+			}
+		}
+	}
+	ncr_annex_vegas = {
+		visible = {
+			or = {
+				original_tag = NCR
+				original_tag = MOT
+			}
+		}
+		available = {
+			date > 2277.7.1
+			VEG = { is_ai = yes }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			annex_country = {
+				target = VEG
+				transfer_troops = yes
+			}
+			every_state = {
+				limit = {
+					is_core_of = VEG
+				}
+				add_compliance = 80
+				add_resistance_target = -20
+			}
+		}
+	}
+	ncr_annex_territories = {
+		visible = {
+			or = {
+				original_tag = NCR
+				original_tag = VEG
+			}
+		}
+		available = {
+			date > 2277.7.1
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			annex_country = {
+				target = MOT
+				transfer_troops = yes
+			}
+			every_state = {
+				limit = {
+					is_owned_by = MOT
+				}
+				add_compliance = 80
+				add_resistance_target = -20
+			}
+		}
+	}
+	ncr_annex_shi = {
+		visible = {
+			or = {
+				original_tag = EUR
+				original_tag = NCR
+			}
+		}
+		available = {
+			date > 2277.7.1
+			SHI = { is_ai = yes }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			annex_country = {
+				target = SHI
+				transfer_troops = yes
+			}
+			every_state = {
+				limit = {
+					is_core_of = SHI
+				}
+				add_compliance = 80
+				add_resistance_target = -20
+			}
+		}
+	}
+	ncr_annex_eureka = {
+		visible = {
+			or = {
+				original_tag = SHI
+				original_tag = NCR
+				original_tag = ARR
+			}
+		}
+		available = {
+			date > 2277.7.1
+			EUR = { is_ai = yes }
+			if = {
+				limit = {
+					or = {
+						original_tag = SHI
+						original_tag = NCR
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			annex_country = {
+				target = EUR
+				transfer_troops = yes
+			}
+			every_state = {
+				limit = {
+					is_core_of = EUR
+				}
+				add_compliance = 80
+				add_resistance_target = -20
+			}
+		}
+	}
+	ncr_annex_arroyo = {
+		visible = {
+			or = {
+				original_tag = EUR
+				original_tag = NCR
+				original_tag = TIM
+			}
+		}
+		available = {
+			date > 2277.7.1
+			ARR = { is_ai = yes }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			annex_country = {
+				target = ARR
+				transfer_troops = yes
+			}
+			annex_country = {
+				target = PAC
+				transfer_troops = no
+			}
+			annex_country = {
+				target = UMB
+				transfer_troops = no
+			}
+			annex_country = {
+				target = FOU
+				transfer_troops = no
+			}
+			annex_country = {
+				target = MXS
+				transfer_troops = no
+			}
+			annex_country = {
+				target = EMB
+				transfer_troops = no
+			}
+			every_state = {
+				limit = {
+					is_core_of = ARR
+				}
+				add_compliance = 80
+				add_resistance_target = -20
+			}
+		}
+	}
+	ncr_annex_oregon = {
+		visible = {
+			or = {
+				original_tag = ARR
+				original_tag = NCR
+				original_tag = VLT
+			}
+		}
+		available = {
+			date > 2278.1.1
+			TIM = { is_ai = yes }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			annex_country = {
+				target = TIM
+				transfer_troops = yes
+			}
+			annex_country = {
+				target = TRL
+				transfer_troops = no
+			}
+			annex_country = {
+				target = CCW
+				transfer_troops = no
+			}
+			annex_country = {
+				target = RBT
+				transfer_troops = no
+			}
+			annex_country = {
+				target = PMR
+				transfer_troops = no
+			}
+			annex_country = {
+				target = MLT
+				transfer_troops = no
+			}
+			annex_country = {
+				target = DIS
+				transfer_troops = no
+			}
+			annex_country = {
+				target = BDT
+				transfer_troops = no
+			}
+			annex_country = {
+				target = MDT
+				transfer_troops = no
+			}
+			every_state = {
+				limit = {
+					is_core_of = TIM
+				}
+				add_compliance = 80
+				add_resistance_target = -20
+			}
+		}
+	}
+	ncr_annex_vault_city = {
+		visible = {
+			or = {
+				original_tag = NEW
+				original_tag = TIM
+				original_tag = NCR
+			}
+		}
+		available = {
+			date > 2278.7.1
+			VLT = { is_ai = yes }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			annex_country = {
+				target = VLT
+				transfer_troops = yes
+			}
+			annex_country = {
+				target = TRL
+				transfer_troops = no
+			}
+			annex_country = {
+				target = CYC
+				transfer_troops = no
+			}
+			annex_country = {
+				target = SHO
+				transfer_troops = no
+			}
+			annex_country = {
+				target = CHE
+				transfer_troops = no
+			}
+			annex_country = {
+				target = PAL
+				transfer_troops = no
+			}
+			annex_country = {
+				target = SLN
+				transfer_troops = no
+			}
+			annex_country = {
+				target = VIP
+				transfer_troops = no
+			}
+			every_state = {
+				limit = {
+					is_core_of = VLT
+				}
+				add_compliance = 80
+				add_resistance_target = -20
+			}
+		}
+	}
+	ncr_annex_new_reno = {
+		visible = {
+			or = {
+				original_tag = DES
+				original_tag = VLT
+				original_tag = NCR
+			}
+		}
+		available = {
+			date > 2278.7.1
+			NEW = { is_ai = yes }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			annex_country = {
+				target = NEW
+				transfer_troops = yes
+			}
+			annex_country = {
+				target = TDN
+				transfer_troops = no
+			}
+			annex_country = {
+				target = KLA
+				transfer_troops = no
+			}
+			annex_country = {
+				target = MOD
+				transfer_troops = no
+			}
+			annex_country = {
+				target = SLA
+				transfer_troops = no
+			}
+			annex_country = {
+				target = YKZ
+				transfer_troops = no
+			}
+			annex_country = {
+				target = JAC
+				transfer_troops = no
+			}
+			every_state = {
+				limit = {
+					is_core_of = NEW
+				}
+				add_compliance = 80
+				add_resistance_target = -20
+			}
+		}
+	}
+	ncr_annex_rangers = {
+		visible = {
+			or = {
+				original_tag = NEW
+				original_tag = NCR
+			}
+		}
+		available = {
+			date > 2278.7.1
+			DES = { is_ai = yes }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			annex_country = {
+				target = DES
+				transfer_troops = yes
+			}
+			annex_country = {
+				target = GRD
+				transfer_troops = no
+			}
+			annex_country = {
+				target = TOF
+				transfer_troops = no
+			}
+			annex_country = {
+				target = SOK
+				transfer_troops = no
+			}
+			annex_country = {
+				target = TVT
+				transfer_troops = no
+			}
+			annex_country = {
+				target = PSH
+				transfer_troops = no
+			}
+			annex_country = {
+				target = SKY
+				transfer_troops = no
+			}
+			every_state = {
+				limit = {
+					is_core_of = DES
+				}
+				add_compliance = 80
+				add_resistance_target = -20
+			}
+		}
+	}
+	ncr_annex_baja = {
+		visible = {
+			or = {
+				original_tag = SHI
+				original_tag = NCR
+			}
+		}
+		available = {
+			date > 2277.7.1
+			BVC = { is_ai = yes }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			annex_country = {
+				target = BVC
+				transfer_troops = yes
+			}
+			every_state = {
+				limit = {
+					is_core_of = BVC
+				}
+				add_compliance = 50
+				add_resistance_target = -20
+			}
+		}
+	}
+}

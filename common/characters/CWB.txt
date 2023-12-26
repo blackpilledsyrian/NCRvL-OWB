@@ -1,0 +1,66 @@
+characters = {
+	CWB_helki_the_ripper = {
+		name = "Helki the Ripper"
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CWB_leader
+			}
+		}
+		country_leader = {
+			desc = CWB_LEADER_DESC
+			ideology = chieftain
+			traits = {
+				warmonger
+				war_industrialist
+				cruel_tyrant
+			}
+			expire = "3000.01.01.01"
+			id = -1
+		}
+		country_leader = {
+			desc = CWB_LEADER_DESC
+			ideology = constitutional_republic
+			traits = {
+				warmonger
+				war_industrialist
+				cruel_tyrant
+			}
+			expire = "3000.1.1.12"
+			id = -1
+		}
+		country_leader = {
+			desc = CWB_LEADER_DESC
+			ideology = technocracy
+			traits = {
+				warmonger
+				war_industrialist
+				cruel_tyrant
+			}
+			expire = "3000.01.01.01"
+		}
+		country_leader = {
+			desc = CWB_LEADER_DESC
+			ideology = kritocracy
+			traits = {
+				warmonger
+				war_industrialist
+				cruel_tyrant
+			}
+			expire = "3000.01.01.01"
+			id = -1
+		}
+		corps_commander = {
+			traits = {
+				agile_trait
+				enduring_trait
+				hot_blooded_trait
+				hill_fighter
+			}
+			skill = 5
+			attack_skill = 6
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+}

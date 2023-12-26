@@ -1,0 +1,33 @@
+state={
+	id=1003
+	name="STATE_1003"
+
+	resources = {
+		metal = 3
+		circuitry = 5
+		composites = 2
+		advanced = 4
+		energy = 1
+	}
+
+	history={
+		buildings = {
+			infrastructure = 4
+			arms_factory = 3
+			dockyard = 1
+		}
+		victory_points = {
+			2096 15
+		}
+		victory_points = {
+			7246 5
+		}
+	}
+
+	provinces={
+		2128 3806 7244 2096 3950 3989 7246
+	}
+	manpower = 16590
+	state_category = large_city
+	buildings_max_level_factor=1.000
+}

@@ -1,0 +1,501 @@
+﻿capital = 253
+oob = "NCR_2275"
+#set_naval_oob = "NCR_2275_naval"
+
+set_technology = {
+	basic_supply_transport_tech = 1
+	infantry_tech_level_tribal = 1
+	infantry_tech_level_settler = 1
+	special_forces_tech_level_tribal = 1
+	special_forces_tech_level_settler = 1
+	power_armour_tech_level_tribal = 1
+	power_armour_tech_level_settler = 1
+	support_tech_level_tribal = 1
+	support_tech_level_settler = 1
+	vehicles_tech_level_tribal = 1
+	vehicles_tech_level_settler = 1
+	robotics_tech_level_tribal = 1
+	robotics_tech_level_settler = 1
+	air_tech_level_tribal = 1
+	air_tech_level_settler = 1
+	naval_tech_level_tribal = 1
+	naval_tech_level_settler = 1
+	tools_tech_level_tribal = 1
+	tools_tech_level_settler = 1
+	habitation_tech_level_tribal = 1
+	habitation_tech_level_settler = 1
+	#habitation_tech_level_scientific = 1
+	exploitation_tech_level_tribal = 1
+	exploitation_tech_level_settler = 1
+	#exploitation_tech_level_scientific = 1
+	electronics_tech_level_tribal = 1
+	electronics_tech_level_settler = 1
+	grand_army = 1
+	grand_battle_plan_owb = 1
+	standard_weaponry_tech = 1
+	melee_weaponry_tech_1 = 1
+	ballistic_weaponry_tech_1 = 1
+	support_weaponry = 1
+	fireteam_weaponry_tech = 1
+	recon_company_tech_1 = 1
+	maintenance_company_tech_1 = 1
+	bike_tech_1 = 1
+	tribal_civilization = 1
+	settled_civilization = 1
+	anti_tank_equipment_tech_1 = 1
+	spec_ops_equipment_tech_1 = 1
+	tool_engineering = 1
+	basic_industry_tech = 1
+	pre_construction_industry_tech = 1
+	pre_agriculture_industry_tech = 1
+	agriculture_industry_tech_1 = 1
+	agriculture_industry_tech_2 = 1
+}
+
+
+add_opinion_modifier = {
+	modifier = ncrrepublicmember
+	target = MOT
+}
+reverse_add_opinion_modifier = {
+	modifier = ncrrepublicmember
+	target = MOT
+}
+
+add_opinion_modifier = {
+	target = MOT
+	modifier = civilised_world
+}
+reverse_add_opinion_modifier = {
+	target = MOT
+	modifier = civilised_world
+}
+add_opinion_modifier = {
+	target = MOT
+	modifier = civilised_world_trade
+}
+reverse_add_opinion_modifier = {
+	target = MOT
+	modifier = civilised_world_trade
+}
+add_opinion_modifier = {
+	target = NEW
+	modifier = ncrrepublicmember
+}
+reverse_add_opinion_modifier = {
+	target = NEW
+	modifier = ncrrepublicmember
+}
+add_opinion_modifier = {
+	target = NCR
+	modifier = civilised_world_trade
+}
+reverse_add_opinion_modifier = {
+	target = NCR
+	modifier = civilised_world_trade
+}
+add_opinion_modifier = {
+	target = NCR
+	modifier = civilised_world
+}
+reverse_add_opinion_modifier = {
+	target = NCR
+	modifier = civilised_world
+}
+add_opinion_modifier = {
+	target = ARR
+	modifier = civilised_world
+}
+reverse_add_opinion_modifier = {
+	target = ARR
+	modifier = civilised_world
+}
+add_opinion_modifier = {
+	target = ARR
+	modifier = civilised_world_trade
+}
+reverse_add_opinion_modifier = {
+	target = ARR
+	modifier = civilised_world_trade
+}
+add_opinion_modifier = {
+	target = SHI
+	modifier = civilised_world
+}
+reverse_add_opinion_modifier = {
+	target = SHI
+	modifier = civilised_world
+}
+add_opinion_modifier = {
+	target = SHI
+	modifier = civilised_world_trade
+}
+reverse_add_opinion_modifier = {
+	target = SHI
+	modifier = civilised_world_trade
+}
+
+add_opinion_modifier = {
+	target = BOS
+	modifier = ncr_bos_gold_reserves
+}
+reverse_add_opinion_modifier = {
+	target = BOS
+	modifier = bos_ncr_pride_before_fall
+}
+add_opinion_modifier = {
+	target = VLT
+	modifier = ncr_vlt_garrison
+}
+reverse_add_opinion_modifier = {
+	target = VLT
+	modifier = vlt_ncr_garrison
+}
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		nautics_tech_1 = 1
+		light_navy_hull_tech_1 = 1
+		waterproof_sealing_tech = 1
+		medium_navy_hull_tech_1 = 1
+		multi_deck_construction_tech = 1
+		heavy_navy_hull_tech_1 = 1
+		naval_invasion_tech_1 = 1
+		naval_module_tech = 1
+		naval_armour_tech_1 = 1
+		naval_pd_module_tech_1 = 1
+		naval_communications_module_tech_1 = 1
+		naval_weapons_module_tech = 1
+	}
+}
+if = {
+	limit = {
+		NOT = { has_dlc = "Man the Guns" }
+	}
+	set_technology = {
+		nautics_tech_non_mtg_1 = 1
+		light_navy_hull_tech_non_mtg_1 = 1
+		waterproof_sealing_tech_non_mtg = 1
+		medium_navy_hull_tech_non_mtg_1 = 1
+		naval_invasion_tech_non_mtg_1 = 1
+		multi_deck_construction_tech_non_mtg = 1
+		heavy_navy_hull_tech_non_mtg_1 = 1
+	}
+}
+
+set_stability = 0.45 #Keep in mind that the NCR Dollars modifier raises this
+set_war_support = 0.25
+set_research_slots = 5
+set_convoys = 40
+set_country_flag = is_ncr_nation
+set_country_flag = has_unique_manpower_law
+set_country_flag = has_unique_economic_laws
+set_country_flag = grand_doctrine_ai
+set_country_flag = grand_infantry_doctrine_ai
+set_country_flag = is_california_nation
+
+set_politics = {
+	ruling_party = people
+	elections_allowed = no
+}
+
+set_popularities = {
+	people = 45
+	elites = 25
+	intellectuals = 15
+	ruler = 15
+}
+
+add_ideas = {
+	ncr_bos_idea_allgood_truce
+	ncrguns
+	currencyncrdollar
+	ncr_disarmed_nation
+	ncr_war_exhausted_economy
+	wisespread_consumerism
+	political_effort_press
+	mutant_law_both
+	ncr_veg_treaty_of_new_vegas
+	vaultcityexpedition
+	ncr_brotherhood_hegemony
+}
+
+add_offsite_building = {
+	type = industrial_complex
+	level = 25
+}
+
+add_timed_idea = {
+	idea = ncr_recovering_gold_reserve
+	days = 455
+}
+
+diplomatic_relation = {
+	country = VEG
+	relation = non_aggression_pact
+	active = yes
+}
+diplomatic_relation = {
+	country = SHI
+	relation = non_aggression_pact
+	active = yes
+}
+
+diplomatic_relation = {
+	country = BOS
+	relation = non_aggression_pact
+	active = yes
+}
+set_variable = { never_return_stolen_territory = 1 }
+
+give_guarantee = SHI
+
+#MOT = {
+#	if = {
+#		limit = {
+#			can_use_autonomy_system = yes
+#		}
+#		NCR = {
+#			MOT = {
+#				become_puppet = yes
+#			}
+#			set_autonomy = {
+#				target = MOT
+#				autonomy_state = autonomy_incorporated_territory
+#			}
+#		}
+#	}
+#	else = {
+#		NCR = {
+#			puppet = MOT
+#		}
+#	}
+#}
+
+NAT = {
+	if = {
+		limit = {
+			can_use_autonomy_system = yes
+		}
+		NCR = {
+			NAT = {
+				become_puppet = yes
+			}
+			set_autonomy = {
+				target = NAT
+				autonomy_state = autonomy_incorporated_territory
+			}
+		}
+	}
+	else = {
+		NCR = {
+			puppet = NAT
+		}
+	}
+}
+
+create_or_join_new_california = yes
+MOT = { create_or_join_new_california = yes }
+NAT = { create_or_join_new_california = yes }
+
+
+recruit_character = NCR_aaron_kimball
+recruit_character = NCR_grant_c_hayes
+recruit_character = NCR_allgood_murphy
+recruit_character = NCR_anton_flynn
+recruit_character = NCR_ranger_commander_martin
+recruit_character = NCR_brigadier_general_thompson
+recruit_character = NCR_big_jim
+recruit_character = NCR_mossman_character
+recruit_character = NCR_drummond
+recruit_character = NCR_major_lawrence
+recruit_character = NCR_colonel_royez
+recruit_character = NCR_general_oliver
+recruit_character = NCR_warhero
+recruit_character = NCR_innovator
+recruit_character = NCR_tactitian
+recruit_character = NCR_ranger_jackson
+recruit_character = NCR_mr_fantastic
+recruit_character = NCR_alice_mclafferty
+recruit_character = NCR_mama_van_graff
+recruit_character = NCR_bastion
+recruit_character = NCR_joseph_dodge
+recruit_character = NCR_zachariah_rigby
+recruit_character = NCR_follower_advisor
+recruit_character = NCR_HME
+recruit_character = NCR_committee_national_security
+recruit_character = NCR_colonel_moore
+recruit_character = NCR_vacant_leadership
+recruit_character = NCR_enclave_advisor_advisor_4
+recruit_character = NCR_air_chief
+recruit_character = NCR_navy_chief
+recruit_character = NCR_moore
+recruit_character = NCR_lieutenant_lloyd_groves
+recruit_character = NCR_veronica
+recruit_character = NCR_Arch_Dornan
+recruit_character = NCR_Douglas_Granite
+recruit_character = NCR_Roger_Ratboy
+## activate starting advisors
+activate_advisor = NCR_alice_mclafferty_economic_advisor
+activate_advisor = NCR_mama_van_graff_advisor
+
+# RDS characters
+recruit_character = RDS_Daniel
+recruit_character = RDS_Chavo
+recruit_character = RDS_Naga
+recruit_character = RDS_wendell_peterson
+recruit_character = RDS_Redding_Council
+recruit_character = RDS_Lawrence_Greene
+recruit_character = RDS_Harry_OConnor
+recruit_character = RDS_DeWit
+
+
+random_character = {
+	limit = {
+		is_character = NCR_anton_flynn
+	}
+	save_global_event_target_as = NCR_anton_flynn_target
+}
+random_character = {
+	limit = {
+		is_character = NCR_allgood_murphy
+	}
+	save_global_event_target_as = NCR_allgood_murphy_target
+}
+random_character = {
+	limit = {
+		is_character = NCR_grant_c_hayes
+	}
+	save_global_event_target_as = NCR_grant_c_hayes_target
+}
+random_character = {
+	limit = {
+		is_character = NCR_mossman_character
+	}
+	save_global_event_target_as = NCR_mossman_character_target
+}
+
+create_equipment_variant = {
+	name = "River Boat"
+	type = ship_hull_light_1
+	name_group = NCR_LIGHT
+	parent_version = 0
+	modules = {
+		fixed_ship_command_slot = ship_command_module_1
+		fixed_ship_engine_slot = light_ship_oars_module
+		fixed_ship_battery_slot = ship_light_mounted_gun_module
+		# fixed_ship_battery_slot_1 = ship_light_mounted_gun_module
+		fixed_ship_detection_slot = ship_detection_module_1
+		# fixed_ship_detection_slot_1 = empty
+		fixed_ship_point_defense_slot = empty
+		mid_1_custom_slot = light_ship_oars_module
+		rear_1_custom_slot = empty
+		rear_2_custom_slot = ship_light_mounted_gun_module
+	}
+}
+
+create_equipment_variant = {
+	name = "Destroyer"
+	type = ship_hull_medium_1
+	name_group = NCR_MEDIUM
+	parent_version = 0
+	modules = {
+		fixed_ship_command_slot = ship_command_module_1
+		fixed_ship_engine_slot = medium_ship_oars_module
+		fixed_ship_battery_slot = ship_medium_mounted_gun_module
+		# fixed_ship_battery_slot_1 = ship_medium_mounted_gun_module
+		fixed_ship_detection_slot = ship_detection_module_1
+		# fixed_ship_detection_slot_1 = empty
+		fixed_ship_armour_slot = empty
+		fixed_ship_point_defense_slot = ship_light_mounted_gun_module
+		# fixed_ship_point_defense_slot_1 = ship_light_mounted_gun_module
+		mid_1_custom_slot = medium_ship_oars_module
+		rear_1_custom_slot = empty
+		rear_2_custom_slot = ship_medium_mounted_gun_module
+	}
+}
+create_equipment_variant = {
+	name = "Heavy Ship"
+	type = ship_hull_heavy_1
+	name_group = NCR_HEAVY
+	parent_version = 0
+	modules = {
+		fixed_ship_command_slot = ship_command_module_1
+		fixed_ship_engine_slot = heavy_ship_oars_module
+		fixed_ship_battery_slot = ship_heavy_mounted_gun_module
+		# fixed_ship_battery_slot_1 = ship_heavy_mounted_gun_module
+		fixed_ship_detection_slot = ship_detection_module_1
+		# fixed_ship_detection_slot_1 = ship_detection_module_1
+		fixed_ship_armour_slot = heavy_ship_armour_module_1
+		fixed_ship_point_defense_slot = ship_pd_module_1
+		# fixed_ship_point_defense_slot_1 = ship_pd_module_1
+		fixed_ship_communication_slot = ship_communications_module_1
+		# fixed_ship_storage_slot = empty
+		front_1_custom_slot = empty
+		mid_1_custom_slot = heavy_ship_oars_module
+		rear_1_custom_slot = ship_detection_module_1
+		rear_2_custom_slot = ship_heavy_mounted_gun_module
+	}
+}
+
+create_dynamic_country = {
+	original_tag = NCR
+	set_country_flag = NCR_boneyard_flag
+	set_politics = {
+		ruling_party = people
+	}
+	set_cosmetic_tag = NCR_boneyard
+	set_research_slots = 5
+	reserve_dynamic_country = yes
+}
+create_dynamic_country = {
+	original_tag = NCR
+	set_country_flag = NCR_redding_flag
+	set_politics = {
+		ruling_party = people
+	}
+	set_cosmetic_tag = NCR_redding
+	set_research_slots = 4
+	reserve_dynamic_country = yes
+}
+add_dynamic_modifier = {
+	modifier = ncr_economy_status
+}
+add_to_variable = { ncr_consumer_goods = 0.15 }
+add_to_variable = { ncr_trade_opinion_factor = 0.05 }
+add_to_variable = { ncr_caps_modifier = -0.1 }
+add_to_variable = { ncr_building_speed = -0.1 }
+add_to_variable = { ncr_industrial_factories = -0.05 }
+force_update_dynamic_modifier = yes
+add_dynamic_modifier = {
+	modifier = ncr_army_dynamic_modifier
+}
+add_to_variable = { ncr_army_command_power = 5 }
+add_to_variable = { ncr_caps_expense_modifier = 0.05 }
+force_update_dynamic_modifier = yes
+
+# Set up array for elections
+add_to_array = { states_indexes_array = 1 }
+add_to_array = { states_indexes_array = 2 }
+add_to_array = { states_indexes_array = 3 }
+add_to_array = { states_indexes_array = 4 }
+add_to_array = { states_indexes_array = 5 }
+
+# 6 values: dump + 5 states
+add_to_array = { global.first_candidate_support_array = 0 }
+add_to_array = { global.first_candidate_support_array = 0 }
+add_to_array = { global.first_candidate_support_array = 0 }
+add_to_array = { global.first_candidate_support_array = 0 }
+add_to_array = { global.first_candidate_support_array = 0 }
+add_to_array = { global.first_candidate_support_array = 0 }
+
+# 6 values: dump + 5 states
+add_to_array = { global.second_candidate_support_array = 0 }
+add_to_array = { global.second_candidate_support_array = 0 }
+add_to_array = { global.second_candidate_support_array = 0 }
+add_to_array = { global.second_candidate_support_array = 0 }
+add_to_array = { global.second_candidate_support_array = 0 }
+add_to_array = { global.second_candidate_support_array = 0 }

@@ -1,0 +1,238 @@
+﻿division_template = {
+	name = "NRPD Team"
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Reno Mobsters"
+	template_counter= 179
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+		demolitions_support = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "NRPD SWAT Team"
+	regiments = {
+		heavy_infantry = { x = 0 y = 0 }
+		heavy_infantry = { x = 0 y = 1 }
+		heavy_infantry = { x = 0 y = 2 }
+		heavy_infantry = { x = 1 y = 0 }
+		heavy_infantry = { x = 1 y = 1 }
+		heavy_infantry = { x = 1 y = 2 }
+	}
+}
+
+division_template = {
+	name = "NRPD Motorized SWAT Team"
+	regiments = {
+		motorized_heavy_infantry = { x = 0 y = 0 }
+		motorized_heavy_infantry = { x = 0 y = 1 }
+		motorized_heavy_infantry = { x = 0 y = 2 }
+		motorized_heavy_infantry = { x = 1 y = 0 }
+		motorized_heavy_infantry = { x = 1 y = 1 }
+		motorized_heavy_infantry = { x = 1 y = 2 }
+	}
+	support = {
+		logistics_company = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "NRPD Motorized Team"
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+	}
+	support = {
+		logistics_company = { x = 0 y = 0 }
+	}
+}
+
+units = {
+	division = {
+		name = "The Loonies"
+		location = 4946
+		division_template = "Reno Mobsters"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "The Mechanists"
+		location = 8480
+		division_template = "Reno Mobsters"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "The Antonius"
+		location = 8803
+		division_template = "Reno Mobsters"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "The Zapdudes"
+		location = 1658
+		division_template = "Reno Mobsters"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "The Wrights"
+		location = 9139
+		division_template = "Reno Mobsters"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "The Bishops"
+		location = 9153
+		division_template = "Reno Mobsters"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "The Van Graffs"
+		location = 9147
+		division_template = "Reno Mobsters"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "The Broken Brothers"
+		location = 9132
+		division_template = "Reno Mobsters"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "NRPD Motorized Team 1"
+		location = 3405
+		division_template = "NRPD Motorized Team"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "NRPD Motorized Team 2"
+		location = 8371
+		division_template = "NRPD Motorized Team"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "NRPD Motorized Swat Team 1"
+		location = 8481
+		division_template = "NRPD Motorized SWAT Team"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "NRPD Motorized Swat Team 2"
+		location = 9146
+		division_template = "NRPD Motorized SWAT Team"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "NRPD Swat Team 1"
+		location = 8809
+		division_template = "NRPD SWAT Team"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "NRPD SWAT Team 2"
+		location = 9130
+		division_template = "NRPD SWAT Team"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "NRPD Team 1"
+		location = 9154
+		division_template = "NRPD Team"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "NRPD Team 2"
+		location = 4886
+		division_template = "NRPD Team"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "NRPD Team 3"
+		location = 9126
+		division_template = "NRPD Team"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "NRPD Team 4"
+		location = 9159
+		division_template = "NRPD Team"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+}
+
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = ballistic_equipment_1
+			creator = "NEW"
+		}
+		requested_factories = 2
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = heavy_infantry_equipment_1
+			creator = "NEW"
+		}
+		requested_factories = 2
+		progress = 0.75
+		efficiency = 100
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = demolitions_equipment_1
+			creator = "NEW"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = heavy_motorized_equipment_1
+			creator = "NEW"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+}

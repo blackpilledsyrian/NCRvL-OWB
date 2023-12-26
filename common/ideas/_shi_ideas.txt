@@ -1,0 +1,541 @@
+ideas = {
+    country = {
+        shi_ghosts_of_the_pacific = {
+            picture = enclave_helmet
+
+            allowed = {
+                always = no
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            removal_cost = -1
+
+            research_bonus = {
+                air_tech_category = 0.1
+                power_armor_tech_category = 0.1
+                infantry_weapons_tech_category = 0.1
+            }
+
+            modifier = {
+                industrial_capacity_factory = 0.05
+                experience_gain_air = 0.05
+                air_range_factor = 0.1
+                stability_factor = -0.1
+                ai_focus_aviation_factor = 0.25
+            }
+        }
+        SHI_the_emperor = {
+            picture = tnk_sink_biological_research_station
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                research_speed_factor = 0.10
+                max_planning = 0.10
+                planning_speed = 0.10
+                political_power_factor = 0.1
+            }
+        }
+        united_kingdom_shi	= {
+            picture = generic_slave_collar
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            removal_cost = -1
+            modifier = {
+                conscription_factor = 0.15
+                mobilization_speed = 0.25
+                intel_network_gain = 0.5
+            }
+        }
+        shi_expert_infiltrators = {
+            picture = itz_idea_icdeb
+
+            allowed = {
+                always = no
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            removal_cost = -1
+
+            modifier = {
+                intel_network_gain = 0.5
+            }
+        }
+        shi_political_interference = {
+            picture = itz_idea_icdeb
+
+            allowed = {
+                always = no
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            removal_cost = -1
+
+            modifier = {
+                political_power_factor = -0.4
+            }
+        }
+        shi_supply_consumption = {
+            picture = generic_food_bad
+
+            allowed = {
+                always = no
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            removal_cost = -1
+
+            modifier = {
+                supply_consumption_factor = 0.2
+            }
+        }
+        shi_volunteers = {
+            picture = shi_calculations
+
+            allowed = {
+                always = no
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            removal_cost = -1
+
+            modifier = {
+                send_volunteer_size = 5
+                send_volunteer_divisions_required = -1
+            }
+        }
+        shi_mercenaries = {
+            picture = shi_calculations
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            removal_cost = -1
+            modifier = {
+                send_volunteer_size = 3
+                send_volunteer_divisions_required = -1
+            }
+        }
+        shi_farming_clearances = {
+            picture = generic_food_good
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            removal_cost = -1
+            modifier = {
+                monthly_population = 0.15
+            }
+        }
+        shi_imperial_army_1 = {
+            picture = animated_vault_boy_army
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            removal_cost = -1
+            modifier = {
+                acclimatization_hot_climate_gain_factor = 0.10
+                air_superiority_bonus_in_combat = 0.05
+                army_attack_factor = 0.05
+                army_core_attack_factor = 0.05
+                army_org_factor = 0.05
+            }
+        }
+        shi_imperial_army_2 = {
+            picture = animated_vault_boy_army
+
+            allowed = {
+                always = no
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            removal_cost = -1
+
+            modifier = {
+                acclimatization_hot_climate_gain_factor = 0.20
+                air_superiority_bonus_in_combat = 0.10
+                army_attack_factor = 0.10
+                army_core_attack_factor = 0.05
+                army_org_factor = 0.10
+                experience_gain_army = 0.075
+            }
+        }
+        shi_arcade_gannon = {
+            picture = veg_follower_advisers
+
+            allowed = {
+                always = no
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            removal_cost = -1
+
+            modifier = {
+                monthly_population = 999
+                research_speed_factor = 100
+                stability_factor = 0.15
+            }
+        }
+        shi_ncr_offense = {
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            picture = warband_without_a_home
+            removal_cost = -1
+            targeted_modifier = {
+                tag = NCR
+                attack_bonus_against = 0.1
+            }
+            modifier = {
+                army_speed_factor = 0.15
+            }
+        }
+        shi_ncr_defense = {
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            picture = steel_conquerors
+            removal_cost = -1
+
+            targeted_modifier = {
+                tag = NCR
+                defense_bonus_against = 0.1
+            }
+            modifier = {
+                dig_in_speed_factor = 0.15
+            }
+        }
+        shi_dojo_truce = {
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            picture = generic_red_star
+            removal_cost = -1
+            modifier = {
+                conscription = 0.04
+                conscription_factor = 0.3
+                mobilization_speed = 0.25
+                intel_network_gain = 0.5
+            }
+        }
+        shi_two_schools = {
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            picture = shi_dragon_school
+            removal_cost = -1
+            modifier = {
+                training_time_factor = 0.2
+                conscription = -0.02
+                political_power_gain = -0.2
+                industrial_capacity_factory = -0.1
+            }
+            research_bonus = {
+                cat_land_doctrine = -0.2
+                industry_specialisation_category = -0.2
+                infantry_tech_category = -0.2
+                electronics = -0.2
+            }
+        }
+        shi_two_schools_1a = {
+            name = shi_two_schools
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            picture = shi_dragon_school
+            removal_cost = -1
+            modifier = {
+                political_power_gain = -0.2
+                industrial_capacity_factory = -0.1
+            }
+            research_bonus = {
+                cat_land_doctrine = -0.2
+                industry_specialisation_category = -0.2
+                infantry_tech_category = -0.2
+                electronics = -0.2
+            }
+        }
+        shi_two_schools_1b = {
+            name = shi_two_schools
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            picture = shi_dragon_school
+            removal_cost = -1
+            modifier = {
+                conscription = -0.02
+                industrial_capacity_factory = -0.1
+            }
+            research_bonus = {
+                cat_land_doctrine = -0.2
+                industry_specialisation_category = -0.2
+                infantry_tech_category = -0.2
+                electronics = -0.2
+            }
+        }
+        shi_two_schools_1c = {
+            name = shi_two_schools
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            picture = shi_dragon_school
+            removal_cost = -1
+            modifier = {
+                conscription = -0.02
+                political_power_gain = -0.2
+            }
+            research_bonus = {
+                cat_land_doctrine = -0.2
+                industry_specialisation_category = -0.2
+                infantry_tech_category = -0.2
+                electronics = -0.2
+            }
+        }
+        shi_two_schools_1a_2a = {
+            name = shi_two_schools
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            picture = shi_dragon_school
+            removal_cost = -1
+            modifier = {
+                political_power_gain = -0.2
+                industrial_capacity_factory = -0.1
+            }
+            research_bonus = {
+                infantry_tech_category = -0.2
+                electronics = -0.2
+            }
+        }
+        shi_two_schools_1a_2b = {
+            name = shi_two_schools
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            picture = shi_dragon_school
+            removal_cost = -1
+            modifier = {
+                political_power_gain = -0.2
+                industrial_capacity_factory = -0.1
+            }
+            research_bonus = {
+                industry_specialisation_category = -0.2
+                electronics = -0.2
+            }
+        }
+        shi_two_schools_1a_2c = {
+            name = shi_two_schools
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            picture = shi_dragon_school
+            removal_cost = -1
+            modifier = {
+                political_power_gain = -0.2
+                industrial_capacity_factory = -0.1
+            }
+            research_bonus = {
+                industry_specialisation_category = -0.2
+                infantry_tech_category = -0.2
+            }
+        }
+        shi_two_schools_1b_2a = {
+            name = shi_two_schools
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            picture = shi_dragon_school
+            removal_cost = -1
+            modifier = {
+                conscription = -0.02
+                industrial_capacity_factory = -0.1
+            }
+            research_bonus = {
+                infantry_tech_category = -0.2
+                electronics = -0.2
+            }
+        }
+        shi_two_schools_1b_2b = {
+            name = shi_two_schools
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            picture = shi_dragon_school
+            removal_cost = -1
+            modifier = {
+                conscription = -0.02
+                industrial_capacity_factory = -0.1
+            }
+            research_bonus = {
+                industry_specialisation_category = -0.2
+                electronics = -0.2
+            }
+        }
+        shi_two_schools_1b_2c = {
+            name = shi_two_schools
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            picture = shi_dragon_school
+            removal_cost = -1
+            modifier = {
+                conscription = -0.02
+                industrial_capacity_factory = -0.1
+            }
+            research_bonus = {
+                industry_specialisation_category = -0.2
+                infantry_tech_category = -0.2
+            }
+        }
+        shi_two_schools_1c_2a = {
+            name = shi_two_schools
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            picture = shi_dragon_school
+            removal_cost = -1
+            modifier = {
+                conscription = -0.02
+                political_power_gain = -0.2
+            }
+            research_bonus = {
+                infantry_tech_category = -0.2
+                electronics = -0.2
+            }
+        }
+        shi_two_schools_1c_2b = {
+            name = shi_two_schools
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            picture = shi_dragon_school
+            removal_cost = -1
+            modifier = {
+                conscription = -0.02
+                political_power_gain = -0.2
+            }
+            research_bonus = {
+                industry_specialisation_category = -0.2
+                electronics = -0.2
+            }
+        }
+        shi_two_schools_1c_2c = {
+            name = shi_two_schools
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            picture = shi_dragon_school
+            removal_cost = -1
+            modifier = {
+                conscription = -0.02
+                political_power_gain = -0.2
+            }
+            research_bonus = {
+                industry_specialisation_category = -0.2
+                infantry_tech_category = -0.2
+            }
+        }
+        shi_navarro_tension = {
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            picture = generic_political_crisis
+            removal_cost = -1
+            modifier = {
+                stability_weekly = -0.01
+                war_support_weekly = 0.005
+                mobilization_speed = 0.05
+                consumer_goods_expected_value = 0.03
+                caps_income_modifier = -0.15
+            }
+        }
+    }
+}
+# vim: set ft=pdx ts=2 sw=2 tw=79 :

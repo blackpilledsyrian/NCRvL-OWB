@@ -1,0 +1,51 @@
+state = {
+	id = 753
+	name = "STATE_753"
+	resources={
+		water = 8
+		circuitry = 12
+		advanced = 2
+		energy = 20
+	}
+
+	history={
+		victory_points = {
+			9434 35
+		}
+		buildings = {
+			infrastructure = 6
+			arms_factory = 4
+			industrial_complex = 4
+			radar_station = 1
+			anti_air_building = 1
+			dockyard = 2
+			11157 = {
+				bunker = 2
+			}
+			11181 = {
+				bunker = 2
+			}
+			9434 = {
+				bunker = 2
+			}
+			11194 = {
+				bunker = 2
+			}
+			9589 = {
+				bunker = 2
+			}
+			9585 = {
+				naval_base = 4
+				bunker = 2
+				coastal_bunker = 6
+			}
+		}
+	}
+
+	provinces={
+		9434 9584 9585 9589 11139 11143 11157 11181 11194
+	}
+	manpower=60000
+	buildings_max_level_factor=1.000
+	state_category = metropolis
+}

@@ -1,0 +1,1222 @@
+ideas = {
+	country = {
+		NEW_a_city_of_sin = {
+			picture = VEG_Narcissism
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			cancel = {
+				NEW = {
+					has_cosmetic_tag = NEW_BROKEN
+				}
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				caps_income_modifier = 0.15
+				army_core_defence_factor = 0.2
+				army_core_attack_factor = 0.2
+				army_morale_factor = 0.25
+				attrition = -0.1
+				consumer_goods_expected_value = -0.03
+				conscription = 0.005
+				stability_factor = -0.1
+			}
+		}
+		casinofunding = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_buildings_factor = 0.05
+			}
+		}
+
+		addictswork = {
+
+			picture = generic_production_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_speed_buildings_factor = 0.2
+			}
+		}
+
+		militaryoutposts = {
+			picture = generic_production_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+
+		thefamily = {
+
+			picture = generic_morale_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				intellectuals_drift = 0.05
+			}
+		}
+
+		salvatores = {
+
+			picture = generic_morale_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				elites_drift = 0.05
+			}
+		}
+
+		mordinos = {
+
+			picture = generic_morale_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				ruler_drift = 0.05
+			}
+		}
+
+		empireofaddiction = {
+
+			picture = generic_infantry_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				war_support_factor = 0.03
+				stability_factor = 0.02
+				conscription = 0.03
+				training_time_army_factor = -0.1
+			}
+		}
+
+		myronlegacy = {
+
+			picture = generic_morale_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				support_equipment = {
+					build_cost_ic = -0.25
+					instant = yes
+				}
+			}
+
+			research_bonus = {
+				support_medical_tech_category = 0.2
+			}
+		}
+
+		vangraff_guns_rule = {
+
+			picture = generic_infantry_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.25
+					instant = yes
+				}
+				support_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+			}
+
+			research_bonus = {
+				energy_weaponry_tech_category = 0.25
+			}
+		}
+
+		houston_company = {
+
+			picture = generic_enclave_with_gun
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				power_armor_equipment = {#enclave_power_armour_equipment_1
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+
+			research_bonus = {
+				energy_weaponry_tech_category = 0.25
+			}
+		}
+
+		jetbeta = {
+
+			picture = generic_morale_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				enemy_justify_war_goal_time = 0.2
+				stability_factor = 0.03
+				war_support_factor = 0.02
+			}
+		}
+
+		sweatshop = {
+
+			picture = generic_production_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_factory_start_efficiency_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.05
+			}
+		}
+
+		bishops = {
+
+			picture = generic_morale_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				people_drift = 0.05
+			}
+		}
+
+		modoc = {
+
+			picture = generic_manpower_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				monthly_population = 0.05
+			}
+		}
+
+		contracts = {
+
+			picture = generic_manpower_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				conscription = 0.02
+			}
+		}
+
+		modocslaves = {
+
+			picture = generic_manpower_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				conscription = 0.02
+				stability_factor = -0.05
+			}
+		}
+
+		golgotharestored = {
+
+			picture = generic_morale_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				resistance_damage_to_garrison = -0.25
+			}
+		}
+
+		bishopbcfour = {
+
+			picture = generic_infantry_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				training_time_army_factor = -0.15
+			}
+		}
+
+		thequeen = {
+
+			picture = generic_morale_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				war_support_factor = 0.05
+				justify_war_goal_time = -0.15
+			}
+
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+			}
+		}
+
+		renochurch = {
+
+			picture = generic_morale_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				research_speed_factor =0.05
+				stability_factor = 0.05
+			}
+		}
+
+		renospeakeasies = {
+
+			picture = generic_morale_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_expected_value = -0.05
+				stability_factor = 0.05
+			}
+		}
+
+		newrenopolice = {
+
+			picture = generic_infantry_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				training_time_army_factor = -0.15
+				resistance_damage_to_garrison = -0.25
+			}
+		}
+
+		chopshop = {
+
+			picture = generic_vehicle_apc
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				organization_floor_modifier_2 = 25
+			}
+			equipment_bonus = {
+				motorized_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+			}
+			research_bonus = {
+				vehicle_tech_category = 0.1
+			}
+		}
+
+		deal1 = {
+
+			picture = generic_morale_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				monthly_population = 0.10
+			}
+		}
+
+		deal2 = {
+
+			picture = generic_morale_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			research_bonus = {
+				support_medical_tech_category = 0.10
+			}
+		}
+
+		deal3 = {
+
+			picture = generic_morale_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			research_bonus = {
+				infantry_tech_category = 0.075
+			}
+		}
+
+		roaringbears = {
+
+			picture = generic_infantry_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				motorized_equipment = {
+					build_cost_ic = -0.15
+					maximum_speed = 0.1
+					instant = yes
+				}
+			}
+		}
+
+		hellhammers = {
+
+			picture = generic_infantry_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				demolitions_equipment = {
+					soft_attack = 0.05
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				fireteam_equipment = {
+					soft_attack = 0.05
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+
+			modifier = {
+				max_dig_in = 5
+			}
+		}
+
+		thraddimmortals = {
+
+			picture = great_protectors
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			research_bonus = {
+				cat_land_doctrine = 0.1
+				infantry_tech_category = 0.1
+			}
+		}
+
+		capsforloyalty = {
+
+			picture = FRA_fortification_focus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_core_defence_factor = 0.05
+				army_morale_factor = 0.05
+				conscription_factor = 0.05
+				caps_expense_modifier = 0.05
+			}
+		}
+
+		renomilitarycouncil = {
+
+			picture = generic_research_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			modifier = {
+				caps_expense_modifier = 0.05
+				command_power_gain_mult = 0.15
+				experience_gain_army_factor = 0.1
+			}
+			research_bonus = {
+				cat_land_doctrine = 0.1
+			}
+		}
+
+		texas_technicians = {
+
+			picture = generic_psyker
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+			}
+			research_bonus = {
+				support_medical_tech_category = 0.10
+			}
+		}
+
+
+		van_graff_advisors = {
+
+			picture = generic_infantry_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			research_bonus = {
+				energy_weaponry_tech_category = 0.05
+				support_fireteam_energy_tech_category = 0.05
+			}
+			modifier = {
+				caps_expense_modifier = 0.05
+				organization_floor_modifier_3 = 10
+			}
+		}
+
+		oldstash = {
+
+			picture = generic_production_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+
+		mutanttact = {
+
+			picture = generic_morale_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				max_planning = 0.08
+				planning_speed = 0.15
+			}
+		}
+
+		genericmercs = {
+
+			picture = generic_infantry_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				training_time_army_factor = -0.15
+				caps_expense_modifier = 0.1
+			}
+		}
+
+		debtwarriorsreno = {
+
+			picture = generic_manpower_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				conscription = 0.01
+			}
+		}
+
+		debtwarriorsklameth = {
+
+			picture = generic_manpower_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				conscription = 0.03
+			}
+		}
+
+		vengefulsons = {
+
+			picture = generic_infantry_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				training_time_army_factor = -0.05
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					soft_attack = 0.1
+					instant = yes
+				}
+			}
+		}
+
+		pabloconquistadors = {
+
+			picture = generic_infantry_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+			}
+		}
+
+		junkcitygladiators = {
+
+			picture = generic_infantry_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				combat_robot_equipment = {
+					build_cost_ic = -0.1
+					reliability = 0.01
+					instant = yes
+				}
+				support_robot_equipment = {
+					build_cost_ic = -0.1
+					reliability = 0.01
+					instant = yes
+				}
+			}
+		}
+
+		roadpsychos = {
+
+			picture = generic_vehicle_bike_post
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				motorized_equipment = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+			}
+		}
+
+		mastersnewarmy = {
+
+			picture = G
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				non_core_manpower = 0.2
+			}
+		}
+
+		cultmutants = {
+
+			picture = G
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				conscription = 0.01
+			}
+		}
+
+		guardiansnewworld = {
+
+			picture = G
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				conscription = 0.015
+			}
+		}
+
+		tamenewworld = {
+			picture = enclave_helmet
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				justify_war_goal_time = -0.2
+			}
+		}
+
+		tametexas = {
+			picture = enclave_helmet
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				justify_war_goal_time = -0.2
+			}
+		}
+
+		brokenideals = {
+			picture = BDT_unity
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = -0.25
+			}
+		}
+		brokenideals2 = {
+			picture = BDT_unity
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = -0.20
+				local_resources_factor = 0.1
+			}
+		}
+		brokenideals3 = {
+			picture = BDT_unity
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = -0.15
+				local_resources_factor = 0.1
+				weekly_manpower = 5
+			}
+		}
+		brokenideals4 = {
+			picture = new_consensus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = -0.15
+				local_resources_factor = 0.1
+				weekly_manpower = 5
+				conscription_factor = -0.4
+			}
+		}
+		brokenidealsreject = {
+			picture = new_consensus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				local_resources_factor = 0.1
+				weekly_manpower = 15
+				conscription_factor = -0.5
+				army_attack_factor = 0.2
+				army_defence_factor = -0.05
+				exodus_national_appeal = -0.70
+			#	maximum_core_cost_increase = 25
+			}
+		}
+		brokenidealsreturn = {
+			picture = new_consensus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				local_resources_factor = 0.1
+				weekly_manpower = 5
+				stability_factor = 0.1
+				stability_weekly  = 0.003
+				exodus_national_appeal = 0.25
+			}
+		}
+		ghostsofthenight = {
+			picture = tnk_lobotomite
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				land_night_attack = 0.2
+			}
+		}
+		mutantsoldiers = {
+			picture = BDT_unity
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				weekly_manpower = 5
+			}
+		}
+		furryfury = {
+			picture = bel_bellingham_for_battle
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_core_defence_factor = 0.1
+				army_core_attack_factor = 0.05
+			}
+		}
+		consensus = {
+			picture = chc_posessed_protect
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_core_defence_factor = 0.1
+				army_core_attack_factor = 0.05
+				weekly_manpower = 5
+				land_night_attack = 0.2
+			}
+		}
+	}
+}

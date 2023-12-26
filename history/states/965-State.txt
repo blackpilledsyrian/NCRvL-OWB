@@ -1,0 +1,32 @@
+
+state={
+	id=965
+	name="STATE_965"
+	resources={
+		water=6.000
+		metal=6.000
+		energy=4.000
+		circuitry=4.000
+	}
+
+	history={
+		buildings = {
+			infrastructure = 4
+			arms_factory = 2
+			industrial_complex = 2
+
+		}
+		victory_points = {
+			1513 15
+		}
+
+	}
+
+	provinces={
+		1513 2081 4499 4500 4544 4555 7191 7192 7193 7198 12376 16998
+	}
+	manpower=19206
+	buildings_max_level_factor=1.000
+	state_category=city
+	local_supplies=0.000
+}

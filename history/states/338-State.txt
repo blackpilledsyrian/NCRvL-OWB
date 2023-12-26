@@ -1,0 +1,27 @@
+state = {
+	id = 338
+	name = "STATE_338"
+	manpower = 5527
+	state_category = town
+
+	resources = {
+		energy = 4
+		composites = 4
+		water = 6
+	}
+
+	history = {
+		victory_points = {
+			3932 5
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			3932 = { naval_base = 1 }
+		}
+	}
+
+	provinces = {
+		1968 1969 2090 3787 3932 3933 3934 3937 3938 8516
+	}
+}

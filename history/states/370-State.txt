@@ -1,0 +1,35 @@
+state = {
+	id = 370
+	name = "STATE_370"
+	manpower = 2700
+	state_category = shanty
+
+	resources = {
+		metal = 10
+		circuitry = 4
+		advanced = 2
+	}
+
+	history = {
+		victory_points = {
+			3635 5
+		}
+		victory_points = {
+			4440 3
+		}
+		victory_points = {
+			4453 5
+		}
+		victory_points = {
+			7376 1
+		}
+		buildings = {
+			infrastructure = 3
+			7376 = { naval_base = 1 }
+		}
+	}
+
+	provinces = {
+		2540 2541 2542 2543 2544 3049 3632 3633 3635 3638 3641 4440 4452 4453 4456 7376
+	}
+}

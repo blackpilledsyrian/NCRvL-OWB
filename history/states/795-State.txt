@@ -1,0 +1,29 @@
+state = {
+	id = 795
+	name = "STATE_795"
+	resources={
+		circuitry=2.000
+	}
+
+	history={
+		owner = TAA
+		add_core_of = TAA
+		buildings = {
+			infrastructure = 3
+			arms_factory = 2
+			industrial_complex = 1
+
+		}
+		victory_points = {
+			9705 10
+		}
+
+	}
+
+	provinces={
+		9699 9701 9705 9709 9711 9713
+	}
+	manpower=12000
+	buildings_max_level_factor=1.000
+	state_category=town
+}

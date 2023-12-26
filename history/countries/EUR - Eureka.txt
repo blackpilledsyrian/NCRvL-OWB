@@ -1,0 +1,230 @@
+﻿capital = 39
+oob = "EUR_2275"
+
+set_technology = {
+	infantry_tech_level_tribal = 1
+	infantry_tech_level_settler = 1
+	infantry_tech_level_scientific = 1
+	special_forces_tech_level_tribal = 1
+	special_forces_tech_level_settler = 1
+	special_forces_tech_level_scientific = 1
+	power_armour_tech_level_tribal = 1
+	power_armour_tech_level_settler = 1
+	power_armour_tech_level_scientific = 1
+	support_tech_level_tribal = 1
+	support_tech_level_settler = 1
+	support_tech_level_scientific = 1
+	vehicles_tech_level_tribal = 1
+	air_tech_level_tribal = 1
+	naval_tech_level_tribal = 1
+	naval_tech_level_settler = 1
+	tools_tech_level_tribal = 1
+	tools_tech_level_settler = 1
+	habitation_tech_level_tribal = 1
+	habitation_tech_level_settler = 1
+	exploitation_tech_level_tribal = 1
+	exploitation_tech_level_settler = 1
+	exploitation_tech_level_scientific = 1
+	electronics_tech_level_tribal = 1
+	electronics_tech_level_settler = 1
+	tribal_civilization = 1
+	settled_civilization = 1
+	tool_engineering = 1
+	standard_weaponry_tech = 1
+	melee_weaponry_tech_1 = 1
+	support_weaponry = 1
+	demolitions_weaponry_tech = 1
+	ballistic_weaponry_tech_1 = 1
+	fireteam_weaponry_tech = 1
+	anti_tank_equipment_tech_1 = 1
+	dog_equipment_tech_1 = 1
+	bike_tech_1 = 1
+	raider_reckless_aggression = 1
+	spec_ops_equipment_tech_1 = 1
+	spec_ops_equipment_tech_2 = 1
+	vehicles_tech_level_settler = 1
+	stripped_pa_tech = 1
+	weight_support_frame_pa_tech_1 = 1
+	weight_support_frame_pa_tech_2 = 1
+	simple_servo_tech = 1
+	wasteland_pa_tech = 1
+	scav_pa_tech = 1
+	basic_supply_transport_tech = 1
+	pre_agriculture_industry_tech = 1
+	elite_army = 1
+	military_heritage_unlock_tech = 1
+}
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		nautics_tech_1 = 1
+		light_navy_hull_tech_1 = 1
+		waterproof_sealing_tech = 1
+		naval_invasion_tech_1 = 1
+	}
+}
+if = {
+	limit = {
+		NOT = { has_dlc = "Man the Guns" }
+	}
+	set_technology = {
+		nautics_tech_non_mtg_1 = 1
+		light_navy_hull_tech_non_mtg_1 = 1
+		waterproof_sealing_tech_non_mtg = 1
+		naval_invasion_tech_non_mtg_1 = 1
+		naval_module_tech = 1
+	}
+}
+
+set_stability = 0.35
+set_war_support = 0.4
+set_research_slots = 5
+set_convoys = 25
+add_manpower = 1000
+
+set_politics = {
+	ruling_party = elites
+	elections_allowed = no
+}
+
+set_popularities = {
+	people = 14
+	elites = 45
+	intellectuals = 21
+	ruler = 20
+}
+
+add_ideas = {
+	eur_mercenary_army
+	ncr_sphere
+}
+
+add_timed_idea = {
+	idea = arr_rock_and_a_hard_place
+	days = 1825
+}
+
+
+
+every_unit_leader = {
+	limit = {
+		OR = {
+			has_id = 12176
+			has_id = 12177
+		}
+	}
+	set_unit_leader_flag = eureka_general
+}
+
+add_equipment_to_stockpile = {
+	type = infantry_equipment
+	amount = 50
+}
+
+
+add_equipment_to_stockpile = {
+	type = enclave_power_armour_equipment_1
+	amount = 100
+	producer = USA
+}
+
+
+add_equipment_to_stockpile = {
+	type = plasma_equipment_1
+	amount = 159
+	producer = USA
+}
+add_equipment_to_stockpile = {
+	type = spec_ops_equipment
+	amount = 25
+}
+
+create_equipment_variant = {
+	name = "River Boat"
+	type = ship_hull_light_1
+	name_group = UMB_LIGHT
+	parent_version = 0
+	modules = {
+		fixed_ship_command_slot = ship_command_module_1
+		fixed_ship_engine_slot = light_ship_oars_module
+		fixed_ship_battery_slot = ship_light_mounted_gun_module
+		# fixed_ship_battery_slot_1 = ship_light_mounted_gun_module
+		fixed_ship_detection_slot = ship_detection_module_1
+		# fixed_ship_detection_slot_1 = empty
+		fixed_ship_point_defense_slot = empty
+		mid_1_custom_slot = light_ship_oars_module
+		rear_1_custom_slot = empty
+		rear_2_custom_slot = ship_light_mounted_gun_module
+	}
+}
+
+set_country_flag = scavenging_disabled
+#Doctrine flag is sometimes changed when the gamerules/default path weights are applied so they can depend on Eureka's path. Before editing these, check the game rule on actions file
+set_country_flag = elite_doctrine_ai
+set_country_flag = is_california_nation
+
+# Trying to do valid Eureka volunteers as an array - values are region id's
+add_to_array = { volunteer_targets = 84 }
+add_to_array = { volunteer_targets = 609 }
+add_to_array = { volunteer_targets = 420 }
+add_to_array = { volunteer_targets = 48 }
+add_to_array = { volunteer_targets = 274 }
+add_to_array = { volunteer_targets = 358 }
+add_to_array = { volunteer_targets = 86 }
+add_to_array = { volunteer_targets = 32 }
+add_to_array = { volunteer_targets = 548 }
+add_to_array = { volunteer_targets = 350 }
+add_to_array = { volunteer_targets = 163 }
+add_to_array = { volunteer_targets = 63 }
+add_to_array = { volunteer_targets = 136 }
+add_to_array = { volunteer_targets = 97 }
+recruit_character = MCA_Douglas_Granite
+recruit_character = EUR_portmaster
+recruit_character = EUR_varland_varland_gillett
+recruit_character = ERB_Dwemer
+recruit_character = ERB_Scott
+recruit_character = ERB_Hamilton
+recruit_character = ERB_Shadow
+recruit_character = EUR_coastal_supplier
+recruit_character = EUR_trash_pile_scavenger
+recruit_character = EUR_portmaster_bander
+recruit_character = EUR_jeff_waters
+recruit_character = EUR_tiny_joe
+recruit_character = EUR_vega_poseidon
+recruit_character = EUR_commander_diablo
+recruit_character = EUR_jay_livard
+recruit_character = EUR_even_eleven
+recruit_character = EUR_land_doctrine_guy
+recruit_character = EUR_sir_rurikhome
+recruit_character = EUR_cordell_hunt
+recruit_character = clayton_schultz
+recruit_character = enc_thomas_kesselhut
+recruit_character = EUR_sally_johnson
+recruit_character = EUR_ms_madaket
+recruit_character = dr_henry
+recruit_character = EUR_olivia_hunt
+recruit_character = francis_mutant
+recruit_character = EUR_daisy_whitman
+recruit_character = EUR_orion_moreno
+recruit_character = EUR_richard_goldman
+recruit_character = EUR_mr_johnson
+recruit_character = EUR_air_mercenary
+recruit_character = EUR_david_orell
+recruit_character = EUR_helen_bellings
+recruit_character = EUR_george_jackson
+recruit_character = EUR_morgan_heath
+recruit_character = EUR_lisa_tess
+recruit_character = EUR_tom_barrow
+set_variable = {
+    bribe_cost = 30
+}
+set_variable = {
+    bribe_increase = 25
+}
+set_party_name = { ideology = elites  long_name = "Portmasters" name = "Portmasters" }
+set_party_name = { ideology = intellectuals  long_name = "Granite Company" name = "Granite Company" }
+set_party_name = { ideology = ruler  long_name = "Regulators" name = "Regulators" }
+set_party_name = { ideology = people  long_name = "Hubologists" name = "Hubologists" }

@@ -1,0 +1,21 @@
+
+state={
+	id=1326
+	name="STATE_1326"
+	provinces={
+		15002 15005 15009 15010 15011 15012 15017 15018 15020 15022
+	}
+	resources = {
+		metal = 8
+	}
+	history = {
+		victory_points = {
+			15002 5
+		}
+		buildings = {
+			infrastructure = 2
+		}
+	}
+	state_category = pastoral
+	manpower = 373
+}

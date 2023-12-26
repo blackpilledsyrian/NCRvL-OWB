@@ -1,0 +1,26 @@
+state={
+	id=1054
+	name="STATE_1054"
+
+	history={
+		victory_points = {
+			12527 10
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 1
+		}
+	}
+
+	resources = {
+		water = 8
+	}
+
+	provinces={
+		4419 12521 12532 12535 12522 12540 12527 12537 12526 12536
+	}
+	manpower = 6855
+	state_category = large_town
+	buildings_max_level_factor=1.000
+}

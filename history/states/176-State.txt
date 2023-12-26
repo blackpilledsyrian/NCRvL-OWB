@@ -1,0 +1,36 @@
+state = {
+	id = 176
+	name = "STATE_176"
+	manpower = 11321
+	state_category = town
+
+	resources = {
+		water = 4
+		energy = 2
+		metal = 8
+	}
+
+	history={
+		owner = BVC
+		add_core_of = BVC
+		victory_points = {
+			4677 10
+		}
+		victory_points = {
+			4701 5
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 2
+			air_base = 1
+			4701 = { naval_base = 1 }
+		}
+
+	}
+
+	provinces={
+		2052 2053 2054 2055 2056 4677 4678 4679 4699 4700 4701 4702 8551 8552 8553 8554 8555
+	}
+
+	buildings_max_level_factor=1.000
+}

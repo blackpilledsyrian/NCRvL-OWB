@@ -1,0 +1,28 @@
+state = {
+	id = 92
+	name = "STATE_92"
+	manpower = 2000
+	state_category = shanty
+
+	resources = {
+		water = 4
+		metal = 4
+	}
+
+	history = {
+		owner = PSH
+		add_core_of = PSH
+		victory_points = {
+			8449 5
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 2
+
+		}
+	}
+
+	provinces = {
+		6587 8441 8449 8447 8446 8450 8445 8448
+	}
+}

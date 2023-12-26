@@ -1,0 +1,1144 @@
+characters = {
+	CES_caesar = {
+		name = CES_CAESAR_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CES_caesar
+			}
+			army = {
+				large = GFX_Portrait_CES_caesar
+			}
+		}
+		country_leader = {
+			desc = CES_CAESAR_DESC
+			ideology = military_government
+			traits = {
+				cruel_tyrant
+				warmonger
+				conqueror_of_tribes
+			}
+			expire = "3000.01.01.01"
+			id = 10001
+		}
+		country_leader = {
+			desc = CES_CAESAR_DESC
+			ideology = tribal_council
+			traits = {
+				cruel_tyrant
+				warmonger
+				conqueror_of_tribes
+			}
+			expire = "3000.01.01.01"
+			id = 10001
+		}
+		country_leader = {
+			desc = CES_CAESAR_DESC
+			ideology = ideocracy
+			traits = {
+				cruel_tyrant
+				warmonger
+				conqueror_of_tribes
+			}
+			expire = "3000.01.01.01"
+			id = 10001
+		}
+		country_leader = {
+			desc = CES_CAESAR_DESC
+			ideology = benevolent_dictatorship
+			traits = {
+				cruel_tyrant
+				warmonger
+				conqueror_of_tribes
+			}
+			expire = "3000.01.01.01"
+			id = 10001
+		}
+	}
+	CES_lucius = {
+		name = CES_LUCIUS_NAME
+		portraits = {
+			army = {
+				small = GFX_idea_lucius_advisor
+				large = GFX_Portrait_CES_lucius
+			}
+			civilian = {
+				small = GFX_idea_lucius_advisor
+				large = GFX_Portrait_CES_lucius
+			}
+		}
+		country_leader = {
+			desc = CES_LUCIUS_DESC
+			ideology = benevolent_dictatorship
+			traits = {
+				well_liked_leader
+			}
+			expire = "3000.1.1.12"
+			id = -1
+		}
+		advisor = {
+			slot = high_command
+			idea_token = CES_lucius_command
+			ledger = army
+			allowed = {
+				original_tag = CES
+			}
+			available = {
+				not_already_hired_except_as = high_command
+				OR = {
+					custom_trigger_tooltip = {
+						tooltip = ces_crucified_lucius
+						has_unit_leader = 10004
+					}
+					is_lucius_leader = yes
+				}
+			}
+			traits = {
+				praetorian_prefect
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 5
+			}
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = CES_lucius_minister
+			allowed = {
+				original_tag = CES
+			}
+			available = {
+				not_already_hired_except_as = cultural_advisor
+				OR = {
+					custom_trigger_tooltip = {
+						tooltip = ces_crucified_lucius
+						has_unit_leader = 10004
+					}
+					is_lucius_leader = yes
+				}
+			}
+			cost = 100
+			traits = {
+				total_war_tactician
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		field_marshal = {
+			traits = {
+				strong_trait
+				enduring_trait
+			}
+			skill = 4
+			attack_skill = 2
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 3
+			legacy_id = 10004
+		}
+	}
+	CES_caius_drusus = {
+		name = CES_CAIUS_DRUSUS_NAME
+		portraits = {
+			army = {
+				large = GFX_Portrait_CES_caius_drusus
+			}
+			civilian = {
+				large = GFX_Portrait_CES_caius_drusus
+			}
+		}
+		country_leader = {
+			desc = CES_CAIUS_DRUSUS_DESC
+			ideology = oligarchy
+			traits = {
+				backroom_backstabber
+				waste_not
+			}
+			expire = "3000.1.1.12"
+			id = -1
+		}
+		corps_commander = {
+			traits = {
+				strong_trait
+				intelligent_trait
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+			legacy_id = 10009
+		}
+	}
+	CES_aurelius = {
+		name = CES_AURELIUS_NAME
+		portraits = {
+			army = {
+				small = GFX_idea_CES_phoenix
+				large = GFX_Portrait_CES_phoenix
+			}
+			civilian = {
+				small = GFX_idea_CES_phoenix
+				large = GFX_Portrait_CES_phoenix
+			}
+		}
+		country_leader = {
+			desc = CES_AURELIUS_DESC
+			ideology = oligarchy
+			traits = {
+				backroom_backstabber
+				armaments_organizer
+			}
+			expire = "3000.1.1.12"
+			id = -1
+		}
+		advisor = {
+			slot = research_advisor
+			idea_token = CES_aurelius_command
+			ledger = army
+			allowed = {
+				original_tag = CES
+			}
+			available = {
+				not_already_hired_except_as = research_advisor
+				OR = {
+					is_caesar_leader = yes
+					is_aurelius_leader = yes
+				}
+			}
+			traits = {
+				armipotent
+			}
+			research_bonus = {
+				cat_terror_tactics = 0.15
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = CES_aurelius_minister
+			allowed = {
+				original_tag = CES
+			}
+			available = {
+				not_already_hired_except_as = economic_advisor
+				OR = {
+					is_caesar_leader = yes
+					is_aurelius_leader = yes
+				}
+			}
+			cost = 100
+			traits = {
+				praefectus_castrorum
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		corps_commander = {
+			traits = {
+				strong_trait
+				intelligent_trait
+			}
+			skill = 4
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 4
+			legacy_id = 10007
+		}
+	}
+	CES_vulpes = {
+		instance = {
+			allowed = {
+				NOT = {
+					has_dlc = "La Resistance"
+				}
+			}
+			name = CES_VULPES_NAME
+			portraits = {
+				army = {
+					large = GFX_Portrait_CES_Vulpes_Inculta
+					small = GFX_idea_vulpes_inculta_advisor
+				}
+				civilian = {
+					large = GFX_Portrait_CES_Vulpes_Inculta
+					small = GFX_idea_vulpes_inculta_advisor
+				}
+			}
+			field_marshal = {
+				traits = {
+					perceptive_trait
+					intelligent_trait
+				}
+				skill = 4
+				attack_skill = 2
+				defense_skill = 2
+				planning_skill = 5
+				logistics_skill = 3
+				legacy_id = -1
+			}
+			country_leader = {
+				desc = CES_VULPES_DESC
+				ideology = oligarchy
+				traits = {
+					backroom_backstabber
+					prince_of_terror
+				}
+				expire = "3000.1.1.12"
+				id = -1
+			}
+			advisor = {
+				slot = high_command
+				idea_token = CES_vulpes_high_command
+				ledger = army
+				allowed = {
+					OR = {
+						original_tag = CES
+						original_tag = TWO
+					}
+				}
+				available = {
+					OR = {
+						is_caesar_leader = yes
+						is_vulpes_leader = yes
+						tag = TWO
+					}
+					not_already_hired_except_as = high_command
+				}
+				traits = {
+					earth_scorcher
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 10
+				}
+			}
+			advisor = {
+				slot = cultural_advisor
+				idea_token = CES_vulpes_cultural_advisor
+				allowed = {
+					OR = {
+						original_tag = CES
+						original_tag = TWO
+					}
+				}
+				available = {
+					OR = {
+						is_caesar_leader = yes
+						is_vulpes_leader = yes
+						tag = TWO
+					}
+					not_already_hired_except_as = cultural_advisor
+				}
+				traits = {
+					fox_cruelty
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 10
+				}
+			}
+		}
+		instance = {
+			allowed = {
+				has_dlc = "La Resistance"
+			}
+			name = CES_VULPES_NAME
+			portraits = {
+				army = {
+					large = GFX_Portrait_CES_Vulpes_Inculta
+					small = GFX_idea_vulpes_inculta_advisor
+				}
+				civilian = {
+					large = GFX_Portrait_CES_Vulpes_Inculta
+					small = GFX_idea_vulpes_inculta_advisor
+				}
+			}
+			country_leader = {
+				desc = CES_VULPES_DESC
+				ideology = oligarchy
+				traits = {
+					backroom_backstabber
+					prince_of_terror
+				}
+				expire = "3000.1.1.12"
+				id = -1
+			}
+			field_marshal = {
+				traits = {
+					perceptive_trait intelligent_t
+				}
+				skill = 4
+				attack_skill = 2
+				defense_skill = 2
+				planning_skill = 5
+				logistics_skill = 3
+				legacy_id = -1
+			}
+			advisor = {
+				slot = high_command
+				idea_token = CES_vulpes_high_command
+				ledger = army
+				allowed = {
+					OR = {
+						original_tag = CES
+						original_tag = TWO
+					}
+				}
+				available = {
+					OR = {
+						is_caesar_leader = yes
+						is_vulpes_leader = yes
+						tag = TWO
+					}
+					not_already_hired_except_as = high_command
+				}
+				traits = {
+					earth_scorcher
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 10
+				}
+			}
+			advisor = {
+				slot = cultural_advisor
+				idea_token = CES_vulpes_cultural_advisor
+				allowed = {
+					OR = {
+						original_tag = CES
+						original_tag = TWO
+					}
+				}
+				available = {
+					OR = {
+						is_caesar_leader = yes
+						is_vulpes_leader = yes
+						tag = TWO
+					}
+					not_already_hired_except_as = cultural_advisor
+				}
+				traits = {
+					fox_cruelty
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 10
+				}
+			}
+		}
+	}
+	CES_malpais = {
+		name = CES_MALPAIS_NAME
+		portraits = {
+			army = {
+				large = GFX_Portrait_CES_malpais
+				small = GFX_idea_CES_malpais
+			}
+			civilian = {
+				large = GFX_Portrait_CES_malpais
+				small = GFX_idea_CES_malpais
+			}
+		}
+		country_leader = {
+			desc = CES_MALPAIS_DESC
+			ideology = warlordship
+			traits = {
+				cruel_tyrant
+			}
+			expire = "3000.1.1.12"
+			id = -1
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = CES_malpais_army_chief
+			ledger = army
+			allowed = {
+				original_tag = CES
+			}
+			available = {
+				OR = {
+					has_country_leader = {
+						character = CES_malpais
+					}
+					has_country_leader = {
+						character = CES_caesar
+					}
+				}
+				NOT = {
+					has_country_flag = CES_burned_man
+				}
+			}
+			traits = {
+				owb_army_chief_offensive_3
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	CES_gaius_duilius = {
+		name = CES_gaius_duilius_name
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor19
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor19
+			}
+		}
+		advisor = {
+			slot = navy_chief
+			idea_token = CES_gaius_duilius_navy_chief
+			ledger = navy
+			allowed = {
+				original_tag = CES
+			}
+			available = {
+				has_completed_focus = ces_legionary_naval_academy
+			}
+			traits = {
+				river_pirate
+			}
+			modifier = {
+				cat_naval_river_fleet_doctrine_cost_factor = -0.25
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	CES_hashkeh_naabaah = {
+		name = CES_hashkeh_naabaah_name
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_hashkeh_chief_of_army
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_hashkeh_chief_of_army
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = CES_hashkeh_naabaah_army_chief
+			ledger = army
+			allowed = {
+				original_tag = CES
+			}
+			available = {
+			}
+			traits = {
+				owb_army_chief_offensive_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	CES_preist_david = {
+		name = CES_preist_david_name
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_david
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_david
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = CES_preist_david_high_command
+			ledger = army
+			allowed = {
+				original_tag = CES
+			}
+			available = {
+				OR = {
+					controls_state = 516
+					any_other_country = {
+						is_subject_of = CES
+						controls_state = 516
+					}
+				}
+			}
+			traits = {
+				war_shaman
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	CES_preist_selene = {
+		name = CES_preist_selene_name
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_selene_advisor
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_selene_advisor
+			}
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = CES_preist_selene_cultural_advisor
+			allowed = {
+				original_tag = CES
+			}
+			available = {
+				OR = {
+					controls_state = 516
+					any_other_country = {
+						is_subject_of = CES
+						controls_state = 516
+					}
+				}
+			}
+			traits = {
+				mother_shaman
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	CES_bares_his_teeth = {
+		name = CES_bares_his_teeth_name
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_bares_his_teeth_command
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_bares_his_teeth_command
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = CES_bares_his_teeth_high_command
+			ledger = army
+			allowed = {
+				original_tag = CES
+			}
+			available = {
+				not_already_hired_except_as = high_command
+				OR = {
+					owns_state = 525
+					LAC = {
+						owns_state = 525
+					}
+				}
+			}
+			traits = {
+				war_dog
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = CES_bares_his_teeth_economic_advisor
+			allowed = {
+				original_tag = CES
+			}
+			available = {
+				not_already_hired_except_as = economic_advisor
+				OR = {
+					owns_state = 525
+					LAC = {
+						owns_state = 525
+					}
+				}
+			}
+			traits = {
+				caesars_hound
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	CES_carmine = {
+		name = CES_carmine_name
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_carmine_command
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_carmine_command
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = CES_carmine_high_command
+			ledger = army
+			allowed = {
+				original_tag = CES
+			}
+			available = {
+				OR = {
+					has_completed_focus = ces_cowboy_country
+				}
+				not_already_hired_except_as = high_command
+			}
+			traits = {
+				bushranger
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = CES_carmine_cultural_advisor
+			allowed = {
+				original_tag = CES
+			}
+			available = {
+				OR = {
+					has_completed_focus = ces_surplus
+				}
+				not_already_hired_except_as = cultural_advisor
+			}
+			traits = {
+				arizona_ranger
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	CES_earnhardt = {
+		name = CES_earnhardt_name
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor24
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor24
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = CES_earnhardt_high_command
+			ledger = army
+			allowed = {
+				original_tag = CES
+			}
+			available = {
+				has_completed_focus = ces_legend_cannonball
+				not_already_hired_except_as = high_command
+			}
+			traits = {
+				pit_lord
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = CES_earnhardt_economic_advisor
+			allowed = {
+				original_tag = CES
+			}
+			available = {
+				TWO = {
+					is_subject_of = CES
+				}
+				has_completed_focus = ces_ride_will_faster
+				not_already_hired_except_as = economic_advisor
+			}
+			traits = {
+				speed_demon
+			}
+			modifier = {
+				local_resources_factor = 0.05
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	CES_lilly_blair = {
+		name = CES_lilly_blair_name
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_VLT_advisor_8
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_VLT_advisor_8
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = CES_lilly_blair_economic_advisor
+			allowed = {
+				original_tag = CES
+			}
+			available = {
+				has_completed_focus = ces_that_happy_day
+			}
+			traits = {
+				phoenix_ties
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	CES_dale_barton = {
+		name = CES_dale_barton_name
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor5
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor5
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = CES_dale_barton_economic_advisor
+			allowed = {
+				original_tag = CES
+			}
+			available = {
+				has_completed_focus = ces_hire_dale_barton
+			}
+			modifier = {
+				trade_opinion_factor = 0.2
+			}
+			traits = {
+				dale_barton_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	CES_frank_ghoul = {
+		name = CES_frank_ghoul_name
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_ghoul_generic5
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_ghoul_generic5
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = CES_frank_ghoul_economic_advisor
+			allowed = {
+				original_tag = CES
+			}
+			available = {
+				has_completed_focus = ces_reservation_frank
+			}
+			traits = {
+				frank_ghoul_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	CES_guillermo_rossi = {
+		name = CES_guillermo_rossi_name
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor6
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor6
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = CES_guillermo_rossi_economic_advisor
+			allowed = {
+				original_tag = CES
+			}
+			available = {
+				has_completed_focus = ces_guillermo_rossi
+			}
+			modifier = {
+				production_factory_max_efficiency_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.05
+			}
+			traits = {
+				head_trader
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	CES_angry_warrior = {
+		name = CES_angry_warrior_name
+		portraits = {
+			army = {
+				large = GFX_Portrait_NAV_hashkesh
+				small = GFX_idea_hashkeh_chief_of_army
+			}
+			civilian = {
+				large = GFX_Portrait_NAV_hashkesh
+				small = GFX_idea_hashkeh_chief_of_army
+			}
+		}
+	}
+	CES_caesar_council = {
+		name = CES_CAESAR_COUNCIL_NAME
+		portraits = {
+			civilian = {
+				large = "GFX_Portrait_Puppet_Leader_CES"
+			}
+		}
+	}
+	CES_davison_and_antler = {
+		name = CES_davison_and_antler_name
+		portraits = {
+			army = {
+				large = GFX_Portrait_CES_davison_and_antler
+			}
+			civilian = {
+				large = GFX_Portrait_CES_davison_and_antler
+			}
+		}
+	}
+	CES_keen = {
+		name = CES_keen_name
+		portraits = {
+			army = {
+				large = GFX_Portrait_CES_keen
+			}
+			civilian = {
+				large = GFX_Portrait_CES_keen
+			}
+		}
+	}
+	CES_shale = {
+        name = SHA_SHALE_NAME
+        portraits = {
+			army = {
+				large = GFX_Portrait_Shale_Animated
+			}
+        }
+    }
+	CES_Lanius = {
+        name = LAC_LANIUS_NAME
+        portraits = {
+			civilian = {
+				large = GFX_Portrait_LAC_lanius
+				small = GFX_idea_LAC_lanius
+			}
+			army = {
+				large = GFX_Portrait_LAC_lanius
+				small = GFX_idea_LAC_lanius
+			}
+        }
+    }
+	CES_measles = {
+		name = CES_measles_name
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CES_Measles
+				small = GFX_idea_measles_cultural_advisor
+			}
+			army = {
+				large = GFX_Portrait_CES_Measles
+				small = GFX_idea_measles_cultural_advisor
+			}
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = CES_measles_high_command
+			allowed = {
+				original_tag = CES
+			}
+			available = {
+				has_completed_focus = ces_caius_horatio_green_measles
+			}
+			research_bonus = {
+				infantry_weapons_tech_category = 0.15
+			}
+			traits = {
+				measles_ghoul_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	CES_green = {
+		name = CES_green_name
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CES_Green
+				small = GFX_idea_green_high_command
+			}
+			army = {
+				large = GFX_Portrait_CES_Green
+				small = GFX_idea_green_high_command
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = CES_green_high_command
+			allowed = {
+				original_tag = CES
+			}
+			available = {
+				has_completed_focus = ces_caius_horatio_green_measles
+			}
+			traits = {
+				green_ghoul_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	CES_horatio = {
+		name = CES_horatio_name
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_CES_Horatio
+				small = GFX_idea_horatio_cultural_advisor
+			}
+			army = {
+				large = GFX_Portrait_CES_Horatio
+				small = GFX_idea_horatio_cultural_advisor
+			}
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = CES_horatio_cultural_advisor
+			allowed = {
+				original_tag = CES
+			}
+			available = {
+				has_completed_focus = ces_caius_horatio_green_measles
+			}
+			traits = {
+				horatio_ghoul_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	CES_airforce = {
+		name = "Centurion Germanicus"
+		portraits = {
+			army = {
+				small = GFX_idea_generic_advisor41
+			}
+		}
+		advisor = {
+			slot = air_chief
+			idea_token = CES_airforce_air_chief
+			ledger = air
+			allowed = {
+				tag = CES
+			}
+			traits = {
+				settler_air_buff
+			}
+			modifier = {
+				cat_elaborate_disruption_doctrine_cost_factor = -0.25
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	CES_fantasticus = {
+		name = CES_FANTASTICUS_NAME
+		portraits = {
+			army = {
+				small = GFX_idea_CES_fantasticus
+			}
+			civilian = {
+				small = GFX_idea_CES_fantasticus
+			}
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = CES_fantasticus_minister
+			allowed = {
+				OR = {
+					original_tag = CES
+					tag = VLP
+				}
+			}
+			visible = {
+				has_country_flag = vlp_fanasticus_advisor
+			}
+			cost = 100
+			traits = {
+				spy_on_masters
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	CES_debug_centurion = {
+		name = CES_debug_centurion_name
+		portraits = {
+			army = {
+				large = "GFX_Portrait_CES_debug_centurion"
+			}
+			civilian = {
+				large = "GFX_Portrait_CES_debug_centurion"
+			}
+		}
+	}
+}

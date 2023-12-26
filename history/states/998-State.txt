@@ -1,0 +1,24 @@
+state={
+	id=998
+	name="STATE_998"
+
+	resources = {
+		water = 2
+	}
+	history={
+		victory_points = {
+			7279 3
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+		}
+	}
+
+	provinces={
+		2477 2476 7243 2473 7279 5134 1527 5122
+	}
+	manpower = 4360
+	state_category = shanty
+	buildings_max_level_factor=1.000
+}

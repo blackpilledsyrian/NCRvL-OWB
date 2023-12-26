@@ -1,0 +1,26 @@
+state = {
+	id = 540
+	name = "STATE_540"
+	manpower = 9500
+	state_category = town
+
+	history = {
+		victory_points = {
+			1938 5
+		}
+		victory_points = {
+			4322 15
+		}
+		victory_points = {
+			4319 3
+		}
+		buildings = {
+			infrastructure = 3
+			4319 = { naval_base = 1 }
+		}
+	}
+
+	provinces = {
+		1493 1932 1938 1949 2526 4012 4013 4014 4015 4019 4319 4321 4322 4332 4333 7487
+	}
+}

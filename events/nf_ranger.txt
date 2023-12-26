@@ -1,0 +1,93 @@
+﻿add_namespace = nf_des
+
+
+country_event = {
+	id = nf_des.1
+	title = nf_des.1.t
+	desc = nf_des.1.d
+	picture = GFX_event_DES_rangers_symbol
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_des.1.a
+		add_political_power = 100
+	}
+}
+
+country_event = {
+	id = nf_des.2
+	title = nf_des.2.t
+	desc = nf_des.2.d
+	picture = GFX_event_DES_rangers_symbol
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_des.2.a
+		add_stability = 0.05
+	}
+}
+
+country_event = {
+	id = nf_des.3
+	title = nf_des.3.t
+	desc = nf_des.3.d
+	picture = GFX_event_DES_rangers_symbol
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_des.3.a
+		add_war_support = 0.05
+	}
+}
+
+country_event = {
+	id = nf_des.4
+	title = nf_des.4.t
+	desc = nf_des.4.d
+	picture = GFX_event_DES_rangers_symbol
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_des.4.a
+		country_event = nf_des.5
+	}
+}
+
+country_event = {
+	id = nf_des.5
+	title = nf_des.5.t
+	desc = nf_des.5.d
+	picture = GFX_event_DES_rangers_symbol
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_des.5.b
+		country_event = nf_des.7
+		ai_chance = {
+			modifier = {
+				DES_has_ai_behavior_wasteland_rangers = yes
+				factor = 0
+			}
+		}
+	}
+}
+
+country_event = {
+	id = nf_des.7
+	title = nf_des.7.t
+	desc = nf_des.7.d
+	picture = GFX_event_DES_rangers_symbol
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_des.7.a
+		kill_ideology_leader = ruler
+		complete_national_focus = des_vargas_wins
+	}
+}

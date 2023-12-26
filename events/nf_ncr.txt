@@ -1,0 +1,6223 @@
+﻿add_namespace = ncr_generic
+
+add_namespace = ncr_early
+
+country_event = { # Vault 13's Hero
+	id = ncr_early.1
+	title = ncr_early.1.t
+	desc = ncr_early.1.d
+	picture = GFX_event_NCR_startup
+
+	is_triggered_only = yes
+	option = {
+		name = ncr_early.1.a
+		add_ideas = ncr_idea_repay_debts
+		ai_chance = {
+			base = 2
+		}
+	}
+	option = {
+		name = ncr_early.1.b
+		add_ideas = ncr_idea_kindness_to_strangers
+		ai_chance = {
+			base = 0	# AI NCR has more trouble managing stability and war support and should try to limit debuffs to them
+		}
+	}
+	option = {
+		name = ncr_early.1.c
+		add_ideas = ncr_idea_self_sacrifice
+		ai_chance = {
+			base = 2
+		}
+	}
+
+	option = {
+		name = ncr_early.1.e
+		add_political_power = 30
+	}
+}
+
+country_event = { # The Republic's Golden Years
+	id = ncr_early.2
+	title = ncr_early.2.t
+	desc = ncr_early.2.d
+	picture = GFX_event_NCR_startup
+
+	is_triggered_only = yes
+	option = {
+		name = ncr_early.2.a
+		489 = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 5
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 5
+		}
+		1 = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 5
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 5
+		}
+		589 = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 5
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 5
+		}
+	}
+	option = {
+		name = ncr_early.2.b
+		every_owned_state = {
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+			add_resource = {
+				type = metal
+				amount = 2
+			}
+		}
+	}
+
+	option = {
+		name = ncr_early.2.c
+		245 = {
+			add_building_construction = {
+				type = arms_factory
+				level = 5
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = dockyard
+				level = 5
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 10
+		}
+		141 = {
+			add_building_construction = {
+				type = arms_factory
+				level = 5
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = dockyard
+				level = 5
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 10
+		}
+		591 = {
+			add_building_construction = {
+				type = arms_factory
+				level = 5
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = dockyard
+				level = 5
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 10
+		}
+		every_owned_state = {
+			add_building_construction = {
+				type = bunker
+				level = 4
+				instant_build = yes
+				province = {
+					all_provinces = yes
+					limit_to_victory_point = yes
+				}
+			}
+			add_state_modifier = {
+				modifier = {
+					local_supplies_for_controller = 0.1
+				}
+			}
+		}
+		ai_chance = {
+			base = 0	# AI NCR won't benefit much from this
+		}
+	}
+
+	option = {
+		name = ncr_early.2.e
+		every_owned_state = {
+			add_extra_state_shared_building_slots = 2
+			add_resource = {
+				type = water
+				amount = 2
+			}
+		}
+	}
+}
+
+country_event = { # Stagnation at the Zenith
+	id = ncr_early.3
+	title = ncr_early.3.t
+	desc = ncr_early.3.d
+	picture = GFX_event_NCR_startup
+
+	is_triggered_only = yes
+	option = {
+		name = ncr_early.3.a
+		253 = {
+			remove_building = {
+				type = arms_factory
+				level = 1
+			}
+			damage_building = {
+				type = arms_factory
+				damage = 1
+			}
+		}
+		custom_effect_tooltip = ncr_early_factory_output_tt
+		add_to_variable = { ncr_industrial_factories = -0.05 }
+		force_update_dynamic_modifier = yes
+	}
+
+	option = {
+		name = ncr_early.3.b
+		add_stability = -0.075
+		add_war_support = 0.025
+		custom_effect_tooltip = ncr_early_caps_income_tt
+		add_to_variable = { ncr_caps_modifier = -0.05 }
+		force_update_dynamic_modifier = yes
+	}
+	option = {
+		name = ncr_early.3.c
+		set_temp_variable = { caps_to_add = 50 }
+		add_caps = yes
+		add_political_power = -50
+		custom_effect_tooltip = ncr_early_political_power_tt
+		add_to_variable = { ncr_pp_support = -0.05 }
+		force_update_dynamic_modifier = yes
+	}
+}
+
+country_event = { # Crises in Calfifornia
+	id = ncr_early.4
+	title = ncr_early.4.t
+	desc = ncr_early.4.d
+
+	is_triggered_only = yes
+	option = {
+		name = ncr_early.4.a
+		add_political_power = 20
+	}
+}
+news_event = { # Dharma
+	id = ncr_early.18
+	title = ncr_early.18.t
+	desc = ncr_early.18.d
+	picture = GFX_event_generic_desert_1
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_early.18.a
+		add_political_power = 20
+	}
+}
+
+
+news_event = { # Contesting the 2278 Senate Election
+	id = ncr_early.5
+	title = ncr_early.5.t
+	desc = ncr_early.5.d
+	picture = GFX_event_NCR_congress
+	is_triggered_only = yes
+	option = {
+		name = ncr_early.5.a
+		add_political_power = 20
+		news_event = ncr_early.17
+	}
+}
+
+news_event = { # The Collapse of the Allgood Truce
+	id = ncr_early.6
+	title = ncr_early.6.t
+	desc = ncr_early.6.d
+
+	is_triggered_only = yes
+	show_major = {
+		is_new_california_member = yes
+	}
+
+	option = { # NCR / The Brotherhood started it!
+		name = ncr_early.6.a
+		trigger = {
+			is_new_california_member = yes
+		}
+		add_stability = -0.05
+		if = {
+			limit = { has_idea = ncr_bos_idea_allgood_truce }
+			swap_ideas = {
+				remove_idea = ncr_bos_idea_allgood_truce
+				add_idea = ncr_bos_idea_hostility_resumed
+			}
+		}
+		NCR = {
+			complete_national_focus = ncr_motion_of_no_confidence
+			#set_country_flag = ncr_vote_no_confidence
+		}
+	}
+
+}
+
+country_event = { # Allgood's Fury
+	id = ncr_early.7
+	title = ncr_early.7.t
+	desc = ncr_early.7.d
+	picture = GFX_event_NCR_mojave_camp
+	is_triggered_only = yes
+	option = {
+		name = ncr_early.7.a
+		custom_effect_tooltip = ncr_early.7.a_tt
+		complete_national_focus = ncr_support_kimball
+		activate_mission = ncr_kimball_murphy_vonc_countdown
+		add_stability = -0.10
+		set_country_flag = ncr_vote_no_confidence
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 0
+				OR = {
+					NCR_has_ai_behavior_allgood = yes
+					NCR_has_ai_behavior_electoral_deadlock_allgood = yes
+					NCR_has_ai_behavior_hayes = yes
+				}
+			}
+		}
+	}
+	option = {
+		name = ncr_early.7.b
+		custom_effect_tooltip = ncr_early.7.a_tt
+		complete_national_focus = ncr_support_allgood
+		activate_mission = ncr_kimball_murphy_vonc_countdown
+		add_stability = -0.10
+		set_country_flag = ncr_vote_no_confidence
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 0
+				OR = {
+					NCR_has_ai_behavior_kimball = yes
+					NCR_has_ai_behavior_electoral_deadlock_kimball = yes
+				}
+			}
+		}
+	}
+}
+
+country_event = { # This Congress has No Confidence in President Kimball
+	id = ncr_early.8
+	title = ncr_early.8.t
+	desc = ncr_early.8.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_early.8.a
+		custom_effect_tooltip = ncr_early.8.a_tt
+		set_country_flag = kimball_retires
+		retire_country_leader = yes
+		promote_character = NCR_allgood_murphy
+		complete_national_focus = ncr_new_hand_on_the_tiller
+		if = {
+			limit = {
+				NOT = { has_idea = ncr_corruption_tolerated }
+				NOT = { has_idea = ncr_corruption_overlooked }
+			}
+			add_ideas = ncr_corruption_overlooked
+		}
+	}
+}
+
+country_event = { # This Congress Retains Confidence in President Kimball
+	id = ncr_early.9
+	title = ncr_early.9.t
+	desc = ncr_early.9.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_early.9.a
+		custom_effect_tooltip = ncr_early.9.a_tt
+		set_country_flag = allgood_retires
+		complete_national_focus = ncr_kimball_vindication
+	}
+}
+
+country_event = { # The Senate Establishes the Maxson Probe
+	id = ncr_early.10
+	title = ncr_early.10.t
+	desc = ncr_early.10.d
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = { activate_mission = ncr_vonc_a_finish_probe }
+	}
+	option = {
+		name = ncr_early.10.a
+		set_temp_variable = { vonc_change = 5 }
+		increase_allgood_score = yes
+		effect_tooltip = {
+			activate_mission = ncr_vonc_a_finish_probe
+		}
+	}
+}
+
+country_event = { # Kimball Moves to Shut the Maxson Probe
+	id = ncr_early.11
+	title = ncr_early.11.t
+	desc = ncr_early.11.d
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = { activate_mission = ncr_vonc_a_finish_probe }
+	}
+	option = {
+		name = ncr_early.11.a
+		set_temp_variable = { vonc_change = 5 }
+		increase_kimball_score = yes
+		effect_tooltip = {
+			activate_mission = ncr_vonc_k_shut_probe
+		}
+	}
+}
+
+country_event = { # Gang Violence in the Hub
+	id = ncr_early.12
+	title = ncr_early.12.t
+	desc = ncr_early.12.d
+	picture = GFX_event_generic_ruins_3
+
+	is_triggered_only = yes
+	option = {
+		name = ncr_early.12.a
+		add_timed_idea = {
+			idea = ncr_idea_hub_chaos
+			days = 365
+		}
+		custom_effect_tooltip = ncr_early.12.a_tt
+		add_war_support = -0.05
+		add_to_variable = { ncr_consumer_goods = 0.02 }
+		force_update_dynamic_modifier = yes
+		1 = {
+			remove_building = {
+				type = industrial_complex
+				level = 2
+			}
+			set_temp_variable = {
+				development_to_add = -0.5
+			}
+			add_development_to_node = yes
+			set_state_flag = {
+				flag = recently_developed_node
+				days = 90
+				value = 1
+			}
+		}
+		set_country_flag = ncr_hub_intervention
+		ai_chance = {
+			base = 0
+		}
+	}
+	option = {
+		name = ncr_early.12.b
+		add_timed_idea = {
+			idea = ncr_idea_hub_chaos
+			days = 365
+		}
+		add_stability = -0.05
+		add_political_power = -25
+		1 = {
+			remove_building = {
+				type = industrial_complex
+				level = 2
+			}
+			set_temp_variable = {
+				development_to_add = -0.5
+			}
+			add_development_to_node = yes
+			set_state_flag = {
+				flag = recently_developed_node
+				days = 90
+				value = 1
+			}
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = { # Those the War Left Behind
+	id = ncr_early.13
+	title = ncr_early.13.t
+	desc = ncr_early.13.d
+	picture = GFX_event_NCR_watch
+
+	is_triggered_only = yes
+	option = {
+		name = ncr_early.13.a
+		add_timed_idea = {
+			idea = ncr_idea_war_left_behind
+			days = 365
+		}
+		custom_effect_tooltip = ncr_early.13.a_tt
+	}
+}
+
+country_event = {
+	id = ncr_early.14
+	title = ncr_early.14.t
+	desc = ncr_early.14.d
+	picture = GFX_event_NCR_caravan
+
+	is_triggered_only = yes
+	option = {
+		name = ncr_early.14.a
+		set_temp_variable = { caps_to_add = 125 }
+		add_caps = yes
+		add_manpower = 400
+		add_political_power = 50
+	}
+}
+
+country_event = {
+	id = ncr_early.15
+	title = ncr_early.15.t
+	desc = ncr_early.15.d
+	picture = GFX_event_NCR_helios_one
+
+	is_triggered_only = yes
+	option = {
+		name = ncr_early.15.a
+	}
+}
+
+news_event = { # More info on leaders
+	id = ncr_early.17
+	title = ncr_early.17.t
+	desc = ncr_early.17.d
+	picture = GFX_event_NCR_congress
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_early.17.a
+		add_political_power = 10
+	}
+}
+news_event = { # More info on leaders
+	id = ncr_early.19
+	title = ncr_early.19.t
+	desc = ncr_early.19.d
+	picture = GFX_event_NCR_mojave_camp
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_early.19.a
+		add_political_power = 10
+		add_to_variable = { OldGuardParty = 1 }
+		hidden_effect = {
+			add_popularity = {
+				ideology = intellectuals
+				popularity = 0.05
+			}
+		}
+		custom_effect_tooltip = lynette_support_tt
+	}
+}
+
+news_event = { # The Office of Science and Industry
+	id = ncr_early.20
+	title = ncr_early.20.t
+	desc = {
+		text = ncr_early.20.da
+		trigger = {
+			NOT = {
+				NCR = {
+					has_country_leader = {
+						character = NCR_grant_c_hayes
+						ruling_only = yes
+					}
+				}
+			}
+		}
+	}
+	desc = {
+		text = ncr_early.20.db
+		trigger = {
+			NCR = {
+				has_country_leader = {
+					character = NCR_grant_c_hayes
+					ruling_only = yes
+				}
+			}
+		}
+	}
+	picture = GFX_event_helios_one_sign
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_early.20.a
+		add_ideas = ncr_osi_expanded_idea
+		add_to_tech_sharing_group = osi_research_pact
+	}
+}
+news_event = { # Ddenounced
+	id = ncr_early.21
+	title = ncr_early.21.t
+	desc = ncr_early.21.d
+	picture = GFX_event_NCR_mojave_camp
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_early.21.a
+		add_war_support = -0.10
+	}
+}
+add_namespace = ncr_kimball
+
+country_event = { # President Kimball's Inagural Address
+	id = ncr_kimball.1
+	title = ncr_kimball.1.t
+	desc = ncr_kimball.1.d
+	picture = GFX_event_NCR_victory
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_kimball.1.a
+	}
+}
+
+country_event = { # President Kimball's Second-In-Command
+	id = ncr_kimball.2
+	title = ncr_kimball.2.t
+	desc = ncr_kimball.2.d
+	picture = GFX_event_NCR_camp
+
+	is_triggered_only = yes
+
+	option = { # Anton Flynn, the Baron's favourite
+		name = ncr_kimball.2.a
+		set_country_flag = ncr_vp_flynn
+	}
+
+	option = { # Jim Marshal, the military man
+		name = ncr_kimball.2.b
+		set_country_flag = ncr_vp_marshall
+	}
+
+	option = { # Grant Hayes, the pragmatic dreamer
+		name = ncr_kimball.2.c
+		set_country_flag = ncr_vp_hayes
+	}
+}
+
+country_event = { # Reno Annexation
+	id = ncr_kimball.3
+	title = ncr_kimball.3.t
+	desc = ncr_kimball.3.d
+	picture = GFX_event_NCR_victory
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_kimball.3.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				add = 100
+			}
+		}
+		hidden_effect = {
+			every_state = {
+				limit = { is_owned_by = NEW }
+				set_state_flag = do_not_exodus
+			}
+			NEW = {
+				join_new_california = yes
+				every_subject_country = {
+					join_new_california = yes
+					end_puppet = NEW
+					NCR = {
+						puppet = PREV
+					}
+				}
+			}
+			every_country = {
+				limit = {
+					OR = {
+						is_neighbor_of = NCR
+						news_is_west_tag = yes
+					}
+				}
+				news_event = { id = ncr_kimball.4 hours = 6 random_hours = 3 }
+			}
+		}
+		NCR = {
+			NCR = { change_tag_from = ROOT }
+			annex_country = {
+				target = NEW
+				transfer_troops = yes
+			}
+			every_state = {
+				limit = { is_core_of = NEW }
+				add_core_of = NCR
+			}
+		}
+		hidden_effect = {
+			every_state = {
+				limit = { is_core_of = NEW }
+				clr_state_flag = do_not_exodus
+			}
+		}
+	}
+	option = {
+		name = ncr_kimball.3.b
+		ai_chance = {
+			base = 0
+		}
+		if = {
+			limit = {
+				can_use_autonomy_system = yes
+			}
+			NCR = {
+				NEW = {
+					become_puppet = yes
+				}
+				set_autonomy = {
+					target = NEW
+					autonomy_state = autonomy_protected_state
+				}
+			}
+		}
+		else = {
+			NCR = {
+				puppet = NEW
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					OR = {
+						is_neighbor_of = NCR
+						news_is_west_tag = yes
+					}
+				}
+				news_event = { id = ncr_kimball.4 hours = 6 random_hours = 3 }
+			}
+		}
+	}
+	option = {
+		name = ncr_kimball.3.c
+		custom_effect_tooltip = ncr_kimball.3.c_tt
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+news_event = { # Reno Annexation
+	id = ncr_kimball.4
+	title = ncr_kimball.4.t
+	desc = ncr_kimball.4.d
+	picture = GFX_event_new_reno_sign
+	# major = yes
+	is_triggered_only = yes
+	option = {
+		trigger = {
+			is_new_california_member = yes
+		}
+		name = ncr_kimball.4.a
+	}
+	option = {
+		trigger = {
+			is_caesars_legion_member = yes
+		}
+		name = ncr_kimball.4.b
+	}
+	option = {
+		trigger = {
+			is_not_caesars_legion_member = yes
+			is_not_new_california_member = yes
+		}
+		name = ncr_kimball.4.c
+	}
+}
+
+
+country_event = { # The Customs Unionn
+	id = ncr_kimball.5
+	title = ncr_kimball.5.t
+	desc = ncr_kimball.5.d
+	picture = GFX_event_NCR_mojave_camp
+
+	immediate = {
+		hidden_effect = {
+			scoped_sound_effect = "pay_taxes"
+		}
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_kimball.5.a
+		ai_chance = {
+			base = 100
+		}
+		set_country_flag = NCR_customs_union
+		swap_ideas = {
+			remove_idea = ncr_sphere
+			add_idea = ncr_sphere2
+		}
+		if = {
+			limit = {
+				tag = ARR
+			}
+			NCR = { news_event = ncr_kimball.9 }
+		}
+		if = {
+			limit = {
+				tag = VLT
+			}
+			NCR = { news_event = ncr_kimball.10 }
+		}
+	}
+	option = {
+		name = ncr_kimball.5.b
+		custom_effect_tooltip = ncr_kimball.3.c_tt
+		ai_chance = {
+			base = 0
+		}
+		if = {
+			limit = {
+				tag = ARR
+			}
+			NCR = { news_event = ncr_kimball.7 }
+		}
+		if = {
+			limit = {
+				tag = VLT
+			}
+			NCR = { news_event = ncr_kimball.8 }
+		}
+		else = {
+			ROOT = {
+				NCR = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+}
+
+news_event = { # Reno Said No
+	id = ncr_kimball.6
+	title = ncr_kimball.6.t
+	desc = ncr_kimball.6.d
+	picture = GFX_event_new_reno_sign
+	# major = yes
+	is_triggered_only = yes
+	option = {
+		name = ncr_kimball.6.a
+		NEW = { ROOT = { grant_wargoals_on_core_states_of_prev_force_ai_war = yes } }
+	}
+}
+news_event = { # Arroyo Said No
+	id = ncr_kimball.7
+	title = ncr_kimball.7.t
+	desc = ncr_kimball.7.d
+	picture = GFX_event_ARR_arroyo
+	# major = yes
+	is_triggered_only = yes
+	option = {
+		name = ncr_kimball.7.a
+		if = {
+			limit = {
+				ARR = {
+					is_new_california_member = yes
+				}
+			}
+			ARR = {
+				leave_new_california = yes
+			}
+		}
+		ARR = { ROOT = { grant_wargoals_on_core_states_of_prev_force_ai_war = yes } }
+	}
+}
+
+news_event = { # Vault City Said No
+	id = ncr_kimball.8
+	title = ncr_kimball.8.t
+	desc = ncr_kimball.8.d
+	picture = GFX_event_vault_city_council_building
+	# major = yes
+	is_triggered_only = yes
+	option = {
+		name = ncr_kimball.8.a
+		if = {
+			limit = {
+				VLT = {
+					is_new_california_member = yes
+				}
+			}
+			VLT = {
+				leave_new_california = yes
+			}
+		}
+		VLT = { ROOT = { grant_wargoals_on_core_states_of_prev_force_ai_war = yes } }
+	}
+}
+news_event = { # Arroyo Said Yes
+	id = ncr_kimball.9
+	title = ncr_kimball.9.t
+	desc = ncr_kimball.9.d
+	picture = GFX_event_ARR_arroyo
+	# major = yes
+	is_triggered_only = yes
+	option = {
+		name = ncr_kimball.9.a
+	}
+}
+
+news_event = { # Vault City Said Yes
+	id = ncr_kimball.10
+	title = ncr_kimball.10.t
+	desc = ncr_kimball.10.d
+	picture = GFX_event_vault_city_council_building
+	# major = yes
+	is_triggered_only = yes
+	option = {
+		name = ncr_kimball.10.a
+	}
+}
+
+news_event = { # Renew Renew
+	id = ncr_kimball.11
+	title = ncr_kimball.11.t
+	desc = ncr_kimball.11.d
+	picture = GFX_event_vault_city_council_building
+	# major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = ncr_kimball.11.a
+		339 = {
+			add_resource = {
+				type = composites
+				amount = 7
+			}
+			add_resource = {
+				type = advanced
+				amount = 5
+			}
+		}
+	}
+}
+
+country_event = { # Nice
+	id = ncr_kimball.12
+	title = ncr_kimball.12.t
+	desc = ncr_kimball.12.d
+	picture = GFX_event_nice_town
+	# major = yes
+	is_triggered_only = yes
+	option = {
+		name = ncr_kimball.12.a
+		add_stability = 0.03
+	}
+}
+
+country_event = { #Kimballs creates Canyonlands
+	id = ncr_kimball.13
+	title = ncr_kimball.13.t
+	desc = ncr_kimball.13.d
+	picture = GFX_event_nice_town
+	is_triggered_only = yes
+	option = {
+		name = ncr_kimball.13.a
+		hidden_effect = {
+			every_owned_state = {
+				limit = {
+					OR = {
+						region = 28
+						region = 38
+						region = 39
+						region = 43
+						region = 5
+					}
+				}
+				set_state_flag = do_not_exodus
+				FRI = {
+					transfer_state = PREV
+				}
+				clr_state_flag = do_not_exodus
+			}
+			FRI = {
+				if = {
+					limit = {
+						can_use_autonomy_system = yes
+					}
+					NCR = {
+						FRI = {
+							become_puppet = yes
+						}
+						set_autonomy = {
+							target = FRI
+							autonomy_state = autonomy_incorporated_territory
+						}
+					}
+				}
+				else = {
+					NCR = {
+						puppet = FRI
+					}
+				}
+				#retire_ideology_leader = people
+				add_country_leader_role = {
+					character = FRI_big_jim
+					promote_leader = yes
+					Country_leader = {
+						ideology = peoples_militia
+						expire = "3000.01.01.01"
+						traits = {
+						}
+					}
+				}
+				create_or_join_new_california = yes
+				set_cosmetic_tag = NCR_Canyonlands
+				load_focus_tree = ncr_puppet_nf
+				add_ideas = mot_idea_support_from_shady_sands
+				inherit_technology = NCR
+			}
+		}
+	}
+}
+
+country_event = { #NCR delegation goes to racoons
+	id = ncr_kimball.14
+	title = ncr_kimball.14.t
+	desc = ncr_kimball.14.d
+	picture = GFX_event_nice_town
+	# major = yes
+	is_triggered_only = yes
+	option = {#Smart racoons
+		name = ncr_kimball.14.a
+		ai_chance = {
+			base = 100
+		}
+		598 = {
+			add_core_of = NCR
+		}
+		NCR = { change_tag_from = ROOT }
+		NCR = {
+			annex_country = {
+				target = SLN
+				transfer_troops = yes
+			}
+		}
+	}
+	option = {#Dumb racoons
+		name = ncr_kimball.14.a
+		SLN = {
+			NCR = {
+				grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+			}
+		}
+	}
+}
+country_event = { #Pay taxes
+	id = ncr_kimball.15
+	title = ncr_kimball.15.t
+	desc = ncr_kimball.15.d
+	picture = GFX_event_NCR_mojave_camp
+
+	immediate = {
+		hidden_effect = {
+			scoped_sound_effect = "pay_taxes"
+		}
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_kimball.15.a
+		ai_chance = {
+			base = 8
+		}
+		add_ideas = ncr_sphere
+	}
+	option = {
+		name = ncr_kimball.15.b
+		custom_effect_tooltip = ncr_kimball.3.c_tt
+		ai_chance = {
+			base = 2
+		}
+		set_country_flag = NCR_rejected_investment
+		ROOT = {
+			NCR = {
+				grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+			}
+		}
+	}
+}
+country_event = { #Kimball gets the wargoals
+	id = ncr_kimball.16
+	title = ncr_kimball.16.t
+	desc = ncr_kimball.16.d
+	picture = GFX_event_NCR_mojave_camp
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_kimball.16.a
+		THN = {
+			ROOT = {
+				grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+			}
+		}
+		EHT = {
+			ROOT = {
+				grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+			}
+		}
+	}
+}
+
+country_event = { #Pay taxes
+	id = ncr_kimball.17
+	title = ncr_kimball.17.t
+	desc = ncr_kimball.17.d
+	picture = GFX_event_NCR_mojave_camp
+
+	immediate = {
+		hidden_effect = {
+			scoped_sound_effect = "pay_taxes"
+		}
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_kimball.17.a
+		ai_chance = {
+			base = 8
+		}
+		remove_ideas = ncr_sphere
+		add_ideas = ncr_sphere2
+		set_country_flag = NCR_customs_union
+		custom_effect_tooltip = ncr_kimball.17.a_tt
+	}
+	option = {
+		name = ncr_kimball.17.b
+		custom_effect_tooltip = ncr_kimball.3.c_tt
+		ai_chance = {
+			base = 2
+		}
+		set_country_flag = NCR_rejected_investment
+		ROOT = {
+			NCR = {
+				grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+			}
+		}
+	}
+}
+
+add_namespace = ncr_test
+country_event = {
+	id = ncr_test.1
+	title = ncr_test.1.t
+	desc = ncr_test.1.d
+	picture = GFX_event_NCR_victory
+
+	is_triggered_only = yes
+	option = {
+		name = ncr_test.1.a
+		annex_country = {
+			target = WHT
+			transfer_troops = yes
+		}
+		annex_country = {
+			target = SOR
+			transfer_troops = yes
+		}
+		annex_country = {
+			target = SLE
+			transfer_troops = yes
+		}
+		annex_country = {
+			target = DEA
+			transfer_troops = yes
+		}
+		annex_country = {
+			target = CLK
+			transfer_troops = yes
+		}
+		annex_country = {
+			target = TAR
+			transfer_troops = yes
+		}
+		annex_country = {
+			target = CRZ
+			transfer_troops = yes
+		}
+		annex_country = {
+			target = NCN
+			transfer_troops = yes
+		}
+		annex_country = {
+			target = UIN
+			transfer_troops = yes
+		}
+		annex_country = {
+			target = CES
+			transfer_troops = yes
+		}
+	}
+}
+
+
+add_namespace = ncr_allgood
+
+country_event = { # President Allgood's Inagural Address
+	id = ncr_allgood.1
+	title = ncr_allgood.1.t
+	desc = ncr_allgood.1.d
+	picture = GFX_event_NCR_victory
+
+	is_triggered_only = yes
+	option = {
+		name = ncr_allgood.1.a
+		hidden_effect = {
+			set_cosmetic_tag = NCR_murphy
+		}
+	}
+}
+
+country_event = { # President Murphy's Second-In-Command
+	id = ncr_allgood.2
+	title = ncr_allgood.2.t
+	desc = ncr_allgood.2.d
+	picture = GFX_event_NCR_camp
+
+	is_triggered_only = yes
+
+	option = { # Jim Marshal, the military man
+		name = ncr_allgood.2.a
+		set_country_flag = ncr_vp_marshall
+	}
+
+	option = { # Grant Hayes, the pragmatic dreamer
+		name = ncr_allgood.2.b
+		set_country_flag = ncr_vp_hayes
+	}
+
+	option = { # Twinkletoes, a figure of reconciliation
+		name = ncr_allgood.2.c
+		set_country_flag = ncr_vp_twinkletoes
+	}
+}
+
+
+country_event = { #Baseball
+	id = ncr_allgood.3
+	title = ncr_allgood.3.t
+	desc = ncr_allgood.3.d
+	picture = GFX_event_baseball
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_allgood.3.a
+		ai_chance = {
+			base = 100
+		}
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 1
+			category = electronics
+		}
+		add_opinion_modifier = {
+			target = NCR
+			modifier = ncr_baseball
+		}
+		reverse_add_opinion_modifier = {
+			target = NCR
+			modifier = ncr_baseball
+		}
+		set_country_flag = ncr_league_member
+		custom_effect_tooltip = ncr_mur_baseball_tt
+		hidden_effect = {
+			activate_mission = ncr_new_baseball_game
+		}
+	}
+	option = {
+		name = ncr_allgood.3.b
+		ai_chance = {
+			base = 0
+		}
+		add_political_power = 25
+	}
+
+}
+country_event = { # Brotherhood Peace
+	id = ncr_allgood.6
+	title = ncr_allgood.6.t
+	desc = ncr_allgood.6.d
+	picture = GFX_event_NCR_congress
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_allgood.6.a
+		ai_chance = {
+			base = 100
+		}
+		BOS = {
+			set_temp_variable = { BOS_tension_to_add = -20 }
+			bos_change_tension = yes
+		}
+		add_opinion_modifier = { target = NCR modifier = ncr_brotherhood_peace }
+		NCR = {
+			news_event = ncr_allgood.7
+		}
+		remove_opinion_modifier = {
+			target = NCR
+			modifier = ncr_bos_war
+		}
+		remove_opinion_modifier = {
+			target = MOT
+			modifier = ncr_bos_war
+		}
+		NCR = {
+			remove_opinion_modifier = {
+				target = BOS
+				modifier = ncr_bos_war
+			}
+		}
+		MOT = {
+			remove_opinion_modifier = {
+				target = BOS
+				modifier = ncr_bos_war
+			}
+		}
+	}
+	option = {
+		name = ncr_allgood.6.b
+		ai_chance = {
+			base = 0
+		}
+		BOS = {
+			set_temp_variable = { BOS_tension_to_add = 10 }
+			bos_change_tension = yes
+		}
+		NCR = { news_event = ncr_allgood.8 }
+	}
+
+}
+news_event = { # Brotherhood Peace
+	id = ncr_allgood.7
+	title = ncr_allgood.7.t
+	desc = ncr_allgood.7.d
+	picture = GFX_event_BOS_our_founding
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_allgood.7.a
+		add_opinion_modifier = { target = BOS modifier = ncr_brotherhood_peace }
+		add_stability = 0.05
+		set_country_flag = brotherhood_embassy
+		NCR = {
+			set_temp_variable = { BOS_tension_to_add = -10 }
+			bos_change_tension = yes
+		}
+		hidden_effect = {
+			BOS = {
+				news_event = {
+					id = ncr_allgood.11
+					days = 10
+				}
+			}
+			every_country = {
+				limit = {
+					OR = {
+						is_neighbor_of = NCR
+						news_is_west_tag = yes
+					}
+				}
+				news_event = { id = news_cali.23 hours = 6 random_hours = 3 }
+			}
+		}
+		effect_tooltip = {
+			NCR = {
+				remove_opinion_modifier = {
+					target = BOS
+					modifier = ncr_bos_war
+				}
+			}
+			MOT = {
+				remove_opinion_modifier = {
+					target = BOS
+					modifier = ncr_bos_war
+				}
+			}
+			BOS = {
+				remove_opinion_modifier = {
+					target = NCR
+					modifier = ncr_bos_war
+				}
+				remove_opinion_modifier = {
+					target = MOT
+					modifier = ncr_bos_war
+				}
+			}
+		}
+	}
+}
+news_event = { # Brotherhood Said No
+	id = ncr_allgood.8
+	title = ncr_allgood.8.t
+	desc = ncr_allgood.8.d
+	picture = GFX_event_BOS_our_interim
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_allgood.8.a
+		NCR = {
+			set_temp_variable = { BOS_tension_to_add = 10 }
+			bos_change_tension = yes
+		}
+		add_war_support = 0.10
+		add_stability = 0.04
+	}
+}
+country_event = { # NCR Requests Aid
+	id = ncr_allgood.9
+	title = ncr_allgood.9.t
+	desc = ncr_allgood.9.d
+	picture = GFX_event_NCR_mojave_camp
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_allgood.9.a
+		ai_chance = {
+			base = 100
+		}
+		NCR = {
+			news_event = ncr_allgood.10
+		}
+		NCR = {
+			set_temp_variable = { BOS_tension_to_add = -10 }
+			bos_change_tension = yes
+		}
+	}
+	option = {
+		name = ncr_allgood.6.b
+		ai_chance = {
+			base = 0
+		}
+		NCR = { news_event = ncr_allgood.11 }
+		BOS = {
+			set_temp_variable = { BOS_tension_to_add = 5 }
+			bos_change_tension = yes
+		}
+	}
+}
+news_event = { # Brotherhood Reinforcements
+	id = ncr_allgood.10
+	title = ncr_allgood.10.t
+	desc = ncr_allgood.10.d
+	picture = GFX_event_BOS_our_founding
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_allgood.10.a
+		if = {
+			limit = {
+				NOT = { has_template_containing_unit = Paladin_unit }
+			}
+			division_template = {
+				name = "Brotherhood Paladins" #CW Tools - False positive? Wiki says that "name" is correct here and not "division name"
+				is_locked = yes
+				priority = 2
+				template_counter = 0
+				regiments = {
+					Paladin_unit = { x = 0 y = 0 }
+					Paladin_unit = { x = 0 y = 1 }
+					Paladin_unit = { x = 1 y = 0 }
+					Paladin_unit = { x = 1 y = 1 }
+					Paladin_demo_unit = { x = 2 y = 0 }
+					Paladin_fireteam_unit = { x = 2 y = 1 }
+					Paladin_demo_unit = { x = 0 y = 2 }
+					Paladin_fireteam_unit = { x = 1 y = 2 }
+				}
+				support = {
+					knight_support_unit = { x = 0 y = 0 }
+					knight_support_unit = { x = 0 y = 1 }
+					scribe_support_unit = { x = 0 y = 2 }
+					scribe_support_unit = { x = 0 y = 3 }
+				}
+			}
+		}
+		random_owned_controlled_state = {
+			create_unit = { #CW Tools - False positive? "name = \"Infantry Division\" is the correct format given by the wiki.
+				division = "name = \"Paladin\" division_template = \"Brotherhood Paladins\" start_experience_factor = 0.75 start_equipment_factor = 1 force_equipment_variants = { ballistic_equipment_3 = { owner = \"USA\" } power_armor_equipment_3 = { owner = \"USA\" } flamer_demolitions_equipment_3 = { owner = \"USA\" } }"
+				owner = NCR
+			}
+			create_unit = { #CW Tools - False positive? "name = \"Infantry Division\" is the correct format given by the wiki.
+				division = "name = \"Paladin\" division_template = \"Brotherhood Paladins\" start_experience_factor = 0.75 start_equipment_factor = 1 force_equipment_variants = { ballistic_equipment_3 = { owner = \"USA\" } power_armor_equipment_3 = { owner = \"USA\" } flamer_demolitions_equipment_3 = { owner = \"USA\" } }"
+				owner = NCR
+			}
+			create_unit = { #CW Tools - False positive? "name = \"Infantry Division\" is the correct format given by the wiki.
+				division = "name = \"Paladin\" division_template = \"Brotherhood Paladins\" start_experience_factor = 0.75 start_equipment_factor = 1 force_equipment_variants = { ballistic_equipment_3 = { owner = \"USA\" } power_armor_equipment_3 = { owner = \"USA\" } flamer_demolitions_equipment_3 = { owner = \"USA\" } }"
+				owner = NCR
+			}
+		}
+		set_temp_variable = { BOS_tension_to_add = -10 }
+		bos_change_tension = yes
+	}
+}
+
+news_event = { # NCR Citizens join teh Brotherhood
+	id = ncr_allgood.11
+	title = ncr_allgood.11.t
+	desc = ncr_allgood.11.d
+	picture = GFX_event_BOS_our_interim
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_allgood.11.a
+		add_manpower = 100
+		set_temp_variable = { BOS_tension_to_add = -10 }
+		bos_change_tension = yes
+	}
+}
+
+news_event = { # Press Complains
+	id = ncr_allgood.15
+	title = ncr_allgood.15.t
+	desc = ncr_allgood.15.d
+	picture = GFX_event_free_press
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_allgood.15.a
+		add_stability = -0.05
+	}
+}
+news_event = { #Baseball match
+	id = ncr_allgood.16
+	title = ncr_allgood.16.t
+	desc = ncr_allgood.16.d
+	picture = GFX_event_baseball
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_allgood.16.a
+		trigger = {
+			tag = NCR
+		}
+		activate_mission = ncr_new_baseball_game
+		random_list = {
+			9 = {
+				NCR = {
+					news_event = ncr_allgood.17
+				}
+			}
+			9 = {
+				modifier = {
+					factor = 0
+					BJS = {
+						OR = {
+							exists = no
+							NOT = {
+								has_country_flag = ncr_league_member
+							}
+							has_war_with_new_california = yes
+						}
+					}
+				}
+				BJS = {
+					news_event = ncr_allgood.17
+				}
+			}
+			9 = {
+				modifier = {
+					factor = 0
+					KLA = {
+						OR = {
+							exists = no
+							NOT = {
+								has_country_flag = ncr_league_member
+							}
+							has_war_with_new_california = yes
+						}
+					}
+				}
+				KLA = {
+					news_event = ncr_allgood.17
+				}
+			}
+			9 = {
+				modifier = {
+					factor = 0
+					VEG = {
+						OR = {
+							exists = no
+							NOT = {
+								has_country_flag = ncr_league_member
+							}
+							has_war_with_new_california = yes
+						}
+					}
+				}
+				VEG = {
+					news_event = ncr_allgood.17
+				}
+			}
+			9 = {
+				modifier = {
+					factor = 0
+					CYC = {
+						OR = {
+							exists = no
+							NOT = {
+								has_country_flag = ncr_league_member
+							}
+							has_war_with_new_california = yes
+						}
+					}
+				}
+				CYC = {
+					news_event = ncr_allgood.17
+				}
+			}
+			9 = {
+				modifier = {
+					factor = 0
+					NEW = {
+						OR = {
+							exists = no
+							NOT = {
+								has_country_flag = ncr_league_member
+							}
+							has_war_with_new_california = yes
+						}
+					}
+				}
+				NEW = {
+					news_event = ncr_allgood.17
+				}
+			}
+			9 = {
+				modifier = {
+					factor = 0
+					ARR = {
+						OR = {
+							exists = no
+							NOT = {
+								has_country_flag = ncr_league_member
+							}
+							has_war_with_new_california = yes
+						}
+					}
+				}
+				ARR = {
+					news_event = ncr_allgood.17
+				}
+			}
+			9 = {
+				modifier = {
+					factor = 0
+					DES = {
+						OR = {
+							exists = no
+							NOT = {
+								has_country_flag = ncr_league_member
+							}
+							has_war_with_new_california = yes
+						}
+					}
+				}
+				DES = {
+					news_event = ncr_allgood.17
+				}
+			}
+			9 = {
+				modifier = {
+					factor = 0
+					SHI = {
+						OR = {
+							exists = no
+							NOT = {
+								has_country_flag = ncr_league_member
+							}
+							has_war_with_new_california = yes
+						}
+					}
+				}
+				SHI = {
+					news_event = ncr_allgood.17
+				}
+			}
+			9 = {
+				modifier = {
+					factor = 0
+					FFI = {
+						OR = {
+							exists = no
+							NOT = {
+								has_country_flag = ncr_league_member
+							}
+							has_war_with_new_california = yes
+						}
+					}
+				}
+				FFI = {
+					news_event = ncr_allgood.17
+				}
+			}
+			9 = {
+				modifier = {
+					factor = 0
+					BOS = {
+						OR = {
+							exists = no
+							NOT = {
+								has_country_flag = ncr_league_member
+							}
+							has_war_with_new_california = yes
+						}
+					}
+				}
+				BOS = {
+					news_event = ncr_allgood.17
+				}
+			}
+		}
+	}
+	option = {
+		name = ncr_allgood.16.b
+		trigger = {
+			NOT = {
+				tag = NCR
+			}
+		}
+		activate_mission = ncr_new_baseball_game
+	}
+}
+news_event = { #Victory in baseballin
+	id = ncr_allgood.17
+	title = ncr_allgood.17.t
+	desc = ncr_allgood.17.d
+	picture = GFX_event_baseball
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_allgood.17.a
+		add_timed_idea = {
+			idea = NCR_celebrating_baseball_victory
+			days = 100
+		}
+	}
+}
+country_event = { #Peace deal with Mojave BoS remnants
+	id = ncr_allgood.18
+	title = ncr_allgood.18.t
+	desc = ncr_allgood.18.d
+	picture = GFX_event_followers_generic
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_allgood.18.a
+		custom_effect_tooltip = ncr_mur_veronica_tt
+		set_country_flag = ncr_veronica_came
+	}
+}
+#Helping BoS remnants part 1
+country_event = {
+	id = ncr_allgood.19
+	title = ncr_allgood.19.t
+	desc = ncr_allgood.19.d
+	picture = GFX_event_MOJ_message_ncr
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_allgood.19.a
+		CES = {
+			country_event = ncr_allgood.191
+		}
+	}
+}
+country_event = { #Helping BoS remnants (Legion side)
+	id = ncr_allgood.191
+	title = ncr_allgood.191.t
+	desc = ncr_allgood.191.d
+	picture = GFX_event_MOJ_patrol
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_allgood.191.a
+		every_owned_state = {
+			limit = {
+				OR = {
+					state = 620
+					state = 67
+					state = 47
+					state = 552
+					state = 380
+					state = 613
+					state = 106
+					state = 137
+					state = 417
+					state = 573
+					state = 46
+				}
+				NOT = {
+					is_core_of = CES
+				}
+			}
+			damage_building = {
+				type = arms_factory
+				damage = 0.6
+			}
+			damage_building = {
+				type = industrial_complex
+				damage = 0.6
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 0.6
+			}
+			add_resistance = 50
+		}
+		hidden_effect = {
+			NCR = {
+				country_event = {
+					id = ncr_allgood.192
+					days = 30
+				}
+			}
+		}
+	}
+}
+country_event = { #Helping BoS remnants part 2
+	id = ncr_allgood.192
+	title = ncr_allgood.192.t
+	desc = ncr_allgood.192.d
+	picture = GFX_event_MOJ_ncr_treaty
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_allgood.192.a
+		army_experience = 30
+		custom_effect_tooltip = VERONICA_TT
+		set_country_flag = ncr_veronica_came_angry
+		hidden_effect = {
+			country_event = {
+				id = ncr_allgood.193
+				days = 28
+			}
+			CES = {
+				country_event = {
+					id = ncr_allgood.193
+					days = 28
+				}
+			}
+		}
+	}
+}
+country_event = { #Helping BoS remnants part 3
+	id = ncr_allgood.193
+	title = ncr_allgood.193.t
+	desc = ncr_allgood.193.d
+	picture = GFX_event_vault_generic_4
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_allgood.193.a
+		trigger = {
+			tag = NCR
+		}
+		custom_effect_tooltip = ncr_mur_based_elijah_tt
+		effect_tooltip = {
+			launch_nuke  = {
+				province = 6990
+				state = 46
+				use_nuke = yes
+			}
+			launch_nuke  = {
+				province = 3202
+				state = 46
+				use_nuke = yes
+			}
+			launch_nuke  = {
+				province = 6996
+				state = 46
+				use_nuke = yes
+			}
+		}
+	}
+	option = {
+		name = ncr_allgood.193.b
+		trigger = {
+			tag = CES
+		}
+		custom_effect_tooltip = ncr_mur_based_elijah_tt
+		launch_nuke  = {
+			province = 6990
+			state = 46
+			use_nuke = yes
+		}
+		launch_nuke  = {
+			province = 3202
+			state = 46
+			use_nuke = yes
+		}
+		launch_nuke  = {
+			province = 6996
+			state = 46
+			use_nuke = yes
+		}
+	}
+}
+country_event = { #Allgood sends help
+	id = ncr_allgood.20
+	title = ncr_allgood.20.t
+	desc = ncr_allgood.20.d
+	picture = GFX_event_NCR_mojave_camp
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_allgood.20.a
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 500
+			producer = NCR
+		}
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 400
+			producer = NCR
+		}
+		division_template = {
+			name = "NCR Expedition"
+			template_counter = 83
+			division_names_group = _NCR_INF_01
+
+			regiments = {
+				spec_ops = { x = 0 y = 0 }
+				spec_ops = { x = 0 y = 1 }
+				spec_ops = { x = 1 y = 0 }
+				spec_ops = { x = 1 y = 1 }
+				spec_ops = { x = 2 y = 0 }
+				spec_ops = { x = 2 y = 1 }
+            }
+		}
+		capital_scope = {
+			create_unit = {
+				division = "name = \"NCR Expedition\" division_template = \"NCR Expedition\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				owner = ROOT
+            }
+			create_unit = {
+				division = "name = \"NCR Expedition\" division_template = \"NCR Expedition\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				owner = ROOT
+            }
+        }
+	}
+}
+country_event = {
+    id = ncr_allgood.21
+    title = ncr_allgood.21.t
+    desc = ncr_allgood.21.d
+    picture = GFX_event_ncr_drummond_and_bos
+
+    is_triggered_only = yes
+
+    option = {
+        name = ncr_allgood.21.a
+        add_war_support = 0.03
+    }
+    option = {
+        name = ncr_allgood.21.b
+        add_stability = 0.03
+    }
+}
+
+
+add_namespace = ncr_crisis
+
+country_event = { # A President of Necessity
+	id = ncr_crisis.1
+	title = ncr_crisis.1.t
+	desc = ncr_crisis.1.d
+	picture = GFX_event_NCR_victory
+
+	is_triggered_only = yes
+	option = {
+		name = ncr_crisis.1.a
+		add_ideas = ncr_idea_constitutional_uncertainty
+	}
+}
+
+news_event = { # Chaos in Shady Sands
+	id = ncr_crisis.2
+	title = ncr_crisis.2.t
+	desc = ncr_crisis.2.d
+	picture = GFX_event_NCR_battle
+
+	# major = yes
+	is_triggered_only = yes
+
+	option = {
+		trigger = {
+			tag = NCR
+		}
+		name = ncr_crisis.2.a
+		set_country_flag = ncr_crisis
+		complete_national_focus = ncr_california_in_crisis
+	}
+	option = {
+		trigger = {
+			is_in_faction_with = NCR
+			NOT = { tag = NCR }
+			NOT = { tag = MOT }
+		}
+		name = ncr_crisis.2.b
+		leave_new_california = yes
+	}
+
+	option = {
+		trigger = {
+			tag = MOT
+		}
+		name = ncr_crisis.2.c
+	}
+
+	option = {
+		trigger = {
+			NOT = { is_in_faction_with = NCR }
+			NOT = { tag = NCR }
+			NOT = { tag = MOT }
+		}
+		name = ncr_crisis.2.e
+	}
+}
+
+country_event = { # Nothing Good Lasts Forever
+	id = ncr_crisis.4
+	title = ncr_crisis.4.t
+	desc = ncr_crisis.4.d
+	picture = GFX_event_NCR_victory
+
+	is_triggered_only = yes
+
+	option = { # We die free
+		name = ncr_crisis.4.a
+		set_country_flag = ncr_dharma
+		BON = { change_tag_from = ROOT }
+		BON = {
+			news_event = { id = ncr_crisis.10 days = 2 }
+		}
+	}
+
+	option = { # Mossman can lead us to glory, not despotism!
+		name = ncr_crisis.4.b
+		set_country_flag = ncr_fascism
+		news_event = ncr_crisis.9
+	}
+}
+
+news_event = {
+	id = ncr_crisis.5
+	title = ncr_crisis.5.t
+	desc = ncr_crisis.5.d
+	picture = GFX_event_NCR_battle_for_hoover_dam
+
+	is_triggered_only = yes
+	show_major = {
+		OR = {
+			original_tag = NCR
+			is_in_faction_with = NCR
+			any_neighbor_country = {
+				OR = {
+					original_tag = NCR
+					is_in_faction_with = NCR
+				}
+			}
+			any_owned_state = {
+				is_on_continent = west_coast
+			}
+		}
+	}
+
+	option = {
+		trigger = { original_tag = NCR }
+		name = ncr_crisis.5.a
+		if = {
+			limit = {
+				NOT = {
+					NCR = {
+						has_completed_focus = ncr_lost_not_forgotten
+					}
+				}
+			}
+			NCR = {
+				complete_national_focus = ncr_lost_not_forgotten
+			}
+		}
+		add_war_support = -0.05
+		add_stability = -0.10
+	}
+
+	option = {
+		trigger = {
+			is_in_faction_with = NCR
+			NOT = { original_tag = NCR }
+		}
+		name = ncr_crisis.5.b
+		add_war_support = -0.025
+	}
+
+	option = {
+		trigger = {
+			NOT = { is_in_faction_with = NCR }
+			NOT = { original_tag = NCR }
+		}
+		name = ncr_crisis.5.c
+	}
+}
+
+country_event = { # A Knock At The Door
+	id = ncr_crisis.6
+	title = ncr_crisis.6.t
+	desc = ncr_crisis.6.d
+
+	is_triggered_only = yes
+
+	option = { # Things can only go one way from here...
+		name = ncr_crisis.6.a
+		retire_character = NCR_drummond
+		kill_country_leader = yes
+		swap_ideas = {
+			remove_idea = ncr_idea_constitutional_uncertainty
+			add_idea = ncr_idea_political_void
+		}
+		custom_effect_tooltip = ncr_murder_most_foul_tt
+		hidden_effect = {
+			promote_character = NCR_vacant_leadership
+		}
+	}
+}
+
+country_event = { # A United Front
+	id = ncr_crisis.7
+	title = ncr_crisis.7.t
+	desc = ncr_crisis.7.d
+	is_triggered_only = yes
+
+	option = { #
+		name = ncr_crisis.7.a
+		remove_ideas = ncr_idea_political_void
+		custom_effect_tooltip = ncr_ctte_for_national_security_tt
+		set_politics = { ruling_party = intellectuals elections_allowed = no }
+		retire_country_leader = yes
+		promote_character = NCR_committee_national_security
+		every_other_country = {
+			news_event = ncr_crisis.8
+		}
+
+	}
+}
+
+news_event = { # Now we've got Trouble
+	id = ncr_crisis.8
+	title = ncr_crisis.8.t
+	desc = ncr_crisis.8.d
+	is_triggered_only = yes
+	picture = GFX_event_NCR_congress
+	option = { #
+		name = ncr_crisis.8.a
+		MOT = {
+			remove_ideas = ncr_veg_treaty_of_new_vegas
+		}
+		VEG = {
+			remove_ideas = ncr_veg_treaty_of_new_vegas
+		}
+		VEG = {
+			remove_opinion_modifier = {
+				target = NCR
+				modifier = ncr_mot_veg_treaty_new_vegas
+			}
+			remove_opinion_modifier = {
+				target = MOT
+				modifier = ncr_mot_veg_treaty_new_vegas
+			}
+		}
+		NCR = {
+			remove_opinion_modifier = {
+				target = VEG
+				modifier = ncr_mot_veg_treaty_new_vegas
+			}
+		}
+		MOT = {
+			remove_opinion_modifier = {
+				target = VEG
+				modifier = ncr_mot_veg_treaty_new_vegas
+			}
+		}
+	}
+}
+
+news_event = { # Moore Fails
+	id = ncr_crisis.9
+	title = ncr_crisis.9.t
+	desc = ncr_crisis.9.d
+	is_triggered_only = yes
+	picture = GFX_event_NCR_congress
+	option = { #
+		name = ncr_crisis.9.a
+		BON = {
+			kill_country_leader = yes
+			create_country_leader = {
+				name = "Bill Calhoun"
+				desc = "Calhoun_DESC"
+				picture = GFX_Portrait_NCR_calhoun_follower
+				expire = "3000.1.1"
+				ideology = peoples_militia
+				traits = {
+					follower_buddy
+					well_liked_leader
+					expert_negotiator
+				}
+			}
+		}
+		complete_national_focus = ncr_put_down_revanchists
+		BON = {
+			complete_national_focus = ncr_mossman_conspiracy
+			remove_ideas = ncr_veg_treaty_of_new_vegas
+		}
+		NCR = {
+			news_event = ncr_crisis.11
+			remove_ideas = ncr_veg_treaty_of_new_vegas
+		}
+		VEG = {
+			remove_opinion_modifier = {
+				target = NCR
+				modifier = ncr_mot_veg_treaty_new_vegas
+			}
+			remove_opinion_modifier = {
+				target = MOT
+				modifier = ncr_mot_veg_treaty_new_vegas
+			}
+		}
+		NCR = {
+			remove_opinion_modifier = {
+				target = VEG
+				modifier = ncr_mot_veg_treaty_new_vegas
+			}
+		}
+		MOT = {
+			remove_opinion_modifier = {
+				target = VEG
+				modifier = ncr_mot_veg_treaty_new_vegas
+			}
+		}
+	}
+
+}
+
+news_event = { # The  People United
+	id = ncr_crisis.10
+	title = ncr_crisis.10.t
+	desc = ncr_crisis.10.d
+	is_triggered_only = yes
+	picture = GFX_event_NCR_congress
+	option = { #
+		name = ncr_crisis.10.a
+		BON = {
+			kill_country_leader = yes
+			create_country_leader = {
+				name = "Bill Calhoun"
+				desc = "Calhoun_DESC"
+				picture = GFX_Portrait_NCR_calhoun_follower
+				expire = "3000.1.1"
+				ideology = peoples_militia
+				traits = {
+					follower_buddy
+				}
+			}
+		}
+		NCR = {
+			news_event = ncr_crisis.11
+			complete_national_focus = ncr_put_down_revanchists
+		}
+		complete_national_focus = ncr_mossman_conspiracy
+	}
+}
+country_event = { # Barons
+	id = ncr_crisis.11
+	title = ncr_crisis.11.t
+	desc = ncr_crisis.11.d
+	is_triggered_only = yes
+	picture = GFX_event_NCR_congress
+	option = { #
+		name = ncr_crisis.11.a
+		activate_mission = war_breaks_out
+		rds_setup_redding = yes
+		if = {
+			limit = {
+				MOT = {
+					exists = yes
+				}
+			}
+			MOT = {
+				country_event = nf_mot.31
+				retire_character = MOT_moore
+			}
+		}
+		if = {
+			limit = {
+				any_country = {
+					is_new_california_member = yes
+				}
+			}
+			PREV = {
+				leave_new_california = yes
+			}
+		}
+		if = {
+			limit = {
+				any_country = {
+					is_puppet_of = NCR
+				}
+			}
+			PREV = {
+				end_puppet = yes
+			}
+		}
+		RDS = {
+			remove_ideas = ncr_veg_treaty_of_new_vegas
+		}
+		MOT = {
+			remove_ideas = ncr_veg_treaty_of_new_vegas
+		}
+		VEG = {
+			remove_opinion_modifier = {
+				target = NCR
+				modifier = ncr_mot_veg_treaty_new_vegas
+			}
+			remove_opinion_modifier = {
+				target = MOT
+				modifier = ncr_mot_veg_treaty_new_vegas
+			}
+		}
+		NCR = {
+			remove_opinion_modifier = {
+				target = VEG
+				modifier = ncr_mot_veg_treaty_new_vegas
+			}
+		}
+		MOT = {
+			remove_opinion_modifier = {
+				target = VEG
+				modifier = ncr_mot_veg_treaty_new_vegas
+			}
+		}
+	}
+	option = {
+		trigger = {
+			is_ai = no
+		}
+		name = ncr_crisis.11.b
+		activate_mission = war_breaks_out
+		RDS = {
+			change_tag_from = ROOT
+		}
+		rds_setup_redding = yes
+		RDS = {
+			remove_ideas = ncr_veg_treaty_of_new_vegas
+		}
+		MOT = {
+			remove_ideas = ncr_veg_treaty_of_new_vegas
+		}
+		VEG = {
+			remove_opinion_modifier = {
+				target = NCR
+				modifier = ncr_mot_veg_treaty_new_vegas
+			}
+			remove_opinion_modifier = {
+				target = MOT
+				modifier = ncr_mot_veg_treaty_new_vegas
+			}
+		}
+		NCR = {
+			remove_opinion_modifier = {
+				target = VEG
+				modifier = ncr_mot_veg_treaty_new_vegas
+			}
+		}
+		MOT = {
+			remove_opinion_modifier = {
+				target = VEG
+				modifier = ncr_mot_veg_treaty_new_vegas
+			}
+		}
+		if = {
+			limit = {
+				MOT = {
+					is_ai = yes
+				}
+			}
+			MOT = {
+				country_event = nf_mot.31
+			}
+		}
+		else = {
+			MOT = {
+				country_event = {
+					id = nf_mot.30
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_country = {
+					is_new_california_member = yes
+				}
+			}
+			PREV = {
+				leave_new_california = yes
+			}
+		}
+		if = {
+			limit = {
+				any_country = {
+					is_puppet_of = NCR
+				}
+			}
+			PREV = {
+				end_puppet = yes
+			}
+		}
+	}
+}
+
+add_namespace = ncr_order
+
+country_event = { # The Night of the Muffled Rifle
+	id = ncr_order.1
+	title = ncr_order.1.t
+	desc = ncr_order.1.d
+	picture = GFX_event_NCR_battle
+
+	is_triggered_only = yes
+
+	option = { # We forge a new path forwards!
+		name = ncr_order.1.a
+		complete_national_focus = ncr_dissolve_committee
+		hidden_effect = {
+			retire_character = NCR_mossman_character
+		}
+	}
+}
+
+country_event = { # There Was Only Ever One
+	id = ncr_order.2
+	title = ncr_order.2.t
+	desc = ncr_order.2.d
+
+	is_triggered_only = yes
+
+	option = { # We forge a new path forwards!
+		name = ncr_order.2.a
+		set_politics = {
+			ruling_party = ruler
+		}
+		set_popularities = {
+			ruler = 80
+			people = 20
+			elites = 0
+			intellectuals = 0
+		}
+		create_country_leader = {
+			name = "NCR_MOORE_NAME"
+			desc = "CASSANDRA_MOORE_DESC"
+			picture = GFX_Portrait_NCR_moore
+			expire = "3000.1.1"
+			ideology = benevolent_dictatorship
+			traits = {
+				president_general
+			}
+		}
+		set_cosmetic_tag = NCR_moore
+		set_party_name = {
+			ideology = ruler
+			long_name = "Commission For Preservation of the Republic"
+			name = "COMPREP"
+		}
+		custom_effect_tooltip = MOORE_TT
+		hidden_effect = {
+			country_event = ncr_order.6
+			create_or_join_californian_hegemony = yes
+			if = {
+				limit = {
+					MOT = {
+						exists = yes
+					}
+				}
+				add_field_marshal_role = {
+					character = NCR_moore
+					traits = {
+						enduring_trait
+						agile_trait
+						cult_of_personality_trait
+					}
+					skill = 4
+					attack_skill = 3
+					defense_skill = 2
+					planning_skill = 3
+					logistics_skill = 2
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = ncr_order.3
+	title = ncr_order.3.t
+	desc = ncr_order.3.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_order.3.a
+		custom_effect_tooltip = ncr_barons_marked_for_death_tt
+		hidden_effect = {
+			set_country_flag = ncr_barons_marked_for_death
+		}
+	}
+	option = {
+		name = ncr_order.3.b
+		custom_effect_tooltip = ncr_barons_alliance_tt
+		hidden_effect = {
+			set_country_flag = ncr_barons_alliance
+		}
+	}
+}
+
+country_event = {
+	id = ncr_order.4
+	title = ncr_order.4.t
+	desc = ncr_order.4.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_order.4.a
+		custom_effect_tooltip = ncr_junkertank_option_tt
+		hidden_effect = {
+			set_country_flag = ncr_junkertank_chosen
+		}
+	}
+	option = {
+		name = ncr_order.4.b
+		set_country_flag = ncr_junkertroop_option_tt
+		hidden_effect = {
+			set_country_flag = ncr_junkertroop_chosen
+		}
+	}
+}
+
+country_event = {
+	id = ncr_order.5
+	title = ncr_order.5.t
+	desc = ncr_order.5.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_order.5.a
+		custom_effect_tooltip = ncr_eliminate_ghouls_option_tt
+		hidden_effect = {
+			set_country_flag = ncr_eliminate_ghouls_chosen
+		}
+	}
+	option = {
+		name = ncr_order.5.b
+		custom_effect_tooltip = ncr_conscript_ghouls_option_tt
+		hidden_effect = {
+			set_country_flag = ncr_ghoul_conscripts_chosen
+		}
+	}
+}
+country_event = {#Choosing the flag
+	id = ncr_order.6
+	picture = GFX_event_ncr_moore_flags
+	title = ncr_order.6.t
+	desc = ncr_order.6.d
+	is_triggered_only = yes
+
+	option = {#Leave the current one
+		name = ncr_order.6.a
+		set_cosmetic_tag = NCR_moore
+	}
+	option = {#White Bear
+		name = ncr_order.6.b
+		set_cosmetic_tag = NCR_moore2
+	}
+	option = {#Star
+		name = ncr_order.6.c
+		set_cosmetic_tag = NCR_moore3
+		ai_chance = {
+			base = 1
+			modifier = {
+				add = 50
+			}
+		}
+	}
+	option = {#Two Bears
+		name = ncr_order.6.e
+		set_cosmetic_tag = NCR_moore_bear
+	}
+}
+country_event = {
+	id = ncr_order.7
+	title = ncr_order.7.t
+	desc = ncr_order.7.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_order.7.a
+		trigger = {
+			NOT = {
+				OR = {
+					has_country_flag = RDS_commie_tree_unlock
+					has_country_flag = RDS_sheriff_tree_unlock
+					has_country_flag = RDS_flynn_independent_flag
+				}
+			}
+		}
+		RDS = {
+			every_owned_state = {
+				set_state_flag = do_not_exodus
+			}
+		}
+		NCR = { change_tag_from = ROOT }
+		NCR = {
+			annex_country = {
+				target = RDS
+				transfer_troops = yes
+			}
+		}
+		NCR = {
+			every_owned_state = {
+				limit = {
+					is_core_of = RDS
+				}
+				clr_state_flag = do_not_exodus
+				remove_core_of = RDS
+			}
+		}
+	}
+	option = {
+		name = ncr_order.7.b
+		RDS = { NCR = { grant_wargoals_on_core_states_of_prev_force_ai_war = yes } }
+	}
+}
+country_event = {
+	id = ncr_order.8
+	title = ncr_order.8.t
+	desc = ncr_order.8.d
+	picture = GFX_event_ncr_black_bear
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_order.8.a
+		add_country_leader_trait = ncr_the_mother_of_california
+		set_cosmetic_tag = NCR_moore_third_republic
+	}
+}
+country_event = {
+	id = ncr_order.9
+	title = ncr_order.9.t
+	desc = ncr_order.9.d
+	picture = GFX_event_NCR_congress
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_order.9.a
+		country_event = ncr_order.10
+	}
+}
+country_event = {
+	id = ncr_order.10
+	title = ncr_order.10.t
+	desc = ncr_order.10.d
+	picture = GFX_event_NCR_congress
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_order.10.a
+		add_political_power = 100
+		add_stability = -0.05
+		add_manpower = -35
+	}
+}
+#Hayes goes to bunker 1
+country_event = {
+	id = ncr_order.11
+	title = ncr_order.11.t
+	desc = ncr_order.11.d
+	picture = GFX_event_ncr_hayes_elected
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_order.11.a
+		set_country_flag = ncr_hayes_left
+		custom_effect_tooltip = ncr_hayes_gone_tt
+	}
+}
+#Hayes goes to bunker 2
+country_event = {
+	id = ncr_order.12
+	title = ncr_order.12.t
+	desc = ncr_order.12.d
+	picture = GFX_event_ncr_hayes_elected
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_order.12.a
+		custom_effect_tooltip = ncr_hayes_back_tt
+		clr_country_flag = ncr_hayes_left
+	}
+}
+#Ratboy story 1
+country_event = {
+	id = ncr_order.13
+	title = ncr_order.13.t
+	desc = ncr_order.13.d
+	picture = GFX_event_ncr_jail
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_order.13.a
+		country_event = ncr_order.14
+	}
+}
+#Ratboy story 2
+country_event = {
+	id = ncr_order.14
+	title = ncr_order.14.t
+	desc = ncr_order.14.d
+	picture = GFX_event_ncr_jail
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_order.14.a
+		set_country_flag = ncr_roger_let_out
+		custom_effect_tooltip = ROGER_TT
+	}
+}
+#Frontier
+country_event = {
+	id = ncr_order.15
+	title = ncr_order.15.t
+	desc = ncr_order.15.d
+	picture = GFX_event_ncr_portland
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_order.15.a
+		custom_effect_tooltip = ncr_oregon_puppet_tt
+		hidden_effect = {
+			every_state = {
+				limit = {
+					OR = {
+						region = 11
+						region = 59
+						region = 58
+					}
+					OWNER = {
+						is_californian_hegemony_member = yes
+					}
+				}
+				NFT = {
+					transfer_state = PREV
+				}
+			}
+			NFT = {
+				every_owned_state = {
+					limit = {
+						NOT = {
+							is_core_of = NFT
+						}
+					}
+					add_compliance = 40
+				}
+				NCR = {
+					puppet = NFT
+				}
+				if = {
+					limit = {
+						NCR = {
+							has_cosmetic_tag = NCR_moore2
+						}
+					}
+					set_cosmetic_tag = NFT_white
+				}
+				load_oob = NFT_army
+				load_focus_tree = ncr_puppet_nf
+				inherit_technology = NCR
+				set_capital = { state = 268 }
+				268 = {
+					set_state_name = ncr_moore_phoenix
+					add_core_of = NFT
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = ncr_order.16
+	title = ncr_order.16.t
+	desc = ncr_order.16.d
+	picture = GFX_event_ncr_hidden_valley_bunker
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_order.16.a
+		46 = {
+			set_temp_variable = { pop_add = -15241 }
+			add_state_population_no_state_name = yes
+		}
+		set_victory_points = {
+			province = 3202
+			value = 1
+		}
+		46 = {
+			set_state_name = "Ghost Valley"
+		}
+	}
+}
+country_event = {
+	id = ncr_order.17
+	title = ncr_order.17.t
+	desc = ncr_order.17.d
+	picture = GFX_event_sub_generic_factory
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_order.17.a
+		set_technology = {
+			tank_equipment_vehicle_tech_3 = 1
+		}
+	}
+}
+country_event = {
+	id = ncr_order.18
+	title = ncr_order.18.t
+	desc = ncr_order.18.d
+	picture = GFX_event_ncr_hidden_valley_bunker
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_order.18.a
+		add_stability = 0.15
+		add_war_support = 0.15
+	}
+}
+add_namespace = ncr_dharma
+
+country_event = { #Dead Man Waiting
+	id = ncr_dharma.1
+	picture = GFX_event_followers_generic
+	title = ncr_dharma.1.t
+	desc = ncr_dharma.1.d
+	is_triggered_only = yes
+
+	option = { #
+		name = ncr_dharma.1.a
+		country_event = ncr_dharma.2
+		DES = {
+			DES_angela_deth = {
+				set_nationality = BON
+			}
+		}
+	}
+}
+country_event = { #Operation Brynhildr
+	id = ncr_dharma.2
+	title = ncr_dharma.2.t
+	desc = ncr_dharma.2.d
+	picture = GFX_event_NCR_victory
+
+	is_triggered_only = yes
+
+	option = { #
+		name = ncr_dharma.2.a
+	}
+}
+country_event = { #Moore trial
+	id = ncr_dharma.6
+	title = ncr_dharma.6.t
+	desc = ncr_dharma.6.d
+	picture = GFX_event_ncr_black_bear
+
+	is_triggered_only = yes
+
+	option = { #Give Moore to the angry crowd
+		name = ncr_dharma.6.a
+		add_manpower = -1
+		add_war_support = -0.1
+		add_timed_idea = {
+			idea = calhoun_disjointed_military
+			days = 180
+		}
+	}
+	option = { #Give Moore a fair trial
+		name = ncr_dharma.6.b
+		add_stability = -0.2
+	}
+}
+country_event = { #Calhoun Broadcast
+	id = ncr_dharma.7
+	title = ncr_dharma.7.t
+	desc = ncr_dharma.7.d
+	picture = GFX_event_NCR_victory
+
+	is_triggered_only = yes
+
+	option = { #
+		name = ncr_dharma.7.a
+		add_war_support = 0.05
+	}
+}
+country_event = { #Moore Martial Law
+	id = ncr_dharma.8
+	title = ncr_dharma.8.t
+	desc = ncr_dharma.8.d
+	picture = GFX_event_NCR_victory
+
+	is_triggered_only = yes
+
+	option = { #Martial Law
+		name = ncr_dharma.8.a
+		add_timed_idea = {
+			days = 90
+			idea = ncr_martial_law
+		}
+	}
+	#option = { #Counter-Narrative
+	#    name = ncr_dharma.8.b
+	#   add_political_power = -200
+	#}
+}
+country_event = { #Calhoun Message to Redding
+	id = ncr_dharma.9
+	title = ncr_dharma.9.t
+	desc = ncr_dharma.9.d
+	picture = GFX_event_ncr_calhoun_logo
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_dharma.9.a
+		trigger = {
+			has_country_flag = RDS_commie_tree_unlock
+		}
+		RDS = {
+			every_owned_state = {
+				set_state_flag = do_not_exodus
+			}
+		}
+		BON = { change_tag_from = ROOT }
+		BON = {
+			annex_country = {
+				target = RDS
+				transfer_troops = yes
+			}
+		}
+		BON = {
+			every_owned_state = {
+				limit = {
+					is_core_of = RDS
+				}
+				clr_state_flag = do_not_exodus
+				remove_core_of = RDS
+			}
+		}
+	}
+	option = {
+		name = ncr_dharma.9.b
+		RDS = { BON = { grant_wargoals_on_core_states_of_prev_force_ai_war = yes } }
+	}
+}
+country_event = { #Calhoun send help to Graham
+	id = ncr_dharma.10
+	title = ncr_dharma.10.t
+	desc = ncr_dharma.10.d
+	picture = GFX_event_ncr_calhoun_logo
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_dharma.10.a
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 1000
+			producer = BON
+		}
+		add_equipment_to_stockpile = {
+			type = support_equipment
+			amount = 800
+			producer = BON
+		}
+		add_equipment_to_stockpile = {
+			type = fireteam_equipment
+			amount =  500
+			producer = BON
+		}
+	}
+}
+
+country_event = { #Calhoun meets Caesar (Caesar is alive)
+	id = ncr_dharma.11
+	title = ncr_dharma.11.t
+	desc = ncr_dharma.11.d
+	picture = GFX_event_ncr_calhoun_logo
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_dharma.11.a
+		add_manpower = -1
+	}
+}
+country_event = { #Calhoun meets Caesar's Tomb (Caesar is dead)
+	id = ncr_dharma.12
+	title = ncr_dharma.12.t
+	desc = ncr_dharma.12.d
+	picture = GFX_event_ncr_calhoun_logo
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_dharma.12.a
+		add_victory_points = {
+			province = 8951
+			value = -3
+		}
+	}
+}
+country_event = { #Calhoun and Graham meet Caesar (Caesar is alive)
+	id = ncr_dharma.13
+	title = ncr_dharma.13.t
+	desc = ncr_dharma.13.d
+	picture = GFX_event_ncr_calhoun_logo
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_dharma.13.a
+	}
+}
+country_event = { #Calhoun and Llwyd
+	id = ncr_dharma.14
+	title = ncr_dharma.14.t
+	desc = ncr_dharma.14.d
+	picture = GFX_event_ncr_calhoun_logo
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_dharma.14.a
+		BON = {
+			country_event = ncr_dharma.141
+		}
+		ai_chance = {
+			factor = 100
+		}
+		set_temp_variable = {
+			temp_BOS_drift_add = 0.25
+		}
+		add_popularity = {
+			ideology = people
+			popularity = 0.1
+		}
+		bos_set_people_drift = yes
+		custom_effect_tooltip = bos_set_codex_law
+		custom_effect_tooltip = bos_people_allowed
+		set_country_flag = bos_people_allowed
+		NCR = {
+			remove_opinion_modifier = {
+				target = BOS
+				modifier = ncr_bos_war
+			}
+		}
+		MOT = {
+			remove_opinion_modifier = {
+				target = BOS
+				modifier = ncr_bos_war
+			}
+		}
+		BOS = {
+			remove_opinion_modifier = {
+				target = NCR
+				modifier = ncr_bos_war
+			}
+			remove_opinion_modifier = {
+				target = MOT
+				modifier = ncr_bos_war
+			}
+		}
+	}
+	option = {
+		name = ncr_dharma.14.b
+		ai_chance = {
+			factor = 0
+		}
+		BON = {
+			country_event = ncr_dharma.142
+		}
+	}
+}
+country_event = { #Lost Hills agrees
+	id = ncr_dharma.141
+	title = ncr_dharma.141.t
+	desc = ncr_dharma.141.d
+	picture = GFX_event_ncr_calhoun_logo
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_dharma.141.a
+		NCR = {
+			add_stability = 0.05
+			add_political_power = 25
+			set_temp_variable = { BOS_tension_to_add = -20 }
+			bos_change_tension = yes
+		}
+		BOS = {
+			add_stability = 0.05
+			add_political_power = 25
+			set_temp_variable = { BOS_tension_to_add = -20 }
+			bos_change_tension = yes
+		}
+		custom_effect_tooltip = ncr_cal_reformers_tt
+		set_country_flag = ncr_bos_reformers_agreed
+		effect_tooltip = {
+			NCR = {
+				remove_opinion_modifier = {
+					target = BOS
+					modifier = ncr_bos_war
+				}
+			}
+			MOT = {
+				remove_opinion_modifier = {
+					target = BOS
+					modifier = ncr_bos_war
+				}
+			}
+			BOS = {
+				remove_opinion_modifier = {
+					target = NCR
+					modifier = ncr_bos_war
+				}
+				remove_opinion_modifier = {
+					target = MOT
+					modifier = ncr_bos_war
+				}
+			}
+		}
+	}
+}
+country_event = { #Lost Hills disagrees
+	id = ncr_dharma.142
+	title = ncr_dharma.142.t
+	desc = ncr_dharma.142.d
+	picture = GFX_event_ncr_calhoun_logo
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_dharma.142.a
+		add_stability = -0.1
+		NCR = {
+			set_temp_variable = { BOS_tension_to_add = 15 }
+			bos_change_tension = yes
+		}
+		BOS = {
+			set_temp_variable = { BOS_tension_to_add = 15 }
+			bos_change_tension = yes
+		}
+	}
+}
+country_event = { #Calhoun offers Llwyd to become Steel Rangers
+	id = ncr_dharma.15
+	title = ncr_dharma.15.t
+	desc = ncr_dharma.15.d
+	picture = GFX_event_ncr_calhoun_logo
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_dharma.15.a
+		ai_chance = {
+			factor = 100
+		}
+		country_event = nf_brotherhood_steel_rangers.2
+		BON = {
+			country_event = ncr_dharma.151
+		}
+	}
+	option = {
+		name = ncr_dharma.15.b
+		ai_chance = {
+			factor = 0
+		}
+		BON = {
+			country_event = ncr_dharma.152
+		}
+	}
+}
+country_event = { #Llwyd agrees
+	id = ncr_dharma.151
+	title = ncr_dharma.151.t
+	desc = ncr_dharma.151.d
+	picture = GFX_event_ncr_calhoun_logo
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_dharma.151.a
+		add_stability = 0.05
+		add_political_power = 25
+		set_technology = {
+			support_tech_level_scientific = 1
+		}
+	}
+}
+country_event = { #Llwyd disagrees
+	id = ncr_dharma.152
+	title = ncr_dharma.152.t
+	desc = ncr_dharma.152.d
+	picture = GFX_event_ncr_calhoun_logo
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_dharma.152.a
+		add_stability = -0.1
+		BON = {
+			give_guarantee = BOS
+		}
+		BOS = {
+			give_guarantee = NCR
+		}
+	}
+}
+country_event = { #Calhoun sends an offer to Navajo
+	id = ncr_dharma.16
+	title = ncr_dharma.16.t
+	desc = ncr_dharma.16.d
+	picture = GFX_event_ncr_calhoun_logo
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_dharma.16.a
+		ai_chance = {
+			factor = 95
+		}
+		trigger = {
+			at_peace_with_dharma_way = yes
+		}
+		BON = {
+			country_event = ncr_dharma.162
+		}
+	}
+	option = {
+		name = ncr_dharma.16.b
+		ai_chance = {
+			factor = 95
+		}
+		trigger = {
+			has_war_with_dharma_way = yes
+		}
+		NAV = {
+			every_country = {
+				limit = {
+					has_war_with = NAV
+				}
+				white_peace = PREV
+			}
+			leave_faction = yes
+			CES = {
+				end_puppet = NAV
+			}
+		}
+		country_event = {
+			id = ncr_dharma.161
+			hours = 3
+		}
+	}
+	option = {
+		name = ncr_dharma.16.c
+		BON = {
+			country_event = ncr_dharma.163
+		}
+	}
+}
+country_event = { #Navajo joins faction
+	id = ncr_dharma.161
+	title = ncr_dharma.161.t
+	desc = ncr_dharma.161.d
+	picture = GFX_event_ncr_calhoun_logo
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_dharma.161.a
+		NAV = {
+			create_or_join_dharma_way = yes
+		}
+	}
+}
+country_event = { #Navajo will revolt
+	id = ncr_dharma.162
+	title = ncr_dharma.162.t
+	desc = ncr_dharma.162.d
+	picture = GFX_event_ncr_calhoun_logo
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_dharma.162.a
+		set_country_flag = ncr_cal_navajo_will_revolt
+	}
+}
+country_event = { #Navajo won't revolt
+	id = ncr_dharma.163
+	title = ncr_dharma.163.t
+	desc = ncr_dharma.163.d
+	picture = GFX_event_ncr_calhoun_logo
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_dharma.163.a
+	}
+}
+country_event = { #Navajo revolts!
+	id = ncr_dharma.164
+	title = ncr_dharma.164.t
+	desc = ncr_dharma.164.d
+	picture = GFX_event_ncr_calhoun_logo
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_dharma.164.a
+		NAV = {
+			every_country = {
+				limit = {
+					has_war_with = NAV
+				}
+				white_peace = PREV
+			}
+			leave_faction = yes
+			CES = {
+				end_puppet = NAV
+			}
+		}
+		country_event = {
+			id = ncr_dharma.161
+			hours = 3
+		}
+	}
+}
+country_event = { #Calhoun establishes a bunch of hospitals
+	id = ncr_dharma.17
+	title = ncr_dharma.17.t
+	desc = ncr_dharma.17.d
+	picture = GFX_event_ncr_calhoun_logo
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_dharma.17.a
+		add_stability = 0.1
+		add_political_power = 100
+		add_ideas = followers_doctors
+		add_offsite_building = {
+			type = industrial_complex
+			level = 4
+		}
+	}
+}
+country_event = { #Calhoun holds elections
+	id = ncr_dharma.18
+	title = ncr_dharma.18.t
+	desc = ncr_dharma.18.d
+	picture = GFX_event_NCR_congress
+
+	is_triggered_only = yes
+
+	option = { #Calhoun
+		name = ncr_dharma.18.a
+		add_stability = 0.1
+		set_cosmetic_tag = NCR_federation
+	}
+	option = { #Hubologists
+		name = ncr_dharma.18.b
+		add_stability = -0.1
+		EUR = {
+			EUR_richard_goldman = {
+				set_nationality = BON
+			}
+		}
+		promote_character = EUR_richard_goldman
+		set_capital = {
+			state = 1
+		}
+		1 = {
+			set_state_name = "Starfather's Church"
+			hidden_effect = {
+				set_province_name = {
+					id = 2409
+					name = "Starfather's Church"
+				}
+			}
+		}
+		set_party_name = {
+			ideology = people
+			long_name = "Starfather's Children"
+			name = "Starfather's Children"
+		}
+		country_event = ncr_dharma.181
+		hidden_effect = {
+			set_politics = {
+				ruling_party = people
+			}
+			set_popularities = {
+				ruler = 0
+				people = 100
+				elites = 0
+				intellectuals = 0
+			}
+		}
+	}
+	option = { #Lo Pan
+		name = ncr_dharma.18.c
+		SHI = {
+			SHI_lo_pan = {
+				set_nationality = BON
+			}
+		}
+		promote_character = SHI_lo_pan
+		set_cosmetic_tag = NCR_Pacific_States
+		hidden_effect = {
+			if = {
+				limit = {
+					SHI = {
+						exists = yes
+					}
+				}
+				SHI = {
+					BON = { change_tag_from = ROOT }
+				}
+				every_state = {
+					limit = {
+						is_core_of = SHI
+					}
+					set_state_flag = do_not_exodus
+				}
+				annex_country = {
+					target = SHI
+					transfer_troops = yes
+				}
+				every_state = {
+					limit = {
+						is_core_of = SHI
+					}
+					clr_state_flag = do_not_exodus
+					add_core_of = BON
+				}
+			}
+		}
+		set_capital = {
+			state = 163
+		}
+		set_party_name = {
+			ideology = ruler
+			long_name = "The Crane School"
+			name = "The Crane School"
+		}
+		hidden_effect = {
+			set_politics = {
+				ruling_party = ruler
+			}
+			set_popularities = {
+				ruler = 100
+				people = 0
+				elites = 0
+				intellectuals = 0
+			}
+		}
+	}
+}
+#Hubologists choose a flag
+country_event = {
+	id = ncr_dharma.181
+	title = ncr_dharma.181.t
+	desc = ncr_dharma.181.d
+	picture = GFX_event_NCR_congress
+
+	is_triggered_only = yes
+
+	option = { #Logo
+		name = ncr_dharma.181.a
+		set_cosmetic_tag = NCR_HUB
+	}
+	option = { #Wheel
+		name = ncr_dharma.181.b
+		set_cosmetic_tag = NCR_HUB_2
+	}
+}
+
+##3 Expansion
+add_namespace = ncr_expansion
+
+country_event = { # Operation Brynhildr
+	id = ncr_expansion.1
+	title = ncr_expansion.1.t
+	desc = ncr_expansion.1.d
+	picture = GFX_event_NCR_victory
+
+	is_triggered_only = yes
+
+	option = { # Kimball
+		name = ncr_expansion.1.a
+		add_political_power = 25
+		add_opinion_modifier = { target = BVC modifier = deployedrangers }
+		add_opinion_modifier = { target = BLP modifier = deployedrangers }
+		custom_effect_tooltip = rangerdeploy_tt
+		hidden_effect = {
+			load_oob = bajarangers
+		}
+		custom_effect_tooltip = ncr_expansion.1.a_tt
+		set_country_flag = kimball_support_dayglow
+
+	}
+	option = { # Murphy
+		name = ncr_expansion.1.b
+		every_state = {
+			limit = {
+				is_baja_california_state = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = water_generator
+				level = 1
+				instant_build = yes
+			}
+		}
+		add_timed_idea = {
+			days = 180
+			idea = rattletailrepaid
+		}
+		BVC ={
+			add_timed_idea = {
+				days = 180
+				idea = rattletale_weaken_resistance
+			}
+		}
+		BLP ={
+			add_timed_idea = {
+				days = 180
+				idea = rattletale_weaken_resistance
+			}
+		}
+	}
+
+	option = { #
+		name = ncr_expansion.1.c
+		866 = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+			}
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+			}
+		}
+		custom_effect_tooltip = ncr_expansion.1.c_tt
+		set_country_flag = hayes_won_baja
+	}
+}
+
+country_event = {
+	id = ncr_expansion.2
+	title = ncr_expansion.2.t
+	desc = ncr_expansion.2.d
+	picture = GFX_event_sub_generic_ruins_9
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_expansion.2.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				add = 50
+			}
+		}
+		add_tech_bonus = {
+			bonus = 0.15
+			uses = 1
+			category = industry
+		}
+		NCR = { news_event = ncr_expansion.3 }
+	}
+	option = {
+		name = ncr_expansion.2.b
+		ai_chance = {
+			base = 0
+		}
+		army_experience = 15
+		NCR = { news_event = ncr_expansion.4 }
+	}
+}
+
+
+news_event = {
+	id = ncr_expansion.3
+	title = ncr_expansion.3.t
+	desc = ncr_expansion.3.d
+	picture = GFX_event_sub_generic_post_war_construction_site
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_expansion.3.a
+		random_owned_state = {
+			limit = {
+				is_valid_state_for_2_arms_factories = yes
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+			add_resource = {
+				type = metal
+				amount = 4
+			}
+		}
+	}
+}
+
+news_event = {
+	id = ncr_expansion.4
+	title = ncr_expansion.4.t
+	desc = ncr_expansion.4.d
+	picture = GFX_event_sub_generic_post_war_construction_site
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_expansion.4.a
+		add_tech_bonus = {
+			bonus = 0.3
+			uses = 2
+			category = infantry_tech_category
+		}
+		army_experience = 5
+	}
+}
+
+country_event = {
+	id = ncr_expansion.5
+	title = ncr_expansion.5.t
+	desc = ncr_expansion.5.d
+	picture = GFX_event_enc_the_silo
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_expansion.5.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				add = 50
+			}
+		}
+		add_war_support = 0.10
+		NCR = { news_event = ncr_expansion.6 }
+
+	}
+	option = {
+		name = ncr_expansion.5.b
+		ai_chance = {
+			base = 0
+		}
+		add_popularity = {
+			ideology = people
+			popularity = -0.05
+		}
+		army_experience = 15
+		add_offsite_building = { type = industrial_complex level = 2 }
+		add_offsite_building = { type = arms_factory level = 1 }
+		every_state = {
+			limit = {
+				is_owned_by = NEW
+			}
+			set_state_flag = do_not_exodus
+		}
+		NCR = { transfer_state = 159 }
+		every_state = {
+			limit = {
+				is_owned_by = NCR
+				is_core_of = NEW
+			}
+			clr_state_flag = do_not_exodus
+		}
+		NCR = { news_event = ncr_expansion.7 }
+	}
+}
+
+news_event = {
+	id = ncr_expansion.6
+	title = ncr_expansion.6.t
+	desc = ncr_expansion.6.d
+	picture = GFX_event_enc_the_silo
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_expansion.6.a
+		every_state = {
+			limit = {
+				state = 159
+			}
+			custom_effect_tooltip = attis_unlock_border_war
+		}
+		set_country_flag = hates_reno
+	}
+}
+
+news_event = {
+	id = ncr_expansion.7
+	title = ncr_expansion.7.t
+	desc = ncr_expansion.7.d
+	picture = GFX_event_enc_the_silo
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_expansion.7.a
+		add_opinion_modifier = {
+			target = NEW
+			modifier = ncrbuddy
+		}
+		NEW = {
+			add_opinion_modifier = {
+				target = NCR
+				modifier = ncrbuddy
+			}
+		}
+	}
+}
+
+news_event = {
+	id = ncr_expansion.8
+	title = ncr_expansion.8.t
+	desc = ncr_expansion.8.d
+	picture = GFX_event_car_3
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_expansion.8.a
+		set_temp_variable = { caps_to_add = 150 }
+		add_caps = yes
+	}
+}
+
+news_event = {
+	id = ncr_expansion.9
+	title = ncr_expansion.9.t
+	desc = ncr_expansion.9.d
+	picture = GFX_event_desert_rangers_marching
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_expansion.9.a
+		add_timed_idea = {
+			idea = ranger_uprising
+			days = 180
+		}
+	}
+}
+
+country_event = {
+	id = ncr_expansion.10
+	title = ncr_expansion.10.t
+	desc = ncr_expansion.10.d
+	picture = GFX_event_ncr_won
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_expansion.10.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				add = 50
+			}
+		}
+		add_ideas = ncr_taxes
+		if = {
+			limit = {
+				has_government = ruler
+			}
+				custom_effect_tooltip = chosen_karma_down
+		subtract_from_variable = { chosen_karma_num = 1 }
+		}
+		if = {
+			limit = {
+				has_government = elites
+			}
+			custom_effect_tooltip = chitsa_karma_down
+			subtract_from_variable = { chitsa_karma_num = 1 }
+		}
+		else_if = {
+			limit = {
+				has_government = people
+			}
+			custom_effect_tooltip = nagor_karma_down
+			subtract_from_variable = { nagor_karma_num = 1 }
+		}
+		else_if = {
+			limit = {
+				has_government = intellectuals
+			}
+			custom_effect_tooltip = dimitri_karma_down
+			subtract_from_variable = { dimitri_karma_num = 1 }
+		}
+
+		effect_tooltip = {
+			set_temp_variable = {
+				node_register_target_1 = 337
+			}
+			set_temp_variable = {
+				node_register_target_2 = 136
+			}
+			register_new_trade_node_connection = yes
+			set_temp_variable = {
+				trade_route_selector_target = 337
+			}
+			set_temp_variable = {
+				node_map_selector = 135
+			}
+			create_trade_route_between = yes
+		}
+		hidden_effect = {
+			set_temp_variable = {
+				node_register_target_1 = 337
+			}
+			set_temp_variable = {
+				node_register_target_2 = 135
+			}
+			register_new_trade_node_connection = yes
+			set_variable = { trade_route_selector_target = 337 }
+			set_variable = { node_map_selector = 136 }
+			create_trade_route_between = yes
+		}
+		NCR = { news_event = ncr_expansion.12 }
+
+	}
+	option = {
+		name = ncr_expansion.10.b
+		if = {
+			limit = {
+				has_government = ruler
+			}
+				custom_effect_tooltip = chosen_karma_down
+		subtract_from_variable = { chosen_karma_num = 1 }
+		}
+		if = {
+			limit = {
+				has_government = elites
+			}
+			custom_effect_tooltip = chitsa_karma_down
+			subtract_from_variable = { chitsa_karma_num = 1 }
+		}
+		else_if = {
+			limit = {
+				has_government = people
+			}
+			custom_effect_tooltip = nagor_karma_down
+			subtract_from_variable = { nagor_karma_num = 1 }
+		}
+		else_if = {
+			limit = {
+				has_government = intellectuals
+			}
+			custom_effect_tooltip = dimitri_karma_down
+			subtract_from_variable = { dimitri_karma_num = 1 }
+		}
+		custom_effect_tooltip = ncr_expansion.10.b_tt
+		NCR = { country_event = ncr_expansion.11 }
+	}
+}
+
+
+country_event = {
+	id = ncr_expansion.11
+	title = ncr_expansion.11.t
+	desc = ncr_expansion.11.d
+	picture = GFX_event_ARR_arroyo
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_expansion.11.a
+		trigger = {
+			369 = {
+				is_owned_by = ARR
+			}
+		}
+### Finish this one
+	}
+}
+
+news_event = {
+	id = ncr_expansion.12
+	title = ncr_expansion.12.t
+	desc = ncr_expansion.12.d
+	picture = GFX_event_ncr_election_posters
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_expansion.12.a
+		add_popularity = {
+			ideology = people
+			popularity = 0.05
+		}
+		army_experience = 15
+		add_offsite_building = { type = industrial_complex level = 1 }
+	}
+}
+
+news_event = {
+	id = ncr_expansion.13
+	title = ncr_expansion.13.t
+	desc = ncr_expansion.13.d
+	picture = GFX_event_ncr_election_posters
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_expansion.13.a
+		MOT = {
+			add_timed_idea = {
+				idea = ncr_takes_power
+				days = 200
+			}
+		}
+		NCR = {
+			add_timed_idea = {
+				idea = ncr_gets_power
+				days = 200
+			}
+		}
+	}
+}
+
+news_event = {
+	id = ncr_expansion.14
+	title = ncr_expansion.14.t
+	desc = ncr_expansion.14.d
+	picture = GFX_event_new_reno_sign
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_expansion.14.a
+		transfer_state = 159
+	}
+}
+news_event = {
+	id = ncr_expansion.15
+	title = ncr_expansion.15.t
+	desc = ncr_expansion.15.d
+	picture = GFX_event_new_reno_sign
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_expansion.15.a
+		add_war_support = -0.05
+	}
+}
+news_event = {
+	id = ncr_expansion.16
+	title = ncr_expansion.16.t
+	desc = ncr_expansion.16.d
+	picture = GFX_event_new_reno_sign
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_expansion.16.a
+		add_political_power = -25
+	}
+}
+
+news_event = {
+	id = ncr_expansion.17
+	title = ncr_expansion.17.t
+	desc = ncr_expansion.17.d
+	picture = GFX_event_new_reno_sign
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_expansion.17.a
+		add_political_power = 100
+		add_popularity = {
+			ideology = people
+			popularity = -0.05
+		}
+	}
+}
+news_event = {
+	id = ncr_expansion.18
+	title = ncr_expansion.18.t
+	desc = ncr_expansion.18.d
+	picture = GFX_event_new_reno_sign
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_expansion.18.a
+		add_war_support = -0.05
+		add_popularity = {
+			ideology = people
+			popularity = -0.05
+		}
+	}
+}
+
+
+news_event = {
+	id = ncr_expansion.19
+	title = ncr_expansion.19.t
+	desc = ncr_expansion.19.d
+	picture = GFX_event_NCR_ice_cream
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_expansion.19.a
+		set_temp_variable = { mot_supply_change = 20 }
+		change_mot_supply = yes
+		add_equipment_to_stockpile = {
+			type = support_equipment
+			amount = 50
+		}
+		add_equipment_to_stockpile = {
+			type = anti_tank_equipment
+			amount = 30
+			producer = MOT
+		}
+		add_equipment_to_stockpile = {
+			type = fireteam_equipment
+			amount =  40
+			producer = MOT
+		}
+		add_political_power = 30
+		custom_effect_tooltip = ncr_expansion.19.a_tt
+	}
+}
+news_event = {
+	id = ncr_expansion.20
+	title = ncr_expansion.20.t
+	desc = ncr_expansion.20.d
+	picture = GFX_event_NCR_watch
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_expansion.20.a
+		set_temp_variable = { caps_to_add = 80 }
+		add_caps = yes
+		add_popularity = {
+			ideology = people
+			popularity = 0.10
+		}
+	}
+}
+
+news_event = {
+	id = ncr_expansion.21
+	title = ncr_expansion.21t
+	desc = ncr_expansion.21.d
+	picture = GFX_event_NCR_watch
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_expansion.21.a
+		add_tech_bonus = {
+			bonus = 0.25
+			uses = 2
+			category = cat_land_doctrine
+		}
+		add_equipment_to_stockpile = { type = energy_equipment_2 amount = 50  producer = USA}
+	}
+}
+country_event = {
+	id = ncr_expansion.22
+	title = ncr_expansion.22.t
+	desc = ncr_expansion.22.d
+	picture = GFX_event_enc_the_silo
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_expansion.22.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				add = 50
+			}
+		}
+		hidden_effect = {
+			NCR  = {
+				news_event = {
+					id = ncr_expansion.23
+					days = 30
+				}
+			}
+		}
+	}
+	option = { #Why does this exist? - Alduin
+		name = ncr_expansion.22.b
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+news_event = {
+	id = ncr_expansion.23
+	title = ncr_expansion.23.t
+	desc = ncr_expansion.23.d
+	picture = GFX_event_ach_hood_security_fields
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_expansion.23.a
+		set_technology = { habitation_tech_level_scientific = 1}
+		set_technology = { exploitation_tech_level_scientific = 1}
+		hidden_effect = {
+			news_event = { id = ncr_expansion.24 days = 70 }
+		}
+	}
+}
+
+
+news_event = {
+	id = ncr_expansion.24
+	title = ncr_expansion.24.t
+	desc = ncr_expansion.24.d
+	picture = GFX_event_generic_nuclear_explosion
+	immediate = {
+		hidden_effect = {
+			goto_state = 13
+			launch_nuke  = {
+				province = 3250
+				state = 13
+				use_nuke = no
+			}
+			launch_nuke  = {
+				province = 3231
+				state = 592
+				use_nuke = no
+			}
+		}
+	}
+	is_triggered_only = yes
+	# major = yes
+	option = {
+		name = ncr_expansion.24.a
+		trigger = {
+			is_new_california_member = yes
+		}
+	}
+	option = {
+		name = ncr_expansion.24.b
+		trigger = {
+			is_new_california_member = no
+		}
+	}
+
+}
+
+news_event = {
+	id = ncr_expansion.25
+	title = ncr_expansion.25.t
+	desc = ncr_expansion.25.d
+	picture = GFX_event_ncr_trenches
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		every_owned_state = {
+			limit = {
+				OR = {
+					is_core_of = CES
+					is_core_of = LAC
+				}
+			}
+			add_resistance = 80
+		}
+	}
+	option = {
+		name = ncr_expansion.25.a
+		if = {
+			limit = {
+				OR = {
+					CES = { all_core_land_owned_by_prev_sphere = yes }
+					AND = {
+						CES = { exists = no }
+						any_owned_state	= {
+							is_core_of = CES
+						}
+					}
+				}
+			}
+			complete_national_focus = ncr_the_bulls_demesne
+		}
+	}
+}
+
+news_event = {
+	id = ncr_expansion.26
+	title = ncr_expansion.26.t
+	desc = ncr_expansion.26.d
+	picture = GFX_event_SHI_good
+	is_triggered_only = yes
+	option = {
+		name = ncr_expansion.26.a
+		add_political_power = 100
+		add_war_support = 0.025
+		SHI = { news_event = ncr_expansion.27 }
+	}
+}
+
+
+news_event = {
+	id = ncr_expansion.27
+	title = ncr_expansion.27.t
+	desc = ncr_expansion.27.d
+	picture = GFX_event_MOJ_ncr_treaty
+	is_triggered_only = yes
+	option = {
+		name = ncr_expansion.27.a
+		add_political_power = 75
+	}
+}
+
+news_event = {
+	id = ncr_expansion.28
+	title = ncr_expansion.28.t
+	desc = ncr_expansion.28.d
+	picture = GFX_event_NCR_money_1
+	is_triggered_only = yes
+
+	#Kimball option
+	option = {
+		name = ncr_expansion.28.a
+		trigger = {
+			has_country_leader = {
+				name = "Aaron Kimball"
+				ruling_only = yes
+			}
+		}
+		MXS = {
+			create_or_join_new_california = yes
+			FOU = {
+				become_puppet = yes
+			}
+			swap_ideas = {
+				remove_idea = MXS_slave_labor
+				add_idea = MXS_slave_labor_2
+			}
+			set_cosmetic_tag = MXS_NCR
+		}
+	}
+
+	#Hayes option
+	option = {
+		name = ncr_expansion.28.b
+		trigger = {
+			has_country_leader = {
+				name = "Grant C. Hayes"
+				ruling_only = yes
+			}
+		}
+		FOU = {
+			become_puppet = yes
+		}
+		MXS = {
+			create_or_join_new_california = yes
+			swap_ideas = {
+				remove_idea = MXS_slave_labor
+				add_idea = MXS_slave_labor_2
+			}
+			set_cosmetic_tag = MXS_NCR
+		}
+	}
+
+	#Allgood option
+	option = {
+		name = ncr_expansion.28.c
+		trigger = {
+			has_country_leader = {
+				name = "Allgood Murphy"
+				ruling_only = yes
+			}
+		}
+		FOU = {
+			become_puppet = yes
+		}
+		MXS = { ROOT = { grant_wargoals_on_core_states_of_prev_force_ai_war = yes } }
+	}
+
+	#Flynn option
+	option = {
+		name = ncr_expansion.28.e
+		trigger = {
+			has_country_leader = {
+				name = "Anton Flynn"
+				ruling_only = yes
+			}
+		}
+		MXS = {
+			create_or_join_big_circle = yes
+			swap_ideas = {
+				remove_idea = MXS_slave_labor
+				add_idea = MXS_slave_labor_3
+			}
+			set_cosmetic_tag = MXS_NCR
+			FOU = {
+				become_puppet = yes
+			}
+		}
+	}
+}
+
+news_event = {
+	id = ncr_expansion.29
+	title = ncr_expansion.29.t
+	desc = ncr_expansion.29.d
+	picture = GFX_event_MOJ_ncr_treaty
+	is_triggered_only = yes
+	option = {
+		name = ncr_expansion.29.a
+	}
+	option = {
+		name = ncr_expansion.29.b
+	}
+}
+
+
+
+add_namespace = ncr_hayes
+
+news_event = {
+	id = ncr_hayes.1
+	title = ncr_hayes.1.t
+	desc = ncr_hayes.1.d
+	picture = GFX_event_fallout_moon
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_hayes.1.a
+		add_political_power = 100
+		add_command_power = 100
+	}
+}
+
+news_event = {
+	id = ncr_hayes.2
+	title = ncr_hayes.2.t
+	desc = ncr_hayes.2.d
+	picture = GFX_event_enc_reform_propaganda
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_hayes.2.a
+		add_stability = -0.10
+		custom_effect_tooltip = ncr_hayes.2.a_tt
+		set_technology = {
+			infantry_tech_level_scientific = 1
+		}
+		set_technology = {
+			support_tech_level_scientific = 1
+		}
+	}
+}
+
+news_event = {
+	id = ncr_hayes.3
+	title = ncr_hayes.3.t
+	desc = ncr_hayes.3.d
+	picture = GFX_event_enc_reform_propaganda
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_hayes.3.a
+		add_to_variable = { ncr_consumer_goods = -0.05 }
+		add_to_variable = { ncr_pp_support = 0.05 }
+		add_to_variable = { ncr_resources_local = 0.05 }
+		force_update_dynamic_modifier = yes
+		custom_effect_tooltip = ncr_hayes_reforms_complete_tt
+		set_technology = {
+			power_armour_tech_level_scientific = 1
+		}
+		set_cosmetic_tag = NCR_NAR
+	}
+}
+
+add_namespace = ncr_hayes_expansion
+
+news_event = {
+	id = ncr_hayes_expansion.1
+	title = ncr_hayes_expansion.1.t
+	desc = ncr_hayes_expansion.1.d
+	picture = GFX_event_ncr_military_base
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_hayes_expansion.1.a
+		random_list = {
+			20 = {
+				country_event = area51_raid_events.5
+				389 = {
+					set_state_flag = area_51_blasted_open
+				}
+				set_country_flag = area_51_done_flag
+			}
+			20 = {
+				country_event = area51_raid_events.6
+				389 = {
+					set_state_flag = area_51_blasted_open
+				}
+				set_country_flag = area_51_done_flag
+			}
+			20 = {
+				country_event = area51_raid_events.7
+				389 = {
+					set_state_flag = area_51_blasted_open
+				}
+				set_country_flag = area_51_done_flag
+			}
+			20 = {
+				country_event = area51_raid_events.8 #New Plague
+				389 = {
+					set_state_flag = area_51_blasted_open
+				}
+				set_country_flag = area_51_done_flag
+				modifier = {
+					factor = 0
+					NOT = { has_global_flag = area_51_easter_egg_toggle_enabled_global_flag }
+				}
+			}
+			20 = {
+				country_event = area51_raid_events.11 #Commander K'Een
+				389 = {
+					set_state_flag = area_51_blasted_open
+				}
+				set_country_flag = area_51_done_flag
+				modifier = {
+					factor = 0
+					OR = {
+						is_ai = no
+						NOT = { has_global_flag = area_51_commander_keen_enabled_global_flag }
+						has_global_flag = UFO_invasion_enabled_global_flag
+					}
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = ncr_hayes_expansion.2
+	title = ncr_hayes_expansion.2.t
+	desc = ncr_hayes_expansion.2.d
+	picture = GFX_event_ncr_hayes_elected
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_hayes_expansion.2.a
+		army_experience = 25
+		NCR = {
+			set_temp_variable = { BOS_tension_to_add = 10 }
+			bos_change_tension = yes
+		}
+		BOS = {
+			set_temp_variable = { BOS_tension_to_add = 10 }
+			bos_change_tension = yes
+		}
+        MOT = {
+            MOT_moore = {
+                set_nationality = NCR
+            }
+        }
+	}
+}
+
+#Rosado meets with Hayes
+country_event = {
+	id = ncr_hayes_expansion.3
+	title = ncr_hayes_expansion.3.t
+	desc = ncr_hayes_expansion.3.d
+	picture = GFX_event_ARR_arroyo
+
+	is_triggered_only = yes
+
+	option = {#Rosado agrees to cut ties with Alamo
+		name = ncr_hayes_expansion.3.a
+		set_country_flag = mxt_rosada_agrees
+		ACH = {
+			ROOT = {
+				grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+			}
+		}
+	}
+}
+#Hayes and Dornan
+country_event = {
+	id = ncr_hayes_expansion.4
+	title = ncr_hayes_expansion.4.t
+	desc = ncr_hayes_expansion.4.d
+	picture = GFX_event_enc_single_soldier
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_hayes_expansion.4.a
+		set_country_flag = ncr_hayes_dornan
+		custom_effect_tooltip = DORNAN_TT
+		custom_effect_tooltip = ncr_hayes_uniform_tt
+		add_equipment_to_stockpile = { type = enclave_power_armour_equipment_2 amount = 2 producer = USA }
+        hidden_effect = {
+            VLT = {
+                retire_character = VLT_chad_rannor
+            }
+        }
+	}
+}
+#SPACE
+country_event = {
+	id = ncr_hayes_expansion.5
+	title = ncr_hayes_expansion.5.t
+	desc = ncr_hayes_expansion.5.d
+	picture = GFX_event_space
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_hayes_expansion.5.a
+		add_timed_idea = {
+			idea = NCR_celebrating_launch
+			days = 180
+		}
+		custom_effect_tooltip = ncr_hayes_button_tt
+		hidden_effect = {
+			country_event = ncr_hayes_expansion.6
+		}
+	}
+}
+#Boom boom boom boom
+country_event = {
+	id = ncr_hayes_expansion.6
+	title = ncr_hayes_expansion.6.t
+	desc = ncr_hayes_expansion.6.d
+	picture = GFX_event_brain
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_hayes_expansion.6.a
+		custom_effect_tooltip = ncr_lost_hills_wipe_tt
+		157 = {
+			set_temp_variable = { pop_add = -51241 }
+			add_state_population_no_state_name = yes
+            set_state_category = wasteland
+		}
+		set_victory_points = {
+			province = 3418
+			value = 1
+		}
+		157 = {
+			set_state_name = "Lost Hills Ruins"
+		}
+	}
+	option = {
+		name = ncr_hayes_expansion.6.b
+		custom_effect_tooltip = ncr_maxson_bunker_wipe_tt
+		412 = {
+			set_temp_variable = { pop_add = -23612 }
+			add_state_population_no_state_name = yes
+            set_state_category = wasteland
+		}
+		set_victory_points = {
+			province = 3110
+			value = 1
+		}
+		412 = {
+			set_state_name = "Maxson Bunker Ruins"
+		}
+	}
+	option = {
+		name = ncr_hayes_expansion.6.c
+		trigger = {
+			MOJ = {
+				NOT = {
+					has_completed_focus = moj_the_mojave_secured
+				}
+			}
+		}
+		custom_effect_tooltip = ncr_madre_hidden_tt
+		hidden_effect = {
+			country_event = ncr_hayes_expansion.7
+		}
+	}
+}
+#Madre
+country_event = {
+	id = ncr_hayes_expansion.7
+	title = ncr_hayes_expansion.7.t
+	desc = ncr_hayes_expansion.7.d
+	picture = GFX_event_MOJ_sierra_madre
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_hayes_expansion.7.a
+		custom_effect_tooltip = ncr_madre_tt
+		custom_effect_tooltip = ncr_veronica_tt
+	}
+}
+country_event = {
+	id = ncr_hayes_expansion.8
+	title = ncr_hayes_expansion.8.t
+	desc = ncr_hayes_expansion.8.d
+	picture = GFX_event_ncr_hayes_elected
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_hayes_expansion.8.a
+        NCR_drummond = {
+            add_planning = 1
+            add_skill_level = 1
+        }
+	}
+}
+
+
+add_namespace = ncr_murphy
+
+
+news_event = {
+	id = ncr_murphy.1
+	title = ncr_murphy.1.t
+	desc = ncr_murphy.1.d
+	picture = GFX_event_followers_generic
+
+	is_triggered_only = yes
+
+	option = {
+		name =  ncr_murphy.1.a
+			350 = {
+				add_resource = {
+					type = water
+					amount = 4
+				}
+				add_resource = {
+					type = metal
+					amount = 6
+				}
+			}
+	}
+}
+news_event = {
+	id = ncr_murphy.2
+	title = ncr_murphy.2.t
+	desc = ncr_murphy.2.d
+	picture = GFX_event_generic_gun_runners
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_murphy.2.a
+		set_technology = { ncr_privatepolice = 1 }
+		custom_effect_tooltip = ncr_murphy.2.a_tt
+		hidden_effect = {
+			350 = {	# The Boneyard
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 2258
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 907
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 4713
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 1782
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 903
+					instant_build = yes
+				}
+			}
+			591 = {	# Dana Point
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 4962
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 902
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 5072
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 2397
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 4966
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 2272
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 877
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 4973
+					instant_build = yes
+				}
+			}
+			1 = {	# The Hub
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 2414
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 4622
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 1780
+					instant_build = yes
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = ncr_murphy.3
+	title = ncr_murphy.3.t
+	desc = ncr_murphy.3.d
+	picture = GFX_event_generic_gun_runners
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_murphy.3.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				add = 100
+			}
+		}
+		every_owned_state = {
+			add_extra_state_shared_building_slots = 1
+			add_resource = {
+				type = water
+				amount = 3
+			}
+		}
+		if = {
+			limit = {
+				has_government = ruler
+			}
+			custom_effect_tooltip = chosen_karma_up
+			add_to_variable = { chosen_karma_num = 1 }
+		}
+		if = {
+			limit = {
+				has_government = elites
+			}
+			custom_effect_tooltip = chitsa_karma_up
+			add_to_variable = { chitsa_karma_num = 1 }
+		}
+		else_if = {
+			limit = {
+				has_government = people
+			}
+			custom_effect_tooltip = nagor_karma_up
+			add_to_variable = { nagor_karma_num = 1 }
+		}
+		else_if = {
+			limit = {
+				has_government = intellectuals
+			}
+			custom_effect_tooltip = dimitri_karma_up
+			add_to_variable = { dimitri_karma_num = 1 }
+		}
+
+		effect_tooltip = {
+			set_temp_variable = {
+				node_register_target_1 = 337
+			}
+			set_temp_variable = {
+				node_register_target_2 = 136
+			}
+			register_new_trade_node_connection = yes
+			set_temp_variable = {
+				trade_route_selector_target = 337
+			}
+			set_temp_variable = {
+				node_map_selector = 135
+			}
+			create_trade_route_between = yes
+		}
+		hidden_effect = {
+			set_temp_variable = {
+				node_register_target_1 = 337
+			}
+			set_temp_variable = {
+				node_register_target_2 = 135
+			}
+			register_new_trade_node_connection = yes
+			set_variable = { trade_route_selector_target = 337 }
+			set_variable = { node_map_selector = 136 }
+			create_trade_route_between = yes
+		}
+		add_opinion_modifier = {
+			target = NCR
+			modifier = arroyo_ncr_trading_ties
+		}
+		NCR = {
+			add_opinion_modifier = {
+				target = ARR
+				modifier = arroyo_ncr_trading_ties
+			}
+		}
+
+	}
+	option = {
+		name = ncr_murphy.3.b
+		ai_chance = {
+			base = 0
+		}
+		NCR = { news_event = ncr_murphy.4 }
+	}
+}
+news_event = {
+	id = ncr_murphy.4
+	title = ncr_murphy.4.t
+	desc = ncr_murphy.4.d
+	picture = GFX_event_ARR_arroyo
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_murphy.2.a
+		add_war_support = 0.05
+	}
+}
+
+news_event = {
+	id = ncr_murphy.5
+	title = ncr_murphy.5.t
+	desc = ncr_murphy.5.d
+	picture = GFX_event_NCR_watch
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_murphy.5.a
+		add_popularity = {
+			ideology = people
+			popularity = 0.05
+		}
+	}
+}
+country_event = {
+	id = ncr_murphy.6
+	title = ncr_murphy.6.t
+	desc = ncr_murphy.6.d
+	picture = GFX_event_generic_gun_runners
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_murphy.6.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				add = 100
+			}
+		}
+		add_manpower = 400
+		NCR = { news_event = NCR_murphy.7 }
+	}
+	option = {
+		name = ncr_murphy.6.b
+		ai_chance = {
+			base = 0
+		}
+		NCR = { news_event = ncr_murphy.8 }
+	}
+}
+
+news_event = {
+	id = ncr_murphy.7
+	title = ncr_murphy.7.t
+	desc = ncr_murphy.7.d
+	picture = GFX_event_vault_city_council_building
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_murphy.7.a
+		add_tech_bonus = {
+			category = industry_specialisation_category
+			bonus = 0.4
+			uses = 2
+		}
+	}
+}
+news_event = {
+	id = ncr_murphy.8
+	title = ncr_murphy.8.t
+	desc = ncr_murphy.8.d
+	picture = GFX_event_NCR_watch
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_murphy.8.a
+		add_stability = -0.01
+	}
+}
+
+news_event = {
+	id = ncr_murphy.9
+	title = ncr_murphy.9.t
+	desc = ncr_murphy.9.d
+	picture = GFX_event_nature_nice
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_murphy.9.a
+		add_ideas = NCR_ERA
+	}
+}
+country_event = {#Murphy meets with Luchas
+	id = ncr_murphy.10
+	title = ncr_murphy.10.t
+	desc = ncr_murphy.10.d
+	picture = GFX_event_ffi_ring
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_murphy.10.a
+		army_experience = 30
+	}
+}
+country_event = {#Murphy and Mojave
+	id = ncr_murphy.11
+	title = ncr_murphy.11.t
+	desc = ncr_murphy.11.d
+	picture = GFX_event_NCR_mojave_camp
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_murphy.11.a
+		trigger = {
+			MOT = {
+				NOT = {
+					has_completed_focus = mot_civilian_rule
+				}
+			}
+		}
+		MOT = {
+			news_event = ncr_murphy.111
+		}
+		MOT = {
+			every_owned_state = {
+				limit = {
+					NOT = {
+						is_core_of = MOT
+					}
+				}
+				add_resistance = -10
+			}
+		}
+	}
+	option = {
+		name = ncr_murphy.11.a
+		trigger = {
+			MOT = {
+				has_completed_focus = mot_civilian_rule
+			}
+		}
+		MOT = {
+			add_stability = 0.15
+			news_event = ncr_murphy.112
+		}
+	}
+}
+#Mojave gets supporty
+news_event = {
+	id = ncr_murphy.111
+	title = ncr_murphy.111.t
+	desc = ncr_murphy.111.d
+	picture = GFX_event_NCR_mojave_camp
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_murphy.111.a
+		add_ideas = NCR_not_a_question_of_citizenship
+		add_ideas = NCR_supporting_the_populace
+	}
+}
+news_event = {
+	id = ncr_murphy.112
+	title = ncr_murphy.112.t
+	desc = ncr_murphy.112.d
+	picture = GFX_event_NCR_mojave_camp
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_murphy.112.a
+		add_stability = 0.15
+	}
+}
+country_event = {#Murphy gives guarantees
+	id = ncr_murphy.12
+	title = ncr_murphy.12.t
+	desc = ncr_murphy.12.d
+	picture = GFX_event_NCR_mojave_camp
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_murphy.12.a
+		NCR = {
+			give_guarantee = ROOT
+		}
+		division_template = {
+			name = "NCR Expedition"
+			template_counter = 83
+			division_names_group = _NCR_INF_01
+
+			regiments = {
+				spec_ops = { x = 0 y = 0 }
+				spec_ops = { x = 0 y = 1 }
+				spec_ops = { x = 1 y = 0 }
+				spec_ops = { x = 1 y = 1 }
+				spec_ops = { x = 2 y = 0 }
+				spec_ops = { x = 2 y = 1 }
+            }
+		}
+		capital_scope = {
+			create_unit = {
+				division = "name = \"NCR Expedition\" division_template = \"NCR Expedition\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				owner = ROOT
+            }
+			create_unit = {
+				division = "name = \"NCR Expedition\" division_template = \"NCR Expedition\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				owner = ROOT
+            }
+			create_unit = {
+				division = "name = \"NCR Expedition\" division_template = \"NCR Expedition\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				owner = ROOT
+            }
+        }
+	}
+}
+country_event = {#Gordon now leads VC
+	id = ncr_murphy.13
+	title = ncr_murphy.13.t
+	desc = ncr_murphy.13.d
+	picture = GFX_event_vault_city
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_murphy.13.a
+		every_state = {
+			limit = {
+				OWNER = {
+					is_new_california_member = yes
+				}
+				OR = {
+					is_core_of = VLT
+					is_core_of = CYC
+					is_core_of = PAL
+					is_core_of = SLN
+				}
+			}
+			VLT = {
+				transfer_state = PREV
+			}
+		}
+		VLT = {
+			become_puppet = yes
+			set_politics = {
+				ruling_party = ruler
+			}
+			set_cosmetic_tag = VLT_gordon_ncr
+			hidden_effect = {
+				set_country_flag = cult_of_renewal_rising
+				set_country_flag = vlt_question_of_faith_greed
+				set_popularities = {
+					people = 5
+					elites = 5
+					intellectuals = 5
+					ruler = 85
+				}
+				load_focus_tree = vaultcity_gordon_nf
+				swap_ideas = {
+					remove_idea = ncrsubjugation
+					add_idea = ncrcooperation
+				}
+			}
+		}
+	}
+}
+
+
+
+add_namespace = ncr_election_results
+
+news_event = { #Hayes
+	id = ncr_election_results.1
+	title = ncr_election_results.1.t
+	desc = ncr_election_results.1.d
+	picture = GFX_event_ncr_hayes_elected
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_election_results.1.a
+		trigger = {
+			original_tag = NCR
+		}
+	}
+	option = {
+		name = ncr_election_results.1.b
+		trigger = {
+			NOT = {
+				original_tag = NCR
+			}
+		}
+	}
+}
+news_event = { #Allgood
+	id = ncr_election_results.2
+	title = ncr_election_results.2.t
+	desc = ncr_election_results.2.d
+	picture = GFX_event_shady_sands
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_election_results.2.a
+		trigger = {
+			original_tag = NCR
+		}
+	}
+	option = {
+		name = ncr_election_results.2.b
+		trigger = {
+			NOT = {
+				original_tag = NCR
+			}
+		}
+	}
+}
+news_event = { #Kimball
+	id = ncr_election_results.3
+	title = ncr_election_results.3.t
+	desc = ncr_election_results.3.d
+	picture = GFX_event_NCR_victory
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_election_results.3.a
+		trigger = {
+			original_tag = NCR
+		}
+	}
+	option = {
+		name = ncr_election_results.3.b
+		trigger = {
+			NOT = {
+				original_tag = NCR
+			}
+		}
+	}
+}
+news_event = { #Deadlock
+	id = ncr_election_results.4
+	title = ncr_election_results.4.t
+	desc = ncr_election_results.4.d
+	picture = GFX_event_NCR_congress
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_election_results.4.a
+		trigger = {
+			original_tag = NCR
+		}
+	}
+	option = {
+		name = ncr_election_results.4.b
+		trigger = {
+			NOT = {
+				original_tag = NCR
+			}
+		}
+	}
+}
+
+add_namespace = ncr_election
+##
+country_event = {
+	id = ncr_election.1
+	title = ncr_election.1.t
+	desc = {
+		trigger = {
+			NCR = {
+				has_country_leader = {
+					character = NCR_aaron_kimball
+				}
+			}
+			NOT = {
+				EUR = {
+					is_subject_of = NCR
+				}
+			}
+		}
+		text = ncr_election.1.d
+	}
+	desc = {
+		trigger = {
+			NCR = {
+				has_country_leader = {
+					character = NCR_allgood_murphy
+				}
+			}
+			NOT = {
+				EUR = {
+					is_subject_of = NCR
+				}
+			}
+		}
+		text = ncr_election.1.d.2
+	}
+	desc = {
+		trigger = {
+			has_country_leader = {
+				character = NCR_allgood_murphy
+			}
+			EUR = {
+				is_subject_of = NCR
+			}
+		}
+		text = ncr_election.1.d.3
+	}
+	desc = {
+		trigger = {
+			NCR = {
+				has_country_leader = {
+					character = NCR_aaron_kimball
+				}
+			}
+			EUR = {
+				is_subject_of = NCR
+			}
+		}
+		text = ncr_election.1.d.4
+	}
+	is_triggered_only = yes
+	picture = GFX_event_NCR_congress
+	option = {
+		trigger = {
+			NCR = {
+				has_country_leader = {
+					character = NCR_aaron_kimball
+				}
+			}
+		}
+		name = ncr_election.1.a #Hayes and Kimball - Go with Kimball
+		set_country_flag = hayes_rallies_against_us
+		set_country_flag = kimball_for_president
+		set_variable = { global.first_candidate_id = 2 }
+		set_variable = { global.second_candidate_id = 3 }
+		if = {
+			limit = {
+				has_country_flag = hayes_election_dayglow_1
+			}
+			set_temp_variable = { state_id = 2 }
+			set_temp_variable = { candidate_id = global.second_candidate_id }
+			set_temp_variable = { support_to_add = 51 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_dayglow_support_1
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_dayglow_2
+			}
+			set_temp_variable = { state_id = 2 }
+			set_temp_variable = { candidate_id = global.second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_dayglow_support_2
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_maxson_1
+			}
+			set_temp_variable = { state_id = 3 }
+			set_temp_variable = { candidate_id = global.second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_maxson_support_1
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_maxson_2
+			}
+			set_temp_variable = { state_id = 3 }
+			set_temp_variable = { candidate_id = global.second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_maxson_support_2
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_shady_sands_1
+			}
+			set_temp_variable = { state_id = 5 }
+			set_temp_variable = { candidate_id = global.second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_shady_sands_support_1
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_shady_sands_2
+			}
+			set_temp_variable = { state_id = 5 }
+			set_temp_variable = { candidate_id = global.second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_shady_sands_support_2
+		}
+		if = {
+			limit = {
+				has_country_flag = kimball_redding_1
+			}
+			set_temp_variable = { state_id = 4 }
+			set_temp_variable = { candidate_id = global.first_candidate_id }
+			set_temp_variable = { support_to_add = 51 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = kimball_redding_1_tt
+		}
+		set_country_flag = ncr_elections_gui_allowed_flag
+		activate_mission = ncr_presidential_election_countdown
+		custom_effect_tooltip = ncr_election_tt
+		set_country_flag = ncr_election_happening
+	}
+	option = {
+		name = ncr_election.1.b # Hayes and Kimball - Go with Hayes
+		set_country_flag = kimball_rallies_against_us
+		custom_effect_tooltip = ncr_election_tt
+		set_country_flag = ncr_elections_gui_allowed_flag
+		activate_mission = ncr_presidential_election_countdown
+		set_country_flag = hayes_for_president
+		trigger = {
+			has_country_leader = {
+				character = NCR_aaron_kimball
+			}
+		}
+		set_variable = { global.first_candidate_id = 2 }
+		set_variable = { global.second_candidate_id = 3 }
+		if = {
+			limit = {
+				has_country_flag = hayes_election_dayglow_1
+			}
+			set_temp_variable = { state_id = 2 }
+			set_temp_variable = { candidate_id = global.second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_dayglow_support_1
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_dayglow_2
+			}
+			set_temp_variable = { state_id = 2 }
+			set_temp_variable = { candidate_id = global.second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_dayglow_support_2
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_maxson_1
+			}
+			set_temp_variable = { state_id = 3 }
+			set_temp_variable = { candidate_id = global.second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_maxson_support_1
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_maxson_2
+			}
+			set_temp_variable = { state_id = 3 }
+			set_temp_variable = { candidate_id = global.second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_maxson_support_2
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_shady_sands_1
+			}
+			set_temp_variable = { state_id = 5 }
+			set_temp_variable = { candidate_id = global.second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_shady_sands_support_1
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_shady_sands_2
+			}
+			set_temp_variable = { state_id = 5 }
+			set_temp_variable = { candidate_id = global.second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_shady_sands_support_2
+		}
+		if = {
+			limit = {
+				has_country_flag = kimball_redding_1
+			}
+			set_temp_variable = { state_id = 4 }
+			set_temp_variable = { candidate_id = global.first_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = kimball_redding_1_tt
+		}
+	}
+	option = {
+		name = ncr_election.1.c # Hayes and Murphy - go with Murphy
+		trigger = {
+			has_country_leader = {
+				character = NCR_allgood_murphy
+			}
+		}
+		custom_effect_tooltip = ncr_election_tt
+		set_variable = { global.first_candidate_id = 1 }
+		set_variable = { global.second_candidate_id = 3 }
+		if = {
+			limit = {
+				has_country_flag = ncr_murphy_pleased_boneyard
+			}
+			set_temp_variable = { state_id = 1 }
+			set_temp_variable = { candidate_id = global.first_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = murphy_pleased_boneyard_1_tt
+		}
+		if = {
+			limit = {
+				has_country_flag = murphy_support_industry_maxson
+			}
+			set_temp_variable = { state_id = 3 }
+			set_temp_variable = { candidate_id = global.first_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = murphy_support_maxson_1_tt
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_dayglow_1
+			}
+			set_temp_variable = { state_id = 2 }
+			set_temp_variable = { candidate_id = global.second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_dayglow_support_1
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_dayglow_2
+			}
+			set_temp_variable = { state_id = 2 }
+			set_temp_variable = { candidate_id = global.second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_dayglow_support_2
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_maxson_1
+			}
+			set_temp_variable = { state_id = 3 }
+			set_temp_variable = { candidate_id = global.second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_maxson_support_1
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_maxson_2
+			}
+			set_temp_variable = { state_id = 3 }
+			set_temp_variable = { candidate_id = global.second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_maxson_support_2
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_shady_sands_1
+			}
+			set_temp_variable = { state_id = 5 }
+			set_temp_variable = { candidate_id = global.second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_shady_sands_support_1
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_shady_sands_2
+			}
+			set_temp_variable = { state_id = 5 }
+			set_temp_variable = { candidate_id = global.second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_shady_sands_support_2
+		}
+		set_country_flag = hayes_rallies_against_us
+		set_country_flag = murphy_for_president
+		set_country_flag = ncr_elections_gui_allowed_flag
+		activate_mission = ncr_presidential_election_countdown
+		set_country_flag = ncr_election_happening
+	}
+	option = {
+		name = ncr_election.1.e # Hayes and Murphy - go with Hayes
+		trigger = {
+			has_country_leader = {
+				character = NCR_allgood_murphy
+			}
+		}
+		custom_effect_tooltip = ncr_election_tt
+		set_variable = { global.first_candidate_id = 1 }
+		set_variable = { global.second_candidate_id = 3 }
+		set_country_flag = murphy_rallies_against_us
+		set_country_flag = hayes_for_president
+		set_country_flag = ncr_elections_gui_allowed_flag
+		activate_mission = ncr_presidential_election_countdown
+		if = {
+			limit = {
+				has_country_flag = ncr_murphy_pleased_boneyard
+			}
+			set_temp_variable = { state_id = 1 }
+			set_temp_variable = { candidate_id = global.first_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = murphy_pleased_boneyard_1_tt
+		}
+		if = {
+			limit = {
+				has_country_flag = murphy_support_industry_maxson
+			}
+			set_temp_variable = { state_id = 3 }
+			set_temp_variable = { candidate_id = global.first_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = murphy_support_maxson_1_tt
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_dayglow_1
+			}
+			set_temp_variable = { state_id = 2 }
+			set_temp_variable = { candidate_id = global.second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_dayglow_support_1
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_dayglow_2
+			}
+			set_temp_variable = { state_id = 2 }
+			set_temp_variable = { candidate_id = global.second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_dayglow_support_2
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_maxson_1
+			}
+			set_temp_variable = { state_id = 3 }
+			set_temp_variable = { candidate_id = global.second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_maxson_support_1
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_maxson_2
+			}
+			set_temp_variable = { state_id = 3 }
+			set_temp_variable = { candidate_id = global.second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_maxson_support_2
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_shady_sands_1
+			}
+			set_temp_variable = { state_id = 5 }
+			set_temp_variable = { candidate_id = global.second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_shady_sands_support_1
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_shady_sands_2
+			}
+			set_temp_variable = { state_id = 5 }
+			set_temp_variable = { candidate_id = global.second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_shady_sands_support_2
+		}
+		set_country_flag = ncr_election_happening
+	}
+	option = {
+		trigger = {
+			NCR = {
+				has_country_leader = {
+					character = NCR_aaron_kimball
+				}
+			}
+			EUR = {
+				is_subject_of = NCR
+			}
+		}
+		name = ncr_election.1.f #Hayes and Granite - Go with Granite
+		set_country_flag = kimball_for_president
+		set_variable = { global.first_candidate_id = 2 }
+		set_variable = { global.second_candidate_id = 4 }
+		if = {
+			limit = {
+				has_country_flag = hayes_election_dayglow_1
+			}
+			set_temp_variable = { state_id = 2 }
+			set_temp_variable = { candidate_id = global.first_candidate_id }
+			set_temp_variable = { support_to_add = 15 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_dayglow_support_1
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_dayglow_2
+			}
+			set_temp_variable = { state_id = 2 }
+			set_temp_variable = { candidate_id = global.first_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_dayglow_support_2
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_maxson_1
+			}
+			set_temp_variable = { state_id = 3 }
+			set_temp_variable = { candidate_id = global.first_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_maxson_support_1
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_maxson_2
+			}
+			set_temp_variable = { state_id = 3 }
+			set_temp_variable = { candidate_id = global.first_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_maxson_support_2
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_shady_sands_1
+			}
+			set_temp_variable = { state_id = 5 }
+			set_temp_variable = { candidate_id = global.first_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_shady_sands_support_1
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_shady_sands_2
+			}
+			set_temp_variable = { state_id = 5 }
+			set_temp_variable = { candidate_id = global.first_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_shady_sands_support_2
+		}
+		if = {
+			limit = {
+				has_country_flag = kimball_redding_1
+			}
+			set_temp_variable = { state_id = 4 }
+			set_temp_variable = { candidate_id = global.first_candidate_id }
+			set_temp_variable = { support_to_add = 51 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = kimball_redding_1_tt
+		}
+		NCR ={
+			set_country_flag = ncr_elections_gui_allowed_flag
+			activate_mission = ncr_presidential_election_countdown
+		}
+		EUR ={
+			set_country_flag = ncr_elections_gui_allowed_flag
+			activate_mission = ncr_presidential_election_countdown
+		}
+		custom_effect_tooltip = ncr_election_tt
+		set_country_flag = ncr_election_happening
+	}
+}
+
+
+country_event = {
+	id = ncr_election.2 #election stuff
+	title = ncr_election.2.t
+	desc = ncr_election.2.d
+	is_triggered_only = yes
+	picture = GFX_event_NCR_congress
+	option = {
+		name = ncr_election.2.a
+		trigger  = {
+			is_ai = no
+			check_variable = {
+				ncr_elections_winner_id = global.first_candidate_id ###
+			}
+			check_variable = {
+				global.first_candidate_id = 2  ## Kimball
+			}
+		}
+		complete_national_focus = ncr_kimball_address
+		every_country = {
+			news_event = ncr_election_results.3
+		}
+		clr_country_flag = kimball_rallies_against_us
+		clr_country_flag = kimball_for_president
+		clr_country_flag = ncr_elections_gui_allowed_flag
+		clr_country_flag = hayes_rallies_against_us
+		clr_country_flag = murphy_for_president
+		clr_country_flag = murphy_rallies_against_us
+		if = {
+			limit = {
+				has_country_flag = kimball_rallies_against_us
+			}
+			add_stability = -0.25
+			add_political_power = -250
+			custom_effect_tooltip = challenger_won_tt
+		}
+	}
+	option = {
+		name = ncr_election.2.b
+		trigger  = {
+			is_ai = no
+			check_variable = {
+				ncr_elections_winner_id = global.first_candidate_id ###
+			}
+			check_variable = {
+				global.first_candidate_id = 1  ## Murphy
+			}
+		}
+		complete_national_focus = ncr_allgood_address
+		ai_chance = {
+			base = 1
+			modifier = {
+				add = 30
+			}
+		}
+		every_country = {
+			news_event = ncr_election_results.2
+		}
+		clr_country_flag = kimball_rallies_against_us
+		clr_country_flag = kimball_for_president
+		clr_country_flag = ncr_elections_gui_allowed_flag
+		clr_country_flag = hayes_rallies_against_us
+		clr_country_flag = murphy_for_president
+		clr_country_flag = murphy_rallies_against_us
+		if = {
+			limit = {
+				has_country_flag = murphy_rallies_against_us
+			}
+			add_stability = -0.25
+			add_political_power = -250
+			custom_effect_tooltip = challenger_won_tt
+		}
+	}
+	option = {
+		name = ncr_election.2.c
+		trigger  = {
+			is_ai = no
+			check_variable = {
+				ncr_elections_winner_id = global.second_candidate_id ###
+			}
+			check_variable = {
+				global.second_candidate_id = 3  ## Hayes
+			}
+		}
+		every_country = {
+			news_event = ncr_election_results.1
+		}
+		complete_national_focus = ncr_dreams_of_old
+		if = {
+			limit = {
+				has_country_leader = {	character = NCR_aaron_kimball }
+			}
+			retire_character = NCR_aaron_kimball
+		}
+		if = {
+			limit = {
+				has_country_leader = {	character = NCR_allgood_murphy }
+			}
+			retire_character = NCR_allgood_murphy
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_rallies_against_us
+			}
+			add_stability = -0.25
+			add_political_power = -250
+			custom_effect_tooltip = challenger_won_tt
+		}
+		set_politics = {
+			ruling_party = intellectuals
+			elections_allowed = no
+		}
+		add_popularity = {
+			ideology = intellectuals
+			popularity = 0.40
+		}
+		clr_country_flag = hayes_rallies_against_us
+		clr_country_flag = kimball_for_president
+		clr_country_flag = kimball_rallies_against_us
+		clr_country_flag = ncr_elections_gui_allowed_flag
+		clr_country_flag = hayes_rallies_against_us
+		clr_country_flag = murphy_for_president
+		clr_country_flag = murphy_rallies_against_us
+	}
+	option = {
+		name = ncr_election.2.e
+		trigger = {
+			is_ai = no
+		}
+		complete_national_focus = ncr_electoral_deadlock
+		every_country = {
+			news_event = ncr_election_results.4
+		}
+		clr_country_flag = hayes_rallies_against_us
+		clr_country_flag = kimball_for_president
+		clr_country_flag = kimball_rallies_against_us
+		clr_country_flag = ncr_elections_gui_allowed_flag
+		clr_country_flag = hayes_rallies_against_us
+		clr_country_flag = murphy_for_president
+		clr_country_flag = murphy_rallies_against_us
+	}
+	option = {
+		name = ncr_election.2.f
+		trigger = {
+			is_ai = yes
+		}
+		if = {
+			limit = {
+				OR = {
+					NCR_has_ai_behavior_electoral_deadlock_kimball = yes
+					NCR_has_ai_behavior_electoral_deadlock_allgood = yes
+				}
+			}
+			complete_national_focus = ncr_electoral_deadlock
+			every_country = {
+				news_event = ncr_election_results.4
+			}
+			clr_country_flag = hayes_rallies_against_us
+			clr_country_flag = kimball_for_president
+			clr_country_flag = kimball_rallies_against_us
+			clr_country_flag = ncr_elections_gui_allowed_flag
+			clr_country_flag = hayes_rallies_against_us
+			clr_country_flag = murphy_for_president
+			clr_country_flag = murphy_rallies_against_us
+		}
+		else_if = {
+			limit = {
+				NCR_has_ai_behavior_hayes = yes
+			}
+			if = {
+				limit = {
+					has_country_leader = {	character = NCR_aaron_kimball }
+				}
+				retire_character = NCR_aaron_kimball
+			}
+			if = {
+				limit = {
+					has_country_leader = {	character = NCR_allgood_murphy }
+				}
+				retire_character = NCR_allgood_murphy
+			}
+			set_politics = {
+				ruling_party = intellectuals
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = intellectuals
+				popularity = 0.40
+			}
+			every_country = {
+				news_event = ncr_election_results.1
+			}
+			clr_country_flag = hayes_rallies_against_us
+			clr_country_flag = kimball_for_president
+			clr_country_flag = kimball_rallies_against_us
+			clr_country_flag = ncr_elections_gui_allowed_flag
+			clr_country_flag = hayes_rallies_against_us
+			clr_country_flag = murphy_for_president
+			clr_country_flag = murphy_rallies_against_us
+		}
+		else = {
+			if = {
+				limit = {
+					has_country_leader = {	character = NCR_aaron_kimball }
+				}
+				complete_national_focus = ncr_kimball_address
+				every_country = {
+					news_event = ncr_election_results.3
+				}
+				clr_country_flag = hayes_rallies_against_us
+				clr_country_flag = kimball_for_president
+				clr_country_flag = kimball_rallies_against_us
+				clr_country_flag = ncr_elections_gui_allowed_flag
+				clr_country_flag = hayes_rallies_against_us
+				clr_country_flag = murphy_for_president
+				clr_country_flag = murphy_rallies_against_us
+			}
+			if = {
+				limit = {
+					has_country_leader = {	character = NCR_allgood_murphy }
+				}
+				complete_national_focus = ncr_allgood_address
+				every_country = {
+					news_event = ncr_election_results.2
+				}
+				clr_country_flag = hayes_rallies_against_us
+				clr_country_flag = kimball_for_president
+				clr_country_flag = kimball_rallies_against_us
+				clr_country_flag = ncr_elections_gui_allowed_flag
+				clr_country_flag = hayes_rallies_against_us
+				clr_country_flag = murphy_for_president
+				clr_country_flag = murphy_rallies_against_us
+			}
+		}
+	}
+}
+
+
+news_event = {
+	id = ncr_election.3
+	title = ncr_election.3.t
+	desc = ncr_election.3.d
+	picture = GFX_event_ncr_election_posters
+
+	is_triggered_only = yes
+
+	option = {
+		name = ncr_election.3.a
+		custom_effect_tooltip = chosen_karma_up
+		add_to_variable = { chosen_karma_num = 1 }
+		add_opinion_modifier = {
+			target = NCR
+			modifier = chosen_one_ties
+		}
+		NCR = {
+			add_opinion_modifier = {
+				target = ARR
+				modifier = chosen_one_ties
+			}
+		}
+	}
+}
+news_event = {
+	id = ncr_election.5 #Hayes and Secret Candidate
+	title = ncr_election.5.t
+	desc = ncr_election.5.d
+	is_triggered_only = yes
+	picture = GFX_event_NCR_congress
+	option = {
+		name = ncr_election.5.a
+		set_variable = { global.first_candidate_id = 2 }
+		set_country_flag = ncr_elections_gui_allowed_flag
+		set_variable = { global.second_candidate_id = 4 }
+		if = {
+			limit = {
+				has_country_flag = hayes_election_dayglow_1
+			}
+			set_temp_variable = { state_id = 2 }
+			set_temp_variable = { candidate_id = global.second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_dayglow_support_1
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_dayglow_2
+			}
+			set_temp_variable = { state_id = 2 }
+			set_temp_variable = { candidate_id = global.second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_dayglow_support_2
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_maxson_1
+			}
+			set_temp_variable = { state_id = 3 }
+			set_temp_variable = { candidate_id = global.second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_maxson_support_1
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_maxson_2
+			}
+			set_temp_variable = { state_id = 3 }
+			set_temp_variable = { candidate_id = global.second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_maxson_support_2
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_shady_sands_1
+			}
+			set_temp_variable = { state_id = 5 }
+			set_temp_variable = { candidate_id = global.second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_shady_sands_support_1
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_shady_sands_2
+			}
+			set_temp_variable = { state_id = 5 }
+			set_temp_variable = { candidate_id = global.second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_shady_sands_support_2
+		}
+		if = {
+			limit = {
+				has_country_flag = kimball_redding_1
+			}
+			set_temp_variable = { state_id = 4 }
+			set_temp_variable = { candidate_id = global.first_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = kimball_redding_1_tt
+		}
+		if = {
+			limit = {
+				has_country_flag = kimball_shady_sands_businesses_happy
+			}
+			set_temp_variable = { state_id = 5 }
+			set_temp_variable = { candidate_id = global.first_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = kimball_shady_sands_businesses_happy_tt
+		}
+		if = {
+			limit = {
+				has_country_flag = kimball_brahmin_barons_happy
+			}
+			set_temp_variable = { state_id = 4 }
+			set_temp_variable = { candidate_id = global.first_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = kimball_barons_happy_tt
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_won_baja
+			}
+			set_temp_variable = { state_id = 1 }
+			set_temp_variable = { candidate_id = global.second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_follower_support_tt
+		}
+		if = {
+			limit = {
+				has_country_flag = kimball_support_dayglow
+			}
+			set_temp_variable = { state_id = 2 }
+			set_temp_variable = { candidate_id = global.first_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+			custom_effect_tooltip = kimball_support_dayglow_tt
+		}
+	}
+}
+
+##
+
+#
+### ncr allgood 12
+
+
+add_namespace = ncr_baseball

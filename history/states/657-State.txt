@@ -1,0 +1,23 @@
+state = {
+	id = 657
+	name = "STATE_657"
+	resources = {
+		water = 6
+		metal = 4
+	}
+	history={
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+		}
+		victory_points = {
+			2516 5
+		}
+	}
+	provinces={
+		2517 236 2127 2516 5 691 5919 624 2463 8648 2208 2549 2015 2554
+	}
+	manpower = 1566
+	state_category = rural
+	buildings_max_level_factor=1.000
+}

@@ -1,0 +1,39 @@
+state = {
+	id = 356
+	name = "STATE_356"
+	manpower = 10656
+	state_category = city
+
+	resources = {
+		metal = 6
+		advanced = 3
+		energy = 13
+		water = 6
+		composites = 4
+		circuitry =  8
+	}
+
+	history = {
+		victory_points = {
+			7397 20
+		}
+		victory_points = {
+			7391 5
+		}
+		victory_points = {
+			7400 5
+		}
+		buildings = {
+			infrastructure = 6
+			dockyard = 1
+			arms_factory = 3
+			industrial_complex = 2
+			7401 = { naval_base = 2 }
+			7391 = { bunker2 = 2 }
+		}
+	}
+
+	provinces = {
+		3739 7391 7397 7398 7399 7400 7401
+	}
+}

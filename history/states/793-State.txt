@@ -1,0 +1,23 @@
+state = {
+	id = 793
+	name = "STATE_793"
+	manpower = 17930
+	state_category = large_town
+
+	history = {
+		owner = TAA
+		add_core_of = TAA
+		victory_points = {
+			8598 10
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			arms_factory = 1
+		}
+	}
+
+	provinces = {
+		8598 9664 9665 9670 9671 9673 9677 9679 9684 9685 9689 9690 9691 9696 9697 9698
+	}
+}

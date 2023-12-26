@@ -1,0 +1,36 @@
+
+state={
+	id=1384
+	name="STATE_1384"
+	resources={
+		water=4.000
+		energy=40.000
+		metal=16.000
+		composites=12.000
+		advanced=12.000
+		circuitry=16.000
+	}
+
+	history={
+		buildings = {
+			infrastructure = 8
+			industrial_complex = 2
+			arms_factory = 4
+			2165 = {
+				bunker = 2
+			}
+		}
+		victory_points = {
+			4489 100
+		}
+
+	}
+
+	provinces={
+		2165 4233 4234 4489 16415 16416 16423 16424 16431 16432
+	}
+	manpower=40160
+	buildings_max_level_factor=1.200
+	state_category=prewar_megacity
+	local_supplies=0.000
+}

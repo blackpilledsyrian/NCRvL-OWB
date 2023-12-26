@@ -1,0 +1,18 @@
+state = {
+	id = 637
+	name = "STATE_637"
+	manpower = 37
+	state_category = wasteland
+	resources = {
+	}
+	impassable = yes
+
+	history = {
+		owner = CES
+		add_core_of = CES
+	}
+
+	provinces = {
+		6618
+	}
+}

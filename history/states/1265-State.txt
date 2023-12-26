@@ -1,0 +1,19 @@
+state={
+	id=1265
+	name="STATE_1265"
+	provinces={
+		14383 14384 14385 14442 14456 14457 14458
+	}
+	history={
+		victory_points = {
+			14457 5
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+		}
+	}
+	state_category = town
+	manpower = 711
+	buildings_max_level_factor=1.000
+}

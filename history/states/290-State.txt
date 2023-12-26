@@ -1,0 +1,19 @@
+state = {
+	id = 290
+	name = "STATE_290"
+	manpower = 42
+	state_category = wasteland
+	impassable = yes
+
+	resources = {
+		metal = 5
+	}
+
+	history={
+	}
+
+	provinces = {
+		4071 4530
+	}
+	buildings_max_level_factor=1.000
+}

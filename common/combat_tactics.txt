@@ -1,0 +1,449 @@
+#### COMBAT TACTICS ###########################################################
+#
+# NOTE: tactics must start with "tactic_" in their name to work with techs.
+###############################################################################
+
+
+# Basic Tactics
+phases = { # phase = no is the standard phase
+	close_combat
+	tactical_withdrawal
+	seize_bridge
+	hold_bridge
+}
+
+tactic_basic_attack = {
+	is_attacker = yes
+	trigger = { # combined scope for both country and combatant
+		is_attacker = yes
+		phase = no
+	}
+	active = yes
+	base =  { factor = 1 }
+	picture = attack
+	attacker = 0.05
+}
+
+tactic_basic_defend = {
+	is_attacker = no
+	trigger = {
+		is_attacker = no
+		phase = no
+	}
+	active = yes
+	base =  { factor = 1 }
+	picture = defend
+
+	defender = 0.05
+}
+
+tactic_basic_mindless_assault = {
+	is_attacker = yes
+	trigger = { # combined scope for both country and combatant
+		is_attacker = yes
+		phase = no
+	}
+	active = yes
+	base =  { factor = 1 }
+	picture = attack
+	countered_by = tactic_basic_dispersed_defence
+	attacker = 0.15
+}
+
+tactic_basic_dispersed_defence = {
+	is_attacker = no
+	trigger = {
+		is_attacker = no
+		phase = no
+	}
+	active = yes
+	base =  { factor = 1 }
+	picture = defend
+	countered_by = tactic_basic_focused_assault
+	defender = 0.15
+}
+
+tactic_basic_focused_assault = {
+	is_attacker = yes
+	trigger = { # combined scope for both country and combatant
+		is_attacker = yes
+		phase = no
+	}
+	active = yes
+	base =  { factor = 1 }
+	picture = attack
+	countered_by = tactic_basic_concentrated_defence
+	attacker = 0.15
+}
+
+tactic_basic_concentrated_defence = {
+	is_attacker = no
+	trigger = {
+		is_attacker = no
+		phase = no
+	}
+	active = yes
+	base =  { factor = 1 }
+	picture = defend
+	countered_by = tactic_basic_mindless_assault
+	defender = 0.15
+}
+
+tactic_basic_steel_assault = {
+	is_attacker = yes
+	trigger = { # combined scope for both country and combatant
+		is_attacker = yes
+		phase = no
+	}
+	active = no
+	base = {
+		factor = 1
+		modifier = {
+			add = 2
+			has_trait = robotics_expert_trait
+		}
+	}
+	picture = attack
+	countered_by = tactic_basic_ambush_defense
+	attacker = 0.25
+}
+
+tactic_basic_steel_defence = {
+	is_attacker = no
+	trigger = {
+		is_attacker = no
+		phase = no
+	}
+	active = no
+	base = {
+		factor = 1
+		modifier = {
+			add = 2
+			has_trait = robotics_expert_trait
+		}
+	}
+	picture = defend
+	countered_by = tactic_basic_fire_and_movement
+	defender = 0.25
+}
+
+tactic_basic_fire_and_movement = {
+	is_attacker = yes
+	trigger = { # combined scope for both country and combatant
+		is_attacker = yes
+		phase = no
+	}
+	active = no
+	base = {
+		factor = 1
+		modifier = {
+			add = 2
+			has_trait = pain_train_trait
+		}
+	}
+	picture = attack
+	countered_by = tactic_basic_overwhelming_firepower_defense
+	attacker = 0.25
+}
+
+tactic_basic_defensive_hardpoints = {
+	is_attacker = no
+	trigger = {
+		is_attacker = no
+		phase = no
+	}
+	active = no
+	base = {
+		factor = 1
+		modifier = {
+			add = 2
+			has_trait = pain_train_trait
+		}
+	}
+	picture = defend
+	countered_by = tactic_basic_steel_assault
+	defender = 0.25
+}
+
+tactic_basic_overwhelming_firepower_attack = {
+	is_attacker = yes
+	trigger = { # combined scope for both country and combatant
+		is_attacker = yes
+		phase = no
+	}
+	active = no
+	base = {
+		factor = 1
+		modifier = {
+			add = 2
+			has_trait = gun_nut_trait
+		}
+	}
+	picture = attack
+	countered_by = tactic_basic_defensive_hardpoints
+	attacker = 0.25
+}
+
+tactic_basic_overwhelming_firepower_defense = {
+	is_attacker = no
+	trigger = {
+		is_attacker = no
+		phase = no
+	}
+	active = no
+	base = {
+		factor = 1
+		modifier = {
+			add = 2
+			has_trait = gun_nut_trait
+		}
+	}
+	picture = defend
+	countered_by = tactic_basic_ambush_attack
+	defender = 0.25
+}
+
+tactic_basic_ambush_attack = {
+	is_attacker = yes
+	trigger = { # combined scope for both country and combatant
+		is_attacker = yes
+		phase = no
+	}
+	active = no
+	base = {
+		factor = 1
+		modifier = {
+			add = 2
+			has_trait = gun_nut_trait
+		}
+	}
+	picture = attack
+	countered_by = tactic_basic_steel_defence
+	attacker = 0.25
+}
+
+tactic_basic_ambush_defense = {
+	is_attacker = no
+	trigger = {
+		is_attacker = no
+		phase = no
+	}
+	active = no
+	base = {
+		factor = 1
+		modifier = {
+			add = 2
+			has_trait = gun_nut_trait
+		}
+	}
+	picture = defend
+	countered_by = tactic_basic_overwhelming_firepower_attack
+	defender = 0.25
+}
+
+tactic_basic_mutant_attack = {
+	is_attacker = yes
+	trigger = { # combined scope for both country and combatant
+		is_attacker = yes
+		phase = no
+	}
+	active = no
+	base = {
+		factor = 3
+	}
+	picture = attack
+	attacker = 0.25
+}
+
+tactic_basic_mutant_defence = {
+	is_attacker = no
+	trigger = {
+		is_attacker = no
+		phase = no
+	}
+	active = no
+	base = {
+		factor = 3
+	}
+	picture = defend
+	defender = 0.25
+}
+
+###close combat tactics here
+tactic_cc_attack = {
+	is_attacker = yes
+	trigger = {
+		is_attacker = yes
+		phase = close_combat
+	}
+
+	active = yes
+
+	base =  { factor = 4 }
+	picture = cc_attack
+	display_phase = close_combat
+
+	attacker = 0.02
+}
+tactic_cc_defend = {
+	is_attacker = no
+	trigger = {
+		is_attacker = no
+		phase = close_combat
+	}
+
+	active = yes
+
+	base =  { factor = 4 }
+	picture = cc_defend
+	display_phase = close_combat
+
+	defender = 0.02
+}
+
+###tactical withdrawal tactics
+tactic_tw_attack = {
+	is_attacker = yes
+	trigger = {
+		is_attacker = yes
+		phase = tactical_withdrawal
+	}
+
+	base =  { factor = 4 }
+	picture = tw_attack
+	display_phase = tactical_withdrawal
+
+	combat_width = -0.25
+	attacker = -0.1
+	defender = -0.1
+}
+tactic_tw_defend = {
+	is_attacker = no
+	trigger = {
+		is_attacker = no
+		phase = tactical_withdrawal
+	}
+
+	base =  { factor = 4 }
+	picture = tw_defend
+	display_phase = tactical_withdrawal
+
+	combat_width = -0.25
+	attacker = -0.1
+	defender = -0.1
+}
+
+# Seize Bridge
+tactic_seize_bridge = {
+	is_attacker = yes
+	trigger = {
+		is_attacker = yes
+		has_combat_modifier = river_crossing
+		phase = no
+		OR = {
+			skill > 3
+			AND = {
+				has_trait = agile_trait
+				skill > 2
+			}
+		}
+	}
+
+	base =  { factor = 2 }
+	picture = seize_bridge
+
+	phase = seize_bridge
+
+	attacker_movement_speed = 0.1
+	combat_width = -0.25
+	attacker = 0.2
+}
+
+tactic_attacker_sb_hold = {
+	is_attacker = yes
+	trigger = {
+		is_attacker = yes
+		phase = seize_bridge
+	}
+
+	base =  { factor = 4 }
+	picture = attacker_sb_hold
+	display_phase = seize_bridge
+
+	combat_width = -0.25
+	attacker = 0.2
+}
+tactic_defender_sb_assault = {
+	is_attacker = no
+	trigger = {
+		is_attacker = no
+		phase = seize_bridge
+	}
+
+	base =  { factor = 4 }
+	picture = defender_sb_assault
+	display_phase = seize_bridge
+
+	combat_width = -0.25
+	defender = -0.05
+}
+tactic_attacker_hb_attack = {
+	is_attacker = yes
+	trigger = {
+		is_attacker = yes
+		phase = hold_bridge
+	}
+
+	base =  { factor = 4 }
+	picture = attacker_hb_attack
+	display_phase = hold_bridge
+
+	combat_width = -0.25
+	attacker = 0.1
+}
+tactic_hold_bridge = {
+	is_attacker = no
+	trigger = {
+		has_combat_modifier = river_crossing
+		is_attacker = no
+		phase = no
+		OR = {
+			skill > 2
+			has_trait = lucky_trait
+		}
+	}
+
+	base =  { factor = 2 }
+	picture = tactic_hold_bridge
+
+	phase = hold_bridge
+
+	attacker_movement_speed = 0.1
+	combat_width = -0.25
+	attacker = 0.2
+	defender = -0.05
+}
+tactic_masterful_blitz = { #Improved version of Blitz for Soviets
+	is_attacker = yes
+	trigger = {
+		is_attacker = yes
+		hardness > 0.5
+		phase = no
+		OR = {
+			skill > 2
+			skill_advantage > 1
+		}
+	}
+
+	active = no
+
+	base =  {
+		factor = 4
+	}
+
+	picture = SOV_tank_desant_blitz
+
+	attacker_movement_speed = 0.5
+	attacker = 0.2
+	defender = -0.2
+}

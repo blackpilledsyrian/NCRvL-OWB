@@ -1,0 +1,774 @@
+characters={
+	MCA_Douglas_Granite = {
+		name = ERB_GRANITE_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_EUR_douglas_enclave
+			}
+		}
+		country_leader = {
+			desc = Granite_desc
+			ideology = technocracy
+			expire = "3000.1.1"
+		}
+	}
+	EUR_portmaster = {
+		name = EUR_portmaster
+		portraits = {
+			civilian = {
+				large = GFX_portmaster_leader
+			}
+		}
+		country_leader = {
+			desc = "EUR_portmaster_desc"
+			expire = "3000.1.1"
+			ideology = conspiratory_oligarchy
+			traits = {
+			}
+		}
+		corps_commander = {
+			traits = {
+				eureka_general
+				charismatic_trait
+				enduring_trait
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+	EUR_richard_goldman = {
+		name = EUR_richard_goldman
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_hubology_leader
+			}
+		}
+		country_leader = {
+			desc = ""
+			expire = "3000.1.1"
+			ideology = unlimited_democracy
+			traits = {
+			}
+		}
+	}
+	EUR_mr_johnson = {
+		name = EUR_mr_johnson_name
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_EUR_regulator_leader
+			}
+		}
+		country_leader = {
+			desc = ""
+			expire = "3000.1.1"
+			ideology = military_government
+			traits = {
+				paranoid
+			}
+		}
+	}
+	EUR_varland_varland_gillett  = {
+		name ="Varland Gillett"
+		portraits = {
+		army = {
+				large = GFX_Portrait_Settler_Generic_29
+			}
+		}
+		corps_commander = {
+			traits = {
+				strong_trait
+				perceptive_trait
+				eureka_general
+			}
+			skill = 1
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+	ERB_Dwemer = {
+		name = ERB_DWEMER_name
+		portraits = {
+			army = {
+				large = GFX_Portrait_EUR_enclave_generic_11
+			}
+		}
+		corps_commander = {
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+			traits = {
+				eureka_general
+				agile_trait
+			}
+			legacy_id = -1
+		}
+	}
+
+	ERB_Scott = {
+		name = ERB_SCOTT_name
+		portraits = {
+			army = {
+				large = GFX_Portrait_EUR_enclave_generic_9
+			}
+		}
+		corps_commander = {
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+			traits = {
+				eureka_general
+				charismatic_trait
+			}
+			legacy_id = -1
+		}
+	}
+	ERB_Hamilton = {
+		name = ERB_Hamilton_name
+		portraits = {
+			army = {
+				large = GFX_Portrait_MCA_enclave_generic_2
+			}
+		}
+	}
+	ERB_Shadow = {
+		name = ERB_Shadow_name
+		portraits = {
+			army = {
+				large = GFX_Portrait_MCA_enclave_generic_10
+			}
+		}
+		corps_commander = {
+			skill = 4
+			attack_skill = 4
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			traits = {
+				eureka_general
+				intelligent_trait
+				robotics_expert_trait
+			}
+			legacy_id = -1
+		}
+	}
+	EUR_coastal_supplier = {
+		name = EUR_coastal_supplier_NAME
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor5
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor5
+			}
+		}
+		advisor = {
+			slot = navy_chief
+			idea_token = EUR_coastal_supplier_idea_token
+			ledger = navy
+			allowed = {
+				original_tag = EUR
+			}
+			traits = {
+				settler_navy_buff
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	EUR_trash_pile_scavenger = {
+		name = EUR_trash_pile_scavenger_NAME
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor18
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor18
+			}
+		}
+		advisor = {
+			slot = navy_chief
+			idea_token = EUR_trash_pile_scavenger_idea_token
+			ledger = navy
+			allowed = {
+				original_tag = EUR
+			}
+			traits = {
+				EUR_trash_scavenger
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	EUR_air_mercenary = {
+		name = EUR_air_mercenary_NAME
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor4
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor4
+			}
+		}
+		advisor = {
+			slot = air_chief
+			idea_token = EUR_air_mercenary_idea_token
+			ledger = navy
+			allowed = {
+				original_tag = EUR
+			}
+			traits = {
+				wpg_mad_baron
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	EUR_portmaster_bander = {
+		name = EUR_portmaster_bander_NAME
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_ghoul_generic13
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_ghoul_generic13
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = EUR_portmaster_bander_idea_token
+			ledger = army
+			allowed = {
+				original_tag = EUR
+			}
+			traits = {
+				owb_army_chief_offensive_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	EUR_jeff_waters = {
+		name = EUR_jeff_waters_NAME
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_enclave_advisor_2
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_enclave_advisor_2
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = EUR_jeff_waters_idea_token
+			ledger = army
+			allowed = {
+				original_tag = EUR
+			}
+			traits = {
+				power_armour_proponent
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	EUR_tiny_joe = {
+		name = EUR_tiny_joe
+		portraits = {
+			army = {
+				small = GFX_idea_generic_advisor31
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = EUR_tiny_joe_token
+			ledger = army
+			allowed = {
+				original_tag = EUR
+			}
+			traits = {
+				settler_spymaster
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	EUR_vega_poseidon = {
+		name = EUR_vega_poseidon
+		portraits = {
+			army = {
+				small = GFX_idea_generic_advisor26
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = EUR_tiny_joe_token
+			ledger = army
+			allowed = {
+				original_tag = EUR
+			}
+			traits = {
+				settler_defend_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	EUR_commander_diablo = {
+		name = EUR_commander_diablo
+		portraits = {
+			army = {
+				small = GFX_idea_enclave_advisor_1
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = EUR_commander_diablo_idea_token
+			ledger = army
+			allowed = {
+				original_tag = EUR
+			}
+			traits = {
+				frontline_operative
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	EUR_jay_livard = {
+		name = EUR_jay_livard
+		portraits = {
+			army = {
+				small = GFX_idea_generic_advisor40
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = EUR_jay_livard_idea_token
+			ledger = army
+			allowed = {
+				original_tag = EUR
+			}
+			traits = {
+				EUR_micromanager
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	EUR_even_eleven = {
+		name = EUR_even_eleven
+		portraits = {
+			army = {
+				small = GFX_idea_generic_advisor30
+			}
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = EUR_even_eleven_idea_token
+			ledger = army
+			allowed = {
+				original_tag = EUR
+			}
+			traits = {
+				EUR_weapon_analyzer
+			}
+
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	EUR_land_doctrine_guy = {
+		portraits = {
+			army = {
+				small = GFX_idea_generic_army_europe_4
+			}
+		}
+		advisor = {
+			slot = research_advisor
+			idea_token = land_doctrine_guy
+			visible = {
+				original_tag = EUR
+			}
+
+			research_bonus = {
+				cat_land_doctrine = 0.10
+			}
+			traits = { military_theorist }
+		}
+	}
+	EUR_david_orell = {
+		name = EUR_david_orell
+		portraits = {
+			army = {
+				small = GFX_idea_enclave_advisor_4
+			}
+		}
+	}
+	EUR_helen_bellings = {
+		name = EUR_helen_bellings
+		portraits = {
+			army = {
+				small = GFX_idea_enclave_advisor_1
+			}
+		}
+	}
+	EUR_george_jackson = {
+		name = EUR_george_jackson
+		portraits = {
+			army = {
+				small = GFX_idea_enclave_advisor
+			}
+		}
+	}
+	EUR_sir_rurikhome = {
+		name = EUR_sir_rurikhome
+		portraits = {
+			army = {
+				small = GFX_idea_generic_advisor34
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = EUR_sir_rurikhome_idea_token
+			allowed = {
+				original_tag = EUR
+			}
+			traits = {
+				settler_homestead_defence
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	EUR_cordell_hunt = {
+		name = EUR_cordell_hunt
+		portraits = {
+			army = {
+				small = GFX_idea_generic_advisor24
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = EUR_cordell_hunt_idea_token
+			allowed = {
+				original_tag = EUR
+			}
+			traits = {
+				EUR_gold_digger
+			}
+			available = {
+				has_country_flag = eur_cordell_chosen
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	EUR_olivia_hunt = {
+		name = EUR_olivia_hunt
+		portraits = {
+			army = {
+				small = GFX_idea_generic_advisor13
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = EUR_olivia_hunt_idea_token
+			allowed = {
+				original_tag = EUR
+			}
+			traits = {
+				EUR_well_builder
+			}
+			available = {
+				has_country_flag = eur_olivia_chosen
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	clayton_schultz = {
+		name = clayton_schultz_name
+		portraits = {
+			army = {
+				small = GFX_idea_clayton_schultz
+			}
+		}
+		advisor = {
+			slot = air_chief
+			idea_token = clayton_schultz_idea_token
+			cost = 200
+
+			allowed = {
+				original_tag = EUR
+			}
+			visible = {
+				has_country_flag = exiles_arrived
+			}
+			traits = { air_close_air_support_3 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	enc_thomas_kesselhut = {
+		name = enc_thomas_kesselhut_name
+		portraits = {
+			army = {
+				small = GFX_idea_thomas_kesselhut
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = enc_thomas_kesselhut
+			allowed = { original_tag = EUR }
+			traits = {
+				enc_technocrat
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	EUR_morgan_heath = {
+		name = EUR_morgan_heath
+		portraits = {
+			army = {
+				small = GFX_idea_enclave_advisor_2
+			}
+		}
+	}
+	EUR_lisa_tess = {
+		name = EUR_lisa_tess
+		portraits = {
+			army = {
+				small = GFX_idea_enclave_advisor_1
+			}
+		}
+	}
+	EUR_tom_barrow = {
+		name = EUR_tom_barrow
+		portraits = {
+			army = {
+				small = GFX_idea_enclave_advisor_4
+			}
+		}
+	}
+	EUR_sally_johnson = {
+		name = EUR_sally_johnson
+			portraits = {
+				army = {
+					small = GFX_idea_enclave_advisor_3
+				}
+			}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = EUR_sally_johnson_idea_token
+			allowed = {
+				original_tag = EUR
+			}
+			traits = {
+				friends_in_high_places
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	EUR_ms_madaket = {
+		name = EUR_ms_madaket
+		portraits = {
+			army = {
+				small = GFX_idea_generic_advisor36
+			}
+		}
+		advisor = {
+				slot = cultural_advisor
+			idea_token = EUR_ms_madaket
+			allowed = {
+				original_tag = EUR
+			}
+			traits = {
+				follower_of_the_apocalypse
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	dr_henry = {
+		name = dr_henry_name
+		portraits = {
+			army = {
+				small = GFX_idea_d_henry
+			}
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = dr_henry
+			allowed = {
+				original_tag = EUR
+			}
+			visible = {
+				has_country_flag = dr_henry_returns
+			}
+			traits = {
+				compassionate_doctor
+			}
+		}
+	}
+	francis_mutant = {
+		name = francis_mutant
+		portraits = {
+			army = {
+				small = "GFX_idea_mutant_generic2"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = economic_advisor
+			allowed = {
+				tag = EUR
+			}
+			idea_token = francis_mutant_idea_token
+			visible = {
+				has_country_flag = accept_mutants
+			}
+			traits = {
+				mutie_scavenger
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	EUR_daisy_whitman = {
+		name = NEW_daisy_whitman
+		portraits = {
+			army = {
+				small = GFX_idea_daisy_whitman
+			}
+		}
+		advisor = {
+			slot = air_chief
+			idea_token = NEW_daisy_whitman_air_chief
+			ledger = air
+			allowed = {
+				original_tag = EUR
+			}
+			visible = {
+				has_completed_focus = eureka_vertibirds
+			}
+			traits = {
+				air_close_air_support_3
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	EUR_orion_moreno = {
+		name = NEW_orion_moreno
+		portraits = {
+			army = {
+				small = GFX_idea_orion_moreno
+			}
+		}
+		advisor = {
+			slot = research_advisor
+			idea_token = NEW_orion_moreno_research_advisor
+			ledger = army
+			allowed = {
+				original_tag = EUR
+			}
+			visible = {
+				has_country_flag = eur_new_generation_flag
+			}
+			traits = {
+				military_theorist
+			}
+			research_bonus = {
+				cat_elite_army = 0.1
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+
+			# 		EUR_le_deville = {
+			# 			picture = generic_advisor46
+			# 			allowed = {
+			# 				original_tag = EUR
+			# 			}
+			# 			available = {
+			# 				# commented for template
+			# 			}
+			# 			traits = {
+			# 				owb_cultural_advisor_state_columnist
+			# 			}
+			# 		}
+			# 		EUR_eli_mouse = {
+			# 			picture = generic_advisor6
+			# 			allowed = {
+			# 				original_tag = EUR
+			# 			}
+			# 			available = {
+			# 				# commented for template
+			# 			}
+			# 			traits = {
+			# 				owb_cultural_advisor_national_strategist
+			# 			}
+			# 		}
+
+}

@@ -1,0 +1,46 @@
+state = {
+	id = 748
+	name = "STATE_748"
+	resources={
+		circuitry=4.000
+		advanced=2.000
+	}
+
+	history={
+		victory_points = {
+			9605 10
+		}
+		buildings = {
+			infrastructure = 2
+			anti_air_building = 2
+			9609 = {
+				naval_base = 2
+			}
+			9605 = {
+				bunker = 1
+
+			}
+			9466 = {
+				bunker = 1
+
+			}
+			9594 = {
+				bunker = 1
+
+			}
+			9593 = {
+				bunker = 1
+
+			}
+
+		}
+
+	}
+
+	provinces={
+		1921 9204 9244 9289 9466 9470 9593 9594 9605 9608 9609 9614
+	}
+	manpower=5100
+	buildings_max_level_factor=1.000
+	state_category=shanty
+}

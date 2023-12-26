@@ -1,0 +1,31 @@
+state = {
+	id = 489
+	name = "STATE_489"
+	manpower = 25489
+	state_category = megalopolis
+
+	resources = {
+		metal = 26
+		composites = 4
+		circuitry = 11
+		advanced = 3
+	}
+
+	history = {
+		owner = NCR
+		add_core_of = NCR
+		victory_points = {
+			9630 20
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 1
+			electricity_generator = 2
+		}
+	}
+
+	provinces = {
+		2075 2262 2264 3288 4619 4789 4827 9628 9629 9630 9631
+	}
+}

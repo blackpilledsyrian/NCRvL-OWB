@@ -1,0 +1,2745 @@
+###################################
+#### Designed by CGS'n'Rhacius ####
+####      Scripted by CGS      ####
+###################################
+
+
+focus_tree = {
+	id = two_sun_focus_tree
+	country = {
+		base = 0
+		modifier = {
+			add = 250
+			tag = TWO
+		}
+	}
+	focus = {
+		id = two_sun_tucson
+		icon = GFX_goal_CES_Great_Chamber
+		cost = 7
+		x = 25
+		y = 0
+		completion_reward = {
+			country_event = {
+				id = nf_two.1
+			}
+		}
+	}
+	focus = {
+		id = two_sun_religion
+		icon = GFX_goal_CES_Great_Chamber
+		cost = 7
+		x = 0
+		y = 1
+		relative_position_id = two_sun_tucson
+		prerequisite = {
+			focus = two_sun_tucson
+		}
+		completion_reward = {
+			country_event = {
+				id = nf_two.2
+			}
+		}
+	}
+	focus = {
+		id = two_sun_will
+		icon = GFX_goal_CES_Great_Chamber
+		cost = 7
+		x = 0
+		y = 1
+		relative_position_id = two_sun_religion
+		prerequisite = {
+			focus = two_sun_religion
+		}
+		completion_reward = {
+			country_event = {
+				id = nf_two.3
+			}
+		}
+	}
+	focus = {
+		id = two_sun_caesar_rule
+		icon = GFX_goal_CES_Two_Legion_Chariots
+		cost = 7
+		x = 0
+		y = 1
+		relative_position_id = two_sun_will
+		prerequisite = {
+			focus = two_sun_will
+		}
+		completion_reward = {
+			country_event = {
+				id = nf_two.4
+			}
+		}
+	}
+
+	### Civilian branch
+
+	focus = {
+		id = two_the_roads
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 30
+		x = -12
+		y = 1
+		relative_position_id = two_sun_caesar_rule
+		prerequisite = {
+			focus = two_sun_caesar_rule
+		}
+		completion_reward = {
+			483 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			93 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			318 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			207 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			516 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = two_scavenging_1
+		icon = GFX_icon_steel
+		cost = 30
+		x = -3
+		y = 1
+		relative_position_id = two_the_roads
+		prerequisite = {
+			focus = two_the_roads
+		}
+		completion_reward = {
+			random_owned_state = {
+				add_resource = {
+					type = metal
+					amount = 14
+				}
+			}
+		}
+	}
+	focus = {
+		id = two_scavenging_2
+		icon = GFX_goal_generic_circuit_adv
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = two_scavenging_1
+		prerequisite = {
+			focus = two_scavenging_1
+		}
+		completion_reward = {
+			random_owned_state = {
+				add_resource = {
+					type = advanced
+					amount = 9
+				}
+			}
+		}
+	}
+	focus = {
+		id = two_industry_1
+		icon = GFX_goal_generic_production
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = two_the_roads
+		prerequisite = {
+			focus = two_the_roads
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = industry
+			}
+		}
+	}
+	focus = {
+		id = two_industry_2
+		icon = GFX_icon_two_furance
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = two_industry_1
+		prerequisite = {
+			focus = two_industry_1
+		}
+		completion_reward = {
+			add_ideas = two_factories_idea
+		}
+	}
+	focus = {
+		id = two_nogales_water
+		icon = GFX_goal_generic_water
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = two_the_roads
+		prerequisite = {
+			focus = two_the_roads
+		}
+		completion_reward = {
+			588 = {
+				add_resource = {
+					type = water
+					amount = 10
+				}
+			}
+		}
+	}
+	focus = {
+		id = two_nogales_farms
+		icon = GFX_goal_food_razor_grain
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = two_nogales_water
+		prerequisite = {
+			focus = two_nogales_water
+		}
+		completion_reward = {
+			588 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = two_tombstone_garages
+		icon = GFX_goal_generic_supplies_focus
+		cost = 30
+		x = 3
+		y = 1
+		relative_position_id = two_the_roads
+		prerequisite = {
+			focus = two_the_roads
+		}
+		completion_reward = {
+			62 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = two_hilltop_garages
+		icon = GFX_goal_CES_Industry_TS_Garage
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = two_tombstone_garages
+		prerequisite = {
+			focus = two_tombstone_garages
+		}
+		completion_reward = {
+			247 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = two_explotation
+		icon = GFX_icon_two_industrialisation
+		cost = 30
+		x = 0
+		y = 3
+		relative_position_id = two_the_roads
+		prerequisite = {
+			focus = two_scavenging_2
+		}
+		prerequisite = {
+			focus = two_industry_2
+		}
+		prerequisite = {
+			focus = two_nogales_farms
+		}
+		prerequisite = {
+			focus = two_hilltop_garages
+		}
+		completion_reward = {
+			set_technology = {
+				exploitation_tech_level_settler = 1
+			}
+			483 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			93 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			318 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			207 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			516 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = two_race_start
+		icon = GFX_icon_two_aniversary
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = two_explotation
+		prerequisite = {
+			focus = two_explotation
+		}
+		completion_reward = {
+			add_ideas = two_great_race_prep_idea
+			TWO = {
+				news_event = {
+					id = nf_two.20
+				}
+			}
+			set_country_flag = great_race_participant
+			activate_mission = invitations_timeout
+
+			custom_effect_tooltip = two_start_race_preparations
+		}
+	}
+
+	focus = {
+		id = two_race_invitations
+		icon = GFX_goal_CES_Industry_TS_Car_Road
+		cost = 15
+		x = 0
+		y = 1
+		relative_position_id = two_race_start
+		prerequisite = {
+			focus = two_race_start
+		}
+		completion_reward = {
+			hidden_effect = {
+				every_country = {
+					limit = {
+						OR = {
+							original_tag = EHT
+							original_tag = IMO
+							original_tag = NEW
+							original_tag = GDH
+						}
+					}
+					add_opinion_modifier = {
+						target = ROOT
+						modifier = two_car_nation
+					}
+				}
+			}
+			custom_effect_tooltip = two_invite
+		}
+	}
+
+	focus = {
+		id = two_race_invitations_80
+		icon = GFX_goal_80
+		cost = 15
+		x = -3
+		y = 1
+		relative_position_id = two_race_invitations
+		prerequisite = {
+			focus = two_race_invitations
+		}
+		bypass = {
+			EHT = { exists = no }
+		}
+		completion_reward = {
+			custom_effect_tooltip = two_invite_80
+		}
+	}
+
+	focus = {
+		id = two_race_invitations_80_2
+		icon = GFX_goal_generic_nice_car
+		cost = 15
+		x = 0
+		y = 1
+		relative_position_id = two_race_invitations_80
+		prerequisite = {
+			focus = two_race_invitations_80
+		}
+		bypass = {
+			EHT = { exists = no }
+		}
+		available = {
+			EHT = {
+				has_country_flag = great_race_participant
+			}
+		}
+		completion_reward = {
+			add_ideas = two_invitations_eht_idea
+			set_technology = {
+				all_terrain_vehicles_tech = 1
+			}
+		}
+	}
+
+	focus = {
+		id = two_race_invitations_imo
+		icon = GFX_goal_BOS_steel_giants
+		cost = 15
+		x = -1
+		y = 1
+		relative_position_id = two_race_invitations
+		prerequisite = {
+			focus = two_race_invitations
+		}
+		bypass = {
+			IMO = { exists = no }
+		}
+		completion_reward = {
+			custom_effect_tooltip = two_invite_imo
+		}
+	}
+
+	focus = {
+		id = two_race_invitations_imo_2
+		icon = GFX_icon_two_tank_imo
+		cost = 15
+		x = 0
+		y = 1
+		relative_position_id = two_race_invitations_imo
+		prerequisite = {
+			focus = two_race_invitations_imo
+		}
+		bypass = {
+			IMO = { exists = no }
+		}
+		available = {
+			IMO = {
+				has_country_flag = great_race_participant
+			}
+		}
+		completion_reward = {
+			add_ideas = two_invitations_imo_idea
+		}
+	}
+
+	focus = {
+		id = two_race_invitations_new
+		icon = GFX_goal_NEW_generic_reno
+		cost = 15
+		x = 1
+		y = 1
+		relative_position_id = two_race_invitations
+		prerequisite = {
+			focus = two_race_invitations
+		}
+		bypass = {
+			NEW = { exists = no }
+		}
+		completion_reward = {
+			custom_effect_tooltip = two_invite_new
+		}
+	}
+
+	focus = {
+		id = two_race_invitations_new_2
+		icon = GFX_goal_generic_army_motorized
+		cost = 15
+		x = 0
+		y = 1
+		relative_position_id = two_race_invitations_new
+		prerequisite = {
+			focus = two_race_invitations_new
+		}
+		bypass = {
+			NEW = { exists = no }
+		}
+		available = {
+			NEW = {
+				has_country_flag = great_race_participant
+			}
+		}
+		completion_reward = {
+			add_ideas = two_invitations_new_idea
+		}
+	}
+
+	focus = {
+		id = two_race_invitations_gdh
+		icon = GFX_goal_generic_GDH_shield
+		cost = 15
+		x = 3
+		y = 1
+		relative_position_id = two_race_invitations
+		prerequisite = {
+			focus = two_race_invitations
+		}
+		bypass = {
+			GDH = { exists = no }
+		}
+		completion_reward = {
+			custom_effect_tooltip = two_invite_gdh
+		}
+	}
+
+	focus = {
+		id = two_race_invitations_gdh_2
+		icon = GFX_icon_two_suneater
+		cost = 15
+		x = 0
+		y = 1
+		relative_position_id = two_race_invitations_gdh
+		prerequisite = {
+			focus = two_race_invitations_gdh
+		}
+		bypass = {
+			GDH = { exists = no }
+		}
+		available = {
+			GDH = {
+				has_country_flag = great_race_participant
+			}
+		}
+		completion_reward = {
+			add_ideas = two_invitations_gdh_idea
+		}
+	}
+
+	focus = {
+		id = two_invitations_end
+		icon = GFX_icon_two_message
+		cost = 15
+		x = 0
+		y = 3
+		relative_position_id = two_race_invitations
+		prerequisite = {
+			focus = two_race_invitations_80_2
+		}
+		prerequisite = {
+			focus = two_race_invitations_imo_2
+		}
+		prerequisite = {
+			focus = two_race_invitations_new_2
+		}
+		prerequisite = {
+			focus = two_race_invitations_gdh_2
+		}
+		completion_reward = {
+			set_technology = {
+				vehicles_tech_level_scientific = 1
+			}
+			hidden_effect = {
+				remove_ideas = {
+					two_invitations_eht_idea
+					two_invitations_new_idea
+					two_invitations_imo_idea
+					two_invitations_gdh_idea
+				}
+				add_ideas = two_invitations_idea
+			}
+			custom_effect_tooltip = two_merge_invitation_ideas
+			custom_effect_tooltip = two_complete_deadline
+		}
+	}
+
+	focus = {
+		id = two_chop_shop
+		icon = GFX_icon_chopshop
+		cost = 30
+		x = -6
+		y = 1
+		relative_position_id = two_race_start
+		prerequisite = {
+			focus = two_race_start
+		}
+		completion_reward = {
+			add_research_slot = 1
+			TWO = {
+				set_temp_variable = {
+					org_selector = 2
+				}
+				set_temp_variable = {
+					org_influence_amount= 25
+				}
+				organization_add_influence = yes
+			}
+		}
+	}
+
+	focus = {
+		id = two_chop_shop_caps
+		icon = GFX_icon_caps
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = two_chop_shop
+		prerequisite = {
+			focus = two_chop_shop
+		}
+		completion_reward = {
+			TWO = {
+				set_temp_variable = {
+					org_selector = 2
+				}
+				set_temp_variable = {
+					org_influence_amount = 25
+				}
+				organization_add_influence = yes
+			}
+			set_temp_variable = { caps_to_add = 150 }
+			add_caps = yes
+		}
+	}
+
+	focus = {
+		id = two_chop_shop_hire
+		icon = GFX_icon_chop_shop_guy
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = two_chop_shop_caps
+		prerequisite = {
+			focus = two_chop_shop_caps
+		}
+		completion_reward = {
+			TWO = {
+				set_temp_variable = {
+					org_selector = 2
+				}
+				set_temp_variable = {
+					org_influence_amount = 25
+				}
+				organization_add_influence = yes
+			}
+			custom_effect_tooltip = two_hire_buck
+		}
+	}
+
+	focus = {
+		id = two_boxes
+		icon = GFX_icon_tools_round
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = two_chop_shop_hire
+		prerequisite = {
+			focus = two_chop_shop_hire
+		}
+		completion_reward = {
+			# adds decision to build boxes
+			516 = {
+
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			set_technology = {
+				tools_tech_level_settler = 1
+			}
+			custom_effect_tooltip = two_allow_boxes
+		}
+	}
+
+	focus = {
+		id = two_track_two_1
+		icon = GFX_goal_CES_Two_Senior_Colosseum
+		cost = 15
+		x = 6
+		y = 1
+		relative_position_id = two_race_start
+		prerequisite = {
+			focus = two_race_start
+		}
+		completion_reward = {
+			hidden_effect = {
+				set_variable = { TWO.tracks_building = 0.05 }
+				add_dynamic_modifier = {
+					modifier = two_tracks_dynamic_modifier
+				}
+			}
+			custom_effect_tooltip = two_tracks_building_start
+		}
+	}
+
+	focus = {
+		id = two_track_two_2
+		icon = GFX_icon_two_road3
+		cost = 15
+		x = -1
+		y = 1
+		relative_position_id = two_track_two_1
+		prerequisite = {
+			focus = two_track_two_1
+		}
+		completion_reward = {
+			hidden_effect = {
+				add_to_variable = { TWO.tracks_building = 0.05 }
+			}
+			custom_effect_tooltip = two_tracks_building_process
+		}
+	}
+
+	focus = {
+		id = two_track_ton
+		icon = GFX_icon_two_track
+		cost = 15
+		x = 1
+		y = 1
+		relative_position_id = two_track_two_1
+		prerequisite = {
+			focus = two_track_two_1
+		}
+		completion_reward = {
+			hidden_effect = {
+				add_to_variable = { TWO.tracks_building = 0.05 }
+			}
+			custom_effect_tooltip = two_tracks_building_process
+		}
+	}
+
+	focus = {
+		id = two_track_cow
+		icon = GFX_icon_two_canyon_road
+		cost = 15
+		x = -1
+		y = 2
+		relative_position_id = two_track_two_1
+		available = {
+			has_completed_focus = two_track_two_1
+		}
+		bypass = {
+			hidden_trigger = {
+				is_ai = yes
+			}
+		}
+		completion_reward = {
+			hidden_effect = {
+				add_to_variable = { TWO.tracks_building = 0.05 }
+			}
+			custom_effect_tooltip = two_tracks_building_process
+		}
+	}
+
+	focus = {
+		id = two_track_rio_yaq
+		icon = GFX_icon_two_road4
+		cost = 15
+		x = 1
+		y = 2
+		relative_position_id = two_track_two_1
+		available = {
+			has_completed_focus = two_track_two_1
+		}
+		bypass = {
+			hidden_trigger = {
+				is_ai = yes
+			}
+		}
+		completion_reward = {
+			hidden_effect = {
+				add_to_variable = { TWO.tracks_building = 0.05 }
+			}
+			custom_effect_tooltip = two_tracks_building_process
+		}
+	}
+
+	focus = {
+		id = two_track_sea
+		icon = GFX_icon_two_tracks_sea
+		cost = 15
+		x = 0
+		y = 3
+		relative_position_id = two_track_two_1
+		prerequisite = {
+			focus = two_track_two_2
+		}
+		prerequisite = {
+			focus = two_track_rio_yaq
+		}
+		prerequisite = {
+			focus = two_track_cow
+		}
+		prerequisite = {
+			focus = two_track_ton
+		}
+		completion_reward = {
+			add_ideas = two_tracks_idea
+			swap_ideas = {
+				remove_idea = two_great_race_prep_idea
+				add_idea = two_great_race_prep_idea_2
+			}
+			hidden_effect = {
+				remove_dynamic_modifier = {
+					modifier = two_tracks_dynamic_modifier
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = two_race_launch
+		icon = GFX_icon_two_sun_race_culture
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = two_invitations_end
+		prerequisite = {
+			focus = two_boxes
+		}
+		prerequisite = {
+			focus = two_invitations_end
+		}
+		prerequisite = {
+			focus = two_track_sea
+		}
+		completion_reward = {
+			custom_effect_tooltip = two_launch_race
+
+			hidden_effect = {
+				launch_great_race = yes
+			}
+		}
+	}
+
+	focus = {
+		id = two_race_finish_line
+		icon = GFX_icon_big_boi_TWO
+		cost = 60
+		x = 0
+		y = 2
+		relative_position_id = two_race_launch
+		prerequisite = {
+			focus = two_race_launch
+		}
+		available = {
+			hidden_trigger = {
+				has_country_flag = great_race_finished
+			}
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = two_worship_of_nas
+				add_idea = two_worship_of_nas2
+			}
+			set_temp_variable = { caps_to_add = 150 }
+			add_caps = yes
+		}
+	}
+
+	### Engineering branch
+
+	focus = {
+		id = two_masters_of_motor
+		icon = GFX_goal_CES_Cult_of_Nas
+		cost = 30
+		x = 10
+		y = 1
+		relative_position_id = two_sun_caesar_rule
+		prerequisite = {
+			focus = two_sun_caesar_rule
+		}
+		completion_reward = {
+			add_ideas = two_four_stroke_miracle
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = vehicle_tech_category
+			}
+		}
+	}
+
+	focus = {
+		id = two_motorized
+		icon = GFX_goal_CES_Two_Chariots
+		cost = 30
+		x = -4
+		y = 1
+		relative_position_id = two_masters_of_motor
+		prerequisite = {
+			focus = two_masters_of_motor
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.5
+				ahead_reduction = 1.0
+				category = motorized_equipment_category
+			}
+		}
+	}
+
+	focus = {
+		id = two_ven_armor
+		icon = GFX_goal_generic_contraptions_girl
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = two_motorized
+		prerequisite = {
+			focus = two_motorized
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.25
+				ahead_reduction = 1.5
+				category = motorized_equipment_category
+			}
+		}
+	}
+
+	focus = {
+		id = two_ven_armor_scrap
+		icon = GFX_goal_generic_metal_focus
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = two_motorized
+		prerequisite = {
+			focus = two_motorized
+		}
+		completion_reward = {
+			random_owned_state = {
+				add_resource = {
+					type = metal
+					amount = 5
+				}
+				add_resource = {
+					type = composites
+					amount = 5
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = two_car_2
+		icon = GFX_icon_two_car_circle
+		cost = 30
+		x = 0
+		y = 2
+		relative_position_id = two_motorized
+		prerequisite = {
+			focus = two_ven_armor
+		}
+		prerequisite = {
+			focus = two_ven_armor_scrap
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				ahead_reduction = 4.0
+				category = motorized_equipment_category
+			}
+		}
+	}
+
+	focus = {
+		id = two_masters_of_motorized
+		icon = GFX_icon_spares
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = two_car_2
+		prerequisite = {
+			focus = two_car_2
+		}
+		completion_reward = {
+			hidden_effect = {
+				if = {
+					limit = {
+						has_idea = two_masters_of_the_motor_b
+					}
+					swap_ideas = {
+						remove_idea = two_masters_of_the_motor_b
+						add_idea = two_masters_of_the_motor_2
+					}
+				}
+				else = {
+					swap_ideas = {
+						remove_idea = two_masters_of_the_motor
+						add_idea = two_masters_of_the_motor_a
+					}
+				}
+			}
+			custom_effect_tooltip = two_improve_masters_of_the_motor_idea_left_tt
+		}
+	}
+
+	focus = {
+		id = two_doctrine_1
+		icon = GFX_goal_CES_Two_Cannonball
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = two_masters_of_motor
+		prerequisite = {
+			focus = two_masters_of_motor
+		}
+		completion_reward = {
+			army_experience = 15
+			add_tech_bonus = {
+				bonus = 0.8
+				category = cat_land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = two_doctrine_2
+		icon = GFX_icon_two_wargoal_tonk
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = two_doctrine_1
+		prerequisite = {
+			focus = two_doctrine_1
+		}
+		completion_reward = {
+			army_experience = 30
+
+			custom_effect_tooltip = two_unlock_ruby_tt
+		}
+	}
+
+	focus = {
+		id = two_doctrine_3
+		icon = GFX_KHA_focus_planning
+		cost = 30
+		x = 0
+		y = 2
+		relative_position_id = two_doctrine_2
+		prerequisite = {
+			focus = two_doctrine_2
+		}
+		completion_reward = {
+			army_experience = 10
+			add_tech_bonus = {
+				bonus = 1.0
+				category = cat_land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = two_apc_1
+		icon = GFX_goal_NCR_Army_of_Mobility
+		cost = 30
+		x = 4
+		y = 1
+		relative_position_id = two_masters_of_motor
+		prerequisite = {
+			focus = two_masters_of_motor
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				ahead_reduction = 2
+				category = motorized_equipment_category
+			}
+		}
+	}
+
+	focus = {
+		id = two_apc_supply_grace
+		icon = GFX_goal_CES_Industry_TS_Back
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = two_apc_1
+		prerequisite = {
+			focus = two_apc_1
+		}
+		completion_reward = {
+			add_ideas = two_supply_idea
+		}
+	}
+
+	focus = {
+		id = two_apc_support
+		icon = GFX_goal_NCR_Weapon_Standardization
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = two_apc_1
+		prerequisite = {
+			focus = two_apc_1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				category = support_anti_tank_tech_category
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				category = support_logistics_tech_category
+			}
+		}
+	}
+
+	focus = {
+		id = two_apc_2
+		icon = GFX_icon_apc_desert
+		cost = 30
+		x = 0
+		y = 2
+		relative_position_id = two_apc_1
+		prerequisite = {
+			focus = two_apc_supply_grace
+		}
+		prerequisite = {
+			focus = two_apc_support
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				ahead_reduction = 3
+				technology = heavy_motorized_equipment_vehicle_tech_2
+			}
+		}
+	}
+
+	focus = {
+		id = two_masters_of_apc
+		icon = GFX_icon_gears_of_war
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = two_apc_2
+		prerequisite = {
+			focus = two_apc_2
+		}
+		completion_reward = {
+			hidden_effect = {
+				if = {
+					limit = {
+						has_idea = two_masters_of_the_motor_a
+					}
+					swap_ideas = {
+						remove_idea = two_masters_of_the_motor_a
+						add_idea = two_masters_of_the_motor_2
+					}
+				}
+				else = {
+					swap_ideas = {
+						remove_idea = two_masters_of_the_motor
+						add_idea = two_masters_of_the_motor_b
+					}
+				}
+			}
+			custom_effect_tooltip = two_improve_masters_of_the_motor_idea_right_tt
+		}
+	}
+
+	focus = {
+		id = two_motorized_1
+		icon = GFX_goal_NCR_Mechanized_Core
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = two_masters_of_motorized
+		prerequisite = {
+			focus = two_doctrine_3
+		}
+		prerequisite = {
+			focus = two_masters_of_motorized
+		}
+		completion_reward = {
+			add_ideas = two_motorized_production_1
+			random_owned_state = {
+				limit = {
+					is_valid_state_for_arms_factory = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = two_motorized_factories
+		icon = GFX_goal_generic_production
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = two_motorized_1
+		prerequisite = {
+			focus = two_motorized_1
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = two_motorized_production_2b
+				}
+				swap_ideas = {
+					remove_idea = two_motorized_production_2b
+					add_idea = two_motorized_production_2
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = two_motorized_production_1
+					add_idea = two_motorized_production_2a
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = two_motorized_construction
+		icon = GFX_goal_CES_workshop
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = two_motorized_1
+		prerequisite = {
+			focus = two_motorized_1
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = two_motorized_production_2a
+				}
+				swap_ideas = {
+					remove_idea = two_motorized_production_2a
+					add_idea = two_motorized_production_2
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = two_motorized_production_1
+					add_idea = two_motorized_production_2b
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = two_motorized_2
+		icon = GFX_icon_two_car_rectangle
+		cost = 30
+		x = 0
+		y = 2
+		relative_position_id = two_motorized_1
+		prerequisite = {
+			focus = two_motorized_factories
+		}
+		prerequisite = {
+			focus = two_motorized_construction
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				uses = 2
+				bonus = 1.0
+				ahead_reduction = 1.0
+				category = car_tech_category
+			}
+		}
+	}
+
+	focus = {
+		id = two_motorized_3
+		icon = GFX_goal_generic_workshop
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = two_motorized_2
+		prerequisite = {
+			focus = two_motorized_2
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = two_motorized_production_2
+				add_idea = two_motorized_production_3
+			}
+
+			set_technology = {
+				habitation_tech_level_settler = 1
+			}
+		}
+	}
+
+	focus = {
+		id = two_tanks_1
+		icon = GFX_goal_CES_hammer_of_mars
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = two_doctrine_3
+		prerequisite = {
+			focus = two_doctrine_3
+		}
+		prerequisite = {
+			focus = two_masters_of_apc
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				category = tank_tech_category
+			}
+		}
+	}
+
+	focus = {
+		id = two_tanks_stats
+		icon = GFX_icon_tonk_1
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = two_tanks_1
+		prerequisite = {
+			focus = two_tanks_1
+		}
+		completion_reward = {
+			add_ideas = two_tank_stats
+		}
+	}
+
+	focus = {
+		id = two_tanks_2
+		icon = GFX_icon_tonk_2
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = two_tanks_stats
+		prerequisite = {
+			focus = two_tanks_stats
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				uses = 2
+				bonus = 1.0
+				ahead_reduction = 1.0
+				category = tank_tech_category
+			}
+		}
+	}
+
+	focus = {
+		id = two_tanks_attack
+		icon = GFX_icon_tonk_3
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = two_tanks_2
+		prerequisite = {
+			focus = two_tanks_2
+		}
+		completion_reward = {
+			set_technology = {
+				armored_chariots_tech = 1
+			}
+			add_ideas = two_thunder_bringers
+		}
+	}
+
+	focus = {
+		id = two_apc_3
+		icon = GFX_goal_EHT_apc
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = two_masters_of_apc
+		prerequisite = {
+			focus = two_doctrine_3
+		}
+		prerequisite = {
+			focus = two_masters_of_apc
+		}
+		completion_reward = {
+			if = {
+				limit = { NOT = { has_tech = mobile_recon_vehicle_tech } }
+				set_technology = { mobile_recon_vehicle_tech = 1 }
+				add_tech_bonus = {
+					uses = 1
+					bonus = 0.5
+					category = support_recon_tech_category
+				}
+			}
+			else = {
+				add_tech_bonus = {
+					uses = 2
+					bonus = 0.5
+					category = support_recon_tech_category
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = two_apc_4
+		icon = GFX_icon_two_combustion_engine
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = two_apc_3
+		prerequisite = {
+			focus = two_apc_3
+		}
+		completion_reward = {
+			random_owned_state = {
+				add_resource = {
+					type = energy
+					amount = 15
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = two_apc_5
+		icon = GFX_icon_apc_modern
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = two_apc_4
+		prerequisite = {
+			focus = two_apc_4
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				ahead_reduction = 1.0
+				category = vehicle_tech_category
+			}
+		}
+	}
+
+	focus = {
+		id = two_slave_trade
+		icon = GFX_goal_CES_Chariots_of_God
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = two_doctrine_3
+		prerequisite = {
+			focus = two_doctrine_3
+		}
+		prerequisite = {
+			focus = two_masters_of_motorized
+		}
+		completion_reward = {
+			CES = {
+				add_tech_bonus = {
+					bonus = 1.0
+					category = vehicle_tech_category
+				}
+				add_tech_bonus = {
+					uses = 2
+					ahead_reduction = 1.0
+					category = vehicle_tech_category
+				}
+			}
+			LAC = {
+				add_tech_bonus = {
+					bonus = 1.0
+					category = vehicle_tech_category
+				}
+				add_tech_bonus = {
+					uses = 2
+					ahead_reduction = 2.0
+					category = vehicle_tech_category
+				}
+			}
+			# add slaves
+			set_temp_variable = { caps_to_add = 400 }
+			add_caps = yes
+		}
+	}
+
+	focus = {
+		id = two_slave_trade_2
+		icon = GFX_goal_CES_slaves
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = two_slave_trade
+		prerequisite = {
+			focus = two_slave_trade
+		}
+		completion_reward = {
+			add_ideas = two_slave_trade_idea
+			every_owned_state = {
+				limit = {
+					OR = {
+						state = 62
+						state = 247
+						state = 283
+					}
+				}
+				set_temp_variable = { pop_add = 2000 }
+				add_state_population_no_state_name = yes
+				add_resource = {
+					type = metal
+					amount = 3
+				}
+			}
+		}
+	}
+
+	### Navy branch
+	focus = {
+		id = two_ultima
+		icon = GFX_goal_generic_wooden_ship
+		cost = 30
+		x = 20
+		y = 1
+		relative_position_id = two_sun_caesar_rule
+		prerequisite = {
+			focus = two_sun_caesar_rule
+		}
+		available = {
+			owns_state = 444
+		}
+		completion_reward = {
+			444 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 3
+					instant_build = yes
+					province = 5310
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = two_small_fleet_advisor
+		icon = GFX_focus_generic_little_entente
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = two_ultima
+		prerequisite = {
+			focus = two_ultima
+		}
+		mutually_exclusive = {
+			focus = two_large_fleet_advisor
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.5
+				uses = 1
+				category = spec_force_equipment_tech_category
+			}
+			add_doctrine_cost_reduction = {
+				cost_reduction = 2
+				uses = 2
+				category = caf_land_doctrine_xp
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				ahead_reduction = 1
+				category = naval_invasion_tech_category
+			}
+			custom_effect_tooltip = two_small_navy_advisor
+		}
+	}
+
+	focus = {
+		id = two_small_fleet_tech
+		icon = GFX_goal_generic_boat_cruise
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = two_small_fleet_advisor
+		prerequisite = {
+			focus = two_small_fleet_advisor
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				ahead_reduction = 2
+				category = naval_invasion_tech_category
+			}
+			add_doctrine_cost_reduction = {
+				name = naval_doctrine_bonus
+				cost_reduction = 0.75
+				uses = 3
+				category = cat_naval_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = two_large_fleet_advisor
+		icon = GFX_goal_generic_naval_doctrines_focus
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = two_ultima
+		prerequisite = {
+			focus = two_ultima
+		}
+		mutually_exclusive = {
+			focus = two_small_fleet_advisor
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				ahead_reduction = 2
+				category = naval_heavy_hull_tech_category
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				ahead_reduction = 1
+				category = naval_medium_hull_tech_category
+			}
+			custom_effect_tooltip = two_large_navy_advisor
+		}
+	}
+
+	focus = {
+		id = two_large_fleet_tech
+		icon = GFX_goal_generic_boat_boat
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = two_large_fleet_advisor
+		prerequisite = {
+			focus = two_large_fleet_advisor
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 3
+				category = naval_tech_category
+			}
+		}
+	}
+
+	focus = {
+		id = two_ultima_2
+		icon = GFX_goal_generic_harbours_focus
+		cost = 30
+		x = 0
+		y = 3
+		relative_position_id = two_ultima
+		prerequisite = {
+			focus = two_small_fleet_tech
+			focus = two_large_fleet_tech
+		}
+		completion_reward = {
+			444 = {
+				if = {
+					limit = {
+						is_valid_state_for_dockyard = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+				}
+				if = {
+					limit = {
+						is_valid_state_for_2_power_stations = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = electricity_generator
+						level = 2
+						instant_build = yes
+					}
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 3
+					instant_build = yes
+					province = 2060
+				}
+			}
+		}
+	}
+
+	### Main/Political branch
+	focus = {
+		id = two_ces_trade
+		icon = GFX_goal_CES_Industry_TS_Market
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = two_sun_caesar_rule
+		prerequisite = {
+			focus = two_sun_caesar_rule
+		}
+		completion_reward = {
+			519 = {
+				add_extra_state_shared_building_slots = 3
+			}
+			588 = {
+				add_extra_state_shared_building_slots = 3
+			}
+		}
+	}
+	focus = {
+		id = two_ces_tribute
+		icon = GFX_goal_CES_Industry_TS_Money
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = two_sun_caesar_rule
+		bypass = {
+			hidden_trigger = {
+				is_ai = yes
+			}
+		}
+		available = {
+			set_temp_variable = { caps_diff = -100 }
+			caps_cost_trigger = yes
+		}
+		prerequisite = {
+			focus = two_sun_caesar_rule
+		}
+		completion_reward = {
+			set_temp_variable = { caps_to_subtract = 100 }
+			subtract_caps = yes
+			CES = {
+				set_temp_variable = { caps_to_add = 100 }
+				add_caps = yes
+			}
+		}
+	}
+	focus = {
+		id = two_cohort
+		icon = GFX_goal_CES_Industry_TS_Exemptions
+		cost = 30
+		x = 0
+		y = 2
+		relative_position_id = two_sun_caesar_rule
+		prerequisite = {
+			focus = two_ces_trade
+		}
+		prerequisite = {
+			focus = two_ces_tribute
+		}
+		completion_reward = {
+			set_technology = {
+				ces_two_tech = 1
+			}
+			add_political_power = 100
+			if = {
+				limit = {
+					CES = {
+						NOT = { has_completed_focus = ces_loyal_tribe }
+					}
+				}
+				CES = {
+					complete_national_focus = ces_loyal_tribe
+				}
+			}
+		}
+	}
+	focus = {
+		id = two_cowboy_self
+		icon = GFX_icon_two_cow_show
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = two_cohort
+		prerequisite = {
+			focus = two_cohort
+		}
+		available = {
+			#custom_trigger_tooltip = {
+			#	tooltip = two_cow_conquest_trigger_tt
+			#	OR = {
+			#		has_global_flag = ces_ultima_friendship
+			#		has_global_flag = ces_ultima_to_two
+			#		has_global_flag = ces_ultima_to_gdh
+			#	}
+			#}
+		}
+		completion_reward = {
+			declare_war_on = {
+				target = COW
+				type = annex_everything
+			}
+		}
+	}
+	focus = {
+		id = two_rule_cow
+		icon = GFX_goal_generic_cowboys
+		cost = 30
+		x = 0
+		y = 2
+		relative_position_id = two_cohort
+		prerequisite = {
+			focus = two_cowboy_self
+		}
+		available = {
+			owns_state = 2
+			owns_state = 330
+			owns_state = 335
+		}
+		completion_reward = {
+			2 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			444 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			330 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			335 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = two_arizona_rangers
+		icon = GFX_goal_NCR_Ranger_Core
+		cost = 30
+		x = -2
+		y = 2
+		relative_position_id = two_cohort
+		prerequisite = {
+			focus = two_cowboy_self
+		}
+		available = {
+			NOT = {
+				has_completed_focus = two_arizona_pacifiing
+			}
+			owns_state = 2
+			owns_state = 330
+			owns_state = 335
+		}
+		completion_reward = {
+			add_ideas = two_remnants_of_rangers
+			every_state = {
+				limit = {
+					is_core_of = COW
+				}
+				set_compliance = 50
+				set_resistance = 20
+			}
+			add_stability = -0.1
+		}
+	}
+	focus = {
+		id = two_arizona_pacifiing
+		icon = GFX_goal_CES_crucifixion_2
+		cost = 30
+		x = 2
+		y = 2
+		relative_position_id = two_cohort
+		prerequisite = {
+			focus = two_cowboy_self
+		}
+		available = {
+			NOT = {
+				has_completed_focus = two_arizona_rangers
+			}
+			owns_state = 2
+			owns_state = 330
+			owns_state = 335
+		}
+		completion_reward = {
+			#kill manpower to end ranger problem
+			every_state = {
+				limit = {
+					is_core_of = COW
+				}
+				random_list = {
+					20 = {
+						damage_building = {
+							type = infrastructure
+							damage = 1
+						}
+					}
+					20 = {
+						damage_building = {
+							type = infrastructure
+							damage = 2
+						}
+					}
+					20 = {
+						damage_building = {
+							type = infrastructure
+							damage = 3
+						}
+					}
+					20 = {
+						damage_building = {
+							type = industrial_complex
+							damage = 1
+						}
+					}
+					20 = {
+						damage_building = {
+							type = arms_factory
+							damage = 1
+						}
+					}
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = COW
+				}
+				set_compliance = 70
+				set_resistance = 10
+			}
+		}
+	}
+	focus = {
+		id = two_cores_cow
+		icon = GFX_icon_two_cowboy_rule
+		cost = 30
+		x = 0
+		y = 3
+		relative_position_id = two_cohort
+		prerequisite = {
+			focus = two_arizona_rangers
+			focus = two_arizona_pacifiing
+		}
+		prerequisite = {
+			focus = two_rule_cow
+		}
+		completion_reward = {
+			set_temp_variable = { core_cost_var = -0.75 }
+			COW = { ROOT = { decrease_coring_cost_for_prev_cores = yes } } # This doesn't fucking work for some reason so using it for tooltip only
+			every_owned_state = {
+				limit = {
+					is_core_of = COW
+				}
+				set_variable = { coring_cost_targeted_state_factor@ROOT = core_cost_var }
+				add_state_modifier = { modifier = { local_required_required_infrastructure_for_coring = -1 } }
+			}
+			if = {
+				limit = { is_ai = yes }
+				hidden_effect = {
+					every_owned_state = {
+						limit = {
+							is_core_of = COW
+						}
+						add_core_of = ROOT
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = two_annex_ton
+		icon = GFX_icon_two_tohono_annex_3
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = two_cores_cow
+		prerequisite = {
+			focus = two_cores_cow
+		}
+		available = {
+			is_neighbor_of = TON
+		}
+		bypass = {
+			TON = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			add_state_claim = 517
+			add_state_claim = 395
+			add_state_claim = 146
+			declare_war_on = {
+				target = TON
+				type = annex_everything
+			}
+		}
+	}
+	focus = {
+		id = two_rule_ton
+		icon = GFX_icon_two_track
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = two_annex_ton
+		prerequisite = {
+			focus = two_annex_ton
+		}
+		available = {
+			ROOT = {
+				owns_state = 517
+				owns_state = 146
+				owns_state = 395
+			}
+		}
+		completion_reward = {
+			517 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			146 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			395 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = two_ton_secrets
+		icon = GFX_KHA_focus_farm_agriculture
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = two_annex_ton
+		prerequisite = {
+			focus = two_annex_ton
+		}
+		available = {
+			ROOT = {
+				owns_state = 517
+				owns_state = 146
+				owns_state = 395
+			}
+		}
+		completion_reward = {
+			add_ideas = two_ton_secrets_idea # fix desc
+		}
+	}
+	focus = {
+		id = two_cores_ton
+		icon = GFX_icon_two_tohono_rule
+		cost = 30
+		x = 0
+		y = 2
+		relative_position_id = two_annex_ton
+
+		prerequisite = {
+			focus = two_rule_ton
+		}
+		prerequisite = {
+			focus = two_ton_secrets
+		}
+		completion_reward = {
+			set_temp_variable = { core_cost_var = -0.75 }
+			TON = { ROOT = { decrease_coring_cost_for_prev_cores = yes } } # This doesn't fucking work for some reason so using it for tooltip only
+			every_owned_state = {
+				limit = {
+					is_core_of = TON
+				}
+				set_variable = { coring_cost_targeted_state_factor@ROOT = core_cost_var }
+				add_state_modifier = { modifier = { local_required_required_infrastructure_for_coring = -1 } }
+			}
+			if = {
+				limit = { is_ai = yes }
+				hidden_effect = {
+					every_owned_state = {
+						limit = {
+							is_core_of = TON
+						}
+						add_core_of = ROOT
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = two_gente_question
+		icon = GFX_goal_gdh_shield
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = two_cores_ton
+		available = {
+			date > 2279.1.1
+		}
+		bypass = {
+			is_not_caesars_legion_member = no
+		}
+		prerequisite = {
+			focus = two_cores_ton
+		}
+		completion_reward = {
+			CES = {
+				country_event = {
+					id = nf_two.9
+				}
+			}
+		}
+	}
+	focus = {
+		id = two_gente_trade
+		icon = GFX_goal_CES_Gente_Two_Friends
+		cost = 30
+		x = 3
+		y = 1
+		relative_position_id = two_gente_question
+		available = {
+			OR = {
+				GDH = {
+					is_in_faction_with = TWO
+				}
+				has_country_flag = two_gdh_friendship
+			}
+		}
+		prerequisite = {
+			focus = two_gente_question
+		}
+		mutually_exclusive = {
+			focus = two_gente_annex
+		}
+		completion_reward = {
+			516 = {
+				set_temp_variable = { development_to_add = 2.0 }
+				add_development_to_node = yes
+			}
+		}
+	}
+	focus = {
+		id = two_gente_trade_res
+		icon = GFX_goal_generic_electricity_focus
+		cost = 30
+		x = -2
+		y = 1
+		relative_position_id = two_gente_trade
+		prerequisite = {
+			focus = two_gente_trade
+		}
+		completion_reward = {
+			297 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_dockyards = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+				}
+				set_building_level = {
+					type = naval_base
+					level = 10
+					province = 3151
+				}
+				add_resource = {
+					type = energy
+					amount = 16
+				}
+			}
+			471 = {
+				add_resource = {
+					type = water
+					amount = 8
+				}
+			}
+		}
+	}
+	focus = {
+		id = two_gente_trade_mil
+		icon = GFX_goal_CES_Industry_TS_Help
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = two_gente_trade
+		prerequisite = {
+			focus = two_gente_trade
+		}
+		completion_reward = {
+			588 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			260 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = two_gente_trade_arms
+		icon = GFX_goal_generic_common_firearms_focus
+		cost = 30
+		x = 2
+		y = 1
+		relative_position_id = two_gente_trade
+		prerequisite = {
+			focus = two_gente_trade
+		}
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = gauss_equipment_2 # change
+				amount = 400
+				producer = USA
+			}
+			GDH = {
+				set_temp_variable = { caps_to_add = 400 }
+				add_caps = yes
+			}
+		}
+	}
+	focus = {
+		id = two_gente_trade_civs
+		icon = GFX_goal_generic_workshop
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = two_gente_trade_mil
+		prerequisite = {
+			focus = two_gente_trade_res
+		}
+		prerequisite = {
+			focus = two_gente_trade_mil
+		}
+		prerequisite = {
+			focus = two_gente_trade_arms
+		}
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					is_valid_state_for_3_civilian_factories = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					is_valid_state_for_3_civilian_factories = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = two_gente_trade_weapons
+		icon = GFX_goal_NEW_Caps_for_Loyalty
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = two_gente_trade_mil
+		prerequisite = {
+			focus = two_gente_trade_res
+		}
+		prerequisite = {
+			focus = two_gente_trade_mil
+		}
+		prerequisite = {
+			focus = two_gente_trade_arms
+		}
+		completion_reward = {
+			set_technology = {
+				infantry_tech_level_settler = 1
+			}
+		}
+	}
+	focus = {
+		id = two_gente_trade_3_suns
+		icon = GFX_icon_two_three_suns_1
+		cost = 60
+		x = 0
+		y = 2
+		relative_position_id = two_gente_trade_mil
+		prerequisite = {
+			focus = two_gente_trade_civs
+		}
+		prerequisite = {
+			focus = two_gente_trade_weapons
+		}
+		completion_reward = {
+			add_ideas = two_gen_3_sun_pact
+			516 = {
+				add_resource = {
+					type = composites
+					amount = 15
+				}
+			}
+			471 = {
+				add_resource = {
+					type = circuitry
+					amount = 15
+				}
+			}
+		}
+	}
+	focus = {
+		id = two_gente_annex
+		icon = GFX_icon_two_GDH_fire
+		cost = 30
+		x = -3
+		y = 1
+		relative_position_id = two_gente_question
+		available = {
+			hidden_trigger = {
+				has_country_flag = two_ces_allow_gente_annexation
+			}
+		}
+		prerequisite = {
+			focus = two_gente_question
+		}
+		mutually_exclusive = {
+			focus = two_gente_trade
+		}
+		completion_reward = {
+			declare_war_on = {
+				target = GDH
+				type = annex_everything
+			}
+		}
+	}
+	focus = {
+		id = two_gente_annex_road
+		icon = GFX_icon_two_canyon_road
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = two_gente_annex
+		prerequisite = {
+			focus = two_gente_annex
+		}
+		available = {
+			GDH = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			516 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			588 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			477 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			471 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = two_gente_annex_mask
+		icon = GFX_icon_two_suneater
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = two_gente_annex_road
+		prerequisite = {
+			focus = two_gente_annex_road
+		}
+		completion_reward = {
+			TWO = {
+				country_event = {
+					id = nf_two.11
+				}
+			}
+		}
+	}
+	focus = {
+		id = two_gente_cores # 3 sun or smth
+		icon = GFX_icon_two_three_suns_2
+		cost = 60
+		x = 0
+		y = 1
+		relative_position_id = two_gente_annex_mask
+		prerequisite = {
+			focus = two_gente_annex_mask
+		}
+		completion_reward = {
+			set_cosmetic_tag = TWO_sonora_equitatae
+			set_temp_variable = { core_cost_var = -0.75 }
+			GDH = { ROOT = { decrease_coring_cost_for_prev_cores = yes } } # This doesn't fucking work for some reason so using it for tooltip only
+			every_owned_state = {
+				limit = {
+					is_core_of = GDH
+				}
+				set_variable = { coring_cost_targeted_state_factor@ROOT = core_cost_var }
+				add_state_modifier = { modifier = { local_required_required_infrastructure_for_coring = -1 } }
+			}
+			if = {
+				limit = { is_ai = yes }
+				hidden_effect = {
+					every_owned_state = {
+						limit = {
+							is_core_of = GDH
+						}
+						add_core_of = ROOT
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = two_ces_civil_war
+		icon = GFX_goal_generic_legion_speared
+		cost = 14
+		x = 3
+		y = 6
+		prerequisite = {
+			focus = two_sun_caesar_rule
+		}
+		allow_branch = {
+			has_country_flag = two_ces_civilwar
+		}
+		completion_reward = {
+			TWO = {
+				news_event = {
+					id = nf_two.300
+				}
+			}
+			CES = {
+				end_puppet = TWO
+			}
+			leave_caesars_legion = yes
+		}
+	}
+
+	focus = {
+		id = two_ces_civil_war_vlp_ally
+		icon = GFX_goal_CES_spqr
+		cost = 21
+		x = 1
+		y = 1
+		relative_position_id = two_ces_civil_war
+		prerequisite = {
+			focus = two_ces_civil_war
+		}
+		mutually_exclusive = {
+			focus = two_ces_civil_war_vlp_run
+		}
+		available = {
+			OR = {
+				CES = {
+					has_country_leader = {
+						character = CES_vulpes
+					}
+				}
+				VLP = {
+					exists = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					can_use_autonomy_system = yes
+				}
+				VLP = {
+					set_autonomy = {
+						target = TWO
+						autonomy_state = autonomy_client_tribe
+					}
+				}
+			}
+			if = {
+				limit = {
+					can_use_autonomy_system = no
+				}
+				VLP = {
+					TWO = {
+						become_puppet = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = two_ces_civil_war_vlp_ally_adv
+		icon = GFX_goal_CES_skinned_bear
+		cost = 21
+		x = 0
+		y = 1
+		relative_position_id = two_ces_civil_war_vlp_ally
+		prerequisite = {
+			focus = two_ces_civil_war_vlp_ally
+		}
+		completion_reward = {
+			# advisors
+		}
+	}
+
+	focus = {
+		id = two_ces_civil_war_vlp_run
+		icon = GFX_goal_CES_generic_focus
+		cost = 21
+		x = -1
+		y = 1
+		relative_position_id = two_ces_civil_war
+		prerequisite = {
+			focus = two_ces_civil_war
+		}
+		mutually_exclusive = {
+			focus = two_ces_civil_war_vlp_ally
+		}
+		available = {
+			VLP = {
+				exists = no
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_war_support = 0.1
+			hidden_effect = {
+				CES = {
+					CES_vulpes = {
+						set_nationality = TWO
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = two_ces_civil_war_vlp_run_ally
+		icon = GFX_KHA_focus_befriend_legion
+		cost = 21
+		x = 0
+		y = 1
+		relative_position_id = two_ces_civil_war_vlp_run
+		prerequisite = {
+			focus = two_ces_civil_war_vlp_run
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			# event chain to join one of the sides
+			country_event = {
+				id = nf_two.301
+			}
+		}
+	}
+
+	focus = {
+		id = two_ces_agency
+		icon = GFX_goal_CES_rome_ascendant
+		cost = 30
+		x = 0
+		y = 3
+		relative_position_id = two_ces_civil_war
+		prerequisite = {
+			focus = two_ces_civil_war_vlp_ally_adv
+			focus = two_ces_civil_war_vlp_run_ally
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+				}
+				create_intelligence_agency = yes
+				upgrade_intelligence_agency = upgrade_economy_civilian
+			}
+			else = {
+				add_stability = 0.1
+			}
+		}
+	}
+
+	focus = {
+		id = two_ces_agency_2
+		icon = GFX_goal_uoa_stealth_boys
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = two_ces_agency
+		prerequisite = {
+			focus = two_ces_agency
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+				}
+				upgrade_intelligence_agency = upgrade_army_department
+				upgrade_intelligence_agency = upgrade_training_centers
+			}
+			else = {
+				add_war_support = 0.1
+			}
+		}
+	}
+}

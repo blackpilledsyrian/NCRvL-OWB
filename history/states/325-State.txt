@@ -1,0 +1,32 @@
+state = {
+	id = 325
+	name = "STATE_325"
+	manpower = 11325
+	state_category = town
+
+	resources = {
+		water = 3
+		composites = 4
+		metal = 6
+	}
+
+	history = {
+		owner = BVC
+		add_core_of = BVC
+		victory_points = {
+			4682 5
+		}
+		victory_points = {
+			4687 5
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			industrial_complex = 1
+		}
+	}
+
+	provinces = {
+		2058 2057 744 4681 4680 4685 4683 4684 4682 4688 4686 4687 8557 8556
+	}
+}

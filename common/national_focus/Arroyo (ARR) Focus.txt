@@ -1,0 +1,2651 @@
+#      Arroyo      #
+#   Colonel & KD   #
+focus_tree = {
+	id = nf_arroyo
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = ARR
+		}
+	}
+	default = no
+	focus = {
+		#History 1
+		id = arr_finding_the_geck
+		icon = GFX_goal_arr_geck_start
+		cost = 7
+		x = 15
+		y = 0
+		completion_reward = {
+			country_event = nf_arroyo.0
+		}
+	}
+	focus = {
+		#History 2
+		id = arr_reaching_thirteen
+		icon = GFX_goal_arr_v13
+		cost = 7
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = arr_finding_the_geck
+		}
+		relative_position_id = arr_finding_the_geck
+		completion_reward = {
+			country_event = nf_arroyo.1
+		}
+	}
+	focus = {
+		#History 3
+		id = arr_oil_rig_arrival
+		icon = GFX_goal_arr_rig
+		cost = 7
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = arr_reaching_thirteen
+		}
+		relative_position_id = arr_reaching_thirteen
+		completion_reward = {
+			country_event = nf_arroyo.2
+		}
+	}
+	focus = {
+		#Dimitri Introduction
+		id = arr_meet_dimitri
+		icon = GFX_goal_arr_dimitri
+		cost = 14
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = arr_oil_rig_arrival
+		}
+		relative_position_id = arr_oil_rig_arrival
+		available = {
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = chosen_one_gone
+				}
+			}
+		}
+		completion_reward = {
+			country_event = {
+				id = nf_arroyo.5
+			}
+		}
+	}
+	focus = {
+		#Chitsa Introduction
+		id = arr_meet_chitsa
+		icon = GFX_goal_arr_chitsa
+		cost = 14
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = arr_oil_rig_arrival
+		}
+		relative_position_id = arr_oil_rig_arrival
+		available = {
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = chosen_one_gone
+				}
+			}
+		}
+		completion_reward = {
+			country_event = {
+				id = nf_arroyo.6
+			}
+		}
+	}
+	focus = {
+		#Nagor Introduction
+		id = arr_meet_nagor
+		icon = GFX_goal_arr_nagor
+		cost = 14
+		x = 2
+		y = 1
+		prerequisite = {
+			focus = arr_oil_rig_arrival
+		}
+		relative_position_id = arr_oil_rig_arrival
+		available = {
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = chosen_one_gone
+				}
+			}
+		}
+		completion_reward = {
+			country_event = {
+				id = nf_arroyo.7
+			}
+		}
+	}
+	focus = {
+		#Umbra/Sulik's Kid
+		id = arr_meet_umbra
+		icon = GFX_goal_arr_avueron
+		cost = 21
+		x = 4
+		y = 2
+		prerequisite = {
+			focus = arr_meet_nagor
+		}
+		prerequisite = {
+			focus = arr_meet_chitsa
+		}
+		prerequisite = {
+			focus = arr_meet_dimitri
+		}
+		relative_position_id = arr_oil_rig_arrival
+		available = {
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = chosen_one_gone
+				}
+			}
+		}
+		completion_reward = {
+			country_event = {
+				id = nf_arroyo.11
+			}
+		}
+	}
+	focus = {
+		#Further Army Idea
+		id = arr_learn_from_sulik
+		icon = GFX_goal_arr_sulik_ways
+		cost = 30
+		x = 2
+		y = 1
+		prerequisite = {
+			focus = arr_meet_umbra
+		}
+		relative_position_id = arr_meet_umbra
+		available = {
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = chosen_one_gone
+				}
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = arr_chosen_army_idea
+				}
+				swap_ideas = {
+					remove_idea = arr_chosen_army_idea
+					add_idea = arr_chosen_army_idea_2
+				}
+				else = {
+					add_ideas = arr_chosen_army_idea
+				}
+			}
+		}
+	}
+	focus = {
+		#Mil Factories from Umbra
+		id = arr_umbra_weapon_workshops
+		icon = GFX_goal_arr_tribal_weapons
+		cost = 30
+		x = 1
+		y = 2
+		prerequisite = {
+			focus = arr_meet_umbra
+		}
+		relative_position_id = arr_meet_umbra
+		available = {
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = chosen_one_gone
+				}
+			}
+		}
+		completion_reward = {
+			32 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 3
+			}
+		}
+	}
+	focus = {
+		#Adventures in Klamath
+		id = arr_meet_klamath
+		icon = GFX_goal_arr_eureka_meet
+		cost = 21
+		x = 1
+		y = 2
+		prerequisite = {
+			focus = arr_meet_nagor
+		}
+		prerequisite = {
+			focus = arr_meet_chitsa
+		}
+		prerequisite = {
+			focus = arr_meet_dimitri
+		}
+		relative_position_id = arr_oil_rig_arrival
+		available = {
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = chosen_one_gone
+				}
+			}
+		}
+		completion_reward = {
+			country_event = {
+				id = nf_arroyo.10
+			}
+		}
+	}
+	focus = {
+		#Klamath Civ factories
+		id = arr_skinning_lessons
+		icon = GFX_goal_arr_klamath_skinning
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = arr_meet_klamath
+		}
+		relative_position_id = arr_meet_klamath
+		available = {
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = chosen_one_gone
+				}
+			}
+		}
+		completion_reward = {
+			96 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+	focus = {
+		#Klamath Army experience
+		id = arr_trapper_techniques
+		icon = GFX_goal_arr_klamath_trapper
+		cost = 30
+		x = 1
+		y = 2
+		prerequisite = {
+			focus = arr_meet_klamath
+		}
+		relative_position_id = arr_meet_klamath
+		available = {
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = chosen_one_gone
+				}
+			}
+		}
+		completion_reward = {
+			army_experience = 30
+		}
+	}
+	focus = {
+		#Klamath and Umbra Weapons
+		id = arr_hunting_weapons
+		icon = GFX_goal_arr_klamath_new_guns
+		cost = 30
+		x = 2
+		y = 1
+		prerequisite = {
+			focus = arr_meet_klamath
+			focus = arr_meet_umbra
+		}
+		relative_position_id = arr_meet_klamath
+		available = {
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = chosen_one_gone
+				}
+			}
+		}
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 550
+				producer = ARR
+			}
+		}
+	}
+	focus = {
+		#Checking out Packers
+		id = arr_meet_packers
+		icon = GFX_goal_arr_packers_camp
+		cost = 21
+		x = -1
+		y = 2
+		prerequisite = {
+			focus = arr_meet_nagor
+		}
+		prerequisite = {
+			focus = arr_meet_chitsa
+		}
+		prerequisite = {
+			focus = arr_meet_dimitri
+		}
+		relative_position_id = arr_oil_rig_arrival
+		available = {
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = chosen_one_gone
+				}
+			}
+		}
+		completion_reward = {
+			country_event = {
+				id = nf_arroyo.9
+			}
+		}
+	}
+	focus = {
+		#Packers Resource Production
+		id = arr_learn_from_foragers
+		icon = GFX_goal_arr_packers_water
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = arr_meet_packers
+		}
+		relative_position_id = arr_meet_packers
+		available = {
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = chosen_one_gone
+				}
+			}
+		}
+		completion_reward = {
+			add_resource = {
+				type = water
+				amount = 12
+				state = 337
+			}
+		}
+	}
+	focus = {
+		#Packers Attrition Idea
+		id = arr_supply_forward_units
+		icon = GFX_goal_arr_packers_hunter
+		cost = 30
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = arr_meet_packers
+		}
+		relative_position_id = arr_meet_packers
+		available = {
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = chosen_one_gone
+				}
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = arr_chosen_army_idea
+				}
+				swap_ideas = {
+					remove_idea = arr_chosen_army_idea
+					add_idea = arr_chosen_army_idea_2
+				}
+				else = {
+					add_ideas = arr_chosen_army_idea
+				}
+			}
+		}
+	}
+	focus = {
+		#How secure is Max Sec?
+		id = arr_meet_max_sec
+		icon = GFX_goal_arr_maxsec_prison
+		cost = 21
+		x = -4
+		y = 2
+		prerequisite = {
+			focus = arr_meet_nagor
+		}
+		prerequisite = {
+			focus = arr_meet_chitsa
+		}
+		prerequisite = {
+			focus = arr_meet_dimitri
+		}
+		relative_position_id = arr_oil_rig_arrival
+		available = {
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = chosen_one_gone
+				}
+			}
+		}
+		completion_reward = {
+			country_event = {
+				id = nf_arroyo.8
+			}
+		}
+	}
+	focus = {
+		#Building a prison
+		id = arr_prison_building_expertise
+		icon = GFX_goal_arr_maxsec_prison_build
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = arr_meet_max_sec
+		}
+		relative_position_id = arr_meet_max_sec
+		available = {
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = chosen_one_gone
+				}
+			}
+		}
+		completion_reward = {
+			every_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		#Building defenses
+		id = arr_building_defenses
+		icon = GFX_goal_arr_maxsec_defense
+		cost = 30
+		x = -1
+		y = 2
+		prerequisite = {
+			focus = arr_meet_max_sec
+		}
+		relative_position_id = arr_meet_max_sec
+		available = {
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = chosen_one_gone
+				}
+			}
+		}
+		completion_reward = {
+			add_ideas = arr_max_sec_bunkers
+		}
+	}
+	focus = {
+		#Building a nation
+		id = arr_building_a_nation
+		icon = GFX_goal_arr_maxsec_building
+		cost = 30
+		x = 1
+		y = 2
+		prerequisite = {
+			focus = arr_meet_max_sec
+			focus = arr_meet_packers
+		}
+		relative_position_id = arr_meet_max_sec
+		available = {
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = chosen_one_gone
+				}
+			}
+		}
+		completion_reward = {
+			every_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+	focus = {
+		id = arr_nagor_start
+		icon = GFX_goal_arr_nagor
+		available = {
+			has_country_flag = chosen_one_gone
+			has_government = people
+		}
+		cost = 30
+		x = 16
+		y = 5
+		relative_position_id = arr_meet_chitsa
+		completion_reward = {
+			army_experience = 50
+		}
+	}
+	focus = {
+		id = arr_never_forget
+		icon = GFX_goal_generic_vertibird
+		available = {
+			has_government = people
+		}
+		cost = 45
+		x = 4
+		y = 1
+		relative_position_id = arr_nagor_start
+		prerequisite = {
+			focus = arr_nagor_start
+		}
+		completion_reward = {
+			add_ideas = arr_memories_of_captivity
+		}
+		ai_will_do = {
+			base = 5
+		}
+	}
+	focus = {
+		id = arr_never_allow
+		icon = GFX_goal_enc_super_soldier
+		available = {
+			has_government = people
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = nagor_karma_bad_tt
+					check_variable = {
+						nagor_karma_num < 5
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = nagor_karma_neutral_tt
+					check_variable = {
+						nagor_karma_num = 5
+					}
+				}
+			}
+		}
+		cost = 45
+		x = 0
+		y = 1
+		relative_position_id = arr_never_forget
+		prerequisite = {
+			focus = arr_never_forget
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = arr_memories_of_captivity
+				add_idea = arr_memories_of_captivity_2
+			}
+		}
+		ai_will_do = {
+			base = 3
+		}
+	}
+	focus = {
+		id = arr_an_army_for_the_people
+		icon = GFX_goal_NCR_Drummonds_Army
+		available = {
+			has_government = people
+		}
+		cost = 45
+		x = 1
+		y = 3
+		relative_position_id = arr_never_forget
+		prerequisite = {
+			focus = arr_never_forget
+		}
+		completion_reward = {
+			add_war_support = 0.15
+		}
+		ai_will_do = {
+			base = 5
+		}
+	}
+	focus = {
+		id = arr_army_special_forces
+		icon = GFX_goal_generic_focus_magazine_aat_sniper
+		available = {
+			has_government = people
+		}
+		cost = 45
+		x = 1
+		y = 1
+		relative_position_id = arr_an_army_for_the_people
+		prerequisite = {
+			focus = arr_an_army_for_the_people
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = spec_force_equipment_tech_category
+			}
+		}
+		ai_will_do = {
+			base = 2
+		}
+	}
+	focus = {
+		id = arr_our_own_metal_men
+		icon = GFX_goal_generic_focus_vault_tec_power_armor
+		available = {
+			has_government = people
+		}
+		cost = 45
+		x = 3
+		y = 1
+		relative_position_id = arr_an_army_for_the_people
+		prerequisite = {
+			focus = arr_an_army_for_the_people
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.7
+				uses = 2
+				category = power_armor_tech_category
+			}
+		}
+		ai_will_do = {
+			factor = 0.5
+		}
+	}
+	focus = {
+		id = arr_stripping_fear
+		icon = GFX_goal_generic_rocket_launcher_classic
+		available = {
+			has_government = people
+		}
+		cost = 45
+		x = -1
+		y = 1
+		relative_position_id = arr_an_army_for_the_people
+		prerequisite = {
+			focus = arr_an_army_for_the_people
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = {
+						has_tech = anti_tank_equipment_tech_1
+					}
+				}
+				set_technology = {
+					anti_tank_equipment_tech_1 = 1
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						has_tech = anti_tank_tech_1
+					}
+				}
+				set_technology = {
+					anti_tank_tech_1 = 1
+				}
+			}
+			else = {
+				add_tech_bonus = {
+					bonus = 1
+					uses = 1
+					ahead_reduction = 1
+					category = support_anti_tank_tech_category
+				}
+			}
+		}
+	}
+	focus = {
+		id = arr_reliable_warfare
+		icon = GFX_goal_generic_common_firearms_focus
+		available = {
+			has_government = people
+		}
+		cost = 45
+		x = -3
+		y = 1
+		relative_position_id = arr_an_army_for_the_people
+		prerequisite = {
+			focus = arr_an_army_for_the_people
+		}
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = melee_equipment_1
+				amount = 500
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 300
+				producer = ARR
+			}
+		}
+	}
+	focus = {
+		id = arr_tribal_means
+		icon = GFX_goal_generic_land_doctrines_focus
+		available = {
+			has_government = people
+		}
+		cost = 45
+		x = 2
+		y = 1
+		relative_position_id = arr_never_forget
+		prerequisite = {
+			focus = arr_never_forget
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.8
+				uses = 2
+				category = cat_land_doctrine
+			}
+		}
+		ai_will_do = {
+			base = 2
+		}
+	}
+	focus = {
+		id = arr_biker_integration
+		icon = GFX_goal_generic_motorcycle
+		available = {
+			has_government = people
+		}
+		cost = 45
+		x = -3
+		y = 1
+		relative_position_id = arr_tribal_means
+		prerequisite = {
+			focus = arr_tribal_means
+			focus = arr_motorgang_recruitment
+		}
+		completion_reward = {
+			custom_effect_tooltip = nagor_motorbike_tt
+			division_template = {
+				name = "Arroyan Frontier Patrol"
+				regiments = {
+					motorized = {
+						x = 0
+						y = 0
+					}
+					motorized = {
+						x = 0
+						y = 1
+					}
+					motorized = {
+						x = 0
+						y = 2
+					}
+					motorized = {
+						x = 1
+						y = 0
+					}
+					motorized = {
+						x = 1
+						y = 1
+					}
+					motorized = {
+						x = 1
+						y = 2
+					}
+					motorized = {
+						x = 2
+						y = 0
+					}
+					motorized = {
+						x = 2
+						y = 1
+					}
+					motorized = {
+						x = 2
+						y = 2
+					}
+					motorized = {
+						x = 3
+						y = 0
+					}
+				}
+			}
+			add_ideas = arr_biker_integration
+		}
+	}
+	focus = {
+		id = arr_to_tribal_ends
+		icon = GFX_goal_generic_the_cutest_fur_trade
+		available = {
+			has_government = people
+			custom_trigger_tooltip = {
+				tooltip = chitsa_karma_good_tt
+				check_variable = {
+					chitsa_karma_num > 5
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = nagor_karma_good_tt
+				check_variable = {
+					nagor_karma_num > 5
+				}
+			}
+		}
+		cost = 45
+		x = 0
+		y = 1
+		relative_position_id = arr_tribal_means
+		prerequisite = {
+			focus = arr_tribal_means
+		}
+		completion_reward = {
+			every_unit_leader = {
+				limit = {
+					has_id = 12175
+				}
+				add_attack = 3
+				add_max_trait = 2
+			}
+		}
+	}
+	focus = {
+		id = arr_frontline_doctors
+		icon = GFX_goal_enc_education_by_followers
+		available = {
+			has_government = people
+		}
+		cost = 45
+		x = 2
+		y = 1
+		relative_position_id = arr_tribal_means
+		prerequisite = {
+			focus = arr_tribal_means
+		}
+		completion_reward = {
+			add_manpower = 500
+			add_to_variable = {
+				dimitri_karma_num = 1
+			}
+			custom_effect_tooltip = dimitri_karma_up
+		}
+	}
+	focus = {
+		id = arr_motorgang_recruitment
+		icon = GFX_goal_generic_motorcycle_savage
+		available = {
+			has_government = people
+		}
+		cost = 45
+		x = -2
+		y = 1
+		relative_position_id = arr_never_forget
+		prerequisite = {
+			focus = arr_never_forget
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = bike_tech_category
+			}
+		}
+	}
+	focus = {
+		id = arr_junkyard_fixers
+		icon = GFX_goal_generic_wrench
+		available = {
+			has_government = people
+		}
+		cost = 45
+		x = -1
+		y = 1
+		relative_position_id = arr_motorgang_recruitment
+		prerequisite = {
+			focus = arr_motorgang_recruitment
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.8
+				uses = 2
+				category = vehicle_tech_category
+			}
+		}
+	}
+	focus = {
+		id = arr_deploy_merrymen
+		icon = GFX_goal_NCR_Rangers_Lead_the_War
+		available = {
+			has_government = people
+		}
+		cost = 30
+		x = -4
+		y = 1
+		relative_position_id = arr_nagor_start
+		prerequisite = {
+			focus = arr_nagor_start
+		}
+		completion_reward = {
+			every_unit_leader = {
+				limit = {
+					has_id = 12175
+				}
+				add_logistics = 2
+			}
+			custom_effect_tooltip = nagor_merrymen_tt
+			set_country_flag = merrymen_enabled
+		}
+		ai_will_do = {
+			base = 5
+		}
+	}
+	focus = {
+		id = arr_redeploy_builders
+		icon = GFX_goal_generic_vault_tec_workshop
+		available = {
+			has_government = people
+		}
+		cost = 30
+		x = -2
+		y = 1
+		relative_position_id = arr_deploy_merrymen
+		prerequisite = {
+			focus = arr_deploy_merrymen
+		}
+		completion_reward = {
+			add_manpower = -200
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 3
+			}
+		}
+		ai_will_do = {
+			base = 2
+		}
+	}
+	focus = {
+		id = arr_redeploy_manufacturers
+		icon = GFX_goal_generic_ammo_boxes_focus
+		available = {
+			has_government = people
+		}
+		cost = 30
+		x = 2
+		y = 1
+		relative_position_id = arr_deploy_merrymen
+		prerequisite = {
+			focus = arr_deploy_merrymen
+		}
+		completion_reward = {
+			add_manpower = -200
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 3
+			}
+		}
+		ai_will_do = {
+			base = 2
+		}
+	}
+	focus = {
+		id = arr_recruit_workshop_workers
+		icon = GFX_goal_generic_Steel_crate
+		available = {
+			has_government = people
+		}
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = arr_deploy_merrymen
+		prerequisite = {
+			focus = arr_deploy_merrymen
+		}
+		completion_reward = {
+			add_manpower = 200
+			add_ideas = arr_workshop_recruitment
+			capital_scope = {
+				damage_building = {
+					type = industrial_complex
+					damage = 0.9
+				}
+				damage_building = {
+					type = arms_factory
+					damage = 0.9
+				}
+			}
+		}
+		ai_will_do = {
+			base = 4
+		}
+	}
+	focus = {
+		id = arr_our_backs_to_paradise
+		icon = GFX_goal_food_razor_grain
+		available = {
+			has_government = people
+		}
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = arr_recruit_workshop_workers
+		prerequisite = {
+			focus = arr_recruit_workshop_workers
+			focus = arr_redeploy_builders
+		}
+		mutually_exclusive = {
+			focus = arr_our_eyes_on_enemies
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = arr_defensive_strategy
+				days = 365
+			}
+			add_to_variable = {
+				nagor_karma_num = 1
+			}
+			custom_effect_tooltip = nagor_karma_up
+		}
+	}
+	focus = {
+		id = arr_our_eyes_on_enemies
+		icon = GFX_goal_generic_bot_eyebot
+		available = {
+			has_government = people
+		}
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = arr_recruit_workshop_workers
+		prerequisite = {
+			focus = arr_recruit_workshop_workers
+			focus = arr_redeploy_manufacturers
+		}
+		mutually_exclusive = {
+			focus = arr_our_backs_to_paradise
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = arr_offensive_strategy
+				days = 365
+			}
+			subtract_from_variable = {
+				nagor_karma_num = 1
+			}
+			custom_effect_tooltip = nagor_karma_down
+		}
+	}
+	focus = {
+		id = arr_sharpening_lenses
+		icon = GFX_goal_generic_swords
+		available = {
+			has_government = people
+			custom_trigger_tooltip = {
+				tooltip = nagor_karma_bad_tt
+				check_variable = {
+					nagor_karma_num < 5
+				}
+			}
+			NOT = {
+				OR = {
+					has_idea = arr_offensive_strategy
+					has_idea = arr_defensive_strategy
+				}
+			}
+		}
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = arr_our_eyes_on_enemies
+		prerequisite = {
+			focus = arr_our_eyes_on_enemies
+			focus = arr_our_backs_to_paradise
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = arr_offensive_strategy
+				days = 365
+			}
+		}
+	}
+	focus = {
+		id = arr_raising_shields
+		icon = GFX_goal_generic_protectron_conceptart_primm_slimm
+		available = {
+			has_government = people
+			custom_trigger_tooltip = {
+				tooltip = nagor_karma_good_tt
+				check_variable = {
+					nagor_karma_num > 5
+				}
+			}
+			NOT = {
+				OR = {
+					has_idea = arr_offensive_strategy
+					has_idea = arr_defensive_strategy
+				}
+			}
+		}
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = arr_our_backs_to_paradise
+		prerequisite = {
+			focus = arr_our_eyes_on_enemies
+			focus = arr_our_backs_to_paradise
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = arr_defensive_strategy
+				days = 365
+			}
+		}
+	}
+	focus = {
+		id = arr_spoils_of_war
+		icon = GFX_goal_generic_slums_focus
+		available = {
+			has_government = people
+			custom_trigger_tooltip = {
+				tooltip = nagor_karma_neutral_tt
+				check_variable = {
+					nagor_karma_num = 5
+				}
+			}
+			OR = {
+				has_idea = arr_offensive_strategy
+				has_idea = arr_defensive_strategy
+			}
+		}
+		cost = 30
+		x = 1
+		y = 2
+		relative_position_id = arr_our_backs_to_paradise
+		#prerequisite = { focus = arr_our_eyes_on_enemies focus = arr_our_backs_to_paradise }
+		completion_reward = {
+			337 = {
+				set_temp_variable = {
+					development_to_add = 1
+				}
+				add_development_to_node = yes
+			}
+		}
+	}
+	focus = {
+		id = arr_chitsa_start
+		icon = GFX_goal_arr_chitsa
+		available = {
+			has_country_flag = chosen_one_gone
+			has_government = elites
+		}
+		cost = 30
+		x = 0
+		y = 5
+		relative_position_id = arr_meet_chitsa
+		completion_reward = {
+			set_temp_variable = {
+				caps_to_add = 100
+			}
+			add_caps = yes
+		}
+	}
+	focus = {
+		id = arr_dorris_warbands
+		icon = GFX_goal_cowboy_hat
+		available = {
+			has_government = elites
+		}
+		cost = 30
+		x = -4
+		y = 1
+		relative_position_id = arr_chitsa_start
+		prerequisite = {
+			focus = arr_chitsa_start
+		}
+		completion_reward = {
+			set_technology = {
+				CES_mercenary_training_tech = 1
+			}
+			59 = {
+				start_resistance = yes
+				custom_effect_tooltip = ""				# PDX forgot the newline for the previous tooltip, so this is here. Love LAR, definitely a finished DLC
+				force_enable_resistance = NEW
+				set_resistance = 30
+			}
+			country_event = {
+				id = nf_arroyo.16
+			}
+		}
+	}
+	focus = {
+		id = arr_support_gun_runners
+		icon = GFX_goal_NCR_Gun_Runner_Deals
+		available = {
+			has_government = elites
+		}
+		cost = 30
+		x = 3
+		y = 1
+		relative_position_id = arr_dorris_warbands
+		prerequisite = {
+			focus = arr_dorris_warbands
+		}
+		completion_reward = {
+			set_temp_variable = {
+				caps_to_add = 50
+			}
+			add_caps = yes
+			set_temp_variable = {
+				org_selector = 1
+			}
+			set_temp_variable = {
+				org_influence_amount = 50
+			}
+			organization_add_influence = yes
+		}
+	}
+	focus = {
+		id = arr_backdoor_purchases
+		icon = GFX_goal_generic_focus_magazine_gunsandbullets_gun_laws
+		available = {
+			has_government = elites
+			if = {
+				limit = {
+					NOT = {
+						is_ai = yes
+					}
+				}
+				set_temp_variable = {
+					caps_diff = -50
+				}
+				caps_cost_trigger = yes
+			}
+		}
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = arr_dorris_warbands
+		prerequisite = {
+			focus = arr_dorris_warbands
+		}
+		completion_reward = {
+			set_temp_variable = {
+				caps_to_add = -50
+			}
+			add_caps = yes
+			add_equipment_to_stockpile = {
+				type = ballistic_equipment_2
+				amount = 1500
+				producer = USA
+			}
+		}
+		ai_will_do = {
+			base = 4
+		}
+	}
+	focus = {
+		id = arr_market_preference
+		icon = GFX_goal_generic_focus_magazine_gunsandbullets_lasers
+		available = {
+			has_government = elites
+			if = {
+				limit = {
+					NOT = {
+						is_ai = yes
+					}
+				}
+				set_temp_variable = {
+					caps_diff = -50
+				}
+				caps_cost_trigger = yes
+			}
+		}
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = arr_backdoor_purchases
+		prerequisite = {
+			focus = arr_backdoor_purchases
+		}
+		completion_reward = {
+			set_temp_variable = {
+				caps_to_add = -50
+			}
+			add_caps = yes
+			add_equipment_to_stockpile = {
+				type = spec_ops_equipment_4
+				amount = 600
+				producer = USA
+			}
+		}
+		ai_will_do = {
+			base = 2
+		}
+	}
+	focus = {
+		id = arr_fourways_extortion
+		icon = GFX_icon_caps
+		available = {
+			has_equipment = {
+				infantry_equipment > 999
+			}
+			has_government = elites
+			custom_trigger_tooltip = {
+				tooltip = chitsa_karma_bad_tt
+				check_variable = {
+					chitsa_karma_num < 5
+				}
+			}
+		}
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = arr_dorris_warbands
+		prerequisite = {
+			focus = arr_dorris_warbands
+		}
+		completion_reward = {
+			add_to_variable = {
+				arr_fou_coercion = 0.05
+			}
+			custom_effect_tooltip = fou_coercion_up_tt
+			set_temp_variable = {
+				caps_to_add = 50
+			}
+			add_caps = yes
+		}
+	}
+	focus = {
+		id = arr_deep_warrior_training
+		icon = GFX_goal_generic_human_warriors
+		available = {
+			has_government = elites
+		}
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = arr_fourways_extortion
+		prerequisite = {
+			focus = arr_fourways_extortion
+			focus = arr_support_gun_runners
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = {
+						has_tech = unit_training_tech_1
+					}
+				}
+				set_technology = {
+					unit_training_tech_1 = 1
+				}
+			}
+			else = {
+				add_tech_bonus = {
+					bonus = 0.8
+					uses = 1
+					ahead_reduction = 1
+					category = infantry_tech_category
+				}
+			}
+		}
+	}
+	focus = {
+		id = arr_trader_rest_stops
+		icon = GFX_goal_generic_trade_economy
+		available = {
+			has_government = elites
+		}
+		cost = 45
+		x = 4
+		y = 1
+		relative_position_id = arr_chitsa_start
+		prerequisite = {
+			focus = arr_chitsa_start
+		}
+		completion_reward = {
+			96 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			337 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_state_modifier = {
+					modifier = {
+						caps_node_trade_modifier = 0.3
+					}
+				}
+			}
+			country_event = {
+				id = nf_arroyo.12
+			}
+		}
+		ai_will_do = {
+			base = 2
+		}
+	}
+	focus = {
+		id = arr_goods_to_sell
+		icon = GFX_goal_generic_guitar
+		available = {
+			has_government = elites
+			custom_trigger_tooltip = {
+				tooltip = chitsa_karma_good_tt
+				check_variable = {
+					chitsa_karma_num > 5
+				}
+			}
+		}
+		cost = 45
+		x = 4
+		y = 2
+		relative_position_id = arr_trader_rest_stops
+		prerequisite = {
+			focus = arr_trader_rest_stops
+		}
+		completion_reward = {
+			32 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			add_stability = 0.05
+		}
+		ai_will_do = {
+			base = 5
+		}
+	}
+	focus = {
+		id = arr_developing_sixes
+		icon = GFX_goal_generic_wooden_ship
+		available = {
+			has_government = elites
+		}
+		cost = 45
+		x = 1
+		y = 1
+		relative_position_id = arr_trader_rest_stops
+		prerequisite = {
+			focus = arr_trader_rest_stops
+		}
+		completion_reward = {
+			32 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = naval_base
+					level = 3
+					instant_build = yes
+					province = 5005
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					level = 3
+					instant_build = yes
+					province = 5005
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = arr_supplying_demand
+		icon = GFX_goal_generic_ammo_boxes_focus
+		available = {
+			has_government = elites
+			custom_trigger_tooltip = {
+				tooltip = chitsa_karma_bad_tt
+				check_variable = {
+					chitsa_karma_num < 5
+				}
+			}
+		}
+		cost = 45
+		x = -1
+		y = 1
+		relative_position_id = arr_trader_rest_stops
+		prerequisite = {
+			focus = arr_trader_rest_stops
+		}
+		completion_reward = {
+			337 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 200
+				producer = ARR
+			}
+		}
+		ai_will_do = {
+			base = 5
+		}
+	}
+	focus = {
+		id = arr_pows_as_builder_slaves
+		icon = GFX_goal_BRK_elite_slaves
+		available = {
+			has_government = elites
+		}
+		cost = 45
+		x = -2
+		y = 1
+		relative_position_id = arr_supplying_demand
+		prerequisite = {
+			focus = arr_supplying_demand
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = nagor_dead
+					}
+				}
+				subtract_from_variable = {
+					nagor_karma_num = 1
+				}
+				custom_effect_tooltip = nagor_karma_down
+			}
+			add_timed_idea = {
+				idea = arr_builder_slaves
+				days = 240
+			}
+		}
+	}
+	focus = {
+		id = arr_geck_clearings
+		icon = GFX_goal_generic_welcome_home
+		available = {
+			has_government = elites
+		}
+		cost = 45
+		x = -1
+		y = 1
+		relative_position_id = arr_developing_sixes
+		prerequisite = {
+			focus = arr_developing_sixes
+			focus = arr_supplying_demand
+		}
+		completion_reward = {
+			337 = {
+				add_extra_state_shared_building_slots = 3
+				add_state_modifier = {
+					modifier = {
+						state_production_speed_buildings_factor = 0.1
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = arr_wealth_is_health
+		icon = GFX_generic_gold_bars
+		available = {
+			has_government = elites
+			if = {
+				limit = {
+					NOT = {
+						is_ai = yes
+					}
+				}
+				set_temp_variable = {
+					caps_diff = -10
+				}
+				caps_cost_trigger = yes
+			}
+		}
+		cost = 45
+		x = 1
+		y = 1
+		relative_position_id = arr_developing_sixes
+		prerequisite = {
+			focus = arr_developing_sixes
+		}
+		completion_reward = {
+			add_political_power = 25
+			set_temp_variable = {
+				caps_to_add = -10
+			}
+			add_caps = yes
+			337 = {
+				set_temp_variable = {
+					development_to_add = 1
+				}
+				add_development_to_node = yes
+			}
+			add_to_variable = {
+				chitsa_karma_num = 1
+			}
+			custom_effect_tooltip = chitsa_karma_up
+		}
+	}
+	focus = {
+		id = arr_production_deals
+		icon = GFX_goal_behemoth_yellow
+		available = {
+			has_government = elites
+			custom_trigger_tooltip = {
+				tooltip = chitsa_karma_neutral_tt
+				check_variable = {
+					chitsa_karma_num = 5
+				}
+			}
+		}
+		cost = 45
+		x = 2
+		y = 2
+		relative_position_id = arr_developing_sixes
+		prerequisite = {
+			focus = arr_geck_clearings
+			focus = arr_developing_sixes
+		}
+		completion_reward = {
+			add_offsite_building = {
+				type = industrial_complex
+				level = 2
+			}
+			add_offsite_building = {
+				type = arms_factory
+				level = 2
+			}
+		}
+		ai_will_do = {
+			base = 5
+		}
+	}
+	focus = {
+		id = arr_trade_leader
+		icon = GFX_goal_generic_ancient_mexican_artifact
+		available = {
+			has_government = elites
+		}
+		cost = 45
+		x = 0
+		y = 2
+		relative_position_id = arr_goods_to_sell
+		prerequisite = {
+			focus = arr_production_deals
+			focus = arr_goods_to_sell
+		}
+		completion_reward = {
+			add_country_leader_trait = ARR_chitsa_leader_trait
+		}
+	}
+	focus = {
+		id = arr_expansion_in_sixes
+		icon = GFX_goal_generic_sign_welcome
+		available = {
+			has_government = elites
+		}
+		cost = 45
+		x = 0
+		y = 2
+		relative_position_id = arr_developing_sixes
+		prerequisite = {
+			focus = arr_geck_clearings
+		}
+		prerequisite = {
+			focus = arr_developing_sixes
+		}
+		completion_reward = {
+			32 = {
+				add_extra_state_shared_building_slots = 4
+			}
+		}
+	}
+	focus = {
+		id = arr_expansion_in_the_pass
+		icon = GFX_icon_two_canyon_road
+		available = {
+			has_government = elites
+		}
+		cost = 45
+		x = -2
+		y = 2
+		relative_position_id = arr_developing_sixes
+		prerequisite = {
+			focus = arr_geck_clearings
+		}
+		prerequisite = {
+			focus = arr_supplying_demand
+		}
+		completion_reward = {
+			96 = {
+				add_extra_state_shared_building_slots = 4
+			}
+		}
+	}
+	focus = {
+		id = arr_stockpiling_metal
+		icon = GFX_goal_generic_scrap_metal
+		available = {
+			has_government = elites
+		}
+		cost = 45
+		x = 2
+		y = 1
+		relative_position_id = arr_expansion_in_the_pass
+		prerequisite = {
+			focus = arr_expansion_in_the_pass
+			focus = arr_expansion_in_sixes
+			focus = arr_production_deals
+		}
+		completion_reward = {
+			add_resource = {
+				type = metal
+				amount = 8
+				state = 337
+			}
+		}
+	}
+	focus = {
+		id = arr_dimitri_start
+		icon = GFX_goal_arr_dimitri
+		available = {
+			has_country_flag = chosen_one_gone
+			has_government = intellectuals
+		}
+		cost = 30
+		x = -17
+		y = 5
+		relative_position_id = arr_meet_chitsa
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = support_tech_category
+			}
+		}
+	}
+	focus = {
+		id = arr_army_research_division
+		icon = GFX_goal_BOS_generic_research
+		available = {
+			has_country_flag = chosen_one_gone
+			has_government = intellectuals
+		}
+		cost = 30
+		x = -5
+		y = 1
+		relative_position_id = arr_dimitri_start
+		prerequisite = {
+			focus = arr_dimitri_start
+		}
+		completion_reward = {
+			army_experience = 30
+		}
+		ai_will_do = {
+			base = 3
+		}
+	}
+	focus = {
+		id = arr_the_followers_teachings
+		icon = GFX_goal_VEG_Follower_Support
+		available = {
+			has_country_flag = chosen_one_gone
+			has_government = intellectuals
+		}
+		cost = 30
+		x = -3
+		y = 1
+		relative_position_id = arr_army_research_division
+		prerequisite = {
+			focus = arr_army_research_division
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = support_medical_tech_category
+			}
+		}
+	}
+	focus = {
+		id = arr_emergency_surture_kits
+		icon = GFX_goal_chem_super_stim
+		available = {
+			has_country_flag = chosen_one_gone
+			has_government = intellectuals
+		}
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = arr_the_followers_teachings
+		prerequisite = {
+			focus = arr_the_followers_teachings
+		}
+		completion_reward = {
+			add_ideas = arr_stimpak_improvements
+		}
+	}
+	focus = {
+		id = arr_adopting_the_strays
+		icon = GFX_goal_generic_best_boy_1
+		available = {
+			has_country_flag = chosen_one_gone
+			has_government = intellectuals
+		}
+		cost = 30
+		x = 2
+		y = 1
+		relative_position_id = arr_the_followers_teachings
+		prerequisite = {
+			focus = arr_the_followers_teachings
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = support_dog_tech_category
+			}
+		}
+	}
+	focus = {
+		id = arr_prisoner_test_subjects
+		icon = GFX_goal_tnk_biological_research_station
+		available = {
+			has_country_flag = chosen_one_gone
+			has_government = intellectuals
+			MXS = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		cost = 30
+		x = 5
+		y = 1
+		relative_position_id = arr_army_research_division
+		prerequisite = {
+			focus = arr_army_research_division
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = civilized_tech_category
+			}
+			subtract_from_variable = {
+				dimitri_karma_num = 1
+			}
+			custom_effect_tooltip = dimitri_karma_down
+		}
+	}
+	focus = {
+		id = arr_new_warfare_doctrine
+		icon = GFX_KHA_focus_planning_red
+		available = {
+			has_country_flag = chosen_one_gone
+			has_government = intellectuals
+		}
+		cost = 30
+		x = 2
+		y = 1
+		relative_position_id = arr_army_research_division
+		prerequisite = {
+			focus = arr_army_research_division
+		}
+		completion_reward = {
+			air_experience = 20
+			army_experience = 20
+		}
+		ai_will_do = {
+			base = 2
+		}
+	}
+	focus = {
+		id = arr_review_communication_procedures
+		icon = GFX_goal_generic_communcation_focus
+		available = {
+			has_country_flag = chosen_one_gone
+			has_government = intellectuals
+			has_air_experience > 24
+		}
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = arr_new_warfare_doctrine
+		prerequisite = {
+			focus = arr_new_warfare_doctrine
+		}
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = 1
+				uses = 2
+				category = cat_air_doctrine
+			}
+		}
+		ai_will_do = {
+			factor = 0.5
+		}
+	}
+	focus = {
+		id = arr_retrofit_old_equipment
+		icon = GFX_goal_generic_bb_gun
+		available = {
+			has_country_flag = chosen_one_gone
+			has_government = intellectuals
+		}
+		cost = 30
+		x = 2
+		y = 1
+		relative_position_id = arr_new_warfare_doctrine
+		prerequisite = {
+			focus = arr_new_warfare_doctrine
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = infantry_weapons_tech_category
+			}
+		}
+		ai_will_do = {
+			base = 3
+		}
+	}
+	focus = {
+		id = arr_air_domination
+		icon = GFX_goal_generic_air_doctrines_focus
+		available = {
+			has_country_flag = chosen_one_gone
+			has_government = intellectuals
+		}
+		cost = 30
+		x = 1
+		y = 2
+		relative_position_id = arr_new_warfare_doctrine
+		prerequisite = {
+			focus = arr_new_warfare_doctrine
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = fighter_tech_category
+			}
+		}
+	}
+	focus = {
+		id = arr_fostering_ground_support
+		icon = GFX_goal_generic_airplane
+		available = {
+			has_country_flag = chosen_one_gone
+			has_government = intellectuals
+		}
+		cost = 30
+		x = -1
+		y = 2
+		relative_position_id = arr_new_warfare_doctrine
+		prerequisite = {
+			focus = arr_new_warfare_doctrine
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = cas_bomber_tech_category
+			}
+		}
+	}
+	focus = {
+		id = arr_batch_thirty
+		icon = GFX_goal_generic_wizard_hat
+		available = {
+			has_country_flag = chosen_one_gone
+			has_government = intellectuals
+		}
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = arr_fostering_ground_support
+		prerequisite = {
+			focus = arr_fostering_ground_support
+			focus = arr_air_domination
+		}
+		completion_reward = {
+			add_nuclear_bombs = 1
+		}
+	}
+	focus = {
+		id = arr_great_society
+		icon = GFX_goal_generic_slums_focus
+		available = {
+			has_government = intellectuals
+		}
+		cost = 45
+		x = 6
+		y = 1
+		relative_position_id = arr_dimitri_start
+		prerequisite = {
+			focus = arr_dimitri_start
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = arr_building_a_great_society
+				days = 365
+			}
+		}
+		ai_will_do = {
+			base = 5
+		}
+	}
+	#Next do two for building slots and two for infrastructure
+	focus = {
+		id = arr_a_flourishing_society
+		icon = GFX_goal_TTM_Golden_Fruit
+		available = {
+			has_government = intellectuals
+			NOT = {
+				has_idea = arr_building_a_great_society
+			}
+		}
+		cost = 45
+		x = 0
+		y = 3
+		relative_position_id = arr_great_society
+		prerequisite = {
+			focus = arr_great_society
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = arr_flourishing_society
+				days = 365
+			}
+		}
+		ai_will_do = {
+			base = 2
+		}
+	}
+	focus = {
+		id = arr_school_building
+		icon = GFX_goal_generic_books
+		available = {
+			has_government = intellectuals
+		}
+		cost = 45
+		x = -3
+		y = 1
+		relative_position_id = arr_great_society
+		prerequisite = {
+			focus = arr_great_society
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			base = 3
+		}
+	}
+	focus = {
+		id = arr_exploiting_the_land
+		icon = GFX_goal_food_various_fruits
+		available = {
+			has_government = intellectuals
+			has_tech = resource_generator_power_tech_2
+			custom_trigger_tooltip = {
+				tooltip = dimitri_karma_bad_tt
+				check_variable = {
+					dimitri_karma_num < 5
+				}
+			}
+		}
+		cost = 30
+		x = -1
+		y = 2
+		relative_position_id = arr_school_building
+		completion_reward = {
+			add_resource = {
+				type = energy
+				amount = 14
+				state = 337
+			}
+		}
+	}
+	focus = {
+		id = arr_clearing_forests
+		icon = GFX_goal_generic_axe_1
+		available = {
+			has_government = intellectuals
+		}
+		cost = 45
+		x = -1
+		y = 1
+		relative_position_id = arr_great_society
+		prerequisite = {
+			focus = arr_great_society
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 4
+			}
+		}
+		ai_will_do = {
+			base = 2
+		}
+	}
+	focus = {
+		id = arr_agricultural_expansion
+		icon = GFX_goal_generic_creature_brahmin
+		available = {
+			has_government = intellectuals
+		}
+		cost = 45
+		x = -1
+		y = 1
+		relative_position_id = arr_clearing_forests
+		prerequisite = {
+			focus = arr_clearing_forests
+			focus = arr_school_building
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.8
+				uses = 2
+				category = agriculture_tech
+			}
+		}
+	}
+	focus = {
+		id = arr_constructing_on_hills
+		icon = GFX_goal_generic_building_focus
+		available = {
+			has_government = intellectuals
+		}
+		cost = 45
+		x = 1
+		y = 1
+		relative_position_id = arr_great_society
+		prerequisite = {
+			focus = arr_great_society
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 4
+			}
+		}
+		ai_will_do = {
+			base = 2
+		}
+	}
+	focus = {
+		id = arr_road_building
+		icon = GFX_icon_two_road3
+		available = {
+			has_government = intellectuals
+		}
+		cost = 45
+		x = 3
+		y = 1
+		relative_position_id = arr_great_society
+		prerequisite = {
+			focus = arr_great_society
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			base = 3
+		}
+	}
+	focus = {
+		id = arr_sanitation_exploration
+		icon = GFX_goal_TTM_Water
+		available = {
+			has_government = intellectuals
+			has_tech = recycling_industry_tech_3
+			custom_trigger_tooltip = {
+				tooltip = dimitri_karma_good_tt
+				check_variable = {
+					dimitri_karma_num > 5
+				}
+			}
+		}
+		cost = 30
+		x = 1
+		y = 2
+		relative_position_id = arr_road_building
+		completion_reward = {
+			every_owned_state = {
+				add_state_modifier = {
+					modifier = {
+						recruitable_population_factor = 0.15
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = arr_further_industrial_planning
+		icon = GFX_goal_generic_backroom_planning
+		available = {
+			has_government = intellectuals
+		}
+		cost = 45
+		x = -1
+		y = 1
+		relative_position_id = arr_road_building
+		prerequisite = {
+			focus = arr_road_building
+			focus = arr_constructing_on_hills
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = industry_specialisation_category
+			}
+		}
+		ai_will_do = {
+			base = 2
+		}
+	}
+	##START OF CHOSEN ONE RETURNS##
+	focus = {
+		id = arr_chosen_one_returns
+		icon = GFX_goal_arr_chosen_one
+		available = {
+			OR = {
+				has_country_flag = a_quiet_return
+				has_country_flag = chosen_one_returned
+			}
+		}
+		cost = 15
+		x = 0
+		y = 13
+		relative_position_id = arr_finding_the_geck
+		completion_reward = {
+			country_event = nf_arroyo.17
+		}
+	}
+	focus = {
+		id = arr_my_wanderings
+		icon = GFX_goal_PLS_Long_Road
+		cost = 15
+		x = 0
+		y = 1
+		relative_position_id = arr_chosen_one_returns
+		prerequisite = {
+			focus = arr_chosen_one_returns
+		}
+		completion_reward = {
+			country_event = {
+				id = nf_arroyo.49
+			}
+		}
+	}
+	focus = {
+		id = arr_facing_the_council
+		icon = GFX_goal_pal_the_league
+		cost = 15
+		x = 0
+		y = 1
+		relative_position_id = arr_my_wanderings
+		prerequisite = {
+			focus = arr_my_wanderings
+		}
+		completion_reward = {
+			country_event = {
+				id = nf_arroyo.86
+			}
+		}
+	}
+	focus = {
+		id = arr_a_glorious_return
+		icon = GFX_goal_generic_creature_bald_eagle
+		cost = 15
+		x = 1
+		y = 1
+		relative_position_id = arr_facing_the_council
+		available = {
+			has_country_flag = chosen_one_returned
+		}
+		prerequisite = {
+			focus = arr_facing_the_council
+		}
+		mutually_exclusive = {
+			focus = arr_a_quiet_return
+		}
+		completion_reward = {
+			country_event = {
+				id = nf_arroyo.89
+			}
+		}
+	}
+	focus = {
+		id = arr_a_quiet_return
+		icon = GFX_goal_RDS_Flynn_Chosen_One
+		cost = 15
+		x = -1
+		y = 1
+		relative_position_id = arr_facing_the_council
+		available = {
+			has_country_flag = a_quiet_return
+		}
+		prerequisite = {
+			focus = arr_facing_the_council
+		}
+		mutually_exclusive = {
+			focus = arr_a_glorious_return
+		}
+		completion_reward = {
+			country_event = {
+				id = nf_arroyo.88
+			}
+			create_corps_commander = {
+				name = "Chosen One"
+				portrait_path = GFX_Portrait_ARR_chosen_one
+				skill = 3
+				id = 15867
+				traits = {
+					perceptive_trait
+					enduring_trait
+					charismatic_trait
+				}
+				attack_skill = 2
+				defense_skill = 3
+				planning_skill = 4
+				logistics_skill = 3
+			}
+		}
+	}
+	focus = {
+		id = arr_good_1
+		icon = GFX_goal_NCR_Propaganda_1
+		cost = 15
+		x = 0
+		y = 3
+		relative_position_id = arr_facing_the_council
+		available = {
+			OR = {
+				has_completed_focus = arr_a_glorious_return
+				has_completed_focus = arr_a_quiet_return
+			}
+		}
+		completion_reward = {
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = UMB
+						is_core_of = PAC
+						is_core_of = MXS
+						is_core_of = FOU
+					}
+				}
+				add_core_of = ARR
+			}
+			annex_country = {
+				target = UMB
+				transfer_troops = yes
+			}
+			add_opinion_modifier = {
+				target = NCR
+				modifier = arr_likes_ncr
+			}
+			NCR = {
+				add_opinion_modifier = {
+					target = ARR
+					modifier = arr_likes_ncr
+				}
+			}
+		}
+	}
+	focus = {
+		id = arr_fou_1
+		icon = GFX_goal_generic_road_construction
+		cost = 15
+		x = -2
+		y = 1
+		relative_position_id = arr_good_1
+		prerequisite = {
+			focus = arr_good_1
+		}
+		available = {
+			FOU = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			NCR = {
+				country_event = {
+					id = nf_arroyo.90
+				}
+			}
+		}
+	}
+	focus = {
+		id = arr_fou_2
+		icon = GFX_icon_two_road3
+		cost = 15
+		x = 0
+		y = 1
+		relative_position_id = arr_good_1
+		prerequisite = {
+			focus = arr_good_1
+		}
+		available = {
+			country_exists = FOU
+		}
+		completion_reward = {
+			NCR = {
+				country_event = {
+					id = nf_arroyo.91
+				}
+			}
+		}
+	}
+	focus = {
+		id = arr_fou_3
+		icon = GFX_icon_two_canyon_road
+		cost = 15
+		x = 2
+		y = 1
+		relative_position_id = arr_good_1
+		prerequisite = {
+			focus = arr_good_1
+		}
+		available = {
+			NCR = {
+				FOU = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+		}
+		completion_reward = {
+			add_ideas = fou_small_income
+		}
+	}
+	focus = {
+		id = arr_eur_1
+		icon = GFX_goal_generic_hot_woman_on_fishman_action_the_sequel
+		cost = 15
+		x = -1.5
+		y = 1
+		relative_position_id = arr_fou_2
+		prerequisite = {
+			focus = arr_fou_1
+			focus = arr_fou_2
+			focus = arr_fou_3
+		}
+		available = {
+			EUR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			NCR = {
+				country_event = nf_arroyo.93
+			}
+		}
+	}
+	focus = {
+		id = arr_eur_2
+		icon = GFX_goal_imo_ammobox
+		cost = 15
+		x = 1.5
+		y = 1
+		relative_position_id = arr_fou_2
+		prerequisite = {
+			focus = arr_fou_1
+			focus = arr_fou_2
+			focus = arr_fou_3
+		}
+		available = {
+			country_exists = EUR
+		}
+		completion_reward = {
+			every_country = {
+				limit = {
+					OR = {
+						tag = ARR
+						tag = NCR
+					}
+				}
+				country_event = nf_arroyo.92
+			}
+		}
+	}
+	focus = {
+		id = arr_the_barons
+		icon = GFX_goal_generic_brahmin_trade
+		cost = 15
+		x = -2
+		y = 2
+		relative_position_id = arr_fou_2
+		prerequisite = {
+			focus = arr_eur_1
+			focus = arr_eur_2
+		}
+		completion_reward = {
+			add_ideas = arr_barons
+		}
+	}
+	focus = {
+		id = arr_republic_taxes
+		icon = GFX_goal_NCR_Shady_Sands
+		cost = 15
+		x = 0
+		y = 2
+		relative_position_id = arr_fou_2
+		prerequisite = {
+			focus = arr_eur_1
+			focus = arr_eur_2
+		}
+		completion_reward = {
+			NCR = {
+				add_ideas = ncr_arr_taxes
+			}
+			ARR = {
+				add_ideas = arr_ncr_taxes
+			}
+		}
+	}
+	focus = {
+		id = arr_ncr_support
+		icon = GFX_goal_NCR_Golden_Ranger
+		cost = 15
+		x = 2
+		y = 2
+		relative_position_id = arr_fou_2
+		prerequisite = {
+			focus = arr_eur_1
+			focus = arr_eur_2
+		}
+		completion_reward = {
+			add_war_support = 0.15
+			add_stability = 0.05
+		}
+	}
+	focus = {
+		id = arr_ncr_statehood
+		icon = GFX_goal_NCR_Council_Hill
+		cost = 15
+		x = -1.5
+		y = 1
+		available = {
+			is_subject = no
+		}
+		relative_position_id = arr_republic_taxes
+		prerequisite = {
+			focus = arr_ncr_support
+		}
+		prerequisite = {
+			focus = arr_republic_taxes
+		}
+		prerequisite = {
+			focus = arr_the_barons
+		}
+		mutually_exclusive = {
+			focus = arr_ncr_acceptance
+		}
+		completion_reward = {
+			news_event = {
+				id = nf_arroyo.94
+			}
+		}
+	}
+	focus = {
+		id = arr_ncr_acceptance
+		icon = GFX_KHA_focus_ncr_formal_alliance
+		cost = 15
+		x = 1.5
+		y = 1
+		available = {
+			is_subject = no
+		}
+		relative_position_id = arr_republic_taxes
+		prerequisite = {
+			focus = arr_ncr_support
+		}
+		prerequisite = {
+			focus = arr_republic_taxes
+		}
+		prerequisite = {
+			focus = arr_the_barons
+		}
+		mutually_exclusive = {
+			focus = arr_ncr_statehood
+		}
+		completion_reward = {
+			news_event = {
+				id = nf_arroyo.95
+			}
+		}
+	}
+}

@@ -1,0 +1,237 @@
+﻿capital = 77
+oob = "MOT_2275"
+
+set_technology = {
+	basic_supply_transport_tech = 1
+	infantry_tech_level_tribal = 1
+	infantry_tech_level_settler = 1
+	special_forces_tech_level_tribal = 1
+	special_forces_tech_level_settler = 1
+	power_armour_tech_level_tribal = 1
+	power_armour_tech_level_settler = 1
+	support_tech_level_tribal = 1
+	support_tech_level_settler = 1
+	vehicles_tech_level_tribal = 1
+	vehicles_tech_level_settler = 1
+	robotics_tech_level_tribal = 1
+	robotics_tech_level_settler = 1
+	air_tech_level_tribal = 1
+	air_tech_level_settler = 1
+	naval_tech_level_tribal = 1
+	naval_tech_level_settler = 1
+	tools_tech_level_tribal = 1
+	tools_tech_level_settler = 1
+	habitation_tech_level_tribal = 1
+	habitation_tech_level_settler = 1
+	exploitation_tech_level_tribal = 1
+	exploitation_tech_level_settler = 1
+	electronics_tech_level_tribal = 1
+	electronics_tech_level_settler = 1
+	grand_army = 1
+	standard_weaponry_tech = 1
+	melee_weaponry_tech_1 = 1
+	ballistic_weaponry_tech_1 = 1
+	support_weaponry = 1
+	fireteam_weaponry_tech = 1
+	demolitions_weaponry_tech = 1
+	explosive_demolitions_weaponry_tech_2 = 1
+	explosive_demolitions_volatility_tech = 1
+	explosive_demolitions_weaponry_tech_3 = 1
+	bike_tech_1 = 1
+	tribal_civilization = 1
+	settled_civilization = 1
+	anti_tank_equipment_tech_1 = 1
+	anti_tank_tech_1 = 1
+	anti_tank_equipment_tech_2 = 1
+	spec_ops_equipment_tech_1 = 1
+	pre_agriculture_industry_tech = 1
+	agriculture_industry_tech_1 = 1
+	agriculture_industry_tech_2 = 1
+}
+
+set_country_flag = dont_give_settler_generic_political_advisors
+set_country_flag = dont_give_settler_generic_high_command
+set_country_flag = dont_give_settler_generic_theorists
+set_country_flag = dont_give_settler_generic_chiefs
+set_country_flag = no_generic_chief
+set_country_flag = no_generic_political_advisors
+set_country_flag = no_generic_high_command
+set_country_flag = no_generic_theorists
+set_country_flag = no_generic_advisor
+set_country_flag = is_ncr_nation
+set_country_flag = is_settler_nation
+set_country_flag = grand_doctrine_ai
+set_country_flag = grand_infantry_doctrine_ai
+set_country_flag = is_california_nation
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		nautics_tech_1 = 1
+		light_navy_hull_tech_1 = 1
+		waterproof_sealing_tech = 1
+		medium_navy_hull_tech_1 = 1
+		multi_deck_construction_tech = 1
+		heavy_navy_hull_tech_1 = 1
+		naval_invasion_tech_1 = 1
+		naval_module_tech = 1
+		naval_armour_tech_1 = 1
+		naval_pd_module_tech_1 = 1
+		naval_communications_module_tech_1 = 1
+		naval_weapons_module_tech = 1
+	}
+}
+if = {
+	limit = {
+		NOT = { has_dlc = "Man the Guns" }
+	}
+	set_technology = {
+		nautics_tech_non_mtg_1 = 1
+		light_navy_hull_tech_non_mtg_1 = 1
+		waterproof_sealing_tech_non_mtg = 1
+		medium_navy_hull_tech_non_mtg_1 = 1
+		naval_invasion_tech_non_mtg_1 = 1
+		multi_deck_construction_tech_non_mtg = 1
+		heavy_navy_hull_tech_non_mtg_1 = 1
+	}
+}
+
+set_stability = 0.25
+set_war_support = 0.5
+set_research_slots = 4
+set_convoys = 40
+
+add_dynamic_modifier = {
+	modifier = moj_preperation_dynamic_mod
+}
+
+add_opinion_modifier = { target = MOJ modifier = mot_moj_sunburst_tension }
+reverse_add_opinion_modifier = { target = MOJ modifier = mot_moj_sunburst_tension }
+
+set_politics = {
+	ruling_party = people
+	elections_allowed = no
+}
+
+set_popularities = {
+	people = 80
+	elites = 5
+	intellectuals = 5
+	ruler = 10
+}
+
+add_ideas = {
+	currencyncrdollar
+	political_effort_press
+	four_year_conscription
+	mutant_law_ghoul
+	officer_law_veterans
+	training_law_veterans
+	tot_economic_mobilisation
+	ncr_sphere
+	mot_idea_support_from_shady_sands
+	mot_idea_pacification_not_emancipation
+	ncr_veg_treaty_of_new_vegas
+	MOT_NCRF_Labor
+}
+
+diplomatic_relation = {
+	country = VEG
+	relation = non_aggression_pact
+	active = yes
+}
+
+set_variable = { never_return_stolen_territory = 1 }
+set_variable = { mot_army_supply = 0 }
+
+recruit_character = MOT_general_lee_oliver
+recruit_character = MOT_josh_hanlon
+recruit_character = MOT_robin_gorobets
+recruit_character = MOT_james_hsu
+recruit_character = MOT_major_dhatri
+recruit_character = MOT_pappas
+recruit_character = MOT_moore
+recruit_character = MOT_augustine_perry
+recruit_character = MOT_ash_winters
+recruit_character = MOT_corporal_sterling
+recruit_character = MOT_raul_tejada
+recruit_character = MOT_major_polati
+recruit_character = MOT_major_knight
+recruit_character = MOT_mike_lawson
+recruit_character = MOT_warden_nathan
+recruit_character = MOT_elizabeth_kieran
+recruit_character = MOT_major_steyn
+recruit_character = MOT_thomas_hildern
+recruit_character = MOT_ignatio_rivas
+recruit_character = MOT_julie_farkas
+recruit_character = MOT_fantasticus
+
+create_equipment_variant = {
+	name = "River Boat"
+	type = ship_hull_light_1
+	name_group = NCR_LIGHT
+	parent_version = 0
+	modules = {
+		fixed_ship_command_slot = ship_command_module_1
+		fixed_ship_engine_slot = light_ship_oars_module
+		fixed_ship_battery_slot = ship_light_mounted_gun_module
+		# fixed_ship_battery_slot_1 = ship_light_mounted_gun_module
+		fixed_ship_detection_slot = ship_detection_module_1
+		# fixed_ship_detection_slot_1 = empty
+		fixed_ship_point_defense_slot = empty
+		mid_1_custom_slot = light_ship_oars_module
+		rear_1_custom_slot = empty
+		rear_2_custom_slot = ship_light_mounted_gun_module
+	}
+}
+
+create_equipment_variant = {
+	name = "Destroyer"
+	type = ship_hull_medium_1
+	name_group = NCR_MEDIUM
+	parent_version = 0
+	modules = {
+		fixed_ship_command_slot = ship_command_module_1
+		fixed_ship_engine_slot = medium_ship_oars_module
+		fixed_ship_battery_slot = ship_medium_mounted_gun_module
+		# fixed_ship_battery_slot_1 = ship_medium_mounted_gun_module
+		fixed_ship_detection_slot = ship_detection_module_1
+		# fixed_ship_detection_slot_1 = empty
+		fixed_ship_armour_slot = empty
+		fixed_ship_point_defense_slot = ship_light_mounted_gun_module
+		# fixed_ship_point_defense_slot_1 = ship_light_mounted_gun_module
+		mid_1_custom_slot = medium_ship_oars_module
+		rear_1_custom_slot = empty
+		rear_2_custom_slot = ship_medium_mounted_gun_module
+	}
+}
+
+create_equipment_variant = {
+	name = "Heavy Ship"
+	type = ship_hull_heavy_1
+	name_group = NCR_HEAVY
+	parent_version = 0
+	modules = {
+		fixed_ship_command_slot = ship_command_module_1
+		fixed_ship_engine_slot = heavy_ship_oars_module
+		fixed_ship_battery_slot = ship_heavy_mounted_gun_module
+		# fixed_ship_battery_slot_1 = ship_heavy_mounted_gun_module
+		fixed_ship_detection_slot = ship_detection_module_1
+		# fixed_ship_detection_slot_1 = ship_detection_module_1
+		fixed_ship_armour_slot = heavy_ship_armour_module_1
+		fixed_ship_point_defense_slot = ship_pd_module_1
+		# fixed_ship_point_defense_slot_1 = ship_pd_module_1
+		fixed_ship_communication_slot = ship_communications_module_1
+		# fixed_ship_storage_slot = empty
+		front_1_custom_slot = empty
+		mid_1_custom_slot = heavy_ship_oars_module
+		rear_1_custom_slot = ship_detection_module_1
+		rear_2_custom_slot = ship_heavy_mounted_gun_module
+	}
+}
+
+
+
+

@@ -1,0 +1,32 @@
+state = {
+	id = 737
+	name = "STATE_737"
+	manpower = 4000
+	state_category = town
+
+	resources = {
+		water = 4
+		composites = 2
+		circuitry = 2
+	}
+
+	history = {
+		victory_points = {
+			9236 5
+		}
+		victory_points = {
+			9231 5
+		}
+		buildings = {
+			infrastructure = 4
+			dockyard = 2
+			9236 = {
+				naval_base = 1
+			}
+		}
+	}
+
+	provinces = {
+		9231 9227 9228 9236 9232 9237 9240 9246
+	}
+}

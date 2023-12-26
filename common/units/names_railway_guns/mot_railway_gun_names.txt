@@ -1,0 +1,5 @@
+RG_mot = {
+	type = railway_gun
+	for_countries = { MOT }
+	fallback_name = "The Bear's Justice"
+}

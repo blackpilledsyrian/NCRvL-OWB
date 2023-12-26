@@ -1,0 +1,16 @@
+
+state={
+	id=1440
+	name="STATE_1440"
+
+	history={
+	}
+
+	provinces={
+		657 14101 20208 20209 20210 20211 20223 20225 20263 20268 20289 20291
+	}
+	manpower=3348
+	buildings_max_level_factor=1.000
+	state_category=shanty
+	local_supplies=0.000
+}

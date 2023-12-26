@@ -1,0 +1,48 @@
+dam_decision_category = {
+	#icon = GFX_deicsion_caps_category
+	priority = {
+		base = 315
+	}
+	visible = {
+		252 = {
+			OWNER = {
+				OR = {
+					tag = ROOT
+					is_in_array = {
+						array = ROOT.subjects
+					}
+				}
+			}
+		}
+	}
+	on_map_area = {
+		state = 252
+		name = hoover_dam_category_target
+		zoom = 50
+	}
+}
+
+first_battle_decision_category = {
+	icon = border_war
+	priority = {
+		base = 320
+	}
+	allowed = {
+		OR = {
+			original_tag = CES
+			is_new_california_member = yes
+		}
+	}
+}
+
+second_battle_decision_category = {
+	icon = border_war
+	priority = {
+		base = 320
+	}
+	on_map_area = {
+		state = 252
+		name = hoover_dam_category_target
+		zoom = 50
+	}
+}

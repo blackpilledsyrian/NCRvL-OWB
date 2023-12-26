@@ -1,0 +1,33 @@
+state = {
+	id = 832
+	name = "STATE_832"
+
+	history={
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 2
+			arms_factory = 1
+			10001 = {
+				naval_base = 4
+			}
+		}
+		victory_points = {
+			10001 25
+		}
+	}
+
+	provinces={
+		9889 9950 9953 9974 10001 10002 10022 10034
+	}
+
+	resources = {
+		energy = 2
+		metal = 2
+		composites = 4
+		water = 4
+	}
+
+	manpower=35000
+	buildings_max_level_factor=1.000
+	state_category=city
+}

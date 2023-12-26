@@ -1,0 +1,33 @@
+state = {
+	id = 1
+	name = "STATE_1"
+
+	resources = {
+		metal = 7
+		composites = 7
+		water = 21
+		energy = 6
+		circuitry = 6
+		advanced = 7
+	}
+
+	history={
+		owner = NCR
+		add_core_of = NCR
+		victory_points = {
+			2409 25
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 4
+			metal_generator = 2
+		}
+	}
+	provinces={
+		951 1780 2001 2409 2410 2411 2412 2413 2414 2415 4622 4785 4786 4787 4953 4954
+	}
+	manpower=25000
+	buildings_max_level_factor=1.000
+	state_category=megalopolis
+}

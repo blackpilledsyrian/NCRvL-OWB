@@ -1,0 +1,289 @@
+# options for map_icon_category:
+# For land units: infantry,armored,other
+# For sea units: ship,transport,uboat
+
+sub_units = {
+
+	fireteam_infantry = {
+		sprite = infantry
+		map_icon_category = infantry
+
+		priority = 600
+		active = no
+
+		type = {
+			infantry
+			artillery
+		}
+
+		group = infantry
+
+		categories = {
+			category_army
+			category_front_line
+			category_weapon_infantry
+			category_fireteams
+		}
+
+		combat_width = 1
+
+		#Size Definitions
+		max_strength = 5
+		max_organisation = 0
+		default_morale = 0.2
+		manpower = 20 # 1000
+
+		# Misc Abilities
+		training_time = 120
+		weight = 0.8
+
+		soft_attack = -0.1
+		hard_attack = -0.1
+		breakthrough = -0.1
+		ap_attack = 0.4
+		supply_consumption = 0.35
+
+		jungle = {
+			movement = -0.15
+		}
+		forest = {
+			movement = -0.05
+		}
+		hills = {
+			movement = -0.05
+		}
+		mountain = {
+			movement = -0.15
+		}
+		amphibious = {
+			movement = -0.25
+			attack = -0.25
+		}
+		marsh = {
+			movement = -0.15
+			attack = -0.15
+		}
+		river = {
+			movement = -0.15
+			attack = -0.15
+		}
+		urban = {
+			defence = 0.1
+		}
+		fort = {
+			defence = 0.15
+		}
+
+		need = {
+			fireteam_equipment = 20
+		}
+
+		transport = fireteam_equipment
+
+		essential = {
+			fireteam_equipment
+		}
+	}
+
+	demolitions_infantry = {
+		sprite = infantry
+		map_icon_category = infantry
+
+		priority = 600
+		active = no
+
+		type = {
+			infantry
+			artillery
+		}
+
+		group = infantry
+
+		categories = {
+			category_army
+			category_front_line
+			category_weapon_infantry
+			category_demolitions
+		}
+
+		combat_width = 1
+
+		#Size Definitions
+		max_strength = 5
+		max_organisation = 0
+		default_morale = 0.2
+		manpower = 20 # 1000
+
+		# Misc Abilities
+		training_time = 120
+		weight = 0.8
+
+		soft_attack = -0.1
+		hard_attack = -0.1
+		breakthrough = -0.1
+		ap_attack = 0.4
+		supply_consumption = 0.35
+
+		jungle = {
+			movement = -0.15
+		}
+		forest = {
+			movement = -0.05
+		}
+		hills = {
+			movement = -0.05
+		}
+		mountain = {
+			movement = -0.15
+		}
+		amphibious = {
+			movement = -0.25
+			attack = -0.25
+		}
+		marsh = {
+			movement = -0.15
+			attack = -0.15
+		}
+		river = {
+			movement = -0.15
+			attack = -0.15
+		}
+		urban = {
+			attack = 0.1
+		}
+		fort = {
+			attack = 0.15
+		}
+
+		essential = {
+			demolitions_equipment
+		}
+
+		transport = demolitions_equipment
+
+		need = {
+			demolitions_equipment = 20
+		}
+	}
+
+	anti_tank_infantry = {
+		sprite = infantry
+		map_icon_category = infantry
+
+		priority = 600
+		active = no
+
+		type = {
+			infantry
+			artillery
+		}
+
+		group = infantry
+
+		categories = {
+			category_army
+			category_front_line
+			category_weapon_infantry
+			category_anti_tank
+		}
+
+		combat_width = 1
+
+		#Size Definitions
+		max_strength = 5
+		max_organisation = 0
+		default_morale = 0.2
+		manpower = 20 # 1000
+
+		# Misc Abilities
+		training_time = 120
+		weight = 0.8
+
+		soft_attack = 0.1
+		hard_attack = 0.1
+		ap_attack = 0.1
+		supply_consumption = 0.35
+
+		jungle = {
+			movement = -0.15
+		}
+		forest = {
+			movement = -0.05
+		}
+		hills = {
+			movement = -0.05
+		}
+		mountain = {
+			movement = -0.15
+		}
+		amphibious = {
+			movement = -0.25
+			attack = -0.25
+		}
+		marsh = {
+			movement = -0.15
+			attack = -0.15
+		}
+		river = {
+			movement = -0.15
+			attack = -0.15
+		}
+
+		essential = {
+			anti_tank_equipment
+		}
+
+		transport = anti_tank_equipment
+
+		need = {
+			anti_tank_equipment = 20
+		}
+	}
+
+	gary_unit = {
+		sprite = infantry
+		map_icon_category = infantry
+
+		priority = 600
+		active = no
+
+		type = {
+			infantry
+		}
+
+		group = infantry
+		soft_attack = 4
+		hard_attack = 4
+		breakthrough = 4
+		defense = 3
+
+		categories = {
+			category_army
+			category_front_line
+			category_infantry
+			category_infantry_and_special_forces
+			category_leg_infantry
+		}
+
+		combat_width = 1
+
+		#Size Definitions
+		max_strength = 5
+		max_organisation = 45
+		default_morale = 0.3
+		manpower = 250 # 1000
+
+		# Misc Abilities
+		training_time = 120
+		suppression = 1
+		weight = 0.5
+
+		supply_consumption = 0.25
+
+		transport = infantry_equipment
+
+		need = {
+			infantry_equipment = 250
+		}
+	}
+}

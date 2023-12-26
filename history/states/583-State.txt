@@ -1,0 +1,25 @@
+state = {
+	id = 583
+	name = "STATE_583"
+	manpower = 15391
+	state_category = large_town
+
+	history = {
+		owner = BVC
+		add_core_of = BVC
+		victory_points = {
+			4640 10
+		}
+		buildings = {
+			arms_factory = 2
+			infrastructure = 3
+			4640 = {
+				bunker = 1
+			}
+		}
+	}
+
+	provinces = {
+		4638 4640 4822 5794 5800
+	}
+}

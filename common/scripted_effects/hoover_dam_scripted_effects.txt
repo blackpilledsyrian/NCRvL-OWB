@@ -1,0 +1,346 @@
+start_first_battle_events = {
+	## Saving event targets
+	ROOT = { save_event_target_as = dam_attacker }
+	252 = {
+		owner = { save_event_target_as = dam_defender }
+	}
+	## Global setup
+	set_global_flag = first_battle_preparing
+	## Splinter off unique chains from generic
+	if = { # Unique MOT / CES chain
+		limit = {
+			event_target:dam_defender = { original_tag = MOT }
+			event_target:dam_attacker = { original_tag = CES }
+			MOJ = {exists = no }
+		}
+		event_target:dam_attacker = {
+			country_event = bhd.1 # Unique event to flavour attack on MOT
+		}
+	}
+	else_if = { # Unique MOJ / CES chain
+		limit = {
+			event_target:dam_defender = { original_tag = MOJ }
+			event_target:dam_attacker = { original_tag = CES }
+			MOT = { exists = no }
+		}
+		event_target:dam_attacker = {
+			country_event = bhd.50 # Unique event to flavour attack on MOJ
+		}
+	}
+	else_if = { # if the mojave territory and chapter are fucking around, it's bad for them
+		limit = {
+			OR = {
+				event_target:dam_defender = { original_tag = MOJ }
+				event_target:dam_defender = { original_tag = MOT }
+			}
+			event_target:dam_attacker = { original_tag = CES }
+			MOT = { exists = yes }
+			MOJ = { exists = yes }
+		}
+		event_target:dam_attacker = {
+			news_event = bhd.153 # Unique event to flavour attack everyone nom nom nom
+		}
+	}
+	else = { # Generic Case
+		event_target:dam_attacker = {
+			declare_war_on = {
+				target = event_target:dam_defender
+				type = annex_everything
+			}
+		}
+		if = {
+			limit = {
+				has_global_flag = debug_logs
+			}
+			log = "Generic 1st Battle of Hoover Dam being used. Look into this. Attacker is [?event_target:dam_attacker.GetName], defender is [?event_target:dam_defender.GetName]"
+		}
+	}
+}
+
+fbhd_bw_hoover = { # Script to start the initial border war for Hoover Dam
+	CES = {
+		## Variable Calculation
+		set_variable = { var = border_war_attacker_modifier value = 1.2 }
+		add_to_variable = { var = border_war_attacker_modifier value = global.fbhd_hoover_attack_add }
+		multiply_variable = { var = border_war_attacker_modifier value = global.fbhd_hoover_attack_mult }
+		set_variable = { var = border_war_defender_modifier value = 0.6 }
+		add_to_variable = { var = border_war_defender_modifier value = global.fbhd_hoover_defence_add }
+		multiply_variable = { var = border_war_defender_modifier value = global.fbhd_hoover_defence_mult }
+		if = {
+			limit = {
+				has_global_flag = debug_logs
+			}
+			log = "[?global.fbhd_hoover_attack_add] Attack Add"
+			log = "[?global.fbhd_hoover_attack_mult] Attack Multi"
+			log = "[?global.fbhd_hoover_defence_add] Def Add"
+			log = "[?global.fbhd_hoover_defence_mult] Def Multi"
+		}
+		## Kicking off the border war
+		start_border_war = {
+			change_state_after_war = no
+			combat_width = 80
+			attacker = {
+				state = 438
+				num_provinces = 2
+				minimum_duration_in_days = 3
+				leader_score = {
+					base = 1
+					modifier = {
+						has_id = 10008 # Malpais
+						add = 100
+					}
+				}
+				on_win = bhd.5
+				on_lose = bhd.6
+				on_cancel = bhd.7
+				terrain_factor = 0.2
+			}
+			defender = {
+				state = 252
+				num_provinces = 1
+				leader_score = {
+					base = 1
+					modifier = {
+						has_id = 820 # Oliver
+						add = 100
+					}
+				}
+				on_win = bhd.8
+				on_lose = bhd.9
+				on_cancel = bhd.10
+				terrain_factor = 0.2
+			}
+		}
+		meta_effect = {
+			text = {
+				set_border_war_data = {
+					attacker = selected_own_state_for_border_war
+					defender = selected_enemy_state_for_border_war
+					attacker_modifier = [BORDER_WAR_ATTACKER_MODIFIER]
+					defender_modifier = [BORDER_WAR_DEFENDER_MODIFIER]
+					combat_width = 80
+				}
+			}
+			BORDER_WAR_ATTACKER_MODIFIER = "[?THIS.border_war_attacker_modifier|3]"
+			BORDER_WAR_DEFENDER_MODIFIER = "[?THIS.border_war_defender_modifier|3]"
+		}
+		clear_variable = border_war_attacker_modifier
+		clear_variable = border_war_defender_modifier
+		## Alerting people
+		news_event = bhd.4
+		clr_global_flag = first_battle_preparing
+		set_global_flag = first_battle_ongoing
+	}
+}
+
+fbhd_bw_boulder = { # Script to start the initial border war for Boulder City
+	CES = {
+		## Variable Calculation
+		set_variable = { border_war_attacker_modifier = 0.9 }
+		add_to_variable = { var = border_war_attacker_modifier value = var:global.fbhd_boulder_attack_add }
+		multiply_variable = { var = border_war_attacker_modifier value = var:global.fbhd_boulder_attack_mult }
+		set_variable = { border_war_defender_modifier = 1 }
+		add_to_variable = { var = border_war_defender_modifier value = var:global.fbhd_boulder_defence_add }
+		multiply_variable = { var = border_war_defender_modifier value = var:global.fbhd_boulder_defence_mult }
+		## Contingency check that CES owns 252 (Hoover Dam)
+		if = {
+			limit = { NOT = { owns_state = 252 } }
+			transfer_state = 252
+			log = "252 transfered to CES in fbhd_bw_boulder. Something is broken elsewhere. Report."
+		}
+		## Kicking off the border war
+		start_border_war = {
+			change_state_after_war = no
+			combat_width = 80
+			attacker = {
+				state = 252
+				num_provinces = 1
+				minimum_duration_in_days = 3
+				leader_score = {
+					base = 1
+					modifier = {
+						has_id = 10008 # Malpais
+						add = 100
+					}
+				}
+				on_win = bhd.11
+				on_lose = bhd.12
+				on_cancel = bhd.13
+				terrain_factor = 0.2
+			}
+			defender = {
+				state = 613
+				num_provinces = 2
+				leader_score = {
+					base = 1
+					modifier = {
+						has_id = 821 # Hanlon
+						add = 100
+					}
+				}
+				on_win = bhd.14
+				on_lose = bhd.15
+				on_cancel = bhd.16
+				terrain_factor = 0.2
+			}
+		}
+		meta_effect = {
+			text = {
+				set_border_war_data = {
+					attacker = selected_own_state_for_border_war
+					defender = selected_enemy_state_for_border_war
+					attacker_modifier = [BORDER_WAR_ATTACKER_MODIFIER]
+					defender_modifier = [BORDER_WAR_DEFENDER_MODIFIER]
+					combat_width = 80
+				}
+			}
+			BORDER_WAR_ATTACKER_MODIFIER = "[?THIS.border_war_attacker_modifier|3]"
+			BORDER_WAR_DEFENDER_MODIFIER = "[?THIS.border_war_defender_modifier|3]"
+		}
+		clear_variable = border_war_attacker_modifier
+		clear_variable = border_war_defender_modifier
+	}
+}
+
+fbhd_legion_overall_vic = {
+	clr_global_flag = first_battle_ongoing
+	set_global_flag = fbhd_legion_overall_vic
+	every_state = {
+		limit = {
+			OR = {
+				state = 252
+				state = 613
+				state = 380
+				state = 573
+				state = 46
+				state = 417
+				state = 137
+				state = 67
+				state = 106
+				state = 620
+			}
+			is_owned_and_controlled_by = MOT
+		}
+		CES = { transfer_state = PREV }
+	}
+	MOT = {
+		every_unit_leader = {
+			set_nationality = NCR
+		}
+		every_navy_leader = {
+			set_nationality = NCR
+		}
+		every_owned_state = {
+			set_state_flag = do_not_decimate
+		}
+	}
+	NCR = {
+		change_tag_from = MOT
+	}
+	NCR = {
+		annex_country = {
+			target = MOT
+			transfer_troops = yes
+		}
+		every_owned_state = {
+			clr_state_flag = do_not_decimate
+		}
+	}
+	news_event = bhd.17
+}
+
+fbhd_boulder_city_miracle = {
+	clr_global_flag = first_battle_ongoing
+	set_global_flag = fbhd_boulder_city_miracle_flag
+	MOT = {
+		transfer_state = 252 # Hoover Dam
+	}
+	news_event = bhd.18
+}
+
+fbhd_mot_hold_dam = {
+	clr_global_flag = first_battle_ongoing
+	set_global_flag = fbhd_mot_hold_dam
+	news_event = bhd.19
+}
+
+fbhd_moj_ces_war = {
+	clr_global_flag = first_battle_preparing
+	MOJ = {
+		CES = {
+			claim_core_states_of_prev = yes
+			declare_war_on = {
+				target = PREV
+				type = annex_everything
+			}
+		}
+	}
+	news_event = bhd.53
+}
+
+start_second_battle_events = { # Should be called in the scope of the nation *attacking* into Hoover Dam
+	## Saving event targets and variables
+	ROOT = { save_event_target_as = dam_attacker }
+	252 = { owner = { save_event_target_as = dam_defender } }
+	set_global_flag = second_battle_preparing
+	## Splinter off unique chains from generic
+	if = { # Unique MOT / CES chain
+		limit = {
+			event_target:dam_defender = { original_tag = MOT }
+			event_target:dam_attacker = { original_tag = CES }
+		}
+		event_target:dam_attacker = {
+			country_event = bhd.100
+		}
+	}
+	else_if = { # Unique NCR / CES chain (mostly edge-case)
+		limit = {
+			event_target:dam_defender = { original_tag = NCR }
+			event_target:dam_attacker = { original_tag = CES }
+		}
+		event_target:dam_attacker = {
+			country_event = bhd.150
+		}
+	}
+	else_if = { #Edge case for Legion owning dam for To the West focus.
+		limit = {
+			event_target:dam_defender = { original_tag = ROOT }
+			event_target:dam_attacker = { original_tag = ROOT }
+			ROOT = {
+				original_tag = CES
+			}
+		}
+		NCR = {
+			ROOT = {
+				grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+			}
+		}
+	}
+	else = { # Generic Edge-Case
+		event_target:dam_attacker = {
+			declare_war_on = {
+				target = event_target:dam_defender
+				type = annex_everything
+			}
+		}
+		if = {
+			limit = {
+				has_global_flag = debug_logs
+			}
+			log = "Generic 2ndd Battle of Hoover Dam being used. Look into this. Attacker is [?event_target:dam_attacker.GetName], defender is [?event_target:dam_defender.GetName]"
+		}
+	}
+}
+
+second_battle_ncr_mobilise_start = {
+	every_country = {
+		limit = {
+			OR = {
+				is_ncr_nation = yes
+				is_caesars_legion_member = yes
+				has_war_with = MOT
+			}
+		}
+		activate_decision = sbhd_ncr_mob
+	}
+}

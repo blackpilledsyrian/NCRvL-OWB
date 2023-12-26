@@ -1,0 +1,1513 @@
+focus_tree = {
+	id = NAV_nf
+	country = {
+		factor = 0
+		modifier = {
+			add = 210
+			tag = NAV
+		}
+	}
+	default = no
+
+	focus = {
+		id = NAV_history_of_the_people
+		icon = GFX_goal_NAV_default
+		cost = 7
+		x = 33
+		y = 0
+		completion_reward = {
+			country_event =  nf_navajo.1
+		}
+	}
+	focus = {
+		id = NAV_before_the_great_war
+		icon = GFX_goal_ITZ_oil_and_imperialism
+		cost = 7
+		x = 0
+		y = 1
+		relative_position_id = NAV_history_of_the_people
+		prerequisite = { focus = NAV_history_of_the_people }
+		completion_reward = {
+			country_event = nf_navajo.2
+		}
+	}
+	focus = {
+		id = NAV_caesar_legion
+		icon = GFX_goal_NAV_CES
+		cost = 7
+		x = 0
+		y = 1
+		relative_position_id = NAV_before_the_great_war
+		prerequisite = { focus = NAV_before_the_great_war }
+		completion_reward = {
+			country_event = nf_navajo.3
+		}
+	}
+
+	focus = {
+		id = NAV_navajo_economy_start
+		icon = GFX_KHA_focus_farm_agriculture
+		cost = 45
+		x = 4
+		y = 1
+		relative_position_id = NAV_caesar_legion
+		prerequisite = { focus = NAV_caesar_legion }
+		completion_reward = {
+			add_ideas = three_sisters
+		}
+	}
+	focus = {
+		id = NAV_windmills
+		icon = GFX_goal_generic_generator_wind
+		cost = 45
+		x = 2
+		y = 1
+		relative_position_id = NAV_navajo_economy_start
+		prerequisite = { focus = NAV_navajo_economy_start }
+		completion_reward = {
+			203 = {
+				add_resource = {
+					type = energy
+					amount = 12
+				}
+			}
+		}
+	}
+	focus = {
+		id = NAV_silversmiths
+		icon = GFX_goal_CES_denarius
+		cost = 45
+		x = 0
+		y = 1
+		relative_position_id = NAV_navajo_economy_start
+		prerequisite = { focus = NAV_navajo_economy_start }
+		completion_reward = {
+			set_temp_variable = { caps_to_add = 300 }
+			add_caps = yes
+		}
+	}
+	focus = {
+		id = NAV_brahmin_herds
+		icon = GFX_goal_generic_creature_brahmin
+		cost = 45
+		x = -2
+		y = 1
+		relative_position_id = NAV_navajo_economy_start
+		prerequisite = { focus = NAV_navajo_economy_start }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = agriculture_tech
+			}
+			203 = {
+				add_resource = {
+					type = water
+					amount = 5
+				}
+			}
+		}
+	}
+	focus = {
+		id = NAV_hogans
+		icon = GFX_goal_generic_slums_focus
+		cost = 45
+		x = 1
+		y = 1
+		relative_position_id = NAV_silversmiths
+		prerequisite = {
+			focus = NAV_brahmin_herds
+			focus = NAV_silversmiths
+			focus = NAV_windmills
+		}
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					is_valid_state_for_3_civilian_factories = yes
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = NAV_weaving
+		icon = GFX_goal_bottlecap
+		cost = 45
+		x = -1
+		y = 1
+		relative_position_id = NAV_silversmiths
+		prerequisite = {
+			focus = NAV_brahmin_herds
+			focus = NAV_silversmiths
+			focus = NAV_windmills
+		}
+
+		completion_reward = {
+			add_ideas = NAV_textile_industry
+			random_owned_state = {
+				limit = {
+					is_valid_state_for_2_civilian_factories = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+
+	focus = {
+		id = NAV_military_start
+		icon = GFX_goal_generic_bow_1
+		cost = 45
+		x = -4
+		y = 1
+		relative_position_id = NAV_caesar_legion
+		prerequisite = { focus = NAV_caesar_legion }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = spec_force_tech_category
+			}
+			army_experience = 25
+		}
+	}
+	focus = {
+		id = NAV_lessons_from_caesar
+		icon = GFX_goal_CES_generic_infantry
+		cost = 45
+		x = -2
+		y = 1
+		relative_position_id = NAV_military_start
+		prerequisite = { focus = NAV_military_start }
+		completion_reward = {
+			add_ideas = ces_puppet_idea_war
+		}
+	}
+
+	focus = {
+		id = NAV_warrior_traditions
+		icon = GFX_goal_pal_drug_followup
+		cost = 45
+		x = 0
+		y = 1
+		relative_position_id = NAV_military_start
+		prerequisite = { focus = NAV_military_start }
+		completion_reward = {
+			add_ideas = NAV_medicine_man
+		}
+	}
+
+	focus = {
+		id = NAV_rainbow_arrows
+		icon = GFX_goal_generic_focus_magazine_gunsandbullets_lasers
+		cost = 45
+		x = 2
+		y = 1
+		relative_position_id = NAV_military_start
+		prerequisite = { focus = NAV_military_start }
+		completion_reward = {
+			if = {
+				limit = {
+					has_tech = energy_weaponry_tech_1
+				}
+				set_technology = {
+					energy_weaponry_tech_2 = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = energy_weaponry_tech_1
+				}
+				set_technology = {
+					energy_weaponry_tech_2 = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = energy_weaponry_tech_2
+				}
+				set_technology = {
+					energy_weaponry_tech_3 = 1
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						has_tech = energy_weaponry_tech_1
+					}
+				}
+				set_technology = {
+					energy_weaponry_tech_1 = 1
+				}
+			}
+
+			else = {
+				add_tech_bonus = {
+					bonus = 0.25
+					uses = 1
+					category = energy_weaponry_tech_category
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = NAV_fight_some_more_forever
+		icon = GFX_goal_generic_tomahawk_2
+		cost = 45
+		x = -1
+		y = 3
+		relative_position_id = NAV_caesar_legion
+		prerequisite = { focus = NAV_caesar_legion }
+		completion_reward = {
+			custom_effect_tooltip = NAV_fight_some_more_forever_tt
+			add_to_variable = { NAV_resistance = 1 }
+			add_war_support = 0.05
+			add_political_power = 75
+		}
+	}
+	focus = {
+		id = NAV_hopi_coal_mines
+		icon = GFX_goal_generic_protectron_construction
+		cost = 45
+		x = -1
+		y = 1
+		relative_position_id = NAV_fight_some_more_forever
+		prerequisite = {
+			focus = NAV_fight_some_more_forever
+		}
+		completion_reward = {
+			203 = {
+				add_resource = {
+					type = energy
+					amount = 15
+				}
+			}
+			add_stability = -0.05
+			custom_effect_tooltip = NAV_fight_some_more_forever_tt
+			add_to_variable = { NAV_resistance = 1 }
+		}
+	}
+	focus = {
+		id = NAV_mormon_missionaries
+		icon = GFX_goal_NCN_temple
+		cost = 45
+		x = -3
+		y = 1
+		relative_position_id = NAV_fight_some_more_forever
+		prerequisite = {
+			focus = NAV_fight_some_more_forever
+		}
+		completion_reward = {
+			203 = {
+				add_resource = {
+					type = water
+					amount = 10
+				}
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = agriculture_tech
+			}
+			custom_effect_tooltip = NAV_fight_some_more_forever_tt
+			add_to_variable = { NAV_resistance = 1 }
+		}
+	}
+	focus = {
+		id = NAV_insurgencies
+		icon = GFX_goal_tribal_generic
+		cost = 45
+		x = -1
+		y = 1
+		relative_position_id = NAV_hopi_coal_mines
+		prerequisite = {
+			focus = NAV_hopi_coal_mines
+			focus = NAV_mormon_missionaries
+		}
+		completion_reward = {
+			add_ideas = NAV_insurgencies_idea
+			custom_effect_tooltip = NAV_fight_some_more_forever_tt
+			add_to_variable = { NAV_resistance = 1 }
+		}
+	}
+	focus = {
+		id = NAV_tribal_medicine
+		icon = GFX_goal_chem_super_stim
+		cost = 45
+		x = -1
+		y = 1
+		relative_position_id = NAV_mormon_missionaries
+		prerequisite = {
+			focus = NAV_hopi_coal_mines
+			focus = NAV_mormon_missionaries
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				ahead_reduction = 2
+				uses = 2
+				category = support_medical_tech_category
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 200
+				producer = NAV
+			}
+			custom_effect_tooltip = NAV_fight_some_more_forever_tt
+			add_to_variable = { NAV_resistance = 1 }
+		}
+	}
+
+
+
+	focus = {
+		id = NAV_the_witch
+		icon = GFX_goal_TTM_Diana_Angry
+		cost = 45
+		x = -1
+		y = 1
+		relative_position_id = NAV_tribal_medicine
+		prerequisite = {
+			focus = NAV_tribal_medicine
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				ahead_reduction = 2
+				uses = 2
+				category = support_medical_tech_category
+			}
+			203 = {
+				add_resource = {
+					type = water
+					amount = 5
+				}
+			}
+			custom_effect_tooltip = NAV_fight_some_more_forever_tt
+			add_to_variable = { NAV_resistance = 1 }
+		}
+	}
+	focus = {
+		id = NAV_wanamingo
+		icon = GFX_goal_generic_creature_wanamingo
+		cost = 45
+		x = 1
+		y = 1
+		relative_position_id = NAV_insurgencies
+		prerequisite = {
+			focus = NAV_insurgencies
+		}
+		completion_reward = {
+			army_experience = 25
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = cat_land_doctrine
+
+			}
+			add_ideas = NAV_wanamingo_idea
+			custom_effect_tooltip = NAV_fight_some_more_forever_tt
+			add_to_variable = { NAV_resistance = 1 }
+		}
+	}
+	focus = {
+		id = NAV_black_mesa_hero
+		icon = GFX_goal_generic_canyon_focus
+		cost = 45
+		x = 1
+		y = 1
+		relative_position_id = NAV_tribal_medicine
+		prerequisite = {
+			focus = NAV_tribal_medicine
+			focus = NAV_insurgencies
+		}
+		completion_reward = {
+			add_corps_commander_role = {
+				character = NAV_free_man
+				skill = 2
+				attack_skill = 3
+				defense_skill = 1
+				planning_skill = 2
+				logistics_skill = 3
+				legacy_id = -1
+			}
+			custom_effect_tooltip = NAV_fight_some_more_forever_tt
+			add_to_variable = { NAV_resistance = 1 }
+		}
+	}
+
+
+	focus = {
+		id = NAV_iron_alliance
+		icon = GFX_goal_generic_power_armour_t45_alt
+		cost = 45
+		x = 0
+		y = 1
+		relative_position_id = NAV_the_witch
+		prerequisite = {
+			focus = NAV_the_witch
+		}
+		prerequisite = {
+			focus = NAV_black_mesa_hero
+		}
+		prerequisite = {
+			focus = NAV_wanamingo
+		}
+		completion_reward = {
+			set_technology = {
+				power_armour_tech_level_tribal = 1
+				power_armour_tech_level_settler = 1
+			}
+			custom_effect_tooltip = NAV_iron_alliance_oob_tt
+			hidden_effect = {
+				load_oob = NAV_iron_alliance
+			}
+			custom_effect_tooltip = NAV_fight_some_more_forever_tt
+			add_to_variable = { NAV_resistance = 1 }
+		}
+	}
+	focus = {
+		id = NAV_love_robot_city
+		icon = GFX_goal_TDT_heart
+		cost = 45
+		x = 2
+		y = 1
+		relative_position_id = NAV_the_witch
+		prerequisite = {
+			focus = NAV_the_witch
+		}
+		prerequisite = {
+			focus = NAV_black_mesa_hero
+		}
+		prerequisite = {
+			focus = NAV_wanamingo
+		}
+		completion_reward = {
+			add_resource = {
+				type = circuitry
+				amount = 5
+				state = 203
+			}
+			add_resource = {
+				type = composites
+				amount = 5
+				state = 203
+			}
+			custom_effect_tooltip = NAV_fight_some_more_forever_tt
+			add_to_variable = { NAV_resistance = 1 }
+		}
+	}
+	focus = {
+		id = NAV_bomb_space_station
+		icon = GFX_goal_generic_bomb_space_station
+		cost = 45
+		x = 4
+		y = 1
+		relative_position_id = NAV_the_witch
+		prerequisite = {
+			focus = NAV_the_witch
+		}
+		prerequisite = {
+			focus = NAV_black_mesa_hero
+		}
+		prerequisite = {
+			focus = NAV_wanamingo
+		}
+		completion_reward = {
+			add_resource = {
+				type = circuitry
+				amount = 5
+				state = 203
+			}
+			add_resource = {
+				type = composites
+				amount = 5
+				state = 203
+			}
+			custom_effect_tooltip = NAV_fight_some_more_forever_tt
+			add_to_variable = { NAV_resistance = 1 }
+		}
+	}
+
+	focus = {
+		id = NAV_bust_the_armour_open
+		icon = GFX_goal_CES_protect_the_bull
+		cost = 45
+		x = -2
+		y = 1
+		will_lead_to_war_with = CES
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+			custom_trigger_tooltip = {
+				check_variable = { NAV_resistance > NAV_loyalty }
+				tooltip = ces_fighting_tt
+			}
+			NOT = {
+				has_completed_focus = NAV_true_friend
+			}
+		}
+		bypass = {
+			has_war_with = CES
+		}
+		relative_position_id = NAV_bomb_space_station
+		prerequisite = {
+			focus = NAV_bomb_space_station
+		}
+		prerequisite = {
+			focus = NAV_love_robot_city
+		}
+		prerequisite = {
+			focus = NAV_iron_alliance
+		}
+		completion_reward = {
+			CES = { news_event = nf_navajo.9 }
+			create_or_join_fifth_world = yes
+			custom_effect_tooltip = NAV_bust_the_armour_open_desc_tt
+			if = {
+				limit = {
+					RES = {
+						has_completed_focus = resg_navajo_compromise
+					}
+				}
+				RES = {
+					invite_to_fifth_world = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = NAV_women_warriors
+		icon = GFX_goal_generic_focus_magazine_aat_sniper
+		cost = 45
+		x = 3
+		y = 1
+		relative_position_id = NAV_lessons_from_caesar
+		prerequisite = {
+			focus = NAV_lessons_from_caesar
+			focus = NAV_rainbow_arrows
+			focus = NAV_warrior_traditions
+		}
+		completion_reward = {
+			add_manpower = 800
+			add_stability = 0.025
+		}
+	}
+	focus = {
+		id = NAV_skinwalkers
+		icon = GFX_goal_generic_esp_stealthboy
+		cost = 45
+		x = 1
+		y = 1
+		relative_position_id = NAV_lessons_from_caesar
+		prerequisite = {
+			focus = NAV_lessons_from_caesar
+			focus = NAV_rainbow_arrows
+			focus = NAV_warrior_traditions
+		}
+		completion_reward = {
+			add_ideas = NAV_skinwalkers_idea
+		}
+	}
+
+
+
+
+
+	focus = {
+		id = NAV_happiness_servitude
+		icon = GFX_goal_CES_friends_legion
+		cost = 45
+		x = 1
+		y = 3
+		relative_position_id = NAV_caesar_legion
+		prerequisite = {
+			focus = NAV_caesar_legion
+
+		}
+		completion_reward = {
+			set_country_flag = NAV_friend
+			custom_effect_tooltip = NAV_happiness_servitude_tt
+			add_to_variable = { NAV_loyalty = 1 }
+			add_stability = 0.05
+			add_political_power = 75
+		}
+	}
+
+	focus = {
+		id = NAV_sign_language
+		icon = GFX_goal_generic_sign_danger
+		cost = 45
+		x = 1
+		y = 1
+		relative_position_id = NAV_fight_some_more_forever
+		prerequisite = {
+			focus = NAV_fight_some_more_forever
+			focus = NAV_happiness_servitude
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = encryption_tech
+			}
+			swap_ideas = {
+				remove_idea = nav_pathfinders
+				add_idea = nav_pathfinders_encryption
+			}
+			custom_effect_tooltip = NAV_happiness_servitude_tt
+			add_to_variable = { NAV_loyalty = 1 }
+		}
+	}
+
+	focus = {
+		id = NAV_uranium_mines
+		icon = GFX_goal_generic_canister_nucleaer
+		cost = 45
+		x = 1
+		y = 1
+		relative_position_id = NAV_happiness_servitude
+		prerequisite = {
+			focus = NAV_happiness_servitude
+		}
+		completion_reward = {
+			203 = {
+				add_resource = {
+					type = energy
+					amount = 15
+				}
+			}
+			custom_effect_tooltip = NAV_happiness_servitude_tt
+			add_to_variable = { NAV_loyalty = 1 }
+		}
+	}
+	focus = {
+		id = NAV_hired_help
+		icon = GFX_goal_generic_slave_collars
+		cost = 45
+		x = 3
+		y = 1
+		relative_position_id = NAV_happiness_servitude
+		prerequisite = {
+			focus = NAV_happiness_servitude
+		}
+		completion_reward = {
+			# increase_slavery = yes
+			# set_temp_variable = {
+			# 	slaves_to_add = 0.90
+			# }
+			# add_slaves_to_nation = yes
+			91 = {
+				set_temp_variable = {
+					pop_add = 800
+				}
+				add_state_population = yes
+			}
+			269 = {
+				set_temp_variable = {
+					pop_add = 900
+				}
+				add_state_population = yes
+			}
+			add_political_power = 75
+			custom_effect_tooltip = NAV_happiness_servitude_tt
+			add_to_variable = { NAV_loyalty = 1 }
+		}
+	}
+	focus = {
+		id = NAV_market_economy
+		icon = GFX_goal_CES_denarius
+		cost = 45
+		x = -1
+		y = 1
+		relative_position_id = NAV_hired_help
+		prerequisite = {
+			focus = NAV_uranium_mines
+			focus = NAV_hired_help
+		}
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					is_valid_state_for_2_civilian_factories = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = NAV_happiness_servitude_tt
+			add_to_variable = { NAV_loyalty = 1 }
+		}
+	}
+	focus = {
+		id = NAV_arms_shipments
+		icon = GFX_goal_CES_blacksmith
+		cost = 45
+		x = 1
+		y = 1
+		relative_position_id = NAV_hired_help
+		prerequisite = {
+			focus = NAV_uranium_mines
+			focus = NAV_hired_help
+		}
+		completion_reward = {
+			add_offsite_building = { type = arms_factory  level = 2 }
+			custom_effect_tooltip = NAV_happiness_servitude_tt
+			add_to_variable = { NAV_loyalty = 1 }
+		}
+	}
+	focus = {
+		id = NAV_heavy_artillery
+		icon = GFX_goal_CES_heavy_gun
+		cost = 45
+		x = 1
+		y = 1
+		relative_position_id = NAV_arms_shipments
+		prerequisite = {
+			focus = NAV_arms_shipments
+			focus = NAV_market_economy
+		}
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					is_valid_state_for_2_arms_factories = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = NAV_happiness_servitude_tt
+			add_to_variable = { NAV_loyalty = 1 }
+		}
+	}
+	focus = {
+		id = NAV_chinle
+		icon = GFX_goal_TTM_Water
+		cost = 45
+		x = 0
+		y = 1
+		relative_position_id = NAV_heavy_artillery
+		prerequisite = {
+			focus = NAV_heavy_artillery
+		}
+		completion_reward = {
+			CES = {country_event = nf_navajo.10 }
+			custom_effect_tooltip = NAV_territory_tt
+		}
+	}
+	focus = {
+		id = NAV_legion_training
+		icon = GFX_goal_CES_centurion
+		cost = 45
+		x = -1
+		y = 1
+		relative_position_id = NAV_arms_shipments
+		prerequisite = {
+			focus = NAV_arms_shipments
+			focus = NAV_market_economy
+		}
+		completion_reward = {
+			add_ideas = cultofmars_principes
+		}
+	}
+	focus = {
+		id = NAV_red_mesa
+		icon = GFX_goal_generic_canyon_focus
+		cost = 45
+		x = 0
+		y = 1
+		relative_position_id = NAV_legion_training
+		prerequisite = {
+			focus = NAV_legion_training
+		}
+		completion_reward = {
+			CES = {country_event = nf_navajo.11 }
+			custom_effect_tooltip = NAV_territory_tt
+		}
+	}
+	focus = {
+		id = NAV_true_friend
+		icon = GFX_goal_roman_helmet
+		cost = 45
+		x = 0
+		y = 1
+		relative_position_id = NAV_red_mesa
+		prerequisite = {
+			focus = NAV_red_mesa
+		}
+		prerequisite = {
+			focus = NAV_chinle
+		}
+		prerequisite = {
+			focus = nav_colorado
+		}
+		available = {
+			custom_trigger_tooltip = {
+				check_variable = { NAV_loyalty > NAV_resistance }
+				tooltip = ces_true_friend_tt
+			}
+			NOT = {
+				has_completed_focus = NAV_bust_the_armour_open
+				has_war_with = CES
+			}
+		}
+		completion_reward = {
+			CES = { country_event = nf_navajo.13 }
+			custom_effect_tooltip = NAV_territory_tt
+		}
+	}
+
+	focus = {
+		id = NAV_railroads
+		icon = GFX_goal_generic_train
+		cost = 45
+		x = -3
+		y = 1
+		relative_position_id = NAV_arms_shipments
+		prerequisite = {
+			focus = NAV_arms_shipments
+			focus = NAV_market_economy
+		}
+		completion_reward = {
+			random_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = nav_colorado
+		icon = GFX_goal_NCR_Riverbank
+		cost = 45
+		x = 0
+		y = 1
+		relative_position_id = NAV_railroads
+		prerequisite = {
+			focus = NAV_railroads
+		}
+		completion_reward = {
+			CES = { country_event = nf_navajo.12 }
+			custom_effect_tooltip = NAV_territory_tt
+		}
+	}
+
+	focus = {
+		id = NAV_research_university
+		icon = GFX_goal_generic_advanced_technology_focus
+		cost = 45
+		x = 0
+		y = 1
+		relative_position_id = NAV_sign_language
+		prerequisite = {
+			focus = NAV_sign_language
+		}
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = NAV_the_ladder
+		icon = GFX_goal_generic_books
+		cost = 45
+		x = 0
+		y = 1
+		relative_position_id = NAV_research_university
+		prerequisite = {
+			focus = NAV_research_university
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = agriculture_tech
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = tool_tech
+			}
+		}
+	}
+
+	focus = {
+		id = NAV_reservation_system
+		icon = GFX_goal_generic_ghouls_focus
+		cost = 45
+		x = 8
+		y = 1
+		relative_position_id = NAV_caesar_legion
+		prerequisite = { focus = NAV_caesar_legion }
+		completion_reward = {
+			news_event = nf_navajo.4
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 4
+				RES = {
+					OR = {
+						is_ai = no
+						has_completed_focus = resg_maintain_status
+						has_completed_focus = resg_navajo_compromise
+					}
+				}
+			}
+		}
+	}
+
+
+	focus = {
+		id = NAV_expand_demand
+		icon = GFX_goal_CES_slaves
+		cost = 45
+		x = 0
+		y = 1
+		relative_position_id = NAV_reservation_system
+		prerequisite = { focus = NAV_reservation_system }
+		completion_reward = {
+			RES = { news_event = nf_navajo.6 }
+			203 = {
+				add_resource = {
+					type = metal
+					amount = 10
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 4
+				RES = {
+					OR = {
+						is_ai = no
+						has_completed_focus = resg_maintain_status
+						has_completed_focus = resg_navajo_compromise
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = NAV_invsetigate_slaves
+		icon = GFX_goal_generic_mistress_of_mystery
+		cost = 45
+		x = 0
+		y = 1
+		relative_position_id = NAV_expand_demand
+		prerequisite = { focus = NAV_expand_demand }
+		completion_reward = {
+			army_experience = 25
+			news_event = nf_navajo.7
+		}
+		ai_will_do = {
+			base = 4
+			modifier = {
+				factor = 0
+				RES = {
+					is_ai = no	# Let the player make the choice about the ultimate direction of NAV diplomacy
+					NOT = {
+						has_completed_focus = resg_maintain_status
+						has_completed_focus = resg_navajo_compromise
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = NAV_navajo_no_ghouls
+		icon = GFX_goal_generic_freedom
+		cost = 45
+		x = -1
+		y = 1
+		relative_position_id = NAV_invsetigate_slaves
+		prerequisite = { focus = NAV_invsetigate_slaves }
+		mutually_exclusive = { focus = NAV_navajo_lets_make_a_deal }
+		available = {
+			RES = {
+				NOT = {
+					has_completed_focus = resg_navajo_compromise
+				}
+			}
+		}
+		bypass = {
+			RES = {
+				exists = no
+			}
+		}
+		will_lead_to_war_with = RES
+		completion_reward = {
+			RES = {
+				remove_ideas = oregon_cannibal_legion_slave_trade
+				leave_current_faction = yes
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+			declare_war_on = {
+				target = RES
+				type = annex_everything
+			}
+		}
+		ai_will_do = {
+			base = 4
+			modifier = {
+				factor = 0
+				RES = {
+					NOT = {
+						is_ai = yes
+						has_completed_focus = resg_maintain_status
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = NAV_the_fate_of_the_ghouls
+		icon = GFX_goal_generic_radaway
+		cost = 45
+		x = 0
+		y = 1
+		relative_position_id = NAV_navajo_no_ghouls
+		prerequisite = {focus = NAV_navajo_no_ghouls }
+		completion_reward = {
+			RES = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = NAV_navajo_lets_make_a_deal
+		icon = GFX_KHA_focus_slave_2
+		cost = 45
+		x = 1
+		y = 1
+		relative_position_id = NAV_invsetigate_slaves
+		prerequisite = { focus = NAV_invsetigate_slaves }
+		mutually_exclusive = { focus = NAV_navajo_no_ghouls }
+		completion_reward = {
+			set_temp_variable = { caps_to_add = 400 }
+			add_caps = yes
+			give_guarantee = RES
+			diplomatic_relation = {
+				country = RES
+				relation = guarantee
+				active = yes
+			}
+			RES = {
+				diplomatic_relation = {
+					country = NAV
+					relation = guarantee
+					active = yes
+				}
+			}
+
+		}
+		ai_will_do = {
+			base = 4
+			modifier = {
+				factor = 0
+				RES = {
+					NOT = {
+						is_ai = yes
+						has_completed_focus = resg_navajo_compromise
+					}
+				}
+			}
+		}
+	}
+
+
+	focus = {
+		id = NAV_profits_of_trade
+		icon = GFX_goal_generic_laser_rifle_2
+		cost = 45
+		x = 0
+		y = 1
+		relative_position_id = NAV_navajo_lets_make_a_deal
+		prerequisite = { focus = NAV_navajo_lets_make_a_deal }
+		completion_reward = {
+			set_technology = {
+				infantry_tech_level_scientific = 1
+			}
+		}
+	}
+	focus = {
+		id = NAV_tribals_vs_settlers
+		icon = GFX_goal_native_american_headdress
+		cost = 45
+		x = -8
+		y = 1
+		relative_position_id = NAV_caesar_legion
+		prerequisite  = {
+			focus = NAV_caesar_legion
+		}
+		completion_reward = {
+			hidden_effect = {
+				add_opinion_modifier = { target = UIN modifier = first_peoples }
+				add_opinion_modifier = { target = SHO modifier = first_peoples }
+				add_opinion_modifier = { target = YAK modifier = first_peoples }
+				add_opinion_modifier = { target = HAI modifier = first_peoples }
+				add_opinion_modifier = { target = SYN modifier = first_peoples }
+				add_opinion_modifier = { target = CHO modifier = first_peoples }
+				add_opinion_modifier = { target = CHR modifier = first_peoples }
+				add_opinion_modifier = { target = CMC modifier = first_peoples }
+				add_opinion_modifier = { target = NIT modifier = first_peoples }
+				add_opinion_modifier = { target = NUN modifier = first_peoples }
+				add_opinion_modifier = { target = STR modifier = first_peoples }
+				add_opinion_modifier = { target = LAP modifier = first_peoples }
+				reverse_add_opinion_modifier = { target = UIN modifier = first_peoples }
+				reverse_add_opinion_modifier = { target = SHO modifier = first_peoples }
+				reverse_add_opinion_modifier = { target = YAK modifier = first_peoples }
+				reverse_add_opinion_modifier = { target = HAI modifier = first_peoples }
+				reverse_add_opinion_modifier = { target = SYN modifier = first_peoples }
+				reverse_add_opinion_modifier = { target = CHO modifier = first_peoples }
+				reverse_add_opinion_modifier = { target = CHR modifier = first_peoples }
+				reverse_add_opinion_modifier = { target = CMC modifier = first_peoples }
+				reverse_add_opinion_modifier = { target = NIT modifier = first_peoples }
+				reverse_add_opinion_modifier = { target = NUN modifier = first_peoples }
+				reverse_add_opinion_modifier = { target = STR modifier = first_peoples }
+				reverse_add_opinion_modifier = { target = LAP modifier = first_peoples }
+			}
+			custom_effect_tooltip = NAV_tribals_vs_settlers_tt
+			add_political_power = 75
+		}
+	}
+
+	focus = {
+		id = NAV_ute_trade
+		icon = GFX_goal_uin_flag
+		cost = 45
+		x = 0
+		y = 1
+		relative_position_id = NAV_tribals_vs_settlers
+		prerequisite = { focus = NAV_tribals_vs_settlers }
+		completion_reward = {
+			set_temp_variable = { caps_to_add = 300 }
+			add_caps = yes
+		}
+	}
+	focus = {
+		id = NAV_shoshone
+		icon = GFX_goal_VLT_shoshone_core
+		cost = 45
+		x = 0
+		y = 1
+		relative_position_id = NAV_ute_trade
+		prerequisite = { focus = NAV_ute_trade }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = air_tech_category
+			}
+		}
+	}
+	focus = {
+		id = NAV_indian_outlaw
+		icon = GFX_goal_generic_tomahawk_2
+		cost = 45
+		x = -1
+		y = 1
+		relative_position_id = NAV_shoshone
+		prerequisite = { focus = NAV_shoshone }
+		mutually_exclusive = {focus = NAV_yakama }
+		completion_reward = {
+			set_temp_variable = { caps_to_add = 300 }
+			add_caps = yes
+		}
+	}
+
+	focus = {
+		id = NAV_yakama
+		icon = GFX_goal_generic_freedom
+		cost = 45
+		x = 1
+		y = 1
+		available = { YAK = { exists = no } }
+		relative_position_id = NAV_shoshone
+		prerequisite = { focus = NAV_shoshone }
+		mutually_exclusive = {focus = NAV_indian_outlaw }
+		completion_reward = {
+			add_ideas = yak_refugees
+		}
+	}
+
+
+	focus = {
+		id = NAV_dinetah_1
+		icon = GFX_goal_NAV_default
+		cost = 45
+		x = -2
+		y = 3
+		relative_position_id = NAV_railroads
+		prerequisite = {
+			focus = NAV_bust_the_armour_open
+			focus = NAV_true_friend
+		}
+		available = {
+			NOT = { is_subject_of = CES }
+		}
+
+		completion_reward = {
+			set_cosmetic_tag = NAV_dinetah
+			203 = {
+				hidden_effect = {
+					set_temp_variable = { new_node_target = THIS.id }
+					set_temp_variable = { new_node_economic_development = 0.25 }
+					add_to_temp_array = { new_node_trade_array = 554 }	# Twin Mothers
+					add_to_temp_array = { new_node_trade_array = 551 }	# New Canaan
+					add_to_temp_array = { new_node_trade_array = 520 }	# Flagstaff
+					add_to_temp_array = { new_node_trade_array = 5 }	# Castra Sol Rubrum
+					set_temp_variable = { set_main_node_flag = 1 }
+				}
+				create_map_node = yes
+				#setup_state_524 = yes
+			}
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = NAV_mesa_verde
+		icon = GFX_goal_sun_flag
+		cost = 45
+		x = 3
+		y = 0
+		relative_position_id = NAV_reservation_system
+		prerequisite = { focus = NAV_caesar_legion }
+		will_lead_to_war_with = PNT
+		bypass = {
+			PNT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			PNT = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = NAV_mesa_verde_2
+		icon = GFX_goal_generic_canyon_focus
+		cost = 45
+		x = 0
+		y = 1
+		relative_position_id = NAV_mesa_verde
+		prerequisite = {
+			focus = NAV_mesa_verde
+		}
+		available = {
+			owns_state = 636
+		}
+		will_lead_to_war_with = PNT
+		completion_reward = {
+			add_political_power = 300
+			add_ideas = {
+				nav_cipher_clan
+			}
+			NAV = {
+				transfer_state = 644
+			}
+			every_state = {
+				limit = {
+					is_core_of = PNT
+				}
+				add_core_of = ROOT
+			}
+		}
+	}
+
+	focus = {
+		id = NAV_handle_the_foragers
+		icon = GFX_goal_generic_workshop
+		cost = 45
+		x = 0
+		y = 1
+		relative_position_id = NAV_mesa_verde_2
+		prerequisite = { focus = NAV_mesa_verde_2 }
+		will_lead_to_war_with = FOR
+		bypass = {
+			FOR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			FOR = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = NAV_handle_the_foragers_2
+		icon = GFX_goal_generic_vault_tec_workshop
+		cost = 45
+		x = 0
+		y = 1
+		relative_position_id = NAV_handle_the_foragers
+		prerequisite = {
+			focus = NAV_handle_the_foragers
+		}
+		available = {
+			owns_state = 308
+			owns_state = 87
+			owns_state = 527
+		}
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_core_of = FOR
+				}
+				add_core_of = ROOT
+			}
+		}
+	}
+	focus = {
+		id = NAV_stop_the_train
+		icon = GFX_goal_generic_train
+		cost = 45
+		x = 0
+		y = 1
+		relative_position_id = NAV_handle_the_foragers_2
+		prerequisite = { focus = NAV_handle_the_foragers_2 }
+		will_lead_to_war_with = INR
+		bypass = {
+			INR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			INR = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = NAV_train_anywhere
+		icon = GFX_goal_generic_metal_focus
+		cost = 45
+		x = 0
+		y = 1
+		relative_position_id = NAV_stop_the_train
+		prerequisite = { focus = NAV_stop_the_train }
+		available = {
+			owns_state = 630
+			owns_state = 601
+		}
+		completion_reward = {
+			630 = {
+				add_resource = {
+					type = metal
+					amount = 10
+				}
+			}
+			601 = {
+				add_resource = {
+					type = water
+					amount = 10
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = INR
+				}
+				add_core_of = ROOT
+			}
+		}
+	}
+	focus = {
+		id = NAV_land_claim
+		icon = GFX_goal_tribal_generic
+		cost = 45
+		x = 0
+		y = 1
+		relative_position_id = NAV_train_anywhere
+		prerequisite = { focus = NAV_train_anywhere }
+		will_lead_to_war_with = CLJ
+		bypass = {
+			CLJ = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			CLJ = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = NAV_claim_jumped
+		icon = GFX_goal_SOK_rocket_launcher
+		cost = 45
+		x = 0
+		y = 1
+		relative_position_id = NAV_land_claim
+		prerequisite = {
+			focus = NAV_land_claim
+		}
+		available = {
+			owns_state = 228
+			owns_state = 515
+		}
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment_2
+				amount = 400
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = explosive_demolitions_equipment_3
+				amount = 1000
+				producer = USA
+			}
+			every_state = {
+				limit = {
+					is_core_of = CLJ
+				}
+				add_core_of = ROOT
+			}
+		}
+	}
+}

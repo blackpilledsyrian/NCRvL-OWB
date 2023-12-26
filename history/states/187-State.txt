@@ -1,0 +1,23 @@
+state = {
+	id = 187
+	name = "STATE_187"
+	manpower = 2000
+	state_category = rural
+
+	history = {
+		owner = SKY
+		add_core_of = SKY
+		victory_points = {
+			3443 5
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+
+		}
+	}
+
+	provinces = {
+		291 3363 3365 3443 3446 4429 8444 8884 8868
+	}
+}

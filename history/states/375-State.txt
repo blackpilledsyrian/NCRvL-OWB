@@ -1,0 +1,26 @@
+state = {
+	id = 375
+	name = "STATE_375"
+	manpower = 975
+	state_category = rural
+
+	resources = {
+		metal = 2
+		circuitry = 1
+	}
+
+	history = {
+		owner = EHT
+		add_core_of = EHT
+		victory_points = {
+			3313 10 #Maybe it has its own infrastructural and religious value, but it doesn't deserve 10VP, @McGebe
+		}
+		buildings = {
+			infrastructure = 10
+		}
+	}
+
+	provinces = {
+		3313 3458 3459
+	}
+}

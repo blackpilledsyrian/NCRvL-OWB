@@ -1,0 +1,29 @@
+state = {
+	id = 739
+	name = "STATE_739"
+	resources={
+		water = 4
+		metal = 4
+	}
+
+	history={
+		buildings = {
+			infrastructure = 4
+			arms_factory = 4
+			#industrial_complex = 1
+			dockyard = 1
+
+		}
+		victory_points = {
+			731 20
+		}
+
+	}
+
+	provinces={
+		731 2234 9379 9381 9389 9522 11015 11022 11027 11040 11048
+	}
+	manpower=37000
+	buildings_max_level_factor=1.000
+	state_category=large_city
+}

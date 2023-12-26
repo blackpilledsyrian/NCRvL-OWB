@@ -1,0 +1,17 @@
+state={
+	id=1042
+	name="STATE_1042"
+
+	history={
+		buildings = {
+			infrastructure = 1
+		}
+	}
+
+	provinces={
+		12519 12514 12515 12510 12509 12516 12524
+	}
+	manpower = 592
+	state_category = rural
+	buildings_max_level_factor=1.000
+}

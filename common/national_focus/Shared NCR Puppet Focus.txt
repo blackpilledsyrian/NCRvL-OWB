@@ -1,0 +1,2578 @@
+
+	shared_focus = {
+		id = ncr_puppet_bear_victorious
+		icon = GFX_goal_generic_ideological_fury_focus
+		allow_branch = {
+			NOT = {
+			original_tag = BJS
+			}
+		}
+		cost = 7
+		x = 30
+		y = 1
+		completion_reward = {
+			country_event = {
+				id = po_puppet_focus_events.1
+			}
+		}
+	}
+	shared_focus = {
+		id = ncr_puppet_capital_siege
+		icon = GFX_goal_NCR_Pokersiege
+		cost = 7
+		prerequisite = {
+			focus = ncr_puppet_bear_victorious
+		}
+		x = 0
+		y = 1
+		relative_position_id = ncr_puppet_bear_victorious
+		completion_reward = {
+			country_event = {
+				id = po_puppet_focus_events.2
+			}
+		}
+	}
+	shared_focus = {
+		id = ncr_puppet_ncrta
+		icon = GFX_goal_generic_NCR_diplomatic_focus
+		cost = 7
+		prerequisite = {
+			focus = ncr_puppet_capital_siege
+		}
+		x = 0
+		y = 1
+		relative_position_id = ncr_puppet_capital_siege
+
+		completion_reward = {
+			country_event = {
+				id = po_puppet_focus_events.3
+			}
+		}
+	}
+
+	#Extra Political Goodies
+	shared_focus = {
+		id = ncr_puppet_stability_buff
+		icon = GFX_goal_pal_vault_city
+		cost = 45
+		prerequisite = {
+			focus = ncr_puppet_ncrta
+		}
+		x = -1
+		y = 2
+		relative_position_id = ncr_puppet_ncrta
+
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.15
+		}
+	}
+	shared_focus = {
+		id = ncr_puppet_war_support_buff
+		icon = GFX_goal_generic_automatron_splash
+		cost = 45
+		prerequisite = {
+			focus = ncr_puppet_ncrta
+		}
+		x = 1
+		y = 2
+		relative_position_id = ncr_puppet_ncrta
+
+		completion_reward = {
+			add_manpower = 500
+			add_war_support = 0.10
+		}
+	}
+
+	#Leadership Type Changes
+
+	shared_focus = { #Military (Ruler) Control
+		id = NCR_puppet_military_rule
+		icon = GFX_goal_NCR_Protege
+		cost = 45
+		prerequisite = {
+			focus = ncr_puppet_ncrta
+			focus = BJS_fate_of_pancho_villa
+		}
+		mutually_exclusive = {
+			focus = NCR_puppet_territorial_administration_leadership
+			focus = NCR_puppet_expeditionary_control
+			focus = NCR_puppet_baron_expansion
+		}
+		ai_will_do = {
+			factor = 25
+			modifier = {
+				factor = 100
+				OR = {
+					original_tag = BOS
+					original_tag = MRA
+					original_tag = SKY
+					original_tag = RAP
+
+				}
+			}
+		}
+		x = -5
+		y = 1
+		relative_position_id = ncr_puppet_ncrta
+
+		completion_reward = {
+				create_country_leader = {
+					name = "NCR Military Government"
+					desc = "ncr_puppet_military_leader_desc"
+					picture = "gfx/leaders/puppets/ncr_puppet_ruler_leader.dds"
+					expire = "3000.1.1"
+					ideology = military_government
+					traits = { po_loyal_puppet }
+				}
+
+			set_politics = {
+				ruling_party = ruler
+				elections_allowed =  no
+			}
+
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.25
+			}
+
+		}
+	}
+
+	shared_focus = {
+		id = ncr_puppet_ncr_draft
+		icon = GFX_goal_NCR_Military_March
+		cost = 45
+		prerequisite = {
+			focus = NCR_puppet_military_rule
+		}
+		available = {}
+		ai_will_do = {
+			factor = 75
+		}
+		x = 0
+		y = 1
+		relative_position_id = NCR_puppet_military_rule
+		completion_reward = {
+			add_ideas = ncr_puppet_idea_ncr_draft
+		}
+	}
+
+	shared_focus = { #Expeditionary (Intellectuals) Control
+		id = NCR_puppet_expeditionary_control
+		icon = GFX_goal_ally_NCR
+		cost = 45
+		prerequisite = {
+			focus = ncr_puppet_ncrta
+			focus = BJS_fate_of_pancho_villa
+		}
+		mutually_exclusive = {
+			focus = NCR_puppet_military_rule
+			focus = NCR_puppet_territorial_administration_leadership
+			focus = NCR_puppet_baron_expansion
+		}
+		ai_will_do = {
+			factor = 25
+			modifier = {
+				factor = 100
+				OR = {
+					original_tag = MOS
+					original_tag = BAG
+
+				}
+			}
+		}
+		x = -3
+		y = 1
+		relative_position_id = ncr_puppet_ncrta
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_character = MOS_ulysses
+				}
+				promote_character = MOS_ulysses
+			}
+			else_if = {
+				limit = {
+					has_character = BAG_goddard
+				}
+				promote_character = BAG_goddard
+			}
+			else_if = {
+				create_country_leader = {
+					name = "NCR Expeditionary Government"
+					desc = "ncr_puppet_expeditionary_leader_desc"
+					picture = "gfx/leaders/puppets/ncr_puppet_intellectuals_leader.dds"
+					expire = "3000.1.1"
+					ideology = technocracy
+					traits = { po_loyal_puppet }
+				}
+			}
+			set_politics = {
+				ruling_party = intellectuals
+				elections_allowed =  no
+			}
+
+			add_popularity = {
+				ideology = intellectuals
+				popularity = 0.25
+			}
+
+		}
+	}
+
+	shared_focus = {
+		id = NCR_puppet_scavenging_the_battlefield
+		icon = GFX_goal_generic_cart
+		cost = 45
+		prerequisite = {
+			focus = NCR_puppet_expeditionary_control
+		}
+		x = 0
+		y = 1
+		relative_position_id = NCR_puppet_expeditionary_control
+		ai_will_do = {
+			factor = 75
+		}
+		completion_reward = {
+			add_ideas = ncr_puppet_scavenger
+			random_owned_controlled_state = {
+				add_resource = {
+					type = metal
+					amount = 6
+				}
+					add_resource = {
+					type = water
+					amount = 6
+				}
+			}
+
+			random_list = {
+				25 = {
+					add_equipment_to_stockpile = {
+						type = ballistic_equipment_1
+						amount = 500
+						producer = USA
+					}
+				}
+				25 = {
+					add_equipment_to_stockpile = {
+						type = ballistic_equipment_2
+						amount = 250
+						producer = USA
+					}
+					add_equipment_to_stockpile = {
+						type = support_equipment
+						amount = 250
+						producer = NCR
+					}
+				}
+				25 = {
+					add_equipment_to_stockpile = {
+						type = ballistic_equipment_3
+						amount = 125
+						producer = USA
+					}
+					add_equipment_to_stockpile = {
+						type = support_equipment
+						amount = 375
+						producer = NCR
+					}
+				}
+				25 = {
+					add_equipment_to_stockpile = {
+						type = ballistic_equipment_4
+						amount = 75
+						producer = USA
+					}
+					add_equipment_to_stockpile = {
+						type = support_equipment
+						amount = 425
+						producer = NCR
+					}
+				}
+			}
+		}
+	}
+
+	shared_focus = { #Territorial (People) Control
+		id = NCR_puppet_territorial_administration_leadership
+		icon = GFX_goal_NCR_Council_Hill
+		cost = 45
+		prerequisite = {
+			focus = ncr_puppet_ncrta
+			focus = BJS_fate_of_pancho_villa
+
+		}
+		mutually_exclusive = {
+			focus = NCR_puppet_military_rule
+			focus = NCR_puppet_expeditionary_control
+			focus = NCR_puppet_baron_expansion
+		}
+		x = 3
+		y = 1
+		ai_will_do = {
+			factor = 25
+			modifier = {
+				factor = 100
+				OR = {
+					original_tag = ARR
+					original_tag = SHI
+					original_tag = NEW
+					original_tag = FOR
+					original_tag = UMB
+				}
+			}
+		}
+		relative_position_id = ncr_puppet_ncrta
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_character = FOR_porter
+				}
+				promote_character = FOR_porter
+			}
+			else_if = {
+				limit = {
+					has_character = NEW_mr_bishop
+				}
+				promote_character = NEW_mr_bishop
+			}
+			else_if = {
+				limit = {
+					has_character = SHI_dr._sheng
+				}
+				promote_character = SHI_dr._sheng
+			}
+			else_if = {
+				limit = {
+					has_character = RAP_shayna_wellby
+				}
+				promote_character = RAP_shayna_wellby
+			}
+			else_if = {
+				limit = {
+					has_character = EDA_director_cole
+				}
+				promote_character = EDA_director_cole
+			}
+			add_popularity = {
+				ideology = people
+				popularity = 0.25
+			}
+
+			add_ideas = ncr_puppet_idea_expanded_admin_authority
+
+		}
+	}
+
+	shared_focus = {
+		id = NCR_puppet_propaganda_posters
+		icon = GFX_goal_lac_ncr
+		cost = 45
+		prerequisite = {
+			focus = NCR_puppet_territorial_administration_leadership
+		}
+		x = 0
+		y = 1
+		relative_position_id = NCR_puppet_territorial_administration_leadership
+		ai_will_do = {
+			factor = 75
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ncr_puppet_idea_expanded_admin_authority
+				add_idea = ncr_puppet_idea_propaganda_posters
+			}
+		}
+	}
+
+	shared_focus = { #Baron (Elite) Control
+		id = NCR_puppet_baron_expansion
+		icon = GFX_goal_NCR_Baron
+		cost = 45
+		prerequisite = {
+			focus = ncr_puppet_ncrta
+			focus = BJS_fate_of_pancho_villa
+
+		}
+		mutually_exclusive = {
+			focus = NCR_puppet_military_rule
+			focus = NCR_puppet_expeditionary_control
+			focus = NCR_puppet_territorial_administration_leadership
+		}
+		ai_will_do = {
+			factor = 25
+			modifier = {
+				factor = 100
+				OR = {
+					original_tag = PEC
+					original_tag = RBD
+					original_tag = BAR
+				}
+			}
+		}
+		x = 5
+		y = 1
+		relative_position_id = ncr_puppet_ncrta
+
+		completion_reward = {
+			create_country_leader = {
+				name = "NCR Barons"
+				desc = "ncr_puppet_baron_leader_desc"
+				picture = "gfx/leaders/puppets/ncr_puppet_elites_leader.dds"
+				expire = "3000.1.1"
+				ideology = conspiratory_oligarchy
+				traits = { po_loyal_puppet }
+			}
+			set_politics = {
+				ruling_party = elites
+				elections_allowed =  no
+			}
+
+			add_popularity = {
+				ideology = elites
+				popularity = 0.25
+			}
+
+		}
+	}
+
+	shared_focus = {
+		id = NCR_puppet_new_farms
+		icon = GFX_goal_NCR_Brahminbill
+		cost = 45
+		prerequisite = {
+			focus = NCR_puppet_baron_expansion
+		}
+		x = 0
+		y = 1
+		relative_position_id = NCR_puppet_baron_expansion
+		ai_will_do = {
+			factor = 75
+		}
+		completion_reward = {
+			add_ideas = ncr_puppet_idea_new_farms
+		}
+	}
+
+	#Raider Leadership Tree
+	shared_focus = {
+		id = ncr_puppet_subduing_warchiefs
+		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
+		cost = 45
+		prerequisite = {
+			focus = NCR_puppet_propaganda_posters
+			focus = NCR_puppet_new_farms
+			focus = NCR_puppet_scavenging_the_battlefield
+			focus = ncr_puppet_ncr_draft
+
+		}
+		mutually_exclusive = {
+			focus = ncr_puppet_tribal_talks
+			focus = ncr_puppet_community_leaders
+		}
+		allow_branch = {
+			OR = {
+				is_raider_nation = yes
+				original_tag = BVC
+			}
+		}
+		available = {
+		}
+		ai_will_do = {
+			factor = 75
+		}
+		x = 0
+		y = 3
+		relative_position_id = ncr_puppet_ncrta
+
+		completion_reward = {
+			add_ideas = ncr_puppet_idea_raider
+		}
+	}
+	shared_focus = {
+		id = ncr_puppet_taking_skulls_off_sticks
+		icon = GFX_goal_generic_secret_weapon
+		cost = 45
+		prerequisite = {
+			focus = ncr_puppet_subduing_warchiefs
+		}
+		available = {}
+		x = 0
+		y = 1
+		relative_position_id = ncr_puppet_subduing_warchiefs
+
+		completion_reward = {
+			add_war_support = -0.05
+			add_stability = 0.1
+		}
+	}
+	shared_focus = {
+		id = ncr_puppet_freeing_slaves
+		icon = GFX_goal_generic_recruitment_focus
+		cost = 45
+		prerequisite = {
+			focus = ncr_puppet_taking_skulls_off_sticks
+		}
+		available = {}
+		x = 0
+		y = 1
+		relative_position_id = ncr_puppet_taking_skulls_off_sticks
+		ai_will_do = {
+			factor = 75
+		}
+		completion_reward = {
+			add_manpower = 1000
+		}
+	}
+	#Tribal Leadership Tree
+	shared_focus = {
+		id = ncr_puppet_tribal_talks
+		icon = GFX_goal_generic_improve_relations
+		cost = 45
+		prerequisite = {
+			focus = NCR_puppet_propaganda_posters
+			focus = NCR_puppet_new_farms
+			focus = NCR_puppet_scavenging_the_battlefield
+			focus = ncr_puppet_ncr_draft
+
+		}
+		available = {
+		}
+		allow_branch = {
+			is_tribal_nation = yes
+			NOT = {
+				original_tag = UMB
+			}
+		}
+		mutually_exclusive = {
+			focus = ncr_puppet_community_leaders
+			focus = ncr_puppet_subduing_warchiefs
+		}
+		x = 0
+		y = 3
+		relative_position_id = ncr_puppet_ncrta
+		ai_will_do = {
+			factor = 75
+		}
+		completion_reward = {
+			add_ideas = ncr_puppet_idea_tribal
+		}
+	}
+	shared_focus = {
+		id = ncr_puppet_introduce_modernity
+		icon = GFX_goal_generic_construction
+		cost = 45
+		prerequisite = {
+			focus = ncr_puppet_tribal_talks
+		}
+		available = {}
+		x = 0
+		y = 1
+		relative_position_id = ncr_puppet_tribal_talks
+		ai_will_do = {
+			factor = 75
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ncr_puppet_idea_tribal
+				add_idea = ncr_puppet_idea_tribal_1
+			}
+		}
+	}
+	shared_focus = {
+		id = ncr_puppet_dispelling_myths
+		icon = GFX_focus_research
+		cost = 45
+		prerequisite = {
+			focus = ncr_puppet_introduce_modernity
+		}
+		available = {}
+		x = 0
+		y = 1
+		relative_position_id = ncr_puppet_introduce_modernity
+		ai_will_do = {
+			factor = 75
+		}
+		completion_reward = {
+			add_ideas = ncr_puppet_idea_tribal_2
+		}
+	}
+	#Settler Leadership Tree
+	shared_focus = {
+		id = ncr_puppet_community_leaders
+		icon = GFX_goal_generic_improve_relations
+		cost = 45
+		prerequisite = {
+			focus = NCR_puppet_propaganda_posters
+			focus = NCR_puppet_new_farms
+			focus = NCR_puppet_scavenging_the_battlefield
+			focus = ncr_puppet_ncr_draft
+
+		}
+		mutually_exclusive = {
+			focus = ncr_puppet_tribal_talks
+			focus = ncr_puppet_subduing_warchiefs
+		}
+		available = {
+		}
+		allow_branch = {
+			OR = {
+				is_settler_nation = yes
+				is_brotherhood_nation = yes
+				original_tag = DES
+			}
+
+		}
+		x = 0
+		y = 3
+		relative_position_id = ncr_puppet_ncrta
+		ai_will_do = {
+			factor = 75
+		}
+		completion_reward = {
+			add_ideas = ncr_puppet_idea_settler
+		}
+	}
+	shared_focus = {
+		id = ncr_puppet_introduce_law
+		icon = GFX_focus_generic_self_management
+		cost = 45
+		prerequisite = {
+			focus = ncr_puppet_community_leaders
+		}
+		available = {}
+		x = 0
+		y = 1
+		relative_position_id = ncr_puppet_community_leaders
+		ai_will_do = {
+			factor = 75
+		}
+		completion_reward = {
+			add_stability = 0.15
+		}
+	}
+	shared_focus = {
+		id = ncr_puppet_taxes_for_infrastructure
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 45
+		prerequisite = {
+			focus = ncr_puppet_introduce_law
+		}
+		available = {}
+		x = 0
+		y = 1
+		relative_position_id = ncr_puppet_introduce_law
+		ai_will_do = {
+			factor = 75
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+
+	#Universal Focus for Tree Continuation
+	shared_focus = {
+		id = ncr_puppet_ncr_state
+		icon = GFX_goal_NCR_Allisgood
+		cost = 45
+		prerequisite = {
+			focus = ncr_puppet_taxes_for_infrastructure
+			focus = ncr_puppet_dispelling_myths
+			focus = ncr_puppet_freeing_slaves
+
+		}
+		available = {}
+		x = 0
+		y = 1
+		relative_position_id = ncr_puppet_taxes_for_infrastructure
+		ai_will_do = {
+			factor = 75
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					can_use_autonomy_system = yes
+				}
+				add_political_power = 150
+				add_autonomy_ratio = {
+					value = 0.5
+					localization = po_autonomy_loc
+				}
+			}
+			if = {
+				limit = {
+					can_use_autonomy_system = no
+				}
+				add_political_power = 150
+			}
+		}
+	}
+
+	#Shared Industrial Focus's
+	shared_focus = {
+		id = NCR_shared_industrial_start_focus
+		icon = GFX_goal_generic_wagon
+		cost = 45
+		x = 19
+		y = 4
+		offset = {
+			x = -4
+				trigger = {
+					original_tag = RAP
+				}
+			}
+        available = {
+            if = {
+				limit = {
+					original_tag = MXT
+				}
+				has_completed_focus = mxt_stabilisation
+			}
+            else = {
+                has_completed_focus = ncr_puppet_ncr_state
+            }
+        }
+        completion_reward = {
+            add_tech_bonus = {
+                name = industrial_bonus
+                bonus = 0.25
+                uses = 2
+                category = construction_category
+            }
+        }
+    }
+    shared_focus = {
+        id = NCR_shared_industrial_new_slots
+        icon = GFX_goal_generic_megaloader
+        cost = 45
+        prerequisite = {
+            focus = NCR_shared_industrial_start_focus
+        }
+        x = 0
+        y = 1
+        relative_position_id = NCR_shared_industrial_start_focus
+        completion_reward = {
+            set_temp_variable = { caps_to_add = -25 }
+            add_caps = yes
+            NCR = {
+                set_temp_variable = { caps_to_add = 25 }
+                add_caps = yes
+            }
+            every_owned_state = {
+                add_extra_state_shared_building_slots = 1
+            }
+        }
+    }
+    shared_focus = {
+        id = NCR_shared_industrial_scavenging_1
+        icon = GFX_goal_generic_cart
+        cost = 45
+        prerequisite = {
+            focus = NCR_shared_industrial_new_slots
+        }
+        x = -2
+        y = 1
+        relative_position_id = NCR_shared_industrial_new_slots
+        completion_reward = {
+            random_owned_controlled_state = {
+                add_resource = {
+                    type = metal
+                    amount = 4
+                }
+                add_resource = {
+                    type = water
+                    amount = 4
+                }
+            }
+        }
+    }
+
+	shared_focus = {
+		id = NCR_shared_industrial_scavenging_2
+		icon = GFX_goal_generic_scrap_rubber
+		cost = 45
+		prerequisite = {
+			focus = NCR_shared_industrial_scavenging_1
+		}
+		x = 0
+		y = 1
+		relative_position_id = NCR_shared_industrial_scavenging_1
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_resource = {
+					type = energy
+					amount = 4
+				}
+				add_resource = {
+					type = composites
+					amount = 4
+				}
+			}
+		}
+	}
+
+	shared_focus = {
+		id = NCR_shared_industrial_scavenging_3
+		icon = GFX_goal_generic_extractor
+		cost = 45
+		prerequisite = {
+			focus = NCR_shared_industrial_scavenging_2
+		}
+		x = 0
+		y = 1
+		relative_position_id = NCR_shared_industrial_scavenging_2
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_resource = {
+					type = circuitry
+					amount = 4
+				}
+				add_resource = {
+					type = advanced
+					amount = 4
+				}
+			}
+		}
+	}
+
+	shared_focus = {
+		id = NCR_shared_industrial_civ_1
+		icon = GFX_goal_generic_drill
+		cost = 45
+		prerequisite = {
+			focus = NCR_shared_industrial_new_slots
+		}
+		x = 0
+		y = 1
+		relative_position_id = NCR_shared_industrial_new_slots
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_valid_state_for_civilian_factory = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 1
+				category = industry
+			}
+		}
+	}
+
+
+	shared_focus = {
+		id = NCR_shared_industrial_civ_2
+		icon = GFX_goal_NCR_Industrialcomplex
+		cost = 45
+		prerequisite = {
+			focus = NCR_shared_industrial_civ_1
+		}
+		x = 0
+		y = 1
+		relative_position_id = NCR_shared_industrial_civ_1
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_valid_state_for_2_arms_factories = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	shared_focus = {
+		id = NCR_shared_industrial_civ_3
+		icon = GFX_goal_PLS_Work_For_Cause
+		cost = 45
+		prerequisite = {
+			focus = NCR_shared_industrial_civ_2
+		}
+		x = 0
+		y = 1
+		relative_position_id = NCR_shared_industrial_civ_2
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 1
+				category = industry
+			}
+		}
+	}
+
+	shared_focus = {
+		id = NCR_shared_industrial_mil_1
+		icon = GFX_goal_generic_pistol_9mm
+		cost = 45
+		prerequisite = {
+			focus = NCR_shared_industrial_new_slots
+		}
+		x = 2
+		y = 1
+		relative_position_id = NCR_shared_industrial_new_slots
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_valid_state_for_arms_factory = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_equipment_to_stockpile = {
+				type = ballistic_equipment_1
+				amount = 250
+				producer = NCR
+			}
+		}
+	}
+
+	shared_focus = {
+		id = NCR_shared_industrial_mil_2
+		icon = GFX_goal_generic_pistol_10mm
+		cost = 45
+		prerequisite = {
+			focus = NCR_shared_industrial_mil_1
+		}
+		x = 0
+		y = 1
+		relative_position_id = NCR_shared_industrial_mil_1
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_valid_state_for_2_arms_factories = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	shared_focus = {
+		id = NCR_shared_industrial_mil_3
+		icon = GFX_goal_generic_rifle_1
+		cost = 45
+		prerequisite = {
+			focus = NCR_shared_industrial_mil_2
+		}
+		x = 0
+		y = 1
+		relative_position_id = NCR_shared_industrial_mil_2
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_valid_state_for_2_arms_factories = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_equipment_to_stockpile = {
+				type = ballistic_equipment_1
+				amount = 250
+				producer = NCR
+			}
+		}
+	}
+
+	shared_focus = {
+		id = NCR_shared_industry_boost
+		icon = GFX_goal_generic_tinker_workbench
+		cost = 45
+		prerequisite = {
+			focus = NCR_shared_industrial_scavenging_3
+		}
+		prerequisite = {
+			focus = NCR_shared_industrial_civ_3
+		}
+		x = -1
+		y = 1
+		relative_position_id = NCR_shared_industrial_civ_3
+		completion_reward = {
+			add_tech_bonus = {
+				category = industry
+				bonus = 0.4
+				uses = 2
+			}
+		}
+	}
+
+	shared_focus = {
+		id = NCR_shared_engineering_boost
+		icon = GFX_goal_generic_wrench
+		cost = 45
+		prerequisite = {
+			focus = NCR_shared_industrial_scavenging_3
+		}
+		prerequisite = {
+			focus = NCR_shared_industrial_mil_3
+		}
+		x = 1
+		y = 1
+		relative_position_id = NCR_shared_industrial_civ_3
+		completion_reward = {
+			add_tech_bonus = {
+				category = electronics
+				bonus = 0.4
+				uses = 2
+			}
+		}
+	}
+
+	shared_focus = {
+		id = NCR_shared_final_scavenge
+		icon = GFX_goal_generic_industrial_truck
+		cost = 45
+		prerequisite = {
+			focus = NCR_shared_industry_boost
+			focus = NCR_shared_engineering_boost
+		}
+		mutually_exclusive = {
+			focus = NCR_shared_final_civ
+			focus = NCR_shared_final_mil
+			focus = NCR_shared_final_naval
+		}
+		x = -2
+		y = 1
+		relative_position_id = NCR_shared_industry_boost
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_valid_state_for_arms_factory = yes
+				}
+				add_resource = {
+					type = metal
+					amount = 6
+				}
+				add_resource = {
+					type = water
+					amount = 6
+				}
+				add_resource = {
+					type = energy
+					amount = 6
+				}
+				add_resource = {
+					type = composites
+					amount = 6
+				}
+				add_resource = {
+					type = circuitry
+					amount = 6
+				}
+				add_resource = {
+					type = advanced
+					amount = 6
+				}
+			}
+		}
+	}
+
+	shared_focus = {
+		id = NCR_shared_final_civ
+		icon = GFX_goal_NCR_Industry1
+		cost = 45
+		prerequisite = {
+			focus = NCR_shared_industry_boost
+			focus = NCR_shared_engineering_boost
+		}
+		mutually_exclusive = {
+
+			focus = NCR_shared_final_mil
+			focus = NCR_shared_final_naval
+			focus = NCR_shared_final_scavenge
+		}
+		x = 0
+		y = 1
+		relative_position_id = NCR_shared_industry_boost
+		completion_reward = {
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	shared_focus = {
+		id = NCR_shared_final_mil
+		icon = GFX_goal_PLS_Soldier_Coffee
+		cost = 45
+		prerequisite = {
+			focus = NCR_shared_industry_boost
+			focus = NCR_shared_engineering_boost
+		}
+		mutually_exclusive = {
+			focus = NCR_shared_final_civ
+			focus = NCR_shared_final_scavenge
+			focus = NCR_shared_final_naval
+		}
+		x = 2
+		y = 1
+		relative_position_id = NCR_shared_industry_boost
+		completion_reward = {
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	shared_focus = {
+		id = NCR_shared_final_naval
+		icon = GFX_goal_PLS_Ship
+		cost = 45
+		available = {
+			any_controlled_state = {
+				is_owned_by = ROOT
+				is_coastal = yes
+			}
+		}
+		prerequisite = {
+			focus = NCR_shared_industry_boost
+			focus = NCR_shared_engineering_boost
+		}
+		mutually_exclusive = {
+			focus = NCR_shared_final_civ
+			focus = NCR_shared_final_mil
+			focus = NCR_shared_final_scavenge
+		}
+		x = 4
+		y = 1
+		relative_position_id = NCR_shared_industry_boost
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					is_coastal = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					is_coastal = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	#NCR Military Shared Tree
+	shared_focus = {
+		id = NCR_shared_military_start_focus
+		icon = GFX_goal_army_mobilize
+		cost = 45
+		x = 42
+		y = 4
+		available = {
+			if = {
+				limit = {
+					original_tag = MXT
+				}
+				has_completed_focus = mxt_stabilisation
+			}
+            else = {
+                has_completed_focus = ncr_puppet_ncr_state
+            }
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = cat_land_doctrine
+			}
+			add_offsite_building = {
+				type = arms_factory
+				level = 1
+			}
+		}
+	}
+	shared_focus = {
+		id = NCR_shared_military_recruitment_1
+		icon = GFX_goal_NCR_Army_Big_Jim_Draft
+		cost = 45
+		prerequisite = {
+			focus = NCR_shared_military_start_focus
+		}
+		x = -3
+		y = 1
+		relative_position_id = NCR_shared_military_start_focus
+		completion_reward = {
+			add_ideas = ncr_shared_recruitable_boost_1
+		}
+	}
+
+	shared_focus = {
+		id = NCR_shared_military_recruitment_2
+		icon = GFX_goal_NCR_Army_Big_Jim_March
+		cost = 45
+		prerequisite = {
+			focus = NCR_shared_military_recruitment_1
+		}
+		x = 0
+		y = 1
+		relative_position_id = NCR_shared_military_recruitment_1
+		completion_reward = {
+			add_manpower = 750
+			add_war_support = 0.075
+
+		}
+	}
+	shared_focus = {
+		id = NCR_shared_military_recruitment_3
+		icon = GFX_goal_NCR_Army_Big_Jim_Combined
+		cost = 45
+		prerequisite = {
+			focus = NCR_shared_military_recruitment_2
+		}
+		x = 0
+		y = 1
+		relative_position_id = NCR_shared_military_recruitment_2
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ncr_shared_recruitable_boost_1
+				add_idea = ncr_shared_recruitable_boost_2
+			}
+
+		}
+	}
+
+	shared_focus = {
+		id = NCR_shared_military_weapons_1
+		icon = GFX_goal_NCR_Weapons
+		cost = 45
+		prerequisite = {
+			focus = NCR_shared_military_start_focus
+		}
+		x = 3
+		y = 1
+		relative_position_id = NCR_shared_military_start_focus
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = ballistic_equipment_1
+				amount = 1000
+				producer = NCR
+			}
+
+		}
+	}
+
+	shared_focus = {
+		id = NCR_shared_military_weapons_2
+		icon = GFX_goal_NCR_Standard_Weapons
+		cost = 45
+		prerequisite = {
+			focus = NCR_shared_military_weapons_1
+		}
+		x = 0
+		y = 1
+		relative_position_id = NCR_shared_military_weapons_1
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = ballistic_equipment_2
+				amount = 750
+				producer = USA
+			}
+		}
+	}
+	shared_focus = {
+		id = NCR_shared_military_weapons_3
+		icon = GFX_goal_NCR_Moore_Guns
+		cost = 45
+		prerequisite = {
+			focus = NCR_shared_military_weapons_2
+		}
+		x = 0
+		y = 1
+		relative_position_id = NCR_shared_military_weapons_2
+		completion_reward = {
+			set_temp_variable = { caps_to_add = -100 }
+			add_caps = yes
+			add_equipment_to_stockpile = {
+				type = ballistic_equipment_3
+				amount = 500
+				producer = USA
+			}
+		}
+	}
+
+	shared_focus = {
+		id = NCR_shared_police_force_1
+		icon = GFX_goal_NCR_Militia
+		cost = 45
+		prerequisite = {
+			focus = NCR_shared_military_start_focus
+		}
+		mutually_exclusive = {
+			focus = NCR_shared_rangers_1
+		}
+		x = -1
+		y = 1
+		relative_position_id = NCR_shared_military_start_focus
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.35
+				uses = 2
+				category = enforcer_tech_category
+			}
+
+		}
+	}
+
+	shared_focus = {
+		id = NCR_shared_police_force_2
+		icon = GFX_goal_NCR_Barons_Jim_Sheriffs
+		cost = 45
+		prerequisite = {
+			focus = NCR_shared_police_force_1
+		}
+		x = 0
+		y = 1
+		relative_position_id = NCR_shared_police_force_1
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = heavy_infantry_equipment_1
+				amount = 1000
+				producer = USA
+			}
+		}
+	}
+	shared_focus = {
+		id = NCR_shared_police_force_3
+		icon = GFX_goal_NCR_Moore_Police
+		cost = 45
+		prerequisite = {
+			focus = NCR_shared_police_force_2
+		}
+		x = 0
+		y = 1
+		relative_position_id = NCR_shared_police_force_2
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = heavy_infantry_equipment_2
+				amount = 400
+				producer = USA
+			}
+		}
+	}
+
+	shared_focus = {
+		id = NCR_shared_rangers_1
+		icon = GFX_goal_NCR_Generic_Rangers
+		cost = 45
+		prerequisite = {
+			focus = NCR_shared_military_start_focus
+		}
+		mutually_exclusive = {
+			focus = NCR_shared_police_force_1
+		}
+		x = 1
+		y = 1
+		relative_position_id = NCR_shared_military_start_focus
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.35
+				uses = 2
+				category = spec_force_equipment_tech_category
+			}
+		}
+	}
+
+	shared_focus = {
+		id = NCR_shared_rangers_2
+		icon = GFX_goal_NCR_Golden_Ranger
+		cost = 45
+		prerequisite = {
+			focus = NCR_shared_rangers_1
+		}
+		x = 0
+		y = 1
+		relative_position_id = NCR_shared_rangers_1
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = spec_ops_equipment_2
+				amount = 500
+				producer = USA
+			}
+		}
+	}
+	shared_focus = {
+		id = NCR_shared_rangers_3
+		icon = GFX_goal_NCR_Ranger_Flag
+		cost = 45
+		prerequisite = {
+			focus = NCR_shared_rangers_2
+		}
+		x = 0
+		y = 1
+		relative_position_id = NCR_shared_rangers_2
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = spec_ops_equipment_3
+				amount = 500
+				producer = USA
+			}
+		}
+	}
+
+	shared_focus = {
+		id = NCR_shared_gun_runner_outpost
+		icon = GFX_goal_NCR_Army_Weapon_Gun_Runners
+		cost = 45
+		prerequisite = {
+			focus = NCR_shared_police_force_3
+			focus = NCR_shared_military_weapons_3
+			focus = NCR_shared_military_recruitment_3
+			focus = NCR_shared_rangers_3
+
+		}
+		x = 1
+		y = 1
+		relative_position_id = NCR_shared_military_recruitment_3
+		completion_reward = {
+			add_offsite_building = {
+				type = arms_factory
+				level = 2
+			}
+
+		}
+	}
+
+	shared_focus = {
+		id = NCR_shared_fortifying_capital
+		icon = GFX_goal_NCR_Sentry
+		cost = 45
+		prerequisite = {
+			focus = NCR_shared_police_force_3
+			focus = NCR_shared_military_weapons_3
+			focus = NCR_shared_military_recruitment_3
+		}
+		x = 3
+		y = 1
+		relative_position_id = NCR_shared_police_force_3
+		completion_reward = {
+			capital_scope = {
+				add_building_construction = {
+					type = bunker2
+					level = 1
+					instant_build = yes
+					province = {
+						limit_to_victory_point = yes
+					}
+				}
+				add_building_construction = {
+					type = bunker2
+					level = 1
+					instant_build = yes
+					province = {
+						all_provinces = yes
+					}
+				}
+			}
+		}
+	}
+
+	shared_focus = {
+		id = NCR_shared_raising_a_garrison
+		icon = GFX_goal_NCR_GI
+		cost = 45
+		prerequisite = {
+			focus = NCR_shared_fortifying_capital
+			focus = NCR_shared_gun_runner_outpost
+		}
+		x = -2
+		y = 1
+		relative_position_id = NCR_shared_fortifying_capital
+		completion_reward = {
+			division_template = {
+				name = "NCR Garrison"
+				template_counter = 147
+				division_names_group = _NCR_INF_01
+
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 2 y = 1 }
+				}
+				}
+				capital_scope = {
+					create_unit = {
+						division = "name = \"NCR Garrison\" division_template = \"NCR Garrison\" start_experience_factor = 0.5 start_equipment_factor = 1"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"NCR Garrison\" division_template = \"NCR Garrison\" start_experience_factor = 0.5 start_equipment_factor = 1"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"NCR Garrison\" division_template = \"NCR Garrison\" start_experience_factor = 0.5 start_equipment_factor = 1"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"NCR Garrison\" division_template = \"NCR Garrison\" start_experience_factor = 0.5 start_equipment_factor = 1"
+						owner = ROOT
+					}
+				}
+			}
+		}
+
+
+
+	#Military Rule Continued
+	shared_focus = {
+		id = NCR_puppet_new_trooper_standards
+		icon = GFX_goal_NCR_Standards
+		cost = 45
+		prerequisite = {
+			focus = ncr_puppet_ncr_draft
+		}
+		x = 0
+		y = 1
+		relative_position_id = ncr_puppet_ncr_draft
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ncr_puppet_idea_ncr_draft
+				add_idea = ncr_puppet_idea_ncr_draft_1
+				}
+			}
+		}
+
+		shared_focus = {
+		id = NCR_puppet_pacification
+		icon = GFX_goal_NCR_Milcenters
+		cost = 45
+		prerequisite = {
+			focus = NCR_puppet_new_trooper_standards
+		}
+		x = -1
+		y = 1
+		relative_position_id = NCR_puppet_new_trooper_standards
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ncr_puppet_idea_ncr_draft_1
+				add_idea = ncr_puppet_idea_ncr_draft_2
+			}
+			set_technology = {
+				heavy_infantry_tech_1 = 1
+			}
+			add_equipment_to_stockpile = {
+				type = heavy_infantry_equipment_1
+				amount = 600
+				producer = USA
+			}
+			division_template = {
+				name = "NCR Military Police"
+				regiments = {
+					heavy_infantry = { x = 0 y = 0 }
+					heavy_infantry = { x = 0 y = 1 }
+					heavy_infantry = { x = 0 y = 2 }
+					heavy_infantry = { x = 1 y = 0 }
+					heavy_infantry = { x = 1 y = 1 }
+					heavy_infantry = { x = 1 y = 2 }
+					heavy_infantry = { x = 2 y = 0 }
+					heavy_infantry = { x = 2 y = 1 }
+					heavy_infantry = { x = 2 y = 2 }
+
+				}
+			}
+
+			capital_scope = {
+				create_unit = {
+					division = "name = \"Military Police\" division_template = \"NCR Military Police\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"Military Police\" division_template = \"NCR Military Police\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"Military Police\" division_template = \"NCR Military Police\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"Military Police\" division_template = \"NCR Military Police\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"Military Police\" division_template = \"NCR Military Police\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = ROOT
+				}
+			}
+
+
+		}
+	}
+
+	#Intellectual Rule Continued
+	shared_focus = {
+		id = NCR_puppet_working_with_locals
+		icon = GFX_goal_NCR_Politicalbandito
+		cost = 45
+		prerequisite = {
+			focus = NCR_puppet_scavenging_the_battlefield
+		}
+		x = 0
+		y = 1
+		relative_position_id = NCR_puppet_scavenging_the_battlefield
+		completion_reward = {
+			every_owned_state = {
+				add_extra_state_shared_building_slots = 2
+			}
+			add_manpower = -300
+			}
+		}
+
+	shared_focus = {
+		id = NCR_puppet_increasing_taxes
+		icon = GFX_goal_NCR_Rationing
+		cost = 45
+		prerequisite = {
+			focus = NCR_puppet_working_with_locals
+		}
+		x = -1
+		y = 1
+		relative_position_id = NCR_puppet_working_with_locals
+		completion_reward = {
+			add_ideas = ncr_puppet_taxation
+
+			NCR = {
+				add_timed_idea = {
+					idea = ncr_puppet_scavenger_ncr
+					days = 365
+				}
+			}
+		}
+	}
+
+	#Administration Rule Continued
+	shared_focus = {
+		id = NCR_puppet_bringing_in_followers
+		icon = GFX_goal_TTM_Followers_Flag
+		cost = 45
+		prerequisite = {
+			focus = NCR_puppet_propaganda_posters
+		}
+		x = 0
+		y = 1
+		relative_position_id = NCR_puppet_propaganda_posters
+		completion_reward = {
+			add_ideas = ncr_puppet_follower_support
+			}
+		}
+
+	shared_focus = {
+		id = NCR_puppet_closer_to_california
+		icon = GFX_goal_NCR_Bears_Roar
+		cost = 45
+		prerequisite = {
+			focus = NCR_puppet_bringing_in_followers
+		}
+		x = 1
+		y = 1
+		relative_position_id = NCR_puppet_bringing_in_followers
+		completion_reward = {
+			add_political_power = 100
+			add_popularity = {
+				ideology = people
+				popularity = 0.25
+			}
+				if = {
+					limit = {
+						can_use_autonomy_system = yes
+					}
+					add_autonomy_ratio = {
+						value = -0.75
+						localization = po_autonomy_loc
+					}
+
+					add_equipment_to_stockpile = {
+						type = ballistic_equipment_1
+						amount = 400
+						producer = NCR
+					}
+					add_equipment_to_stockpile = {
+						type = support_equipment
+						amount = 400
+						producer = NCR
+					}
+					division_template = {
+						name = "NCR Expeditionary Force"
+						template_counter = 86
+						division_names_group = _NCR_INF_01
+
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+							infantry = { x = 2 y = 0 }
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+							infantry = { x = 1 y = 2 }
+							infantry = { x = 2 y = 1 }
+						}
+						support = {
+							recon_company = { x = 0 y = 0 }
+						}
+					}
+
+					capital_scope = {
+						create_unit = {
+							division = "name = \"NCR Expeditionaries\" division_template = \"NCR Expeditionary Force\" start_experience_factor = 0.5 start_equipment_factor = 1"
+							owner = ROOT
+						}
+						create_unit = {
+							division = "name = \"NCR Expeditionaries\" division_template = \"NCR Expeditionary Force\" start_experience_factor = 0.5 start_equipment_factor = 1"
+							owner = ROOT
+						}
+						create_unit = {
+							division = "name = \"NCR Expeditionaries\" division_template = \"NCR Expeditionary Force\" start_experience_factor = 0.5 start_equipment_factor = 1"
+							owner = ROOT
+						}
+						create_unit = {
+							division = "name = \"NCR Expeditionaries\" division_template = \"NCR Expeditionary Force\" start_experience_factor = 0.5 start_equipment_factor = 1"
+							owner = ROOT
+						}
+						create_unit = {
+							division = "name = \"NCR Expeditionaries\" division_template = \"NCR Expeditionary Force\" start_experience_factor = 0.5 start_equipment_factor = 1"
+							owner = ROOT
+						}
+					}
+
+				}
+				if = {
+					limit = {
+						can_use_autonomy_system = no
+					}
+					add_political_power = -150
+					add_equipment_to_stockpile = {
+						type = ballistic_equipment_1
+						amount = 400
+						producer = NCR
+					}
+					add_equipment_to_stockpile = {
+						type = support_equipment
+						amount = 400
+						producer = NCR
+					}
+					division_template = {
+						name = "NCR Expeditionary Force"
+						template_counter = 86
+						division_names_group = _NCR_INF_01
+
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+							infantry = { x = 2 y = 0 }
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+							infantry = { x = 1 y = 2 }
+							infantry = { x = 2 y = 1 }
+						}
+						support = {
+							recon_company = { x = 0 y = 0 }
+						}
+					}
+
+					NCR = {
+						add_political_power = 50
+				}
+			}
+		}
+	}
+
+	#Baron Rule Continued
+	shared_focus = {
+		id = NCR_puppet_new_quotas
+		icon = GFX_goal_cotton_2
+		cost = 45
+		prerequisite = {
+			focus = NCR_puppet_new_farms
+		}
+		x = 0
+		y = 1
+		relative_position_id = NCR_puppet_new_farms
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ncr_puppet_idea_new_farms
+				add_idea = ncr_puppet_idea_quotas
+				}
+			}
+		}
+
+	shared_focus = {
+		id = NCR_puppet_worker_encouragement
+		icon = GFX_goal_pal_exploit_countryside
+		cost = 45
+		prerequisite = {
+			focus = NCR_puppet_new_quotas
+		}
+		x = 1
+		y = 1
+		relative_position_id = NCR_puppet_new_quotas
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ncr_puppet_idea_quotas
+				add_idea = ncr_puppet_idea_encouragement
+			}
+		}
+	}
+
+	#Settler Tree Continued
+	shared_focus = {
+		id = ncr_puppet_settler_supporting_the_ncr
+		icon = GFX_goal_NCR_Weapon_Standardization
+		cost = 45
+		prerequisite = {
+			focus = ncr_puppet_ncr_state
+
+		}
+		available = {
+		}
+		allow_branch = {
+			OR = {
+				is_settler_nation = yes
+				is_brotherhood_nation = yes
+				original_tag = DES
+				original_tag = BVC
+			}
+
+		}
+		x = -1
+		y = 1
+		relative_position_id = ncr_puppet_ncr_state
+		completion_reward = {
+			add_political_power = -100
+
+			NCR = {
+				add_equipment_to_stockpile = {
+					type = ballistic_equipment_1
+					amount = 400
+					producer = NCR
+				}
+			}
+		}
+	}
+
+	shared_focus = {
+		id = ncr_puppet_settler_sending_recruits_to_the_ncr
+		icon = GFX_goal_pal_vc_benefits
+		cost = 45
+		prerequisite = {
+			focus = ncr_puppet_settler_supporting_the_ncr
+
+		}
+		available = {
+		}
+		x = 0
+		y = 1
+		relative_position_id = ncr_puppet_settler_supporting_the_ncr
+		completion_reward = {
+			add_political_power = -25
+			add_manpower = -500
+			NCR = {
+				add_manpower = 500
+				add_political_power = 25
+			}
+		}
+	}
+
+	shared_focus = {
+		id = ncr_puppet_settler_paying_our_dues
+		icon = GFX_goal_brahmin_cart
+		cost = 45
+		prerequisite = {
+			focus = ncr_puppet_settler_sending_recruits_to_the_ncr
+
+		}
+		available = {
+		}
+		x = 0
+		y = 1
+		relative_position_id = ncr_puppet_settler_sending_recruits_to_the_ncr
+		completion_reward = {
+			add_political_power = -50
+			NCR = {
+				set_temp_variable = { caps_to_add = 50 }
+				add_caps = yes
+			}
+		}
+	}
+
+	shared_focus = {
+		id = ncr_puppet_settler_expanding_production
+		icon = GFX_icon_two_car_circle
+		cost = 45
+		prerequisite = {
+			focus = ncr_puppet_ncr_state
+
+		}
+		available = {
+		}
+		allow_branch = {
+			OR = {
+				is_settler_nation = yes
+				is_brotherhood_nation = yes
+				original_tag = DES
+				original_tag = BVC
+			}
+
+		}
+		x = 1
+		y = 1
+		relative_position_id = ncr_puppet_ncr_state
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = {
+						has_tech = bike_tech_1
+					}
+				}
+				set_technology = {
+					bike_tech_1 = 1
+				}
+			}
+			add_ideas = ncr_puppet_idea_expanding_vehicle_production
+			add_equipment_to_stockpile = {
+				type = bike_equipment_1
+				amount = 300
+				producer = NCR
+			}
+		}
+	}
+
+	shared_focus = {
+		id = ncr_puppet_settler_gunrunner_facilities
+		icon = GFX_icon_two_combustion_engine
+		cost = 45
+		prerequisite = {
+			focus = ncr_puppet_settler_expanding_production
+
+		}
+		available = {
+		}
+		x = 0
+		y = 1
+		relative_position_id = ncr_puppet_settler_expanding_production
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_valid_state_for_2_arms_factories = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	shared_focus = {
+		id = ncr_puppet_settler_hiring_experts
+		icon = GFX_goal_original_highwayman
+		cost = 45
+		prerequisite = {
+			focus = ncr_puppet_settler_gunrunner_facilities
+
+		}
+		available = {
+		}
+		x = 0
+		y = 1
+		relative_position_id = ncr_puppet_settler_gunrunner_facilities
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ncr_puppet_idea_expanding_vehicle_production
+				add_idea = ncr_puppet_idea_highwaymen_experts
+			}
+		}
+	}
+	shared_focus = {
+		id = ncr_puppet_settler_raising_forces
+		icon = GFX_goal_pal_passage_for_80s
+		cost = 45
+		prerequisite = {
+			focus = ncr_puppet_settler_hiring_experts
+		}
+		prerequisite = {
+			focus = ncr_puppet_settler_paying_our_dues
+		}
+		available = {
+		}
+		allow_branch = {
+			OR = {
+				is_settler_nation = yes
+				is_brotherhood_nation = yes
+				original_tag = DES
+			}
+
+		}
+		x = 1
+		y = 1
+		relative_position_id = ncr_puppet_settler_paying_our_dues
+		completion_reward = {
+
+			add_equipment_to_stockpile = {
+				type = heavy_motorized_equipment_1
+				amount = 350
+				producer = USA
+			}
+
+
+			division_template = {
+
+				name = "NCR Motor-Runners"
+				template_counter= 102
+
+				regiments = {
+					motorized = {
+						x = 0
+						y = 0
+					}
+					motorized = {
+						x = 0
+						y = 1
+					}
+					motorized = {
+						x = 0
+						y = 2
+					}
+					motorized = {
+						x = 1
+						y = 0
+					}
+					motorized = {
+						x = 1
+						y = 1
+					}
+					motorized = {
+						x = 1
+						y = 2
+					}
+					motorized = {
+						x = 2
+						y = 2
+					}
+					motorized = {
+						x = 2
+						y = 1
+					}
+					motorized = {
+						x = 2
+						y = 0
+					}
+					motorized = {
+						x = 3
+						y = 0
+					}
+				}
+			}
+
+			capital_scope = {
+					create_unit = {
+						division = "name = \"NCR Riders\" division_template = \"NCR Motor-Runners\" start_experience_factor = 0.5 start_equipment_factor = 1"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"NCR Riders\" division_template = \"NCR Motor-Runners\" start_experience_factor = 0.5 start_equipment_factor = 1"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"NCR Riders\" division_template = \"NCR Motor-Runners\" start_experience_factor = 0.5 start_equipment_factor = 1"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"NCR Riders\" division_template = \"NCR Motor-Runners\" start_experience_factor = 0.5 start_equipment_factor = 1"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"NCR Riders\" division_template = \"NCR Motor-Runners\" start_experience_factor = 0.5 start_equipment_factor = 1"
+						owner = ROOT
+					}
+				}
+			}
+		}
+	#Tribal Tree Continued
+
+	shared_focus = {
+		id = ncr_puppet_tribal_sending_our_strongest
+		icon = GFX_goal_generic_nuka_break_bat
+		cost = 45
+		prerequisite = {
+			focus = ncr_puppet_ncr_state
+			focus = UMB_steady_integration
+
+		}
+		available = {
+		}
+		allow_branch = {
+			is_tribal_nation = yes
+		}
+		x = -1
+		y = 1
+		relative_position_id = ncr_puppet_ncr_state
+
+		completion_reward = {
+			add_manpower = -400
+			NCR = {
+				add_manpower = 400
+			}
+		}
+	}
+
+	shared_focus = {
+		id = ncr_puppet_tribal_new_training_regiments
+		icon = GFX_goal_generic_mexican_infantry
+		cost = 45
+		prerequisite = {
+			focus = ncr_puppet_tribal_sending_our_strongest
+
+		}
+		available = {
+		}
+		x = 0
+		y = 1
+		relative_position_id = ncr_puppet_tribal_sending_our_strongest
+
+		completion_reward = {
+			add_ideas = ncr_puppet_idea_training_regiments
+		}
+	}
+
+	shared_focus = {
+		id = ncr_puppet_tribal_getting_combat_experience
+		icon = GFX_goal_NCR_Mojave
+		cost = 45
+		prerequisite = {
+			focus = ncr_puppet_tribal_new_training_regiments
+
+		}
+		available = {
+		}
+		x = 0
+		y = 1
+		relative_position_id = ncr_puppet_tribal_new_training_regiments
+
+		completion_reward = {
+			swap_ideas = {
+				add_idea = ncr_puppet_idea_tribal_combat_experience
+				remove_idea = ncr_puppet_idea_training_regiments
+			}
+		}
+	}
+
+	shared_focus = {
+		id = ncr_puppet_tribal_improving_our_diets
+		icon = GFX_goal_food_various_vegetables
+		cost = 45
+		prerequisite = {
+			focus = ncr_puppet_ncr_state
+			focus = UMB_steady_integration
+
+		}
+		available = {
+		}
+		allow_branch = {
+			is_tribal_nation = yes
+		}
+		x = 1
+		y = 1
+		relative_position_id = ncr_puppet_ncr_state
+
+		completion_reward = {
+			add_ideas = ncr_puppet_idea_tribal_diet
+		}
+	}
+
+	shared_focus = {
+		id = ncr_puppet_tribal_trials_for_our_warriors
+		icon = GFX_goal_poseidon_poster
+		cost = 45
+		prerequisite = {
+			focus = ncr_puppet_tribal_improving_our_diets
+
+		}
+		available = {
+		}
+		x = 0
+		y = 1
+		relative_position_id = ncr_puppet_tribal_improving_our_diets
+
+		completion_reward = {
+			swap_ideas = {
+				add_idea = ncr_puppet_idea_tribal_trials
+				remove_idea = ncr_puppet_idea_tribal_diet
+			}
+		}
+	}
+
+	shared_focus = {
+		id = ncr_puppet_tribal_expanding_our_forces
+		icon = GFX_goal_ITZ_guns_and_glory
+		cost = 45
+		prerequisite = {
+			focus = ncr_puppet_tribal_trials_for_our_warriors
+
+		}
+		available = {
+		}
+		x = 0
+		y = 1
+		relative_position_id = ncr_puppet_tribal_trials_for_our_warriors
+
+		completion_reward = {
+			swap_ideas = {
+				add_idea = ncr_puppet_idea_tribal_expanding
+				remove_idea = ncr_puppet_idea_tribal_trials
+			}
+		}
+	}
+
+	shared_focus = {
+		id = ncr_puppet_tribal_a_tithe_to_california
+		icon = GFX_goal_generic_gulf_treaty
+		cost = 45
+		prerequisite = {
+			focus = ncr_puppet_tribal_getting_combat_experience
+		}
+
+		prerequisite = {
+			focus = ncr_puppet_tribal_expanding_our_forces
+		}
+		available = {
+			NOT = {
+				NCR = {
+						has_idea = ncr_puppet_tithe
+				}
+			}
+		}
+		allow_branch = {
+			is_tribal_nation = yes
+		}
+		x = -1
+		y = 1
+		relative_position_id = ncr_puppet_tribal_expanding_our_forces
+
+		completion_reward = {
+			NCR = {
+				add_timed_idea = {
+					idea = ncr_puppet_tithe
+					days = 365
+				}
+			}
+
+			add_timed_idea = {
+				idea = ncr_puppet_tithe_giver
+				days = 365
+			}
+		}
+	}
+
+	#Raider Tree Continued
+
+	shared_focus = {
+		id = ncr_puppet_raider_keep_up_the_assault
+		icon = GFX_goal_pal_pr_cyclops
+		cost = 45
+		prerequisite = {
+			focus = ncr_puppet_ncr_state
+
+		}
+		allow_branch = {
+			is_raider_nation = yes
+		}
+		available = {
+
+		}
+		x = -1
+		y = 1
+		relative_position_id = ncr_puppet_ncr_state
+
+		completion_reward = {
+			add_ideas = ncr_puppet_assault
+		}
+	}
+
+	shared_focus = {
+		id = ncr_puppet_raider_piercing_our_foes
+		icon = GFX_goal_pal_we_won
+		cost = 45
+		prerequisite = {
+			focus = ncr_puppet_raider_keep_up_the_assault
+
+		}
+		available = {
+		}
+		x = 0
+		y = 1
+		relative_position_id = ncr_puppet_raider_keep_up_the_assault
+
+		completion_reward = {
+			swap_ideas = {
+				add_idea = ncr_puppet_piercing
+				remove_idea = ncr_puppet_assault
+			}
+		}
+	}
+
+	shared_focus = {
+		id = ncr_puppet_raider_gains_from_shock_troops
+		icon = GFX_goal_pal_business_as_usual
+		cost = 45
+		prerequisite = {
+			focus = ncr_puppet_raider_piercing_our_foes
+
+		}
+		available = {
+		}
+		x = 0
+		y = 1
+		relative_position_id = ncr_puppet_raider_piercing_our_foes
+
+		completion_reward = {
+			swap_ideas = {
+				add_idea = ncr_puppet_shock
+				remove_idea = ncr_puppet_piercing
+			}
+		}
+	}
+
+	shared_focus = {
+		id = ncr_puppet_raider_bringing_in_ranger_trainers
+		icon = GFX_goal_NCR_Mossmans_Army
+		cost = 45
+		prerequisite = {
+			focus = ncr_puppet_ncr_state
+
+		}
+		allow_branch = {
+			is_raider_nation = yes
+		}
+		available = {
+		}
+		x = 1
+		y = 1
+		relative_position_id = ncr_puppet_ncr_state
+
+		completion_reward = {
+			add_ideas = ncr_puppet_raider_ranger_trainers
+		}
+	}
+
+	shared_focus = {
+		id = ncr_puppet_raider_discipline_and_honor
+		icon = GFX_goal_NCR_Oldworldmilitary
+		cost = 45
+		prerequisite = {
+			focus = ncr_puppet_raider_bringing_in_ranger_trainers
+
+		}
+		available = {
+		}
+		x = 0
+		y = 1
+		relative_position_id = ncr_puppet_raider_bringing_in_ranger_trainers
+
+		completion_reward = {
+			swap_ideas = {
+				add_idea = ncr_puppet_raider_discipline
+				remove_idea = ncr_puppet_raider_ranger_trainers
+			}
+		}
+	}
+
+	shared_focus = {
+		id = ncr_puppet_raider_duty_to_the_ncr
+		icon = GFX_goal_NCR_Petersonswar
+		cost = 45
+		prerequisite = {
+			focus = ncr_puppet_raider_discipline_and_honor
+
+		}
+		available = {
+		}
+		x = 0
+		y = 1
+		relative_position_id = ncr_puppet_raider_discipline_and_honor
+
+		completion_reward = {
+			swap_ideas = {
+				add_idea = ncr_puppet_raider_duty
+				remove_idea = ncr_puppet_raider_discipline
+			}
+		}
+	}
+
+	shared_focus = {
+		id = ncr_puppet_raider_establish_ranger_units
+		icon = GFX_goal_NCR_Buyout
+		cost = 45
+		prerequisite = {
+			focus = ncr_puppet_raider_gains_from_shock_troops
+		}
+
+		prerequisite = {
+			focus = ncr_puppet_raider_duty_to_the_ncr
+		}
+		allow_branch = {
+			is_raider_nation = yes
+		}
+		available = {
+			has_tech = spec_ops_equipment_tech_1
+
+		}
+		x = -1
+		y = 1
+		relative_position_id = ncr_puppet_raider_duty_to_the_ncr
+
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = spec_ops_equipment_1
+				amount = 625
+				producer = NCR
+			}
+			division_template = {
+				name = "Homegrown Rangers"
+				template_counter= 83
+				regiments = {
+					spec_ops = {
+						x = 0
+						y = 0
+					}
+					spec_ops = {
+						x = 0
+						y = 1
+					}
+					spec_ops = {
+						x = 0
+						y = 2
+					}
+					spec_ops = {
+						x = 1
+						y = 0
+					}
+					spec_ops = {
+						x = 1
+						y = 1
+					}
+				}
+			}
+
+
+			capital_scope = {
+				create_unit = {
+					division = "name = \"Homegrown Rangers\" division_template = \"Homegrown Rangers\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"Homegrown Rangers\" division_template = \"Homegrown Rangers\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"Homegrown Rangers\" division_template = \"Homegrown Rangers\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"Homegrown Rangers\" division_template = \"Homegrown Rangers\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"Homegrown Rangers\" division_template = \"Homegrown Rangers\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = ROOT
+				}
+			}
+		}
+	}
+
+		##Unique Shared Paths
+		#Den Military Path
+
+
+		#Eureka
+
+

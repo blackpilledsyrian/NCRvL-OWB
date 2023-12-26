@@ -1,0 +1,27 @@
+
+state={
+	id=1097
+	name="STATE_1097"
+	resources={
+		energy=4.000
+	}
+
+	history={
+		victory_points = {
+			13244 5
+		}
+		buildings = {
+			infrastructure = 3
+
+		}
+
+	}
+
+	provinces={
+		13243 13244 13245 13246 13248 13328 13332 13355 13362 13363 21075
+	}
+	manpower=3467
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
+}

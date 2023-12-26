@@ -1,0 +1,2940 @@
+ideas = {
+	hidden_ideas = {
+		legion_gr_reduce_pop = {
+			picture = generic_manpower_bonus
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				conscription_factor = -0.5
+			}
+		}
+	}
+	country = {
+		ces_victory_in_the_east = {
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = pre-war_industry
+			modifier = {
+				surrender_limit = 0.1
+				local_resources_factor = 0.1
+				min_export = -0.1
+				trade_opinion_factor = 0.1
+				monthly_population = 0.1
+				political_power_factor = 0.1
+				production_factory_max_efficiency_factor = 0.1
+				production_factory_start_efficiency_factor = 0.1
+				global_building_slots_factor = 0.1
+				industrial_capacity_dockyard = 0.1
+				industrial_capacity_factory = 0.1
+				industry_repair_factor = 0.1
+				research_speed_factor = 0.1
+			}
+		}
+		ces_tribute_to_hades = {
+			picture = rejection_of_automation
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				send_volunteer_size = 4
+			}
+		}
+		southern_friends = {
+			picture = rejection_of_automation
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				send_volunteer_size = 2
+			}
+		}
+		library = {
+			picture = rejection_of_automation
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.05
+				research_sharing_per_country_bonus_factor = 0.05
+			}
+		}
+		via_militaris = {
+			picture = rejection_of_automation
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				war_support_factor = -0.15
+				production_speed_infrastructure_factor = 0.1
+			}
+		}
+		via_militaris_2 = {
+			picture = rejection_of_automation
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_infrastructure_factor = 0.1
+				local_resources_factor = 0.1
+			}
+		}
+		via_militaris_3 = {
+			picture = rejection_of_automation
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				resistance_damage_to_garrison = -0.15
+				resistance_target = -0.05
+				production_speed_infrastructure_factor = 0.2
+				local_resources_factor = 0.1
+			}
+		}
+		manumissio = {
+			picture = rejection_of_automation
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_factory_start_efficiency_factor = -0.15
+				industrial_capacity_factory = -0.15
+				local_resources_factor = -0.15
+				war_support_factor = -0.15
+				stability_factor = -0.15
+			}
+		}
+		manumissio1 = {
+			picture = rejection_of_automation
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_factory_start_efficiency_factor = -0.15
+				local_resources_factor = -0.08
+				war_support_factor = -0.08
+				stability_factor = -0.15
+			}
+		}
+		manumissio2 = {
+			picture = rejection_of_automation
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_factory_start_efficiency_factor = -0.15
+				stability_factor = -0.15
+			}
+		}
+		manumissio3 = {
+			picture = rejection_of_automation
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_factory_start_efficiency_factor = -0.08
+				stability_factor = -0.08
+			}
+		}
+		manumissio4 = {
+			picture = rejection_of_automation
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_factory_start_efficiency_factor = 0.1
+				local_resources_factor = 0.1
+				political_power_factor = 0.1
+				war_support_factor = 0.1
+				stability_factor = 0.1
+				conscription_factor = -0.15
+				resistance_activity = -0.15
+			}
+		}
+		national_spirit_rejection_of_automation = {
+			picture = rejection_of_automation
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			research_bonus = {
+				robotics_tech_category = -0.6
+				energy_weaponry_tech_category = -0.6
+				power_armor_tech_category = -0.6
+				industry_specialisation_category = -0.2
+				electronics = -0.2
+			}
+		}
+		national_spirit_rejection_of_automation1 = {
+			picture = rejection_of_automation
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			research_bonus = {
+				robotics_tech_category = -0.6
+				energy_weaponry_tech_category = -0.6
+				industry_specialisation_category = -0.05
+				electronics = -0.05
+			}
+		}
+		national_spirit_rejection_of_automation2 = {
+			picture = rejection_of_automation
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			research_bonus = {
+				robotics_tech_category = -0.3
+				energy_weaponry_tech_category = -0.3
+				industry_specialisation_category = 0.05
+				electronics = 0.05
+			}
+		}
+		national_spirit_rejection_of_automation3 = {
+			picture = rejection_of_automation
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			research_bonus = {
+				robotics_tech_category = -0.05
+				energy_weaponry_tech_category = -0.05
+				industry_specialisation_category = 0.05
+				electronics = 0.05
+			}
+		}
+		legionary_state = {
+			picture = generic_scavenger
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				exodus_occupier_appeal = -0.25
+				local_resources_factor = -0.25
+				consumer_goods_expected_value = 0.1
+				conversion_cost_civ_to_mil_factor = -0.3
+				conversion_cost_mil_to_civ_factor = -0.3
+				production_speed_industrial_complex_factor = -0.3
+				production_speed_arms_factory_factor = -0.3
+			}
+		}
+		legionary_state1 = {
+			picture = generic_scavenger
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				exodus_occupier_appeal = -0.2
+				local_resources_factor = -0.1				#15
+				consumer_goods_expected_value = 0.05				#5
+				conversion_cost_civ_to_mil_factor = -0.2				#20
+				conversion_cost_mil_to_civ_factor = -0.2				#20
+				production_speed_industrial_complex_factor = -0.15				#20
+				production_speed_arms_factory_factor = -0.15				#20
+			}
+		}
+		legionary_state2 = {
+			picture = generic_scavenger
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				exodus_occupier_appeal = -0.15
+				local_resources_factor = -0.05				#15
+				consumer_goods_expected_value = 0.03				#3
+				conversion_cost_civ_to_mil_factor = -0.15				#20
+				conversion_cost_mil_to_civ_factor = -0.15				#20
+				production_speed_industrial_complex_factor = -0.05
+				production_speed_arms_factory_factor = -0.05
+			}
+		}
+		legionary_state3 = {
+			picture = generic_scavenger
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				exodus_occupier_appeal = -0.1
+				conversion_cost_civ_to_mil_factor = -0.1				#20
+				conversion_cost_mil_to_civ_factor = -0.1				#20
+				production_speed_industrial_complex_factor = 0.05				#20
+				production_speed_arms_factory_factor = 0.05				#20
+				consumer_goods_expected_value = 0.01
+			}
+		}
+		legionary_state4 = {
+			picture = caesars_legacy_2
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				exodus_occupier_appeal = -0.05
+				local_resources_factor = 0.05				#15
+				production_speed_industrial_complex_factor = 0.1				#20
+				production_speed_arms_factory_factor = 0.1				#20
+				consumer_goods_expected_value = -0.01
+			}
+		}
+		legionary_state5 = {
+			picture = caesars_legacy_2
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				monthly_population = 0.05
+				global_building_slots_factor = 0.1
+				local_resources_factor = 0.05				#15
+				production_speed_industrial_complex_factor = 0.1				#20
+				production_speed_arms_factory_factor = 0.1				#20
+				consumer_goods_expected_value = -0.03
+			}
+		}
+		legionary_state6 = {
+			picture = caesars_legacy_2
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				monthly_population = 0.1
+				global_building_slots_factor = 0.15
+				local_resources_factor = 0.1				#15
+				production_speed_industrial_complex_factor = 0.15				#20
+				production_speed_arms_factory_factor = 0.15				#20
+				consumer_goods_expected_value = -0.05
+			}
+		}
+		state_of_legion = {
+			picture = caesars_legacy_2
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_industrial_complex_factor = 0.1
+				global_building_slots_factor = 0.1
+				production_speed_arms_factory_factor = 0.1
+			}
+		}
+		ces_legionary_glory = {
+			picture = caesars_legacy_2
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_morale_factor = 0.05
+				army_org_factor = 0.05
+			}
+		}
+		ces_caesar_is_cool_idea = {
+			picture = caesars_legacy_2
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				justify_war_goal_time = -0.25
+			}
+		}
+		ces_primus_glory_idea = {
+			picture = caesars_legacy_2
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_morale_factor = 0.08
+				army_org_factor = 0.05
+			}
+		}
+		ces_legionary_inger_idea = {
+			picture = generic_medicine
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				conscription = 0.01
+				monthly_population = 0.1
+				experience_loss_factor = -0.1
+			}
+			research_bonus = {
+				support_tech_category = 0.1
+			}
+		}
+		ces_inger_funding_idea = {
+			picture = generic_medicine
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				conscription = 0.01
+				monthly_population = 0.1
+				experience_loss_factor = -0.1
+				modifier_army_sub_unit_medical_chem_company_max_org_factor = 0.3
+				modifier_army_sub_unit_motorized_medical_chem_company_max_org_factor = 0.3
+			}
+			research_bonus = {
+				support_tech_category = 0.1
+			}
+			equipment_bonus = {
+				support_equipment = {
+					build_cost_ic = -0.2
+					instant = yes
+				}
+			}
+		}
+		CES_moroni_horns_idea = {
+			picture = NCN_mormon_mission
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				monthly_population = 0.05
+				experience_loss_factor = -0.1
+			}
+			equipment_bonus = {
+				support_equipment = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+			}
+		}
+		CES_malpais_power_support = {
+			picture = generic_service_rifle
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				modifier_army_sub_unit_fireteam_support_attack_factor = 0.1
+				modifier_army_sub_unit_demolitions_support_attack_factor = 0.1
+				modifier_army_sub_unit_anti_tank_company_attack_factor = 0.1
+				modifier_army_sub_unit_fireteam_infantry_attack_factor = 0.05
+				modifier_army_sub_unit_fireteam_infantry_defence_factor = 0.05
+				modifier_army_sub_unit_demolitions_infantry_attack_factor = 0.05
+				modifier_army_sub_unit_demolitions_infantry_defence_factor = 0.05
+				modifier_army_sub_unit_anti_tank_infantry_attack_factor = 0.05
+				modifier_army_sub_unit_anti_tank_infantry_defence_factor = 0.05
+				army_org = 5
+			}
+			equipment_bonus = {
+				fireteam_equipment = {
+					reliability = 0.05
+					soft_attack = 0.05
+					hard_attack = 0.05
+					defense = 0.05
+					ap_attack = 0.05
+					breakthrough = 0.05
+					instant = yes
+				}
+				demolitions_equipment = {
+					reliability = 0.05
+					soft_attack = 0.05
+					hard_attack = 0.05
+					defense = 0.05
+					ap_attack = 0.05
+					breakthrough = 0.05
+					instant = yes
+				}
+				anti_tank_equipment = {
+					reliability = 0.05
+					soft_attack = 0.05
+					hard_attack = 0.05
+					defense = 0.05
+					ap_attack = 0.05
+					breakthrough = 0.05
+					instant = yes
+				}
+			}
+		}
+		CES_fire_fuel_idea = {
+			picture = generic_flamer
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				modifier_army_sub_unit_fireteam_support_attack_factor = 0.1
+				modifier_army_sub_unit_demolitions_support_attack_factor = 0.1
+				modifier_army_sub_unit_anti_tank_company_attack_factor = 0.1
+			}
+			equipment_bonus = {
+				fireteam_equipment = {
+					reliability = 0.05
+					soft_attack = 0.05
+					hard_attack = 0.05
+					defense = 0.05
+					ap_attack = 0.05
+					breakthrough = 0.05
+					instant = yes
+				}
+				demolitions_equipment = {
+					reliability = 0.05
+					soft_attack = 0.05
+					hard_attack = 0.05
+					defense = 0.05
+					ap_attack = 0.05
+					breakthrough = 0.05
+					instant = yes
+				}
+				anti_tank_equipment = {
+					reliability = 0.05
+					soft_attack = 0.05
+					hard_attack = 0.05
+					defense = 0.05
+					ap_attack = 0.05
+					breakthrough = 0.05
+					instant = yes
+				}
+			}
+		}
+		CES_legionary_support_idea = {
+			picture = generic_flamer
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				modifier_army_sub_unit_fireteam_support_attack_factor = 0.1
+				modifier_army_sub_unit_demolitions_support_attack_factor = 0.1
+				modifier_army_sub_unit_anti_tank_company_attack_factor = 0.1
+			}
+		}
+		ces_decanius_glory_idea = {
+			picture = KHA_khan_arena
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_morale_factor = 0.1
+				army_org_factor = 0.08
+				modifier_army_sub_unit_infantry_attack_factor = 0.08
+				modifier_army_sub_unit_infantry_defence_factor = 0.05
+				motorized_defence_factor = 0.08
+				motorized_attack_factor = 0.05
+			}
+		}
+		ces_auxiliaries_idea = {
+			picture = generic_raider_1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				non_core_manpower = 0.05
+				resistance_damage_to_garrison = -0.15
+			}
+		}
+		ces_auxiliaries_integration = {
+			picture = generic_raider_1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				non_core_manpower = 0.05
+				resistance_damage_to_garrison = -0.15
+				special_forces_attack_factor = 0.1
+				special_forces_defence_factor = 0.1
+			}
+		}
+		ces_lessons_haskhesh_idea = {
+			picture = generic_radio
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				non_core_manpower = 0.05
+				resistance_damage_to_garrison = -0.15
+				modifier_army_sub_unit_infantry_defence_factor = 0.04
+				modifier_army_sub_unit_infantry_attack_factor = 0.04
+				motorized_defence_factor = 0.04
+				motorized_attack_factor = 0.04
+				special_forces_attack_factor = 0.1
+				special_forces_defence_factor = 0.1
+				attrition = -0.1
+				supply_consumption_factor = -0.2
+			}
+		}
+		ces_auxiliary_supremacy_idea = {
+			picture = generic_backpack
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				non_core_manpower = 0.05
+				resistance_damage_to_garrison = -0.15
+				modifier_army_sub_unit_infantry_defence_factor = 0.05
+				modifier_army_sub_unit_infantry_attack_factor = 0.05
+				motorized_defence_factor = 0.05
+				motorized_attack_factor = 0.05
+				special_forces_attack_factor = 0.1
+				special_forces_defence_factor = 0.1
+				attrition = -0.1
+				supply_consumption_factor = -0.2
+				special_forces_min = 15 #special_forces_cap = 0.03
+			}
+		}
+		ces_frumentarii_guide_idea = {
+			picture = generic_mystery_serum
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				attrition = -0.05
+				modifier_army_sub_unit_infantry_speed_factor = 0.1
+				modifier_army_sub_unit_heavy_infantry_speed_factor = 0.1
+			}
+		}
+		ces_frumentarii_infiltrator_idea = {
+			picture = generic_caps
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				attrition = -0.05
+				modifier_army_sub_unit_infantry_speed_factor = 0.1
+				modifier_army_sub_unit_heavy_infantry_speed_factor = 0.1
+				initiative_factor = 0.15
+				recon_factor = 0.15
+			}
+		}
+		ces_frumentarii_drilmasters_idea = {
+			picture = vexillarius
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				attrition = -0.05
+				modifier_army_sub_unit_infantry_speed_factor = 0.1
+				modifier_army_sub_unit_heavy_infantry_speed_factor = 0.1
+				initiative_factor = 0.15
+				recon_factor = 0.15
+				training_time_army_factor = 0.1
+				experience_gain_army_factor = 0.05
+			}
+		}
+		ces_frumentarii_generals_idea = {
+			picture = vexillarius
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				attrition = -0.05
+				initiative_factor = 0.15
+				recon_factor = 0.15
+				training_time_army_factor = 0.1
+				experience_gain_army_factor = 0.05
+				planning_speed = 0.15
+				max_planning = 0.15
+				modifier_army_sub_unit_infantry_speed_factor = 0.1
+				modifier_army_sub_unit_heavy_infantry_speed_factor = 0.1
+			}
+		}
+		ces_centurion_glory_idea = {
+			picture = praetorians
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_morale_factor = 0.1
+				army_org_factor = 0.1
+				modifier_army_sub_unit_infantry_defence_factor = 0.1
+				modifier_army_sub_unit_infantry_attack_factor = 0.1
+				motorized_defence_factor = 0.1
+				motorized_attack_factor = 0.1
+				recon_factor = 0.1
+				planning_speed = 0.1
+			}
+		}
+		roman_citizens = {
+			picture = caesars_legacy_2
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.1
+				political_power_gain = 0.1
+				monthly_population = 0.1
+			}
+		}
+		roman_citizens2 = {
+			picture = caesars_legacy_2
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.2
+				war_support_factor = 0.1
+				political_power_gain = 0.1
+				monthly_population = 0.15
+			}
+		}
+		ces_tithes = {
+			picture = caps
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				caps_income_modifier = 0.2
+				local_resources_factor = 0.1
+				stability_factor = -0.1
+			}
+		}
+		ces_tithes1 = {
+			picture = caps
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				caps_income_modifier = 0.3
+				local_resources_factor = 0.2
+			}
+		}
+		ces_aequitas_idea = {
+			picture = generic_legion
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				compliance_gain = 0.03
+				resistance_growth = -0.05
+			}
+		}
+		ces_fortress_arizona = {
+			picture = generic_legion
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_anti_air_building_factor = 0.15
+				production_speed_bunker_factor = 0.1
+				production_speed_bunker2_factor = 0.1
+				resistance_damage_to_garrison = -0.1
+				conscription_factor = 0.05
+			}
+		}
+		ces_fortress_arizona1 = {
+			picture = generic_legion
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_anti_air_building_factor = 0.3
+				production_speed_bunker_factor = 0.15
+				production_speed_bunker2_factor = 0.15
+				resistance_damage_to_garrison = -0.15
+				conscription_factor = 0.1
+				caps_income_modifier = 0.1
+				army_defence_factor = 0.1
+				max_dig_in_factor = 0.1
+				dig_in_speed_factor = 0.1
+				max_dig_in = 2
+			}
+		}
+		cultofmars = {
+			picture = cult_of_mars
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.1
+				production_speed_arms_factory_factor = 0.1
+				conversion_cost_civ_to_mil_factor = -0.2
+				conscription_factor = -0.03
+				core_creation_cost_factor = -0.2
+				research_speed_factor = -0.1
+				experience_gain_army_factor = 0.2
+			}
+		}
+		cultofmars1 = {
+			picture = cult_of_mars
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.1
+				production_speed_arms_factory_factor = 0.1
+				conversion_cost_civ_to_mil_factor = 0.2
+				conscription_factor = -0.02
+				core_creation_cost_factor = -0.2
+				research_speed_factor = -0.05
+				experience_gain_army_factor = 0.2
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					build_cost_ic = -0.1
+				}
+			}
+		}
+		cultofmars2 = {
+			picture = cult_of_mars
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.1
+				production_speed_arms_factory_factor = 0.1
+				conversion_cost_civ_to_mil_factor = 0.2
+				core_creation_cost_factor = -0.2
+				experience_gain_army_factor = 0.2
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					build_cost_ic = -0.1
+				}
+				motorized_equipment = {
+					instant = yes
+					build_cost_ic = -0.1
+				}
+			}
+		}
+		cultofmars3 = {
+			picture = cult_of_mars
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.15
+				production_speed_arms_factory_factor = 0.1
+				conversion_cost_civ_to_mil_factor = 0.2
+				max_fuel_factor = 0.1
+				core_creation_cost_factor = -0.2
+				research_speed_factor = 0.025
+				experience_gain_army_factor = 0.2
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					build_cost_ic = -0.1
+				}
+				motorized_equipment = {
+					instant = yes
+					build_cost_ic = -0.1
+				}
+			}
+		}
+		cultofmars4 = {
+			picture = cult_of_mars
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.15
+				production_speed_arms_factory_factor = 0.15
+				conversion_cost_civ_to_mil_factor = 0.2
+				max_fuel_factor = 0.1
+				core_creation_cost_factor = -0.2
+				research_speed_factor = 0.05
+				experience_gain_army_factor = 0.2
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					build_cost_ic = -0.1
+				}
+				motorized_equipment = {
+					instant = yes
+					build_cost_ic = -0.1
+				}
+			}
+		}
+		frumentarii_advisors = {
+			picture = generic_legion
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				send_volunteer_divisions_required = -0.2
+				send_volunteer_size = 2
+			}
+		}
+		ces_desert_idea = {
+			picture = generic_legion
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				special_forces_attack_factor = 0.15
+				heat_attrition_factor = -0.2
+			}
+		}
+		ces_frumentarii_officers_idea = {
+			picture = generic_legion
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_morale_factor = 0.05
+			}
+		}
+		ces_tip_of_spear_idea = {
+			picture = centurions
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_morale_factor = 0.05
+				modifier_army_sub_unit_infantry_defence_factor = 0.05
+				modifier_army_sub_unit_heavy_infantry_defence_factor = 0.05
+			}
+		}
+		ces_vulpes_guard_idea = {
+			picture = vexillarius
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_morale_factor = 0.05
+				modifier_army_sub_unit_infantry_defence_factor = 0.05
+				modifier_army_sub_unit_heavy_infantry_defence_factor = 0.05
+				special_forces_min = 10 #special_forces_cap = 0.01
+				own_operative_detection_chance_factor = -0.25
+				operation_outcome = 0.1
+			}
+		}
+		CES_urban_legionaries_idea = {
+			picture = caesars_legacy_2
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				special_forces_min = 15 #special_forces_cap = 0.03
+				mobilization_speed = 0.2
+			}
+			equipment_bonus = {
+				demolitions_equipment = {
+					instant = yes
+					build_cost_ic = -0.1
+					soft_attack = 0.1
+					hard_attack = 0.1
+				}
+			}
+		}
+		CES_armories_gente_idea = {
+			picture = generic_box_1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					build_cost_ic = -0.1
+					soft_attack = 0.05
+					hard_attack = 0.05
+				}
+			}
+		}
+		ces_canis_latrans_idea = {
+			picture = shottol
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				special_forces_attack_factor = 0.15
+				heat_attrition_factor = -0.2
+				special_forces_defence_factor = 0.15
+				army_speed_factor = 0.1
+			}
+		}
+		# National Focus
+		legion_tribute_idea_navajo = {
+			picture = caps
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			targeted_modifier = {
+				tag = CES
+				cic_to_target_factor = 0.1
+			}
+			modifier = {
+				extra_trade_to_target_factor = 0.1
+			}
+		}
+		legion_tribute_idea_hopi = {
+			picture = caps
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			targeted_modifier = {
+				tag = CES
+				mic_to_target_factor = 0.1
+			}
+			modifier = {
+				extra_trade_to_target_factor = 0.1
+			}
+		}
+		two_speedway_toll = {
+			picture = cult_of_nas
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			targeted_modifier = {
+				tag = CES
+				cic_to_target_factor = 0.1
+			}
+			modifier = {
+				extra_trade_to_target_factor = 0.1
+			}
+		}
+		two_oval_tithe_idea = {
+			picture = cult_of_nas
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			#picture = shottol
+			modifier = {
+				extra_trade_to_target_factor = 0.1
+			}
+			targeted_modifier = {
+				tag = CES
+				mic_to_target_factor = 0.1
+			}
+		}
+		nav_pathfinders = {
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = cult_of_diana
+			modifier = {
+				special_forces_min = 20 #special_forces_cap = 0.04
+				heat_attrition_factor = -0.25
+			}
+		}
+		nav_pathfinders2 = {
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = cult_of_diana
+			modifier = {
+				special_forces_min = 40 #special_forces_cap = 0.1
+				heat_attrition_factor = -0.25
+				recon_factor = 0.2
+				modifier_army_sub_unit_spec_ops_speed_factor = 0.05
+			}
+		}
+		nav_pathfinders_encryption = {
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = cult_of_diana
+			modifier = {
+				special_forces_min = 40 #special_forces_cap = 0.1
+				heat_attrition_factor = -0.25
+				encryption_factor = 0.2
+			}
+		}
+		legion_training = {
+			picture = praetorians
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				special_forces_attack_factor = 0.05
+				special_forces_defence_factor = 0.05
+				special_forces_min = 20
+				experience_gain_army_unit_factor = 0.1
+				new_operative_slot_bonus = 1
+			}
+		}
+		legion_training_non_lar = {
+			picture = praetorians
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				special_forces_attack_factor = 0.05
+				special_forces_defence_factor = 0.05
+				special_forces_min = 20
+				experience_gain_army_unit_factor = 0.1
+				decryption_factor = 0.1
+			}
+		}
+		two_sun_cliens = {
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = cult_of_nas
+			equipment_bonus = {
+				motorized_equipment = {
+					breakthrough = 0.05
+					maximum_speed = 0.05
+					instant = yes
+				}
+				chariot_equipment = {
+					soft_attack = 0.05
+					maximum_speed = 0.05
+					instant = yes
+				}
+				tank_equipment = {
+					hard_attack = 0.05
+					maximum_speed = 0.05
+					instant = yes
+				}
+			}
+		}
+		two_sun_cliens2 = {
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = cult_of_nas
+			equipment_bonus = {
+				motorized_equipment = {
+					breakthrough = 0.05
+					maximum_speed = 0.1
+					defense = 0.05
+					instant = yes
+				}
+				chariot_equipment = {
+					soft_attack = 0.05
+					maximum_speed = 0.1
+					defense = 0.05
+					instant = yes
+				}
+				tank_equipment = {
+					hard_attack = 0.05
+					maximum_speed = 0.1
+					defense = 0.05
+					instant = yes
+				}
+			}
+		}
+		legion_chariots_of_gods = {
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = cult_of_nas
+			equipment_bonus = {
+				motorized_equipment = {
+					maximum_speed = 0.05
+					breakthrough = 0.05
+					instant = yes
+				}
+				chariot_equipment = {
+					soft_attack = 0.05
+					breakthrough = 0.05
+					instant = yes
+				}
+			}
+		}
+		ces_scribes_slaves = {
+			picture = generic_BOS_idea_scribes
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				research_speed_factor = 0.04
+			}
+		}
+		CES_code_talkers = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = generic_radio
+			modifier = {
+				encryption_factor = 0.2
+				crypto_strength = 1
+			}
+		}
+		legion_slave_trade = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = generic_radio
+			modifier = {
+				consumer_goods_expected_value = -0.05
+				political_power_gain = 0.25
+			}
+		}
+		legion_nf_numeri = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = generic_infantry_bonus
+			modifier = {
+				training_time_army_factor = -0.2
+			}
+		}
+		legion_nf_lay_of_the_land = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = generic_infantry_bonus
+			modifier = {
+				winter_attrition_factor = -0.1
+				heat_attrition_factor = -0.1
+				recon_factor = 0.05
+			}
+		}
+		legion_nf_legionary_grit = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = generic_legion
+			modifier = {
+				no_supply_grace = 48
+			}
+		}
+		legion_nf_praetorian = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = praetorians
+			modifier = {
+				max_planning = 0.08
+				planning_speed = 0.15
+				conscription_factor = -0.025
+			}
+		}
+		legion_nf_meritocracy = {
+			picture = legionary_unit_tactics
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_leader_start_level = 1
+				army_leader_start_attack_level = 1
+				army_leader_start_defense_level = 1
+				army_leader_start_logistics_level = 1
+			}
+		}
+		legion_nf_legionary_blacksmiths = {
+			picture = rejection_of_automation
+			removal_cost = -1
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.1
+			}
+		}
+		legion_nf_enslaved_scribes = {
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			picture = generic_research_bonus
+			modifier = {
+				research_speed_factor = 0.03
+			}
+		}
+		legion_nf_gladiator = {
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			picture = generic_legion
+			modifier = {
+				stability_factor = 0.05
+				war_support_factor = 0.025
+				attrition = -0.05
+			}
+		}
+		ces_new_generation_idea = {
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			picture = praetorians
+			modifier = {
+				military_leader_cost_factor = -0.25
+				training_time_army_factor = -0.15
+				production_speed_buildings_factor = 0.15
+				political_power_factor = 0.05
+			}
+		}
+		ces_biding_our_time_idea = {
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			picture = generic_legion
+			modifier = {
+				experience_gain_army_unit_factor = 0.1
+				consumer_goods_expected_value = -0.025
+				industrial_capacity_factory = 0.1
+			}
+			research_bonus = {
+				infantry_tech_category = 0.1
+				support_tech_category = 0.1
+			}
+		}
+		legion_nf_burned_man_rumours = {
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			picture = burned_man_rumours
+			modifier = {
+				army_org_factor = -0.1
+				max_planning = -0.2
+				stability_factor = -0.1
+				war_support_factor = -0.1
+			}
+		}
+		legion_nf_worthy_foe = {
+			picture = new_thesis
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				conscription_factor = 0.01
+			}
+		}
+		legion_nf_servus = {
+			picture = generic_manpower_bonus
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				conscription_factor = 0.025
+				consumer_goods_expected_value = 0.05
+			}
+		}
+		ces_infinite_armies = {
+			picture = generic_manpower_bonus
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				breakthrough_factor = 0.05
+				conscription_factor = 0.15
+				mobilization_speed = 0.25
+			}
+		}
+		legion_nf_freemen = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = generic_infantry_bonus
+			modifier = {
+				army_org_factor = 0.05
+			}
+		}
+		legion_nf_foundries_of_mars = {
+			picture = brotherhood_of_mars
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			equipment_bonus = {
+				combat_robot_equipment = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+				support_robot_equipment = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+				motorized_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				#bus_equipment = {#doesn't exist
+				#	build_cost_ic = -0.10
+				#	instant = yes
+				#}
+			}
+			research_bonus = {
+				power_armor_tech_category = 0.6
+			}
+		}
+		legion_nf_pax_per_bellum = {
+			picture = generic_legion
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				justify_war_goal_time = -0.15
+			}
+		}
+		legion_nf_child_soldiers = {
+			picture = generic_manpower_bonus
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				conscription_factor = 0.075
+				training_time_army_factor = 0.05
+				army_org_factor = -0.05
+			}
+		}
+		legion_nf_hoover_dam = {
+			picture = generic_manpower_bonus
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.25
+				industrial_capacity_dockyard = 0.25
+			}
+		}
+		legion_nf_weapon_maintenance = {
+			picture = generic_service_rifle
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			equipment_bonus = {
+				infantry_equipment = {
+					reliability = 0.1
+					instant = yes
+				}
+			}
+		}
+		ces_long_war_idea = {
+			picture = warband_without_a_home
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			cancel = {
+				if = {
+					limit = {
+						OR = {
+							original_tag = NCR
+							original_tag = MOT
+						}
+					}
+					OR = {
+						has_war_with = CES
+						NOT = { country_exists = CES }
+					}
+				}
+				else_if = {
+					limit = {
+						OR = {
+							original_tag = CES
+							original_tag = LAC
+						}
+					}
+					OR = {
+						has_war_with = NCR
+						NOT = { country_exists = NCR }
+					}
+				}
+			}
+			removal_cost = -1
+			modifier = {
+				weekly_manpower = -3
+				caps_expense_modifier = 0.03
+				experience_gain_army = 0.03
+			}
+		}
+		CES_modern_triarii_idea = {
+			picture = generic_manpower_bonus
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			equipment_bonus = {
+				infantry_equipment = {
+					reliability = 0.05
+					build_cost_ic = -0.05
+					instant = yes
+				}
+			}
+		}
+		CES_vulcan_legion_idea = {
+			picture = legionary_unit_tactics
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				modifier_army_sub_unit_power_armour_attack_factor = 0.1
+				modifier_army_sub_unit_power_armour_defence_factor = 0.1
+				conscription_factor = -0.02
+			}
+		}
+		CES_vulcan_legion_idea_2 = {
+			picture = legionary_unit_tactics
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				modifier_army_sub_unit_power_armour_attack_factor = 0.1
+				modifier_army_sub_unit_power_armour_defence_factor = 0.1
+				special_forces_min = 40 #special_forces_cap = 0.02
+				conscription_factor = -0.03
+			}
+		}
+		CES_vulcan_legion_idea_3 = {
+			picture = legionary_unit_tactics
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				modifier_army_sub_unit_power_armour_attack_factor = 0.1
+				modifier_army_sub_unit_power_armour_defence_factor = 0.1
+				special_forces_min = 40 #special_forces_cap = 0.02
+				conscription_factor = -0.04
+			}
+			equipment_bonus = {
+				power_armor_equipment = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+			}
+		}
+		CES_vulcan_chariots_idea = {
+			picture = legionary_unit_tactics
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				modifier_army_sub_unit_tank_attack_factor = 0.04
+				modifier_army_sub_unit_tank_defence_factor = 0.05
+				modifier_army_sub_unit_motorized_attack_factor = 0.04
+				modifier_army_sub_unit_motorized_defence_factor = 0.05
+			}
+		}
+		CES_vulcan_chariots_idea_2 = {
+			picture = legionary_unit_tactics
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				modifier_army_sub_unit_tank_attack_factor = 0.06
+				modifier_army_sub_unit_tank_defence_factor = 0.05
+				modifier_army_sub_unit_motorized_attack_factor = 0.06
+				modifier_army_sub_unit_motorized_defence_factor = 0.05
+			}
+			equipment_bonus = {
+				tank_equipment = {
+					instant = yes
+					armor_value = 0.1
+				}
+			}
+		}
+		CES_vulcan_chariots_idea_3 = {
+			picture = legionary_unit_tactics
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				modifier_army_sub_unit_tank_attack_factor = 0.1
+				modifier_army_sub_unit_tank_defence_factor = 0.05
+				modifier_army_sub_unit_motorized_attack_factor = 0.1
+				modifier_army_sub_unit_motorized_defence_factor = 0.05
+			}
+			equipment_bonus = {
+				tank_equipment = {
+					instant = yes
+					build_cost_ic = 0.05
+					breakthrough = 0.1
+					armor_value = 0.1
+				}
+			}
+		}
+		legion_nf_unit_tactics = {
+			picture = legionary_unit_tactics
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_org_factor = 0.05
+			}
+		}
+		legion_nf_explosives_creation = {
+			picture = generic_manpower_bonus
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			equipment_bonus = {
+				demolitions_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+		legion_nf_ridgers_pyre = {
+			picture = generic_manpower_bonus
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				war_support_factor = 0.025
+				production_speed_buildings_factor = 0.025
+			}
+		}
+		legion_nf_kaibab_crucifiction = {
+			picture = legion_crucifixion
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_morale_factor = 0.05
+				political_power_factor = 0.02
+			}
+		}
+		legion_nf_profligate_destruction = {
+			picture = generic_nuke_device
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				resistance_damage_to_garrison = -0.2
+			}
+		}
+		legion_nf_divide_et_impera = {
+			picture = generic_manpower_bonus
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				org_loss_when_moving = -0.1
+			}
+		}
+		infiltrate_ncr_resistance = {
+			allowed = {
+				always = no				# Added via focus
+			}
+			removal_cost = -1
+			picture = radio
+			modifier = {
+				operative_slot = 1
+				intelligence_agency_defense = 0.5
+				operation_outcome = 0.2
+				intel_from_operatives_factor = 0.2
+			}
+		}
+		infiltrate_ncr = {
+			picture = caps
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				decryption_factor = 0.25
+				encryption_factor = 0.25
+			}
+		}
+		legion_nf_decimatio = {
+			picture = generic_manpower_bonus
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				conscription_factor = -0.01
+				military_leader_cost_factor = -0.1
+			}
+		}
+		national_spirit_we_love_lasers = {
+			picture = rejection_of_automation
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			research_bonus = {
+				robotics_tech_category = 0.3
+				energy_weaponry_tech_category = 0.3
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					build_cost_ic = -0.1
+				}
+				combat_robot_equipment = {
+					build_cost_ic = -0.1
+				}
+				support_robot_equipment = {
+					build_cost_ic = -0.1
+				}
+			}
+		}
+		national_spirit_teutonic_knights = {
+			picture = rejection_of_automation
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			research_bonus = {
+				power_armor_tech_category = 0.3
+			}
+			equipment_bonus = {
+				power_armor_equipment = {
+					instant = yes
+					build_cost_ic = -0.1
+				}
+			}
+		}
+		national_spirit_engineering = {
+			picture = rejection_of_automation
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				consumer_goods_expected_value = -0.1
+				production_speed_industrial_complex_factor = 0.15
+				production_speed_arms_factory_factor = 0.15
+				local_resources_factor = 0.1
+			}
+		}
+		national_spirit_research = {
+			picture = rejection_of_automation
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.08
+				production_factory_max_efficiency_factor = 0.15
+			}
+		}
+		ces_ever_evolving_idea = {
+			picture = cult_of_mars
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_org_factor = 0.1
+				planning_speed = 0.1
+				experience_loss_factor = -0.1
+			}
+		}
+		cultofmars_principes = {
+			picture = cult_of_mars
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				non_core_manpower = 0.025
+				experience_loss_factor = -0.15
+				planning_speed = 0.1
+			}
+			equipment_bonus = {
+				fireteam_equipment = {
+					instant = yes
+					soft_attack = 0.05
+				}
+				demolitions_equipment = {
+					instant = yes
+					soft_attack = 0.05
+				}
+			}
+		}
+		legion_select_few1 = {
+			picture = legionary_unit_tactics
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_leader_start_level = 1
+				army_leader_start_defense_level = 1
+				army_attack_factor = 0.1
+				non_core_manpower = 0.025
+				army_org_factor = 0.05
+				planning_speed = 0.1
+			}
+			equipment_bonus = {
+				fireteam_equipment = {
+					instant = yes
+					soft_attack = 0.08
+				}
+				demolitions_equipment = {
+					instant = yes
+					soft_attack = 0.08
+				}
+			}
+		}
+		cultofmars_triplex = {
+			picture = caesars_legacy_2
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				non_core_manpower = 0.05
+				army_speed_factor = 0.05
+				attrition = -0.1
+				mobilization_speed = 0.25
+				conscription_factor = 0.05
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					soft_attack = 0.05
+				}
+			}
+		}
+		legion_select_few2 = {
+			picture = legionary_unit_tactics
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_leader_start_level = 1
+				army_leader_start_attack_level = 1
+				army_attack_factor = 0.05
+				non_core_manpower = 0.05
+				army_speed_factor = 0.05
+				attrition = -0.15
+				mobilization_speed = 0.2
+				conscription_factor = 0.05
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					soft_attack = 0.05
+				}
+			}
+		}
+		CES_healthy_ghouls = {
+			picture = ghoul_recruitment
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				weekly_manpower = 1
+				modifier_army_sub_unit_ghoul_infantry_attack_factor = 0.15
+				modifier_army_sub_unit_ghoul_infantry_speed_factor = 0.05
+				modifier_army_sub_unit_ghoul_infantry_defence_factor = 0.05
+			}
+		}
+		CES_nightkin_frumentaries = {
+			picture = somnus
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.075
+                land_night_attack = 0.05
+				modifier_army_sub_unit_super_mutant_nightkin_infantry_attack_factor = 0.05
+			}
+		}
+		CES_nightkin_frumentaries_2 = {
+			picture = somnus
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+                land_night_attack = 0.15
+				modifier_army_sub_unit_super_mutant_nightkin_infantry_attack_factor = 0.15
+				modifier_army_sub_unit_super_mutant_nightkin_infantry_speed_factor = 0.1
+			}
+		}
+		CES_davison_schizophrenia = {
+			picture = generic_skull
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.075
+				breakthrough_factor = 0.05
+				modifier_army_sub_unit_super_mutant_aux_infantry_attack_factor = 0.05
+			}
+		}
+		CES_davison_schizophrenia_2 = {
+			picture = generic_bio
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.1
+				breakthrough_factor = 0.075
+				modifier_army_sub_unit_super_mutant_aux_infantry_attack_factor = 0.1
+			}
+		}
+		CES_davison_schizophrenia_3 = {
+			picture = generic_skull
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.05
+				breakthrough_factor = 0.06
+				modifier_army_sub_unit_super_mutant_aux_infantry_defence_factor = 0.1
+			}
+		}
+		CES_fev_pool_mutants = {
+			picture = generic_nuclear_material
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				modifier_army_sub_unit_super_mutant_aux_infantry_attack_factor = 0.05
+				modifier_army_sub_unit_super_mutant_aux_infantry_defence_factor = 0.05
+				modifier_army_sub_unit_super_mutant_aux_infantry_speed_factor = 0.05
+			}
+		}
+		CES_fev_pool_mutants_nightkins = {
+			picture = generic_nuclear_material
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				modifier_army_sub_unit_super_mutant_nightkin_infantry_attack_factor = 0.05
+				modifier_army_sub_unit_super_mutant_nightkin_infantry_defence_factor = 0.05
+				modifier_army_sub_unit_super_mutant_nightkin_infantry_speed_factor = 0.05
+			}
+		}
+		CES_nightkin_research = {
+			picture = generic_light_bulb
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = -0.08
+				consumer_goods_expected_value = 0.03
+			}
+		}
+		CES_nightkin_migration = {
+			picture = bdt_unity
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				weekly_manpower = 3
+			}
+		}
+		CES_stealthboy_stash = {
+			picture = generic_pip_box
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				land_night_attack = 0.15
+			}
+		}
+		CES_hades_legion = {
+			picture = generic_helm_gladiator
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				attrition = -0.10
+				supply_consumption_factor = -0.10
+				army_leader_start_planning_level = 1
+				army_leader_start_logistics_level = 1
+			}
+		}
+		CES_lanius_campaign = {
+			picture = LAC_blank_slate
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			available = {
+				LAC = {
+					has_active_mission = lanius_countdown_dog_city
+				}
+			}
+			removal_cost = -1
+			modifier = {
+				weekly_manpower = -10
+				caps_flat_income_modifier = 3
+				consumer_goods_expected_value = -0.03
+			}
+		}
+		CES_healthy_ghouls_2 = {
+			picture = ghoul_recruitment
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.10
+				weekly_manpower = 10
+				modifier_army_sub_unit_ghoul_infantry_attack_factor = 0.05
+				modifier_army_sub_unit_ghoul_infantry_speed_factor = 0.05
+				modifier_army_sub_unit_ghoul_infantry_defence_factor = 0.10
+			}
+		}
+		CES_ghoul_dogs = {
+			picture = hellhounds
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				modifier_army_sub_unit_dog_company_attack_factor = 0.15
+				modifier_army_sub_unit_dog_company_defence_factor = 0.15
+				supply_consumption_factor = -0.10
+			}
+		}
+		CES_experienced_ghouls_idea = {
+			picture = long_lives
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.10
+				experience_gain_army_factor = 0.10
+			}
+		}
+
+		CES_acceptable_failures_idea = {
+			picture = acceptable_failures
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				weekly_manpower = 5
+				production_speed_buildings_factor = 0.05
+				local_resources_factor = 0.05
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+			}
+		}
+
+		CES_go_pluto_idea = {
+			picture = eternal_flame
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				global_building_slots_factor = 0.05
+				army_org_factor = 0.05
+				army_morale_factor = 0.05
+			}
+			research_bonus = {
+				industry_specialisation_category = 0.1
+			}
+		}
+
+		CES_gente_ghoul_deal = {
+			picture = a_gentle_offer
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					breakthrough = 0.10
+					hardness = 0.10
+				}
+			}
+		}
+
+		CES_mineral_wealth_idea = {
+			picture = treasures_of_the_underworld
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				caps_income_modifier = 0.10
+				caps_flat_income_modifier = 15.0
+				consumer_goods_expected_value = -0.02
+			}
+		}
+
+		CES_relieved_tensions_idea = {
+			picture = relieved_tensions
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.10
+				war_support_factor = -0.10
+				conscription_factor = 0.10
+				compliance_gain = 0.03
+				resistance_growth = -0.20
+				caps_expense_modifier = 0.10
+			}
+		}
+
+		CES_funding_profligates_idea = {
+			picture = supporting_profligates
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				civilian_intel_factor = 0.15
+				caps_income_modifier = 0.10
+				stability_factor = -0.10
+				consumer_goods_expected_value = -0.03
+			}
+		}
+
+		CES_taa_arms_improvements_idea = {
+			picture = texan_arms
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					reliability = 0.05
+					soft_attack = 0.05
+					hard_attack = 0.05
+				}
+			}
+		}
+
+		CES_eternal_flame_idea = {
+			picture = eternal_flame
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_industrial_complex_factor = 0.05
+				production_speed_arms_factory_factor = 0.05
+				global_building_slots_factor = 0.10
+				army_org_factor = 0.10
+				army_morale_factor = 0.10
+			}
+			research_bonus = {
+				industry_specialisation_category = 0.2
+			}
+		}
+		CES_stay_hades_idea = {
+			picture = the_underworld_surfaces
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.05
+				attrition = -0.05
+				max_planning = 0.05
+			}
+			research_bonus = {
+				air_equipment_tech_category = 0.1
+			}
+		}
+		CES_athens_idea = {
+			picture = wisdom_of_athens
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				war_support_factor = -0.05
+				conscription = -0.02
+				research_speed_factor = 0.05
+				political_power_gain = 0.15
+				production_speed_dockyard_factor = 0.10
+				trade_opinion_factor = 0.25
+			}
+		}
+		CES_sparta_idea = {
+			picture = might_of_sparta
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.05
+				conscription = -0.02
+				modifier_army_sub_unit_ghoul_infantry_attack_factor = 0.075
+				modifier_army_sub_unit_ghoul_infantry_speed_factor = 0.075
+				experience_gain_army_unit_factor = 0.15
+				org_loss_when_moving = -0.10
+			}
+		}
+		CES_ghoul_nation_idea = {
+			picture = a_haven_for_ghouls
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				justify_war_goal_time = -0.1
+				monthly_population = 0.3
+				starting_compliance = 0.1
+			}
+		}
+		CES_underworld_surfaces_idea = {
+			picture = the_underworld_surfaces
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.10
+				attrition = -0.10
+				max_planning = 0.10
+				stability_factor = 0.05
+				war_support_factor = 0.05
+			}
+			research_bonus = {
+				air_equipment_tech_category = 0.2
+			}
+		}
+		CES_ghoul_navajo_idea = {
+			picture = generic_flexible_foreign_policy2
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				autonomy_gain = -0.7
+				cic_to_overlord_factor = 0.10
+				mic_to_overlord_factor = 0.10
+				stability_factor = 0.10
+				production_speed_buildings_factor = 0.05
+				global_building_slots_factor = 0.05
+			}
+		}
+
+		CES_ghoul_two_sun_idea = {
+			picture = generic_flexible_foreign_policy2
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				autonomy_gain = -0.7
+				cic_to_overlord_factor = 0.10
+				mic_to_overlord_factor = 0.10
+				stability_factor = 0.10
+				production_speed_buildings_factor = 0.05
+				global_building_slots_factor = 0.05
+			}
+		}
+		CES_go_east_idea = {
+			picture = the_road_east
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				weekly_casualties_war_support = 0.005
+				justify_war_goal_when_in_major_war_time = -0.15
+				offensive_war_stability_factor = 0.10
+				annex_cost_factor = -0.10
+			}
+		}
+		CES_los_teachings_idea = {
+			picture = los_the_church_of_the_lost
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.05
+				exodus_national_appeal = 0.05
+				conscription_factor = 0.05
+				max_dig_in = 5
+			}
+		}
+		CES_tlp_teachings_idea = {
+			picture = national_guard_icon
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				planning_speed = 0.05
+				experience_gain_army_factor = 0.05
+				training_time_factor = -0.10
+			}
+		}
+		CES_whd_teachings_idea = {
+			picture = KHA_ourown_slave_trade
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.05
+				resistance_target = -0.05
+				resistance_damage_to_garrison = -0.30
+			}
+		}
+		CES_bel_teachings_idea = {
+			picture = bellingham_teachings
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				winter_attrition_factor = -0.25
+				acclimatization_cold_climate_gain_factor = 0.5
+				supply_factor = 0.1
+				unit_upkeep_attrition_factor = -0.05
+			}
+		}
+		CES_gila_navigators = {
+			picture = generic_boat
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				naval_invasion_prep_speed = 0.25
+				naval_invasion_penalty = -0.1
+				naval_speed_factor = 0.1
+				spotting_chance = 0.1
+			}
+		}
+		CES_frontier_toll = {
+			picture = LAC_the_conquering_frontier
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				experience_gain_army_unit_factor = 0.05
+				army_leader_start_attack_level = 1
+				army_leader_start_planning_level = 1
+				coordination_bonus = 0.05
+			}
+		}
+		CES_merciless_cohort = {
+			picture = LAC_mustering_cohort
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				resistance_damage_to_garrison = -0.25
+				resistance_garrison_penetration_chance = -0.25
+				required_compliance_for_coring = -20
+				org_loss_when_moving = -0.1
+				core_creation_cost_factor = -0.3
+			}
+		}
+		CES_triumph_reliance = {
+			picture = LAC_blank_slate
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				war_stability_factor = 0.15
+				army_leader_start_level = 1
+				coring_raider_caps_per_infrastructure_mod = 20
+			}
+		}
+		CES_lessons_denver = {
+			picture = lanius
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				experience_gain_army_unit_factor = 0.05
+				army_leader_start_defense_level = 1
+				army_leader_start_logistics_level = 1
+				planning_speed = 0.1
+			}
+		}
+		CES_learning_to_build_quickly = {
+			picture = generic_trowl
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_defence_factor = 0.05
+				production_speed_buildings_factor = 0.05
+				production_factory_start_efficiency_factor = 0.05
+				dig_in_speed_factor = 0.15
+			}
+		}
+		CES_comprehensive_training = {
+			picture = legion_recruitment_drive
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				experience_gain_infantry_combat_factor = 0.15
+				pocket_penalty = -0.15
+				caps_expense_modifier = -0.05
+			}
+		}
+	}
+}

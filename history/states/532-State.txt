@@ -1,0 +1,29 @@
+state = {
+	id = 532
+	name = "STATE_532"
+	manpower = 3986
+	state_category = pastoral
+
+	resources = {
+		metal = 10
+		water = 4
+	}
+
+	history = {
+		owner = YMP
+		add_core_of = YMP
+		victory_points = {
+			6700 5
+		}
+		victory_points = {
+			6824 15
+		}
+		buildings = {
+			infrastructure = 1
+		}
+	}
+
+	provinces = {
+		6699 6700 6702 6824 9160
+	}
+}

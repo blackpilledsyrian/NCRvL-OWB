@@ -1,0 +1,84 @@
+﻿division_template = {
+	name = "Foot Patrol"
+	regiments = {
+		police_infantry = { x = 0 y = 0 }
+		police_infantry = { x = 0 y = 1 }
+		police_infantry = { x = 1 y = 0 }
+		police_infantry = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Highway Patrol"
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Special Weapons Patrol"
+	regiments = {
+		spec_ops = { x = 0 y = 0}
+		spec_ops = { x = 1 y = 0}
+		spec_ops = { x = 0 y = 1}
+		spec_ops = { x = 1 y = 1}
+	}
+}
+
+units = {
+	division = {
+		name = "Lafayette Patrol Garrison"
+		location = 11812
+		division_template = "Foot Patrol"
+		start_experience_factor = 0.7
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "10th Patrol"
+		location = 11812
+		division_template = "Highway Patrol"
+		start_experience_factor = 0.7
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "10th PD Strike Force"
+		location = 11812
+		division_template = "Special Weapons Patrol"
+		start_equipment_factor = 1.0
+		start_experience_factor = 0.8
+	}
+}
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = ballistic_equipment_1
+			creator = "TPM"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 20
+	}
+	add_equipment_production = {
+		equipment = {
+			type = light_motorized_equipment_2
+			creator = "TPM"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 20
+	}
+	add_equipment_production = {
+		equipment = {
+			type = spec_ops_equipment_1
+			creator = "TPM"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 20
+	}
+}

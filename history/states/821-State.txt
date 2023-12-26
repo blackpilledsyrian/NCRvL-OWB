@@ -1,0 +1,20 @@
+state = {
+	id = 821
+	name = "STATE_821"
+
+	history={
+		buildings = {
+			infrastructure = 2
+			10021 = {
+				naval_base = 1
+			}
+		}
+	}
+
+	provinces={
+		10007 10014 10021 10039 10051 10068 10856 10858
+	}
+	manpower=2471
+	buildings_max_level_factor=1.000
+	state_category=wasteland
+}

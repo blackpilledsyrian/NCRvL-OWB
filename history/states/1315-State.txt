@@ -1,0 +1,38 @@
+
+state={
+	id=1315
+	name="STATE_1315"
+	provinces={
+		15182 15183 15184 15185 15191 15194 15196 15198 15199
+	}
+	resources = {
+		water = 2
+		energy = 2
+	}
+	history = {
+		victory_points = {
+			15199 5
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			15199 = {
+				bunker = 2
+			}
+			15182 = {
+				bunker = 2
+			}
+			15183 = {
+				bunker = 2
+			}
+			15184 = {
+				bunker = 2
+			}
+			15185 = {
+				bunker = 2
+			}
+		}
+	}
+	state_category = rural
+	manpower = 713
+}

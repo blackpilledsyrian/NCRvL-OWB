@@ -1,0 +1,20 @@
+state={
+	id=977
+	name="STATE_977"
+	history={
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 1
+		}
+		victory_points = {
+			8519 5
+		}
+	}
+	provinces={
+		8513 12399 2010 8519 8520 8522 8523 2349 8509 8511 8510
+	}
+	manpower=6487
+	buildings_max_level_factor=1.000
+	state_category=town
+}

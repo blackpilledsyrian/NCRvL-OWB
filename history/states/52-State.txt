@@ -1,0 +1,25 @@
+
+state={
+	id=52
+	name="STATE_52"
+
+	history={
+		victory_points = {
+			1994 5
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+
+		}
+
+	}
+
+	provinces={
+		1994 2082 2490 4063 4502 4504 4507 4508 4509 4545 4549 4552 7176 8537 16993 16994
+	}
+	manpower=4000
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
+}

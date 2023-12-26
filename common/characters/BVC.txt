@@ -1,0 +1,106 @@
+characters = {
+	BVC_pancho_villa = {
+		name = "Pancho Villa"
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_BVC_leader
+			}
+		}
+		corps_commander = {
+			traits = {
+				strong_trait
+				enduring_trait
+				bruiser_trait
+				desert_fox
+			}
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 1
+			legacy_id = -1
+		}
+		country_leader = {
+			desc = Pancho_Villa_DESC
+			ideology = gang
+			traits = {
+				warmonger
+				popular_figurehead
+				expert_negotiator
+				logistics_tsar
+			}
+			expire = "3000.01.01.01"
+			id = -1
+		}
+	}
+	BVC_guarez_moya = {
+		name = "Guarez Moya"
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_BLP_leader
+			}
+		}
+		corps_commander = {
+			skill = 4
+			traits = {
+				perceptive_trait
+				charismatic_trait
+				fortune_finder_trait
+				hill_fighter
+			}
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 4
+			legacy_id = -1
+		}
+		country_leader = {
+			ideology = constitutional_republic
+			traits = {
+				warmonger
+				popular_figurehead
+				expert_negotiator
+				logistics_tsar
+			}
+
+			expire = "2292.1.1.12"
+			id = -1
+		}
+	}
+	BVC_rómulo_robles = {
+		name = "Rómulo Robles"
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Raider_Generic_5
+			}
+		}
+		country_leader = {
+			ideology = meritocracy
+			traits = {
+				war_industrialist
+				political_workhorse
+				fortifications_expert
+			}
+			expire = "2292.1.1.12"
+			id = -1
+		}
+	}
+	BVC_porfirio_almonte = {
+		name = "Porfirio Almonte"
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Raider_Generic_10
+			}
+		}
+		country_leader = {
+			ideology = conspiratory_oligarchy
+			traits = {
+				compassionate_gentleman
+				well_liked_leader
+				captain_of_industry
+			}
+			expire = "2284.1.1.12"
+			id = -1
+		}
+	}
+}

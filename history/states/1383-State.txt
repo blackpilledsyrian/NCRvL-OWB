@@ -1,0 +1,24 @@
+
+state={
+	id= 1383
+	name= "STATE_1383"
+	resources= {
+		circuitry= 6.000
+	}
+
+	history={
+		victory_points = {
+			14525 5
+		}
+		buildings = {
+			infrastructure = 3
+		}
+	}
+	provinces= {
+		14494 14495 14499 14525 14526 14535 14536
+	}
+	manpower= 518
+	buildings_max_level_factor= 1.000
+	state_category= pastoral
+	local_supplies= 0.000
+}

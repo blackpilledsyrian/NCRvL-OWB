@@ -1,0 +1,37 @@
+state = {
+	id = 746
+	name = "STATE_746"
+	manpower = 74660
+	state_category = large_city
+
+	resources = {
+		water = 7
+		metal = 7
+		energy = 7
+	}
+
+	history = {
+		victory_points = {
+			8599 30
+		}
+		victory_points = {
+			8818 5
+		}
+		add_extra_state_shared_building_slots = 1
+		buildings = {
+			infrastructure = 5
+			arms_factory = 1
+			industrial_complex = 5
+			anti_air_building = 1
+			dockyard = 1
+			8599 = {
+				bunker = 2
+				naval_base = 2
+			}
+		}
+	}
+
+	provinces = {
+		774 792 1657 3018 3133 3139 3287 4798 5762 6704 6763 6825 6839 8599 8818 8826 8828 8829 8834 8836 8837 8838 8975 9137 9151 9295 9414 9505 9508 9509 9511 9512 9513 9551 9553 12344
+	}
+}

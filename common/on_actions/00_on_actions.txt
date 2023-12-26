@@ -1,0 +1,1217 @@
+on_actions = {
+	# country
+	#on_new_term_election = {
+	#	random_events = {
+	#	}
+	#}
+
+	# Ace pilots
+	# country, FROM = ace
+	on_ace_promoted = {
+		random_events = {
+			100 = ace_promoted.1
+			5 = ace_promoted.2
+		}
+	}
+
+	# country, FROM = ace, PREV = enemy ace
+	# This event fires twice, once for each ace.
+	on_aces_killed_each_other = {
+		random_events = {
+			100 = aces_killed_each_other.1
+		}
+	}
+
+	# country, FROM = our ace,
+	# PREV = enemy ace, has killed FROM
+	on_ace_killed_by_ace = {
+		random_events = {
+			100 = ace_killed_by_ace.1
+		}
+	}
+
+	# country, FROM = our ace,
+	# PREV = enemy ace, killed by FROM
+	on_ace_killed_other_ace = {
+		random_events = {
+			100 = ace_killed_other_ace.1
+		}
+	}
+
+	# our ace is killed by no name
+	# country, FROM = ace
+	on_ace_killed = {
+		random_events = {
+			100 = ace_died.1
+		}
+	}
+
+	# our ace died in accident
+	# country, FROM = ace
+	on_ace_killed_on_accident = {
+
+	}
+
+	# enemy ace is killed by our non name
+	# country, FROM = enemy ace
+	on_non_ace_killed_other_ace = {
+
+	}
+
+	# During justifying wargoals
+	# triggered daily, so make sure there is a sink somewhere not firing events
+	# country, FROM = target nation
+	on_justifying_wargoal_pulse = {
+
+	}
+
+	on_wargoal_expire = {
+
+	}
+
+	#FROM is state #ROOT is broken as hell
+	on_nuke_drop = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						OWNER = {
+							NOT = {
+								has_idea = apocalypse_now
+								#has_completed_focus = hea_nf_heart_of_steam_output_first
+							}
+						}
+					}
+				}
+				FROM = {
+					OWNER = {
+						add_timed_idea = {
+							idea = apocalypse_now
+							days = 180
+						}
+					}
+				}
+			}
+			#news_event = { id = nuke_dropped.2 days = 1 }
+			#news_event = { id = nuke_dropped.3 days = 1 }
+			#news_event = { id = nuke_dropped.4 days = 1 }
+			#news_event = { id = nuke_dropped.5 days = 1 }
+			#news_event = { id = nuke_dropped.6 days = 1 }
+			#news_event = { id = nuke_dropped.7 days = 1 }
+			#news_event = { id = nuke_dropped.8 days = 1 }
+			#news_event = { id = nuke_dropped.9 days = 1 }
+			#news_event = { id = nuke_dropped.10 days = 1 }
+			#news_event = { id = nuke_dropped.11 days = 1 }
+			#news_event = { id = nuke_dropped.12 days = 1 }
+			#news_event = { id = nuke_dropped.13 days = 1 }
+			#news_event = { id = nuke_dropped.14 days = 1 }
+			#news_event = { id = nuke_dropped.15 days = 1 }
+		}
+		#random_events = {
+		#	100 = nuke_dropped.0
+		#}
+	}
+
+	#on_five_year_pulse = {
+	#
+	#}
+
+	#on_border_war_lost = {
+	#
+	#}
+
+	on_leave_faction = {
+		effect = {
+			FROM = {
+				add_opinion_modifier = {
+					modifier = faction_traitor
+					target = ROOT
+					days = 365
+				}
+
+				add_opinion_modifier = {
+					modifier = faction_traitor_trade
+					target = ROOT
+					days = 365
+				}
+			}
+		}
+	}
+
+	#PREV is the one that joins the faction
+	#on_create_faction = {
+	#	effect = {
+	#	}
+	#
+	#}
+
+	#PREV is country getting invited.
+	#on_offer_join_faction = {
+	#	effect = {
+	#	}
+	#
+	#}
+
+	#PREV is faction leader on join faction requests.
+	#on_join_faction = {
+	#	effect = {
+	#	}
+	#
+	#}
+
+	# FROM is war target
+	# on_declare_war = {
+	# 	effect = {
+	# 	}
+	# }
+
+	# When a new faction is formed
+	#on_faction_formed = {
+	#	effect = {}
+	#}
+
+	# ROOT is winner, FROM is loser
+	on_peaceconference_ended = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						original_tag = MOS
+						has_government = intellectuals
+					}
+				}
+				FROM = {
+					retire_ideology_leader = intellectuals
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						original_tag = HAN
+					}
+					ROOT = {
+						tag = WDN
+					}
+				}
+				FROM = {
+					HAN_Kennelmaster = {
+						set_nationality = WDN
+					}
+					HAN_medicine = {
+						set_nationality = WDN
+					}
+					HAN_foreman = {
+						set_nationality = WDN
+					}
+					HAN_touchdown = {
+						set_nationality = WDN
+					}
+					HAN_caravan = {
+						set_nationality = WDN
+					}
+					HAN_rex = {
+						set_nationality = WDN
+					}
+					HAN_doc = {
+						set_nationality = WDN
+					}
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						original_tag = HAN
+					}
+					ROOT = {
+						original_tag = LAC
+						is_caesars_legion_member = yes
+					}
+					IRN = {
+						is_caesars_legion_member = yes
+					}
+				}
+				every_state = {
+					limit = {
+						OWNER = {
+							is_ally_with = LAC
+						}
+						OR = {
+							is_core_of = HAN
+							is_core_of = ROB
+							is_core_of = MXC
+							is_core_of = SCO
+						}
+					}
+					if = {
+						limit = {
+							has_state_flag = lac_give_to_irn_once
+						}
+						clr_state_flag = lac_give_to_irn_once
+						remove_claim_by = LAC
+						IRN = {
+							transfer_state = PREV
+						}
+					}
+					else = {
+						LAC = {
+							transfer_state = PREV
+						}
+					}
+				}
+			}
+			# 	if = {
+			# 		limit = {
+			# 			NEW = {
+			# 				has_cosmetic_tag = ENC_cosmetic_tag
+			# 			}
+			# 		}
+			# 		if = {
+			# 			limit = {
+			# 				NEW = {
+			# 					is_ai = no
+			# 				}
+			# 				ENC = {
+			# 					is_ai = yes
+			# 				}
+			# 			}
+			# 			ENC = {
+			# 				every_unit_leader = {
+			# 					set_nationality = NEW
+			# 				}
+			# 			}
+			# 			every_state = {
+			# 				limit = {
+			# 					is_core_of = ENC
+			# 				}
+			# 				add_core_of = NEW
+			# 			}
+			# 			if = {
+			# 				limit = {
+			# 					BJS = { exists = yes is_subject_of = ENC }
+			# 				}
+			# 				ENC = { BJS = { release_from_prev_as_puppet = yes } }
+			# 				NEW = { puppet = BJS }
+			# 			}
+			# 			NEW = {
+			# 				annex_country = { target = ENC transfer_troops = yes }
+			# 			}
+			# 		}
+			# 	}
+			# }
+			if = {
+				limit = {
+					ROOT = { original_tag = ATE }
+					FROM = { original_tag = ATE }
+				}
+				clear_variable = global.aztec_breakaway
+			}
+			if = {
+				limit = {
+					FROM = { original_tag = MOJ }
+					NCR = { NOT = { has_completed_focus = ncr_federalise_mot } }
+					ROOT = {
+						tag = CES
+					}
+				}
+				NCR = { news_event = ncr_crisis.5 }
+			}
+			if = {
+				limit = {
+					has_country_flag = set_as_major_for_war
+				}
+				set_major = no
+				clr_country_flag = set_as_major_for_war
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = set_as_major_for_war
+					}
+				}
+				FROM = {
+					clr_country_flag = set_as_major_for_war
+					set_major = no
+				}
+			}
+		}
+	}
+
+	# ROOT is capitulated country, FROM is winner
+	# on_capitulation = {
+	#		effect = {
+	#			news_event = { id = country_capitulated.0 days = 0 }
+	#			# Legion lost
+	#			if = {
+	#				limit = {
+	#					tag = CES
+	#					has_war_with = NCR
+	#					has_country_flag = battle_for_hoover_dam
+	#				}
+	#				country_event = { id = nf_legion.4 }
+	#			}
+	#			if = {
+	#				limit = {
+	#					tag = NCR
+	#					has_war_with = CES
+	#					FROM = {
+	#						tag = CES
+	#						has_country_flag = battle_for_hoover_dam
+	#					}
+	#				}
+	#				country_event = { id = nf_legion.3 }
+	#			}
+	#			every_state = {
+	#				limit = {
+	#					is_core_of = ROOT
+	#				}
+	#				decimate_half_all_industry = yes
+	#			}
+	#		}
+	# }
+
+	# ROOT is previously capitulated country
+	#on_uncapitulation = {
+	#	effect = {
+	#		if = {
+	#			limit = {
+	#				original_tag = FRA
+	#				has_government = democratic
+	#				is_puppet = no
+	#			}
+	#			drop_cosmetic_tag = yes
+	#		}
+	#	}
+	#}
+
+	#on_government_change = {
+	#
+	#}
+
+	#on_coup_succeeded = {
+	#
+	#}
+
+	#ROOT is winner #FROM gets annexed
+	on_civil_war_end = {
+		effect = {
+			if = {
+				limit = {
+					FROM = { original_tag = VEG }
+					ROOT = { original_tag = VEG }
+				}
+				every_other_country = {
+					limit = {
+						original_tag = VEG
+						has_government = ruler
+					}
+					country_event = { id = nf_vegas.40 }#days = 1 }
+				}
+			}
+		}
+	}
+
+	#used when puppeting in a peace conference
+	#ROOT = nation being puppeted, FROM = overlord
+	on_puppet = {
+		effect = {
+			#every_country = { country_event = startup.4 }
+		}
+	}
+
+	#used when puppeting through the occupied territories menu during peace time (or when releasing from non-core but owned territory, f.e. Britain releasing Egypt)
+	#ROOT = nation being released, FROM = overlord
+	on_release_as_puppet = {
+		#Legion has specific handling for which nations can join in their wars
+		#Normally, a relased puppet auto-joins all wars that their master is in.
+		#Lets replaced that logic and have them peace out of those wars at first, so they can be called
+		#in using our special handling
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						is_caesars_legion_member = yes
+					}
+				}
+				every_country = {
+					limit = {
+						has_war_with = ROOT
+					}
+					ROOT = {
+						white_peace = PREV
+					}
+				}
+			}
+		}
+	}
+
+	#ROOT is winner #FROM gets annexed - For civil wars on_civil_war_end is also fired
+	on_annex = {
+		effect = {
+
+		}
+	}
+
+	#Not run on a specific country.
+	on_startup = {
+		effect = {
+			NCR = {
+				set_global_flag = country_flags_initialized
+			}
+			BVC = {
+				load_oob = BVC_2275
+			}
+			BLP = {
+				load_oob = BLP_2275
+			}
+			STC = {
+				load_oob = STC_2275
+			}
+			HVR = {
+				load_oob = "HVR_2275"
+			}
+			## Relation modifiers for countries based on types
+			# nobody likes supermutants, supermutants don't like anyone else
+			every_country = {
+				limit = {
+					is_super_mutant_nation = yes
+				}
+				set_supermutant_nation = yes
+			}
+			# everyone views HEA as religious nutjobs, HEA views everyone as impure
+			every_country = {
+				limit = {
+					tag = HEA
+				}
+				every_country = {
+					limit = {
+						NOT = { tag = HEA }
+					}
+					reverse_add_opinion_modifier = {
+						target = PREV
+						modifier = hea_view_world
+					}
+					add_opinion_modifier = {
+						target = PREV
+						modifier = world_view_hea
+					}
+				}
+			}
+			# everyone fears BRK, BRK sees everyone as future prey
+			every_country = {
+				limit = {
+					tag = BRK
+				}
+				every_country = {
+					limit = {
+						NOT = { tag = BRK }
+					}
+					reverse_add_opinion_modifier = {
+						target = PREV
+						modifier = brk_view_world
+					}
+					add_opinion_modifier = {
+						target = PREV
+						modifier = world_view_brk
+					}
+				}
+			}
+
+			#itza var setups
+			ITZ = {
+				set_variable = { itz_harvest_prediction = 3 }
+				set_variable = { itz_harvest_mp = 0.10 }
+				set_variable = { itz_harvest_ws = 0.10 }
+				add_dynamic_modifier = {
+					modifier = itz_idea_dynamic_harvest
+				}
+			}
+
+			#Flower War var setups
+			ITZ = {
+				set_variable = { GLOBAL.flw_attacker_tag = ITZ.id }
+				set_variable = { GLOBAL.flw_defender_tag = ATE.id }
+				set_variable = { GLOBAL.flw_attacker_state = 815 }
+				set_variable = { GLOBAL.flw_defender_state = 803 }
+				activate_mission = flower_war_peacetime_countdown
+				add_ai_strategy = {
+					type = antagonize
+					id = "ATE"
+					value = 100
+				}
+				add_ai_strategy = {
+					type = invade
+					id = "ATE"
+					value = 100
+				}
+				add_opinion_modifier = {
+					target = ATE
+					modifier = flower_wars_opinion
+				}
+			}
+			ATE = {
+				activate_mission = flower_war_peacetime_countdown
+				add_ai_strategy = {
+					type = antagonize
+					id = "ITZ"
+					value = 100
+				}
+				add_ai_strategy = {
+					type = invade
+					id = "ITZ"
+					value = 100
+				}
+				add_opinion_modifier = {
+					target = ITZ
+					modifier = flower_wars_opinion
+				}
+			}
+
+			# Ignoring Honduras
+			every_country = {
+				limit = { NOT = { tag = GRH } }
+				add_ai_strategy = {
+					type = ignore
+					id = "GRH"
+					value = 1000
+				}
+			}
+
+			# Reducing frendliness with ATE
+			every_country = {
+				limit = {
+					NOT = { tag = ATE }
+					NOT = { tag = CAF }
+				}
+				add_ai_strategy = {
+					type = befriend
+					id = "ATE"
+					value = -20
+				}
+				add_ai_strategy = {
+					type = alliance
+					id = "ATE"
+					value = -20
+				}
+			}
+
+			### Sets the startup cost of smuggling drugs to the Legion for Rio ##
+			RRG = {
+				set_variable = { smuggle_drugs_cost = 25 }
+				set_variable = { arm_rebels = 100 }
+			}
+
+			#Add basic spec ops template to all nations that have the equipment but no templates with spec ops
+			every_country = {
+				limit = {
+					has_tech = spec_ops_equipment_tech_1
+					NOT = { has_template_containing_unit = spec_ops }
+				}
+				load_oob = "unlock_special_forces"
+			}
+			#Give nations templates for units they start with but don't have in any template
+			every_country = {
+				if = {
+					limit = {
+						NOT = {
+							has_template_containing_unit = motorized
+						}
+						has_tech = bike_tech_1
+					}
+					hidden_effect = {
+						load_oob = "unlock_motorized"
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_template_containing_unit = tank
+						}
+						has_tech = tank_equipment_vehicle_tech_1
+					}
+					hidden_effect = {
+						load_oob = "unlock_tank"
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_template_containing_unit = spec_ops
+						}
+						has_tech = spec_ops_equipment_tech_1
+					}
+					hidden_effect = {
+						load_oob = "unlock_special_forces"
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_template_containing_unit = super_mutant_infantry
+						}
+						has_tech = super_mutant_civilization
+					}
+					hidden_effect = {
+						load_oob = "unlock_supermutant_infantry"
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_template_containing_unit = ghoul_infantry
+						}
+						has_tech = ghoul_civilization
+					}
+					hidden_effect = {
+						load_oob = "unlock_ghoul_infantry"
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_template_containing_unit = power_armour
+						}
+						has_tech = stripped_pa_tech
+					}
+					hidden_effect = {
+						load_oob = "unlock_power_armour"
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_template_containing_unit = support_robot
+						}
+						has_tech = robot_makeshift_automatons_tech
+					}
+					hidden_effect = {
+						load_oob = "unlock_support_robot"
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_template_containing_unit = combat_robot
+						}
+						has_tech = robot_lifter_equipment_tech
+					}
+					hidden_effect = {
+						load_oob = "unlock_combat_robot"
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_template_containing_unit = heavy_infantry
+						}
+						has_tech = heavy_infantry_tech_1
+					}
+					hidden_effect = {
+						if = {
+							limit = {
+								original_tag = IMO
+							}
+							load_oob = "imo_unlock_heavy_infantry"
+						}
+						else = {
+							load_oob = "unlock_heavy_infantry"
+						}
+					}
+				}
+			}
+			# NCN Variable Setup
+			NCN = {
+				set_variable = { ncn_decadence = 5 }
+				set_variable = { ncn_threat = 0 }
+				update_ncn_threat = yes
+				update_ncn_decadence = yes
+				country_event = { id = nf_ncn.42 days = 204 }
+			}
+			# TEU Setup
+			every_country = {
+				limit = {
+					has_dynamic_modifier = {
+						modifier = texan_economic_union
+					}
+				}
+				set_variable = { tep_positive = 0.02 }
+				set_variable = { tep_negative = -0.02 }
+			}
+			#MOJ/MOT Fiddling
+			MOJ = {
+				set_variable = { global.op_sun_countdown = 460 }
+				activate_mission = operation_sunburst_countdown
+			}
+			MOT = {
+				activate_mission = operation_sunburst_countdown
+			}
+			#MOJ Control Var Setting
+			47 = { set_variable = { mot_state_control = 0 } }
+			67 = { set_variable = { mot_state_control = 0 } }
+			552 = { set_variable = { mot_state_control = 0 } }
+			137 = { set_variable = { mot_state_control = 0 } }
+			613 = { set_variable = { mot_state_control = 0 } }
+			252 = { set_variable = { mot_state_control = 0 } }
+			573 = { set_variable = { mot_state_control = 0 } }
+			46 = { set_variable = { mot_state_control = 0 } }
+			417 = { set_variable = { mot_state_control = 0 } }
+			77 = { set_variable = { mot_state_control = 2 } }
+			#NCR Var Setting
+			NCR = {
+				set_variable = { ncr_vonc_kimball = 0 }
+				set_variable = { ncr_vonc_allgood = 0 }
+				set_variable = { ncr_vonc_undecided = 100 }
+				set_variable = { avail_trooper_div = 22 }
+				set_variable = { deploy_trooper_div = 0 }
+				set_variable = { avail_ranger_div = 7 }
+				set_variable = { deploy_ranger_div = 0 }
+			}
+
+			#VEG Chip Search
+			VEG = {
+				set_variable = { global.chip_search = 3955 }
+				#activate_mission = chip_countdown
+				#intialize_vegas_casino = yes
+			}
+
+			#Give nations that have the wrong laws the right ones as adding to history files didn't work?
+			NEW = {
+				add_ideas = mutant_law_none
+			}
+			VLT = {
+				add_ideas = mutant_law_none
+			}
+
+			# SLN startup
+			SLN = {
+				activate_mission = SLN_vision_quest_countdown
+			}
+		}
+	}
+
+	on_unit_leader_created = {
+		effect = {
+		}
+	}
+
+	# on_peaceconference_started = {
+	# 	effect = {
+	# 		every_state = {
+	# 			limit = {
+	# 				impassable = yes
+	# 				OWNER = {
+	# 					OR = {
+	# 						tag = ROOT
+	# 						tag = FROM
+	# 					}
+	# 				}
+	# 			}
+	# 		}
+	# 		add_to_array = {
+	# 			array = impassable_of_nation_in_peace_conference
+	# 		}
+	# 	}
+	# }
+
+	#ROOT is new controller #FROM is old controller #FROM.FROM is state ID
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = {
+					owns_state = 1
+				}
+				add_to_variable = { global.state_control_change_tick = 1 }
+			}
+			# Fix to the impassables transfering between nations not at war post-1.12 (Thanks Paradox)
+			# if = {
+			# 	limit = {
+			# 		FROM.FROM = {
+			# 			is_in_array = {
+			# 				array = impassable_of_nation_in_peace_conference
+			# 				value = THIS
+			# 			}
+			# 		}
+			# 	}
+			# 	if = {
+			# 		limit = {
+			# 			ROOT = {
+			# 				NOT = {
+			# 					has_war_with = FROM
+			# 				}
+			# 			}
+			# 		}
+			# 		FROM.FROM = {
+			# 			remove_from_array = {
+			# 				array = impassable_of_nation_in_peace_conference
+			# 				value = THIS
+			# 			}
+			# 			transfer_state_to = FROM
+			# 		}
+			# 	}
+			# 	else = {
+			# 		FROM.FROM = {
+			# 			remove_from_array = {
+			# 				array = impassable_of_nation_in_peace_conference
+			# 				value = THIS
+			# 			}
+			# 		}
+			# 	}
+			# }
+			if = {
+				limit = {
+					FROM.FROM = {
+						impassable = yes
+					}
+					ROOT = {
+						NOT = {
+							has_war_with = FROM
+						}
+					}
+				}
+				FROM.FROM = {
+					transfer_state_to = FROM
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_global_flag = war_for_heaven_finished }
+					NOT = { has_global_flag = ncn_canaan_in_flames }
+					NOT = { has_global_flag = ncn_canaan_in_glory }
+					FROM.FROM = { state = 551 }
+					FROM = { tag = NCN }
+					ROOT = {
+						OR = {
+							tag = WHT
+							is_in_faction_with = WHT
+							is_subject_of = WHT
+						}
+					}
+					NCN = { has_war_with = WHT }
+				}
+				NCN = {
+					country_event = nf_ncn.7
+					set_global_flag = war_for_heaven_finished
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_global_flag = ncn_canaan_in_flames }
+					NOT = { has_global_flag = ncn_canaan_in_glory }
+					NOT = { has_global_flag = war_for_heaven_finished }
+					FROM.FROM = { state = 326 }
+					FROM = { tag = WHT }
+					ROOT = {
+						OR = {
+							tag = NCN
+							is_in_faction_with = NCN
+							is_subject_of = NCN
+							AND = {
+								has_idea = ncn_idea_mormon_mission
+								NCN = { has_war_with = WHT }
+							}
+						}
+						NOT = { has_war_with = NCN }
+					}
+					OR = {
+						NCN = { has_war_with = WHT }
+						has_global_flag = NCN_alternate_route
+					}
+				}
+				NCN = {
+					country_event = nf_ncn.8
+					set_global_flag = war_for_heaven_finished
+					set_global_flag = ncn_canaan_in_glory
+					news_event = nf_ncn.80
+				}
+			}
+
+			### Tabitha Decision Mission Trigger
+			if = {
+				limit = {
+					FROM.FROM = {
+						state = 573
+					}
+					ROOT = {
+						is_super_mutant_nation = yes
+					}
+				}
+				activate_mission = the_fate_of_tabitha
+			}
+		}
+	}
+
+	on_unit_leader_level_up = {
+		effect = {
+
+		}
+	}
+
+	# From is owner country
+	on_army_leader_daily = {
+		effect = {
+			if = {
+				limit = {
+					check_variable = { random < 0.02 }
+					NOT = {
+						has_trait = sick
+						has_trait = virus
+					}
+					set_temp_variable = { temp = sum_unit_terrain_modifier@sickness_chance }
+					divide_temp_variable = { temp = num_units?1 }
+					check_variable = { temp > 0.75 }
+					NOT = { has_unit_leader_flag = recently_sick }
+					country_leaders_can_get_sick = yes
+				}
+
+				# Robots get viruses instead of being sick but paradox has shit ways to target generals so it's ID coded.
+				if = {
+					limit = {
+						OR = {
+							FROM = {
+								has_country_flag = has_robot_generals
+								NOT = {
+									tag = VEG
+								}
+							}
+							AND = {
+								FROM = {
+									tag = VEG
+								}
+								NOT = {
+									is_character = VEG_arcade_gannon
+									is_character = VEG_swank
+								}
+							}
+							AND = {
+								FROM = {
+									tag = TTM
+								}
+								NOT = {
+									is_character = TTM_ruth
+									is_character = TTM_helea
+									is_character = TTM_akeisha_moon
+								}
+							}
+							AND = {
+								FROM = {
+									tag = MOJ
+								}
+								OR = {
+									is_character = MOJ_vera_keyes
+									is_character = MOJ_primm_slim
+								}
+							}
+							AND = {
+								FROM = {
+									tag = ROB
+								}
+								is_character = ROB_doki_doki
+							}
+							AND = {
+								FROM = {
+									tag = PET
+								}
+								is_character = PET_petronet
+							}
+						}
+					}
+					add_timed_unit_leader_trait = {
+						trait = virus
+						days = 30
+					}
+					unit_leader_event = { id = generic.170 }
+				}
+				else = {
+					add_timed_unit_leader_trait = {
+						trait = sick
+						days = 30
+					}
+					unit_leader_event = { id = generic.17 }
+				}
+			}
+		}
+	}
+
+	# From is owner country
+	on_army_leader_won_combat = {
+		effect = {
+			if = {
+				limit = {
+					set_temp_variable = { chance = 0.001 }
+					set_temp_variable = { factor = 1.0 }
+					add_to_temp_variable = { factor = leader_modifier@wounded_chance_factor }
+					multiply_temp_variable = { chance = factor }
+					check_variable = { random < chance }
+					NOT = { has_trait = wounded }
+				}
+				add_timed_unit_leader_trait = {
+					trait = wounded
+					days = 90
+				}
+
+				# New Vegas gets robot events isntead of human ones.
+				if = {
+					limit = {
+						FROM = {
+							tag = VEG
+						}
+						NOT = {
+							is_character = VEG_arcade_gannon
+							is_character = VEG_victor
+							is_character = VEG_swank
+						}
+					}
+					unit_leader_event = { id = generic.180 }
+				}
+				else = {
+					unit_leader_event = { id = generic.18 }
+				}
+			}
+		}
+	}
+
+	# From is owner country
+	on_army_leader_lost_combat = {
+		effect = {
+			if = {
+				limit = {
+					set_temp_variable = { chance = 0.005 }
+					set_temp_variable = { factor = 1.0 }
+					add_to_temp_variable = { factor = leader_modifier@wounded_chance_factor }
+					multiply_temp_variable = { chance = factor }
+					check_variable = { random < chance }
+					NOT = { has_trait = wounded }
+				}
+				add_timed_unit_leader_trait = {
+					trait = wounded
+					days = 90
+				}
+
+				# New Vegas gets robot events isntead of human ones.
+				if = {
+					limit = {
+						FROM = {
+							tag = VEG
+						}
+						NOT = {
+							is_character = VEG_arcade_gannon
+							is_character = VEG_victor
+							is_character = VEG_swank
+						}
+					}
+					unit_leader_event = { id = generic.180 }
+				}
+				else = {
+					unit_leader_event = { id = generic.18 }
+				}
+			}
+		}
+	}
+
+	on_army_leader_promoted = {
+		effect = {
+			add_timed_unit_leader_trait = {
+				trait = recently_promoted
+				days = 100
+			}
+		}
+	}
+
+	# Scope is the country owner of the PotF, FROM is the country of the killer
+	on_pride_of_the_fleet_sunk = {
+	}
+
+	# root country that invades
+	# scope state that is invaded
+	# from scope state that the invasion started
+	# on_naval_invasion = {
+	# 	effect = {
+	# 	}
+	# }
+
+
+	# root country that paradrops
+	# scope state that is paradroped into
+	# from scope state that the paradrop started
+	on_paradrop = {
+		effect = {
+			set_country_flag = has_paradropped_flag
+		}
+	}
+	on_ruling_party_change = {
+		effect = {
+		}
+	}
+
+
+	# ROOT is capitulated country, FROM is winner
+	# on_peaceconference_ended = {
+	# 	effect = {
+	# 		set_temp_variable = {
+	# 			slaves_to_add = 0.40
+	# 		}
+	# 		add_slaves_to_nation = yes
+	# 	}
+	# }
+
+	#ROOT = attacking side
+	#FROM = defending side
+	#fired when two countries end up at war with each other (on_war is fired when a country goes to war against anyone and is not fired again when it enters war against another country unless it went to peace first)
+	on_war_relation_added = {
+		effect = {
+			if = {
+				limit = {
+					is_major = no
+					is_subject = no
+				}
+				set_country_flag = set_as_major_for_war
+				set_major = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						is_major = no
+						is_subject = no
+					}
+				}
+				FROM = {
+					set_country_flag = set_as_major_for_war
+					set_major = yes
+				}
+			}
+		}
+	}
+		#Liberty Enlightening Arizona
+	on_peaceconference_ended = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						original_tag = CES
+					}
+					ROOT = {
+						original_tag = NCR
+						is_new_california_member = yes
+					}
+					COW = {
+						is_new_california_member = yes
+					}
+				}
+				every_state = {
+					limit = {
+						is_arizona_state = yes
+					}
+					if = {
+						limit = {
+							has_state_flag = ncr_give_to_cow_once
+						}
+						clr_state_flag = ncr_give_to_cow_once
+						remove_claim_by = CES
+						COW = {
+							transfer_state = PREV
+						}
+					}
+				}
+			}
+		}
+	}
+}

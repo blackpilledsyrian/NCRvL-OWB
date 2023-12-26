@@ -1,0 +1,105 @@
+﻿l_english:
+  mutantsettlers_tt:0 "Three squads of Super mutant Conscripts will join our army."
+  ncr_owns_baja_states_tt:0 "We own the Baja States directly or through a puppet."
+  ncr_longmarch_tt:0 "§GIf you still own Boulder City the border between it and the Hoover Dam will be fortified with 3 Outposts in each province. If you no longer own Boulder City its border with you will be fortified with 3 outposts.§!"
+  rangerdeploy_tt:0 "The Rangers Lead the Way."
+  expandfrontierdevtooltip:0 "§GThis will unlock decisions to start border wars on the Frontier!§!"
+  westfrontierdevtooltip:0 "§GThis will unlock decisions for settling the Western Frontier§!"
+  northfrontierdevtooltip:0 "§GThis will unlock decisions for settling the Northern Frontier§!"
+  purchasinglandtooltip:0 "§GThis will allow you to purchase states from the Desert Rangers§!"
+  ncr_navarro_rising_tt:0 "§OThe Rangers§! §Ythat were sent into Navarro will rise, and together we'll attack the Shi!§!"
+  ncr_moore_baron_question_tt:0 "§gThe Barons fate must be decided first§!"
+  ncr_moore_hearts_tt:0 "\n§gThe power armor that was collected from the dead paladins will be used to create a memorial to the §Ofallen heroes§! of the war with the §RBrotherhood of Steel§!§!\n"
+  ncr_moore_best_reward_tt:0 "§g\nThere's no other bonus - destroying the Steel Plague is its own reward§!"
+  ncr_calhoun_shady_workers_tt:0 "§OWorking people rise up against the Moore's tyranny in Shady Sands§!"
+  ncr_calhoun_graham_not_back_tt:0 "§OThe Prodigal Son is yet to return.§!"
+  ncr_coredivide_tt:0 "§YGain cores on all of The Divide's core states which we own.§!"
+  ncr_baja_ally_tt:0 "§YThis will invite the people of Baja into our sphere, ensuring that they are alligned with us and dependent on our Economy. Of course this will also change their Focus Tree and Politcal Party.§!"
+
+  steel_hearts_memorial:0 "§gSteel Hearts Memorial§!"
+
+  ncr_destroyer_of_lost_hills:0 "§RDestroyer of Lost Hills§!"
+  ncr_tincans:0 "§RKnow Your Place,§! §gTincan§!"
+  ncr_professional_courtesy:0 "Professional Courtesy"
+
+  ncr_the_mother_of_california:0 "The Mother of California"
+
+  ncr_kimball_focus:0 "§RWe are focusing on another battle plan!§!"
+
+  #Kimballs tooltips
+  ncr_steel_bears_tt:0 "§tThree §g"Steel Bears"§! power armor units will be ready to serve!§!"
+  ncr_claims_utah_tt:0 "§tWe'll get claims on Northwest Arizona, Southeast and Southwest Utah!§!"
+  ncr_canyonlands_owning_tt:0 "§tWe secured the control over the lands of NW Arizona, SE and SW Utah§!"
+  ncr_basin_campaign_tt:0 "§tUnlocks decisions for a §gGreat Basin campaign§! to bring democracy to the West Nevada!§!"
+  ncr_no_tax_tt:0 "§tWe can't TAX anyone? Impossible!§!"
+  ncr_invest_cost_tt:0 "§RThis investment will cost us 1% penalty to consumer goods§!§G,but 3% increase of caps income!§!"
+  NCR_investment_n_1:0 "§tWe invested into a nearby country§!"
+  NCR_customs_union:0 "§tJoined the NCR Customs Union§!"
+  NCR_ready_to_puppet:0 "§tWe own their economy§!"
+  NCR_pay_taxes_tt:0 "§tUnlocks decisions to invest into nearby countries, allowing us to make them our economic puppet.§!"
+
+  #Murphy tooltips
+  ncr_mur_rbd_tt:0 "§Y@RBD [RBD.GetName]§! §4 will be released as a puppet under the protection of NCR!§!"
+  ncr_mur_lgs_tt:0 "§Y@LGS [LGS.GetName]§! §4will be released as a puppet under the protection of NCR!§!"
+  ncr_mur_gdh_tt:0 "§4The dictatorial regime of the Generalissimo will be transformed into a brand new§! §YSonora State§!"
+  ncr_mur_bear_hug_tt:0 "§4We will give guarantees to nearby non-raider West Coast nations and send them 3 ranger division to help protect their freedom!§!"
+  ncr_mur_baseball_tt:0 "§4Unlocks yearly baseball matches, that you can see in the decision menu!§!"
+  ncr_mur_moj_tt:0 "§4Unfortunately, we do not have the opportunity to negotiate with the @MOJ Mojave Brotherhood...\n\nMaybe we'll be able to do it later.§!"
+  ncr_mur_help_tt:0 "§4Unlocks decisions to help the nations all around the wasteland fight against the tyrants!§!"
+  ncr_veronica_came:0 "§gVeronica decided to become the Follower of the Apocalypse§!"
+  ncr_mur_veronica_tt:0 "§gVeronica Santangelo§! §Ybecomes a cultural advisor!§!"
+  ncr_veronica_tt:0 "\n\n§8Dozens of miles away, Veronica felt a disturbance about her mentor, as though he suddenly cried out in terror, and was suddenly silenced.§!"
+  ncr_mur_based_elijah_tt:0 "§RThe bunker exploded. A giant mushroom cloud, bigger than any nuke, erupted from Hidden Valley. The shockwave would be talked about for decades.§!"
+  ncr_mur_followers_influence_decrease:0 "This will reduce the desire of the §YFollowers of the Apocalypse§! to make demands towards our government, letting us ask for more assistance from them.\n\n"
+
+  #Hayes tooltips
+  ncr_hayes_unlock_mexico_tt:0 "§1We'll unlock decisions that let us start the Mexico campaign!§!"
+  ncr_hayes_moore_tt:0 "§1Colonel Moore will be given control of the newly annexed territories.§!"
+  ncr_hayes_uniform_tt:0 "§1"Put on your uniform, maggot!"§!"
+  ncr_hayes_granite_tt:0 "§1Granite will become a §YMilitary High Command§! advisor.§!"
+  ncr_hayes_area_51_tt:0 "§1A new puppet will be created on Sky Reavers lands, to oversee the research of pre-war technology.§!"
+  ncr_hayes_button_tt:0 "§1\nHey, what button is this?§!"
+  ncr_madre_hidden_tt:0 "§Y???§1 §Rwill be wiped out from the map.§!"
+  ncr_madre_tt:0 "§YSierra Madre§1 §Rwas wiped out from the map.§!"
+  ncr_lost_hills_wipe_tt:0 "§gLost Hills§! §Rwill be wiped out from the map.§!"
+  ncr_maxson_bunker_wipe_tt:0 "§gMaxson Bunker§! §Rwill be wiped out from the map.§!"
+
+  #Moore tooltips
+  ncr_claims_a_lot_tt:0 "§gWe'll get claims on Nevada, Arizona and Mojave!§!"
+  ncr_oregon_owning_tt:0 "§gOregon was pacified§!"
+  ncr_oregon_wargoal_tt:0 "§gWe'll get wargoals to finally pacify all those Oregon savages!§!"
+  ncr_crusade_tt:0 "§tUnlocks decision to finally wipe out the Brotherhood of Steel from the face of the Earth!§!"
+  ncr_hayes_gone_tt:0 "§1While Hayes is on his expedition, he won't be able to perform his political duties as an advisor!§!"
+  ncr_hayes_back_tt:0 "§1Confused over the fate of his country, Hayes becomes available as an advisor once again!§!"
+  ncr_oregon_puppet_tt:0 "§1Pre-war Oregon territory will become a puppet under Roger Ratboy control!§!"
+
+  #Calhoun
+  ncr_cal_navajo_tt:0 "§5Navajo are questioning their loyalty to the Legion§!"
+  ncr_cal_nevada_tt:0 "§5We will restore Nevada Rangers, the protectors of Nevada, under the rule of my good friend Angela Deth!§!"
+  ncr_cal_nevada_retake_tt:0 "§5I might not agree with such actons, but Angela is right, Nevada Rangers should be restored as the protectors of Nevada territories!\n§!"
+  ncr_cal_reformers_tt:0 "§5Even though negotiations with the reformists have been successful, we still have a long way to go before they come to power, but we will get decisions that will help to strengthen Lloyd position.§!"
+  ncr_cal_cooping_with_steel_rangers:0 "§5gWe are cooperating with the Steel Rangers currently§!"
+  ncr_good_man_goes_war_tt:0 "§57 divisions of Rangers and 10 divisions of militia will rally for our cause.§!"
+  ncr_cal_raiders_tt:0 "§RI can't allow another Caesar to appear on the wastelands...§!\n\n§5We will get a decision, that gives us §Rwargoals§! on the neighboring raider nations.§!"
+  ncr_cal_followers_tt:0 "§5All nations, who have Followers established, will get the following effects:\n§!"
+  ncr_empty_tt:0 "\n\n"
+  ncr_daniel_tt:0 "§5Looking for a shelter, New Canaan Exiles led by Daniel came to the Californian Way and we will sure help these lovely people.§!\n\n§YGet Daniel as a cultural advisor!§!"
+
+  ncr_moore_phoenix:0 "Camp Phoenix"
+
+
+  is_raider_nation:0 "§RIs a Raider Nation§!"
+
+  ncr_hayes_left:0 "§1Hayes is unanvailable at the moment!§!"
+
+  economy_moore_prosperity:0 "A Modern State"
+
+
+  MOSSMAN_TT:0 "\n§Y$NCR_mossman_character_name$§! becomes a Unit Leader.\n§LLevel§!: §Y4§!\n§RAttack Skill§!: §Y2§!\n§GDefense Skill§!: §Y2§!\n§PPlanning Skill§!: §Y3§!\n§MLogistics Skill§!: §Y3§!\n\n"
+  BIG_JIM_TT:0 "\n§Y$NCR_big_jim$§! becomes a Unit Leader.\n§LLevel§!: §Y3§!\n§RAttack Skill§!: §Y3§!\n§GDefense Skill§!: §Y1§!\n§PPlanning Skill§!: §Y2§!\n§MLogistics Skill§!: §Y2§!\n\n"
+  MOORE_TT:0 "\n§Y$NCR_moore_name$§! becomes a Unit Leader.\n§LLevel§!: §Y4§!\n§RAttack Skill§!: §Y3§!\n§GDefense Skill§!: §Y2§!\n§PPlanning Skill§!: §Y3§!\n§MLogistics Skill§!: §Y2§!\n\n"
+  GAMMA_TT:0 "\n§Y$NCR_LLOYD_GROVES_NAME$§! becomes a Unit Leader.\n§LLevel§!: §Y3§!\n§RAttack Skill§!: §Y1§!\n§GDefense Skill§!: §Y2§!\n§PPlanning Skill§!: §Y2§!\n§MLogistics Skill§!: §Y3§!\n\n"
+  DORNAN_TT:0 "\n§Y$NCR_ARCH_DORNAN_NAME$§! becomes a Unit Leader.\n§LLevel§!: §Y6§!\n§RAttack Skill§!: §Y4§!\n§GDefense Skill§!: §Y3§!\n§PPlanning Skill§!: §Y3§!\n§MLogistics Skill§!: §Y4§!\n§gTraits§!: §tCharismatic§!, §tEnduring§!, §tPain Train§!, §tUrban Assault Specialist§!\n\n"
+  GRANITE_TT:0 "\n§Y$ERB_GRANITE_NAME$§! becomes a Unit Leader.\n§LLevel§!: §Y5§!\n§RAttack Skill§!: §Y6§!\n§GDefense Skill§!: §Y2§!\n§PPlanning Skill§!: §Y3§!\n§MLogistics Skill§!: §Y1§!\n§gTraits§!: §tEnduring§!, §tPain Train§!, §tUrban Assault Specialist§!\n\n"
+  VERONICA_TT:0 "\n§Y$NCR_VERONICA_NAME$§! becomes a Unit Leader.\n§LLevel§!: §Y4§!\n§RAttack Skill§!: §Y4§!\n§GDefense Skill§!: §Y2§!\n§PPlanning Skill§!: §Y3§!\n§MLogistics Skill§!: §Y1§!\n§gTraits§!: §tStrong§!\n\n"
+  ROGER_TT:0 "\n§Y$NCR_ROGER_RATBOY_NAME$§! becomes a Unit Leader.\n§LLevel§!: §Y3§!\n§RAttack Skill§!: §Y3§!\n§GDefense Skill§!: §Y2§!\n§PPlanning Skill§!: §Y1§!\n§MLogistics Skill§!: §Y2§!\n§gTraits§!: §tEnduring§!, §tUrban Assault Specialist§!\n\n"

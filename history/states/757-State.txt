@@ -1,0 +1,23 @@
+state = {
+	id = 757
+	name = "STATE_757"
+	resources={
+		metal = 12
+		advanced = 2
+	}
+
+	history={
+		buildings = {
+			infrastructure = 1
+
+		}
+
+	}
+
+	provinces={
+		734 9403 9406 9410 9415 11077 11078 11085 11093
+	}
+	manpower=2849
+	buildings_max_level_factor=1.000
+	state_category=wasteland
+}

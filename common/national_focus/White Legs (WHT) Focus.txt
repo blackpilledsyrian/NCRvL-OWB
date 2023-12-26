@@ -1,0 +1,2832 @@
+####################################################
+#				White Legs Focus Tree
+#			Written by Faelin & Zusk
+#
+####################################################
+focus_tree = {
+	id = nf_wht
+	country = {
+		factor = 0
+		modifier = {
+			add = 13
+			tag = WHT
+		}
+	}
+	default = no
+	focus = {
+		id = wht_bombs_origins
+		icon = GFX_goal_WHT_generic_flag
+		cost = 7
+		x = 10
+		y = 0
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_bombs_origins entered"
+			}
+			country_event = {
+				id = nf_whitelegs.1
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_bombs_origins exited"
+			}
+		}
+	}
+	focus = {
+		id = wht_supermutant_invasion
+		icon = GFX_goal_WHT_supermutant
+		cost = 7
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = wht_bombs_origins
+		}
+		relative_position_id = wht_bombs_origins
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_supermutant_invasion entered"
+			}
+			country_event = {
+				id = nf_whitelegs.2
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_supermutant_invasion exited"
+			}
+		}
+	}
+	focus = {
+		id = wht_winds_change
+		icon = GFX_goal_WHT_ulysses
+		cost = 7
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = wht_supermutant_invasion
+		}
+		relative_position_id = wht_supermutant_invasion
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_winds_change entered"
+			}
+			country_event = {
+				id = nf_whitelegs.3
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_winds_change exited"
+			}
+		}
+	}
+	focus = {
+		id = wht_glories_caeasar
+		icon = GFX_goal_CES_roman_eagle
+		cost = 40
+		x = -7
+		y = 1
+		available = {
+			CES = {
+				exists = yes
+				is_subject = no
+			}
+		}
+		prerequisite = {
+			focus = wht_winds_change
+		}
+		relative_position_id = wht_winds_change
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_glories_caeasar entered"
+			}
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.05
+			}
+			set_temp_variable = {
+				caps_to_add = 200
+			}
+			add_caps = yes
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_glories_caeasar exited"
+			}
+		}
+	}
+	focus = {
+		id = wht_scavenge_ruins
+		icon = GFX_goal_generic_metal_focus
+		cost = 60
+		x = -4
+		y = 1
+		prerequisite = {
+			focus = wht_winds_change
+		}
+		relative_position_id = wht_winds_change
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_scavenge_ruins entered"
+			}
+			random_owned_state = {
+				limit = {
+					is_valid_state_for_2_civilian_factories = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_scavenge_ruins exited"
+			}
+		}
+	}
+	focus = {
+		id = wht_learn_to_drink
+		icon = GFX_goal_water_generic
+		cost = 60
+		x = 4
+		y = 1
+		prerequisite = {
+			focus = wht_winds_change
+		}
+		relative_position_id = wht_winds_change
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_learn_to_drink entered"
+			}
+			random_owned_state = {
+				limit = {
+					is_valid_state_for_purification_station = yes
+				}
+				set_temp_variable = {
+					pop_add = 500
+				}
+				add_state_population = yes
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = water_generator
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					is_valid_state_for_purification_station = yes
+				}
+				set_temp_variable = {
+					pop_add = 500
+				}
+				add_state_population = yes
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = water_generator
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					is_valid_state_for_purification_station = yes
+				}
+				set_temp_variable = {
+					pop_add = 500
+				}
+				add_state_population = yes
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = water_generator
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_learn_to_drink exited"
+			}
+		}
+	}
+	focus = {
+		id = wht_training_caesar
+		icon = GFX_goal_CES_centurion
+		cost = 40
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = wht_glories_caeasar
+		}
+		available = {
+			CES = {
+				exists = yes
+				is_subject = no
+			}
+		}
+		relative_position_id = wht_glories_caeasar
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_training_caesar entered"
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = cat_land_doctrine
+			}
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.05
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_training_caesar exited"
+			}
+		}
+	}
+	focus = {
+		id = wht_guns_from_flagstaff
+		icon = GFX_goal_CES_servus_publicus
+		cost = 40
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = wht_glories_caeasar
+		}
+		available = {
+			CES = {
+				exists = yes
+				is_subject = no
+			}
+		}
+		relative_position_id = wht_glories_caeasar
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_guns_from_flagstaff entered"
+			}
+			add_ideas = wht_caesar_lessons
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_guns_from_flagstaff exited"
+			}
+		}
+	}
+	focus = {
+		id = wht_slave_raiding
+		icon = GFX_goal_CES_slaves
+		cost = 40
+		x = 2
+		y = 1
+		prerequisite = {
+			focus = wht_glories_caeasar
+		}
+		available = {
+			CES = {
+				exists = yes
+				is_subject = no
+			}
+		}
+		relative_position_id = wht_glories_caeasar
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_slave_raiding entered"
+			}
+			add_political_power = 80
+			custom_effect_tooltip = unlock_slave_raiding
+			if = {
+				limit = { NCN = { exists = yes } }
+				NCN = {
+					add_to_variable = {
+						ncn_threat = 8
+					}
+					custom_effect_tooltip = ncn_gain_8_threat
+					update_ncn_threat = yes
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_slave_raiding exited"
+			}
+		}
+	}
+	focus = {
+		id = wht_guns_from_legion
+		icon = GFX_goal_generic_pipe_weapons_focus
+		cost = 40
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = wht_slave_raiding
+			focus = wht_guns_from_flagstaff
+			focus = wht_training_caesar
+		}
+		available = {
+			CES = {
+				exists = yes
+				is_subject = no
+			}
+			OR = {
+				has_completed_focus = wht_slave_raiding
+				has_completed_focus = wht_guns_from_flagstaff
+			}
+			OR = {
+				has_completed_focus = wht_slave_raiding
+				has_completed_focus = wht_training_caesar
+			}
+			OR = {
+				has_completed_focus = wht_training_caesar
+				has_completed_focus = wht_guns_from_flagstaff
+			}
+		}
+		relative_position_id = wht_guns_from_flagstaff
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_guns_from_legion entered"
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 600
+				producer = CES
+			}
+			add_tech_bonus = {
+				bonus = 0.2
+				uses = 1
+				category = ballistic_weaponry_tech_category
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_guns_from_legion exited"
+			}
+		}
+	}
+	focus = {
+		id = WHT_adopt_denarius
+		icon = GFX_goal_CES_denarius
+		cost = 60
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = wht_slave_raiding
+			focus = wht_guns_from_flagstaff
+		}
+		prerequisite = {
+			focus = wht_slave_raiding
+			focus = wht_training_caesar
+		}
+		prerequisite = {
+			focus = wht_slave_raiding
+			focus = wht_guns_from_flagstaff
+		}
+		available = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				ruler > 0.2
+			}
+			NOT = {
+				has_completed_focus = WHT_caps
+			}
+		}
+		relative_position_id = wht_guns_from_flagstaff
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] WHT_adopt_denarius entered"
+			}
+			set_country_flag = accept_denarius
+			swap_ideas = {
+				remove_idea = currencygenericcap
+				add_idea = currencycesdenarius
+			}
+			set_temp_variable = {
+				caps_to_add = 200
+			}
+			add_caps = yes
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.05
+			}
+			custom_effect_tooltip = WHT_adopt_denarius.tt
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] WHT_adopt_denarius exited"
+			}
+		}
+	}
+	focus = {
+		id = wht_mormon_slaves
+		icon = GFX_goal_NCN_Generic
+		cost = 40
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = wht_winds_change
+		}
+		relative_position_id = wht_winds_change
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_mormon_slaves entered"
+			}
+			add_popularity = {
+				ideology = people
+				popularity = 0.05
+			}
+			add_stability = 0.1
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_mormon_slaves exited"
+			}
+		}
+	}
+	focus = {
+		id = wht_copper_mines
+		icon = GFX_goal_generic_metal_focus
+		cost = 40
+		x = 2
+		y = 1
+		prerequisite = {
+			focus = wht_mormon_slaves
+		}
+		relative_position_id = wht_mormon_slaves
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_copper_mines entered"
+			}
+			326 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_resource = {
+					type = metal
+					amount = 10
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_copper_mines exited"
+			}
+		}
+	}
+
+
+	focus = {
+		id = wht_sell_animal_skins
+		icon = GFX_goal_generic_creature_gecko
+		cost = 40
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = wht_mormon_slaves
+		}
+		relative_position_id = wht_mormon_slaves
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_sell_animal_skins entered"
+			}
+			set_temp_variable = {
+				caps_to_add = 200
+			}
+			add_caps = yes
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_sell_animal_skins exited"
+			}
+		}
+	}
+	focus = {
+		id = wht_welcome_traders
+		icon = GFX_goal_generic_communcation_focus
+		cost = 40
+		prerequisite = {
+			focus = wht_mormon_slaves
+		}
+		relative_position_id = wht_mormon_slaves
+		x = 0
+		y = 1
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_welcome_traders entered"
+			}
+			set_temp_variable = {
+				caps_to_add = 75
+			}
+			add_caps = yes
+			random_owned_controlled_state = {
+				limit = {
+					is_valid_state_for_civilian_factory = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_valid_state_for_arms_factory = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_welcome_traders exited"
+			}
+		}
+	}
+	focus = {
+		id = wht_good_book
+		icon = GFX_goal_NCN_Mormon_Book
+		cost = 40
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = wht_welcome_traders
+			focus = wht_sell_animal_skins
+			focus = wht_copper_mines
+		}
+		available = {
+			OR = {
+				has_completed_focus = wht_welcome_traders
+				has_completed_focus = wht_sell_animal_skins
+			}
+			OR = {
+				has_completed_focus = wht_sell_animal_skins
+				has_completed_focus = wht_copper_mines
+			}
+			OR = {
+				has_completed_focus = wht_welcome_traders
+				has_completed_focus = wht_copper_mines
+			}
+		}
+		relative_position_id = wht_welcome_traders
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = WHT_widespread_illiteracy
+				add_idea = WHT_limited_literacy
+			}
+			add_popularity = {
+				ideology = people
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = wht_strong_arms_white_legs
+		icon = GFX_goal_WHT_salt_upon
+		cost = 40
+		x = 7
+		y = 1
+		prerequisite = {
+			focus = wht_winds_change
+		}
+		relative_position_id = wht_winds_change
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_strong_arms_white_legs entered"
+			}
+			add_popularity = {
+				ideology = elites
+				popularity = 0.05
+			}
+			add_stability = 0.1
+			custom_effect_tooltip = wht_strong_arms_white_legs_tt
+			add_to_variable = {
+				pantheon_loyalty_var = 0.05
+			}
+			add_to_variable = {
+				pantheon_mood_var = 0.2
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_strong_arms_white_legs exited"
+			}
+		}
+	}
+	focus = {
+		id = wht_god_salt
+		icon = GFX_goal_generic_food_focus
+		cost = 40
+		x = 2
+		y = 1
+		prerequisite = {
+			focus = wht_strong_arms_white_legs
+		}
+		relative_position_id = wht_strong_arms_white_legs
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_god_salt entered"
+			}
+			add_ideas = god_of_salt
+			custom_effect_tooltip = wht_strong_arms_white_legs_tt
+			add_to_variable = {
+				pantheon_loyalty_var = 0.05
+			}
+			add_to_variable = {
+				pantheon_mood_var = 0.2
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_god_salt exited"
+			}
+		}
+	}
+	focus = {
+		id = wht_god_lake
+		icon = GFX_goal_NCN_Northern_Missionaries
+		cost = 40
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = wht_strong_arms_white_legs
+		}
+		relative_position_id = wht_strong_arms_white_legs
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_god_lake entered"
+			}
+			add_ideas = god_of_the_lake
+			custom_effect_tooltip = wht_strong_arms_white_legs_tt
+			add_to_variable = {
+				pantheon_loyalty_var = 0.05
+			}
+			add_to_variable = {
+				pantheon_mood_var = 0.2
+			}
+			if = {
+				limit = { NCN = { exists = yes } }
+				NCN = {
+					add_to_variable = {
+						ncn_threat = 4
+					}
+					custom_effect_tooltip = ncn_gain_4_threat
+					update_ncn_threat = yes
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_god_lake exited"
+			}
+		}
+	}
+	focus = {
+		id = wht_god_sky
+		icon = GFX_goal_generic_airplane
+		cost = 40
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = wht_strong_arms_white_legs
+		}
+		relative_position_id = wht_strong_arms_white_legs
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_god_sky entered"
+			}
+			add_ideas = god_of_sky
+		}
+	}
+	focus = {
+		id = wht_the_city_slickers
+		icon = GFX_goal_generic_war_focus
+		cost = 40
+		x = 2
+		y = 1
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		prerequisite = {
+			focus = wht_slave_raiding
+			focus = wht_sell_animal_skins
+		}
+		bypass = {
+			FRI = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		allow_branch = {
+			has_global_flag = WHT_status_broken_global_flag
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		will_lead_to_war_with = FRI
+		relative_position_id = wht_slave_raiding
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_the_city_slickers entered"
+			}
+			FRI = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+			if = {
+				limit = { NCN = { exists = yes } }
+				custom_effect_tooltip = ncn_gain_2_threat_on_declare
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_the_city_slickers exited"
+			}
+		}
+	}
+	focus = {
+		id = wht_god_old
+		icon = GFX_goal_wht_helmet
+		cost = 40
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = wht_god_sky
+			focus = wht_god_lake
+			focus = wht_god_salt
+		}
+		available = {
+			OR = {
+				has_completed_focus = wht_god_sky
+				has_completed_focus = wht_god_lake
+			}
+			OR = {
+				has_completed_focus = wht_god_sky
+				has_completed_focus = wht_god_salt
+			}
+			OR = {
+				has_completed_focus = wht_god_salt
+				has_completed_focus = wht_god_lake
+			}
+		}
+		relative_position_id = wht_god_lake
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_god_old entered"
+			}
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.1
+			}
+			add_war_support = 0.05
+			add_manpower = 750
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_god_old exited"
+			}
+		}
+	}
+	focus = {
+		id = WHT_caps
+		icon = GFX_goal_bottlecap
+		cost = 60
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = wht_god_sky
+			focus = wht_god_lake
+			focus = wht_god_salt
+		}
+		available = {
+			NOT = {
+				has_completed_focus = WHT_adopt_denarius
+			}
+		}
+		relative_position_id = wht_god_lake
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] WHT_caps entered"
+			}
+			add_stability = -0.025
+			set_temp_variable = {
+				caps_to_add = 200
+			}
+			add_caps = yes
+			add_political_power = 75
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] WHT_caps exited"
+			}
+		}
+	}
+	focus = {
+		id = wht_clock_breaking
+		icon = GFX_goal_generic_alarm_clock
+		cost = 40
+		x = 3
+		y = 1
+		prerequisite = {
+			focus = wht_god_old
+			focus = wht_good_book
+		}
+		prerequisite = {
+			focus = wht_god_old
+			focus = wht_guns_from_legion
+		}
+		prerequisite = {
+			focus = wht_good_book
+			focus = wht_guns_from_legion
+		}
+		relative_position_id = wht_good_book
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		ai_will_do = {
+			modifier = {
+				factor = 0
+				has_completed_focus = wht_tar_walking
+				NOT = { has_completed_focus = wht_tar_stuck }
+			}
+			modifier = {
+				factor = 1.5
+			}
+		}
+		# bypass = {
+		#		CLK = {
+		#			all_core_land_owned_by_prev_sphere = yes
+		#		}
+		# }
+
+		will_lead_to_war_with = CLK
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_clock_breaking entered"
+			}
+			CLK = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+			if = {
+				limit = { NCN = { exists = yes } }
+				custom_effect_tooltip = ncn_gain_8_threat_on_declare
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_clock_breaking exited"
+			}
+		}
+	}
+	focus = {
+		id = wht_adopt_clock
+		icon = GFX_goal_generic_generic_diplomatic_focus
+		cost = 40
+		x = 2
+		y = 1
+		prerequisite = {
+			focus = wht_clock_breaking
+		}
+		available = {
+			#owns_state = 496
+			CLK = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		mutually_exclusive = {
+			focus = wht_send_clock_to_flagstaff
+		}
+		mutually_exclusive = {
+			focus = wht_break_clock
+		}
+		relative_position_id = wht_clock_breaking
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_adopt_clock entered"
+			}
+			add_popularity = {
+				ideology = people
+				popularity = 0.05
+			}
+			add_stability = 0.05
+			random_owned_controlled_state = {
+				limit = {
+					is_valid_state_for_civilian_factory = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_adopt_clock exited"
+			}
+		}
+	}
+	focus = {
+		id = wht_send_clock_to_flagstaff
+		icon = GFX_goal_CES_diplomatic
+		cost = 40
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = wht_clock_breaking
+		}
+		mutually_exclusive = {
+			focus = wht_break_clock
+		}
+		mutually_exclusive = {
+			focus = wht_adopt_clock
+		}
+		available = {
+			CES = {
+				exists = yes
+				is_subject = no
+			}
+			#owns_state = 496
+			CLK = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = wht_clock_breaking
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_send_clock_to_flagstaff entered"
+			}
+			add_tech_bonus = {
+				bonus = 0.4
+				uses = 2
+				category = infantry_weapons_tech_category
+			}
+			NCN = {
+				add_to_variable = {
+					ncn_threat = 4
+				}
+				custom_effect_tooltip = ncn_gain_4_threat
+				update_ncn_threat = yes
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_send_clock_to_flagstaff exited"
+			}
+		}
+	}
+	focus = {
+		id = wht_break_clock
+		icon = GFX_goal_generic_brass_knuckles
+		cost = 40
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = wht_clock_breaking
+		}
+		mutually_exclusive = {
+			focus = wht_send_clock_to_flagstaff
+		}
+		mutually_exclusive = {
+			focus = wht_adopt_clock
+		}
+		available = {
+			#owns_state = 496
+			CLK = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = wht_clock_breaking
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_break_clock entered"
+			}
+			496 = {
+				add_resource = {
+					type = metal
+					amount = 6
+				}
+				add_resource = {
+					type = composites
+					amount = 3
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName]	wht_break_clock exited"
+			}
+			NCN = {
+				add_to_variable = {
+					ncn_threat = 8
+				}
+				custom_effect_tooltip = ncn_gain_8_threat
+				update_ncn_threat = yes
+			}
+		}
+	}
+	focus = {
+		id = wht_tar_walking
+		icon = GFX_goal_generic_flamer_focus
+		cost = 40
+		x = -3
+		y = 1
+		prerequisite = {
+			focus = wht_god_old
+			focus = wht_good_book
+		}
+		prerequisite = {
+			focus = wht_god_old
+			focus = wht_guns_from_legion
+		}
+		prerequisite = {
+			focus = wht_good_book
+			focus = wht_guns_from_legion
+		}
+		relative_position_id = wht_good_book
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		ai_will_do = {
+			modifier = {
+				factor = 0
+				has_completed_focus = wht_clock_breaking
+				NOT = { has_completed_focus = wht_clock_silenced }
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_completed_focus = wht_clock_breaking }
+			}
+			modifier = {
+				factor = 0
+				has_global_flag = WHT_status_broken_global_flag
+				NOT = { has_completed_focus = wht_the_city_slickers }
+			}
+			modifier = {
+				factor = 1.5
+			}
+		}
+		# bypass = {
+		#		TAR = {
+		#			all_core_land_owned_by_prev_sphere = yes
+		#		}
+		# }
+
+		will_lead_to_war_with = TAR
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_tar_walking entered"
+			}
+			TAR = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+			if = {
+				limit = { NCN = { exists = yes } }
+				custom_effect_tooltip = ncn_gain_10_threat_on_declare
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] wht_tar_walking exited"
+			}
+		}
+	}
+	focus = {
+		id = wht_bone_breakers
+		icon = GFX_goal_generic_sledgehammers
+		cost = 40
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = wht_god_old
+			focus = wht_good_book
+		}
+		prerequisite = {
+			focus = wht_god_old
+			focus = wht_guns_from_legion
+		}
+		prerequisite = {
+			focus = wht_god_old
+			focus = wht_guns_from_legion
+		}
+		relative_position_id = wht_good_book
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = tribal_tech_category
+			}
+		}
+	}
+	focus = {
+		id = wht_sappers
+		icon = GFX_goal_generic_artillery
+		cost = 40
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = wht_god_old
+			focus = wht_good_book
+		}
+		prerequisite = {
+			focus = wht_god_old
+			focus = wht_guns_from_legion
+		}
+		prerequisite = {
+			focus = wht_god_old
+			focus = wht_guns_from_legion
+		}
+		relative_position_id = wht_good_book
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = support_dog_tech_category
+			}
+		}
+	}
+	focus = {
+		id = wht_enslave_tar
+		icon = GFX_goal_BRK_enslave_the_opposition
+		cost = 40
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = wht_tar_walking
+		}
+		mutually_exclusive = {
+			focus = wht_lords_tar
+		}
+		mutually_exclusive = {
+			focus = wht_wives_tar
+		}
+		available = {
+			#owns_state = 138
+			TAR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = wht_tar_walking
+		completion_reward = {
+			set_temp_variable = {
+				caps_to_add = 200
+			}
+			add_caps = yes
+			NCN = {
+				add_to_variable = {
+					ncn_threat = 8
+				}
+				custom_effect_tooltip = ncn_gain_8_threat
+				update_ncn_threat = yes
+			}
+		}
+	}
+	focus = {
+		id = wht_lords_tar
+		icon = GFX_goal_generic_food_focus
+		cost = 40
+		x = 2
+		y = 1
+		prerequisite = {
+			focus = wht_tar_walking
+		}
+		available = {
+			#owns_state = 138
+			TAR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		mutually_exclusive = {
+			focus = wht_enslave_tar
+		}
+		mutually_exclusive = {
+			focus = wht_wives_tar
+		}
+		relative_position_id = wht_tar_walking
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_valid_state_for_2_civilian_factories = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = wht_wives_tar
+		icon = GFX_goal_BRK_wife_strength
+		cost = 40
+		x = 0
+		y = 1
+		mutually_exclusive = {
+			focus = wht_lords_tar
+		}
+		mutually_exclusive = {
+			focus = wht_enslave_tar
+		}
+		available = {
+			#owns_state = 138
+			TAR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		prerequisite = {
+			focus = wht_tar_walking
+		}
+		relative_position_id = wht_tar_walking
+		completion_reward = {
+			add_tech_bonus = {
+				name = agri_development
+				bonus = 0.5
+				uses = 2
+				category = industry
+			}
+			NCN = {
+				add_to_variable = {
+					ncn_threat = 4
+				}
+				custom_effect_tooltip = ncn_gain_4_threat
+				update_ncn_threat = yes
+			}
+		}
+	}
+	focus = {
+		id = wht_clock_silenced
+		icon = GFX_goal_generic_data_focus
+		cost = 40
+		x = 2
+		y = 1
+		prerequisite = {
+			focus = wht_break_clock
+			focus = wht_send_clock_to_flagstaff
+			focus = wht_adopt_clock
+		}
+		available = {
+			owns_state = 496
+		}
+		relative_position_id = wht_break_clock
+		completion_reward = {
+			496 = {
+				add_core_of = WHT
+			}
+		}
+	}
+	focus = {
+		id = wht_tar_stuck
+		icon = GFX_goal_fallout_tool
+		cost = 40
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = wht_lords_tar
+			focus = wht_enslave_tar
+			focus = wht_wives_tar
+		}
+		available = {
+			owns_state = 138
+		}
+		relative_position_id = wht_wives_tar
+		completion_reward = {
+			138 = {
+				add_core_of = WHT
+			}
+		}
+	}
+	focus = {
+		id = wht_eighties_negotiation
+		text = wht_eighties_negotiation_switch
+		icon = GFX_goal_generic_war_focus
+		cost = 40
+		x = -1
+		y = 1
+		dynamic = yes
+		available = {
+			if = {
+				limit = {
+					has_global_flag = EHT_status_broken_global_flag
+				}
+				has_completed_focus = wht_clock_breaking
+			}
+		}
+		bypass = {
+			if = {
+				limit = {
+					has_global_flag = EHT_status_broken_global_flag
+				}
+				NOE = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+			else = {
+				EHT = { exists = no }
+			}
+		}
+		prerequisite = {
+			focus = wht_break_clock
+			focus = wht_send_clock_to_flagstaff
+			focus = wht_adopt_clock
+		}
+		prerequisite = {
+			focus = wht_lords_tar
+			focus = wht_enslave_tar
+			focus = wht_wives_tar
+		}
+		will_lead_to_war_with = NOE
+		relative_position_id = wht_break_clock
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = EHT_status_broken_global_flag
+				}
+				NOE = {
+					ROOT = {
+						grant_wargoals_on_core_states_of_prev = yes
+					}
+				}
+				if = {
+					limit = { NCN = { exists = yes } }
+					custom_effect_tooltip = ncn_gain_8_threat_on_declare
+				}
+			}
+			else = {
+				country_event = nf_whitelegs.6
+				NCN = {
+					add_to_variable = {
+						ncn_threat = 4
+					}
+					custom_effect_tooltip = ncn_gain_4_threat
+					update_ncn_threat = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = wht_envelop_ncn
+		icon = GFX_goal_NCN_Mormon_Book
+		cost = 40
+		x = 2
+		y = 1
+		prerequisite = {
+			focus = wht_eighties_negotiation
+		}
+		available = {
+			is_subject = no
+			is_neighbor_of = NCN
+			is_neighbor_of = CRZ
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		ai_will_do = {
+			# Strongly encourage the White Legs to take out CRZ if they haven't been
+			# guaranteed by New Canaan yet.
+			modifier = {
+				factor = 5
+				NOT = {
+					NCN = { has_guaranteed = CRZ }
+				}
+			}
+			modifier = {
+				factor = 2
+				NOT = {
+					NCN = { has_completed_focus = NCN_fortify_south }
+				}
+			}
+		}
+		relative_position_id = wht_eighties_negotiation
+		will_lead_to_war_with = CRZ
+		completion_reward = {
+			CRZ = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+			if = {
+				limit = { NCN = { exists = yes } }
+				custom_effect_tooltip = ncn_gain_10_threat_on_declare
+			}
+		}
+	}
+	focus = {
+		id = wht_betray_eighties
+		icon = GFX_goal_80
+		cost = 40
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = wht_eighties_negotiation
+		}
+		allow_branch = {
+			has_global_flag = EHT_status_default_global_flag
+		}
+		available = {
+			EHT = {
+				exists = yes
+				NOT = { is_subject_of = ROOT }
+				NOT = { is_in_faction_with = ROOT }
+			}
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			if = {
+				limit = {
+					has_global_flag = NCN_status_default_global_flag
+				}
+				EHT = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 0
+				OR = {
+					EHT = {
+						EHT_has_ai_behavior_legs = yes
+					}
+					AND = {
+						EHT = {
+							is_ai = no
+							OR = {
+								AND = {
+									has_completed_focus = EHT_ally_white_legs
+									NOT = {
+										has_completed_focus = EHT_preparing_the_war_trails
+									}
+								}
+								AND = {
+									NOT = {
+										has_completed_focus = EHT_preparing_the_war_trails
+									}
+									NOT = {
+										has_completed_focus = EHT_ally_mormons
+									}
+									NOT = {
+										has_completed_focus = EHT_second_nevada_road_war
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		will_lead_to_war_with = EHT
+		relative_position_id = wht_eighties_negotiation
+		completion_reward = {
+			custom_effect_tooltip = wht_betray_eighties_tt
+			EHT = {
+				country_event = { id = nf_whitelegs.17 days = 1 }
+			}
+		}
+	}
+	focus = {
+		id = wht_attack_mormons
+		icon = GFX_goal_wht_burn_salt_lake_city
+		cost = 40
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = wht_eighties_negotiation
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			if = {
+				limit = {
+					has_global_flag = NCN_status_broken_global_flag
+				}
+				BRI = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+				FAR = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+			else = {
+				NCN = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+		}
+		ai_will_do = {
+			# Discourage the White Legs from pursuing war with New Canaan if they can
+			# still easily take out CRZ without involving NCN.
+			modifier = {
+				if = {
+					limit = {
+						NOT = { has_completed_focus = wht_envelop_ncn }
+						CRZ = {
+							exists = yes
+							NOT = { is_subject_of = ROOT }
+							NOT = { is_in_faction_with = ROOT }
+						}
+						NOT = {
+							NCN = {
+								OR = {
+									has_guaranteed = CRZ
+									is_in_faction_with = CRZ
+								}
+							}
+						}
+					}
+					set_temp_variable = { focus_factor = 0.1 }
+				}
+				else = {
+					set_temp_variable = { focus_factor = 10 }
+				}
+				factor = focus_factor
+			}
+		}
+		will_lead_to_war_with = BRI
+		will_lead_to_war_with = FAR
+		will_lead_to_war_with = NCN
+		relative_position_id = wht_eighties_negotiation
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = NCN_status_broken_global_flag
+				}
+				if = {
+					limit = {
+						BRI = {
+							NOT = { all_core_land_owned_by_prev_sphere = yes }
+						}
+					}
+					BRI = {
+						ROOT = {
+							grant_wargoals_on_core_states_of_prev = yes
+						}
+					}
+				}
+				if = {
+					limit = {
+						FAR = {
+							NOT = { all_core_land_owned_by_prev_sphere = yes }
+						}
+					}
+					FAR = {
+						ROOT = {
+							grant_wargoals_on_core_states_of_prev = yes
+						}
+					}
+				}
+			}
+			else = {
+				NCN = {
+					ROOT = {
+						grant_wargoals_on_core_states_of_prev = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = wht_attack_mormons_ferocity
+		icon = GFX_goal_generic_deathclaw
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = wht_attack_mormons
+		}
+		mutually_exclusive = {
+			focus = wht_attack_mormons_compassion
+		}
+		relative_position_id = wht_attack_mormons
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					is_utah_state = yes
+				}
+				add_resistance = -20
+			}
+		}
+	}
+	focus = {
+		id = wht_attack_mormons_compassion
+		icon = GFX_goal_generic_radaway
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = wht_attack_mormons
+		}
+		mutually_exclusive = {
+			focus = wht_attack_mormons_ferocity
+		}
+		relative_position_id = wht_attack_mormons
+
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					is_utah_state = yes
+				}
+				add_compliance = 20
+			}
+		}
+	}
+	focus = {
+		id = wht_coronation_of_the_brute
+		icon = GFX_goal_generic_mountain_fortress
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = wht_attack_mormons_ferocity
+			focus = wht_attack_mormons_compassion
+		}
+		available = {
+			owns_state = 551
+		}
+		relative_position_id = wht_attack_mormons_ferocity
+		completion_reward = {
+			551 = {
+				add_core_of = WHT
+			}
+			country_event = nf_whitelegs.13
+		}
+	}
+	focus = {
+		#Military - Navy
+		id = wht_legs_navy
+		icon = GFX_goal_generic_wooden_ship
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = wht_coronation_of_the_brute
+		prerequisite = {
+			focus = wht_coronation_of_the_brute
+		}
+		x = 3
+		y = 1
+		cost = 40
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+			}
+		}
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					is_valid_state_for_2_dockyards = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_doctrine_cost_reduction = {
+				name = naval_doctrine_bonus
+				cost_reduction = 0.75
+				uses = 2
+				category = cat_naval_doctrine
+			}
+		}
+	}
+	focus = {
+		id = wht_lessons_from_raiding_rivers
+		icon = GFX_goal_ARM_reynosa_dockyard_renovations
+		cost = 40
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = wht_legs_navy
+		}
+		relative_position_id = wht_legs_navy
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = naval_doctrine_bonus
+				cost_reduction = 0.75
+				uses = 2
+				category = cat_naval_doctrine
+			}
+			navy_experience = 50
+		}
+	}
+	focus = {
+		#Military - Taxes
+		id = wht_legs_regularize_tithes
+		icon = GFX_goal_NEW_Caps_for_Loyalty
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = wht_coronation_of_the_brute
+		prerequisite = {
+			focus = wht_coronation_of_the_brute
+		}
+		x = 1
+		y = 1
+		cost = 40
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					is_valid_state_for_3_civilian_factories = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		#Military - Taxes
+		id = wht_parliament
+		icon = GFX_goal_RRG_radio_broadcast
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = wht_legs_regularize_tithes
+		prerequisite = {
+			focus = wht_legs_regularize_tithes
+		}
+		x = 0
+		y = 1
+		cost = 40
+		completion_reward = {
+			country_event = {
+				id = nf_whitelegs.28
+			}
+		}
+	}
+	focus = {
+		# Settling
+		id = wht_settle_lands
+		icon = GFX_goal_generic_food_focus
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = wht_coronation_of_the_brute
+		prerequisite = {
+			focus = wht_coronation_of_the_brute
+		}
+		x = -1
+		y = 1
+		cost = 40
+		completion_reward = {
+			add_ideas = WHT_settling_down
+		}
+	}
+	focus = {
+		# Settling
+		id = wht_tenant_farmers
+		icon = GFX_KHA_focus_slave_2
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = wht_settle_lands
+		prerequisite = {
+			focus = wht_settle_lands
+		}
+		x = 0
+		y = 1
+		cost = 40
+		completion_reward = {
+			add_ideas = WHT_tenant_farmers
+		}
+	}
+	focus = {
+		# Standing Army 1
+		id = wht_standing_army_1
+		icon = GFX_goal_sling_shot
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = wht_coronation_of_the_brute
+		prerequisite = {
+			focus = wht_coronation_of_the_brute
+		}
+		x = -3
+		y = 1
+		cost = 40
+		completion_reward = {
+			army_experience = 75
+		}
+	}
+	focus = {
+		# Standing Army 1
+		id = wht_standing_army_2
+		icon = GFX_goal_power_fist
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = wht_standing_army_1
+		prerequisite = {
+			focus = wht_standing_army_1
+		}
+		x = 0
+		y = 1
+		cost = 40
+		completion_reward = {
+			add_ideas = WHT_standing_army
+		}
+	}
+	focus = {
+		#  Utah
+		id = wht_chiefs_of_utah
+		icon = GFX_goal_NCN_Kingdom_of_God
+		ai_will_do = {
+			factor = 1
+		}
+		relative_position_id = wht_standing_army_2
+		prerequisite = {
+			focus = wht_standing_army_2
+			focus = wht_tenant_farmers
+			focus = wht_parliament
+			focus = wht_lessons_from_raiding_rivers
+		}
+		x = 3
+		y = 1
+		cost = 40
+		completion_reward = {
+			custom_effect_tooltip = wht_chiefs_of_utah_tt
+			add_research_slot = 1
+			every_state = {
+				limit = {
+					is_utah_state = yes
+				}
+				add_claim_by = WHT
+			}
+		}
+	}
+	focus = {
+		id = WHT_friend_legion
+		icon = GFX_KHA_focus_befriend_legion
+		cost = 30
+		x = 6
+		y = 15
+		available = {
+			date > 2277.1.1
+		}
+		ai_will_do = {
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						AND = {
+							has_completed_focus = wht_clock_silenced
+							has_completed_focus = wht_tar_stuck
+						}
+						AND = {
+							OR = {
+								has_completed_focus = wht_clock_breaking
+								has_completed_focus = wht_tar_walking
+							}
+							has_completed_focus = wht_sappers
+							has_completed_focus = wht_bone_breakers
+							has_completed_focus = wht_scavenge_ruins
+							has_completed_focus = wht_learn_to_drink
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 10
+				has_global_flag = WHT_ai_behavior_legion_global_flag
+			}
+			modifier = {
+				factor = 0.1
+				OR = {
+					has_global_flag = WHT_ai_behavior_claws_global_flag
+					has_global_flag = WHT_ai_behavior_mormon_global_flag
+				}
+			}
+		}
+		completion_reward = {
+			add_political_power = 100
+			add_to_tech_sharing_group = legion_research_pact
+			add_manpower = 500
+		}
+	}
+	focus = {
+		id = WHT_ulysses
+		icon = GFX_goal_WHT_ulysses
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = WHT_friend_legion
+		}
+		relative_position_id = WHT_friend_legion
+		available = {
+		}
+		completion_reward = {
+			unlock_decision_tooltip = white_legs_recruit_ulysses
+		}
+	}
+	focus = {
+		id = WHT_legion_support
+		icon = GFX_goal_revolver
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = WHT_ulysses
+		}
+		relative_position_id = WHT_ulysses
+		available = {
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_valid_state_for_3_civilian_factories = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = WHT_braid_hair
+		icon = GFX_goal_CES_centurion
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = WHT_legion_support
+		}
+		relative_position_id = WHT_legion_support
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 100
+			add_war_support = 0.05
+		}
+	}
+	focus = {
+		id = WHT_legion_training
+		icon = GFX_goal_CES_burning_blade
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = WHT_friend_legion
+		}
+		relative_position_id = WHT_friend_legion
+		available = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.05
+			}
+			add_ideas = WHT_legion_training_idea
+		}
+	}
+	focus = {
+		id = WHT_arms_depots
+		icon = GFX_goal_generic_supplies_focus
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = WHT_legion_training
+		}
+		relative_position_id = WHT_legion_training
+		available = {
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = raider_ballistic_bonus
+				bonus = 0.5
+				uses = 1
+				category = ballistic_weaponry_tech_category
+			}
+			country_event = nf_whitelegs.4
+		}
+	}
+	focus = {
+		id = WHT_send_youth_flagstaff
+		icon = GFX_goal_CES_praetorian_guard
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = WHT_arms_depots
+		}
+		relative_position_id = WHT_arms_depots
+		available = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.05
+			}
+			add_manpower = -500
+			CES = {
+				add_manpower = 500
+			}
+			add_tech_bonus = {
+				name = military_advances
+				bonus = 0.75
+				uses = 2
+				category = cat_land_doctrine
+			}
+		}
+	}
+	focus = {
+		id = WHT_our_new_master
+		icon = GFX_goal_CES_ces_lucius
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = WHT_braid_hair
+		}
+		prerequisite = {
+			focus = WHT_send_youth_flagstaff
+		}
+		available = {
+		}
+		relative_position_id = WHT_send_youth_flagstaff
+		completion_reward = {
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.05
+			}
+			country_event = {
+				id = nf_whitelegs.15
+			}
+		}
+	}
+	focus = {
+		id = WHT_happy_trails_caravan
+		icon = GFX_goal_brahmin_cart
+		cost = 30
+		x = 14
+		y = 15
+		available = {
+			date > 2277.1.1
+		}
+		ai_will_do = {
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						AND = {
+							has_completed_focus = wht_clock_silenced
+							has_completed_focus = wht_tar_stuck
+						}
+						AND = {
+							OR = {
+								has_completed_focus = wht_clock_breaking
+								has_completed_focus = wht_tar_walking
+							}
+							has_completed_focus = wht_sappers
+							has_completed_focus = wht_bone_breakers
+							has_completed_focus = wht_scavenge_ruins
+							has_completed_focus = wht_learn_to_drink
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 10
+				has_global_flag = WHT_ai_behavior_mormon_global_flag
+			}
+			modifier = {
+				factor = 0.1
+				OR = {
+					has_global_flag = WHT_ai_behavior_legion_global_flag
+					has_global_flag = WHT_ai_behavior_mormon_global_flag
+				}
+			}
+		}
+		completion_reward = {
+			add_political_power = 100
+			add_popularity = {
+				ideology = people
+				popularity = 0.05
+			}
+		}
+	}
+
+	focus = {
+		id = WHT_tater_farming
+		icon = GFX_goal_generic_food_focus
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = WHT_happy_trails_caravan
+		}
+		relative_position_id = WHT_happy_trails_caravan
+		available = {
+		}
+		completion_reward = {
+			set_temp_variable = {
+				caps_to_add = 400
+			}
+			add_caps = yes
+		}
+	}
+	focus = {
+		id = WHT_safe_travels
+		icon = GFX_goal_NEW_Caps_for_Loyalty
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = WHT_tater_farming
+		}
+		relative_position_id = WHT_tater_farming
+		available = {
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					infrastructure < 9
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					infrastructure < 9
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					infrastructure < 9
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					infrastructure < 9
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			set_temp_variable = {
+				caps_to_add = 200
+			}
+			add_caps = yes
+		}
+	}
+	focus = {
+		id = WHT_restart_mines
+		icon = GFX_goal_generic_metal_focus
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = WHT_safe_travels
+		}
+		relative_position_id = WHT_safe_travels
+		available = {
+		}
+		completion_reward = {
+			373 = {
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				add_resource = {
+					type = metal
+					amount = 15
+				}
+			}
+		}
+	}
+	focus = {
+		id = WHT_mormons_convert_warriors
+		icon = GFX_goal_NCN_moroni
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = WHT_happy_trails_caravan
+		}
+		relative_position_id = WHT_happy_trails_caravan
+		available = {
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					is_in_tech_sharing_group = legion_research_pact
+				}
+				remove_from_tech_sharing_group = legion_research_pact
+			}
+			add_ideas = WHT_mormon_soldiers_idea
+		}
+	}
+	focus = {
+		id = WHT_mormons_ban_drugs
+		icon = GFX_goal_NEW_Jet_Beta_is_finished
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = WHT_mormons_convert_warriors
+		}
+		relative_position_id = WHT_mormons_convert_warriors
+		available = {
+		}
+		completion_reward = {
+			set_country_flag = bans_drugs
+			if = {
+				limit = {
+					has_idea = chems_legalised
+				}
+				swap_ideas = {
+					remove_idea = chems_legalised
+					add_idea = chems_banned
+				}
+			}
+			custom_effect_tooltip = WHT_mormons_ban_drugs_tt
+			set_temp_variable = {
+				caps_to_add = 200
+			}
+			add_caps = yes
+		}
+	}
+	focus = {
+		id = WHT_mormon_temple
+		icon = GFX_goal_NCN_generic_SLC_Temple
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = WHT_mormons_ban_drugs
+		}
+		relative_position_id = WHT_mormons_ban_drugs
+		available = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = people
+				popularity = 0.05
+			}
+			add_ideas = ncn_idea_divine_guidance_restored
+		}
+	}
+	focus = {
+		id = WHT_laws
+		icon = GFX_goal_NCN_The_Promise_of_Paradise_Eternal
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = WHT_mormon_temple
+			focus = WHT_restart_mines
+		}
+		relative_position_id = WHT_mormon_temple
+		available = {
+		}
+		completion_reward = {
+			country_event = nf_whitelegs.14
+			every_state = {
+				limit = {
+					is_core_of = NCN
+				}
+				add_core_of = WHT
+			}
+		}
+	}
+	#### Elites###
+	focus = {
+		id = WHT_upheaval
+		icon = GFX_goal_WHT_salt_upon
+		cost = 30
+		x = 10
+		y = 15
+		available = {
+			date > 2277.1.1
+		}
+		ai_will_do = {
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						AND = {
+							has_completed_focus = wht_clock_silenced
+							has_completed_focus = wht_tar_stuck
+						}
+						AND = {
+							has_offensive_war = yes
+							OR = {
+								has_completed_focus = wht_clock_breaking
+								has_completed_focus = wht_tar_walking
+								AND = {
+									has_global_flag = EHT_status_broken_global_flag
+									has_completed_focus = wht_the_city_slickers
+								}
+							}
+							has_completed_focus = wht_sappers
+							has_completed_focus = wht_bone_breakers
+							has_completed_focus = wht_scavenge_ruins
+							has_completed_focus = wht_learn_to_drink
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 10
+				has_global_flag = WHT_ai_behavior_claws_global_flag
+			}
+			modifier = {
+				factor = 0.1
+				OR = {
+					has_global_flag = WHT_ai_behavior_legion_global_flag
+					has_global_flag = WHT_ai_behavior_mormon_global_flag
+				}
+			}
+		}
+		completion_reward = {
+			add_political_power = 100
+			add_popularity = {
+				ideology = elites
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = WHT_strong_spears
+		icon = GFX_KHA_focus_treaty_2_orange
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = WHT_upheaval
+		}
+		relative_position_id = WHT_upheaval
+		available = {
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				ahead_reduction = 1
+				category = melee_weaponry_tech_category
+			}
+		}
+	}
+	focus = {
+		id = WHT_new_warriors
+		icon = GFX_goal_generic_land_doctrines_focus
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = WHT_strong_spears
+		}
+		relative_position_id = WHT_strong_spears
+		available = {
+		}
+		completion_reward = {
+			hidden_effect = {
+				load_oob = WHT_foreign_mercenaries
+			}
+			custom_effect_tooltip = WHT_new_warriors_tt
+		}
+	}
+	focus = {
+		id = WHT_brahmin_horn_formation
+		icon = GFX_goal_generic_common_firearms_focus
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = WHT_upheaval
+		}
+		relative_position_id = WHT_upheaval
+		available = {
+		}
+		completion_reward = {
+			add_ideas = brahmin_horn_formation
+		}
+	}
+	focus = {
+		id = WHT_speak_english
+		icon = GFX_KHA_focus_treaty_2_orange
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = WHT_new_warriors
+		}
+		relative_position_id = WHT_new_warriors
+		available = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = elites
+				popularity = 0.05
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 3
+				category = industry
+			}
+		}
+	}
+	focus = {
+		id = WHT_mastery_trade_routes
+		icon = GFX_KHA_focus_slave_trade_own_ruler
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = WHT_speak_english
+			focus = WHT_restart_mines
+		}
+		relative_position_id = WHT_speak_english
+		available = {
+			OR = {
+				has_tech = specialized_industry_tech_2
+				has_tech = generalized_industry_tech_2
+			}
+		}
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					is_valid_state_for_4_civilian_factories = yes
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					has_tech = specialized_industry_tech_2
+				}
+				set_technology = {
+					specialized_industry_tech_3 = 1
+				}
+			}
+			if = {
+				limit = {
+					has_tech = generalized_industry_tech_2
+				}
+				set_technology = {
+					generalized_industry_tech_3 = 1
+				}
+			}
+		}
+	}
+	focus = {
+		id = WHT_youth_apprentices
+		icon = GFX_goal_generic_military_industry_focus
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = WHT_brahmin_horn_formation
+		}
+		relative_position_id = WHT_brahmin_horn_formation
+		available = {
+		}
+		completion_reward = {
+			add_ideas = pain_makers
+		}
+	}
+	focus = {
+		id = WHT_explosives
+		icon = GFX_goal_generic_artillery
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = WHT_youth_apprentices
+		}
+		relative_position_id = WHT_youth_apprentices
+		available = {
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_tech = demolitions_weaponry_tech
+				}
+				add_equipment_to_stockpile = {
+					type = demolitions_equipment
+					amount = 750
+					producer = WHT
+				}
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				ahead_reduction = 1
+				category = support_demolitions_tech_category
+			}
+		}
+	}
+	focus = {
+		id = WHT_more_guns
+		icon = GFX_goal_tribal_generic
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = WHT_explosives
+			focus = WHT_send_youth_flagstaff
+		}
+		relative_position_id = WHT_explosives
+		available = {
+			OR = {
+				has_tech = explosive_demolitions_weaponry_tech_2
+				has_tech = flamer_demolitions_weaponry_tech_2
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] gentribal_deathpowder entered"
+			}
+			if = {
+				limit = {
+					has_tech = flamer_demolitions_weaponry_tech_2
+				}
+				set_technology = {
+					flamer_demolitions_weaponry_tech_3 = 1
+				}
+				add_equipment_to_stockpile = {
+					type = demolitions_equipment
+					amount = 250
+					producer = WHT
+				}
+			}
+			if = {
+				limit = {
+					has_tech = explosive_demolitions_weaponry_tech_2
+				}
+				set_technology = {
+					explosive_demolitions_weaponry_tech_3 = 1
+				}
+				add_equipment_to_stockpile = {
+					type = demolitions_equipment
+					amount = 250
+					producer = WHT
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] gentribal_deathpowder exited"
+			}
+		}
+	}
+	focus = {
+		id = WHT_deathclaw_mounts_world
+		icon = GFX_goal_generic_deathclaw
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = WHT_explosives
+		}
+		prerequisite = {
+			focus = WHT_speak_english
+		}
+		relative_position_id = WHT_explosives
+		available = {
+		}
+		completion_reward = {
+			set_technology = {
+				dog_infantry_tech = 1
+				warden_doggos_tech = 1
+			}
+			set_cosmetic_tag = WHT_tribal
+			swap_ideas = {
+				remove_idea = WHT_savages
+				add_idea = WHT_savages2
+			}
+			add_corps_commander_role = {
+				character = WHT_tears_in_the_rain
+				traits = {
+					charismatic_trait
+					lucky_trait
+					agile_trait
+					urban_assault_specialist
+					fortress_buster
+				}
+				skill = 5
+				attack_skill = 5
+				defense_skill = 3
+				planning_skill = 2
+				logistics_skill = 2
+				legacy_id = -1
+			}
+		}
+	}
+	focus = {
+		id = wht_dominion_over_utah
+		icon = GFX_focus_generic_self_management
+		relative_position_id = WHT_deathclaw_mounts_world
+		prerequisite = {
+			focus = WHT_deathclaw_mounts_world
+			focus = WHT_our_new_master
+			focus = WHT_laws
+		}
+		available = {
+			num_of_controlled_states > 30
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		x = 0
+		y = 1
+		cost = 30
+		completion_reward = {
+			custom_effect_tooltip = wht_dominion_utah_tt
+			hidden_effect = {
+				every_state = {
+					limit = {
+						is_utah_state = yes
+					}
+					set_variable = {
+						coring_cost_targeted_state_factor@WHT = -0.25
+					}
+				}
+			}
+		}
+	}
+}
+# vim: set ft=pdx ts=2 sw=2 tw=79 :

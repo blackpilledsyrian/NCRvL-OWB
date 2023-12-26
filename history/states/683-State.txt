@@ -1,0 +1,30 @@
+state = {
+	id = 683
+	name = "STATE_683"
+	resources={
+		water = 2
+		metal = 4
+	}
+
+	history={
+		victory_points = {
+			9457 15
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			dockyard = 2
+			749 = {
+				naval_base = 3
+			}
+		}
+
+	}
+
+	provinces={
+		749 9451 9454 9457 9461 9469 11174 11188 11205 11206 11226
+	}
+	manpower=24000
+	buildings_max_level_factor=1.000
+	state_category=town
+}

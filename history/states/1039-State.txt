@@ -1,0 +1,24 @@
+state={
+	id=1039
+	name="STATE_1039"
+
+	history={
+		victory_points = {
+			1480 10
+		}
+		victory_points = {
+			2593 5
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 2
+		}
+	}
+
+	provinces={
+		12507 432 12508 12512 627 8734 1480 2677 1433 1449 2593	2679
+	}
+	manpower = 6258
+	state_category = town
+	buildings_max_level_factor=1.000
+}

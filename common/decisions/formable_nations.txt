@@ -1,0 +1,2394 @@
+formable_nations = {
+	form_ach_leon_brotherhood = {
+		allowed = {
+			original_tag = ACH
+		}
+		visible = {
+			NOT = { has_cosmetic_tag = ACH_texan_brotherhood }
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ACH_not_texas_formed_tt
+				NOT = { has_cosmetic_tag = ACH_leon_brotherhood }
+			}
+			has_completed_focus = ach_nf_send_it_all_west
+			ARM = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+
+		#highlight_states = {
+		#	highlight_states_trigger = {
+		#		state = 769
+		#	}
+		#}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 200
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = ACH_leon_brotherhood
+			set_technology = {
+				habitation_tech_level_scientific = 1
+				popup = no
+			}
+			set_technology = {
+				tools_tech_level_scientific = 1
+				popup = no
+			}
+		}
+	}
+	form_ach_texan_brotherhood = {
+		allowed = {
+			original_tag = ACH
+		}
+		visible = {
+			NOT = { has_cosmetic_tag = ACH_leon_brotherhood }
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ACH_not_leon_formed_tt
+				NOT = { has_cosmetic_tag = ACH_leon_brotherhood }
+			}
+			OR = {
+				TBH = {
+					is_subject_of = ACH
+				}
+				AND = {
+					controls_state = 892
+					TBH = {
+						exists = no
+					}
+				}
+			}
+		}
+
+		#highlight_states = {
+		#	highlight_states_trigger = {
+		#		state = 892
+		#	}
+		#}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 200
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = ACH_texan_brotherhood
+			if = {
+				limit = {
+					892 = {
+						is_owned_by = ACH
+					}
+				}
+				set_capital = { state = 892 }
+			}
+			add_state_core = 892
+			add_state_core = 893
+			add_political_power = 100
+			if = {
+				limit = {
+					TBH = { is_subject_of = ACH }
+				}
+				annex_country = {
+					target = TBH
+					transfer_troops = yes
+				}
+			}
+		}
+	}
+	form_deseret = {
+		allowed = {
+			original_tag = NCN
+		}
+		visible = {
+			#has_completed_focus = NCN_kingdom_of_god
+		}
+		# Zusk: Fixed by using our other trigger. That old approach was super expensive
+		available = {
+			EHT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			WHT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			TAR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			CLK = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+
+		# Due to the game being fucking stupid this doesn't do what it should do - it will only highlight 1 state but it should highlight them all :(
+		#highlight_states = {
+		#	highlight_states_trigger = {
+		#		is_utah_state = yes
+		#		NOT = {
+		#			owner = {
+		#				OR = {
+		#					tag = NCN
+		#					is_subject_of = NCN
+		#				}
+		#			}
+		#		}
+		#	}
+		#}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 20
+		}
+
+		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_deseret (decision) complete entered"
+			}
+			set_cosmetic_tag = NCN_deseret
+			custom_effect_tooltip = ncn_throne_tt
+			set_capital = { state = 266 }
+			266 = {
+				set_state_name = "The Throne of the Lord"
+				set_temp_variable = {
+					pop_add = 20000
+				}
+				add_state_population = yes
+				add_extra_state_shared_building_slots = 4
+			}
+			hidden_effect = {
+				set_province_name = {
+					id = 6306
+					name = "The Throne of the Lord"
+				}
+			}
+			news_event = nf_ncn.43
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_deseret (decision) complete exited"
+			}
+		}
+	}
+	form_cascadia = {
+		allowed = {
+			OR = {
+				original_tag = VIC
+				original_tag = HAI
+				original_tag = DRE
+				original_tag = WHI
+				original_tag = KAM
+				original_tag = BEL
+			}
+		}
+		visible = {
+			OR = {
+				NOT = { has_variable = global.cascadia }
+				var:global.cascadia = { exists = no }
+			}
+			NOT = {
+				original_tag = HAI
+				has_global_flag = HAI_admiral_dictator_enabled_global_flag
+			}
+		}
+		available = {
+			has_war = no
+			BRK = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		highlight_states = { # Due to the game being fucking stupid this doesn't do what it should do - it will only highlight 1 state but it should highlight them all :(
+			highlight_states_trigger = {
+				is_core_of = BRK
+			}
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 200
+		}
+
+		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_cascadia (decision) complete entered"
+			}
+			set_country_flag = cascadia_formed
+			set_variable = { global.cascadia = THIS }
+			set_cosmetic_tag = cascadia
+			add_stability = 0.25
+			every_owned_state = {
+				set_temp_variable = {
+					pop_add = 250
+				}
+				add_state_population_no_state_name = yes
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = cascadia_cores_tt
+			hidden_effect ={
+				every_state = {
+					limit = {
+						OR = {
+							region = 14
+							region = 60
+							region = 61
+							region = 35
+							region = 89
+						}
+					}
+					add_claim_by = ROOT
+					add_core_of = ROOT
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_cascadia (decision) complete exited"
+			}
+		}
+	}
+	form_longtree = {
+		allowed = {
+			original_tag = LON
+		}
+		visible = {
+			wild_wasteland = yes
+		}
+		available = {
+			controls_state = 222
+			controls_state = 197
+			controls_state = 138
+			controls_state = 484
+			controls_state = 551
+		}
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 200
+		}
+		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_longtree (decision) complete entered"
+			}
+			set_cosmetic_tag = LON_long
+			add_stability = 0.2
+			every_owned_state = {
+				set_temp_variable = {
+					pop_add = 250
+				}
+				add_state_population_no_state_name = yes
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_longtree (decision) complete exited"
+			}
+		}
+	}
+	expand_alliance = {
+		allowed = {
+			original_tag = IRN
+		}
+		available = {
+			if = {
+				limit = {
+					NOT = { has_cosmetic_tag = IRN_knight }
+				}
+				controls_state = 256
+				controls_state = 385
+				controls_state = 453
+				controls_state = 390
+				controls_state = 510
+			}
+			else = {
+				date > 2277.1.1
+			}
+		}
+		visible = {
+			NOT = {
+				has_cosmetic_tag = IRN_king
+			}
+			#wild_wasteland = yes
+		}
+
+		ai_will_do = {
+			base = 200
+		}
+		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] expand_alliance (decision) complete entered"
+			}
+			if = {
+				limit = {
+					has_cosmetic_tag = IRN_knight
+				}
+				set_cosmetic_tag = IRN_king
+				add_ideas = irn_ironcrown
+			}
+			else = {
+				set_cosmetic_tag = IRN_knight
+				add_ideas = irn_ironthrone
+			}
+			add_stability = 0.1
+			every_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] expand_alliance (decision) complete exited"
+			}
+		}
+	}
+	sok_form_arroyo = {
+		allowed = {
+			original_tag = SOK
+		}
+		visible = {
+			OR = {
+				NOT = { has_variable = global.sok_arroyo }
+				var:global.sok_arroyo = { exists = no }
+			}
+			NOT = { has_country_flag = sok_can_form_navarro }
+		}
+		available = {
+			has_war = no
+			owns_state = 32
+			owns_state = 337
+			owns_state = 96
+			NOT = { country_exists = ARR }
+			has_country_flag = sok_can_form_arroyo
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 200
+		}
+
+		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_cascadia (decision) complete entered"
+			}
+			set_country_flag = sok_arroyo_formed
+			set_variable = { global.sok_arroyo = THIS }
+			set_capital = {state = 337 }
+			set_cosmetic_tag = ARR
+			custom_effect_tooltip = sok_form_arroyo_name_change_tt
+			hidden_effect = {
+				set_country_leader_name = {
+					name = "The Chosen One"
+				}
+			}
+			swap_ruler_traits = {
+				remove = arroyos_exile
+				add = arroyos_saviour
+			}
+			custom_effect_tooltip = sok_form_arroyo_ind_tt
+			set_technology = {
+				tools_tech_level_settler = 1
+				tools_tech_level_scientific = 1
+				habitation_tech_level_tribal = 1
+				habitation_tech_level_settler = 1
+				habitation_tech_level_scientific = 1
+				electronics_tech_level_tribal = 1
+				electronics_tech_level_settler = 1
+			}
+		}
+	}
+	sok_form_navarro = {
+		allowed = {
+			original_tag = SOK
+		}
+		visible = {
+			NOT = { has_cosmetic_tag = SOK_navarro }
+			has_country_flag = sok_can_form_navarro
+			OR = {
+				NOT = { has_variable = global.navarro }
+				var:global.navarro = { exists = no }
+			}
+		}
+		available = {
+			controls_state = 548
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 200
+		}
+
+		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_navarro (decision) complete entered"
+			}
+			set_country_flag = sok_navarro_formed
+			set_variable = { global.navarro = THIS }
+			set_capital = {state = 548 }
+			add_state_core = 548
+			set_cosmetic_tag = SOK_navarro
+			swap_ruler_traits = {
+				remove = raider_of_navarro
+				add = legend_of_navarro
+			}
+			custom_effect_tooltip = sok_form_navarro_tech_tt
+			set_technology = {
+				power_armour_tech_level_scientific = 1
+				air_tech_level_settler = 1
+				air_tech_level_scientific = 1
+			}
+			unlock_decision_tooltip = sok_enclave_pa_schematics_purchase
+			unlock_decision_tooltip = sok_enclave_verti_schematics_purchase
+			unlock_decision_tooltip = sok_enclave_guns_schematics_purchase
+		}
+	}
+	form_colorado = {
+		allowed = {
+			OR = {
+				original_tag = FOR
+				original_tag = MXC
+				original_tag = HAN
+				original_tag = EAG
+			}
+		}
+		visible = {
+			has_country_leader_with_trait = colorado_patriot
+			OR = {
+				NOT = { has_variable = global.colorado }
+				var:global.colorado = { exists = no }
+			}
+		}
+		available = {
+			num_of_controlled_states > 40
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 200
+		}
+
+		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_colorado (decision) complete entered"
+			}
+			set_country_flag = colorado_formed
+			set_variable = { global.colorado = THIS }
+			if = {
+				limit = {
+					original_tag = MXC
+				}
+				set_cosmetic_tag = MXC_colorado
+			}
+			else = {
+				set_cosmetic_tag = COL
+			}
+			add_stability = 0.25
+			custom_effect_tooltip = colorado_claims_tt
+			hidden_effect ={
+				every_state = {
+					limit = {
+						OR = {
+							region = 42
+							region = 43
+							region = 44
+						}
+						NOT = { is_owned_by = ROOT }
+					}
+					add_claim_by = ROOT
+				}
+			}
+			every_owned_state = {
+				set_temp_variable = {
+					pop_add = 250
+				}
+				add_state_population_no_state_name = yes
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_colorado (decision) complete exited"
+			}
+		}
+	}
+	form_oklahoma = {
+		allowed = {
+			original_tag = TLP
+		}
+		visible = {
+			has_country_leader_with_trait = oklahoma_patriot
+			OR = {
+				NOT = { has_variable = global.oklahoma }
+				var:global.oklahoma = { exists = no }
+			}
+		}
+		available = {
+			owns_state = 868
+			num_of_controlled_states > 10
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 200
+		}
+
+		complete_effect = {
+			set_variable = { global.oklahoma = THIS }
+			set_cosmetic_tag = state_oklahoma
+			add_stability = 0.25
+			every_owned_state = {
+				set_temp_variable = {
+					pop_add = 250
+				}
+				add_state_population_no_state_name = yes
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					has_idea = army_with_a_state
+				}
+				swap_ideas = {
+					remove_idea = army_with_a_state
+					add_idea = tlp_state_with_an_army
+				}
+			}
+		}
+	}
+	form_new_mariposa = {
+		allowed = {
+			OR = {
+				original_tag = TRL
+				#original_tag = NEW
+				original_tag = UTO
+				original_tag = JCT
+			}
+		}
+		visible = {
+			OR = {
+				original_tag = TRL
+				#has_cosmetic_tag = THR_cosmetic_tag
+				original_tag = UTO
+				AND = {
+					original_tag = JCT
+					NOT = { has_government = people }
+				}
+			}
+			NOT = { has_global_flag = new_mariposa_formed }
+			NOT = { has_country_flag = is_varina }
+		}
+		available = { #Two different kinds of New Mariposa, either one which reconquers the territory The Master gets in a bad end in Fallout 1, or the player conquers Vault 6 and the rest of Washington and forms a proper 'New' Mariposa
+			OR = {
+				WBH = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+				NCR = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+		}
+
+		highlight_states = { # Due to the game being fucking stupid this doesn't do what it should do - it will only highlight 1 state but it should highlight them all :(
+			highlight_states_trigger = {
+				is_washington_state = yes
+				NOT = {
+					owner = {
+						OR = {
+							tag = ROOT
+							is_subject_of = ROOT
+						}
+					}
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 20
+		}
+
+		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_new_mariposa (decision) complete entered"
+			}
+			set_global_flag = new_mariposa_formed
+			set_cosmetic_tag = NEW_mariposa
+			#Prefers going with the Southern Mariposa effect rather then the first, since the focus would be too strong if you got cores on all of Washington + Southern Cali
+			if = {
+				limit = {
+					NCR = {
+						all_core_land_owned_by_prev_sphere = yes
+					}
+				}
+				every_state = {
+					limit = {
+						is_core_of = NCR
+					}
+					# add_core_of = ROOT
+					add_compliance = 50
+					add_resistance_target = -5
+				}
+				#Moves our capital to where Mariposa should be
+				set_capital = { state = 190 }
+				#Move stuff over from Shady Sands to New Mariposa, so that you don't just have a capital with nothing in it
+				190 = {
+					add_core_of = ROOT
+					set_state_name = "New Mariposa"
+					hidden_effect = {
+						set_province_name = { id = 4740 name = "New Mariposa"}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					WBH = {
+						all_core_land_owned_by_prev_sphere = yes
+					}
+				}
+				every_state = {
+					limit = {
+						is_core_of = WBH
+					}
+					# add_core_of = ROOT
+					add_compliance = 50
+					add_resistance_target = -5
+				}
+				#Moves our capital to Vault 6
+				set_capital = { state = 351 }
+				351 = {
+					add_core_of = ROOT
+					set_state_name = "New Mariposa"
+					hidden_effect = {
+						set_province_name = { id = 4335 name = "New Mariposa"}
+					}
+				}
+			}
+			#Just cut the incredibly long puppet trigger for now, its so much code for so little benefit - since it almost never fires in game.
+			if = {
+				limit = { NOT = { original_tag = TRL } }
+				add_country_leader_trait = new_mariposa_new_master #Troll Warren get this from their capstone focus, other countries get it here
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_new_mariposa (decision) complete exited"
+			}
+		}
+	}
+	form_northwestern_brotherhood = {
+		allowed = {
+			original_tag = TCA
+		}
+		visible = {
+			NOT = { has_global_flag = northwestern_brotherhood_formed }
+		}
+		available = {
+			OR = {
+				WBH = { exists = no }
+				WBH = { is_subject_of = TCA }
+			}
+			controls_state = 84
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 84
+			}
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 200
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = TCA_northwestern_brotherhood
+			if = {
+				limit = { 84 = { NOT = { is_owned_by = TCA } } }
+				set_state_owner = 84
+			}
+			add_state_core = 84
+			set_capital = { state = 84 }
+			every_state = {
+				limit = { is_washington_state = yes }
+				add_claim_by = TCA
+			}
+			WBH = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+		}
+	}
+	form_wardens_of_the_white = {
+		allowed = {
+			original_tag = TCA
+		}
+		visible = {
+			has_idea = tca_wardens_of_the_white
+		}
+		available = {
+			OR = {
+				WBH = { exists = no }
+				WBH = { is_subject_of = TCA }
+			}
+			controls_state = 84
+			has_idea = tca_wardens_of_the_white
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 84
+			}
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 200
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = TCA_wardens
+			if = {
+				limit = { 84 = { NOT = { is_owned_by = TCA } } }
+				set_state_owner = 84
+			}
+			add_state_core = 84
+			set_capital = { state = 84 }
+			every_state = {
+				limit = { is_washington_state = yes }
+				add_claim_by = TCA
+			}
+			custom_effect_tooltip = form_wardens_of_the_white_tt
+			set_politics = {
+				ruling_party = people
+			}
+			delete_unit_template_and_units = { division_template = "Brotherhood Exiles" }
+			remove_ideas = tca_brotherhood_exiles
+			swap_ideas = {
+				remove_idea = tca_a_temporary_mandate
+				add_idea = tca_protectors_of_the_north
+			}
+			set_technology = {
+				special_forces_tech_level_settler = 1
+				special_forces_tech_level_scientific = 1
+			}
+		}
+	}
+#	form_grand_inquisition = {
+#		allowed = {
+#			original_tag = ROT
+#		}
+#		available = {
+#			OR = {
+#				TOC = { exists = no }
+#				TOC = { is_subject_of = ROT }
+#			}
+#			controls_state = 332
+#		}
+#
+#		highlight_states = {
+#			highlight_states_trigger = {
+#				state = 332
+#			}
+#		}
+#
+#		fire_only_once = yes
+#
+#		ai_will_do = {
+#			base = 200
+#		}
+#
+#		complete_effect = {
+#			set_cosmetic_tag = ROT_inquisition
+#			if = {
+#				limit = { 332 = { NOT = { is_owned_by = ROT } } }
+#				set_state_owner = 332
+#			}
+#			set_capital = { state = 332 }
+#			every_state = {
+#				limit = { is_core_of = TOC }
+#				add_core_of = ROT
+#			}
+#			set_technology = {
+#				support_tech_level_scientific = 1
+#				special_forces_tech_level_settler = 1
+#			}
+#		}
+#	}
+#	form_old_spokane_state = {
+#		allowed = {
+#			original_tag = TOC
+#		}
+#		available = {
+#			OR = {
+#				ROT = { exists = no }
+#				ROT = { is_subject_of = TOC }
+#			}
+#			controls_state = 418
+#		}
+
+#		highlight_states = {
+#			highlight_states_trigger = {
+#				state = 418
+#			}
+#		}
+
+#		fire_only_once = yes
+
+#		ai_will_do = {
+#			base = 200
+#		}
+
+#		complete_effect = {
+#			set_cosmetic_tag = TOC_old_spokane
+#			if = {
+#				limit = { 418 = { NOT = { is_owned_by = ROT } } }
+#				set_state_owner = 418
+#			}
+#			every_state = {
+#				limit = { is_core_of = ROT }
+#				add_core_of = TOC
+#			}
+#			set_technology = {
+#				tools_tech_level_scientific = 1
+#				habitation_tech_level_scientific = 1
+#				electronics_tech_level_scientific = 1
+#			}
+#		}
+#	}
+	form_great_circuit = {
+		allowed = {
+			original_tag = MTR
+		}
+		available = {
+			OR = {
+				SNO = { exists = no }
+				SNO = { is_subject_of = MTR }
+			}
+			controls_state = 1292
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 1292
+			}
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 200
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = MTR_great_circuit
+			if = {
+				limit = { 1292 = { NOT = { is_owned_by = ROT } } }
+				set_state_owner = 1292
+			}
+			every_state = {
+				limit = { is_core_of = SNO }
+				add_core_of = MTR
+			}
+			every_owned_state = {
+				limit = {
+					infrastructure < 5
+					OR = {
+						is_core_of = SNO
+						is_core_of = MTR
+					}
+				}
+				set_building_level = {
+					type = infrastructure
+					level = 5
+					instant_build = yes
+				}
+			}
+			add_ideas = MTR_expansive_rail_network
+			set_technology = {
+				habitation_tech_level_scientific = 1
+				exploitation_tech_level_scientific = 1
+			}
+		}
+	}
+	form_nomads_of_the_new_north = {
+		allowed = {
+			original_tag = SNO
+		}
+		available = {
+			OR = {
+				MTR = { exists = no }
+				MTR = { is_subject_of = SNO }
+			}
+			controls_state = 1276
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 1276
+			}
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 200
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = SNO_nomads_of_the_far_north
+			if = {
+				limit = { 1276 = { NOT = { is_owned_by = ROT } } }
+				set_state_owner = 1276
+			}
+			every_state = {
+				limit = { is_core_of = MTR }
+				add_core_of = SNO
+			}
+			add_stability = 0.10
+			add_ideas = SNO_nomads_new_north
+			set_technology = {
+				infantry_tech_level_scientific = 1
+				special_forces_tech_level_scientific = 1
+			}
+		}
+	}
+	form_republic_of_the_steam = {
+		allowed = {
+			original_tag = ROS
+		}
+		available = {
+			OR = {
+				MCA = { exists = no }
+				MCA = { is_subject_of = ROS }
+			}
+			OR = {
+				HEA = { exists = no }
+				HEA = { is_subject_of = ROS}
+			}
+			controls_state = 656
+			controls_state = 1384
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 656
+				state = 1384
+			}
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 200
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = ROS_republic
+			if = {
+				limit = { 1384 = { NOT = { is_owned_by = HEA } } }
+				set_state_owner = 1384
+			}
+			every_state = {
+				limit = { is_core_of = HEA }
+				add_core_of = ROS
+			}
+			if = {
+				limit = { 656 = { NOT = { is_owned_by = MCA } } }
+				set_state_owner = 656
+			}
+			every_state = {
+				limit = { is_core_of = MCA }
+				add_core_of = ROS
+			}
+			modify_building_resources = {
+				building = electricity_generator
+				resource = energy
+				amount = 2
+			}
+			add_ideas = ros_secrets_of_the_steam
+			set_technology = {
+				tools_tech_level_scientific = 1
+				habitation_tech_level_scientific = 1
+				electronics_tech_level_scientific = 1
+			}
+		}
+	}
+	form_motor_city = {
+		allowed = {
+			original_tag = FIE
+		}
+		available = {
+			OR = {
+				VEG = { exists = no }
+				VEG = { is_subject_of = FIE }
+			}
+			OR = {
+				MOT = { exists = no }
+				MOT = { is_subject_of = FIE }
+			}
+			controls_state = 211
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 211
+			}
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 200
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = FIE_motor_city
+			if = {
+				limit = { 211 = { NOT = { is_owned_by = FIE } } }
+				set_state_owner = 211
+			}
+			211 = {
+				add_core_of = FIE
+				set_state_name = "Motor City"
+			}
+			set_capital = { state = 211 }
+			hidden_effect = {
+				set_province_name = {
+					id = 3179
+					name = "Motor City"
+				}
+			}
+			VEG = { ROOT = { claim_core_states_of_prev = yes } }
+			MOT = { ROOT = { claim_core_states_of_prev = yes } }
+			set_technology = {
+				vehicles_tech_level_scientific = 1
+			}
+		}
+	}
+	form_arizona_rangers = {
+		allowed = {
+			tag = COW
+		}
+		available = {
+			controls_state = 520
+			controls_state = 518
+			controls_state = 519
+			controls_state = 516
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				OR = {
+					state = 520
+					state = 518
+					state = 519
+					state = 516
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 200
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = ARZ_rangers
+			hidden_effect = {
+				every_state = {
+					limit = { is_arizona_state = yes }
+					add_claim_by = ROOT
+				}
+			}
+			add_state_core = 520
+			add_state_core = 518
+			add_state_core = 519
+			add_state_core = 516
+			set_capital = { state = 519 }
+			custom_effect_tooltip = form_arizona_rangers_tt
+			set_technology = {
+				infantry_tech_level_scientific = 1
+				special_forces_tech_level_scientific = 1
+			}
+			swap_ideas = {
+				remove_idea = cow_remnants_of_rangers
+				add_idea = cow_reformed_corps
+			}
+		}
+	}
+	form_hookers = {
+		allowed = {
+			tag = RHO
+		}
+		available = {
+			controls_state = 518
+			controls_state = 519
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				OR = {
+					state = 518
+					state = 519
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 200
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = RHO_hookers
+			518 = {
+				set_state_name = "Northern Hook"
+				hidden_effect = {
+					set_province_name = { id = 7962 name = "Northern Hook"}
+				}
+			}
+			519 = {
+				set_state_name = "Southern Hook"
+				hidden_effect = {
+					set_province_name = { id = 8933 name = "Southern Hook"}
+				}
+			}
+			add_state_core = 518
+			add_state_core = 519
+			set_capital = { state = 518 }
+			swap_ideas = {
+				remove_idea = RHO_raiders_of_lost_space_center
+				add_idea = RHO_raiders_of_arizona
+			}
+			381 = {
+				add_resource = {
+					type = metal
+					amount = 8
+				}
+				add_resource = {
+					type = energy
+					amount = 8
+				}
+			}
+			add_offsite_building = {
+				type = arms_factory
+				level = 2
+			}
+		}
+	}
+	form_lincoln_league = {
+		allowed = {
+			OR = {
+				original_tag = LOS
+				original_tag = CBN
+			}
+		}
+
+		available = {
+			NOT = { country_exists = SHA }
+			owns_state = 932
+			#OR = {
+			#	SHA = {
+			#		OR = {
+			#			CBN = {
+			#				country_owns_all_core_land_of_prev = yes
+			#			}
+			#			LOS = {
+			#				country_owns_all_core_land_of_prev = yes
+			#			}
+			#		}
+			#	}
+			#}
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 932
+			}
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 200
+		}
+
+		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_lincoln_league (decision) complete entered"
+			}
+			set_cosmetic_tag = LIN_lincoln_league
+			add_stability = 0.15
+			every_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = lincoln_capital_tt
+			if = {
+				limit = {
+					owns_state = 934
+				}
+				set_capital = { state = 934 }
+				934 = {
+					hidden_effect = {
+						set_victory_points = {
+							province = 11634
+							value = 20
+						}
+						set_province_name = {
+							id = 11634
+							name = "Lincoln City"
+						}
+					}
+					set_state_category = city
+					add_manpower = 10000
+					set_state_name = "Lincoln"
+				}
+			}
+			else = {
+				capital_scope = {
+					add_extra_state_shared_building_slots = 1
+					add_manpower = 5000
+					set_state_name = "Lincoln"
+				}
+			}
+			custom_effect_tooltip = lincoln_invitation_tt
+			if = {
+				limit = {
+					original_tag = CBN
+				}
+				if = {
+					limit = {
+						LOS = {
+							exists = yes
+						}
+					}
+					LOS = { country_event = nf_lincoln_league.1 }
+				}
+				else = {
+					LOS = {
+						ROOT = {
+							grant_wargoals_on_core_states_of_prev = yes
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					original_tag = LOS
+				}
+				if = {
+					limit = {
+						CBN = {
+							exists = yes
+						}
+					}
+					CBN = { country_event = nf_lincoln_league.1 }
+				}
+				else = {
+					CBN = {
+						ROOT = {
+							grant_wargoals_on_core_states_of_prev = yes
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						SHA = {
+							is_ai = yes
+							exists = yes
+						}
+					}
+					annex_country = {
+						target = SHA
+						transfer_troops = yes
+					}
+				}
+				add_ideas = {
+					mutant_law_both
+				}
+			}
+			custom_effect_tooltip = lincoln_tech_tt
+			if = {
+				limit = {
+					NOT = { has_tech = ghoul_civilization }
+				}
+				set_technology = { ghoul_civilization = 1 }
+			}
+			set_technology = { super_mutant_aux_infantry_tech = 1 }
+			custom_effect_tooltip = oregon_cannibal_new_line
+			custom_effect_tooltip = lincoln_cores_tt
+			hidden_effect = {
+				if = {
+					limit = {
+						original_tag = CBN
+					}
+					every_state = {
+						limit = {
+							OR = {
+								is_core_of = LOS
+								is_core_of = SHA
+							}
+						}
+						add_core_of = CBN
+					}
+					else = {
+						every_state = {
+							limit = {
+								OR = {
+									is_core_of = CBN
+									is_core_of = SHA
+								}
+							}
+							add_core_of = LOS
+						}
+					}
+				}
+			}
+			#custom_effect_tooltip = lincoln_claims_tt
+			#hidden_effect ={
+			#	every_state = {
+			#		limit = {
+			#			OR = {
+			#				is_core_of = EDN
+			#				is_core_of = TAA
+			#				is_core_of = IMO
+			#				is_core_of = PER
+			#				is_core_of = PEC
+			#				state = 924
+			#				state = 917
+			#				state = 916
+			#				state = 908
+			#				state = 909
+			#				state = 910
+			#				state = 799
+			#				state = 903
+			#			}
+			#		}
+			#		add_claim_by = ROOT
+			#	}
+			#}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_lincoln_league (decision) complete exited"
+			}
+		}
+	}
+	form_lincoln_league_appoint_coleader = {
+		allowed = {
+			OR = {
+				original_tag = LOS
+				original_tag = CBN
+			}
+		}
+
+		available = {
+			has_cosmetic_tag = LIN_lincoln_league
+			if = {
+				limit = { original_tag = LOS }
+				CBN = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+			else = {
+				LOS = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 200
+		}
+
+		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_lincoln_league_appoint_coleader (decision) complete entered"
+			}
+			if = {
+				limit = { original_tag = LOS }
+				add_ideas = {
+					cbn_best_little_whorehouse_in_texas
+					cbn_major_jasmine_idea
+				}
+			}
+			else = {
+				add_ideas = {
+					los_the_church_of_the_lost
+					los_high_priestess_sappho_idea
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_lincoln_league_appoint_coleader (decision) complete exited"
+			}
+		}
+	}
+	form_baja = {
+		allowed = {
+			always = no
+		}
+		available = {
+			AND = {
+				BVC = {
+					ROOT = {
+						country_owns_all_core_land_of_prev = yes
+					}
+				}
+				BLP = {
+					ROOT = {
+						country_owns_all_core_land_of_prev = yes
+					}
+				}
+			}
+		}
+		highlight_states = {
+			highlight_states_trigger = {
+				is_core_of = BVC
+				is_core_of = BLP
+			}
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 200
+		}
+
+		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_baja (decision) complete entered"
+			}
+			set_country_flag = baja_formed
+			set_cosmetic_tag = baja
+			if = {
+				limit = {
+					NOT = {
+						481 = {
+							is_capital = yes
+						}
+					}
+				}
+				set_capital = { state = 481 }
+			}
+			add_stability = 0.25
+			every_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			swap_ideas = {
+				remove_idea = baja_banditos
+				add_idea = baja_banditos_united
+			}
+			custom_effect_tooltip = baja_cores_tt
+			hidden_effect ={
+				every_state = {
+					limit = {
+						OR = {
+							is_core_of = BLP
+							is_core_of = BVC
+						}
+					}
+					add_core_of = ROOT
+				}
+				add_state_core = 866
+				add_state_core = 80
+				add_state_core = 4
+				add_state_core = 583
+				add_state_core = 24
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_baja (decision) complete exited"
+			}
+		}
+	}
+	baja_move_capital = {
+		allowed = {
+			OR = {
+				original_tag = BVC
+				original_tag = BlP
+			}
+		}
+		available = {
+			has_cosmetic_tag = baja
+			583 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+
+		visible = {
+			has_cosmetic_tag = baja
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 200
+		}
+
+		complete_effect = {
+			if = {
+				limit = {
+					NOT = {
+						583 = {
+							is_capital = yes
+						}
+					}
+				}
+				set_capital = { state = 583 }
+			}
+			583 = {
+				set_state_category = large_city
+				set_temp_variable = { pop_add = 20000 }
+				add_state_population = yes
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			hidden_effect = {
+				set_victory_points = {
+					province = 4640
+						value = 25
+				}
+			}
+		}
+	}
+	form_erebus = { #first olympus formable
+		allowed = {
+			original_tag = OLY
+		}
+		available = {
+			WBH = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			TCA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 200
+		}
+		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_erebus (decision) complete entered"
+			}
+			WBH = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			TCA = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			set_cosmetic_tag = OLY_erebus
+			add_war_support = 0.2
+			country_event = {
+				id = nf_oly.1
+			}
+			every_owned_state = {
+				set_temp_variable = {
+					pop_add = 250
+				}
+				add_state_population_no_state_name = yes
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			556 = {
+				set_state_name = "Olympia"
+			}
+			set_province_name = { id = 7111 name = "Amphitritepolis"}
+			hidden_effect = {
+				set_province_name = { id = 7116 name = "Olympia"}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_erebus (decision) complete exited"
+			}
+		}
+	}
+	form_elysian_fields = { #second olympus formable
+		allowed = {
+			original_tag = OLY
+		}
+		available = {
+			has_cosmetic_tag = OLY_erebus
+			BEL = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			BRK = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			TOC = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			ROT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 200
+		}
+		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_elysian_fields (decision) complete entered"
+			}
+			set_cosmetic_tag = OLY_elysian_fields
+			add_ideas = oly_elysium_achieved
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_elysian_fields (decision) complete exited"
+			}
+		}
+	}
+	form_northern_federation = { #yakama formable
+		allowed = {
+			original_tag = YAK
+		}
+		available = {
+			WBH = {
+				exists = no
+			}
+			TCA = {
+				exists = no
+			}
+		}
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 200
+		}
+		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_northern_federation (decision) complete entered"
+			}
+			WBH = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			TCA = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			set_cosmetic_tag = YAK_northern_federation
+			if = {
+				limit = {
+					northern_league_does_not_exist = yes
+				}
+				effect_tooltip = {
+					create_faction = northern_league
+				}
+				hidden_effect = {
+					create_or_join_northern_league = yes
+				}
+			}
+			add_equipment_to_stockpile = {
+				type = plasma_equipment_1
+				amount = 500
+				producer = USA
+			}
+			set_technology = {
+				power_armour_tech_level_tribal = 1
+				power_armour_tech_level_settler = 1
+				stripped_pa_tech = 1
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_northern_federation (decision) complete exited"
+			}
+		}
+	}
+	form_democratic_technate_of_wakaw = { #wakaw formable
+		allowed = {
+			original_tag = WAK
+		}
+		available = {
+			is_in_faction = no
+			SBR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			PLT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			FRG = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			STN = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			DUN = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 200
+		}
+		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_democratic_technate_of_wakaw (decision) complete entered"
+			}
+			SBR = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			PLT = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			FRG = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			DUN = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			STN = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			set_technology = {
+				super_mutant_behemoth = 1
+			}
+			swap_ideas = {
+				add_idea = cpf_cure_to_addiction
+				remove_idea = cpf_sanatorium_at_birch_hills
+			}
+			hidden_effect = {
+				set_technology = {
+					electronics_tech_level_scientific = 1
+				}
+				set_technology = {
+					infantry_tech_level_scientific = 1
+				}
+				add_research_slot = 1
+			}
+			set_cosmetic_tag = WAK_democratic_technate
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_democratic_technate_of_wakaw (decision) complete exited"
+			}
+		}
+	}
+	form_competitive_governate_of_stoon = { #stoon formable
+		allowed = {
+			original_tag = STN
+		}
+		available = {
+			SBR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			PLT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			FRG = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			WAK = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			DUN = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 200
+		}
+		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_competitive_governate_of_stoon (decision) complete entered"
+			}
+			SBR = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			PLT = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			FRG = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			DUN = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			WAK = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			set_cosmetic_tag = STN_competitive_goverment
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_competitive_governate_of_stoon (decision) complete exited"
+			}
+		}
+	}
+	form_canada_stn = { #stoon formable
+		allowed = {
+			original_tag = STN
+		}
+		visible = {
+			has_cosmetic_tag = STN_competitive_goverment
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = STN_competitive_goverment_tt
+				NOR = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+				STA = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+				MTC = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+				BRA = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+				WPG = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+				STB = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+				ARB = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+				ROL = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+				DLN = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+				DMM = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+				RRR = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+				TPA = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+				NUN = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+				MJW = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+				UNB = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+				BAT = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+				URA = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+				IRC = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+				LOI = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+				VSH = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+				STC = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+				BGR = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+		}
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 200
+		}
+		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_canada_stn (decision) complete entered"
+			}
+			add_state_core = 1206
+			add_state_core = 1225
+			add_state_core = 1263
+			add_state_core = 1319
+			add_state_core = 1105
+			add_state_core = 1100
+			add_state_core = 1101
+			add_state_core = 1108
+			add_state_core = 1125
+			set_cosmetic_tag = STN_canada_goverment
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_canada_stn (decision) complete exited"
+			}
+		}
+	}
+	form_capitalist_microheaven_of_dundurn = { #dundurn formable
+			allowed = {
+				original_tag = DUN
+			}
+			available = {
+				is_in_faction = no
+				PLT = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+				STN = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+			fire_only_once = yes
+
+			ai_will_do = {
+				base = 200
+			}
+			complete_effect = {
+				if = {
+					limit = { has_global_flag = debug_logs }
+					log = "[GetDateText]: [Root.GetName] form_capitalist_microheaven_of_dundurn (decision) complete entered"
+				}
+			PLT = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			STN = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			set_technology = {
+				artillery_ammo_unlock_tech = 1
+			}
+			set_cosmetic_tag = DUN_capitalist_microheaven
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_capitalist_microheaven_of_dundurn (decision) complete exited"
+			}
+		}
+	}
+	form_lugnuts_paradise = { #strasbourg formable
+		allowed = {
+			original_tag = SBR
+		}
+		available = {
+			is_in_faction = no
+			DUN = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			PLT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			FRG = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			WAK = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			STN = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 200
+		}
+		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_lugnuts_paradise (decision) complete entered"
+			}
+			DUN = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			PLT = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			FRG = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			STN = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			WAK = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			set_technology = {
+				sentinel_unit_tech = 1
+			}
+			add_ideas = cpf_direct_democracy
+			set_cosmetic_tag = SBR_lugnuts_paradise
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_lugnuts_paradise (decision) complete exited"
+			}
+		}
+	}
+	form_pleasant_country = { #pleasnantdale formable
+		allowed = {
+			original_tag = PLT
+		}
+		available = {
+			is_in_faction = no
+			DUN = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			STN = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 200
+		}
+		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_pleasant_country (decision) complete entered"
+			}
+			DUN = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			STN = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			add_ideas = cpf_all_is_pleasant
+			set_cosmetic_tag = PLT_pleasant_country
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_pleasant_country (decision) complete exited"
+			}
+		}
+	}
+	form_faewild = { #fairy glen formable
+		allowed = {
+			original_tag = FRG
+		}
+		available = {
+			is_in_faction = no
+			DUN = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			SBR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			PLT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			WAK = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			STN = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 200
+		}
+		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_faewild (decision) complete entered"
+			}
+			DUN = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			SBR = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			PLT = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			STN = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			WAK = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			add_ideas = frg_fair_freedom
+			hidden_effect = {
+				remove_ideas = frg_the_minds_of_children_debuff
+				remove_ideas = frg_memories_of_the_fallen_debuff
+				remove_ideas = frg_boys_will_be_boys_debuff
+			}
+			set_cosmetic_tag = FRG_faewild
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_faewild (decision) complete exited"
+			}
+		}
+	}
+
+### Plaguelands Formables
+
+	form_upsilon_initiative = { # Site Y Formable
+		icon = GFX_decision_generic_research
+		allowed = {
+			original_tag = SIY
+		}
+		available = {
+			custom_trigger_tooltip = {
+				TLR = { all_core_land_owned_by_prev_sphere = yes }
+				BRE = { all_core_land_owned_by_prev_sphere = yes }
+				SAN = { all_core_land_owned_by_prev_sphere = yes }
+				RAD = { all_core_land_owned_by_prev_sphere = yes }
+				FRN = { all_core_land_owned_by_prev_sphere = yes }
+				DAM = { all_core_land_owned_by_prev_sphere = yes }
+				DED = { all_core_land_owned_by_prev_sphere = yes }
+				REH = { all_core_land_owned_by_prev_sphere = yes }
+				OQZ = { all_core_land_owned_by_prev_sphere = yes }
+				OST = { all_core_land_owned_by_prev_sphere = yes }
+
+				tooltip = SIY_plaguelands_conquered_tt
+			}
+		}
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 200
+		}
+		complete_effect = {
+			set_cosmetic_tag = SIY_initiative
+			custom_effect_tooltip = SIY_core_plaguelands_tt
+			set_province_name = {
+				id = 3724
+				name = "Site X"
+			}
+			set_province_name = {
+				id = 4422
+				name = "Site Y"
+			}
+			set_province_name = {
+				id = 3042
+				name = "Site Z"
+			}
+			swap_ideas = {
+				remove_idea = SIY_illfated_expedition
+				add_idea = SIY_successful_expedition
+			}
+			if = {
+				limit = {
+					has_idea = SIY_plagued_lands
+				}
+				remove_ideas = SIY_plagued_lands
+			}
+			add_research_slot = 1
+
+			hidden_effect = {
+				every_subject_country = {
+					ROOT = {
+						annex_country = {
+							target = PREV
+							transfer_troops = yes
+						}
+					}
+				}
+
+				TLR = { ROOT = { core_owned_states_of_prev = yes } }
+				BRE = { ROOT = { core_owned_states_of_prev = yes } }
+				SAN = { ROOT = { core_owned_states_of_prev = yes } }
+				RAD = { ROOT = { core_owned_states_of_prev = yes } }
+				FRN = { ROOT = { core_owned_states_of_prev = yes } }
+				DAM = { ROOT = { core_owned_states_of_prev = yes } }
+				DED = { ROOT = { core_owned_states_of_prev = yes } }
+				REH = { ROOT = { core_owned_states_of_prev = yes } }
+				OQZ = { ROOT = { core_owned_states_of_prev = yes } }
+				OST = { ROOT = { core_owned_states_of_prev = yes } }
+
+				set_politics = {
+					ruling_party = intellectuals
+					elections_allowed = no
+				}
+				set_popularities = {
+					intellectuals = 100
+					people = 0
+					elites = 0
+					ruler = 0
+				}
+			}
+		}
+	}
+
+	BRE_formables = { # Parish Formables
+		allowed = {
+			original_tag = BRE
+		}
+		visible = {
+			OR= {
+				has_country_leader = {
+					character = BRE_highsentry_luna
+					ruling_only = yes
+				}
+				has_country_leader = {
+					character = BRE_joiner_ec
+					ruling_only = yes
+				}
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				SIY = { all_core_land_owned_by_prev_sphere = yes }
+				BRE = { all_core_land_owned_by_prev_sphere = yes }
+				SAN = { all_core_land_owned_by_prev_sphere = yes }
+				RAD = { all_core_land_owned_by_prev_sphere = yes }
+				FRN = { all_core_land_owned_by_prev_sphere = yes }
+				DAM = { all_core_land_owned_by_prev_sphere = yes }
+				DED = { all_core_land_owned_by_prev_sphere = yes }
+				REH = { all_core_land_owned_by_prev_sphere = yes }
+				OQZ = { all_core_land_owned_by_prev_sphere = yes }
+				OST = { all_core_land_owned_by_prev_sphere = yes }
+
+				tooltip = BRE_plaguelands_conquered_tt
+			}
+		}
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 200
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					has_country_leader = {
+						character = BRE_highsentry_luna
+						ruling_only = yes
+					}
+				}
+				set_cosmetic_tag = BRE_crusade
+			}
+			else_if = {
+				limit = {
+					has_country_leader = {
+					character = BRE_joiner_ec
+					ruling_only = yes
+					}
+				}
+				set_cosmetic_tag = BRE_synthesium
+			}
+		}
+	}
+
+}

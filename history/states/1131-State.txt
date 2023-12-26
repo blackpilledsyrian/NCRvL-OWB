@@ -1,0 +1,28 @@
+
+state={
+	id=1131
+	name="STATE_1131"
+	resources={
+		water=4.000
+	}
+
+	history={
+		victory_points = {
+			16397 5
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+
+		}
+
+	}
+
+	provinces={
+		13696 13697 14030 14032 14034 16397 16398
+	}
+	manpower=612
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
+}

@@ -1,0 +1,25 @@
+state = {
+	id = 469
+	name = "STATE_469"
+	manpower = 7135
+	state_category = rural
+
+	history = {
+		owner = RAP
+		add_core_of = RAP
+		victory_points = {
+			5777 5
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			5777 = {
+				bunker = 1
+			}
+		}
+	}
+
+	provinces = {
+		855 5774 5777 5778 5779 5782 5783 5784 5796 5797 5798 5803 6660
+	}
+}

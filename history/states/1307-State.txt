@@ -1,0 +1,26 @@
+state={
+	id=1307
+	name="STATE_1307"
+	resources = {
+		water = 2
+		energy = 2
+	}
+	history={
+		victory_points = {
+			13387 5
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+			arms_factory = 1
+		}
+	}
+
+	provinces={
+		13385 13386 13387 13390 13391 13397
+	}
+	manpower=2354
+	buildings_max_level_factor=1.000
+	state_category = shanty
+	local_supplies=0.000
+}

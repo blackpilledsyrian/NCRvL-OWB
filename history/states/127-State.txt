@@ -1,0 +1,27 @@
+state = {
+	id = 127
+	name = "STATE_127"
+	manpower = 5000
+	state_category = rural
+
+	resources = {
+		metal = 4
+	}
+
+	history = {
+		owner = SOR
+		add_core_of = SOR
+		victory_points = {
+			6404 5
+		}
+		buildings = {
+			infrastructure = 1
+			arms_factory = 1
+			6404 = { naval_base = 1 }
+		}
+	}
+
+	provinces = {
+		3247 6401 6402 6403 6404 9075 3248
+	}
+}

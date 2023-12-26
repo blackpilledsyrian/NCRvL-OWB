@@ -1,0 +1,624 @@
+characters = {
+	# country leaders
+	VLT_first_citizen_lynette = {
+		name = VLT_FIRST_CITIZEN_LYNETTE_NAME
+		gender = female
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_VLT_first_citizen
+			}
+		}
+		country_leader = {
+			desc = VLT_FIRST_CITIZEN_LYNETTE_DESC
+			ideology = technocracy
+			expire = "3000.01.01.01"
+		}
+	}
+	VLT_security_chief_maier = {
+		name = VLT_FIRST_CITIZEN_MAIER_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_VLT_david_maier
+			}
+		}
+		country_leader = {
+			desc = VLT_FIRST_CITIZEN_MAIER_DESC
+			ideology = peoples_militia
+			expire = "3000.01.01.01"
+		}
+	}
+	VLT_festus = {
+		name = VLT_FESTUS_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_VLT_festus
+			}
+			army = {
+				small = GFX_idea_vlt_festus_advisor
+			}
+
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = vlt_festus_advisor_token
+			available = {
+				OR = {
+					has_completed_focus = vlt_what_about_gecko
+					has_completed_focus = vlt_a_long_time_coming
+				}
+			}
+			traits = {
+				gecko_representative
+			}
+			research_bonus = {
+				industry_specialisation_category = 0.1
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	VLT_gordon_of_gecko = {
+		name = VLT_FIRST_CITIZEN_GORDON_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_VLT_gordon_large
+			}
+			army = {
+				small = GFX_Portrait_VLT_gordon_small
+			}
+		}
+		country_leader = {
+			desc = VLT_FIRST_CITIZEN_GORDON_DESC
+			ideology = benevolent_dictatorship
+			expire = "3000.01.01.01"
+			traits = {
+				last_wolf_of_wall_street
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			desc = vlt_gordon_of_gecko_advisor_desc
+			idea_token = vlt_gordon_of_gecko_advisor
+			allowed = {
+				original_tag = VLT
+			}
+			visible = {
+				always = no
+			}
+			#available = {
+			#	always = no
+			#}
+			cost = -1
+			can_be_fired = no
+			traits = {
+				vlt_gordon_gecko_representative
+			}
+
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	VLT_the_brain = {
+		name = VLT_THE_BRAIN_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_VLT_brain
+			}
+			army = {
+				small = GFX_idea_vlt_brain_advisor
+			}
+
+		}
+		country_leader = {
+			desc = VLT_THE_BRAIN_DESC
+			ideology = benevolent_dictatorship
+			expire = "3000.01.01.01"
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = vlt_the_brain_advisor
+			allowed = {
+				original_tag = VLT
+			}
+			visible = {
+				has_completed_focus = vlt_a_teacher_returns
+			}
+			available = {
+				has_completed_focus = vlt_a_teacher_returns
+			}
+			traits = {
+				vlt_brain_renewal_teacher
+			}
+
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	VLT_council_of_citizens = {
+		name = VLT_COUNCIL_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_VLT_council
+			}
+		}
+		country_leader = {
+			#desc = VLT_COUNCIL_NAME_DESC
+			ideology = survivalism
+			expire = "3000.01.01.01"
+		}
+	}
+
+	#unit leaders
+	VLT_security_chief_wallace = {
+		name = VLT_SECURITY_CHIEF_WALLACE_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_VLT_security_chief
+				small = GFX_idea_vlt_wallace_advisor
+			}
+			army = {
+				large = GFX_Portrait_VLT_security_chief
+				small = GFX_idea_vlt_wallace_advisor
+			}
+		}
+		corps_commander = {
+			desc = VLT_SECURITY_CHIEF_WALLACE_DESC
+			traits = {
+				bunker_kid_trait
+				strong_trait
+				intelligent_trait
+				urban_assault_specialist
+			}
+			skill = 5
+			attack_skill = 2
+			defense_skill = 4
+			planning_skill = 4
+			logistics_skill = 2
+		}
+		advisor = {
+			slot = economic_advisor
+			desc = VLT_SECURITY_CHIEF_WALLACE_DESC
+			idea_token = vlt_wallace_advisor
+			allowed = {
+				original_tag = VLT
+			}
+			traits = {
+				vlt_customs_official
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	VLT_braelynn_christopherson = {
+		name = VLT_braelynn_christopherson_name
+		gender = female
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_VLT_braelynn_christopherson
+			}
+			army = {
+				large = GFX_Portrait_VLT_braelynn_christopherson
+			}
+		}
+		corps_commander = {
+			desc = VLT_braelynn_christopherson_desc
+			traits = {
+				hot_blooded_trait
+				perceptive_trait
+				agile_trait
+				urban_assault_specialist
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+	VLT_chad_rannor = {
+		name = VLT_CHAD_RANNOR_NAME
+		#desc = "alternative desc that should never show but was added for testing"
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_VLT_chad
+			}
+			army = {
+				large = GFX_Portrait_VLT_chad
+			}
+		}
+		field_marshal = {
+			desc = VLT_CHAD_RANNOR_DESC
+			visible = {	has_country_flag = vlt_unlock_rannor }
+			skill = 6
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 5
+			logistics_skill = 5
+			traits = {
+				commando_trait
+				enduring_trait
+				agile_trait
+				urban_assault_specialist
+				fortress_buster
+				paratrooper
+			}
+		}
+	}
+
+
+	#advisors
+	VLT_dweller_albert = {
+		name = VLT_dweller_albert
+		portraits = {
+			army = {
+				small = GFX_idea_VLT_advisor_5
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = VLT_dweller_albert_army_chief
+			ledger = army
+			allowed = {
+				original_tag = VLT
+			}
+			visible = {
+			}
+			traits = {
+				vault_tec_security_trainer
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	VLT_dweller_hubert = {
+		name = VLT_dweller_hubert
+		portraits = {
+			army = {
+				small = GFX_idea_VLT_advisor_3
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = VLT_dweller_hubert_army_chief
+			ledger = army
+			allowed = {
+				original_tag = VLT
+			}
+			visible = {
+			}
+			traits = {
+				vault_tec_defence
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	VLT_dweller_edmund = {
+		name = VLT_dweller_edmund
+		portraits = {
+			army = {
+				small = GFX_idea_VLT_advisor_7
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = VLT_dweller_edmund_high_command
+			ledger = army
+			allowed = {
+				original_tag = VLT
+			}
+			visible = {
+			}
+			traits = {
+				frontline_operative
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	VLT_dweller_francis = {
+		name = VLT_dweller_francis
+		portraits = {
+			army = {
+				small = GFX_idea_VLT_advisor_1
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = VLT_dweller_francis_high_command
+			ledger = army
+			allowed = {
+				original_tag = VLT
+			}
+			visible = {
+			}
+			traits = {
+				settler_spymaster
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	VLT_dweller_douglas = {
+		name = VLT_dweller_douglas
+		portraits = {
+			army = {
+				small = GFX_idea_VLT_advisor_8
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = VLT_dweller_douglas_high_command
+			ledger = army
+			allowed = {
+				original_tag = VLT
+			}
+			visible = {
+			}
+			traits = {
+				tribal_logistics
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	VLT_dweller_ian = {
+		name = VLT_dweller_ian
+		portraits = {
+			army = {
+				small = GFX_idea_VLT_advisor_9
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = VLT_dweller_ian_economic_advisor
+			allowed = {
+				original_tag = VLT
+			}
+			visible = {
+			}
+			traits = {
+				vault_tec_engineer
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	VLT_dweller_cyril = {
+		name = VLT_dweller_cyril
+		portraits = {
+			army = {
+				small = GFX_idea_VLT_advisor_1
+			}
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = VLT_dweller_cyril_cultural_advisor
+			allowed = {
+				original_tag = VLT
+			}
+			visible = {
+			}
+			traits = {
+				model_citizen
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	VLT_dweller_donald = {
+		name = VLT_dweller_donald
+		portraits = {
+			army = {
+				small = GFX_idea_VLT_advisor_2
+			}
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = VLT_dweller_donald_cultural_advisor
+			allowed = {
+				original_tag = VLT
+			}
+			visible = {
+			}
+			traits = {
+				vault_tec_medical_training
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	VLT_dweller_adam = {
+		name = VLT_dweller_adam
+		portraits = {
+			army = {
+				small = GFX_idea_VLT_advisor_11
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = VLT_dweller_adam_economic_advisor
+			allowed = {
+				original_tag = VLT
+			}
+			visible = {
+			}
+			traits = {
+				vlt_asset_protection
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	VLT_dweller_isaiah = {
+		name = VLT_dweller_isaiah
+		portraits = {
+			army = {
+				small = GFX_idea_VLT_advisor_10
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = VLT_dweller_isaiah_economic_advisor
+			allowed = {
+				original_tag = VLT
+			}
+			visible = {
+			}
+			traits = {
+				vlt_practiced_treasurer
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	VLT_dweller_nigel = {
+		name = VLT_dweller_nigel
+		portraits = {
+			army = {
+				small = GFX_idea_VLT_advisor_6
+			}
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = VLT_dweller_nigel_cultural_advisor
+			allowed = {
+				original_tag = VLT
+			}
+			visible = {
+			}
+			traits = {
+				beloved_personality
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	VLT_dweller_elena = {
+		name = VLT_dweller_elena
+		gender = female
+		portraits = {
+			army = {
+				small = GFX_idea_VLT_advisor_4
+			}
+		}
+		advisor = {
+			slot = research_advisor
+			idea_token = VLT_dweller_elena_research_advisor
+			allowed = {
+				original_tag = VLT
+			}
+			visible = {
+			}
+			traits = {
+				military_theorist
+			}
+			research_bonus = {
+				cat_land_doctrine = 0.1
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	VLT_citizen_gracchi = {
+		name = VLT_citizen_gracchi_name
+		portraits = {
+			army = {
+				small = GFX_idea_VLT_advisor_1
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = VLT_citizen_gracchi_token
+			allowed = {
+				original_tag = VLT
+			}
+			traits = {
+				popular_radio_host
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	# ghouls
+	VLT_joseph_williamson = {
+		name = VLT_joseph_williamson_name
+		portraits = {
+			army = {
+				small = GFX_idea_ghoul_generic5
+			}
+		}
+	}
+	VLT_reuben_baxter = {
+		name = VLT_reuben_baxter_name
+		portraits = {
+			army = {
+				small = GFX_idea_ghoul_generic5
+			}
+		}
+	}
+	VLT_skeeter = {
+		name = VLT_skeeter_name
+		portraits = {
+			army = {
+				small = GFX_idea_ghoul_generic1
+			}
+		}
+	}
+	VLT_wooz = {
+		name = VLT_wooz_name
+		portraits = {
+			army = {
+				small = GFX_idea_ghoul_generic3
+			}
+		}
+	}
+	VLT_virgie = {
+		name = VLT_virgie_name
+		gender = female
+		portraits = {
+			army = {
+				small = GFX_idea_ghoul_generic2
+			}
+		}
+	}
+
+	VLT_zomak = {
+		name = VLT_dweller_nigel
+		portraits = {
+			army = {
+				small = GFX_idea_ghoul_generic3
+			}
+		}
+	}
+}

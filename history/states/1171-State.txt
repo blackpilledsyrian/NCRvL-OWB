@@ -1,0 +1,28 @@
+state={
+	id=1171
+	name="STATE_1171"
+	provinces={
+		13259 13262 13265 14660 16382 16383 16384
+	}
+	resources = {
+		water = 2
+	}
+	history = {
+		victory_points = {
+			13262 5
+		}
+		buildings = {
+			infrastructure = 2
+			dockyard = 1
+			16382 = {
+				bunker = 4
+			}
+			14660 = {
+				bunker = 4
+			}
+		}
+	}
+	state_category = pastoral
+	manpower = 316
+	buildings_max_level_factor=1.000
+}

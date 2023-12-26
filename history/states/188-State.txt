@@ -1,0 +1,27 @@
+state = {
+	id = 188
+	name = "STATE_188"
+	manpower = 1000
+	state_category = town
+
+	resources = {
+		energy = 6
+		composites = 6
+	}
+
+	history = {
+		victory_points = {
+			4402 5
+		}
+		buildings = {
+			dockyard = 3
+			infrastructure = 1
+			4403 = { naval_base = 8 }
+			4402 = { naval_base = 4 }
+		}
+	}
+
+	provinces = {
+		4402 4403
+	}
+}

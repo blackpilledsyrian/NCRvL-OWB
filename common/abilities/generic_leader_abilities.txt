@@ -1,0 +1,800 @@
+ability = {
+	force_attack = {
+		name = ABILITY_FORCE_ATTACK
+		desc = ABILITY_FORCE_ATTACK_DESC
+
+		sound_effect = command_power_ability_offensive
+
+		type = army_leader
+
+		allowed = {
+			NOT = { has_trait = exhausted_order_trait}
+			is_leading_army_group = no
+			is_border_war = no
+		}
+
+		ai_will_do = {
+			factor = -1
+			modifier = {
+				FROM = {
+					has_war_support > 0.1
+					# command_power > 1.5
+				}
+				check_variable = { num_units_offensive_combats > 6 }
+
+				set_temp_variable = { temp = avg_offensive_combat_status }
+				check_variable = { temp > 0.45 }
+				check_variable = { ai_random > temp }
+
+				add = 2
+			}
+		}
+
+		cost = 0.22
+		duration = 168
+
+		one_time_effect = {
+			add_timed_unit_leader_trait = {
+				trait = exhausted_order_trait
+				days = 20
+			}
+			add_temporary_buff_to_units = {
+				combat_offense = 0.2
+				combat_breakthrough = 0.25
+				org_damage_multiplier = -0.75
+				str_damage_multiplier = 0.6
+				war_support_reduction_on_damage = 0.2
+				cannot_retreat_while_attacking = 1.0
+
+				days = 7
+				tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
+			}
+		}
+	}
+
+	last_stand = {
+		name = ABILITY_LAST_STAND
+		desc = ABILITY_LAST_STAND_DESC
+
+		sound_effect = command_power_ability_offensive
+
+		type = army_leader
+
+		allowed = {
+			NOT = { has_trait = exhausted_order_trait}
+			is_leading_army_group = no
+			is_border_war = no
+		}
+
+		cost = 0.22
+		duration = 168
+
+		one_time_effect = {
+			add_timed_unit_leader_trait = {
+				trait = exhausted_order_trait
+				days = 20
+			}
+			add_temporary_buff_to_units = {
+				combat_defense = 0.2
+				combat_entrenchment = 0.25
+				org_damage_multiplier = -1.0
+				str_damage_multiplier = 0.6
+				war_support_reduction_on_damage = 0.2
+				cannot_retreat_while_defending = 1.0
+
+				days = 7
+				tooltip = ABILITY_LAST_STAND_TOOLTIP
+			}
+		}
+
+		ai_will_do = {
+			factor = -1
+			modifier = {
+				FROM = {
+					has_war_support > 0.4
+				}
+
+				check_variable = { num_units_defensive_combats > 6 }
+
+				set_temp_variable = { temp = avg_defensive_combat_status }
+				check_variable = { temp < 0.40 }
+				check_variable = { ai_random > temp }
+
+				add = 2
+			}
+		}
+	}
+
+	staff_office_plan = {
+		name = ABILITY_STAFF_OFFICE_PLAN
+		desc = ABILITY_STAFF_OFFICE_PLAN_DESC
+
+		sound_effect = command_power_ability_defensive
+
+		type = army_leader
+
+		allowed = {
+			is_border_war = no
+			NOT = { has_trait = exhausted_order_trait}
+		}
+
+		cost = 0.12
+		duration = 168
+
+		unit_modifiers = {
+			planning_speed = 4.0
+		}
+
+		one_time_effect = {
+			add_timed_unit_leader_trait = {
+				trait = exhausted_order_trait
+				days = 20
+			}
+		}
+
+		ai_will_do = {
+			factor = -1
+			modifier = {
+				# FROM = {
+				# 	command_power > 2.0
+				# }
+				check_variable = { num_units > 6 }
+				check_variable = { unit_ratio_ready_for_plan > 0.55 }
+				check_variable = { avg_unit_planning_ratio < 0.4 }
+
+				add = 2
+			}
+		}
+	}
+
+	siege_artillery = {
+		name = ABILITY_SIEGE_ARTILLERY
+		desc = ABILITY_SIEGE_ARTILLERY_DESC
+
+		type = army_leader
+
+		allowed = {
+			has_ability = siege_artillery
+			NOT = { has_trait = exhausted_order_trait}
+			is_border_war = no
+		}
+
+		one_time_effect = {
+			add_timed_unit_leader_trait = {
+				trait = exhausted_order_trait
+				days = 20
+			}
+		}
+
+		unit_modifiers = {
+			fort = {
+				attack = 0.2
+			}
+			fortification_damage = 2.0
+			fortification_collateral_chance = 2.0
+		}
+		cost = 0.1
+		duration = 168
+
+		ai_will_do = {
+			factor = -1
+			modifier = {
+				# FROM = {
+				# 	command_power > 1.5
+				# }
+
+				set_temp_variable = { temp = num_units_offensive_combats }
+				check_variable = { temp > 6 }
+				set_temp_variable = { temp2 = num_units_offensive_combats_against@fort }
+				divide_temp_variable = { temp2 = temp?1 }
+				check_variable = { temp2 > 0.5 }
+
+				add = 2
+			}
+		}
+	}
+
+	glider_planes = {
+		name = ABILITY_GLIDER_PLANES_ARTILLERY
+		desc = ABILITY_GLIDER_PLANES_ARTILLERY_DESC
+
+		type = army_leader
+
+		allowed = {
+			has_ability = glider_planes
+			NOT = { has_trait = exhausted_order_trait}
+			is_border_war = no
+		}
+
+		one_time_effect = {
+			add_timed_unit_leader_trait = {
+				trait = exhausted_order_trait
+				days = 20
+			}
+		}
+
+		unit_modifiers = {
+			paratrooper_weight_factor = 1.0
+			paradrop_organization_factor = 2.0
+			paratrooper_aa_defense = 0.5
+		}
+
+		cost = 0.1
+		duration = 168
+	}
+	faster_naval_invasion_planning = {
+		name = ABILITY_FASTER_NAVAL_PLANNING
+		desc = ABILITY_FASTER_NAVAL_PLANNING_DESC
+
+		type = army_leader
+
+		allowed = {
+			has_ability = faster_naval_invasion_planning
+			NOT = { has_trait = exhausted_order_trait}
+			is_border_war = no
+		}
+
+		one_time_effect = {
+			add_timed_unit_leader_trait = {
+				trait = exhausted_order_trait
+				days = 20
+			}
+		}
+
+		unit_modifiers = {
+			naval_invasion_prep_speed = 0.5
+		}
+
+		cost = 0.1
+		duration = 168
+	}
+
+	probing_attack = {
+		name = ABILITY_PROBING_ATTACK
+		desc = ABILITY_PROBING_ATTACK_DESC
+
+		type = army_leader
+
+		allowed = {
+			has_ability = probing_attack
+			NOT = { has_trait = exhausted_order_trait}
+			is_border_war = no
+		}
+
+		one_time_effect = {
+			add_timed_unit_leader_trait = {
+				trait = exhausted_order_trait
+				days = 20
+			}
+		}
+
+		unit_modifiers = {
+			dont_lose_dig_in_on_attack = 1.0
+			offence = -0.2
+		}
+
+		cancelable = yes
+		cost = 0.1
+		duration = -1
+	}
+
+	makeshift_bridges = {
+		name = ABILITY_MAKESHIFT_BRIDGES
+		desc = ABILITY_MAKESHIFT_BRIDGES_DESC
+
+		type = army_leader
+
+		allowed = {
+			has_ability = makeshift_bridges
+			NOT = { has_trait = exhausted_order_trait}
+			is_border_war = no
+		}
+
+		one_time_effect = {
+			add_timed_unit_leader_trait = {
+				trait = exhausted_order_trait
+				days = 20
+			}
+		}
+
+		unit_modifiers = {
+			river_crossing_factor = -0.4
+			river = {
+				attack = 0.2
+			}
+		}
+
+		cost = 0.1
+		duration = 168
+
+		ai_will_do = {
+			factor = -1
+			modifier = {
+				# FROM = {
+				# 	command_power > 2.0
+				# }
+				check_variable = { num_units_crossing_river > 5 }
+
+				add = 2
+			}
+		}
+	}
+
+	extra_suplies = {
+		name = ABILITY_EXTRA_SUPLIES
+		desc = ABILITY_EXTRA_SUPLIES_DESC
+
+		type = army_leader
+
+		allowed = {
+			has_ability = extra_suplies
+			NOT = { has_trait = exhausted_order_trait}
+			is_border_war = no
+		}
+
+		one_time_effect = {
+			add_timed_unit_leader_trait = {
+				trait = exhausted_order_trait
+				days = 20
+			}
+		}
+
+		unit_modifiers = {
+			no_supply_grace = 168
+		}
+
+		one_time_effect = {
+			supply_units = 168
+		}
+
+		cost = 0.2
+		duration = 168
+		cooldown = 504
+	}
+
+	requisition_winter_gear = {
+		name = ABILITY_REQUISITION_WINTER_GEAR
+		desc = ABILITY_REQUISITION_WINTER_GEAR_DESC
+
+		type = army_leader
+
+		allowed = {
+			has_ability = requisition_winter_gear
+			NOT = { has_trait = exhausted_order_trait}
+			is_border_war = no
+		}
+
+		one_time_effect = {
+			add_timed_unit_leader_trait = {
+				trait = exhausted_order_trait
+				days = 20
+			}
+		}
+
+		unit_modifiers = {
+			acclimatization_cold_climate_gain_factor = 0.5
+		}
+
+		cost = 0.1
+		duration = 168
+
+		ai_will_do = {
+			factor = -1
+			modifier = {
+				# FROM = {
+				# 	command_power > 2.0
+				# }
+				check_variable = { num_units_on_climate@cold_climate > 8 }
+				set_temp_variable = { temp = avg_units_acclimation@cold_climate }
+				divide_temp_variable = { temp =  num_units?1 }
+				check_variable = { temp < 0.5 }
+
+				add = 2
+			}
+		}
+	}
+
+	use_archimedes_ii = {
+		name = ABILITY_USE_ARCHIMEDES_II
+		desc = ABILITY_USE_ARCHIMEDES_II_DESC
+
+		sound_effect = use_psycho
+
+		type = army_leader
+		cost = 0.30
+		allowed = {
+			OWNER = {
+				has_country_flag = archimedes_ii
+				NOT = { has_idea = moj_archimedes_ii_cooldown }
+			}
+			NOT = { has_trait = exhausted_order_trait}
+			is_leading_army_group = no
+		}
+		duration = 168
+
+		one_time_effect = {
+			add_timed_unit_leader_trait = {
+				trait = exhausted_order_trait
+				days = 20
+			}
+			add_temporary_buff_to_units = {
+				combat_offense = 0.4
+				combat_breakthrough = 0.4
+				org_damage_multiplier = -0.4
+				str_damage_multiplier = -0.15
+				cannot_retreat_while_attacking = 1.0
+
+				days = 7
+				tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
+			}
+			OWNER = {
+				add_timed_idea = {
+					idea = moj_archimedes_ii_cooldown
+					days = 90
+				}
+			}
+		}
+
+
+		ai_will_do = {
+			factor = -1
+			modifier = {
+				check_variable = { num_units_defensive_combats > 6 }
+
+				set_temp_variable = { temp = avg_defensive_combat_status }
+				check_variable = { temp < 0.40 }
+				check_variable = { ai_random > temp }
+
+				add = 2
+			}
+		}
+	}
+
+	# use_mentats = {
+	# 	name = ABILITY_USE_MENTAT
+	# 	desc = ABILITY_USE_MENTAT_DESC
+
+	# 	sound_effect = command_power_ability_offensive
+
+	# 	type = army_leader
+
+	# 	allowed = {
+	# 		NOT = { has_trait = exhausted_order_trait}
+	# 		is_leading_army_group = no
+	# 		is_border_war = no
+	# 		OWNER = {
+	# 			has_idea = chems_legalised
+	# 			check_variable = { chems > 0 }
+	# 		}
+	# 	}
+	# 	one_time_effect = {
+	# 		add_timed_unit_leader_trait = {
+	# 			trait = exhausted_order_trait
+	# 			days = 28
+	# 		}
+	# 		random_list = {
+	# 			90 = {  }
+	# 			10 = { unit_leader_event = generic.26 }
+	# 		}
+	# 		OWNER = {
+	# 			subtract_from_variable = { chems = 1 }
+	# 		}
+	# 	}
+
+
+	# 	cost = 0
+	# 	duration = 168
+
+	# 	unit_modifiers = {
+	# 		planning_speed = 4.0
+	# 		supply_consumption_factor = -0.50
+	# 	}
+
+	# 	ai_will_do = {
+	# 		factor = -1
+	# 		modifier = {
+	# 			FROM = {
+	# 				has_war_support > 0.4
+	# 			}
+
+	# 			check_variable = { num_units_defensive_combats > 6 }
+
+	# 			set_temp_variable = { temp = avg_defensive_combat_status }
+	# 			check_variable = { temp < 0.40 }
+	# 			check_variable = { ai_random > temp }
+
+	# 			add = 2
+	# 		}
+	# 	}
+	# }
+	# use_buffout = {
+	# 	name = ABILITY_USE_BUFFOUT
+	# 	desc = ABILITY_USE_BUFFOUT_DESC
+
+	# 	sound_effect = command_power_ability_offensive
+
+	# 	type = army_leader
+
+	# 	allowed = {
+	# 		NOT = { has_trait = exhausted_order_trait}
+	# 		is_leading_army_group = no
+	# 		is_border_war = no
+	# 		OWNER = {
+	# 			has_idea = chems_legalised
+	# 			check_variable = { chems > 0 }
+	# 		}
+	# 	}
+
+
+	# 	cost = 0
+	# 	duration = 168
+
+	# 	unit_modifiers = {
+	# 		army_attack_factor = 0.15
+	# 		army_speed_factor = 0.10
+	# 		army_org_factor = -0.025
+	# 		supply_consumption_factor = -0.50
+	# 		experience_loss_factor = 0.15
+	# 		experience_gain_army_factor = -0.5
+
+	# 	}
+	# 	one_time_effect = {
+	# 		add_timed_unit_leader_trait = {
+	# 			trait = exhausted_order_trait
+	# 			days = 28
+	# 		}
+	# 		random_list = {
+	# 			90 = {  }
+	# 			10 = { unit_leader_event = generic.26 }
+	# 		}
+	# 		OWNER = {
+	# 			subtract_from_variable = { chems = 1 }
+	# 		}
+	# 	}
+
+
+
+	# 	ai_will_do = {
+	# 		factor = -1
+	# 		modifier = {
+	# 			FROM = {
+	# 				has_war_support > 0.4
+	# 			}
+
+	# 			check_variable = { num_units_defensive_combats > 6 }
+
+	# 			set_temp_variable = { temp = avg_defensive_combat_status }
+	# 			check_variable = { temp < 0.40 }
+	# 			check_variable = { ai_random > temp }
+
+	# 			add = 2
+	# 		}
+	# 	}
+	# }
+	# use_psycho = {
+	# 	name = ABILITY_USE_PSYCHO
+	# 	desc = ABILITY_USE_PSYCHO_DESC
+
+	# 	sound_effect = use_psycho
+
+	# 	type = army_leader
+	# 	cost = 0
+	# 	allowed = {
+	# 		NOT = { has_trait = exhausted_order_trait}
+	# 		is_leading_army_group = no
+	# 		is_border_war = no
+	# 		OWNER = {
+	# 			has_idea = chems_legalised
+	# 			check_variable = { chems > 0 }
+	# 		}
+	# 	}
+	# 	duration = 168
+
+	# 	unit_modifiers = {
+	# 		offence = 0.25
+	# 		attrition = 0.25
+	# 		army_speed_factor = -0.05
+	# 	}
+	# 	one_time_effect = {
+	# 		add_timed_unit_leader_trait = {
+	# 			trait = exhausted_order_trait
+	# 			days = 28
+	# 		}
+	# 		random_list = {
+	# 			90 = {  }
+	# 			10 = { unit_leader_event = generic.26 }
+	# 		}
+	# 		OWNER = {
+	# 			subtract_from_variable = { chems = 1 }
+	# 		}
+	# 	}
+
+
+	# 	ai_will_do = {
+	# 		factor = -1
+	# 		modifier = {
+	# 			FROM = {
+	# 				has_war_support > 0.4
+	# 			}
+
+	# 			check_variable = { num_units_defensive_combats > 6 }
+
+	# 			set_temp_variable = { temp = avg_defensive_combat_status }
+	# 			check_variable = { temp < 0.40 }
+	# 			check_variable = { ai_random > temp }
+
+	# 			add = 2
+	# 		}
+	# 	}
+	# }
+	# use_jet = {
+    #     name = ABILITY_USE_JET
+    #     desc = ABILITY_USE_JET_DESC
+
+    #     sound_effect = command_power_ability_offensive
+
+    #     type = army_leader
+
+    #     allowed = {
+	# 		NOT = { has_trait = exhausted_order_trait}
+    #         is_leading_army_group = no
+    #         is_border_war = no
+    #         OWNER = {
+    #             has_idea = chems_legalised
+    #             check_variable = { chems > 0 }
+    #         }
+    #     }
+
+
+    #     cost = 0
+    #     duration = 168
+
+    #     one_time_effect = {
+	# 		add_timed_unit_leader_trait = {
+	# 			trait = exhausted_order_trait
+	# 			days = 28
+	# 		}
+    #         add_temporary_buff_to_units = {
+    #             combat_offense  = 0.2
+    #             combat_defense = -0.25
+    #             org_damage_multiplier = -1.0
+    #             str_damage_multiplier = 0.6
+    #             cannot_retreat_while_attacking = 1.0
+    #             days = 7
+    #         }
+    #         random_list = {
+    #             90 = {  }
+    #             10 = { unit_leader_event = generic.26 }
+    #         }
+    #         OWNER = {
+    #             subtract_from_variable = { chems = 1 }
+    #         }
+    #     }
+
+    #     ai_will_do = {
+    #         factor = -1
+    #         modifier = {
+    #             FROM = {
+    #                 has_war_support > 0.4
+    #             }
+
+    #             check_variable = { num_units_defensive_combats > 6 }
+
+    #             set_temp_variable = { temp = avg_defensive_combat_status }
+    #             check_variable = { temp < 0.40 }
+    #             check_variable = { ai_random > temp }
+
+    #             add = 2
+    #         }
+    #     }
+    # }
+
+	use_fatman = {
+		name = ABILITY_USE_FATMAN
+		desc = ABILILTY_USE_FATMAN_DESC
+
+		sound_effect = use_fatman_sound
+		type = army_leader
+
+		allowed = {
+			OWNER = {
+				check_variable = {
+					fatman_uses > 0
+				}
+			}
+			NOT = { has_trait = exhausted_order_trait}
+		}
+
+		cost = 0.10
+		duration = 168
+		one_time_effect = {
+			add_timed_unit_leader_trait = {
+				trait = exhausted_order_trait
+				days = 20
+			}
+			add_temporary_buff_to_units = {
+				combat_offense = 0.5
+				combat_breakthrough = 0.5
+				org_damage_multiplier = -0.8
+				cannot_retreat_while_attacking = 1.0
+				days = 7
+				tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
+			}
+			OWNER = {
+				subtract_from_variable = { fatman_uses = 1 }
+			}
+		}
+
+
+		ai_will_do = {
+			factor = -1
+			modifier = {
+				FROM = {
+					has_war_support > 0.4
+				}
+
+				check_variable = { num_units_defensive_combats > 6 }
+
+				set_temp_variable = { temp = avg_defensive_combat_status }
+				check_variable = { temp < 0.40 }
+				check_variable = { ai_random > temp }
+
+				add = 2
+			}
+		}
+	}
+	use_artillery = {
+		name = USE_ARTILLERY
+		desc = USE_ARTILLERY_DESC
+
+		sound_effect = use_artillery_sound
+		type = army_leader
+
+		allowed = {
+			OWNER = {
+				check_variable = {
+					artillery_uses > 0
+				}
+			}
+			NOT = { has_trait = exhausted_order_trait}
+		}
+
+		cost = 0.10
+		duration = 360
+		one_time_effect = {
+			add_timed_unit_leader_trait = {
+				trait = exhausted_order_trait
+				days = 28
+			}
+			add_temporary_buff_to_units = {
+				combat_offense = 0.20
+				combat_breakthrough = 0.20
+				combat_defense = 0.20
+				org_damage_multiplier = -0.5
+				str_damage_multiplier = -0.15
+				days = 15
+			}
+			OWNER = {
+				subtract_from_variable = { artillery_uses = 1 }
+			}
+		}
+
+
+		ai_will_do = {
+			factor = -1
+			modifier = {
+				FROM = {
+					has_war_support > 0.4
+				}
+
+				check_variable = { num_units_defensive_combats > 6 }
+
+				set_temp_variable = { temp = avg_defensive_combat_status }
+				check_variable = { temp < 0.40 }
+				check_variable = { ai_random > temp }
+
+				add = 2
+			}
+		}
+	}
+}

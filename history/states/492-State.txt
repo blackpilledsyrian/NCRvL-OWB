@@ -1,0 +1,31 @@
+state = {
+	id = 492
+	name = "STATE_492"
+	manpower = 7100
+	state_category = city
+
+	resources = {
+		metal = 4
+		water = 10
+	}
+
+	history = {
+		victory_points = {
+			7207 20
+		}
+		victory_points = {
+			7211 3
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			arms_factory = 2
+			air_base = 1
+			7206 = { naval_base = 3 }
+		}
+	}
+
+	provinces = {
+		2095 3643 3672 3673 3774 3791 3793 3794 3795 7206 7207 7209 7211
+	}
+}

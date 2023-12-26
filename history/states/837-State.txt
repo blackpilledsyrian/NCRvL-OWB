@@ -1,0 +1,26 @@
+state = {
+	id = 837
+	name = "STATE_837"
+
+	history={
+			buildings = {
+			infrastructure = 2
+			arms_factory = 2
+		}
+		victory_points = {
+			9812 10
+		}
+	}
+
+	provinces={
+		9768 9769 9805 9812
+	}
+
+	resources = {
+		energy = 4
+	}
+
+	manpower=32500
+	buildings_max_level_factor=1.000
+	state_category=town
+}

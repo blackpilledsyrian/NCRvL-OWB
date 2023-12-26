@@ -1,0 +1,384 @@
+ideas = {
+	country = {
+		GDH_the_generalismos_arsenal = {
+			picture = generic_gold_gun
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				industrial_capacity_factory = 0.05
+				production_factory_max_efficiency_factor = 0.05
+				production_speed_arms_factory_factor = 0.05
+			}
+			research_bonus = {
+				infantry_weapons_tech_category = 0.05
+				support_combat_tech_category = 0.05
+			}
+		}
+		gdh_baja_contracts = {
+			picture = generic_caps
+			removal_cost = -1
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+		gdh_guns_for_hire = {
+			picture = pile_of_guns
+			removal_cost = -1
+			modifier = {
+				send_volunteer_factor = 0.15
+			}
+		}
+		gdh_frumentarius = {
+			picture = itz_idea_icdeb
+			modifier = {
+				decryption_factor = 0.1
+				encryption_factor = 0.1
+				gdh_equipment_production_bonus = 0.2
+			}
+			removal_cost = -1
+		}
+		gdh_frumentarius2 = {
+			picture = bunker_blues
+			modifier = {
+				gdh_equipment_production_bonus = 0.5
+				decryption_factor = 0.1
+				encryption_factor = 0.1
+				compliance_gain = 0.05
+			}
+			removal_cost = -1
+		}
+		gdh_standing_army = {
+			picture = generic_morale_bonus
+			removal_cost = -1
+			equipment_bonus = {
+				infantry_equipment = {
+					reliability = 0.05
+					soft_attack = 0.05
+					build_cost_ic = -0.05
+					instant = yes
+				}
+				support_equipment = {
+					reliability = 0.1
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+		gdh_fort_construction = {
+			picture = pre-war_industry
+			removal_cost = -1
+			modifier = {
+				production_speed_bunker_factor = 0.25
+			}
+		}
+		gdh_smiley = {
+			picture = VEG_Good_Business
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.2
+			}
+		}
+		gdh_stoic = {
+			picture = ncn_way_of_the_canaanite
+			removal_cost = -1
+			modifier = {
+				surrender_limit = 0.1
+				research_speed_factor = 0.05
+			}
+		}
+		gdh_ruthless = {
+			picture = ncn_sneering_imperialist
+			removal_cost = -1
+			modifier = {
+				army_org_factor = 0.05
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+				attrition = -0.2
+			}
+		}
+		gdh_brave = {
+			picture = generic_bos_captain_hat
+			removal_cost = -1
+			modifier = {
+				special_forces_attack_factor = 0.1
+				special_forces_defence_factor = 0.1
+				army_morale_factor = 0.05
+			}
+		}
+		gdh_cunning = {
+			picture = generic_bos_captain_hat
+			removal_cost = -1
+			modifier = {
+				max_planning_factor = 0.05
+				production_speed_infrastructure_factor = 0.1
+				production_speed_buildings_factor = 0.05
+			}
+		}
+		gdh_free_trade = {
+			picture = generic_service_rifle
+			removal_cost = -1
+			modifier = {
+				gdh_equipment_production_bonus = 0.15
+			}
+		}
+		gdh_gun_production = {
+			picture = generic_chinese_rifle
+			removal_cost = -1
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+		gdh_gun_production_2 = {
+			picture = generic_chinese_rifle
+			removal_cost = -1
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.2
+					instant = yes
+				}
+			}
+		}
+		gdh_public_works = {
+			picture = salvaged_military_industry
+			removal_cost = -1
+			modifier = {
+				production_speed_industrial_complex_factor = 0.1
+				industrial_capacity_factory = 0.1
+				consumer_goods_expected_value = -0.05
+				production_speed_buildings_factor = 0.1
+			}
+		}
+		gdh_party_invitations = {
+			picture = VEG_The_White_Glove_Society
+			removal_cost = -1
+			modifier = {
+				consumer_goods_expected_value = -0.05
+				production_speed_buildings_factor = 0.1
+			}
+		}
+		gdh_ruler_acceptance = {
+			picture = utah_blessing
+			removal_cost = -1
+			modifier = {
+				consumer_goods_expected_value = -0.05
+				production_speed_buildings_factor = 0.1
+			}
+		}
+		gdh_gulf_state = {
+			picture = VEG_Narcissism
+			removal_cost = -1
+			modifier = {
+				production_speed_industrial_complex_factor = 0.1
+				consumer_goods_expected_value = -0.1
+				production_speed_buildings_factor = 0.15
+				industrial_capacity_factory = 0.1
+			}
+		}
+		gdh_ffi_buildup = {
+			picture = generic_production_bonus
+			removal_cost = -1
+			modifier = {
+				production_speed_arms_factory_factor = 0.1
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+		gdh_vault_research = {
+			picture = generic_vault_door
+			removal_cost = -1
+			research_bonus = {
+				infantry_weapons_tech_category = 0.1
+				infantry_tech_category = 0.05
+			}
+		}
+		gdh_vault_research_2 = {
+			picture = generic_vault_door
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.1
+			}
+		}
+		gdh_anti_ffi = {
+			picture = ffi_volunteers
+			removal_cost = -1
+			modifier = {
+				mobilization_speed = 0.1
+			}
+			targeted_modifier = {
+				tag = NCR
+				defense_bonus_against = 0.1
+			}
+			targeted_modifier = {
+				tag = MOT
+				defense_bonus_against = 0.1
+			}
+			targeted_modifier = {
+				tag = SHI
+				defense_bonus_against = 0.1
+			}
+			targeted_modifier = {
+				tag = BVC
+				defense_bonus_against = 0.1
+			}
+		}
+		gdh_manpower = {
+			picture = food_for_service
+			removal_cost = -1
+			modifier = {
+				conscription = 0.05
+			}
+		}
+		gdh_manpower2 = {
+			picture = food_for_service
+			removal_cost = -1
+			modifier = {
+				conscription = 0.05
+			}
+		}
+		gdh_manpower3 = {
+			picture = food_for_service
+			removal_cost = -1
+			modifier = {
+				conscription = 0.1
+				experience_gain_army_factor = 0.1
+			}
+		}
+		gdh_suppression = {
+			picture = generic_mesmetron
+			removal_cost = -1
+			modifier = {
+				compliance_gain = 0.1
+			}
+		}
+		gdh_robots = {
+			picture = robot_salvaging_expertise
+			removal_cost = -1
+			equipment_bonus = {
+				combat_robot_equipment = {
+					build_cost_ic = -0.1
+					soft_attack = 0.05
+				}
+			}
+		}
+		gdh_sell_equipment1 = {
+			picture = VEG_Repaid_Debt
+			removal_cost = -1
+			modifier = {
+				gdh_equipment_production_bonus = 0.1
+			}
+		}
+		gdh_sell_equipment2 = {
+			picture = VEG_Repaid_Debt
+			removal_cost = -1
+			modifier = {
+				gdh_equipment_production_bonus = 0.2
+			}
+		}
+		gdh_sell_equipment3 = {
+			picture = VEG_Repaid_Debt
+			removal_cost = -1
+			modifier = {
+				gdh_equipment_production_bonus = 0.3
+			}
+		}
+		gdh_sell_equipment4 = {
+			picture = VEG_Repaid_Debt
+			removal_cost = -1
+			modifier = {
+				gdh_equipment_production_bonus = 0.4
+			}
+		}
+		gdh_sell_equipment5 = {
+			picture = VEG_Repaid_Debt
+			removal_cost = -1
+			modifier = {
+				gdh_equipment_production_bonus = 0.5
+			}
+		}
+		gdh_sell_equipment6 = {
+			picture = VEG_Repaid_Debt
+			removal_cost = -1
+			modifier = {
+				gdh_equipment_production_bonus = 0.6
+			}
+		}
+		gdh_sell_equipment7 = {
+			picture = VEG_Repaid_Debt
+			removal_cost = -1
+			modifier = {
+				gdh_equipment_production_bonus = 0.7
+			}
+		}
+		gdh_sell_equipment8 = {
+			picture = VEG_Repaid_Debt
+			removal_cost = -1
+			modifier = {
+				gdh_equipment_production_bonus = 0.8
+			}
+		}
+		gdh_sell_equipment9 = {
+			picture = VEG_Repaid_Debt
+			removal_cost = -1
+			modifier = {
+				gdh_equipment_production_bonus = 0.9
+			}
+		}
+		gdh_sell_equipment10 = {
+			picture = VEG_Repaid_Debt
+			removal_cost = -1
+			modifier = {
+				gdh_equipment_production_bonus = 1
+			}
+		}
+		gdh_sell_equipment11 = {
+			picture = VEG_Repaid_Debt
+			removal_cost = -1
+			modifier = {
+				gdh_equipment_production_bonus = 1.1
+			}
+		}
+		gdh_sell_equipment12 = {
+			picture = VEG_Repaid_Debt
+			removal_cost = -1
+			modifier = {
+				gdh_equipment_production_bonus = 1.2
+			}
+		}
+		gdh_sell_equipment13 = {
+			picture = VEG_Repaid_Debt
+			removal_cost = -1
+			modifier = {
+				gdh_equipment_production_bonus = 1.3
+			}
+		}
+		gdh_sell_equipment14 = {
+			picture = VEG_Repaid_Debt
+			removal_cost = -1
+			modifier = {
+				gdh_equipment_production_bonus = 1.4
+			}
+		}
+		gdh_sell_equipment15 = {
+			picture = VEG_Repaid_Debt
+			removal_cost = -1
+			modifier = {
+				gdh_equipment_production_bonus = 1.5
+			}
+		}
+	}
+}

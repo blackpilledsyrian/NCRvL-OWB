@@ -1,0 +1,27 @@
+
+state={
+	id=1218
+	name="STATE_1218"
+	resources={
+		metal=6.000
+	}
+
+	history={
+		victory_points = {
+			13995 5
+		}
+		buildings = {
+			infrastructure = 1
+
+		}
+
+	}
+
+	provinces={
+		13959 13962 13963 13964 13973 13977 13994 13995 13996 13997
+	}
+	manpower=91
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+}

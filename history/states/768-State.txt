@@ -1,0 +1,32 @@
+state = {
+	id = 768
+	name = "STATE_768"
+	resources={
+		water = 4
+		metal = 9
+		circuitry = 4
+		energy = 12
+	}
+
+	history={
+		victory_points = {
+			9374 20
+		}
+		buildings = {
+			infrastructure = 5
+			arms_factory = 2
+			industrial_complex = 2
+			anti_air_building = 1
+			radar_station = 1
+
+		}
+
+	}
+
+	provinces={
+		9276 9367 9372 9374 9377 9519 11009 11017 11019 11021
+	}
+	manpower=55000
+	buildings_max_level_factor=1.000
+	state_category=large_city
+}

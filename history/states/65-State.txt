@@ -1,0 +1,35 @@
+state = {
+	id = 65
+	name = "STATE_65"
+	manpower = 5935
+	state_category = town
+
+	resources = {
+		water = 2
+	}
+
+	history = {
+		victory_points = {
+			1500 3
+		}
+		victory_points = {
+			4047 5
+		}
+		victory_points = {
+			4326 5
+		}
+		victory_points = {
+			7517 3
+		}
+		victory_points = {
+			7518 3
+		}
+		buildings = {
+			infrastructure = 3
+		}
+	}
+
+	provinces = {
+		1500 1936 1937 4010 4011 4043 4047 4318 4326 4327 4328 7378 7511 7512 7514 7515 7517 7518
+	}
+}

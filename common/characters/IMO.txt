@@ -1,0 +1,59 @@
+characters = {
+	IMO_juggernaut = {
+		name = "Juggernaut"
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Juggernaut_Animated
+			}
+		}
+		country_leader = {
+			desc = IMO_JUGGERNAUT_DESC
+			ideology = militarist_oligarchy
+			traits = {
+				dislikes_brotherhood_of_steel
+			}
+			expire = "3000.01.01.01"
+			id = -1
+		}
+		country_leader = {
+			desc = IMO_JUGGERNAUT_DESC
+			ideology = unlimited_democracy
+			traits = {
+				dislikes_brotherhood_of_steel
+			}
+			expire = "2293.1.1.12"
+			id = -1
+		}
+		country_leader = {
+			desc = IMO_JUGGERNAUT_DESC
+			ideology = gang
+			traits = {
+				dislikes_brotherhood_of_steel
+			}
+			expire = "2294.1.1.12"
+			id = -1
+		}
+		country_leader = {
+			desc = IMO_JUGGERNAUT_DESC
+			ideology = meritocracy
+			expire = "2285.1.1.12"
+			traits = {
+				dislikes_brotherhood_of_steel
+			}
+			id = -1
+		}
+		corps_commander = {
+			traits = {
+				enduring_trait
+				agile_trait
+				warchief_trait
+				fortress_buster
+			}
+			skill = 5
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 5
+		}
+	}
+}

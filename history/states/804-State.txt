@@ -1,0 +1,27 @@
+state = {
+	id = 804
+	name = "STATE_804"
+	resources={
+		metal = 8
+		circuitry = 4
+	}
+
+	history={
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+
+		}
+		victory_points = {
+			10164 10
+		}
+
+	}
+
+	provinces={
+		10164 10202 10230 10243 10261 10281 10305 10329 10330 10337 10353 10354 10370 10371 10398 10880 10898
+	}
+	manpower=9000
+	buildings_max_level_factor=1.000
+	state_category=shanty
+}

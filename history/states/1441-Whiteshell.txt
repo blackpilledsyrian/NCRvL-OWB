@@ -1,0 +1,19 @@
+
+state={
+	id=1441
+	name="STATE_1441"
+
+	history={
+		victory_points = {
+			20286 5
+		}
+	}
+
+	provinces={
+		20273 20274 20275 20286 20287
+	}
+	manpower=748
+	buildings_max_level_factor=1.000
+	state_category=shanty
+	local_supplies=0.000
+}

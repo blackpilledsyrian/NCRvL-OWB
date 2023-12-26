@@ -1,0 +1,126 @@
+﻿capital = 326
+
+set_technology = {
+	basic_supply_transport_tech = 1
+	infantry_tech_level_tribal = 1
+	#infantry_tech_level_settler = 1
+	#infantry_tech_level_scientific = 1
+	support_tech_level_tribal = 1
+	#support_tech_level_settler = 1
+	#support_tech_level_scientific = 1
+	special_forces_tech_level_tribal = 1
+	#special_forces_tech_level_settler = 1
+	#special_forces_tech_level_scientific = 1
+	#power_armour_tech_level_settler = 1
+	#power_armour_tech_level_scientific = 1
+	#vehicles_tech_level_tribal = 1
+	#vehicles_tech_level_settler = 1
+	#vehicles_tech_level_scientific = 1
+	#robotics_tech_level_tribal = 1
+	#robotics_tech_level_settler = 1
+	#robotics_tech_level_scientific = 1
+	air_tech_level_tribal = 1
+	#air_tech_level_settler = 1
+	#air_tech_level_scientific = 1
+	naval_tech_level_tribal = 1
+	#naval_tech_level_settler = 1
+	#naval_tech_level_scientific = 1
+	tools_tech_level_tribal = 1
+	#tools_tech_level_settler = 1
+	#tools_tech_level_scientific = 1
+	habitation_tech_level_tribal = 1
+	#habitation_tech_level_settler = 1
+	#habitation_tech_level_scientific = 1
+	exploitation_tech_level_tribal = 1
+	#exploitation_tech_level_settler = 1
+	#exploitation_tech_level_scientific = 1
+	electronics_tech_level_tribal = 1
+	#electronics_tech_level_settler = 1
+	#electronics_tech_level_scientific = 1
+	tribal_tech_visibility_tech = 1
+	tribal_tech_access_tech = 1
+	tool_engineering = 1
+	standard_weaponry_tech = 1
+	melee_weaponry_tech_1 = 1
+	anti_tank_equipment_tech_1 = 1
+	dog_equipment_tech_1 = 1
+	med_company_tech_1 = 1
+	pre_construction_industry_tech = 1
+	pre_recycling_industry_tech = 1
+	basic_industry_tech = 1
+	support_weaponry = 1
+	raider_reckless_aggression = 1
+	demolitions_weaponry_tech = 1
+	terror_tactics = 1
+	melee_weaponry_tech_2 = 1
+	heavy_infantry_tech_1 = 1
+	glider_tech = 1
+	cargo_plane_tech_1 = 1
+	elaborate_disruption_doctrine = 1
+	spec_ops_equipment_tech_1 = 1
+}
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		nautics_tech_1 = 1
+		light_navy_hull_tech_1 = 1
+		naval_invasion_tech_1 = 1
+	}
+}
+if = {
+	limit = {
+		NOT = { has_dlc = "Man the Guns" }
+	}
+	set_technology = {
+		nautics_tech_non_mtg_1 = 1
+		light_navy_hull_tech_non_mtg_1 = 1
+		naval_invasion_tech_non_mtg_1 = 1
+	}
+}
+
+set_stability = 0.4
+set_war_support = 0.4
+set_convoys = 50
+set_research_slots = 3
+set_country_flag = is_tribal_nation
+set_country_flag = is_utah_nation
+set_country_flag = tribal_doctrine_ai
+set_country_flag = roman_doctrine_ai
+
+add_opinion_modifier = { target = NCN modifier = ncn_wht_open_ambitions }
+reverse_add_opinion_modifier = { target = NCN modifier = ncn_wht_open_ambitions }
+
+set_politics = {
+	ruling_party = elites
+	elections_allowed = no
+}
+
+set_popularities = {
+	people = 20
+	elites = 55
+	intellectuals = 0
+	ruler = 25
+}
+
+add_ideas = {
+	# slavers_idea_2
+	undesirables_law_raider
+	WHT_savages
+	WHT_widespread_illiteracy
+	outsider_law_volunteers
+	partial_economic_mobilisation
+}
+hidden_effect = {
+	add_ideas = tech_air_production_nerf_idea
+}
+set_variable = { never_return_stolen_territory = 1 }
+
+recruit_character = WHT_salt_upon_wounds
+recruit_character = WHT_balm_upon_wounds
+recruit_character = WHT_tears_in_the_rain
+
+set_country_flag = infantry_ballistic_ai
+# vim: set ft=pdx ts=2 sw=2 tw=79 :

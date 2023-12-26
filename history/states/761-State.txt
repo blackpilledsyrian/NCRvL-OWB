@@ -1,0 +1,29 @@
+state = {
+	id = 761
+	name = "STATE_761"
+	resources={
+		energy = 9
+		metal = 8
+		composites = 12
+	}
+
+	history={
+		victory_points = {
+			740 10
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 2
+			air_base = 3
+
+		}
+
+	}
+
+	provinces={
+		736 740 9201 9394 9412 9520 11029 11036 11039 11052 11059 11063 11069 11075 11086
+	}
+	manpower=8548
+	buildings_max_level_factor=1.000
+	state_category=shanty
+}

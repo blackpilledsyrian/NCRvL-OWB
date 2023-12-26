@@ -1,0 +1,36 @@
+state = {
+	id = 777
+	name = "STATE_777"
+	resources={
+		metal=22.000
+		circuitry=4.000
+		composites=4.000
+	}
+
+	history={
+		buildings = {
+			arms_factory = 1
+			industrial_complex = 1
+			metal_generator = 1
+			infrastructure = 5
+			9515 = {
+				naval_base = 8
+				bunker = 3
+			}
+			9518 = {
+				bunker = 2
+			}
+		}
+		victory_points = {
+			9515 15
+		}
+
+	}
+
+	provinces={
+		710 2245 9306 9322 9515 9518 10490 10580 10920 10925 10933 10954 10968 10973
+	}
+	manpower=38591
+	buildings_max_level_factor=1.000
+	state_category=town
+}

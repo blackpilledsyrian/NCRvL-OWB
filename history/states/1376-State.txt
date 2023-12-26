@@ -1,0 +1,22 @@
+
+state={
+	id=1376
+	name="STATE_1376"
+	provinces={
+		15246 15247 15250 15251 15254 15255 15258
+	}
+	resources = {
+		composites = 2
+	}
+	history = {
+		victory_points = {
+			15247 5
+		}
+		buildings = {
+			infrastructure = 2
+		}
+	}
+	state_category = city
+	manpower = 3371
+	buildings_max_level_factor=1.000
+}

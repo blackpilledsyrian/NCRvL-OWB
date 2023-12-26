@@ -1,0 +1,4540 @@
+technologies = {
+	@Col_1 = 8
+	@Col_2 = 12
+	@Col_3 = 16
+	@Col_3_5 = 17
+	@Col_4 = 20
+	@Col_4_5 = 22
+	@Col_5 = 24
+	@Col_5_5 = 26
+	@Col_6 = 28
+	@Col_7 = 32
+	@Col_8 = 36
+	@Col_9 = 39
+
+	@Row_1 = 0
+	@Row_2 = 1
+	@Row_3 = 2
+	@Row_4 = 3
+	@Row_5 = 4
+	@Row_6 = 5
+	@Row_7 = 6
+	@Row_at = 7
+	@Row_8 = 8
+	@Row_9 = 9
+	@Row_10 = 10
+	@Row_11 = 11
+	@Row_12 = 12
+	@Row_13 = 13
+	@Row_14 = 14
+
+	@Row_dog = 16
+	@Row_med = 18
+	@Row_rec = 20
+	@Row_log = 22
+	@Row_mai = 24
+
+	support_weaponry = {
+		enable_equipments = {
+			support_equipment_1
+		}
+
+		path = {
+			leads_to_tech = fireteam_weaponry_tech
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = demolitions_weaponry_tech
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = dog_equipment_tech_1
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = anti_tank_equipment_tech_1
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = med_company_tech_1
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = recon_company_tech_1
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = logistics_company_tech_1
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = maintenance_company_tech_1
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2275
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_1 y = @Col_1 }
+		}
+
+		dependencies = {
+			support_tech_level_tribal = 1
+		}
+
+		categories = {
+			support_tech_category
+			support_non_combat_tech_category
+			tribal_tech_category
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	fireteam_weaponry_tech = {
+
+		enable_subunits = {
+			fireteam_infantry
+			fireteam_support
+			power_armour_fireteam_infantry
+		}
+		enable_equipments = {
+			fireteam_equipment_1
+		}
+
+		path = {
+			leads_to_tech = energy_fireteam_weaponry_tech_2
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = ballistic_fireteam_weaponry_tech_2
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = aa_fireteam_equipment_tech
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2276
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_4 y = @Col_2 }
+		}
+
+		dependencies = {
+			support_tech_level_tribal = 1
+		}
+
+		categories = {
+			support_tech_category
+			support_fireteam_tech_category
+			support_combat_tech_category
+			tribal_tech_category
+		}
+
+		ai_will_do = {
+			factor = 2
+
+			modifier = {
+				factor = 5
+				date > "2276.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2277.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2278.1.1"
+			}
+		}
+	}
+
+	ballistic_fireteam_weaponry_tech_2 = {
+
+		enable_equipments = {
+			ballistic_fireteam_equipment_2
+		}
+
+		dependencies = {
+			support_tech_level_tribal = 1
+		}
+
+		XOR = {
+			energy_fireteam_weaponry_tech_2
+		}
+
+		path = {
+			leads_to_tech = ballistic_fireteam_high_caliber_tech
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = ballistic_fireteam_low_caliber_tech
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2278
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_2 y = @Col_3 }
+		}
+
+		categories = {
+			support_tech_category
+			support_fireteam_tech_category
+			support_fireteam_ballistic_tech_category
+			support_combat_tech_category
+			tribal_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1.5
+
+			modifier = {
+				factor = 0
+				has_tech = energy_fireteam_weaponry_tech_2
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = energy_fireteam_weaponry_tech_2
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = support_energy_ai
+			}
+			modifier = {
+				factor = 5
+				date > "2278.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2279.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2280.1.1"
+			}
+		}
+	}
+
+	ballistic_fireteam_high_caliber_tech = {
+
+		category_fireteams = {
+			hard_attack = 0.05
+			soft_attack = 0.05
+			ap_attack = 0.1
+		}
+
+		XOR = {
+			ballistic_fireteam_low_caliber_tech
+		}
+
+		path = {
+			leads_to_tech = ballistic_fireteam_weaponry_tech_3
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_settler = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2279
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_3 y = @Col_4 }
+		}
+
+		categories = {
+			support_tech_category
+			support_fireteam_tech_category
+			support_fireteam_ballistic_tech_category
+			support_combat_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1.5
+
+			modifier = {
+				factor = 0
+				has_tech = ballistic_fireteam_low_caliber_tech
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = ballistic_fireteam_low_caliber_tech
+			}
+			modifier = {
+				factor = 5
+				date > "2279.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2280.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2281.1.1"
+			}
+		}
+	}
+
+	ballistic_fireteam_low_caliber_tech = {
+
+		category_fireteams = {
+			soft_attack = 0.15
+			hard_attack = -0.05
+			ap_attack = -0.05
+		}
+
+		XOR = {
+			ballistic_fireteam_high_caliber_tech
+		}
+
+		path = {
+			leads_to_tech = ballistic_fireteam_weaponry_tech_3
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_settler = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2279
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_1 y = @Col_4 }
+		}
+
+		categories = {
+			support_tech_category
+			support_fireteam_tech_category
+			support_fireteam_ballistic_tech_category
+			support_combat_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1.5
+
+			modifier = {
+				factor = 0
+				has_tech = ballistic_fireteam_high_caliber_tech
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = ballistic_fireteam_high_caliber_tech
+			}
+			modifier = {
+				factor = 5
+				date > "2279.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2280.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2281.1.1"
+			}
+		}
+	}
+
+	ballistic_fireteam_weaponry_tech_3 = {
+
+		enable_equipments = {
+			ballistic_fireteam_equipment_3
+		}
+
+		path = {
+			leads_to_tech = ballistic_fireteam_cooling_jacket_tech
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_settler = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2281
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_2 y = @Col_5 }
+		}
+
+		categories = {
+			support_tech_category
+			support_fireteam_tech_category
+			support_fireteam_ballistic_tech_category
+			support_combat_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1.5
+
+			modifier = {
+				factor = 5
+				date > "2281.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2282.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2283.1.1"
+			}
+		}
+	}
+
+	ballistic_fireteam_cooling_jacket_tech = {
+
+		category_fireteams = {
+			reliability = 0.03
+		}
+
+		path = {
+			leads_to_tech = ballistic_fireteam_weaponry_tech_4
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_settler = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2282
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_2 y = @Col_6 }
+		}
+
+		categories = {
+			support_tech_category
+			support_fireteam_tech_category
+			support_fireteam_ballistic_tech_category
+			support_combat_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1.5
+
+			modifier = {
+				factor = 5
+				date > "2284.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2282.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2283.1.1"
+			}
+		}
+	}
+
+	ballistic_fireteam_weaponry_tech_4 = {
+
+		enable_equipments = {
+			ballistic_fireteam_equipment_4
+		}
+
+		path = {
+			leads_to_tech = ballistic_fireteam_tri_barrel_tech
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = ballistic_fireteam_hepta_barrel_tech
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_scientific = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2283
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_2 y = @Col_7 }
+		}
+
+		categories = {
+			support_tech_category
+			support_fireteam_tech_category
+			support_fireteam_ballistic_tech_category
+			support_combat_tech_category
+			scientific_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1.5
+
+			modifier = {
+				factor = 5
+				date > "2283.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2284.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2285.1.1"
+			}
+		}
+	}
+
+	ballistic_fireteam_tri_barrel_tech = {
+
+		category_fireteams = {
+			hard_attack = 0.1
+			breakthrough = 0.1
+		}
+
+		XOR = {
+			ballistic_fireteam_hepta_barrel_tech
+		}
+
+		dependencies = {
+			support_tech_level_scientific = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2284
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_3 y = @Col_8 }
+		}
+
+		categories = {
+			support_tech_category
+			support_fireteam_tech_category
+			support_fireteam_ballistic_tech_category
+			support_combat_tech_category
+			scientific_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 0
+				has_tech = ballistic_fireteam_hepta_barrel_tech
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = ballistic_fireteam_hepta_barrel_tech
+			}
+			modifier = {
+				factor = 5
+				date > "2286.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2284.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2285.1.1"
+			}
+		}
+	}
+
+	ballistic_fireteam_hepta_barrel_tech = {
+
+		category_fireteams = {
+			soft_attack = 0.1
+		}
+
+		XOR = {
+			ballistic_fireteam_tri_barrel_tech
+		}
+
+		dependencies = {
+			support_tech_level_scientific = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2284
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_1 y = @Col_8 }
+		}
+
+		categories = {
+			support_tech_category
+			support_fireteam_tech_category
+			support_fireteam_ballistic_tech_category
+			support_combat_tech_category
+			scientific_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 0
+				has_tech = ballistic_fireteam_tri_barrel_tech
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = ballistic_fireteam_tri_barrel_tech
+			}
+			modifier = {
+				factor = 5
+				date > "2286.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2284.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2285.1.1"
+			}
+		}
+	}
+
+	energy_fireteam_weaponry_tech_2 = {
+
+		enable_equipments = {
+			energy_fireteam_equipment_2
+		}
+
+		XOR = {
+			ballistic_fireteam_weaponry_tech_2
+		}
+
+		path = {
+			leads_to_tech = energy_fireteam_focus_lens_tech
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = energy_fireteam_heat_lens_tech
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_tribal = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2278
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_6 y = @Col_3 }
+		}
+
+		categories = {
+			support_tech_category
+			support_fireteam_tech_category
+			support_fireteam_energy_tech_category
+			support_combat_tech_category
+			tribal_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1.5
+
+			modifier = {
+				factor = 0
+				has_tech = ballistic_fireteam_weaponry_tech_2
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = ballistic_fireteam_weaponry_tech_2
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = support_ballistic_ai
+			}
+			modifier = {
+				factor = 5
+				date > "2278.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2279.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2280.1.1"
+			}
+		}
+	}
+
+	energy_fireteam_focus_lens_tech = {
+
+		category_fireteams = {
+			hard_attack = 0.03
+			air_attack = 0.03
+			ap_attack = 0.15
+		}
+
+		XOR = {
+			energy_fireteam_heat_lens_tech
+		}
+
+		path = {
+			leads_to_tech = energy_fireteam_weaponry_tech_3
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_settler = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2279
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_7 y = @Col_4 }
+		}
+
+		categories = {
+			support_tech_category
+			support_fireteam_tech_category
+			support_fireteam_energy_tech_category
+			support_combat_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1.5
+
+			modifier = {
+				factor = 0
+				has_tech = energy_fireteam_heat_lens_tech
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = energy_fireteam_heat_lens_tech
+			}
+			modifier = {
+				factor = 5
+				date > "2279.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2280.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2281.1.1"
+			}
+		}
+	}
+
+	energy_fireteam_heat_lens_tech = {
+
+		category_fireteams = {
+			soft_attack = 0.05
+			defense = 0.05
+			breakthrough = 0.05
+		}
+
+		XOR = {
+			energy_fireteam_focus_lens_tech
+		}
+
+		path = {
+			leads_to_tech = energy_fireteam_weaponry_tech_3
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_settler = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2279
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_5 y = @Col_4 }
+		}
+
+		categories = {
+			support_tech_category
+			support_fireteam_tech_category
+			support_fireteam_energy_tech_category
+			support_combat_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1.5
+
+			modifier = {
+				factor = 0
+				has_tech = energy_fireteam_focus_lens_tech
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = energy_fireteam_focus_lens_tech
+			}
+			modifier = {
+				factor = 5
+				date > "2279.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2280.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2281.1.1"
+			}
+		}
+	}
+
+	energy_fireteam_weaponry_tech_3 = {
+
+		enable_equipments = {
+			energy_fireteam_equipment_3
+		}
+
+		path = {
+			leads_to_tech = energy_fireteam_cooling_jacket_tech
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_settler = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2281
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_6 y = @Col_5 }
+		}
+
+		categories = {
+			support_tech_category
+			support_fireteam_tech_category
+			support_fireteam_energy_tech_category
+			support_combat_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1.5
+
+			modifier = {
+				factor = 5
+				date > "2281.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2282.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2283.1.1"
+			}
+		}
+	}
+
+	energy_fireteam_cooling_jacket_tech = {
+
+		category_fireteams = {
+			reliability = 0.03
+		}
+
+		path = {
+			leads_to_tech = energy_fireteam_weaponry_tech_4
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_settler = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2282
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_6 y = @Col_6 }
+		}
+
+		categories = {
+			support_tech_category
+			support_fireteam_tech_category
+			support_fireteam_energy_tech_category
+			support_combat_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1.5
+
+			modifier = {
+				factor = 5
+				date > "2284.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2282.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2283.1.1"
+			}
+		}
+	}
+
+	energy_fireteam_weaponry_tech_4 = {
+
+		enable_equipments = {
+			energy_fireteam_equipment_4
+		}
+
+		path = {
+			leads_to_tech = energy_fireteam_rapid_charge_tech
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = energy_fireteam_over_charge_tech
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_scientific = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2283
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_6 y = @Col_7 }
+		}
+
+		categories = {
+			support_tech_category
+			support_fireteam_tech_category
+			support_fireteam_energy_tech_category
+			support_combat_tech_category
+			scientific_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1.5
+
+			modifier = {
+				factor = 5
+				date > "2283.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2284.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2285.1.1"
+			}
+		}
+	}
+
+	energy_fireteam_rapid_charge_tech = {
+
+		category_fireteams = {
+			soft_attack = 0.05
+			hard_attack = 0.05
+			air_attack = 0.05
+		}
+
+		XOR = {
+			energy_fireteam_over_charge_tech
+		}
+
+		dependencies = {
+			support_tech_level_scientific = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2284
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_5 y = @Col_8 }
+		}
+
+		categories = {
+			support_tech_category
+			support_fireteam_tech_category
+			support_fireteam_energy_tech_category
+			support_combat_tech_category
+			scientific_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 0
+				has_tech = energy_fireteam_over_charge_tech
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = energy_fireteam_over_charge_tech
+			}
+			modifier = {
+				factor = 5
+				date > "2286.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2284.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2285.1.1"
+			}
+		}
+	}
+
+	energy_fireteam_over_charge_tech = {
+
+		category_fireteams = {
+			hard_attack = 0.1
+		}
+
+		XOR = {
+			energy_fireteam_rapid_charge_tech
+		}
+
+		dependencies = {
+			support_tech_level_scientific = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2284
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_7 y = @Col_8 }
+		}
+
+		categories = {
+			support_tech_category
+			support_fireteam_tech_category
+			support_fireteam_energy_tech_category
+			support_combat_tech_category
+			scientific_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 0
+				has_tech = energy_fireteam_rapid_charge_tech
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = energy_fireteam_rapid_charge_tech
+			}
+			modifier = {
+				factor = 5
+				date > "2286.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2284.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2285.1.1"
+			}
+		}
+	}
+
+	aa_fireteam_equipment_tech = {
+
+		enable_subunits = {
+			anti_air_support
+		}
+		enable_equipments = {
+			anti_air_equipment_1
+		}
+
+		path = {
+			leads_to_tech = aa_fireteam_tech
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2278
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_4 y = @Col_3_5 }
+		}
+
+		dependencies = {
+			support_tech_level_tribal = 1
+		}
+
+		categories = {
+			support_tech_category
+			support_fireteam_tech_category
+			support_anti_air_tech_category
+			support_combat_tech_category
+			tribal_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 1.5
+				date > "2279.1.1"
+			}
+			modifier = {
+				factor = 2
+				date > "2280.1.1"
+			}
+			modifier = {
+				factor = 3
+				has_deployed_air_force_size = {
+					size < 25
+					type = fighter
+				}
+			}
+			modifier = {
+				factor = 0.5
+				num_of_military_factories < 8
+			}
+			modifier = {
+				factor = 2
+				NOT = { has_tech = air_tech_level_settler }
+			}
+		}
+	}
+
+	aa_fireteam_tech = {
+
+		static_anti_air_damage_factor = 0.1
+		static_anti_air_hit_chance_factor = 0.1
+
+		anti_air_support = {
+			air_attack = 0.15
+		}
+
+		path = {
+			leads_to_tech = aa_fireteam_equipment_tech_2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2279
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_4 y = @Col_4_5 }
+		}
+
+		dependencies = {
+			support_tech_level_settler = 1
+		}
+
+		categories = {
+			support_tech_category
+			support_anti_air_tech_category
+			support_combat_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 5
+				date > "2280.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2281.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2282.1.1"
+			}
+		}
+	}
+
+	aa_fireteam_equipment_tech_2 = {
+
+		enable_equipments = {
+			anti_air_equipment_2
+		}
+
+		path = {
+			leads_to_tech = aa_fireteam_tech_2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2281
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_4 y = @Col_5_5 }
+		}
+
+		dependencies = {
+			support_tech_level_settler = 1
+		}
+
+		categories = {
+			support_tech_category
+			support_anti_air_tech_category
+			support_combat_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 1.5
+				date > "2282.1.1"
+			}
+			modifier = {
+				factor = 2
+				date > "2283.1.1"
+			}
+			modifier = {
+				factor = 3
+				has_deployed_air_force_size = {
+					size < 25
+					type = fighter
+				}
+			}
+		}
+	}
+
+	aa_fireteam_tech_2 = {
+
+		static_anti_air_damage_factor = 0.1
+		static_anti_air_hit_chance_factor = 0.1
+
+		anti_air_support = {
+			air_attack = 0.15
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2283
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_4 y = @Col_7 }
+		}
+
+		dependencies = {
+			support_tech_level_scientific = 1
+		}
+
+		categories = {
+			support_tech_category
+			support_anti_air_tech_category
+			support_combat_tech_category
+			scientific_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 5
+				date > "2284.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2285.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2286.1.1"
+			}
+		}
+	}
+
+	demolitions_weaponry_tech = {
+
+		enable_subunits = {
+			demolitions_infantry
+			demolitions_support
+			power_armour_demolitions_infantry
+		}
+		enable_equipments = {
+			demolitions_equipment_1
+		}
+
+		path = {
+			leads_to_tech = flamer_demolitions_weaponry_tech_2
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = explosive_demolitions_weaponry_tech_2
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_tribal = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2276
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_11 y = @Col_2 }
+		}
+
+		categories = {
+			support_tech_category
+			support_demolitions_tech_category
+			support_combat_tech_category
+			tribal_tech_category
+		}
+
+		ai_will_do = {
+			factor = 2
+
+			modifier = {
+				factor = 5
+				date > "2276.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2277.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2278.1.1"
+			}
+		}
+	}
+
+	flamer_demolitions_weaponry_tech_2 = {
+
+		enable_equipments = {
+			flamer_demolitions_equipment_2
+		}
+
+		XOR = {
+			explosive_demolitions_weaponry_tech_2
+		}
+
+		path = {
+			leads_to_tech = flamer_demolitions_high_pressure_tech
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = flamer_demolitions_sustained_pressure_tech
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_tribal = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2278
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_9 y = @Col_3 }
+		}
+
+		categories = {
+			support_tech_category
+			support_demolitions_tech_category
+			support_demolitions_flamer_tech_category
+			support_combat_tech_category
+			tribal_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1.5
+
+			modifier = {
+				factor = 0
+				has_tech = explosive_demolitions_weaponry_tech_2
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = explosive_demolitions_weaponry_tech_2
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = support_explosive_ai
+			}
+			modifier = {
+				factor = 5
+				date > "2278.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2279.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2280.1.1"
+			}
+		}
+	}
+
+	flamer_demolitions_high_pressure_tech = {
+
+		category_demolitions = {
+			hard_attack = 0.1
+			ap_attack = 0.05
+			max_strength = 0.05
+		}
+
+		XOR = {
+			flamer_demolitions_sustained_pressure_tech
+		}
+
+		path = {
+			leads_to_tech = flamer_demolitions_weaponry_tech_3
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_settler = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2279
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_10 y = @Col_4 }
+		}
+
+		categories = {
+			support_tech_category
+			support_demolitions_tech_category
+			support_demolitions_flamer_tech_category
+			support_combat_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1.5
+
+			modifier = {
+				factor = 0
+				has_tech = flamer_demolitions_sustained_pressure_tech
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = flamer_demolitions_sustained_pressure_tech
+			}
+			modifier = {
+				factor = 5
+				date > "2279.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2280.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2281.1.1"
+			}
+		}
+	}
+
+	flamer_demolitions_sustained_pressure_tech = {
+
+		category_demolitions = {
+			soft_attack = 0.05
+			breakthrough = 0.05
+			defense = 0.04
+		}
+
+		XOR = {
+			flamer_demolitions_high_pressure_tech
+		}
+
+		path = {
+			leads_to_tech = flamer_demolitions_weaponry_tech_3
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_settler = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2279
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_8 y = @Col_4 }
+		}
+
+		categories = {
+			support_tech_category
+			support_demolitions_tech_category
+			support_demolitions_flamer_tech_category
+			support_combat_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1.5
+
+			modifier = {
+				factor = 0
+				has_tech = flamer_demolitions_high_pressure_tech
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = flamer_demolitions_high_pressure_tech
+			}
+			modifier = {
+				factor = 5
+				date > "2279.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2280.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2281.1.1"
+			}
+		}
+	}
+
+	flamer_demolitions_weaponry_tech_3 = {
+
+		enable_equipments = {
+			flamer_demolitions_equipment_3
+		}
+
+		path = {
+			leads_to_tech = flamer_demolitions_cooling_jacket_tech
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_settler = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2281
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_9 y = @Col_5 }
+		}
+
+		categories = {
+			support_tech_category
+			support_demolitions_tech_category
+			support_demolitions_flamer_tech_category
+			support_combat_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1.5
+
+			modifier = {
+				factor = 5
+				date > "2281.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2282.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2283.1.1"
+			}
+		}
+	}
+
+	flamer_demolitions_cooling_jacket_tech = {
+
+		category_demolitions = {
+			reliability = 0.05
+		}
+
+		path = {
+			leads_to_tech = flamer_demolitions_weaponry_tech_4
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_settler = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2282
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_9 y = @Col_6 }
+		}
+
+		categories = {
+			support_tech_category
+			support_demolitions_tech_category
+			support_demolitions_flamer_tech_category
+			support_combat_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1.5
+
+			modifier = {
+				factor = 5
+				date > "2284.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2282.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2283.1.1"
+			}
+		}
+	}
+
+	flamer_demolitions_weaponry_tech_4 = {
+
+		enable_equipments = {
+			flamer_demolitions_equipment_4
+		}
+
+		path = {
+			leads_to_tech = flamer_demolitions_temperature_focus_tech
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = flamer_demolitions_longevity_focus_tech
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_scientific = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2283
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_9 y = @Col_7 }
+		}
+
+		categories = {
+			support_tech_category
+			support_demolitions_tech_category
+			support_demolitions_flamer_tech_category
+			support_combat_tech_category
+			scientific_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1.5
+
+			modifier = {
+				factor = 5
+				date > "2283.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2284.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2285.1.1"
+			}
+		}
+	}
+
+	flamer_demolitions_temperature_focus_tech = {
+
+		category_demolitions = {
+			hard_attack = 0.1
+		}
+
+		XOR = {
+			flamer_demolitions_longevity_focus_tech
+		}
+
+		dependencies = {
+			support_tech_level_scientific = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2284
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_10 y = @Col_8 }
+		}
+
+		categories = {
+			support_tech_category
+			support_demolitions_tech_category
+			support_demolitions_flamer_tech_category
+			support_combat_tech_category
+			scientific_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1.5
+
+			modifier = {
+				factor = 0
+				has_tech = flamer_demolitions_longevity_focus_tech
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = flamer_demolitions_longevity_focus_tech
+			}
+			modifier = {
+				factor = 5
+				date > "2286.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2284.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2285.1.1"
+			}
+		}
+	}
+
+	flamer_demolitions_longevity_focus_tech = {
+
+		category_demolitions = {
+			soft_attack = 0.12
+			defense = -0.06
+		}
+
+		XOR = {
+			flamer_demolitions_temperature_focus_tech
+		}
+
+		dependencies = {
+			support_tech_level_scientific = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2284
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_8 y = @Col_8 }
+		}
+
+		categories = {
+			support_tech_category
+			support_demolitions_tech_category
+			support_demolitions_flamer_tech_category
+			support_combat_tech_category
+			scientific_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1.5
+
+			modifier = {
+				factor = 0
+				has_tech = flamer_demolitions_temperature_focus_tech
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = flamer_demolitions_temperature_focus_tech
+			}
+			modifier = {
+				factor = 5
+				date > "2286.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2284.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2285.1.1"
+			}
+		}
+	}
+
+	explosive_demolitions_weaponry_tech_2 = {
+
+		enable_equipments = {
+			explosive_demolitions_equipment_2
+		}
+
+		XOR = {
+			flamer_demolitions_weaponry_tech_2
+		}
+
+		path = {
+			leads_to_tech = explosive_demolitions_volatility_tech
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = explosive_demolitions_operational_security_tech
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_tribal = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2278
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_13 y = @Col_3 }
+		}
+
+		categories = {
+			support_tech_category
+			support_demolitions_tech_category
+			support_demolitions_explosive_tech_category
+			support_combat_tech_category
+			tribal_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1.5
+
+			modifier = {
+				factor = 0
+				has_tech = flamer_demolitions_weaponry_tech_2
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = flamer_demolitions_weaponry_tech_2
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = support_flamer_ai
+			}
+			modifier = {
+				factor = 5
+				date > "2278.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2279.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2280.1.1"
+			}
+		}
+	}
+
+	explosive_demolitions_operational_security_tech = {
+
+		category_demolitions = {
+			reliability = 0.05
+		}
+
+		XOR = {
+			explosive_demolitions_volatility_tech
+		}
+
+		path = {
+			leads_to_tech = explosive_demolitions_weaponry_tech_3
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_settler = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2279
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_12 y = @Col_4 }
+		}
+
+		categories = {
+			support_tech_category
+			support_demolitions_tech_category
+			support_demolitions_explosive_tech_category
+			support_combat_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1.5
+
+			modifier = {
+				factor = 0
+				has_tech = explosive_demolitions_volatility_tech
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = explosive_demolitions_volatility_tech
+			}
+			modifier = {
+				factor = 5
+				date > "2279.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2280.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2281.1.1"
+			}
+		}
+	}
+
+	explosive_demolitions_volatility_tech = {
+
+		category_demolitions = {
+			hard_attack = 0.03
+			soft_attack = 0.05
+			ap_attack = 0.05
+		}
+
+		XOR = {
+			explosive_demolitions_operational_security_tech
+		}
+
+		path = {
+			leads_to_tech = explosive_demolitions_weaponry_tech_3
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_settler = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2279
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_14 y = @Col_4 }
+		}
+
+		categories = {
+			support_tech_category
+			support_demolitions_tech_category
+			support_demolitions_explosive_tech_category
+			support_combat_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1.5
+
+			modifier = {
+				factor = 0
+				has_tech = explosive_demolitions_operational_security_tech
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = explosive_demolitions_operational_security_tech
+			}
+			modifier = {
+				factor = 5
+				date > "2279.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2280.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2281.1.1"
+			}
+		}
+	}
+
+	explosive_demolitions_weaponry_tech_3 = {
+
+		enable_equipments = {
+			explosive_demolitions_equipment_3
+		}
+
+		path = {
+			leads_to_tech = explosive_demolitions_propulsion_charge_tech
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_settler = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2281
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_13 y = @Col_5 }
+		}
+
+		categories = {
+			support_tech_category
+			support_demolitions_tech_category
+			support_demolitions_explosive_tech_category
+			support_combat_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1.5
+
+			modifier = {
+				factor = 5
+				date > "2281.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2282.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2283.1.1"
+			}
+		}
+	}
+
+	explosive_demolitions_propulsion_charge_tech = {
+
+		category_demolitions = {
+			hard_attack = 0.05
+			soft_attack = 0.05
+			breakthrough = 0.04
+		}
+
+		path = {
+			leads_to_tech = explosive_demolitions_weaponry_tech_4
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_settler = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2282
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_13 y = @Col_6 }
+		}
+
+		categories = {
+			support_tech_category
+			support_demolitions_tech_category
+			support_demolitions_explosive_tech_category
+			support_combat_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1.5
+
+			modifier = {
+				factor = 5
+				date > "2284.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2282.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2283.1.1"
+			}
+		}
+	}
+
+	explosive_demolitions_weaponry_tech_4 = {
+
+		enable_equipments = {
+			explosive_demolitions_equipment_4
+		}
+
+		path = {
+			leads_to_tech = explosive_demolitions_rapid_fire_tech
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = explosive_demolitions_cyclic_fire_tech
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_scientific = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2283
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_13 y = @Col_7 }
+		}
+
+		categories = {
+			support_tech_category
+			support_demolitions_tech_category
+			support_demolitions_explosive_tech_category
+			support_combat_tech_category
+			scientific_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1.5
+
+			modifier = {
+				factor = 5
+				date > "2283.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2284.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2285.1.1"
+			}
+		}
+	}
+
+	explosive_demolitions_cyclic_fire_tech = {
+
+		category_demolitions = {
+			soft_attack = 0.05
+			defense = 0.15
+		}
+
+		XOR = {
+			explosive_demolitions_rapid_fire_tech
+		}
+
+		dependencies = {
+			support_tech_level_scientific = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2284
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_12 y = @Col_8 }
+		}
+
+		categories = {
+			support_tech_category
+			support_demolitions_tech_category
+			support_demolitions_explosive_tech_category
+			support_combat_tech_category
+			scientific_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1.5
+
+			modifier = {
+				factor = 0
+				has_tech = explosive_demolitions_rapid_fire_tech
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = explosive_demolitions_rapid_fire_tech
+			}
+			modifier = {
+				factor = 5
+				date > "2286.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2284.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2285.1.1"
+			}
+		}
+	}
+
+	explosive_demolitions_rapid_fire_tech = {
+
+		category_demolitions = {
+			hard_attack = 0.1
+			breakthrough = 0.05
+		}
+
+		XOR = {
+			explosive_demolitions_cyclic_fire_tech
+		}
+
+		dependencies = {
+			support_tech_level_scientific = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2284
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_14 y = @Col_8 }
+		}
+
+		categories = {
+			support_tech_category
+			support_demolitions_tech_category
+			support_demolitions_explosive_tech_category
+			support_combat_tech_category
+			scientific_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1.5
+
+			modifier = {
+				factor = 0
+				has_tech = explosive_demolitions_cyclic_fire_tech
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = explosive_demolitions_cyclic_fire_tech
+			}
+			modifier = {
+				factor = 5
+				date > "2286.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2284.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2285.1.1"
+			}
+		}
+	}
+
+	# Dog
+	dog_equipment_tech_1 = {
+
+		enable_subunits = {
+			dog_company
+		}
+
+		enable_equipments = {
+			dogs_equipment_1
+		}
+
+		path = {
+			leads_to_tech = dog_tech_1
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2276
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_dog y = @Col_2 }
+		}
+
+		dependencies = {
+			support_tech_level_tribal = 1
+		}
+
+		categories = {
+			support_tech_category
+			support_dog_tech_category
+			support_combat_tech_category
+			tribal_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1.5
+
+			modifier = {
+				factor = 5
+				OR = {
+					tag = HAN
+					tag = WHD
+				}
+			}
+			modifier = {
+				factor = 2
+				date > "2276.1.1"
+			}
+			modifier = {
+				factor = 2
+				date > "2277.1.1"
+			}
+			modifier = {
+				factor = 2
+				date > "2278.1.1"
+			}
+		}
+	}
+
+	dog_tech_1 = {
+
+		dog_company = {
+			soft_attack = 0.05
+			suppression_factor = 0.2
+			recon = 0.2
+		}
+
+		dog_infantry = {
+			soft_attack = 0.025
+			suppression_factor = 0.05
+			recon = 0.1
+		}
+
+		path = {
+			leads_to_tech = dog_equipment_tech_2
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_tribal = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2278
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_dog y = @Col_3 }
+		}
+
+		categories = {
+			support_tech_category
+			support_dog_tech_category
+			support_combat_tech_category
+			tribal_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1.2
+
+			modifier = {
+				factor = 5
+				OR = {
+					tag = HAN
+					tag = WHD
+				}
+			}
+			modifier = {
+				factor = 2
+				date > "2278.1.1"
+			}
+			modifier = {
+				factor = 2
+				date > "2279.1.1"
+			}
+			modifier = {
+				factor = 2
+				date > "2280.1.1"
+			}
+		}
+	}
+
+	dog_equipment_tech_2 = {
+
+		enable_equipments = {
+			dogs_equipment_2
+		}
+
+		path = {
+			leads_to_tech = dog_tech_2
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_settler = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2279
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_dog y = @Col_4 }
+		}
+
+		categories = {
+			support_tech_category
+			support_dog_tech_category
+			support_combat_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1.2
+
+			modifier = {
+				factor = 5
+				OR = {
+					tag = HAN
+					tag = WHD
+				}
+			}
+			modifier = {
+				factor = 2
+				date > "2279.1.1"
+			}
+			modifier = {
+				factor = 2
+				date > "2280.1.1"
+			}
+			modifier = {
+				factor = 2
+				date > "2281.1.1"
+			}
+		}
+	}
+
+	dog_tech_2 = {
+
+		dog_company = {
+			soft_attack = 0.05
+			suppression_factor = 0.2
+			recon = 0.2
+		}
+
+		dog_infantry = {
+			soft_attack = 0.025
+			suppression_factor = 0.05
+			recon = 0.1
+		}
+
+		path = {
+			leads_to_tech = dog_tech_3
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_settler = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2281
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_dog y = @Col_5 }
+		}
+
+		categories = {
+			support_tech_category
+			support_dog_tech_category
+			support_combat_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1.2
+
+			modifier = {
+				factor = 5
+				OR = {
+					tag = HAN
+					tag = WHD
+				}
+			}
+			modifier = {
+				factor = 2
+				date > "2281.1.1"
+			}
+			modifier = {
+				factor = 2
+				date > "2282.1.1"
+			}
+			modifier = {
+				factor = 2
+				date > "2283.1.1"
+			}
+		}
+	}
+
+	dog_tech_3 = {
+
+		dog_company = {
+			soft_attack = 0.05
+			suppression_factor = 0.2
+			recon = 0.2
+		}
+
+		dog_infantry = {
+			soft_attack = 0.025
+			suppression_factor = 0.05
+			recon = 0.1
+		}
+
+		path = {
+			leads_to_tech = dog_equipment_tech_3
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_settler = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2282
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_dog y = @Col_6 }
+		}
+
+		categories = {
+			support_tech_category
+			support_dog_tech_category
+			support_combat_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1.2
+
+			modifier = {
+				factor = 5
+				OR = {
+					tag = HAN
+					tag = WHD
+				}
+			}
+			modifier = {
+				factor = 2
+				date > "2282.1.1"
+			}
+			modifier = {
+				factor = 2
+				date > "2283.1.1"
+			}
+			modifier = {
+				factor = 2
+				date > "2284.1.1"
+			}
+		}
+	}
+
+	dog_equipment_tech_3 = {
+
+		enable_equipments = {
+			dogs_equipment_3
+		}
+
+		dependencies = {
+			support_tech_level_scientific = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2283
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_dog y = @Col_7 }
+		}
+
+		categories = {
+			support_tech_category
+			support_dog_tech_category
+			support_combat_tech_category
+			scientific_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1.2
+
+			modifier = {
+				factor = 5
+				OR = {
+					tag = HAN
+					tag = WHD
+				}
+			}
+			modifier = {
+				factor = 2
+				date > "2283.1.1"
+			}
+			modifier = {
+				factor = 2
+				date > "2284.1.1"
+			}
+			modifier = {
+				factor = 2
+				date > "2285.1.1"
+			}
+		}
+	}
+
+	anti_tank_equipment_tech_1 = {
+
+		enable_subunits = {
+			anti_tank_company
+			anti_tank_infantry
+			power_armour_anti_tank_infantry
+		}
+
+		enable_equipments = {
+			anti_tank_equipment_1
+		}
+
+		path = {
+			leads_to_tech = anti_tank_tech_1
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_tribal = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2276
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_at y = @Col_2 }
+		}
+
+		categories = {
+			support_tech_category
+			support_anti_tank_tech_category
+			support_combat_tech_category
+			tribal_tech_category
+		}
+
+		ai_will_do = {
+			factor = 4
+
+			modifier = {
+				factor = 3
+				date > "2276.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2277.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2278.1.1"
+			}
+		}
+	}
+
+	anti_tank_tech_1 = {
+		category_anti_tank = {
+			ap_attack = 0.15
+			hard_attack = 0.1
+		}
+		path = {
+			leads_to_tech = anti_tank_equipment_tech_2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2278
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_at y = @Col_3 }
+		}
+
+		dependencies = {
+			support_tech_level_tribal = 1
+		}
+
+		categories = {
+			support_tech_category
+			support_anti_tank_tech_category
+			support_combat_tech_category
+			tribal_tech_category
+		}
+
+		ai_will_do = {
+			factor = 3
+
+			modifier = {
+				factor = 3
+				date > "2278.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2279.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2280.1.1"
+			}
+		}
+	}
+
+	anti_tank_equipment_tech_2 = {
+
+		enable_equipments = {
+			anti_tank_equipment_2
+		}
+
+		path = {
+			leads_to_tech = anti_tank_tech_2
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_settler = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2281
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_at y = @Col_5 }
+		}
+
+		categories = {
+			support_tech_category
+			support_anti_tank_tech_category
+			support_combat_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 2
+
+			modifier = {
+				factor = 3
+				date > "2281.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2282.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2283.1.1"
+			}
+		}
+	}
+
+	anti_tank_tech_2 = {
+
+		category_anti_tank = {
+			ap_attack = 0.15
+			hard_attack = 0.1
+		}
+
+		path = {
+			leads_to_tech = anti_tank_equipment_tech_3
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_settler = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2282
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_at y = @Col_6 }
+		}
+
+		categories = {
+			support_tech_category
+			support_anti_tank_tech_category
+			support_combat_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 3
+				date > "2282.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2283.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2284.1.1"
+			}
+		}
+	}
+
+	anti_tank_equipment_tech_3 = {
+
+		enable_equipments = {
+			anti_tank_equipment_3
+		}
+
+		dependencies = {
+			support_tech_level_scientific = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2283
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_at y = @Col_7 }
+		}
+
+		categories = {
+			support_tech_category
+			support_anti_tank_tech_category
+			support_combat_tech_category
+			scientific_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 3
+				date > "2283.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2284.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2285.1.1"
+			}
+		}
+	}
+
+	med_company_tech_1 = {
+
+		enable_subunits = {
+			medical_chem_company
+		}
+
+		path = {
+			leads_to_tech = med_company_tech_2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2276
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_med y = @Col_2 }
+		}
+
+		dependencies = {
+			support_tech_level_tribal = 1
+		}
+
+		categories = {
+			support_tech_category
+			support_medical_tech_category
+			support_non_combat_tech_category
+			tribal_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 5
+				is_brotherhood_nation = yes
+			}
+			modifier = {
+				factor = 3
+				date > "2276.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2277.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2278.1.1"
+			}
+		}
+
+		on_research_complete = {
+			if = {
+				limit = {
+					OR = {
+						original_tag = TAR
+						original_tag = CRZ
+						original_tag = UIN
+					}
+					has_idea = sickness_of_soot
+				}
+				boost_sickness_of_soot_recovery_rate = yes
+			}
+		}
+	}
+
+	med_company_tech_2 = {
+
+		category_medical_support = {
+			casualty_trickleback = 0.05
+			experience_loss_factor = -0.05
+			default_morale = 0.03
+		}
+
+		path = {
+			leads_to_tech = med_company_tech_3
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_tribal = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2278
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_med y = @Col_3 }
+		}
+
+		categories = {
+			support_tech_category
+			support_medical_tech_category
+			support_non_combat_tech_category
+			tribal_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 5
+				is_brotherhood_nation = yes
+			}
+			modifier = {
+				factor = 3
+				date > "2278.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2279.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2280.1.1"
+			}
+		}
+
+		on_research_complete = {
+			if = {
+				limit = {
+					OR = {
+						original_tag = TAR
+						original_tag = CRZ
+						original_tag = UIN
+					}
+					has_idea = sickness_of_soot
+				}
+				boost_sickness_of_soot_recovery_rate = yes
+			}
+		}
+	}
+
+	med_company_tech_3 = {
+
+		category_medical_support = {
+			casualty_trickleback = 0.05
+			experience_loss_factor = -0.05
+			default_morale = 0.03
+		}
+
+		path = {
+			leads_to_tech = med_company_tech_4
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_settler = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2279
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_med y = @Col_4 }
+		}
+
+		categories = {
+			support_tech_category
+			support_medical_tech_category
+			support_non_combat_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 5
+				is_brotherhood_nation = yes
+			}
+			modifier = {
+				factor = 3
+				date > "2279.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2280.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2281.1.1"
+			}
+		}
+
+		on_research_complete = {
+			if = {
+				limit = {
+					OR = {
+						original_tag = TAR
+						original_tag = CRZ
+						original_tag = UIN
+					}
+					has_idea = sickness_of_soot
+				}
+				boost_sickness_of_soot_recovery_rate = yes
+			}
+		}
+	}
+
+	med_company_tech_4 = {
+
+		category_medical_support = {
+			casualty_trickleback = 0.05
+			experience_loss_factor = -0.05
+			default_morale = 0.03
+		}
+
+		path = {
+			leads_to_tech = med_company_tech_5
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_settler = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2281
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_med y = @Col_5 }
+		}
+
+		categories = {
+			support_tech_category
+			support_medical_tech_category
+			support_non_combat_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 5
+				is_brotherhood_nation = yes
+			}
+			modifier = {
+				factor = 3
+				date > "2281.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2282.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2283.1.1"
+			}
+		}
+
+		on_research_complete = {
+			if = {
+				limit = {
+					OR = {
+						original_tag = TAR
+						original_tag = CRZ
+						original_tag = UIN
+					}
+					has_idea = sickness_of_soot
+				}
+				boost_sickness_of_soot_recovery_rate = yes
+			}
+		}
+	}
+
+	med_company_tech_5 = {
+
+		category_medical_support = {
+			casualty_trickleback = 0.05
+			experience_loss_factor = -0.05
+			default_morale = 0.03
+		}
+
+		path = {
+			leads_to_tech = med_company_tech_6
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_settler = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2282
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_med y = @Col_6 }
+		}
+
+		categories = {
+			support_tech_category
+			support_medical_tech_category
+			support_non_combat_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 5
+				is_brotherhood_nation = yes
+			}
+			modifier = {
+				factor = 3
+				date > "2282.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2283.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2284.1.1"
+			}
+		}
+
+		on_research_complete = {
+			if = {
+				limit = {
+					OR = {
+						original_tag = TAR
+						original_tag = CRZ
+						original_tag = UIN
+					}
+					has_idea = sickness_of_soot
+				}
+				boost_sickness_of_soot_recovery_rate = yes
+			}
+		}
+	}
+
+	med_company_tech_6 = {
+
+		category_medical_support = {
+			casualty_trickleback = 0.05
+			experience_loss_factor = -0.05
+			default_morale = 0.03
+		}
+
+		dependencies = {
+			support_tech_level_scientific = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2283
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_med y = @Col_7 }
+		}
+
+		categories = {
+			support_tech_category
+			support_medical_tech_category
+			support_non_combat_tech_category
+			scientific_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 5
+				is_brotherhood_nation = yes
+			}
+			modifier = {
+				factor = 3
+				date > "2283.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2284.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2285.1.1"
+			}
+		}
+
+		on_research_complete = {
+			if = {
+				limit = {
+					OR = {
+						original_tag = TAR
+						original_tag = CRZ
+						original_tag = UIN
+					}
+					has_idea = sickness_of_soot
+				}
+				boost_sickness_of_soot_recovery_rate = yes
+			}
+		}
+	}
+
+	recon_company_tech_1 = {
+
+		enable_subunits = {
+			recon_company
+		}
+
+		path = {
+			leads_to_tech = recon_company_tech_2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2276
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_rec y = @Col_2 }
+		}
+
+		dependencies = {
+			support_tech_level_tribal = 1
+		}
+
+		categories = {
+			support_tech_category
+			support_recon_tech_category
+			support_non_combat_tech_category
+			tribal_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 3
+				is_brotherhood_nation = yes
+			}
+			modifier = {
+				factor = 3
+				date > "2276.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2277.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2278.1.1"
+			}
+		}
+	}
+
+	recon_company_tech_2 = {
+
+		category_recon_support = {
+			recon = 1
+		}
+
+		path = {
+			leads_to_tech = recon_company_tech_3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2278
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_rec y = @Col_3 }
+		}
+
+		dependencies = {
+			support_tech_level_tribal = 1
+		}
+
+		categories = {
+			support_tech_category
+			support_recon_tech_category
+			support_non_combat_tech_category
+			tribal_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 3
+				is_brotherhood_nation = yes
+			}
+			modifier = {
+				factor = 3
+				date > "2278.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2279.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2280.1.1"
+			}
+		}
+	}
+
+	recon_company_tech_3 = {
+
+		category_recon_support = {
+			recon = 1
+		}
+
+		path = {
+			leads_to_tech = recon_company_tech_4
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_settler = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2279
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_rec y = @Col_4 }
+		}
+
+		categories = {
+			support_tech_category
+			support_recon_tech_category
+			support_non_combat_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 3
+				is_brotherhood_nation = yes
+			}
+			modifier = {
+				factor = 3
+				date > "2279.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2280.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2281.1.1"
+			}
+		}
+	}
+
+	recon_company_tech_4 = {
+
+		category_recon_support = {
+			recon = 1
+		}
+
+		path = {
+			leads_to_tech = recon_company_tech_5
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_settler = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2281
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_rec y = @Col_5 }
+		}
+
+		categories = {
+			support_tech_category
+			support_recon_tech_category
+			support_non_combat_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 3
+				is_brotherhood_nation = yes
+			}
+			modifier = {
+				factor = 3
+				date > "2281.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2282.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2283.1.1"
+			}
+		}
+	}
+
+	recon_company_tech_5 = {
+
+		category_recon_support = {
+			recon = 1
+		}
+
+		path = {
+			leads_to_tech = recon_company_tech_6
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_settler = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2282
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_rec y = @Col_6 }
+		}
+
+		categories = {
+			support_tech_category
+			support_recon_tech_category
+			support_non_combat_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 3
+				is_brotherhood_nation = yes
+			}
+			modifier = {
+				factor = 3
+				date > "2282.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2283.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2284.1.1"
+			}
+		}
+	}
+
+	recon_company_tech_6 = {
+
+		category_recon_support = {
+			recon = 1
+		}
+
+		dependencies = {
+			support_tech_level_scientific = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2283
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_rec y = @Col_7 }
+		}
+
+		categories = {
+			support_tech_category
+			support_recon_tech_category
+			support_non_combat_tech_category
+			scientific_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 3
+				is_brotherhood_nation = yes
+			}
+			modifier = {
+				factor = 3
+				date > "2283.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2284.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2285.1.1"
+			}
+		}
+	}
+
+	logistics_company_tech_1 = {
+
+		enable_subunits = {
+			logistics_company
+		}
+
+		path = {
+			leads_to_tech = logistics_company_tech_2
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_tribal = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2276
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_log y = @Col_2 }
+		}
+
+		categories = {
+			support_tech_category
+			support_logistics_tech_category
+			support_non_combat_tech_category
+			tribal_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 3
+				is_brotherhood_nation = yes
+			}
+			modifier = {
+				factor = 3
+				date > "2276.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2277.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2278.1.1"
+			}
+		}
+	}
+
+	logistics_company_tech_2 = {
+
+		category_logistics_support = {
+			supply_consumption_factor = -0.05
+			initiative = 0.03
+		}
+
+		path = {
+			leads_to_tech = logistics_company_tech_3
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_tribal = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2278
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_log y = @Col_3 }
+		}
+
+		categories = {
+			support_tech_category
+			support_logistics_tech_category
+			support_non_combat_tech_category
+			tribal_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 3
+				is_brotherhood_nation = yes
+			}
+			modifier = {
+				factor = 3
+				date > "2278.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2279.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2280.1.1"
+			}
+		}
+	}
+
+	logistics_company_tech_3 = {
+
+		category_logistics_support = {
+			supply_consumption_factor = -0.05
+			initiative = 0.03
+		}
+
+		path = {
+			leads_to_tech = logistics_company_tech_4
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_settler = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2279
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_log y = @Col_4 }
+		}
+
+		categories = {
+			support_tech_category
+			support_logistics_tech_category
+			support_non_combat_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 3
+				is_brotherhood_nation = yes
+			}
+			modifier = {
+				factor = 3
+				date > "2279.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2280.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2281.1.1"
+			}
+		}
+	}
+
+	logistics_company_tech_4 = {
+
+		category_logistics_support = {
+			supply_consumption_factor = -0.05
+			initiative = 0.03
+		}
+
+		path = {
+			leads_to_tech = logistics_company_tech_5
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_settler = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2281
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_log y = @Col_5 }
+		}
+
+		categories = {
+			support_tech_category
+			support_logistics_tech_category
+			support_non_combat_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 3
+				is_brotherhood_nation = yes
+			}
+			modifier = {
+				factor = 3
+				date > "2281.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2282.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2283.1.1"
+			}
+		}
+	}
+
+	logistics_company_tech_5 = {
+
+		category_logistics_support = {
+			supply_consumption_factor = -0.05
+			initiative = 0.03
+		}
+
+		path = {
+			leads_to_tech = logistics_company_tech_6
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_settler = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2282
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_log y = @Col_6 }
+		}
+
+		categories = {
+			support_tech_category
+			support_logistics_tech_category
+			support_non_combat_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 3
+				is_brotherhood_nation = yes
+			}
+			modifier = {
+				factor = 3
+				date > "2282.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2283.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2284.1.1"
+			}
+		}
+	}
+
+	logistics_company_tech_6 = {
+
+		category_logistics_support = {
+			supply_consumption_factor = -0.05
+			initiative = 0.03
+		}
+
+		dependencies = {
+			support_tech_level_scientific = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2283
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_log y = @Col_7 }
+		}
+
+		categories = {
+			support_tech_category
+			support_logistics_tech_category
+			support_non_combat_tech_category
+			scientific_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 3
+				is_brotherhood_nation = yes
+			}
+			modifier = {
+				factor = 3
+				date > "2283.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2284.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2285.1.1"
+			}
+		}
+	}
+
+	maintenance_company_tech_1 = {
+
+		enable_subunits = {
+			maintenance_company
+		}
+
+		path = {
+			leads_to_tech = maintenance_company_tech_2
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_tribal = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2276
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_mai y = @Col_2 }
+		}
+
+		categories = {
+			support_tech_category
+			support_maintenance_tech_category
+			support_non_combat_tech_category
+			tribal_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 3
+				is_brotherhood_nation = yes
+			}
+			modifier = {
+				factor = 3
+				date > "2276.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2277.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2278.1.1"
+			}
+		}
+	}
+
+	maintenance_company_tech_2 = {
+
+		category_maintenance_support = {
+			reliability_factor = 0.05
+			equipment_capture_factor = 0.02
+		}
+		maintenance_company = {
+			urban = {
+				attack = 0.02
+			}
+			fort = {
+				attack = 0.02
+			}
+		}
+		motorized_maintenance_company = {
+			urban = {
+				attack = 0.02
+			}
+			fort = {
+				attack = 0.02
+			}
+		}
+
+		path = {
+			leads_to_tech = maintenance_company_tech_3
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_tribal = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2278
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_mai y = @Col_3 }
+		}
+
+		categories = {
+			support_tech_category
+			support_maintenance_tech_category
+			support_non_combat_tech_category
+			tribal_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 3
+				is_brotherhood_nation = yes
+			}
+			modifier = {
+				factor = 3
+				date > "2278.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2279.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2280.1.1"
+			}
+		}
+	}
+
+	maintenance_company_tech_3 = {
+
+		category_maintenance_support = {
+			reliability_factor = 0.05
+			equipment_capture_factor = 0.02
+		}
+		maintenance_company = {
+			urban = {
+				attack = 0.02
+			}
+			fort = {
+				attack = 0.02
+			}
+		}
+		motorized_maintenance_company = {
+			urban = {
+				attack = 0.02
+			}
+			fort = {
+				attack = 0.02
+			}
+		}
+
+		path = {
+			leads_to_tech = maintenance_company_tech_4
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_settler = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2279
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_mai y = @Col_4 }
+		}
+
+		categories = {
+			support_tech_category
+			support_maintenance_tech_category
+			support_non_combat_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 3
+				is_brotherhood_nation = yes
+			}
+			modifier = {
+				factor = 3
+				date > "2279.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2280.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2281.1.1"
+			}
+		}
+	}
+
+	maintenance_company_tech_4 = {
+
+		category_maintenance_support = {
+			reliability_factor = 0.05
+			equipment_capture_factor = 0.02
+		}
+		maintenance_company = {
+			urban = {
+				attack = 0.02
+			}
+			fort = {
+				attack = 0.02
+			}
+		}
+		motorized_maintenance_company = {
+			urban = {
+				attack = 0.02
+			}
+			fort = {
+				attack = 0.02
+			}
+		}
+
+		path = {
+			leads_to_tech = maintenance_company_tech_5
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_settler = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2281
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_mai y = @Col_5 }
+		}
+
+		categories = {
+			support_tech_category
+			support_maintenance_tech_category
+			support_non_combat_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 3
+				is_brotherhood_nation = yes
+			}
+			modifier = {
+				factor = 3
+				date > "2283.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2282.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2281.1.1"
+			}
+		}
+	}
+
+	maintenance_company_tech_5 = {
+
+		category_maintenance_support = {
+			reliability_factor = 0.05
+			equipment_capture_factor = 0.02
+		}
+		maintenance_company = {
+			urban = {
+				attack = 0.02
+			}
+			fort = {
+				attack = 0.02
+			}
+		}
+		motorized_maintenance_company = {
+			urban = {
+				attack = 0.02
+			}
+			fort = {
+				attack = 0.02
+			}
+		}
+
+		path = {
+			leads_to_tech = maintenance_company_tech_6
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			support_tech_level_settler = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2282
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_mai y = @Col_6 }
+		}
+
+		categories = {
+			support_tech_category
+			support_maintenance_tech_category
+			support_non_combat_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 3
+				is_brotherhood_nation = yes
+			}
+			modifier = {
+				factor = 3
+				date > "2284.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2282.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2283.1.1"
+			}
+		}
+	}
+
+	maintenance_company_tech_6 = {
+
+		category_maintenance_support = {
+			reliability_factor = 0.05
+			equipment_capture_factor = 0.02
+		}
+		maintenance_company = {
+			urban = {
+				attack = 0.02
+			}
+			fort = {
+				attack = 0.02
+			}
+		}
+		motorized_maintenance_company = {
+			urban = {
+				attack = 0.02
+			}
+			fort = {
+				attack = 0.02
+			}
+		}
+
+		dependencies = {
+			support_tech_level_scientific = 1
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2283
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_mai y = @Col_7 }
+		}
+
+		categories = {
+			support_tech_category
+			support_maintenance_tech_category
+			support_non_combat_tech_category
+			scientific_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 3
+				is_brotherhood_nation = yes
+			}
+			modifier = {
+				factor = 3
+				date > "2285.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2283.1.1"
+			}
+			modifier = {
+				factor = 3
+				date > "2284.1.1"
+			}
+		}
+	}
+
+
+	# Unique
+
+	fireteam_elite_weaponry_tech = {
+
+		enable_equipments = {
+			fireteam_equipment_5
+		}
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		allow = {
+			always = no
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2283
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_4 y = @Col_9 }
+		}
+
+		categories = {
+			support_tech_category
+			support_combat_tech_category
+			support_fireteam_tech_category
+			support_fireteam_ballistic_tech_category
+			scientific_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 5
+				date > "2283.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2284.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2285.1.1"
+			}
+		}
+	}
+
+	demolitions_elite_weaponry_tech = {
+
+		enable_equipments = {
+			demolitions_equipment_5
+		}
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		allow = {
+			always = no
+		}
+
+		research_cost = 1.35
+		xp_research_type = army
+		xp_boost_cost = 30
+		xp_research_bonus = 0.3
+		start_year = 2283
+		folder = {
+			name = fallout_support_folder
+			position = { x = @Row_11 y = @Col_9 }
+		}
+
+		categories = {
+			support_tech_category
+			support_combat_tech_category
+			support_fireteam_tech_category
+			support_fireteam_ballistic_tech_category
+			scientific_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 5
+				date > "2283.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2284.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "2285.1.1"
+			}
+		}
+	}
+}

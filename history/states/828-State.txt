@@ -1,0 +1,32 @@
+state = {
+	id = 828
+	name = "STATE_828"
+	resources={
+		energy = 8
+		water = 16
+	}
+
+	history={
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 2
+			arms_factory = 1
+			dockyard = 2
+			9992 = {
+				naval_base = 4
+			}
+		}
+		victory_points = {
+			10027 25
+		}
+		set_state_flag = custom_member_states
+		setup_state_828 = yes
+	}
+
+	provinces={
+		9914 9927 9951 9952 9957 9988 9992 10025 10027 10067 10080 10839 10842 10846 10847 10851 10853
+	}
+	manpower=74552
+	buildings_max_level_factor=1.000
+	state_category=city
+}

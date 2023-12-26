@@ -1,0 +1,30 @@
+state = {
+	id = 173
+	name = "STATE_173"
+	manpower = 12000
+	state_category = large_town
+
+	resources = {
+		metal = 4
+	}
+
+	history = {
+		owner = RAP
+		add_core_of = RAP
+		victory_points = {
+			5772 3
+		}
+		victory_points = {
+			5806 5
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 1
+		}
+	}
+
+	provinces = {
+		5768 5769 5770 5771 5806 5811 5937 5772 5773 5804 5810 6665
+	}
+}

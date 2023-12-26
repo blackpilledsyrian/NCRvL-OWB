@@ -1,0 +1,24 @@
+state = {
+	id = 751
+	name = "STATE_751"
+	resources={
+		water=5.000
+	}
+
+	history={
+		buildings = {
+			infrastructure = 2
+		}
+		victory_points = {
+			9284 5
+		}
+		add_extra_state_shared_building_slots = 2
+	}
+
+	provinces={
+		762 3183 3222 3227 6611 6701 6726 6997 9017 9019 9065 9165 9284 9286 9483 9537 9539
+	}
+	manpower=7000
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+}

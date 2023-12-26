@@ -1,0 +1,139 @@
+﻿division_template = {
+	name = "Mojave Troopers"
+	template_counter= 68
+	division_names_group = _NCR_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+		infantry = { x = 3 y = 0 }
+	}
+	support = {
+		anti_tank_company = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "NCR Rangers"
+	template_counter= 83
+	priority = 2
+	regiments = {
+		spec_ops = { x = 0 y = 0 }
+		spec_ops = { x = 0 y = 1 }
+		spec_ops = { x = 0 y = 2 }
+		spec_ops = { x = 1 y = 0 }
+		spec_ops = { x = 1 y = 1 }
+		spec_ops = { x = 2 y = 0 }
+		spec_ops = { x = 2 y = 1 }
+		spec_ops = { x = 2 y = 2 }
+		spec_ops = { x = 3 y = 0 }
+		spec_ops = { x = 3 y = 1 }
+	}
+	support = {
+		anti_tank_company = { x = 0 y = 0 }
+	}
+}
+
+units = {
+	division = {
+		name = "Hanlon's Rangers"
+		location = 5766
+		division_template = "NCR Rangers"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "The Dam Busters"
+		location = 6603
+		division_template = "NCR Rangers"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "Forlorn Hope Platoon"
+		location = 5766
+		division_template = "Mojave Troopers"
+		start_experience_factor = 0.45
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "Mojave Outpost Platoon"
+		location = 6608
+		division_template = "Mojave Troopers"
+		start_experience_factor = 0.45
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "Goodsprings Platoon"
+		location = 6988
+		division_template = "Mojave Troopers"
+		start_experience_factor = 0.45
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "Searchlight Platoon"
+		location = 5761
+		division_template = "Mojave Troopers"
+		start_experience_factor = 0.45
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "Boulder City Platoon"
+		location = 3226
+		division_template = "Mojave Troopers"
+		start_experience_factor = 0.45
+		start_equipment_factor = 1.0
+	}
+}
+
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = ballistic_equipment_1
+			creator = "MOT"
+		}
+		requested_factories = 4
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = anti_tank_equipment_2
+			creator = "MOT"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = explosive_demolitions_equipment_3
+			creator = "MOT"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = spec_ops_equipment_1
+			creator = "MOT"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+}
+# vim: set ft=pdx ts=2 sw=2 tw=79 :

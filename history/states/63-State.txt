@@ -1,0 +1,41 @@
+state = {
+	id = 63
+	name = "STATE_63"
+	manpower = 25250
+	state_category = prewar_megacity
+
+	resources = {
+		water = 6
+		metal = 12
+		energy = 6
+		composites = 6
+	}
+
+	history={
+		owner = NCR
+		add_core_of = NCR
+		victory_points = {
+			2652 30
+		}
+		buildings = {
+			infrastructure = 4
+			arms_factory = 1
+			industrial_complex = 4
+			dockyard = 5
+			radar_station = 1
+			2659 = {
+				naval_base = 3
+			}
+
+		}
+		add_dynamic_modifier = {
+			modifier = caps_ncr_start_modifier
+		}
+		set_variable = { ncr_nf_caps_state_modifier = -0.25 }
+	}
+
+	provinces={
+		2048 2619 2620 2646 2647 2649 2650 2652 2653 2654 2655 2659 2660 2662 4975 4976 4977 4978 4979 4980
+	}
+	buildings_max_level_factor=1.000
+}

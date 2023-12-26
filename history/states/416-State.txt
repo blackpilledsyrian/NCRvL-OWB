@@ -1,0 +1,26 @@
+state = {
+	id = 416
+	name = "STATE_416"
+	manpower = 1678
+	state_category = rural
+
+	history = {
+		victory_points = {
+			3802 1
+		}
+		victory_points = {
+			3823 5
+		}
+		victory_points = {
+			3969 3
+		}
+		buildings = {
+			infrastructure = 1
+			3823 = { naval_base = 1 }
+		}
+	}
+
+	provinces = {
+		3954 3823 3951 7417 2152 4380 3969 3797 3802 2120 3809 3801
+	}
+}

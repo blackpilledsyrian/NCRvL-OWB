@@ -1,0 +1,35 @@
+state = {
+	id = 337
+	name = "STATE_337"
+	manpower = 25337
+	state_category = metropolis
+
+	resources = {
+		metal = 11
+		water = 7
+		composites = 5
+		circuitry = 5
+		advanced = 3
+	}
+
+	history = {
+		owner = ARR
+		add_core_of = ARR
+		victory_points = {
+			2722 25
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 8
+			arms_factory = 1
+			air_base = 1
+			2722 = {
+				bunker = 1
+			}
+		}
+	}
+
+	provinces = {
+		1750 1752 2722 2723 2724 2726 5034
+	}
+}

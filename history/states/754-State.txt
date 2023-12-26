@@ -1,0 +1,28 @@
+state = {
+	id = 754
+	name = "STATE_754"
+	resources = {
+		energy = 2
+	}
+
+	history={
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			10698 = {
+				#naval_base = 1
+			}
+		}
+		victory_points = {
+			9426 5
+		}
+
+	}
+
+	provinces={
+		745 9422 9426 9438 9579 10698 11116 11140
+	}
+	manpower=8920
+	buildings_max_level_factor=1.000
+	state_category=town
+}

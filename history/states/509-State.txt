@@ -1,0 +1,24 @@
+state = {
+	id = 509
+	name = "STATE_509"
+	manpower = 7491
+	state_category = town
+
+	history = {
+		victory_points = {
+			7383 10
+		}
+		victory_points = {
+			7519 3
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 2
+			industrial_complex = 1
+		}
+	}
+
+	provinces = {
+		1514 1517 1934 2493 3912 3913 3914 4009 4320 7381 7382 7383 7519
+	}
+}

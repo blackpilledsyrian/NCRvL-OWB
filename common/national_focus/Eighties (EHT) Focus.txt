@@ -1,0 +1,2335 @@
+###########################################
+#		  Eighties Focus Tree			  #
+#	  Written by Loony, Faelin & Zusk	  #
+###########################################
+
+focus_tree = {
+	id = eht_nf
+	country = {
+		factor = 0
+		modifier = {
+			add = 80
+			original_tag = EHT
+		}
+	}
+	default = no
+
+	#shared_focus = raider_modular_the_garage
+	#shared_focus = raider_modular_incorporate_slavers
+
+	###################
+	# Starter Focuses #
+	###################
+	focus = {
+		id = EHT_focus_nevada_road_war
+		icon = GFX_goal_80
+		cost = 7
+		x = 15
+		y = 0
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_nevada_road_war entered"
+			}
+			country_event = {
+				id = nf_80s.3
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_nevada_road_war exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_focus_utah_road_war
+		icon = GFX_goal_80
+		cost = 7
+		prerequisite = {
+			focus = EHT_focus_nevada_road_war
+		}
+		x = 0
+		y = 1
+		relative_position_id = EHT_focus_nevada_road_war
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_utah_road_war entered"
+			}
+			country_event = {
+				id =  nf_80s.4
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_utah_road_war exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_focus_thunderbird
+		icon = GFX_goal_80
+		cost = 7
+		prerequisite = {
+			focus = EHT_focus_utah_road_war
+		}
+		x = 0
+		y = 1
+		relative_position_id = EHT_focus_utah_road_war
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_thunderbird entered"
+			}
+			country_event = {
+				id = nf_80s.2
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_thunderbird exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_focus_the_oasis
+		icon = GFX_goal_80
+		cost = 7
+		prerequisite = {
+			focus = EHT_focus_thunderbird
+		}
+		x = 0
+		y = 1
+		relative_position_id = EHT_focus_thunderbird
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_the_oasis entered"
+			}
+			country_event = {
+				id = nf_80s.1
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_the_oasis exited"
+			}
+		}
+	}
+
+	###################
+	# Ruby Valley War #
+	###################
+
+	focus = {
+		id = EHT_ruby
+		icon = GFX_goal_generic_ruby_focus
+		cost = 60
+		prerequisite = {
+			focus = EHT_focus_the_oasis
+		}
+		available = {
+			has_army_manpower = { size > 2000 }
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			RUB = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		ai_will_do = {
+			base = 10
+		}
+		x = 0
+		y = 1
+		relative_position_id = EHT_focus_the_oasis
+		will_lead_to_war_with = RUB
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_ruby entered"
+			}
+			country_event = nf_80s.31
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_ruby exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_focus_ruby_promotion
+		icon = GFX_goal_generic_focus_magazine_backwood_get_off_my_lawn
+		cost = 30
+		prerequisite = {
+			focus = EHT_ruby
+		}
+		available = { owns_state = 237 }
+		x = 0
+		y = 1
+		relative_position_id = EHT_ruby
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_ruby_promotion entered"
+			}
+			country_event = nf_80s.6
+			237 = { add_core_of = EHT }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_ruby_promotion exited"
+			}
+		}
+	}
+
+	#################################
+	# Starter Focuses - Settle Down #
+	#################################
+
+	focus = {
+		id = EHT_focus_sedentary
+		icon = GFX_goal_generic_slums_focus
+		cost = 30
+		prerequisite = {
+			focus = EHT_focus_the_oasis
+		}
+		available = {
+			NOT = {
+				has_completed_focus = EHT_focus_nomadic
+			}
+		}
+		x = -3
+		y = 1
+		relative_position_id = EHT_focus_the_oasis
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_sedentary entered"
+			}
+			add_stability = 0.1
+			add_war_support = -0.1
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 2
+				category = agriculture_tech
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_sedentary exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_focus_wendover_encampment
+		icon = GFX_goal_generic_workshop
+		cost = 30
+		prerequisite = {
+			focus = EHT_focus_sedentary
+		}
+		x = -2
+		y = 1
+		relative_position_id =EHT_focus_sedentary
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_wendover_encampment entered"
+			}
+			478 = {
+				add_extra_state_shared_building_slots = 2
+			}
+			40 = {
+				add_extra_state_shared_building_slots = 2
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_wendover_encampment exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_focus_stable_production
+		icon = GFX_goal_fallout_tool
+		cost = 60
+		prerequisite = {
+			focus = EHT_focus_wendover_encampment
+		}
+		x = -1
+		y = 1
+		relative_position_id = EHT_focus_wendover_encampment
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_stable_production entered"
+			}
+			add_ideas = EHT_idea_stable_production
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_stable_production exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_focus_wendover_exchange
+		icon = GFX_goal_bottlecap
+		cost = 60
+		prerequisite = {
+			focus = EHT_focus_wendover_encampment
+		}
+		x = 1
+		y = 1
+		relative_position_id = EHT_focus_wendover_encampment
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_wendover_exchange entered"
+			}
+			40 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			478 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_wendover_exchange exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_focus_wendover_outriders
+		icon = GFX_goal_generic_truck_1
+		cost = 60
+		prerequisite = {
+			focus = EHT_focus_stable_production
+		}
+		mutually_exclusive = { focus = EHT_focus_wendover_battlements }
+		x = -2
+		y = 1
+		relative_position_id = EHT_focus_stable_production
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_wendover_outriders entered"
+			}
+			set_country_flag = EHT_wendover_outriders
+			custom_effect_tooltip = EHT_focus_wendover_outriders_tt
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_wendover_outriders exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_focus_wendover_battlements
+		icon = GFX_goal_generic_slave_collars
+		cost = 60
+		prerequisite = {
+			focus = EHT_focus_stable_production
+		}
+		mutually_exclusive = { focus = EHT_focus_wendover_outriders }
+		x = 0
+		y = 1
+		relative_position_id = EHT_focus_stable_production
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_wendover_battlements entered"
+			}
+			add_resource = {
+				type = metal
+				amount = 16
+				state = 40
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_wendover_battlements exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_focus_wendover_armoury
+		icon = GFX_goal_generic_common_firearms_focus
+		cost = 60
+		prerequisite = {
+			focus = EHT_focus_wendover_exchange
+		}
+		x = 0
+		y = 1
+		relative_position_id = EHT_focus_wendover_exchange
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_wendover_armoury entered"
+			}
+			40 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+				else = {
+					OWNER = {
+						add_offsite_building = { type = arms_factory level = 2 }
+					}
+				}
+			}
+			478 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+				else = {
+					OWNER = {
+						add_offsite_building = { type = arms_factory level = 2 }
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_wendover_armoury exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_windover_gas_station
+		icon = GFX_goal_generic_fuel_focus
+		cost = 60
+		prerequisite = { focus = EHT_focus_wendover_battlements }
+		x = 0
+		y = 1
+		relative_position_id = EHT_focus_wendover_battlements
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_wendover_battlements entered"
+			}
+			add_ideas = EHT_gas_station
+			add_resource = {
+				type = energy
+				amount = 10
+				state = 40
+			}
+			add_resource = {
+				type = energy
+				amount = 5
+				state = 478
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_wendover_battlements exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_focus_nomadic_centralization
+		icon = GFX_goal_generic_food_focus
+		cost = 60
+		prerequisite = {
+			focus = EHT_focus_wendover_outriders
+			focus = EHT_focus_wendover_armoury
+		}
+		x = 0
+		y = 1
+		relative_position_id = EHT_focus_wendover_armoury
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_nomadic_centralization entered"
+			}
+			add_ideas = EHT_nomadic_centralization_idea
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_nomadic_centralization exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_focus_park_our_cars
+		icon = GFX_goal_generic_nice_car
+		cost = 60
+		prerequisite = {
+			focus = EHT_focus_nomadic_centralization
+			focus = EHT_windover_gas_station
+		}
+		mutually_exclusive = { focus = EHT_hit_the_gas }
+		x = 1
+		y = 1
+		relative_position_id = EHT_windover_gas_station
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_park_our_cars entered"
+			}
+			swap_ideas = {
+				remove_idea = EHT_sedentary
+				add_idea = EHT_sedentary2
+			}
+			40 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_park_our_cars exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_hit_the_gas
+		icon = GFX_goal_generic_nuka
+		cost = 60
+		prerequisite = {
+			focus = EHT_focus_nomadic_centralization
+			focus = EHT_windover_gas_station
+		}
+		mutually_exclusive = { focus = EHT_focus_park_our_cars }
+		x = 3
+		y = 1
+		relative_position_id = EHT_windover_gas_station
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_hit_the_gas entered"
+			}
+			swap_ideas = {
+				remove_idea = EHT_sedentary
+				add_idea = EHT_zoom
+			}
+			512 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_hit_the_gas exited"
+			}
+		}
+	}
+
+	#################################
+	# Starter Focuses - Settle Down #
+	#################################
+
+	focus = {
+		id = EHT_focus_nomadic
+		icon = GFX_goal_original_highwayman
+		cost = 30
+		prerequisite = {
+			focus = EHT_focus_the_oasis
+		}
+		available = {
+			NOT = {
+				has_completed_focus = EHT_focus_sedentary
+			}
+		}
+		x = 3
+		y = 1
+		relative_position_id = EHT_focus_the_oasis
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_nomadic entered"
+			}
+			add_stability = -0.1
+			add_war_support = 0.1
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 2
+				category = tool_tech
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_nomadic exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_focus_assimilation
+		icon = GFX_goal_generic_data_focus
+		cost = 30
+		prerequisite = {
+			focus = EHT_focus_nomadic
+		}
+		x = 2
+		y = 1
+		relative_position_id = EHT_focus_nomadic
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_assimilation entered"
+			}
+			# Swap Ideas does not show the updated custom modifier tooltip. Displaying it as a separate removal and addition gets around this
+			remove_ideas = EHT_nomadic
+			custom_effect_tooltip = spacer_tt
+			add_ideas = EHT_nomadic2
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_assimilation exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_focus_well_travelled_roads
+		icon = GFX_goal_generic_nice_car
+		cost = 60
+		prerequisite = {
+			focus = EHT_focus_assimilation
+		}
+		x = -1
+		y = 1
+		relative_position_id = EHT_focus_assimilation
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = light_motorized_equipment_2
+				amount = 800
+				producer = USA
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_focus_camp_craftsmen
+		icon = GFX_goal_CES_workshop
+		cost = 60
+		prerequisite = {
+			focus = EHT_focus_assimilation
+		}
+		x = 1
+		y = 1
+		relative_position_id = EHT_focus_assimilation
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_camp_craftsmen entered"
+			}
+			add_offsite_building = { type = industrial_complex level = 3 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_camp_craftsmen exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_focus_nomadic_flexibillity
+		icon = GFX_goal_generic_fuel_focus
+		cost = 60
+		prerequisite = {
+			focus = EHT_focus_well_travelled_roads
+		}
+		x = 0
+		y = 1
+		relative_position_id = EHT_focus_well_travelled_roads
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_nomadic_flexibillity entered"
+			}
+			add_ideas = EHT_idea_nomadic_flexibillity
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_nomadic_flexibillity exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_focus_camp_weaponsmiths
+		icon = GFX_goal_generic_advanced_firearms_focus
+		cost = 60
+		prerequisite = {
+			focus = EHT_focus_camp_craftsmen
+		}
+		mutually_exclusive = {
+			focus = EHT_thunderbird_smiths
+		}
+		x = 0
+		y = 1
+		relative_position_id = EHT_focus_camp_craftsmen
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_camp_weaponsmiths entered"
+			}
+			add_offsite_building = { type = arms_factory level = 3 }
+			add_equipment_to_stockpile = {
+				type = ballistic_equipment_1
+				amount = 350
+				producer = USA
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_camp_weaponsmiths exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_thunderbird_smiths
+		icon = GFX_goal_pal_business_as_usual
+		cost = 60
+		prerequisite = {
+			focus = EHT_focus_camp_craftsmen
+		}
+		mutually_exclusive = {
+			focus = EHT_focus_camp_weaponsmiths
+		}
+		x = 2
+		y = 1
+		relative_position_id = EHT_focus_camp_craftsmen
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_thunderbird_smiths entered"
+			}
+			add_offsite_building = { type = arms_factory level = 2 }
+			custom_effect_tooltip = EHT_thunder_smith_tt
+			set_country_flag = EHT_thunderbird_smiths
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_thunderbird_smiths exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_focus_old_world_arteries
+		text = EHT_focus_old_world_arteries
+		icon = GFX_goal_generic_motorcycle_savage
+		cost = 60
+		prerequisite = {
+			focus = EHT_focus_nomadic_flexibillity
+		}
+
+		x = 0
+		y = 1
+		relative_position_id = EHT_focus_nomadic_flexibillity
+		completion_reward = {
+			add_ideas = EHT_idea_old_world_arteries
+			add_equipment_to_stockpile = {
+				type = light_motorized_equipment_2
+				amount = 200
+				producer = USA
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_focus_ghost_warriors
+		icon = GFX_goal_power_fist
+		cost = 60
+		prerequisite = {
+			focus = EHT_focus_camp_weaponsmiths
+			focus = EHT_thunderbird_smiths
+		}
+		x = 0
+		y = 1
+		relative_position_id = EHT_focus_camp_weaponsmiths
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_ghost_warriors entered"
+			}
+			add_ideas = EHT_ghost_warriors
+			add_equipment_to_stockpile = {
+				type = melee_equipment_3
+				amount = 850
+				producer = USA
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_ghost_warriors exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_glory_road
+		icon = GFX_goal_original_highwayman
+		cost = 60
+		prerequisite = {
+			focus = EHT_focus_ghost_warriors
+			focus = EHT_focus_old_world_arteries
+		}
+		mutually_exclusive = {
+			focus = EHT_BE_LAME
+		}
+		x = -1
+		y = 1
+		relative_position_id = EHT_focus_ghost_warriors
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_glory_road entered"
+			}
+			hidden_effect = {
+				remove_ideas = EHT_ghost_warriors
+				remove_ideas = EHT_nomadic2
+			}
+			swap_ideas = {
+				remove_idea = EHT_the_devils_of_utah
+				add_idea = EHT_the_devils_of_utah_2
+			}
+			add_ideas = EHT_glory_road_idea
+			custom_effect_tooltip = spacer_tt
+			custom_effect_tooltip = oro_best_brightest
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_glory_road exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_BE_LAME
+		icon = GFX_goal_generic_forklift
+		cost = 60
+		prerequisite = {
+			focus = EHT_focus_ghost_warriors
+			focus = EHT_focus_old_world_arteries
+		}
+		mutually_exclusive = {
+			focus = EHT_glory_road
+		}
+		x = -3
+		y = 1
+		relative_position_id = EHT_focus_ghost_warriors
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_BE_LAME entered"
+			}
+			hidden_effect = {
+				remove_ideas = EHT_ghost_warriors
+				remove_ideas = EHT_nomadic2
+			}
+			remove_ideas = EHT_the_devils_of_utah
+			custom_effect_tooltip = spacer_tt
+			add_ideas = EHT_skilled_cunning_craftsmen
+			custom_effect_tooltip = spacer_tt
+			custom_effect_tooltip = oro_best_brightest
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_BE_LAME exited"
+			}
+		}
+	}
+
+	#################################
+	# Starter Focuses - Generations #
+	#################################
+
+	focus = {
+		id = EHT_focus_breathe_of_elders
+		icon = GFX_goal_generic_data_focus
+		cost = 60
+		prerequisite = { focus = EHT_focus_sedentary }
+		available = {
+			num_of_factories > 20
+		}
+		x = 1
+		y = 1
+		relative_position_id = EHT_focus_sedentary
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_breathe_of_elders entered"
+			}
+			army_experience = 25
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 2
+				category = cat_land_doctrine
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_breathe_of_elders exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_wisdom_next_generation
+		icon = GFX_goal_80
+		cost = 60
+		prerequisite = { focus = EHT_focus_nomadic }
+		available = {
+			num_of_factories > 20
+		}
+		x = -1
+		y = 1
+		relative_position_id = EHT_focus_nomadic
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_wisdom_next_generation entered"
+			}
+			army_experience = 25
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 2
+				category = vehicle_tech_category
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_wisdom_next_generation exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_focus_people_of_the_wind
+		icon = GFX_goal_brahmin_cart
+		cost = 60
+		prerequisite = {
+			focus = EHT_focus_breathe_of_elders
+			focus = EHT_wisdom_next_generation
+		}
+		x = -1
+		y = 1
+		relative_position_id = EHT_focus_ruby_promotion
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_people_of_the_wind entered"
+			}
+			set_temp_variable = { caps_to_add = 300 } add_caps = yes
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_people_of_the_wind exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_focus_city_of_banners
+		icon = GFX_goal_generic_canyon_focus
+		cost = 60
+		prerequisite = {
+			focus = EHT_focus_breathe_of_elders
+			focus = EHT_wisdom_next_generation
+		}
+		x = 1
+		y = 1
+		relative_position_id = EHT_focus_ruby_promotion
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_city_of_banners entered"
+			}
+			478 = {
+				set_temp_variable = {
+					pop_add = 5000
+				}
+				add_state_population_no_state_name = yes
+			}
+			40 = {
+				set_temp_variable = {
+					pop_add = 5000
+				}
+				add_state_population_no_state_name = yes
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_city_of_banners exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_focus_wisdom_of_the_new_generation
+		icon = GFX_goal_generic_human_warriors
+		cost = 60
+		prerequisite = {
+			focus = EHT_focus_city_of_banners
+		}
+		prerequisite = {
+			focus = EHT_focus_people_of_the_wind
+		}
+		available = {
+			num_of_factories > 30
+		}
+		x = 0
+		y = 2
+		relative_position_id = EHT_focus_ruby_promotion
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_wisdom_of_the_new_generation entered"
+			}
+			add_research_slot = 1
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_wisdom_of_the_new_generation exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_focus_ready_to_return
+		text = EHT_focus_ready_to_return
+		icon = GFX_goal_80
+		cost = 60
+		#prerequisite = {
+		#	focus = EHT_focus_camp_weaponsmiths
+		#	focus = EHT_focus_wendover_armoury
+		#	focus = EHT_thunderbird_smiths
+		#}
+		prerequisite = {
+			focus = EHT_focus_wisdom_of_the_new_generation
+		}
+		#prerequisite = {
+		#	focus = EHT_focus_wendover_battlements
+		#	focus = EHT_focus_old_world_arteries
+		#	focus = EHT_focus_wendover_outriders
+		#}
+		x = 0
+		y = 1
+		relative_position_id = EHT_focus_wisdom_of_the_new_generation
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_ready_to_return entered"
+			}
+			add_war_support = 0.1
+			add_stability = 0.1
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_ready_to_return exited"
+			}
+		}
+	}
+
+	#################################
+	# 		Expansion Focuses		#
+	#################################
+
+	focus = {
+		id = EHT_our_parking_lot
+		icon = GFX_goal_80
+		cost = 30
+		prerequisite = {
+			focus = EHT_focus_park_our_cars
+			focus = EHT_hit_the_gas
+		}
+		relative_position_id = EHT_focus_ready_to_return
+		x = -2
+		y = 2
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_our_parking_lot entered"
+			}
+			add_stability = 0.05
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_our_parking_lot exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_long_road_home
+		icon = GFX_goal_80
+		cost = 30
+		prerequisite = {
+			focus = EHT_glory_road
+			focus = EHT_BE_LAME
+		}
+		relative_position_id = EHT_focus_ready_to_return
+		x = 2
+		y = 2
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_long_road_home entered"
+			}
+			army_experience = 50
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_long_road_home exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_build_more_roads
+		icon = GFX_goal_CES_via_militaris
+		cost = 60
+		prerequisite = { focus = EHT_our_parking_lot }
+		x = -1
+		y = 1
+		relative_position_id = EHT_our_parking_lot
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_build_more_roads entered"
+			}
+			every_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_build_more_roads exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_focus_war_for_mountains
+		icon = GFX_goal_mountain_flag
+		cost = 60
+		prerequisite = {
+			focus = EHT_our_parking_lot
+			focus = EHT_long_road_home
+		}
+		x = 1
+		y = 1
+		relative_position_id = EHT_our_parking_lot
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_war_for_mountains entered"
+			}
+			set_technology = { all_terrain_vehicles_tech = 1 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_war_for_mountains exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_faith_in_the_roads
+		icon = GFX_goal_generic_canister_nucleaer
+		cost = 60
+		prerequisite = {
+			focus = EHT_long_road_home
+			focus = EHT_our_parking_lot
+		}
+		x = -1
+		y = 1
+		relative_position_id = EHT_long_road_home
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_faith_in_the_roads entered"
+			}
+			swap_ideas = {
+				remove_idea = EHT_the_sacred_garage
+				add_idea = EHT_the_sacred_garage2
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_faith_in_the_roads exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_retaking_the_road
+		icon = GFX_goal_generic_focus_magazine_gunsandbullets_gun_laws
+		cost = 60
+		prerequisite = {
+			focus = EHT_long_road_home
+		}
+		x = 1
+		y = 1
+		relative_position_id = EHT_long_road_home
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_retaking_the_road entered"
+			}
+			264 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			40 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_retaking_the_road exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_ripe_for_taking
+		icon = GFX_goal_lurker_offer_muttfruit
+		cost = 30
+		prerequisite = {
+			focus = EHT_build_more_roads
+			focus = EHT_focus_war_for_mountains
+			focus = EHT_faith_in_the_roads
+			focus = EHT_retaking_the_road
+		}
+		available = {
+			RUB = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			RIP = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = RIP
+		x = -1
+		y = 1
+		relative_position_id = EHT_build_more_roads
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_ripe_for_taking entered"
+			}
+			RIP = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_ripe_for_taking exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_focus_riperult_promotion
+		icon = GFX_goal_generic_land_doctrines_focus
+		cost = 30
+		prerequisite = {
+			focus = EHT_ripe_for_taking
+		}
+		available = { owns_state = 462 }
+		x = 0
+		y = 1
+		relative_position_id = EHT_ripe_for_taking
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_riperult_promotion entered"
+			}
+			country_event = nf_80s.36
+			462 = { add_core_of = EHT }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_riperult_promotion exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_focus_grab_destiny
+		icon = GFX_goal_generic_focus_magazine_gunsandbullets_lasers
+		cost = 30
+		prerequisite = {
+			focus = EHT_build_more_roads
+			focus = EHT_focus_war_for_mountains
+			focus = EHT_faith_in_the_roads
+			focus = EHT_retaking_the_road
+		}
+		available = {
+			RUB = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			GRA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = GRA
+		x = 1
+		y = 1
+		relative_position_id = EHT_build_more_roads
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_grab_destiny entered"
+			}
+			GRA = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_grab_destiny exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_grab_luggage
+		icon = GFX_goal_NEW_Caps_for_Loyalty
+		cost = 30
+		prerequisite = {
+			focus = EHT_focus_grab_destiny
+		}
+		available = {
+			owns_state = 425
+		}
+		x = 0
+		y = 1
+		relative_position_id = EHT_focus_grab_destiny
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_grab_luggage entered"
+			}
+			country_event = nf_80s.5
+			425 = { add_core_of = EHT }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_grab_luggage exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_way_road_warrior
+		icon = GFX_goal_generic_flamer_focus
+		cost = 60
+		prerequisite = {
+			focus = EHT_focus_war_for_mountains
+			focus = EHT_faith_in_the_roads
+		}
+		relative_position_id = EHT_focus_war_for_mountains
+		x = 1
+		y = 1
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_way_road_warrior entered"
+			}
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 2
+				category = vehicle_tech_category
+			}
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 2
+				category = cat_land_doctrine
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_way_road_warrior exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_lord_long_road
+		icon = GFX_goal_brahmin_cart
+		cost = 60
+		prerequisite = {
+			focus = EHT_way_road_warrior
+		}
+		relative_position_id = EHT_way_road_warrior
+		x = 0
+		y = 1
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_lord_long_road entered"
+			}
+			set_technology = { ncr_railway_construction = 1 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_lord_long_road exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_swing_north
+		icon = GFX_goal_original_highwayman
+		cost = 30
+		relative_position_id = EHT_retaking_the_road
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = EHT_build_more_roads
+			focus = EHT_focus_war_for_mountains
+			focus = EHT_faith_in_the_roads
+			focus = EHT_retaking_the_road
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			HAM = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+
+		will_lead_to_war_with = HAM
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_swing_north entered"
+			}
+			HAM = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_swing_north exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_focus_northport_promotion
+		icon = GFX_goal_generic_focus_magazine_aat_sniper
+		cost = 30
+		relative_position_id = EHT_swing_north
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = EHT_swing_north
+		}
+		bypass = {
+		}
+		available = {
+			owns_state = 170
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_northport_promotion entered"
+			}
+			country_event = nf_80s.7
+			170 = {add_core_of = EHT }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_northport_promotion exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_swing_east
+		icon = GFX_goal_generic_artillery
+		cost = 30
+		relative_position_id = EHT_retaking_the_road
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = EHT_build_more_roads
+			focus = EHT_focus_war_for_mountains
+			focus = EHT_faith_in_the_roads
+			focus = EHT_retaking_the_road
+		}
+		available = {
+			HAM = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			EAS = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+
+		will_lead_to_war_with = EAS
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_swing_east entered"
+			}
+			EAS = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_swing_east exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_focus_eastport_promotion
+		icon = GFX_goal_ancient_wealth
+		cost = 30
+		relative_position_id = EHT_swing_east
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = EHT_swing_east
+		}
+		available = {
+			owns_state = 367
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_eastport_promotion entered"
+			}
+			country_event = nf_80s.8
+			367 = { add_core_of = EHT }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_eastport_promotion exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_scientific_vehicles
+		icon = GFX_goal_EHT_apc
+		cost = 60
+		relative_position_id = EHT_lord_long_road
+		x = 0
+		y = 1
+		available = {
+			has_completed_focus = EHT_focus_ruby_promotion
+		}
+		prerequisite = {
+			focus = EHT_grab_luggage
+		}
+		prerequisite = {
+			focus = EHT_focus_northport_promotion
+		}
+		prerequisite = {
+			focus = EHT_focus_eastport_promotion
+		}
+		prerequisite = {
+			focus = EHT_focus_riperult_promotion
+		}
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = EHT_flagman_reorganize
+				days = 90
+			}
+			set_technology = { vehicles_tech_level_scientific = 1  }
+		}
+	}
+	##################################
+	# Second Nevada Road War Focuses #
+	##################################
+
+	focus = {
+		id = EHT_focus_utah_road_war_second
+		icon = GFX_goal_NCN_Kingdom_of_God
+		cost = 60
+		prerequisite = {
+			focus = EHT_scientific_vehicles
+		}
+		x = 0
+		y = 2
+		relative_position_id = EHT_lord_long_road
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_utah_road_war_second entered"
+			}
+			custom_effect_tooltip = EHT_focus_utah_road_war_second_tt
+			hidden_effect = {
+				every_state = {
+					limit = {
+						is_utah_state = yes
+					}
+					set_variable = {
+						coring_cost_targeted_state_factor@EHT = -0.25
+					}
+				}
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = 3
+			}
+			add_offsite_building = {
+				type = arms_factory
+				level = 3
+			}
+			add_stability = 0.1
+			add_political_power = 150
+			mark_focus_tree_layout_dirty = yes
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_utah_road_war_second exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_focus_desert_living
+		icon = GFX_icon_apc_desert
+		cost = 60
+		prerequisite = {
+			focus = EHT_focus_utah_road_war_second
+		}
+		x = -2
+		y = 1
+		relative_position_id = EHT_focus_utah_road_war_second
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_desert_living entered"
+			}
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 2
+				category = habitation_category
+			}
+			every_owned_state = {
+				limit = {
+					OR = {
+						state = 40
+						state = 309
+						state = 270
+						state = 264
+						state = 577
+						state = 440
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_desert_living exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_focus_admit_caravans
+		icon = GFX_icon_caps
+		cost = 60
+		prerequisite = {
+			focus = EHT_focus_utah_road_war_second
+		}
+		x = 0
+		y = 1
+		relative_position_id = EHT_focus_utah_road_war_second
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_admit_caravans entered"
+			}
+			add_ideas = EHT_gold_hills_market
+			40 = {
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				else = {
+					OWNER = {
+						add_offsite_building = { type = industrial_complex level = 1 }
+					}
+				}
+			}
+			if = {
+				limit = { has_idea = closed_economy }
+				swap_ideas = {
+					remove_idea = closed_economy
+					add_idea = free_trade
+				}
+			}
+			else_if = {
+				limit = { has_idea = limited_exports }
+				swap_ideas = {
+					remove_idea = limited_exports
+					add_idea = free_trade
+				}
+			}
+			else_if = {
+				limit = { has_idea = export_focus }
+				swap_ideas = {
+					remove_idea = export_focus
+					add_idea = free_trade
+				}
+			}
+			else = {
+				add_political_power = 100
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_admit_caravans exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_focus_mineral_deposits
+		icon = GFX_goal_generic_metal_focus
+		cost = 60
+		prerequisite = {
+			focus = EHT_focus_utah_road_war_second
+		}
+		x = 2
+		y = 1
+		relative_position_id = EHT_focus_utah_road_war_second
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_mineral_deposits entered"
+			}
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 2
+				category = extraction_category
+			}
+			add_resource = {
+				type = metal
+				amount = 6
+				state = 40
+			}
+			add_resource = {
+				type = advanced
+				amount = 4
+				state = 40
+			}
+			add_resource = {
+				type = metal
+				amount = 6
+				state = 309
+			}
+			add_resource = {
+				type = circuitry
+				amount = 4
+				state = 309
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_focus_mineral_deposits exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_ally_white_legs
+		icon = GFX_goal_white_leg_warrior
+		cost = 60
+		prerequisite = { focus = EHT_focus_admit_caravans }
+		available = {
+			WHT = { exists = yes }
+		}
+		x = -2
+		y = 1
+		relative_position_id = EHT_focus_admit_caravans
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_ally_white_legs entered"
+			}
+			40 = {
+				if = {
+					limit = {
+						is_valid_state_for_3_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = arms_factory
+						level = 3
+						instant_build = yes
+					}
+				}
+				else = {
+					OWNER = {
+						add_offsite_building = { type = arms_factory level = 3 }
+					}
+				}
+			}
+			WHT = {
+				326 = {
+					if = {
+						limit = {
+							is_valid_state_for_2_arms_factories = yes
+						}
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+							type = arms_factory
+							level = 2
+							instant_build = yes
+						}
+					}
+					else = {
+						OWNER = {
+							add_offsite_building = { type = arms_factory level = 2 }
+						}
+					}
+				}
+			}
+			NCN = {
+				add_ai_strategy = {
+					type = antagonize
+					id = EHT
+					value = 50
+				}
+				add_ai_strategy = {
+					type = conquer
+					id = EHT
+					value = 25
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_ally_white_legs exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_ally_caesar
+		icon = GFX_goal_CES_Eight_Ally
+		cost = 60
+		prerequisite = { focus = EHT_focus_admit_caravans }
+		available = {
+		}
+		x = 0
+		y = 1
+		relative_position_id = EHT_focus_admit_caravans
+		completion_reward = {
+			40 = {
+				if = {
+					limit = {
+						is_valid_state_for_3_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = arms_factory
+						level = 3
+						instant_build = yes
+					}
+				}
+				else = {
+					OWNER = {
+						add_offsite_building = { type = arms_factory level = 3 }
+					}
+				}
+			}
+			if = {
+				limit = {
+					CES = {
+						NOT = {
+							has_country_flag = CES_civil_war
+						}
+					}
+				}
+
+				d_join_caesars_legion = yes
+				add_research_slot = 1
+				custom_effect_tooltip = EHT_ally_caesar_tt
+			}
+			else = {
+				country_event = nf_legion.129
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_preparing_the_war_trails
+		icon = GFX_goal_CES_via_militaris
+		cost = 60
+		prerequisite = {focus = EHT_ally_caesar }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = eht_war_trails_tt
+				OR = {
+					WHT = { is_subject = yes }
+					WHT = { exists = no }
+					NCN = { is_subject = yes }
+					NCN = { exists = no }
+					has_completed_focus = EHT_ally_caesar
+					AND = {
+						WHT = { has_war_with = ROOT }
+						has_completed_focus = EHT_ally_white_legs
+					}
+					AND = {
+						NCN = { has_war_with = ROOT }
+						has_completed_focus = EHT_ally_mormons
+					}
+				}
+			}
+			is_subject = no
+        }
+		x = 0
+		y = 2
+		relative_position_id = EHT_focus_admit_caravans
+        completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_preparing_the_war_trails entered"
+			}
+			hidden_effect = { load_oob = EHT_small_warband }
+			custom_effect_tooltip = summon_small_warband
+			213 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+                }
+			}
+			264 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+			}
+			577 = {
+                add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+                }
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_start_your_engines
+		icon = GFX_goal_generic_workshop
+		cost = 60
+		prerequisite = { focus = EHT_preparing_the_war_trails }
+		x = 0
+		y = 1
+		relative_position_id = EHT_preparing_the_war_trails
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_start_your_engines entered"
+			}
+			add_timed_idea = {
+				idea = EHT_revving_up
+				days = 365
+			}
+			40 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+				else = {
+					OWNER = {
+						add_offsite_building = { type = arms_factory level = 2 }
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_start_your_engines exited"
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_tribal_refugees
+		icon = GFX_goal_tribal_generic
+		cost = 60
+		prerequisite = { focus = EHT_start_your_engines }
+		x = 0
+		y = 1
+		relative_position_id = EHT_start_your_engines
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_tribal_refugees entered"
+			}
+			hidden_effect = { load_oob = EHT_tribal_refugees }
+			custom_effect_tooltip = EHT_tribal_refugees_tt
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_tribal_refugees exited"
+			}
+		}
+	}
+	focus = {
+		id = EHT_ride_true
+		icon = GFX_goal_generic_motorcycle
+		cost = 60
+		prerequisite = { focus = EHT_tribal_refugees }
+		x = -2
+		y = 1
+		relative_position_id = EHT_tribal_refugees
+		completion_reward = {
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = RUB
+						is_core_of = GRA
+						is_core_of = RIP
+						is_core_of = HAM
+						is_core_of = EAS
+						is_core_of = MUR
+						is_core_of = ANO
+					}
+				}
+				add_core_of = EHT
+			}
+		}
+	}
+
+	focus = {
+		id = EHT_cult_of_nas
+		icon = GFX_goal_TTM_Temple
+		cost = 60
+		prerequisite = { focus = EHT_tribal_refugees }
+		available = {
+			TWO = {
+				is_subject_of = CES
+				has_idea = two_masters_of_the_motor_2
+			}
+		}
+		x = 2
+		y = 1
+		relative_position_id = EHT_tribal_refugees
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_cult_of_nas entered"
+			}
+			add_ideas = two_masters_of_the_motor_2
+			add_equipment_to_stockpile	= {
+				type = heavy_motorized_equipment_3
+				amount = 500
+				producer = USA
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_cult_of_nas exited"
+			}
+            if = {
+                limit = { has_global_flag = debug_logs }
+                log = "[GetDateText]: [Root.GetName] EHT_propose_alliance_to_white_legs exited"
+            }
+        }
+    }
+    focus = {
+        id = EHT_bridge_the_gap
+        icon = GFX_goal_generic_construct_infrastructure
+        cost = 60
+        relative_position_id = EHT_tribal_refugees
+        prerequisite = { focus = EHT_tribal_refugees }
+        x = 0
+        y = 1
+        available = {
+            WHT = { exists = yes }
+        }
+        completion_reward = {
+            if = {
+                limit = { has_global_flag = debug_logs }
+                log = "[GetDateText]: [Root.GetName] EHT_bridge_the_gap entered"
+            }
+			72 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+			}
+            WHT = {
+				add_stability = 0.05
+			}
+			add_political_power = 150
+            if = {
+                limit = { has_global_flag = debug_logs }
+                log = "[GetDateText]: [Root.GetName] EHT_bridge_the_gap exited"
+            }
+        }
+    }
+    focus = {
+        id = EHT_western_bridgehead
+        icon = GFX_goal_WHT_generic_flag
+        cost = 60
+        relative_position_id = EHT_ally_white_legs
+        prerequisite = { focus = EHT_ally_white_legs }
+        x = -1
+        y = 1
+        available = {
+            WHT = { exists = yes }
+        }
+        completion_reward = {
+            if = {
+                limit = { has_global_flag = debug_logs }
+                log = "[GetDateText]: [Root.GetName] EHT_western_bridgehead entered"
+            }
+            WHT = {
+                add_offsite_building = { type = arms_factory level = 4 }
+            }
+            if = {
+                limit = { has_global_flag = debug_logs }
+                log = "[GetDateText]: [Root.GetName] EHT_western_bridgehead exited"
+            }
+        }
+    }
+    focus = {
+        id = EHT_ally_mormons
+        icon = GFX_goal_NCN_Mormon_Book
+        cost = 60
+        relative_position_id = EHT_focus_admit_caravans
+        prerequisite = {focus = EHT_focus_admit_caravans }
+        available = {
+        }
+        x = 2
+        y = 1
+        completion_reward = {
+            if = {
+                limit = { has_global_flag = debug_logs }
+                log = "[GetDateText]: [Root.GetName] EHT_ally_mormons entered"
+            }
+			40 = {
+				if = {
+					limit = {
+						is_valid_state_for_3_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = arms_factory
+						level = 3
+						instant_build = yes
+					}
+				}
+				else = {
+					OWNER = {
+						add_offsite_building = { type = arms_factory level = 3 }
+					}
+				}
+			}
+            NCN = {
+                551 = {
+                    if = {
+                        limit = {
+                            is_valid_state_for_2_arms_factories = yes
+                        }
+                        add_extra_state_shared_building_slots = 2
+                        add_building_construction = {
+                            type = arms_factory
+                            level = 2
+                            instant_build = yes
+                        }
+                    }
+					else = {
+						OWNER = {
+							add_offsite_building = { type = arms_factory level = 2 }
+						}
+					}
+                }
+            }
+			WHT = {
+				add_ai_strategy = {
+					type = antagonize
+					id = EHT
+					value = 50
+				}
+				add_ai_strategy = {
+					type = conquer
+					id = EHT
+					value = 25
+				}
+			}
+		}
+	}
+    focus = {
+		id = EHT_eastern_dockyard
+		icon = GFX_goal_NCN_Generic
+		cost = 60
+		prerequisite = { focus = EHT_ally_mormons }
+		x = 1
+		y = 1
+		relative_position_id = EHT_ally_mormons
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_eastern_dockyard entered"
+			}
+			NCN = {
+				352 = {
+					if = {
+						limit = {
+							is_valid_state_for_2_arms_factories = yes
+							is_valid_state_for_2_dockyards = yes
+						}
+						add_extra_state_shared_building_slots = 5
+						add_building_construction = {
+							type = arms_factory
+							level = 2
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = dockyard
+							level = 2
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = naval_base
+							level = 2
+							instant_build = yes
+							province = 6296
+						}
+					}
+					else = {
+						OWNER = {
+							add_offsite_building = { type = arms_factory level = 2 }
+							add_offsite_building = { type = dockyard level = 2 }
+						}
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_eastern_dockyard exited"
+			}
+		}
+	}
+    focus = {
+        id = EHT_eastern_bridgehead
+        icon = GFX_goal_80
+        cost = 60
+        relative_position_id = EHT_eastern_dockyard
+        prerequisite = { focus = EHT_eastern_dockyard }
+        x = 1
+        y = 1
+        available = {
+            WHT = { exists = yes }
+        }
+        completion_reward = {
+            if = {
+                limit = { has_global_flag = debug_logs }
+                log = "[GetDateText]: [Root.GetName] EHT_eastern_bridgehead entered"
+            }
+            add_offsite_building = { type = industrial_complex level = 4 }
+            if = {
+                limit = { has_global_flag = debug_logs }
+                log = "[GetDateText]: [Root.GetName] EHT_eastern_bridgehead exited"
+            }
+        }
+    }
+
+	focus = {
+		id = EHT_western_dockyard
+		icon = GFX_goal_80
+		cost = 60
+		prerequisite = { focus = EHT_western_bridgehead }
+		x = -1
+		y = 1
+		relative_position_id = EHT_western_bridgehead
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_western_dockyard entered"
+			}
+			577 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+						is_valid_state_for_2_dockyards = yes
+					}
+					add_extra_state_shared_building_slots = 5
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = naval_base
+						level = 2
+						instant_build = yes
+						province = 6300
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_western_dockyard exited"
+			}
+		}
+	}
+}

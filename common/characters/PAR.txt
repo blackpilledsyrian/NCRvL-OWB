@@ -1,0 +1,67 @@
+characters = {
+	PAR_dyed_blood = {
+		name = PAR_DYED_BLOOD_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_PAR_leader
+			}
+		}
+		corps_commander = {
+			traits = {
+				strong_trait
+				charismatic_trait
+				desert_fox
+			}
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 5
+			legacy_id = -1
+		}
+		country_leader = {
+			desc = PAR_DYED_BLOOD_DESC
+			ideology = chieftain
+			traits = {
+				born_of_the_blood
+				war_industrialist
+				cruel_tyrant
+			}
+			expire = "3000.01.01.01"
+			id = -1
+		}
+		country_leader = {
+			desc = PAR_DYED_BLOOD_DESC
+			ideology = town_hall_democracy
+			traits = {
+				born_of_the_blood
+				war_industrialist
+				cruel_tyrant
+			}
+			expire = "2290.1.1.12"
+			id = -1
+		}
+		country_leader = {
+			desc = PAR_DYED_BLOOD_DESC
+			ideology = technocracy
+			traits = {
+				born_of_the_blood
+				war_industrialist
+				cruel_tyrant
+			}
+			expire = "2295.1.1.12"
+			id = -1
+		}
+		country_leader = {
+			desc = PAR_DYED_BLOOD_DESC
+			ideology = feudalism
+			traits = {
+				born_of_the_blood
+				war_industrialist
+				cruel_tyrant
+			}
+			expire = "2284.1.1.12"
+			id = -1
+		}
+	}
+}

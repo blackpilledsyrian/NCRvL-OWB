@@ -1,0 +1,26 @@
+state={
+	id=1246
+	name="STATE_1246"
+	provinces={
+		14706 14707 14708 15032 15033 15034 15035 15037 15038 15039
+	}
+	resources = {
+		water = 2
+		energy = 2
+		circuitry = 2
+	}
+	history = {
+		victory_points = {
+			15032 5
+		}
+		victory_points = {
+			15034 2
+		}
+		buildings = {
+			infrastructure = 2
+		}
+	}
+	state_category = pastoral
+	manpower = 618
+	buildings_max_level_factor=1.000
+}

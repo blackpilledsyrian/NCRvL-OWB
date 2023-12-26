@@ -1,0 +1,29 @@
+state = {
+	id = 689
+	name = "STATE_689"
+	resources={
+		metal = 16
+	}
+
+	history={
+		victory_points = {
+			2192 15
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 2
+			#industrial_complex = 1
+			2255 = {
+				naval_base = 2
+			}
+		}
+
+	}
+
+	provinces={
+		772 778 2192 2255 7652 9393 9502 9503 9507 9548 9550 9552 11276 11277 11279 11283 11288 11289 11290 11294 11295 11297 11298 11299
+	}
+	manpower=28213
+	buildings_max_level_factor=1.000
+	state_category=town
+}

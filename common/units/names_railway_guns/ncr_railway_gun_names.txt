@@ -1,0 +1,5 @@
+RG_ncr = {
+	type = railway_gun
+	for_countries = { NCR }
+	fallback_name = "The Bear's Vengeance"
+}

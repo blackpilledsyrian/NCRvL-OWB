@@ -1,0 +1,14 @@
+state = {
+	id = 280
+	name = "STATE_280"
+	manpower = 216
+	state_category = rural
+	impassable = yes
+
+	history = {
+	}
+
+	provinces = {
+		2213 4496 4497
+	}
+}

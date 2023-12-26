@@ -1,0 +1,49 @@
+state = {
+	id = 420
+	name = "STATE_420"
+	manpower = 16716
+	state_category = large_city
+
+	resources = {
+		metal = 6
+		water = 4
+		composites = 12
+	}
+
+	history = {
+		victory_points = {
+			1963 5
+		}
+		victory_points = {
+			4436 10
+		}
+		victory_points = {
+			4447 15
+		}
+		victory_points = {
+			4449 5
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 2
+			arms_factory = 1
+			dockyard = 2
+			air_base = 1
+			radar_station = 4
+			anti_air_building = 3
+			2534 = {
+				coastal_bunker = 4
+				naval_base = 6
+			}
+			4447 = {
+				coastal_bunker = 4
+				bunker = 2
+				bunker2 = 1
+			}
+		}
+	}
+
+	provinces = {
+		1963 2534 2535 2536 2537 2538 3630 3631 4436 4437 4438 4447 4448 4449 4450
+	}
+}

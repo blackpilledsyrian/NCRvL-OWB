@@ -1,0 +1,3041 @@
+####################################################
+#         Eureka Focus Tree
+#           Written by KD, Faeelin
+#
+####################################################
+
+focus_tree = {
+	id = eureka_nf
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			original_tag = EUR
+		}
+	}
+	continuous_focus_position = { x = 0 y = 0 }
+	default = no
+
+	focus = { #Things get bad
+		id = eur_desolation
+		icon = GFX_goal_eur_bomb
+		cost = 7
+		x = 17
+		y = 0
+
+		completion_reward = {
+			country_event = nf_eureka.0
+		}
+	}
+	focus = { #Portmasters form
+		id = eur_rise_of_the_portmasters
+		icon = GFX_goal_eur_gun_bottle
+		cost = 7
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = eur_desolation
+		}
+		relative_position_id = eur_desolation
+
+		completion_reward = {
+			country_event = nf_eureka.1
+		}
+	}
+	focus = { #Mercenary role
+		id = eur_expedition_abroad
+		icon = GFX_goal_eur_enclave_helmet
+		cost = 7
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = eur_rise_of_the_portmasters
+		}
+		relative_position_id = eur_rise_of_the_portmasters
+
+		completion_reward = {
+			country_event = nf_eureka.20
+		}
+	}
+	focus = { #Army start
+		id = eur_modify_scavenging_procedures
+		icon = GFX_goal_bottlecap
+		cost = 30
+		x = -15
+		y = 1
+		prerequisite = {
+			focus = eur_expedition_abroad
+		}
+		relative_position_id = eur_expedition_abroad
+
+		completion_reward = {
+			add_manpower = 300
+			army_experience = 15
+		}
+	}
+	focus = {
+		id = eur_guns_in_bulk
+		icon = GFX_goal_generic_ammo_boxes_focus
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = eur_modify_scavenging_procedures
+		}
+		mutually_exclusive = {
+			focus = eur_guns_quickly
+		}
+		bypass = {
+			NOT = {
+				has_idea = eur_mercenary_army
+			}
+		}
+		relative_position_id = eur_modify_scavenging_procedures
+
+		completion_reward = {
+			custom_effect_tooltip = eureka_more_guns_tt
+		}
+	}
+	focus = {
+		id = eur_guns_quickly
+		icon = GFX_goal_generic_pipe_revolver
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = eur_modify_scavenging_procedures
+		}
+		mutually_exclusive = {
+			focus = eur_guns_in_bulk
+		}
+		bypass = {
+			NOT = {
+				has_idea = eur_mercenary_army
+			}
+		}
+		relative_position_id = eur_modify_scavenging_procedures
+
+		completion_reward = {
+			custom_effect_tooltip = eureka_quicker_guns_tt
+		}
+	}
+	focus = {
+		id = eur_take_it_all
+		icon = GFX_goal_ancient_wealth_2
+		cost = 30
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = eur_guns_quickly
+			focus = eur_guns_in_bulk
+		}
+		mutually_exclusive = {
+			focus = eur_rapid_repair
+		}
+		bypass = {
+			NOT = {
+				has_idea = eur_mercenary_army
+			}
+		}
+		relative_position_id = eur_guns_quickly
+
+		completion_reward = {
+			custom_effect_tooltip = eureka_more_support_tt
+		}
+	}
+	focus = {
+		id = eur_rapid_repair
+		icon = GFX_goal_NEW_Jet_Beta_is_finished
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = eur_guns_quickly
+			focus = eur_guns_in_bulk
+		}
+		mutually_exclusive = {
+			focus = eur_take_it_all
+		}
+		bypass = {
+			NOT = {
+				has_idea = eur_mercenary_army
+			}
+		}
+		relative_position_id = eur_guns_quickly
+
+		completion_reward = {
+			custom_effect_tooltip = eureka_quicker_support_tt
+		}
+	}
+	focus = {
+		id = eur_scavenger_to_general
+		icon = GFX_goal_NCR_Baron
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = eur_rapid_repair
+			focus = eur_take_it_all
+		}
+		relative_position_id = eur_rapid_repair
+
+		completion_reward = {
+			create_corps_commander = {
+				name = "Scavenger #51"
+				id = 12178
+				picture = GFX_Portrait_Raider_Generic_15
+				traits = { perceptive_trait intelligent_trait }
+				skill = 1
+				attack_skill = 3
+				defense_skill = 3
+				planning_skill = 3
+				logistics_skill = 3
+			}
+			custom_effect_tooltip = eur_scavenger_51_tt
+			hidden_effect = {
+				every_unit_leader = {
+					limit = {
+						has_id = 12178
+					}
+					set_unit_leader_flag = eureka_general
+				}
+			}
+		}
+	}
+	focus = {
+		id = eur_makeshift_power_armor
+		icon = GFX_goal_generic_pa_t51_fatman
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = eur_rapid_repair
+		}
+		available = {
+			has_completed_focus = eur_decrepit_power_armor
+		}
+		bypass = {
+			NOT = {
+				has_idea = eur_mercenary_army
+			}
+		}
+		relative_position_id = eur_rapid_repair
+
+		completion_reward = {
+			custom_effect_tooltip = eureka_more_pa_tt
+		}
+	}
+	focus = {
+		id = eur_reuse_vertibird_engines
+		icon = GFX_goal_BOS_vertibird_schematics
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = eur_take_it_all
+		}
+		available = {
+			has_completed_focus = eur_scavenge_airplanes
+		}
+		bypass = {
+			NOT = {
+				has_idea = eur_mercenary_army
+			}
+		}
+		relative_position_id = eur_take_it_all
+
+		completion_reward = {
+			custom_effect_tooltip = eureka_more_planes_tt
+		}
+	}
+	focus = {
+		id = eur_bypassed_wires
+		icon = GFX_goal_generic_bike
+		cost = 30
+		x = -2
+		y = 2
+		prerequisite = {
+			focus = eur_take_it_all
+			focus = eur_rapid_repair
+		}
+		mutually_exclusive = {
+			focus = eur_spare_tires
+		}
+		bypass = {
+			NOT = {
+				has_idea = eur_mercenary_army
+			}
+		}
+		relative_position_id = eur_rapid_repair
+
+		completion_reward = {
+			custom_effect_tooltip = eureka_quicker_bikes_tt
+		}
+	}
+	focus = {
+		id = eur_spare_tires
+		icon = GFX_goal_generic_tires
+		cost = 30
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = eur_take_it_all
+			focus = eur_rapid_repair
+		}
+		mutually_exclusive = {
+			focus = eur_bypassed_wires
+		}
+		bypass = {
+			NOT = {
+				has_idea = eur_mercenary_army
+			}
+		}
+		relative_position_id = eur_rapid_repair
+
+		completion_reward = {
+			custom_effect_tooltip = eureka_more_bikes_tt
+		}
+	}
+	focus = { #Air start
+		id = eur_study_air_designs
+		icon = GFX_goal_eur_aiplane_blueprint
+		cost = 30
+		x = -10
+		y = 1
+		prerequisite = {
+			focus = eur_expedition_abroad
+		}
+		relative_position_id = eur_expedition_abroad
+
+		completion_reward = {
+			set_technology = {
+				air_tech_level_settler = 1
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 3
+				category = air_tech_category
+			}
+		}
+	}
+	focus = {
+		id = eur_scavenge_airplanes
+		icon = GFX_goal_eur_broken_plane
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = eur_study_air_designs
+		}
+		available = {
+			has_tech = glider_tech
+		}
+		bypass = {
+			NOT = {
+				has_idea = eur_mercenary_army
+			}
+		}
+		relative_position_id = eur_study_air_designs
+
+		completion_reward = {
+			custom_effect_tooltip = eur_planes_tt
+		}
+	}
+	focus = {
+		id = eur_clear_airports
+		icon = GFX_goal_eur_airport_tower
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = eur_scavenge_airplanes
+		}
+		relative_position_id = eur_scavenge_airplanes
+
+		completion_reward = {
+			39 = {
+				add_building_construction = {
+					type = air_base
+					level = 1
+				}
+			}
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = eur_pilot_training_procedures
+		icon = GFX_goal_eur_vr_pod
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = eur_scavenge_airplanes
+		}
+		relative_position_id = eur_scavenge_airplanes
+
+		completion_reward = {
+			add_manpower = 200
+			add_ideas = eur_inexperienced_pilots
+		}
+	}
+	focus = {
+		id = eur_take_pilot_input
+		icon = GFX_goal_eur_thumbs_up_pilot
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = eur_pilot_training_procedures
+		}
+		available = {
+			has_air_experience > 74
+		}
+		relative_position_id = eur_pilot_training_procedures
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.8
+				uses = 2
+				category = air_tech_category
+			}
+		}
+	}
+	focus = {
+		id = eur_airborne_volunteers
+		icon = GFX_goal_eur_flight_helmet
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = eur_pilot_training_procedures
+		}
+		prerequisite = {
+			focus = eur_clear_airports
+		}
+		relative_position_id = eur_pilot_training_procedures
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = eur_inexperienced_pilots
+				add_idea = eur_inexperienced_pilots2
+			}
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.75
+				uses = 1
+				category = cat_air_doctrine
+			}
+		}
+	}
+	focus = {
+		id = eur_improve_plane_functionality
+		icon = GFX_goal_eur_plane_device
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = eur_airborne_volunteers
+		}
+		relative_position_id = eur_airborne_volunteers
+
+		completion_reward = {
+			air_experience = 50
+		}
+	}
+	focus = {
+		id = eur_construct_additional_runways
+		icon = GFX_goal_eur_runaway
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = eur_airborne_volunteers
+		}
+		relative_position_id = eur_airborne_volunteers
+
+		completion_reward = {
+			39 = {
+				add_building_construction = {
+					type = air_base
+					level = 3
+				}
+			}
+		}
+	}
+	focus = {
+		id = eur_ensure_trained_pilots
+		icon = GFX_goal_eur_pilot
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = eur_construct_additional_runways
+		}
+		prerequisite = {
+			focus = eur_improve_plane_functionality
+		}
+		relative_position_id = eur_construct_additional_runways
+
+		completion_reward = {
+			set_technology = {
+				air_tech_level_scientific = 1
+			}
+			swap_ideas = {
+				remove_idea = eur_inexperienced_pilots2
+				add_idea = eur_inexperienced_pilots3
+			}
+		}
+	}
+	focus = { #Contact the Shi
+		id = eur_contact_the_shi
+		icon = GFX_goal_EUR_shi_dragon
+		cost = 30
+		x = -1
+		y = 1
+		available = {
+			country_exists = SHI
+			set_temp_variable = { caps_diff = -10 }
+			caps_cost_trigger = yes
+		}
+		prerequisite = {
+			focus = eur_expedition_abroad
+		}
+		relative_position_id = eur_expedition_abroad
+
+		completion_reward = {
+			# Put an event here if you get to it. If you do, move the opinion mod into it to declutter
+			country_event = nf_eureka.26
+			set_temp_variable = {
+				caps_to_add = -10
+			}
+			add_caps = yes
+			SHI = {
+				set_temp_variable = {
+					caps_to_add = 10
+				}
+				add_caps = yes
+			}
+		}
+	}
+	focus = { #Contact the Shi
+		id = eur_seize_our_destiny
+		icon = GFX_goal_usa_radio_reform
+		cost = 30
+		x = 0
+		y = 2
+		allow_branch = {
+			has_country_flag = granite_plots
+		}
+		available = {
+			set_temp_variable = { caps_diff = -75 }
+			caps_cost_trigger = yes
+		}
+		prerequisite = {
+			focus = eur_expedition_abroad
+		}
+		relative_position_id = eur_expedition_abroad
+
+		completion_reward = {
+			add_popularity = {
+				ideology = intellectuals
+				popularity = 0.15
+			}
+			set_temp_variable = {
+				caps_to_add = -75
+			}
+			add_caps = yes
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 0
+				NOT = { EUR_has_ai_behavior_eurekaclave = yes }
+			}
+		}
+	}
+
+	focus = {
+		id = eur_salvage_operations
+		icon = GFX_goal_generic_scrap_metal
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = eur_expedition_abroad
+		}
+		relative_position_id = eur_expedition_abroad
+
+		completion_reward = {
+			add_resource = {
+				type = metal
+				amount = 8
+				state = 39
+			}
+		}
+	}
+	focus = {
+		id = eur_little_slice_paradise
+		icon = GFX_goal_food_various_fruits
+		cost = 30
+		x = 3
+		y = 1
+		prerequisite = {
+			focus = eur_expedition_abroad
+		}
+		relative_position_id = eur_expedition_abroad
+
+		completion_reward = {
+			country_event = nf_eureka.25
+		}
+	}
+	focus = {
+		id = eur_max_sec
+		icon = GFX_goal_arr_maxsec_prison_build
+		cost = 30
+		x = 6
+		y = 1
+		prerequisite = {
+			focus = eur_expedition_abroad
+		}
+		available = {
+			MXS = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = eur_expedition_abroad
+
+		completion_reward = {
+			country_event = nf_eureka.63
+		}
+	}
+	focus = {
+		id = eur_guns_germs_or_steel
+		icon = GFX_goal_enc_science
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = eur_little_slice_paradise
+		}
+		relative_position_id = eur_little_slice_paradise
+		completion_reward = {
+			country_event = nf_eureka.32
+			add_political_power = 50
+		}
+	}
+	focus = { #Hunt Advisor Unlock
+		id = eur_the_hunt_twins
+		icon = GFX_goal_eur_barons_money
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = eur_little_slice_paradise
+		}
+		relative_position_id = eur_little_slice_paradise
+
+		completion_reward = {
+			country_event = nf_eureka.6
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = eur_olivia_focus
+		icon = GFX_goal_eur_water_pump
+		cost = 30
+		x = 1
+		y = 1
+		available = {
+			has_idea = EUR_olivia_hunt_idea_token
+		}
+		mutually_exclusive = {
+			focus = eur_cordell_focus
+		}
+		prerequisite = {
+			focus = eur_the_hunt_twins
+		}
+		prerequisite = {
+			focus = eur_guns_germs_or_steel
+		}
+		mutually_exclusive = {
+			focus = eur_francis_won
+		}
+		relative_position_id = eur_the_hunt_twins
+
+		completion_reward = {
+			set_technology = {
+				habitation_tech_level_scientific = 1
+			}
+			add_political_power = 25
+			39 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+				}
+			}
+		}
+	}
+	focus = {
+		id = eur_cordell_focus
+		icon = GFX_goal_eur_gold_ore
+		cost = 30
+		x = -1
+		y = 1
+		available = {
+			has_idea = EUR_cordell_hunt_idea_token
+		}
+		mutually_exclusive = {
+			focus = eur_francis_won
+		}
+		mutually_exclusive = {
+			focus = eur_olivia_focus
+		}
+		prerequisite = {
+			focus = eur_guns_germs_or_steel
+		}
+		relative_position_id = eur_the_hunt_twins
+
+		completion_reward = {
+			set_technology = {
+				exploitation_tech_level_scientific = 1
+			}
+			add_political_power = 25
+			add_offsite_building = {
+				type = industrial_complex
+				level = 1
+			}
+			39 = {
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+	focus = {
+		id = eur_francis_won
+		icon = GFX_goal_behemoth_green
+		cost = 30
+		x = -3
+		y = 1
+		available = {
+			has_idea = francis_mutant_idea_token
+		}
+		mutually_exclusive = {
+			focus = eur_olivia_focus
+		}
+		mutually_exclusive = {
+			focus = eur_cordell_focus
+		}
+		prerequisite = {
+			focus = eur_guns_germs_or_steel
+		}
+		relative_position_id = eur_the_hunt_twins
+
+		completion_reward = {
+			set_technology = {
+				tools_tech_level_scientific = 1
+				super_mutant_behemoth = 1
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = 2
+			}
+			39 = {
+				add_extra_state_shared_building_slots = 2
+				add_resource = {
+					type = metal
+					amount = 4
+				}
+			}
+		}
+	}
+	focus = {
+		id = eur_the_growing_port
+		icon = GFX_goal_generic_construct_naval_dockyard
+		cost = 30
+		x = 20
+		y = 1
+		prerequisite = {
+			focus = eur_expedition_abroad
+		}
+		relative_position_id = eur_expedition_abroad
+
+		completion_reward = {
+			add_offsite_building = {
+				type = dockyard
+				level = 3
+			}
+			39 = {
+				add_extra_state_shared_building_slots = 3
+			}
+		}
+	}
+	focus = {
+		id = eur_sell_excess_convoys
+		icon = GFX_goal_generic_navy_battleship
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = eur_the_growing_port
+		}
+		available = {
+			has_equipment = {
+				convoy > 19
+			}
+		}
+		relative_position_id = eur_the_growing_port
+
+		completion_reward = {
+			custom_effect_tooltip = eur_remove_convoys_20_tt
+			hidden_effect = {
+				add_equipment_to_stockpile = {
+					type = convoy_1
+					amount = -20
+				}
+			}
+			set_temp_variable = {
+				caps_to_add = 30
+			}
+			add_caps = yes
+		}
+	}
+	focus = {
+		id = eur_ship_exporting_scheme
+		icon = GFX_goal_generic_navy_battleship
+		cost = 30
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = eur_sell_excess_convoys
+		}
+		relative_position_id = eur_sell_excess_convoys
+
+		completion_reward = {
+			custom_effect_tooltip = eur_export_convoys_tt
+		}
+	}
+	focus = {
+		id = eur_joint_force_drills
+		icon = GFX_goal_NCR_River_Patrols
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = eur_the_growing_port
+		}
+		relative_position_id = eur_the_growing_port
+
+		completion_reward = {
+			navy_experience = 30
+			army_experience = 15
+		}
+	}
+	focus = {
+		id = eur_prioritize_army_training
+		icon = GFX_goal_generic_boat_battleship
+		cost = 30
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = eur_the_growing_port
+		}
+		relative_position_id = eur_the_growing_port
+
+		completion_reward = {
+			custom_effect_tooltip = eur_navy_to_army_tt
+		}
+	}
+	#focus = {
+	#	id = eur_joint_force_support
+	#	icon = GFX_goal_generic_ammo_boxes_focus
+	#	cost = 30
+	#	x = 1
+	#	y = 1
+	#	prerequisite = {
+	#		focus = eur_joint_force_drills
+	#	}
+	#	prerequisite = {
+	#		focus = eur_prioritize_army_training
+	#	}
+	#	relative_position_id = eur_prioritize_army_training
+
+	#	completion_reward = {
+	#		custom_effect_tooltip = eur_attaches_tt
+	#	}
+	#}
+	focus = {
+		id = eur_mercenary_expansion
+		icon = GFX_goal_BOS_steel_cage
+		cost = 30
+		x = 15
+		y = 1
+		available = {
+			set_temp_variable = { caps_diff = -15 }
+			caps_cost_trigger = yes
+		}
+		prerequisite = {
+			focus = eur_expedition_abroad
+		}
+		relative_position_id = eur_expedition_abroad
+
+		ai_will_do = {
+			base = 20
+		}
+
+		completion_reward = {
+			set_temp_variable = {
+				caps_to_add = -15
+			}
+			add_caps = yes
+		}
+	}
+	focus = {
+		id = eur_northern_expansion
+		icon = GFX_goal_BRK_broken_no_longer
+		cost = 30
+		x = 0
+		y = 1
+		available = {
+			set_temp_variable = { caps_diff = -10 }
+			caps_cost_trigger = yes
+		}
+		prerequisite = {
+			focus = eur_mercenary_expansion
+		}
+		relative_position_id = eur_mercenary_expansion
+
+		ai_will_do = {
+			base = 20
+		}
+
+		completion_reward = {
+			set_temp_variable = {
+				caps_to_add = -10
+			}
+			add_caps = yes
+			army_experience = 5
+			custom_effect_tooltip = eur_northern_expansion_tt
+			hidden_effect = {
+				add_to_array = { volunteer_targets = 492 }
+				add_to_array = { volunteer_targets = 398 }
+				add_to_array = { volunteer_targets = 557 }
+				add_to_array = { volunteer_targets = 177 }
+				add_to_array = { volunteer_targets = 125 }
+				add_to_array = { volunteer_targets = 338 }
+			}
+		}
+	}
+	focus = {
+		id = eur_mexican_expedition
+		icon = GFX_goal_flag_mexico
+		cost = 30
+		x = 2
+		y = 1
+		available = {
+			set_temp_variable = { caps_diff = -10 }
+			caps_cost_trigger = yes
+		}
+		prerequisite = {
+			focus = eur_mercenary_expansion
+		}
+		relative_position_id = eur_mercenary_expansion
+
+		ai_will_do = {
+			base = 20
+		}
+
+		completion_reward = {
+			set_temp_variable = {
+				caps_to_add = -10
+			}
+			add_caps = yes
+			army_experience = 5
+			custom_effect_tooltip = eur_mexican_expedition_tt
+			hidden_effect = {
+				add_to_array = { volunteer_targets = 22 }
+				add_to_array = { volunteer_targets = 683 }
+				add_to_array = { volunteer_targets = 739 }
+				add_to_array = { volunteer_targets = 780 }
+				add_to_array = { volunteer_targets = 800 }
+				add_to_array = { volunteer_targets = 829 }
+			}
+		}
+	}
+	focus = {
+		id = eur_south_of_honduras
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		x = 0
+		y = 2
+		available = {
+			set_temp_variable = { caps_diff = -60 }
+			caps_cost_trigger = yes
+		}
+		prerequisite = {
+			focus = eur_mexican_expedition
+		}
+		relative_position_id = eur_mexican_expedition
+
+		ai_will_do = {
+			base = 20
+		}
+
+		completion_reward = {
+			set_temp_variable = {
+				caps_to_add = -60
+			}
+			add_caps = yes
+			army_experience = 30
+			add_ideas = eur_honduras_veterans
+		}
+	}
+	focus = {
+		id = eur_from_north_to_south
+		icon = GFX_goal_generic_amphibious_assault
+		cost = 30
+		x = -1
+		y = 1
+		available = {
+			set_temp_variable = { caps_diff = -10 }
+			caps_cost_trigger = yes
+		}
+		prerequisite = {
+			focus = eur_mexican_expedition
+			focus = eur_northern_expansion
+		}
+		relative_position_id = eur_mexican_expedition
+
+		ai_will_do = {
+			base = 20
+		}
+
+		completion_reward = {
+			set_temp_variable = {
+				caps_to_add = -10
+			}
+			add_caps = yes
+			army_experience = 20
+		}
+	}
+	focus = {
+		id = eur_river_convoys
+		icon = GFX_goal_NCR_Riverbank
+		cost = 30
+		x = -2
+		y = 1
+		available = {
+			set_temp_variable = { caps_diff = -10 }
+			caps_cost_trigger = yes
+		}
+		prerequisite = {
+			focus = eur_mercenary_expansion
+		}
+		relative_position_id = eur_mercenary_expansion
+
+		ai_will_do = {
+			base = 20
+		}
+
+		completion_reward = {
+			set_temp_variable = {
+				caps_to_add = -10
+			}
+			add_caps = yes
+			army_experience = 5
+			custom_effect_tooltip = eur_river_convoys_tt
+			hidden_effect = {
+				add_to_array = { volunteer_targets = 467 }
+				add_to_array = { volunteer_targets = 251 }
+				add_to_array = { volunteer_targets = 37 }
+				add_to_array = { volunteer_targets = 493 }
+				add_to_array = { volunteer_targets = 437 }
+				add_to_array = { volunteer_targets = 235 }
+			}
+		}
+	}
+	focus = {
+		id = eur_lower_snake_expansion
+		icon = GFX_goal_HEA_focus_political_action
+		cost = 30
+		x = 0
+		y = 1
+		available = {
+			set_temp_variable = { caps_diff = -10 }
+			caps_cost_trigger = yes
+		}
+		prerequisite = {
+			focus = eur_river_convoys
+		}
+		relative_position_id = eur_river_convoys
+
+		ai_will_do = {
+			base = 20
+		}
+
+		completion_reward = {
+			set_temp_variable = {
+				caps_to_add = -10
+			}
+			add_caps = yes
+			army_experience = 5
+			custom_effect_tooltip = eur_lower_snake_tt
+			hidden_effect = {
+				add_to_array = { volunteer_targets = 314 }
+				add_to_array = { volunteer_targets = 51 }
+				add_to_array = { volunteer_targets = 346 }
+				add_to_array = { volunteer_targets = 52 }
+				add_to_array = { volunteer_targets = 172 }
+				add_to_array = { volunteer_targets = 298 }
+				add_to_array = { volunteer_targets = 447 }
+			}
+		}
+	}
+	focus = {
+		id = eur_identifying_threats
+		icon = GFX_goal_eur_attack_arrows
+		cost = 30
+		x = -4
+		y = 1
+		prerequisite = {
+			focus = eur_expedition_abroad
+		}
+		relative_position_id = eur_expedition_abroad
+
+		completion_reward = {
+			army_experience = 20
+		}
+		allow_branch = {
+			NOT = {
+				OR = {
+					has_country_flag = granite_plots
+					has_country_flag = conquered_navarro
+				}
+			}
+		}
+	}
+	# focus = { #Fourways influence  # This focus exists twice, which will boink stuff. Idk which one you wanna keep, so I am just commenting this one out - Alduin
+	# 	id = eur_fourways_crisis
+	# 	icon = GFX_goal_generic_brahmin_trade
+	# 	cost = 30
+	# 	x = 0
+	# 	y = 1
+	# 	available = {
+	# 		ARR = {
+	# 			has_country_flag = fourways_insecure
+	# 		}
+	# 	}
+	# 	prerequisite = {
+	# 		focus = eur_identifying_threats
+	# 	}
+	# 	relative_position_id = eur_identifying_threats
+
+	# 	completion_reward = {
+	# 		country_event = {
+	# 			id = nf_eureka.7
+	# 		}
+	# 	}
+	# }
+	focus = {
+		id = eur_the_fearsome_bear
+		icon = GFX_goal_eur_ncr_bear
+		cost = 30
+		x = 2
+		y = 1
+		prerequisite = {
+			focus = eur_identifying_threats
+		}
+		available = {
+			date > 2277.6.1
+		}
+		relative_position_id = eur_identifying_threats
+
+		completion_reward = {
+			hidden_effect = {
+				39 = {
+					add_building_construction = {
+						type = bunker
+						level = 2
+						instant_build = yes
+						province = 1191
+					}
+					add_building_construction = {
+						type = bunker
+						level = 2
+						instant_build = yes
+						province = 4923
+					}
+				}
+			}
+			custom_effect_tooltip = eur_ncr_fortify_tt
+		}
+	}
+	focus = {
+		id = eur_join_ncr
+		icon = GFX_goal_eur_ncr_flag_vb
+		cost = 30
+		x = 0
+		y = 1
+		available = {
+			is_subject = no
+		}
+		prerequisite = {
+			focus = eur_the_fearsome_bear
+		}
+		available = {
+			NOT = { has_war_with = ARR }
+			NOT = { has_war_with = NCR }
+		}
+		relative_position_id = eur_the_fearsome_bear
+		ai_will_do = {
+			factor = 70
+		}
+
+		completion_reward = {
+			NCR = {
+				add_opinion_modifier = {
+					target = EUR
+					modifier = brk_woo_whi
+				}
+			}
+			ask_to_join_new_california = yes
+		}
+	}
+	focus = {
+		id = eur_benefit_from_ncr_oversight
+		icon = GFX_goal_eur_ncr_eur_flag
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = eur_join_ncr
+		}
+		available = {
+			is_new_california_member = yes
+		}
+		relative_position_id = eur_join_ncr
+
+		completion_reward = {
+			add_ideas = eur_legion_training
+			add_offsite_building = {
+				type = arms_factory
+				level = 3
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = 3
+			}
+			add_manpower = 1000
+			set_cosmetic_tag = EUR_ncrterritories
+			hidden_effect = {
+				every_country = {
+					limit = {
+						OR = {
+							is_neighbor_of = NCR
+							is_neighbor_of = EUR
+							news_is_west_tag = yes
+						}
+					}
+					news_event = { id = news_cali.13 hours = 6 random_hours = 3 }
+				}
+			}
+		}
+	}
+	focus = {
+		id = eur_the_growing_tribe
+		icon = GFX_goal_eur_arr_vault_frame
+		cost = 30
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = eur_identifying_threats
+		}
+		available = {
+			date > 2277.6.1
+		}
+		relative_position_id = eur_identifying_threats
+
+		completion_reward = {
+			hidden_effect = {
+				39 = {
+					add_building_construction = {
+						type = bunker
+						level = 2
+						instant_build = yes
+						province = 1754
+					}
+					add_building_construction = {
+						type = bunker
+						level = 2
+						instant_build = yes
+						province = 7058
+					}
+					add_building_construction = {
+						type = bunker
+						level = 2
+						instant_build = yes
+						province = 1215
+					}
+					add_building_construction = {
+						type = bunker
+						level = 2
+						instant_build = yes
+						province = 4920
+					}
+				}
+			}
+			custom_effect_tooltip = eur_arr_fortify_tt
+		}
+	}
+	focus = {
+		id = eur_pursuing_partnership
+		icon = GFX_goal_eur_arr_peace
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = eur_the_growing_tribe
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = eur_arr_good_karma_tt
+				OR = {
+					AND = {
+						ARR = {
+							has_government = people
+							check_variable = { nagor_karma_num > 5 }
+						}
+					}
+					AND = {
+						ARR = {
+							has_government = elites
+							check_variable = { chitsa_karma_num > 5 }
+						}
+					}
+					AND = {
+						ARR = {
+							has_government = intellectuals
+							check_variable = { dimitri_karma_num > 5 }
+						}
+					}
+					AND = {
+						ARR = {
+							has_government = ruler
+							check_variable = { dimitri_karma_num > 5 }
+						}
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = eur_no_arr_crisis_tt
+				NOT = { ARR = { has_country_flag = eureka_insecure } }
+			}
+			NOT = { has_completed_focus = eur_arr_readying_for_war }
+		}
+		relative_position_id = eur_the_growing_tribe
+
+		completion_reward = {
+			custom_effect_tooltip = eur_arr_pursue_partnership_tt
+			ARR = {
+				country_event = {
+					id = nf_eureka.11
+				}
+			}
+		}
+	}
+	focus = {
+		id = eur_arr_readying_for_war
+		icon = GFX_goal_eur_arr_war
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = eur_the_growing_tribe
+		}
+		available = {
+			NOT = { has_non_aggression_pact_with = ARR }
+			NOT = { is_puppet_of = ARR }
+		}
+		relative_position_id = eur_the_growing_tribe
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = eur_down_with_arroyo
+				days = 280
+			}
+			custom_effect_tooltip = eur_emergency_divisions_tt
+			hidden_effect = {
+				if = {
+					limit = {
+						NOT = { has_template = "Eureka Irregulars" }
+					}
+					division_template = {
+						name = "Eureka Irregulars"
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+						}
+						priority = 0
+					}
+				}
+				39 = {
+					create_unit = {
+						division = "name = \"Eureka Irregulars\" division_template = \"Eureka Irregulars\" start_experience_factor = 0.8 start_equipment_factor = 1.0"
+						owner = EUR
+					}
+					create_unit = {
+						division = "name = \"Eureka Irregulars\" division_template = \"Eureka Irregulars\" start_experience_factor = 0.8 start_equipment_factor = 1.0"
+						owner = EUR
+					}
+					create_unit = {
+						division = "name = \"Eureka Irregulars\" division_template = \"Eureka Irregulars\" start_experience_factor = 0.2 start_equipment_factor = 1.0"
+						owner = EUR
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 0
+				EUR_has_ai_behavior_portmasters_arroyo = yes
+				OR = {
+					ARR_has_ai_behavior_good_integrated = yes
+					ARR_has_ai_behavior_good_independent = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = eur_begin_army_reforms
+		icon = GFX_goal_eur_helmet_chevron_1
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = eur_join_ncr
+			focus = eur_arr_readying_for_war
+		}
+		relative_position_id = eur_join_ncr
+
+		completion_reward = {
+			remove_ideas = eur_mercenary_army
+			custom_effect_tooltip = eur_begin_reforms_tt
+			clr_country_flag = scavenging_disabled
+		}
+	}
+	focus = {
+		id = eur_finish_army_reforms
+		icon = GFX_goal_eur_helmet_chevron_2
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = eur_begin_army_reforms
+		}
+		relative_position_id = eur_begin_army_reforms
+
+		completion_reward = {
+			country_lock_all_division_template = no
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 2
+				category = cat_land_doctrine
+			}
+		}
+	}
+	focus = {
+		id = eur_finalize_a_standing_army
+		icon = GFX_goal_eur_helmet_chevron_3
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = eur_finish_army_reforms
+		}
+		relative_position_id = eur_finish_army_reforms
+
+		completion_reward = {
+			add_ideas = eur_standing_army
+			set_rule = {
+				can_send_volunteers = no
+			}
+			custom_effect_tooltip = eur_no_more_mercs_tt
+		}
+	}
+	focus = {
+		id = eur_begin_expansionism
+		icon = GFX_goal_eur_helmet_chevron_4
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = eur_finalize_a_standing_army
+		}
+		relative_position_id = eur_finalize_a_standing_army
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = eur_standing_army
+				add_idea = eur_standing_army2
+			}
+		}
+	}
+	focus = {
+		id = eur_begin_local_development
+		icon = GFX_goal_generic_welcome_home
+		cost = 30
+		x = 3
+		y = 1
+		prerequisite = {
+			focus = eur_francis_won
+			focus = eur_cordell_focus
+			focus = eur_olivia_focus
+		}
+		relative_position_id = eur_francis_won
+		completion_reward = {
+			add_offsite_building = {
+					type = industrial_complex
+					level = 3
+				}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 3
+			}
+		}
+	}
+	focus = {
+		id = eur_begin_weapons_production
+		icon = GFX_goal_NCR_Gun_Runner_Deals
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = eur_francis_won
+			focus = eur_cordell_focus
+			focus = eur_olivia_focus
+		}
+		relative_position_id = eur_francis_won
+
+		completion_reward = {
+			add_offsite_building= {
+					type = arms_factory
+					level = 3
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 3
+			}
+		}
+	}
+	focus = {
+		id = eur_begin_local_development2
+		icon = GFX_goal_fallout_tool
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = eur_begin_local_development
+			focus = eur_begin_weapons_production
+		}
+		mutually_exclusive = {
+			focus = eur_begin_weapons_production2
+		}
+		relative_position_id = eur_begin_local_development
+
+		completion_reward = {
+			add_offsite_building = {
+					type = industrial_complex
+					level = 4
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 4
+			}
+		}
+	}
+	focus = {
+		id = eur_begin_weapons_production2
+		icon = GFX_goal_generic_workshop
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = eur_begin_local_development
+			focus = eur_begin_weapons_production
+		}
+		mutually_exclusive = {
+			focus = eur_begin_local_development2
+		}
+		relative_position_id = eur_begin_weapons_production
+
+		completion_reward = {
+			add_offsite_building = {
+					type = arms_factory
+					level = 4
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 4
+			}
+		}
+	}
+	focus = {
+		id = eur_begin_local_development3
+		icon = GFX_goal_generic_brahmin_trade
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = eur_begin_local_development2
+			focus = eur_begin_weapons_production2
+		}
+		mutually_exclusive = {
+			focus = eur_begin_weapons_production3
+		}
+		relative_position_id = eur_begin_local_development2
+
+		completion_reward = {
+			add_offsite_building = {
+				type = industrial_complex
+				level = 5
+			}
+			39 = {
+				hidden_effect = {
+					set_temp_variable = { new_node_target = THIS.id }
+					add_to_temp_array = { new_node_trade_array = 211 }
+					add_to_temp_array = { new_node_trade_array = 525 }
+					add_to_temp_array = { new_node_trade_array = 554 }
+					add_to_temp_array = { new_node_trade_array = 210 }
+					add_to_temp_array = { new_node_trade_array = 551 }
+					add_to_temp_array = { new_node_trade_array = 478 }
+					set_temp_variable = { new_node_map_x = 2165 }
+					set_temp_variable = { new_node_map_y = 960 }
+				}
+				create_map_node = yes
+			}
+			39 = {
+				add_extra_state_shared_building_slots = 5
+			}
+		}
+	}
+	focus = {
+		id = eur_begin_weapons_production3
+		icon = GFX_goal_enclave_chip
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = eur_begin_local_development2
+			focus = eur_begin_weapons_production2
+		}
+		mutually_exclusive = {
+			focus = eur_begin_local_development3
+		}
+		relative_position_id = eur_begin_weapons_production2
+
+		completion_reward = {
+			add_offsite_building = {
+				type = arms_factory
+				level = 4
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 4
+			}
+			add_to_variable = { EUR_suspicion = 1 }
+			custom_effect_tooltip = eur_suspicion_increase_tt
+		}
+	}
+	focus = {
+		id = eur_provoke_unrest_in_packers
+		icon = GFX_goal_eur_burn_packers
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = eur_arr_readying_for_war
+		}
+		available = {
+			NOT = { 182 = { is_core_of = ARR } }
+			NOT = { is_puppet_of = ARR }
+		}
+		relative_position_id = eur_arr_readying_for_war
+
+		completion_reward = {
+			182 = {
+				add_resistance = 30
+			}
+			ARR = {
+				add_manpower = -125
+			}
+		}
+	}
+	focus = {
+		id = eur_invade_umbra
+		icon = GFX_goal_eur_attack_umbra
+		cost = 30
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = eur_arr_readying_for_war
+		}
+		available = {
+			NOT = { has_war_with = ARR }
+			NOT = { has_non_aggression_pact_with = ARR }
+			NOT = { is_puppet_of = ARR }
+		}
+		relative_position_id = eur_arr_readying_for_war
+
+		completion_reward = {
+			declare_war_on = {
+				target = ARR
+				type = annex_everything
+			}
+		}
+	}
+	focus = {
+		id = eur_our_role_in_oregon
+		icon = GFX_goal_generic_bb_gun
+		cost = 30
+		x = 9
+		y = 1
+		prerequisite = {
+			focus = eur_expedition_abroad
+		}
+		relative_position_id = eur_expedition_abroad
+
+		completion_reward = {
+			set_temp_variable = {
+				caps_to_add = 10
+			}
+			add_caps = yes
+		}
+	}
+	focus = {
+		id = eur_lessons_from_old_enemies
+		icon = GFX_goal_eur_mirelurk
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = eur_our_role_in_oregon
+		}
+		available = {
+			has_completed_focus = eur_river_convoys
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		relative_position_id = eur_our_role_in_oregon
+
+		completion_reward = {
+			add_ideas = lurk_shelled_warriors_1
+		}
+	}
+	focus = {
+		id = eur_umbra_tribals
+		icon = GFX_goal_tribal_generic
+		cost = 30
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = eur_our_role_in_oregon
+		}
+		available = {
+			has_completed_focus = eur_river_convoys
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		relative_position_id = eur_our_role_in_oregon
+
+		completion_reward = {
+			every_unit_leader = {
+				add_attack = 2
+			}
+		}
+	}
+	focus = {
+		id = eur_baja_bonanza
+		icon = GFX_goal_NCR_Baja
+		cost = 30
+		x = 2
+		y = 1
+		prerequisite = {
+			focus = eur_our_role_in_oregon
+		}
+		available = {
+			has_completed_focus = eur_mexican_expedition
+		}
+		relative_position_id = eur_our_role_in_oregon
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		completion_reward = {
+			set_temp_variable = { caps_to_add = 20 }
+			add_caps = yes
+		}
+	}
+	focus = {
+		id = eur_investing_our_gains
+		icon = GFX_icon_caps
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = eur_baja_bonanza
+			focus = eur_umbra_tribals
+			focus = eur_lessons_from_old_enemies
+			focus = eur_decrepit_power_armor
+		}
+		relative_position_id = eur_umbra_tribals
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		completion_reward = {
+			add_offsite_building = {
+				type = industrial_complex
+				level = 2
+			}
+			39 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+	focus = {
+		id = eur_fellow_fighters
+		icon = GFX_goal_RRG_ffi
+		cost = 30
+		x = 2
+		y = 1
+		prerequisite = {
+			focus = eur_investing_our_gains
+		}
+		available = {
+			has_completed_focus = eur_mexican_expedition
+		}
+		relative_position_id = eur_investing_our_gains
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = cat_land_doctrine
+			}
+		}
+	}
+	focus = {
+		id = eur_friends_in_the_sun
+		icon = GFX_goal_generic_GDH_shield
+		cost = 30
+		x = 4
+		y = 1
+		prerequisite = {
+			focus = eur_investing_our_gains
+		}
+		available = {
+			has_completed_focus = eur_mexican_expedition
+		}
+		relative_position_id = eur_investing_our_gains
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		completion_reward = {
+			set_temp_variable = { caps_to_add = 30 }
+			add_caps = yes
+			# if you get around to it, event here
+		}
+	}
+	focus = {
+		id = eur_land_of_the_giants
+		icon = GFX_goal_CAF_coffee_cups
+		cost = 30
+		x = 3
+		y = 2
+		prerequisite = {
+			focus = eur_investing_our_gains
+		}
+		available = {
+			has_completed_focus = eur_mexican_expedition
+		}
+		relative_position_id = eur_investing_our_gains
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = agriculture_tech
+			}
+		}
+	}
+	focus = {
+		id = eur_raider_refugees
+		icon = GFX_goal_generic_emote_help
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = eur_investing_our_gains
+		}
+		available = {
+			has_completed_focus = eur_northern_expansion
+		}
+		relative_position_id = eur_investing_our_gains
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		completion_reward = {
+			add_manpower = 1000
+			army_experience = 10
+			# if you get around to it, event here
+		}
+	}
+	focus = {
+		id = eur_wanderers_welcome
+		icon = GFX_goal_generic_cities_focus
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = eur_raider_refugees
+		}
+		relative_position_id = eur_raider_refugees
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = eur_open_doors
+				days = 365
+			}
+		}
+	}
+	focus = {
+		id = eur_timberline_scouts
+		icon = GFX_goal_oregon_deal_with_timberline
+		cost = 30
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = eur_investing_our_gains
+		}
+		available = {
+			has_completed_focus = eur_lower_snake_expansion
+		}
+		relative_position_id = eur_investing_our_gains
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		completion_reward = {
+			add_ideas = eur_timber_scouts
+		}
+	}
+	focus = {
+		id = eur_battling_the_mutants
+		icon = GFX_goal_NEW_enslave_warren
+		cost = 30
+		x = -4
+		y = 1
+		prerequisite = {
+			focus = eur_investing_our_gains
+		}
+		available = {
+			has_completed_focus = eur_lower_snake_expansion
+		}
+		relative_position_id = eur_investing_our_gains
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		completion_reward = {
+			add_manpower = 750
+			add_offsite_building = {
+				type = arms_factory
+				level = 2
+			}
+			39 = {
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+	focus = {
+		id = eur_people_of_the_steam
+		icon = GFX_goal_HEA_focus_addres_militarism
+		cost = 30
+		x = -3
+		y = 2
+		prerequisite = {
+			focus = eur_investing_our_gains
+		}
+		available = {
+			has_completed_focus = eur_lower_snake_expansion
+		}
+		relative_position_id = eur_investing_our_gains
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		completion_reward = {
+			add_ideas = eur_steam_powered_weapons
+			# if you get around to it, event here
+		}
+	}
+	focus = {
+		id = eur_decrepit_power_armor
+		icon = GFX_goal_generic_power_armour_x01
+		cost = 30
+		x = -2
+		y = 2
+		prerequisite = {
+			focus = eur_our_role_in_oregon
+		}
+		available = {
+			has_completed_focus = eur_northern_expansion
+		}
+		relative_position_id = eur_our_role_in_oregon
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = eur_power_armor_tt
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = power_armor_tech_category
+			}
+		}
+	}
+	focus = {
+		id = eur_power_armor_training
+		icon = GFX_goal_generic_pa_51_camo
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = eur_decrepit_power_armor
+		}
+		relative_position_id =  eur_decrepit_power_armor
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = eur_pa_divisions_tt
+			hidden_effect = {
+				division_template = {
+					name = "31st Mechanized"
+					regiments = {
+						power_armour = { x = 0 y = 0 }
+						power_armour = { x = 0 y = 1 }
+						power_armour = { x = 1 y = 0 }
+						power_armour = { x = 1 y = 1 }
+						power_armour = { x = 2 y = 0 }
+						power_armour = { x = 2 y = 1 }
+					}
+					support = {
+						demolitions_support = { x = 0 y = 0 }
+					}
+				}
+			}
+			add_ideas = EUR_power_armor_specialists
+		}
+	}
+	focus = { #Fourways influence
+		id = eur_fourways_crisis
+		icon = GFX_goal_eur_fourways
+		cost = 30
+		x = 0
+		y = 1
+		available = {
+			ARR = {
+				has_country_flag = fourways_insecure
+			}
+		}
+		prerequisite = {
+			focus = eur_identifying_threats
+		}
+		relative_position_id = eur_identifying_threats
+
+		completion_reward = {
+			country_event = {
+				id = nf_eureka.7
+			}
+		}
+	}
+	focus = {
+		id = eur_new_management
+		icon = GFX_goal_enclave_approval
+		cost = 30
+		x = -4
+		y = 1
+		prerequisite = {
+			focus = eur_expedition_abroad
+		}
+		relative_position_id = eur_expedition_abroad
+		available = {
+			set_temp_variable = { caps_diff = -25 }
+			caps_cost_trigger = yes
+		}
+		completion_reward = {
+			set_temp_variable = {
+				caps_to_add = -25
+			}
+			add_caps = yes
+			news_event = nf_eureka.41
+
+		}
+		allow_branch = {
+			has_country_flag = conquered_navarro
+		}
+	}
+	focus = {
+		id = eur_refugees_rig
+		icon = GFX_goal_SOK_slave_collar
+		cost = 30
+		x = 2
+		y = 1
+		prerequisite = {
+			focus = eur_new_management
+		}
+		relative_position_id = eur_new_management
+		available = {
+			if = {
+				limit = {
+					NOT = { is_ai = yes }
+				}
+				set_temp_variable = { caps_diff = -25 }
+				caps_cost_trigger = yes
+			}
+		}
+		completion_reward = {
+			set_temp_variable = { caps_to_add = -25 }
+			add_caps = yes
+			every_owned_state = {
+				limit = {
+					is_core_of = NAT
+				}
+				add_core_of = EUR
+			}
+			country_event = nf_eureka.33
+			add_to_variable = { EUR_suspicion = 2 }
+			custom_effect_tooltip = eur_suspicion_increase_tt
+		}
+	}
+
+	focus = {
+		id = eur_scientists_to_navarro
+		icon = GFX_goal_uoa_holotape
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = eur_refugees_rig
+		}
+		relative_position_id = eur_refugees_rig
+		available = {
+			if = {
+				limit = {
+					NOT = { is_ai = yes }
+				}
+				set_temp_variable = { caps_diff = -25 }
+				caps_cost_trigger = yes
+			}
+		}
+		completion_reward = {
+			set_temp_variable = { caps_to_add = -25 }
+			add_caps = yes
+			country_event = nf_eureka.42
+			hidden_effect = {
+				news_event = { id = nf_eureka.34 days = 10 }
+			}
+			add_to_variable = { EUR_suspicion = 1 }
+			custom_effect_tooltip = eur_suspicion_increase_tt
+		}
+	}
+	focus = {
+		id = eur_workshops_of_navarro
+		icon = GFX_goal_generic_vault_tec_workshop
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = eur_refugees_rig
+		}
+		relative_position_id = eur_refugees_rig
+		available = {
+			if = {
+				limit = {
+					NOT = { is_ai = yes }
+				}
+				set_temp_variable = { caps_diff = -25 }
+				caps_cost_trigger = yes
+			}
+		}
+		completion_reward = {
+			set_temp_variable = { caps_to_add = -25 }
+			add_caps = yes
+			add_offsite_building = {
+				type = arms_factory
+				level = 2
+			}
+			39 = {
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+
+
+	focus = {
+		id = eur_new_generation
+		icon = GFX_goal_enc_officer
+		cost = 30
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = eur_new_management
+		}
+		relative_position_id = eur_new_management
+		available = {
+			if = {
+				limit = {
+					NOT = { is_ai = yes }
+				}
+				set_temp_variable = { caps_diff = -25 }
+				caps_cost_trigger = yes
+			}
+		}
+		completion_reward = {
+			set_temp_variable = { caps_to_add = -25 }
+			add_caps = yes
+			remove_ideas = eur_mercenary_army
+			custom_effect_tooltip = eur_begin_reforms_tt
+			add_to_variable = { EUR_suspicion = 1 }
+			custom_effect_tooltip = eur_suspicion_increase_tt
+			custom_effect_tooltip = eur_new_generation_tt
+			clr_country_flag = scavenging_disabled
+			hidden_effect = {
+				set_country_flag = eur_new_generation_flag
+				add_advisor_role = {
+					character = EUR_tom_barrow
+					advisor = {
+						slot = cultural_advisor
+						idea_token = EUR_tom_barrow_idea_token
+						ledger = army
+						traits = {
+							EUR_rig_database
+						}
+						cost = 100
+						ai_will_do = {
+							factor = 10
+						}
+					}
+				}
+				add_advisor_role = {
+					character = EUR_lisa_tess
+					advisor = {
+					slot = cultural_advisor
+					idea_token = EUR_lisa_tess_idea_token
+						traits = {
+							EUR_just_business
+						}
+						cost = 100
+						ai_will_do = {
+							factor = 10
+						}
+					}
+				}
+				add_advisor_role = {
+					character = EUR_morgan_heath
+					advisor = {
+						slot = cultural_advisor
+						idea_token = EUR_morgan_heath_idea_token
+						ledger = army
+						traits = {
+							EUR_like_me_papa
+						}
+						cost = 100
+						ai_will_do = {
+							factor = 10
+						}
+					}
+				}
+				add_advisor_role = {
+					character = EUR_david_orell
+					advisor = {
+						slot = economic_advisor
+						idea_token = EUR_david_orell_idea_token
+						ledger = army
+						traits = {
+							EUR_old_ways_new_days
+						}
+						cost = 100
+						ai_will_do = {
+							factor = 10
+						}
+					}
+				}
+				add_advisor_role = {
+					character = EUR_helen_bellings
+					advisor = {
+						slot = economic_advisor
+						idea_token = EUR_helen_bellings_idea_token
+						ledger = army
+						traits = {
+							EUR_runs_in_blood
+						}
+						cost = 100
+						ai_will_do = {
+							factor = 10
+						}
+					}
+				}
+				add_advisor_role = {
+					character = EUR_george_jackson
+					advisor = {
+						slot = economic_advisor
+						idea_token = EUR_george_jackson_idea_token
+						ledger = army
+						traits = {
+							EUR_bad_memories
+						}
+						cost = 100
+						ai_will_do = {
+							factor = 10
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = eur_power_armor_specialization
+		icon = GFX_goal_enclave_power_armor_lame
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = eur_new_generation
+		}
+		relative_position_id = eur_new_generation
+		available = {
+			if = {
+				limit = {
+					NOT = { is_ai = yes }
+				}
+				set_temp_variable = { caps_diff = -25 }
+				caps_cost_trigger = yes
+			}
+		}
+		completion_reward = {
+			set_temp_variable = { caps_to_add = -25 }
+			add_caps = yes
+			add_tech_bonus = {
+				bonus = 0.5
+				ahead_reduction = 2
+				uses = 2
+				category = power_armor_tech_category
+			}
+			custom_effect_tooltip = eur_power_armor_specialization_tt
+		}
+	}
+	focus = {
+		id = eur_brahmin_ranches
+		icon = GFX_goal_generic_creature_brahmin
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = eur_new_management
+		}
+		relative_position_id = eur_new_management
+		completion_reward = {
+			set_temp_variable = {
+				caps_to_add = 120
+			}
+			add_timed_idea = {
+				idea = eur_land_reform
+				days = 365
+			}
+			add_caps = yes
+		}
+	}
+	focus = {
+		id = eur_plasma_grenades
+		icon = GFX_enclave_van_graff
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = eur_new_generation
+		}
+		relative_position_id = eur_new_generation
+		available = {
+			if = {
+				limit = {
+					NOT = { is_ai = yes }
+				}
+				set_temp_variable = { caps_diff = -25 }
+				caps_cost_trigger = yes
+			}
+		}
+		completion_reward = {
+			set_temp_variable = { caps_to_add = -25 }
+			add_caps = yes
+			add_tech_bonus = {
+				bonus = 0.5
+				ahead_reduction = 2
+				uses = 2
+				category = support_tech_category
+			}
+			custom_effect_tooltip = eur_plasma_grenades_tt
+		}
+	}
+	focus = {
+		id = eur_power_armor_specialization1
+		icon = GFX_goal_enclave_looking
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = eur_power_armor_specialization
+		}
+		prerequisite = {
+			focus = eur_plasma_grenades
+		}
+
+		relative_position_id = eur_power_armor_specialization
+		available = {
+			if = {
+				limit = {
+					NOT = { is_ai = yes }
+				}
+				set_temp_variable = { caps_diff = -25 }
+				caps_cost_trigger = yes
+			}
+		}
+		completion_reward = {
+			set_temp_variable = { caps_to_add = -25 }
+			add_caps = yes
+			country_lock_all_division_template = no
+			custom_effect_tooltip = eur_power_armor_specialization1_tt
+		}
+	}
+	focus = {
+		id = eureka_vertibirds
+		icon = GFX_goal_generic_vertibird_winterized
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = eur_power_armor_specialization1
+		}
+		prerequisite = {
+			focus = eur_take_pilot_input
+		}
+		relative_position_id = eur_power_armor_specialization1
+		available = {
+			if = {
+				limit = {
+					NOT = { is_ai = yes }
+				}
+				set_temp_variable = { caps_diff = -25 }
+				caps_cost_trigger = yes
+			}
+		}
+		completion_reward = {
+			set_temp_variable = { caps_to_add = -25 }
+			add_caps = yes
+			set_technology = {
+				air_tech_level_scientific = 1
+				vertibird_unlock_tech = 1
+			}
+			add_to_variable = { EUR_suspicion = 1 }
+			custom_effect_tooltip = eur_suspicion_increase_tt
+			custom_effect_tooltip = eureka_vertibirds_tt
+		}
+	}
+
+	focus = {
+		id = eur_packing_defenses
+		icon = GFX_goal_enclave_mutants
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = eur_scientists_to_navarro
+		}
+		prerequisite = {
+			focus = eur_plasma_grenades
+		}
+		available = {
+			date > 2277.1.1
+		}
+		bypass = {
+			PAC = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = PAC
+		will_lead_to_war_with = ARR
+
+		relative_position_id = eur_plasma_grenades
+		completion_reward = {
+			PAC = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+			ARR = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+
+
+	focus = {
+		id = eur_revenge_baby
+		icon = GFX_goal_enclave_arroyo_conquest
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = eur_packing_defenses
+		}
+		prerequisite = {
+			focus = eur_power_armor_specialization1
+		}
+		available = {
+			ARR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = eur_packing_defenses
+		completion_reward = {
+			country_event = nf_eureka.37
+		}
+	}
+
+
+	focus = {
+		id = eur_miners_redding
+		icon = GFX_goal_ancient_wealth_2
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = eur_workshops_of_navarro
+		}
+		prerequisite = {
+			focus = eur_francis_won
+			focus = eur_cordell_focus
+			focus = eur_olivia_focus
+		}
+		relative_position_id = eur_workshops_of_navarro
+		completion_reward = {
+			NCR = {
+				country_event = nf_eureka.38
+			}
+		}
+	}
+
+	focus = {
+		id = eur_infrastructure_development
+		icon = GFX_goal_generic_road_construction
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = eur_workshops_of_navarro
+		}
+		prerequisite = {
+			focus = eur_scientists_to_navarro
+		}
+		relative_position_id = eur_workshops_of_navarro
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					is_core_of = NAT
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+
+				}
+			}
+		}
+	}
+	focus = {
+		id = eur_plasma_guns
+		icon = GFX_goal_generic_what_is_plasma_anyway
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = eur_miners_redding
+		}
+		prerequisite = {
+			focus = eur_infrastructure_development
+		}
+		relative_position_id = eur_miners_redding
+		available = {
+			if = {
+				limit = {
+					NOT = { is_ai = yes }
+				}
+				set_temp_variable = { caps_diff = -25 }
+				caps_cost_trigger = yes
+			}
+		}
+		completion_reward = {
+			set_temp_variable = { caps_to_add = -25 }
+			add_caps = yes
+			set_technology = {
+				plasma_unlock_tech = 1
+				infantry_tech_level_scientific = 1
+			}
+			add_tech_bonus = {
+				bonus = 0.75
+				ahead_reduction = 2
+				uses = 1
+				category = plasma_weaponry_tech_category
+			}
+			add_to_variable = { EUR_suspicion = 1 }
+			custom_effect_tooltip = eur_suspicion_increase_tt
+		}
+	}
+	focus = {
+		id = eur_awsome_power_armor
+		icon = GFX_goal_enclave_apa_cool
+		cost = 30
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = eur_revenge_baby
+		}
+		prerequisite = {
+			focus = eureka_vertibirds
+		}
+		available = {
+			has_government = intellectuals
+		}
+		relative_position_id = eur_revenge_baby
+		completion_reward = {
+			set_technology = {
+				enclave_pa_unlock_tech = 1
+
+			}
+			add_to_variable = { EUR_suspicion = 1 }
+			custom_effect_tooltip = eur_suspicion_increase_tt
+		}
+	}
+
+
+	focus = {
+		id = eu_army_conscription
+		icon = GFX_goal_hubologist
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = eur_packing_defenses
+		}
+		prerequisite = {
+			focus = eur_infrastructure_development
+		}
+		bypass = {
+			SHI = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = SHI
+		relative_position_id = eur_packing_defenses
+		completion_reward = {
+			SHI = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = eur_whacha_gonna_do
+		icon = GFX_goal_generic_focus_magazine_gunsandbullets_gun_laws
+		cost = 30
+		x = -1
+		y = 1
+		available = {
+			OR = {
+				SHI = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+				SHI = {
+					exists = no
+				}
+			}
+		}
+		prerequisite = {
+			focus = eur_plasma_guns
+		}
+		prerequisite = {
+			focus = eu_army_conscription
+		}
+		prerequisite = {
+			focus = eur_revenge_baby
+		}
+		relative_position_id = eu_army_conscription
+		completion_reward = {
+			custom_effect_tooltip = eur_whacha_gonna_do_tt
+			if  = {
+				limit = {
+					intellectuals > party_popularity@elites
+					intellectuals > party_popularity@ruler
+					intellectuals > party_popularity@people
+				}
+				news_event = nf_eureka.29
+			}
+			if  = {
+				limit = {
+					elites > party_popularity@intellectuals
+					elites > party_popularity@ruler
+					elites > party_popularity@people
+				}
+				news_event = nf_eureka.44
+			}
+			if  = {
+				limit = {
+					ruler > party_popularity@elites
+					ruler > party_popularity@intellectuals
+					ruler > party_popularity@people
+				}
+				news_event = nf_eureka.45
+			}
+			if  = {
+				limit = {
+					people > party_popularity@intellectuals
+					people > party_popularity@ruler
+					people > party_popularity@elites
+				}
+				news_event = nf_eureka.46
+			}
+		}
+	}
+	focus = {
+		id = eur_enclave_strikes_back
+		icon = GFX_goal_enclave_ncr_war
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = eur_whacha_gonna_do
+		}
+		available = {
+			has_government = intellectuals
+		}
+		bypass = {
+			NCR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = NCR
+		relative_position_id = eur_whacha_gonna_do
+		completion_reward = {
+			NCR = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = eur_portmaters_goals
+		icon = GFX_goal_PLS_Gai_Expand_Port
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = eur_whacha_gonna_do
+		}
+		available = {
+			has_government = elites
+		}
+		bypass = {
+			VIC = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			TVR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = eur_whacha_gonna_do
+		completion_reward = {
+			VIC = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+			TVR = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = eur_gift_from_the_ones_above
+		icon = GFX_goal_generic_nuke
+		cost = 30
+		x = -3
+		y = 1
+		prerequisite = {
+			focus = eur_whacha_gonna_do
+		}
+		available = {
+			has_government = people
+		}
+		relative_position_id = eur_whacha_gonna_do
+		completion_reward = {
+			add_nuclear_bombs = 2
+			custom_effect_tooltip = eur_hubologist_path_tt
+			set_country_flag = eur_hub_unlock_focuses
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+	focus = {
+		id = eur_hubbels_telescope
+		icon = GFX_goal_eur_telescope
+		cost = 30
+		x = -1
+		y = 1
+		allow_branch = {
+			has_country_flag = eur_hub_unlock_focuses
+		}
+		prerequisite = {
+			focus = eur_gift_from_the_ones_above
+		}
+		relative_position_id = eur_gift_from_the_ones_above
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = eur_the_mega_church
+		icon = GFX_goal_eur_hubology
+		cost = 30
+		x = 1
+		y = 1
+		allow_branch = {
+			has_country_flag = eur_hub_unlock_focuses
+		}
+		prerequisite = {
+			focus = eur_gift_from_the_ones_above
+		}
+		available = {
+			owns_state = 163
+		}
+		relative_position_id = eur_gift_from_the_ones_above
+		completion_reward = {
+			add_state_core = 163
+			add_state_core = 511
+			add_state_core = 474
+			ROOT = {
+				set_capital = {
+					state = 163
+					remember_old_capital = no
+				}
+			}
+			163 = {
+				set_state_name = "Starfather's Church"
+				hidden_effect = {
+					set_province_name = {
+						id = 2422
+						name = "Starfather's Church"
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = eur_eastern_pilgrimage
+		icon = GFX_goal_lac_east
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = eur_the_mega_church
+		}
+		relative_position_id = eur_the_mega_church
+		completion_reward = {
+			add_ideas = eureka_hubologists
+		}
+	}
+	focus = {
+		id = eur_jumbo_jet
+		icon = GFX_goal_imo_plane
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = eur_hubbels_telescope
+		}
+		relative_position_id = eur_hubbels_telescope
+		completion_reward = {
+			add_ideas = eureka_skyyachts
+		}
+	}
+	focus = {
+		id = eur_operation_cinderella
+		icon = GFX_KHA_focus_ncr_support
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = eur_hubbels_telescope
+			focus = eur_the_mega_church
+		}
+		relative_position_id = eur_hubbels_telescope
+		completion_reward = {
+		custom_effect_tooltip = eur_hubologist_claims_tt
+			hidden_effect = {
+				every_state = {
+					limit = {
+						OR = {
+							region = 53
+							region = 11
+							region = 59
+							region = 58
+						}
+					}
+					add_claim_by = ROOT
+				}
+			}
+		}
+	}
+	focus = {
+		id = eur_starfathers_realm
+		icon = GFX_goal_eur_cthulu
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = eur_operation_cinderella
+		}
+		prerequisite = {
+			focus = eur_jumbo_jet
+		}
+		prerequisite = {
+			focus = eur_eastern_pilgrimage
+		}
+		relative_position_id = eur_operation_cinderella
+		completion_reward = {
+			set_cosmetic_tag = EUR_starfather
+			if = {
+				limit = {
+					NCR = {
+						has_completed_focus = ncr_allgood_address
+					}
+				}
+				ask_to_join_new_california = yes
+			}
+		}
+	}
+	focus = {
+		id = ncr_regulator_friends
+		icon = GFX_goal_BOS_tesla_cannon
+		cost = 30
+		x = 3
+		y = 1
+		prerequisite = {
+			focus = eur_whacha_gonna_do
+		}
+		available = {
+			has_government = ruler
+		}
+		relative_position_id = eur_whacha_gonna_do
+		completion_reward = {
+			#custom_effect_tooltip = ncr_regulator_friends_tt
+			NCR = {
+				set_temp_variable = { BOS_tension_to_add = 10 }
+				bos_change_tension = yes
+			}
+			BOS = {
+				set_temp_variable = { BOS_tension_to_add = 10 }
+				bos_change_tension = yes
+			}
+		}
+	}
+
+	focus = {
+		id = eur_regulator_rail_guns
+		icon = GFX_goal_generic_gauss_prototype
+		cost = 30
+		x = 2
+		y = 1
+		prerequisite = {
+			focus = eur_plasma_guns
+		}
+		prerequisite = {
+			focus = eu_army_conscription
+		}
+		prerequisite = {
+			focus = eur_revenge_baby
+		}
+		available = {
+			has_government = ruler
+		}
+		relative_position_id = eu_army_conscription
+		completion_reward = {
+			set_technology = { gauss_unlock_tech = 1 }
+		}
+	}
+
+	focus = {
+		id = eur_enclave_technicians
+		icon = GFX_goal_NEW_Enclave_Technician
+		cost = 30
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = eur_study_air_designs
+		}
+		prerequisite = {
+			focus = eur_modify_scavenging_procedures
+		}
+
+		relative_position_id = eur_study_air_designs
+		completion_reward = {
+			add_ideas = enclave_salvagers
+			add_to_variable = { EUR_suspicion = 1 }
+			custom_effect_tooltip = eur_suspicion_increase_tt
+		}
+	}
+}

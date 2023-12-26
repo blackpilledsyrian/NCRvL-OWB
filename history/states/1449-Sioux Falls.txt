@@ -1,0 +1,16 @@
+state={
+	id=1449
+	name="STATE_1449"
+	provinces={
+		21107 21110 21114
+	}
+	history = {
+		victory_points = {
+			21114 10
+		}
+	}
+	manpower=100
+	state_category=rural
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

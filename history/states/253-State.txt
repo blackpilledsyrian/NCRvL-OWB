@@ -1,0 +1,30 @@
+state = {
+	id = 253
+	name = "STATE_253"
+	manpower = 55235
+	state_category = prewar_megacity
+
+	resources = {
+		water = 12
+		circuitry = 4
+		energy = 10
+	}
+
+	history = {
+		owner = NCR
+		add_core_of = NCR
+		victory_points = {
+			8814 50
+		}
+		buildings = {
+			infrastructure = 5
+			arms_factory = 3
+			industrial_complex = 5
+			radar_station = 1
+		}
+	}
+
+	provinces = {
+		989 3280 3284 3285 3286 8814 8819 8824 8825 8827 8830 8831 8832 8833 8839 8840 8841 8842 8845
+	}
+}

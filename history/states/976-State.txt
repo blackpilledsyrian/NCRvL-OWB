@@ -1,0 +1,23 @@
+state={
+	id=976
+	name="STATE_976"
+	history={
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 2
+		}
+		victory_points = {
+			8505 10
+		}
+		victory_points = {
+			3945 5
+		}
+	}
+	provinces={
+		8505 12400 8534 8507 8527 4000 2087 8508 8506 12401 12404 2488 3943 3945
+	}
+	manpower=6487
+	buildings_max_level_factor=1.000
+	state_category=large_town
+}

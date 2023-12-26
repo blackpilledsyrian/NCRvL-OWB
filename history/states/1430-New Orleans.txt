@@ -1,0 +1,37 @@
+state = {
+	id = 1430
+	name = "STATE_1430"
+	manpower = 21950
+	state_category = megalopolis
+
+	resources = {
+		water = 8
+		metal = 18
+		energy = 12
+		composites = 5
+	}
+
+	history = {
+		owner = TPM
+		add_core_of = TPM
+		buildings = {
+			infrastructure = 5
+			arms_factory = 2
+			industrial_complex = 2
+			air_base = 2
+			16445 = { naval_base = 1 }
+			16460 = { naval_base = 4 }
+			16449 = { naval_base = 5 }
+		}
+		victory_points = {
+			16452 25
+		}
+		victory_points = {
+			16455 25
+		}
+	}
+
+	provinces = {
+		16452 16449 16450 16445 16750 16460 791 16459 16749 16456 16453 16455 16454
+	}
+}

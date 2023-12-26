@@ -1,0 +1,20 @@
+state = {
+	id = 658
+	name = "STATE_658"
+	history={
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 2
+		}
+		victory_points = {
+			672 5
+		}
+	}
+	provinces={
+		1 672 2588 441 8646 59 2225 656 8642 2467 2365 2552 2551
+	}
+	manpower = 1330
+	state_category = town
+	buildings_max_level_factor=1.000
+}

@@ -1,0 +1,21 @@
+state = {
+	id = 814
+	name = "STATE_814"
+	manpower = 37022
+	state_category = shanty
+
+	history = {
+		victory_points = {
+			10156 20
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			10101 = { naval_base = 3 }
+		}
+	}
+
+	provinces = {
+		10032 10033 10038 10064 10083 10087 10101 10117 10120 10128 10156 10174 10198 10232 10245 10307
+	}
+}

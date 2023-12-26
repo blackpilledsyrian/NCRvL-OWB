@@ -1,0 +1,594 @@
+﻿add_namespace = nf_two
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_two.1" }
+	id = nf_two.1
+	title = nf_two.1.t
+	desc = nf_two.1.d
+	picture = GFX_event_sub_generic_city_2
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_two.1.a
+
+		add_ideas = two_tucson_sci
+	}
+
+	option = {
+		name = nf_two.1.b
+
+		add_ideas = two_tucson_road
+		add_equipment_to_stockpile = {
+			type = heavy_motorized_equipment_2
+			amount = 150
+			producer = USA
+		}
+	}
+
+	option = {
+		name = nf_two.1.c
+
+		add_ideas = two_tucson_arms
+		add_equipment_to_stockpile = {
+			type = gauss_equipment_2
+			amount = 100
+			producer = USA
+		}
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_two.2" }
+	id = nf_two.2
+	title = nf_two.2.t
+	desc = nf_two.2.d
+	picture = GFX_event_CES_camp_1
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_two.2.a
+
+		add_stability = 0.1
+	}
+	option = {
+		name = nf_two.2.b
+
+		add_war_support = 0.1
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_two.3" }
+	id = nf_two.3
+	title = nf_two.3.t
+	desc = nf_two.3.d
+	#picture =
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_two.3.a # Priest
+
+		add_ideas = two_demon_priest
+	}
+
+	option = {
+		name = nf_two.3.b # Mechanic
+
+		add_ideas = two_demon_mechanic
+	}
+
+	option = {
+		name = nf_two.3.c # Racer
+
+		add_ideas = two_demon_racer
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_two.4" }
+	id = nf_two.4
+	title = nf_two.4.t
+	desc = nf_two.4.d
+	picture = GFX_event_legion_scouts
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_two.4.a # wealthy
+
+		516 = {
+			set_temp_variable = { development_to_add = 1 }
+			add_development_to_node = yes
+		}
+		set_temp_variable = { caps_to_add = 250 }
+		add_caps = yes
+	}
+	option = {
+		name = nf_two.4.b # Powerful
+
+		set_technology = {
+			chariot_vehicle_tech = 1
+		}
+	}
+	option = {
+		name = nf_two.4.c # Civilized
+
+		set_technology = {
+			support_tech_level_settler = 1
+		}
+	}
+}
+
+country_event = { #CES, give us land pls
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_two.5" }
+	id = nf_two.5
+	title = nf_two.5.t
+	desc = nf_two.5.d
+	picture = GFX_event_CES_caesar
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_two.5.a
+
+		every_owned_state = {
+			limit = {
+				is_core_of = COW
+			}
+			remove_core_of = CES
+			remove_claim_by = CES
+			TWO = { transfer_state = PREV }
+		}
+	}
+
+	option = {
+		name = nf_two.5.b
+
+		TWO = {
+			unlock_national_focus = two_cowboy_ces
+			unlock_national_focus = two_rule_cow
+			unlock_national_focus = two_arizona_pacifiing
+			unlock_national_focus = two_cores_cow
+		}
+	}
+}
+
+country_event = { # War at COW for CES
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_two.6" }
+	id = nf_two.6
+	title = nf_two.6.t
+	desc = nf_two.6.d
+	picture = GFX_event_CES_caesar
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_two.6.a #yes
+
+		TWO = {
+			add_state_claim = 2
+			add_state_claim = 444
+			add_state_claim = 330
+			add_state_claim = 335
+			declare_war_on = {
+				target = COW
+				type = annex_everything
+			}
+		}
+
+		ai_chance = {
+			base = 100
+		}
+
+		TWO = { set_country_flag = two_ces_allowed_cow }
+	}
+
+	option = {
+		name = nf_two.6.b # no
+
+		hidden_effect = {
+			unlock_national_focus = two_arizona_rangers
+			unlock_national_focus = two_cores_cow
+			unlock_national_focus = two_rule_cow
+		}
+	}
+}
+
+country_event = { #ranger problem
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_two.7" }
+	id = nf_two.7
+	title = nf_two.7.t
+	desc = nf_two.7.d
+	picture = GFX_event_desert_rangers_marching
+
+	is_triggered_only = yes
+
+	immediate = {
+		random_owned_state = {
+			limit = {
+				is_core_of = COW
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+			add_resistance = 10
+		}
+		random_owned_state = {
+			limit = {
+				is_core_of = COW
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 2
+			}
+			add_resistance = 20
+		}
+		random_owned_state = {
+			limit = {
+				is_core_of = COW
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 2
+			}
+			add_resistance = 20
+		}
+	}
+
+	option = {
+		name = nf_two.7.a
+	}
+
+	option = {
+		name = nf_two.7.b
+	}
+}
+
+country_event = { #wargoal on Gente
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_two.9" }
+	id = nf_two.9
+	title = nf_two.9.t
+	desc = nf_two.9.d
+	picture = GFX_event_CES_caesar
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_two.9.a #yes
+
+		TWO = {
+			set_country_flag = two_ces_allow_gente_annexation
+		}
+		CES = {
+			remove_from_faction = GDH
+		}
+
+		ai_chance = {
+			base = 0
+
+			modifier = {
+				add = 100
+				GDH = {
+					NOT = { is_in_faction_with = CES }
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nf_two.9.b # no
+
+		TWO = {
+			set_country_flag = two_gdh_friendship
+		}
+
+
+		ai_chance = {
+			base = 0
+
+			modifier = {
+				add = 100
+				GDH = {
+					is_in_faction_with = CES
+				}
+			}
+		}
+	}
+}
+
+country_event = { # Gente Trade
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_two.10" }
+	id = nf_two.10
+	title = nf_two.10.t
+	desc = nf_two.10.d
+	picture = GFX_event_trader
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_two.10.a
+	}
+}
+
+country_event = { # Gente mask
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_two.11" }
+	id = nf_two.11
+	title = nf_two.11.t
+	desc = nf_two.11.d
+	picture = GFX_event_gente_de_sol_villa
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_two.11.a
+		event_target:FFI_suneater_target = {
+			set_nationality = TWO
+		}
+	}
+}
+
+news_event = { # Great Race preparations
+	id = nf_two.20
+	title = nf_two.20.t
+	desc = nf_two.20.d
+	picture = GFX_event_sub_generic_post_war_construction_site
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_two.20.a
+	}
+}
+
+# Race
+news_event = {
+	id = nf_two.90
+	title = nf_two.90.t
+	desc = nf_two.90.d
+	picture = GFX_event_twosun_car
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_two.90.a
+	}
+}
+
+country_event = { # invitation
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_two.91" }
+	id = nf_two.91
+	title = nf_two.91.t
+	desc = nf_two.91.d
+	#picture =
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_two.91.a
+
+		set_country_flag = great_race_participant
+	}
+
+	option = {
+		name = nf_two.91.b
+
+		set_country_flag = great_race_participant
+		set_country_flag = great_race_dont_show
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_two.101" }
+	id = nf_two.101
+	title = nf_two.101.t
+	desc = nf_two.101.d
+	picture = "[GetRacePicture]"
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_two.101.a
+	}
+}
+
+news_event = { # winner event
+	id = nf_two.102
+	title = nf_two.102.t
+	desc = nf_two.102.d
+	picture = GFX_event_radio_new_vegas
+
+	major = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			great_race_calculate_winner = yes
+		}
+	}
+
+	option = {
+		name = nf_two.102.a
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_two.105" }
+	id = nf_two.105
+	#picture =
+
+	is_triggered_only = yes
+
+	hidden = yes
+
+	immediate = {
+		great_race_race = yes
+	}
+}
+
+# Legion civil war
+news_event = {
+	id = nf_two.300
+	title = nf_two.300.t
+	desc = nf_two.300.d
+	picture = GFX_event_caesar_death
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_two.300.a
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_two.301" }
+	id = nf_two.301
+	title = nf_two.301.t
+	desc = nf_two.301.d
+	#picture =
+
+	is_triggered_only = yes
+
+	option = {
+		trigger = {
+			country_exists = CES
+			CES = {
+				NOT = {
+					has_country_flag = TWO_rejected
+				}
+			}
+			CES = {
+				NOT = {
+					has_country_leader = {
+						character = CES_malpais
+					}
+				}
+			}
+		}
+		name = nf_two.301.a
+		CES = {
+			country_event = { id = nf_two.302 }
+		}
+	}
+
+	option = {
+		trigger = {
+			always = no # screw Malpais, he burned our temle
+			country_exists = MAL
+			MAL = {
+				NOT = {
+					has_country_flag = TWO_rejected
+				}
+			}
+		}
+		name = nf_two.301.b
+		MAL = {
+			country_event = { id = nf_two.302 }
+		}
+	}
+	option = {
+		trigger = {
+			country_exists = LUC
+			LUC = {
+				NOT = {
+					has_country_flag = TWO_rejected
+				}
+			}
+		}
+		name = nf_two.301.c
+		LUC = {
+			country_event = { id = nf_two.302 }
+		}
+	}
+	option = {
+		trigger = {
+			country_exists = AUR
+			AUR = {
+				NOT = {
+					has_country_flag = TWO_rejected
+				}
+			}
+		}
+		name = nf_two.301.ar
+		AUR = {
+			country_event = { id = nf_two.302 }
+		}
+	}
+	option = { # alone
+		name = nf_two.301.e
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_two.302" }
+	id = nf_two.302
+	title = nf_two.302.t
+	desc = nf_two.302.d
+	picture = GFX_event_CES_vulpes
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_two.302.a
+		if = {
+			limit = {
+				can_use_autonomy_system = yes
+			}
+			ROOT = {
+				set_autonomy = {
+					target = TWO
+					autonomy_state = autonomy_client_tribe
+				}
+			}
+		}
+		if = {
+			limit = {
+				can_use_autonomy_system = no
+			}
+			ROOT = {
+				TWO = {
+					become_puppet = yes
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				NOT = { tag = CES }
+			}
+			CES = {
+				country_event = {
+					id = nf_two.303
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nf_two.302.b
+		hidden_effect = {
+			set_country_flag = TWO_rejected
+		}
+		TWO = {
+			country_event = { id = nf_two.301 }
+		}
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_two.303" }
+	id = nf_two.303
+	title = nf_two.303.t
+	desc = nf_two.303.d
+	#picture =
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_two.303.a
+	}
+}

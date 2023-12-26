@@ -1,0 +1,21 @@
+state = {
+	id = 558
+	name = "STATE_558"
+	manpower = 10550
+	state_category = rural
+
+	history = {
+		owner = SHI
+		add_core_of = SHI
+		victory_points = {
+			2615 5
+		}
+		buildings = {
+			infrastructure = 2
+		}
+	}
+
+	provinces = {
+		957 2270 2614 2615 3297 4601 4602 4603 4604 4723 4724 4725 5045
+	}
+}

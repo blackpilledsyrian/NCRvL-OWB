@@ -1,0 +1,16 @@
+state={
+	id=968
+	name="STATE_968"
+	history={
+		buildings = {
+			infrastructure = 1
+		}
+	}
+	impassable = yes
+	provinces={
+		4578
+	}
+	manpower=126
+	buildings_max_level_factor=1.000
+	state_category=wasteland
+}

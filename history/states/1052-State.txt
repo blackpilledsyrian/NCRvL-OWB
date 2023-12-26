@@ -1,0 +1,27 @@
+state = {
+	id = 1052
+	name = "STATE_1052"
+	manpower = 2876
+	state_category = rural
+
+	resources = {
+		energy = 8
+		metal = 4
+	}
+
+	history = {
+		victory_points = {
+			12623 5 #Nerfed from 20, @McGebe
+		}
+		victory_points = {
+			12609 3
+		}
+		buildings = {
+			infrastructure = 3 #Nerfed from 5, @McGebe
+		}
+	}
+
+	provinces = {
+		12623 12617 12601 12600 12619 12629 12605 12616 12628 12622 12609
+	}
+}

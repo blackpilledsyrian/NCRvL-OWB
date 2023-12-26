@@ -1,0 +1,419 @@
+﻿l_english:
+ # Categories
+
+  category_army:0 "Army"
+  category_front_line:0 "Frontline Platoons"
+  category_demolitions:0 "Demolitions"
+  category_fireteams:0 "Fireteams"
+  category_anti_tank:0 "Anti-tank"
+  category_robots:0 "Robots"
+  category_front_line_robots:0 "Frontline Robots"
+  category_cnc_robots:0 "CnC Robots"
+  category_mutants:0 "Mutants"
+  category_super_mutants:0 "Super Mutants"
+  category_super_mutant_infantry:0 "Super Mutant Infantry"
+  category_special_forces:0 "Special Forces"
+  category_infantry_and_special_forces:0 "Infantry and Special Forces"
+  category_light_special_forces:0 "Light Special Forces"
+  category_power_armour:0 "Heavy Special Forces"
+  category_infantry:0 "Infantry"
+  category_militia:0 "Locals"
+  category_standard_infantry:0 "Standard Infantry"
+  category_leg_infantry:0 "Walking Infantry"
+  category_weapon_infantry:0 "Weapon Infantry"
+  category_vehicles:0 "Vehicles"
+  category_support:0 "Support Units"
+  category_combat_support:0 "Fighting Support Units"
+  category_non_combat_support:0 "Non Combat Support Units"
+  category_medical_support:0 "Medical Support Units"
+  category_recon_support:0 "Recon Support Units"
+  category_logistics_support:0 "Logistics Support Units"
+  category_maintenance_support:0 "Maintenance Support Units"
+  category_behemoth:0 "Behemoths"
+  mobile:0 "Mobile"
+  infantry:0 "Infantry"
+  support:0 "Support"
+  special_forces_group:0 "Special Forces Group"
+
+
+  category_air_unit:0 "All Aircraft"
+  category_fighter:0 "Fighter"
+  category_light_air:0 "Light Aircraft"
+  category_cas:0 "Close Air Support"
+  category_transport:0 "Cargo Aircraft"
+  category_heavy_air:0 "Heavy Aircraft"
+  category_bomber:0 "Bombers"
+  category_strat_bomber:0 "Strategic Bombers"
+  category_blimp:0 "Airships"
+  category_spotter_plane:0 "Spotter Aircraft"
+  category_screen_ship:0 "Screen Ships"
+  category_capital_ship:0 "Capital Ships"
+  category_carrier_ship:0 "Carrier Ships"
+
+  category_all_infantry:0 "All Infantry & Motorized"
+
+ # Groups (Division designer categories)
+  group_robot_group_title:0 "Robot Platoons"
+  group_mutant_group_title:0 "Mutant Platoons"
+  group_special_forces_group_title:0 "Special Platoons"
+
+ # Infantry
+  Infantry:0 "Infantry Platoon"
+  Infantry_short:0 "Infantry"
+  Infantry_desc:0 ""
+
+ # Infantry
+  heavy_infantry:0 "Enforcers"
+  heavy_infantry_short:0 "Enforcers"
+  heavy_infantry_desc:0 ""
+
+  dog_infantry:0 "Warhound Platoon"
+  dog_infantry_short:0 "Warhounds"
+  dog_infantry_desc:0 "Let slip the dogs of war"
+
+  spec_ops:0 "Special Ops Platoon"
+  spec_ops_short:0 "Spec Ops"
+  spec_ops_desc:0 ""
+
+  militia:0 "Militia Platoon"
+  militia_short:0 "Militia"
+  militia_desc:0 ""
+
+  police_infantry:0 "Lawkeeper Platoon"
+  police_infantry_short:0 "Lawkeepers"
+  police_infantry_desc:0 ""
+
+  fireteam_infantry:0 "Fireteam Platoon"
+  fireteam_infantry_short:0 "Fireteam"
+  fireteam_infantry_desc:0 ""
+
+  demolitions_infantry:0 "Demolitions Platoon"
+  demolitions_infantry_short:0 "Demolitions"
+  demolitions_infantry_desc:0 ""
+
+  anti_tank_infantry:0 "Anti-tank Platoon"
+  anti_tank_infantry_short:0 "Anti-tank"
+  anti_tank_infantry_desc:0 ""
+
+  gary_unit:0 "Gary Horde"
+  gary_unit_short:0 "GARY"
+  gary_unit_desc:0 ""
+
+  ghoul_paratrooper:0 "Airborne Ghoul Infantry"
+  ghoul_paratrooper_short:0 "Airborne"
+  ghoul_paratrooper_desc:0 ""
+
+  super_mutant_nightkin_infantry:0 "Nightkin Infantry"
+  super_mutant_nightkin_infantry_short:0 "Nightkin"
+  super_mutant_nightkin_infantry_desc:0 "The nightkin were an elite warrior caste in the Master's super mutant army and the apex of his creation of super mutants."
+
+  forward_firebase_support:0 "Forward Firebase"
+  forward_firebase_support_short:0 "Firebase"
+  forward_firebase_support_desc:0 "Reinforced, semi-mobile positions that will make it a lot easier to hold the line."
+
+  behemoth:0 "Behemoth"
+  behemoth_short:0 "Behemoth"
+  behemoth_desc:0 ""
+
+  power_armour:0 "Power Armour Platoon"
+  power_armour_short:0 "Power Armour"
+  power_armour_desc:0 "A unit of infantry equipped with power armour. Their armour can provide an enormous advantage in combat by adding more resilience to soft attacks. The cost of producing such armour increases the cost of infantry units but can provide much better use of manpower resources."
+
+  power_armour_fireteam_infantry:0 "Powered Fireteam Platoon"
+  power_armour_fireteam_infantry_short:0 "PA Fireteam"
+  power_armour_fireteam_infantry_desc:0 ""
+
+  power_armour_demolitions_infantry:0 "Powered Demolitions Platoon"
+  power_armour_demolitions_infantry_short:0 "PA Demolitions"
+  power_armour_demolitions_infantry_desc:0 ""
+
+  ghoul_infantry:0 "Ghoul Infantry Platoon"
+  ghoul_infantry_short:0 "Ghoul Infantry"
+  ghoul_infantry_desc:0 "A group of intelligent ghoul soldiers, much more resistant to the harsh reality of the wasteland than normal humans due to their prolonged exposure to radiation."
+
+  super_mutant_infantry:0 "Super Mutant Infantry Platoon"
+  super_mutant_infantry_short:0 "Super Mutants"
+  super_mutant_infantry_desc:0 "Super mutants, while usually not as smart as their human counterparts, are much stronger and resilient due to their larger, more powerful frame. In contrast to normal infantry however an access to FEV is needed to produce these hulking soldiers."
+
+  super_mutant_aux_infantry:0 "Super Mutant Auxiliary Platoon"
+  super_mutant_aux_infantry_short:0 "Super Mutants"
+  super_mutant_aux_infantry_desc:0 "Super mutants, while usually not as smart as their human counterparts, are much stronger and resilient due to their larger, more powerful frame. In contrast to normal infantry however an access to FEV is needed to produce these hulking soldiers."
+
+
+  molerat_infantry:0 "Molerat Cohort"
+  molerat_infantry_short:0 "Molerats"
+  molerat_infantry_desc:0 "One of the buggers might not be dangerous. But what about twenty? Or a hundred?"
+  mirelurk_infantry:0 "Mirelurk Platoon"
+  mirelurk_infantry_short:0 "Lurkers"
+  mirelurk_infantry_desc:0 "Tamed Mirelurks, ready to fight and die for their queen."
+
+  cybernetic_support:0 "Cybernetic Implants"
+  cybernetic_support_desc:0 "With the right kind of technology we can surpass human limits! Our soldiers will be harder, better, faster and stronger then our simple organic foes!"
+
+  plant_support:0 "Monstrous Plants"
+  plant_support_desc:0 "Home grown bio-warriors will give our troops a huge advantage, assuming that we can fight in lands fertile enough to plant them."
+
+ # Motorized/Mechanized
+  motorized_heavy_infantry:0 "Motorized Enforcers"
+  motorized_heavy_infantry_short:0 "Mobile Enforcers"
+  motorized_heavy_infantry_desc:0 ""
+  motorized_fireteam:0 "Motorized Fireteams"
+  motorized_fireteam_short:0 "Mobile Fireteams"
+  motorized_fireteam_desc:0 ""
+  motorized_demoteam:0 "Motorized Demolitions"
+  motorized_demoteam_short:0 "Mobile Demolitions"
+  motorized_demoteam_desc:0 ""
+  motorized_anti_tank:0 "Motorized Anti-tank"
+  motorized_anti_tank_short:0 "Mobile Anti-tank"
+  motorized_anti_tank_desc:0 ""
+
+ # tanks
+  tank:0 "Tank Platoon"
+  tank_short:0 "Tanks"
+  tank_desc:0 "Heavily armed and armoured tanks will plough through any soft targets foolish enough to stand in their way."
+
+ # Planes
+  spotter_plane:0 "Recon Aircraft"
+  spotter_plane_short:0 "Recon"
+  spotter_plane_desc:0 ""
+  fighter:0 "Fighter Plane"
+  fighter_short:0 "Fighter"
+  fighter_desc:0 ""
+  car_fighter:0 "Carrier Fighter"
+  car_fighter_short:0 "Carrier Fighter"
+  car_fighter_desc:0 ""
+  hev_fighter:0 "Heavy Fighter"
+  hev_fighter_short:0 "Heavy Fighter"
+  hev_fighter_desc:0 ""
+  long_fighter:0 "Long Range Fighter"
+  long_fighter_short:0 "Long Range Fighter"
+  long_fighter_desc:0 ""
+  cas:0 "Close Air Support"
+  cas_short:0 "CAS"
+  cas_desc:0 ""
+  hev_cas:0 "Heavy Cas Plane"
+  hev_cas_short:0 "Heavy Cas Plane"
+  hev_cas_desc:0 ""
+  car_cas:0 "Carrier Cas Plane"
+  car_cas_short:0 "Carrier Cas Plane"
+  car_cas_desc:0 ""
+  long_cas:0 "Long Range Cas Plane"
+  long_cas_short:0 "Long Range Cas Plane"
+  long_cas_desc:0 ""
+  transport_plane:0 "Cargo Plane"
+  transport_plane_short:0 "Cargo Plane"
+  transport_plane_desc:0 ""
+  blimp_bomber:0 "Airship"
+  blimp_bomber_short:0 "Airship"
+  blimp_bomber_desc:0 ""
+  ground_blimp_bomber:0 "Support Airship"
+  ground_blimp_bomber_short:0 "Support Airship"
+  ground_blimp_bomber_desc:0 ""
+  air_blimp:0 "Tactical Air Coverage Blimp"
+  air_blimp_short:0 "Tactical Air Coverage Blimp"
+  air_blimp_desc:0 ""
+  cheap_blimp:0 "Light Zeppelin"
+  cheap_blimp_short:0 "Light Zeppelin"
+  cheap_blimp_desc:0 ""
+  strat_bomber:0 "Strategic Bomber"
+  strat_bomber_short:0 "Heavy Bomber"
+  strat_bomber_desc:0 ""
+  long_strategic_bomber:0 "Long Range Bomber"
+  long_strategic_bomber_short:0 "Long Range Bomber"
+  long_strategic_bomber_desc:0 ""
+  hev_strategic_bomber:0 "Heavy Turboprop Bomber"
+  hev_strategic_bomber_short:0 "Heavy Turboprop Bomber"
+  hev_strategic_bomber_desc:0 ""
+  nav_strategic_bomber:0 "Torpedo Bomber"
+  nav_strategic_bomber_short:0 "Torpedo Bomber"
+  nav_strategic_bomber_desc:0 ""
+  payload_glider:0 "Payload Gliders"
+  payload_glider_short:0 "Bomb Gliders"
+  payload_glider_desc:0 ""
+  chaff_glider:0 "Barrage Balloons"
+  chaff_glider_short:0 "Barrage Balloons"
+  chaff_glider_desc:0 ""
+
+ # Robots
+  support_robot:0 "Support Robot Platoon"
+  support_robot_short:0 "Support Robots"
+  support_robot_desc:0 "Lightly armoured and armed robots put into service as a combat unit. With a focus on supporting roles."
+
+  combat_robot:0 "Combat Robot Platoon"
+  combat_robot_short:0 "Combat Robots"
+  combat_robot_desc:0 "Heavily armoured and armed robots put into service as a combat unit."
+
+  security_robot:0 "Security Robot Platoon"
+  security_robot_short:0 "Security Robots"
+  security_robot_desc:0 "Intermediate robots perfectly suited to pacify unruly populations."
+
+  super_heavy_robot:0 "Super-Heavy Robot Platoon"
+  super_heavy_robot_short:0 "Super-Heavy Robots"
+  super_heavy_robot_desc:0 "Robots that defy any convention of reasoning or logic, made for one purpose only, destruction."
+
+  cnc_robot:0 "Command and Control Attachment"
+  cnc_robot_short:0 "CnC Attachment"
+  cnc_robot_desc:0 ""
+  cnc_robot_2:0 "Command and Control Attachment"
+  cnc_robot_2_short:0 "CnC Attachment"
+  cnc_robot_2_desc:0 ""
+  cnc_robot_3:0 "Command and Control Attachment"
+  cnc_robot_3_short:0 "CnC Attachment"
+  cnc_robot_3_desc:0 ""
+
+
+
+ # Support
+
+  power_armour_support:0 "Power Armour Support"
+  power_armour_support_short:0 "Power Armour Support"
+  power_armour_support_desc:0 "A unit of infantry equipped with power armour. Their armour can provide an enormous advantage in combat by adding more resilience to soft attacks. The cost of producing such armour increases the cost of infantry units but can provide much better use of manpower resources"
+
+  fireteam_support:0 "Fireteam Support"
+  fireteam_support_short:0 "Fireteam"
+  fireteam_support_desc:0 ""
+
+  anti_air_support:0 "Anti Air Support"
+  anti_air_support_short:0 "Anti-Air"
+  anti_air_support_desc:0 ""
+
+  demolitions_support:0 "Demolitions Support"
+  demolitions_support_short:0 "Demolitions"
+  demolitions_support_desc:0 ""
+
+  power_armour_fireteam_support:0 "Powered Fireteam Support"
+  power_armour_fireteam_support_short:0 "PA Fireteam"
+  power_armour_fireteam_support_desc:0 ""
+
+  power_armour_demolitions_support:0 "Powered Demolition Support"
+  power_armour_demolitions_support_short:0 "PA Demolitions"
+  power_armour_demolitions_support_desc:0 ""
+
+  power_armour_anti_tank_infantry:0 "Powered Anti-tank Platoon"
+  power_armour_anti_tank_infantry_short:0 "PA Anti-tank"
+  power_armour_anti_tank_infantry_desc:0 ""
+
+  recon_company:0 "Recon Support"
+  recon_company_short:0 "Recon"
+  recon_company_desc:0 "In the vast wasteland without old world technologies like GPS and access to mapping technology having a traditional group of infantry to perform recon can allow a unit to better choose tactics in battle."
+
+  motorized_recon_company:0 "Mobile Recon Support"
+  motorized_recon_company_short:0 "Mobile Recon"
+  motorized_recon_company_desc:0 "Reconaissance teams with the aid of vehicles can provide great benefits to our intel, allowing for faster and safer traversal and heightened awareness of enemy troop movements."
+
+  maintenance_company:0 "Maintenance Support"
+  maintenance_company_short:0 "Maintenance"
+  maintenance_company_desc:0 "Vehicles and robots are difficult to produce, instead of having to throw away those who break down in the wasteland some can be saved using specially trained units with some basic repair skills to restore them into working order."
+
+  motorized_maintenance_company:0 "Mobile Maintenance \nSupport"
+  motorized_maintenance_company_short:0 "Mobile Maintenance"
+  motorized_maintenance_company_desc:0 "Equipment that our maintenance teams repair can not be brought back into working condition instantly. The process takes time and the effort of transporting broken equipment until the time that it can be fixed. Motorization will allow our crews to perform their jobs on-the-go and carry more equipment in the process."
+
+  logistics_company:0 "Logistics Support"
+  logistics_company_short:0 "Logistics"
+  logistics_company_desc:0 "In the wasteland supplies are even more difficult to carry to the front lines than before the war due to only the skeletons of infrastructure remaining. Adding logistics companies will certainly assist in allowing a larger army to be fielded and properly supplied."
+
+  motorized_logistics_company:0 "Mobile Logistics Support"
+  motorized_logistics_company_short:0 "Mobile Logistics"
+  motorized_logistics_company_desc:0 "Supplying an army in the wasteland provides a ser of unique challenges, not least of which are damaged or blocked pre-war infrastructure and hostile wildlife. A faster and better protected logistical company will make supplies and essential equipment better protected from damage, thus increasing effectiveness."
+
+  dog_company:0 "Dog Support"
+  dog_company_short:0 "Dogs"
+  dog_company_desc:0 "Dogs trained to kill, providing advantages especially in forested areas and extra support elsewhere in combat."
+
+  anti_tank_company:0 "Anti-tank Support"
+  anti_tank_company_short:0 "Anti-tank"
+  anti_tank_company_desc:0 "A variety of anti tank weapons assembled into a unit to provide hit and run support on armoured targets can give infantry and other soft units a chance to resist vehicles and robots without having to produce them."
+
+  medical_chem_company:0 "Medical Chem Support"
+  medical_chem_company_short:0 "Chems"
+  medical_chem_company_desc:0 "Good men are difficult to come by, especially after the world ended. Adding specialists to our units, carrying medical equipment and practising basic medical skills can at least reduce some of the losses sustained on the battlefield."
+
+  motorized_medical_chem_company:0 "Mobile Medical Chem \nSupport"
+  motorized_medical_chem_company_short:0 "Mobile Chems"
+  motorized_medical_chem_company_desc:0 "Treating an injured soldier is enough of an arduous task to begin with, but extracting men from an active warzone brings a whole extra set of difficulties to the table. The incorporation of vehicles into our medical crews will significantly improve this process and help us save more lives."
+
+  spec_ops_horses_tech:0 "Horsemen"
+  spec_ops_horses_tech_desc:0 ""
+  spec_ops_horses_tech_2:0 "Horsemen II"
+  spec_ops_horses_tech_2_desc:0 ""
+  spec_ops_horses_tech_3:0 "Horsemen III"
+  spec_ops_horses_tech_3_desc:0 ""
+
+  spec_ops_cavalry:0 "Horsemen"
+  spec_ops_cavalry_short:0 "Riders"
+  spec_ops_cavalry_desc:0 "Who knew horses were still a thing in this wasteland?"
+
+  chariot_unit:0 "Legion Chariots"
+  chariot_unit_short:0 "Chariots"
+  chariot_unit_desc:0 "Legion goes BRRRRRRRRRR"
+
+  monster_support:0 "Colorado Mutant Support"
+  monster_support_desc:0 ""
+
+  # Support
+  light_ship_unit:0 "Light Ship"
+  light_ship_unit_short:0 "LS"
+  light_ship_unit_desc:0 ""
+
+  medium_ship_screen_unit:0 "Medium Ship"
+  medium_ship_screen_unit_short:0 "MS"
+  medium_ship_screen_unit_desc:0 ""
+
+  heavy_ship_unit:0 "Heavy Ship"
+  heavy_ship_unit_short:0 "HS"
+  heavy_ship_unit_desc:0 ""
+
+  super_heavy_ship_unit:0 "Superheavy Ship"
+  super_heavy_ship_unit_short:0 "NCR"
+  super_heavy_ship_unit_desc:0 ""
+
+  # Sentinels
+  sentinel_unit:0 "Sentinel Automated Power Armour Unit"
+  sentinel_unit_short:0 "Sentinels"
+  sentinel_unit_desc:0 "Humans need not apply."
+
+  alamo_defenders:0 "Alamo Volunteers"
+  alamo_defenders_short:0 "Volunteers"
+  alamo_defenders_desc:0 "Colonel Travis, Davy Crockett, and a hundred eighty more Captain Dickinson, Jim Bowie Present and accounted for."
+
+  crusader_unit:0 "Crusader"
+  crusader_unit_short:0 "Crusader"
+  crusader_unit_desc:0 ""
+
+  cybernetic_warform:0 "Cybernetic Warform"
+  cybernetic_warform_short:0 "Warform"
+  cybernetic_warform_desc:0 "What have we done?"
+
+  paladin_unit:0 "Paladin Platoon"
+  paladin_unit_short:0 "Paladins"
+  paladin_unit_desc:0 ""
+  Paladin_fireteam_unit:0 "Paladin Fireteam"
+  Paladin_fireteam_unit_short:0 "Paladins"
+  Paladin_fireteam_unit_desc:0 ""
+  Paladin_demo_unit:0 "Paladin Demoteam"
+  Paladin_demo_unit_short:0 "Paladins"
+  Paladin_demo_unit_desc:0 ""
+  knight_support_unit:0 "Brotherhood Knights"
+  knight_support_unit_short:0 "Knights"
+  knight_support_unit_desc:0 ""
+  scribe_support_unit:0 "Field Scribes"
+  scribe_support_unit_short:0 "Scribes"
+  scribe_support_unit_desc:0 ""
+
+  # Elites
+  elite_infantry:0 "Elite Infantry"
+  elite_infantry_short:0 "Elite Infantry"
+  elite_infantry_desc:0 ""
+  elite_power_armour:0 "Elite Power Armour"
+  elite_power_armour_short:0 "Elite Power Armour"
+  elite_power_armour_desc:0 ""
+  elite_spec_ops:0 "Elite Special Ops"
+  elite_spec_ops_short:0 "Elite Spec Ops"
+  elite_spec_ops_desc:0 ""
+  elite_motorized:0 "Elite Motorized"
+  elite_motorized_short:0 "Elite Motorized"
+  elite_motorized_desc:0 ""
+  elite_robot:0 "Elite Robot"
+  elite_robot_short:0 "Elite Robot"
+  elite_robot_desc:0 ""

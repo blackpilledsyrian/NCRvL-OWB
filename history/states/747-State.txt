@@ -1,0 +1,32 @@
+state = {
+	id = 747
+	name = "STATE_747"
+	resources={
+		metal = 5
+		circuitry = 3
+	}
+
+	history={
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 2
+			dockyard = 1
+			9622 = {
+				naval_base = 1
+
+			}
+
+		}
+		victory_points = {
+			9622 20
+		}
+
+	}
+
+	provinces={
+		8596 8597 9152 9157 9178 9206 9287 9290 9291 9478 9492 9498 9617 9618 9619 9621 9622 9623 12343
+	}
+	manpower=36720
+	buildings_max_level_factor=1.000
+	state_category=large_city
+}

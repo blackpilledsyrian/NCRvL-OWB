@@ -1,0 +1,27 @@
+state={
+	id=1017
+	name="STATE_1017"
+	resources = {
+		water = 4
+		energy = 12
+	}
+	history={
+		victory_points = {
+			12814 10
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			12814 = {
+				naval_base = 1
+			}
+		}
+	}
+
+	provinces={
+		12819 12823 12802 12806 12812 12828 12810 12830 12835 12814
+	}
+	manpower = 3300
+	state_category = rural
+	buildings_max_level_factor=1.000
+}

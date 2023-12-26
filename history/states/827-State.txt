@@ -1,0 +1,24 @@
+state = {
+	id = 827
+	name = "STATE_827"
+
+	history={
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			dockyard = 1
+
+		}
+		victory_points = {
+			9850 10
+		}
+
+	}
+
+	provinces={
+		9832 9834 9849 9850 9851 9864 9867 9895 10831 10835 10836
+	}
+	manpower=15101
+	buildings_max_level_factor=1.000
+	state_category=town
+}

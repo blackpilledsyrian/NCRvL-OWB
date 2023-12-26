@@ -1,0 +1,29 @@
+state = {
+	id = 781
+	name = "STATE_781"
+	resources={
+		water = 4
+		metal = 4
+	}
+
+	history={
+		victory_points = {
+			11023 15
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 2
+			dockyard = 1
+
+		}
+
+	}
+
+	provinces={
+		9278 9384 9569 11023 11028 11034 11035
+	}
+	manpower=36648
+	buildings_max_level_factor=1.000
+	state_category=town
+}

@@ -1,0 +1,22 @@
+
+state={
+	id=1224
+	name="STATE_1224"
+	provinces={
+		12852 12854 12856 12859 12862 12866 12869 12870 13785
+	}
+	history={
+		victory_points = {
+			12866 5
+		}
+		buildings = {
+			infrastructure = 3
+		}
+	}
+	resources = {
+		composites = 4
+	}
+	manpower= 1211
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

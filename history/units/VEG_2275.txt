@@ -1,0 +1,237 @@
+﻿# If you change the division templates here, please also update the hack in
+# common/on_actions/game_rule_on_actions.txt to prevent countries releasable by
+# Vegas in game rules from inheriting the Vegas templates.
+division_template = {
+	name = "Militia Force"
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Securitron Division"
+	template_counter = 66
+	regiments = {
+		security_robot = { x = 0 y = 0 }
+		security_robot = { x = 0 y = 1 }
+		security_robot = { x = 0 y = 2 }
+		security_robot = { x = 1 y = 0 }
+		security_robot = { x = 1 y = 1 }
+	}
+	priority = 2
+	support = {
+		cnc_robot = { x = 0 y = 0 }
+		logistics_company = { x = 1 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Protectron Division"
+
+	regiments = {
+		support_robot = { x = 0 y = 0 }
+		support_robot = { x = 0 y = 1 }
+		support_robot = { x = 0 y = 2 }
+		support_robot = { x = 1 y = 0 }
+		support_robot = { x = 1 y = 1 }
+	}
+	support = {
+		cnc_robot = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "NCR Garrison"
+	template_counter= 68
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 0 y = 2 }
+	}
+	support = {
+		logistics_company = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Infantry Division"
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 2 }
+	}
+}
+
+units = {
+
+	division = {
+		name = "Securitron Gatekeepers"
+		location = 9069
+		division_template = "Securitron Division"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+	}
+
+	division = {
+		name = "Inner Strip Security"
+		location = 3179
+		division_template = "Securitron Division"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "NCR Strip Garrison"
+		location = 3179
+		division_template = "NCR Garrison"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "NCR Freeside Garrison"
+		location = 3188
+		division_template = "NCR Garrison"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Old Cerulean Robotics Bots"
+		location = 3188
+		division_template = "Protectron Division"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "The Kings"
+		location = 9069
+		division_template = "Infantry Division"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "The Boomers"
+		location = 8856
+		division_template = "Infantry Division"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Jackobstown Militia"
+		location = 8849
+		division_template = "Infantry Division"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "The Followers"
+		location = 3188
+		division_template = "Militia Force"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Westside Militia"
+		location = 3182
+		division_template = "Militia Force"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Mercury Pass Militia"
+		location = 8851
+		division_template = "Militia Force"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "North Vegas Square Militia"
+		location = 3180
+		division_template = "Militia Force"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "NCR Bittersprings Garrison"
+		location = 3197
+		division_template = "NCR Garrison"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Great Khans Remnants"
+		location = 3197
+		division_template = "Militia Force"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Happy Trails Caravan Company"
+		location = 8550
+		division_template = "Militia Force"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "NCR Mercenaries"
+		location = 3225
+		division_template = "NCR Garrison"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "NCR Ranger Station Foxtrot Garrison"
+		location = 3190
+		division_template = "NCR Garrison"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+	}
+}
+
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = security_robot_securitron_equipment_1
+			creator = "VEG"
+		}
+		requested_factories = 4
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ballistic_equipment_1
+			creator = "VEG"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = cnc_robot_equipment_1
+			creator = "VEG"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "VEG"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+}

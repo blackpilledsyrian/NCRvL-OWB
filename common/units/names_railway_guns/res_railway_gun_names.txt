@@ -1,0 +1,5 @@
+RG_COMMON = {
+	type = railway_gun
+	for_countries = { RES }
+	fallback_name = "The Raging Bull"
+}

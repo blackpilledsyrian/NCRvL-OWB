@@ -1,0 +1,275 @@
+equipments = {
+	motorized_equipment = {
+		year = 2265
+		is_archetype = yes
+		picture = archetype_motorized_equipment
+		is_buildable = no
+		type = motorized
+		group_by = archetype
+		supply_truck = yes
+
+		interface_category = interface_category_land
+
+		upgrades = {
+			#pa_redundancy_upgrade
+			#pa_production_upgrade
+		}
+
+		#Space taken in convoy
+		lend_lease_cost = 5
+		reliability = 0.8
+		build_cost_ic = 2
+		resources = {
+
+		}
+	}
+
+	# Motorcycles
+	bike_equipment_1 = {
+		archetype = motorized_equipment
+		priority = 10
+		maximum_speed = 6
+		reliability = 1
+		visual_level = 0
+		defense = 1
+		breakthrough = 1
+		armor_value = 5
+		ap_attack = 1
+		hardness = 0.05
+		fuel_consumption = 0.1
+
+		#Space taken in convoy
+		lend_lease_cost = 5
+
+		build_cost_ic = 2
+		resources = {
+			metal = 1
+		}
+	}
+
+	light_motorized_equipment_1 = {
+		archetype = motorized_equipment
+		parent = bike_equipment_1
+		priority = 30
+		visual_level = 2
+		is_convertable = yes
+
+		defense = 3
+		breakthrough = 3.5
+
+		maximum_speed = 10
+		reliability = 0.85
+		armor_value = 10
+		ap_attack = 2
+		hardness = 0.15
+		fuel_consumption = 0.2
+
+		build_cost_ic = 6.0
+		resources = {
+			metal = 1
+			water = 1
+			circuitry = 1
+		}
+	}
+
+	light_motorized_equipment_2 = {
+		archetype = motorized_equipment
+		parent = light_motorized_equipment_1
+		priority = 30
+		visual_level = 4
+		is_convertable = yes
+
+		defense = 5
+		breakthrough = 4.5
+
+		maximum_speed = 11
+		reliability = 0.85
+		armor_value = 15
+		ap_attack = 4
+		hardness = 0.25
+		fuel_consumption = 0.3
+
+		build_cost_ic = 9
+		resources = {
+			metal = 1
+			water = 1
+			circuitry = 1
+		}
+	}
+
+	light_motorized_equipment_3 = {
+		archetype = motorized_equipment
+		parent = light_motorized_equipment_2
+		priority = 30
+		visual_level = 6
+		is_convertable = yes
+
+		defense = 7
+		breakthrough = 5.5
+
+		maximum_speed = 12
+		reliability = 0.85
+		armor_value = 20
+		ap_attack = 6.5
+		hardness = 0.35
+		fuel_consumption = 0.4
+
+		build_cost_ic = 12.5
+		resources = {
+			metal = 2
+			water = 1
+			circuitry = 1
+		}
+	}
+
+	light_motorized_equipment_4 = {
+		archetype = motorized_equipment
+		parent = light_motorized_equipment_3
+		priority = 30
+		visual_level = 8
+		is_convertable = yes
+
+		defense = 9.5
+		breakthrough = 7
+
+		maximum_speed = 13
+		reliability = 0.8
+		armor_value = 30
+		ap_attack = 9
+		hardness = 0.45
+		fuel_consumption = 0.5
+
+		build_cost_ic = 16.5
+		resources = {
+			metal = 2
+			water = 1
+			circuitry = 1
+		}
+	}
+
+	heavy_motorized_equipment_1 = {
+		archetype = motorized_equipment
+		parent = bike_equipment_1
+		priority = 30
+		visual_level = 3
+		is_convertable = yes
+
+		defense = 4
+		breakthrough = 2
+
+		maximum_speed = 7
+		reliability = 0.8
+		armor_value = 20
+		ap_attack = 2
+		hardness = 0.35
+		fuel_consumption = 0.3
+
+		build_cost_ic = 8
+		resources = {
+			metal = 1
+			water = 1
+			circuitry = 1
+		}
+	}
+
+	heavy_motorized_equipment_2 = {
+		archetype = motorized_equipment
+		parent = heavy_motorized_equipment_1
+		priority = 30
+		visual_level = 5
+		is_convertable = yes
+
+		defense = 6.5
+		breakthrough = 3
+
+		maximum_speed = 8
+		reliability = 0.8
+		armor_value = 25
+		ap_attack = 4
+		hardness = 0.5
+		fuel_consumption = 0.4
+
+		build_cost_ic = 12
+		resources = {
+			metal = 2
+			water = 1
+			circuitry = 1
+		}
+	}
+
+	heavy_motorized_equipment_3 = {
+		archetype = motorized_equipment
+		parent = heavy_motorized_equipment_2
+		priority = 30
+		visual_level = 7
+		is_convertable = yes
+
+		defense = 9
+		breakthrough = 4
+
+		maximum_speed = 9
+		reliability = 0.8
+		armor_value = 35
+		ap_attack = 6.5
+		hardness = 0.65
+		fuel_consumption = 0.5
+
+		build_cost_ic = 16
+		resources = {
+			metal = 2
+			water = 2
+			circuitry = 1
+		}
+	}
+
+	heavy_motorized_equipment_4 = {
+		archetype = motorized_equipment
+		parent = heavy_motorized_equipment_3
+		priority = 30
+		visual_level = 9
+		is_convertable = yes
+
+		defense = 12.5
+		breakthrough = 5.5
+
+		maximum_speed = 10
+		reliability = 0.8
+		armor_value = 45
+		ap_attack = 9
+		hardness = 0.8
+		fuel_consumption = 0.6
+
+		build_cost_ic = 20
+		resources = {
+			metal = 2
+			water = 2
+			circuitry = 1
+		}
+	}
+
+	bubblefish_heavy_motorized_equipment = {
+		archetype = motorized_equipment
+		parent = heavy_motorized_equipment_4
+		priority = 30
+		visual_level = 10
+		is_convertable = yes
+
+		defense = 11.5
+		breakthrough = 5.5
+
+		maximum_speed = 13.0
+		reliability = 0.8
+		armor_value = 30
+		ap_attack = 9
+		hardness = 0.35
+		fuel_consumption = 0.6
+
+		build_cost_ic = 20
+		resources = {
+			metal = 1
+			water = 1
+			circuitry = 1
+		}
+	}
+
+}

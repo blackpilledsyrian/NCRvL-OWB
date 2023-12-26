@@ -1,0 +1,28 @@
+state = {
+	id = 267
+	name = "STATE_267"
+	manpower = 16000
+	state_category = large_town
+
+	resources = {
+		water = 5
+		metal = 17
+	}
+
+	history = {
+		owner = TOB
+		add_core_of = TOB
+		victory_points = {
+			6542 15
+		}
+		buildings = {
+			infrastructure = 4
+			arms_factory = 2
+			industrial_complex = 1
+		}
+	}
+
+	provinces = {
+		1091 1588 2501 6542 7471 7472 7476 7477
+	}
+}

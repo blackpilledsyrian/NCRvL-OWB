@@ -1,0 +1,20 @@
+state={
+	id=1020
+	name="STATE_1020"
+
+	resources = {
+		water = 6
+	}
+	history={
+		buildings = {
+			infrastructure = 2
+		}
+	}
+
+	provinces={
+		12774 12793 12778 12794 12775 12803 12818
+	}
+	manpower = 1100
+	state_category = rural
+	buildings_max_level_factor=1.000
+}

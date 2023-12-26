@@ -1,0 +1,1683 @@
+focus_tree = {
+    id = ncr_puppet_nf
+    country = {
+        factor = 0
+        modifier = {
+            OR = {
+                is_subject_of = NCR
+                AND = {
+                    is_in_faction_with = NCR
+                    original_tag = BVC
+                }
+            }
+            add = 12
+        }
+    }
+    default = no
+    shared_focus = ncr_puppet_bear_victorious
+    shared_focus = NCR_shared_industrial_start_focus
+    shared_focus = NCR_shared_military_start_focus
+
+    #Umbra mini tree
+
+    focus = {
+        id = UMB_understanding_umbra
+        icon = GFX_goal_sling_shot
+        x = 30
+        y = 6
+        cost = 30
+        allow_branch = {
+            original_tag = UMB
+        }
+        ai_will_do = {
+            factor = 75
+        }
+        prerequisite = {
+            focus = NCR_puppet_propaganda_posters
+            focus = NCR_puppet_new_farms
+            focus = NCR_puppet_scavenging_the_battlefield
+            focus = ncr_puppet_ncr_draft
+
+        }
+       #relative_position_id = ncr_puppet_ncrta
+        completion_reward = {
+            add_ideas = umb_puppet_understanding
+        }
+    }
+
+    #Rejecting Replacements
+    focus = {
+        id = UMB_rejecting_replacements
+        icon = GFX_goal_generic_dark_cultist
+        x = -2
+        y = 1
+        cost = 30
+        relative_position_id = UMB_understanding_umbra
+        prerequisite = { focus = UMB_understanding_umbra  }
+        mutually_exclusive = { focus = UMB_son_of_sulik
+        focus = UMB_teaching_tribals
+        }
+        ai_will_do = { factor = 25 }
+        completion_reward = {
+            add_stability = 0.15
+            add_war_support = 0.10
+            add_autonomy_score = {
+                value = 500
+            }
+        }
+    }
+
+    #People Of Prophecies
+    focus = {
+        id = UMB_people_of_prophecies
+        icon = GFX_goal_generic_wizard_hat
+        x = 0
+        y = 1
+        cost = 30
+        relative_position_id = UMB_rejecting_replacements
+        prerequisite = { focus = UMB_rejecting_replacements  }
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            swap_ideas = {
+                remove_idea = umb_spiritual_guidance
+                add_idea = umb_spiritual_guidance_2
+            }
+            add_autonomy_score = {
+                value = 200
+            }
+        }
+    }
+
+    #Son Of Sulik
+    focus = {
+        id = UMB_son_of_sulik
+        icon = GFX_goal_TDT_loyal_puppet
+        x = 0
+        y = 1
+        cost = 30
+        relative_position_id = UMB_understanding_umbra
+        prerequisite = { focus = UMB_understanding_umbra  }
+        mutually_exclusive = { focus = UMB_rejecting_replacements  }
+        mutually_exclusive = { focus = UMB_teaching_tribals  }
+        ai_will_do = { factor = 60 }
+        completion_reward = {
+            UMB_avueron = {
+                promote_character = yes
+                promote_character = tribal_council
+            }
+            add_stability = 0.05
+            add_political_power = 100
+        }
+    }
+
+    #Friendly Followers
+    focus = {
+        id = UMB_friendly_followers
+        icon = GFX_goal_MOJ_incorporate_the_followers
+        x = 0
+        y = 1
+        cost = 30
+        relative_position_id = UMB_son_of_sulik
+        prerequisite = { focus = UMB_son_of_sulik  }
+        completion_reward = {
+            set_technology = {
+                habitation_tech_level_settler = 1
+                exploitation_tech_level_settler = 1
+            }
+            add_tech_bonus = {
+                name = medical_bonus
+                bonus = 0.5
+                uses = 1
+                category = support_medical_tech_category
+            }
+            add_tech_bonus = {
+                name = agriculture_bonus
+                bonus = 0.5
+                uses = 1
+                category = agriculture_tech
+            }
+        }
+    }
+
+    #Teaching Tribals
+    focus = {
+        id = UMB_teaching_tribals
+        icon = GFX_goal_generic_mentats
+        x = 2
+        y = 1
+        cost = 30
+        relative_position_id = UMB_understanding_umbra
+        prerequisite = { focus = UMB_understanding_umbra  }
+        mutually_exclusive = { focus = UMB_rejecting_replacements  }
+        mutually_exclusive = { focus = UMB_son_of_sulik  }
+        ai_will_do = { factor = 15 }
+        completion_reward = {
+            add_stability = -0.15
+            add_political_power = -50
+            add_autonomy_score = {
+                value = -400
+            }
+            add_tech_bonus = {
+                name = industrial_bonus
+                bonus = 0.5
+                uses = 1
+                category = tool_tech
+            }
+        }
+    }
+
+    #Abrasive Advancement
+    focus = {
+        id = UMB_abrasive_advancement
+        icon = GFX_goal_generic_books
+        x = 0
+        y = 1
+        cost = 30
+        relative_position_id = UMB_teaching_tribals
+        prerequisite = { focus = UMB_teaching_tribals  }
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            remove_ideas = umb_spiritual_guidance
+            set_technology = {
+                infantry_tech_level_settler = 1
+                tools_tech_level_settler = 1
+                electronics_tech_level_settler = 1
+            }
+        }
+    }
+
+    #Steady Integration
+    focus = {
+        id = UMB_steady_integration
+        icon = GFX_goal_generic_focus_magazine_backwood_get_off_my_lawn
+        x = 0
+        y = 1
+        cost = 30
+        relative_position_id = UMB_friendly_followers
+        prerequisite = { focus = UMB_people_of_prophecies  focus = UMB_friendly_followers  focus = UMB_abrasive_advancement  }
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            239 = {
+                add_building_construction = {
+                    type = infrastructure
+                    level = 2
+                    instant_build = yes
+                }
+            }
+            39 = {
+                add_building_construction = {
+                    type = infrastructure
+                    level = 2
+                    instant_build = yes
+                }
+            }
+            340 = {
+                add_building_construction = {
+                    type = infrastructure
+                    level = 2
+                    instant_build = yes
+                }
+            }
+            353 = {
+                add_building_construction = {
+                    type = infrastructure
+                    level = 2
+                    instant_build = yes
+                }
+            }
+        }
+    }
+
+    ##Rapids Mini Tree
+
+    focus = {
+        id = RAP_new_captains
+        icon = GFX_goal_generic_wasteland_girl
+        x = 20
+        y = 4
+        cost = 30
+        available = {
+            has_completed_focus = ncr_puppet_ncr_state
+        }
+        allow_branch = {
+            original_tag = RAP
+        }
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            add_ideas = rap_puppet_new_captains
+        }
+    }
+
+    #Cut The Links
+    focus = {
+        id = RAP_cut_the_links
+        icon = GFX_goal_pantheon_poseidon
+        x = 2
+        y = 0
+        cost = 30
+        available = {
+            has_completed_focus = ncr_puppet_ncr_state
+        }
+        relative_position_id = RAP_new_captains
+        allow_branch = {
+            original_tag = RAP
+        }
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            add_ideas = rap_puppet_cut_ties
+
+        }
+    }
+
+    #Shared Waters
+    focus = {
+        id = RAP_shared_waters
+        icon = GFX_goal_generic_boat
+        x = 1
+        y = 1
+        cost = 30
+        relative_position_id = RAP_new_captains
+        prerequisite = { focus = RAP_new_captains  }
+        prerequisite = { focus = RAP_cut_the_links  }
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            add_resource = {
+                type = water
+                amount = 6
+                state = 500
+            }
+            add_resource = {
+                type = water
+                amount = 6
+                state = 205
+            }
+            add_resource = {
+                type = water
+                amount = 6
+                state = 173
+            }
+            add_tech_bonus = {
+                name = agriculture_bonus
+                bonus = 0.5
+                uses = 1
+                category = agriculture_tech
+            }
+        }
+    }
+
+    #Funding Patrol Vessels
+    focus = {
+        id = RAP_funding_patrol_vessels
+        icon = GFX_goal_NCR_River_Patrols
+        x = 0
+        y = 2
+        cost = 30
+        relative_position_id = RAP_new_captains
+        prerequisite = { focus = RAP_shared_waters  }
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            add_resource = {
+                type = energy
+                amount = 5
+                state = 99
+            }
+            99 = {
+                add_extra_state_shared_building_slots = 3
+                add_building_construction = {
+                    type = dockyard
+                    level = 3
+                    instant_build = yes
+                }
+            }
+        }
+    }
+
+    #Better Armaments On Their Boats
+    focus = {
+        id = RAP_better_armaments_on_their_boats
+        icon = GFX_goal_generic_artillery
+        x = 2
+        y = 2
+        cost = 30
+        relative_position_id = RAP_new_captains
+        prerequisite = { focus = RAP_shared_waters }
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            add_tech_bonus = {
+                name = naval_bonus
+                bonus = 0.5
+                uses = 4
+                category = naval_weapon_module_tech_category
+            }
+        }
+    }
+
+    #Fortify The Crossings
+    focus = {
+        id = RAP_fortify_the_crossings
+        icon = GFX_goal_NCR_Bastion_By_the_Sea
+        x = 1
+        y = 3
+        cost = 30
+        relative_position_id = RAP_new_captains
+        prerequisite = { focus = RAP_better_armaments_on_their_boats  }
+        prerequisite = { focus = RAP_funding_patrol_vessels  }
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+                99 = {
+                        add_building_construction = {
+                        type = coastal_bunker
+                        level = 2
+                            province = {
+                                id = 5642
+                            }
+                        }
+                }
+                500 = {
+                        add_building_construction = {
+                        type = coastal_bunker
+                        level = 2
+                            province = {
+                                id = 5787
+                            }
+                        }
+                }
+                147 = {
+                        add_building_construction = {
+                        type = coastal_bunker
+                        level = 2
+                            province = {
+                                id = 5789
+                            }
+                        }
+                        add_building_construction = {
+                        type = coastal_bunker
+                        level = 2
+                            province = {
+                                id = 5792
+                            }
+                        }
+                }
+            }
+        }
+
+
+    #It All Flows Downriver
+    focus = {
+        id = RAP_it_all_flows_downriver
+        icon = GFX_goal_NCR_Riverbank
+        x = 0
+        y = 4
+        cost = 30
+        relative_position_id = RAP_new_captains
+        prerequisite = { focus = RAP_fortify_the_crossings  }
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            add_ideas = rap_puppet_flows_downriver
+        }
+    }
+
+    #Los Algodones
+    focus = {
+        id = RAP_los_algodones
+        icon = GFX_goal_chem_super_stim
+        x = 2
+        y = 4
+        cost = 30
+        relative_position_id = RAP_new_captains
+        prerequisite = { focus = RAP_fortify_the_crossings  }
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            add_tech_bonus = {
+                name = support_bonus
+                bonus = 1.0
+                uses = 1
+                category = support_medical_tech_category
+            }
+            set_technology = {
+                med_company_tech_3 = 1
+            }
+        }
+    }
+
+    #Frontlines
+    focus = {
+        id = RAP_frontlines
+        icon = GFX_goal_lac_evil_legion
+        x = 1
+        y = 5
+        cost = 30
+        relative_position_id = RAP_new_captains
+        available = {
+            has_war_with = CES
+        }
+        bypass = {
+            NOT = {
+                    country_exists = CES
+                }
+        }
+        prerequisite = { focus = RAP_it_all_flows_downriver  }
+        prerequisite = { focus = RAP_los_algodones  }
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            add_ideas = rap_puppet_frontline
+        }
+    }
+
+    #Bringing Back Wellby
+    focus = {
+        id = RAP_bringing_back_wellby
+        icon = GFX_goal_NCR_Seabear
+        x = 0
+        y = 1
+        cost = 30
+        relative_position_id = RAP_frontlines
+        available = {
+            OR = {
+                has_war_with = CES
+                NOT = {
+                    country_exists = CES
+                }
+            }
+        }
+        prerequisite = { focus = RAP_frontlines  }
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            country_event = nf_rap_puppet.1
+        }
+    }
+
+    #Real Shipbuilding
+    focus = {
+        id = RAP_real_shipbuilding
+        icon = GFX_goal_NCR_Rebuild_the_13
+        x = 0
+        y = 1
+        cost = 60
+        relative_position_id = RAP_bringing_back_wellby
+        prerequisite = { focus = RAP_bringing_back_wellby  }
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            add_resource = {
+                type = energy
+                amount = 8
+                state = 107
+            }
+            add_resource = {
+                type = circuitry
+                amount = 8
+                state = 107
+            }
+            set_technology = {
+                naval_tech_level_settler = 1
+            }
+        }
+    }
+
+    #Estuary
+    focus = {
+        id = RAP_estuary
+        icon = GFX_goal_ITZ_dominate_the_caribbean_trade
+        x = 0
+        y = 1
+        cost = 45
+        relative_position_id = RAP_real_shipbuilding
+        prerequisite = { focus = RAP_real_shipbuilding  }
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            add_ideas = rap_puppet_river_end
+        }
+    }
+
+    #Baja State Tree
+
+    focus = {
+        id = BJS_the_state_of_baja
+        icon = GFX_goal_NCR_Bajastate
+        x = 30
+        y = 1
+        cost = 7
+        allow_branch = {
+            original_tag = BVC
+        }
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            country_event = nf_bjs_puppet.1
+            hidden_effect = {
+             caps_country_initialize = yes
+            }
+        }
+    }
+
+    #Labor Of Compromise
+    focus = {
+        id = BJS_labor_of_compromise
+        icon = GFX_goal_NCR_Sympathies
+        x = 0
+        y = 1
+        cost = 7
+        relative_position_id = BJS_the_state_of_baja
+        prerequisite = { focus = BJS_the_state_of_baja  }
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            country_event = nf_bjs_puppet.2
+            hidden_effect = {
+             caps_country_initialize = yes
+            }
+        }
+    }
+
+    #Fate Of Pancho Villa
+    focus = {
+        id = BJS_fate_of_pancho_villa
+        icon = GFX_goal_NCR_Politicalbandito
+        x = 0
+        y = 2
+        cost = 7
+        relative_position_id = BJS_the_state_of_baja
+        prerequisite = { focus = BJS_labor_of_compromise  }
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            country_event = nf_bjs_puppet.3
+        }
+    }
+
+    #Bandito Heritage
+    focus = {
+        id = BJS_bandito_heritage
+        icon = GFX_goal_generic_cowboys
+        x = -20
+        y = 1
+        cost = 45
+        allow_branch = {
+            original_tag = BVC
+        }
+        available = {
+            has_completed_focus = ncr_puppet_ncr_state
+            NOT = {
+                has_completed_focus = BJS_forging_a_new_identity
+            }
+        }
+        ai_will_do = {
+            factor = 75
+        }
+        relative_position_id = BJS_fate_of_pancho_villa
+        completion_reward = {
+            add_ideas = bjs_puppet_bandito_heritage
+        }
+    }
+
+    #Violence As A Tool
+    focus = {
+        id = BJS_violence_as_a_tool
+        icon = GFX_goal_pal_we_won
+        x = 0
+        y = 1
+        cost = 45
+        relative_position_id = BJS_bandito_heritage
+        prerequisite = { focus = BJS_bandito_heritage  }
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            176 = {
+                    add_extra_state_shared_building_slots = 1
+                    add_building_construction = {
+                        type = arms_factory
+                        level = 1
+                        instant_build = yes
+                    }
+            }
+            add_ideas = bjs_puppet_violent_tools
+            add_war_support = 0.05
+        }
+    }
+
+    #"Procurement"
+    focus = {
+        id = BJS_procurement
+        icon = GFX_goal_pal_pr_cyclops
+        x = -1
+        y = 2
+        cost = 45
+        relative_position_id = BJS_bandito_heritage
+        prerequisite = { focus = BJS_violence_as_a_tool  }
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            add_ideas = bjs_puppet_procurement
+        }
+    }
+
+    #Promote The Old Crews
+    focus = {
+        id = BJS_promote_the_old_crews
+        icon = GFX_goal_pal_business_as_usual
+        x = 1
+        y = 2
+        cost = 45
+        relative_position_id = BJS_bandito_heritage
+        prerequisite = { focus = BJS_violence_as_a_tool  }
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            add_ideas = bjs_puppet_old_crews
+            army_experience = 10
+        }
+    }
+
+    #Forging A New Identity
+    focus = {
+        id = BJS_forging_a_new_identity
+        icon = GFX_goal_generic_western
+        x = -16
+        y = 1
+        cost = 45
+        allow_branch = {
+            original_tag = BVC
+        }
+        relative_position_id = BJS_bandito_heritage
+        available = {
+            has_completed_focus = ncr_puppet_ncr_state
+            NOT = {
+                has_completed_focus = BJS_bandito_heritage
+            }
+        }
+        relative_position_id = BJS_fate_of_pancho_villa
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            add_ideas = bjs_puppet_new_identity
+        }
+    }
+
+    #Building The Center
+    focus = {
+        id = BJS_building_the_center
+        icon = GFX_goal_generic_scyscrapers_postwar
+        x = 0
+        y = 1
+        cost = 45
+        relative_position_id = BJS_forging_a_new_identity
+        prerequisite = { focus = BJS_forging_a_new_identity  }
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            176 = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 2
+                    instant_build = yes
+                }
+                set_temp_variable = {
+                    pop_add = 5000
+                }
+                add_state_population = yes
+            }
+        }
+    }
+
+    #Sieze The Last Shipments
+    focus = {
+        id = BJS_sieze_the_last_shipments
+        icon = GFX_goal_generic_f76_player
+        x = -1
+        y = 1
+        cost = 45
+        relative_position_id = BJS_building_the_center
+        prerequisite = { focus = BJS_building_the_center  }
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            add_equipment_to_stockpile = {
+                type = ballistic_equipment_1
+                amount = 200
+                producer = NCR
+            }
+            add_equipment_to_stockpile = {
+                type = support_equipment_1
+                amount = 50
+                producer = NCR
+            }
+            add_equipment_to_stockpile = {
+                type = fireteam_equipment_1
+                amount = 45
+                producer = NCR
+            }
+            add_ideas = bjs_puppet_siezed_shipments
+        }
+    }
+
+    #Dealing With Guarez
+    focus = {
+        id = BJS_dealing_with_guarez
+        icon = GFX_goal_pal_back_to_raiding
+        x = 1
+        y = 1
+        cost = 45
+        relative_position_id = BJS_building_the_center
+        prerequisite = { focus = BJS_building_the_center  }
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            country_event = nf_bjs_puppet.4
+        }
+    }
+
+    #Gulf of California
+    focus = {
+        id = BJS_gulf_of_california
+        icon = GFX_goal_NCR_Integration
+        x = 1
+        y = 1
+        cost = 30
+        allow_branch = {
+            original_tag = BVC
+        }
+        ai_will_do = {
+            factor = 75
+        }
+        available = {
+            OR = {
+                has_completed_focus = BJS_sieze_the_last_shipments
+                has_completed_focus = BJS_dealing_with_guarez
+                has_completed_focus = BJS_promote_the_old_crews
+                has_completed_focus = BJS_procurement
+
+            }
+        }
+        relative_position_id = BJS_promote_the_old_crews
+        completion_reward = {
+            add_resource = {
+                type = energy
+                amount = 6
+                state = 176
+            }
+            174 = {
+                    add_extra_state_shared_building_slots = 1
+                    add_building_construction = {
+                        type = dockyard
+                        level = 1
+                        instant_build = yes
+                    }
+            }
+            158 = {
+                    add_extra_state_shared_building_slots = 1
+                    add_building_construction = {
+                        type = dockyard
+                        level = 1
+                        instant_build = yes
+                    }
+            }
+            481 = {
+                    add_extra_state_shared_building_slots = 1
+                    add_building_construction = {
+                        type = dockyard
+                        level = 1
+                        instant_build = yes
+                    }
+            }
+            176 = {
+                    add_extra_state_shared_building_slots = 1
+                    add_building_construction = {
+                        type = dockyard
+                        level = 1
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                    type = naval_base
+                    level = 3
+                        province = {
+                            id = 4701
+                        }
+                    }
+            }
+        }
+    }
+
+    #Defending The Mouth Of The Colorado
+    focus = {
+        id = BJS_defending_the_mouth_of_the_colorado
+        icon = GFX_goal_NCR_aradeshport
+        x = -2
+        y = 1
+        cost = 45
+        relative_position_id = BJS_gulf_of_california
+        prerequisite = { focus = BJS_gulf_of_california } prerequisite = { focus = BJS_procurement focus = BJS_sieze_the_last_shipments } prerequisite = { focus = BJS_promote_the_old_crews focus = BJS_dealing_with_guarez }
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            651 = {
+                    add_extra_state_shared_building_slots = 1
+                    add_building_construction = {
+                        type = dockyard
+                        level = 1
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                    type = naval_base
+                    level = 4
+                        province = {
+                            id = 4819
+                        }
+                    }
+            }
+            add_ideas = bjs_puppet_defending_the_river
+        }
+    }
+
+    #Organize A Navy
+    focus = {
+        id = BJS_organize_a_navy
+        icon = GFX_goal_NCR_River_Patrols
+        x = 2
+        y = 1
+        cost = 45
+        relative_position_id = BJS_gulf_of_california
+        prerequisite = { focus = BJS_gulf_of_california } prerequisite = { focus = BJS_procurement focus = BJS_sieze_the_last_shipments } prerequisite = { focus = BJS_promote_the_old_crews focus = BJS_dealing_with_guarez }
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            97 = {
+                    add_extra_state_shared_building_slots = 1
+                    add_building_construction = {
+                        type = dockyard
+                        level = 1
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                    type = naval_base
+                    level = 2
+                        province = {
+                            id = 733
+                        }
+                    }
+            }
+            add_ideas = bjs_puppet_organized_navy
+            navy_experience = 25
+        }
+    }
+
+    #Contain The Generalissimo
+    focus = {
+        id = BJS_contain_the_generalissimo
+        icon = GFX_goal_gdh_shield
+        x = 2
+        y = 1
+        cost = 45
+        relative_position_id = BJS_defending_the_mouth_of_the_colorado
+        available = {
+            GDH = {
+                is_in_faction_with = CES
+            }
+        }
+        prerequisite = { focus = BJS_defending_the_mouth_of_the_colorado  }
+        prerequisite = { focus = BJS_organize_a_navy  }
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            add_resource = {
+                type = energy
+                amount = 6
+                state = 176
+            }
+            176 = {
+                    add_extra_state_shared_building_slots = 3
+                    add_building_construction = {
+                        type = dockyard
+                        level = 3
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                    type = coastal_bunker
+                    level = 4
+                        province = {
+                            id = 4701
+                        }
+                    }
+            }
+            add_ideas = bjs_puppet_contain_gente
+            every_state = {
+                limit = {
+                    OR = {
+                        is_core_of = GDH
+                        is_core_of = TWO
+                        is_core_of = COW
+                        is_core_of = TON
+                    }
+                }
+                add_core_of = ROOT
+            }
+        }
+    }
+
+    #Sky Reavers
+    focus = {
+        id = ncr_SKY_establish_the_survey_corp
+        icon = GFX_goal_NCR_Caravan
+        cost = 45
+        available = {
+            has_completed_focus = ncr_puppet_ncr_state
+        }
+        allow_branch = {
+            original_tag = SKY
+        }
+        x = 30
+        y = 15
+        #relative_position_id = ncr_puppet_raider_establish_ranger_units
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            add_ideas = nevada_survey_corp
+        }
+    }
+
+    focus = {
+        id = ncr_SKY_exploring_area_2
+        icon = GFX_goal_NCR_Army_Weapon_Artillery
+        cost = 45
+        prerequisite = {
+            focus = ncr_SKY_establish_the_survey_corp
+        }
+        x = -1
+        y = 1
+        relative_position_id = ncr_SKY_establish_the_survey_corp
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            add_tech_bonus = {
+                name = explosive_bonus
+                bonus = 0.25
+                uses = 2
+                category = support_demolitions_tech_category
+            }
+            NCR = {
+                add_equipment_to_stockpile = {
+                    type = artillery_ammo_equipment_1
+                    amount = 3
+                    producer = USA
+                }
+                add_tech_bonus = {
+                    name = explosive_bonus
+                    bonus = 0.5
+                    uses = 1
+                    category = support_demolitions_tech_category
+                }
+            }
+        }
+    }
+
+    focus = {
+        id = ncr_SKY_exploring_area_22
+        icon = GFX_goal_generic_fighter_focus
+        cost = 45
+        prerequisite = {
+            focus = ncr_SKY_establish_the_survey_corp
+        }
+        x = 1
+        y = 1
+        relative_position_id = ncr_SKY_establish_the_survey_corp
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            add_tech_bonus = {
+                name = air_bonus
+                bonus = 0.5
+                uses = 2
+                category = air_tech_category
+            }
+        }
+    }
+
+    focus = {
+        id = ncr_SKY_exploring_area_18
+        icon = GFX_goal_generic_aircraft_stingray
+        cost = 45
+        prerequisite = {
+            focus = ncr_SKY_establish_the_survey_corp
+        }
+        x = -1
+        y = 1
+        relative_position_id = ncr_SKY_exploring_area_2
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            add_tech_bonus = {
+                name = air_bonus
+                bonus = 0.65
+                uses = 1
+                category = air_tech_category
+            }
+        }
+    }
+
+    focus = {
+        id = ncr_SKY_exploring_area_15
+        icon = GFX_goal_TTM_EPA
+        cost = 45
+        prerequisite = {
+            focus = ncr_SKY_establish_the_survey_corp
+        }
+        x = 1
+        y = 1
+        relative_position_id = ncr_SKY_exploring_area_22
+        completion_reward = {
+            add_ideas = nevada_greenery
+            NCR = {
+                add_ideas = ncr_nevada_foodstuffs
+            }
+        }
+    }
+    focus = {
+        id = ncr_SKY_exploring_area_6
+        icon = GFX_goal_generic_nuclear_fighter
+        cost = 45
+        prerequisite = {
+            focus = ncr_SKY_establish_the_survey_corp
+        }
+        x = 0
+        y = 2
+        relative_position_id = ncr_SKY_establish_the_survey_corp
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            add_ideas = airforce_schematics
+        }
+    }
+
+    focus = {
+        id = ncr_SKY_the_airbase_calls
+        icon = GFX_goal_generic_vertibird
+        cost = 45
+        prerequisite = {
+            focus = ncr_SKY_exploring_area_6
+        }
+        prerequisite = {
+            focus = ncr_SKY_exploring_area_15
+        }
+        prerequisite = {
+            focus = ncr_SKY_exploring_area_18
+        }
+        x = 0
+        y = 1
+        relative_position_id = ncr_SKY_exploring_area_6
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            swap_ideas = {
+                remove_idea = nevada_greenery
+                add_idea = area_51_controlled
+            }
+
+            NCR = {
+                swap_ideas = {
+                    remove_idea = ncr_nevada_foodstuffs
+                    add_idea = ncr_51_boons
+                }
+            }
+        }
+    }
+
+    focus = {
+        id = ncr_SKY_searching_for_schematics
+        icon = GFX_goal_generic_blueprint
+        cost = 45
+        prerequisite = {
+            focus = ncr_SKY_the_airbase_calls
+        }
+        x = -2
+        y = 1
+        relative_position_id = ncr_SKY_the_airbase_calls
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            add_tech_bonus = {
+                name = air_bonus
+                bonus = 1
+                uses = 2
+                category = air_tech_category
+            }
+
+        }
+    }
+    focus = {
+        id = ncr_SKY_searching_for_the_escaped
+        icon = GFX_goal_area_51
+        cost = 45
+        prerequisite = {
+            focus = ncr_SKY_searching_for_schematics
+        }
+        x = -1
+        y = 1
+        relative_position_id = ncr_SKY_searching_for_schematics
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            add_tech_bonus = {
+                name = air_bonus
+                uses = 2
+                ahead_reduction = 2
+                category = air_tech_category
+            }
+        }
+    }
+
+    focus = {
+        id = ncr_SKY_opening_armories
+        icon = GFX_goal_generic_western
+        cost = 45
+        prerequisite = {
+            focus = ncr_SKY_the_airbase_calls
+        }
+        x = 2
+        y = 1
+        relative_position_id = ncr_SKY_the_airbase_calls
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            random_owned_controlled_state = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = arms_factory
+                    level = 2
+                    instant_build = yes
+                }
+            }
+        }
+    }
+    focus = {
+        id = ncr_SKY_reparing_weapons
+        icon = GFX_goal_generic_rifle_combat
+        cost = 45
+        prerequisite = {
+            focus = ncr_SKY_opening_armories
+        }
+        x = 1
+        y = 1
+        relative_position_id = ncr_SKY_opening_armories
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            add_equipment_to_stockpile = {
+                type = ballistic_equipment_3
+                amount = 1000
+                producer = USA
+            }
+            NCR = {
+                add_equipment_to_stockpile = {
+                    type = ballistic_equipment_3
+                    amount = 1000
+                    producer = USA
+                }
+            }
+        }
+    }
+
+    focus = {
+        id = ncr_SKY_examining_labs
+        icon = GFX_goal_enc_science
+        cost = 45
+        prerequisite = {
+            focus = ncr_SKY_the_airbase_calls
+        }
+        x = 0
+        y = 1
+        relative_position_id = ncr_SKY_the_airbase_calls
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            swap_ideas = {
+                remove_idea = area_51_controlled
+                add_idea = area_51_labs
+            }
+        }
+    }
+    focus = {
+        id = ncr_SKY_accessing_the_database
+        icon = GFX_goal_generic_mainframe_1
+        cost = 45
+        prerequisite = {
+            focus = ncr_SKY_examining_labs
+        }
+        x = -1
+        y = 1
+        relative_position_id = ncr_SKY_examining_labs
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            swap_ideas = {
+                remove_idea = area_51_labs
+                add_idea = area_51_database
+            }
+            NCR = {
+                swap_ideas = {
+                    remove_idea = ncr_51_boons
+                    add_idea = ncr_51_database
+                }
+            }
+        }
+    }
+
+    focus = {
+        id = ncr_SKY_secrets_of_the_airforce
+        icon = GFX_goal_usa_plane
+        cost = 45
+        prerequisite = {
+            focus = ncr_SKY_examining_labs
+        }
+        available = {
+            has_idea = area_51_database
+        }
+        x = 1
+        y = 1
+        relative_position_id = ncr_SKY_examining_labs
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            swap_ideas = {
+                remove_idea = area_51_database
+                add_idea = area_51_airforce_secrets
+            }
+        }
+    }
+
+    focus = {
+        id = ncr_SKY_the_Hellion_project
+        icon = GFX_goal_chr_hellion
+        cost = 45
+        prerequisite = {
+            focus = ncr_SKY_searching_for_the_escaped
+        }
+        prerequisite = {
+            focus = ncr_SKY_accessing_the_database
+        }
+        x = 1
+        y = 1
+        relative_position_id = ncr_SKY_searching_for_the_escaped
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            # set_technology = {
+            #     vertibird_cas_tech = 1
+            # }
+            add_equipment_to_stockpile = {
+                type = vb_gunship_equipment
+                amount = 20
+                producer = USA
+            }
+        }
+    }
+    focus = {
+        id = ncr_SKY_air_matinence_training
+        icon = GFX_goal_generic_data_focus
+        cost = 45
+        prerequisite = {
+            focus = ncr_SKY_reparing_weapons
+        }
+        prerequisite = {
+            focus = ncr_SKY_secrets_of_the_airforce
+        }
+        x = 1
+        y = 1
+        relative_position_id = ncr_SKY_secrets_of_the_airforce
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            swap_ideas = {
+                remove_idea = area_51_airforce_secrets
+                add_idea = area_51_matinence
+            }
+        }
+    }
+
+    focus = {
+        id = ncr_SKY_the_republics_airforce
+        icon = GFX_goal_NCR_Hayes_Fly_Bear
+        cost = 45
+        prerequisite = {
+            focus = ncr_SKY_the_Hellion_project
+        }
+        prerequisite = {
+            focus = ncr_SKY_air_matinence_training
+        }
+        x = -2
+        y = 1
+        relative_position_id = ncr_SKY_air_matinence_training
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            swap_ideas = {
+                remove_idea = area_51_matinence
+                add_idea = area_51_bearforce
+            }
+        }
+    }
+
+
+
+    #Fourways
+    focus = {
+        id = ncr_FOU_a_lesson_from_house
+        icon = GFX_goal_VEG_The_House
+        cost = 45
+        available = {
+            has_completed_focus = ncr_puppet_ncrta
+        }
+        allow_branch = {
+            original_tag = FOU
+        }
+        x = 35
+        y = 9
+        #relative_position_id = ncr_puppet_ncr_state
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            add_stability = 0.20
+            add_political_power = 100
+        }
+    }
+
+    focus = {
+        id = ncr_FOU_expanding_regional_security
+        icon = GFX_goal_NCR_Shi_Good_Bear
+        cost = 45
+        prerequisite = {
+            focus = ncr_FOU_a_lesson_from_house
+        }
+        x = 0
+        y = 1
+        relative_position_id = ncr_FOU_a_lesson_from_house
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            add_war_support = 0.10
+            division_template = {
+                name = "NCR Security Force"
+                division_names_group = _NCR_INF_01
+
+                regiments = {
+                    infantry = { x = 0 y = 0 }
+                    infantry = { x = 0 y = 1 }
+                    infantry = { x = 0 y = 2 }
+                    infantry = { x = 2 y = 0 }
+                    infantry = { x = 1 y = 0 }
+                    infantry = { x = 1 y = 1 }
+                    infantry = { x = 1 y = 2 }
+                }
+                support = {
+                    recon_company = { x = 0 y = 0 }
+                }
+            }
+
+            capital_scope = {
+                create_unit = {
+                    division = "name = \"NCR Security Force\" division_template = \"NCR Security Force\" start_experience_factor = 0.5 start_equipment_factor = 1"
+                    owner = ROOT
+                }
+                create_unit = {
+                    division = "name = \"NCR Security Force\" division_template = \"NCR Security Force\" start_experience_factor = 0.5 start_equipment_factor = 1"
+                    owner = ROOT
+                }
+                create_unit = {
+                    division = "name = \"NCR Security Force\" division_template = \"NCR Security Force\" start_experience_factor = 0.5 start_equipment_factor = 1"
+                    owner = ROOT
+                }
+            }
+        }
+    }
+    focus = {
+        id = ncr_FOU_brahmin_pitstop
+        icon = GFX_goal_NCR_Generic_Brahmin
+        cost = 45
+        prerequisite = {
+            focus = ncr_FOU_expanding_regional_security
+        }
+        x = -1
+        y = 1
+        relative_position_id = ncr_FOU_expanding_regional_security
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            add_ideas = FOU_pitstop
+        }
+    }
+    focus = {
+        id = ncr_FOU_crimson_caravan_contracts
+        icon = GFX_goal_generic_brahmin_trade
+        cost = 45
+        prerequisite = {
+            focus = ncr_FOU_expanding_regional_security
+        }
+        x = 1
+        y = 1
+        relative_position_id = ncr_FOU_expanding_regional_security
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            add_ideas = FOU_caravan
+
+        }
+    }
+    focus = {
+        id = ncr_FOU_entering_the_big_circle
+        icon = GFX_goal_NCR_Hayes_Free_Trade
+        cost = 45
+        prerequisite = {
+            focus = ncr_FOU_crimson_caravan_contracts
+        }
+        prerequisite = {
+            focus = ncr_FOU_brahmin_pitstop
+        }
+        x = 1
+        y = 1
+        relative_position_id = ncr_FOU_brahmin_pitstop
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            custom_effect_tooltip = oro_best_brightest
+            add_ideas = FOU_big_circle
+            hidden_effect = {
+                remove_ideas = FOU_pitstop
+                remove_ideas = FOU_caravan
+            }
+        }
+    }
+
+    #Bagger
+    focus = {
+        id = ncr_BAG_expanding_authority_in_colorado
+        icon = GFX_goal_NCR_Propaganda_2
+        cost = 45
+        available = {
+            has_completed_focus = ncr_puppet_ncr_state
+        }
+        allow_branch = {
+            # original_tag = BAG
+            always = no
+        }
+        x = 30
+        y = 14
+        ai_will_do = { factor = 100 }
+        completion_reward = {
+            every_owned_state = {
+                limit = {
+                    OR = {
+                        region = 42
+                        region = 43
+                        region = 44
+                    }
+                }
+                add_compliance = 10
+                add_resistance = -10
+            }
+        }
+    }
+    focus = {
+        id = ncr_BAG_reconsiling_the_foragers
+        icon = GFX_goal_NCR_Barons_Congress_Exile
+        cost = 45
+        prerequisite = {
+            focus = ncr_BAG_expanding_authority_in_colorado
+        }
+        x = -1
+        y = 1
+        relative_position_id = ncr_BAG_expanding_authority_in_colorado
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            FOR = {
+                country_event = nf_minor_ncr_puppet.1
+            }
+        }
+    }
+
+    focus = {
+        id = ncr_BAG_professional_training
+        icon = GFX_goal_NCR_Army_Big_Jim_Drills
+        cost = 45
+        prerequisite = {
+            focus = ncr_BAG_expanding_authority_in_colorado
+        }
+        x = 1
+        y = 1
+        relative_position_id = ncr_BAG_expanding_authority_in_colorado
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            add_ideas = bag_ncr_training
+            if = {
+                limit = {
+                    OR = {
+                        LUM = {
+                            exists = yes
+                        }
+                        WHD = {
+                            exists = yes
+                        }
+                    }
+
+                }
+            declare_war_on = {
+                target = LUM
+            }
+            declare_war_on = {
+                target = WHD
+            }
+            }
+            else = {}
+        }
+    }
+
+    focus = {
+        id = ncr_BAG_statehood_offer_to_battery
+        icon = GFX_goal_NCR_Generic_Bill
+        cost = 45
+        prerequisite = {
+            focus = ncr_BAG_reconsiling_the_foragers
+        }
+        prerequisite = {
+            focus = ncr_BAG_professional_training
+        }
+        x = 1
+        y = 1
+        relative_position_id = ncr_BAG_reconsiling_the_foragers
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            YMP = {
+                country_event = nf_minor_ncr_puppet.2
+            }
+        }
+    }
+    focus = {
+        id = ncr_BAG_the_secrets_of_the_dome
+        icon = GFX_goal_generic_boulder_dome
+        cost = 45
+        prerequisite = {
+            focus = ncr_BAG_statehood_offer_to_battery
+        }
+        x = 0
+        y = 1
+        relative_position_id = ncr_BAG_statehood_offer_to_battery
+        ai_will_do = {
+            factor = 75
+        }
+        completion_reward = {
+            set_technology = {
+                plasma_weaponry_1 = 1
+            }
+            add_ideas = bag_dome_secrets
+        }
+    }
+    #End
+}

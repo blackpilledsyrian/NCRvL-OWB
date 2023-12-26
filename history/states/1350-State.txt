@@ -1,0 +1,22 @@
+state={
+	id=1350
+	name="STATE_1350"
+	provinces={
+		14882 14883 14884 14885 14887 14888 14889 14890 14891 14916
+	}
+	resources = {
+		circuitry = 2
+	}
+	history = {
+		victory_points = {
+			14890 5
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+		}
+	}
+	state_category = shanty
+	manpower = 312
+	buildings_max_level_factor=1.000
+}

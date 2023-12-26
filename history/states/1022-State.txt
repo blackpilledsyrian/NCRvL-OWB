@@ -1,0 +1,27 @@
+state={
+	id=1022
+	name="STATE_1022"
+
+	resources = {
+		water = 2
+		energy = 1
+	}
+
+	history={
+		victory_points = {
+			12791 5
+		}
+		buildings = {
+			infrastructure = 1
+			arms_factory = 2
+			industrial_complex = 2
+		}
+	}
+
+	provinces={
+		12795 12813 12815 12797 12807 12782 12791
+	}
+	manpower = 4000
+	state_category = large_town
+	buildings_max_level_factor=1.000
+}

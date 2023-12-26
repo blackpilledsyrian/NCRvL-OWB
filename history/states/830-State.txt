@@ -1,0 +1,30 @@
+state = {
+	id = 830
+	name = "STATE_830"
+	resources={
+		water = 6
+		energy = 4
+	}
+
+	history={
+		buildings = {
+			infrastructure = 1
+			dockyard = 2
+			9761 = {
+				naval_base = 1
+			}
+
+		}
+		victory_points = {
+			9760 5
+		}
+
+	}
+
+	provinces={
+		9759 9760 9761 9791 9796 9807 9814 9829 9830 9835 9836 9844 9852 9865 9888 9910 10834
+	}
+	manpower=8568
+	buildings_max_level_factor=1.000
+	state_category=town
+}

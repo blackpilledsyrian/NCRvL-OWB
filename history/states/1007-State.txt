@@ -1,0 +1,33 @@
+state={
+	id=1007
+	name="STATE_1007"
+
+	resources = {
+		water = 4
+		metal = 4
+		composites = 1
+	}
+
+	history={
+		buildings = {
+			infrastructure = 3
+			arms_factory = 3
+		}
+		victory_points = {
+			3772 10
+		}
+		victory_points = {
+			7306 5
+		}
+		victory_points = {
+			3707 5
+		}
+	}
+
+	provinces={
+		2472 7306 3798 3771 2112 3626 2106 3707 2562 3772 10461 3952
+	}
+	manpower = 7699
+	state_category = large_town
+	buildings_max_level_factor=1.000
+}

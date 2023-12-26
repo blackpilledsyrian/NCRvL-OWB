@@ -1,0 +1,27 @@
+state = {
+	id = 288
+	name = "STATE_288"
+	manpower = 6961
+	state_category = town
+
+	resources ={
+		water = 12
+		composites = 4
+		energy = 6
+	}
+
+	history = {
+		victory_points = {
+			3783 10
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 2
+		}
+	}
+
+	provinces = {
+		264 1964 1965 2484 3685 3780 3781 3782 3783 3784 3785 3786 3836 3844 3849 3850 3851 3995
+	}
+}

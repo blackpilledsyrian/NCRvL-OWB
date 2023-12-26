@@ -1,0 +1,146 @@
+﻿division_template = {
+	name = "Militia Force"
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Defenders of Diné"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 3 y = 0 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+	}
+	support = {
+		demolitions_support = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Skin-walkers"
+	template_counter = 143
+
+	regiments = {
+		spec_ops = { x = 0 y = 0 }
+		spec_ops = { x = 0 y = 1 }
+		spec_ops = { x = 0 y = 2 }
+		spec_ops = { x = 1 y = 0 }
+		spec_ops = { x = 1 y = 1 }
+		spec_ops = { x = 1 y = 2 }
+		spec_ops = { x = 2 y = 0 }
+		spec_ops = { x = 2 y = 1 }
+		demolitions_infantry = { x = 3 y = 0 }
+		demolitions_infantry = { x = 3 y = 1}
+	}
+	support = {
+		demolitions_support = { x = 0 y = 0 }
+	}
+}
+
+units = {
+	division = {
+		name = "Sanja's Band"
+		location = 8993
+		division_template = "Defenders of Diné"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Warriors of Armarilla"
+		location = 6720
+		division_template = "Defenders of Diné"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Bloomfields Tribesmen"
+		location = 6562
+		division_template = "Defenders of Diné"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Chaco Mesa Battlegroup"
+		location = 8074
+		division_template = "Defenders of Diné"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Del-Norte Lonewalkers"
+		location = 8069
+		division_template = "Defenders of Diné"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Nageezi Skin-walkers"
+		location = 6730
+		division_template = "Skin-walkers"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "La Jara Skin-walkers"
+		location = 8197
+		division_template = "Skin-walkers"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Jicarilla Skin-walkers"
+		location = 6563
+		division_template = "Skin-walkers"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Tierra Amarilla Skin-walkers"
+		location = 5585
+		division_template = "Skin-walkers"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+}
+
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = ballistic_equipment_1
+			creator = "NAV"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = spec_ops_equipment_2
+			creator = "NAV"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = demolitions_equipment_1
+			creator = "NAV"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+}

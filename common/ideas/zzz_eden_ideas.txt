@@ -1,0 +1,274 @@
+ideas = {
+	country = {
+		EDN_brotherhood_knowledge = {
+            picture = navarro_scout_camp
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            research_bonus = {
+                energy_weaponry_tech_category = 0.05
+                cat_land_doctrine = 0.10
+            }
+            modifier = {
+                research_speed_factor = 0.03
+                army_core_attack_factor = 0.05
+                army_core_defence_factor = 0.05
+            }
+        }
+		EDN_the_corpse1 = {
+			picture = corrupted_geck
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				MONTHLY_POPULATION = -0.1
+				stability_factor = -0.1
+				production_speed_buildings_factor = -0.1
+				conscription = 0.05
+				exodus_national_appeal = -0.05
+			}
+		}
+		EDN_the_corpse2 = {
+			picture = corrupted_geck
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				stability_factor = -0.05
+				production_speed_buildings_factor = -0.05
+				conscription = 0.045
+				exodus_national_appeal = -0.025
+				max_dig_in = 14
+			}
+		}
+		EDN_the_corpse3 = {
+			picture = corrupted_geck
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				MONTHLY_POPULATION = 0.1
+				conscription = 0.04
+				max_dig_in = 12
+			}
+		}
+		EDN_the_corpse4 = {
+			picture = corrupted_geck
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				MONTHLY_POPULATION = 0.2
+				stability_factor = 0.05
+				production_speed_buildings_factor = 0.05
+				conscription = 0.035
+				exodus_national_appeal = 0.025
+				max_dig_in = 11
+			}
+		}
+		EDN_the_corpse5 = {
+			picture = EDN_paradise
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				MONTHLY_POPULATION = 0.3
+				stability_factor = 0.15
+				production_speed_buildings_factor = 0.1
+				conscription = 0.03
+				exodus_national_appeal = 0.05
+				max_dig_in = 10
+			}
+		}
+		EDN_resourceful = {
+			picture = EDN_resourcefulness
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				local_resources_factor = 0.15
+			}
+		}
+
+		EDN_productive = {
+			picture = EDN_productive
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				industrial_capacity_factory = 0.075
+			}
+		}
+
+		EDN_industrious = {
+			picture = EDN_industrious
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				global_building_slots_factor = 0.1
+			}
+		}
+
+		EDN_skilled = {
+			picture = EDN_skilled
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.05
+			}
+		}
+
+		EDN_unprepared = {
+			picture = EDN_unprepared
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				army_attack_factor = -0.3
+				army_defence_factor = -0.3
+				max_dig_in = -15
+			}
+		}
+
+		EDN_power_armor_primacy = {
+			picture = EDN_power_armor_primacy
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				modifier_army_sub_unit_power_armour_attack_factor = 0.075
+				modifier_army_sub_unit_power_armour_defence_factor = 0.075
+				special_forces_min = 30
+				special_forces_cap = 0.05
+			}
+		}
+
+		EDN_thriving_military_industry = {
+			picture = EDN_military_ind_bad
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				production_speed_arms_factory_factor = 0.1
+				production_speed_dockyard_factor = 0.1
+			}
+		}
+
+		EDN_thriving_consumer_industry = {
+			picture = EDN_military_ind_good
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_infrastructure_factor = 0.1
+			}
+		}
+
+		EDN_the_eden_volunteer_corps = {
+			picture = EDN_volunteer
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				send_volunteer_size = 10
+			}
+		}
+
+		RRG_eden_influence = {
+			picture = EDN_culture
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				monthly_population = 0.15
+			}
+			research_bonus = {
+				agriculture_tech = 0.1
+			}
+		}
+
+		EDN_rrg_influence = {
+			picture = EDN_culture
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				political_power_factor = 0.1
+				people_drift = 0.05
+				caps_income_modifier = 0.05
+			}
+		}
+	}
+}
+

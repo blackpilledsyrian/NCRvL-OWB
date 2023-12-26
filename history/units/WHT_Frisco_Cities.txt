@@ -1,0 +1,44 @@
+﻿units = {
+	division = {
+		name = "Deathclaw Hunter Warband"
+		location = 8549
+		division_template = "White Leg Warband"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Salt-Upon-Fries' Warband"
+		location = 3412
+		division_template = "White Leg Warband"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Tears-In-The-Rain's Warband"
+		location = 6363
+		division_template = "White Leg Armored Warband"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Frisco City Warband"
+		location = 1532
+		division_template = "White Leg Warband"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "St. George Warband"
+		location = 1008
+		division_template = "White Leg Warband"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Cedar City Warband"
+		location = 6370
+		division_template = "White Leg Warband"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+}

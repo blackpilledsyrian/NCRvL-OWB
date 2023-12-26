@@ -1,0 +1,149 @@
+characters = {
+	SHI_Akigahai = {
+		name = SHI_Akigahai_name
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_SHI_leader
+			}
+		}
+		country_leader = {
+			desc = SHI_Akigahai_DESC
+			ideology = militarist_oligarchy
+			traits = {
+				expert_negotiator
+				political_workhorse
+			}
+			expire = "3000.01.01.01"
+			id = -1
+		}
+	}
+	SHI_lo_pan = {
+		name = SHI_lo_pan_name
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Lo_Pan
+			}
+		}
+		country_leader = {
+			desc = SHI_lo_pan_desc
+			ideology = warlordship
+			expire = "2292.1.1.12"
+			traits = {
+				#settlement_protector #Unit leader trait, not leader trait, it has no function
+				cruel_tyrant
+			}
+		}
+		corps_commander = {
+			traits = {
+				hot_blooded_trait
+				strong_trait
+				agile_trait
+				urban_assault_specialist
+			}
+			skill = 4
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+	SHI_dragon = {
+		name = SHI_dragon_name
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_dragon
+			}
+		}
+		corps_commander = {
+			traits = {
+				skilled_trait
+				enduring_trait
+				perceptive_trait
+				urban_assault_specialist
+			}
+			skill = 5
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	SHI_xian = {
+		name = SHI_xian_name
+		portraits = {
+			civilian = {
+				large = GFX_portrait_doctor_xian
+				small = GFX_idea_SHI_researcher
+			}
+			army = {
+				small = GFX_idea_SHI_researcher
+			}
+		}
+		corps_commander = {
+			traits = {
+				tech_wizard_trait
+				intelligent_trait
+				lucky_trait
+				paratrooper
+				inspirational_trait
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 3
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = SHI_xian_idea_token
+			ledger = army
+			allowed = {
+				original_tag = SHI
+			}
+			available = {
+				has_completed_focus = shi_fund_engineering
+			}
+			traits = {
+				shi_researcher_reborn
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	shi_elder_francis = {
+		name = shi_elder_francis_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_francis_krieger
+			}
+		}
+		country_leader = {
+			ideology = technocracy
+			expire = "2292.1.1.12"
+			id = -1
+			desc = shi_elder_francis_DESC
+			traits = {
+				expert_negotiator
+				political_workhorse
+			}
+			expire = "3000.01.01.01"
+			id = -1
+		}
+	}
+	SHI_Norton = {
+		name = "King Norton II"
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_SHI_Nortan
+			}
+		}
+		country_leader = {
+			desc = SHI_NORTON_DESC
+			ideology = feudalism
+			expire = "3000.01.01.01"
+			id = -1
+		}
+	}
+}

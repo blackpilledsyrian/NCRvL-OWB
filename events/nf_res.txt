@@ -1,0 +1,400 @@
+﻿add_namespace = nf_events_res
+
+country_event = {
+	id = nf_events_res.1
+	title = nf_events_res.1.t
+	desc = nf_events_res.1.d
+	picture = GFX_event_brain
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_events_res.1.a
+
+		add_manpower = -250
+	}
+	option = {
+		name = nf_events_res.1.b
+
+		282 = {
+			add_resource = {
+				type = water
+				amount = -6
+			}
+		}
+	}
+	option = {
+		name = nf_events_res.1.c
+
+		add_timed_idea = {
+			idea = res_leaked_reactor_idea
+			days = 720
+		}
+		282 = {
+			add_resource = {
+				type = energy
+				amount = -2
+			}
+		}
+	}
+}
+
+country_event = {
+	id = nf_events_res.2
+	title = nf_events_res.2.t
+	desc = nf_events_res.2.d
+	picture = GFX_event_generic_desert
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_events_res.2.a
+
+		add_ideas = res_revanchism_idea
+	}
+	option = {
+		name = nf_events_res.2.b
+
+		add_ideas = res_new_society_idea
+	}
+	option = {
+		name = nf_events_res.2.c
+
+		add_ideas = res_ghoul_heaven_idea
+	}
+}
+
+country_event = {
+	id = nf_events_res.3
+	title = nf_events_res.3.t
+	desc = nf_events_res.3.d
+
+	picture = GFX_event_vault_1
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_events_res.3.a
+
+		set_temp_variable = { workshops_to_add = 4 }
+		RES_add_workshops = yes
+
+		add_stability = -0.2
+		add_manpower = -500
+	}
+	option = {
+		name = nf_events_res.3.b
+
+		set_temp_variable = { workshops_to_add = 2 }
+		RES_add_workshops = yes
+
+		add_stability = -0.05
+		add_manpower = -200
+	}
+	option = {
+		name = nf_events_res.3.c
+
+		set_temp_variable = { workshops_to_add = 1 }
+		RES_add_workshops = yes
+
+		add_stability = 0.05
+		add_manpower = -100
+		89 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	id = nf_events_res.4
+	title = nf_events_res.4.t
+	desc = nf_events_res.4.d
+
+	picture = GFX_event_res_trading_post
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_events_res.4.a
+		add_stability = 0.025
+		add_political_power = 25
+	}
+}
+
+country_event = {
+	id = nf_events_res.5
+	title = nf_events_res.5.t
+	desc = nf_events_res.5.d
+	picture = GFX_event_reservation_trade
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_events_res.5.a
+		add_equipment_to_stockpile = {
+			type = ballistic_equipment_1
+			amount = 400
+			producer = USA
+		}
+		add_manpower = 30	# Low cause flavor, event specifically mentions RES receiving guns and 30 people
+	}
+}
+
+country_event = {
+	id = nf_events_res.6
+	title = nf_events_res.6.t
+	desc = nf_events_res.6.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_events_res.6.a
+	}
+}
+
+country_event = {
+	id = nf_events_res.7
+	title = nf_events_res.7.t
+	desc = nf_events_res.7.d
+
+	picture = GFX_event_vault_2
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_events_res.7.a
+
+		add_to_variable = { res_sub_level_2_manpower_var = 10 }
+		custom_effect_tooltip = res_decrease_mp_drain_tt
+	}
+}
+
+country_event = {
+	id = nf_events_res.8
+	title = nf_events_res.8.t
+	desc = nf_events_res.8.d
+
+	picture = GFX_event_vault_2
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_events_res.8.a
+
+		add_to_variable = { res_sub_level_2_manpower_var = 10 }
+		custom_effect_tooltip = res_decrease_mp_drain_tt
+	}
+}
+
+country_event = {
+	id = nf_events_res.9
+	title = nf_events_res.9.t
+	desc = nf_events_res.9.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_events_res.9.a
+	}
+	# option = {
+	# 	name = nf_events_res.9.b
+	# }
+}
+
+country_event = { # Nepthys joins
+	id = nf_events_res.10
+	title = nf_events_res.10.t
+	desc = nf_events_res.10.d
+	fire_only_once = yes
+
+	trigger = {
+		tag = RES
+		has_idea = RES_horatio_high_command
+	}
+
+	mean_time_to_happen = {
+		days = 240
+	}
+
+	option = {
+		name = nf_events_res.10.a
+
+		set_temp_variable = { chosen_newborn_var = 5 }
+		res_add_newborn = yes
+	}
+}
+
+country_event = { # Athos joins
+	id = nf_events_res.11
+	title = nf_events_res.11.t
+	desc = nf_events_res.11.d
+	fire_only_once = yes
+
+	trigger = {
+		tag = RES
+	}
+
+	mean_time_to_happen = {
+		months = 18
+	}
+
+	option = {
+		name = nf_events_res.11.a
+
+		set_temp_variable = { chosen_newborn_var = 3 }
+		res_add_newborn = yes
+	}
+}
+
+country_event = { # Hidden Focus unlocks
+	id = nf_events_res.12
+	title = nf_events_res.12.t
+	desc = nf_events_res.12.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_events_res.12.a
+	}
+}
+
+
+### Flavor ###
+add_namespace = nf_events_flavor_res
+
+country_event = {
+	id = nf_events_flavor_res.1
+	title = nf_events_flavor_res.1.t
+	desc = nf_events_flavor_res.1.d
+
+	picture = GFX_event_rrg_ruins
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_events_flavor_res.1.a
+
+		add_manpower = 1000
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 1000
+		}
+
+		677 = { add_core_of = RES }
+	}
+	option = {
+		name = nf_events_flavor_res.1.b
+
+		add_manpower = 1000
+		set_temp_variable = { caps_to_add = 200 }
+		add_caps = yes
+
+		677 = { add_core_of = RES }
+	}
+	option = {
+		name = nf_events_flavor_res.1.c
+
+		add_manpower = 1000
+		add_stability = 0.1
+
+		677 = { add_core_of = RES }
+	}
+}
+
+country_event = {
+	id = nf_events_flavor_res.2
+	title = nf_events_flavor_res.2.t
+	desc = nf_events_flavor_res.2.d
+
+	picture = GFX_event_generic_ruins_4
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_events_flavor_res.2.a
+
+		# TODO replace w/ proper faction syntax
+		add_to_faction = LOS
+	}
+}
+
+
+### Green RES ###
+add_namespace = nf_events_green_res
+
+# Colonel overtakes the country
+country_event = {
+	id = nf_events_green_res.1
+	title = nf_events_green_res.1.t
+	desc = nf_events_green_res.1.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_events_green_res.1.a
+		add_stability = -0.2
+		retire_character = RES_willem_clark
+		set_politics = {
+			ruling_party = elites
+		}
+		hidden_effect = {
+			set_popularities = {
+				ruler = 15
+				people = 15
+				elites = 60
+				intellectuals = 10
+			}
+		}
+	}
+}
+
+# Going Green event
+country_event = {
+	id = nf_events_green_res.2
+	title = nf_events_green_res.2.t
+	desc = nf_events_green_res.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_events_green_res.2.a
+
+		add_stability = -0.2
+	}
+}
+
+# Exile opposition
+country_event = {
+	id = nf_events_green_res.3
+	title = nf_events_green_res.3.t
+	desc = nf_events_green_res.3.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_events_green_res.3.a
+		custom_effect_tooltip = res_long_walk_tt
+		add_manpower = -100
+		add_political_power = 100
+	}
+}
+
+# Sgt. Hank
+country_event = {
+	id = nf_events_green_res.4
+	title = nf_events_green_res.4.t
+	desc = nf_events_green_res.4.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_events_green_res.4.a
+		# TODO Replace this effect with adding Hank as a general. Waiting on the GFX for it.
+		army_experience = 25
+	}
+}

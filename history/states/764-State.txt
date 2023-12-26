@@ -1,0 +1,26 @@
+state = {
+	id = 764
+	name = "STATE_764"
+	resources={
+		circuitry = 4
+		energy = 4
+	}
+
+	history={
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+		}
+		victory_points = {
+			732 5
+		}
+
+	}
+
+	provinces={
+		732 737 9391 9400 9525 9572 9577 10675 11042 11044 11058 11064 11066 11073 11080 11083
+	}
+	manpower=8920
+	buildings_max_level_factor=1.000
+	state_category=shanty
+}

@@ -1,0 +1,30 @@
+state = {
+	id = 818
+	name = "STATE_818"
+
+	history={
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 2
+			arms_factory = 2
+			10331 = {
+				naval_base = 4
+			}
+		}
+		victory_points = {
+			10331 30
+		}
+	}
+
+	resources = {
+		composites = 4
+	}
+
+	provinces={
+		10199 10203 10233 10272 10275 10282 10331 10351 10356 10387 10390
+	}
+
+	manpower=54000
+	buildings_max_level_factor=1.000
+	state_category=city
+}

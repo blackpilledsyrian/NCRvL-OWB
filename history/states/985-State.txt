@@ -1,0 +1,23 @@
+state = {
+	id = 985
+	name = "STATE_985"
+	manpower = 1971
+	state_category=rural
+
+	history = {
+		victory_points = {
+			12426 5
+		}
+		victory_points = {
+			12433 3
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+		}
+	}
+
+	provinces = {
+		261 2148 2350 7221 12426 12429 12430 12431 12433 12434 12435 12437 12439
+	}
+}

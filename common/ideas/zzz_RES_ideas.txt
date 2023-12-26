@@ -1,0 +1,301 @@
+@medium_progress_speed = 0.5
+@fast_progress_speed = 1
+
+ideas = {
+	country = {
+		res_sub_level_2_idea = {
+			picture = generic_production_bonus
+			removal_cost = -1
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.1
+				industrial_capacity_factory = 0.2
+			}
+		}
+		res_gates_idea = {
+			picture = hells_gates
+			removal_cost = -1
+			modifier = {
+				exodus_occupier_appeal = -0.4
+				exodus_national_appeal = -0.4
+				global_building_slots_factor = 0.3
+				#no_compliance_gain = 1
+				caps_flat_income_modifier = 15
+			}
+		}
+		res_leaked_reactor_idea = {
+			picture = radioactivespill
+			modifier = {
+				fuel_gain_factor = -0.75
+			}
+		}
+		res_revanchism_idea = {
+			picture = generic_mass_infantry
+			modifier = {
+				army_attack_factor = 0.1
+				experience_gain_army = 0.05
+			}
+		}
+		res_new_society_idea = {
+			picture = pantheon_ncn
+			modifier = {
+				army_core_defence_factor = 0.15
+				max_dig_in = 3.0
+			}
+		}
+		res_ghoul_heaven_idea = {
+			picture = two_temple
+			modifier = {
+				stability_factor = 0.1
+				industrial_capacity_factory = 0.05
+			}
+		}
+		res_ammo_idea = {
+			picture = generic_caps
+			removal_cost = -1
+			modifier = {
+				supply_consumption_factor = -0.15
+				no_supply_grace = 24
+				army_attack_factor = 0.05
+			}
+		}
+		res_armor_idea = {
+			picture = generic_improv_barricade
+			removal_cost = -1
+			equipment_bonus = {
+				heavy_infantry_equipment = {
+					build_cost_ic = -0.25
+					instant = yes
+				}
+			}
+			modifier = {
+				army_defence_factor = 0.1
+			}
+		}
+		res_level_1_idea = {
+			picture = generic_vault_door
+			removal_cost = -1
+			modifier = {
+				conscription_factor = 0.05
+				global_building_slots_factor = 0.1
+			}
+		}
+		res_help_for_navajo_idea = {
+			# TODO
+			#picture =
+			removal_cost = -1
+			targeted_modifier = {
+				tag = RES
+				attack_bonus_against = 0.5
+			}
+
+			cancel = {
+				RES = { exists = no }
+			}
+		}
+		res_help_for_navajo_2_idea = {
+			# TODO
+			#picture =
+			removal_cost = -1
+			modifier = {
+				land_reinforce_rate = -0.01
+			}
+			cancel = {
+				NAV = { exists = no }
+			}
+		}
+		res_crusade_idea = {
+			picture = generic_nuclear_aftermath
+			modifier = {
+				exodus_assimilation_proportion = 0.2
+				enemy_justify_war_goal_time = -0.9
+				surrender_limit = 0.25
+				war_stability_factor = 0.1
+				breakthrough_factor = 0.1
+				required_garrison_factor = -0.25
+			}
+		}
+		resg_fortifying_our_positions_idea = {
+			# TODO
+			#picture =
+			modifier = {
+				production_speed_bunker_factor = 0.25
+			}
+		}
+		resg_ghoul_army_idea = {
+			# TODO
+			#picture =
+			modifier = {
+				modifier_army_sub_unit_ghoul_infantry_attack_factor = 0.1
+				modifier_army_sub_unit_heavy_infantry_attack_factor = 0.1
+				modifier_army_sub_unit_ghoul_infantry_max_org_factor = 0.05
+				modifier_army_sub_unit_heavy_infantry_max_org_factor = 0.05
+			}
+		}
+		resg_bear_hunting_idea = {
+			# TODO
+			#picture =
+			targeted_modifier = {
+				tag = NCR
+				attack_bonus_against = 0.05
+				defense_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = MOT
+				attack_bonus_against = 0.05
+				defense_bonus_against = 0.05
+			}
+			modifier = {
+				army_attack_factor = 0.05
+			}
+		}
+		resg_stand_against_bull_idea = {
+			# TODO
+			#picture =
+			targeted_modifier = {
+				tag = NCR
+				attack_bonus_against = 0.05
+				defense_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = MOT
+				attack_bonus_against = 0.05
+				defense_bonus_against = 0.05
+			}
+			modifier = {
+				army_defence_factor = 0.05
+			}
+		}
+		resg_old_world_knowledge_idea = {
+			# TODO
+			#picture =
+			modifier = {
+				research_speed_factor = 0.05
+			}
+		}
+		resg_army_with_spirit_idea = {
+			# TODO
+			#picture =
+			modifier = {
+				conscription_factor = 0.3	# Intentionally very high, RES has plenty of manpower debuffs or other debuffs in some places
+				training_time_factor = -0.15	# Intentionally not just for the army
+				consumer_goods_expected_value = -0.05
+			}
+		}
+	}
+	hidden_ideas = {
+		newborn_1_civ_idea = {
+			modifier = {
+				required_garrison_factor = -0.15
+			}
+		}
+		newborn_1_mil_idea = {
+			modifier = {
+				army_attack_factor = 0.1
+				experience_gain_army_factor = 0.05
+			}
+		}
+		newborn_1_prj_idea = {
+			modifier = {
+				sl3_progress_speed_flat = @medium_progress_speed
+			}
+		}
+		newborn_2_civ_idea = {
+			modifier = {
+				industry_free_repair_factor = 0.3
+				production_speed_buildings_factor = 0.05
+				stability_factor = 0.1
+			}
+		}
+		newborn_2_mil_idea = {
+			modifier = {
+				production_speed_arms_factory_factor = 0.1
+			}
+		}
+		newborn_2_prj_idea = {
+			modifier = {
+				sl3_progress_speed_flat = @medium_progress_speed
+			}
+		}
+		newborn_3_civ_idea = {
+			modifier = {
+				consumer_goods_expected_value = -0.03
+			}
+		}
+		newborn_3_mil_idea = {
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.05
+				industrial_capacity_factory = 0.1
+			}
+		}
+		newborn_3_prj_idea = {
+			modifier = {
+				sl3_progress_speed_flat = @medium_progress_speed
+			}
+		}
+		newborn_4_civ_idea = {
+			modifier = {
+				faction_trade_opinion_factor = 0.5
+				local_resources_factor = 0.2
+			}
+		}
+		newborn_4_mil_idea = {
+			modifier = {
+				production_speed_arms_factory_factor = 0.05
+				line_change_production_efficiency_factor = 0.05
+			}
+		}
+		newborn_4_prj_idea = {
+			modifier = {
+				sl3_progress_speed_flat = @medium_progress_speed
+			}
+		}
+		newborn_5_civ_idea = {
+			modifier = {
+				caps_flat_income_modifier = 5
+			}
+		}
+		newborn_5_mil_idea = {
+			modifier = {
+				conscription = 0.02
+			}
+		}
+		newborn_5_prj_idea = {
+			modifier = {
+				sl3_progress_speed_flat = @fast_progress_speed
+			}
+		}
+		newborn_6_civ_idea = {
+			modifier = {
+				# none
+			}
+		}
+		newborn_6_mil_idea = {
+			modifier = {
+				resistance_target = -0.1
+				land_reinforce_rate = 0.01
+				minimum_training_level = -0.1
+			}
+		}
+		newborn_6_prj_idea = {
+			modifier = {
+				sl3_progress_speed_flat = @fast_progress_speed
+			}
+		}
+		newborn_7_civ_idea = {
+			modifier = {
+				production_factory_start_efficiency_factor = 0.05
+				production_factory_max_efficiency_factor = 0.03
+			}
+		}
+		newborn_7_mil_idea = {
+			modifier = {
+				army_org_factor = 0.15
+			}
+		}
+		newborn_7_prj_idea = {
+			modifier = {
+				sl3_progress_speed_flat = @medium_progress_speed
+			}
+		}
+	}
+}

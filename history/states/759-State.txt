@@ -1,0 +1,34 @@
+state = {
+	id = 759
+	name = "STATE_759"
+	resources={
+		circuitry = 8
+		advanced = 4
+		energy = 15
+		composites = 4
+		metal = 4
+	}
+
+	history={
+		buildings = {
+			infrastructure = 4
+			arms_factory = 3
+			industrial_complex = 1
+			dockyard = 1
+			11047 = {
+				naval_base = 1
+			}
+		}
+		victory_points = {
+			9521 30
+		}
+
+	}
+
+	provinces={
+		9198 9199 9390 9405 9521 9524 9568 9575 10672 11024 11025 11032 11043 11047 11050 11055 11056 11072
+	}
+	manpower=37300
+	buildings_max_level_factor=1.000
+	state_category=city
+}

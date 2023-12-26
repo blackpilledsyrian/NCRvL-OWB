@@ -1,0 +1,18 @@
+state={
+	id=1248
+	name="STATE_1248"
+	provinces={
+		14692 14693 14694 15067 15081 15083 15084 15085
+	}
+	history = {
+		victory_points = {
+			14694 5
+		}
+		buildings = {
+			infrastructure = 3
+		}
+	}
+	state_category = rural
+	manpower = 732
+	buildings_max_level_factor=1.000
+}

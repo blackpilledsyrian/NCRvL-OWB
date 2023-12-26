@@ -1,0 +1,22 @@
+state = {
+	id = 743
+	name = "STATE_743"
+
+	history={
+		victory_points = {
+			9613 5
+		}
+		buildings = {
+			infrastructure = 2
+
+		}
+
+	}
+
+	provinces={ #Provences after 208 were moved here in 3.2, mostly to help make the ARM-RRG border look better if one were to annex the other.
+		748 1995 3208 7095 9150 9203 9205 9283 9285 9464 9597 9601 9603 9604 9606 9607 9611 9612 9613 9615 11213 11228 11229 11231 11240 11208 9452 11185 11189 9592 10702 9588
+	}
+	manpower=7100
+	buildings_max_level_factor=1.000
+	state_category=shanty
+}

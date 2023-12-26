@@ -1,0 +1,277 @@
+﻿l_english:
+  #-------------------------------
+  # RES focuses, made by Rhacius
+  #-------------------------------
+
+  res_nuclear_testing_facility:0 "The Nuclear Testing Facility"
+  res_nuclear_testing_facility_desc:0 "Dr. Willem Clark is gifted, both as a nuclear physicist, but also as a natural leader of men. When the old world burnt he saved what he could, in hopes of one day building a new one from the ashes."
+
+  res_expedition_outside:0 "The First' Expedition"
+  res_expedition_outside_desc:0 "Twelve survivors were sent out to establish contact with the outside world, only one, Dr. Clark managed to return, his bright mind forever changed by the experience with the outside wasteland."
+
+  res_clarks_dream:0 "Clark’s Dream"
+  res_clarks_dream_desc:0 "The enigmatic Dr. Clark has closed himself off to outsiders and most of his fellow ghouls, spending every waking hour in his lab on sub level 3, working tirelessly for the future of ghoul kind."
+
+  res_trading_post:0 "The Trading Post"
+  res_trading_post_desc:0 "The Reservation has been a lucrative and popular trading hub, even while the Blackfoot tribe still roamed the nearby wastes and has since grown to a true center of slave trade and commerce."
+
+  res_acquiring_slaves:0 "Acquiring Slaves"
+  res_acquiring_slaves_desc:0 "Forced labor serves as an essential part of our economy and internal operations. It would be wise to keep our supply secured."
+
+  res_hank_focus:0 "Hank and the Newuns"
+  res_hank_focus_desc:0 "The newuns do not always share our vision, even going as far as to harbour secret sympathies for our smooth skin slaves, best to employ them on the surface, where they can not interfere with the Doctors work."
+
+  res_slaves_rad_protection:0 "Protection for the Slaves"
+  res_slaves_rad_protection_desc:0 "Short are the lifespans of our slaves, even shorter the time they can benefit us through their labour. While we can not prevent their eventual death through radiation we can at least delay it by providing them with some protection."
+
+  res_betty_focus:0 "Betty" #Shop
+  res_betty_focus_desc:0 "Hell hath no fury like a woman scorned, some slaves even suspect that the devil himself turned her into a ghoul just so he could delay the day of their eventual meeting for a little while longer."
+
+  res_scaven_pickers:0 "The Scaven Pickers"
+  res_scaven_pickers_desc:0 "The Scaven-pickers are nomads that live on our lands, having so far escaped death or capture at the hands of the legion. Hank, who somehow managed to make sense of their gibberish has suggested a peaceful solution, a few shipments of Rad-X for an alliance."
+
+  res_horatio_focus:0 "Horatio the Giant"
+  res_horatio_focus_desc:0 "The past of the largest Ghoul of the Reservation and perhaps even the wastes, is a mystery, within him Dr Clark found one of his most fanatical and by far the most brutal followers, making him ideal to break in the new slaves."
+
+  res_smooch:0 "Buy More Smooch"
+  res_smooch_desc:0 "A lot of the Reservations residents suffer some form of pain, with both physical and mental pain being present in equal measure. To all those suffering Smooch offers a cheap and available form of relief, even one our slaves can partake in."
+
+  res_gallup:0 "The Settlement of Gallup"
+  res_gallup_desc:0 "The residents of Gallup found themselves forcefully integrated into the Reservation, after a new deal with Flagstaff found them on our side of the newly agreed upon border. We shall put their lives in service to the cause."
+
+  res_trade_ces:0 "Trading with Flagstaff"
+  res_trade_ces_desc:0 "There is no denying that we benefited greatly from the Legions' ascension, their constant campaigns are what fulfill our ever growing need for slaves and fuel our industry, it is in our interest to deepen those ties now that they have settled in Flagstaff."
+
+  res_trade_nav:0 "Trade with the Navajo"
+  res_trade_nav_desc:0 "The Navajo have proven themselves to be worthwhile trade partners, they provide us with the resources we lack and in exchange we arm them with those same weapons they once used to hold off the legion."
+
+  res_trade_lac:0 "The Doctor and the Legate"
+  res_trade_lac_desc:0 "Dr. Clark has secluded himself in his lab and he famously only left his domain on sub-levels 3 once. It was to personally congratulate Lanius on his new assignment to the east. While we do not know what was spoken between the two men, the Legate certainly left an impression."
+
+  res_trade_two:0 "Trade Along the New Highway"
+  res_trade_two_desc:0 "The people of Two Sun have never been on the best terms with us, their lifestyle simply incompatible with the idea of living in a cramped space underground, none the less we stand to benefit if we trade along the new roads they have built."
+
+  res_trade_smooch:0 "Smuggle Smooch"
+  res_trade_smooch_desc:0 "The Legions restrictions on trade were always problematic and while we managed to convince them to at least allow our traders to carry Rad-X and Rad away, we may never expect them to outright recognize Smooch, leaving us with only one option."
+
+  res_chem_kits:0 "Reservation Rad Away"
+  res_chem_kits_desc:0 "Our Representatives have managed to convince our Legion trade partners to make yet another exemption, this time for Rad Away. Since the exemption only applies to our traders we have also indirectly been given a monopoly on the product."
+
+  res_expand_trading_post:0 "Trading Post Expansion"
+  res_expand_trading_post_desc:0 "Our small on surface trading post can no longer hope to contain all the travellers seeking to exchange goods with us. It is therefore necessary that we expand it to better accommodate the travelling merchants seeking to do business on our land."
+
+  res_jilian:0 "The Story of Jilian"
+  res_jilian_desc:0 "The work on the surface continues apace, but for some of those overseeing things, it creates reservations about the bright future to come."
+
+  res_road:0 "The Reservation Railway"
+  res_road_desc:0 "We seek to better connect our land through the construction of a new railway system which we are going to model after the tracks already spanning over the Navajo land."
+
+  res_town:0 "Ghoultown"
+  res_town_desc:0 "Ghouls from all over the wasteland have travelled to our doorstep, some for safety, others for the comfort of being amongst their own kind. With the sub-levels limited capacity most of the new arrivals were forced to create their own settlement on the surface."
+
+  res_sub_level_1:0 "Sub-Level 1"
+  res_sub_level_1_desc:0 "To meet the increasing demand of living space we were already force to relocate some of the slaves, but now is the time to redouble our efforts to reclaim and expand the subterranean living space known as Sub-Level 1."
+
+  res_town_scavenging:0 "Scavenging Gallup"
+  res_town_scavenging_desc:0 "Our leadership decided to scavenge in the town of Gallup, despite any potential objections the current residence might have."
+
+  res_colonel_green_focus:0 "Colonel Green"
+  res_colonel_green_focus_desc:0 "In the absence of Dr Clark Colonel Green was the one to lead the remaining survivors to rebuild some semblance of civilization and while the Doctor stays focused on the big picture Colonel tends to ensure the smooth running of day to day operations."
+
+  res_elite:0 "A Ghoul Military"
+  res_elite_desc:0 "Colonel Green was the first to realise the danger the wasteland might hold and so he formed an elite military unit that managed to hold the countless threats that roamed Arizona at bay, at least until the Legion assumed the mantle as the wasteland's new protector."
+
+  res_nuclear_nellie:0 "§pNuclear Nelly§!"
+  res_nuclear_nellie_desc:0 "Colonel Green ever the soldier focuses his efforts on conventional warfare, believing it to be the best way to protect the Reservation. Doctor Clark has proceeded with the development of a weapon for the war he intends to lead."
+
+  res_ghoulification:0 "Study the Ghoulification Process"
+  res_ghoulification_desc:0 "The skin blisters and they vomit uncontrollably as radiation sickness takes hold, all while Doctor Clark and his team watch, itching ever closer to uncovering the secret of Ghoulification, all they seem to need is more test subjects."
+
+  res_born_ghouls:0 "Natural Born Ghouls"
+  res_born_ghouls_desc:0 "The Born Ghouls represent the future of the ghoul species and the Reservation will do everything in its power to keep the Doctors successes alive, although seemingly favoured by the two doctors, is not sustainable, at least not at its current success rate."
+
+  res_sub_level_2:0 "Sub-Level 2"
+  res_sub_level_2_desc:0 "It is the forges of sub-level 2 that keep the economic wheel of the reservation turning, without it no slaves, no resources, no more guns and eventually no more Reservation.\nIt is for this reason we need to do everything in our power to keep it operational."
+
+  res_gas_masks:0 "Gas Masks"
+  res_gas_masks_desc:0 "Radioactive particles pose a constant, invisible threat to our workforce, by equipping them with rudimentary gas masks we can at least reduce their impact, while keeping their lungs intact for just a little while longer."
+
+  res_filtration_system:0 "The New Filtration System"
+  res_filtration_system_desc:0 "How can we expect our slaves to work if the water itself is what kills them, by installing expensive filtration systems capable of functioning despite the radiation we can ensure that at least our slaves drinking water is no longer poisonous."
+
+  res_machines:0 "Ancient Machines"
+  res_machines_desc:0 "Most electronics break down in this radioactive environment, however the Reservation being designed as a Nuclear Research Station has been equipped with machines capable of withstanding the demand, we just have to keep buying spare parts to keep them functional."
+
+  res_shooting_range:0 "The Shooting Range"
+  res_shooting_range_desc:0 "Colonel Green has insisted that every physically capable ghoul should at least once a week be trained in the handling of our own weapons, for this practice we are required to build a new shooting range."
+
+  res_ammo:0 "The Last Ammunition"
+  res_ammo_desc:0 "Our Gunsmiths have worked on a new type of ammo, infused with radioactive pigments, they pose an incredible threat to any non-ghoul lifeform that finds itself wounded by it."
+
+  res_chems:0 "Sub-Level 2 Chem Lab"
+  res_chems_desc:0 "The chemical lab on sub-level 2 may look idle for an outsider. But every day one ghoul comes to replenish his supplies and leaves on a lift, different from the one leading to sub-level 1."
+
+  res_weapons:0 "New Weapons"
+  res_weapons_desc:0 "One of our gunsmiths has come up with a new and frankly ingenious design for our weapon schematics. It will be sure to give both our buyers and our soldiers an edge should they come up against inferior designs."
+
+  res_armour:0 "New Armor"
+  res_armour_desc:0 "While our ghouls are known for their tenacity having survived what would have killed lesser life forms several times over, this doesn’t mean we can ignore the concept of protection or neglect our soldiers with proper armaments."
+
+  res_green_room:0 "§GThe Green Room§!"
+  res_green_room_desc:0 "Our slaves expect to die, and every day of their life is a day of suffering and torment, for the Ghouls spare none of them. At night horrifying screams travel up from sub-level 3, horrifying proof of Dr Clarks ongoing experiments in a location simply referred to as “§GThe Green Room§!”."
+
+  res_hint_focus:0 "???"
+  res_hint_focus_desc:0 "§YThe Beautiful\nThe Curious§!\n\n§OThe Gifted\nThe Skilled\nThe Combative§!\n\n§pThe Quiet\nThe Cruel§!"
+  res_hint_focus_tt:0 "\n§YThere is more than meets the eye§!\n\n§OThe fate of the project will determine our path§!\n\n§pMight not the grass be greener on the other side?§!"
+  res_project_fate_tt:0 "§YThe project's outcome will determine our own.§!"
+
+  res_head:0 "§cThe Messiah§!"
+  res_head_desc:0 "The mind of man is capable of anything — because everything is in it, all the past as well as the future."
+
+  res_left_hand:0 "§YDelivering Salvation with his Left§!"
+  res_left_hand_desc:0 "The researchers of sub level 3 have finally found a solution to the declining population problem, a process that although risky offers a never before imagined rate of success.\nWe will soon be ready to administer our salvation to all of mankind."
+
+  res_heart:0 "§GAccursed Heart§!"
+  res_heart_desc:0 "And now,' said the unknown, 'farewell kindness, humanity, and gratitude! Farewell to all the feelings that expand the heart! I have been heaven's substitute to recompense the good - now the god of vengeance yields to me his power to punish the wicked!"
+
+  res_right_hand:0 "§PCarrying Death in his Right§!"
+  res_right_hand_desc:0 "Our Ghoul engineers have rearmed §pNuclear Nellie§!, a massive artillery piece designed to launch nothing short of nuclear warheads over extraordinary distances. Soon this ultimate weapon will deliver untold nuclear devastation upon the Doctor's enemies."
+
+  res_crusade:0 "§MResurrection§!"
+  res_crusade_desc:0 "Doctor Clark has finally emerged from his lab on sub-level 3, his burning passion for our cause reinvigorating all Ghouls that now come and gather to hear him speak, for many this would be the first time they would meet their saviour in person."
+
+  res_launch_nellie:0 "§RUnleash Armageddon§!"
+  res_launch_nellie_desc:0 "The time has come, once again nuclear fire shall wipe the slate clean and the radioactive flames shall put an end to the era of man. We shall unleash untold devastation upon the world, so the age of the ghoul may arise from its ashes."
+
+
+
+
+  ####Green
+  resg_going_green:0 "Face To Face"
+  resg_going_green_desc:0 "In the bowels of the facility, Colonel Green and Dr. Clark meet for the last time."
+
+  resg_maintain_status:0 "Favored Status"
+  resg_maintain_status_desc:0 "The Legion, for all its many flaws, does possess one of the largest armies in the wasteland. Tossing away our position with them could toss away all our work."
+
+  resg_navajo_under_boot:0 "Room For One Reservation"
+  resg_navajo_under_boot_desc:0 "Our former "allies", the Navajo, broke our trade agreements and attempted to wipe us our. Alas, they did not account for our advanced weaponry and tactics. Now they are the ones underneath a new boot."
+
+  resg_master_of_aeronautics:0 "Mastery Of Aeronautics"
+  resg_master_of_aeronautics_desc:0 "With the resources of our new territory, we can begin production of many forms of aircraft. We have found many ghouls with a pre-war education in aeronautics to support this endeavour."
+
+  resg_us_pilots:0 "Flight Hours"
+  resg_us_pilots_desc:0 "A plane is nothing without a pilot. Despite the costs, no form of practice beats actual time in the air."
+
+  resg_cracking_whip:0 "A Familiar Practice"
+  resg_cracking_whip_desc:0 "Under Clark we developed quite a few methods for keeping smoothskins in line."
+
+  resg_develop_farming_tools:0 "Farms Of New Navajo"
+  resg_develop_farming_tools_desc:0 "Taking direct control of the farms around the captured capital of the Navajo will ensure a steady supply of food for ourselves and for trade."
+
+  resg_depose_false_mother:0 "Topple The Mother Of Tribals"
+  resg_depose_false_mother_desc:0 "Diana Stone may believe she can fool the wasteland forever. Our records, however, show all too clearly who she really was before the war. A mortal, who found her own way to live through the centuries. The fertile lands and easily led members of the Twin Mothers tribe would greatly strengthen the Reservation."
+
+  resg_friends_of_drussus:0 "Friends on The Other Side"
+  resg_friends_of_drussus_desc:0 "Drussus may walk his own path, but it's good to keep in touch with fellow ghouls, especially ones that are high ranking Legion officiers!"
+
+  resg_ghoul_friendly_arizona:0 "Friendship In Arizona"
+  resg_ghoul_friendly_arizona_desc:0 "Despite misgivings on all sides, the alliances in Arizona continue to benefit all sides."
+
+  resg_fortifying_our_positions:0 "Towering Walls"
+  resg_fortifying_our_positions_desc:0 "While we may no longer be following the mad designs of the Doctor, there are still enemies out there we will one day certainly face."
+
+  resg_ghoul_army:0 "Ghoulish Army"
+  resg_ghoul_army_desc:0 "Under the Colonel's command, our military forces will be prepared to stand for as long as our ghoulish bodies do."
+
+  resg_deepen_legion_ties:0 "Legion Ties"
+  resg_deepen_legion_ties_desc:0 "Our soldiers fight alongside the Legion on many occasions now, and bring home stories of what they have seen."
+
+  resg_adapt_legion_doctrine:0 "Their Warfare"
+  resg_adapt_legion_doctrine_desc:0 "While at first glance their methods of fighting may seem... primitive... the Legion's constant conquests have developed a level of real world experience we can not replicate. Yet."
+
+  resg_bear_hunting:0 "The Foolish Bear"
+  resg_bear_hunting_desc:0 "To cling so desperately to the past, to base their society on failed structures. The souls of California are even more foolish than those of Arizona."
+
+  resg_expand_production:0 "No Sun Below"
+  resg_expand_production_desc:0 "The workshifts below the earth have not yet slowed. Not while the surface needs arms and armor. And that will never end."
+
+  resg_ultimate_deterent:0 "The Red Button"
+  resg_ultimate_deterent_desc:0 "Work continues to bring Nuclear Nellie to full capacity. While only Colonel Green will have the authority to begin the firing sequence, this weapon will doubtless prove invaluable in the days to come."
+
+  resg_army_with_spirit:0 "Esprit De Corps"
+  resg_army_with_spirit_desc:0 "Since the Colonel's takeover, the military forces are ever more present in the government and society at large. This is not without benefit. Pride in service goes a long way to countering the small size of our population and, thus, our armies."
+
+  resg_navajo_compromise:0 "Honoring Our Pacts"
+  resg_navajo_compromise_desc:0 "The Navajo will stand with us. We will stand with them. Two societies, holding our against the wasteland. It will take compromise, but we are both stronger this way."
+
+  resg_reservation_airbase:0 "Shared Wings"
+  resg_reservation_airbase_desc:0 "Together we will take to the skies."
+
+  resg_reservation_keeping_them:0 "Shared Arms"
+  resg_reservation_keeping_them_desc:0 "Together we will hold our place upon the earth."
+
+  resg_not_all_smoothskins:0 "Trusting Smoothskins"
+  resg_not_all_smoothskins_desc:0 "After centuries, it can be difficult to maintain trust with a smoothskin nation. Our alliance with the Legion was mere convenience and necessity. Our alliance with the Navajo, however, could be forged of much stronger bonds."
+
+  resg_civilian_industry:0 "Public Industry"
+  resg_civilian_industry_desc:0 "Rather than pouring every spare resource into "the Project", some machining supplies should be allowed to serve the civilians living in our territory."
+
+  resg_first_harvest:0 "First Harvest"
+  resg_first_harvest_desc:0 "Clark was content to trade for the majority of food needed. Yet with a little hard work, some of the soil here can still create life. We only ever needed to try."
+
+  resg_welcome_the_silversmiths:0 "Welcome the Silversmiths"
+  resg_welcome_the_silversmiths_desc:0 "Though our pact with the Navajo is a military one first and foremost, welcoming their many skilled craftsmen would undoubtedly benefit both of our economies."
+
+  resg_skinwalkers_patrols:0 "Military Exchange"
+  resg_skinwalkers_patrols_desc:0 "As a sign of our formal military pact, the most skilled of each army will spend time amoungst the other, teaching what they know best."
+
+  resg_rio_grande_fleet:0 "Grande Patrols"
+  resg_rio_grande_fleet_desc:0 "The Navajo may not be able to muster a large fleet, but our seafaring abilities make even theirs seem impressive. Fortunately, the challenges of river navigation pale in comparison to that of the perilous ocean. Even developing modest vessels would be enough to keep our flank from being exposed to the enemy."
+
+  resg_limited_expansion:0 "Carefully Extending Sub-Level 2"
+  resg_limited_expansion_desc:0 "With trade and diplomacy going on above, we no longer need to maintain the relentless conditions of Sub-Level 2. Increasing production is still valuable, but not at the cost of other opportunities."
+
+  resg_stand_against_bull:0 "The Raging Bull"
+  resg_stand_against_bull_desc:0 "Tell the Arizona Slave Army that they can finally rest, their labors on the rails through the great deserts is finally complete. Now the Raging Bull will make it's stampede past Vegas and into the Bear's den while it slumbers ignorantly and its enemies prosper."
+
+  resg_modern_arms:0 "Light, A Particle, A Wave"
+  resg_modern_arms_desc:0 "When all other arguments fail, the APOLLO laser rifle never falters."
+
+  resg_dismantle_cult:0 "Deprogramming"
+  resg_dismantle_cult_desc:0 "In truth, a great many members of the Reservation still believe in the teachings of the False Savior. Willem Clark spent centuries poisoning our minds. It will take years to root it all out. Let this be the first day."
+
+  resg_exile_opposition:0 "Let Them Start The Endless Walk"
+  resg_exile_opposition_desc:0 "The Endless Walk has long been a terrible practice, a final offer to remove pesky troublemakers. Let the final walkers be those who will not renounce those ways."
+
+  resg_sgt_hank:0 "Sergeant Hank"
+  resg_sgt_hank_desc:0 "Hank has made something of a name for himself, even before we put a bullet through Clark. He never truly embraced the old methods. Bringing him into the military will give some authority to back up his words."
+
+  resg_owe_up:0 "Admission Is The First Step"
+  resg_owe_up_desc:0 "As difficult as it may be, public speaking to both the ghouls and smoothskins in our territory about where thing went wrong is needed to avoid the same mistakes."
+
+  resg_close_mines:0 "Into The Sunlight"
+  resg_close_mines_desc:0 "Some of the slaves haven't been allowed out of the mines in so long, the sun will surely burn fiercly in their eyes and upon their skin."
+
+  resg_end_human_experimentation:0 "Close The Labs, Open The Cages"
+  resg_end_human_experimentation_desc:0 "The days of endless experimentation on live human subjects are over. Those who remain will be set free and given care, while the scientists on those projects who are willing to change can be put on more practical sciences."
+
+  resg_convince_born:0 "Arguments With The First Born Children"
+  resg_convince_born_desc:0 "Despite the horrific experiments needed to bring them into being, the Born Ghouls are regarded with no small amount of awe. Getting them to accept Green's leadership would go a long way to keeping the peace here at the facility."
+
+  resg_grant_freedoms:0 "Breaking The Collars"
+  resg_grant_freedoms_desc:0 "No more will humans be forced to labor, collars around their necks. There will be misgivings, and we can not prevent those who prefer to flee. But in time a healthy smoothskin population will take root in our culture."
+
+  resg_old_world_knowledge:0 "New World, Same Science"
+  resg_old_world_knowledge_desc:0 "Nuclear war, not matter how devastating, does not change the fundamental laws upon which the universe operates. What worked before will work again."
+
+  resg_boulder:0 "Open The Dome"
+  resg_boulder_desc:0 "Boulder Dome was truly a marvel in its day, a great center of learning built to last through the end of the world and then some. Clearly, it was not a fruitless effort. Teams of scientists are already being dispatched to recover the research stored there."
+
+  resg_hoover:0 "Building A Turbine"
+  resg_hoover_desc:0 "Once a wonder of the old world, the turbines of Hoover Dam have suffered greatly with age. Equipment to design and construct a new one is already being prepared for travel west."
+
+  resg_paradise:0 "Garden Of Paradise"
+  resg_paradise_desc:0 "The lands of Diana held many secrets. Not least of all a functioning G.E.C.K.! We will surely put this to good use."
+
+  resg_satellite:0 "Look At the Stars Tonight"
+  resg_satellite_desc:0 "Since mankind first lifted their heads upward, they have marvelled at the stars above. We once reached our hands out to grab them, breaching beyond the atmosphere of the homeworld. We can do so again, with a few vital supplies."

@@ -1,0 +1,229 @@
+﻿division_template = {
+	name = "Militia Force"
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "White Leg Warband"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		demolitions_infantry = { x = 2 y = 2 }
+		demolitions_infantry = { x = 3 y = 2 }
+		demolitions_infantry = { x = 3 y = 0 }
+		demolitions_infantry = { x = 3 y = 1 }
+	}
+	support = {
+		demolitions_support = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "White Leg Sky Warband"
+	regiments = {
+		spec_ops = { x = 0 y = 0 }
+		spec_ops = { x = 0 y = 1 }
+		spec_ops = { x = 0 y = 2 }
+		spec_ops = { x = 1 y = 0 }
+		spec_ops = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "White Leg Armored Warband"
+	regiments = {
+		heavy_infantry = { x = 0 y = 0 }
+		heavy_infantry = { x = 0 y = 1 }
+		heavy_infantry = { x = 0 y = 2 }
+		heavy_infantry = { x = 2 y = 0 }
+		heavy_infantry = { x = 2 y = 1 }
+		heavy_infantry = { x = 1 y = 0 }
+		heavy_infantry = { x = 1 y = 1 }
+		heavy_infantry = { x = 1 y = 2 }
+		heavy_infantry = { x = 3 y = 0 }
+		heavy_infantry = { x = 3 y = 1 }
+	}
+	support = {
+		dog_company = { x = 0 y = 0 }
+		demolitions_support = { x = 1 y = 0 }
+	}
+}
+
+units = {
+	division = {
+		name = "Salt-Upon-Wounds' Warband"
+		location = 3512
+		division_template = "White Leg Armored Warband"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "318 Warband"
+		location = 8898
+		division_template = "White Leg Armored Warband"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "White-Claws' Warband"
+		location = 6381
+		division_template = "White Leg Armored Warband"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Caliente Warband"
+		location = 3410
+		division_template = "White Leg Warband"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Harmony Warband"
+		location = 3567
+		division_template = "White Leg Warband"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Garison Warband"
+		location = 3510
+		division_template = "White Leg Warband"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Salt Lake Warband"
+		location = 6376
+		division_template = "White Leg Warband"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Wah-Wah Warband"
+		location = 6380
+		division_template = "White Leg Warband"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Mountain Blade Warband"
+		location = 6373
+		division_template = "White Leg Warband"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Escalante Warband"
+		location = 6374
+		division_template = "White Leg Warband"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Harmony Sky Warband"
+		location = 3569
+		division_template = "White Leg Sky Warband"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Caliente Sky Warband"
+		location = 3569
+		division_template = "White Leg Sky Warband"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Cedar Sky Warband"
+		location = 6366
+		division_template = "White Leg Sky Warband"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Frisco Sky Warband"
+		location = 6366
+		division_template = "White Leg Sky Warband"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+}
+
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = melee_equipment_2
+			creator = "WHT"
+		}
+		requested_factories = 2
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = demolitions_equipment_1
+			creator = "WHT"
+		}
+		requested_factories = 2
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = spec_ops_equipment_1
+			creator = "WHT"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = heavy_infantry_equipment_1
+			creator = "WHT"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = dogs_equipment_1
+			creator = "WHT"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = fighter_equipment_1
+			creator = "WHT"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = cargo_plane_equipment_1
+			creator = "WHT"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+}

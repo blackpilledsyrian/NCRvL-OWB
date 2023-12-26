@@ -1,0 +1,26 @@
+state = {
+	id = 1351
+	name = "STATE_1351"
+	manpower = 112
+	state_category = pastoral
+
+	resources = {
+		water = 4
+	}
+
+	history = {
+		victory_points = {
+			14878 1
+		}
+		victory_points = {
+			14875 2
+		}
+		buildings = {
+			infrastructure = 2
+		}
+	}
+
+	provinces = {
+		14867 14875 14877 14878 14879 14880 14881 14897 14898
+	}
+}

@@ -1,0 +1,21 @@
+state = {
+	id = 606
+	name = "STATE_606"
+	manpower = 10400
+	state_category = rural
+
+	history = {
+		owner = SHI
+		add_core_of = SHI
+		victory_points = {
+			4606 5
+		}
+		buildings = {
+			infrastructure = 2
+		}
+	}
+
+	provinces = {
+		2020 2271 2458 4605 4606 4726 4795 4831 5046
+	}
+}

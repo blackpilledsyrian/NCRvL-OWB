@@ -1,0 +1,191 @@
+﻿capital = 634
+
+oob = "RES_2275"
+
+### Technologies
+set_technology = {
+	basic_supply_transport_tech = 1
+	infantry_tech_level_tribal = 1
+	infantry_tech_level_settler = 1
+	infantry_tech_level_scientific = 1
+	support_tech_level_tribal = 1
+	support_tech_level_settler = 1
+	support_tech_level_scientific = 1
+	special_forces_tech_level_tribal = 1
+	special_forces_tech_level_settler = 1
+	special_forces_tech_level_scientific = 1
+	#power_armour_tech_level_settler = 1
+	#power_armour_tech_level_scientific = 1
+	vehicles_tech_level_tribal = 1
+	vehicles_tech_level_settler = 1
+	vehicles_tech_level_scientific = 1
+	#robotics_tech_level_tribal = 1
+	#robotics_tech_level_settler = 1
+	#robotics_tech_level_scientific = 1
+	air_tech_level_tribal = 1
+	air_tech_level_settler = 1
+	#air_tech_level_scientific = 1
+	naval_tech_level_tribal = 1
+	#naval_tech_level_settler = 1
+	#naval_tech_level_scientific = 1
+	tools_tech_level_tribal = 1
+	tools_tech_level_settler = 1
+	tools_tech_level_scientific = 1
+	habitation_tech_level_tribal = 1
+	habitation_tech_level_settler = 1
+	habitation_tech_level_scientific = 1
+	exploitation_tech_level_tribal = 1
+	exploitation_tech_level_settler = 1
+	exploitation_tech_level_scientific = 1
+	electronics_tech_level_tribal = 1
+	electronics_tech_level_settler = 1
+	electronics_tech_level_scientific = 1
+	tribal_civilization = 1
+	tool_engineering = 1
+	standard_weaponry_tech = 1
+	melee_weaponry_tech_1 = 1
+	spec_ops_equipment_tech_1 = 1
+	pre_construction_industry_tech = 1
+	pre_recycling_industry_tech = 1
+	basic_industry_tech = 1
+	support_weaponry = 1
+	heavy_infantry_tech_1 = 1
+	fireteam_weaponry_tech = 1
+	demolitions_weaponry_tech = 1
+	explosive_demolitions_weaponry_tech_2 = 1
+	anti_tank_equipment_tech_1 = 1
+	anti_tank_tech_1 = 1
+	ghoul_civilization = 1
+	ghoul_paratrooper_tech = 1
+	grand_army = 1
+	grand_battle_plan_owb = 1
+	fortified_positions_doctrine = 1
+	grand_assault_doctrine = 1
+	unit_training_tech_1 = 1
+	unit_training_tech_2 = 1
+	unit_training_tech_3 = 1
+	unit_training_tech_4 = 1
+	heavy_infantry_tech_2 = 1
+	heavy_infantry_tech_3 = 1
+	energy_fireteam_weaponry_tech_2 = 1
+	energy_fireteam_focus_lens_tech = 1
+	energy_weaponry_tech_1 = 1
+	energy_weapon_emitter_tech = 1
+	energy_weaponry_tech_2 = 1
+	tactics_doctrine_tech = 1
+	ballistic_weaponry_tech_1 = 1
+	military_heritage_unlock_tech = 1
+	implant_tech_visibility_tech = 1
+}
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		nautics_tech_1 = 1
+		light_navy_hull_tech_1 = 1
+		naval_invasion_tech_1 = 1
+	}
+}
+if = {
+	limit = {
+		NOT = { has_dlc = "Man the Guns" }
+	}
+	set_technology = {
+		nautics_tech_non_mtg_1 = 1
+		light_navy_hull_tech_non_mtg_1 = 1
+		naval_invasion_tech_non_mtg_1 = 1
+	}
+}
+
+set_stability = 0.5
+set_war_support = 0.45
+set_research_slots = 6
+set_country_flag = is_settler_nation
+set_country_flag = is_ghoul_nation
+set_country_flag = grand_doctrine_ai
+set_country_flag = grand_infantry_doctrine_ai
+set_country_flag = scavenging_disabled
+# set_country_flag = has_unique_manpower_law  # No unique manpower laws for now, we'll see about testing @CGS
+set_country_flag = generic_decisions_disabled
+set_country_flag = backstory_disabled
+set_country_flag = is_arizona_nation
+set_country_flag = no_generic_advisor
+set_country_flag = no_generic_chief
+set_country_flag = no_generic_high_command
+add_manpower = 200		# Need to be deliberate about manpower balance as it's an important resource @Tran
+
+### Ideas
+add_ideas = {
+	res_gates_idea
+	free_trade
+	outsider_law_none
+	normies_law_none
+	war_economy
+}
+
+### Characters
+# Leaders
+recruit_character = RES_willem_clark
+recruit_character = RES_colonel_green
+# Save willem for game rule switch
+random_character = {
+	limit = {
+		is_character = RES_willem_clark
+	}
+	save_global_event_target_as = RES_willem_clark_target
+}
+
+# Advisors
+recruit_character = RES_hank
+recruit_character = RES_betty
+recruit_character = RES_horatio
+
+# Newborn
+recruit_character = RES_newborn_1
+# recruit_character = RES_newborn_2
+# recruit_character = RES_newborn_3
+# recruit_character = RES_newborn_4
+# recruit_character = RES_newborn_5
+# recruit_character = RES_newborn_6
+# recruit_character = RES_newborn_7
+
+### Politics
+set_politics = {
+	ruling_party = ruler
+	elections_allowed = no
+}
+set_popularities = {
+	people = 15
+	elites = 0
+	intellectuals = 20
+	ruler = 65
+}
+
+### Diplomacy
+create_or_join_caesars_legion = yes
+
+### Misc
+# Setup nellie target states
+
+# Setup is now done via focuses as it varies for Willem and Green
+# add_to_array = { res_nellie_targets_array = 203.id }	# New Navajo
+# add_to_array = { res_nellie_targets_array = 522.id }	# Red Sun City
+# add_to_array = { res_nellie_targets_array = 518.id }	# North Phoenix
+# add_to_array = { res_nellie_targets_array = 520.id }	# Flagstaff
+
+# Sub-Level 2
+set_variable = { res_sub_level_2_factory_efficiency_var = 0.25 }
+set_variable = { res_sub_level_2_factory_output_var = 0.15 }
+set_variable = { res_sub_level_2_manpower_var = -25 }
+set_variable = { SL2_production_modifier = 5 }
+set_variable = { res_project_max_progress = 0.25 }
+set_variable = { res_project_max_progress_display = 25 }
+set_variable = { RES.manpower_debt = 0 }
+add_dynamic_modifier = { modifier = res_sub_level_2_dynamic_modifier }
+
+# Add Measles to starting GUI
+add_to_array = { free_newborn_array = 1 }
+add_to_array = { all_newborn_array = 1 }
+
+add_to_tech_sharing_group = legion_research_pact

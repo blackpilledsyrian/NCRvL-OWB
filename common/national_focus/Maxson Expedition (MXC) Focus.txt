@@ -1,0 +1,3079 @@
+focus_tree = {
+	id = maxson_bos_nf
+	country = {
+		factor = 0
+		modifier = {
+			add = 0
+			tag = MXC
+		}
+	}
+
+	default = no
+
+	focus = {
+		id = maxson_bos_our_mission
+		icon = GFX_goal_max_our_departure
+		cost = 7
+		x = 14
+		y = 0
+
+		completion_reward = {
+			country_event = nf_maxson.1
+		}
+	}
+
+	focus = {
+		id = maxson_bos_expedition_failure
+		icon = GFX_goal_max_snapping_at_heels
+		cost = 7
+		x = 0
+		y = 1
+		relative_position_id = maxson_bos_our_mission
+
+		prerequisite = {
+			focus = maxson_bos_our_mission
+		}
+
+		completion_reward = {
+			country_event = nf_maxson.4
+		}
+	}
+
+	focus = {
+		id = maxson_bos_the_bunker
+		icon = GFX_goal_max_finding_bunker
+		cost = 7
+		x = 0
+		y = 1
+		relative_position_id = maxson_bos_expedition_failure
+
+		prerequisite = {
+			focus = maxson_bos_expedition_failure
+		}
+
+		completion_reward = {
+			country_event = nf_maxson.2
+		}
+	}
+
+	focus = {
+		id = maxson_bos_our_struggles
+		icon = GFX_goal_max_circle_schism
+		cost = 7
+		x = 0
+		y = 1
+		relative_position_id = maxson_bos_the_bunker
+
+		prerequisite = {
+			focus = maxson_bos_the_bunker
+		}
+
+		completion_reward = {
+			country_event = nf_maxson.3
+		}
+	}
+
+	#Core Local Territory Focuses
+
+	focus = {
+		id = maxson_bos_core_walsh
+		icon = GFX_goal_MOJ_paladin_thought
+		cost = 15
+		x = 1
+		y = 1
+		relative_position_id = maxson_bos_our_struggles
+		prerequisite = {
+			focus = maxson_bos_our_struggles
+		}
+		completion_reward = {
+			add_state_core = 208
+		}
+	}
+	focus = {
+		id = maxson_bos_truchas_peak
+		icon = GFX_goal_MOJ_scribal_thought
+		cost = 15
+		x = -1
+		y = 1
+		relative_position_id = maxson_bos_our_struggles
+		prerequisite = {
+			focus = maxson_bos_our_struggles
+		}
+		completion_reward = {
+			add_state_core = 639
+			country_event = nf_maxson.15
+		}
+	}
+
+		#--------------#
+		#First Army#
+		#--------------#
+
+		#Recover Our Might#
+		focus = {
+			id = maxson_bos_failure_a1
+			icon = GFX_goal_max_our_might
+			cost = 60
+			x = -6
+			y = 1
+			relative_position_id = maxson_bos_our_struggles
+			ai_will_do = { factor = 100 }
+			prerequisite = {
+				focus = maxson_bos_our_struggles
+			}
+
+			completion_reward = {
+			add_ideas = maxson_failure_army_1
+			}
+		}
+
+		#Never Lose It Again#
+		focus = {
+			id = maxson_bos_failure_afinal
+			icon = GFX_goal_max_never_lose_again
+			cost = 60
+			x = 0
+			y = 3
+			relative_position_id = maxson_bos_failure_a1
+
+			available = {
+				date > 2276.01.01
+			}
+
+			prerequisite = {
+				focus = maxson_bos_failure_a1
+			}
+
+
+			completion_reward = {
+			swap_ideas = {
+				remove_idea = maxson_failure_army_1
+				add_idea = maxson_failure_army_3
+			}
+		}
+	}
+
+		#------------------#
+		#--First Industry--#
+		#------------------#
+
+		#We Need To Hold#
+		focus = {
+			id = maxson_bos_failure_b1
+			icon = GFX_goal_max_we_need_to_hold
+			cost = 60
+			x = 6
+			y = 1
+			relative_position_id = maxson_bos_our_struggles
+
+			prerequisite = {
+				focus = maxson_bos_our_struggles
+			}
+
+			completion_reward = {
+			add_ideas = maxson_failure_industry_1
+			}
+		}
+
+		#Walsh Civilian Industry#
+		focus = {
+			id = maxson_bos_failure_b2
+			icon = GFX_goal_max_walshian_civilian_industry
+			cost = 30
+			x = 2
+			y = 1
+			relative_position_id = maxson_bos_failure_b1
+
+			prerequisite = {
+				focus = maxson_bos_failure_b1
+			}
+
+			completion_reward = {
+				country_event = nf_maxson.14
+				208 = {
+					add_extra_state_shared_building_slots = 4
+					add_building_construction = {
+							type = industrial_complex
+							level = 1
+							instant_build = yes
+					}
+
+					add_building_construction = {
+							type = infrastructure
+							level = 2
+							instant_build = yes
+						}
+					}
+			}
+		}
+
+		#Scribe Focuses#
+
+			#Scribe Industry Basics#
+		focus = {
+			id = maxson_bos_scribe_1
+			icon = GFX_goal_max_scribe_industry
+			cost = 30
+			x = -4
+			y = 1
+			relative_position_id = maxson_bos_failure_b1
+
+			prerequisite = {
+				focus = maxson_bos_failure_b1
+			}
+
+			completion_reward = {
+				add_ideas = maxson_industry_1
+			}
+		}
+			#Scribe Industry/Research Focus#
+		focus = {
+			id = maxson_bos_scribe_2
+			icon = GFX_goal_max_research_focus
+			cost = 30
+			x = -1
+			y = 1
+			relative_position_id = maxson_bos_scribe_1
+
+			prerequisite = {
+				focus = maxson_bos_scribe_1
+			}
+
+			completion_reward = {
+				country_event = nf_maxson.7
+			}
+		}
+
+		#Untapped Welsh Resources#
+		focus = {
+			id = maxson_bos_failure_b3
+			icon = GFX_goal_max_untapped_resources
+			cost = 30
+			x = 1
+			y = 1
+			relative_position_id = maxson_bos_failure_b2
+
+			prerequisite = {
+				focus = maxson_bos_failure_b2
+			}
+
+			completion_reward = {
+				add_resource = {
+					type = metal
+					amount = 6
+					state = 208
+				}
+				add_resource = {
+					type = energy
+					amount = 4
+					state = 208
+				}
+				add_resource = {
+					type = circuitry
+					amount = 4
+					state = 208
+				}
+				add_resource = {
+					type = water
+					amount = 4
+					state = 208
+				}
+			}
+		}
+
+			#Rebuild Roads In Maxson#
+		focus = {
+			id = maxson_bos_failure_b4
+			icon = GFX_goal_max_restoring_roads
+			cost = 30
+			x = -1
+			y = 1
+			relative_position_id = maxson_bos_failure_b2
+
+			prerequisite = {
+				focus = maxson_bos_failure_b2
+			}
+
+			completion_reward = {
+				412 = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+							type = industrial_complex
+							level = 2
+							instant_build = yes
+					}
+
+					add_building_construction = {
+							type = infrastructure
+							level = 2
+							instant_build = yes
+						}
+					}
+			}
+		}
+			#Underground Workshops
+		focus = {
+			id = maxson_bos_failure_b5
+			icon = GFX_goal_max_underground_workshops
+			cost = 30
+			x = 1
+			y = 1
+			relative_position_id = maxson_bos_failure_b4
+
+			prerequisite = {
+				focus = maxson_bos_failure_b4
+			}
+
+			prerequisite = {
+				focus = maxson_bos_failure_b3
+			}
+
+			completion_reward = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 2
+				}
+			}
+		}
+			#Fortify The Bunker#
+		focus = {
+			id = maxson_bos_failure_b6
+			icon = GFX_goal_max_maxson_bunker_fortification
+			cost = 30
+			x = -2
+			y = 1
+			relative_position_id = maxson_bos_failure_b1
+
+			prerequisite = {
+				focus = maxson_bos_failure_b1
+			}
+
+			completion_reward = {
+				custom_effect_tooltip = maxson_bunker_tooltip_1
+				hidden_effect = {
+					412 = {
+						add_building_construction = {
+							type = bunker
+							province = {
+								id = 3110
+							}
+							level = 2
+							instant_build = yes
+						}
+					}
+				}
+			}
+		}
+
+			#Fortify South#
+		focus = {
+			id = maxson_bos_failure_b7
+			icon = GFX_goal_max_southern_border_fortification
+			cost = 30
+			x = 1
+			y = 1
+			relative_position_id = maxson_bos_failure_b6
+
+			prerequisite = {
+				focus = maxson_bos_failure_b6
+			}
+
+			completion_reward = {
+				custom_effect_tooltip = maxson_bunker_tooltip_2
+				hidden_effect = {
+					412 = {
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = {
+								id = 1809
+								id = 1014
+								id = 5678
+							}
+							instant_build = yes
+						}
+					}
+				}
+				hidden_effect = {
+					208 = {
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = {
+								id = 2862
+								id = 3129
+								id = 5665
+							}
+							instant_build = yes
+						}
+					}
+				}
+				hidden_effect = {
+					639 = {
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = {
+								id = 6764
+								id = 6761
+							}
+						}
+					}
+				}
+			}
+		}
+
+	#Fortify West Of Bunker#
+		focus = {
+			id = maxson_bos_failure_b8
+			icon = GFX_goal_max_southern_border_fortification
+			cost = 30
+			x = -1
+			y = 1
+			relative_position_id = maxson_bos_failure_b6
+
+			prerequisite = {
+				focus = maxson_bos_failure_b6
+			}
+
+			completion_reward = {
+				custom_effect_tooltip = maxson_bunker_tooltip_3
+				hidden_effect = {
+					639 = {
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = {
+								id = 7812
+								id = 8990
+								id = 6766
+								id = 6642
+								id = 6641
+							}
+							instant_build = yes
+						}
+					}
+				}
+			}
+		}
+		#The Bulwarks Of Steel#
+		focus = {
+			id = maxson_bos_failure_bfinal
+			icon = GFX_goal_max_bulwarks_of_steel
+			cost = 60
+			x = 0
+			y = 3
+			relative_position_id = maxson_bos_failure_b1
+
+			available = {
+				date > 2276.01.01
+			}
+
+			prerequisite = {
+				focus = maxson_bos_failure_b1
+			}
+
+			completion_reward = {
+				swap_ideas = {
+					remove_idea = maxson_failure_industry_1
+					add_idea = maxson_failure_industry_2
+				}
+			}
+		}
+
+
+		#-----------------------------------#
+		#---------FIRST EXPANSION-----------#
+		#-----------------------------------#
+
+		#A weak target to recover our morale
+
+		focus = {
+			id = maxson_bos_robot_city_a
+			icon = GFX_goal_max_punching_steel
+			cost = 60
+			x = -3
+			y = 1
+			relative_position_id = maxson_bos_failure_a1
+			available = {
+				ai_has_no_other_wars_or_wargoals = yes
+			}
+
+			bypass = {
+				ROB = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+
+			prerequisite = {
+				focus = maxson_bos_failure_a1
+			}
+
+			will_lead_to_war_with = ROB
+
+			completion_reward = {
+					add_tech_bonus = {
+						bonus = 0.3
+						uses = 1
+						ahead_reduction = 0.5
+						category = support_anti_tank_tech_category
+					}
+					add_equipment_to_stockpile = {
+						type = anti_tank_equipment
+						amount = 25
+					}
+					ROB = {
+						ROOT = {
+							grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+						}
+					}
+				}
+			}
+
+
+	focus = {
+		id = maxson_bos_expedition_continues
+		icon = GFX_goal_max_we_still_have_a_mission
+		cost = 30
+		x = 0
+		y = 4
+		relative_position_id = maxson_bos_our_struggles
+
+		prerequisite = {
+			focus = maxson_bos_our_struggles
+		}
+
+		available = {
+			OR = {
+				has_completed_focus = maxson_bos_scorpions_territory_final
+				has_completed_focus = maxson_bos_robot_city_territory_final
+			}
+		}
+
+		completion_reward = {
+			add_ideas = maxson_expedition_fervor_idea_1
+		}
+	}
+
+	#WAR OF VENGEANCE#
+	focus = {
+		id = maxson_bos_hangdogs_a
+		icon = GFX_goal_max_our_second_chance
+		cost = 60
+		x = 14
+		y = 9
+		#relative_position_id = maxson_bos_hangdogs_a
+		available = {
+			OR = {
+				ai_has_no_other_wars_or_wargoals = yes
+				AND = {
+					is_ai = yes
+					has_war_with = HAN
+				}
+			}
+		}
+
+		bypass = {
+			HAN = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+
+		available = {
+			has_completed_focus = maxson_bos_scorpions_territory_final
+			has_completed_focus = maxson_bos_robot_city_territory_final
+			has_completed_focus = maxson_bos_failure_afinal
+			has_completed_focus = maxson_bos_core_walsh
+			has_completed_focus = maxson_bos_truchas_peak
+		}
+
+		prerequisite = {
+			focus = maxson_bos_expedition_continues
+		}
+
+		will_lead_to_war_with = HAN
+		will_lead_to_war_with = D09
+
+		completion_reward = {
+			country_event = nf_maxson.5
+			HAN = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			if = {
+				limit = {
+					country_exists = D09
+				}
+				D09 = {
+					ROOT = {
+						grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+					}
+				}
+			}
+		}
+	}
+
+		#The Next Generation#
+		focus = {
+			id = maxson_bos_failure_a2
+			icon = GFX_goal_max_the_next_generation
+			cost = 30
+			x = -7
+			y = 1
+			relative_position_id = maxson_bos_hangdogs_a
+
+			prerequisite = {
+				focus = maxson_bos_hangdogs_a
+			}
+
+			completion_reward = {
+			add_ideas = maxson_failure_army_2
+			add_manpower = 200
+			country_event = nf_maxson.17
+			}
+		}
+
+		#Walsh Military Industry#
+		focus = {
+			id = maxson_bos_failure_a3
+			icon = GFX_goal_max_walshian_military_industry
+			cost = 30
+			x = -11
+			y = 1
+			relative_position_id = maxson_bos_hangdogs_a
+			prerequisite = {
+				focus = maxson_bos_hangdogs_a
+			}
+			completion_reward = {
+				208 = {
+					add_extra_state_shared_building_slots = 4
+					add_building_construction = {
+							type = arms_factory
+							level = 2
+							instant_build = yes
+						}
+					}
+			}
+		}
+
+			#Maxson Infantry Equipment And Factories#
+		focus = {
+			id = maxson_bos_failure_a4
+			icon = GFX_goal_max_weapons_to_strike_down_our_foes
+			cost = 30
+			x = -1
+			y = 1
+			relative_position_id = maxson_bos_failure_a3
+
+			prerequisite = {
+				focus = maxson_bos_failure_a3
+			}
+
+			completion_reward = {
+				412 = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+							type = arms_factory
+							level = 2
+							instant_build = yes
+						}
+					}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 200
+					producer = MXC
+				}
+			}
+		}
+
+			#Maxson Power Armor And Factories#
+		focus = {
+			id = maxson_bos_failure_a5
+			icon = GFX_goal_max_armor_to_safeguard
+			cost = 30
+			x = 1
+			y = 1
+			relative_position_id = maxson_bos_failure_a3
+
+			prerequisite = {
+				focus = maxson_bos_failure_a3
+			}
+
+			completion_reward = {
+				412 = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+							type = arms_factory
+							level = 2
+							instant_build = yes
+						}
+					}
+				add_equipment_to_stockpile = {
+					type = power_armor_equipment
+					amount = 100
+					producer = MXC
+				}
+			}
+		}
+			#Maxson Advanced Material Processing#
+		focus = {
+			id = maxson_bos_failure_a6
+			icon = GFX_goal_max_undergound_advanced_materials
+			cost = 30
+			x = 1
+			y = 1
+			relative_position_id = maxson_bos_failure_a4
+
+			prerequisite = {
+				focus = maxson_bos_failure_a4
+			}
+
+			prerequisite = {
+				focus = maxson_bos_failure_a5
+			}
+
+			completion_reward = {
+				add_offsite_building = {
+					type = arms_factory
+					level = 1
+				}
+				412 = {
+					add_resource = {
+						type = advanced
+						amount = 5
+					}
+					add_resource = {
+						type = composites
+						amount = 5
+					}
+					add_resource = {
+						type = circuitry
+						amount = 5
+					}
+				}
+			}
+		}
+			#Walsh Militia#
+		focus = {
+			id = maxson_bos_failure_a7
+			icon = GFX_goal_max_walshian_militia
+			cost = 30
+			x = -1
+			y = 1
+			relative_position_id = maxson_bos_failure_a2
+
+			prerequisite = {
+				focus = maxson_bos_failure_a2
+			}
+
+			completion_reward = {
+			add_ideas = maxson_walsh_militia
+			}
+		}
+			#Maxson Field Exercises#
+		focus = {
+			id = maxson_bos_failure_a8
+			icon = GFX_goal_max_field_exercises
+			cost = 30
+			x = 1
+			y = 1
+			relative_position_id = maxson_bos_failure_a2
+
+			prerequisite = {
+				focus = maxson_bos_failure_a2
+			}
+
+			completion_reward = {
+				add_tech_bonus = {
+					bonus = 0.3
+					uses = 2
+					category = cat_elite_army
+				}
+				add_war_support = 0.05
+			}
+		}
+			#Maxson Powered Might#
+		focus = {
+			id = maxson_bos_failure_a9
+			icon = GFX_goal_max_powered_armor_developments
+			cost = 30
+			x = 1
+			y = 1
+			relative_position_id = maxson_bos_failure_a7
+
+			prerequisite = {
+				focus = maxson_bos_failure_a7
+			}
+			prerequisite = {
+				focus = maxson_bos_failure_a8
+			}
+
+			completion_reward = {
+				add_tech_bonus = {
+					bonus = 0.5
+					uses = 1
+					ahead_reduction = 1
+					category = power_armor_tech_category
+				}
+			}
+		}
+
+	#---------------------------#
+	#-----AIRSHIP---------------#
+	#---------------------------#
+
+	focus = {
+		id = maxson_bos_airship_a
+		icon = GFX_goal_max_airship_down
+		cost = 30
+		x = -9
+		y = 3
+		relative_position_id = maxson_bos_hangdogs_a
+		prerequisite = {
+			focus = maxson_bos_hangdogs_a
+		}
+		available = {
+			ROB = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+
+		completion_reward = {
+			country_event = nf_maxson.airship
+		}
+	}
+
+		#Repair Blimp // Wreckage Insights#
+	focus = {
+		id = maxson_bos_prepare_1
+		icon = GFX_goal_max_wreckage_insights
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = maxson_bos_airship_a
+
+		prerequisite = {
+			focus = maxson_bos_airship_a
+		}
+
+		completion_reward = {
+			country_event = nf_maxson_prepare.1
+		}
+	}
+
+		#Sealed Hangers#
+	focus = {
+		id = maxson_bos_prepare_2
+		icon = GFX_goal_max_sealed_hangers
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = maxson_bos_airship_a
+
+		prerequisite = {
+			focus = maxson_bos_airship_a
+		}
+
+		completion_reward = {
+			country_event = nf_maxson_prepare.2
+		}
+	}
+
+		#What Air Do We Focus#
+	focus = {
+		id = maxson_bos_prepare_3
+		icon = GFX_goal_max_aerial_tactics
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = maxson_bos_prepare_1
+
+		prerequisite = {
+			focus = maxson_bos_prepare_1
+		}
+
+		completion_reward = {
+			country_event = nf_maxson.8
+			air_experience = 50
+		}
+	}
+
+		#Airborne Idea Focus#
+	focus = {
+		id = maxson_bos_prepare_4
+		icon = GFX_goal_max_dropping_feet_first
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = maxson_bos_prepare_2
+
+		prerequisite = {
+			focus = maxson_bos_prepare_2
+		}
+
+		completion_reward = {
+			country_event = nf_maxson.9
+		}
+	}
+
+	#--------------------------------------------#
+	#----------ROBOT CITY EXTRA FOCUSES----------#
+	#--------------------------------------------#
+		#DISMANTLE BOTS#
+	focus = {
+		id = maxson_bos_robot_city_territory_a
+		icon = GFX_goal_max_gather_the_remains
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = maxson_bos_robot_city_a
+
+		prerequisite = {
+			focus = maxson_bos_robot_city_a
+		}
+
+		available = {
+			ROB = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+
+		mutually_exclusive = {
+			focus = maxson_bos_robot_city_territory_b
+		}
+
+		completion_reward = {
+			add_resource = {
+				type = metal
+				amount = 5
+				state = 524
+			}
+			add_resource = {
+				type = circuitry
+				amount = 5
+				state = 524
+			}
+	}
+}
+
+		#REPURPUSE BOTS#
+	focus = {
+		id = maxson_bos_robot_city_territory_b
+		icon = GFX_goal_max_repurpose_the_remains
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = maxson_bos_robot_city_a
+
+		prerequisite = {
+			focus = maxson_bos_robot_city_a
+		}
+
+		available = {
+			ROB = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+
+		mutually_exclusive = {
+			focus = maxson_bos_robot_city_territory_a
+		}
+
+		completion_reward = {
+		524 = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+}
+
+		#Clear Roads#
+	focus = {
+		id = maxson_bos_robot_city_territory_c
+		icon = GFX_goal_max_clear_the_roads
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = maxson_bos_robot_city_territory_a
+
+		prerequisite = {
+			focus = maxson_bos_robot_city_territory_a
+			focus = maxson_bos_robot_city_territory_b
+		}
+
+		available = {
+			ROB = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+
+		completion_reward = {
+		524 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+		}
+		112 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+		}
+		593 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+		}
+		315 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+}
+
+		#Refurbish Buildings#
+	focus = {
+		id = maxson_bos_robot_city_territory_d
+		icon = GFX_goal_max_refurbish_the_buildings
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = maxson_bos_robot_city_territory_b
+
+		prerequisite = {
+			focus = maxson_bos_robot_city_territory_a
+			focus = maxson_bos_robot_city_territory_b
+		}
+
+		available = {
+			ROB = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+
+		completion_reward = {
+		524 = {
+			add_extra_state_shared_building_slots = 4
+		}
+	}
+}
+		#HUNT DOWN STRAGGLERS#
+	focus = {
+		id = maxson_bos_robot_city_territory_final
+		icon = GFX_goal_max_robot_city_no_more
+		cost = 60
+		x = 1
+		y = 2
+		relative_position_id = maxson_bos_robot_city_territory_a
+
+		available = {
+			has_country_flag = rob_secured
+		}
+
+		prerequisite = {
+			focus = maxson_bos_robot_city_territory_c
+		}
+
+		prerequisite = {
+			focus = maxson_bos_robot_city_territory_d
+		}
+
+		completion_reward = {
+			add_state_core = 524
+			country_event = nf_maxson.16
+		}
+	}
+
+
+		#----------------------------#
+		#-----SCORPIONS--------------#
+		#----------------------------#
+
+	focus = {
+		id = maxson_bos_scorpions_a
+		icon = GFX_goal_max_stomp_the_scorpions
+		cost = 60
+		x = 3
+		y = 1
+		relative_position_id = maxson_bos_failure_a1
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+        ai_will_do = { factor = 100 }
+		bypass = {
+			SCO = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+
+		prerequisite = {
+			focus = maxson_bos_failure_a1
+		}
+
+		will_lead_to_war_with = SCO
+
+		completion_reward = {
+			SCO = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+
+	#-------------------------------------------#
+	#------SECURE MOTOR POOLS-------------------#
+	#-------------------------------------------#
+	focus = {
+		id = maxson_bos_scorpions_territory_a
+		icon = GFX_goal_max_raider_ingenuity
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = maxson_bos_scorpions_a
+
+		prerequisite = {
+			focus = maxson_bos_scorpions_a
+		}
+
+		available = {
+			SCO = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+
+		completion_reward = {
+			army_experience = 25
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 2
+				category = motorized_equipment_category
+			}
+			422 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+		#Confiscate Resources#
+	focus = {
+		id = maxson_bos_scorpions_territory_b
+		icon = GFX_goal_max_confiscate_resources
+		cost = 30
+		x = 2
+		y = 1
+		relative_position_id = maxson_bos_scorpions_a
+
+		prerequisite = {
+			focus = maxson_bos_scorpions_a
+		}
+
+		available = {
+			SCO = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+
+		completion_reward = {
+			add_resource = {
+				type = metal
+				amount = 3
+				state = 412
+			}
+			add_resource = {
+				type = water
+				amount = 3
+				state = 412
+			}
+			add_resource = {
+				type = energy
+				amount = 3
+				state = 412
+			}
+		}
+	}
+
+	focus = {
+		id = maxson_bos_scorpions_territory_c
+		icon = GFX_goal_max_watching_south
+		cost = 30
+		x = -2
+		y = 1
+		relative_position_id = maxson_bos_scorpions_a
+
+		prerequisite = {
+			focus = maxson_bos_scorpions_a
+		}
+
+		available = {
+			SCO = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = scorpion_border_focus
+			hidden_effect = {
+				523 = {
+					add_building_construction = {
+					type = bunker
+					level = 1
+					province = {
+						id = 7037
+						id = 7039
+						id = 7866
+						}
+					instant_build = yes
+					}
+				}
+				123 = {
+					add_building_construction = {
+					type = bunker
+					level = 1
+					province = {
+						id = 5284
+						}
+					instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	#----------------------------------------#
+	#----BITE DOWN ON THE SCORPIONS----------#
+	#----------------------------------------#
+	focus = {
+		id = maxson_bos_scorpions_territory_final
+		icon = GFX_goal_max_bite_down_on_the_scorpions
+		cost = 60
+		x = 0
+		y = 1
+		relative_position_id = maxson_bos_scorpions_territory_a
+
+		available = {
+			OR = {
+				has_country_flag = scorpions_stomped
+				has_country_flag = scorpion_nature_complete
+			}
+		}
+
+		prerequisite = {
+			focus = maxson_bos_scorpions_territory_a
+		}
+
+		prerequisite = {
+			focus = maxson_bos_scorpions_territory_b
+		}
+
+		completion_reward = {
+			country_event = nf_maxson.12
+			add_state_core = 422
+		}
+	}
+
+	#Steel Vs Iron / Conquer Iron Alliance Goal#
+	focus = {
+		id = maxson_bos_ironalliance_a
+		icon = GFX_goal_max_steel_vs_iron
+		cost = 30
+		x = 6
+		y = 1
+		relative_position_id = maxson_bos_hangdogs_a
+
+		available = {
+			OR = {
+				LAC = {
+					exists = no
+				}
+				date > 2279.01.01
+			}
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+
+		bypass = {
+			IRN = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		prerequisite = {
+			focus = maxson_bos_hangdogs_a
+		}
+
+		will_lead_to_war_with = IRN
+
+		completion_reward = {
+			IRN = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+	#Chained Choir Hook Focuses#
+	focus = {
+		id = maxson_bos_choir_1
+		icon = GFX_goal_max_hummingbird_wargames
+		cost = 30
+		x = 11
+		y = 1
+		relative_position_id = maxson_bos_hangdogs_a
+		prerequisite = {
+			focus = maxson_bos_hangdogs_a
+		}
+		available = {
+			is_ally_with = CHC
+		}
+		completion_reward = {
+			army_experience = 35
+			CHC = {
+				army_experience = 35
+			}
+			country_event = nf_maxson.19
+		}
+	}
+	focus = {
+		id = maxson_bos_choir_2
+		icon = GFX_goal_max_painted_rock_fortifications
+		cost = 30
+		x = 10
+		y = 2
+		relative_position_id = maxson_bos_hangdogs_a
+		prerequisite = {
+			focus = maxson_bos_choir_1
+		}
+		available = {
+			is_ally_with = CHC
+			CHC = {
+				PAR = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+		}
+		completion_reward = {
+			891 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+				}
+			}
+			938 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = maxson_bos_choir_3
+		icon = GFX_goal_max_fortify_core_territory
+		cost = 30
+		x = 12
+		y = 2
+		relative_position_id = maxson_bos_hangdogs_a
+		prerequisite = {
+			focus = maxson_bos_choir_1
+		}
+		available = {
+			is_ally_with = CHC
+		}
+		completion_reward = {
+			208 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+				}
+			}
+			412 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+				}
+			}
+			639 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = maxson_bos_choir_4
+		icon = GFX_goal_max_keeping_the_peace
+		cost = 30
+		x = 11
+		y = 3
+		relative_position_id = maxson_bos_hangdogs_a
+		prerequisite = {
+			focus = maxson_bos_choir_2
+		}
+		prerequisite = {
+			focus = maxson_bos_choir_3
+		}
+		available = {
+			is_ally_with = CHC
+		}
+		completion_reward = {
+			hidden_effect = { load_OOB = mxcpeacekeepers }
+			custom_effect_tooltip = "Two units of fully equipped Enforcers will join you!"
+		}
+	}
+	focus = {
+		id = maxson_bos_choir_5
+		icon = GFX_goal_max_recruit_from_the_hummingbirds
+		cost = 30
+		x = 13
+		y = 3
+		relative_position_id = maxson_bos_hangdogs_a
+		bypass = {
+		}
+		prerequisite = {
+			focus = maxson_bos_choir_3
+		}
+		available = {
+			is_ally_with = CHC
+		}
+		completion_reward = {
+			add_manpower = 325
+			add_war_support = 0.03
+		}
+	}
+	focus = {
+		id = maxson_bos_choir_6
+		icon = GFX_goal_max_learning_from_the_best
+		cost = 30
+		x = 9
+		y = 3
+		relative_position_id = maxson_bos_hangdogs_a
+		bypass = {
+		}
+		prerequisite = {
+			focus = maxson_bos_choir_2
+		}
+		available = {
+			is_ally_with = CHC
+		}
+		completion_reward = {
+			set_technology = {
+				exploitation_tech_level_scientific = 1
+			}
+			country_event = nf_maxson.20
+		}
+	}
+	#They Paid The Price / Conquered Event#
+	focus = {
+		id = maxson_bos_ironalliance_b
+		icon = GFX_goal_max_iron_scraps
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = maxson_bos_ironalliance_a
+
+		prerequisite = {
+			focus = maxson_bos_ironalliance_a
+		}
+
+		available = {
+			IRN = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+
+		completion_reward = {
+			army_experience = 10
+			add_ideas = maxson_ironmen_b
+		}
+	}
+
+	#Chinese Ghoul Conquer#
+
+	focus = {
+		id = maxson_bos_ghouls_a
+		icon = GFX_goal_max_old_soldiers
+		cost = 30
+		x = 4
+		y = 1
+		relative_position_id = maxson_bos_hangdogs_a
+
+		available = {
+			OR = {
+				LAC = {
+					exists = no
+				}
+				date > 2279.01.01
+			}
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+
+		bypass = {
+			WHD = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		prerequisite = {
+			focus = maxson_bos_hangdogs_a
+		}
+
+		will_lead_to_war_with = WHD
+
+		completion_reward = {
+			WHD = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+
+	#Chinese Ghoul Idea#
+
+	focus = {
+		id = maxson_bos_ghouls_b
+		icon = GFX_goal_max_old_lessons
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = maxson_bos_ghouls_a
+
+		prerequisite = {
+			focus = maxson_bos_ghouls_a
+		}
+
+		available = {
+			WHD = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+
+		completion_reward = {
+			army_experience = 10
+			add_ideas = maxson_ghouls
+		}
+	}
+
+	#Second Expansion/Finding the Dome#
+
+	#Baggers Conquest#
+	focus = {
+		id = maxson_bos_baggers_a
+		icon = GFX_goal_max_what_are_you_doing_in_colorado
+		cost = 30
+		x = 3
+		y = 1
+		relative_position_id = maxson_bos_ghouls_b
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			BAG = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		prerequisite = {
+			focus = maxson_bos_ghouls_b
+		}
+
+		prerequisite = {
+			focus = maxson_bos_ironalliance_b
+		}
+
+		will_lead_to_war_with = BAG
+
+		completion_reward = {
+			BAG = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+
+	#Taking Their Scientists/The Dome#
+	focus = {
+		id = maxson_bos_baggers_b
+		icon = GFX_goal_max_baggers_purpose
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = maxson_bos_baggers_a
+
+		available = {
+			BAG = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+
+		prerequisite = {
+			focus = maxson_bos_baggers_a
+		}
+
+		completion_reward = {
+			add_research_slot = 1
+			country_event = nf_maxson.18
+		}
+	}
+
+	#Luminous Ones Conquest MINOR#
+	focus = {
+		id = maxson_bos_luminous_ones
+		icon = GFX_goal_max_conquering_the_mountain
+		cost = 30
+		x = -2
+		y = 1
+		relative_position_id = maxson_bos_baggers_a
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+
+		bypass = {
+			LUM = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+
+		prerequisite = {
+			focus = maxson_bos_baggers_a
+		}
+
+		will_lead_to_war_with = LUM
+
+		available = {
+			BAG = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+
+		completion_reward = {
+			LUM = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+
+	#Combine ideas and core territory, remove some of the downsides ONLY AFTER A TIME#
+	focus = {
+		id = maxson_bos_ironghouls
+		icon = GFX_goal_max_making_nice
+		cost = 60
+		x = 1
+		y = 1
+		relative_position_id = maxson_bos_ghouls_b
+
+		available = {
+			has_country_flag = mxc_bid
+		}
+
+		prerequisite = {
+		focus = maxson_bos_ironalliance_b
+		}
+
+		prerequisite = {
+		focus = maxson_bos_ghouls_b
+		}
+
+		available = {
+			date > 2279.01.01
+			has_idea = maxson_ironmen_a
+			has_idea = maxson_ironmen_b
+			has_idea = maxson_ghouls
+		}
+
+		completion_reward = {
+			army_experience = 10
+		custom_effect_tooltip = combined_idea_b
+		hidden_effect = {
+			swap_ideas = {
+				remove_idea = maxson_ghouls
+				add_idea = maxson_combined_idea_b
+				}
+				remove_ideas = maxson_ironmen_a
+				remove_ideas = maxson_ironmen_b
+			}
+		}
+	}
+
+	#Hangdogs#
+
+	#Denver City Idea Focus - Unlocks Rest Of Denver Focuses#
+	focus = {
+		id = maxson_bos_hangdogs_b
+		icon = GFX_goal_max_the_city_of_denver
+		cost = 60
+		x = 0
+		y = 1
+		relative_position_id = maxson_bos_hangdogs_a
+
+		available = {
+			HAN = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+
+		prerequisite = {
+			focus = maxson_bos_hangdogs_a
+		}
+
+		completion_reward = {
+			country_event = nf_maxson.24
+			add_stability = 0.10
+			army_experience = 75
+            set_province_name = {
+                id = 9015
+                name = "Denver"
+            }
+			remove_ideas = maxson_hangdog_defeat
+		}
+	}
+
+	#Dealing with the advanced tech of Denver#
+	focus = {
+		id = maxson_bos_hangdogs_c
+		icon = GFX_goal_max_wealth_of_the_past
+		cost = 45
+		x = 2
+		y = 1
+		relative_position_id = maxson_bos_hangdogs_b
+
+		prerequisite = {
+			focus = maxson_bos_hangdogs_b
+		}
+
+		completion_reward = {
+			country_event = nf_maxson.21
+			add_political_power = 45
+		}
+	}
+
+	#Denver Tech A WARDEN SITE REACTIVATION SO FACTORIES#
+		#Restore Site B#
+	focus = {
+		id = maxson_bos_hangdogs_tech_a1
+		icon = GFX_goal_max_site_b
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = maxson_bos_hangdogs_c
+
+		prerequisite = {
+			focus = maxson_bos_hangdogs_c
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				uses = 2
+				bonus = 0.3
+				ahead_reduction = 0.3
+				category = robotics_tech_category
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = 1
+			}
+		}
+	}
+
+		#Reactivate Site C and D#
+	focus = {
+		id = maxson_bos_hangdogs_tech_a2
+		icon = GFX_goal_max_site_c_and_d
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = maxson_bos_hangdogs_tech_a1
+
+		prerequisite = {
+			focus = maxson_bos_hangdogs_tech_a1
+		}
+
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = support_robot_two_legs_equipment_2
+				amount = 300
+				producer = USA
+			}
+			set_technology = {
+				robotics_tech_level_scientific = 1
+			}
+		}
+	}
+
+	focus = {
+		id = maxson_bos_hangdogs_tech_a3
+		icon = GFX_goal_max_denvers_warden
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = maxson_bos_hangdogs_tech_a2
+
+		prerequisite = {
+			focus = maxson_bos_hangdogs_tech_a2
+		}
+
+		completion_reward = {
+			add_ideas = {
+					maxson_warden_patrols
+				}
+			set_technology = {
+				electronics_tech_level_scientific = 1
+			}
+		}
+	}
+
+	#Denver Tech B TECH BONUSES#
+	focus = {
+		id = maxson_bos_hangdogs_tech_b1
+		icon = GFX_goal_max_national_guard_armories
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = maxson_bos_hangdogs_c
+
+		prerequisite = {
+			focus = maxson_bos_hangdogs_c
+		}
+
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = energy_equipment_3
+				amount = 500
+				producer = USA
+			}
+			add_tech_bonus = {
+				uses = 1
+				bonus = 0.2
+				ahead_reduction = 0.3
+				category = infantry_weapons_tech_category
+			}
+		}
+	}
+
+focus = {
+		id = maxson_bos_hangdogs_tech_b2
+		icon = GFX_goal_max_west_tek_facility
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = maxson_bos_hangdogs_tech_b1
+
+		prerequisite = {
+			focus = maxson_bos_hangdogs_tech_b1
+		}
+
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = power_armor_equipment_4
+				amount = 150
+				producer = USA
+			}
+			add_tech_bonus = {
+				uses = 1
+				bonus = 0.2
+				ahead_reduction = 0.3
+				category = power_armor_tech_category
+			}
+		}
+	}
+
+focus = {
+		id = maxson_bos_hangdogs_tech_b3
+		icon = GFX_goal_max_us_army_vehicle_depot
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = maxson_bos_hangdogs_tech_b2
+
+		prerequisite = {
+			focus = maxson_bos_hangdogs_tech_b2
+		}
+
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = heavy_motorized_equipment_2
+				amount = 125
+				producer = USA
+			}
+			add_tech_bonus = {
+				uses = 2
+				bonus = 0.2
+				ahead_reduction = 0.3
+				category = motorized_equipment_category
+			}
+		}
+	}
+
+	#Dealing with the people of Denver#
+	focus = {
+		id = maxson_bos_hangdogs_d
+		icon = GFX_goal_max_city_exploration
+		cost = 45
+		x = -3
+		y = 1
+		relative_position_id = maxson_bos_hangdogs_b
+
+		prerequisite = {
+			focus = maxson_bos_hangdogs_b
+		}
+
+		completion_reward = {
+			country_event = nf_maxson.22
+			add_political_power = 45
+		}
+	}
+
+		#Denver Focus Line A CIVLIAN#
+	focus = {
+		id = maxson_bos_hangdogs_city_a1
+		icon = GFX_goal_max_denver_consumer_industry
+		cost = 30
+		x = -2
+		y = 1
+		relative_position_id = maxson_bos_hangdogs_d
+
+		prerequisite = {
+			focus = maxson_bos_hangdogs_d
+		}
+
+		completion_reward = {
+			525 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+		#Industry Tech Bonus#
+	focus = {
+		id = maxson_bos_hangdogs_city_a2
+		icon = GFX_goal_max_scribe_industrial_insights
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = maxson_bos_hangdogs_city_a1
+
+		prerequisite = {
+			focus = maxson_bos_hangdogs_city_a1
+		}
+
+		completion_reward = {
+				add_tech_bonus = {
+					bonus = 0.25
+					uses = 2
+					ahead_reduction = 0.3
+					category = industry_specialisation_category
+				}
+		}
+	}
+
+		#Denver Focus Line B INFRASTRUCTURE#
+	focus = {
+		id = maxson_bos_hangdogs_city_b1
+		icon = GFX_goal_max_clogged_streets
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = maxson_bos_hangdogs_d
+
+		prerequisite = {
+			focus = maxson_bos_hangdogs_d
+		}
+
+		completion_reward = {
+		525 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+				}
+			}
+		}
+	}
+
+		#Ifrastrcutre outside Denver#
+	focus = {
+		id = maxson_bos_hangdogs_city_b2
+		icon = GFX_goal_max_paved_roads
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = maxson_bos_hangdogs_city_b1
+
+		prerequisite = {
+			focus = maxson_bos_hangdogs_city_b1
+		}
+
+		completion_reward = {
+		custom_effect_tooltip = hangdog_roads
+		hidden_effect = {
+			109 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+					}
+				}
+			355 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+					}
+				}
+			490 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+					}
+				}
+			185 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+					}
+				}
+			414 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+					}
+				}
+			82 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+					}
+				}
+			544 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+					}
+				}
+			460 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+					}
+				}
+			610 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+					}
+				}
+			550 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+		#Denver Focus Line C WEAPONS/MILITARY#
+	focus = {
+		id = maxson_bos_hangdogs_city_c1
+		icon = GFX_goal_max_denver_military_industry
+		cost = 30
+		x = 2
+		y = 1
+		relative_position_id = maxson_bos_hangdogs_d
+
+		prerequisite = {
+			focus = maxson_bos_hangdogs_d
+		}
+
+		completion_reward = {
+			525 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+		#Factory Blueprints#
+	focus = {
+		id = maxson_bos_hangdogs_city_c2
+		icon = GFX_goal_max_factory_blueprints
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = maxson_bos_hangdogs_city_c1
+
+		prerequisite = {
+			focus = maxson_bos_hangdogs_city_c1
+		}
+
+		completion_reward = {
+				add_tech_bonus = {
+					bonus = 0.25
+					uses = 1
+					ahead_reduction = 0.5
+					category = support_fireteam_tech_category
+				}
+				add_tech_bonus = {
+					bonus = 0.25
+					uses = 1
+					ahead_reduction = 0.5
+					category = support_anti_tank_tech_category
+				}
+		}
+	}
+
+		#Core Denver#
+	focus = {
+		id = maxson_bos_hangdogs_city_final
+		icon = GFX_goal_max_a_muzzled_city
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = maxson_bos_hangdogs_city_b2
+
+		prerequisite = {
+			focus = maxson_bos_hangdogs_city_a2
+		}
+
+		prerequisite = {
+			focus = maxson_bos_hangdogs_city_b2
+		}
+
+		prerequisite = {
+			focus = maxson_bos_hangdogs_city_c2
+		}
+
+		completion_reward = {
+			add_state_core = 525
+			set_capital = {
+				state = 525
+				remember_old_capital = yes
+			}
+		}
+	}
+
+	#Vault 0 and Boulder Dome Focuses#
+
+	#Opening Focus and Swap Ideas#
+	focus = {
+		id = maxson_bos_expedition_colorado1
+		icon = GFX_goal_max_colorado_brotherhood
+		cost = 60
+		x = 0
+		y = 5
+		relative_position_id = maxson_bos_hangdogs_b
+
+		prerequisite = {
+			focus = maxson_bos_hangdogs_b
+		}
+
+		completion_reward = {
+			country_event = nf_maxson.23
+				swap_ideas = {
+					remove_idea = maxson_expedition_fervor_idea_1
+					add_idea = maxson_expedition_fervor_idea_2
+				}
+			set_cosmetic_tag = MXC_chapter
+			every_state = {
+				tooltip = "Every Colorado State"
+				limit = {
+					OR = {
+						region = 42
+						region = 43
+						region = 44
+					}
+				}
+				add_claim_by = ROOT
+			}
+		}
+	}
+
+			#Vault 0 Opening Focus#
+		focus = {
+			id = maxson_bos_vault1
+			icon = GFX_goal_max_vault_0000
+			cost = 60
+			x = -6
+			y = 1
+			relative_position_id = maxson_bos_expedition_colorado1
+
+			prerequisite = {
+				focus = maxson_bos_expedition_colorado1
+			}
+
+			available = {
+				has_completed_focus = maxson_bos_hangdogs_c
+				460 = {
+					is_owned_and_controlled_by = MXC
+				}
+			}
+
+			completion_reward = {
+				country_event = nf_maxson_vault0.1
+				460 = {
+					add_building_construction = {
+						type = bunker2
+						province = {
+							id = 9013
+						}
+						level = 2
+						instant_build = yes
+					}
+				}
+				set_province_name = {
+					id = 9013
+					name = "Vault 0"
+				}
+			}
+		}
+		#Upper Levels#
+		focus = {
+			id = maxson_bos_vault2
+			icon = GFX_goal_max_upper_levels
+			cost = 30
+			x = 0
+			y = 1
+			relative_position_id = maxson_bos_vault1
+
+			prerequisite = {
+				focus = maxson_bos_vault1
+			}
+
+			available = {
+				460 = {
+					is_owned_and_controlled_by = MXC
+				}
+			}
+
+			completion_reward = {
+				country_event = nf_maxson_vault0.2
+				add_political_power = 45
+			}
+		}
+		#Signs of Battle#
+		focus = {
+			id = maxson_bos_vault3
+			icon = GFX_goal_max_signs_of_battle
+			cost = 30
+			x = -2
+			y = 1
+			relative_position_id = maxson_bos_vault1
+
+			available = {
+				has_completed_focus = maxson_bos_vault2
+				460 = {
+					is_owned_and_controlled_by = MXC
+				}
+			}
+
+			prerequisite = {
+				focus = maxson_bos_vault1
+			}
+
+			completion_reward = {
+				country_event = nf_maxson_vault0.3
+				set_technology = {
+					plasma_unlock_tech = 1
+				}
+				add_tech_bonus = {
+					bonus = 0.25
+					ahead_reduction = 1
+					uses = 1
+					category = plasma_weaponry_tech_category
+				}
+			}
+		}
+			#Vault Tec Construction#
+		focus = {
+			id = maxson_bos_vault4
+			icon = GFX_goal_max_vault_tec_construction
+			cost = 30
+			x = 2
+			y = 1
+			relative_position_id = maxson_bos_vault1
+
+			available = {
+				has_completed_focus = maxson_bos_vault2
+				460 = {
+					is_owned_and_controlled_by = MXC
+				}
+			}
+
+			prerequisite = {
+				focus = maxson_bos_vault1
+			}
+
+			completion_reward = {
+				set_technology = {
+					habitation_tech_level_scientific = 1
+				}
+			}
+		}
+
+		#Lower Levels#
+		focus = {
+			id = maxson_bos_vault5
+			icon = GFX_goal_max_lower_levels
+			cost = 30
+			x = 0
+			y = 1
+			relative_position_id = maxson_bos_vault2
+
+			prerequisite = {
+				focus = maxson_bos_vault2
+			}
+
+			available = {
+				460 = {
+					is_owned_and_controlled_by = MXC
+				}
+			}
+
+			completion_reward = {
+				country_event = nf_maxson_vault0.5
+				add_political_power = 45
+			}
+		}
+			#Vault Tec Industry#
+		focus = {
+			id = maxson_bos_vault6
+			icon = GFX_goal_max_vault_tec_industry
+			cost = 30
+			x = 2
+			y = 0
+			relative_position_id = maxson_bos_vault5
+
+			available = {
+				has_completed_focus = maxson_bos_vault5
+				460 = {
+					is_owned_and_controlled_by = MXC
+				}
+			}
+
+			prerequisite = {
+				focus = maxson_bos_vault4
+			}
+
+			completion_reward = {
+				set_technology = {
+					tools_tech_level_scientific = 1
+					vault_industry_tech = 1
+				}
+			}
+		}
+			#Collapsed Sections#
+		focus = {
+			id = maxson_bos_vault7
+			icon = GFX_goal_max_collapsed_sections
+			cost = 30
+			x = -2
+			y = 0
+			relative_position_id = maxson_bos_vault5
+
+			available = {
+				has_completed_focus = maxson_bos_vault5
+				460 = {
+					is_owned_and_controlled_by = MXC
+				}
+			}
+
+			prerequisite = {
+				focus = maxson_bos_vault3
+			}
+
+			completion_reward = {
+				add_tech_bonus = {
+					bonus = 0.5
+					uses = 1
+					category = robotics_tech_category
+				}
+				set_technology = {
+					robot_scurry_tech = 1
+				}
+			}
+		}
+		#Calculators Lair#
+		focus = {
+			id = maxson_bos_vault8
+			icon = GFX_goal_max_calculators_lair
+			cost = 30
+			x = 0
+			y = 1
+			relative_position_id = maxson_bos_vault5
+
+			prerequisite = {
+				focus = maxson_bos_vault5
+			}
+
+			available = {
+				460 = {
+					is_owned_and_controlled_by = MXC
+				}
+			}
+
+			completion_reward = {
+				country_event = nf_maxson_vault0.6
+				add_state_core = 460
+			}
+		}
+
+		#Buena Vista - Hellion Aircraft#
+		focus = {
+			id = maxson_bos_vault9
+			icon = GFX_goal_max_buena_vista_hanger
+			cost = 30
+			x = -4
+			y = 1
+			relative_position_id = maxson_bos_vault1
+
+			prerequisite = {
+				focus = maxson_bos_vault1
+			}
+
+			available = {
+				460 = {
+					is_owned_and_controlled_by = MXC
+				}
+			}
+
+			completion_reward = {
+				country_event = nf_maxson_vault0.4
+				set_technology = {
+					air_tech_level_scientific = 1
+				}
+			}
+		}
+
+				#Boulder Dome Opening Focus#
+
+			#The Sealed Dome#
+		focus = {
+			id = maxson_bos_dome1
+			icon = GFX_goal_max_the_sealed_dome
+			cost = 60
+			x = 6
+			y = 1
+			relative_position_id = maxson_bos_expedition_colorado1
+
+			available = {
+			has_completed_focus = maxson_bos_baggers_b
+			}
+
+			bypass = {
+				GLW = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+
+			prerequisite = {
+				focus = maxson_bos_expedition_colorado1
+			}
+
+			will_lead_to_war_with = GLW
+
+			completion_reward = {
+				country_event = nf_maxson_boulderdome.1
+				add_political_power = 50
+			}
+		}
+			#Irradiated Inhabitants#
+		focus = {
+			id = maxson_bos_dome2
+			icon = GFX_goal_max_irradiated_inhabitants
+			cost = 30
+			x = -1
+			y = 1
+			relative_position_id = maxson_bos_dome1
+
+			available = {
+				568 = {
+					is_owned_and_controlled_by = MXC
+				}
+			}
+
+			prerequisite = {
+				focus = maxson_bos_dome1
+			}
+
+			completion_reward = {
+				country_event = nf_maxson_boulderdome.2
+				army_experience = 25
+			}
+		}
+
+			#Brotherhood Outpost Boulder#
+		focus = {
+			id = maxson_bos_dome3
+			icon = GFX_goal_max_brotherhood_outpost_boulder
+			cost = 30
+			x = 1
+			y = 1
+			relative_position_id = maxson_bos_dome1
+
+			available = {
+				568 = {
+					is_owned_and_controlled_by = MXC
+				}
+			}
+
+			prerequisite = {
+				focus = maxson_bos_dome1
+			}
+
+			completion_reward = {
+				country_event = nf_maxson_boulderdome.3
+				add_political_power = 25
+			}
+		}
+			#Breaking Open The Dome#
+		focus = {
+			id = maxson_bos_dome4
+			icon = GFX_goal_max_breaking_open_the_dome
+			cost = 30
+			x = 1
+			y = 1
+			relative_position_id = maxson_bos_dome2
+
+			prerequisite = {
+				focus = maxson_bos_dome2
+			}
+			prerequisite = {
+				focus = maxson_bos_dome3
+			}
+
+			available = {
+				568 = {
+					is_owned_and_controlled_by = MXC
+				}
+			}
+
+			completion_reward = {
+				add_political_power = 25
+				army_experience = 25
+			}
+		}
+			#Circle Cure, if available / The Circle Cure#
+		focus = {
+			id = maxson_bos_dome5
+			icon = GFX_goal_max_the_circle_cure
+			cost = 30
+			x = -3
+			y = 1
+			relative_position_id = maxson_bos_dome4
+
+			available = {
+				NOT = { has_country_flag = maxson_circle_killed }
+				568 = {
+					is_owned_and_controlled_by = MXC
+				}
+			}
+
+			prerequisite = {
+				focus = maxson_bos_dome4
+			}
+
+			completion_reward = {
+				custom_effect_tooltip = boulderdome_cure_tooltip
+				set_country_flag = maxson_circle_cured
+			}
+		}
+			#Medical Wonders#
+		focus = {
+			id = maxson_bos_dome6
+			icon = GFX_goal_max_medical_wonders
+			cost = 30
+			x = -1
+			y = 1
+			relative_position_id = maxson_bos_dome4
+
+			prerequisite = {
+				focus = maxson_bos_dome4
+			}
+
+			available = {
+				568 = {
+					is_owned_and_controlled_by = MXC
+				}
+			}
+
+			completion_reward = {
+				add_tech_bonus = {
+					uses = 3
+					bonus = 0.5
+					ahead_reduction = 0.5
+					category = support_medical_tech_category
+				}
+			}
+		}
+			#ZAX tech bonuses / ZAX 1.2c
+		focus = {
+			id = maxson_bos_dome7
+			icon = GFX_goal_max_the_resident_zax
+			cost = 30
+			x = 1
+			y = 1
+			relative_position_id = maxson_bos_dome4
+
+			prerequisite = {
+				focus = maxson_bos_dome4
+			}
+
+			available = {
+				568 = {
+					is_owned_and_controlled_by = MXC
+				}
+			}
+
+			completion_reward = {
+				add_ideas = maxson_boulder_zax
+			}
+		}
+
+		focus = {
+			id = maxson_bos_dome8
+			icon = GFX_goal_max_establish_ourselves
+			cost = 30
+			x = 3
+			y = 1
+			relative_position_id = maxson_bos_dome4
+
+			prerequisite = {
+				focus = maxson_bos_dome4
+			}
+
+			available = {
+				568 = {
+					is_owned_and_controlled_by = MXC
+				}
+			}
+
+			completion_reward = {
+				add_state_core = 568
+			}
+		}
+
+		#FINAL FOCUSES / ENDGAME #
+
+		#Contact Midwest#
+	# focus = {
+	# 	id = maxson_bos_final_contact1
+	# 	icon = GFX_goal_max_contact_midwest
+	# 	cost = 30
+	# 	x = -2
+	# 	y = 1
+	# 	relative_position_id = maxson_bos_final_hq
+
+	# 	prerequisite = {
+	# 		focus = maxson_bos_final_hq
+	# 	}
+
+	# 	completion_reward = {
+	# 		custom_effect_tooltip = maxson_brotherhood_contact
+	# 		hidden_effect = {
+	# 			country_event = nf_maxson_final.5
+	# 		}
+
+	# 	}
+	# }
+		#Contact Lost Hills#
+	# focus = {
+	# 	id = maxson_bos_final_contact2
+	# 	icon = GFX_goal_max_contact_western
+	# 	cost = 30
+	# 	x = 0
+	# 	y = 1
+	# 	relative_position_id = maxson_bos_final_hq
+
+	# 	prerequisite = {
+	# 		focus = maxson_bos_final_hq
+	# 	}
+
+	# 	completion_reward = {
+	# 		custom_effect_tooltip = maxson_brotherhood_contact
+	# 		hidden_effect = {
+	# 			if = {
+	# 				limit = {
+	# 					BOS = {
+	# 						exists = yes
+	# 					}
+	# 				}
+	# 				country_event = nf_maxson_final.6
+	# 			}
+	# 			else_if = {
+	# 				limit = {
+	# 					BOS = {
+	# 						exists = no
+	# 					}
+	# 				}
+	# 				country_event = nf_maxson_final.7
+	# 			}
+	# 		}
+	# 	}
+	# }
+		#Contact Texas/Alamo#
+	# focus = {
+	# 	id = maxson_bos_final_contact3
+	# 	icon = GFX_goal_max_contact_texas
+	# 	cost = 30
+	# 	x = 2
+	# 	y = 1
+	# 	relative_position_id = maxson_bos_final_hq
+
+	# 	prerequisite = {
+	# 		focus = maxson_bos_final_hq
+	# 	}
+
+	# 	completion_reward = {
+	# 		custom_effect_tooltip = maxson_brotherhood_contact
+	# 		hidden_effect = {
+	# 			if = {
+	# 				limit = {
+	# 					TBH = {
+	# 						exists = yes
+	# 					}
+	# 				}
+	# 				country_event = nf_maxson_final.8
+	# 			}
+	# 			else_if = {
+	# 				limit = {
+	# 					TBH = {
+	# 						exists = no
+	# 					}
+	# 				}
+	# 				country_event = nf_maxson_final.9
+	# 			}
+	# 			if = {
+	# 				limit = {
+	# 					ACH = {
+	# 						exists = yes
+	# 					}
+	# 				}
+	# 				country_event = nf_maxson_final.10
+	# 			}
+	# 			else_if = {
+	# 				limit = {
+	# 					ACH = {
+	# 						exists = no
+	# 					}
+	# 				}
+	# 				country_event = nf_maxson_final.11
+	# 			}
+	# 		}
+	# 	}
+	# }
+
+	focus = {
+		id = maxson_bos_laniuswar_1
+		icon = GFX_goal_max_emergency_recruitment
+		cost = 15
+		x = -2
+		y = 1
+		available = {
+			has_war_with = LAC
+		}
+		prerequisite = {
+			focus = maxson_bos_expedition_colorado1
+		}
+
+		relative_position_id = maxson_bos_expedition_colorado1
+
+		completion_reward = {
+			add_manpower = 350
+			add_stability = -0.05
+		}
+	}
+
+	focus = {
+		id = maxson_bos_laniuswar_2
+		icon = GFX_goal_max_defend_our_home
+		cost = 15
+		x = 0
+		y = 1
+		available = {
+			has_war_with = LAC
+		}
+		prerequisite = {
+			focus = maxson_bos_expedition_colorado1
+		}
+
+		relative_position_id = maxson_bos_expedition_colorado1
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = maxson_lanius_war
+				days = 80
+			}
+		}
+	}
+
+	focus = {
+		id = maxson_bos_laniuswar_3
+		icon = GFX_goal_max_requisition_caravan_guns
+		cost = 15
+		x = 2
+		y = 1
+		available = {
+			has_war_with = LAC
+		}
+		prerequisite = {
+			focus = maxson_bos_expedition_colorado1
+		}
+
+		relative_position_id = maxson_bos_expedition_colorado1
+
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 450
+			}
+			add_stability = -0.05
+		}
+	}
+		#Brotherhood Occupation#
+	focus = {
+		id = maxson_bos_postlanius_3
+		icon = GFX_goal_max_occupy_the_conquered_land
+		cost = 15
+		x = 0
+		y = 2
+		available = {
+			LAC = {
+				exists = no
+			}
+			5 = {
+				OR = {
+					is_owned_by = MXC
+					is_owned_by = CHC
+				}
+			}
+			215 = {
+				is_owned_by = MXC
+			}
+			is_puppet = no
+		}
+		bypass = {
+
+		}
+
+		relative_position_id = maxson_bos_expedition_colorado1
+
+		completion_reward = {
+			puppet = EDA
+			EDA = {
+				set_cosmetic_tag = LAC_occupied
+			}
+			custom_effect_tooltip = maxson_occupy_new_mexico
+			hidden_effect = {
+				EDA = {
+					load_focus_tree = bos_puppet_nf
+				}
+				every_state = {
+					limit = {
+						is_owned_by = MXC
+						OR = {
+							region = 15
+							region = 45
+							region = 47
+						}
+					}
+					EDA = {
+						transfer_state = PREV
+					}
+				}
+				IRN = {
+					leave_faction = yes
+				}
+			}
+		}
+	}
+		#Free the Slaves#
+	focus = {
+		id = maxson_bos_postlanius_1
+		icon = GFX_goal_max_free_the_slaves
+		cost = 15
+		x = 1
+		y = 2
+		available = {
+			EDA = {
+				is_puppet_of = MXC
+			}
+		}
+		bypass = {
+
+		}
+		prerequisite = {
+			focus = maxson_bos_postlanius_3
+		}
+
+		relative_position_id = maxson_bos_laniuswar_1
+
+		completion_reward = {
+			5 = {
+				add_manpower = -5000
+			}
+			525 = {
+				add_manpower = 5000
+			}
+		}
+	}
+	#Support the new Chapter#
+	focus = {
+		id = maxson_bos_postlanius_2
+		icon = GFX_goal_max_support_the_new_chapter
+		cost = 15
+		x = 3
+		y = 2
+		available = {
+			EDA = {
+				is_puppet_of = MXC
+			}
+		}
+		bypass = {
+
+		}
+		prerequisite = {
+			focus = maxson_bos_postlanius_3
+		}
+
+		relative_position_id = maxson_bos_laniuswar_1
+
+		completion_reward = {
+			EDA = {
+				add_autonomy_score = {
+					value = 100
+				}
+			}
+		}
+	}
+
+		#Expansion Final Idea#
+	focus = {
+		id = maxson_bos_expedition_colorado2
+		icon = GFX_goal_max_expansionist_tendencies
+		cost = 30
+		x = 0
+		y = 2
+		relative_position_id = maxson_bos_postlanius_3
+
+		available = {
+			has_completed_focus = maxson_bos_vault8
+		}
+
+		prerequisite = {
+			focus = maxson_bos_postlanius_1
+		}
+		prerequisite = {
+			focus = maxson_bos_postlanius_2
+		}
+
+		completion_reward = {
+			country_event = nf_maxson_final.1
+			set_cosmetic_tag = MXC_colorado
+			add_ideas = maxson_final_attack
+		}
+	}
+		#Defensive Final Idea#
+	# focus = {
+	# 	id = maxson_bos_expedition_colorado3
+	# 	icon = GFX_goal_max_fortress_colorado
+	# 	cost = 30
+	# 	x = 1
+	# 	y = 1
+	# 	relative_position_id = maxson_bos_postlanius_3
+
+	# 	prerequisite = {
+	# 		focus = maxson_bos_postlanius_3
+	# 	}
+
+	# 	mutually_exclusive = {
+	# 		focus = maxson_bos_expedition_colorado2
+	# 	}
+
+	# 	completion_reward = {
+	# 		add_ideas = maxson_final_defense
+	# 	}
+	# }
+
+	# focus = {
+	# 	id = maxson_bos_final_hq
+	# 	icon = GFX_goal_max_colorado_headquarters
+	# 	cost = 30
+	# 	x = 0
+	# 	y = 2
+	# 	relative_position_id = maxson_bos_postlanius_3
+
+	# 	available = {
+	# 		has_completed_focus = maxson_bos_vault8
+	# 	}
+
+	# 	prerequisite = {
+	# 		focus = maxson_bos_postlanius_3
+	# 	}
+
+	# 	completion_reward = {
+	# 		country_event = nf_maxson_final.1
+	# 	}
+	# }
+
+}

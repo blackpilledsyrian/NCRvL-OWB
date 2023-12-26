@@ -1,0 +1,870 @@
+﻿add_namespace = nf_gente
+#origin 1
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_gente.1" }
+	id = nf_gente.1
+	title = nf_gente.1.t
+	desc = nf_gente.1.d
+	picture = GFX_event_generic_desert_2
+	is_triggered_only = yes
+	option = {
+		name = nf_gente.1.a
+		add_ideas = gdh_smiley
+	}
+	option = {
+		name = nf_gente.1.b
+		add_ideas = gdh_stoic
+	}
+	option = {
+		name = nf_gente.1.c
+		add_ideas = gdh_ruthless
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_gente.2" }
+	id = nf_gente.2
+	title = nf_gente.2.t
+	desc = nf_gente.2.d
+	picture = GFX_event_generic_nuka_lurk
+	is_triggered_only = yes
+	option = {
+		name = nf_gente.2.a
+		add_ideas = gdh_brave
+	}
+	option = {
+		name = nf_gente.2.b
+		add_ideas = gdh_cunning
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_gente.3" }
+	id = nf_gente.3
+	title = nf_gente.3.t
+	desc = nf_gente.3.d
+	picture = GFX_event_generic_gun_runners
+	is_triggered_only = yes
+	option = {
+		name = nf_gente.3.a
+		add_ideas = gdh_free_trade
+		custom_effect_tooltip = nf_gente.3.a_tt
+	}
+	option = {
+		name = nf_gente.3.b
+		add_ideas = gdh_gun_production
+	}
+	option = {
+		name = nf_gente.3.c
+		471 = {
+			if = {
+				limit = {
+					is_valid_state_for_2_arms_factories = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	#villa
+	id = nf_gente.33
+	title = nf_gente.33.t
+	desc = nf_gente.33.d
+	picture = GFX_event_gente_de_sol_villa
+	is_triggered_only = yes
+	option = {
+		name = nf_gente.33.a
+		set_country_flag = GDH_villa_construction_begun
+		custom_effect_tooltip = nf_gente.33.a_tt
+	}
+}
+
+country_event = {
+	#event for ffi
+	id = nf_gente.4
+	title = nf_gente.4.t
+	desc = nf_gente.4.d
+	picture = GFX_event_gente_de_sol_villa
+	is_triggered_only = yes
+	option = {
+		name = nf_gente.4.a
+		custom_effect_tooltip = nf_gente.4.a_tt
+	}
+}
+
+country_event = {
+	#event for caf
+	id = nf_gente.6
+	title = nf_gente.6.t
+	desc = nf_gente.6.d
+	picture = GFX_event_gente_de_sol_villa
+	is_triggered_only = yes
+	option = {
+		name = nf_gente.6.a
+		828 = {
+			set_temp_variable = {
+				development_to_add = 1
+			}
+			add_development_to_node = yes
+		}
+	}
+	option = {
+		name = nf_gente.6.b
+		trigger = {
+			CAF = {
+				is_in_faction = no
+			}
+		}
+		828 = {
+			set_temp_variable = {
+				development_to_add = 1
+			}
+			add_development_to_node = yes
+		}
+		## Faction
+	}
+}
+
+country_event = {
+	#choose between robotics, tanks, or air
+	id = nf_gente.7
+	title = nf_gente.7.t
+	desc = nf_gente.7.d
+	picture = GFX_event_generic_zax
+	is_triggered_only = yes
+	option = {
+		name = nf_gente.7.a
+		set_technology = {
+			robotics_tech_level_scientific = 1
+		}
+	}
+	option = {
+		name = nf_gente.7.b
+		set_technology = {
+			air_tech_level_scientific = 1
+		}
+	}
+	option = {
+		name = nf_gente.7.c
+		set_technology = {
+			vehicles_tech_level_scientific = 1
+		}
+	}
+}
+
+country_event = {
+	#fiesta
+	id = nf_gente.8
+	title = nf_gente.8.t
+	desc = nf_gente.8.d
+	picture = GFX_event_gente_de_sol_villa
+	is_triggered_only = yes
+	option = {
+		name = nf_gente.8.a
+		set_technology = {
+			naval_tech_level_scientific = 1
+		}
+	}
+	option = {
+		name = nf_gente.8.b
+		set_technology = {
+			air_tech_level_scientific = 1
+		}
+	}
+	option = {
+		name = nf_gente.8.c
+		set_technology = {
+			vehicles_tech_level_scientific = 1
+		}
+	}
+	option = {
+		name = nf_gente.7.d
+		set_technology = {
+			support_tech_level_scientific = 1
+		}
+	}
+}
+
+country_event = {
+	#event for rrg - new weaponry?
+	id = nf_gente.9
+	title = nf_gente.9.t
+	desc = nf_gente.9.d
+	picture = GFX_event_gente_de_sol_villa
+	is_triggered_only = yes
+	option = {
+		name = nf_gente.9.a
+		add_tech_bonus = {
+			bonus = 0.25
+			uses = 1
+			category = infantry_tech_category
+		}
+		if = {
+			limit = {
+				has_tech = ballistic_weaponry_tech_2
+			}
+			add_equipment_to_stockpile = {
+				type = ballistic_equipment_2
+				amount = 1000
+			}
+		}
+		else_if = {
+			limit = {
+				has_tech = ballistic_weaponry_tech_1
+			}
+			add_equipment_to_stockpile = {
+				type = ballistic_equipment_1
+				amount = 1000
+			}
+		}
+		else = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 1000
+			}
+		}
+		CES = {
+			country_event = {
+				id = nf_gente.10
+			}
+		}
+	}
+}
+
+country_event = {
+	#event for ces, gdh trades with rrg
+	id = nf_gente.10
+	title = nf_gente.10.t
+	desc = nf_gente.10.d
+	picture = GFX_event_gente_de_sol_villa
+	is_triggered_only = yes
+	option = {
+		name = nf_gente.10.a
+	}
+}
+
+country_event = {
+	#event for NCR
+	id = nf_gente.11
+	title = nf_gente.11.t
+	desc = nf_gente.11.d
+	picture = GFX_event_gente_de_sol_villa
+	is_triggered_only = yes
+	option = {
+		name = nf_gente.11.a
+		ai_chance = {
+			base = 1
+		}
+		GDH = {
+			country_event = {
+				id = nf_gente.12
+			}
+		}
+		set_country_flag = gdh_market_country_available
+		custom_effect_tooltip = nf_gente.11.a_tt
+	}
+}
+
+country_event = {
+	#event for gdh, ncr said yes
+	id = nf_gente.12
+	title = nf_gente.12.t
+	desc = nf_gente.12.d
+	picture = GFX_event_NCR_victory
+	is_triggered_only = yes
+	option = {
+		name = nf_gente.12.a
+	}
+}
+
+country_event = {
+	#event for gdh, ncr said no
+	id = nf_gente.13
+	title = nf_gente.13.t
+	desc = nf_gente.13.d
+	picture = GFX_event_NCR_money_2
+	is_triggered_only = yes
+	option = {
+		name = nf_gente.13.a
+		set_country_flag = ncr_assholes
+	}
+}
+
+country_event = {
+	#event for gdh - The end of the Road
+	id = nf_gente.14
+	title = nf_gente.14.t
+	desc = nf_gente.14.d
+	picture = GFX_event_gente_de_sol_villa
+	is_triggered_only = yes
+	option = {
+		name = nf_gente.14.a
+		add_equipment_to_stockpile = {
+			type = gauss_equipment_1
+			amount = 300
+			producer = USA
+		}
+	}
+}
+
+country_event = {
+	#event for gdh - sham election
+	id = nf_gente.15
+	title = nf_gente.15.t
+	desc = nf_gente.15.d
+	#picture =
+	is_triggered_only = yes
+	option = {
+		name = nf_gente.15.a
+		add_country_leader_trait = man_of_community
+	}
+	option = {
+		name = nf_gente.15.b
+		promote_character = GDH_gubernia_izquierda
+		set_politics = {
+			ruling_party = people
+		}
+		set_popularities = {
+			ruler = 20
+			people = 80
+		}
+	}
+}
+
+country_event = {
+	#event for ces - new weaponry?
+	id = nf_gente.16
+	title = nf_gente.16.t
+	desc = nf_gente.16.d
+	picture = GFX_event_gente_de_sol_villa
+	is_triggered_only = yes
+	option = {
+		name = nf_gente.16.a
+		add_tech_bonus = {
+			bonus = 0.25
+			uses = 1
+			category = infantry_tech_category
+		}
+		if = {
+			limit = {
+				has_tech = ballistic_weaponry_tech_1
+			}
+			add_equipment_to_stockpile = {
+				type = ballistic_equipment_1
+				amount = 1000
+			}
+		}
+		else = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 1000
+			}
+		}
+		RRG = {
+			country_event = {
+				id = nf_gente.17
+			}
+		}
+	}
+}
+
+country_event = {
+	#event for RRG - gdh advances trade with ces
+	id = nf_gente.17
+	title = nf_gente.17.t
+	desc = nf_gente.17.d
+	picture = GFX_event_gente_de_sol_villa
+	is_triggered_only = yes
+	option = {
+		name = nf_gente.17.a
+	}
+}
+
+country_event = {
+	#event for ces - ultima purchase
+	id = nf_gente.18
+	title = nf_gente.18.t
+	desc = nf_gente.18.d
+	picture = GFX_event_gold
+	is_triggered_only = yes
+	option = {
+		name = nf_gente.18.a
+		ai_chance = {
+			base = 1
+		}
+		GDH = {
+			country_event = {
+				id = nf_gente.19
+			}
+		}
+	}
+	option = {
+		name = nf_gente.18.b
+		GDH = {
+			country_event = {
+				id = nf_gente.20
+			}
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+country_event = {
+	#Legion said yes!
+	id = nf_gente.19
+	title = nf_gente.19.t
+	desc = nf_gente.19.d
+	picture = GFX_event_CES_caesar
+	is_triggered_only = yes
+	option = {
+		name = nf_gente.19.a
+		transfer_state = 444
+		444 = {
+			remove_core_of = CES
+			remove_claim_by = CES
+		}
+		set_temp_variable = {
+			caps_to_add = -400
+		}
+		add_caps = yes
+		CES = {
+			set_temp_variable = {
+				caps_to_add = 400
+			}
+			add_caps = yes
+		}
+	}
+}
+
+country_event = {
+	# Legion said no
+	id = nf_gente.20
+	title = nf_gente.20.t
+	desc = nf_gente.20.d
+	picture = GFX_event_CES_caesar
+	is_triggered_only = yes
+	option = {
+		name = nf_gente.20.a
+		444 = {
+			add_claim_by = GDH
+		}
+	}
+}
+
+country_event = {
+	#event for ces - badlands
+	id = nf_gente.21
+	title = nf_gente.21.t
+	desc = nf_gente.21.d
+	picture = GFX_event_gold
+	is_triggered_only = yes
+	option = {
+		name = nf_gente.21.a
+		GDH = {
+			country_event = {
+				id = nf_gente.22
+			}
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+	option = {
+		name = nf_gente.21.b
+		GDH = {
+			country_event = {
+				id = nf_gente.23
+			}
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+country_event = {
+	#You get NOgales
+	id = nf_gente.22
+	title = nf_gente.22.t
+	desc = nf_gente.22.d
+	picture = GFX_event_CES_caesar
+	is_triggered_only = yes
+	option = {
+		name = nf_gente.22.a
+		transfer_state = 588
+		558 = {
+			remove_core_of = CES
+			remove_claim_by = CES
+		}
+		set_temp_variable = {
+			caps_to_add = -400
+		}
+		add_caps = yes
+		CES = {
+			set_temp_variable = {
+				caps_to_add = 400
+			}
+			add_caps = yes
+		}
+	}
+}
+
+country_event = {
+	#No Nogales
+	id = nf_gente.23
+	title = nf_gente.23.t
+	desc = nf_gente.23.d
+	picture = GFX_event_CES_caesar
+	is_triggered_only = yes
+	option = {
+		name = nf_gente.23.a
+		588 = {
+			add_claim_by = GDH
+		}
+	}
+}
+
+country_event = {
+	#GDH asks for nonaggression Pact
+	id = nf_gente.24
+	title = nf_gente.24.t
+	desc = nf_gente.24.d
+	picture = GFX_event_gente_de_sol_villa
+	is_triggered_only = yes
+	option = {
+		name = nf_gente.24.a
+		ai_chance = {
+			base = 1
+		}
+		GDH = {
+			country_event = nf_gente.25
+		}
+	}
+	option = {
+		name = nf_gente.24.b
+		ai_chance = {
+			base = 1
+		}
+		GDH = {
+			country_event = nf_gente.26
+		}
+	}
+}
+
+country_event = {
+	#Caesar wants to be firends
+	id = nf_gente.25
+	title = nf_gente.25.t
+	desc = nf_gente.25.d
+	picture = GFX_event_CES_caesar
+	is_triggered_only = yes
+	option = {
+		name = nf_gente.25.a
+		diplomatic_relation = {
+			country = CES
+			relation = non_aggression_pact
+			active = yes
+		}
+	}
+}
+
+country_event = {
+	#Caesar Hates us
+	id = nf_gente.26
+	title = nf_gente.26.t
+	desc = nf_gente.26.d
+	picture = GFX_event_CES_caesar
+	is_triggered_only = yes
+	option = {
+		name = nf_gente.26.a
+		complete_national_focus = gdh_eagle_economy
+	}
+}
+
+country_event = {
+	#event for CES
+	id = nf_gente.34
+	title = nf_gente.34.t
+	desc = nf_gente.34.d
+	picture = GFX_event_gente_de_sol_villa
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = nf_gente.34.a
+		ai_chance = {
+			base = 1
+		}
+		random_owned_state = {
+			limit = {
+				is_valid_state_for_3_arms_factories = yes
+			}
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = arms_factory
+				level = 3
+				instant_build = yes
+			}
+		}
+		set_country_flag = gdh_market_country_available
+		custom_effect_tooltip = nf_gente.34_tt
+		GDH = {
+			country_event = nf_gente.36
+		}
+		increase_trading = yes
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_completed_focus = ces_outsiders_gente
+					}
+				}
+				complete_national_focus = ces_outsiders_gente
+			}
+		}
+	}
+	option = {
+		name = nf_gente.34.b
+		ai_chance = {
+			base = 1
+		}
+		GDH = {
+			country_event = nf_gente.35
+		}
+	}
+}
+
+country_event = {
+	#Cesar is an ashsole
+	id = nf_gente.35
+	title = nf_gente.35.t
+	desc = nf_gente.35.d
+	picture = GFX_event_gente_de_sol_villa
+	is_triggered_only = yes
+	option = {
+		name = nf_gente.35.a
+		complete_national_focus = gdh_eagle_economy
+	}
+}
+
+country_event = {
+	#Caesar said yes
+	id = nf_gente.36
+	title = nf_gente.36.t
+	desc = nf_gente.36.d
+	picture = GFX_event_gente_de_sol_villa
+	is_triggered_only = yes
+	option = {
+		name = nf_gente.36.a
+		##3 Caps stuf
+	}
+}
+
+country_event = {
+	#event for rrg
+	id = nf_gente.37
+	title = nf_gente.37.t
+	desc = nf_gente.37.d
+	picture = GFX_event_gente_de_sol_villa
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = nf_gente.37.a
+		ai_chance = {
+			base = 1
+		}
+		random_owned_state = {
+			limit = {
+				is_valid_state_for_3_arms_factories = yes
+			}
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = arms_factory
+				level = 3
+				instant_build = yes
+			}
+		}
+		GDH = {
+			country_event = nf_gente.38
+		}
+		set_country_flag = gdh_market_country_available
+		custom_effect_tooltip = nf_gente.34_tt
+	}
+	option = {
+		name = nf_gente.37.b
+		ai_chance = {
+			base = 0
+		}
+		### GDH = { news_event = nf_gente.39 }
+	}
+}
+
+country_event = {
+	#RRG said yes
+	id = nf_gente.38
+	title = nf_gente.38.t
+	desc = nf_gente.38.d
+	picture = GFX_event_gente_de_sol_villa
+	is_triggered_only = yes
+	option = {
+		name = nf_gente.38.a
+		set_temp_variable = {
+			caps_to_add = 400
+		}
+		add_caps = yes
+	}
+}
+
+news_event = {
+	#Panic attack
+	id = nf_gente.39
+	title = nf_gente.39.t
+	desc = nf_gente.39.d
+	picture = GFX_event_gente_de_sol_villa
+	is_triggered_only = yes
+	option = {
+		name = nf_gente.39.a
+		add_stability = -0.15
+		set_variable = {
+			generalissimo_stress = 0
+		}
+		custom_effect_tooltip = nf_gente.39.a_tt
+	}
+}
+
+country_event = {
+	#Gente Wants Baja
+	id = nf_gente.40
+	title = nf_gente.40.t
+	desc = nf_gente.40.d
+	picture = GFX_event_gente_de_sol_villa
+	is_triggered_only = yes
+	option = {
+		name = nf_gente.40.a
+		ai_chance = {
+			base = 1
+		}
+		GDH = {
+			news_event = nf_gente.41
+		}
+		set_temp_variable = {
+			caps_to_add = 1000
+		}
+		add_caps = yes
+	}
+	option = {
+		name = nf_gente.40.b
+		ai_chance = {
+			base = 0
+		}
+		GDH = {
+			news_event = nf_gente.42
+		}
+	}
+}
+
+news_event = {
+	#Caesar sold baja
+	id = nf_gente.41
+	title = nf_gente.41.t
+	desc = nf_gente.41.d
+	picture = GFX_event_gente_de_sol_villa
+	is_triggered_only = yes
+	option = {
+		name = nf_gente.41.a
+		set_temp_variable = {
+			caps_to_add = -1000
+		}
+		add_caps = yes
+		transfer_state = 651
+		transfer_state = 650
+		transfer_state = 41
+		transfer_state = 174
+		transfer_state = 158
+		transfer_state = 136
+		transfer_state = 481
+		transfer_state = 176
+		transfer_state = 325
+		transfer_state = 97
+		every_state = {
+			limit = {
+				is_core_of = BVC
+			}
+			add_core_of = GDH
+		}
+		every_state = {
+			limit = {
+				is_core_of = BLP
+			}
+			add_core_of = GDH
+		}
+	}
+}
+
+news_event = {
+	#Caesar said no
+	id = nf_gente.42
+	title = nf_gente.42.t
+	desc = nf_gente.42.d
+	picture = GFX_event_gente_de_sol_villa
+	is_triggered_only = yes
+	option = {
+		name = nf_gente.42.a
+		every_state = {
+			limit = {
+				is_core_of = BVC
+			}
+			add_core_of = GDH
+		}
+		every_state = {
+			limit = {
+				is_core_of = c
+			}
+			add_core_of = GDH
+		}
+	}
+}
+
+news_event = {
+	#Baja guns
+	id = nf_gente.43
+	title = nf_gente.43.t
+	desc = nf_gente.43.d
+	picture = GFX_event_gente_de_sol_villa
+	is_triggered_only = yes
+	option = {
+		name = nf_gente.43.a
+		if = {
+			limit = {
+				has_tech = ballistic_weaponry_tech_2
+			}
+			add_equipment_to_stockpile = {
+				type = ballistic_equipment_2
+				amount = 1000
+			}
+		}
+		else_if = {
+			limit = {
+				has_tech = ballistic_weaponry_tech_1
+			}
+			add_equipment_to_stockpile = {
+				type = ballistic_equipment_1
+				amount = 1000
+			}
+		}
+		else = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 1000
+			}
+		}
+	}
+}

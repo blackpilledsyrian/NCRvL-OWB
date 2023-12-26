@@ -1,0 +1,51 @@
+﻿units = {
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 5
+		}
+		location = 2649
+		division_template = "NCR Troopers"
+		start_experience_factor = 0.15
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 23
+		}
+		location = 889
+		division_template = "NCR Troopers"
+		start_experience_factor = 0.15
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 9
+		}
+		location = 2652
+		division_template = "NCR Troopers"
+		start_experience_factor = 0.15
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "2nd Ranger Company"
+		location = 2048
+		division_template = "NCR Rangers"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "3rd Ranger Company"
+		location = 6659
+		division_template = "NCR Rangers"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+}
+# vim: set ft=pdx ts=2 sw=2 tw=79 :

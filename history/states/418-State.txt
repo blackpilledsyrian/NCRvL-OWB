@@ -1,0 +1,28 @@
+state = {
+	id = 418
+	name = "STATE_418"
+	manpower = 16500
+	state_category = city
+
+	resources = {
+		water = 7
+		metal = 11
+		energy = 12
+	}
+
+	history = {
+		victory_points = {
+			4001 10
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 2
+			arms_factory = 3
+			4001 = { bunker = 2 }
+		}
+	}
+
+	provinces = {
+		238 4001 4051 8492 8493 8494 8495 8497
+	}
+}

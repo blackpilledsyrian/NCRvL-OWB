@@ -1,0 +1,601 @@
+sub_units = {
+
+	recon_company = {
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		active = no
+		affects_speed = no
+
+		type = {
+			infantry
+			support
+		}
+
+		group = support
+
+		categories = {
+			category_army
+			category_support
+			category_non_combat_support
+			category_recon_support
+		}
+
+		combat_width = 0
+
+		#Size Definitions
+		max_strength = 10
+		max_organisation = 15
+		default_morale = 0.3
+		manpower = 15 # 500
+		training_time = 120
+		suppression = 1
+
+		#Misc Abilities
+		weight = 0.1
+		supply_consumption = 0.1
+		recon = 1.5
+		can_be_parachuted = yes
+
+		essential = {
+			infantry_equipment
+			support_equipment
+		}
+
+		need = {
+			infantry_equipment = 15
+			support_equipment = 15
+		}
+
+		forest = {
+			movement = 0.1
+		}
+		hills = {
+			movement = 0.1
+		}
+		mountain = {
+			movement = 0.1
+		}
+		jungle = {
+			movement = 0.1
+		}
+		marsh = {
+			movement = 0.1
+		}
+		plains = {
+			movement = 0.1
+		}
+		desert = {
+			movement = 0.1
+		}
+		river = {
+			movement = 0.1
+		}
+		amphibious = {
+			movement = 0.1
+		}
+		fort = {
+			movement = 0.1
+		}
+		urban = {
+			movement = 0.1
+		}
+		amphibious = {
+			movement = 0.1
+		}
+
+		same_support_type = recon_company # blocks adding other recon types to template
+	}
+
+	motorized_recon_company = {
+		sprite = motorized
+		map_icon_category = infantry
+		priority = 0
+		active = no
+		affects_speed = no
+
+		type = {
+			motorized
+			support
+		}
+
+		group = support
+
+		categories = {
+			category_army
+			category_support
+			category_non_combat_support
+			category_recon_support
+		}
+
+		combat_width = 0
+
+		#Size Definitions
+		max_strength = 20
+		max_organisation = 20
+		default_morale = 0.35
+		manpower = 15 # 500
+		training_time = 150
+		suppression = 1
+
+		#Misc Abilities
+		weight = 0.3
+		supply_consumption = 0.3
+		recon = 2
+		can_be_parachuted = yes
+
+		essential = {
+			infantry_equipment
+			support_equipment
+			motorized_equipment
+		}
+
+		transport = motorized_equipment
+		need = {
+			infantry_equipment = 15
+			support_equipment = 15
+			motorized_equipment = 15
+		}
+
+		forest = {
+			movement = 0.15
+		}
+		hills = {
+			movement = 0.15
+		}
+		mountain = {
+			movement = 0.15
+		}
+		jungle = {
+			movement = 0.15
+		}
+		marsh = {
+			movement = 0.15
+		}
+		plains = {
+			movement = 0.15
+		}
+		desert = {
+			movement = 0.15
+		}
+		river = {
+			movement = 0.15
+		}
+		amphibious = {
+			movement = 0.15
+		}
+		fort = {
+			movement = 0.15
+		}
+		urban = {
+			movement = 0.15
+		}
+		amphibious = {
+			movement = 0.15
+		}
+
+		same_support_type = recon_company # blocks adding other recon types to template
+	}
+
+	logistics_company = {
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		affects_speed = no
+
+		type = {
+			infantry
+			support
+		}
+
+		group = support
+
+		categories = {
+			category_army
+			category_support
+			category_non_combat_support
+			category_logistics_support
+		}
+
+		combat_width = 0
+
+		#Size Definitions
+		max_strength = 10
+		max_organisation = 15
+		default_morale = 0.3
+		manpower = 15 # 500
+		training_time = 120
+
+		#Misc Abilities
+		weight = 0.1
+		can_be_parachuted = yes
+
+		# Support nerfs to combat abilities
+		defense = -0.8
+		breakthrough = -0.8
+		soft_attack = -0.8
+		hard_attack = -0.8
+		air_attack = -0.8
+
+		# Important Ability
+		supply_consumption_factor = -0.1
+		initiative = 0.1
+
+		essential = {
+			support_equipment
+		}
+
+		need = {
+			support_equipment = 15
+		}
+
+		marsh = {
+			attack = 0.1
+			defence = 0.1
+		}
+		jungle = {
+			attack = 0.1
+			defence = 0.1
+		}
+		river = {
+			attack = 0.1
+			defence = 0.1
+		}
+		amphibious = {
+			attack = 0.1
+			defence = 0.1
+		}
+
+		same_support_type = logistics_company # blocks adding other logistics types to template
+	}
+
+	motorized_logistics_company = {
+		sprite = motorized
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		affects_speed = no
+
+		type = {
+			motorized
+			support
+		}
+
+		group = support
+
+		categories = {
+			category_army
+			category_support
+			category_non_combat_support
+			category_logistics_support
+		}
+
+		combat_width = 0
+
+		#Size Definitions
+		max_strength = 20
+		max_organisation = 20
+		default_morale = 0.35
+		manpower = 15 # 500
+		training_time = 150
+
+		#Misc Abilities
+		weight = 0.3
+		supply_consumption = 0.2
+		can_be_parachuted = yes
+
+		# Support nerfs to combat abilities
+		defense = -0.8
+		breakthrough = -0.8
+		soft_attack = -0.8
+		hard_attack = -0.8
+		air_attack = -0.8
+
+
+		# Important Ability
+		supply_consumption_factor = -0.1
+		initiative = 0.2
+
+		essential = {
+			support_equipment
+			motorized_equipment
+		}
+
+		transport = motorized_equipment
+		need = {
+			support_equipment = 15
+			motorized_equipment = 15
+		}
+
+		marsh = {
+			attack = 0.1
+			defence = 0.1
+		}
+		jungle = {
+			attack = 0.1
+			defence = 0.1
+		}
+		river = {
+			attack = 0.1
+			defence = 0.1
+		}
+		amphibious = {
+			attack = 0.1
+			defence = 0.1
+		}
+
+		same_support_type = logistics_company # blocks adding other logistics types to template
+	}
+
+	maintenance_company = {
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		active = no
+		affects_speed = no
+
+		type = {
+			infantry
+			support
+		}
+
+		group = support
+
+		categories = {
+			category_army
+			category_support
+			category_non_combat_support
+			category_maintenance_support
+		}
+
+		combat_width = 0
+
+		#Size Definitions
+		max_strength = 10
+		max_organisation = 15
+		default_morale = 0.3
+		manpower = 15 # 500
+		training_time = 120
+
+		#Misc Abilities
+		weight = 0.1
+		can_be_parachuted = yes
+
+		# Support nerfs to combat abilities
+		defense = -0.8
+		breakthrough = -0.8
+		soft_attack = -0.8
+		hard_attack = -0.8
+		air_attack = -0.8
+
+		# Important Ability
+		reliability_factor = 0.05
+		equipment_capture_factor = 0.1
+
+		essential = {
+			support_equipment
+		}
+
+		need = {
+			support_equipment = 15
+		}
+
+		urban = {
+			attack = 0.1
+			defence = 0.1
+		}
+		fort = {
+			attack = 0.1
+			defence = 0.1
+		}
+
+		same_support_type = maintenance_company # blocks adding other maintenance types to template
+	}
+
+	motorized_maintenance_company = {
+		sprite = motorized
+		map_icon_category = infantry
+		priority = 0
+		active = no
+		affects_speed = no
+
+		type = {
+			motorized
+			support
+		}
+
+		group = support
+
+		categories = {
+			category_army
+			category_support
+			category_non_combat_support
+			category_maintenance_support
+		}
+
+		combat_width = 0
+
+		#Size Definitions
+		max_strength = 20
+		max_organisation = 20
+		default_morale = 0.35
+		manpower = 15 # 500
+		training_time = 150
+
+		#Misc Abilities
+		weight = 0.3
+		supply_consumption = 0.2
+		can_be_parachuted = yes
+
+		# Support nerfs to combat abilities
+		defense = -0.8
+		breakthrough = -0.8
+		soft_attack = -0.8
+		hard_attack = -0.8
+		air_attack = -0.8
+
+		# Important Ability
+		reliability_factor = 0.05
+		equipment_capture_factor = 0.15
+
+		essential = {
+			support_equipment
+			motorized_equipment
+		}
+
+		need = {
+			support_equipment = 15
+			motorized_equipment = 15
+		}
+
+		urban = {
+			attack = 0.1
+			defence = 0.1
+			movement = 0.1
+		}
+		fort = {
+			attack = 0.1
+			defence = 0.1
+			movement = 0.1
+		}
+		same_support_type = maintenance_company # blocks adding other maintenance types to template
+	}
+
+	medical_chem_company = {
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		active = no
+		affects_speed = no
+
+		type = {
+			infantry
+			support
+		}
+
+		group = support
+
+		categories = {
+			category_army
+			category_support
+			category_non_combat_support
+			category_medical_support
+		}
+
+		combat_width = 0
+
+		#Size Definitions
+		max_strength = 20
+		max_organisation = 20
+		default_morale = 0.4
+		manpower = 15
+		training_time = 120
+		suppression = 1
+
+		#Misc Abilities
+		weight = 0.1
+		can_be_parachuted = yes
+
+		# Support nerfs to combat abilities
+		defense = -0.8
+		breakthrough = -0.8
+		soft_attack = -0.8
+		hard_attack = -0.8
+		air_attack = -0.8
+
+		casualty_trickleback = 0.15
+		experience_loss_factor = -0.15
+
+		essential = {
+			support_equipment
+		}
+
+		radiation = {
+			attack = 0.1
+			defence = 0.1
+		}
+
+		desert = {
+			attack = 0.1
+			defence = 0.1
+		}
+
+		need = {
+			support_equipment = 15
+		}
+
+		same_support_type = medical_chem_company # blocks adding other medical types to template
+	}
+
+	motorized_medical_chem_company = {
+		sprite = motorized
+		map_icon_category = infantry
+		priority = 0
+		active = no
+		affects_speed = no
+
+		type = {
+			motorized
+			support
+		}
+
+		group = support
+
+		categories = {
+			category_army
+			category_support
+			category_non_combat_support
+			category_medical_support
+		}
+
+		combat_width = 0
+
+		#Size Definitions
+		max_strength = 30
+		max_organisation = 25
+		default_morale = 0.45
+		manpower = 15
+		training_time = 150
+		suppression = 1
+
+		#Misc Abilities
+		weight = 0.3
+		supply_consumption = 0.2
+		can_be_parachuted = yes
+
+		# Support nerfs to combat abilities
+		defense = -0.8
+		breakthrough = -0.8
+		soft_attack = -0.8
+		hard_attack = -0.8
+		air_attack = -0.8
+
+		casualty_trickleback = 0.2
+		experience_loss_factor = -0.15
+
+		essential = {
+			support_equipment
+			motorized_equipment
+		}
+
+		radiation = {
+			attack = 0.1
+			defence = 0.1
+		}
+
+		desert = {
+			attack = 0.1
+			defence = 0.1
+		}
+
+		need = {
+			support_equipment = 15
+			motorized_equipment = 15
+		}
+
+		same_support_type = medical_chem_company # blocks adding other medical types to template
+	}
+}

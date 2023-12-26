@@ -1,0 +1,24 @@
+state = {
+	id = 787
+	name = "STATE_787"
+	manpower = 12259
+	state_category = shanty
+
+	resources = {
+		water = 8
+	}
+
+	history = {
+		victory_points = {
+			2240 10
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+		}
+	}
+
+	provinces = {
+		2240 2242 9299 9300 9301 9302 9309 9310 9311 9313 10434 10441 10477 10496
+	}
+}

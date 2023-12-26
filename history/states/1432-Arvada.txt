@@ -1,0 +1,25 @@
+state = {
+	id = 1432
+	name = "STATE_1432"
+	manpower = 998
+	state_category = rural
+
+	resources = {
+		water = 2
+		energy = 2
+	}
+
+	history = {
+		victory_points = {
+			12648 5
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+		}
+	}
+
+	provinces = {
+		12602 12612 12615 12630 12638 12648
+	}
+}

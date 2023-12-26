@@ -1,0 +1,298 @@
+﻿division_template = {
+	name = "Liberti"
+	division_names_group = _CES_INF_01
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 0 y = 2 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+		militia = { x = 1 y = 2 }
+	}
+}
+division_template = {
+	name = "Velites"
+	template_counter= 79
+	division_names_group = _CES_INF_01
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+		fireteam_support = { x = 0 y = 0 }
+		anti_tank_company = { x = 1 y = 0 }
+	}
+}
+division_template = {
+	name = "Equites"
+
+	division_names_group = _CES_INF_01
+
+	regiments = {
+		chariot_unit = { x = 0 y = 0 }
+		chariot_unit = { x = 0 y = 1 }
+		chariot_unit = { x = 1 y = 0 }
+		chariot_unit = { x = 0 y = 2 }
+		chariot_unit = { x = 1 y = 1 }
+		chariot_unit = { x = 1 y = 2 }
+		chariot_unit = { x = 2 y = 0 }
+		chariot_unit = { x = 2 y = 1 }
+	}
+	support = {
+		fireteam_support = { x = 0 y = 0 }
+		anti_tank_company = { x = 1 y = 0 }
+	}
+}
+division_template = {
+	name = "Triarii"
+	template_counter= 80
+	division_names_group = _CES_INF_01
+
+	regiments = {
+		spec_ops = { x = 0 y = 0 }
+		spec_ops = { x = 0 y = 1 }
+		spec_ops = { x = 1 y = 0 }
+		spec_ops = { x = 1 y = 1 }
+		spec_ops = { x = 2 y = 0 }
+		spec_ops = { x = 2 y = 1 }
+	}
+	support = {
+		fireteam_support = { x = 0 y = 0 }
+		anti_tank_company = { x = 1 y = 0 }
+	}
+}
+
+
+units = {
+	division = {
+		name = "Legio I Corporis Custodes"
+		location = 2784
+		division_template = "Triarii"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "Legio I Centurio Vulpes"
+		location = 2938
+		division_template = "Triarii"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Legio I Centurio Mars"
+		location = 5245
+		division_template = "Triarii"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "Legio XX Novus Mexicum"
+		location = 2853
+		division_template = "Velites"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "Legio VII Novus Mexicum"
+		location = 5415
+		division_template = "Velites"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "Legio VIII Novus Mexicum"
+		location = 2286
+		division_template = "Velites"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "Legio IX Novus Mexicum"
+		location = 5255
+		division_template = "Velites"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Legio XI Novus Mexicum"
+		location = 882
+		division_template = "Velites"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Legio XII Novus Mexicum"
+		location = 2749
+		division_template = "Velites"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Legio XIII Novus Mexicum"
+		location = 7004
+		division_template = "Velites"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Legio XIV Novus Mexicum"
+		location = 5258
+		division_template = "Velites"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Legio XV Novus Mexicum"
+		location = 2772
+		division_template = "Velites"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "Legio I Novus Mexicum"
+		location = 2934
+		division_template = "Equites"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "Legio II Novus Mexicum"
+		location = 5251
+		division_template = "Equites"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "Legio III Novus Mexicum"
+		location = 2765
+		division_template = "Equites"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "Legio IV Novus Mexicum"
+		location = 2936
+		division_template = "Equites"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "Legio V Novus Mexicum"
+		location = 5524
+		division_template = "Equites"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "Legio VI Novus Mexicum"
+		location = 2785
+		division_template = "Equites"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "Leberti I Novus Mexicum"
+		location = 8968
+		division_template = "Liberti"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "Leberti II Novus Mexicum"
+		location = 5246
+		division_template = "Liberti"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "Leberti III Novus Mexicum"
+		location = 2802
+		division_template = "Liberti"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "Leberti IV Novus Mexicum"
+		location = 5555
+		division_template = "Liberti"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "Leberti V Novus Mexicum"
+		location = 5252
+		division_template = "Liberti"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+}
+
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = chariot_equipment_1
+			creator = "LAC"
+		}
+		requested_factories = 4
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = fireteam_equipment_1
+			creator = "LAC"
+		}
+		requested_factories = 3
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = melee_equipment_2
+			creator = "LAC"
+		}
+		requested_factories = 3
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = spec_ops_equipment_1
+			creator = "LAC"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = anti_tank_equipment_1
+			creator = "LAC"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+}

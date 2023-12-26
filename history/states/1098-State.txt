@@ -1,0 +1,22 @@
+state={
+	id=1098
+	name="STATE_1098"
+	resources = {
+		metal = 2
+	}
+	provinces={
+		13352 13353 13354 13356 13357 13358 13364 13366 13367
+	}
+	history = {
+		victory_points = {
+			13354 5
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+		}
+	}
+	state_category = rural
+	manpower = 3200
+	buildings_max_level_factor=1.000
+}

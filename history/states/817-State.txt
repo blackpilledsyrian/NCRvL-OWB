@@ -1,0 +1,22 @@
+state = {
+	id = 817
+	name = "STATE_817"
+
+	history={
+		buildings = {
+			infrastructure = 1
+		}
+	}
+
+	resources = {
+		advanced = 4
+		circuitry = 8
+	}
+
+	provinces={
+		10180 10207 10221 10268 10299 10312 10333
+	}
+	manpower=2960
+	buildings_max_level_factor=1.000
+	state_category=wasteland
+}

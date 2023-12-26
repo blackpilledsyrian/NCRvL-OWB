@@ -1,0 +1,23 @@
+
+state={
+	id=1090
+	name="STATE_1090"
+	resources = {
+		water = 4
+	}
+	history={
+		victory_points = {
+			13230 5
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+		}
+	}
+	provinces={
+		235 13228 13230 13231 13232 13237 13238 13241
+	}
+	manpower= 2500
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

@@ -1,0 +1,39 @@
+state = {
+	id = 590
+	name = "STATE_590"
+	manpower = 7899
+	state_category = large_town
+
+	resources = {
+		energy = 26
+		advanced = 12
+		composites = 10
+		circuitry = 14
+	}
+
+	history={
+		victory_points = {
+			4516 15
+		}
+		victory_points = {
+			1395 3
+		}
+		victory_points = {
+			4575 3
+		}
+		victory_points = {
+			4582 3
+		}
+		buildings = {
+			infrastructure = 3
+			electricity_generator = 2
+			industrial_complex = 2
+			arms_factory = 1
+		}
+		add_extra_state_shared_building_slots = 3
+	}
+	provinces = {
+		1395 1993 2076 2137 2595 4220 4248 4513 4514 4516 4517 4518 4575 4582
+	}
+	buildings_max_level_factor=1.000
+}

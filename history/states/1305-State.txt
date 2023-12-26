@@ -1,0 +1,21 @@
+state = {
+	id = 1305
+	name = "STATE_1305"
+	manpower = 3100
+	state_category = town
+
+	history = {
+		victory_points = {
+			13466 5
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 1
+		}
+	}
+
+	provinces = {
+		13421 13431 13432 13434 13452 13453 13454 13465 13466 13467 13475
+	}
+}

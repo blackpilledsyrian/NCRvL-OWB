@@ -1,0 +1,16 @@
+state={
+	id=955
+	name="STATE_955"
+	history={
+		buildings = {
+			infrastructure = 1
+		}
+	}
+	impassable = yes
+	provinces={
+		4498
+	}
+	manpower=164
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

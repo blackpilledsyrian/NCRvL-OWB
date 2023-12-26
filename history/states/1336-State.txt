@@ -1,0 +1,19 @@
+state={
+	id=1336
+	name="STATE_1336"
+	provinces={
+		14759 14760 14761 14767 14771
+	}
+	history = {
+		victory_points = {
+			14767 5
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+		}
+	}
+	state_category = pastoral
+	manpower = 119
+	buildings_max_level_factor=1.000
+}

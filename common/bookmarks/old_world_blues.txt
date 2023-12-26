@@ -1,0 +1,235 @@
+bookmarks = {
+	bookmark = {
+		name = "WC_NAME"
+		desc = "WC_DESC"
+		date = 2275.1.1.12
+		picture = "GFX_bookmark_selection_entry_west_coast"
+		default_country = "NCR"
+		default = yes
+		"NCR" = {
+			history = "NCR_OWB_DESC"
+			ideology = people
+			ideas = {
+				ncr_veg_treaty_of_new_vegas
+				ncr_bos_idea_allgood_truce
+				vaultcityexpedition
+			}
+			focuses = {
+				ncr_federalise_mot
+				ncr_bear_roars
+				ncr_dreams_of_old
+			}
+		}
+		"CES" = {
+			history = "CES_OWB_DESC"
+			ideology = ruler
+			ideas = {
+				cultofmars
+				national_spirit_rejection_of_automation
+				legionary_state
+			}
+			focuses = {
+				ces_malpais_legate_prevails
+				ces_perpetual_war
+				ces_triumph
+			}
+		}
+		"BOS" = {
+			history = "BOS_OWB_DESC"
+			ideology = intellectuals
+			ideas = {
+				bos_underground_hangars
+				bos_army_confusion_4
+				bos_civilian_distrust
+			}
+			focuses = {
+				bos_nf_learning_from_the_ncr_bos_war
+				bos_nf_taking_back_california
+				bos_nf_purpose_fulfilled
+			}
+		}
+		"NEW" = {
+			history = "NEW_OWB_DESC"
+			ideology = people
+			ideas = {
+				NEW_a_city_of_sin
+			}
+			focuses = {
+				new_renoproclamation
+			}
+		}
+		"VLT" = {
+			history = "VLT_OWB_DESC"
+			ideology = intellectuals
+			ideas = {
+				marvels_of_vault_city
+				ncrsubjugation
+				vault_city_election
+			}
+			focuses = {
+				vlt_end_of_a_term
+				vlt_nevada_pact_baby
+			}
+		}
+		"VEG" = {
+			history = "VEG_OWB_DESC"
+			ideology = ruler
+			ideas = {
+				ncr_veg_treaty_of_new_vegas
+				veg_jewel_of_the_mojave
+				robotics_genius
+			}
+			focuses = {
+				veg_judgement
+				veg_platinumchip
+				veg_architect
+			}
+		}
+		"ARR" = {
+			minor = yes
+			history = "ARR_OWB_DESC"
+			ideology = ruler
+			ideas = {
+				ARR_legacy_of_the_dweller
+			}
+			focuses = {
+				arr_finding_the_geck
+				arr_meet_max_sec
+				arr_building_a_nation
+			}
+		}
+		# Also present on Utah, removed to fit someone else from WC in
+		# "EHT" = {
+		# 	minor = yes
+		# 	history = "EHT_OWB_DESC"
+		# 	ideology = ruler
+		# 	ideas = {
+		# 		EHT_idea_terror_of_long_80
+		# 		EHT_the_devils_of_utah
+		# 	}
+		# 	focuses = {
+		# 		EHT_second_nevada_road_war
+		# 		EHT_focus_well_travelled_roads
+		# 		EHT_focus_utah_road_war_second
+		# 	}
+		# }
+		"TVT" = {
+			minor = yes
+			history = "TVT_OWB_DESC"			#Made last minute for release. Can be changed
+			ideology = people
+			ideas = {
+				tvt_the_people_of_tomorrow
+			}
+			focuses = {
+				tvt_sandmans_stranglehold
+				tvt_opening_up
+				tvt_utopias_reach
+			}
+		}
+		"SOK" = {
+			minor = yes
+			history = "SOK_OWB_DESC"			#Made last minute for release. Can be changed
+			ideology = ruler
+			ideas = {
+				SOK_tis_but_a_scratch
+			}
+			focuses = {
+				sok_unique
+				sok_sln
+				sok_arr
+			}
+		}
+		"DES" = {
+			minor = yes
+			history = "DES_OWB_DESC"			#Made last minute for release. Can be changed
+			ideology = ruler
+			ideas = {
+				DES_wasteland_preparedness
+				DES_ranger_treaty_defied
+			}
+			focuses = {
+				des_unique
+				des_vargas_wins
+			}
+		}
+		"TOF" = {
+			minor = yes
+			history = "TOF_OWB_DESC"
+			ideology = elites
+			ideas = {
+				TOF_powder_gangers
+			}
+			focuses = {
+				tof_heading_to_jericho
+				tof_city_318
+				tof_the_walls_of_jericho_fell
+			}
+		}
+		"GRD" = {
+			minor = yes
+			history = "GRD_OWB_DESC"
+			ideology = intellectuals
+			ideas = {
+				bunkerblues
+				GRD_worshiping_technology
+				brotherhood_chaotic_conflicts
+			}
+			focuses = {
+				grd_unique
+				grd_tvt_deep_integration
+				grd_guardians_of_the_world_hole
+			}
+		}
+		"MOT" = {
+			minor = yes
+			history = "MOT_OWB_DESC"
+			ideology = people
+			ideas = {
+				ncr_veg_treaty_of_new_vegas
+				mot_idea_support_from_shady_sands
+				mot_idea_pacification_not_emancipation
+			}
+			focuses = {
+				mot_the_coming_storm
+				mot_the_old_world_wall
+				mot_the_great_debate
+			}
+		}
+		"MOJ" = {
+			minor = yes
+			history = "MOJ_OWB_DESC"
+			ideology = intellectuals
+			ideas = {
+				bunkerblues
+				MOJ_elijah_determination
+			}
+			focuses = {
+				MOJ_spears_from_the_sun
+				MOJ_the_mojave_drive_inn
+				moj_the_gala_event
+			}
+		}
+		"EUR" = {
+			history = "EUR_OWB_DESC"
+			ideology = elites
+			ideas = {
+				eur_mercenary_army
+				eur_down_with_arroyo
+			}
+			focuses = {
+				eur_northern_expansion
+				eur_umbra_tribals
+				eur_raider_refugees
+			}
+		}
+		"---" = {
+			history = "OTHER_OWB_DESC"
+		}
+		effect = {
+			randomize_weather = 12345			# <- Obligatory in every bookmark !
+			#123 = { rain_light = yes }
+		}
+	}
+}
+
+# vim: set ft=pdx ts=2 sw=2 tw=79 :

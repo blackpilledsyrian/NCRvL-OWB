@@ -1,0 +1,28 @@
+state={
+	id=1386
+	name="STATE_1386"
+	provinces={
+		2121 3703 4422 16986 16989
+	}
+	resources={
+		metal = 4
+		advanced = 2
+		composites = 2
+		energy = 2
+	}
+	history={
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+			arms_factory = 1
+
+			4422 = { bunker = 2 }
+		}
+		victory_points = {
+			4422 10
+		}
+	}
+	manpower=681
+	buildings_max_level_factor=1.000
+	state_category=town
+}

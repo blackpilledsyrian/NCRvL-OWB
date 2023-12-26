@@ -1,0 +1,27 @@
+state = {
+	id = 862
+	name = "STATE_862"
+	resources={
+		water=4.000
+	}
+
+	history={
+		buildings = {
+			infrastructure = 2
+			9907 = {
+				naval_base = 2
+			}
+		}
+		victory_points = {
+			9907 5
+		}
+
+	}
+
+	provinces={
+		9879 9907 9921
+	}
+	manpower=8381
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

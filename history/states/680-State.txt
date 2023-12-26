@@ -1,0 +1,24 @@
+state = {
+	id = 680
+	name = "STATE_680"
+
+	history={
+		victory_points = {
+			9543 10
+		}
+		buildings = {
+			infrastructure = 2
+			9538 = {
+				naval_base = 3
+			}
+		}
+
+	}
+
+	provinces={
+		2257 3196 8591 9395 9477 9480 9485 9488 9538 9540 9543 10717 11242 11245 11252 11254 11255 11257 11259 11260 11261 11262 11265 11266 11267 11270 11272
+	}
+	manpower=10928
+	buildings_max_level_factor=1.000
+	state_category=shanty
+}

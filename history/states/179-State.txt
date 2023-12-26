@@ -1,0 +1,35 @@
+state = {
+	id = 179
+	name = "STATE_179"
+	manpower = 17600
+	state_category = city
+
+	resources = {
+		energy = 12
+		composites = 12
+	}
+
+	history = {
+		victory_points = {
+			8577 15
+		}
+		victory_points = {
+			7384 10
+		}
+		buildings = {
+			infrastructure = 6
+			industrial_complex = 2
+			arms_factory = 1
+			dockyard = 1
+			7384 = {
+				bunker = 1
+				coastal_bunker = 1
+			}
+			8577 = { naval_base = 3 }
+		}
+	}
+
+	provinces = {
+		2527 3928 3929 3930 3931 4008 7384 7385 7492 8577
+	}
+}

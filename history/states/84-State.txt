@@ -1,0 +1,39 @@
+state = {
+	id = 84
+	name = "STATE_84"
+	resources={
+		energy = 16
+		metal = 8
+		advanced = 12
+		circuitry = 12
+		composites = 8
+	}
+
+	history={
+		victory_points = {
+			9239 25
+		}
+		victory_points = {
+			9234 15
+		}
+		victory_points = {
+			9250 10
+		}
+		buildings = {
+			infrastructure = 6
+			industrial_complex = 3
+			arms_factory = 2
+			air_base = 1
+
+			9234 = { naval_base = 3 }
+			9250 = { naval_base = 4 }
+		}
+	}
+
+	provinces={
+		1914 1915 1916 7123 7124 9233 9234 9239 9242 9245 9248 9250
+	}
+	manpower=32061
+	buildings_max_level_factor=1.000
+	state_category=large_city
+}

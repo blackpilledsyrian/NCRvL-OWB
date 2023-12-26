@@ -1,0 +1,22 @@
+state={
+	id=990
+	name="STATE_990"
+	resources = {
+		metal = 4
+	}
+	history={
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+		}
+		victory_points = {
+			12441 5
+		}
+	}
+	provinces={
+		12442 12443 12444 12441 12440 4580 12351 12352 4579 12446 12349
+	}
+	manpower=4923
+	buildings_max_level_factor=1.000
+	state_category=large_town
+}

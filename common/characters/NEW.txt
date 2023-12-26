@@ -1,0 +1,1023 @@
+characters = {
+	NEW_mr_bishop = {
+		name = NEW_MR_BISHOP_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEW_bishop
+				small = GFX_idea_mr_bishop
+			}
+			army = {
+				large = GFX_Portrait_NEW_bishop
+				small = GFX_idea_mr_bishop
+			}
+		}
+		country_leader = {
+			desc = NEW_MR_BISHOP_DESC
+			ideology = constitutional_republic
+			expire = "3000.01.01.01"
+			id = 10061
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = NEW_mr_bishop_cultural_advisor
+			allowed = {
+				original_tag = NEW
+			}
+			visible = {
+				NOT = {
+					has_cosmetic_tag = ENC_cosmetic_tag
+				}
+				NOT = {
+					has_cosmetic_tag = THR_cosmetic_tag
+				}
+			}
+			traits = {
+				chessmaster
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	NEW_christopher_wright = {
+		name = NEW_WRIGHT_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEW_wright
+				small = GFX_idea_christopher_wright
+			}
+			army = {
+				large = GFX_Portrait_NEW_wright
+				small = GFX_idea_christopher_wright
+			}
+		}
+		country_leader = {
+			desc = NEW_WRIGHT_DESC
+			ideology = ideocracy
+			expire = "3000.01.01.01"
+			id = 10062
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = NEW_christopher_wright_cultural_advisor
+			allowed = {
+				original_tag = NEW
+			}
+			visible = {
+				NOT = {
+					has_cosmetic_tag = ENC_cosmetic_tag
+				}
+				NOT = {
+					has_cosmetic_tag = THR_cosmetic_tag
+				}
+			}
+			traits = {
+				moonshine_intellectual
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	NEW_thradd_the_immortal = {
+		name = "Chief Thradd"
+		portraits = {
+			army = {
+				large = GFX_Portrait_NEW_thradd
+				small = GFX_idea_thradd_the_immortal
+			}
+			civilian = {
+				large = GFX_Portrait_NEW_thradd
+				small = GFX_idea_thradd_the_immortal
+			}
+		}
+
+		advisor = {
+			slot = army_chief
+			idea_token = NEW_thradd_the_immortal_army_chief
+			ledger = army
+			allowed = {
+				original_tag = NEW
+			}
+			available = {
+				has_completed_focus = new_thradd
+			}
+			visible = {
+				NOT = {
+					has_cosmetic_tag = ENC_cosmetic_tag
+				}
+			}
+			traits = {
+				immortal_titan
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		corps_commander = {
+			visible = {
+				has_completed_focus = new_thradd
+			}
+			traits = {
+				intelligent_trait
+				charismatic_trait
+			}
+			skill = 4
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
+	NEW_skynet = {
+		name = "Skynet"
+		portraits = {
+			army = {
+				small = GFX_big_grass_advisor_17
+			}
+			civilian = {
+				small = GFX_big_grass_advisor_17
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = NEW_skynet_army_chief
+			ledger = army
+			allowed = {
+				original_tag = NEW
+			}
+			available = {
+				has_completed_focus = new_techslot
+			}
+			traits = {
+				owb_army_chief_offensive_3
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	NEW_elder_rutherford = {
+		name = NEW_RUTHERFORD_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEW_rutherford
+				small = GFX_idea_NEW_rutherford
+			}
+			army = {
+				large = GFX_Portrait_NEW_rutherford
+				small = GFX_idea_NEW_rutherford
+			}
+		}
+	}
+	NEW_united_families = {
+		name = NEW_BROKENFAM_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEW_united
+			}
+			army = {
+				large = GFX_Portrait_NEW_united
+			}
+		}
+		country_leader = {
+			desc = NEW_BROKENFAM_NAME_DESC
+			ideology = conspiratory_oligarchy
+			expire = "3000.01.01.01"
+		}
+	}
+	NEW_mama_van_graff = {
+		name = NEW_MAMA_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEW_mama_graff
+			}
+			army = {
+				large = GFX_Portrait_NEW_mama_graff
+			}
+		}
+		country_leader = {
+			desc = NEW_MAMA_NAME_DESC
+			ideology = military_government
+			expire = "3000.01.01.01"
+			id = 10062
+		}
+	}
+
+	NEW_colonel_jalabert = {
+		name = NEW_colonel_jalabert
+		portraits = {
+			army = {
+				large = GFX_Portrait_NEW_jalabert
+				small = GFX_idea_colonel_jalabert
+			}
+			civilian = {
+				large = GFX_Portrait_NEW_jalabert
+				small = GFX_idea_colonel_jalabert
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = NEW_colonel_jalabert_army_chief
+			ledger = army
+			allowed = {
+				original_tag = NEW
+			}
+			available = {
+				has_completed_focus = new_roaring
+			}
+			visible = {
+				NOT = {
+					has_cosmetic_tag = ENC_cosmetic_tag
+				}
+				NOT = {
+					has_cosmetic_tag = THR_cosmetic_tag
+				}
+			}
+			traits = {
+				the_bear_of_reno
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	NEW_kieva_nanjimi = {
+		name = NEW_kieva_nanjimi_name
+		portraits = {
+			army = {
+				large = GFX_Portrait_NEW_kieva
+			}
+			civilian = {
+				large = GFX_Portrait_NEW_kieva
+			}
+		}
+	}
+	NEW_mockingbird = {
+		name = NEW_mockingbird_name
+		portraits = {
+			army = {
+				large = GFX_Portrait_NEW_mockingbird
+				small = GFX_idea_warcrying_todd
+			}
+			civilian = {
+				large = GFX_Portrait_NEW_mockingbird
+				small = GFX_idea_warcrying_todd
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = NEW_mockingbird_high_command
+			ledger = army
+			allowed = {
+				original_tag = NEW
+			}
+			available = {
+				has_completed_focus = new_roadpsychos
+			}
+			visible = {
+				NOT = {
+					has_cosmetic_tag = ENC_cosmetic_tag
+				}
+			}
+			traits = {
+				blitzer
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	NEW_tobias_halvorsen = {
+		name = NEW_tobias_halvorsen
+		portraits = {
+			army = {
+				large = GFX_Portrait_NEW_tobias
+				small = GFX_idea_tobias_halvorsen
+			}
+			civilian = {
+				large = GFX_Portrait_NEW_tobias
+				small = GFX_idea_tobias_halvorsen
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = NEW_tobias_halvorsen_army_chief
+			ledger = army
+			allowed = {
+				original_tag = NEW
+			}
+			available = {
+				has_completed_focus = new_artillery
+			}
+			visible = {
+				NOT = {
+					has_cosmetic_tag = ENC_cosmetic_tag
+				}
+				NOT = {
+					has_cosmetic_tag = THR_cosmetic_tag
+				}
+			}
+			traits = {
+				flash_in_the_pan
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	NEW_daisy_whitman = {
+		name = NEW_daisy_whitman
+		portraits = {
+			army = {
+				small = GFX_idea_daisy_whitman
+			}
+		}
+		advisor = {
+			slot = air_chief
+			idea_token = NEW_daisy_whitman_air_chief
+			ledger = air
+			allowed = {
+				original_tag = NEW
+			}
+			visible = {
+				has_cosmetic_tag = ENC_cosmetic_tag
+			}
+			traits = {
+				air_close_air_support_3
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+
+	NEW_pablo = {
+		name = NEW_pablo
+		portraits = {
+			army = {
+				large = GFX_Portrait_NEW_pablo
+				small = GFX_idea_pablo
+			}
+			civilian = {
+				large = GFX_Portrait_NEW_pablo
+				small = GFX_idea_pablo
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = NEW_pablo_high_command
+			ledger = army
+			allowed = {
+				original_tag = NEW
+			}
+			available = {
+				has_completed_focus = new_pablos
+			}
+			visible = {
+				NOT = {
+					has_cosmetic_tag = ENC_cosmetic_tag
+				}
+			}
+			traits = {
+				conquistador_captain
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	NEW_hassan = {
+		name = NEW_hassan_name
+		portraits = {
+			army = {
+				large = GFX_Portrait_NEW_hassan
+			}
+			civilian = {
+				large = GFX_Portrait_NEW_hassan
+			}
+		}
+	}
+	NEW_runs_with_hatred = {
+		name = NEW_runs_with_hatred
+		portraits = {
+			army = {
+				large = GFX_Portrait_NEW_runs_with_hatred
+				small = GFX_idea_runs_with_hatred
+			}
+			civilian = {
+				large = GFX_Portrait_NEW_runs_with_hatred
+				small = GFX_idea_runs_with_hatred
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = NEW_runs_with_hatred_high_command
+			ledger = army
+			allowed = {
+				original_tag = NEW
+			}
+			available = {
+				has_completed_focus = new_vengefulsons
+			}
+			visible = {
+				NOT = {
+					has_cosmetic_tag = ENC_cosmetic_tag
+				}
+			}
+			traits = {
+				burning_avenger
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	NEW_pit_master_frazz = {
+		name = NEW_pit_master_frazz
+		portraits = {
+			army = {
+				large = GFX_Portrait_NEW_frazz
+				small = GFX_idea_pit_master_frazz
+			}
+			civilian = {
+				large = GFX_Portrait_NEW_frazz
+				small = GFX_idea_pit_master_frazz
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = NEW_pit_master_frazz_high_command
+			ledger = army
+			allowed = {
+				original_tag = NEW
+			}
+			available = {
+				has_completed_focus = new_gladiators
+			}
+			visible = {
+				NOT = {
+					has_cosmetic_tag = ENC_cosmetic_tag
+				}
+			}
+			traits = {
+				erratic_engineer
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	NEW_jean_baptise = {
+		name = NEW_jean_baptise_name
+		portraits = {
+			army = {
+				large = GFX_Portrait_NEW_jean
+			}
+			civilian = {
+				large = GFX_Portrait_NEW_jean
+			}
+		}
+	}
+	NEW_karm_the_brilliant = {
+		name = NEW_karm_the_brilliant
+		portraits = {
+			army = {
+				small = GFX_idea_karm_the_brilliant
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = NEW_karm_the_brilliant_high_command
+			ledger = army
+			allowed = {
+				original_tag = NEW
+			}
+			available = {
+				has_completed_focus = new_mutanttech
+			}
+			visible = {
+				NOT = {
+					has_cosmetic_tag = ENC_cosmetic_tag
+				}
+			}
+			traits = {
+				ancient_tactician
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	NEW_snookie = {
+		name = NEW_snookie
+		portraits = {
+			army = {
+				small = GFX_idea_snookie
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = NEW_snookie_high_command
+			ledger = army
+			allowed = {
+				original_tag = NEW
+			}
+			visible = {
+				has_cosmetic_tag = ENC_cosmetic_tag
+			}
+			traits = {
+				snookie_guard
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	NEW_sanders = {
+		name = NEW_sanders
+		portraits = {
+			army = {
+				small = GFX_idea_sanders
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = NEW_sanders_high_command
+			ledger = army
+			allowed = {
+				original_tag = NEW
+			}
+			visible = {
+				has_cosmetic_tag = ENC_cosmetic_tag
+			}
+			traits = {
+				sanders_spec_ops
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	NEW_jagged_jimmy_j = {
+		name = NEW_jagged_jimmy_j
+		portraits = {
+			civilian = {
+				small = GFX_Portrait_NEW_ganster_generic_2_small
+			}
+			army = {
+				small = GFX_Portrait_NEW_ganster_generic_2_small
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = NEW_jagged_jimmy_j_economic_advisor
+			desc = NEW_jagged_jimmy_j_desc
+			allowed = {
+				original_tag = NEW
+			}
+			traits = {
+				satisfaction_guaranteed
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	NEW_liam_eldridge = {
+		name = NEW_liam_eldridge_name
+		portraits = {
+			civilian = {
+				small = GFX_idea_NEW_eldridge
+			}
+			army = {
+				small = GFX_idea_NEW_eldridge
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = NEW_liam_eldridge_economic_advisor
+			desc = NEW_liam_eldridge_desc
+			allowed = {
+				original_tag = NEW
+			}
+			traits = {
+				new_reno_arms_proprietor
+			}
+			research_bonus = {
+				ballistic_weaponry_tech_category = 0.15
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	NEW_enrico_savinelli = {
+		name = NEW_enrico_savinelli_name
+		portraits = {
+			civilian = {
+				small = GFX_Portrait_NEW_ganster_generic_9_small
+			}
+			army = {
+				small = GFX_Portrait_NEW_ganster_generic_9_small
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = NEW_enrico_savinelli_economic_advisor
+			desc = NEW_enrico_savinelli_desc
+			allowed = {
+				original_tag = NEW
+			}
+			traits = {
+				caravan_master
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	NEW_dan_mcgrew = {
+		name = NEW_dan_mcgrew_name
+		portraits = {
+			civilian = {
+				small = GFX_Portrait_NEW_ganster_generic_4_small
+			}
+			army = {
+				small = GFX_Portrait_NEW_ganster_generic_4_small
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = NEW_dan_mcgrew_economic_advisor
+			desc = NEW_dan_mcgrew_desc
+			allowed = {
+				original_tag = NEW
+			}
+			traits = {
+				pragmatic_investor
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	NEW_phil = {
+		name = NEW_phil_name
+		portraits = {
+			civilian = {
+				small = GFX_idea_ghoul_generic4
+			}
+			army = {
+				small = GFX_idea_ghoul_generic4
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = NEW_phil_economic_advisor
+			desc = NEW_phil_desc
+			allowed = {
+				original_tag = NEW
+			}
+			traits = {
+				behind_the_stick
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	NEW_raul = {
+		name = NEW_raul
+		portraits = {
+			army = {
+				small = GFX_idea_raul
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = NEW_raul_economic_advisor
+			allowed = {
+				original_tag = NEW
+			}
+			visible = {
+				has_cosmetic_tag = ENC_cosmetic_tag
+			}
+			traits = {
+				raul_engineer
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	NEW_quincy = {
+		name = NEW_quincy
+		portraits = {
+			army = {
+				small = GFX_idea_quincy
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = NEW_quincy_economic_advisor
+			allowed = {
+				original_tag = NEW
+			}
+			visible = {
+				has_cosmetic_tag = ENC_cosmetic_tag
+			}
+			traits = {
+				quincy_technician
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	NEW_tiaret_van_graff = {
+		name = NEW_tiaret_van_graff
+		portraits = {
+			army = {
+				small = GFX_idea_tiaret_van_graff
+			}
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = NEW_tiaret_van_graff_cultural_advisor
+			allowed = {
+				original_tag = NEW
+			}
+			available = {
+				has_completed_focus = new_enctech
+			}
+			visible = {
+				NOT = {
+					has_cosmetic_tag = ENC_cosmetic_tag
+				}
+				NOT = {
+					has_cosmetic_tag = THR_cosmetic_tag
+				}
+			}
+			research_bonus = {
+				energy_weaponry_tech_category = 0.1
+			}
+			traits = {
+				bloody_bride_of_bishop
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	NEW_ol_crookshanks = {
+		name = NEW_ol_crookshanks
+		portraits = {
+			army = {
+				small = GFX_idea_ol_crookshanks
+			}
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = NEW_ol_crookshanks_cultural_advisor
+			allowed = {
+				original_tag = NEW
+			}
+			available = {
+				has_completed_focus = new_sanctuary
+			}
+			visible = {
+				NOT = {
+					has_cosmetic_tag = ENC_cosmetic_tag
+				}
+				NOT = {
+					has_cosmetic_tag = THR_cosmetic_tag
+				}
+			}
+			traits = {
+				pre_war_administrator
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	NEW_judah_kreger = {
+		name = NEW_judah_kreger
+		portraits = {
+			army = {
+				small = GFX_idea_judah_kreger
+			}
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = NEW_judah_kreger_cultural_advisor
+			allowed = {
+				original_tag = NEW
+			}
+			visible = {
+				has_cosmetic_tag = ENC_cosmetic_tag
+			}
+			traits = {
+				judah_kreger_leader
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	NEW_big_shot_bob = {
+		name = NEW_big_shot_bob_name
+		portraits = {
+			army = {
+				small = GFX_idea_generic_political_advisor_europe_1
+			}
+		}
+		advisor = {
+			slot = research_advisor
+			idea_token = NEW_big_shot_bob_research_advisor
+			ledger = army
+			allowed = {
+				original_tag = NEW
+			}
+			traits = {
+				military_theorist
+			}
+			research_bonus = {
+				cat_land_doctrine = 0.15
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	NEW_ferath = {
+		name = NEW_ferath
+		portraits = {
+			army = {
+				small = GFX_idea_deathclaw_minister
+			}
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = NEW_ferath_cultural_advisor
+			desc = NEW_ferath_desc
+			allowed = {
+				original_tag = NEW
+			}
+			available = {
+				has_completed_focus = new_brokendeadlyclawslovelyhearts
+			}
+			visible = {
+				has_country_flag = new_brokentakeoverflag
+			}
+			traits = {
+				kind_hearted
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	NEW_tommy_the_balls = {
+		name = NEW_tommy_the_balls_name
+		portraits = {
+			civilian = {
+				small = GFX_Portrait_NEW_ganster_generic_6_small
+			}
+			army = {
+				small = GFX_Portrait_NEW_ganster_generic_6_small
+			}
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = NEW_tommy_the_balls_cultural_advisor
+			desc = NEW_tommy_the_balls_desc
+			allowed = {
+				original_tag = NEW
+			}
+			traits = {
+				feared_mobster
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 5
+			}
+		}
+	}
+	NEW_mark_torrance = {
+		name = NEW_mark_torrance_name
+		portraits = {
+			civilian = {
+				small = GFX_Portrait_NEW_ganster_generic_10_small
+			}
+			army = {
+				small = GFX_Portrait_NEW_ganster_generic_10_small
+			}
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = NEW_mark_torrances_cultural_advisor
+			desc = NEW_mark_torrance_desc
+			allowed = {
+				original_tag = NEW
+			}
+			traits = {
+				prizefighter
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	NEW_cody = {
+		instance = {
+			allowed = {
+				has_dlc = "La Resistance"
+			}
+			name = NEW_cody_name
+			portraits = {
+				civilian = {
+					small = GFX_Portrait_NEW_ganster_generic_3_small
+				}
+				army = {
+					small = GFX_Portrait_NEW_ganster_generic_3_small
+				}
+			}
+			advisor = {
+				slot = cultural_advisor
+				idea_token = NEW_cody_cultural_advisor
+				desc = NEW_cody_desc
+				allowed = {
+					original_tag = NEW
+				}
+				traits = {
+					street_smarts_lar
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 10
+				}
+			}
+		}
+		instance = {
+			allowed = {
+				NOT = {
+					has_dlc = "La Resistance"
+				}
+			}
+			name = NEW_cody_name
+			portraits = {
+				civilian = {
+					small = GFX_Portrait_NEW_ganster_generic_3_small
+				}
+				army = {
+					small = GFX_Portrait_NEW_ganster_generic_3_small
+				}
+			}
+			advisor = {
+				slot = cultural_advisor
+				idea_token = NEW_cody_cultural_advisor
+				desc = NEW_cody_desc
+				allowed = {
+					original_tag = NEW
+				}
+				traits = {
+					street_smarts_non_lar
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 10
+				}
+			}
+		}
+	}
+}

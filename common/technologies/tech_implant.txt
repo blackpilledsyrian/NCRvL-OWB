@@ -1,0 +1,1132 @@
+technologies = {
+	# Column Position is relative to the tree position in countrytechtree.gui
+	@Col_1 = 6
+	@Col_2 = 8
+	@Col_3 = 10
+	@Col_4 = 12
+	@Col_5 = 14
+	@Col_6 = 16
+	@Col_7 = 18
+	@Col_8 = 20
+	@Col_9 = 22
+	@Col_10 = 24
+	@Col_11 = 26
+	@Col_12 = 28
+	@Col_13 = 30
+
+	@Row_assignments = 0
+	@Row_1 = 2
+	@Row_2 = 4
+	@Row_3 = 6
+	@Row_4 = 8
+	@Row_5 = 10
+	@Row_6 = 12
+	@Row_7 = 14
+	@Row_8 = 16
+	@Row_9 = 18
+	@Row_10 = 20
+	@Row_11 = 22
+	@Row_12 = 24
+	@Row_13 = 26
+	@Row_14 = 28
+
+
+	#-------------------------
+	# Implant Assignments
+	#-------------------------
+
+	implant_militia_supply_tech = {
+
+		heavy_infantry = {
+			max_organisation = 5
+			supply_consumption = 0.01
+			need = {
+				Implant_equipment = 25
+			}
+		}
+		militia = {
+			max_organisation = 5
+			supply_consumption = 0.01
+			need = {
+				Implant_equipment = 25
+			}
+		}
+		police_infantry = {
+			max_organisation = 5
+			supply_consumption = 0.01
+			need = {
+				Implant_equipment = 25
+			}
+		}
+
+		research_cost = 3
+		start_year = 2275
+
+		folder = {
+			name = fallout_tech_implant_folder
+			position = { x = @Row_assignments y = @Col_1 }
+		}
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		allow_branch = {
+			has_tech = implant_tech_visibility_tech
+		}
+
+		categories = {
+			support_medical_tech_category
+			implant_tech
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				date > "2276.1.1"
+			}
+		}
+	}
+
+	implant_infantry_supply_tech = {
+
+		infantry = {
+			max_organisation = 5
+			supply_consumption = 0.01
+			need = {
+				Implant_equipment = 25
+			}
+		}
+		ghoul_infantry = {
+			max_organisation = 5
+			supply_consumption = 0.01
+			need = {
+				Implant_equipment = 25
+			}
+		}
+		dog_infantry = {
+			max_organisation = 5
+			supply_consumption = 0.01
+			need = {
+				Implant_equipment = 25
+			}
+		}
+		skate_infantry = {
+			max_organisation = 5
+			supply_consumption = 0.01
+			need = {
+				Implant_equipment = 25
+			}
+		}
+		fireteam_infantry = {
+			supply_consumption = 0.01
+			need = {
+				Implant_equipment = 25
+			}
+		}
+		demolitions_infantry = {
+			supply_consumption = 0.01
+			need = {
+				Implant_equipment = 25
+			}
+		}
+		fireteam_support = {
+			supply_consumption = 0.01
+			need = {
+				Implant_equipment = 15
+			}
+		}
+		demolitions_support = {
+			supply_consumption = 0.01
+			need = {
+				Implant_equipment = 15
+			}
+		}
+		anti_tank_company = {
+			supply_consumption = 0.01
+			need = {
+				Implant_equipment = 15
+			}
+		}
+		recon_company = {
+			supply_consumption = 0.01
+			need = {
+				Implant_equipment = 15
+			}
+		}
+		#elite_infantry = {
+		#	supply_consumption = 0.01
+		#	need = {
+		#		Implant_equipment = 15
+		#	}
+		#}
+
+		research_cost = 3
+		start_year = 2275
+
+		folder = {
+			name = fallout_tech_implant_folder
+			position = { x = @Row_assignments y = @Col_3 }
+		}
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		allow_branch = {
+			has_tech = implant_tech_visibility_tech
+		}
+
+		categories = {
+			support_medical_tech_category
+			implant_tech
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				date > "2276.1.1"
+			}
+		}
+	}
+
+	implant_spec_ops_supply_tech = {
+
+		spec_ops = {
+			max_organisation = 5
+			supply_consumption = 0.01
+			need = {
+				Implant_equipment = 25
+			}
+		}
+		spec_ops_cavalry = {
+			max_organisation = 5
+			supply_consumption = 0.01
+			need = {
+				Implant_equipment = 25
+			}
+		}
+		ghoul_paratrooper = {
+			max_organisation = 5
+			supply_consumption = 0.01
+			need = {
+				Implant_equipment = 25
+			}
+		}
+		#elite_spec_ops = {
+		#	max_organisation = 5
+		#	supply_consumption = 0.01
+		#	need = {
+		#		Implant_equipment = 25
+		#	}
+		#}
+
+		research_cost = 3
+		start_year = 2275
+
+		folder = {
+			name = fallout_tech_implant_folder
+			position = { x = @Row_assignments y = @Col_5 }
+		}
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		allow_branch = {
+			has_tech = implant_tech_visibility_tech
+		}
+
+		categories = {
+			support_medical_tech_category
+			implant_tech
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				date > "2276.1.1"
+			}
+		}
+	}
+
+	implant_power_armour_supply_tech = {
+
+		power_armour = {
+			max_organisation = 5
+			supply_consumption = 0.01
+			need = {
+				Implant_equipment = 25
+			}
+		}
+		power_armour_fireteam_infantry = {
+			max_organisation = 5
+			supply_consumption = 0.01
+			need = {
+				Implant_equipment = 25
+			}
+		}
+		power_armour_demolitions_infantry = {
+			max_organisation = 5
+			supply_consumption = 0.01
+			need = {
+				Implant_equipment = 25
+			}
+		}
+		power_armour_support = {
+			supply_consumption = 0.01
+			need = {
+				Implant_equipment = 25
+			}
+		}
+		paladin_unit = {
+			supply_consumption = 0.01
+			need = {
+				Implant_equipment = 25
+			}
+		}
+		Paladin_fireteam_unit = {
+			supply_consumption = 0.01
+			need = {
+				Implant_equipment = 25
+			}
+		}
+		Paladin_demo_unit = {
+			supply_consumption = 0.01
+			need = {
+				Implant_equipment = 25
+			}
+		}
+		knight_support_unit = {
+			supply_consumption = 0.01
+			need = {
+				Implant_equipment = 25
+			}
+		}
+		scribe_support_unit = {
+			supply_consumption = 0.01
+			need = {
+				Implant_equipment = 25
+			}
+		}
+		#elite_power_armour = {
+		#	max_organisation = 5
+		#	supply_consumption = 0.01
+		#	need = {
+		#		Implant_equipment = 25
+		#	}
+		#}
+
+		research_cost = 3
+		start_year = 2275
+
+		folder = {
+			name = fallout_tech_implant_folder
+			position = { x = @Row_assignments y = @Col_7 }
+		}
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		allow_branch = {
+			has_tech = implant_tech_visibility_tech
+		}
+
+		categories = {
+			support_medical_tech_category
+			implant_tech
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				date > "2276.1.1"
+			}
+		}
+	}
+
+	implant_vehicles_supply_tech = {
+
+		motorized = {
+			max_organisation = 5
+			supply_consumption = 0.01
+			need = {
+				Implant_equipment = 25
+			}
+		}
+		chariot_unit = {
+			max_organisation = 5
+			supply_consumption = 0.03
+			need = {
+				Implant_equipment = 50
+			}
+		}
+		motorized_heavy_infantry = {
+			max_organisation = 5
+			supply_consumption = 0.03
+			need = {
+				Implant_equipment = 25
+			}
+		}
+		#elite_motorized = {
+		#	max_organisation = 5
+		#	supply_consumption = 0.03
+		#	need = {
+		#		Implant_equipment = 50
+		#	}
+		#}
+
+		research_cost = 3
+		start_year = 2275
+
+		folder = {
+			name = fallout_tech_implant_folder
+			position = { x = @Row_assignments y = @Col_9 }
+		}
+
+		dependencies = {
+			blocked_tech = 1
+		}
+
+		allow_branch = {
+			has_tech = implant_tech_visibility_tech
+		}
+
+		categories = {
+			support_medical_tech_category
+			implant_tech
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				date > "2276.1.1"
+			}
+		}
+	}
+
+	#-------------------------
+	# Implants
+	#-------------------------
+
+	implant_rejection_therapy_tech = {
+
+		industrial_capacity_factory = -0.02
+		medical_chem_company = {
+			casualty_trickleback = 0.05
+			experience_loss_factor = -0.05
+		}
+
+		path = {
+			leads_to_tech = implant_neural_interface_tech
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			implant_tech_access_tech = 1
+		}
+
+		allow_branch = {
+			has_tech = implant_tech_visibility_tech
+		}
+
+		research_cost = 3
+		start_year = 2275
+
+		folder = {
+			name = fallout_tech_implant_folder
+			position = { x = @Row_1 y = @Col_5 }
+		}
+
+		categories = {
+			support_medical_tech_category
+			implant_tech
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				date > "2276.1.1"
+			}
+		}
+	}
+
+	implant_neural_interface_tech = {
+
+		industrial_capacity_factory = 0.05
+		industrial_capacity_dockyard = 0.05
+
+		path = {
+			leads_to_tech = implant_signal_translation_tech
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = implant_safety_regulation_tech
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			implant_tech_access_tech = 1
+		}
+
+		research_cost = 3
+		start_year = 2275
+
+		folder = {
+			name = fallout_tech_implant_folder
+			position = { x = @Row_2 y = @Col_5 }
+		}
+
+		categories = {
+			support_medical_tech_category
+			implant_tech
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				date > "2276.1.1"
+			}
+		}
+	}
+
+	implant_signal_translation_tech = {
+
+		industrial_capacity_factory = -0.02
+		land_reinforce_rate = 0.02
+
+
+		path = {
+			leads_to_tech = implant_killswitch_tech
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = implant_shock_absorbers_equipment_tech
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			implant_tech_access_tech = 1
+		}
+
+		research_cost = 3
+		start_year = 2275
+
+		folder = {
+			name = fallout_tech_implant_folder
+			position = { x = @Row_3 y = @Col_4 }
+		}
+
+		categories = {
+			support_medical_tech_category
+			implant_tech
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				date > "2276.1.1"
+			}
+		}
+	}
+
+	implant_killswitch_tech = {
+
+		conscription_factor = -0.1
+		army_org_Factor = 0.1
+
+
+		dependencies = {
+			implant_tech_access_tech = 1
+		}
+
+		research_cost = 3
+		start_year = 2275
+
+		folder = {
+			name = fallout_tech_implant_folder
+			position = { x = @Row_3 y = @Col_2 }
+		}
+
+		categories = {
+			support_medical_tech_category
+			implant_tech
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				date > "2276.1.1"
+			}
+		}
+	}
+
+	implant_safety_regulation_tech = {
+
+		industrial_capacity_factory = -0.02
+		category_army = {
+			max_strength = 0.5
+		}
+
+
+		path = {
+			leads_to_tech = implant_safety_regulation_override_tech
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = implant_shock_absorbers_equipment_tech
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			implant_tech_access_tech = 1
+		}
+
+		research_cost = 3
+		start_year = 2275
+
+		folder = {
+			name = fallout_tech_implant_folder
+			position = { x = @Row_3 y = @Col_6 }
+		}
+
+		categories = {
+			support_medical_tech_category
+			implant_tech
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				date > "2276.1.1"
+			}
+		}
+	}
+
+	implant_safety_regulation_override_tech = {
+
+		industrial_capacity_factory = -0.02
+		category_army = {
+			max_strength = -0.25
+			soft_attack = 0.03
+			hard_attack = 0.03
+		}
+
+
+		dependencies = {
+			implant_tech_access_tech = 1
+		}
+
+		research_cost = 3
+		start_year = 2275
+
+		folder = {
+			name = fallout_tech_implant_folder
+			position = { x = @Row_3 y = @Col_8 }
+		}
+
+		categories = {
+			support_medical_tech_category
+			implant_tech
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				date > "2276.1.1"
+			}
+		}
+	}
+
+	implant_shock_absorbers_equipment_tech = {
+
+		enable_equipments = {
+			implant_equipment_1
+		}
+
+		path = {
+			leads_to_tech = implant_medical_maintenance_tech
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = implant_biochemical_combat_boosters_tech
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			implant_tech_access_tech = 1
+			implant_safety_regulation_tech = 1
+			implant_signal_translation_tech = 1
+		}
+
+		research_cost = 3
+		start_year = 2275
+
+		folder = {
+			name = fallout_tech_implant_folder
+			position = { x = @Row_4 y = @Col_5 }
+		}
+
+		categories = {
+			support_medical_tech_category
+			implant_tech
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				date > "2276.1.1"
+			}
+		}
+	}
+
+	implant_medical_maintenance_tech = {
+
+		industrial_capacity_factory = -0.02
+		medical_chem_company = {
+			reliability_factor = 0.05
+		}
+
+		path = {
+			leads_to_tech = implant_occulus_enhancers_equipment_tech
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			implant_tech_access_tech = 1
+		}
+
+		research_cost = 3
+		start_year = 2275
+
+		folder = {
+			name = fallout_tech_implant_folder
+			position = { x = @Row_5 y = @Col_6 }
+		}
+
+		categories = {
+			support_medical_tech_category
+			implant_tech
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				date > "2276.1.1"
+			}
+		}
+	}
+
+	implant_biochemical_combat_boosters_tech = {
+
+		industrial_capacity_factory = -0.02
+		category_army = {
+			default_morale = 0.03
+		}
+
+		path = {
+			leads_to_tech = implant_occulus_enhancers_equipment_tech
+			research_cost_coeff = 1
+		}
+
+
+		research_cost = 3
+		start_year = 2275
+
+		folder = {
+			name = fallout_tech_implant_folder
+			position = { x = @Row_5 y = @Col_4 }
+		}
+
+		categories = {
+			support_medical_tech_category
+			implant_tech
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				date > "2276.1.1"
+			}
+		}
+	}
+
+	implant_occulus_enhancers_equipment_tech = {
+
+		enable_equipments = {
+			implant_equipment_2
+		}
+
+		path = {
+			leads_to_tech = implant_adaptive_interface_tech
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			implant_tech_access_tech = 1
+			implant_medical_maintenance_tech = 1
+			implant_biochemical_combat_boosters_tech = 1
+		}
+
+		research_cost = 3
+		start_year = 2275
+
+		folder = {
+			name = fallout_tech_implant_folder
+			position = { x = @Row_6 y = @Col_5 }
+		}
+
+		categories = {
+			support_medical_tech_category
+			implant_tech
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				date > "2276.1.1"
+			}
+		}
+	}
+
+	implant_adaptive_interface_tech = {
+
+		industrial_capacity_factory = 0.05
+		industrial_capacity_dockyard = 0.05
+
+		path = {
+			leads_to_tech = implant_adaptive_respiratory_enhancer_tech
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = implant_monocyte_breeder_tech
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			implant_tech_access_tech = 1
+		}
+
+		research_cost = 3
+		start_year = 2275
+
+		folder = {
+			name = fallout_tech_implant_folder
+			position = { x = @Row_7 y = @Col_5 }
+		}
+
+		categories = {
+			support_medical_tech_category
+			implant_tech
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				date > "2276.1.1"
+			}
+		}
+	}
+
+	implant_adaptive_respiratory_enhancer_tech = {
+
+		industrial_capacity_factory = -0.02
+		attrition = -0.15
+
+		path = {
+			leads_to_tech = implant_subdermal_armour_equipment_tech
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			implant_tech_access_tech = 1
+		}
+
+		research_cost = 3
+		start_year = 2275
+
+		folder = {
+			name = fallout_tech_implant_folder
+			position = { x = @Row_8 y = @Col_4 }
+		}
+
+		categories = {
+			support_medical_tech_category
+			implant_tech
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				date > "2276.1.1"
+			}
+		}
+	}
+
+	implant_monocyte_breeder_tech = {
+
+		industrial_capacity_factory = -0.02
+		category_army = {
+			default_morale = 0.03
+		}
+
+		path = {
+			leads_to_tech = implant_subdermal_armour_equipment_tech
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			implant_tech_access_tech = 1
+		}
+
+		research_cost = 3
+		start_year = 2275
+
+		folder = {
+			name = fallout_tech_implant_folder
+			position = { x = @Row_8 y = @Col_6 }
+		}
+
+		categories = {
+			support_medical_tech_category
+			implant_tech
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				date > "2276.1.1"
+			}
+		}
+	}
+
+	implant_subdermal_armour_equipment_tech = {
+
+		enable_equipments = {
+			implant_equipment_3
+		}
+
+		path = {
+			leads_to_tech = implant_biochemical_mastery_tech
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			implant_tech_access_tech = 1
+			implant_adaptive_respiratory_enhancer_tech = 1
+			implant_monocyte_breeder_tech = 1
+		}
+
+		research_cost = 3
+		start_year = 2275
+
+		folder = {
+			name = fallout_tech_implant_folder
+			position = { x = @Row_9 y = @Col_5 }
+		}
+
+		categories = {
+			support_medical_tech_category
+			implant_tech
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				date > "2276.1.1"
+			}
+		}
+	}
+
+	implant_biochemical_mastery_tech = {
+
+		industrial_capacity_factory = -0.02
+		category_army = {
+			maximum_speed = 0.05
+		}
+
+		path = {
+			leads_to_tech = implant_advanced_cybernetic_warfare_module
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			implant_tech_access_tech = 1
+		}
+
+		research_cost = 3
+		start_year = 2275
+
+		folder = {
+			name = fallout_tech_implant_folder
+			position = { x = @Row_10 y = @Col_5 }
+		}
+
+		categories = {
+			support_medical_tech_category
+			implant_tech
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				date > "2276.1.1"
+			}
+		}
+	}
+
+	implant_advanced_cybernetic_warfare_module = {
+
+		enable_equipments = {
+			implant_equipment_4
+		}
+
+		path = {
+			leads_to_tech = implant_a_question_of_morals_tech
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			implant_tech_access_tech = 1
+		}
+
+		research_cost = 3
+		start_year = 2275
+
+		folder = {
+			name = fallout_tech_implant_folder
+			position = { x = @Row_11 y = @Col_5 }
+		}
+
+		categories = {
+			support_medical_tech_category
+			implant_tech
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				date > "2276.1.1"
+			}
+		}
+	}
+
+	implant_a_question_of_morals_tech = {
+
+		political_power_gain = -0.25
+		stability_factor = -0.2
+
+		dependencies = {
+			implant_tech_access_tech = 1
+			implant_safety_regulation_override_tech = 1
+			implant_killswitch_tech = 1
+		}
+
+		on_research_complete = {
+			custom_effect_tooltip = implant_tech_bad_idea_1
+		}
+
+		path = {
+			leads_to_tech = implant_cybernetic_warform_tech
+			research_cost_coeff = 1
+		}
+
+		research_cost = 3
+		start_year = 2275
+
+		folder = {
+			name = fallout_tech_implant_folder
+			position = { x = @Row_13 y = @Col_5 }
+		}
+
+		categories = {
+			support_medical_tech_category
+			implant_tech
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	implant_cybernetic_warform_tech = {
+
+		enable_subunits = {
+			cybernetic_warform
+		}
+
+		on_research_complete = {
+			custom_effect_tooltip = implant_tech_bad_idea_2
+			hidden_effect = {
+				if = {
+					limit = {
+						NOT = { has_country_leader_with_trait = bos_the_smothering_storm } #Humanity's progress wont be thwarted
+						NOT = { original_tag = TVT } #The technological utopia of Nevada! C:
+					}
+					country_event = {
+						id = implant_events.1
+						days = 15
+						random = 240
+					}
+				}
+				if = {
+					limit = {
+						has_global_flag = owb_allow_achievements_enabled_global_flag
+						NOT = { has_country_flag = achievement_unlock_warforms }
+					}
+					set_country_flag = achievement_unlock_warforms
+				}
+			}
+		}
+
+		dependencies = {
+			implant_tech_access_tech = 1
+			implant_safety_regulation_override_tech = 1
+			implant_killswitch_tech = 1
+		}
+
+		research_cost = 3
+		start_year = 2275
+
+		folder = {
+			name = fallout_tech_implant_folder
+			position = { x = @Row_14 y = @Col_5 }
+		}
+
+		categories = {
+			support_medical_tech_category
+			implant_tech
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				date > "2276.1.1"
+			}
+		}
+	}
+}

@@ -1,0 +1,31 @@
+state = {
+	id = 351
+	name = "STATE_351"
+	manpower = 8467
+	state_category = large_town
+
+	resources = {
+		circuitry = 4
+		advanced = 4
+	}
+
+	history = {
+		owner = PMR
+		add_core_of = PMR
+		victory_points = {
+			4335 10
+		}
+		victory_points = {
+			7516 5
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 2
+			arms_factory = 1
+		}
+	}
+
+	provinces = {
+		1939 4022 4334 4335 7107 7516 7106
+	}
+}

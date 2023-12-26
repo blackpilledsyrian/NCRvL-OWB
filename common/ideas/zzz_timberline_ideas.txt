@@ -1,0 +1,37 @@
+ideas = {
+	country = {
+		TIM_scouting_heritage = {
+			picture = TIM_patch_scouting_heritage
+			removal_cost = -1
+			modifier = {
+				attrition = -0.10
+				recon_factor = 0.10
+				special_forces_cap = 0.1
+				special_forces_attack_factor = 0.1
+				special_forces_defence_factor = 0.1
+				special_forces_min = 60 #special_forces_cap = 0.15
+				required_garrison_factor = -0.25
+                resistance_damage_to_garrison = -0.25
+				people_acceptance = 15
+				exodus_national_appeal = 0.25
+			}
+		}
+		TIM_leave_no_trace = {
+			picture = TIM_patch_forestry
+			removal_cost = -1
+			modifier = {
+				local_resources_factor = 0.2
+				min_export = -0.1
+				production_lack_of_resource_penalty_factor = -0.1
+				country_resource_metal = 10
+				country_resource_water = 10
+			}
+			research_bonus = {
+				robotics_tech_category = -0.5
+				energy_weaponry_tech_category = -0.5
+				power_armor_tech_category = -0.5
+			}
+		}
+	}
+}
+# vim: set ft=pdx ts=2 sw=2 tw=79 :

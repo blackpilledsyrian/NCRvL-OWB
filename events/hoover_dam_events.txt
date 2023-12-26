@@ -1,0 +1,749 @@
+﻿##########################
+#  Battles of Hoover Dam #
+#     Events for All     #
+#  Scripted by HappyNTH  #
+# Made possible by tears #
+##########################
+
+add_namespace = bhd
+
+## 1st Battle: MOT vs CES ##
+
+country_event = { # CES: Pre-Attack
+	id = bhd.1
+	title = bhd.1.t
+	desc = bhd.1.d
+	picture = GFX_event_CES_hoover_dam
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			ROOT = { save_event_target_as = dam_attacker }
+			252 = { owner = { save_event_target_as = dam_defender } }
+			MOT = {
+				country_event = bhd.2
+				activate_mission = fbhd_bw_hoover_countdown
+			}
+			activate_mission = fbhd_bw_hoover_countdown
+			country_event = { id = bhd.3 days = 10 }
+		}
+	}
+
+	option = { # Give the Legate the go-ahead
+		name = bhd.1.a
+		custom_effect_tooltip = fbhd_ces_pre_tt
+		effect_tooltip = {
+			MOT = { country_event = bhd.2 }
+		}
+	}
+}
+
+country_event = { # MOT: Warning
+	id = bhd.2
+	title = bhd.2.t
+	desc = bhd.2.d
+	picture = GFX_event_CES_hoover_dam
+
+	is_triggered_only = yes
+
+	option = {
+		name = bhd.2.a
+	}
+}
+
+country_event = { # Hidden event to time Hoover
+	id = bhd.3
+
+	hidden = yes
+	is_triggered_only = yes
+
+	immediate = {
+		fbhd_bw_hoover = yes
+	}
+}
+
+news_event = { # New Event: Battle for Hoover Dam (CES vs MOT)
+	id = bhd.4
+	title = bhd.4.t
+	desc = bhd.4.d
+	picture = GFX_event_NCR_battle_for_hoover_dam
+
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		trigger = {
+			is_new_california_member = yes
+		}
+		name = bhd.4.a
+	}
+
+	option = {
+		trigger = {
+			is_caesars_legion_member = yes
+		}
+		name = bhd.4.b
+	}
+
+	option = {
+		trigger = {
+			NOT = { is_new_california_member = yes }
+			NOT = { is_caesars_legion_member = yes }
+		}
+		name = bhd.4.c
+	}
+}
+
+country_event = { # CES: Hoover Victory
+	id = bhd.5
+	title = bhd.5.t
+	desc = bhd.5.d
+	#picture =
+
+	is_triggered_only = yes
+
+	immediate = {
+		transfer_state = 252
+		hidden_effect = {
+			country_event = { id = bhd.505 days = 3 }
+			MOT = {
+				country_event = bhd.506
+				activate_mission = fbhd_boulder_city_countdown
+			}
+			activate_mission = fbhd_boulder_city_countdown
+		}
+	}
+
+	option = {
+		name = bhd.5.a
+		complete_national_focus  = ces_hoover_dam_battle
+		custom_effect_tooltip = ces_boulder_city_border_tt
+	}
+}
+
+country_event = { # CES: Bould City Battle #Added a delay between the border wars to deal with a bug where the Miracle happened immediately if the Legion won the Dam
+	id = bhd.505
+	title = bhd.505.t
+	desc = bhd.505.d
+	picture = GFX_event_CES_hoover_dam
+
+	is_triggered_only = yes
+	immediate = {
+		fbhd_bw_boulder = yes
+	}
+
+	option = {
+		name = bhd.505.a
+	}
+}
+
+country_event = { #MOT heads up for Boulder City vis a vis the above
+	id = bhd.506
+	title = bhd.506.t
+	desc = bhd.506.d
+	picture = GFX_event_NCR_battle
+
+	is_triggered_only = yes
+
+	option = {
+		name = bhd.506.a
+	}
+}
+
+country_event = { # CES: Hoover Defeat
+	id = bhd.6
+	title = bhd.6.t
+	desc = bhd.6.d
+	#picture =
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			fbhd_mot_hold_dam = yes
+			complete_national_focus  = ces_hoover_dam_battle
+		}
+	}
+
+	option = {
+		name = bhd.6.a
+	}
+}
+
+country_event = { # CES: Hoover Cancel
+	id = bhd.7
+	title = bhd.7.t
+	desc = bhd.7.d
+	#picture =
+
+	is_triggered_only = yes
+
+	option = {
+		name = bhd.7.a
+		complete_national_focus  = ces_hoover_dam_battle
+		if = {
+			limit = {
+				original_tag = CES
+			}
+			complete_national_focus  = ces_ncr_won_dam
+		}
+	}
+}
+
+country_event = { # NCR: Hoover Victory
+	id = bhd.8
+	title = bhd.8.t
+	desc = bhd.8.d
+	#picture =
+
+	is_triggered_only = yes
+
+	option = {
+		name = bhd.8.a
+	}
+}
+
+country_event = { # NCR: Hoover Defeat
+	id = bhd.9
+	title = bhd.9.t
+	desc = bhd.9.d
+	#picture =
+
+	is_triggered_only = yes
+
+	option = {
+		name = bhd.9.a
+	}
+}
+
+country_event = { # NCR: Hoover Cancel
+	id = bhd.10
+	title = bhd.10.t
+	desc = bhd.10.d
+	#picture =
+
+	is_triggered_only = yes
+
+	option = {
+		name = bhd.10.a
+	}
+}
+
+country_event = { # CES: Boulder Victory
+	id = bhd.11
+	title = bhd.11.t
+	desc = bhd.11.d
+	#picture =
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = { fbhd_legion_overall_vic = yes }
+	}
+
+	option = {
+		name = bhd.11.a
+		hidden_effect = {
+			complete_national_focus = ces_hoover_dam_battle
+		}
+	}
+}
+
+country_event = { # CES: Boulder Defeat
+	id = bhd.12
+	title = bhd.12.t
+	desc = bhd.12.d
+	#picture =
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = { fbhd_boulder_city_miracle = yes }
+	}
+
+	option = {
+		name = bhd.12.a
+		hidden_effect = {
+			complete_national_focus = ces_hoover_dam_battle
+		}
+	}
+}
+
+country_event = { # CES: Boulder Cancel
+	id = bhd.13
+	title = bhd.13.t
+	desc = bhd.13.d
+	#picture =
+
+	is_triggered_only = yes
+
+	option = {
+		name = bhd.13.a
+		hidden_effect = {
+			complete_national_focus  = ces_hoover_dam_battle
+		}
+	}
+}
+
+country_event = { # NCR: Boulder Victory
+	id = bhd.14
+	title = bhd.14.t
+	desc = bhd.14.d
+	#picture =
+
+	is_triggered_only = yes
+
+	option = {
+		name = bhd.14.a
+	}
+}
+
+country_event = { # NCR: Boulder Defeat
+	id = bhd.15
+	title = bhd.15.t
+	desc = bhd.15.d
+	#picture =
+
+	is_triggered_only = yes
+
+	option = {
+		name = bhd.15.a
+	}
+}
+
+country_event = { # NCR: Boulder Cancel
+	id = bhd.16
+	title = bhd.16.t
+	desc = bhd.16.d
+	#picture =
+
+	is_triggered_only = yes
+
+	option = {
+		name = bhd.16.a
+	}
+}
+
+news_event = { # News Event: Legion Overall Vic
+	id = bhd.17
+	title = bhd.17.t
+	desc = bhd.17.d
+	picture = GFX_event_CES_hoover_dam
+
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		trigger = {
+			is_new_california_member = yes
+		}
+		name = bhd.17.a
+		if = {
+			limit = {
+				NOT = {
+					NCR = {
+						has_completed_focus = ncr_lost_not_forgotten
+					}
+				}
+			}
+			NCR = {
+				complete_national_focus = ncr_lost_not_forgotten
+			}
+		}
+	}
+
+	option = {
+		trigger = {
+			is_caesars_legion_member = yes
+		}
+		if = {
+			limit = {
+				original_tag = CES
+			}
+			complete_national_focus = ces_this_was_a_triumph
+		}
+		name = bhd.17.b
+	}
+
+	option = {
+		trigger = {
+			NOT = { is_new_california_member = yes }
+			NOT = { is_caesars_legion_member = yes }
+		}
+		name = bhd.17.c
+	}
+}
+
+news_event = { # News Event: Miracle in Boulder City
+	id = bhd.18
+	title = bhd.18.t
+	desc = bhd.18.d
+	picture = GFX_event_NCR_hoover_dam
+
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		trigger = {
+			is_new_california_member = yes
+		}
+		name = bhd.18.a
+		if = {
+			limit = {
+				TAG =  MOT
+			}
+			MOT = { complete_national_focus = mot_victory_at_the_dam }
+		}
+	}
+
+	option = {
+		trigger = {
+			is_caesars_legion_member = yes
+		}
+		if = {
+			limit = {
+				original_tag = CES
+			}
+			complete_national_focus = ces_ncr_won_dam
+		}
+		name = bhd.18.b
+	}
+
+	option = {
+		trigger = {
+			NOT = { is_new_california_member = yes }
+			NOT = { is_caesars_legion_member = yes }
+		}
+		name = bhd.18.c
+	}
+}
+
+news_event = { # News Event: NCR Hold the Dam
+	id = bhd.19
+	title = bhd.19.t
+	desc = bhd.19.d
+	picture = GFX_event_NCR_hoover_dam
+
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		trigger = {
+			is_new_california_member = yes
+		}
+		if = {
+			limit = {
+				TAG =  MOT
+			}
+			MOT = { complete_national_focus = mot_victory_at_the_dam }
+		}
+		name = bhd.19.a
+	}
+
+	option = {
+		trigger = {
+			is_caesars_legion_member = yes
+		}
+		name = bhd.18.b
+		if = {
+			limit = {
+				original_tag = CES
+			}
+			complete_national_focus  = ces_ncr_won_dam
+		}
+	}
+
+	option = {
+		trigger = {
+			NOT = { is_new_california_member = yes }
+			NOT = { is_caesars_legion_member = yes }
+		}
+		name = bhd.18.c
+	}
+}
+
+## First Battle: MOJ vs CES ##
+
+country_event = { # CES: Pre-Attack
+	id = bhd.50
+	title = bhd.50.t
+	desc = bhd.50.d
+	picture = GFX_event_CES_hoover_dam
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			MOJ = { country_event = bhd.51 }
+			country_event = { id = bhd.52 days = 5 }
+		}
+	}
+
+	option = { # Give the Legate the go-ahead
+		name = bhd.50.a
+		custom_effect_tooltip = fbhd_ces_pre_tt
+		effect_tooltip = {
+			MOJ = { country_event = bhd.51 }
+		}
+	}
+}
+
+country_event = { # MOT: Warning
+	id = bhd.51
+	title = bhd.51.t
+	desc = bhd.51.d
+	picture = GFX_event_CES_hoover_dam
+
+	is_triggered_only = yes
+
+	option = {
+		name = bhd.51.a
+	}
+}
+
+country_event = { # Hidden event to time Hoover
+	id = bhd.52
+
+	hidden = yes
+	is_triggered_only = yes
+
+	immediate = {
+		fbhd_moj_ces_war = yes
+	}
+}
+
+news_event = { # New Event: Battle for Hoover Dam (MOJ vs CES)
+	id = bhd.53
+	title = bhd.53.t
+	desc = bhd.53.d
+	picture = GFX_event_CES_hoover_dam
+
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		trigger = {
+			is_brotherhood_nation = yes
+		}
+		name = bhd.53.a
+	}
+
+	option = {
+		trigger = {
+			is_caesars_legion_member = yes
+		}
+		name = bhd.53.b
+	}
+
+	option = {
+		trigger = {
+			NOT = { is_brotherhood_nation = yes }
+			NOT = { is_caesars_legion_member = yes }
+		}
+		name = bhd.53.c
+	}
+}
+
+## Second Battle: MOT vs CES ##
+
+country_event = { # Returning to Hoover
+	id = bhd.100
+	title = bhd.100.t
+	desc = bhd.100.d
+	picture = GFX_event_NCR_hoover_dam
+	is_triggered_only = yes
+	fire_only_once = yes # back-up
+
+	immediate = {
+		hidden_effect = {
+			MOT = {
+				country_event = bhd.101 # warning event
+				activate_mission = sbhd_attack_countdown
+			}
+			activate_mission = sbhd_attack_countdown
+			news_event = { id = bhd.102 days = 10 } # News Event for 2nd Battle
+			country_event = { id = bhd.103 days = 12 }
+		}
+	}
+
+	option = {
+		name = bhd.100.a
+		effect_tooltip = {
+			MOT = { country_event = bhd.101 }
+		}
+	}
+}
+
+country_event = { # MOT: Warning
+	id = bhd.101
+	title = bhd.101.t
+	desc = bhd.101.d
+	picture = GFX_event_CES_hoover_dam
+
+	is_triggered_only = yes
+
+	option = {
+		name = bhd.101.a
+	}
+}
+
+news_event = { # New Event: Battle for Hoover Dam (MOT vs CES)
+	id = bhd.102
+	title = bhd.102.t
+	desc = bhd.102.d
+	picture = GFX_event_NCR_battle_for_hoover_dam
+
+	major = yes
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { tag = MOT }
+				second_battle_ncr_mobilise_start = yes
+			}
+		}
+	}
+
+	option = {
+		trigger = {
+			is_ncr_nation = yes
+		}
+		name = bhd.102.a
+		#custom_effect_tooltip = ncr_mustering_tt DEPRACATED
+	}
+
+	option = {
+		trigger = {
+			is_caesars_legion_member = yes
+		}
+		name = bhd.102.b
+	}
+
+	option = {
+		trigger = {
+			NOT = { is_ncr_nation = yes }
+			NOT = { is_caesars_legion_member = yes }
+		}
+		name = bhd.102.c
+	}
+}
+
+country_event = { # CES: NCR begins to muster
+	id = bhd.103
+	title = bhd.103.t
+	desc = bhd.103.d
+	picture = GFX_event_NCR_mojave_outpost
+
+	is_triggered_only = yes
+
+	option = {
+		name = bhd.103.a
+		custom_effect_tooltip = ncr_mustering_tt
+	}
+}
+
+## Second Battle: NCR vs CES ##
+
+country_event = { # Returning to Hoover
+	id = bhd.150
+	title = bhd.150.t
+	desc = bhd.150.d
+	picture = GFX_event_NCR_hoover_dam
+	is_triggered_only = yes
+	fire_only_once = yes # back-up
+
+	immediate = {
+		hidden_effect = {
+			NCR = {
+				country_event = bhd.151 # warning event
+				activate_mission = sbhd_attack_countdown
+			}
+			activate_mission = sbhd_attack_countdown
+			news_event = { id = bhd.152 days = 10 } # News Event for 2nd Battle
+		}
+	}
+
+	option = {
+		name = bhd.150.a
+		effect_tooltip = {
+			NCR = { country_event = bhd.151 }
+		}
+	}
+}
+
+country_event = { # MOT: Warning
+	id = bhd.151
+	title = bhd.151.t
+	desc = bhd.151.d
+	picture = GFX_event_CES_hoover_dam
+
+	is_triggered_only = yes
+
+	option = {
+		name = bhd.151.a
+	}
+}
+
+news_event = { # New Event: Battle for Hoover Dam (MOJ vs CES)
+	id = bhd.152
+	title = bhd.152.t
+	desc = bhd.152.d
+	picture = GFX_event_NCR_battle_for_hoover_dam
+
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		trigger = {
+			is_ncr_nation = yes
+		}
+		name = bhd.152.a
+		custom_effect_tooltip = ncr_mustering_tt
+	}
+
+	option = {
+		trigger = {
+			is_caesars_legion_member = yes
+		}
+		name = bhd.152.b
+	}
+
+	option = {
+		trigger = {
+			NOT = { is_ncr_nation = yes }
+			NOT = { is_caesars_legion_member = yes }
+		}
+		name = bhd.152.c
+	}
+}
+
+
+
+news_event = { # Haha noobs
+	id = bhd.153
+	title = bhd.153.t
+	desc = bhd.153.d
+	picture = GFX_event_CES_hoover_dam
+
+	is_triggered_only = yes
+
+	option = { # Give the Legate the go-ahead
+		name = bhd.153.a
+		MOT = {
+			ROOT = {
+				grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+			}
+		}
+		MOJ = {
+			ROOT = {
+				grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+			}
+		}
+		effect_tooltip = {
+			MOT = { country_event = bhd.2 }
+			MOJ = { country_event = bhd.51 }
+		}
+	}
+}

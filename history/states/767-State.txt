@@ -1,0 +1,44 @@
+state = {
+	id = 767
+	name = "STATE_767"
+	resources={
+		metal=3
+		water=4.000
+		energy=7.000
+	}
+
+	history={
+		victory_points = {
+			9398 15
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+			9576 = {
+				bunker = 1
+
+			}
+			9398 = {
+				bunker = 1
+
+			}
+			9343 = {
+				bunker = 1
+
+			}
+			9528 = {
+				bunker = 1
+
+			}
+
+		}
+
+	}
+
+	provinces={
+		9343 9398 9404 9419 9528 9576 9578 11037 11038 11045 11054 11062 11076 11084 11091 11092 11095 11107 11113
+	}
+	manpower=14248
+	buildings_max_level_factor=1.000
+	state_category=town
+}

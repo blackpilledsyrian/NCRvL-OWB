@@ -1,0 +1,39 @@
+state = {
+	id = 775
+	name = "STATE_775"
+	resources={
+		metal = 8
+	}
+
+	history={
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 1
+			radar_station = 1
+			708 = {
+				bunker = 1
+			}
+			9314 = {
+				bunker = 1
+			}
+			9267 = {
+				bunker = 1
+			}
+			709 = {
+				naval_base = 2
+			}
+		}
+		victory_points = {
+			2243 15
+		}
+
+	}
+
+	provinces={
+		708 709 2243 9267 9304 9314 9332 10489 10921 10927 10932 10934 10938 10940 10948 10963 10965
+	}
+	manpower=20000
+	buildings_max_level_factor=1.000
+	state_category=city
+}

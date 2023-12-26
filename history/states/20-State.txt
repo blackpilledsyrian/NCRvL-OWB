@@ -1,0 +1,27 @@
+state = {
+	id = 20
+	name = "STATE_20"
+	resources={
+		metal=4.000
+	}
+
+	history={
+		victory_points = {
+			7405 5
+		}
+		victory_points = {
+			3845 3
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+		}
+	}
+
+	provinces = {
+		635 2531 2533 3841 3842 3845 3966 3993 4388 4390 7405 7406 7407 7435 8487
+	}
+	manpower=4206
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

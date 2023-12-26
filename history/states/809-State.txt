@@ -1,0 +1,24 @@
+state = {
+	id = 809
+	name = "STATE_809"
+
+	history={
+		buildings = {
+			infrastructure = 1
+			10116 = {
+				naval_base = 2
+			}
+		}
+		victory_points = {
+			10036 5
+		}
+
+	}
+
+	provinces={
+		10018 10023 10024 10036 10054 10055 10063 10071 10079 10094 10115 10116 10127 10137
+	}
+	manpower=7168
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

@@ -1,0 +1,21 @@
+state={
+	id=1277
+	name="STATE_1277"
+	provinces={
+		14334 14335 14336 14359 14360 14361 14362 14363 14364
+	}
+	resources = {
+		circuitry = 5
+	}
+	history = {
+		victory_points = {
+			14361 5
+		}
+		buildings = {
+			infrastructure = 2
+		}
+	}
+	state_category = pastoral
+	manpower = 217
+	buildings_max_level_factor=1.000
+}

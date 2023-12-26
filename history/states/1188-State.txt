@@ -1,0 +1,35 @@
+
+state={
+	id=1188
+	name="STATE_1188"
+	resources={
+		water=7.000
+		energy=8.000
+		metal=5.000
+		composites=4.000
+		advanced=5.000
+	}
+
+	history={
+		victory_points = {
+			16401 40
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 2
+			arms_factory = 3
+			dockyard = 1
+			air_base = 1
+
+		}
+
+	}
+
+	provinces={
+		14486 14487 14608 14610 14749 16401
+	}
+	manpower=25183
+	buildings_max_level_factor=1.000
+	state_category=metropolis
+	local_supplies=0.000
+}

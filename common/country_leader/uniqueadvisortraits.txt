@@ -1,0 +1,3974 @@
+leader_traits = {
+	mother_shaman = {
+		random = no
+		research_speed_factor = 0.05
+		stability_factor = 0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	war_shaman = {
+		random = no
+		army_morale_factor = 0.1
+		army_speed_factor = 0.025
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	caesars_hound = {
+		random = no
+		local_resources_factor = 0.15
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	war_dog = {
+		random = no
+		equipment_bonus = {
+			dogs_equipment = {
+				instant = yes
+				breakthrough = 0.15
+				soft_attack = 0.15
+				recon = 0.15
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	arizona_ranger = {
+		random = no
+		compliance_gain = 0.03
+		political_power_gain = 0.15
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	bushranger = {
+		random = no
+		attrition = -0.15
+		supply_consumption_factor = -0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	shi_air_alliance = {
+		random = no
+		equipment_bonus = {
+			fighter_equipment = {
+				instant = yes
+				build_cost_ic = -0.15
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	pit_lord = {
+		random = no
+		equipment_bonus = {
+			motorized_equipment = {
+				instant = yes
+				maximum_speed = 0.1
+				breakthrough = 0.05
+				defense = 0.05
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	speed_demon = {
+		random = no
+		production_speed_infrastructure_factor = 0.25
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	fox_cruelty = {
+		random = no
+		encryption = 1.5
+		decryption = 1.5
+		non_core_manpower = 0.05
+		resistance_target = -0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	earth_scorcher = {
+		random = no
+		resistance_growth_on_our_occupied_states = 0.25
+		enemy_operative_detection_chance = 0.1
+		intel_network_gain = 0.1
+		foreign_subversive_activites = 0.2
+		operative_slot = 1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	total_war_tactician = {
+		random = no
+		economy_cost_factor = -0.2
+		mobilization_laws_cost_factor = -0.2
+		experience_gain_army = 0.1
+		industrial_capacity_factory = 0.075
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	praetorian_prefect = {
+		random = no
+		equipment_bonus = {
+			spec_ops_equipment = {
+				instant = yes
+				breakthrough = 0.25
+			}
+			power_armor_equipment = {
+				instant = yes
+				breakthrough = 0.25
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	armipotent = {
+		random = no
+		political_power_factor = 0.05
+		experience_gain_army = 0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	praefectus_castrorum = {
+		random = no
+		training_time_army_factor = -0.1
+		production_speed_arms_factory_factor = 0.05
+		production_speed_bunker_factor = 0.05
+		equipment_bonus = {
+			infantry_equipment = {
+				instant = yes
+				build_cost_ic = -0.1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	spy_on_masters = {
+		random = no
+		operative_slot = 1
+		decryption = 1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	ruthless_capitalist = {
+		random = no
+		production_speed_buildings_factor = 0.05
+		local_resources_factor = -0.05
+		caps_income_modifier = -0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	van_graff_ncr_advisor = {
+		random = no
+		production_speed_arms_factory_factor = 0.10
+		caps_income_modifier = -0.1
+		equipment_bonus = {
+			infantry_equipment = {
+				build_cost_ic = 0.2
+				instant = yes
+			}
+		}
+		production_factory_max_efficiency_factor = -0.10
+		organization_floor_modifier_3 = 25
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	van_graff_ncr_advisor_good = {
+		random = no
+		production_speed_arms_factory_factor = 0.15
+		caps_income_modifier = -0.15
+		equipment_bonus = {
+			infantry_equipment = {
+				build_cost_ic = -0.15
+				instant = yes
+			}
+		}
+		production_factory_max_efficiency_factor = 0.05
+		organization_floor_modifier_3 = 50
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	ruthless_capitalist_good = {
+		random = no
+		production_speed_buildings_factor = 0.08
+		local_resources_factor = 0.05
+		caps_income_modifier = 0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	ncr_air_buff = {
+		random = no
+		equipment_bonus = {
+			air_equipment_tech_category = {
+				instant = yes
+				build_cost_ic = -0.05
+				air_agility = 0.05
+				air_defence = 0.05
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	monster_of_the_east_chief = {
+		random = no
+		resistance_damage_to_garrison = -0.1
+		non_core_manpower = 0.05
+		army_org_factor = 0.075
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	old_world_blues = {
+		random = no
+		research_speed_factor = 0.075
+		political_power_gain = -0.1
+		production_speed_industrial_complex_factor = 0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	power_broker = {
+		random = no
+		political_power_gain = 0.12
+		production_speed_arms_factory_factor = 0.05
+		stability_factor = -0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	peaceful_foreman = {
+		random = no
+		production_factory_efficiency_gain_factor = 0.15
+		production_factory_start_efficiency_factor = 0.15
+		conscription_factor = -0.2
+		justify_war_goal_time = 0.25
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	gun_runner = {
+		random = no
+		consumer_goods_expected_value = 0.05
+		equipment_bonus = {
+			infantry_equipment = {
+				build_cost_ic = -0.15
+				instant = yes
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	follower_of_the_apocalypse = {
+		random = no
+		MONTHLY_POPULATION = 0.1
+		production_speed_infrastructure_factor = 0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	promising_follower = {
+		random = no
+		research_speed_factor = 0.04
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	first_recon_commander = {
+		random = no
+		special_forces_min = 20 #special_forces_cap = 0.025
+		recon_factor = 0.2
+		special_forces_training_time_factor = -0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	all_american_badass = {
+		random = no
+		army_core_attack_factor = 0.075
+		army_core_defence_factor = 0.075
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	general_wait_and_see = {
+		random = no
+		army_defence_factor = 0.05
+		planning_speed = -0.2
+		max_planning = 0.1
+		equipment_bonus = {
+			power_armor_equipment = {
+				instant = yes
+				hardness = 0.2
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# Duplicate name with another trait and not used
+	#
+	# war_hero = {
+	# 	random = no
+	# 	war_support_factor = 0.025
+	# 	ai_will_do = {
+	# 		factor = 1
+	# 	}
+	# }
+	unblinking_hawk = {
+		random = no
+		planning_speed = 0.15
+		war_support_factor = 0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	calm_leader = {
+		random = no
+		army_org_factor = 0.05
+		supply_consumption_factor = -0.1
+		initiative_factor = 0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	ranger_general = {
+		random = no
+		special_forces_attack_factor = 0.075
+		special_forces_defence_factor = 0.075
+		special_forces_min = 30 #special_forces_cap = 0.05
+		special_forces_training_time_factor = 0.15
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	the_baron = {
+		random = no
+		conscription = 0.01
+		special_forces_cap = -0.05
+		mobilization_speed = 0.1
+		army_org_factor = 0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	unpopular_genius = {
+		random = no
+		war_support_factor = 0.05
+		max_planning = 0.05
+		planning_speed = 0.15
+		stability_factor = -0.05
+		ai_will_do = {
+			factor = 0.5
+		}
+	}
+	head_physician = {
+		random = no
+		MONTHLY_POPULATION = 0.2
+		conscription_factor = 0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	doctor_henry_trait = {
+		random = no
+		MONTHLY_POPULATION = 0.08
+		conscription_factor = 0.08
+		special_forces_min = 40 #special_forces_cap = 0.1
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	head_trader = {
+		random = no
+		production_speed_infrastructure_factor = 0.05
+		local_resources_factor = 0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	head_quartermaster = {
+		random = no
+		land_reinforce_rate = 0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	head_recruiter = {
+		random = no
+		mobilization_speed = 0.2
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	head_mechanic = {
+		random = no
+		supply_consumption_factor = -0.08
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	raider_supplier = {
+		random = no
+		war_support_factor = 0.08
+		trade_opinion_factor = 0.25
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	dedicated_scribe = {
+		random = no
+		research_speed_factor = 0.025
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactical_historian = {
+		random = no
+		research_speed_factor = 0.025
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	dispatcher = {
+		random = no
+		army_org_factor = 0.075
+		army_morale_factor = 0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	viper = {
+		random = no
+		stability_factor = -0.1
+		resistance_damage_to_garrison = -0.25
+		resistance_growth_on_our_occupied_states = 0.25
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	jackal = {
+		random = no
+		stability_factor = -0.1
+		supply_consumption_factor = -0.2
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	aggressive_attacker = {
+		random = no
+		army_defence_factor = -0.05
+		breakthrough_factor = 0.05
+		army_strength_factor = -0.05
+		army_attack_factor = 0.10
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	ranger_instructor = {
+		random = no
+		special_forces_min = 40 #special_forces_cap = 0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	lifelong_ranger = {
+		random = no
+		special_forces_attack_factor = 0.075
+		special_forces_defence_factor = 0.075
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tactically_minded = {
+		random = no
+		max_planning = 0.08
+		planning_speed = 0.08
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	two_timing_dealer = {
+		random = no
+		consumer_goods_expected_value = -0.05
+		caps_expense_modifier = -0.2
+		local_resources_factor = 0.15
+		resistance_damage_to_garrison = 0.1
+		political_power_factor = -0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	two_timing_dealer_good = {
+		random = no
+		consumer_goods_expected_value = -0.03
+		caps_expense_modifier = -0.2
+		local_resources_factor = 0.1
+		resistance_damage_to_garrison = 0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	MCA_sip_drip = {
+		random = no
+		stability_factor = 0.05
+		caps_income_modifier = 0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	phoenix_ties = {
+		random = no
+		consumer_goods_expected_value = -0.03
+		local_resources_factor = 0.09
+		research_speed_factor = 0.03
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	chessmaster = {
+		random = no
+		political_power_factor = 0.25
+		stability_factor = -0.1
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				add = 1
+				date < 2278.1.1
+			}
+		}
+	}
+	jet_baron = {
+		random = no
+		war_support_factor = 0.1
+		stability_factor = 0.1
+		conscription = -0.03
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	moonshine_intellectual = {
+		random = no
+		consumer_goods_expected_value = 0.04
+		research_speed_factor = 0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	bloody_bride_of_bishop = {
+		random = no
+		resistance_damage_to_garrison = -0.2
+		political_power_factor = -0.1
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				date < 2278.1.1
+			}
+		}
+	}
+	pre_war_administrator = {
+		random = no
+		mobilization_speed = 0.2
+		stability_factor = -0.1
+		political_power_factor = 0.1
+		mobilization_laws_cost_factor = -0.25
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	conquistador_captain = {
+		random = no
+		army_morale_factor = 0.1
+		army_defence_factor = 0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	burning_avenger = {
+		random = no
+		army_morale_factor = 0.1
+		army_attack_factor = 0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	blitzer = {
+		random = no
+		equipment_bonus = {
+			motorized_equipment = {
+				instant = yes
+				maximum_speed = 0.1
+				breakthrough = 0.1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	erratic_engineer = {
+		random = no
+		equipment_bonus = {
+			support_robot_equipment = {
+				instant = yes
+				soft_attack = 0.15
+				hard_attack = 0.15
+				breakthrough = 0.15
+				defense = 0.15
+			}
+			combat_robot_equipment = {
+				instant = yes
+				soft_attack = 0.15
+				hard_attack = 0.15
+				breakthrough = 0.15
+				defense = 0.15
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	esoteric_engineer = {
+		random = no
+		equipment_bonus = {
+			fireteam_equipment = {
+				instant = yes
+				soft_attack = 0.075
+				hard_attack = 0.075
+				ap_attack = 0.075
+			}
+			power_armor_equipment = {
+				instant = yes
+				breakthrough = 0.075
+				hardness = 0.075
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	ancient_tactician = {
+		random = no
+		planning_speed = -0.15
+		max_planning = 0.15
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	drill_sergeant = {
+		random = no
+		training_time_factor = -0.1
+		experience_gain_army_factor = 0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	immortal_titan = {
+		random = no
+		special_forces_attack_factor = 0.1
+		special_forces_defence_factor = 0.1
+		special_forces_cap = 0.05
+		special_forces_min = 40
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	the_bear_of_reno = {
+		random = no
+		army_org_factor = 0.1
+		army_morale_factor = 0.1
+		equipment_bonus = {
+			motorized_equipment = {
+				instant = yes
+				breakthrough = 0.1
+				defense = 0.1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	flash_in_the_pan = {
+		random = no
+		modifier_army_sub_unit_demolitions_support_attack_factor = 0.15
+		modifier_army_sub_unit_fireteam_support_attack_factor = 0.15
+		modifier_army_sub_unit_fireteam_infantry_attack_factor = 0.1
+		modifier_army_sub_unit_demolitions_infantry_attack_factor = 0.1
+		equipment_bonus = {
+			fireteam_equipment = {
+				instant = yes
+				hard_attack = 0.15
+				soft_attack = 0.15
+				ap_attack = 0.15
+			}
+			demolitions_equipment = {
+				instant = yes
+				hard_attack = 0.15
+				soft_attack = 0.15
+				ap_attack = 0.15
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	beloved_personality = {
+		random = no
+		war_support_factor = 0.05
+		stability_factor = 0.05
+		conscription_factor = 0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	new_reno_arms_proprietor = {
+		random = no
+		industrial_capacity_factory = 0.08
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	feared_mobster = {
+		random = no
+		conscription = 0.03
+		compliance_gain = 0.03
+		command_power_gain = 0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	caravan_master = {
+		random = no
+		economy_cost_factor = -0.25
+		caps_country_trade_modifier = 0.25
+		min_export = -0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	pragmatic_investor = {
+		random = no
+		production_speed_industrial_complex_factor = 0.05
+		production_speed_infrastructure_factor = 0.05
+		local_resources_factor = 0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	satisfaction_guaranteed = {
+		random = no
+		stability_factor = -0.04
+		caps_flat_income_modifier = 6
+		consumer_goods_expected_value = -0.06
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	prizefighter = {
+		random = no
+		caps_expense_modifier = -0.1
+		war_support_factor = 0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	street_smarts_lar = {
+		random = no
+		root_out_resistance_effectiveness_factor = 0.2
+		enemy_operative_detection_chance_factor = 0.3
+		war_stability_factor = 0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	street_smarts_non_lar = {
+		random = no
+		resistance_decay = 0.1
+		encryption_factor = 0.25
+		war_stability_factor = 0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	behind_the_stick = {
+		random = no
+		caps_income_modifier = 0.15
+		trade_opinion_factor = 0.3
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	last_wolf_of_wall_street = {
+		random = no
+		political_power_gain = 0.05
+		trade_opinion_factor = 0.50
+		caps_income_modifier = 0.05
+	}
+	actually_a_molerat = {
+		random = no
+		monthly_population = 0.1
+		surrender_limit = 0.1
+		supply_consumption_factor = -0.3
+	}
+	# zomak
+	vlt_zomak_destroyer = {
+		army_attack_factor = 0.05
+		army_speed_factor = 0.1
+		random = no
+	}
+	vlt_zomak_third_eye = {
+		decryption_factor = 0.25
+		max_planning = 0.1
+		random = no
+	}
+	vlt_zomak_mutated_arm = {
+		breakthrough_factor = 0.15
+		random = no
+	}
+	vlt_zomak_degree_in_economics = {
+		industrial_capacity_factory = 0.075
+		caps_expense_modifier = -0.35
+		random = no
+	}
+	vlt_zomak_a_weird_book = {
+		encryption_factor = 0.25
+		initiative_factor = 0.15
+		research_speed_factor = 0.05
+		random = no
+	}
+
+
+
+
+	popular_radio_host = {
+		random = no
+		stability_factor = 0.05
+		political_power_gain = 0.1
+		ai_will_do = {
+			factor = 2
+
+		}
+	}
+	gecko_representative = {
+		random = no
+		exodus_national_appeal = 0.10
+		# add something more here TODO
+	}
+	vlt_gordon_gecko_representative = {
+		random = no
+		stability_factor = -0.05
+		political_power_factor = -0.03
+		custom_modifier_tooltip = advisor_cant_be_removed_tt
+	}
+	vlt_brain_renewal_teacher = {
+		random = no
+		stability_factor = 0.05
+		political_power_factor = 0.05
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				add = 1
+				date < 2278.1.1
+			}
+		}
+	}
+	vlt_tragic_merchant = {
+		random = no
+		trade_opinion_factor = 0.1
+		consumer_goods_expected_value = -0.05
+	}
+	vlt_pre_war_football_coach = {
+		random = no
+		experience_gain_army = 0.15
+		conscription_factor = 0.05
+	}
+	vlt_pre_war_doctor = {
+		random = no
+		experience_loss_factor = -0.25
+		monthly_population = 0.01
+	}
+	vlt_ghoul_gadgeteer = {
+		random = no
+		industry_repair_factor = 0.25
+		supply_node_range = 0.1
+	}
+	vlt_expert_sniper = {
+		random = no
+		special_forces_attack_factor = 0.05
+		special_forces_cap = 0.25
+	}
+	vlt_customs_official = {
+		random = no
+		political_power_gain = 0.1
+		production_factory_efficiency_gain_factor = 0.1
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				add = 1
+				date < 2278.1.1
+			}
+		}
+	}
+	vlt_asset_protection = {
+		random = no
+		resistance_garrison_penetration_chance = -0.05
+		production_factory_start_efficiency_factor = 0.1
+		equipment_bonus = {
+			infantry_equipment = {
+				build_cost_ic = -0.1
+				instant = yes
+			}
+		}
+	}
+	vlt_practiced_treasurer = {
+		random = no
+		caps_income_modifier = 0.1
+		production_speed_industrial_complex_factor = 0.075
+	}
+
+	sensitive_artist = {
+		random = no
+		stability_factor = 0.05
+		production_speed_industrial_complex_factor = 0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	internal_repair = {
+		random = no
+		supply_consumption_factor = -0.05
+		land_reinforce_rate = 0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	pre_simulated_tactics = {
+		random = no
+		planning_speed = 0.1
+		max_planning = 0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	adaptive_learning = {
+		random = no
+		army_morale_factor = 0.075
+		army_defence_factor = 0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	armed_politeness = {
+		random = no
+		resistance_damage_to_garrison = -0.25
+		resistance_growth_on_our_occupied_states = 0.25
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	aggressive_ai = {
+		random = no
+		equipment_bonus = {
+			security_robot_equipment = {
+				instant = yes
+				soft_attack = 0.1
+				hard_attack = 0.05
+				ap_attack = 0.05
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	reserved_ai = {
+		random = no
+		max_dig_in = 1
+		equipment_bonus = {
+			security_robot_equipment = {
+				instant = yes
+				hardness = 0.1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	unpredictable_ai = {
+		random = no
+		planning_speed = 0.12
+		experience_gain_army_factor = 0.12
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	nightkin_terror = {
+		random = no
+		training_time_factor = -0.1
+		army_core_attack_factor = 0.075
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	consuming_hunger = {
+		random = no
+		army_org_factor = 0.1
+		supply_consumption_factor = -0.1
+		non_core_manpower = -0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	brains_and_brawn = {
+		random = no
+		max_planning = 0.075
+		planning_speed = 0.075
+		research_speed_factor = 0.025
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	slave_master = {
+		random = no
+		local_resources_factor = 0.15
+		stability_factor = -0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	strong_rower = {
+		random = no
+		amphibious_invasion = 0.1
+		naval_speed_factor = 0.1
+		strike_force_movement_org_loss = -0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	ample_legroom = {
+		random = no
+		air_accidents_factor = -0.1
+		air_mission_efficiency = 0.1
+		air_defence_factor = 0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	mining_magnate = {
+		random = no
+		local_resources_factor = 0.15
+		stability_factor = -0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	warren_mother = {
+		random = no
+		stability_factor = 0.1
+		political_power_factor = 0.1
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				add = 1
+				date < 2278.1.1
+			}
+		}
+	}
+	warren_hunter = {
+		random = no
+		equipment_bonus = {
+			infantry_equipment = {
+				instant = yes
+				breakthrough = 0.05
+				hard_attack = 0.05
+				soft_attack = 0.1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	old_soldier = {
+		random = no
+		supply_consumption_factor = -0.075
+		resistance_damage_to_garrison = -0.125
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	warren_healer = {
+		random = no
+		army_org_factor = 0.075
+		army_morale_factor = 0.075
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	power_of_might = {
+		random = no
+		#hardness = 0.05 #doesn't work like this.
+		experience_gain_army_factor = 0.1
+		equipment_bonus = {
+			infantry_equipment = {
+				breakthrough = 0.1
+				defense = 0.05
+				instant = yes
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	power_of_hunger = {
+		random = no
+		army_org_factor = 0.05
+		army_morale_factor = 0.05
+		conscription_factor = -0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	power_of_tactics = {
+		random = no
+		planning_speed = 0.1
+		max_planning = 0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Reno Ecnlave
+	raul_engineer = {
+		random = no
+		production_speed_arms_factory_factor = 0.1
+		production_speed_dockyard_factor = 0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	judah_kreger_leader = {
+		random = no
+		war_support_factor = 0.1
+		stability_factor = 0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	snookie_guard = {
+		random = no
+		max_dig_in = 2
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	quincy_technician = {
+		random = no
+		production_speed_industrial_complex_factor = 0.1
+		production_speed_infrastructure_factor = 0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	sanders_spec_ops = {
+		random = no
+		special_forces_attack_factor = 0.05
+		special_forces_defence_factor = 0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	gifted_translator = {
+		random = no
+		trade_opinion_factor = 0.15
+		consumer_goods_expected_value = -0.02
+		political_power_gain = 0.05
+		people_drift = 0.01
+	}
+	unrelenting_crusader = {
+		random = no
+		stability_factor = -0.05
+		war_support_factor = 0.05
+		justify_war_goal_time = -0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	peace_mission = {
+		random = no
+		stability_factor = 0.1
+		war_support_factor = -0.05
+		justify_war_goal_time = 0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	calm_doc = {
+		random = no
+		political_power_gain = -0.1
+		production_factory_max_efficiency_factor = 0.05
+		production_factory_efficiency_gain_factor = 0.15
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				date < 2276.1.1
+			}
+		}
+	}
+	quatermaster_45 = {
+		random = no
+		training_time_factor = -0.1
+		equipment_bonus = {
+			infantry_equipment = {
+				build_cost_ic = -0.15
+				instant = yes
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	coming_convert = {
+		random = no
+		subjects_autonomy_gain = -0.5
+		political_power_gain = 0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	mormon_militia = {
+		random = no
+		planning_speed = 0.2
+		max_planning = 0.08
+		stability_factor = -0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	gods_warrior = {
+		random = no
+		army_attack_factor = 0.1
+		stability_factor = -0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tribal_mormon = {
+		random = no
+		war_support_factor = 0.05
+		army_org_factor = 0.075
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	defender_priest = {
+		random = no
+		max_dig_in = 3
+		army_core_defence_factor = 0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	mormon_ranger = {
+		random = no
+		special_forces_attack_factor = 0.05
+		special_forces_defence_factor = 0.05
+		special_forces_min = 10 #special_forces_cap = 0.025
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	mormon_navy_buff = {
+		random = no
+		equipment_bonus = {
+			naval_equipment = {
+				instant = yes
+				build_cost_ic = -0.1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	mormon_air_buff = {
+		random = no
+		equipment_bonus = {
+			air_equipment_tech_category = {
+				instant = yes
+				build_cost_ic = -0.1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	security_expert = {
+		random = no
+		army_defence_factor = 0.05
+		max_dig_in = 1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	veteran_paladin = {
+		random = no
+		army_attack_factor = 0.08
+		planning_speed = 0.08
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	contingency_minister = {
+		random = no
+		stability_factor = 0.1
+		production_speed_industrial_complex_factor = 0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	weapons_repair_expert = {
+		random = no
+		equipment_bonus = {
+			infantry_equipment = {
+				soft_attack = 0.05
+				hard_attack = 0.05
+				reliability = 0.05
+				instant = yes
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	brotherhood_distinguished_paladin = {
+		random = no
+		army_morale_factor = 0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	military_quartermaster = {
+		random = no
+		out_of_supply_factor = -0.2
+		supply_consumption_factor = -0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	reconnaissance_expert = {
+		random = no
+		recon_factor = 0.1
+		decryption_factor = 0.05
+		army_speed_factor = 0.03
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	political_mastermind = {
+		random = no
+		political_power_factor = 0.1
+		improve_relations_maintain_cost_factor = -0.25
+		economy_cost_factor = -0.1
+		mobilization_laws_cost_factor = -0.1
+		trade_laws_cost_factor = -0.1
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				add = 1
+				date < 2278.1.1
+			}
+		}
+	}
+	brotherhood_scribe = {
+		random = no
+		production_speed_arms_factory_factor = 0.03
+		research_speed_factor = 0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	surveyor = {
+		random = no
+		production_speed_buildings_factor = 0.08
+		local_resources_factor = 0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	field_medic = {
+		random = no
+		experience_loss_factor = -0.15
+		army_morale_factor = 0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	decorated_hero = {
+		random = no
+		stability_factor = 0.1
+		war_support_factor = 0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	the_armorer_trait = {
+		random = no
+		army_defence_factor = 0.10
+		land_reinforce_rate = 0.02
+		army_speed_factor = -0.05
+		equipment_bonus = {
+			heavy_infantry_equipment = {
+				instant = yes
+				breakthrough = 0.10
+				hardness = 0.10
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	anders_lar_trait = {
+		random = no
+		operative_slot = 1
+		intel_network_gain_factor = 0.15
+		own_operative_detection_chance_factor = -0.10
+	}
+	anders_trait = {
+		random = no
+		industrial_capacity_factory = 0.05
+		encryption_factor = 0.25
+		decryption_factor = 0.25
+	}
+	oscar_velasco_trait = {
+		random = no
+		special_forces_min = 50 #special_forces_cap = 0.1
+		special_forces_attack_factor = 0.05
+		special_forces_defence_factor = 0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	jack_trait = {
+		random = no
+		war_support_factor = 0.05
+		army_morale_factor = 0.05
+		research_speed_factor = 0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	diane_trait = {
+		random = no
+		war_support_factor = 0.1
+		caps_flat_income_modifier = 10
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	jerry_the_punk_trait = {
+		random = no
+		political_power_factor = 0.05
+		trade_opinion_factor = 0.2
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				add = 1
+				date < 2278.1.1
+			}
+		}
+	}
+	black_paladin_trait = {
+		random = no
+		army_attack_factor = 0.05
+		war_support_factor = 0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	caesar_redeemed = {
+		random = no
+		non_core_manpower = 0.05
+		people_drift = 0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	minor_baron = {
+		random = no
+		political_power_gain = 0.15
+		trade_opinion_factor = 0.15
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				add = 1
+				date < 2278.1.1
+			}
+		}
+	}
+	baroness = {
+		random = no
+		trade_opinion_factor = 0.25
+		stability_factor = 0.05
+		caps_income_modifier = 0.15
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	ancient_warmonger_trait = {
+		random = no
+		conscription = 0.05
+		political_power_gain = -0.1
+		MONTHLY_POPULATION = -0.1
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	bumbling_politician_trait = {
+		random = no
+		consumer_goods_expected_value = 0.1
+		political_power_gain = 0.10
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	revolutionary_farmer_trait = {
+		random = no
+		consumer_goods_expected_value = -0.1
+		MONTHLY_POPULATION = 0.10
+		conscription = -0.05
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	ancient_skills_trait = {
+		random = no
+		conscription = 0.05
+		war_support_factor = 0.05
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	good_politician_trait = {
+		random = no
+		stability_factor = 0.05
+		political_power_gain = 0.1
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	good_farmer_trait = {
+		random = no
+		production_speed_infrastructure_factor = 0.03
+		global_building_slots_factor = 0.1
+		MONTHLY_POPULATION = 0.1
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	model_citizen = {
+		random = no
+		stability_factor = 0.1
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	masterful_engineer = {
+		random = no
+		production_speed_industrial_complex_factor = 0.05
+		production_speed_infrastructure_factor = 0.05
+		production_speed_bunker_factor = 0.15
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	scientific_devotee = {
+		random = no
+		research_speed_factor = 0.05
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	vault_tec_engineer = {
+		random = no
+		fuel_gain_factor = 0.15
+		industry_free_repair_factor = 0.4
+		production_speed_buildings_factor = 0.05
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	rallier_of_the_people = {
+		random = no
+		mobilization_speed = 0.15
+		surrender_limit = 0.05
+		conscription_factor = 0.1
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	industrial_baron = {
+		random = no
+		production_speed_infrastructure_factor = 0.1
+		production_speed_buildings_factor = 0.05
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	hideous_quartermaster = {
+		random = no
+		trade_opinion_factor = -0.15
+		no_supply_grace = 24
+		industrial_capacity_factory = 0.1
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	vault_tec_medical_training = {
+		random = no
+		experience_loss_factor = -0.2
+		monthly_population = 0.15
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	vault_tec_security_trainer = {
+		random = no
+		training_time_army_factor = -0.1
+		army_org_factor = 0.1
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	vault_tec_defence = {
+		random = no
+		army_defence_factor = 0.1
+		max_dig_in = 2
+		dig_in_speed_factor = 0.05
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	power_armour_proponent = {
+		random = no
+		equipment_bonus = {
+			power_armor_equipment = {
+				build_cost_ic = -0.1
+				maximum_speed = 0.05
+				instant = yes
+			}
+		}
+		army_core_defence_factor = 0.05
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	patient_teacher = {
+		random = no
+		research_speed_factor = 0.03
+		land_reinforce_rate = 0.05
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	legion_tactician = {
+		random = no
+		army_attack_factor = 0.1
+		conscription_factor = 0.075
+		max_planning = -0.025
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	urban_planner = {
+		random = no
+		global_building_slots_factor = 0.1
+		production_speed_infrastructure_factor = 0.1
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	waste_not = {
+		random = no
+		local_resources_factor = 0.08
+		stability_factor = -0.03
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	bad_influence = {
+		random = no
+		consumer_goods_expected_value = 0.05
+		political_power_gain = -0.07
+		research_speed_factor = -0.1
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	frank_ghoul_trait = {
+		random = no
+		equipment_bonus = {
+			fireteam_equipment = {
+				instant = yes
+				soft_attack = 0.10
+				hard_attack = 0.10
+				ap_attack = 0.10
+			}
+		}
+		equipment_bonus = {
+			infantry_equipment = {
+				instant = yes
+				breakthrough = 0.10
+				hardness = 0.10
+			}
+		}
+
+		# custom_modifier_tooltip = frank_ghoul_trait_tt
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	measles_ghoul_trait = {
+		random = no
+		equipment_bonus = {
+			infantry_equipment = {
+				instant = yes
+				build_cost_ic = -0.05
+			}
+			support_equipment = {
+				instant = yes
+				build_cost_ic = -0.2
+			}
+		}
+	}
+	green_ghoul_trait = {
+		random = no
+		supply_consumption_factor = -0.1
+		resistance_damage_to_garrison = -0.1
+		army_attack_factor = 0.05
+	}
+	horatio_ghoul_trait = {
+		random = no
+		production_speed_industrial_complex_factor = 0.05
+		production_factory_start_efficiency_factor = 0.1
+		stability_factor = 0.05
+	}
+
+
+	##### GPF ####
+
+	gpf_raider_tactics = {
+		random = no
+		org_loss_when_moving = -0.1
+		army_attack_factor = 0.1
+	}
+
+	gpf_wasteland_survivor = {
+		random = no
+		attrition = -0.05
+		supply_consumption_factor = -0.05
+		out_of_supply_factor = -0.05
+	}
+	gpf_road_warrior = {
+		random = no
+		max_planning = 0.05
+		equipment_bonus = {
+			motorized_equipment_category = {
+				build_cost_ic = -0.05
+				instant = yes
+			}
+		}
+	}
+	gpf_pathfinder = {
+		random = no
+		experience_loss_factor = -0.02
+		breakthrough_factor = 0.04
+		# Bugged in country scopes, blame PDX
+		# terrain_penalty_reduction = 0.04
+	}
+	gpf_scarcity_magician = {
+		random = no
+		production_lack_of_resource_penalty_factor = -0.1
+		out_of_supply_factor = -0.01
+	}
+
+	gpf_recruiter = {
+		random = no
+		conscription_factor = 0.05
+		non_core_manpower = 0.02
+	}
+	gpf_business_magnate = {
+		random = no
+		caps_income_modifier = 0.10
+		political_power_gain = -0.02
+	}
+
+	gpf_enterprising_weaponsmith = {
+		random = no
+		equipment_bonus = {
+			infantry_equipment = {
+				build_cost_ic = 0.05
+				soft_attack = 0.2
+				instant = yes
+			}
+		}
+	}
+	lushanya_advisor_trait = {
+		random = no
+		trade_opinion_factor = 0.25
+		min_export = -0.1
+	}
+	gpf_nashoba_advisor_trait = {
+		random = no
+		local_resources_factor = -0.10
+		stability_factor = 0.10
+	}
+	gpf_trade_genius = {
+		random = no
+		organization_floor_modifier_1 = 25
+		organization_floor_modifier_2 = 25
+	}
+	man_of_science = {
+
+	}
+	##### CMC #####
+	cmc_friends_in_low_places = {
+		random = no
+		consumer_goods_expected_value = -0.05
+        local_resources_factor = 0.1
+        resistance_damage_to_garrison = 0.25
+	}
+	cmc_queen_of_the_red_river = {
+		random = no
+		consumer_goods_expected_value = -0.08
+        local_resources_factor = 0.2
+        resistance_damage_to_garrison = 0.40
+	}
+	cmc_ear_to_the_ground = {
+		random = no
+		recon_factor = 0.05
+		decryption_factor = 0.5
+	}
+	cmc_chief_of_surveillance = {
+		random = no
+		recon_factor = 0.05
+		encryption_factor = 0.5
+		decryption_factor = 1.0
+	}
+	cmc_ear_to_the_ground_lar = {
+		random = no
+		recon_factor = 0.05
+        intel_network_gain_factor = 0.5
+	}
+	cmc_police_chief = {
+		random = no
+		political_power_gain = 0.25
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				add = 1
+				date < 2278.1.1
+			}
+		}
+	}
+	cmc_entertainer = {
+		random = no
+		stability_factor = 0.05
+		caps_income_modifier = 0.1
+	}
+
+	#### CHO
+
+	librarian_trait = {
+		random = no
+		political_power_gain = 0.15
+		stability_factor = 0.1
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				add = 1
+				date < 2278.1.1
+			}
+		}
+	}
+	medicine_man = {
+		random = no
+		experience_loss_factor = -0.2
+		army_morale_factor = 0.2
+
+	}
+	#### Lanius
+	lac_more_trait = {
+		random = no
+		equipment_bonus = {
+			infantry_equipment = {
+				build_cost_ic = -0.15
+				instant = yes
+			}
+		}
+	}
+	lac_mckin_trait = {
+		random = no
+		industrial_capacity_factory = 0.08
+		production_lack_of_resource_penalty_factor = -0.05
+		resistance_target = 0.03
+	}
+	lac_valencia_trait = {
+		random = no
+		experience_loss_factor = -0.25
+	}
+	lac_honest_trait = {
+		random = no
+		fuel_gain_factor = 0.1
+		local_resources_factor = 0.1
+	}
+	lac_mathius_trait = {
+		random = no
+		industry_free_repair_factor = 0.12
+		production_speed_buildings_factor = 0.08
+	}
+	lac_paxton_trait = {
+		random = no
+		political_power_gain = 0.15
+		caps_country_trade_modifier = 0.05
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				add = 1
+				date < 2278.1.1
+			}
+		}
+	}
+	lac_sheriff_trait = {
+		random = no
+		production_speed_infrastructure_factor = 0.2
+	}
+	lac_doorn_trait = {
+		random = no
+		research_speed_factor = 0.06
+		stability_factor = -0.03
+	}
+	lac_bishop_trait = {
+		random = no
+		conscription_factor = 0.06
+		stability_factor = 0.06
+	}
+	lac_songbird_trait = {
+		random = no
+		compliance_gain = 0.02
+		recon_factor = 0.15
+	}
+	lac_armistead_trait = {
+		random = no
+		army_attack_factor = 0.14
+		army_defence_factor= -0.07
+	}
+	lac_starved_trait = {
+		random = no
+		supply_consumption_factor = -0.15
+		out_of_supply_factor = -0.2
+	}
+	lac_vex_trait = {
+		random = no
+		war_support_factor = 0.08
+		army_org_factor = 0.08
+	}
+	lac_instructor_trait = {
+		random = no
+		conscription_factor = 0.12
+		training_time_factor = -0.1
+	}
+	lac_servius_trait = {
+		random = no
+		army_infantry_attack_factor = 0.1
+		army_infantry_defence_factor = 0.1
+	}
+	lac_fireball_trait = {
+		random = no
+		motorized_attack_factor = 0.08
+		motorized_defence_factor = 0.08
+		organization_floor_modifier_2 = 10
+		equipment_bonus = {
+			motorized_equipment_category = {
+				build_cost_ic = -0.05
+				instant = yes
+			}
+		}
+		army_speed_factor = 0.025
+	}
+	lac_ahiga_trait = {
+		random = no
+		special_forces_defence_factor = 0.1
+		special_forces_attack_factor = 0.1
+	}
+	lac_arrow_trait = {
+		random = no
+		industry_repair_factor = 0.2
+		production_speed_buildings_factor = 0.05
+	}
+	#####LOI#####
+	loi_lawkeeper = {
+		random = no
+		compliance_gain = 0.02
+		recon_factor = 0.05
+	}
+	loi_state_reformer = {
+		random = no
+		stability_factor = 0.10
+		political_power_gain = 0.05
+	}
+	loi_teman = {
+		random = no
+		navy_screen_attack_factor = 0.1
+		navy_screen_defence_factor = 0.1
+	}
+	loi_outrider = {
+		random = no
+		army_speed_factor = 0.05
+		army_attack_factor = 0.05
+	}
+	loi_terror = {
+		random = no
+		operative_slot = 1
+		intel_from_operatives_factor = 0.15
+		stability_factor = -0.20
+	}
+	loi_steady_she_goes = {
+		random = no
+		motorized_attack_factor = 0.05
+		motorized_defence_factor = 0.10
+		equipment_bonus = {
+			motorized_equipment_category = {
+				build_cost_ic = -0.05
+				instant = yes
+			}
+		}
+	}
+	#####HAN#####
+	HAN_kennel_trait = {
+		random = no
+		production_speed_industrial_complex_factor = 0.1
+	}
+	HAN_med_trait = {
+		random = no
+		stability_factor = 0.05
+		MONTHLY_POPULATION = 0.2
+	}
+	HAN_foreman_trait = {
+		random = no
+		local_resources_factor = 0.12
+	}
+	HAN_touchdown_trait = {
+		random = no
+		industrial_capacity_factory = 0.1
+	}
+	HAN_mobius_trait = {
+		random = no
+		trade_opinion_factor = 0.25
+		line_change_production_efficiency_factor = 0.2
+	}
+	HAN_henson_trait = {
+		random = no
+		consumer_goods_expected_value = -0.05
+		stability_factor = -0.1
+	}
+	HAN_booth_trait = {
+		random = no
+		war_support_factor = 0.1
+		army_org = 2
+		justify_war_goal_time = -0.25
+	}
+	HAN_rex_trait = {
+		random = no
+		political_power_gain = 0.15
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				add = 1
+				date < 2278.1.1
+			}
+		}
+	}
+	HAN_munch_trait = {
+		random = no
+		research_speed_factor = 0.05
+	}
+	HAN_network_trait = {
+		random = no
+		encryption_factor = 0.2
+		decryption_factor = 0.2
+		max_planning = 0.25
+	}
+	HAN_network_lar_trait = {
+		random = no
+		root_out_resistance_effectiveness_factor = 0.1
+		max_planning = 0.25
+	}
+	HAN_powergrid_trait = {
+		random = no
+		fuel_gain_factor = 0.2
+		max_fuel_factor = 0.15
+	}
+	HAN_plains_trait = {
+		random = no
+		army_speed_factor = 0.075
+		army_attack_factor = 0.025
+	}
+	HAN_bodhi_trait = {
+		random = no
+		experience_loss_factor = -0.08
+		experience_gain_army_factor = 0.08
+	}
+	HAN_dome_trait = {
+		random = no
+		equipment_bonus = {
+			support_robot_equipment = {
+				soft_attack = 0.1
+				defense = 0.1
+				instant = yes
+			}
+			combat_robot_equipment = {
+				soft_attack = 0.1
+				defense = 0.1
+				instant = yes
+			}
+		}
+	}
+	HAN_radcliff_trait = {
+		random = no
+		army_infantry_attack_factor = 0.08
+		army_infantry_defence_factor = 0.08
+	}
+	HAN_bomber_trait = {
+		random = no
+		air_weather_penalty = -0.25
+		air_strategic_bomber_bombing_factor = 0.15
+	}
+	HAN_asterion_trait = {
+		random = no
+		army_core_attack_factor = 0.05
+		army_core_defence_factor = 0.05
+		recon_factor = 0.05
+	}
+	TOC_northern_trait = {
+		random = no
+		air_weather_penalty = -0.25
+		equipment_bonus = {
+			fighter_equipment = {
+				instant = yes
+				build_cost_ic = -0.1
+			}
+		}
+	}
+	TOC_strict_discipline_trait = {
+		random = no
+		army_attack_factor = 0.10
+		training_time_factor = -0.05
+		war_support_factor = 0.05
+		stability_factor = -0.1
+	}
+	TOC_reformed_raider_trait = {
+		random = no
+		resistance_target = -0.10
+		compliance_growth = 0.10
+	}
+	TOC_blunt_industrialist_trait = {
+		random = no
+		industrial_capacity_factory = 0.15
+		local_resources_factor = 0.05
+	}
+	TOC_perseverant_trait = {
+		random = no
+		army_morale_factor = 0.10
+	}
+	TOC_strict_enforcer_trait = {
+		random = no
+		land_reinforce_rate = 0.03
+		breakthrough_factor = 0.1
+	}
+	TOC_dependable_agent_trait = {
+		random = no
+		recon_factor = 0.05
+		recon_factor_while_entrenched = 0.10
+		encryption_factor = 0.2
+		decryption_factor = 0.2
+		operative_slot = 1
+	}
+	TOC_fiercely_confident_trait = {
+		random = no
+		army_attack_factor = 0.075
+		army_defence_factor = 0.075
+		army_speed_factor = -0.05
+	}
+	TOC_free_flier_trait = {
+		random = no
+		air_agility_factor = 0.1
+		air_range_factor = 0.1
+	}
+	TOC_simple_strategist_trait = {
+		random = no
+		experience_gain_army = 0.10
+		dig_in_speed_factor = 0.05
+	}
+	TOC_electric_trait = {
+		random = no
+		local_resources_factor = 0.1
+		production_factory_max_efficiency_factor = 0.05
+	}
+	TOC_quartermaster_trait = {
+		random = no
+		stability_factor = -0.05
+		war_support_factor = 0.1
+		equipment_bonus = {
+			infantry_equipment = {
+				instant = yes
+				build_cost_ic = -0.1
+			}
+		}
+	}
+	TOC_trapper_trait = {
+		random = no
+		industrial_capacity_factory = 0.025
+		caps_flat_income_modifier = 10
+	}
+	ROT_inquisitor_trait = {
+		random = no
+		army_attack_factor = 0.1
+		recon_factor = 0.1
+	}
+	ROT_bigot_trait = {
+		random = no
+		army_org_factor = 0.05
+		targeted_modifier = {
+			tag = TOC
+			attack_bonus_against = 0.1
+		}
+		targeted_modifier = {
+			tag = SIN
+			attack_bonus_against = 0.1
+		}
+		targeted_modifier = {
+			tag = BLO
+			attack_bonus_against = 0.1
+		}
+		targeted_modifier = {
+			tag = LOS
+			attack_bonus_against = 0.1
+		}
+		targeted_modifier = {
+			tag = RES
+			attack_bonus_against = 0.1
+		}
+	}
+	ROT_reformer_trait = {
+		random = no
+		political_power_gain = 0.1
+		line_change_production_efficiency_factor = 0.1
+		consumer_goods_expected_value = 0.03
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				add = 1
+				date < 2278.1.1
+			}
+		}
+	}
+	ROT_warmind_trait = {
+		random = no
+		production_speed_arms_factory_factor = 0.12
+		production_speed_industrial_complex_factor = -0.05
+		conversion_cost_civ_to_mil_factor = -0.2
+	}
+	FIE_night_trait = {
+		random = no
+		land_night_attack = 0.3
+		army_attack_factor = 0.08
+	}
+	FIE_motor_trait = {
+		random = no
+		experience_gain_army_factor = 0.1
+		army_morale_factor = 0.05
+		ai_focus_aggressive_factor = 0.5
+		justify_war_goal_time = -0.25
+	}
+	FIE_cook_trait = {
+		random = no
+		equipment_bonus = {
+			demolitions_equipment = {
+				build_cost_ic = -0.05
+				reliability = 0.05
+				soft_attack = 0.07
+				hard_attack = 0.04
+				instant = yes
+			}
+		}
+	}
+	FIE_daniel_trait = {
+		random = no
+		encryption_factor = 0.1
+		decryption_factor = 0.1
+	}
+	FIE_daniel_LAR_trait = {
+		random = no
+		intel_from_operatives_factor = 0.15
+	}
+	TCA_reform_trait = {
+		random = no
+		special_forces_attack_factor = 0.08
+		special_forces_defence_factor = 0.08
+	}
+	TCA_paramilitary_trait = {
+		random = no
+		industrial_capacity_factory = 0.05
+		experience_gain_army_factor = 0.1
+	}
+	TCA_friend_trait = {
+		random = no
+		research_speed_factor = 0.03
+	}
+	TCA_helper_trait = {
+		random = no
+		justify_war_goal_time = 0.15
+		war_support_factor = -0.05
+		non_core_manpower = 0.04
+		stability_factor = 0.08
+	}
+	gdh_caserta_trait = {
+		random = no
+		equipment_bonus = {
+			infantry_equipment = {
+				soft_attack = 0.1
+				hard_attack = 0.1
+				reliability = -0.02
+				instant = yes
+			}
+		}
+	}
+	gdh_mendoza_trait = {
+		random = no
+		army_org_factor = 0.04
+		army_attack_factor = 0.04
+		army_defence_factor= 0.04
+		army_speed_factor = 0.04
+	}
+	gdh_garcia_trait = {
+		random = no
+		army_org_factor = 0.1
+		supply_consumption_factor = -0.1
+	}
+	gdh_calderon_trait = {
+		random = no
+		army_core_attack_factor = 0.1
+		army_core_defence_factor = 0.1
+	}
+	gdh_azul_trait = {
+		random = no
+		army_defence_factor = 0.05
+		army_attack_factor = 0.05
+	}
+	gdh_blanco_trait = {
+		random = no
+		army_morale_factor = 0.1
+	}
+	gdh_huerta_trait = {
+		random = no
+		special_forces_defence_factor = 0.08
+		special_forces_attack_factor = 0.08
+	}
+	gdh_alvarez_trait = {
+		random = no
+		gdh_equipment_production_bonus = 0.1
+		production_speed_arms_factory_factor = 0.1
+	}
+	gdh_hidalgo_trait = {
+		random = no
+		political_power_factor = -0.1
+		industrial_capacity_factory = 0.08
+	}
+	gdh_reyes_trait = {
+		random = no
+		organization_floor_modifier_1 = -25
+		organization_floor_modifier_4 = -25
+		organization_floor_modifier_3 = -25
+		production_factory_max_efficiency_factor = 0.08
+	}
+	gdh_guillen_trait = {
+		random = no
+		organization_floor_modifier_2 = 25
+		motorized_attack_factor = 0.05
+		motorized_defence_factor = 0.05
+	}
+	gdh_diaz_trait = {
+		random = no
+		gdh_equipment_production_bonus = -0.1
+		research_speed_factor = 0.075
+	}
+	gdh_songwriter_trait = {
+		random = no
+		gdh_equipment_production_bonus = -0.1
+		stability_factor = 0.1
+	}
+	gdh_carvallo_trait = {
+		random = no
+		gdh_equipment_production_bonus = 0.25
+		industrial_capacity_factory = 0.025
+	}
+	gdh_carranza_trait = {
+		random = no
+		MONTHLY_POPULATION = 0.2
+		war_support_factor = 0.1
+	}
+	gdh_obregon_trait = {
+		random = no
+		resistance_target = -0.05
+		decryption_factor = 0.1
+		encryption_factor = 0.1
+	}
+	gdh_obregon_LAR_trait = {
+		random = no
+		resistance_target = -0.05
+		intel_network_gain_factor = 0.2
+	}
+	mutie_scavenger = {
+		random = no
+		industrial_capacity_factory = 0.05
+		local_resources_factor = 0.1
+	}
+	mutie_tough = {
+		random = no
+		line_change_production_efficiency_factor = 0.1
+		industry_repair_factor = 0.1
+		production_factory_max_efficiency_factor = 0.05
+	}
+	tidal_terror = {
+		random = no
+		equipment_bonus = {
+			mirelurk_equipment = {
+				instant = yes
+				defense = 0.15
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tide_hunter = {
+		random = no
+		equipment_bonus = {
+			mirelurk_equipment = {
+				instant = yes
+				soft_attack = 0.15
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	killclaw_aspect = {
+		random = no
+		equipment_bonus = {
+			mirelurk_equipment = {
+				instant = yes
+				breakthrough = 0.1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	hunter_aspect = {
+		random = no
+		army_speed_factor = 0.12
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	king_aspect = {
+		random = no
+		army_org_factor = 0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	softshell_aspect = {
+		random = no
+		experience_gain_army_factor = 0.1
+		conscription_factor = 0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tla_industry_trait = {
+		random = no
+		production_speed_arms_factory_factor = 0.08
+		production_speed_industrial_complex_factor = 0.08
+		ai_will_do = {
+			factor = 1.5
+		}
+	}
+	tla_efficiency_trait = {
+		random = no
+		line_change_production_efficiency_factor = 0.12
+		industrial_capacity_factory = 0.05
+	}
+	tla_extraction_trait = {
+		random = no
+		fuel_gain_factor = 0.1
+		max_fuel_factor = 0.15
+		local_resources_factor = 0.1
+	}
+	MXC_andrea_trait = {
+		random = no
+		army_core_defence_factor = 0.05
+		army_core_attack_factor = 0.05
+		experience_gain_army_factor = 0.1
+	}
+	MXC_air_trait = {
+		random = no
+		air_strategic_bomber_bombing_factor = 0.05
+		equipment_bonus = {
+			strategic_bomber_equipment = {
+				instant = yes
+				build_cost_ic = -0.1
+			}
+		}
+	}
+	MXC_vic_trait = {
+		random = no
+		army_infantry_attack_factor = -0.1
+		special_forces_min = 10
+		equipment_bonus = {
+			power_armor_equipment = {
+				instant = yes
+				build_cost_ic = -0.08
+			}
+		}
+	}
+	MXC_burden_trait = {
+		random = no
+		max_planning = 0.1
+		planning_speed = -0.1
+		army_org_factor = 0.05
+	}
+	MXC_wasteland_trait = {
+		random = no
+		army_infantry_defence_factor = 0.1
+		army_infantry_attack_factor = 0.1
+		equipment_bonus = {
+			power_armor_equipment = {
+				instant = yes
+				build_cost_ic = 0.12
+			}
+		}
+	}
+	MXC_smarter_trait = {
+		random = no
+		stability_factor = -0.05
+		local_resources_factor = 0.08
+		modifier_army_sub_unit_support_robot_attack_factor = 0.06
+		modifier_army_sub_unit_combat_robot_attack_factor = 0.06
+		modifier_army_sub_unit_support_robot_defence_factor = 0.06
+		modifier_army_sub_unit_combat_robot_defence_factor = 0.06
+	}
+	MXC_backbone_trait = {
+		random = no
+		production_speed_infrastructure_factor = 0.15
+		production_speed_industrial_complex_factor = 0.08
+	}
+	MXC_onetrack_trait = {
+		random = no
+		production_speed_arms_factory_factor = 0.08
+		industrial_capacity_factory = 0.06
+	}
+	MXC_envoy_trait = {
+		random = no
+		stability_factor = 0.05
+		MONTHLY_POPULATION = 0.25
+		caps_income_modifier = -0.1
+	}
+	MXC_iron_trait = {
+		random = no
+		stability_factor = -0.1
+		political_power_gain = 0.1
+		local_resources_factor = 0.05
+	}
+	MXC_integration_trait = {
+		random = no
+		war_support_factor = -0.08
+		compliance_gain = 0.02
+		resistance_target = -0.05
+	}
+	MXC_acquisition_trait = {
+		random = no
+		trade_opinion_factor = -0.15
+		research_speed_factor = 0.05
+	}
+	MXC_atom_trait = {
+		random = no
+		modifier_army_sub_unit_spec_ops_attack_factor = 0.05
+		modifier_army_sub_unit_spec_ops_speed_factor = 0.05
+		modifier_army_sub_unit_spec_ops_defence_factor = -0.05
+
+	}
+	MXC_elrick_trait = {
+		random = no
+		equipment_capture_factor = 0.1
+		research_speed_factor = 0.05
+	}
+	MXC_dan_trait = {
+		random = no
+		trade_opinion_factor = 0.15
+		supply_consumption_factor = -0.05
+	}
+	pacer = {
+		random = no
+		political_power_gain = 0.15
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				add = 1
+				date < 2278.1.1
+			}
+		}
+	}
+	duke = {
+		random = no
+		fuel_gain_factor = 0.15
+		max_fuel_factor = 0.2
+	}
+	phillipe = {
+		random = no
+		supply_factor = 0.15
+		stability_factor = 0.05
+	}
+	jessup = {
+		random = no
+		production_speed_arms_factory_factor = 0.08
+		industrial_capacity_factory = 0.04
+		production_factory_start_efficiency_factor = 0.02
+	}
+	swank = {
+		random = no
+		stability_factor = 0.075
+		trade_laws_cost_factor = -0.15
+		mobilization_laws_cost_factor = -0.15
+		economy_cost_factor = -0.15
+	}
+	taa_soil_trait = {
+		random = no
+		army_core_defence_factor = 0.1
+		training_time_army_factor = -0.1
+	}
+	taa_armed_trait = {
+		random = no
+		equipment_bonus = {
+			infantry_equipment = {
+				soft_attack = 0.1
+				hard_attack = 0.1
+				build_cost_ic = 0.02
+				instant = yes
+			}
+		}
+	}
+	taa_hired_trait = {
+		random = no
+		army_org_factor = 0.05
+		army_attack_factor = 0.05
+		army_defence_factor= 0.05
+		army_speed_factor = 0.05
+	}
+	taa_material_trait = {
+		random = no
+		country_resource_energy = 10
+		country_resource_water = 10
+		country_resource_composites = 6
+		country_resource_circuitry = 8
+		country_resource_advanced = 6
+		caps_income_modifier = -0.15
+	}
+	taa_profit_trait = {
+		random = no
+		industrial_capacity_factory = 0.05
+		caps_flat_income_modifier = 5
+	}
+	taa_earth_trait = {
+		random = no
+		local_resources_factor = 0.1
+		MONTHLY_POPULATION = 0.2
+	}
+	taa_killing_trait = {
+		random = no
+		war_support_factor = 0.1
+		trade_opinion_factor = 0.25
+	}
+	taa_wealth_trait = {
+		random = no
+		stability_factor = 0.08
+		caps_income_modifier = 0.1
+	}
+	taa_wheeling_trait = {
+		random = no
+		political_power_factor = 0.1
+		trade_opinion_factor = 0.15
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				add = 1
+				date < 2278.1.1
+			}
+		}
+	}
+	taa_grit_trait = {
+		random = no
+		modifier_army_sub_unit_militia_attack_factor = 0.15
+		modifier_army_sub_unit_militia_speed_factor = 0.15
+		modifier_army_sub_unit_militia_defence_factor = 0.15
+	}
+	lns_captivating_speaker = {
+		random = no
+		political_power_factor = 0.1
+		war_support_factor = 0.1
+	}
+	lns_quick_witted = {
+		random = no
+		org_loss_when_moving = -0.1
+		planning_speed = 0.2
+	}
+	lns_senior_trait = {
+		random = no
+		army_org_factor = 0.05
+		planning_speed = 0.1
+	}
+	lns_heritage_trait = {
+		random = no
+		air_ace_generation_chance_factor = 0.1
+		experience_gain_air = 0.05
+	}
+	lns_respond_trait = {
+		random = no
+		army_core_defence_factor = 0.05
+		army_speed_factor = 0.1
+	}
+	lns_cause_trait = {
+		random = no
+		army_infantry_attack_factor = 0.08
+		army_infantry_defence_factor = 0.08
+		caps_expense_modifier = -0.05
+	}
+	lns_old_trait = {
+		random = no
+		army_org_factor = 0.1
+		max_dig_in = 2
+	}
+	lns_trade_trait = {
+		random = no
+		trade_opinion_factor = 0.25
+		caps_income_modifier = 0.1
+	}
+	lns_expedition_trait = {
+		random = no
+		industrial_capacity_factory = 0.05
+		production_speed_infrastructure_factor = 0.05
+		local_resources_factor = 0.05
+	}
+	lns_finance_trait = {
+		random = no
+		line_change_production_efficiency_factor = 0.1
+		production_factory_max_efficiency_factor = 0.05
+	}
+	lns_slaver_trait = {
+		random = no
+		caps_income_modifier = 0.15
+		local_resources_factor = 0.1
+	}
+	lns_pride_trait = {
+		random = no
+		conscription_factor = 0.05
+		war_support_factor = 0.05
+		offensive_war_stability_factor = 0.1
+	}
+	lns_powerhouse_trait = {
+		random = no
+		stability_factor = 0.05
+		political_power_factor = 0.05
+		production_factory_efficiency_gain_factor = 0.05
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				add = 1
+				date < 2278.1.1
+			}
+		}
+	}
+	lns_sufficient_trait = {
+		random = no
+		consumer_goods_expected_value = -0.03
+		MONTHLY_POPULATION = 0.2
+	}
+	lns_cloud_trait = {
+		random = no
+		fuel_gain_factor = 0.12
+		stability_factor = -0.05
+	}
+	lns_painter_trait = {
+		random = no
+		resistance_damage_to_garrison = -0.15
+		core_creation_cost_factor = -0.15
+		resistance_growth = -0.15
+	}
+	lns_burn_texas_down = {
+		random = no
+		stability_factor = -0.05
+		equipment_bonus = {
+			demolitions_equipment = {
+				build_cost_ic = -0.05
+				reliability = 0.05
+				soft_attack = 0.15
+				hard_attack = 0.15
+				instant = yes
+			}
+		}
+	}
+	lns_air_buff = {
+		random = no
+		air_agility_factor = 0.1
+		air_maximum_speed_factor = 0.1
+	}
+	lns_sly_merchant = {
+		random = no
+		caps_flat_income_modifier = 8
+		production_speed_buildings_factor = 0.075
+		political_power_factor = -0.05
+	}
+	MOT_Hanlon_trait = {
+		random = no
+		army_org_factor = 0.1
+		special_forces_defence_factor = 0.1
+		special_forces_attack_factor = 0.1
+	}
+	MOT_Oliver_trait = {
+		random = no
+		army_defence_factor = 0.15
+		modifier_army_sub_unit_power_armour_max_org_factor = 0.15
+		max_planning = 0.1
+	}
+	MOT_Dhatri_trait = {
+		random = no
+		recon_factor = 0.1
+		army_speed_factor = 0.05
+		special_forces_defence_factor = 0.05
+	}
+	MOT_Pappas_trait = {
+		random = no
+		army_org_factor = 0.15
+		army_attack_factor = 0.05
+	}
+	MOT_Moore_trait = {
+		random = no
+		army_infantry_attack_factor = 0.1
+		army_infantry_defence_factor = 0.1
+	}
+	MOT_Raul_trait = {
+		random = no
+		supply_consumption_factor = -0.05
+		out_of_supply_factor = -0.1
+		unit_upkeep_attrition_factor = -0.15
+	}
+	MOT_Polati_trait = {
+		random = no
+		production_speed_arms_factory_factor = 0.15
+	}
+	MOT_Knight_trait = {
+		random = no
+		trade_opinion_factor = 0.25
+		caps_flat_income_modifier = 10
+	}
+	MOT_Lawson_trait = {
+		random = no
+		local_resources_factor = 0.15
+	}
+	MOT_Warden_trait = {
+		random = no
+		industrial_capacity_factory = 0.1
+		resistance_target = 0.03
+	}
+	MOT_Keiran_LAR_trait = {
+		random = no
+		intel_network_gain = 0.1
+		root_out_resistance_effectiveness_factor = 0.1
+	}
+	MOT_Keiran_NONLAR_trait = {
+		random = no
+		resistance_damage_to_garrison = -0.1
+		decryption_factor = 0.15
+	}
+	MOT_Steyn_trait = {
+		random = no
+		consumer_goods_expected_value = -0.05
+		stability_factor = -0.05
+		political_power_gain = 0.05
+	}
+	MOT_Hildern_trait = {
+		random = no
+		research_speed_factor = 0.1
+	}
+	MOT_Ignatio_trait = {
+		random = no
+		local_resources_factor = -0.05
+		stability_factor = 0.1
+		resistance_target = -0.1
+	}
+	MOT_Richards_trait = {
+		random = no
+		MONTHLY_POPULATION = 0.2
+		experience_loss_factor = -0.1
+	}
+	ncr_hero_trait = {
+		random = no
+		army_morale_factor = 0.1
+		stability_factor = -0.05
+		war_support_factor = 0.05
+	}
+	ncr_innovator_trait = {
+		random = no
+		army_speed_factor = 0.05
+		land_reinforce_rate = 0.03
+		attrition = -0.05
+	}
+	ncr_tactitian_trait = {
+		random = no
+		experience_gain_army_factor = 0.1
+		supply_consumption_factor = -0.1
+	}
+	ncr_bastion_trait = {
+		random = no
+		trade_opinion_factor = 0.25
+		caps_country_trade_modifier = 0.15
+	}
+	ncr_dodge_trait = {
+		random = no
+		production_speed_buildings_factor = 0.05
+		global_building_slots_factor = 0.05
+	}
+	ncr_equipment_trait = {
+		random = no
+		organization_floor_modifier_1 = 25
+		equipment_bonus = {
+			infantry_equipment = {
+				soft_attack = 0.05
+				hard_attack = 0.05
+				build_cost_ic = -0.05
+				instant = yes
+			}
+		}
+	}
+	ncr_imperialist_trait = {
+		random = no
+		war_support_factor = 0.08
+		stability_factor = -0.04
+		caps_income_modifier = 0.08
+	}
+	ncr_HME_lar_trait = {
+		random = no
+		stability_factor = 0.075
+		resistance_damage_to_garrison = -0.15
+		root_out_resistance_effectiveness_factor = 0.1
+	}
+	ncr_HME_nonlar_trait = {
+		random = no
+		stability_factor = 0.075
+		resistance_damage_to_garrison = -0.15
+		decryption_factor = 0.1
+		encryption_factor = 0.1
+	}
+	ncr_spy_trait = {
+		random = no
+		operative_slot = 1
+		compliance_growth = 0.1
+	}
+	ncr_hardened_mercenary = {
+		random = no
+		modifier_army_sub_unit_power_armour_attack_factor = 0.1
+		modifier_army_sub_unit_power_armour_speed_factor = 0.1
+		modifier_army_sub_unit_power_armour_max_org_factor = 0.1
+		stability_factor = -0.1
+	}
+	HRO_cold_trait = {
+		random = no
+		army_defence_factor= 0.1
+		max_planning = 0.1
+	}
+	HRO_limit_trait = {
+		random = no
+		army_speed_factor = 0.05
+		army_attack_factor = 0.05
+	}
+	HRO_liftoff_trait = {
+		random = no
+		fuel_gain_factor = 0.12
+	}
+	HRO_yonder_trait = {
+		random = no
+		equipment_bonus = {
+			fighter_equipment = {
+				instant = yes
+				build_cost_ic = -0.1
+			}
+		}
+	}
+	HRO_ride_trait = {
+		random = no
+		motorized_attack_factor = 0.1
+	}
+	HRO_boot_trait = {
+		random = no
+		army_infantry_defence_factor = 0.08
+		army_infantry_attack_factor = 0.08
+	}
+	HRO_shooting_trait = {
+		random = no
+		special_forces_attack_factor = 0.12
+		special_forces_defence_factor = 0.12
+	}
+	HRO_best_trait = {
+		random = no
+		army_defence_factor= 0.1
+		army_attack_factor = 0.1
+		caps_income_modifier = -0.2
+	}
+	HRO_killers_trait = {
+		random = no
+		conscription_factor = -0.1
+		army_defence_factor= 0.08
+		army_attack_factor = 0.08
+	}
+	HRO_fresh_trait = {
+		random = no
+		production_speed_industrial_complex_factor = 0.1
+	}
+	HRO_adjunct_trait = {
+		random = no
+		research_speed_factor = 0.05
+	}
+	HRO_tech_trait = {
+		random = no
+		local_resources_factor = 0.12
+	}
+	HRO_stadium_trait = {
+		random = no
+		caps_income_modifier = 0.1
+		caps_country_trade_modifier = 0.1
+	}
+	HRO_fast_trait = {
+		random = no
+		production_speed_arms_factory_factor = 0.05
+		line_change_production_efficiency_factor = 0.1
+	}
+	HRO_skyhigh_trait = {
+		random = no
+		production_speed_infrastructure_factor = 0.15
+		production_speed_air_base_factor = 0.15
+	}
+	HRO_justdoit_trait = {
+		random = no
+		war_support_factor = 0.1
+		mobilization_speed = 0.1
+	}
+	HRO_frontier_trait = {
+		random = no
+		political_power_factor = -0.1
+		consumer_goods_expected_value = -0.05
+	}
+	HRO_self_trait = {
+		random = no
+		supply_consumption_factor = -0.1
+		min_export = -0.05
+	}
+	HRO_bulwark_trait = {
+		random = no
+		trade_opinion_factor = -0.15
+		weekly_manpower = 10
+	}
+	tsela_trait = {
+		random = no
+		no_supply_grace = 48
+		supply_consumption_factor = -0.1
+	}
+	bidziil_trait = {
+		random = no
+		army_org_factor = 0.1
+		army_morale_factor = 0.05
+	}
+	hokee_trait = {
+		random = no
+		modifier_army_sub_unit_spec_ops_defence_factor = 0.1
+		recon_factor = 0.1
+		army_core_defence_factor = 0.075
+	}
+	sialea_trait = {
+		random = no
+		army_attack_factor = 0.05
+		modifier_army_sub_unit_spec_ops_attack_factor = 0.1
+	}
+	hashkeh_trait = {
+		random = no
+		army_attack_factor = 0.1
+	}
+	sicheii_trait = {
+		random = no
+		max_planning = 0.08
+		planning_speed = 0.08
+	}
+	way_of_the_land = {
+		random = no
+		monthly_population = 0.1
+	}
+	natives_pathfinder = {
+		random = no
+		army_core_defence_factor = 0.15
+		army_core_attack_factor = 0.1
+	}
+	natives_stories_trait = {
+		random = no
+		stability_factor = 0.15
+	}
+	natives_air_chief_trait = {
+		random = no
+		equipment_bonus = {
+			fighter_equipment = {
+				instant = yes
+				build_cost_ic = -0.1
+				air_range = 0.2
+			}
+			cargo_plane_equipment = {
+				instant = yes
+				build_cost_ic = -0.1
+				air_range = 0.2
+			}
+		}
+	}
+	# ARR
+	ARR_chitsa_leader_trait = {
+		random = no
+		caps_country_trade_modifier = 0.25
+	}
+	compassionate_doctor = {
+		random = no
+		monthly_population = 0.03
+		war_support_factor = -0.10
+		attrition = -0.1
+	}
+	ncr_peace_land_brahmin = {
+		random = no
+		war_support_factor = -0.1
+		production_speed_buildings_factor = 0.15
+		local_resources_factor = 0.06
+	}
+	new_beacon_of_hope = {
+		random = no
+		defensive_war_stability_factor = 0.3
+	}
+	new_hit_and_run_trait = {
+		random = no
+		army_speed_factor = 0.02
+		army_defence_factor = 0.1
+	}
+	new_run_and_hit_trait = {
+		random = no
+		army_speed_factor = 0.01
+		army_attack_factor = 0.05
+	}
+	new_larg_trait = {
+		random = no
+		country_resource_metal = 5
+		production_speed_infrastructure_factor = 0.1
+		repair_speed_infrastructure_factor = 0.3
+	}
+	new_karg_trait = {
+		random = no
+		stability_factor = 0.05
+		minimum_training_level = -0.05
+	}
+	new_burrow_master_trait = {
+		random = no
+		army_core_defence_factor = 0.1
+		local_resources_factor = 0.1
+	}
+	TNK_mobius_trait = {
+		random = no
+		equipment_bonus = {
+			support_robot_equipment = {
+				build_cost_ic = -0.06
+				instant = yes
+			}
+		}
+	}
+	TNK_sink_biological_research_station_trait = {
+		random = no
+		equipment_bonus = {
+			support_equipment = {
+				build_cost_ic = -0.04
+				instant = yes
+			}
+		}
+	}
+	TNK_sink_toaster_trait = {
+		random = no
+		equipment_bonus = {
+			fireteam_equipment = {
+				build_cost_ic = -0.03
+				instant = yes
+			}
+		}
+	}
+	TNK_sink_toaster_trait = {
+		random = no
+		equipment_bonus = {
+			fireteam_equipment = {
+				build_cost_ic = -0.02
+				instant = yes
+			}
+		}
+	}
+	### 5.0
+	SNO_supplier = {
+		random = no
+		stability_factor = 0.05
+		supply_consumption_factor = -0.15
+		surrender_limit = 0.05
+		max_surrender_limit_offset = 0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	ruminator_trait = {
+		random = no
+		exodus_national_appeal = 0.10
+		# add something more here TODO
+	}
+	MCA_chicago_school = {
+		random = no
+		production_factory_efficiency_gain_factor = 0.1
+		production_factory_start_efficiency_factor = 0.1
+		stability_factor = -0.05
+		political_power_factor = -0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	MCA_students_of_history = {
+		random = no
+		research_speed_factor = 0.05
+		experience_gain_army = 0.05
+		consumer_goods_expected_value = 0.05
+		stability_factor = 0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	enc_fuel_expert = {
+		random = no
+		fuel_gain_factor = 0.15
+		max_fuel_factor = 0.10
+		army_fuel_consumption_factor = -0.10
+		consumer_goods_expected_value = 0.05
+	}
+	political_mastermind_eighties = {
+		random = no
+		political_power_factor = 0.15
+		improve_relations_maintain_cost_factor = -0.25
+		economy_cost_factor = -0.1
+		mobilization_laws_cost_factor = -0.1
+		trade_laws_cost_factor = -0.1
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				add = 1
+				date < 2278.1.1
+			}
+		}
+	}
+	shi_researcher_reborn = {
+		random = no
+		production_speed_arms_factory_factor = 0.05
+		stability_factor = -0.05
+		research_speed_factor = 0.05
+		line_change_production_efficiency_factor = 0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	MCA_chicago_school_good = {
+		random = no
+
+		weekly_manpower = 1
+		production_factory_max_efficiency_factor = 0.1
+		local_resources_factor = 0.1
+		industrial_capacity_factory = 0.1
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	####REDDING#####
+	rds_head_of_rma = {
+		random = no
+		local_resources_factor = 0.08
+		state_resources_factor = 0.1
+		people_drift = 0.03
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	rds_private_detective = {
+		random = no
+		encryption = 0.5
+		operative_slot = 1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	####REDDING#####
+	#### New Khans ####
+	amgalan_the_wanderer = {
+		random = no
+		trade_opinion_factor = 0.20
+		diplomacy_distance = 75
+	}
+	the_progress_mover = {
+		random = no
+		consumer_goods_expected_value = -0.05
+		research_speed_factor = 0.1
+		production_factory_max_efficiency_factor = 0.15
+	}
+	the_wise_crow = {
+		random = no
+		political_power_factor = 0.15
+		compliance_gain = 0.03
+		stability_factor = 0.1
+	}
+	#### Highland Watch ####
+	atoms_devout = {
+		random = no
+		research_speed_factor = 0.06
+		local_resources_factor = 0.08
+	}
+	saint_joyful = {
+		random = no
+		political_power_factor = 0.20
+		improve_relations_maintain_cost_factor = -0.25
+		economy_cost_factor = -0.1
+		mobilization_laws_cost_factor = -0.1
+		trade_laws_cost_factor = -0.1
+    }
+	### BRA
+	BRA_north_hound = {
+		random = no
+		special_forces_attack_factor = 0.08
+		special_forces_defence_factor = 0.08
+		equipment_bonus = {
+			dogs_equipment = {
+				instant = yes
+				breakthrough = 0.15
+				maximum_speed = 0.1
+				soft_attack = 0.15
+			}
+		}
+	}
+
+	BRA_noble = {
+		random = no
+		consumer_goods_expected_value = -0.03
+		stability_factor = -0.04
+	}
+
+	BRA_noble_2 = {
+		random = no
+		consumer_goods_expected_value = -0.06
+		stability_factor = -0.04
+	}
+
+	BRA_trait_mailman = {
+		random = no
+		production_factory_max_efficiency_factor = 0.15
+		production_factory_efficiency_gain_factor = 0.05
+	}
+	BRA_jack_of = {
+		random = no
+		army_speed_factor = 0.04
+		army_org_factor = 0.04
+		army_attack_factor = 0.04
+		army_defence_factor = 0.04
+	}
+	BRA_jack_of_2 = {
+		random = no
+		attrition = -0.2
+		experience_gain_army = 0.05
+		experience_gain_army_factor = 0.1
+	}
+	BRA_aggressive_attacker = {
+		random = no
+		army_attack_speed_factor = 0.05
+		army_attack_factor = 0.1
+	}
+	BRA_aggressive_attacker_2 = {
+		random = no
+		land_reinforce_rate = 0.04
+		org_loss_when_moving = -0.2
+	}
+	BRA_wall_of_manitoba = {
+		random = no
+		army_org_factor = 0.05
+		army_defence_factor = 0.1
+		dig_in_speed_factor = 0.2
+	}
+	BRA_wall_of_manitoba_2 = {
+		random = no
+		army_morale_factor = 0.12
+		experience_loss_factor = -0.2
+	}
+	BRA_forward_thinker = {
+		random = no
+		research_speed_factor = 0.08
+		political_power_factor = -0.05
+	}
+	BRA_bloody_baron = {
+		random = no
+		mobilization_speed = 0.15
+		conscription_factor = 0.1
+		conscription = 0.01
+		minimum_training_level = 0.15
+	}
+	BRA_militarist = {
+		random = no
+		war_support_factor = 0.15
+		war_stability_factor = 0.5
+		mobilization_laws_cost_factor = -0.25
+	}
+	BRA_healing_hand = {
+		random = no
+		experience_loss_factor = -0.2
+		monthly_population = 0.1
+	}
+	BRA_iron_wall = {
+		random = no
+		experience_gain_army = 0.05
+		experience_gain_air_factor = -0.25
+		experience_gain_navy_factor = -0.25
+		army_core_defence_factor = 0.15
+	}
+	BRA_rogue_trader = {
+		random = no
+		trade_opinion_factor = 0.35
+		operative_slot = 1
+		intel_network_gain_factor = 0.1
+	}
+	BRA_cleptocrat = {
+		random = no
+		local_resources_factor = 0.1
+		extra_trade_to_overlord_factor = 0.2
+	}
+	BRA_bureaucrat = {
+		random = no
+		production_speed_buildings_factor = 0.05
+		production_speed_infrastructure_factor = 0.1
+		industrial_capacity_factory = 0.1
+	}
+	BRA_economist = {
+		random = no
+		state_resource_energy = 20
+		army_fuel_consumption_factor = -0.15
+		fuel_gain_factor = 0.25
+	}
+	BRA_handyman = {
+		random = no
+		line_change_production_efficiency_factor = 0.2
+		conversion_cost_mil_to_civ_factor = -0.2
+		conversion_cost_civ_to_mil_factor = -0.2
+		industry_repair_factor = 0.2
+	}
+	BRA_the_best = {
+		random = no
+		encryption_factor = 0.25
+		decryption_factor = 0.25
+		custom_modifier_tooltip = bra_he_is_best_tt
+	}
+
+	###Metal Mouths###
+	MET_mean_leroy_brown = {
+		random = no
+		army_org_factor = 0.06
+		breakthrough_factor = 0.06
+		experience_gain_army_unit_factor = 0.16
+	}
+
+	MET_shiny_metal_arms = {
+		random = no
+		max_planning_factor = 0.1
+		army_attack_speed_factor = 0.1
+		justify_war_goal_time = -0.15
+	}
+
+	MET_cutthroat_springblade = {
+		random = no
+		recon_factor = 0.1
+		army_speed_factor = 0.1
+		command_power_gain_mult = 0.2
+	}
+
+	MET_hard_headed = {
+		random = no
+		max_dig_in_factor = 0.2
+		cas_damage_reduction = 0.1
+		pocket_penalty = -0.25
+	}
+
+	MET_causing_mayhem = {
+		random = no
+		resistance_damage_to_garrison = -0.15
+		initiative_factor = 0.05
+		land_night_attack = 0.05
+	}
+
+	MET_explosive_attitude = {
+		random = no
+		resistance_growth_on_our_occupied_states = 0.2
+		army_morale_factor = 0.05
+		equipment_bonus = {
+			demolitions_equipment = {
+				instant = yes
+				build_cost_IC = -0.15
+				reliability = -0.20
+			}
+		}
+	}
+
+	MET_former_storm = {
+		random = no
+		air_accidents_factor = 0.1
+		air_defence_factor = 0.1
+		equipment_bonus = {
+			fighter_equipment = {
+				instant = yes
+				build_cost_ic = -0.1
+			}
+			cas_equipment = {
+				instant = yes
+				build_cost_ic = -0.1
+			}
+		}
+	}
+
+	MET_bronze_flight = {
+		random = no
+		air_ace_bonuses_factor = 0.1
+		air_ace_generation_chance_factor = 0.15
+		air_agility_factor = 0.1
+		air_range_factor = -0.1
+	}
+
+	MET_eating_chrome = {
+		random = no
+		experience_gain_army = 0.1
+		equipment_bonus = {
+			anti_tank_equipment = {
+				instant = yes
+				ap_attack = 0.2
+			}
+		}
+	}
+
+	MET_deadly_thoughts = {
+		random = no
+		experience_gain_army = 0.15
+		offensive_war_stability_factor = 0.2
+	}
+
+	MET_old_wolf = {
+		random = no
+		experience_gain_army = 0.075
+		research_speed_factor = 0.025
+		equipment_bonus = {
+			implant_equipment = {
+				instant = yes
+				build_cost_IC = -0.05
+				reliability = 0.05
+			}
+		}
+	}
+
+	MET_copper_construction = {
+		random = no
+		production_speed_industrial_complex_factor = 0.1
+		global_building_slots_factor = 0.05
+	}
+
+	MET_gol_d = {
+		random = no
+		caps_raider_self_bonus = 0.1
+		production_speed_arms_factory_factor = 0.1
+	}
+
+	MET_safe_cracking = {
+		random = no
+		supply_factor = 0.1
+		organization_floor_modifier_1 = 30
+		organization_floor_modifier_4 = 30
+	}
+
+	MET_artist_redition = {
+		random = no
+		war_support_factor = 0.05
+		decryption_factor = 0.15
+		own_operative_intel_extraction_rate = 0.15
+	}
+
+	MET_pretty_legs = {
+		random = no
+		political_power_gain = 0.15
+		required_garrison_factor = -0.1
+	}
+
+	MET_mr_orderly = {
+		random = no
+		experience_loss_factor = -0.05
+		equipment_bonus = {
+			implant_equipment = {
+				instant = yes
+				build_cost_IC = -0.05
+				reliability = 0.05
+			}
+		}
+	}
+
+	MET_music_man = {
+		random = no
+		stability_factor = 0.05
+		production_factory_max_efficiency_factor = 0.02
+	}
+
+	MET_feeding_metal = {
+		random = no
+		monthly_population = 0.2
+		conscription_factor = 0.05
+		attrition = -0.05
+	}
+
+	MET_metal_mechanic = {
+		random = no
+		equipment_bonus = {
+			infantry_equipment = {
+				instant = yes
+				build_cost_IC = 0.10
+				soft_attack = 0.05
+				hard_attack = 0.1
+				air_attack = 0.1
+				reliability = 0.1
+			}
+		}
+	}
+
+	#Whitecourt
+	WHC_black_market = {
+		random = no
+		consumer_goods_expected_value = 0.05
+		stability_factor = -0.1
+		equipment_bonus = {
+			fireteam_equipment = {
+				build_cost_ic = -0.15
+				soft_attack = 0.1
+				instant = yes
+			}
+			demolitions_equipment = {
+				build_cost_ic = -0.15
+				soft_attack = 0.1
+				instant = yes
+			}
+			infantry_equipment = {
+				build_cost_ic = -0.15
+				soft_attack = 0.15
+				instant = yes
+			}
+		}
+	}
+
+    #Three Rivers
+	wpg_mad_baron = {
+		random = no
+		equipment_bonus = {
+			air_equipment_tech_category = {
+				instant = yes
+				build_cost_ic = -0.15
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	wpg_unorthodox_strategist = {
+		random = no
+		planning_speed = 0.4
+		max_planning_factor = -0.15
+		army_speed_factor = 0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	wpg_sabre_of_revolution = {
+		random = no
+		army_attack_factor = 0.15
+		org_loss_when_moving = -0.07
+		army_org_factor = -0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	wpg_fortification_master = {
+		random = no
+
+		max_dig_in_factor = 0.1
+		army_defence_factor = 0.1
+		land_reinforce_rate = 0.06
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	wpg_torchbearer = {
+		random = no
+
+        army_attack_factor = 0.2
+		army_defence_factor = 0.2
+		army_morale_factor = 0.1
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	wpg_girlscout = {
+		random = no
+
+        cas_damage_reduction = 0.2
+		acclimatization_hot_climate_gain_factor = 0.5
+		acclimatization_cold_climate_gain_factor = 0.5
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	wpg_natural_talent = {
+		random = no
+
+        army_attack_factor = 0.03
+		army_defence_factor = 0.05
+		army_org_factor = 0.03
+		equipment_capture_factor = 0.03
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	wpg_born_improviser = {
+		random = no
+
+		equipment_bonus = {
+			infantry_equipment = {
+				reliability = 0.1
+				instant = yes
+			}
+		}
+		equipment_bonus = {
+			power_armor_equipment = {
+				reliability = 0.2
+				instant = yes
+			}
+		}
+		equipment_bonus = {
+			motorized_equipment = {
+				reliability = 0.2
+				instant = yes
+			}
+		}
+		industry_free_repair_factor = 0.1
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	wpg_adventurous_capitalist = {
+		random = no
+
+		production_factory_efficiency_gain_factor = 0.2
+		line_change_production_efficiency_factor = -0.4
+		industrial_capacity_factory = 0.1
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	wpg_architect_of_freedom = {
+		random = no
+
+		production_speed_buildings_factor = 0.1
+		production_speed_infrastructure_factor = 0.2
+		compliance_gain = 0.02
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	wpg_shipmaster = {
+		random = no
+
+		industrial_capacity_dockyard = 0.1
+		local_resources_factor = 0.2
+		experience_gain_navy = 0.04
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	wpg_dealmaker = {
+		random = no
+
+		political_power_factor = -0.25
+		custom_modifier_tooltip = wpg_helen_contacts_tt
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	wpg_american_patriot = {
+		random = no
+
+		training_time_factor = -0.2
+		mobilization_speed = 0.1
+		production_speed_arms_factory_factor = 0.1
+		conversion_cost_civ_to_mil_factor = -0.2
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	wpg_danger_fuel = {
+		random = no
+
+		army_fuel_consumption_factor = -0.25
+		fuel_gain_factor = 0.5
+		air_accidents_factor = 0.15
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	wpg_republican_scholar = {
+
+		random = no
+
+		stability_factor = 0.15
+		research_speed_factor = 0.04
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	wpg_verdient_recruiter = {
+
+		random = no
+
+        conscription = 0.03
+		war_support_factor = 0.15
+		caps_expense_modifier = -0.15
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	wpg_river_trader = {
+
+		random = no
+
+		caps_income_modifier = 0.4
+		trade_opinion_factor = 0.2
+		industrial_capacity_dockyard = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	wpg_social_chameleon = {
+
+		random = no
+
+		operative_slot = 2
+		civilian_intel_to_others = 20
+		army_intel_to_others = 20
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	wpg_person_of_land = {
+
+		random = no
+
+		local_factories = 0.2
+		monthly_population = -0.2
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	wpg_legendary_fisherman = {
+
+		random = no
+
+        naval_invasion_penalty = -0.15
+		army_core_defence_factor = 0.1
+		army_core_attack_factor = 0.1
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#HVR-cult of liberty
+		HVR_smart_thief = {
+		random = no
+		stability_factor = -0.03
+		production_factory_max_efficiency_factor = 0.05
+		caps_income_modifier = 0.20
+		caps_expense_modifier = -0.15
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+			HVR_clueless_genius = {
+		random = no
+		weekly_manpower = 45
+		org_loss_when_moving = 0.10
+		army_attack_speed_factor = 0.10
+		army_attack_factor = 0.10
+		breakthrough_factor = 0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

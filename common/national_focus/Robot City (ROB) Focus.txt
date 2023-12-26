@@ -1,0 +1,3313 @@
+focus_tree = {
+	id = rob_focus
+	country = {
+		base = 0
+		modifier = {
+			tag = ROB
+			add = 0
+		}
+	}
+	default = no
+	focus = {
+		id = rob_dokidokiintro
+		icon = GFX_goal_TTM_rob_game_over
+		cost = 7
+		x = 0
+		y = 1
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_dokidokiintro entered"
+			}
+			custom_effect_tooltip = imdokidoki
+			country_event = {
+				id = rob_event.1
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_dokidokiintro exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_argosintro
+		icon = GFX_rob_argos1
+		cost = 7
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = rob_dokidokiintro
+		}
+		relative_position_id = rob_dokidokiintro
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_argosintro entered"
+			}
+			country_event = {
+				id = rob_event.2
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_argosintro exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_letsgettoknoweachother
+		icon = GFX_rob_flag_robotcity
+		cost = 7
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = rob_argosintro
+		}
+		relative_position_id = rob_dokidokiintro
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_letsgettoknoweachother entered"
+			}
+			country_event = rob_event.3
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_letsgettoknoweachother exited"
+			}
+		}
+	}
+############################
+### ROBOT CITY STORYLINE ###
+############################
+	focus = {
+		id = rob_waitasecond
+		icon = GFX_goal_TTM_rob_game_over
+		cost = 10
+		x = 0
+		y = 1
+		bypass = {
+			OR = {
+				HAN = {
+					exists = no
+				}
+				HAN = {
+					has_completed_focus = han_open_the_box
+					has_war = no
+				}
+			}
+		}
+		available = {
+			HAN = {
+				has_completed_focus = han_open_the_box
+			}
+		}
+		prerequisite = {
+			focus = rob_letsgettoknoweachother
+		}
+		relative_position_id = rob_letsgettoknoweachother
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_waitasecond entered"
+			}
+			add_stability = -0.05
+			add_command_power = 25
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_waitasecond exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_hangdogs
+		icon = GFX_bares_his_teeth
+		cost = 10
+		x = -2
+		y = 1
+		bypass = {
+			HAN = {
+				has_war_with = ROB
+			}
+		}
+		available = {
+			HAN = {
+				has_completed_focus = han_open_the_box
+				has_country_leader = {
+					character = HAN_bares_his_teeth
+					ruling_only = yes
+				}
+			}
+		}
+		prerequisite = {
+			focus = rob_waitasecond
+		}
+		mutually_exclusive = {
+			focus = rob_warden
+		}
+		relative_position_id = rob_waitasecond
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_hangdogs entered"
+			}
+			add_political_power = 100
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_hangdogs exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_spooky
+		icon = GFX_rob_roading
+		cost = 15
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = rob_hangdogs
+		}
+		relative_position_id = rob_hangdogs
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_spooky entered"
+			}
+			HAN = {
+				add_timed_idea = {
+					idea = ROB_carbombs
+					days = 180
+					}
+				}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_spooky exited"
+				}
+			}
+		}
+	focus = {
+		id = rob_hangthedogs
+		icon = GFX_rob_war_hangdogs
+		cost = 15
+		x = 0
+		y = 2
+		available = {
+			HAN = {
+				exists = yes
+				OR = {
+					is_justifying_wargoal_against = ROB
+					has_war_with = ROB
+				}
+			}
+		}
+		prerequisite = {
+			focus = rob_hangdogs
+		}
+		relative_position_id = rob_hangdogs
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_hangthedogs entered"
+			}
+			add_timed_idea = {
+				idea = ROB_hangingdogs
+				days = 180
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_hangthedogs exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_defendhome
+		icon = GFX_rob_thearmy
+		cost = 15
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = rob_hangdogs
+		}
+		relative_position_id = rob_hangdogs
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_defendhome entered"
+			}
+			custom_effect_tooltip = dokiborderpatrol
+			hidden_effect = {
+				every_state = {
+					limit = {
+						is_core_of = ROB
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+						}
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_defendhome exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_warden
+		icon = GFX_praisebewarden
+		cost = 10
+		x = 2
+		y = 1
+		bypass = {
+			WDN = {
+				has_war_with = ROB
+			}
+		}
+		available = {
+			WDN = {
+				has_government = people
+				is_warden_leader = yes
+				exists = yes
+			}
+		}
+		prerequisite = {
+			focus = rob_waitasecond
+		}
+		mutually_exclusive = {
+			focus = rob_hangdogs
+		}
+		relative_position_id = rob_waitasecond
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_warden entered"
+			}
+			add_political_power = 100
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_warden exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_americanproduction
+		icon = GFX_goal_TTM_Dynamite
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = rob_warden
+		}
+		relative_position_id = rob_warden
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_americanproduction entered"
+			}
+			add_equipment_to_stockpile = {
+				type = support_robot_equipment
+				amount = 350
+				producer = USA
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_americanproduction exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_satelliteconnection
+		icon = GFX_goal_generic_satellite
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = rob_warden
+		}
+		relative_position_id = rob_warden
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_satelliteconnection entered"
+			}
+			524 = {
+				add_building_construction = {
+					type = radar_station
+					level = 3
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_satelliteconnection exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_prouddeputy
+		icon = GFX_wardendeputy
+		cost = 30
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = rob_warden
+		}
+		relative_position_id = rob_warden
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_prouddeputy entered"
+			}
+			525 = {
+				add_resource = {
+					type = energy
+					amount = 5
+					}
+				}
+			524 = {
+				add_resource = {
+					type = metal
+					amount = 5
+					}
+				}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_prouddeputy exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_scored
+		icon = GFX_han_generic
+		cost = 30
+		x = 0
+		y = 3
+		available = {
+			has_war = no
+			OR = {
+				owns_state = 525
+				AND = {
+					WDN = {
+						owns_state = 525
+					}
+					is_in_faction_with = WDN
+				}
+			}
+		}
+		relative_position_id = rob_waitasecond
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_housekeeping entered"
+			}
+			add_war_support = 0.10
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_housekeeping exited"
+				}
+			}
+		}
+	focus = {
+		id = rob_housekeeping
+		icon = GFX_rob_protectron1
+		cost = 30
+		x = -1
+		y = 1
+		available = {
+			owns_state = 525
+		}
+		prerequisite = {
+			focus = rob_scored
+		}
+		relative_position_id = rob_scored
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_housekeeping entered"
+			}
+			525 = {
+				add_resource = {
+					type = energy
+					amount = 8
+				}
+				remove_building = {
+					type = infrastructure
+						level = 2
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_housekeeping exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_claimjumping
+		icon = GFX_goal_generic_canister_nucleaer
+		cost = 30
+		x = 1
+		y = 1
+		available = {
+			owns_state = 525
+		}
+		prerequisite = {
+			focus = rob_scored
+		}
+		relative_position_id = rob_scored
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_claimjumping entered"
+			}
+			525 = {
+				add_resource = {
+					type = advanced
+					amount = 8
+				}
+				remove_building = {
+					type = infrastructure
+						level = 2
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_claimjumping exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_thebigjerk
+		icon = GFX_rob_lanius
+		cost = 30
+		x = -4
+		y = 1
+		prerequisite = {
+			focus = rob_scored
+		}
+		bypass = {
+			has_war_with = LAC
+		}
+		available = {
+			OR = {
+				LAC = {
+					owns_state = 554
+				}
+				LAC = {
+					exists = no
+				}
+			}
+		}
+		relative_position_id = rob_scored
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_thebigjerk entered"
+			}
+			country_event = {
+				id = rob_event.1004
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_thebigjerk exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_electricfeel
+		icon = GFX_rob_electricfeel
+		cost = 30
+		x = -1
+		y = 1
+		bypass = {
+			LAC = {
+				exists = no
+			}
+		}
+		prerequisite = {
+			focus = rob_thebigjerk
+		}
+		mutually_exclusive = {
+			focus = rob_nonerdsallowed
+		}
+		relative_position_id = rob_thebigjerk
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_electricfeel entered"
+			}
+			custom_effect_tooltip = dokilove
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_electricfeel exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_kidnappingthebeast
+		icon = GFX_rob_kidnapped
+		cost = 30
+		x = -2
+		y = 2
+		available = {
+			owns_state = 5
+		}
+		prerequisite = {
+			focus = rob_electricfeel
+		}
+		relative_position_id = rob_thebigjerk
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_kidnappingthebeast entered"
+			}
+			custom_effect_tooltip = dokilanius
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_kidnappingthebeast exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_legionhunters
+		icon = GFX_rob_laniusspotted
+		cost = 30
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = rob_electricfeel
+			focus = rob_nonerdsallowed
+		}
+		relative_position_id = rob_thebigjerk
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_legionhunters entered"
+			}
+			add_ideas = ROB_legionhunterdrones
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_legionhunters exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_nonerdsallowed
+		icon = GFX_rob_war_lanius
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = rob_thebigjerk
+		}
+		mutually_exclusive = {
+			focus = rob_electricfeel
+		}
+		relative_position_id = rob_thebigjerk
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_nonerdsallowed entered"
+			}
+			add_war_support = 0.10
+			custom_effect_tooltip = dokibully
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_nonerdsallowed exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_makethemregretit
+		icon = GFX_goal_generic_legion_speared
+		cost = 30
+		x = 2
+		y = 2
+		available = {
+			LAC = {
+				exists = no
+			}
+			owns_state = 5
+		}
+		prerequisite = {
+			focus = rob_nonerdsallowed
+		}
+		relative_position_id = rob_thebigjerk
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_makethemregretit entered"
+			}
+			5 = {
+				add_resource = {
+					type = metal
+					amount = 15
+					}
+				}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_makethemregretit exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_braveleapforward
+		icon = GFX_rob_flag_robotcity
+		cost = 30
+		x = 0
+		y = 4
+		prerequisite = {
+			focus = rob_scored
+		}
+		relative_position_id = rob_scored
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_braveleapforward entered"
+			}
+			add_political_power = -50
+			every_state = {
+				tooltip = "Every Colorado State"
+				limit = {
+					OR = {
+						#region = 6
+						region = 42
+						region = 43
+						region = 44
+					}
+				}
+				add_claim_by = ROOT
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_braveleapforward exited"
+			}
+		}
+	}
+##############################
+### ROBOT CITY LEFT BRANCH ###
+##############################
+	focus = {
+		id = rob_leftbranch
+		icon = GFX_rob_flag_robotcity
+		cost = 30
+		x = -12
+		y = 1
+		prerequisite = {
+			focus = rob_letsgettoknoweachother
+		}
+		relative_position_id = rob_letsgettoknoweachother
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_leftbranch entered"
+			}
+			add_stability = 0.05
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_leftbranch exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_protocols
+		icon = GFX_goal_BOS_generic_research
+		cost = 30
+		x = -5
+		y = 1
+		prerequisite = {
+			focus = rob_leftbranch
+		}
+		relative_position_id = rob_leftbranch
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_rightbranch entered"
+			}
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = electronics
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_rightbranch exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_experience
+		icon = GFX_goal_generic_robots_focus
+		cost = 30
+		x = 3
+		y = 1
+		prerequisite = {
+			focus = rob_protocols
+		}
+		relative_position_id = rob_protocols
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_experience entered"
+			}
+			army_experience = 20
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_experience exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_defenseprotocols
+		icon = GFX_goal_generic_data_focus
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = rob_experience
+		}
+		mutually_exclusive = {
+			focus = rob_attackprotocols
+		}
+		relative_position_id = rob_experience
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_defenseprotocols entered"
+			}
+			add_ideas = ROB_defensiveprotocol
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_defenseprotocols exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_attackprotocols
+		icon = GFX_goal_generic_advanced_technology_focus
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = rob_experience
+		}
+		mutually_exclusive = {
+			focus = rob_defenseprotocols
+		}
+		relative_position_id = rob_experience
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_attackprotocols entered"
+			}
+			add_ideas = ROB_offensiveprotocol
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_attackprotocols exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_maudeeconomy
+		icon = GFX_rob_votemaude
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = rob_protocols
+		}
+		mutually_exclusive = {
+			focus = rob_sargesway
+		}
+		relative_position_id = rob_protocols
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_maudeeconomy entered"
+			}
+			add_ideas = ROB_maude
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_maudeeconomy exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_sargesway
+		icon = GFX_rob_votesarge
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = rob_protocols
+		}
+		mutually_exclusive = {
+			focus = rob_maudeeconomy
+		}
+		relative_position_id = rob_protocols
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_sargesway entered"
+			}
+			add_ideas = ROB_sarge
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_sargesway exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_taxmen
+		icon = GFX_rob_taxmen
+		cost = 30
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = rob_sargesway
+			focus = rob_maudeeconomy
+		}
+		relative_position_id = rob_protocols
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_taxmen entered"
+			}
+			set_temp_variable = {
+				caps_to_add = 100
+			}
+			add_caps = yes
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_taxmen exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_sentienttrafficlights
+		icon = GFX_rob_trafficlight
+		cost = 30
+		x = -1
+		y = 3
+		prerequisite = {
+			focus = rob_taxmen
+		}
+		mutually_exclusive = {
+			focus = rob_crossingguards
+		}
+		relative_position_id = rob_protocols
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_sentienttrafficlights entered"
+			}
+			add_ideas = ROB_trafficlights
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_sentienttrafficlights exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_crossingguards
+		icon = GFX_goal_ARM_tampico_land_acquisition
+		cost = 30
+		x = 1
+		y = 3
+		prerequisite = {
+			focus = rob_taxmen
+		}
+		mutually_exclusive = {
+			focus = rob_sentienttrafficlights
+		}
+		relative_position_id = rob_protocols
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_crossingguards entered"
+			}
+			add_ideas = ROB_crossingguards
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_crossingguards exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_roombarights
+		icon = GFX_rob_toastermoment
+		cost = 30
+		x = -3
+		y = 1
+		prerequisite = {
+			focus = rob_protocols
+		}
+		relative_position_id = rob_protocols
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_roombarights entered"
+			}
+			country_event = {
+				id = rob_event.11
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_roombarights exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_roombaflamethrowers
+		icon = GFX_rob_toasterfire
+		cost = 30
+		x = -4
+		y = 2
+		prerequisite = {
+			focus = rob_roombarights
+		}
+		mutually_exclusive = {
+			focus = rob_roombaknives
+		}
+		relative_position_id = rob_protocols
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_roombaflamethrowers entered"
+			}
+			add_ideas = ROB_toasterflamethrower
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_roombaflamethrowers exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_roombaknives
+		icon = GFX_rob_toaster
+		cost = 30
+		x = -2
+		y = 2
+		prerequisite = {
+			focus = rob_roombarights
+		}
+		mutually_exclusive = {
+			focus = rob_roombaflamethrowers
+		}
+		relative_position_id = rob_protocols
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_roombaknives entered"
+			}
+			add_ideas = ROB_toasterknife
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_roombaknives exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_robotics
+		icon = GFX_goal_generic_circuit_adv
+		cost = 30
+		x = 4
+		y = 1
+		prerequisite = {
+			focus = rob_leftbranch
+		}
+		relative_position_id = rob_leftbranch
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_robotics entered"
+			}
+			add_tech_bonus = {
+				bonus = 0.30
+				ahead_reduction = 1
+				uses = 2
+				category = robotics_tech_category
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_robotics exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_production1
+		icon = GFX_goal_ARM_tampico_land_acquisition
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = rob_robotics
+		}
+		relative_position_id = rob_robotics
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_production1 entered"
+			}
+			524 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_production1 exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_production2
+		icon = GFX_goal_ARM_ciudad_valles_land_acquisition
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = rob_robotics
+		}
+		relative_position_id = rob_robotics
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_production2 entered"
+			}
+			524 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_production2 exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_production3
+		icon = GFX_goal_ARM_superior_mechanization
+		cost = 30
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = rob_robotics
+		}
+		relative_position_id = rob_robotics
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_production2 entered"
+			}
+			524 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_production2 exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_production4
+		icon = GFX_goal_ARM_gai_plant_reactivation
+		cost = 30
+		x = 0
+		y = 3
+		prerequisite = {
+			focus = rob_production3
+		}
+		relative_position_id = rob_robotics
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_production2 entered"
+			}
+			524 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_production2 exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_combatupgrades
+		icon = GFX_goal_generic_advanced_technology_focus
+		cost = 30
+		x = 3
+		y = 1
+		prerequisite = {
+			focus = rob_robotics
+		}
+		relative_position_id = rob_robotics
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_combatupgrades entered"
+			}
+			add_ideas = rob_combatupgrades
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_combatupgrades exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_supportupgrades
+		icon = GFX_goal_generic_data_focus
+		cost = 30
+		x = -3
+		y = 1
+		prerequisite = {
+			focus = rob_robotics
+		}
+		relative_position_id = rob_robotics
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_supportupgrades entered"
+			}
+			add_ideas = rob_supportupgrades
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_supportupgrades exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_nightkinbrains
+		icon = GFX_rob_robobrain1
+		cost = 30
+		x = -1
+		y = 1
+		available = {
+			has_tech = robot_command_equipment_tech_3
+		}
+		prerequisite = {
+			focus = rob_combatupgrades
+			focus = rob_production2
+		}
+		relative_position_id = rob_combatupgrades
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_nightkinbrains entered"
+			}
+			add_ideas = ROB_nightkinrobobrains
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_nightkinbrains exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_militarygrade
+		icon = GFX_goal_TTM_Robot_Refugees
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = rob_production4
+		}
+		relative_position_id = rob_production4
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_militarygrade entered"
+			}
+			add_ideas = ROB_militaryhardware
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_militarygrade exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_sentries
+		icon = GFX_rob_infrared
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = rob_supportupgrades
+			focus = rob_production1
+		}
+		relative_position_id = rob_supportupgrades
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_sentries entered"
+			}
+			add_ideas = ROB_watchbots
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_sentries exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_robotopia
+		icon = GFX_rob_flag_robotcity2
+		cost = 30
+		x = -3
+		y = 1
+		available = {
+			owns_state = 525
+		}
+		prerequisite = {
+			focus = rob_braveleapforward
+		}
+		mutually_exclusive = {
+			focus = rob_republic
+		}
+		relative_position_id = rob_braveleapforward
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_robotopia entered"
+			}
+			set_cosmetic_tag = ROB_robotopiastate
+			set_capital = {
+				state = 525
+			}
+			set_province_name = {
+				id = 9015
+				name = "New Robot City"
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_robotopia exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_friends_with_guns
+		icon = GFX_goal_generic_bot_handy
+		cost = 30
+		x = -2
+		y = 1
+		available = {
+			owns_state = 525
+		}
+		prerequisite = {
+			focus = rob_robotopia
+		}
+		relative_position_id = rob_robotopia
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_robotopia entered"
+			}
+			add_war_support = 0.05
+			add_offsite_building = {
+				type = arms_factory
+				level = 4
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_robotopia exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_i_like_land_a_lot
+		icon = GFX_goal_generic_bot_brain_head
+		cost = 30
+		x = 0
+		y = 1
+		available = {
+			owns_state = 525
+		}
+		prerequisite = {
+			focus = rob_robotopia
+		}
+		relative_position_id = rob_robotopia
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_i_like_land_a_lot entered"
+			}
+			add_ideas = ROB_calculatorsrevenge
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_i_like_land_a_lot exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_repairing_vaults
+		icon = GFX_goal_generic_assaultron
+		cost = 30
+		x = 2
+		y = 1
+		available = {
+			owns_state = 525
+		}
+		prerequisite = {
+			focus = rob_robotopia
+		}
+		relative_position_id = rob_robotopia
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_i_like_land_a_lot entered"
+			}
+			add_equipment_to_stockpile = {
+				type = support_robot_two_legs_equipment_3
+				amount = 500
+				producer = USA
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_i_like_land_a_lot exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_republic
+		icon = GFX_goal_generic_colorado
+		cost = 30
+		x = 3
+		y = 1
+		prerequisite = {
+			focus = rob_braveleapforward
+		}
+		mutually_exclusive = {
+			focus = rob_robotopia
+		}
+		relative_position_id = rob_braveleapforward
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_robotopia entered"
+			}
+			set_cosmetic_tag = ROB_republic
+			add_stability = 0.10
+			every_owned_state = {
+				add_compliance = 20.0
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_robotopia exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_every_man_a_representative
+		icon = GFX_goal_CPH_vote_machine
+		cost = 30
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = rob_republic
+		}
+		relative_position_id = rob_republic
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_every_man_a_representative entered"
+			}
+			add_ideas = ROB_presidente
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_every_man_a_representative exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_consumption_is_good
+		icon = GFX_goal_generic_blueprint
+		cost = 30
+		x = 0
+		y = 1
+		available = {
+			is_subject = no
+			has_war = no
+			borders_texan_economic_union = yes
+		}
+		prerequisite = {
+			focus = rob_republic
+		}
+		relative_position_id = rob_republic
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_consumption_is_good entered"
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = 3
+			}
+			if = {
+				limit = { NOT = { is_in_faction = yes } }
+				ask_to_join_texan_economic_union = yes
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_consumption_is_good exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_all_hail_president
+		icon = GFX_focus_focus_wpg_steel_democracy
+		cost = 30
+		x = 2
+		y = 1
+		prerequisite = {
+			focus = rob_republic
+		}
+		relative_position_id = rob_republic
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_all_hail_president entered"
+			}
+			add_ideas = ROB_representation
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_all_hail_president exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_killthelegion
+		icon = GFX_goal_generic_legion_speared
+		cost = 30
+		x = -2
+		y = 1
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+			is_neighbor_of = CES
+		}
+		bypass = {
+			CES = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = CES
+		prerequisite = {
+			focus = rob_kidnappingthebeast
+			focus = rob_makethemregretit
+		}
+		relative_position_id = rob_makethemregretit
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_robotopia entered"
+			}
+			CES = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_robotopia exited"
+			}
+		}
+	}
+###############################################################################################################################################################################
+############################################################ ROBOT CITY RIGHT BRANCH ##########################################################################################
+###############################################################################################################################################################################
+	focus = {
+		id = rob_ourplace
+		icon = GFX_rob_thinking
+		cost = 30
+		x = 12
+		y = 1
+		prerequisite = {
+			focus = rob_letsgettoknoweachother
+		}
+		relative_position_id = rob_letsgettoknoweachother
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_ourplace entered"
+			}
+			add_political_power = 100
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_ourplace exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_robotcity
+		icon = GFX_goal_TTM_Colorado_Shield
+		cost = 30
+		x = -4
+		y = 1
+		prerequisite = {
+			focus = rob_ourplace
+		}
+		relative_position_id = rob_ourplace
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_robotcity entered"
+			}
+			add_political_power = 100
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_robotcity exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_developthecity1
+		icon = GFX_rob_hammers_blank
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = rob_robotcity
+		}
+		relative_position_id = rob_robotcity
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_developthecity1 entered"
+			}
+			524 = {
+				add_resource = {
+					type = metal
+					amount = 12
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_developthecity1 exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_developthecity2
+		icon = GFX_goal_generic_protectron_conceptart_construction
+		cost = 30
+		x = -1
+		y = 2
+		prerequisite = {
+			focus = rob_developthecity1
+		}
+		relative_position_id = rob_robotcity
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_developthecity2 entered"
+			}
+			add_ideas = ROB_constructioncrew
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_developthecity2 exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_developthecity3
+		icon = GFX_goal_generic_protectron_conceptart_police
+		cost = 30
+		x = -3
+		y = 1
+		prerequisite = {
+			focus = rob_robotcity
+		}
+		relative_position_id = rob_robotcity
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_developthecity3 entered"
+			}
+			add_ideas = ROB_police
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_developthecity3 exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_developthecity4
+		icon = GFX_goal_generic_protectron_conceptart_firefighter
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = rob_developthecity3
+		}
+		relative_position_id = rob_developthecity3
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_developthecity4 entered"
+			}
+			add_ideas = ROB_firefighters
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_developthecity4 exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_developthecountry1
+		icon = GFX_rob_watering
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = rob_robotcity
+		}
+		relative_position_id = rob_robotcity
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_developthecountry1 entered"
+			}
+			593 = {
+				add_resource = {
+					type = water
+					amount = 12
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_developthecountry1 exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_developthecountry2
+		icon = GFX_rob_farming
+		cost = 30
+		x = 1
+		y = 2
+		prerequisite = {
+			focus = rob_developthecountry1
+		}
+		relative_position_id = rob_robotcity
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_developthecountry2 entered"
+			}
+			add_ideas = ROB_livestock
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_developthecountry2 exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_developthecountry3
+		icon = GFX_rob_gassing
+		cost = 30
+		x = 3
+		y = 1
+		prerequisite = {
+			focus = rob_robotcity
+		}
+		relative_position_id = rob_robotcity
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_developthecountry3 entered"
+			}
+			add_ideas = ROB_waterbots
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_developthecountry3 exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_developthecountry4
+		icon = GFX_rob_roading
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = rob_developthecountry3
+		}
+		relative_position_id = rob_developthecountry3
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_developthecountry4 entered"
+			}
+			112 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			524 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			593 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			315 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_developthecountry4 exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_robotcityfinale
+		icon = GFX_rob_thinking
+		cost = 30
+		x = 0
+		y = 3
+		prerequisite = {
+			focus = rob_developthecity2
+			focus = rob_developthecity4
+		}
+		prerequisite = {
+			focus = rob_developthecountry2
+			focus = rob_developthecountry4
+		}
+		relative_position_id = rob_robotcity
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_robotcityfinale entered"
+			}
+			add_research_slot = 1
+			add_ideas = ROB_thinkingemoji
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_robotcityfinale exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_thehumanquestion
+		icon = GFX_rob_brains2
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = rob_ourplace
+		}
+		relative_position_id = rob_ourplace
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_thehumanquestion entered"
+			}
+			country_event = {
+				id = rob_event.4
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_thehumanquestion exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_friendsincolorado
+		icon = GFX_goal_TTM_Colorado_Shield
+		cost = 30
+		x = 0
+		y = 3
+		prerequisite = {
+			focus = rob_thehumanquestion
+		}
+		relative_position_id = rob_thehumanquestion
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_friendsincolorado entered"
+			}
+			add_stability = 0.05
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_friendsincolorado exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_dianafriend
+		icon = GFX_rob_flag_twinmothers
+		cost = 30
+		x = 0
+		y = 3
+		prerequisite = {
+			focus = rob_friendsincolorado
+		}
+		relative_position_id = rob_friendsincolorado
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_dianafriend entered"
+			}
+			add_political_power = 100
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_dianafriend exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_troubleinparadise
+		icon = GFX_goal_TTM_Nursery
+		cost = 30
+		x = 2
+		y = 1
+		available = {
+			TTM = {
+				has_completed_focus = ttm_the_tribe_destroyed
+			}
+			TTM = {
+				exists = yes
+			}
+		}
+		prerequisite = {
+			focus = rob_dianafriend
+		}
+		relative_position_id = rob_dianafriend
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_troubleinparadise entered"
+			}
+			TTM = {
+				country_event = {
+					id = rob_event.3000
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_troubleinparadise exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_homelessmom
+		icon = GFX_goal_TTM_Twin_Mothers_Destroyed
+		cost = 30
+		x = -2
+		y = 1
+		available = {
+			TTM = {
+				exists = no
+			}
+		}
+		prerequisite = {
+			focus = rob_dianafriend
+		}
+		relative_position_id = rob_dianafriend
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_homelessmom entered"
+			}
+			hidden_effect = {
+				TTM = {
+					TTM_diana = {
+						set_nationality = ROB
+					}
+				}
+			}
+			custom_effect_tooltip = dokimom
+			38 = {
+				add_claim_by = ROOT
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_homelessmom exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_mutualefforts
+		icon = GFX_rob_dianathink
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = rob_dianafriend
+		}
+		relative_position_id = rob_dianafriend
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_mutualefforts entered"
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				name = ttm_fruit_of_knowledge
+				category = agriculture_tech
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_mutualefforts exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_geckstealing
+		icon = GFX_goal_ENC_geck
+		cost = 30
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = rob_mutualefforts
+		}
+		relative_position_id = rob_dianafriend
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_geckstealing entered"
+			}
+			add_to_variable = { geck_count = 1 }
+			custom_effect_tooltip = dokigeckstealing
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_geckstealing exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_ciphers
+		icon = GFX_rob_flag_ciphers
+		cost = 30
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = rob_friendsincolorado
+		}
+		relative_position_id = rob_friendsincolorado
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_ciphers entered"
+			}
+			add_political_power = 100
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_ciphers exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_technologysharing
+		icon = GFX_goal_NEW_bio_med_gel_experiments
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = rob_ciphers
+		}
+		relative_position_id = rob_ciphers
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_technologysharing entered"
+			}
+			PNT = {
+				add_ideas = ROB_researchagreements
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_technologysharing exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_tellingstories
+		icon = GFX_goal_TTM_Autodoc
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = rob_ciphers
+		}
+		relative_position_id = rob_ciphers
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_tellingstories entered"
+			}
+			add_command_power = 50
+			capital_scope = {
+				add_resource = {
+					type = circuitry
+					amount = 2
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_tellingstories exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_strengthenourfriendship
+		icon = GFX_goal_generic_mountain_fortress
+		cost = 30
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = rob_tellingstories
+		}
+		prerequisite = {
+			focus = rob_technologysharing
+		}
+		relative_position_id = rob_ciphers
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_tellingstories entered"
+			}
+			add_research_slot = 1
+			PNT = {
+				add_research_slot = 1
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_tellingstories exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_maxson
+		icon = GFX_rob_flag_maxson
+		cost = 30
+		x = 3
+		y = 1
+		prerequisite = {
+			focus = rob_friendsincolorado
+		}
+		relative_position_id = rob_friendsincolorado
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_maxson entered"
+			}
+			add_political_power = 100
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_maxson exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_maxsonwar
+		icon = GFX_rob_war_maxson
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = rob_maxson
+		}
+#		mutually_exclusive = {
+#			focus = rob_maxsonfriend
+#		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			MXC = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = MXC
+		relative_position_id = rob_maxson
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_maxsonwar entered"
+			}
+			MXC = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_maxsonwar exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_deletethebrotherhood
+		icon = GFX_goal_MOJ_technology_raids
+		cost = 30
+		x = 0
+		y = 2
+		available = {
+			MXC = {
+				exists = no
+			}
+			ROB = {
+				owns_state = 412
+				owns_state = 208
+			}
+		}
+		prerequisite = {
+			focus = rob_maxsonwar
+		}
+		relative_position_id = rob_maxson
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_deletethebrotherhood entered"
+			}
+			add_state_core = 412
+			add_state_core = 208
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_deletethebrotherhood exited"
+			}
+		}
+	}
+#	focus = {
+#		id = rob_maxsonfriend
+#		icon = GFX_rob_maxsonthink
+#		cost = 30
+#		x = 1
+#		y = 1
+#		prerequisite = {
+#			focus = rob_maxson
+#		}
+#		mutually_exclusive = {
+#			focus = rob_maxsonwar
+#		}
+#		relative_position_id = rob_maxson
+#		completion_reward = {
+#			if = {
+#				limit = { has_global_flag = debug_logs }
+#				log = "[GetDateText]: [Root.GetName] rob_maxsonfriend entered"
+#			}
+#			MXC = {
+#				country_event = {
+#					id = rob_event.1001
+#				}
+#			}
+#			if = {
+#				limit = { has_global_flag = debug_logs }
+#				log = "[GetDateText]: [Root.GetName] rob_maxsonfriend exited"
+#			}
+#		}
+#	}
+#	focus = {
+#		id = rob_maxsharing
+#		icon = GFX_goal_generic_focus_magazine_gunsandbullets_plasma
+#		cost = 30
+#		x = 1
+#		y = 2
+#		prerequisite = {
+#			focus = rob_maxsonfriend
+#		}
+#		relative_position_id = rob_maxson
+#		completion_reward = {
+#			if = {
+#				limit = { has_global_flag = debug_logs }
+#				log = "[GetDateText]: [Root.GetName] rob_maxsharing entered"
+#			}
+#			MXC = {
+#				add_ideas = ROB_researchagreements
+#			}
+#			if = {
+#				limit = { has_global_flag = debug_logs }
+#				log = "[GetDateText]: [Root.GetName] rob_maxsharing exited"
+#			}
+#		}
+#	}
+	focus = {
+		id = rob_what_is_your_type
+		icon = GFX_rob_flag_robotcity
+		cost = 30
+		x = 4
+		y = 1
+		prerequisite = {
+			focus = rob_ourplace
+		}
+		relative_position_id = rob_ourplace
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_what_is_your_type entered"
+			}
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+				}
+				create_intelligence_agency = yes
+			}
+			else = {
+				add_tech_bonus = {
+					bonus = 0.5
+					uses = 1
+					category = encryption_tech
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = decryption_tech
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = support_recon_tech_category
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_what_is_your_type exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_digital_love
+		icon = GFX_goal_CES_women_marriage
+		cost = 30
+		x =-2
+		y = 1
+		prerequisite = {
+			focus = rob_what_is_your_type
+		}
+		relative_position_id = rob_what_is_your_type
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_digital_love entered"
+			}
+			524 = {
+				set_temp_variable = { pop_add = 7000 }
+				add_state_population = yes
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_digital_love exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_romantic_getaway
+		icon = GFX_goal_generic_focus_magazine_aat_fishmen
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = rob_digital_love
+		}
+		relative_position_id = rob_digital_love
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_romantic_getaway entered"
+			}
+			add_ideas = ROB_romantic_getaway
+			524 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_romantic_getaway exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_normal_girl
+		icon = GFX_goal_generic_focus_magazine_gunsandbullets_doomsday
+		cost = 30
+		x = 1
+		y = 1
+		available = {
+			OR = {
+				has_completed_focus = rob_robotopia
+				has_completed_focus = rob_republic
+			}
+		}
+		prerequisite = {
+			focus = rob_romantic_getaway
+		}
+		mutually_exclusive = {
+			focus = rob_best_interest
+			focus = rob_good_sense_of_humor
+		}
+		relative_position_id = rob_romantic_getaway
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_normal_girl entered"
+			}
+			custom_effect_tooltip = rob_normal_girl_tt
+			if = {
+				limit = {
+					NOT = {
+						has_tech = electronic_engineering
+					}
+				}
+				set_technology = {
+					electronic_engineering = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = electronic_engineering
+					NOT = {
+						has_tech = electronic_engineering_1
+					}
+				}
+				set_technology = {
+					electronic_engineering_1 = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = electronic_engineering_1
+					NOT = {
+						has_tech = electronic_engineering_2
+					}
+				}
+				set_technology = {
+					electronic_engineering_2 = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = electronic_engineering_2
+					NOT = {
+						has_tech = electronic_engineering_3
+					}
+				}
+				set_technology = {
+					electronic_engineering_3 = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = electronic_engineering_3
+					NOT = {
+						has_tech = electronic_engineering_4
+					}
+				}
+				set_technology = {
+					electronic_engineering_4 = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = electronic_engineering_4
+					NOT = {
+						has_tech = electronic_engineering_5
+					}
+				}
+				set_technology = {
+					electronic_engineering_5 = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = electronic_engineering_5
+					NOT = {
+						has_tech = electronic_engineering_6
+					}
+				}
+				set_technology = {
+					electronic_engineering_6 = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = electronic_engineering_6
+					NOT = {
+						has_tech = electronic_engineering_7
+					}
+				}
+				set_technology = {
+					electronic_engineering_7 = 1
+				}
+			}
+			else = {
+				add_tech_bonus = {
+					bonus = 0.5
+					uses = 1
+					category = electronics
+				}
+			}
+			add_political_power = 100
+			add_stability = 0.1
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_normal_girl exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_have_some_confidence
+		icon = GFX_goal_generic_focus_magazine_gunsandbullets_lasers
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = rob_what_is_your_type
+		}
+		relative_position_id = rob_what_is_your_type
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_have_some_confidence entered"
+			}
+			add_command_power = 50
+			add_war_support = 0.05
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_have_some_confidence exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_safe_and_sound
+		icon = GFX_goal_generic_focus_magazine_gunsandbullets_take_aim
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = rob_have_some_confidence
+		}
+		relative_position_id = rob_have_some_confidence
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_safe_and_sound entered"
+			}
+			add_timed_idea = {
+				idea = ROB_safe_and_sound
+				days = 720
+			}
+			524 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_safe_and_sound exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_best_interest
+		icon = GFX_goal_generic_focus_magazine_lal_married_a_robot
+		cost = 30
+		x = 0
+		y = 1
+		available = {
+			OR = {
+				has_completed_focus = rob_robotopia
+				has_completed_focus = rob_republic
+			}
+		}
+		prerequisite = {
+			focus = rob_safe_and_sound
+		}
+		mutually_exclusive = {
+			focus = rob_normal_girl
+			focus = rob_good_sense_of_humor
+		}
+		relative_position_id = rob_safe_and_sound
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_best_interest entered"
+			}
+			add_ideas = ROB_best_interest
+			add_equipment_to_stockpile = {
+				type = support_robot_two_legs_equipment_3
+				amount = 200
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = combat_robot_equipment_2
+				amount = 100
+				producer = USA
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_best_interest exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_messing_around
+		icon = GFX_goal_generic_focus_magazine_tesla_robots_rule
+		cost = 30
+		x = 2
+		y = 1
+		prerequisite = {
+			focus = rob_what_is_your_type
+		}
+		relative_position_id = rob_what_is_your_type
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_messing_around entered"
+			}
+			add_political_power = 50
+			set_temp_variable = { caps_to_add = 50 }
+			add_caps = yes
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_messing_around exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_comedy_clubs
+		icon = GFX_goal_generic_focus_magazine_robcofun_wastelad
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = rob_messing_around
+		}
+		relative_position_id = rob_messing_around
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_comedy_clubs entered"
+			}
+			add_ideas = ROB_comedy_clubs
+			524 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_comedy_clubs exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_good_sense_of_humor
+		icon = GFX_goal_generic_focus_magazine_backwood_get_off_my_lawn
+		cost = 30
+		x = -1
+		y = 1
+		available = {
+			OR = {
+				has_completed_focus = rob_robotopia
+				has_completed_focus = rob_republic
+			}
+		}
+		prerequisite = {
+			focus = rob_comedy_clubs
+		}
+		mutually_exclusive = {
+			focus = rob_normal_girl
+			focus = rob_best_interest
+		}
+		relative_position_id = rob_comedy_clubs
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_sense_of_humor entered"
+			}
+			524 = {
+				add_extra_state_shared_building_slots = 3
+				add_resource = {
+					type = energy
+					amount = 12
+				}
+				add_resource = {
+					type = metal
+					amount = 8
+				}
+			}
+			524 = {
+				hidden_effect = {
+					set_temp_variable = { new_node_target = THIS.id }
+					set_temp_variable = { new_node_economic_development = 1 }
+					add_to_temp_array = { new_node_trade_array = 525 }
+					add_to_temp_array = { new_node_trade_array = 430 }
+					add_to_temp_array = { new_node_trade_array = 554 }
+					add_to_temp_array = { new_node_trade_array = 103 }
+					add_to_temp_array = { new_node_trade_array = 921 }
+					set_temp_variable = { set_main_node_flag = 1 }
+					set_temp_variable = { new_node_map_x = 2680 }
+					set_temp_variable = { new_node_map_y = 1042 }
+				}
+				create_map_node = yes
+				#setup_state_524 = yes
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_sense_of_humor exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_bizarre
+		icon = GFX_goal_generic_BOS_focus_surface_outposts
+		cost = 30
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = rob_maxson
+		}
+		relative_position_id = rob_maxson
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_bizarre entered"
+			}
+			add_ideas = bizaare_market
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_bizarre exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_affairs_abound
+		icon = GFX_rob_flag_robotcity
+		cost = 30
+		x = 0
+		y = 4
+		prerequisite = {
+			focus = rob_leftbranch
+		}
+		relative_position_id = rob_leftbranch
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_affairs_abound entered"
+			}
+			add_war_support = 0.10
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_affairs_abound exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_broken_hearts
+		icon = GFX_goal_cph_sledgehammer_raider
+		cost = 30
+		x = -4
+		y = 1
+		prerequisite = {
+			focus = rob_affairs_abound
+		}
+		relative_position_id = rob_affairs_abound
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_broken_hearts entered"
+			}
+			add_political_power = 75
+			add_manpower = 250
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_broken_hearts exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_the_big_sister
+		icon = GFX_partytime
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = rob_broken_hearts
+		}
+		mutually_exclusive = {
+#			focus = rob_breaking_hearts
+			focus = rob_supplying_the_broken_hearts
+		}
+		relative_position_id = rob_broken_hearts
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_the_big_sister entered"
+			}
+			army_experience = 20
+			random_owned_state = {
+				add_resource = {
+					type = metal
+					amount = 3
+				}
+				add_resource = {
+					type = energy
+					amount = 3
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_the_big_sister exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_queen_of_colorado
+		icon = GFX_rob_flag_robotcity
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = rob_the_big_sister
+		}
+		relative_position_id = rob_the_big_sister
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_queen_of_colorado entered"
+			}
+			custom_effect_tooltip = broken_hearts_tt
+			hidden_effect = {
+				593 = {
+					add_core_of = BRT
+					set_state_flag = do_not_exodus
+					add_extra_state_shared_building_slots = 3
+					if = {
+						limit = {
+							is_valid_state_for_arms_factory = yes
+						}
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+							type = arms_factory
+							level = 2
+							instant_build = yes
+						}
+					}
+					if = {
+						limit = {
+							is_valid_state_for_civilian_factory = yes
+						}
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+							type = industrial_complex
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				315 = {
+					add_core_of = BRT
+					set_state_flag = do_not_exodus
+					add_extra_state_shared_building_slots = 3
+				}
+				release = BRT
+				puppet = BRT
+				BRT = {
+					load_oob = BRT_starting
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_queen_of_colorado exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_supplying_the_broken_hearts
+		icon = GFX_rob_taxmen
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = rob_broken_hearts
+		}
+		mutually_exclusive = {
+			focus = rob_the_big_sister
+#			focus = rob_breaking_hearts
+		}
+		relative_position_id = rob_broken_hearts
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_supplying_the_broken_hearts entered"
+			}
+			army_experience = 20
+			random_owned_state = {
+				add_resource = {
+					type = metal
+					amount = 3
+				}
+				add_resource = {
+					type = energy
+					amount = 3
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_supplying_the_broken_hearts exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_crimson_amy
+		icon = GFX_goal_generic_power_armour_raider_overboss
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = rob_supplying_the_broken_hearts
+		}
+		relative_position_id = rob_supplying_the_broken_hearts
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_crimson_amy entered"
+			}
+			every_unit_leader = {
+				add_attack = 1
+				add_defense = 1
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_crimson_amy exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_argoscomehome
+		icon = GFX_rob_argos2
+		cost = 30
+		x = 2
+		y = 1
+		available = {
+			has_completed_focus = rob_scored
+		}
+		prerequisite = {
+			focus = rob_affairs_abound
+		}
+		relative_position_id = rob_affairs_abound
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_argoscomehome entered"
+			}
+			if = {
+				limit = {
+					has_tech = radio_detection
+					NOT = { has_tech = decimetric_radar }
+				}
+				set_technology = { decimetric_radar = 1 }
+			}
+			if = {
+				limit = {
+					NOT = { has_tech = radio_detection }
+				}
+				set_technology = {
+					radio_detection = 1
+					decimetric_radar = 1
+				}
+			}
+			else = {
+				add_stability = 0.10
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_argoscomehome exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_ampthesignal
+		icon = GFX_goal_RRG_radio_broadcast
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = rob_argoscomehome
+		}
+		relative_position_id = rob_argoscomehome
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_ampthesignal entered"
+			}
+			524 = {
+				add_building_construction = {
+					type = radar_station
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_ampthesignal exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_tlaloc
+		icon = GFX_goal_MAX_the_assembly_of_notables
+		cost = 30
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = rob_ampthesignal
+		}
+		relative_position_id = rob_ampthesignal
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_tlaloc entered"
+			}
+			country_event = {
+				id = rob_event.13
+			}
+			hidden_effect = {
+				country_event = {
+					id = rob_event.3001
+					days = 14
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_tlaloc exited"
+			}
+		}
+	}
+#	focus = { Coming in a later patch. If you still don't see this later on, code-monger, you should poke violet in the server!
+#		id = rob_tlaloc_inspo
+#		icon = GFX_goal_MAX_the_assembly_of_notables
+#		cost = 30
+#		x = -1
+#		y = 1
+#		prerequisite = {
+#			focus = rob_tlaloc
+#		}
+#		relative_position_id = rob_tlaloc
+#		completion_reward = {
+#			if = {
+#				limit = { has_global_flag = debug_logs }
+#				log = "[GetDateText]: [Root.GetName] rob_tlaloc entered"
+#			}
+#			country_event = {
+#				id = rob_event.13
+#			}
+#			if = {
+#				limit = { has_global_flag = debug_logs }
+#				log = "[GetDateText]: [Root.GetName] rob_tlaloc exited"
+#			}
+#		}
+#	}
+	focus = {
+		id = rob_bigempty
+		icon = GFX_goal_big_mt_forbidden_zone
+		cost = 30
+		x = 2
+		y = 1
+		available = {
+			date > 2280.1.1
+		}
+		prerequisite = {
+			focus = rob_ampthesignal
+		}
+		relative_position_id = rob_ampthesignal
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_bigempty entered"
+			}
+			country_event = {
+				id = rob_event.12
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_bigempty exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_odysseus
+		icon = GFX_rob_argos3
+		cost = 30
+		x = 0
+		y = 2
+		available = {
+			if = {
+				limit = {
+					TTM = {
+						has_completed_focus = ttm_memory_of_family
+					}
+				}
+				else = {
+					TTM = {
+						exists = no
+					}
+				}
+			}
+		}
+		prerequisite = {
+			focus = rob_ampthesignal
+		}
+		relative_position_id = rob_argoscomehome
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_odysseus entered"
+			}
+			country_event = {
+				id = rob_event.14
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_odysseus exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_maybedianahasapoint
+		icon = GFX_thinkingwithdiana
+		cost = 30
+		x = 4
+		y = 1
+		prerequisite = {
+			focus = rob_scored
+		}
+		relative_position_id = rob_scored
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_maybedianahasapoint entered"
+			}
+			add_stability = 0.10
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_maybedianahasapoint exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_scrappingoldrobots
+		icon = GFX_goal_generic_humanoid_robots
+		cost = 30
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = rob_maybedianahasapoint
+		}
+		relative_position_id = rob_maybedianahasapoint
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_scrappingoldrobots entered"
+			}
+			460 = {
+				add_resource = {
+					type = metal
+					amount = 8
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_scrappingoldrobots exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_integrateoldhardware
+		icon = GFX_goal_ARM_mechanical_computing
+		cost = 30
+		x = 2
+		y = 1
+		prerequisite = {
+			focus = rob_maybedianahasapoint
+		}
+		relative_position_id = rob_maybedianahasapoint
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_integrateoldhardware entered"
+			}
+			460 = {
+				add_resource = {
+					type = advanced
+					amount = 10
+				}
+			}
+			460 = {
+				add_resource = {
+					type = circuitry
+					amount = 10
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_integrateoldhardware exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_mom
+		icon = GFX_goal_TTM_Golden_Fruit
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = rob_maybedianahasapoint
+		}
+		relative_position_id = rob_maybedianahasapoint
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_mom entered"
+			}
+			524 = {
+				add_resource = {
+					type = water
+					amount = 16
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_mom exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_mommasgirl
+		icon = GFX_thinkingwithdiana
+		cost = 30
+		x = -1
+		y = 2
+		available = {
+			is_neighbor_of = TTM
+		}
+		prerequisite = {
+			focus = rob_mom
+		}
+		mutually_exclusive = {
+			focus = rob_independent
+		}
+		relative_position_id = rob_maybedianahasapoint
+		ai_will_do = {
+			base = 100
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_mommasgirl entered"
+			}
+			hidden_effect = {
+				TTM = {
+					puppet = ROB
+				}
+			}
+			custom_effect_tooltip = dokipuppet
+			add_ideas = ROB_dianashadow
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_mommasgirl exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_independent
+		icon = GFX_partytime
+		cost = 30
+		x = 1
+		y = 2
+		prerequisite = {
+			focus = rob_mom
+		}
+		mutually_exclusive = {
+			focus = rob_mommasgirl
+		}
+		relative_position_id = rob_maybedianahasapoint
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_independent entered"
+			}
+			add_ideas = ROB_chaddoki
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_independent exited"
+			}
+		}
+	}
+	focus = {
+		id = rob_sippingfrommartinis
+		icon = GFX_rob_martini
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = rob_independent
+			focus = rob_mommasgirl
+		}
+		relative_position_id = rob_independent
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_sippingfrommartinis entered"
+			}
+			add_political_power = 250
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] rob_sippingfrommartinis exited"
+			}
+		}
+	}
+}

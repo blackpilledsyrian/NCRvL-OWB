@@ -1,0 +1,138 @@
+﻿capital = 51
+oob = "TIM_2275"
+
+set_technology = {
+	basic_supply_transport_tech = 1
+	infantry_tech_level_tribal = 1
+	infantry_tech_level_settler = 1
+	#infantry_tech_level_scientific = 1
+	support_tech_level_tribal = 1
+	support_tech_level_settler = 1
+	#support_tech_level_scientific = 1
+	special_forces_tech_level_tribal = 1
+	special_forces_tech_level_settler = 1
+	special_forces_tech_level_scientific = 1
+	#power_armour_tech_level_settler = 1
+	#power_armour_tech_level_scientific = 1
+	vehicles_tech_level_tribal = 1
+	#vehicles_tech_level_settler = 1
+	#vehicles_tech_level_scientific = 1
+	robotics_tech_level_tribal = 1
+	#robotics_tech_level_settler = 1
+	#robotics_tech_level_scientific = 1
+	air_tech_level_tribal = 1
+	air_tech_level_settler = 1
+	#air_tech_level_scientific = 1
+	naval_tech_level_tribal = 1
+	naval_tech_level_settler = 1
+	#naval_tech_level_scientific = 1
+	tools_tech_level_tribal = 1
+	tools_tech_level_settler = 1
+	tools_tech_level_scientific = 1
+	habitation_tech_level_tribal = 1
+	habitation_tech_level_settler = 1
+	habitation_tech_level_scientific = 1
+	exploitation_tech_level_tribal = 1
+	exploitation_tech_level_settler = 1
+	exploitation_tech_level_scientific = 1
+	electronics_tech_level_tribal = 1
+	electronics_tech_level_settler = 1
+	#electronics_tech_level_scientific = 1
+	tool_engineering = 1
+	standard_weaponry_tech = 1
+	melee_weaponry_tech_1 = 1
+	melee_weaponry_tech_2 = 1
+	melee_weaponry_tech_3 = 1
+	support_weaponry = 1
+	demolitions_weaponry_tech = 1
+	fireteam_weaponry_tech = 1
+	recon_company_tech_1 = 1
+	spec_ops_equipment_tech_1 = 1
+	spec_ops_equipment_tech_2 = 1
+	terror_tactics = 1
+	super_mutant_behemoth = 1
+}
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		nautics_tech_1 = 1
+		light_navy_hull_tech_1 = 1
+		naval_invasion_tech_1 = 1
+	}
+}
+if = {
+	limit = {
+		NOT = { has_dlc = "Man the Guns" }
+	}
+	set_technology = {
+		nautics_tech_non_mtg_1 = 1
+		light_navy_hull_tech_non_mtg_1 = 1
+		naval_invasion_tech_non_mtg_1 = 1
+	}
+}
+
+recruit_character = TIM_bear_bunyan
+
+add_to_tech_sharing_group = timberline_research_pact
+
+set_truce = {
+	target = WBH
+	days = 1825
+}
+add_manpower = 1000
+set_stability = 0.65
+set_war_support = 0.15
+set_research_slots = 4
+set_country_flag = is_settler_nation
+set_country_flag = is_oregon_nation
+set_country_flag = grand_doctrine_ai
+set_country_flag = grand_infantry_doctrine_ai
+set_politics = {
+	ruling_party = people
+	elections_allowed = no
+}
+221 = { add_claim_by = TIM }
+351 = { add_claim_by = TIM }
+274 = { add_claim_by = TIM }
+7 = { add_claim_by = TIM }
+192 = { add_claim_by = TIM }
+23 = { add_claim_by = TIM }
+37 = { add_claim_by = TIM }
+186 = { add_claim_by = TIM }
+493 = { add_claim_by = TIM }
+449 = { add_claim_by = TIM }
+450 = { add_claim_by = TIM }
+506 = { add_claim_by = TIM }
+437 = { add_claim_by = TIM }
+166 = { add_claim_by = TIM }
+235 = { add_claim_by = TIM }
+268 = { add_claim_by = TIM }
+113 = { add_claim_by = TIM }
+231 = { add_claim_by = TIM }
+358 = { add_claim_by = TIM }
+451 = { add_claim_by = TIM }
+86 = { add_claim_by = TIM }
+150 = { add_claim_by = TIM }
+600 = { add_claim_by = TIM }
+29 = { add_claim_by = TIM }
+949 = { add_claim_by = TIM }
+71 = { add_claim_by = TIM }
+155 = { add_claim_by = TIM }
+323 = { add_claim_by = TIM }
+298 = { add_claim_by = TIM }
+343 = { add_claim_by = TIM }
+
+add_ideas = {
+	TIM_scouting_heritage
+	TIM_leave_no_trace
+}
+
+set_popularities = {
+	people = 100
+	elites = 0
+	intellectuals = 0
+	ruler = 0
+}

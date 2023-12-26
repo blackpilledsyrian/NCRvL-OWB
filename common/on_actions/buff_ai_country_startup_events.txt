@@ -1,0 +1,12 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			every_country = {
+				add_manpower = 500
+				army_experience = 50
+				air_experience = 50
+				navy_experience = 50
+			}
+		}
+	}
+}

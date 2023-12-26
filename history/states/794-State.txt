@@ -1,0 +1,25 @@
+state = {
+	id = 794
+	name = "STATE_794"
+
+	history={
+		owner = TAA
+		add_core_of = TAA
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+
+		}
+		victory_points = {
+			9680 10
+		}
+
+	}
+
+	provinces={
+		9661 9666 9668 9669 9674 9675 9680 9681 9682 9687 9692 9693
+	}
+	manpower=19000
+	buildings_max_level_factor=1.000
+	state_category=shanty
+}

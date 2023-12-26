@@ -1,0 +1,51 @@
+LAC_STRIKE_NORTH = {
+	name = "The Butcher"
+	desc = "Lanius will head north for Colorado, then return home to Caesar"
+
+	enable = {
+		original_tag = LAC
+		LAC_has_ai_behavior_default  = yes
+	}
+	abort = {}
+
+	ai_national_focuses = {	# NOTE: Please don't change early war order without altering the sequence of the early New Mexico wargoal ai strategies for Lanius @Tran
+		lac_the_cohorts_legate
+		lac_the_legates_cohort
+		lac_conquering_lambda
+		ces_earth_defense_force
+		lac_march_on_mescalero
+		ces_earth_defense_force2
+		lac_attack_the_archdiocese
+		lac_march_on_mescalero2
+		lac_fate_ofarchdiochese
+		lac_winter_is_coming
+		lac_winter_is_coming2
+		ces_executives
+		lac_conquest_of_new_mexico
+		lac_pushing_for_colorado
+		lac_block_out_sun
+		lac_bsu
+		lac_maxson_must_die
+		lac_towards_denver
+		lac_hire_iron_alliance
+		lac_building_up_for_hangdogs
+		lac_hang_the_dogs
+		lac_brought_to_heel
+		lac_the_march_west
+	}
+
+	ai_strategy = {
+		type = force_build_armies
+		value = 30
+	}
+	ai_strategy = {
+		type = build_army
+		id = infantry
+		value = 5
+	}
+	ai_strategy = {
+		type = build_army
+		id = chariot
+		value = 5
+	}
+}

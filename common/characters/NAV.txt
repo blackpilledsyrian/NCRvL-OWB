@@ -1,0 +1,228 @@
+characters = {
+	NAV_chief_hashkeh_naabaah = {
+		name = NAV_HASHKEH_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NAV_hashkesh
+				small = GFX_idea_hashkeh_chief_of_army
+			}
+			army = {
+				large = GFX_Portrait_NAV_hashkesh
+				small = GFX_idea_hashkeh_chief_of_army
+			}
+		}
+		country_leader = {
+			desc = NAV_HASHKEH_DESC
+			ideology = chieftain
+			traits = {
+				expert_negotiator
+			}
+			expire = "3000.01.01.01"
+			id = -1
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = NAV_hashkeh_chief_of_army
+			ledger = army
+			allowed = {
+				original_tag = NAV
+			}
+			traits = {
+				hashkeh_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		corps_commander = {
+			traits = {
+				enduring_trait
+				charismatic_trait
+				desert_fox
+				hill_fighter
+			}
+			skill = 5
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}
+	NAV_niyol_tsinajinnie = {
+		name = NAV_NIYOL_TSINAJINNIE_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Tribal_Generic_15
+			}
+		}
+		country_leader = {
+			desc = NAV_NIYOL_TSINAJINNIE_DESC
+			ideology = town_hall_democracy
+			expire = "2287.1.1.12"
+			id = -1
+		}
+	}
+	NAV_dighin_sani = {
+		name = NAV_DIGHIN_SANI_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Tribal_Generic_13
+			}
+		}
+		country_leader = {
+			desc = NAV_DIGHIN_SANI_DESC
+			ideology = technocracy
+			traits = {
+				war_industrialist
+				armaments_organizer
+			}
+			expire = "2285.1.1.12"
+			id = -1
+		}
+	}
+	NAV_chester_sani = {
+		name = NAV_CHESTER_SANI_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Tribal_Generic_10
+			}
+		}
+		country_leader = {
+			desc = NAV_CHESTER_SANI_DESC
+			ideology = militarist_oligarchy
+			traits = {
+				political_workhorse
+				fortifications_expert
+			}
+			expire = "2283.1.1.12"
+			id = -1
+		}
+	}
+	NAV_sicheii = {
+		name = NAV_sicheii
+		portraits = {
+			army = {
+				small = GFX_idea_sicheii_chief_of_army
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = NAV_sicheii_chief_of_army
+			ledger = army
+			allowed = {
+				original_tag = NAV
+			}
+			traits = {
+				sicheii_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	NAV_tsela = {
+		name = NAV_tsela
+		portraits = {
+			army = {
+				small = GFX_idea_tsela_high_command
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = NAV_tsela_high_command
+			ledger = army
+			allowed = {
+				original_tag = NAV
+			}
+			traits = {
+				tsela_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	NAV_bidziil = {
+		name = NAV_bidziil
+		portraits = {
+			army = {
+				small = GFX_idea_bidziil_high_command
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = NAV_bidziil_high_command
+			ledger = army
+			allowed = {
+				original_tag = NAV
+			}
+			traits = {
+				bidziil_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	NAV_hokee = {
+		name = NAV_hokee
+		portraits = {
+			army = {
+				small = GFX_idea_hokee_high_command
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = NAV_hokee_high_command
+			ledger = army
+			allowed = {
+				original_tag = NAV
+			}
+			traits = {
+				hokee_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	NAV_sialea_lea = {
+		name = NAV_sialea_lea
+		portraits = {
+			army = {
+				small = GFX_idea_sialea_lea_high_command
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = NAV_sialea_lea_high_command
+			ledger = army
+			allowed = {
+				original_tag = NAV
+			}
+			traits = {
+				sialea_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	NAV_free_man = {
+		name = NAV_free_man_name
+		portraits = {
+			army = {
+				large = GFX_Portrait_LAM_free_man
+			}
+			civilian = {
+				large = GFX_Portrait_LAM_free_man
+			}
+		}
+	}
+}

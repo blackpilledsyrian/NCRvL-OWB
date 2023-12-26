@@ -1,0 +1,32 @@
+
+state={
+	id=1143
+	name="STATE_1143"
+	resources={
+		water=8.000
+		energy=8.000
+		metal=8.000
+	}
+
+	history={
+		victory_points = {
+			14119 5
+		}
+		victory_points = {
+			14078 1
+		}
+		buildings = {
+			infrastructure = 1
+
+		}
+
+	}
+
+	provinces={
+		14119 14121 14135 14145
+	}
+	manpower=313
+	buildings_max_level_factor=1.000
+	state_category=shanty
+	local_supplies=0.000
+}

@@ -1,0 +1,533 @@
+﻿division_template = {
+	name = "Tribal Militia"
+	priority = 0
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Legionary"
+	template_counter = 117
+	division_names_group = _CES_INF_01
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+	}
+	support = {
+		medical_chem_company = { x = 0 y = 0 }
+		dog_company = { x = 1 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Frumentarii"
+	template_counter = 80
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+	support = {
+		recon_company = { x = 0 y = 0 }
+		demolitions_support = { x = 1 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Praetorian Guard"
+	regiments = {
+		spec_ops = { x = 0 y = 0 }
+		spec_ops = { x = 0 y = 1 }
+		spec_ops = { x = 1 y = 0 }
+		spec_ops = { x = 1 y = 1 }
+		spec_ops = { x = 2 y = 0 }
+	}
+	support = {
+		medical_chem_company = { x = 0 y = 0 }
+		recon_company = { x = 1 y = 0 }
+		dog_company = { x = 2 y = 0 }
+		demolitions_support = { x = 3 y = 0 }
+	}
+}
+
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = melee_equipment_2
+			creator = "CES"
+		}
+		requested_factories = 10
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_1
+			creator = "CES"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = spec_ops_equipment_1
+			creator = "CES"
+		}
+		requested_factories = 5
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "CES"
+		}
+		requested_factories = 2
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = demolitions_equipment_1
+			creator = "CES"
+		}
+		requested_factories = 2
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = dogs_equipment_1
+			creator = "CES"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = bike_equipment_1
+			creator = "CES"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = supply_equipment_1
+			creator = "CES"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+}
+
+
+units = {
+
+	division = {
+		name = "1st Praetorian Guard"
+		location = 8951
+		division_template = "Praetorian Guard"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+		force_equipment_variants = {
+            melee_equipment_3 = { owner = "USA" }
+            dogs_equipment_2 = { owner = "USA" }
+            spec_ops_equipment_2 = { owner = "USA" }
+            explosive_demolitions_equipment_2 = { owner = "USA" }
+        }
+	}
+
+	division = {
+		name = "2nd Praetorian Guard"
+		location = 8959
+		division_template = "Praetorian Guard"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+		force_equipment_variants = {
+            melee_equipment_3 = { owner = "USA" }
+            dogs_equipment_2 = { owner = "USA" }
+            spec_ops_equipment_2 = { owner = "USA" }
+            explosive_demolitions_equipment_2 = { owner = "USA" }
+        }
+	}
+
+	division = {
+		name = "3rd Praetorian Guard"
+		location = 8956
+		division_template = "Praetorian Guard"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+		force_equipment_variants = {
+            melee_equipment_3 = { owner = "USA" }
+            dogs_equipment_2 = { owner = "USA" }
+            spec_ops_equipment_2 = { owner = "USA" }
+            explosive_demolitions_equipment_2 = { owner = "USA" }
+        }
+	}
+
+	division = {
+		name = "4th Praetorian Guard"
+		location = 8957
+		division_template = "Praetorian Guard"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+		force_equipment_variants = {
+            melee_equipment_3 = { owner = "USA" }
+            dogs_equipment_2 = { owner = "USA" }
+            spec_ops_equipment_2 = { owner = "USA" }
+            explosive_demolitions_equipment_2 = { owner = "USA" }
+        }
+	}
+
+	division = {
+		name = "5th Praetorian Guard"
+		location = 8954
+		division_template = "Praetorian Guard"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+		force_equipment_variants = {
+            melee_equipment_3 = { owner = "USA" }
+            dogs_equipment_2 = { owner = "USA" }
+            spec_ops_equipment_2 = { owner = "USA" }
+            explosive_demolitions_equipment_2 = { owner = "USA" }
+        }
+	}
+
+	division = {
+		name = "6th Praetorian Guard"
+		location = 8960
+		division_template = "Praetorian Guard"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+		force_equipment_variants = {
+            melee_equipment_3 = { owner = "USA" }
+            dogs_equipment_2 = { owner = "USA" }
+            spec_ops_equipment_2 = { owner = "USA" }
+            explosive_demolitions_equipment_2 = { owner = "USA" }
+        }
+	}
+
+	division = {
+		name = "7th Praetorian Guard"
+		location = 8958
+		division_template = "Praetorian Guard"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+		force_equipment_variants = {
+            melee_equipment_3 = { owner = "USA" }
+            dogs_equipment_2 = { owner = "USA" }
+            spec_ops_equipment_2 = { owner = "USA" }
+            explosive_demolitions_equipment_2 = { owner = "USA" }
+        }
+	}
+
+	division = {
+		name = "8th Praetorian Guard"
+		location = 8952
+		division_template = "Praetorian Guard"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+		force_equipment_variants = {
+            melee_equipment_3 = { owner = "USA" }
+            dogs_equipment_2 = { owner = "USA" }
+            spec_ops_equipment_2 = { owner = "USA" }
+            explosive_demolitions_equipment_2 = { owner = "USA" }
+        }
+	}
+
+	division = {
+		name = "9th Praetorian Guard"
+		location = 1623
+		division_template = "Praetorian Guard"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+		force_equipment_variants = {
+            melee_equipment_3 = { owner = "USA" }
+            dogs_equipment_2 = { owner = "USA" }
+            spec_ops_equipment_2 = { owner = "USA" }
+            explosive_demolitions_equipment_2 = { owner = "USA" }
+        }
+	}
+
+	division = {
+		name = "1st Frumentarii"
+		location = 5639
+		division_template = "Frumentarii"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "2nd Frumentarii"
+		location = 2904
+		division_template = "Frumentarii"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "3rd Frumentarii"
+		location = 920
+		division_template = "Frumentarii"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "1st Legion"
+		location = 7911
+		division_template = "Legionary"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "2nd Legion"
+		location = 8946
+		division_template = "Legionary"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "3rd Legion"
+		location = 2898
+		division_template = "Legionary"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "4th Legion"
+		location = 5157
+		division_template = "Legionary"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "5th Legion"
+		location = 7962
+		division_template = "Legionary"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "6th Legion"
+		location = 2904
+		division_template = "Legionary"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "7th Legion"
+		location = 8933
+		division_template = "Legionary"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "8th Legion"
+		location = 1871
+		division_template = "Legionary"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "9th Legion"
+		location = 7949
+		division_template = "Legionary"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "10th Legion"
+		location = 5638
+		division_template = "Legionary"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "11th Legion"
+		location = 5639
+		division_template = "Legionary"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "12th Legion"
+		location = 5146
+		division_template = "Legionary"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "13th Legion"
+		location = 5153
+		division_template = "Legionary"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "14th Legion"
+		location = 1679
+		division_template = "Legionary"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "15th Legion"
+		location = 8963
+		division_template = "Legionary"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "16th Legion"
+		location = 5417
+		division_template = "Legionary"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "17th Legion"
+		location = 8121
+		division_template = "Legionary"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "18th Legion"
+		location = 7932
+		division_template = "Legionary"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "19th Legion"
+		location = 5235
+		division_template = "Legionary"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "20th Legion"
+		location = 7945
+		division_template = "Legionary"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "21st Legion"
+		location = 8079
+		division_template = "Legionary"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "23rd Legion"
+		location = 6578
+		division_template = "Legionary"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "24th Legion"
+		location = 1874
+		division_template = "Legionary"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "25th Legion"
+		location = 3157
+		division_template = "Legionary"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "26th Legion"
+		location = 947
+		division_template = "Legionary"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "27th Legion"
+		location = 3220
+		division_template = "Legionary"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "28th Legion"
+		location = 2334
+		division_template = "Legionary"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "29th Legion"
+		location = 8103
+		division_template = "Legionary"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "30th Legion"
+		location = 8048
+		division_template = "Legionary"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "31st Legion"
+		location = 7907
+		division_template = "Legionary"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+}

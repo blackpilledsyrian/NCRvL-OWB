@@ -1,0 +1,23 @@
+state={
+	id=960
+	name="STATE_960"
+	resources = {
+		water = 1
+		metal = 3
+	}
+	history={
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+		}
+		victory_points = {
+			1386 5
+		}
+	}
+	provinces={
+		1741 7521 4072 1386 4563 4069 4564 4515 4236 4235 4230 1742 4488
+	}
+	manpower=6491
+	buildings_max_level_factor=1.000
+	state_category=town
+}

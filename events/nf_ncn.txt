@@ -1,0 +1,1928 @@
+﻿add_namespace = nf_ncn
+
+## Opening Events ##
+
+country_event = { #The First Judge Samson
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.1" }
+	id = nf_ncn.1
+	title = nf_ncn.1.t
+	desc = nf_ncn.1.d
+	picture = GFX_event_NCN_new_canaan
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_ncn.1.a
+		ai_chance = {
+			base = 1
+		}
+		random_owned_state = {
+			add_building_construction = {
+				type = bunker2
+				level = 2
+				instant_build = yes
+				province = 6306
+			}
+			add_resource = {
+				type = circuitry
+				amount = 4
+			}
+			add_resource = {
+				type = advanced
+				amount = 4
+			}
+		}
+	}
+	option = {
+		name = nf_ncn.1.b
+		ai_chance = {
+			base = 2
+		}
+		add_manpower = -100
+		random_owned_state = {
+			add_resource = {
+				type = metal
+				amount = 8
+			}
+			add_resource = {
+				type = energy
+				amount = 6
+			}
+		}
+	}
+}
+
+country_event = { #The Second Judge Ehud
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.2" }
+	id = nf_ncn.2
+	title = nf_ncn.2.t
+	desc = nf_ncn.2.d
+	picture = GFX_event_NCN_new_canaan
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_ncn.2.a
+		ai_chance = {
+			base = 3
+		}
+		457 = {
+			if = {
+				limit = {
+					is_valid_state_for_arms_factory = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	option = {
+		name = nf_ncn.2.b
+		ai_chance = {
+			base = 1
+		}
+		add_war_support = 0.075
+		army_experience = 10
+	}
+}
+
+country_event = { #The Third Judge Gideon
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.3" }
+	id = nf_ncn.3
+	title = nf_ncn.3.t
+	desc = nf_ncn.3.d
+	picture = GFX_event_BOS_super_mutant
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_ncn.3.a
+		ai_chance = {
+			base = 4
+		}
+		add_ideas = mutant_law_both
+		add_political_power = 75
+	}
+	option = {
+		name = nf_ncn.3.b
+		ai_chance = {
+			base = 1
+		}
+		add_war_support = 0.05
+		army_experience = 20
+	}
+}
+
+country_event = { #The Fourth Judge Deborah
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.4" }
+	id = nf_ncn.4
+	title = nf_ncn.4.t
+	desc = nf_ncn.4.d
+	picture = GFX_event_NCN_new_canaan
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_ncn.4.a
+		ai_chance = {
+			base = 1
+		}
+		add_political_power = 150
+	}
+	option = {
+		name = nf_ncn.4.b
+		ai_chance = {
+			base = 3
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_template = "Disciples of God"
+				}
+			}
+			division_template = {
+				name = "Disciples of God"
+				regiments = {
+					spec_ops = { x = 0 y = 0 }
+					spec_ops = { x = 0 y = 1 }
+					spec_ops = { x = 1 y = 0 }
+					spec_ops = { x = 1 y = 1 }
+					spec_ops = { x = 2 y = 0 }
+				}
+				support = {
+					motorized_recon_company = { x = 0 y = 0 }
+					motorized_medical_chem_company = { x = 0 y = 1 }
+				}
+				priority = 2
+			}
+		}
+		551 = {
+			create_unit = {
+				division = "name = \"Deborah's Own\" division_template = \"Disciples of God\" start_experience_factor = 0.75 start_equipment_factor = 1.0"
+				owner = NCN
+			}
+		}
+		add_war_support = 0.05
+	}
+}
+
+country_event = { # Tribals at the Gates
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.5" }
+	id = nf_ncn.5
+	title = nf_ncn.5.t
+	desc = nf_ncn.5.d
+	picture = GFX_event_fall_new_canaan
+
+	fire_only_once = yes
+	trigger = {
+		tag = NCN
+		any_neighbor_country = {
+			OR = {
+				tag = WHT
+				is_subject_of = WHT
+			}
+		}
+	}
+	mean_time_to_happen = {
+		days = 4
+	}
+
+	option = { # Something is up now...
+		name = nf_ncn.5.a
+		complete_national_focus = NCN_tribals_at_the_door
+		add_to_variable = {
+			var = ncn_threat
+			value = 10
+		}
+		update_ncn_threat = yes
+		custom_effect_tooltip = ncn_gain_10_threat
+	}
+}
+
+country_event = { # The War for Heaven
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.6" }
+	id = nf_ncn.6
+	title = nf_ncn.6.t
+	desc = nf_ncn.6.d
+	picture = GFX_event_zion
+
+	fire_only_once = yes
+	trigger = {
+		tag = NCN
+		has_war_with = WHT
+	}
+	mean_time_to_happen = {
+		days = 4
+	}
+
+	option = { # Scripted Loc!
+		name = nf_ncn.6.a
+		complete_national_focus = NCN_war_for_heaven
+	}
+}
+
+country_event = { # Day of Judgement / Canaan in Flames
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.7" }
+	id = nf_ncn.7
+	title = nf_ncn.7.t
+	desc = nf_ncn.7.d
+	picture = GFX_event_fall_new_canaan
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { has_global_flag = ncn_canaan_in_flames }
+				}
+				news_event = nf_ncn.70
+				set_global_flag = ncn_canaan_in_flames
+				NCN = {
+					transfer_state = 224
+					add_state_core = 224
+					every_state = {
+						limit = {
+							is_owned_by = NCN
+							NOT = { state = 224 }
+						}
+						WHT = { transfer_state = PREV }
+					}
+					every_country = {
+						limit = {
+							is_subject_of = NCN
+						}
+						NCN = { end_puppet = PREV }
+					}
+					every_other_country = {
+						limit = {
+							is_in_faction_with = NCN
+						}
+						leave_mormon_alliance = yes
+					}
+					every_other_country = {
+						limit = {
+							is_guaranteed_by = NCN
+						}
+						NCN = {
+							diplomatic_relation = {
+								country = PREV
+								relation = guarantee
+								active = no
+							}
+						}
+					}
+					every_country = {
+						limit = {
+							has_war_with = NCN
+						}
+						white_peace = NCN
+					}
+					set_truce = {
+						target = WHT
+						days = 500
+					}
+					WHT = {
+						set_truce = {
+							target = PREV
+							days = 500
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						OR = {
+							tag = SOR
+							tag = DEA
+							tag = NCN
+						}
+					}
+					set_truce = {
+						target = WHT
+						days = 500
+					}
+					WHT = {
+						set_truce = {
+							target = PREV
+							days = 500
+						}
+					}
+				}
+				SOR = { add_ideas = ncn_idea_mormon_mission }
+				DEA = { add_ideas = ncn_idea_mormon_mission }
+			}
+		}
+	}
+
+	option = { # NCN / Our home is in flames. Our people, dead. We must flee.
+		name = nf_ncn.7.a
+		ai_chance = {
+			base = 1
+		}
+		trigger = {
+			tag = NCN
+		}
+		set_cosmetic_tag = NCN_exile
+		complete_national_focus = NCN_canaan_in_flames
+		add_ideas = {
+			ncn_idea_holy_flames_quenched
+			ncn_idea_destroyed_economy
+			ncn_idea_theological_confusion
+		}
+		country_event = { id = nf_ncn.12 days = 7 random = 2 }
+		remove_dynamic_modifier = {
+			modifier = ncn_decadence_dynamic_modifier
+		}
+		remove_dynamic_modifier = {
+			modifier = ncn_threat_dynamic_modifier
+		}
+	}
+}
+
+news_event = {
+	id = nf_ncn.70
+	title = nf_ncn.7.t
+	desc = nf_ncn.7.d
+	picture = GFX_event_fall_new_canaan
+	is_triggered_only = yes
+	major = yes
+
+	option = { # NCN / Our home is in flames. Our people, dead. We must flee.
+		name = nf_ncn.7.a
+		ai_chance = {
+			base = 1
+		}
+		trigger = {
+			tag = NCN
+		}
+	}
+
+	option = { # WHT / Not even their 'God' could save them!
+		name = nf_ncn.7.b
+		ai_chance = {
+			base = 1
+		}
+		trigger = {
+			tag = WHT
+		}
+	}
+
+	option = { # A new power emerges in Utah
+		name = nf_ncn.7.c
+		ai_chance = {
+			base = 1
+		}
+		trigger = {
+			NOT = { tag = WHT }
+			NOT = { tag = NCN }
+		}
+		if = {
+			limit = {
+				tag = CES
+				NOT = { has_country_flag = CES_burned_man }
+				NOT = { has_idea = legion_nf_burned_man_rumours }
+				NOT = {
+					has_country_leader = {
+						character = CES_malpais
+					}
+				}
+			}
+			country_event = { id = nf_ncn.14 days = 2 }
+		}
+	}
+}
+
+country_event = { # Day of Judgement / Capture of Lincon
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.8" }
+	id = nf_ncn.8
+	title = nf_ncn.8.t
+	desc = nf_ncn.8.d
+	picture = GFX_event_CES_whitelegs
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { # NCN / The heathens have been defeated.
+		name = nf_ncn.8.a
+		ai_chance = {
+			base = 1
+		}
+		trigger = {
+			tag = NCN
+		}
+		complete_national_focus = NCN_canaan_in_glory
+		if = {
+			limit = {
+				NOT = { has_global_flag = NCN_alternate_route }
+			}
+			annex_country = {
+				target = WHT
+			}
+		}
+		add_ideas = {
+			ncn_idea_rampant_corruption
+			ncn_idea_warmongering_disposition
+			ncn_idea_disrupted_economy
+		}
+		country_event = { id = nf_ncn.13 days = 7 random = 2 }
+		remove_dynamic_modifier = {
+			modifier = ncn_threat_dynamic_modifier
+		}
+	}
+}
+
+news_event = {
+	id = nf_ncn.80
+	title = nf_ncn.8.t
+	desc = nf_ncn.8.d
+	picture = GFX_event_CES_whitelegs
+	is_triggered_only = yes
+	major = yes
+
+	option = { # NCN / The heathens have been defeated.
+		name = nf_ncn.8.a
+		ai_chance = {
+			base = 1
+		}
+		trigger = {
+			tag = NCN
+		}
+	}
+
+	option = { # WHT / We cannot fight on...
+		name = nf_ncn.8.b
+		ai_chance = {
+			base = 1
+		}
+		trigger = {
+			tag = WHT
+		}
+		effect_tooltip = {
+			NCN = {
+				annex_country = {
+					target = WHT
+				}
+			}
+		}
+	}
+
+	option = { # A new power emerges in Utah
+		name = nf_ncn.8.c
+		ai_chance = {
+			base = 1
+		}
+		trigger = {
+			NOT = { tag = WHT }
+			NOT = { tag = NCN }
+		}
+	}
+}
+
+country_event = { # The Soft Hands of the Holy
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.9" }
+	id = nf_ncn.9
+	title = nf_ncn.9.t
+	desc = nf_ncn.9.d
+	picture = GFX_event_zion
+
+	is_triggered_only = yes
+
+	option = { # So be it, Lord
+		name = nf_ncn.9.a
+	}
+}
+
+country_event = { # Decadence and Riches
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.10" }
+	id = nf_ncn.10
+	title = nf_ncn.10.t
+	desc = nf_ncn.10.d
+	picture = GFX_event_gold
+
+	is_triggered_only = yes
+
+	option = { # Our new lands will make us rich indeed
+		name = nf_ncn.10.a
+	}
+}
+
+country_event = { # The Burned Man Walks
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.11" }
+	id = nf_ncn.11
+	title = nf_ncn.11.t
+	desc = nf_ncn.11.d
+	picture = GFX_event_joshua_graham
+
+	is_triggered_only = yes
+
+	option = { # The White Legs shall know their place before the Lord
+		name = nf_ncn.11.a
+	}
+}
+
+country_event = { # A New Leader in Exile
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.12" }
+	id = nf_ncn.12
+	title = nf_ncn.12.t
+	desc = nf_ncn.12.d
+	picture = GFX_event_joshua_graham
+
+	is_triggered_only = yes
+
+	option = { # The Burned Man is our new hope
+		name = nf_ncn.12.a
+		ai_chance = {
+			base = 2
+			modifier = {
+				factor = 0
+				NCN_has_ai_behavior_daniel = yes
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_government = people }
+			}
+			set_politics = {
+				ruling_party = people
+			}
+		}
+		promote_character = NCN_joshua_graham
+	}
+
+	option = { # Daniel's soft touch is the way forwards
+		name = nf_ncn.12.b
+		ai_chance = {
+			base = 3
+			modifier = {
+				factor = 0
+				NCN_has_ai_behavior_joshua = yes
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_government = people }
+			}
+			set_politics = {
+				ruling_party = people
+			}
+		}
+		promote_character = NCN_daniel
+	}
+}
+
+country_event = { # The Church Has Grown Stale
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.13" }
+	id = nf_ncn.13
+	title = nf_ncn.13.t
+	desc = nf_ncn.13.d
+	picture = GFX_event_NCN_new_canaan
+
+	is_triggered_only = yes
+
+	option = { # Jeremiah saw off the White Legs, so he is fit to lead
+		name = nf_ncn.13.a
+		ai_chance = {
+			base = 2
+			modifier = {
+				factor = 0
+				NCN_has_ai_behavior_daniel = yes
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_government = people }
+			}
+			set_politics = {
+				ruling_party = people
+			}
+		}
+		add_popularity = {
+			ideology = elites
+			popularity = 0.2
+		}
+	}
+
+	option = { # Daniel's soft touch is the way forwards
+		name = nf_ncn.12.b
+		ai_chance = {
+			base = 3
+			modifier = {
+				factor = 0
+				NCN_has_ai_behavior_jeremiah = yes
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_government = people }
+			}
+			set_politics = {
+				ruling_party = people
+			}
+		}
+		promote_character = NCN_daniel
+	}
+}
+
+country_event = { # The Malpais Legate Speaks Out
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.14" }
+	id = nf_ncn.14
+	title = nf_ncn.14.t
+	desc = nf_ncn.14.d
+	picture = GFX_event_CES_burning
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			DEA = { country_event = { id = nf_utah.189 days = 2 } }
+			NCN = { country_event = { id = nf_ncn.15 days = 2 } }
+		}
+	}
+
+	option = { # He dares question Caesar?
+		name = nf_ncn.14.a
+		retire_character = CES_malpais
+		set_country_flag = CES_burned_man
+
+		effect_tooltip = { DEA = { country_event = nf_utah.189 } }
+		effect_tooltip = { NCN = { country_event = nf_ncn.15 } }
+	}
+}
+
+country_event = { # The Prodigal Son Returns
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.15" }
+	id = nf_ncn.15
+	title = nf_ncn.15.t
+	desc = nf_ncn.15.d
+	picture = GFX_event_joshua_graham
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = nf_ncn.15.a
+		set_global_flag = prodigal_son_returns
+		add_corps_commander_role = {
+			character = NCN_joshua_graham
+			traits = {
+				agile_trait
+				enduring_trait
+				gunslinger_trait
+				desert_fox
+				desert_fox_II
+			}
+			skill = 5
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 3
+			legacy_id = -1
+		}
+	}
+}
+
+country_event = { # Get with the Program, Old Man!
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.16" }
+	id = nf_ncn.16
+	title = nf_ncn.16.t
+	desc = nf_ncn.16.d
+	picture = GFX_event_zion
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			random_list = {
+				50 = {
+					set_country_flag = ncn_army_revolts
+				}
+				50 = {
+					set_country_flag = ncn_clergy_revolts
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nf_ncn.16.a
+		if = {
+			limit = {
+				has_country_flag = ncn_army_revolts
+			}
+			custom_effect_tooltip = ncn_army_revolts_tt
+			if = {
+				limit = {
+					has_country_flag = ncn_army_loyal
+				}
+				custom_effect_tooltip = ncn_army_loyal_pays_off_tt
+				start_civil_war = {
+					ideology = elites
+					size = 0.4
+					states_filter = {
+						NOT = {
+							state = 551
+							any_neighbor_state = {
+								state = 551
+							}
+						}
+					}
+					keep_unit_leaders = {
+						4000
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = { has_country_flag = ncn_army_loyal }
+				}
+				start_civil_war = {
+					ideology = elites
+					size = 0.5
+					states_filter = {
+						NOT = {
+							state = 551
+							any_neighbor_state = {
+								state = 551
+							}
+						}
+					}
+					keep_unit_leaders = {
+						4000
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = ncn_clergy_revolts
+			}
+			custom_effect_tooltip = ncn_clergy_revolts_tt
+			if = {
+				limit = {
+					has_country_flag = ncn_clergy_loyal
+				}
+				custom_effect_tooltip = ncn_clergy_loyal_pays_off_tt
+				start_civil_war = {
+					ideology = elites
+					size = 0.35
+					keep_unit_leaders = {
+						4000
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = { has_country_flag = ncn_clergy_loyal }
+				}
+				start_civil_war = {
+					ideology = elites
+					size = 0.45
+					keep_unit_leaders = {
+						4000
+					}
+				}
+			}
+			random_country = {
+				limit = {
+					original_tag = NCN
+					NOT = { tag = NCN }
+				}
+				create_new_owb_country = yes
+			}
+		}
+		every_country = {
+			limit = {
+				is_subject_of = NCN
+			}
+			country_event = nf_ncn.17
+		}
+		hidden_effect = {
+			news_event = nf_ncn.160
+		}
+	}
+}
+
+news_event = { # Daniel's New Ninety-Five Thesis
+	id = nf_ncn.160
+	title = nf_ncn.160.t
+	desc = nf_ncn.160.d
+	is_triggered_only = yes
+	picture = GFX_event_NCN_new_canaan
+
+	option = {
+		name = nf_ncn.160.a
+	}
+}
+
+country_event = { # A Schism in the Church
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.17" }
+	id = nf_ncn.17
+	title = nf_ncn.17.t
+	desc = nf_ncn.17.d
+
+	is_triggered_only = yes
+
+	option = { # Stay loyal to the new church!
+		name = nf_ncn.17.a
+		ai_chance = {
+			base = 2
+		}
+		random_list = {
+			40 = {
+				add_stability = -0.05
+				add_political_power = 20
+			}
+			60 = {
+				custom_effect_tooltip = ncn_old_start_cw_tt
+				hidden_effect = {
+					set_variable = { puppet_cw_size = random }
+					multiply_variable = { puppet_cw_size = 0.3 }
+					add_to_variable = { puppet_cw_size = 0.3 }
+					if = {
+						limit = {
+							has_government = elites
+						}
+						start_civil_war = {
+							ideology = ruler
+							size = puppet_cw_size
+						}
+					}
+					else = {
+						start_civil_war = {
+							ideology = elites
+							size = puppet_cw_size
+						}
+					}
+					every_country = { # NCN breakaway puppets breakaway
+						limit = {
+							original_tag = PREV
+							NOT = { tag = PREV }
+						}
+						every_country = {
+							limit = {
+								original_tag = NCN
+								NOT = { tag = NCN }
+							}
+							create_new_owb_country = yes
+							puppet = PREV
+						}
+					}
+				}
+			}
+		}
+	}
+
+	option = { # The old ways are best.
+		name = nf_ncn.17.b
+		ai_chance = {
+			base = 1
+		}
+		random_list = {
+			30 = {
+				add_stability = 0.05
+				add_political_power = -20
+			}
+			70 = {
+				custom_effect_tooltip = ncn_old_start_cw_tt
+				hidden_effect = {
+					set_variable = { puppet_cw_size = random }
+					multiply_variable = { puppet_cw_size = 0.3 }
+					add_to_variable = { puppet_cw_size = 0.3 }
+					if = {
+						limit = {
+							has_government = people
+						}
+						start_civil_war = {
+							ideology = intellectuals
+							size = puppet_cw_size
+						}
+					}
+					else = {
+						start_civil_war = {
+							ideology = people
+							size = puppet_cw_size
+						}
+					}
+					NCN = {
+						end_puppet = PREV
+					}
+					every_country = { # NCN puppets breakaway
+						limit = {
+							original_tag = PREV
+							NOT = { tag = PREV }
+						}
+						create_new_owb_country = yes
+						NCN = {
+							puppet = PREV
+						}
+					}
+					every_country = { # NCN breakaway puppets us
+						limit = {
+							original_tag = PREV
+							tag = PREV
+						}
+						every_country = {
+							limit = {
+								original_tag = NCN
+								NOT = { tag = NCN }
+							}
+							create_new_owb_country = yes
+							puppet = PREV
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { # Utah Should See God
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.18" }
+	id = nf_ncn.18
+	title = nf_ncn.18.t
+	desc = nf_ncn.18.d
+	picture = GFX_event_zion
+
+	is_triggered_only = yes
+
+	option = { # The Lord touches all.
+		name = nf_ncn.18.a
+	}
+}
+
+country_event = { # A Twisted System Triumphant
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.19" }
+	id = nf_ncn.19
+	title = nf_ncn.19.t
+	desc = nf_ncn.19.d
+	picture = GFX_event_gold
+
+	is_triggered_only = yes
+
+	option = { # Money buys any heart
+		name = nf_ncn.19.a
+	}
+}
+
+country_event = { # Utah Must Prosper
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.20" }
+	id = nf_ncn.20
+	title = nf_ncn.20.t
+	desc = nf_ncn.20.d
+	picture = GFX_event_zion
+
+	is_triggered_only = yes
+
+	option = { # All shall see your light, o Lord!
+		name = nf_ncn.20.a
+	}
+}
+
+country_event = { # God's Place On Earth
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.21" }
+	id = nf_ncn.21
+	title = nf_ncn.21.t
+	desc = nf_ncn.21.d
+	picture = GFX_event_zion
+
+	is_triggered_only = yes
+
+	option = { # It is our duty to protect all peoples from tyranny.
+		name = nf_ncn.21.a
+	}
+}
+
+country_event = { # The Mormon's Lifeblood
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.22" }
+	id = nf_ncn.22
+	title = nf_ncn.22.t
+	desc = nf_ncn.22.d
+	picture = GFX_event_gold
+
+	is_triggered_only = yes
+
+	option = { # As long as the caravans thrive, so do we.
+		name = nf_ncn.22.a
+	}
+}
+
+country_event = { # The White Legs Fall
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.23" }
+	id = nf_ncn.23
+	title = nf_ncn.23.t
+	desc = nf_ncn.23.d
+	picture = GFX_event_slavery
+
+	trigger = {
+		tag = NCN
+		WHT = {
+			OR = {
+				exists = no
+				AND = {
+					is_puppet = yes
+					NOT = { is_subject_of = NCN }
+				}
+				NOT = { owns_state = 326 }
+			}
+		}
+		NOT = { has_completed_focus = NCN_canaan_in_flames }
+		NOT = { has_completed_focus = NCN_canaan_in_glory }
+	}
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			complete_national_focus = NCN_tribals_at_the_door
+			complete_national_focus = NCN_war_for_heaven
+			set_global_flag = NCN_alternate_route
+		}
+	}
+
+	option = { # The area needs clensing by holy flame!
+		name = nf_ncn.23.a
+		custom_effect_tooltip = ncn_need_to_take_lincon_tt
+		TAR = {
+			ROOT = {
+				grant_wargoals_on_core_states_of_prev = yes
+			}
+		}
+		CLK = {
+			ROOT = {
+				grant_wargoals_on_core_states_of_prev = yes
+			}
+		}
+		WHT = {
+			ROOT = {
+				grant_wargoals_on_core_states_of_prev = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.230" }
+	id = nf_ncn.230
+	title = nf_ncn.230.t
+	desc = nf_ncn.230.d
+	picture = GFX_event_CES_whitelegs
+
+	trigger = {
+		tag = NCN
+		NOT = { has_war_with = WHT }
+		WHT = {
+			surrender_progress > 0.6
+		}
+	}
+	fire_only_once = yes
+
+	immediate = {
+		custom_effect_tooltip = nf_ncn.230.tt
+	}
+
+	option = {
+		name = nf_ncn.230.a
+		custom_effect_tooltip = nf_ncn.230.tt
+	}
+}
+
+country_event = { # A New Church of Jesus Christ of Latter-day Saints
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.24" }
+	id = nf_ncn.24
+	title = nf_ncn.24.t
+	desc = nf_ncn.24.d
+	picture = GFX_event_generic_ruins_4
+
+	is_triggered_only = yes
+
+	option = { # New Canaan
+		name = nf_ncn.24.a
+		ai_chance = {
+			base = 3
+		}
+		add_stability = 0.05
+		add_political_power = 40
+		set_capital = { state = 551 }
+		551 = {
+			add_extra_state_shared_building_slots = 2
+		}
+	}
+
+	option = { # New Jerusalem
+		name = nf_ncn.24.b
+		ai_chance = {
+			base = 2
+		}
+		add_political_power = 80
+		set_capital = { state = 266 }
+		266 = {
+			add_extra_state_shared_building_slots = 2
+		}
+	}
+
+	option = { # Provo: this one is for you, Dolphy
+		name = nf_ncn.24.c
+		ai_chance = {
+			base = 1
+		}
+		add_stability = -0.05
+		add_political_power = 120
+		set_capital = { state = 240 }
+		240 = {
+			add_extra_state_shared_building_slots = 2
+		}
+	}
+}
+
+country_event = { # From Utah, With Love
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.25" }
+	id = nf_ncn.25
+	title = nf_ncn.25.t
+	desc = nf_ncn.25.d
+	picture = GFX_event_KHA_bitter_springs_massacre
+
+	is_triggered_only = yes
+
+	option = { # The Reavers must be shown the way
+		name = nf_ncn.25.a
+		SKY = {
+			ROOT = {
+				grant_wargoals_on_core_states_of_prev = yes
+			}
+		}
+	}
+}
+
+news_event = { # The Mission to the Mojave
+	id = nf_ncn.26
+	title = nf_ncn.26.t
+	desc = nf_ncn.26.d
+	picture = GFX_event_NCN_new_canaan
+	major = yes
+	is_triggered_only = yes
+
+	option = { # NCN
+		name = nf_ncn.26.a
+		trigger = {
+			OR = {
+				tag = NCN
+				is_subject_of = NCN
+				is_in_faction_with = NCN
+			}
+		}
+	}
+
+	option = { # KHA
+		name = nf_ncn.26.b
+		trigger = {
+			tag = KHA
+		}
+	}
+
+	option = { # Other
+		name = nf_ncn.26.c
+		trigger = {
+			NOT = {
+				tag = NCN
+				is_subject_of = NCN
+				is_in_faction_with = NCN
+			}
+			NOT = { tag = KHA }
+		}
+	}
+}
+
+country_event = { # The End of the Timekeepers
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.27" }
+	id = nf_ncn.27
+	title = nf_ncn.27.t
+	desc = nf_ncn.27.d
+	picture = GFX_event_generic_ruins_2
+
+	fire_only_once = yes
+	trigger = {
+		tag = NCN
+		CLK = {
+			OR = {
+				exists = no
+				is_subject_of = WHT
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = ncn_timekeepers_incident
+		}
+	}
+	option = { # The White Legs claim a new victim
+		name = nf_ncn.27.a
+		custom_effect_tooltip = ncn_unlock_timekeepers_incident_tt
+		custom_effect_tooltip = ncn_gain_4_threat
+		add_to_variable = { ncn_threat = 4 }
+	}
+}
+
+country_event = { # The Ogden Armoury Beckons
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.28" }
+	id = nf_ncn.28
+	title = nf_ncn.28.t
+	desc = nf_ncn.28.d
+	picture = GFX_event_generic_ruins_1
+
+	fire_only_once = yes
+	trigger = {
+		tag = NCN
+		date > 2275.06.01
+		controls_state = 551
+	}
+	mean_time_to_happen = {
+		days = 100
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = ncn_ogden_incident
+		}
+	}
+	option = {
+		name = nf_ncn.28.a
+		custom_effect_tooltip = ncn_unlock_ogden_incident_tt
+		551 = {
+			add_resource = {
+				type = composites
+				amount = 4
+			}
+		}
+	}
+}
+
+country_event = { # Followers of the Apocolypse Arrive
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.29" }
+	id = nf_ncn.29
+	title = nf_ncn.29.t
+	desc = nf_ncn.29.d
+	picture = GFX_event_followers_chillin
+
+	fire_only_once = yes
+	trigger = {
+		tag = NCN
+		OR = {
+			date > 2275.10.1
+			any_country = {
+				NOT = { tag = NCR }
+				has_country_flag = followers_established
+			}
+		}
+	}
+	mean_time_to_happen = {
+		days = 100
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = ncn_followers_incident
+			set_country_flag = do_not_spread_followers_from_this_tag
+		}
+	}
+	option = {
+		name = nf_ncn.29.a
+		custom_effect_tooltip = ncn_unlock_followers_incident_tt
+		add_stability = -0.02
+	}
+}
+
+country_event = { # Trader Trouble
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.30" }
+	id = nf_ncn.30
+	title = nf_ncn.30.t
+	desc = nf_ncn.30.d
+	picture = GFX_event_NCR_caravan
+
+	fire_only_once = yes
+	trigger = {
+		tag = NCN
+	}
+	mean_time_to_happen = {
+		days = 300
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = ncn_traders_incident
+		}
+	}
+	option = {
+		name = nf_ncn.30.a
+		custom_effect_tooltip = ncn_unlock_traders_incident_tt
+		add_stability = -0.05
+		set_temp_variable = { caps_to_add = 200 }
+		add_caps = yes
+	}
+}
+
+country_event = { # The Exiled Canaanites Reach Out
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.31" }
+	id = nf_ncn.31
+	title = nf_ncn.31.t
+	desc = nf_ncn.31.d
+	picture = GFX_event_NCN_new_canaan
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_ncn.31.a
+		ai_chance = {
+			base = 11
+		}
+		create_or_join_mormon_alliance = yes
+		add_mormon_alliance_ally_strategies = yes
+		hidden_effect = {
+			every_country = {
+				limit = {
+					OR = {
+						is_subject_of = NCN
+						is_subject_of = WHT
+					}
+					NOT = { is_in_faction_with = NCN }
+				}
+				create_or_join_mormon_alliance = yes
+				add_mormon_alliance_ally_strategies = yes
+			}
+			NCN = {
+				add_ai_strategy = {
+					type = alliance
+					id = "WHT"
+					value = 500
+				}
+			}
+			add_ai_strategy = {
+				type = alliance
+				id = "NCN"
+				value = 500
+			}
+		}
+	}
+
+	option = {
+		name = nf_ncn.31.b
+		ai_chance = {
+			base = 1
+		}
+		NCN = { country_event = nf_ncn.33 }
+	}
+}
+
+country_event = { # The White Legs Accept
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.32" }
+	id = nf_ncn.32
+	title = nf_ncn.32.t
+	desc = nf_ncn.32.d
+	picture = GFX_event_NCN_new_canaan
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_ncn.32.a
+		effect_tooltip = {
+			WHT = {
+				create_or_join_mormon_alliance = yes
+			}
+		}
+	}
+}
+
+country_event = { # The White Legs Decline
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.33" }
+	id = nf_ncn.33
+	title = nf_ncn.33.t
+	desc = nf_ncn.33.d
+	picture = GFX_event_NCN_new_canaan
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_ncn.33.a
+		complete_national_focus = NCN_god_strengthens_our_resolve
+		if = {
+			limit = {
+				NOT = { has_idea = ncn_idea_embers_of_a_holy_war }
+			}
+			swap_ideas = {
+				remove_idea = ncn_idea_holy_flames_quenched
+				add_idea = ncn_idea_embers_of_a_holy_war
+			}
+		}
+	}
+}
+
+country_event = { # NCN Offers an Alliance
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.34" }
+	id = nf_ncn.34
+	title = nf_ncn.34.t
+	desc = nf_ncn.34.d
+	picture = GFX_event_NCN_new_canaan
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_ncn.34.a
+		ai_chance = {
+			base = 7
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					is_in_faction_with = NCN
+					NOT = { tag = NCN }
+				}
+				set_country_flag = ncn_mormon_alliance_old
+				create_or_join_new_california = yes
+				add_new_california_ally_strategies = yes
+			}
+		}
+		NCN = {
+			set_country_flag = ncn_mormon_alliance_old
+			create_or_join_new_california = yes
+			add_new_california_ally_strategies = yes
+			add_ai_strategy = {
+				type = alliance
+				id = "NCR"
+				value = 100
+			}
+		}
+		add_ai_strategy = {
+			type = alliance
+			id = "NCN"
+			value = 100
+		}
+	}
+
+	option = {
+		name = nf_ncn.31.b
+		ai_chance = {
+			base = 1
+		}
+		NCN = { country_event = nf_ncn.33 }
+	}
+}
+
+country_event = { # The NCR Accepts
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.35" }
+	id = nf_ncn.35
+	title = nf_ncn.35.t
+	desc = nf_ncn.35.d
+	picture = GFX_event_NCN_new_canaan
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_ncn.35.a
+	}
+}
+
+country_event = { # The NCR Decline
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.36" }
+	id = nf_ncn.36
+	title = nf_ncn.36.t
+	desc = nf_ncn.36.d
+	picture = GFX_event_NCN_new_canaan
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_ncn.36.a
+	}
+}
+
+country_event = { # The End of the Road
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.37" }
+	id = nf_ncn.37
+	title = nf_ncn.37.t
+	desc = nf_ncn.37.d
+	picture = GFX_event_NCN_new_canaan
+
+	fire_only_once = yes
+	trigger = {
+		tag = NCN
+		is_in_faction_with = NCR
+		NOT = { has_war_with = CES }
+	}
+	mean_time_to_happen = {
+		days = 10
+	}
+	immediate = {
+		if = {
+			limit = { tag = NCN }
+			hidden_effect = {
+				NCR = { country_event = nf_ncn.37 }
+			}
+		}
+	}
+
+	option = {
+		name = nf_ncn.37.a
+		if = {
+			limit = { tag = NCN }
+			create_or_join_mormon_alliance = yes
+			hidden_effect = {
+				every_country = {
+					limit = {
+						has_country_flag = ncn_mormon_alliance_old
+					}
+					create_or_join_mormon_alliance = yes
+				}
+				every_country = {
+					limit = {
+						OR = {
+							is_in_faction_with = NCN
+							tag = NCN
+						}
+					}
+					remove_new_california_ally_strategies = yes
+				}
+			}
+		}
+	}
+}
+
+country_event = { # Those Not Quite Mormon
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.38" }
+	id = nf_ncn.38
+	title = nf_ncn.38.t
+	desc = nf_ncn.38.d
+	picture = GFX_event_generic_ruins_3
+
+	fire_only_once = yes
+	trigger = {
+		tag = NCN
+	}
+	mean_time_to_happen = {
+		days = 50
+	}
+
+	option = {
+		name = nf_ncn.38.a
+		unlock_decision_category_tooltip = ncn_outcasts_and_misfits
+		activate_mission = farfield_revolt_mission
+		set_variable = { ncn_farfield_actions = 0 }
+		activate_mission = brigham_revolt_mission
+		set_variable = { ncn_brigham_actions = 0 }
+	}
+}
+
+country_event = { # Farfield Revolts!
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.39" }
+	id = nf_ncn.39
+	title = nf_ncn.39.t
+	desc = nf_ncn.39.d
+	picture = GFX_event_generic_raider_1
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			FAR = {
+				transfer_state = 457
+				transfer_state = 378
+				declare_war_on = {
+					target = NCN
+					type = take_core_state
+				}
+				load_oob = FAR_revolt
+			}
+		}
+	}
+
+	option = {
+		name = nf_ncn.39.a
+		add_war_support = 0.05
+	}
+}
+
+country_event = { # Brigham Revolts!
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.40" }
+	id = nf_ncn.40
+	title = nf_ncn.40.t
+	desc = nf_ncn.40.d
+	picture = GFX_event_generic_settlement_2
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			BRI = {
+				transfer_state = 352
+				transfer_state = 128
+				declare_war_on = {
+					target = NCN
+					type = take_core_state
+				}
+				load_oob = BRI_revolt
+			}
+		}
+	}
+
+	option = {
+		name = nf_ncn.40.a
+		add_war_support = 0.05
+	}
+}
+
+country_event = { # A Kingdom of Utah?
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.41" }
+	id = nf_ncn.41
+	title = nf_ncn.41.t
+	desc = nf_ncn.41.d
+	picture = GFX_event_NCN_new_canaan
+
+	trigger = {
+		tag = NCN
+		has_country_leader = {
+			character = NCN_jeremiah_rigdon
+		}
+		has_completed_focus = NCN_drop_the_pretense
+	}
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 180
+	}
+
+	option = { # I am the new King of Israel
+		name = nf_ncn.41.a
+		hidden_effect = {
+			promote_character = {
+				character = NCN_jeremiah_rigdon
+				ideology = conspiratory_oligarchy
+			}
+		}
+		set_character_name = {
+			character = NCN_jeremiah_rigdon
+			name = NCN_KING_JEREMIAH_RIDGON_NAME
+		}
+		set_cosmetic_tag = NCN_utah_kingdom
+		add_war_support = 0.05
+	}
+
+	option = { # I shall be a governor, just as my ancestors in the old church
+		name = nf_ncn.41.b
+		hidden_effect = {
+			promote_character = {
+				character = NCN_jeremiah_rigdon
+				ideology = conspiratory_oligarchy
+			}
+		}
+		set_character_name = {
+			character = NCN_jeremiah_rigdon
+			name = NCN_GOVENOR_JEREMIAH_RIDGON_NAME
+		}
+		set_cosmetic_tag = NCN_utah_state
+		set_temp_variable = { caps_to_add = 400 }
+		add_caps = yes
+	}
+
+	option = { # I take no title, for we are all one under God
+		name = nf_ncn.41.c
+		add_stability = 0.05
+	}
+}
+
+country_event = { # Pioneer Day
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.42" }
+	id = nf_ncn.42
+	title = nf_ncn.42.t
+	desc = nf_ncn.42.d
+	picture = GFX_event_NCN_pioneer_day
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			country_event = { id = nf_ncn.42 days = 365 }
+		}
+	}
+
+	option = { # We remember our ancestors on this day
+		name = nf_ncn.42.a
+		add_stability = 0.02
+		add_political_power = 20
+	}
+}
+
+news_event = { # Kingdom of God on Earth
+	id = nf_ncn.43
+	title = nf_ncn.43.t
+	desc = nf_ncn.43.d
+	picture = GFX_event_NCN_new_canaan
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		trigger = {
+			OR = {
+				tag = NCN
+				is_subject_of = NCN
+				is_in_faction_with = NCN
+			}
+		}
+		name = nf_ncn.43.a
+	}
+
+	option = {
+		trigger = {
+			NOT = {
+				tag = NCN
+				is_subject_of = NCN
+				is_in_faction_with = NCN
+			}
+		}
+		name = nf_ncn.43.b
+	}
+}
+
+country_event = { # Taxes
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.50" }
+	id = nf_ncn.50
+	title = nf_ncn.50.t
+	desc = nf_ncn.50.d
+	picture = GFX_event_gold
+
+	is_triggered_only = yes
+
+	option = { # Hahaha
+		name = nf_ncn.50.a
+		NCN = {
+			ROOT = { become_puppet_of_prev = yes }
+			hidden_effect = {
+				ROOT = {
+					if = {
+						limit = {
+							NCN = { is_in_faction_with = NCR }
+							NCR = { is_faction_leader = yes }
+						}
+						set_country_flag = ncn_mormon_alliance_old
+						create_or_join_new_california = yes
+						add_new_california_ally_strategies = yes
+
+					}
+					else_if = {
+						limit = {
+							NCN = { is_faction_leader = yes }
+						}
+						create_or_join_mormon_alliance = yes
+						add_mormon_alliance_ally_strategies = yes
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				NCN = { has_completed_focus = NCN_economic_centralization }
+			}
+			add_ideas = ncn_idea_the_invisible_hand
+		}
+		else_if = {
+			limit = {
+				NCN = { has_completed_focus = NCN_autonomy_for_tariffs }
+			}
+			add_ideas = ncn_idea_paying_tithe
+		}
+		set_politics = {
+			ruling_party = elites
+		}
+		add_popularity = {
+			ideology = elites
+			popularity = 0.3
+		}
+		start_civil_war = {
+			ideology = people
+			size = 0.4
+		}
+	}
+}
+
+country_event = { # Death
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.51" }
+	id = nf_ncn.51
+	title = nf_ncn.51.t
+	desc = nf_ncn.51.d
+	picture = GFX_event_joshua_graham
+
+	is_triggered_only = yes
+
+	option = { # Hahaha
+		ai_chance = {
+			base = 40
+		}
+		name = nf_ncn.51.a
+		NCN = {
+			annex_country = {
+				target = ROOT transfer_troops = yes
+			}
+		}
+	}
+	option = { # Hahaha
+		ai_chance = {
+			base = 60
+		}
+		name = nf_ncn.51.b
+		declare_war_on = {
+			target = NCN
+			type = annex_everything
+		}
+	}
+}
+
+
+country_event = { # ASk for Aid
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.52" }
+	id = nf_ncn.52
+	title = nf_ncn.52.t
+	desc = nf_ncn.52.d
+	picture = GFX_event_zion
+
+	is_triggered_only = yes
+
+	option = { # Hahaha
+		ai_chance = {
+			base = 80
+		}
+		name = nf_ncn.52.a
+		give_resource_rights = { receiver = NCN state = 446 }
+		give_resource_rights = { receiver = TTM state = 38 }
+		NCN = { country_event = nf_ncn.53 }
+	}
+	option = { # Hahaha
+		ai_chance = {
+			base = 20
+		}
+		name = nf_ncn.52.b
+		NCN = { country_event = nf_ncn.54 }
+	}
+}
+
+country_event = { # Get Aid
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.53" }
+	id = nf_ncn.53
+	title = nf_ncn.53.t
+	desc = nf_ncn.53.d
+	picture = GFX_event_zion
+
+	is_triggered_only = yes
+
+	option = { # Hahaha
+		name = nf_ncn.53.a
+		custom_effect_tooltip = nf_ncn.53.a_tt
+	}
+}
+
+
+country_event = { # No Aid
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.54" }
+	id = nf_ncn.54
+	title = nf_ncn.54.t
+	desc = nf_ncn.54.d
+	picture = GFX_event_zion
+
+	is_triggered_only = yes
+
+	option = { # Hahaha
+		name = nf_ncn.54.a
+	}
+}
+
+country_event = { # The "Danish" Mormons
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_ncn.55" }
+	id = nf_ncn.55
+	title = nf_ncn.55.t
+	desc = nf_ncn.55.d
+	picture = GFX_event_generic_settlement_2
+
+	trigger = {
+		original_tag = NCN
+		date > 2276.1.1
+	}
+	mean_time_to_happen = {
+		months = 24
+	}
+	fire_only_once = yes
+
+	option = { # They're disguising their heresy as a pastry!
+		name = nf_ncn.55.a
+		custom_effect_tooltip = nf_ncn.55.a_tt
+		hidden_effect = { set_country_flag = expel_danish_heretics }
+		add_political_power = 40
+		add_stability = 0.05
+	}
+
+	option = { # The story seems plausible enough.
+		name = nf_ncn.55.b
+		add_political_power = -40
+		add_stability = -0.05
+	}
+}

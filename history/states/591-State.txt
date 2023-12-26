@@ -1,0 +1,28 @@
+state = {
+	id = 591
+	name = "STATE_591"
+	manpower = 24500
+	state_category = megalopolis
+
+	resources = {
+		water = 4
+		metal = 2
+	}
+
+	history = {
+		owner = NCR
+		add_core_of = NCR
+		victory_points = {
+			2661 20
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 2
+			industrial_complex = 2
+		}
+	}
+
+	provinces = {
+		877 902 1781 2272 2273 2397 2651 2656 2661 4962 4963 4964 4965 4966 4973 4974 5072
+	}
+}

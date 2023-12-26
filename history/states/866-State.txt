@@ -1,0 +1,29 @@
+state = {
+	id = 866
+	name = "STATE_866"
+	resources={
+		water = 4
+	}
+
+	history={
+		owner = BVC
+		add_core_of = BVC
+		victory_points = {
+			4818 20
+		}
+		buildings = {
+			infrastructure = 5
+			dockyard = 1
+			industrial_complex = 5
+
+		}
+
+	}
+
+	provinces={
+		839 2621 2622 4817 4818 7157
+	}
+	manpower=20000
+	buildings_max_level_factor=1.000
+	state_category=large_city
+}

@@ -1,0 +1,28 @@
+
+state={
+	id=1189
+	name="STATE_1189"
+	resources={
+		circuitry=3.000
+	}
+
+	history={
+		victory_points = {
+			14550 5
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+
+		}
+
+	}
+
+	provinces={
+		14301 14302 14325 14537 14548 14549 14550
+	}
+	manpower=1112
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
+}

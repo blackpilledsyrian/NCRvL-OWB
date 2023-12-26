@@ -1,0 +1,15 @@
+state = {
+	id = 24
+	name = "STATE_24"
+	manpower = 400
+	state_category = rural
+	impassable = yes
+	history = {
+		owner = BVC
+		add_core_of = BVC
+	}
+
+	provinces = {
+		4708
+	}
+}

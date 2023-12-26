@@ -1,0 +1,31 @@
+state = {
+	id = 834
+	name = "STATE_834"
+
+	history={
+		buildings = {
+			infrastructure = 1
+			9816 = {
+				naval_base = 1
+			}
+			9823 = {
+				naval_base = 2
+			}
+		}
+		victory_points = {
+			9827 5
+		}
+	}
+
+	provinces={
+		9797 9806 9810 9816 9823 9827 9838 9841
+	}
+
+	resources = {
+		advanced = 6
+	}
+
+	manpower=25876
+	buildings_max_level_factor=1.000
+	state_category=shanty
+}

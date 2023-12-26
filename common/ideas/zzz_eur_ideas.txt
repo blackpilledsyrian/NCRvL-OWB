@@ -1,0 +1,452 @@
+ideas = {
+	country = {
+		eur_mercenary_army = {
+			picture = eur_specops
+			allowed_civil_war = { always = yes }
+			removal_cost = 1
+			modifier = {
+				cant_justify_on_countries = 1
+				army_org_factor = 0.1
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+				send_volunteer_size = 10
+				army_fuel_consumption_factor = -0.1
+				caps_expense_modifier = 0.1
+				hidden_modifier = {
+					send_volunteer_divisions_required = -10
+					diplomacy_distance = 10000
+					diplomacy_distance_factor = 5.25
+				}
+				custom_modifier_tooltip = eur_no_train_tt
+			}
+		}
+		eur_spec_attack = {
+			picture = animated_vault_boy_army
+			allowed_civil_war = { always = yes }
+			removal_cost = 1
+			modifier = {
+				special_forces_attack_factor = 0.1
+			}
+		}
+		eur_spec_defence = {
+			picture = animated_vault_boy_army
+			allowed_civil_war = { always = yes }
+			removal_cost = 1
+			modifier = {
+				special_forces_defence_factor = 0.1
+			}
+		}
+		eur_spec_supply = {
+			picture = animated_vault_boy_army
+			allowed_civil_war = { always = yes }
+			removal_cost = 1
+			modifier = {
+				special_forces_out_of_supply_factor = -0.2
+			}
+		}
+		eureka_hubologists = {
+			picture = generic_satellite
+			allowed_civil_war = { always = yes }
+			removal_cost = 1
+			modifier = {
+				weekly_manpower = 20
+			}
+		}
+		eureka_skyyachts = {
+			picture = generic_satellite
+			allowed_civil_war = { always = yes }
+			removal_cost = 1
+			modifier = {
+				army_morale_factor = 0.10
+				army_speed_factor = 0.10
+				army_attack_factor = 0.05
+			}
+		}
+		eur_honduras_veterans = {
+			picture = generic_technical_doc
+			allowed_civil_war = { always = yes }
+			removal_cost = 1
+			modifier = {
+				research_speed_factor = 0.03
+			}
+		}
+		EUR_salvage = {
+			picture = mean_bastards
+			allowed_civil_war = { always = yes }
+			removal_cost = 1
+			modifier = {
+				attrition = -0.15
+				dig_in_speed_factor = 0.1
+			}
+		}
+		eur_open_doors = {
+			picture = generic_mass_infantry
+			allowed_civil_war = { always = yes }
+			removal_cost = 1
+			modifier = {
+				monthly_population = 0.15
+				exodus_national_appeal = 0.15
+				production_speed_buildings_factor = -0.03
+			}
+		}
+		eur_timber_scouts = {
+			picture = GFX_goal_TIM_patch_scouting_heritage
+			allowed_civil_war = { always = yes }
+			removal_cost = 1
+			modifier = {
+				army_speed_factor = 0.05
+			}
+		}
+		eur_down_with_arroyo = {
+			picture = warband_without_a_home
+			allowed_civil_war = { always = yes }
+			removal_cost = 1
+			targeted_modifier = {
+				tag = ARR
+				attack_bonus_against = 0.05
+				defense_bonus_against = 0.1
+			}
+		}
+		eur_bring_down_goliath = {
+			picture = warband_without_a_home
+			allowed_civil_war = { always = yes }
+			removal_cost = 1
+			targeted_modifier = {
+				tag = NCR
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.15
+			}
+		}
+		eur_shi_contacts = {
+			picture = shi_calculations
+			allowed_civil_war = { always = yes }
+			removal_cost = 1
+			modifier = {
+				research_speed_factor = 0.08
+			}
+		}
+		eur_hubologist_contacts = {
+			picture = generic_ufo_idea
+			allowed_civil_war = { always = yes }
+			removal_cost = 1
+			modifier = {
+				research_speed_factor = 0.03
+				stability_factor = -0.04
+			}
+		}
+		eur_legion_training = {
+			picture = generic_enclave_reborn
+			allowed_civil_war = { always = yes }
+			removal_cost = 1
+			modifier = {
+				special_forces_attack_factor = 0.1
+				special_forces_defence_factor = 0.05
+			}
+		}
+		eur_standing_army = {
+			picture = eur_specops
+			allowed_civil_war = { always = yes }
+			removal_cost = 1
+			modifier = {
+				army_org_factor = 0.1
+				army_defence_factor = 0.1
+				conscription_factor = 0.1
+				army_fuel_consumption_factor = -0.15
+			}
+		}
+		eur_standing_army2 = {
+			picture = eur_specops
+			allowed_civil_war = { always = yes }
+			removal_cost = 1
+			modifier = {
+				army_org_factor = 0.1
+				army_defence_factor = 0.1
+				conscription_factor = 0.15
+				land_reinforce_rate = 0.05
+				justify_war_goal_time = -0.3
+				army_fuel_consumption_factor = -0.15
+			}
+		}
+		eur_inexperienced_pilots = {
+			picture = air_support_focus
+			allowed_civil_war = { always = yes }
+			removal_cost = 1
+			modifier = {
+				air_accidents_factor = 0.2
+				air_attack_factor = 0.05
+				air_range_factor = 0.1
+			}
+		}
+		eur_inexperienced_pilots2 = {
+			picture = air_support_focus
+			allowed_civil_war = { always = yes }
+			removal_cost = 1
+			modifier = {
+				air_accidents_factor = 0.2
+				air_attack_factor = 0.05
+				air_range_factor = 0.1
+				air_volunteer_cap = 25
+			}
+		}
+		eur_inexperienced_pilots3 = {
+			picture = air_support_focus
+			allowed_civil_war = { always = yes }
+			removal_cost = 1
+			modifier = {
+				air_accidents_factor = 0.05
+				air_agility_factor = 0.05
+				air_attack_factor = 0.1
+				air_range_factor = 0.1
+				air_volunteer_cap = 25
+			}
+		}
+		eur_enclave_pilots = {
+			picture = air_support_focus
+			allowed_civil_war = { always = yes }
+			removal_cost = 1
+			modifier = {
+				air_accidents_factor = 0.05
+				air_attack_factor = 0.05
+				air_range_factor = 0.1
+			}
+			equipment_bonus = {
+				strategic_bomber_equipment = {
+					air_bombing = 0.1
+				}
+				hev_strategic_bomber_equipment = {
+					air_bombing = 0.1
+				}
+				long_strategic_bomber_equipment = {
+					air_bombing = 0.1
+				}
+				cas_equipment = {
+					air_ground_attack = 0.1
+					air_agility = 0.1
+				}
+				hev_cas_equipment = {
+					air_ground_attack = 0.1
+					air_agility = 0.1
+				}
+				car_cas_equipment = {
+					air_ground_attack = 0.1
+					air_agility = 0.1
+				}
+				long_cas_equipment = {
+					air_ground_attack = 0.1
+					air_agility = 0.1
+				}
+			}
+		}
+		eur_weakened_offensives = {
+			picture = generic_backpack
+			allowed_civil_war = { always = yes }
+			removal_cost = 1
+			modifier = {
+				army_attack_factor = -0.05
+			}
+		}
+		eur_weakened_defensives = {
+			picture = generic_backpack
+			allowed_civil_war = { always = yes }
+			removal_cost = 1
+			modifier = {
+				army_defence_factor = -0.05
+			}
+		}
+		eur_strengthened_offensives = {
+			picture = generic_backpack
+			allowed_civil_war = { always = yes }
+			removal_cost = 1
+			modifier = {
+				army_attack_factor = 0.05
+			}
+		}
+		eur_strengthened_defensives = {
+			picture = generic_backpack
+			allowed_civil_war = { always = yes }
+			removal_cost = 1
+			modifier = {
+				army_defence_factor = 0.05
+			}
+		}
+		granite_company_heroism = {
+			picture = enclave_propaganda
+			allowed_civil_war = { always = yes }
+			removal_cost = 1
+			modifier = {
+				experience_gain_army = 0.05
+				conscription =  -0.05
+			}
+		}
+		eur_next_generation = {
+			picture = generic_enclave_with_gun
+			allowed_civil_war = { always = yes }
+			removal_cost = 1
+			modifier = {
+				special_forces_min = 15
+				send_volunteer_divisions_required = -10
+				diplomacy_distance = 10000
+				diplomacy_distance_factor = 5.25
+			}
+		}
+		eur_next_generation2 = {
+			picture = generic_enclave_with_gun
+			allowed_civil_war = { always = yes }
+			removal_cost = 1
+			modifier = {
+				special_forces_min = 50
+				conscription = -0.03
+			}
+		}
+		all_are_welcome = {
+			picture = generic_carrot
+			allowed_civil_war = { always = yes }
+			removal_cost = 1
+			modifier = {
+				stability_factor = -0.05
+				MONTHLY_POPULATION = 0.25
+			}
+		}
+		the_genetic_elite = {
+			picture = generic_carrot
+			allowed_civil_war = { always = yes }
+			removal_cost = 1
+			modifier = {
+				stability_factor = 0.05
+				MONTHLY_POPULATION = 0.15
+			}
+		}
+		the_genetic_elite2 = {
+			picture = generic_brahmin
+			allowed_civil_war = { always = yes }
+			removal_cost = 1
+			modifier = {
+				MONTHLY_POPULATION = 0.07
+				political_power_gain = 0.02
+			}
+		}
+		the_genetic_elite3 = {
+			picture = generic_brahmin
+			allowed_civil_war = { always = yes }
+			removal_cost = 1
+			modifier = {
+				MONTHLY_POPULATION = -0.01
+				political_power_gain = 0.05
+				compliance_gain = 0.05
+				special_forces_min = 5
+			}
+		}
+		the_genetic_elite4 = {
+			picture = generic_brahmin
+			allowed_civil_war = { always = yes }
+			removal_cost = 1
+			modifier = {
+				MONTHLY_POPULATION = -0.01
+				political_power_gain = 0.07
+				compliance_gain = 0.10
+				special_forces_min = 15
+				caps_expense_modifier = 0.09
+			}
+		}
+		eur_land_reform = {
+			picture = generic_brahmin
+			allowed_civil_war = { always = yes }
+			removal_cost = 1
+			modifier = {
+				stability_factor = -0.10
+				political_power_gain = -0.5
+			}
+		}
+		EUR_power_armor_specialists = {
+
+			picture = generic_enclave_with_gun
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				special_forces_min = 50
+				special_forces_cap = 0.05
+			}
+
+			equipment_bonus = {
+				power_armor_equipment = {#enclave_power_armour_equipment_1
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+			research_bonus = {
+				power_armor_tech_category = 0.25
+				energy_weaponry_tech_category = 0.25
+			}
+		}
+
+		enclave_salvagers = {
+
+			picture = generic_hat_america
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.10
+					instant = yes
+				}
+			}
+		}
+		eur_ncr_bribes = {
+			picture = generic_gold_knife
+			allowed_civil_war = { always = yes }
+			removal_cost = 1
+			modifier = {
+				operative_slot = 1
+				intel_network_gain_factor = 0.10
+			}
+		}
+		eur_hubologist_stuff = {
+			picture = generic_satellite_1
+			allowed_civil_war = { always = yes }
+			removal_cost = 1
+			research_bonus = {
+				air_tech_category = 0.25
+			}
+		}
+		eur_poseidonet = {
+			picture = generic_x01
+			allowed_civil_war = { always = yes }
+			removal_cost = 1
+			research_bonus = {
+				power_armor_tech_category = 0.25
+			}
+		}
+		eur_steam_powered_weapons = {
+			picture = silicon_valley_mainframe
+			allowed = {
+			}
+			removal_cost = -1
+			equipment_bonus = {
+				infantry_equipment = {
+					soft_attack = 0.1
+					hard_attack = 0.1
+					reliability = -0.01
+					instant = yes
+				}
+			}
+		}
+	}
+}

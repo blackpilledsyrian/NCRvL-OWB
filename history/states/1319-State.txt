@@ -1,0 +1,30 @@
+
+state={
+	id=1319
+	name="STATE_1319"
+	provinces={
+		14482 15126 15127 15128 15129 16362 16363 16364 16365
+	}
+	resources = {
+		water = 12
+		energy = 2
+		advanced = 8
+	}
+	history = {
+		victory_points = {
+			14482 20
+		}
+		victory_points = {
+			15128 10
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 2
+			arms_factory = 1
+			air_base = 1
+			radar_station = 1
+		}
+	}
+	state_category = city
+	manpower = 13782
+}

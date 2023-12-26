@@ -1,0 +1,729 @@
+characters = {
+	MOT_general_lee_oliver = {
+		name = MOT_GENERAL_LEE_OLIVER_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NCR_oliver
+				small = GFX_idea_general_oliver
+			}
+			army = {
+				large = GFX_Portrait_NCR_oliver
+				small = GFX_idea_general_oliver
+			}
+		}
+		country_leader = {
+			desc = MOT_general_lee_oliver_army_chief_desc
+			ideology = constitutional_republic
+			traits = {
+				dislikes_caesars_legion
+			}
+			expire = "3000.01.01.01"
+			id = -1
+		}
+		country_leader = {
+			desc = MOT_general_lee_oliver_army_chief_desc
+			ideology = meritocracy
+			traits = {
+				dislikes_caesars_legion
+			}
+			expire = "3000.01.01.01"
+			id = -1
+		}
+		country_leader = {
+			desc = MOT_general_lee_oliver_army_chief_desc
+			ideology = militarist_oligarchy
+			traits = {
+				dislikes_caesars_legion
+			}
+			expire = "3000.01.01.01"
+			id = -1
+		}
+		country_leader = {
+			desc = MOT_general_lee_oliver_army_chief_desc
+			ideology = military_government
+			traits = {
+				dislikes_caesars_legion
+			}
+			expire = "3000.01.01.01"
+			id = -1
+		}
+		field_marshal = {
+			traits = {
+				perceptive_trait
+				intelligent_trait
+			}
+			skill = 6
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 5
+			logistics_skill = 5
+			legacy_id = 820
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = MOT_general_lee_oliver_army_chief
+			desc = MOT_general_lee_oliver_army_chief_desc
+			ledger = army
+			allowed = {
+				original_tag = MOT
+			}
+			traits = {
+				MOT_Oliver_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+				modifier = {
+					date > 2277.1.1
+					add = 5
+				}
+			}
+		}
+	}
+	MOT_josh_hanlon = {
+		name = MOT_josh_hanlon_name
+		portraits = {
+			army = {
+				large = GFX_Portrait_NCR_hanlon
+				small = GFX_idea_hanlon_minister
+			}
+			civilian = {
+				large = GFX_Portrait_NCR_hanlon
+				small = GFX_idea_hanlon_minister
+			}
+		}
+		field_marshal = {
+			traits = {
+				strong_trait
+				intelligent_trait
+				ranger_trait
+			}
+			skill = 6
+			attack_skill = 5
+			defense_skill = 5
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = 821
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = MOT_josh_hanlon_army_chief
+			ledger = army
+			allowed = {
+				original_tag = MOT
+			}
+			traits = {
+				MOT_Hanlon_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+				modifier = {
+					date > 2277.1.1
+					add = 5
+				}
+			}
+		}
+	}
+	MOT_robin_gorobets = {
+		name = MOT_ROBIN_GOROBETS_NAME
+		portraits = {
+			army = {
+				large = GFX_Portrait_NCR_gorobets
+			}
+		}
+		corps_commander = {
+			traits = {
+				strong_trait
+				perceptive_trait
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = 822
+		}
+	}
+	MOT_james_hsu = {
+		name = MOT_JAMES_HSU_NAME
+		portraits = {
+			army = {
+				large = GFX_Portrait_NCR_hsu
+				small = GFX_idea_hsu_minister
+			}
+			civilian = {
+				large = GFX_Portrait_NCR_hsu
+				small = GFX_idea_hsu_minister
+			}
+		}
+		corps_commander = {
+			traits = {
+				charismatic_trait
+				intelligent_trait
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 4
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = 823
+		}
+		advisor = {
+			slot = high_command
+			idea_token = MOT_james_hsu_high_command
+			ledger = army
+			allowed = {
+				original_tag = MOT
+			}
+			traits = {
+				calm_leader
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 5
+			}
+		}
+	}
+	MOT_major_dhatri = {
+		name = MOT_MAJOR_DHATRI_NAME
+		portraits = {
+			army = {
+				small = GFX_idea_major_dhatri
+			}
+			civilian = {
+				small = GFX_idea_major_dhatri
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = MOT_major_dhatri_high_command
+			desc = MOT_major_dhatri_desc
+			ledger = army
+			allowed = {
+				original_tag = MOT
+			}
+			traits = {
+				MOT_Dhatri_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 5
+				modifier = {
+					date > 2277.1.1
+					add = 5
+				}
+			}
+		}
+	}
+	MOT_pappas = {
+		name = MOT_PAPPAS_NAME
+		portraits = {
+			army = {
+				large = GFX_Portrait_MOT_marie_pappas
+				small = GFX_idea_pappas_minister
+			}
+			civilian = {
+				large = GFX_Portrait_MOT_marie_pappas
+				small = GFX_idea_pappas_minister
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = MOT_pappas_high_command
+			desc = MOT_pappas_desc
+			ledger = army
+			allowed = {
+				original_tag = MOT
+			}
+			traits = {
+				MOT_Pappas_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+				modifier = {
+					date > 2277.1.1
+					add = 5
+				}
+			}
+		}
+		corps_commander = {
+			traits = {
+				charismatic_trait
+				intelligent_trait
+			}
+			skill = 5
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+			legacy_id = -1
+		}
+	}
+	MOT_moore = {
+		name = MOT_moore_name
+		gender = female
+		portraits = {
+			army = {
+				large = GFX_Portrait_NCR_moore
+				small = GFX_idea_moore_minister
+			}
+			civilian = {
+				large = GFX_Portrait_NCR_moore
+				small = GFX_idea_moore_minister
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = MOT_moore_high_command
+			desc = MOT_moore_desc
+			ledger = army
+			allowed = {
+				original_tag = MOT
+			}
+			traits = {
+				MOT_Moore_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+				modifier = {
+					date > 2277.1.1
+					add = 5
+				}
+			}
+		}
+		corps_commander = {
+			visible = {
+				OR = {
+					tag = NCR
+					has_completed_focus = mot_promote_major_moore
+					tag = EUR
+				}
+			}
+			traits = {
+				enduring_trait
+				agile_trait
+				bruiser_trait
+			}
+			skill = 4
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
+	MOT_augustine_perry = {
+		name = MOT_AUGUSTINE_PERRY_NAME
+		portraits = {
+			army = {
+				small = GFX_idea_generic_political_advisor_europe_1
+			}
+			civilian = {
+				small = GFX_idea_generic_political_advisor_europe_1
+			}
+		}
+		advisor = {
+			slot = research_advisor
+			idea_token = MOT_augustine_perry_research_advisor
+			desc = MOT_augustine_perry_desc
+			ledger = army
+			allowed = {
+				original_tag = MOT
+			}
+			traits = {
+				military_theorist
+			}
+			research_bonus = {
+				cat_land_doctrine = 0.15
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	MOT_ash_winters = {
+		name = MOT_ASH_WINTERS_NAME
+		portraits = {
+			army = {
+				small = GFX_idea_generic_political_advisor_europe_2
+			}
+			civilian = {
+				small = GFX_idea_generic_political_advisor_europe_2
+			}
+		}
+		advisor = {
+			slot = research_advisor
+			idea_token = MOT_ash_winters_research_advisor
+			desc = MOT_ash_winters_desc
+			ledger = army
+			allowed = {
+				original_tag = MOT
+			}
+			traits = {
+				military_theorist
+			}
+			research_bonus = {
+				cat_grand_army = 0.2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	MOT_corporal_sterling = {
+		name = MOT_corporal_sterling_name
+		portraits = {
+			army = {
+				small = GFX_idea_mot_corporal_sterling
+			}
+			civilian = {
+				small = GFX_idea_mot_corporal_sterling
+			}
+		}
+		advisor = {
+			slot = research_advisor
+			idea_token = MOT_corporal_sterling_research_advisor
+			desc = MOT_corporal_sterling_desc
+			ledger = army
+			allowed = {
+				original_tag = MOT
+			}
+			traits = {
+				military_theorist
+			}
+			research_bonus = {
+				cat_elite_army = 0.3
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	MOT_raul_tejada = {
+		name = MOT_RAUL_TEJADA_NAME
+		portraits = {
+			army = {
+				large = GFX_Portrait_MOT_raul_ghost
+				small = GFX_idea_raul_minister
+			}
+			civilian = {
+				large = GFX_Portrait_MOT_raul_ghost
+				small = GFX_idea_raul_minister
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = MOT_raul_tejada_economic_advisor
+			desc = MOT_raul_tejada_desc
+			allowed = {
+				original_tag = MOT
+			}
+			traits = {
+				MOT_Raul_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 7
+			}
+		}
+	}
+	MOT_major_polati = {
+		name = MOT_MAJOR_POLATI_NAME
+		portraits = {
+			army = {
+				small = GFX_idea_polati_minister
+			}
+			civilian = {
+				small = GFX_idea_polati_minister
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = MOT_major_polati_economic_advisor
+			desc = MOT_major_polati_desc
+			allowed = {
+				original_tag = MOT
+			}
+			traits = {
+				MOT_Polati_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 11
+				modifier = {
+					add = 4
+					date > 2277.1.1
+				}
+			}
+		}
+	}
+	MOT_major_knight = {
+		name = MOT_major_knight_name
+		portraits = {
+			army = {
+				small = GFX_idea_knight_minister
+			}
+			civilian = {
+				small = GFX_idea_knight_minister
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = MOT_major_knight_economic_advisor
+			desc = MOT_major_knight_desc
+			allowed = {
+				original_tag = MOT
+			}
+			traits = {
+				MOT_Knight_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	MOT_mike_lawson = {
+		name = MOT_mike_lawson_name
+		portraits = {
+			army = {
+				small = GFX_idea_generic_advisor24
+			}
+			civilian = {
+				small = GFX_idea_generic_advisor24
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = MOT_mike_lawson_economic_advisor
+			desc = MOT_mike_lawson_desc
+			allowed = {
+				original_tag = MOT
+			}
+			traits = {
+				MOT_Lawson_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	MOT_warden_nathan = {
+		name = MOT_warden_nathan_name
+		portraits = {
+			army = {
+				small = GFX_idea_generic_advisor21
+			}
+			civilian = {
+				small = GFX_idea_generic_advisor21
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = MOT_warden_nathan_economic_advisor
+			desc = MOT_warden_nathan_desc
+			allowed = {
+				original_tag = MOT
+			}
+			traits = {
+				MOT_Warden_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	MOT_elizabeth_kieran = {
+		instance = {
+			allowed = {
+				has_dlc = "La Resistance"
+			}
+			name = MOT_elizabeth_kieran_name
+			gender = female
+			portraits = {
+				army = {
+					small = GFX_idea_generic_advisor1
+				}
+				civilian = {
+					small = GFX_idea_generic_advisor1
+				}
+			}
+			advisor = {
+				slot = cultural_advisor
+				idea_token = MOT_elizabeth_kieran_cultural_advisor
+				desc = MOT_elizabeth_kieran_desc
+				allowed = {
+					original_tag = MOT
+				}
+				traits = {
+					MOT_Keiran_LAR_trait
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 10
+				}
+			}
+		}
+		instance = {
+			allowed = {
+				NOT = {
+					has_dlc = "La Resistance"
+				}
+			}
+			name = MOT_elizabeth_kieran_name
+			gender = female
+			portraits = {
+				army = {
+					small = GFX_idea_generic_advisor1
+				}
+				civilian = {
+					small = GFX_idea_generic_advisor1
+				}
+			}
+			advisor = {
+				slot = cultural_advisor
+				idea_token = MOT_elizabeth_kieran_cultural_advisor
+				desc = MOT_elizabeth_kieran_desc
+				allowed = {
+					original_tag = MOT
+				}
+				traits = {
+					MOT_Keiran_NONLAR_trait
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 10
+				}
+			}
+		}
+	}
+	MOT_major_steyn = {
+		name = MOT_major_steyn_name
+		portraits = {
+			army = {
+				small = GFX_idea_generic_advisor27
+			}
+			civilian = {
+				small = GFX_idea_generic_advisor27
+			}
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = MOT_major_steyn_cultural_advisor
+			desc = MOT_major_steyn_desc
+			allowed = {
+				original_tag = MOT
+			}
+			traits = {
+				MOT_Steyn_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	MOT_thomas_hildern = {
+		name = MOT_thomas_hildern_name
+		portraits = {
+			army = {
+				small = GFX_idea_hildern_minister
+			}
+			civilian = {
+				small = GFX_idea_hildern_minister
+			}
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = MOT_thomas_hildern_cultural_advisor
+			desc = MOT_thomas_hildern_desc
+			allowed = {
+				original_tag = MOT
+			}
+			traits = {
+				MOT_Hildern_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	MOT_ignatio_rivas = {
+		name = MOT_ignatio_rivas_name
+		portraits = {
+			army = {
+				small = GFX_idea_ignatio_minister
+			}
+			civilian = {
+				small = GFX_idea_ignatio_minister
+			}
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = MOT_ignatio_rivas_cultural_advisor
+			desc = MOT_ignatio_rivas_desc
+			allowed = {
+				original_tag = MOT
+			}
+			available = {
+				controls_state = 417
+			}
+			traits = {
+				MOT_Ignatio_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	MOT_julie_farkas = {
+		name = MOT_julie_farkas_name
+		gender = female
+		portraits = {
+			army = {
+				large = GFX_Portrait_MOT_julie_farkas
+				small = GFX_idea_mot_julie_farkas
+			}
+			civilian = {
+				large = GFX_Portrait_MOT_julie_farkas
+				small = GFX_idea_mot_julie_farkas
+			}
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = MOT_julie_farkas_cultural_advisor
+			desc = MOT_julie_farkas_desc
+			allowed = {
+				original_tag = MOT
+			}
+			traits = {
+				MOT_Richards_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	MOT_fantasticus = {
+		name = MOT_FANTASTICUS_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_MOT_fantasticus
+			}
+			army = {
+				large = GFX_Portrait_MOT_fantasticus
+			}
+		}
+	}
+}

@@ -1,0 +1,24 @@
+state={
+	id=1365
+	name="STATE_1365"
+	provinces={
+		14648 14649 14843 14844 14846 14852 14853 14854 14855
+	}
+	resources = {
+		water = 12
+		energy = 2
+		metal = 6
+	}
+	history = {
+		victory_points = {
+			14854 10
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+		}
+	}
+	state_category = town
+	manpower = 4132
+	buildings_max_level_factor=1.000
+}

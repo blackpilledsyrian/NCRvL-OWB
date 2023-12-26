@@ -1,0 +1,22 @@
+state = {
+	id = 797
+	name = "STATE_797"
+	manpower = 1797
+	state_category = rural
+
+	history = {
+		owner = TAA
+		add_core_of = TAA
+		#victory_points = { #There's nothing, really
+		#	9728 5
+		#}
+		#add_extra_state_shared_building_slots = 1 #Industry moved Eagle Pass;793
+		buildings = {
+			infrastructure = 2
+		}
+	}
+
+	provinces = {
+		2849 9718 9720 9723 9724 9726 9727 9728 9730 9731 9732 9733 9734 9735 9736 9737 9738 9739 9740 12346
+	}
+}

@@ -1,0 +1,30 @@
+state = {
+	id = 177
+	name = "STATE_177"
+	manpower = 2000
+	state_category = town
+
+	resources = {
+		metal = 5
+		advanced = 5
+	}
+
+	history = {
+		victory_points = {
+			2471 5
+		}
+		victory_points = {
+			7215 5
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			air_base = 1
+			7215 = { naval_base = 1 }
+		}
+	}
+
+	provinces = {
+		453 682 2134 2153 2471 3815 3816 3817 3818 3819 3820 3963 3964 3965 3980 4370 4371 4372 4381 7215 7416
+	}
+}

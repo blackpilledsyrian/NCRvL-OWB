@@ -1,0 +1,24 @@
+state = {
+	id = 575
+	name = "STATE_575"
+	manpower = 6480
+	state_category = shanty
+
+	resources = {
+		metal = 10
+	}
+
+	history = {
+		victory_points = {
+			3664 5
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+		}
+	}
+
+	provinces = {
+		1918 1919 1920 1927 1928 2495 3661 3662 3663 3664 3665 3679 3680 3681 3855
+	}
+}

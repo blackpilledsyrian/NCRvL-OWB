@@ -1,0 +1,26 @@
+state = {
+	id = 184
+	name = "STATE_184"
+	manpower = 3000
+	state_category = city
+
+	resources = {
+		metal = 6
+	}
+
+	history = {
+		owner = NEW
+		add_core_of = NEW
+		victory_points = {
+			3405 5
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+		}
+	}
+
+	provinces = {
+		1142 2689 2692 3405 8372 8775 8813 9187 9195
+	}
+}

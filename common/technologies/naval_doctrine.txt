@@ -1,0 +1,1347 @@
+technologies = {
+
+	pacific_fleet_navy_doctrine = {
+
+		critical_receive_chance = -0.05
+		naval_critical_effect_factor = -0.05
+
+		path = {
+			leads_to_tech = river_fleet_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = force_concentration_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = dispersed_formations_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		xp_research_type = navy
+		xp_unlock_cost = 50
+
+		categories = {
+			cat_naval_doctrine
+		}
+
+		folder = {
+			name = naval_doctrine_folder
+			position = { x = 0 y = 0 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_carrier_hull_tech_category = 1.0
+			naval_light_hull_tech_category = 1.0
+			naval_medium_hull_tech_category = 1.0
+			naval_heavy_hull_tech_category = 1.0
+		}
+	}
+
+	river_fleet_navy_doctrine = {
+
+		category_screen_ship = {
+			max_organisation = 3
+		}
+		spec_ops = {
+			amphibious = {
+				movement = 0.1
+				attack = 0.1
+				defence = 0.1
+			}
+		}
+		power_armour = {
+			amphibious = {
+				movement = 0.1
+				attack = 0.1
+				defence = 0.1
+			}
+		}
+		heavy_infantry = {
+			amphibious = {
+				movement = 0.1
+				attack = 0.1
+				defence = 0.1
+			}
+		}
+
+		path = {
+			leads_to_tech = coastal_patrols_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		xp_research_type = navy
+		xp_unlock_cost = 50
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_river_fleet_doctrine
+		}
+
+		folder = {
+			name = naval_doctrine_folder
+			position = { x = 0 y = 2 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_light_hull_tech_category = 1.0
+			naval_medium_hull_tech_category = 1.0
+		}
+	}
+
+	coastal_patrols_navy_doctrine = {
+
+		convoy_escort_efficiency = 0.1
+		category_screen_ship = {
+			surface_detection = 0.05
+		}
+
+		path = {
+			leads_to_tech = raiding_flotillas_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		xp_research_type = navy
+		xp_unlock_cost = 50
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_river_fleet_doctrine
+		}
+
+		folder = {
+			name = naval_doctrine_folder
+			position = { x = 0 y = 4 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_light_hull_tech_category = 1.0
+			naval_medium_hull_tech_category = 1.0
+		}
+	}
+
+	raiding_flotillas_navy_doctrine = {
+
+		category_screen_ship = {
+			naval_speed = 0.05
+			convoy_raiding_coordination = 0.05
+		}
+
+		path = {
+			leads_to_tech = assault_parties_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		xp_research_type = navy
+		xp_unlock_cost = 50
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_river_fleet_doctrine
+		}
+
+		folder = {
+			name = naval_doctrine_folder
+			position = { x = 0 y = 6 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_light_hull_tech_category = 1.0
+			naval_medium_hull_tech_category = 1.0
+		}
+	}
+
+	assault_parties_navy_doctrine = {
+
+		category_screen_ship = {
+			surface_visibility = -0.02
+			lg_attack = 0.02
+			hg_attack = 0.02
+		}
+
+		path = {
+			leads_to_tech = suicide_runs_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		xp_research_type = navy
+		xp_unlock_cost = 50
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_river_fleet_doctrine
+		}
+
+		folder = {
+			name = naval_doctrine_folder
+			position = { x = 0 y = 8 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_light_hull_tech_category = 1.0
+			naval_medium_hull_tech_category = 1.0
+		}
+	}
+
+	suicide_runs_navy_doctrine = {
+
+		category_screen_ship = {
+			lg_attack = 0.03
+			hg_attack = 0.03
+		}
+
+		naval_retreat_speed = -0.1
+
+		path = {
+			leads_to_tech = terrain_exploitation_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		xp_research_type = navy
+		xp_unlock_cost = 50
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_river_fleet_doctrine
+		}
+
+		folder = {
+			name = naval_doctrine_folder
+			position = { x = 0 y = 10 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_light_hull_tech_category = 1.0
+			naval_medium_hull_tech_category = 1.0
+		}
+	}
+
+	terrain_exploitation_navy_doctrine = {
+
+		category_screen_ship = {
+			surface_visibility = -0.15
+		}
+
+		doctrine = yes
+		xp_research_type = navy
+		xp_unlock_cost = 50
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_river_fleet_doctrine
+		}
+
+		folder = {
+			name = naval_doctrine_folder
+			position = { x = 0 y = 12 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_light_hull_tech_category = 1.0
+			naval_medium_hull_tech_category = 1.0
+		}
+	}
+
+	force_concentration_navy_doctrine = {
+
+		category_capital_ship = {
+			max_organisation = 4
+			lg_attack = 0.04
+			hg_attack = 0.04
+		}
+
+		XOR = { dispersed_formations_navy_doctrine }
+
+		path = {
+			leads_to_tech = area_denial_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		xp_research_type = navy
+		xp_unlock_cost = 50
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_force_concentration_doctrine
+		}
+
+		folder = {
+			name = naval_doctrine_folder
+			position = { x = -2 y = 2 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_tech = dispersed_formations_navy_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = dispersed_formations_navy_doctrine
+			}
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = concentrated_navy_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_medium_hull_tech_category = 1.0
+			naval_heavy_hull_tech_category = 1.0
+		}
+	}
+
+	area_denial_navy_doctrine = {
+
+		strike_force_movement_org_loss = -0.25
+
+		path = {
+			leads_to_tech = focus_fire_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		xp_research_type = navy
+		xp_unlock_cost = 50
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_force_concentration_doctrine
+		}
+
+		folder = {
+			name = naval_doctrine_folder
+			position = { x = -2 y = 4 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_tech = dispersed_formations_navy_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = dispersed_formations_navy_doctrine
+			}
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = concentrated_navy_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_medium_hull_tech_category = 1.0
+			naval_heavy_hull_tech_category = 1.0
+		}
+	}
+
+	focus_fire_navy_doctrine = {
+
+		category_capital_ship = {
+			lg_armor_piercing = 0.1
+			hg_armor_piercing = 0.1
+			lg_attack = 0.06
+			hg_attack = 0.06
+			surface_visibility = 0.1
+		}
+
+		path = {
+			leads_to_tech = ship_of_the_line_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		xp_research_type = navy
+		xp_unlock_cost = 50
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_force_concentration_doctrine
+		}
+
+		folder = {
+			name = naval_doctrine_folder
+			position = { x = -2 y = 6 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_tech = dispersed_formations_navy_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = dispersed_formations_navy_doctrine
+			}
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = concentrated_navy_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_medium_hull_tech_category = 1.0
+			naval_heavy_hull_tech_category = 1.0
+		}
+	}
+
+	ship_of_the_line_navy_doctrine = {
+
+		category_capital_ship = {
+			armor_value = 0.25
+		}
+
+		naval_retreat_speed = -0.1
+
+		path = {
+			leads_to_tech = wave_supremacy_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		xp_research_type = navy
+		xp_unlock_cost = 50
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_force_concentration_doctrine
+		}
+
+		folder = {
+			name = naval_doctrine_folder
+			position = { x = -2 y = 8 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_tech = dispersed_formations_navy_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = dispersed_formations_navy_doctrine
+			}
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = concentrated_navy_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_medium_hull_tech_category = 1.0
+			naval_heavy_hull_tech_category = 1.0
+		}
+	}
+
+	wave_supremacy_navy_doctrine = {
+
+		category_capital_ship = {
+			lg_attack = 0.1
+			hg_attack = 0.1
+		}
+
+		sortie_efficiency = 0.05
+
+		path = {
+			leads_to_tech = barge_focus_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		xp_research_type = navy
+		xp_unlock_cost = 50
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_force_concentration_doctrine
+		}
+
+		folder = {
+			name = naval_doctrine_folder
+			position = { x = -2 y = 10 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_tech = dispersed_formations_navy_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = dispersed_formations_navy_doctrine
+			}
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = concentrated_navy_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_medium_hull_tech_category = 1.0
+			naval_heavy_hull_tech_category = 1.0
+		}
+	}
+
+	barge_focus_navy_doctrine = {
+
+		category_capital_ship = {
+			max_organisation = 7
+		}
+
+		path = {
+			leads_to_tech = destroyer_focus_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		xp_research_type = navy
+		xp_unlock_cost = 50
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_force_concentration_doctrine
+		}
+
+		folder = {
+			name = naval_doctrine_folder
+			position = { x = -2 y = 12 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_tech = dispersed_formations_navy_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = dispersed_formations_navy_doctrine
+			}
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = concentrated_navy_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_medium_hull_tech_category = 1.0
+			naval_heavy_hull_tech_category = 1.0
+		}
+	}
+
+	destroyer_focus_navy_doctrine = {
+
+		category_capital_ship = {
+			max_organisation = 8
+		}
+
+		path = {
+			leads_to_tech = carrier_focus_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		xp_research_type = navy
+		xp_unlock_cost = 50
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_force_concentration_doctrine
+		}
+
+		folder = {
+			name = naval_doctrine_folder
+			position = { x = -2 y = 14 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_tech = dispersed_formations_navy_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = dispersed_formations_navy_doctrine
+			}
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = concentrated_navy_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_medium_hull_tech_category = 1.0
+			naval_heavy_hull_tech_category = 1.0
+		}
+	}
+
+	carrier_focus_navy_doctrine = {
+
+		sortie_efficiency = 0.15
+
+		doctrine = yes
+		xp_research_type = navy
+		xp_unlock_cost = 50
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_force_concentration_doctrine
+		}
+
+		folder = {
+			name = naval_doctrine_folder
+			position = { x = -2 y = 16 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_tech = dispersed_formations_navy_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = dispersed_formations_navy_doctrine
+			}
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = concentrated_navy_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_medium_hull_tech_category = 1.0
+			naval_heavy_hull_tech_category = 1.0
+			naval_carrier_hull_tech_category = 1.0
+			naval_super_carrier_hull_tech_category = 1.0
+		}
+	}
+
+	dispersed_formations_navy_doctrine = {
+
+		category_screen_ship = {
+			surface_detection = 0.1
+			surface_visibility = -0.1
+			naval_speed = 0.1
+		}
+
+		XOR = { force_concentration_navy_doctrine }
+
+		path = {
+			leads_to_tech = wolfpacks_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		xp_research_type = navy
+		xp_unlock_cost = 50
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_dispersed_formation_doctrine
+		}
+
+		folder = {
+			name = naval_doctrine_folder
+			position = { x = 2 y = 2 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_tech = force_concentration_navy_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = force_concentration_navy_doctrine
+			}
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = dispersed_navy_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_light_hull_tech_category = 1.0
+			naval_medium_hull_tech_category = 1.0
+		}
+	}
+
+	wolfpacks_navy_doctrine = {
+
+		category_screen_ship = {
+			lg_attack = 0.03
+			hg_attack = 0.03
+			naval_speed = 0.05
+		}
+
+		path = {
+			leads_to_tech = convoy_interdiction_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		xp_research_type = navy
+		xp_unlock_cost = 50
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_dispersed_formation_doctrine
+		}
+
+		folder = {
+			name = naval_doctrine_folder
+			position = { x = 2 y = 4 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_tech = force_concentration_navy_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = force_concentration_navy_doctrine
+			}
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = dispersed_navy_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_light_hull_tech_category = 1.0
+			naval_medium_hull_tech_category = 1.0
+		}
+	}
+
+	convoy_interdiction_navy_doctrine = {
+
+		category_screen_ship = {
+			convoy_raiding_coordination = 0.15
+		}
+
+		path = {
+			leads_to_tech = decoy_tactics_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		xp_research_type = navy
+		xp_unlock_cost = 50
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_dispersed_formation_doctrine
+		}
+
+		folder = {
+			name = naval_doctrine_folder
+			position = { x = 2 y = 6 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_tech = force_concentration_navy_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = force_concentration_navy_doctrine
+			}
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = dispersed_navy_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_light_hull_tech_category = 1.0
+			naval_medium_hull_tech_category = 1.0
+		}
+	}
+
+	decoy_tactics_navy_doctrine = {
+
+		category_screen_ship = {
+			naval_speed = 0.05
+		}
+
+		naval_retreat_speed = 0.2
+
+		path = {
+			leads_to_tech = swimming_bait_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		xp_research_type = navy
+		xp_unlock_cost = 50
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_dispersed_formation_doctrine
+		}
+
+		folder = {
+			name = naval_doctrine_folder
+			position = { x = 2 y = 8 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_tech = force_concentration_navy_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = force_concentration_navy_doctrine
+			}
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = dispersed_navy_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_light_hull_tech_category = 1.0
+			naval_medium_hull_tech_category = 1.0
+		}
+	}
+
+	swimming_bait_navy_doctrine = {
+
+		category_capital_ship = {
+			armor_value = 0.15
+		}
+
+		path = {
+			leads_to_tech = force_projection_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		xp_research_type = navy
+		xp_unlock_cost = 50
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_dispersed_formation_doctrine
+		}
+
+		folder = {
+			name = naval_doctrine_folder
+			position = { x = 2 y = 10 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_tech = force_concentration_navy_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = force_concentration_navy_doctrine
+			}
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = dispersed_navy_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_light_hull_tech_category = 1.0
+			naval_medium_hull_tech_category = 1.0
+		}
+	}
+
+	force_projection_navy_doctrine = {
+
+		category_capital_ship = {
+			naval_speed = 0.1
+		}
+
+		naval_damage_factor = 0.03
+
+		path = {
+			leads_to_tech = rapid_redeployment_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		xp_research_type = navy
+		xp_unlock_cost = 50
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_dispersed_formation_doctrine
+		}
+
+		folder = {
+			name = naval_doctrine_folder
+			position = { x = 2 y = 12 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_tech = force_concentration_navy_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = force_concentration_navy_doctrine
+			}
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = dispersed_navy_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_light_hull_tech_category = 1.0
+			naval_medium_hull_tech_category = 1.0
+		}
+	}
+
+	rapid_redeployment_navy_doctrine = {
+
+		category_capital_ship = {
+			naval_speed = 0.05
+		}
+		category_screen_ship = {
+			naval_speed = 0.05
+		}
+
+		path = {
+			leads_to_tech = sail_focus_navy_doctrine
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes
+		xp_research_type = navy
+		xp_unlock_cost = 50
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_dispersed_formation_doctrine
+		}
+
+		folder = {
+			name = naval_doctrine_folder
+			position = { x = 2 y = 14 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_tech = force_concentration_navy_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = force_concentration_navy_doctrine
+			}
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = dispersed_navy_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_light_hull_tech_category = 1.0
+			naval_medium_hull_tech_category = 1.0
+		}
+	}
+
+	sail_focus_navy_doctrine = {
+
+		category_screen_ship = {
+			max_organisation = 10
+			lg_attack = 0.05
+			hg_attack = 0.05
+		}
+
+		doctrine = yes
+		xp_research_type = navy
+		xp_unlock_cost = 50
+
+		categories = {
+			cat_naval_doctrine
+			cat_naval_dispersed_formation_doctrine
+		}
+
+		folder = {
+			name = naval_doctrine_folder
+			position = { x = 2 y = 16 }
+		}
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_tech = force_concentration_navy_doctrine
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = force_concentration_navy_doctrine
+			}
+			modifier = {
+				num_of_naval_factories < 1
+				factor = 0
+			}
+			modifier = {
+				num_of_naval_factories > 3
+				factor = 2
+			}
+			modifier = {
+				num_of_naval_factories > 6
+				factor = 2
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_country_flag = dispersed_navy_doctrine_ai }
+			}
+		}
+
+		ai_research_weights = {
+			cat_naval_doctrine = -0.5
+			naval_light_hull_tech_category = 1.0
+			naval_medium_hull_tech_category = 1.0
+		}
+	}
+}

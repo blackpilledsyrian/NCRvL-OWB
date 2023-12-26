@@ -1,0 +1,171 @@
+﻿capital = 211
+oob = "VEG_2275"
+
+set_technology = {
+	basic_supply_transport_tech = 1
+	infantry_tech_level_tribal = 1
+	infantry_tech_level_settler = 1
+	#infantry_tech_level_scientific = 1
+	support_tech_level_tribal = 1
+	support_tech_level_settler = 1
+	#support_tech_level_scientific = 1
+	special_forces_tech_level_tribal = 1
+	special_forces_tech_level_settler = 1
+	#special_forces_tech_level_scientific = 1
+	#power_armour_tech_level_settler = 1
+	#power_armour_tech_level_scientific = 1
+	vehicles_tech_level_tribal = 1
+	vehicles_tech_level_settler = 1
+	#vehicles_tech_level_scientific = 1
+	robotics_tech_level_tribal = 1
+	robotics_tech_level_settler = 1
+	#robotics_tech_level_scientific = 1
+	air_tech_level_tribal = 1
+	air_tech_level_settler = 1
+	#air_tech_level_scientific = 1
+	naval_tech_level_tribal = 1
+	#naval_tech_level_settler = 1
+	#naval_tech_level_scientific = 1
+	tools_tech_level_tribal = 1
+	tools_tech_level_settler = 1
+	#tools_tech_level_scientific = 1
+	habitation_tech_level_tribal = 1
+	habitation_tech_level_settler = 1
+	#habitation_tech_level_scientific = 1
+	exploitation_tech_level_tribal = 1
+	exploitation_tech_level_settler = 1
+	#exploitation_tech_level_scientific = 1
+	electronics_tech_level_tribal = 1
+	electronics_tech_level_settler = 1
+	#electronics_tech_level_scientific = 1
+	standard_weaponry_tech = 1
+	ballistic_weaponry_tech_1 = 1
+	melee_weaponry_tech_1 = 1
+	robot_automation_tech = 1
+	robot_makeshift_automatons_tech = 1
+	robot_protectron_equipment_tech_1 = 1
+	tribal_civilization = 1
+	settled_civilization = 1
+	scientific_civilization = 1
+	basic_industry_tech = 1
+	tool_engineering = 1
+	maketool_engineering_1 = 1
+	pre_construction_industry_tech = 1
+	construction_industry_tech_1 = 1
+	construction_industry_tech_2 = 1
+	extraction_industry_tech_1 = 1
+	habitation_industry_tech_1 = 1
+	extraction_industry_tech_2 = 1
+	habitation_industry_tech_2 = 1
+	resource_generator_tech = 1
+	resource_generator_water_tech_1 = 1
+	resource_generator_power_tech_1 = 1
+	resource_generator_metal_tech_1 = 1
+	electronic_engineering = 1
+	automated_warfare = 1
+	robot_fission_batteries_tech = 1
+	robot_handy_equipment_tech_1 = 1
+	robot_armour_hardening_tech = 1
+	robot_handy_equipment_tech_2 = 1
+	robot_securitron_tech_1 = 1
+	robot_command_equipment_tech_1 = 1
+	support_weaponry = 1
+	logistics_company_tech_1 = 1
+	robco_unlock_tech = 1
+}
+
+set_stability = 0.5
+set_war_support = 0.15
+set_research_slots = 5 #Can get up to 6 in the House path
+set_country_flag = is_robotic_nation
+set_country_flag = has_robot_generals
+set_country_flag = robot_doctrine_ai
+set_country_flag = is_california_nation
+
+add_opinion_modifier = {
+	target = NCR
+	modifier = ncr_mot_veg_treaty_new_vegas
+}
+reverse_add_opinion_modifier = {
+	target = NCR
+	modifier = ncr_mot_veg_treaty_new_vegas
+}
+add_opinion_modifier = {
+	target = MOT
+	modifier = ncr_mot_veg_treaty_new_vegas
+}
+reverse_add_opinion_modifier = {
+	target = MOT
+	modifier = ncr_mot_veg_treaty_new_vegas
+}
+
+set_politics = {
+	ruling_party = ruler
+	elections_allowed = no
+}
+
+add_manpower = 1000
+
+set_popularities = {
+	people = 0
+	elites = 0
+	intellectuals = 0
+	ruler = 100
+}
+
+add_ideas = {
+	veg_jewel_of_the_mojave
+	robotics_genius
+	ncr_veg_treaty_of_new_vegas
+	free_trade
+}
+
+give_military_access = MOT
+
+recruit_character = VEG_mr_house
+recruit_character = VEG_benny
+recruit_character = VEG_the_king
+recruit_character = VEG_securitron_ai
+recruit_character = VEG_pdq88b_wiggum
+recruit_character = VEG_offensive_protocols
+recruit_character = VEG_defensive_protocols
+recruit_character = VEG_unorthodox_protocols
+recruit_character = VEG_subroutine_alpha
+recruit_character = VEG_subroutine_beta
+recruit_character = VEG_subroutine_gamma
+recruit_character = VEG_militia_leader_mick
+recruit_character = VEG_false_khan
+recruit_character = VEG_motor_runner
+recruit_character = VEG_nero
+recruit_character = VEG_pacer
+recruit_character = VEG_duke
+recruit_character = VEG_phillipe
+recruit_character = VEG_jessup
+recruit_character = VEG_swank
+recruit_character = VEG_mr_new_vegas
+recruit_character = VEG_michael_angelo
+recruit_character = VEG_marjorie
+recruit_character = VEG_victor
+recruit_character = VEG_arcade_gannon
+
+random_character = {
+	limit = {
+		is_character = VEG_benny
+	}
+	save_global_event_target_as = VEG_benny_target
+}
+
+if = {
+	limit = {
+		has_dlc = "La Resistance"
+	}
+	create_operative_leader = {
+		name = "Courier Six"
+		gfx = GFX_Portrait_VEG_courier
+		skill = 50
+		traits = { operative_smooth_talker operative_heavyweight operative_speech }
+		bypass_recruitment = no
+		available_to_spy_master = no
+		nationalities = { VEG }
+	}
+}

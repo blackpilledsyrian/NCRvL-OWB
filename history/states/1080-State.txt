@@ -1,0 +1,22 @@
+state={
+	id=1080
+	name="STATE_1080"
+	resources = {
+		metal = 3
+	}
+	history={
+		victory_points = {
+			13059 5
+		}
+		buildings = {
+			infrastructure = 3
+		}
+	}
+
+	provinces={
+		13039 13044 13059 13058 13043 13037 13054 13065 13070 13068
+	}
+	manpower = 1100
+	state_category = rural
+	buildings_max_level_factor=1.000
+}

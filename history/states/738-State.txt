@@ -1,0 +1,30 @@
+   state = {
+	id = 738
+	name = "STATE_738"
+	manpower = 2800
+	state_category = shanty
+
+	history = {
+		victory_points = {
+			9258 5
+		}
+		victory_points = {
+			9260 5
+		}
+		victory_points = {
+			9257 5
+		}
+		buildings = {
+			infrastructure = 4
+			dockyard = 1
+			9258 = {
+				naval_base = 7
+				coastal_bunker = 4
+			}
+		}
+	}
+
+	provinces = {
+		9258 9257 9260
+	}
+}

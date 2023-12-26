@@ -1,0 +1,26 @@
+state = {
+	id = 1066
+	name = "STATE_1066"
+	manpower = 3200
+	state_category = large_town
+
+	resources = {
+		metal = 4
+		energy = 2
+		advanced = 2
+	}
+
+	history = {
+		victory_points = {
+			13052 10
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+		}
+	}
+
+	provinces = {
+		13009 13019 13031 13034 13035 13038 13051 13052 13053 13064
+	}
+}

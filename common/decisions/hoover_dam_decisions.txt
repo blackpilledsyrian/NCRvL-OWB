@@ -1,0 +1,321 @@
+first_battle_decision_category = {
+	fbhd_preattack_countdown = {
+		allowed = { always = no } # triggered with on_action
+		available = { hidden_trigger = { always = no } }
+		activation = { always = no }
+		cancel_trigger = { 252 = { owner = { has_war_with = ROOT } } }
+		is_good = no
+		days_mission_timeout = 835 # Mid-April 2277
+		timeout_effect = {
+			start_first_battle_events = yes
+		}
+	}
+	fbhd_bw_hoover_countdown = {
+		allowed = { always = no } # Activated exlusively by command
+		available = { hidden_trigger = { always = no } }
+		activation = { always = no } # As above
+		is_good = no
+		days_mission_timeout = 10
+		war_with_on_timeout = CES
+		war_with_on_timeout = MOT
+		timeout_effect = {
+			effect_tooltip = {
+				start_border_war = {
+					change_state_after_war = no
+					combat_width = 80
+					attacker = {
+						state = 438
+						num_provinces = 2
+						minimum_duration_in_days = 3
+						leader_score = {
+							base = 1
+							modifier = {
+								has_id = 10008 # Malpais
+								add = 100
+							}
+						}
+						on_win = bhd.5
+						on_lose = bhd.6
+						on_cancel = bhd.7
+						terrain_factor = 0.2
+					}
+					defender = {
+						state = 252
+						num_provinces = 1
+						leader_score = {
+							base = 1
+							modifier = {
+								has_id = 820 # Oliver
+								add = 100
+							}
+						}
+						on_win = bhd.8
+						on_lose = bhd.9
+						on_cancel = bhd.10
+						terrain_factor = 0.2
+					}
+				}
+			}
+		}
+	}
+	fbhd_boulder_city_countdown = {
+		allowed = { always = no } # Activated exlusively by command
+		available = { hidden_trigger = { always = no } }
+		activation = { always = no } # As above
+		is_good = no
+		days_mission_timeout = 3
+		war_with_on_timeout = CES
+		war_with_on_timeout = MOT
+		timeout_effect = {
+			effect_tooltip = {
+				start_border_war = {
+					change_state_after_war = no
+					combat_width = 80
+					attacker = {
+						state = 252
+						num_provinces = 1
+						minimum_duration_in_days = 3
+						leader_score = {
+							base = 1
+							modifier = {
+								has_id = 10008 # Malpais
+								add = 100
+							}
+						}
+						on_win = bhd.11
+						on_lose = bhd.12
+						on_cancel = bhd.13
+						terrain_factor = 0.2
+					}
+					defender = {
+						state = 613
+						num_provinces = 2
+						leader_score = {
+							base = 1
+							modifier = {
+								has_id = 821 # Hanlon
+								add = 100
+							}
+						}
+						on_win = bhd.14
+						on_lose = bhd.15
+						on_cancel = bhd.16
+						terrain_factor = 0.2
+					}
+				}
+			}
+		}
+	}
+}
+
+second_battle_decision_category = {
+	sbhd_attack_countdown = {
+		allowed = { always = no } # Activated exlusively by command
+		available = { hidden_trigger = { always = no } }
+		activation = { always = no } # As above
+		is_good = no
+		days_mission_timeout = 10
+		war_with_on_timeout = CES
+		war_with_on_timeout = MOT
+		timeout_effect = {
+			if = {
+				limit = {
+					original_tag = CES
+					252 = { is_owned_by = MOT }
+				}
+				declare_war_on = {
+					target = MOT
+					type = annex_everything
+				}
+			}
+			else_if = {
+				limit = {
+					original_tag = CES
+					252 = { is_owned_by = NCR }
+				}
+				declare_war_on = {
+					target = NCR
+					type = annex_everything
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = { original_tag = CES }
+					252 = { is_owned_by = MOT }
+				}
+				effect_tooltip = {
+					CES = {
+						declare_war_on = {
+							target = MOT
+							type = annex_everything
+						}
+					}
+				}
+			}
+			else = {
+				effect_tooltip = {
+					CES = {
+						declare_war_on = {
+							target = NCR
+							type = annex_everything
+						}
+					}
+				}
+			}
+		}
+	}
+	sbhd_ncr_mob = {
+		allowed = { always = no } # Activated exlusively by command
+		available = { hidden_trigger = { always = no } }
+		activation = { always = no } # As above
+		is_good = no
+		days_mission_timeout = 80
+		timeout_effect = {
+			if = {
+				limit = { tag = NCR }
+				hidden_effect = {
+					every_state = {
+						limit = { is_owned_by = MOT }
+						set_state_flag = do_not_decimate
+					}
+					every_state =  {
+						limit = {
+							is_owned_by = MOT
+							controller = {
+								OR = {
+									original_tag = CES
+									is_caesars_legion_member = yes
+								}
+							}
+						}
+						set_state_flag = ces_occupy
+					}
+				}
+				CES = {
+					declare_war_on = {
+						target = NCR
+						type = annex_everything
+					}
+				}
+				MOT = {
+					every_unit_leader = {
+						set_nationality = NCR
+					}
+				}
+				NCR = {
+					annex_country = {
+						target = MOT
+						transfer_troops = yes
+					}
+				}
+				hidden_effect =  {
+					every_state = {
+						limit = {
+							has_state_flag = ces_occupy
+						}
+						CES = {
+							set_state_controller = PREV
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = { tag = MOT }
+				NCR = { change_tag_from = PREV }
+				effect_tooltip = {
+					CES = {
+						declare_war_on = {
+							target = NCR
+							type = annex_everything
+						}
+					}
+					NCR = {
+						annex_country = {
+							target = MOT
+							transfer_troops = yes
+						}
+					}
+				}
+			}
+			else = {
+				effect_tooltip = {
+					CES = {
+						declare_war_on = {
+							target = NCR
+							type = annex_everything
+						}
+					}
+					NCR = {
+						annex_country = {
+							target = MOT
+							transfer_troops = yes
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+dam_decision_category = {
+	restore_turbine = {
+		visible = {
+			if = {
+				limit = { original_tag = MOT }
+				has_completed_focus = mot_restoring_hoover
+			}
+		}
+		available = {
+			OR = {
+				has_completed_focus = mot_restoring_hoover
+				has_tech = exploitation_tech_level_settler
+			}
+			custom_trigger_tooltip = {
+				tooltip = restore_turbine_avail_tt
+				any_of = {
+					array = 252.dam_turbine_primary
+					check_variable = { v < 1 }
+				}
+			}
+		}
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 0.8 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		days_remove = 100
+		modifier = {
+			consumer_goods_expected_value = 0.04
+		}
+		complete_effect = {
+			252 = {
+				for_each_loop = {
+					array = dam_turbine_primary
+					if = {
+						limit = { check_variable = { v = 0 } }
+						set_variable = { dam_turbine_primary^i = 1 }
+						set_temp_variable = { break = 1 }
+					}
+				}
+			}
+		}
+		remove_effect = {
+			252 = {
+				for_each_loop = {
+					array = dam_turbine_primary
+					if = {
+						limit = { check_variable = { v = 1 } }
+						set_variable = { dam_turbine_primary^i = 2 }
+						set_temp_variable = { break = 1 }
+					}
+				}
+				add_resource = {
+					type = energy
+					amount = 20
+				}
+			}
+		}
+	}
+}

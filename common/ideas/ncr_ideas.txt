@@ -1,0 +1,1494 @@
+ideas = {
+	country = {
+		## On-Start Ideas
+		ncr_bos_idea_allgood_truce = {
+			picture = ncn_sneering_imperialist
+			modifier = {
+				custom_modifier_tooltip = allgood_truce_tt
+			}
+		}
+		ncr_bos_idea_hostility_resumed = {
+			picture = ncn_sneering_imperialist
+			modifier = {
+				#custom_modifier_tooltip = ncr_bos_idea_hostility_resumed_tt
+				weekly_manpower = -1
+			}
+		}
+		## Hub Chaos Levels
+		ncr_idea_hub_chaos = {
+			picture = generic_catastrophe
+			modifier = {
+				caps_node_trade_modifier = -0.25
+				trade_opinion_factor = -0.25
+				weekly_manpower = -4
+				consumer_goods_expected_value = 0.10
+				production_speed_buildings_factor = -0.05
+			}
+		}
+		ncr_idea_hub_martial_law = {
+			picture = generic_service_rifle
+			modifier = {
+				caps_node_trade_modifier = -0.1
+				trade_opinion_factor = -0.10
+				weekly_manpower = -4
+				stability_factor = -0.05
+			}
+		}
+
+		##kimball stuff
+
+		ncr_osi_expanded_idea = {
+
+			picture = generic_medicine
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+
+			research_bonus = {
+				support_medical_tech_category = 0.1
+				industry_specialisation_category = 0.05
+				agriculture_tech = 0.1
+			}
+		}
+		ncr_osi_expanded_idea_2 = {
+
+			picture = generic_medicine
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				research_speed_factor = 0.05
+			}
+			research_bonus = {
+				support_medical_tech_category = 0.1
+				industry_specialisation_category = 0.1
+				agriculture_tech = 0.1
+				electronics = 0.1
+			}
+		}
+
+
+		ncr_command_power_good = {
+
+			picture = generic_medicine
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			modifier = {
+				max_command_power = 20
+				command_power_gain = 0.10
+			}
+		}
+		## War Left Behind Levels
+		ncr_idea_war_left_behind = {
+			picture = ncr_ranger_idea
+			modifier = {
+				war_support_factor = -0.2
+				conscription_factor = -0.15
+				local_resources_factor = -0.05
+				industrial_capacity_factory = -0.05
+			}
+		}
+		ncr_idea_civilian_powerhouse = {
+			picture = VEG_Wealthy_Clientele
+			modifier = {
+				stability_factor = 0.05
+				war_support_factor = -0.05
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_arms_factory_factor = -0.05
+				production_speed_buildings_factor = 0.05
+			}
+		}
+		ncr_idea_war_ready_economy = {
+			picture = VEG_Good_Business
+			modifier = {
+				local_resources_factor = 0.05
+				industrial_capacity_factory = 0.05
+				production_speed_arms_factory_factor = 0.15
+				production_speed_dockyard_factor = 0.1
+			}
+		}
+
+		ncr_forceful_expansion_idea = {
+			picture = generic_badass
+			modifier = {
+				stability_factor = -0.1
+				war_support_factor = 0.1
+				production_speed_arms_factory_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.05
+			}
+		}
+		## Corruption Levels
+		ncr_corruption_curbed = {
+			picture = corruption_20
+			modifier = {
+				caps_income_modifier = -0.025
+				political_power_factor = -0.15
+				consumer_goods_expected_value = 0.03
+			}
+		}
+
+
+		ncr_railroad_to_nowhere = {
+			picture = corruption_30
+			modifier = {
+				caps_income_modifier = -0.05
+				stability_factor = 0.05
+				industrial_capacity_factory = -0.02
+			}
+		}
+		ncr_corruption_overlooked = {
+			picture = corruption_10
+			modifier = {
+				caps_income_modifier = -0.05
+				stability_factor = 0.05
+				political_power_factor = -0.2
+				consumer_goods_expected_value = 0.07
+			}
+		}
+		ncr_corruption_tolerated = {
+			picture = corruption_10
+			modifier = {
+				caps_income_modifier = -0.075
+				stability_factor = 0.1
+				political_power_factor = -0.25
+				consumer_goods_expected_value = 0.06
+			}
+		}
+
+
+		ncr_corruption_big_businesses = {
+			picture = corruption_10
+			modifier = {
+				caps_income_modifier = 0.05
+				stability_factor = 0.15
+				political_power_factor = -0.2
+				consumer_goods_expected_value = 0.05
+			}
+		}
+		## Initial Focus Ideas
+		ncr_idea_repay_debts = {
+			picture = aradesh
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.05
+				stability_factor = 0.05
+				consumer_goods_expected_value = 0.02
+				caps_income_modifier = -0.05
+			}
+		}
+		ncr_idea_kindness_to_strangers = {
+			picture = generic_medicine
+			modifier = {
+				compliance_gain = 0.02
+				exodus_national_appeal = 0.1
+				war_support_factor = -0.05
+			}
+		}
+		ncr_idea_self_sacrifice = {
+			picture = generic_medal
+			modifier = {
+				country_resource_water = 8
+				production_factory_max_efficiency_factor = 0.03
+				research_speed_factor = -0.02
+				weekly_manpower = -5
+			}
+		}
+		## Collapse Ideas
+		ncr_idea_constitutional_uncertainty = {
+			picture = moj_idea_settlements_raided_ncr
+			modifier = {
+				stability_weekly = -0.03
+				political_power_factor = -0.333
+				intellectuals_drift = 0.01
+			}
+		}
+
+		ncr_idea_political_void = {
+			picture = generic_catastrophe
+			modifier = {
+				stability_weekly = -0.05
+				political_power_factor = -0.5
+				intellectuals_drift = 0.03
+			}
+		}
+		## Foreign Policy Ideas
+		ncr_idea_california_resurgent = {
+			picture = ncr_ranger_propaganda
+			modifier = {
+				war_support_factor = 0.05
+				surrender_limit = 0.1
+				production_factory_efficiency_gain_factor = 0.05
+				army_morale_factor = 0.05
+			}
+		}
+		ncr_idea_republic_reserve = {	# Intentionally very strong, removed once certain eco law level is reached
+			picture = ncr_republic_reserve
+			modifier = {
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_arms_factory_factor = 0.1
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+				custom_modifier_tooltip = ncr_idea_republic_reserve_tt
+			}
+			cancel = {
+				NOT = {
+					has_idea = ncr_war_exhausted_economy
+					has_idea = ncr_rural_revitalisation
+					has_idea = ncr_giant_awakes
+				}
+			}
+			on_remove = {
+				add_timed_idea = {
+					idea = ncr_idea_republic_reserve_debt
+					days = 730
+				}
+			}
+		}
+		ncr_idea_republic_reserve_debt = {
+			picture = ncr_republic_reserve
+			modifier = {
+				caps_income_modifier = -0.25
+			}
+		}
+
+		ncr_recovering_gold_reserve = {	# Timed starting idea
+			picture = chi_hyper_inflation5
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				caps_income_modifier = -0.30
+				caps_flat_income_modifier = -7
+				local_resources_factor = -0.05
+			}
+		}
+
+		#### Fae Stuff
+
+
+		rattletailrepaid = {
+
+			picture = great_depression
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_expected_value = 0.05
+			}
+		}
+		rattletale_weaken_resistance = {
+
+			picture = great_depression
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_core_defence_factor = -0.05
+				army_core_attack_factor = -0.05
+			}
+		}
+		riverpatrols = {
+
+			picture = generic_naval_manufacturer_3
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			modifier = {
+				navy_max_range_factor = 0.2
+			}
+			equipment_bonus = {
+				ship_hull_light = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				convoy = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+		california_navy_sweet = {
+
+			picture = generic_naval_manufacturer_3
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				ship_hull_light = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+				convoy = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+			}
+		}
+
+		### Hayes
+		ncr_hayes_bad = {
+			picture = generic_cash
+			modifier = {
+				caps_income_modifier = -0.10
+				stability_factor = -0.05
+				political_power_factor = -0.1
+				local_resources_factor = -0.10
+				consumer_goods_expected_value = 0.10
+			}
+		}
+		broken_barons = {
+			picture = brahmin_baron
+			modifier = {
+				caps_node_trade_modifier = 0.1
+				trade_opinion_factor = 0.10
+				consumer_goods_expected_value = -0.05
+			}
+		}
+
+		ncr_mechanized_corps = {
+
+			picture = generic_vehicle_apc
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				combat_robot_equipment = {
+					build_cost_ic = -0.1
+					soft_attack = 0.1
+					instant = yes
+				}
+			}
+		}
+		militindustrial = {
+
+			picture = generic_production_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_speed_industrial_complex_factor = -0.1
+				production_speed_arms_factory_factor = 0.1
+			}
+		}
+		militindustrial_good = {
+
+			picture = generic_production_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_speed_industrial_complex_factor = 0.05
+				production_speed_arms_factory_factor = 0.1
+				consumer_goods_expected_value = 0.01
+				caps_income_modifier = -0.1
+			}
+		}
+		ncr_robotic_republicans = {
+
+			picture = robot_salvaging_expertise
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				modifier_army_sub_unit_combat_robot_attack_factor = 0.05
+				modifier_army_sub_unit_support_robot_attack_factor = 0.05
+			}
+		}
+		legacyofnavarro_good = {
+
+			picture = legacy_of_navarro
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				conscription = -0.005
+			}
+
+			equipment_bonus = {
+				combat_robot_equipment = {
+					build_cost_ic = -0.05
+					soft_attack = 0.15
+					breakthrough = 0.15
+					instant = yes
+				}
+				support_robot_equipment = {
+					build_cost_ic = -0.05
+					soft_attack = 0.15
+					defense = 0.15
+					instant = yes
+				}
+			}
+			research_bonus = {
+				robotics_tech_category = 0.15
+			}
+		}
+		ncr_brotherhood_hegemony = {
+
+			picture = legacy_of_navarro
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				power_armor_equipment = {
+					build_cost_ic = 0.75
+					instant = yes
+				}
+			}
+
+			research_bonus = {
+				energy_weaponry_tech_category = -0.75
+				power_armor_tech_category = -0.75
+			}
+		}
+		ncr_brotherhood_contested = {
+
+			picture = legacy_of_navarro
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				power_armor_equipment = {
+					build_cost_ic = 0.25
+					instant = yes
+				}
+			}
+			modifier = {
+				special_forces_min = 40
+			}
+
+			research_bonus = {
+				energy_weaponry_tech_category = -0.50
+				power_armor_tech_category = -0.25
+			}
+		}
+		ncr_brotherhood_angry = {
+
+			picture = legacy_of_navarro
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				power_armor_equipment = {
+					build_cost_ic = 0.1
+					instant = yes
+				}
+			}
+
+			research_bonus = {
+				energy_weaponry_tech_category = -0.20
+				power_armor_tech_category = -0.10
+			}
+			modifier = {
+				special_forces_min = 65
+				conscription_factor = -0.05
+			}
+		}
+		ncr_brotherhood_really_angry = {
+
+			picture = legacy_of_navarro
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				power_armor_equipment = {
+					build_cost_ic = 0.1
+					instant = yes
+				}
+			}
+
+			research_bonus = {
+				energy_weaponry_tech_category = -0.20
+				power_armor_tech_category = -0.10
+			}
+			modifier = {
+				special_forces_min = 65
+				conscription_factor = -0.05
+				modifier_army_sub_unit_power_armour_attack_factor = 0.05
+				modifier_army_sub_unit_power_armour_speed_factor = 0.05
+			}
+		}
+		ncr_brotherhood_really_really_angry = {
+
+			picture = legacy_of_navarro
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				power_armor_equipment = {
+					breakthrough = 0.05
+					soft_attack = 0.05
+					hard_attack = 0.05
+					instant = yes
+				}
+			}
+			modifier = {
+				special_forces_min = 75
+				conscription_factor = -0.08
+				modifier_army_sub_unit_power_armour_attack_factor = 0.05
+				modifier_army_sub_unit_power_armour_speed_factor = 0.05
+			}
+		}
+
+
+		ncr_crushed_brotherhood = {
+			picture = ncr_ranger_idea
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			research_bonus = {
+				power_armor_tech_category = 0.15
+			}
+			equipment_bonus = {
+				power_armor_equipment = {
+					breakthrough = 0.1
+					soft_attack = 0.1
+					hard_attack = 0.1
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				spec_ops_equipment = {
+					build_cost_ic = 0.05
+					instant = yes
+				}
+			}
+			modifier = {
+				special_forces_min = 85
+				conscription_factor = -0.14
+				modifier_army_sub_unit_power_armour_attack_factor = 0.05
+				modifier_army_sub_unit_power_armour_speed_factor = 0.05
+			}
+		}
+
+####
+		ncr_true_to_tandi = {
+			picture = tandi
+			modifier = {
+				caps_income_modifier = 0.05
+				political_power_factor = 0.05
+				consumer_goods_expected_value = -0.05
+				conscription_factor = 0.05
+				local_resources_factor = 0.05
+				army_core_defence_factor = 0.10
+			}
+		}
+		##### REdding
+		wanamingo_mine_idea = {
+			#picture =
+			modifier = {
+				caps_income_modifier = 0.05
+				consumer_goods_expected_value = -0.05
+
+			}
+		}
+		ncr_constitution_idea = {
+			picture = generic_political_crisis
+			modifier = {
+				stability_factor = 0.1
+				political_power_factor = 0.25
+			}
+		}
+		ncr_congress_up_north = {
+			picture = flag_NCR
+			modifier = {
+				political_power_factor = 0.15
+				trade_opinion_factor = 0.25
+				weekly_manpower = 2
+			}
+		}
+
+
+		##moore
+
+		ncr_barons_gone = {
+			picture = generic_brahmin
+			modifier = {
+				trade_opinion_factor = -0.10
+				production_speed_infrastructure_factor = -0.1
+				caps_income_modifier = -0.1
+			}
+		}
+
+		ncr_alliance_with_barons = {
+			picture = brahmin_baron
+			modifier = {
+				production_speed_infrastructure_factor = 0.05
+				trade_opinion_factor = 0.05
+			}
+		}
+
+		ncr_junkertank_bonus = {
+			picture = savage_idea
+			modifier = {
+				army_speed_factor = 0.05
+				supply_consumption_factor = -0.05
+			}
+		}
+
+		ncr_junkertroop_bonus = {
+			picture = generic_mass_infantry
+			modifier = {
+				conscription_factor = 0.05
+				land_reinforce_rate = 0.02
+				org_loss_when_moving = -0.2
+			}
+		}
+
+		ncr_eliminate_ghouls = {
+			picture = mean_bastards
+			modifier = {
+				stability_factor = 0.1
+				research_speed_factor = -0.02
+			}
+		}
+		ncr_garrison_rangers = {
+
+			picture = hea_idea_conscription
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				resistance_target = -0.05
+			}
+		}
+		ncr_wartime_administration = {
+
+			picture = hea_idea_conscription
+
+			allowed = {
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = {
+				CES = { exists = no }
+			}
+			removal_cost = -1
+
+			modifier = {
+				political_power_factor = -0.25
+				stability_weekly_factor = -0.01
+				war_support_factor = 0.3
+				command_power_gain = 0.5
+				defensive_war_stability_factor = 0.3
+				planning_speed = 0.1
+				intel_network_gain_factor = 0.1
+				minimum_training_level = -0.05
+			}
+		}
+		ncr_remove_checks_and_balances = {
+
+			picture = hea_idea_conscription
+
+			allowed = {
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = {
+				CES = { exists = no }
+			}
+			removal_cost = -1
+
+			modifier = {
+				political_power_factor = -0.25
+				stability_factor = -0.5
+				ruler_drift = 0.1
+				min_export = -0.05
+				production_speed_buildings_factor = 0.1
+				conversion_cost_civ_to_mil_factor = -0.5
+				production_factory_efficiency_gain_factor = 0.1
+				production_lack_of_resource_penalty_factor = -0.2
+				line_change_production_efficiency_factor = 0.25
+			}
+		}
+		ncr_supply_train_expansion = {
+			picture = generic_open_trade
+			modifier = {
+				supply_consumption_factor = -0.05
+			}
+		}
+
+		ncr_supply_train_expansion_1 = {
+			picture = generic_open_trade
+			modifier = {
+				supply_consumption_factor = -0.1
+			}
+		}
+
+		ncr_supply_train_expansion_2 = {
+			picture = generic_open_trade
+			modifier = {
+				production_speed_infrastructure_factor = 0.15
+				supply_consumption_factor = -0.05
+			}
+		}
+
+		ncr_foraging_focused_logistics = {
+			picture = generic_open_trade
+			modifier = {
+				supply_consumption_factor = -0.15
+				army_org_regain = 0.05
+			}
+		}
+
+		ncr_supply_route_focused_logistics = {
+			picture = generic_open_trade
+			modifier = {
+				production_speed_infrastructure_factor = 0.2
+
+			}
+		}
+
+		ncr_compliance_laws_idea = {
+			picture = ncr_ranger_propaganda
+			modifier = {
+				conscription_factor = -0.1
+				stability_factor = 0.1
+				research_speed_factor = -0.05
+				production_speed_buildings_factor = 0.1
+			}
+		}
+
+		ncr_expanded_prison_responsibilities_idea = {
+			picture = generic_military_draft
+			modifier = {
+				local_resources_factor = 0.05
+				industrial_capacity_factory = 0.05
+				consumer_goods_expected_value = -0.01
+			}
+		}
+
+		ncr_gun_runner_engineers_1 = {
+			picture = service_rifle
+			modifier = {
+				production_speed_arms_factory_factor = 0.08
+			}
+		}
+
+		ncr_study_gun_runner_schematics_1 = {
+			picture = generic_service_rifle
+			equipment_bonus = {
+				fireteam_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				demolitions_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+
+		ncr_new_procurement_system_1 = {
+			picture = service_rifle
+			modifier = {
+				production_speed_arms_factory_factor = 0.15
+				global_building_slots_factor = 0.1
+			}
+		}
+
+		ncr_new_procurement_system_2 = {
+			picture = generic_service_rifle
+			equipment_bonus = {
+				fireteam_equipment = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+				demolitions_equipment = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+			}
+		}
+
+		ncr_loyal_officer_promotions_1 = {
+			picture = officer_hat
+			modifier = {
+				army_leader_start_level = 1
+				army_leader_start_attack_level = 1
+				max_command_power_mult = 0.15
+				army_leader_cost_factor = -0.15
+			}
+		}
+
+		ncr_loyal_officer_promotions_2 = {
+			picture = officer_hat
+			modifier = {
+				army_leader_start_level = 1
+				army_leader_start_attack_level = 1
+				max_command_power_mult = 0.3
+				army_leader_cost_factor = -0.3
+				political_power_factor = 0.1
+			}
+		}
+
+		ncr_ranger_primacy = {
+			picture = ranger_propaganda
+			modifier = {
+				heat_attrition_factor = -0.2
+				special_forces_training_time_factor = -0.1
+				special_forces_cap = 0.1
+			}
+		}
+
+		ncr_shi_research_agreement = {
+
+			picture = ncr_ranger_idea
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			research_bonus = {
+				spec_force_equipment_tech_category = 0.05
+				agriculture_tech = 0.05
+			}
+		}
+		ranger_uprising  = {
+			picture = mot_pacification_not_emancipation
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.15
+				war_support_factor = -0.10
+				weekly_manpower = -7
+			}
+		}
+		### New Ieas
+		bos_war = {
+			picture = MOJ_idea_settlements_raided_ncr
+			removal_cost = -1
+			modifier = {
+				experience_gain_factor =  0.05
+				weekly_manpower = -3
+				stability_factor = -0.15
+				war_support_factor = 0.05
+				industrial_capacity_factory = -0.05
+				local_resources_factor = -0.10
+			}
+		}
+
+
+		drummondsarmy = {
+
+			picture = generic_infantry_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				experience_gain_factor = 0.07
+			}
+			research_bonus = {
+				infantry_weapons_tech_category = 0.1
+			}
+		}
+		#### Loot Mojave
+		ncr_takes_our_power = {
+			picture = generic_dam
+			available = {
+				owns_state = 252
+				#BON = { exists = yes }
+			}
+			removal_cost = -1
+			modifier = {
+				country_resource_energy = -30
+			}
+		}
+
+
+		ncr_takes_our_power2 = {
+			picture = generic_dam
+			available = {
+				owns_state = 252
+				BON = { exists = yes }
+			}
+			removal_cost = -1
+			modifier = {
+				country_resource_energy = -50
+			}
+		}
+		ncr_gets_power = {
+			picture = generic_dam
+			available = {
+
+				MOT = {
+					exists = yes
+					owns_state = 252
+				}
+			}
+			removal_cost = -1
+			modifier = {
+				country_resource_energy = 15
+			}
+		}
+		ncr_gets_power2 = {
+			picture = generic_dam
+			available = {
+
+				MOT = {
+					exists = yes
+					owns_state = 252
+				}
+			}
+			removal_cost = -1
+			modifier = {
+				country_resource_energy = 30
+			}
+		}
+		ncr_taxes = {
+			picture = generic_dam
+			available = {
+				NOT = { has_war_with = NCR }
+			}
+			removal_cost = -1
+			modifier = {
+				country_resource_advanced = -1
+				caps_flat_income_modifier = -3
+			}
+		}
+		boneyard_blades_idea_good = {
+			picture = ncn_way_of_the_canaanite
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				weekly_manpower = -2
+				modifier_army_sub_unit_militia_attack_factor = 0.10
+				modifier_army_sub_unit_militia_speed_factor = 0.10
+				modifier_army_sub_unit_militia_defence_factor = 0.10
+			}
+			research_bonus = {
+				cat_land_doctrine = 0.05
+			}
+		}
+		hubweapons = {
+
+			picture = generic_morale_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				modifier_army_sub_unit_militia_attack_factor = 0.05
+				modifier_army_sub_unit_militia_speed_factor = 0.05
+				modifier_army_sub_unit_militia_defence_factor = 0.05
+			}
+
+			equipment_bonus = {
+				demolitions_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+			}
+		}
+		bigjim = {
+			picture = generic_infantry_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				heat_attrition_factor = -0.1
+			}
+		}
+
+		ncrmarch = {
+
+			picture = generic_infantry_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_speed_factor = 0.10
+				army_org_factor = 0.05
+				heat_attrition_factor = -0.1
+			}
+		}
+
+		jimdraft = {
+
+			picture = generic_manpower_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_speed_factor = 0.10
+				army_org_factor = 0.05
+				heat_attrition_factor = -0.1
+				modifier_army_sub_unit_fireteam_infantry_attack_factor = 0.15
+				modifier_army_sub_unit_fireteam_infantry_defence_factor = 0.15
+			}
+		}
+		jimdraft2 = {
+
+			picture = generic_manpower_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_speed_factor = 0.10
+				army_org_factor = 0.05
+				heat_attrition_factor = -0.1
+				modifier_army_sub_unit_fireteam_infantry_attack_factor = 0.15
+				modifier_army_sub_unit_fireteam_infantry_defence_factor = 0.15
+				modifier_army_sub_unit_demolitions_infantry_attack_factor = 0.15
+				modifier_army_sub_unit_demolitions_infantry_defence_factor = 0.15
+			}
+		}
+		speartip = {
+
+			picture = generic_vehicle_great_war_tank
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			research_bonus = {
+				vehicle_tech_category = 0.15
+			}
+			modifier = {
+				modifier_army_sub_unit_tank_attack_factor = 0.1
+				modifier_army_sub_unit_tank_max_org_factor = 0.05
+			}
+		}
+		#Expansion branch
+		####Allgood
+		NCR_state_department = {
+			picture = generic_helm_army
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				trade_opinion_factor = 0.1
+				global_building_slots_factor = 0.1
+				compliance_gain = 0.03
+			}
+		}
+		NCR_supporting_the_populace = {
+			picture = gov_idea_ncr_dollar
+			allowed = {
+				always = no
+			}
+			cancel = {
+                has_completed_focus = mot_civilian_rule
+            }
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = -0.1
+				caps_income_modifier = -0.1
+			}
+		}
+		NCR_not_a_question_of_citizenship = {
+			picture = generic_soup
+			allowed = {
+				always = no
+			}
+			cancel = {
+                has_completed_focus = mot_civilian_rule
+            }
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.1
+				compliance_gain = 0.02
+				non_core_manpower = 0.05
+			}
+		}
+		NCR_protectors_of_justice = {
+			picture = generic_helm_ranger
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				diplomacy_distance_factor = 0.5
+				political_power_factor = 0.2
+				justify_war_goal_time = 0.25
+			}
+		}
+		NCR_celebrating_baseball_victory = {
+			picture = generic_hat_america
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.3
+				stability_weekly = 0.01
+			}
+		}
+
+		#Expansion branch
+		####kimball
+		NCR_DEA = {
+			picture = generic_helm_army
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				justify_war_goal_time = -0.1
+				war_support_factor = 0.1
+				max_command_power = 25
+			}
+		}
+		NCR_steel_menace = {
+			picture = spineless
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				war_support_weekly = 0.03
+				industrial_capacity_factory = 0.15
+				political_power_factor = 0.15
+				stability_weekly = -0.01
+			}
+		}
+		NCR_investments = {
+			picture = generic_briefcase
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				consumer_goods_expected_value = -0.05
+			}
+		}
+		NCR_investing = {
+			picture = generic_briefcase
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				consumer_goods_expected_value = 0.02
+			}
+		}
+
+		#Hayes
+		NCR_area_51_research_zone = {
+			picture = generic_folder
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.06
+				consumer_goods_expected_value = 0.02
+			}
+		}
+		NCR_celebrating_launch = {
+			picture = generic_satellite_1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_weekly = 0.003
+				political_power_factor = 0.2
+			}
+		}
+		#Hayes
+		NCR_cali_first = {
+			picture = generic_helm_army
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				justify_war_goal_time = -0.3
+				production_speed_arms_factory_factor = 0.075
+				max_command_power = 75
+			}
+		}
+		NCR_hayes_reforms = {
+			picture = generic_helm_army
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				caps_income_modifier = -0.15
+				consumer_goods_expected_value = 0.05
+				political_power_factor = 0.1
+				production_speed_industrial_complex_factor = 0.15
+				production_speed_arms_factory_factor = 0.05
+			}
+		}
+		NCR_chaotic_region = {
+			picture = generic_blood
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = -0.25
+				consumer_goods_expected_value = 0.15
+				compliance_gain = 0.05
+				resistance_target = -0.15
+			}
+		}
+	}
+}
+

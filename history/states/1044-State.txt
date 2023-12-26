@@ -1,0 +1,27 @@
+state = {
+	id = 1044
+	name = "STATE_1044"
+	manpower = 28646
+	state_category = metropolis
+
+	resources = {
+		water = 8
+		advanced = 4
+		metal = 6
+	}
+
+	history = {
+		victory_points = {
+			12604 25
+		}
+		buildings = {
+			infrastructure = 6
+			arms_factory = 4
+			industrial_complex = 3
+		}
+	}
+
+	provinces = {
+		12562 12572 12577 12580 12583 12591 12594 12595 12598 12604 12607 12610
+	}
+}

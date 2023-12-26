@@ -1,0 +1,1227 @@
+characters = {
+	NCR_grant_c_hayes = {
+		name = NCR_GRANT_C_HAYES_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Hayes
+				small = GFX_idea_grant_c_hayes
+			}
+			army = {
+				large = GFX_Portrait_Hayes
+				small = GFX_idea_grant_c_hayes
+			}
+		}
+		country_leader = {
+			desc = NCR_GRANT_C_HAYES_DESC
+			ideology = ideocracy
+			expire = "3000.01.01.01"
+			id = -1
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = NCR_grant_c_hayes_cultural_advisor
+			allowed = {
+				OR = {
+					original_tag = NCR
+					original_tag = DAY
+				}
+			}
+			available = {
+				OR = {
+					has_completed_focus = ncr_support_hayes
+					NOT = {
+						has_country_flag = ncr_hayes_left
+					}
+					#tag = DAY
+				}
+			}
+			traits = {
+				old_world_blues
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 5
+				modifier = {
+					factor = 2
+					political_power_growth > 1.2
+				}
+			}
+		}
+	}
+	NCR_allgood_murphy = {
+		name = NCR_ALLGOOD_MURPHY_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NCR_allgood
+				small = GFX_idea_allgood_murphy
+			}
+			army = {
+				large = GFX_Portrait_NCR_allgood
+				small = GFX_idea_allgood_murphy
+			}
+		}
+		country_leader = {
+			desc = NCR_ALLGOOD_MURPHY_DESC
+			ideology = constitutional_republic
+			expire = "3000.01.01.01"
+			id = -1
+			traits = {
+				charismatic_leader
+				follower_of_the_apocalypse
+			}
+		}
+	}
+
+	NCR_anton_flynn = {
+		name = NCR_ANTON_FLYNN_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NCR_flynn
+				small = GFX_idea_anton_flynn
+			}
+			army = {
+				large = GFX_Portrait_NCR_flynn
+				small = GFX_idea_anton_flynn
+			}
+		}
+		country_leader = {
+			desc = NCR_ANTON_FLYNN_DESC
+			ideology = conspiratory_oligarchy
+			expire = "3000.01.01.01"
+			traits = {
+				baron_connections
+            }
+			id = -1
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = NCR_allgood_murphy_economic_advisor
+			slot = cultural_advisor
+			idea_token = NCR_anton_flynn_cultural_advisor
+			allowed = {
+				OR = {
+					original_tag = NCR
+					original_tag = RDS
+				}
+			}
+			available = {
+				OR = {
+					has_completed_focus = ncr_lift_small_business_restrictions
+					tag = RDS
+				}
+			}
+			traits = {
+				power_broker
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 5
+				modifier = {
+					factor = 2
+					OR = {
+						has_stability > 0.5
+						AND = {
+							has_stability > 0.25
+							has_war = yes
+						}
+					}
+				}
+			}
+		}
+	}
+	NCR_colonel_moore = {
+		name = NCR_moore_name
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NCR_moore
+				small = GFX_idea_moore_minister
+			}
+			army = {
+				large = GFX_Portrait_NCR_moore
+			}
+		}
+		country_leader = {
+			desc = CASSANDRA_MOORE_DESC
+			ideology = benevolent_dictatorship
+			expire = "3000.01.01.01"
+			id = -1
+			traits = {
+				president_general
+			}
+		}
+	}
+	NCR_air_chief = {
+		name = NCR_air_chief_name
+		gender = female
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_sariah
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_sariah
+			}
+		}
+		advisor = {
+			slot = air_chief
+			idea_token = NCR_air_chief
+			desc = NCR_air_chief_desc
+			ledger = air
+			allowed = {
+				original_tag = NCR
+			}
+			traits = {
+				ncr_air_buff
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 4
+			}
+		}
+	}
+	NCR_navy_chief = {
+		name = NCR_navy_chief_name
+		portraits = {
+			army = {
+				small = GFX_idea_generic_advisor18
+			}
+		}
+		advisor = {
+			slot = navy_chief
+			idea_token = NCR_navy_chief_idea_token
+			desc = NCR_navy_chief_desc
+			ledger = army
+			allowed = {
+				original_tag = NCR
+			}
+			available = {
+				has_completed_focus = ncr_setting_sun_navies_rule
+			}
+			traits = {
+				navy_chief_reform_2
+			}
+			research_bonus = {
+				naval_tech_category = 0.2
+				naval_module_tech_category = 0.05
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 4
+			}
+		}
+	}
+	NCR_enclave_advisor_advisor_4 = {
+		name= ENC_generic_advisor_4_name
+		portraits = {
+			army = {
+				large = GFX_Portrait_ENC_generic_advisor_4
+				small = GFX_idea_enclave_advisor_4
+			}
+		}
+		advisor = {
+			slot = research_advisor
+			idea_token = NCR_enclave_advisor_advisor_4_idea_token
+			desc = ENC_generic_advisor_4_desc
+			ledger = army
+			allowed = {
+				original_tag = NCR
+			}
+			modifier = {
+				experience_gain_army = 0.15
+				modifier_army_sub_unit_power_armour_attack_factor = 0.05
+				modifier_army_sub_unit_power_armour_defence_factor = 0.05
+			}
+			available = {
+				has_completed_focus = ncr_scavenge_old_army_base
+			}
+			research_bonus = {
+				power_armor_tech_category = 0.1
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 8
+				modifier = {
+					add = 4
+					has_completed_focus = ncr_power_armor_approach
+				}
+			}
+		}
+	}
+	NCR_committee_national_security = {
+		name = NCR_commitee_name
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_TEX_provisional_senate
+				#small = GFX_idea_moore_minister
+			}
+			army = {
+				large = GFX_Portrait_TEX_provisional_senate
+			}
+		}
+		country_leader = {
+			desc = NCR_Committee_DESC
+			ideology = ideocracy
+			expire = "3000.01.01.01"
+			id = -1
+			traits = {
+				military_dominance
+				civil_service_members
+			}
+		}
+	}
+	NCR_vacant_leadership = {
+		name = NCR_vacant_leadership
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_TEX_provisional_senate
+				#small = GFX_idea_moore_minister
+			}
+			army = {
+				large = GFX_Portrait_TEX_provisional_senate
+			}
+		}
+		country_leader = {
+			desc = NCR_Vacant_DESC
+			ideology = constitutional_republic
+			expire = "3000.01.01.01"
+			id = -1
+			traits = {
+				constitutional_chaos
+			}
+		}
+	}
+	NCR_mossman_character = {
+		name = NCR_mossman_character_name
+		portraits = {
+			army = {
+				large = GFX_Portrait_NCR_mossman
+				small = GFX_idea_mossman_chief_of_army
+			}
+			civilian = {
+				large = GFX_Portrait_NCR_mossman
+				small = GFX_idea_mossman_chief_of_army
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = NCR_mossman_character_army_chief
+			ledger = army
+			allowed = {
+				OR = {
+					original_tag = NCR
+					tag = RDS
+				}
+			}
+			traits = {
+				ranger_general
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		field_marshal = {
+			skill = 4
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 3
+			traits = {
+				perceptive_trait
+				agile_trait
+				ranger_trait
+			}
+			legacy_id = 123456
+		}
+		country_leader = {
+			desc = NCR_mossman_character_name_DESC
+			ideology = military_government
+			expire = "3000.01.01.01"
+			id = -1
+			traits = {
+				war_hero
+				army_commando_1
+			}
+		}
+	}
+	NCR_aaron_kimball = {
+		name = NCR_kimball_character_name
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NCR_kimball
+				small = GFX_idea_aaron_kimball
+			}
+			army = {
+				large = GFX_Portrait_NCR_kimball
+				small = GFX_idea_aaron_kimball
+			}
+		}
+		country_leader = {
+			desc = NCR_kimball_character_name_desc
+			ideology = constitutional_republic
+			expire = "3000.01.01.01"
+			id = -1
+			traits = {
+				military_background
+			}
+		}
+	}
+	NCR_ranger_commander_martin = {
+		name = NCR_ranger_commander_martin
+		portraits = {
+			army = {
+				large = GFX_Portrait_NCR_Generic_1
+			}
+		}
+		corps_commander = {
+			traits = {
+				strong_trait
+				enduring_trait
+				ranger_trait
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+			legacy_id = 123456789
+		}
+	}
+	NCR_brigadier_general_thompson = {
+		name = NCR_brigadier_general_thompson
+		portraits = {
+			army = {
+				large = GFX_Portrait_NCR_Generic_2
+			}
+		}
+		field_marshal = {
+			traits = {
+				strong_trait
+				perceptive_trait
+				lucky_trait
+			}
+			skill = 3
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 1
+			legacy_id = 12345678
+		}
+	}
+	NCR_big_jim = {
+		name = NCR_big_jim
+		portraits = {
+			army = {
+				large = GFX_Portrait_NCR_bigjim
+				small = GFX_idea_big_jim_chief_of_army
+			}
+			civilian = {
+				large = GFX_Portrait_NCR_bigjim
+				small = GFX_idea_big_jim_chief_of_army
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = NCR_big_jim_army_chief
+			ledger = army
+			allowed = {
+				OR = {
+					original_tag = NCR
+					tag = RDS
+				}
+			}
+			traits = {
+				the_baron
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		field_marshal = {
+			skill = 3
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+			traits = {
+				strong_trait
+				charismatic_trait
+			}
+			legacy_id = 1234567
+		}
+	}
+
+	NCR_drummond = {
+		name = NCR_DRUMMOND_NAME
+		portraits = {
+			army = {
+				large = GFX_Portrait_NCR_drummond
+				small = GFX_idea_drummond_chief_of_army
+			}
+			civilian = {
+				large = GFX_Portrait_NCR_drummond
+				small = GFX_idea_drummond_chief_of_army
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = NCR_drummond_army_chief
+			ledger = army
+			allowed = {
+				original_tag = NCR
+			}
+			traits = {
+				unpopular_genius
+			}
+			cost = 100
+			ai_will_do = {
+				base = 4
+				modifier = {
+					add = 4
+					OR = {
+						has_stability > 0.5
+						AND = {
+							has_stability > 0.25
+							has_war = yes
+						}
+					}
+				}
+				modifier = {	# Leaves the decision up to the AI naturally once it can actually compare other army chiefs to drummond (if also +2 from above)
+					factor = 0
+					NOT = {
+						has_completed_focus = ncr_jim
+						has_completed_focus = ncr_rangergenmossman
+					}
+				}
+			}
+		}
+		country_leader = {
+			desc = NCR_DRUMMOND_DESC
+			ideology = peoples_militia
+			traits = {
+				#traits_here
+			}
+			expire = "3000.01.01.01"
+			id = -1
+		}
+		field_marshal = {
+			skill = 5
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 3
+			legacy_id = 12345
+			traits = {
+				strong_trait
+				charismatic_trait
+			}
+		}
+	}
+	NCR_major_lawrence = {
+		name = NCR_major_lawrence
+		portraits = {
+			army = {
+				small = GFX_idea_generic_political_advisor_asia_1
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = NCR_major_lawrence_high_command
+			desc = NCR_major_lawrence_desc
+			ledger = army
+			allowed = {
+				original_tag = NCR
+			}
+			traits = {
+				first_recon_commander
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 6
+			}
+		}
+	}
+	NCR_colonel_royez = {
+		name = NCR_colonel_royez_name
+		portraits = {
+			army = {
+				small = GFX_idea_colonel_royez
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = NCR_colonel_royez_high_command
+			ledger = army
+			allowed = {
+				original_tag = NCR
+			}
+			traits = {
+				all_american_badass
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	NCR_general_oliver = {
+		name = NCR_general_oliver_name
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NCR_oliver
+				small = GFX_idea_general_oliver
+			}
+			army = {
+				large = GFX_Portrait_NCR_oliver
+				small = GFX_idea_general_oliver
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = NCR_general_oliver_high_command
+			ledger = army
+			allowed = {
+				original_tag = NCR
+			}
+			available = {
+				has_completed_focus = ncr_olivers_pet_project
+			}
+			traits = {
+				general_wait_and_see
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 8
+			}
+		}
+	}
+	NCR_warhero = {
+		name = NCR_warhero
+		gender = female
+		portraits = {
+			army = {
+				small = GFX_idea_generic_advisor2
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = NCR_warhero_high_command
+			desc = NCR_warhero_desc
+			ledger = army
+			allowed = {
+				original_tag = NCR
+			}
+			traits = {
+				ncr_hero_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 6
+				modifier = {
+					add = 2
+					OR = {
+						has_stability > 0.5
+						AND = {
+							has_stability > 0.25
+							has_war = yes
+						}
+					}
+				}
+			}
+		}
+	}
+	NCR_innovator = {
+		name = NCR_innovator
+		portraits = {
+			army = {
+				small = GFX_idea_generic_political_advisor_europe_5
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = NCR_innovator_high_command
+			desc = NCR_innovator_desc
+			ledger = army
+			allowed = {
+				original_tag = NCR
+			}
+			traits = {
+				ncr_innovator_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 9	# Higher than others as no debuffs, universally decent
+			}
+		}
+	}
+	NCR_tactitian = {
+		name = NCR_tactitian
+		portraits = {
+			army = {
+				small = GFX_idea_generic_political_advisor_europe_4
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = NCR_tactitian_high_command
+			desc = NCR_tactitian_desc
+			ledger = army
+			allowed = {
+				original_tag = NCR
+			}
+			traits = {
+				ncr_tactitian_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 6
+			}
+		}
+	}
+	NCR_ranger_jackson = {
+		name = NCR_ranger_jackson
+		portraits = {
+			army = {
+				small = GFX_idea_generic_political_advisor_europe_1
+			}
+		}
+		advisor = {
+			slot = research_advisor
+			idea_token = NCR_ranger_jackson_research_advisor
+			desc = NCR_ranger_jackson_desc
+			ledger = army
+			allowed = {
+				original_tag = NCR
+			}
+			traits = {
+				military_theorist
+			}
+			research_bonus = {
+				cat_land_doctrine = 0.1
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	NCR_mr_fantastic = {
+		name = NCR_mr_fantastic_name
+		portraits = {
+			army = {
+				small = GFX_idea_mr_fantastic
+			}
+		}
+		advisor = {
+			slot = research_advisor
+			idea_token = NCR_mr_fantastic_research_advisor
+			ledger = army
+			removal_cost = 300
+			allowed = {
+				OR = {
+					original_tag = NCR
+					original_tag = MOT
+				}
+			}
+			available = {
+				controls_state = 417
+			}
+			on_add = {
+				custom_effect_tooltip = mr_fantastic_tt
+				set_temp_variable = {
+					removal_cost = 300
+				}
+				custom_effect_tooltip = remove_cost_tooltip
+			}
+			traits = {
+				nuclear_scientist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 0	# Fantastic is not so fantastic for the AI to be appointing
+			}
+		}
+	}
+	NCR_alice_mclafferty = {
+		name = NCR_alice_mclafferty_name
+		gender = female
+		portraits = {
+			army = {
+				small = GFX_idea_alice_mclafferty
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = NCR_alice_mclafferty_economic_advisor
+			desc = NCR_alice_mclafferty_economic_advisor_desc
+			allowed = {
+				original_tag = NCR
+			}
+			traits = {
+				ruthless_capitalist
+			}
+			can_be_fired = no
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	NCR_mama_van_graff = {
+		name = NCR_mama_van_graff_name
+		gender = female
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_NEW_mama_graff
+			}
+			army = {
+				large = GFX_Portrait_NEW_mama_graff
+				small = GFX_idea_van_graff_advisor
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = NCR_mama_van_graff_advisor
+			desc = NCR_mama_van_graff_advisor_desc
+			allowed = {
+				original_tag = NCR
+			}
+			can_be_fired = no
+			traits = {
+				van_graff_ncr_advisor
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	NCR_bastion = {
+		name = NCR_bastion
+		portraits = {
+			army = {
+				small = GFX_idea_generic_political_advisor_europe_2
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = NCR_bastion_economic_advisor
+			desc = NCR_bastion_desc
+			allowed = {
+				original_tag = NCR
+			}
+			traits = {
+				ncr_bastion_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+				modifier = {
+					factor = 0.5
+					date < "2276.3.1"	# NCR needs to get other things up and running first
+				}
+			}
+		}
+	}
+	NCR_joseph_dodge = {
+		name = NCR_joseph_dodge
+		portraits = {
+			army = {
+				small = GFX_idea_generic_political_advisor_europe_3
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = NCR_joseph_dodge_economic_advisor
+			desc = NCR_joseph_dodge_desc
+			allowed = {
+				original_tag = NCR
+			}
+			available = {
+				has_completed_focus = ncr_permanent_hub_advisors
+			}
+			traits = {
+				ncr_dodge_trait
+			}
+			research_bonus = {
+				industry = 0.15
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 12	  # Very strong relative to the others
+			}
+		}
+	}
+	NCR_zachariah_rigby = {
+		name = NCR_zachariah_rigby_name
+		portraits = {
+			army = {
+				small = GFX_idea_generic_political_advisor_african_3
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = NCR_zachariah_rigby_economic_advisor
+			allowed = {
+				original_tag = NCR
+			}
+			available = {
+				has_completed_focus = ncr_grdeals
+			}
+			traits = {
+				ncr_equipment_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+
+	NCR_follower_advisor = {
+		name = NCR_follower_advisor_name
+		portraits = {
+			army = {
+				small = GFX_idea_NCR_ignacio
+			}
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = NCR_follower_advisor_cultural_advisor
+			desc = NCR_follower_advisor_name_desc
+			allowed = {
+				OR = {
+					original_tag = NCR
+					original_tag = BON
+				}
+			}
+			available = {
+				OR = {
+					has_completed_focus = ncr_follower_advisor
+					tag = BON
+				}
+			}
+			traits = {
+				follower_of_the_apocalypse
+			}
+			research_bonus = {
+				resource_and_agriculture_category = 0.1
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+
+	NCR_imperialist = {
+		name = NCR_imperialist
+		portraits = {
+			army = {
+				small = GFX_idea_generic_political_advisor_african_1
+			}
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = NCR_imperialist_cultural_advisor
+			allowed = {
+				original_tag = NCR
+			}
+			traits = {
+				ncr_imperialist_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	NCR_HME = {
+		instance = {
+			allowed = {
+				has_dlc = "La Resistance"
+			}
+			name = NCR_HME
+			portraits = {
+				army = {
+					small = GFX_idea_generic_political_advisor_south_america_3
+				}
+			}
+			advisor = {
+				slot = cultural_advisor
+				idea_token = NCR_HME_cultural_advisor
+				desc = NCR_HME_desc
+				allowed = {
+					OR = {
+						original_tag = NCR
+						tag = RDS
+					}
+				}
+				traits = {
+					ncr_HME_lar_trait
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 17.5	 # NCR needs stability
+				}
+			}
+		}
+		instance = {
+			allowed = {
+				NOT = {
+					has_dlc = "La Resistance"
+				}
+			}
+			name = NCR_HME
+			portraits = {
+				army = {
+					small = GFX_idea_generic_political_advisor_south_america_3
+				}
+			}
+			advisor = {
+				slot = cultural_advisor
+				idea_token = NCR_HME_cultural_advisor
+				allowed = {
+					original_tag = NCR
+				}
+				traits = {
+					ncr_HME_nonlar_trait
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 17.5	 # NCR needs stability
+				}
+			}
+		}
+	}
+	chief_elise = {
+		name = NCR_ranger_elise
+		gender = female
+		portraits = {
+			army = {
+				small = GFX_idea_two_ranger
+			}
+			civilian = {
+				small = GFX_idea_two_ranger
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = ncr_ranger_elise
+			desc = NCR_warhero_desc
+			allowed = {
+				OR = {
+					original_tag = NCR
+					original_tag = DAY
+				}
+			}
+			available = {
+				has_completed_focus = ncr_always_fight_for_freedom
+			}
+			traits = {
+				peaceful_foreman
+				ncr_spy_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	NCR_moore = {
+		name = NCR_MOORE_NAME
+		gender = female
+		portraits = {
+			army = {
+				large = GFX_Portrait_NCR_moore
+			}
+			civilian = {
+				large = GFX_Portrait_NCR_moore
+			}
+		}
+	}
+	NCR_lieutenant_lloyd_groves = {
+		name = NCR_LLOYD_GROVES_NAME
+		portraits = {
+			army = {
+				large = GFX_Portrait_NCR_gamma
+			}
+			civilian = {
+				large = GFX_Portrait_NCR_gamma
+			}
+		}
+		corps_commander = {
+			visible = {
+				OR = {
+					has_completed_focus = ncr_gammacore
+					tag = BON
+				}
+			}
+			desc = "NCR_LLOYD_GROVES_NAME_desc"
+			traits = {
+				enduring_trait
+				agile_trait
+				desert_fox
+			}
+			skill = 3
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}
+	NCR_veronica = {
+		name = NCR_VERONICA_NAME
+		gender = female
+		portraits = {
+			army = {
+				large = GFX_Portrait_NCR_veronica
+				small = GFX_idea_NCR_veronica
+			}
+			civilian = {
+				large = GFX_Portrait_NCR_veronica
+			}
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = NCR_veronicacultural_advisor
+			allowed = {
+				OR = {
+					original_tag = NCR
+				}
+			}
+			available = {
+				has_country_flag = ncr_veronica_came
+			}
+			traits = {
+				promising_follower
+			}
+			research_bonus = {
+				electronics = 0.1
+				cat_grand_army = 0.08
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		corps_commander = {
+			visible = {
+				has_country_flag = ncr_veronica_came_angry
+			}
+			desc = "NCR_VERONICA_NAME_desc"
+			traits = {
+				strong_trait
+				intelligence_trait
+			}
+			skill = 4
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 1
+		}
+	}
+	NCR_Douglas_Granite = {
+		name = ERB_GRANITE_NAME
+		portraits = {
+			army = {
+				large = GFX_Portrait_EUR_douglas_enclave
+				small = GFX_idea_NCR_granite
+			}
+			civilian = {
+				large = GFX_Portrait_EUR_douglas_enclave
+			}
+		}
+		corps_commander = {
+			visible = {
+				has_country_flag = ncr_hayes_granite_general
+			}
+			traits = {
+				enduring_trait
+				lucky_trait
+				urban_assault_specialist
+			}
+			skill = 5
+			attack_skill = 6
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 1
+		}
+		advisor = {
+			slot = high_command
+			idea_token = NCR_granite_high_command
+			desc = NCR_granite_desc
+			ledger = army
+			allowed = {
+				original_tag = NCR
+			}
+			visible = {
+				has_country_flag = ncr_hayes_granite_advisor
+			}
+			traits = {
+				ncr_hardened_mercenary
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	NCR_Arch_Dornan = {
+		name = NCR_ARCH_DORNAN_NAME
+		portraits = {
+			army = {
+				large = GFX_Portrait_NCR_arch_dornan
+			}
+			civilian = {
+				large = GFX_Portrait_NCR_arch_dornan
+			}
+		}
+		corps_commander = {
+			visible = {
+				has_country_flag = ncr_hayes_dornan
+			}
+			desc = "NCR_ARCH_DORNAN_NAME_desc"
+			traits = {
+				charismatic_trait
+				enduring_trait
+				pain_train_trait
+				urban_assault_specialist
+			}
+			skill = 6
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 4
+		}
+	}
+	NCR_Roger_Ratboy = {
+		name = NCR_ROGER_RATBOY_NAME
+		portraits = {
+			army = {
+				large = GFX_Portrait_NCR_roger_ratboy
+			}
+			civilian = {
+				large = GFX_Portrait_NCR_roger_ratboy
+			}
+		}
+		corps_commander = {
+			visible = {
+				has_country_flag = ncr_roger_let_out
+			}
+			desc = "NCR_ROGER_RATBOY_NAME_desc"
+			traits = {
+				enduring_trait
+				agile_trait
+				urban_assault_specialist
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}
+}

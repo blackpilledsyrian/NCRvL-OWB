@@ -1,0 +1,31 @@
+state = {
+	id = 97
+	name = "STATE_97"
+	manpower = 18000
+	state_category = town
+
+	resources = {
+		water = 4
+	}
+
+	history = {
+		owner = BVC
+		add_core_of = BVC
+		victory_points = {
+			4694 20
+		}
+		victory_points = {
+			733 3
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 3
+			industrial_complex = 1
+			733 = { naval_base = 3 }
+		}
+	}
+
+	provinces = {
+		733 2059 4689 4690 4691 4692 4693 4694 4695 4696 4697 4698
+	}
+}

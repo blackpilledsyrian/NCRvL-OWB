@@ -1,0 +1,32 @@
+state = {
+	id = 769
+	name = "STATE_769"
+	resources={
+		circuitry = 60
+		advanced = 40
+		energy = 70
+		composites = 40
+	}
+
+	history={
+		victory_points = {
+			9523 50
+		}
+		buildings = {
+			infrastructure = 7
+			arms_factory = 6
+			industrial_complex = 3
+			radar_station = 5
+			air_base = 5
+			anti_air_building = 3
+		}
+
+	}
+
+	provinces={
+		644 9523 9570 9573 11030 11041 11046 11049 11065 11074 11079
+	}
+	manpower=49868
+	buildings_max_level_factor=1.000
+	state_category=megalopolis
+}

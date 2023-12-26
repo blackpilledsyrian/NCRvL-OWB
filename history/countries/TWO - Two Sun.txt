@@ -1,0 +1,181 @@
+﻿capital = 516
+oob = "TWO_2275"
+set_technology = {
+	basic_supply_transport_tech = 1
+	infantry_tech_level_tribal = 1
+	#infantry_tech_level_settler = 1
+	#infantry_tech_level_scientific = 1
+	support_tech_level_tribal = 1
+	#support_tech_level_settler = 1
+	#support_tech_level_scientific = 1
+	special_forces_tech_level_tribal = 1
+	special_forces_tech_level_settler = 1
+	#special_forces_tech_level_scientific = 1
+	#power_armour_tech_level_settler = 1
+	#power_armour_tech_level_scientific = 1
+	vehicles_tech_level_tribal = 1
+	vehicles_tech_level_settler = 1
+	#vehicles_tech_level_scientific = 1
+	robotics_tech_level_tribal = 1
+	#robotics_tech_level_settler = 1
+	#robotics_tech_level_scientific = 1
+	air_tech_level_tribal = 1
+	#air_tech_level_settler = 1
+	#air_tech_level_scientific = 1
+	naval_tech_level_tribal = 1
+	naval_tech_level_settler = 1
+	#naval_tech_level_scientific = 1
+	tools_tech_level_tribal = 1
+	#tools_tech_level_settler = 1
+	#tools_tech_level_scientific = 1
+	habitation_tech_level_tribal = 1
+	#habitation_tech_level_settler = 1
+	#habitation_tech_level_scientific = 1
+	exploitation_tech_level_tribal = 1
+	#exploitation_tech_level_settler = 1
+	#exploitation_tech_level_scientific = 1
+	electronics_tech_level_tribal = 1
+	electronics_tech_level_settler = 1
+	#electronics_tech_level_scientific = 1
+	tribal_tech_visibility_tech = 1
+	tribal_tech_access_tech = 1
+	tool_engineering = 1
+	standard_weaponry_tech = 1
+	melee_weaponry_tech_1 = 1
+	pre_construction_industry_tech = 1
+	pre_recycling_industry_tech = 1
+	basic_industry_tech = 1
+	resource_generator_tech = 1
+	support_weaponry = 1
+	grand_army = 1
+	bike_tech_1 = 1
+	motorisation_vehicle_tech = 1
+	light_motorized_equipment_vehicle_tech_1 = 1
+	safety_hatches_vehicle_tech = 1
+	fireteam_weaponry_tech = 1
+	maintenance_company_tech_1 = 1
+	maintenance_company_tech_2 = 1
+	mobile_maintenance_vehicle_tech = 1
+	vehicle_perk_tech_1 = 1
+	vehicle_perk_tech_2 = 1
+}
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		nautics_tech_1 = 1
+		light_navy_hull_tech_1 = 1
+		naval_invasion_tech_1 = 1
+	}
+}
+
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "Man the Guns"
+		}
+	}
+	set_technology = {
+	basic_supply_transport_tech = 1
+		nautics_tech_non_mtg_1 = 1
+		light_navy_hull_tech_non_mtg_1 = 1
+		naval_invasion_tech_non_mtg_1 = 1
+	}
+}
+
+set_fuel_ratio = 0.75
+set_stability = 0.45
+set_war_support = 0.3
+set_convoys = 45
+set_research_slots = 4
+set_country_flag = grand_doctrine_ai
+set_country_flag = grand_motorized_doctrine_ai
+set_country_flag = is_settler_nation
+set_country_flag = is_arizona_nation
+# set
+set_country_flag = dont_give_settler_generic_political_advisors
+set_country_flag = dont_give_settler_generic_high_command
+set_country_flag = dont_give_settler_generic_chiefs
+set_country_flag = dont_give_settler_generic_theorists
+
+set_country_flag = no_generic_advisor
+set_country_flag = no_generic_chief
+set_country_flag = no_generic_theorist
+set_country_flag = no_generic_high_command
+
+set_country_flag = has_unique_manpower_law
+
+set_politics = {
+	ruling_party = ruler
+	elections_allowed = no
+}
+
+set_popularities = {
+	people = 0
+	elites = 0
+	intellectuals = 0
+	ruler = 100
+}
+
+recruit_character = TWO_will_faster
+recruit_character = TWO_vicente_alvarez
+recruit_character = TWO_ignacio_de_cos
+recruit_character = TWO_francisco_javier_guerrero
+recruit_character = TWO_sara_christian
+recruit_character = TWO_red_foyt
+recruit_character = TWO_jess_tender
+recruit_character = TWO_marius_the_younger
+recruit_character = TWO_mortal_joe
+recruit_character = TWO_mortimer
+recruit_character = TWO_hershel_rudd
+recruit_character = TWO_simon_bellingham
+recruit_character = TWO_carmen_capdevila
+recruit_character = TWO_leeroy_waltrip
+recruit_character = TWO_albanus
+recruit_character = TWO_buck_teague
+recruit_character = TWO_william_herschel
+recruit_character = TWO_wyatt
+recruit_character = TWO_rudel_castro
+recruit_character = TWO_merito_mortimer
+recruit_character = TWO_tiny_labonte
+recruit_character = TWO_ruby_flock
+
+add_ideas = {
+	TWO_legionem_foederati
+	two_worship_of_nas
+	two_masters_of_the_motor
+	two_sun_cliens	# Don't remove this if you can help it, it can be swapped with another idea via a Legion focus
+	free_trade
+	partial_economic_mobilisation
+}
+
+if = {
+	limit = {
+		can_use_autonomy_system = yes
+	}
+	CES = {
+		set_autonomy = {
+			target = TWO
+			autonomy_state = autonomy_client_tribe
+		}
+		set_autonomy = {
+			target = TWO
+			autonomy_state = autonomy_client_tribe
+		}
+	}
+}
+
+if = {
+	limit = {
+		can_use_autonomy_system = no
+	}
+	CES = {
+		TWO = {
+			become_puppet = yes
+		}
+	}
+}
+
+add_to_tech_sharing_group = legion_research_pact

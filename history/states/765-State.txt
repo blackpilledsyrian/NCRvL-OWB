@@ -1,0 +1,31 @@
+state = {
+	id = 765
+	name = "STATE_765"
+	resources={
+		water = 8
+		circuitry = 8
+		advanced = 2
+		energy = 14
+	}
+
+	history={
+		victory_points = {
+			9563 20
+		}
+		buildings = {
+			infrastructure = 6
+			arms_factory = 3
+			industrial_complex = 5
+			radar_station = 2
+
+		}
+
+	}
+
+	provinces={
+		9273 9348 9355 9360 9559 9563 9564 10969 10981 10982 10983 10995 11005
+	}
+	manpower=65000
+	buildings_max_level_factor=1.000
+	state_category=large_city
+}

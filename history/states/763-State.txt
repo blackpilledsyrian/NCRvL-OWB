@@ -1,0 +1,39 @@
+state = {
+	id = 763
+	name = "STATE_763"
+	resources={
+		water=1.000
+		energy=14.000
+	}
+
+	history={
+		victory_points = {
+			492 15
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+			492 = {
+				bunker = 1
+
+			}
+			9392 = {
+				bunker = 1
+
+			}
+			9571 = {
+				bunker = 1
+
+			}
+
+		}
+
+	}
+
+	provinces={
+		492 9382 9383 9387 9392 9399 9571 11016 11031 11033 11051 11057
+	}
+	manpower=14248
+	buildings_max_level_factor=1.000
+	state_category=town
+}

@@ -1,0 +1,702 @@
+characters = {
+	GDH_generalissimo_vialla = {
+		name = GDH_GENERALISSIMO_VIALLA_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_GDH_generalissimo
+			}
+			army = {
+				large = GFX_Portrait_GDH_generalissimo
+			}
+		}
+		corps_commander = {
+			traits = {
+				charismatic_trait
+				intelligent_trait
+				naval_invader
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+			legacy_id = 12130
+		}
+		country_leader = {
+			desc = GDH_GENERALISSIMO_VIALLA_DESC
+			ideology = warlordship
+			traits = {
+				cruel_tyrant
+				well_liked_leader
+			}
+			expire = "3000.01.01.01"
+			id = -1
+		}
+		country_leader = {
+			desc = GDH_GENERALISSIMO_VIALLA_DESC
+			ideology = constitutional_monarchy
+			traits = {
+				cruel_tyrant
+				well_liked_leader
+			}
+			expire = "3000.01.01.01"
+			id = -1
+		}
+		country_leader = {
+			desc = GDH_GENERALISSIMO_VIALLA_DESC
+			ideology = meritocracy
+			traits = {
+				cruel_tyrant
+				well_liked_leader
+			}
+			expire = "3000.01.01.01"
+			id = -1
+		}
+		country_leader = {
+			desc = GDH_GENERALISSIMO_VIALLA_DESC
+			ideology = feudalism
+			traits = {
+				cruel_tyrant
+				well_liked_leader
+			}
+			expire = "3000.01.01.01"
+			id = -1
+		}
+	}
+	GDH_alvarez = {
+		name = GDH_alvarez_name
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor12
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor12
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = GDH_alvarez_economic_advisor
+			allowed = {
+				original_tag = GDH
+			}
+			traits = {
+				gdh_alvarez_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	GDH_hidalgo = {
+		name = GDH_hidalgo_name
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_ghoul_generic3
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_ghoul_generic3
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = GDH_hidalgo_economic_advisor
+			allowed = {
+				original_tag = GDH
+			}
+			traits = {
+				gdh_hidalgo_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	GDH_guillen = {
+		name = GDH_guillen_name
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor16
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor16
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = GDH_guillen_economic_advisor
+			allowed = {
+				original_tag = GDH
+			}
+			traits = {
+				gdh_guillen_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	GDH_reyes = {
+		name = GDH_reyes_name
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor1
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor1
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = GDH_reyes_economic_advisor
+			allowed = {
+				original_tag = GDH
+			}
+			traits = {
+				gdh_reyes_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	GDH_diaz = {
+		name = GDH_diaz_name
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor19
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor19
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = GDH_diaz_economic_advisor
+			allowed = {
+				original_tag = GDH
+			}
+			traits = {
+				gdh_diaz_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	GDH_songwriter = {
+		name = GDH_songwriter_name
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_song_minister
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_song_minister
+			}
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = GDH_songwriter_cultural_advisor
+			allowed = {
+				original_tag = GDH
+			}
+			traits = {
+				gdh_songwriter_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	GDH_carvallo = {
+		name = GDH_carvallo_name
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor20
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor20
+			}
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = GDH_carvallo_cultural_advisor
+			allowed = {
+				original_tag = GDH
+			}
+			traits = {
+				gdh_carvallo_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	GDH_carranza = {
+		name = GDH_carranza_name
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor21
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor21
+			}
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = GDH_carranza_cultural_advisor
+			allowed = {
+				original_tag = GDH
+			}
+			traits = {
+				gdh_carranza_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	GDH_obregon = {
+		instance = {
+			allowed = {
+				has_dlc = "La Resistance"
+			}
+			name = GDH_obregon_name
+			portraits = {
+				army = {
+					#large = gfx_sprite_type_name_or_file_path
+					small = GFX_idea_generic_advisor22
+				}
+				civilian = {
+					#large = gfx_sprite_type_name_or_file_path
+					small = GFX_idea_generic_advisor22
+				}
+			}
+			advisor = {
+				slot = cultural_advisor
+				idea_token = GDH_obregon_cultural_advisor
+				allowed = {
+					original_tag = GDH
+				}
+				traits = {
+					gdh_obregon_LAR_trait
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 10
+				}
+			}
+		}
+		instance = {
+			allowed = {
+				NOT = {
+					has_dlc = "La Resistance"
+				}
+			}
+			name = GDH_obregon_name
+			portraits = {
+				army = {
+					#large = gfx_sprite_type_name_or_file_path
+					small = GFX_idea_generic_advisor22
+				}
+				civilian = {
+					#large = gfx_sprite_type_name_or_file_path
+					small = GFX_idea_generic_advisor22
+				}
+			}
+			advisor = {
+				slot = cultural_advisor
+				idea_token = GDH_obregon_cultural_advisor
+				allowed = {
+					original_tag = GDH
+				}
+				traits = {
+					gdh_obregon_trait
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 10
+				}
+			}
+		}
+	}
+	GDH_garcia = {
+		name = GDH_garcia_name
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor24
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor24
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = GDH_garcia_high_command
+			ledger = army
+			allowed = {
+				original_tag = GDH
+			}
+			traits = {
+				gdh_garcia_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	GDH_calderon = {
+		name = GDH_calderon_name
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor20
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor20
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = GDH_calderon_high_command
+			ledger = army
+			allowed = {
+				original_tag = GDH
+			}
+			traits = {
+				gdh_calderon_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	GDH_azul = {
+		name = GDH_azul_name
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor25
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor25
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = GDH_azul_high_command
+			ledger = army
+			allowed = {
+				original_tag = GDH
+			}
+			traits = {
+				gdh_azul_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	GDH_blanco = {
+		name = GDH_blanco_name
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor36
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor36
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = GDH_blanco_high_command
+			ledger = army
+			allowed = {
+				original_tag = GDH
+			}
+			traits = {
+				gdh_blanco_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	GDH_huerta = {
+		name = GDH_huerta_name
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor28
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor28
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = GDH_huerta_high_command
+			ledger = army
+			allowed = {
+				original_tag = GDH
+			}
+			traits = {
+				gdh_huerta_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	GDH_caserta = {
+		name = GDH_caserta_name
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor2
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor2
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = GDH_caserta_army_chief
+			ledger = army
+			allowed = {
+				original_tag = GDH
+			}
+			traits = {
+				gdh_caserta_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	GDH_mendoza = {
+		name = GDH_mendoza_name
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor30
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor30
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = GDH_mendoza_army_chief
+			ledger = army
+			allowed = {
+				original_tag = GDH
+			}
+			traits = {
+				gdh_mendoza_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	GDH_dario_vazquez = {
+		name = GDH_dario_vazquez_name
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor33
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor33
+			}
+		}
+		advisor = {
+			slot = navy_chief
+			idea_token = GDH_dario_vazquez_navy_chief
+			ledger = navy
+			allowed = {
+				original_tag = GDH
+			}
+			traits = {
+				settler_navy_buff
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	GDH_adan_carbonero = {
+		name = GDH_adan_carbonero_name
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor41
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor41
+			}
+		}
+		advisor = {
+			slot = air_chief
+			idea_token = GDH_adan_carbonero_air_chief
+			ledger = air
+			allowed = {
+				original_tag = GDH
+			}
+			traits = {
+				settler_air_buff
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	GDH_thornton = {
+		name = GDH_thornton_name
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor41
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor41
+			}
+		}
+		advisor = {
+			slot = research_advisor
+			idea_token = GDH_thornton_research_advisor
+			ledger = army
+			allowed = {
+				original_tag = GDH
+			}
+			available = {
+				has_completed_focus = gdh_ranger_mission
+			}
+			traits = {
+				military_theorist
+			}
+			research_bonus = {
+				cat_grand_army = 0.15
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	GDH_oseguara = {
+		name = GDH_oseguara_name
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor44
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor44
+			}
+		}
+		advisor = {
+			slot = research_advisor
+			idea_token = GDH_oseguara_research_advisor
+			ledger = army
+			allowed = {
+				original_tag = GDH
+			}
+			available = {
+				has_completed_focus = gdh_accept_frumentarii
+			}
+			traits = {
+				military_theorist
+			}
+			research_bonus = {
+				cat_terror_tactics = 0.15
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	GDH_lucius_three_roads = {
+		name = GDH_lucius_three_roads_name
+		portraits = {
+			army = {
+				large = GFX_Portrait_CES_magnus
+				#small = gfx_sprite_type_name_or_file_path
+			}
+			civilian = {
+				large = GFX_Portrait_CES_magnus
+				#small = gfx_sprite_type_name_or_file_path
+			}
+		}
+	}
+	GDH_gubernia_izquierda = {
+		name = GDH_GUBERNIA_IZQUIERDA_NAME
+		portraits = {
+			army = {
+				large = GFX_Portrait_GDH_izquierda
+				#small = gfx_sprite_type_name_or_file_path
+			}
+			civilian = {
+				large = GFX_Portrait_GDH_izquierda
+				#small = gfx_sprite_type_name_or_file_path
+			}
+		}
+		country_leader = {
+			desc = GDH_GUBERNIA_IZQUIERDA_DESC
+			ideology = peoples_militia
+			traits = {
+				popular_figurehead
+				cult_of_personality
+			}
+			expire = "3000.01.01.01"
+			id = -1
+		}
+	}
+}

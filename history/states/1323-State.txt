@@ -1,0 +1,25 @@
+
+state={
+	id=1323
+	name="STATE_1323"
+	provinces={
+		14605 14994 14995 14996 14997 14998 14999 15000 15001 15013 15019
+	}
+	resources = {
+		metal = 8
+		circuitry = 5
+	}
+	history = {
+		victory_points = {
+			14605 25
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 2
+			arms_factory = 1
+		}
+	}
+	state_category = city
+	manpower = 7621
+	local_supplies=0.000
+}

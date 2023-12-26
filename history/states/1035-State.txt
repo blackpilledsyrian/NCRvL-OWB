@@ -1,0 +1,22 @@
+state = {
+	id = 1035
+	name = "STATE_1035"
+	manpower = 1753
+	state_category = large_town
+
+	history = {
+		owner = DRY
+		add_core_of = DRY
+		victory_points = {
+			12903 5
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 2
+		}
+	}
+
+	provinces = {
+		2206 6833 12461 12462 12465 12466 12903
+	}
+}

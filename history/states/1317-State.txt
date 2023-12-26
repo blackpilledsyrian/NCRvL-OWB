@@ -1,0 +1,29 @@
+state = {
+	id = 1317
+	name = "STATE_1317" #For the Lost
+	manpower = 1912
+	state_category = town
+
+	history = {
+		victory_points = {
+			15134 7
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			15133 = {
+				bunker = 2
+			}
+			15134 = {
+				bunker = 2
+			}
+			15135 = {
+				bunker = 2
+			}
+		}
+	}
+
+	provinces = {
+		15133 15134 15135 15136 15137 15138 15140 15142 15143 15144 15148 15149
+	}
+}

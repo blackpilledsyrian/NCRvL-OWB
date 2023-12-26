@@ -1,0 +1,5518 @@
+#Tree for the "Nevada" generics related to TV-Town
+focus_tree = {
+	id = nevada_nf
+	country = {
+		base = 0
+		modifier = {
+			OR = {
+				original_tag = TOF
+				original_tag = SOK
+				original_tag = GRD
+				original_tag = DES
+			}
+			add = 50
+		}
+	}
+	default = no
+	focus = {
+		id = nevada_1
+		icon = GFX_goal_generic_ideological_fury_focus
+		cost = 7.0
+		x = 12
+		y = 0
+		completion_reward = {
+			if = {
+				limit = {
+					original_tag = TOF
+				}
+				country_event = nf_tof.1
+			}
+			else_if = {
+				limit = {
+					original_tag = SOK
+				}
+				country_event = nf_sok.1
+			}
+			else_if = {
+				limit = {
+					original_tag = GRD
+				}
+				country_event = nf_grd.1
+			}
+			else_if = {
+				limit = {
+					original_tag = DES
+				}
+				country_event = nf_des.1
+			}
+		}
+	}
+	focus = {
+		id = nevada_2
+		icon = GFX_goal_generic_ideological_fury_focus
+		cost = 7.0
+		prerequisite = {
+			focus = nevada_1
+		}
+		relative_position_id = nevada_1
+		x = 0
+		y = 1
+		completion_reward = {
+			if = {
+				limit = {
+					original_tag = TOF
+				}
+				country_event = nf_tof.2
+			}
+			else_if = {
+				limit = {
+					original_tag = SOK
+				}
+				country_event = nf_sok.2
+			}
+			else_if = {
+				limit = {
+					original_tag = GRD
+				}
+				country_event = nf_grd.2
+			}
+			else_if = {
+				limit = {
+					original_tag = DES
+				}
+				country_event = nf_des.2
+			}
+		}
+	}
+	focus = {
+		id = nevada_3
+		icon = GFX_goal_generic_ideological_fury_focus
+		cost = 7.0
+		prerequisite = {
+			focus = nevada_2
+		}
+		relative_position_id = nevada_2
+		x = 0
+		y = 1
+		completion_reward = {
+			if = {
+				limit = {
+					original_tag = TOF
+				}
+				country_event = nf_tof.3
+			}
+			else_if = {
+				limit = {
+					original_tag = SOK
+				}
+				country_event = nf_sok.3
+			}
+			else_if = {
+				limit = {
+					original_tag = GRD
+				}
+				country_event = nf_grd.3
+			}
+			else_if = {
+				limit = {
+					original_tag = DES
+				}
+				country_event = nf_des.3
+			}
+		}
+	}
+	focus = {
+		id = nevada_ind_0
+		icon = GFX_goal_generic_workshop
+		cost = 30.0
+		prerequisite = {
+			focus = nevada_3
+		}
+		allow_branch = {
+			OR = {
+				original_tag = SOK
+				original_tag = GRD
+			}
+		}
+		relative_position_id = nevada_3
+		x = -4
+		y = 1
+		completion_reward = {
+			capital_scope = {
+				add_resource = {
+					type = metal
+					amount = 6
+				}
+			}
+		}
+	}
+	focus = {
+		id = nevada_ind_1
+		icon = GFX_goal_pal_access_the_terminals
+		cost = 30
+		prerequisite = {
+			focus = nevada_3
+		}
+		relative_position_id = nevada_3
+		x = -2
+		y = 1
+		completion_reward = {
+			capital_scope = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+				}
+			}
+			#add_offsite_building = { type = industrial_complex level = 1 }
+		}
+	}
+	focus = {
+		id = nevada_ind_2
+		icon = GFX_goal_chr_pestilent_breath
+		cost = 30
+		prerequisite = {
+			focus = nevada_3
+		}
+		relative_position_id = nevada_3
+		x = 0
+		y = 1
+		completion_reward = {
+			capital_scope = {
+				add_extra_state_shared_building_slots = 2
+				set_temp_variable = { pop_add = 800 }
+				add_state_population = yes
+			}
+		}
+	}
+	focus = {
+		id = nevada_ind_3
+		icon = GFX_goal_generic_laser_pistol
+		cost = 30
+		prerequisite = {
+			focus = nevada_3
+		}
+		relative_position_id = nevada_3
+		x = 2
+		y = 1
+		completion_reward = {
+			hidden_effect = {
+				country_event = nf_nevada_stockpiles.1
+			}
+			capital_scope = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = nevada_ind_4
+		icon = GFX_goal_generic_blueprint
+		cost = 30
+		prerequisite = {
+			focus = nevada_3
+		}
+		allow_branch = {
+			OR = {
+				original_tag = SOK
+				original_tag = GRD
+			}
+		}
+		relative_position_id = nevada_3
+		x = 4
+		y = 1
+		completion_reward = {
+			army_experience = 10
+		}
+	}
+	#Unrelated Industry focuses, mostly to help flesh the tree out.
+	focus = {
+		id = nevada_ind_5
+		icon = GFX_goal_generic_helm_army_2_alt
+		cost = 30
+		prerequisite = {
+			focus = nevada_ind_1
+		}
+		relative_position_id = nevada_3
+		x = -3
+		y = 2
+		completion_reward = {
+			add_command_power = 50
+			add_political_power = 100
+		}
+	}
+	focus = {
+		id = nevada_ind_6
+		icon = GFX_goal_generic_brahmin_trade
+		cost = 30
+		prerequisite = {
+			focus = nevada_ind_3
+		}
+		relative_position_id = nevada_3
+		x = 3
+		y = 2
+		completion_reward = {
+			set_temp_variable = { caps_to_add = 50 }
+			add_caps = yes
+		}
+	}
+	#1st Wargoals
+	focus = {
+		id = tof_wg_on_sok
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		relative_position_id = nevada_3
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = nevada_ind_1
+		}
+		prerequisite = {
+			focus = nevada_ind_2
+		}
+		prerequisite = {
+			focus = nevada_ind_3
+		}
+		allow_branch = {
+			original_tag = TOF
+		}
+		will_lead_to_war_with = SOK
+		bypass = {
+			ai_has_no_other_wars_or_wargoals = yes
+			if = {
+				limit = {
+					country_exists = SOK
+				}
+				is_neighbor_of = SOK
+			}
+		}
+		bypass = {
+			SOK = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			SOK = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = sok_wg_on_tof
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		relative_position_id = nevada_3
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = nevada_ind_0
+		}
+		prerequisite = {
+			focus = nevada_ind_1
+		}
+		prerequisite = {
+			focus = nevada_ind_2
+		}
+		prerequisite = {
+			focus = nevada_ind_3
+		}
+		prerequisite = {
+			focus = nevada_ind_4
+		}
+		allow_branch = {
+			original_tag = SOK
+		}
+		will_lead_to_war_with = TOF
+		bypass = {
+			ai_has_no_other_wars_or_wargoals = yes
+			if = {
+				limit = {
+					country_exists = TOF
+				}
+				is_neighbor_of = TOF
+			}
+		}
+		bypass = {
+			TOF = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			TOF = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = des_wg_on_grd
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		relative_position_id = nevada_3
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = nevada_ind_1
+		}
+		prerequisite = {
+			focus = nevada_ind_2
+		}
+		prerequisite = {
+			focus = nevada_ind_3
+		}
+		allow_branch = {
+			original_tag = DES
+		}
+		will_lead_to_war_with = GRD
+		bypass = {
+			ai_has_no_other_wars_or_wargoals = yes
+			if = {
+				limit = {
+					country_exists = GRD
+				}
+				is_neighbor_of = GRD
+			}
+		}
+		bypass = {
+			GRD = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			GRD = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = grd_wg_on_des
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		relative_position_id = nevada_3
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = nevada_ind_0
+		}
+		prerequisite = {
+			focus = nevada_ind_1
+		}
+		prerequisite = {
+			focus = nevada_ind_2
+		}
+		prerequisite = {
+			focus = nevada_ind_3
+		}
+		prerequisite = {
+			focus = nevada_ind_4
+		}
+		allow_branch = {
+			original_tag = GRD
+		}
+		will_lead_to_war_with = DES
+		bypass = {
+			ai_has_no_other_wars_or_wargoals = yes
+			if = {
+				limit = {
+					country_exists = DES
+				}
+				is_neighbor_of = DES
+			}
+		}
+		bypass = {
+			DES = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			DES = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = nevada_consolidation_1
+		icon = GFX_focus_generic_self_management
+		cost = 30
+		x = 0
+		y = 3
+		relative_position_id = nevada_3
+		available = {
+			if = {
+				limit = {
+					original_tag = TOF
+				}
+				SOK = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+			else_if = {
+				limit = {
+					original_tag = SOK
+				}
+				TOF = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+			else_if = {
+				limit = {
+					original_tag = DES
+				}
+				GRD = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+			else_if = {
+				limit = {
+					original_tag = GRD
+				}
+				DES = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = nf_nevada_stockpiles_1
+				}
+				remove_ideas = nf_nevada_stockpiles_1
+			}
+			if = {
+				limit = {
+					has_idea = nf_nevada_stockpiles_2
+				}
+				remove_ideas = nf_nevada_stockpiles_2
+			}
+			if = {
+				limit = {
+					original_tag = TOF
+				}
+				SOK = {
+					ROOT = {
+						core_owned_states_of_prev = yes
+					}
+				}
+				hidden_effect = { #Clearing the cores is more performant healthy here
+					every_owned_state = {
+						limit = {
+							is_core_of = SOK
+						}
+						on_core = yes #Triggers the raider 'on_core' action
+						remove_core_of = SOK
+						remove_claim_by = SOK
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					original_tag = SOK
+				}
+				TOF = {
+					ROOT = {
+						core_owned_states_of_prev = yes
+					}
+				}
+				hidden_effect = { #Clearing the cores is more performant healthy here
+					every_owned_state = {
+						limit = {
+							is_core_of = TOF
+						}
+						on_core = yes #Triggers the raider 'on_core' action
+						remove_core_of = TOF
+						remove_claim_by = TOF
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					original_tag = DES
+				}
+				GRD = {
+					ROOT = {
+						core_owned_states_of_prev = yes
+					}
+				}
+				hidden_effect = { #Clearing the cores is more performant healthy here
+					every_owned_state = {
+						limit = {
+							is_core_of = GRD
+						}
+						on_core = yes #Triggers the raider 'on_core' action
+						remove_core_of = GRD
+						remove_claim_by = GRD
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					original_tag = GRD
+				}
+				DES = {
+					ROOT = {
+						core_owned_states_of_prev = yes
+					}
+				}
+				hidden_effect = { #Clearing the cores is more performant healthy here
+					every_owned_state = {
+						limit = {
+							is_core_of = DES
+						}
+						on_core = yes #Triggers the raider 'on_core' action
+						remove_core_of = DES
+						remove_claim_by = DES
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = nevada_ind_7
+		icon = GFX_goal_generic_supplies_focus
+		cost = 30
+		prerequisite = {
+			focus = nevada_consolidation_1
+		}
+		relative_position_id = nevada_consolidation_1
+		x = -1
+		y = 1
+		completion_reward = {
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+				}
+				set_temp_variable = { pop_add = 1200 }
+				add_state_population = yes
+			}
+		}
+	}
+	focus = {
+		id = nevada_ind_10
+		icon = GFX_goal_original_highwayman
+		cost = 30
+		prerequisite = {
+			focus = nevada_consolidation_1
+		}
+		relative_position_id = nevada_consolidation_1
+		x = 1
+		y = 1
+		completion_reward = {
+			hidden_effect = {
+				country_event = nf_nevada_stockpiles.2
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+				}
+				set_temp_variable = { pop_add = 1200 }
+				add_state_population = yes
+			}
+		}
+	}
+	focus = {
+		id = nevada_ind_11
+		icon = GFX_goal_generic_bunkers_focus
+
+		cost = 30
+		allow_branch = {
+			OR = {
+				original_tag = DES
+				original_tag = TOF
+			}
+		}
+		prerequisite = {
+			focus = nevada_consolidation_1
+		}
+		relative_position_id = nevada_consolidation_1
+		x = 3
+		y = 1
+		completion_reward = {
+			random_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+				set_temp_variable = { pop_add = 1000 }
+				add_state_population = yes
+			}
+		}
+	}
+	focus = {
+		id = nevada_ind_12
+		icon = GFX_goal_generic_common_firearms_focus
+		cost = 30
+		prerequisite = {
+			focus = nevada_consolidation_1
+		}
+		relative_position_id = nevada_consolidation_1
+		x = -4
+		y = 2
+		offset = {
+			x = -2
+			y = 0
+			trigger = {
+				OR = {
+					original_tag = DES
+					original_tag = TOF
+				}
+			}
+		}
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = ballistic_equipment_2
+				amount = 150
+				producer = USA
+			}
+		}
+
+	}
+	focus = {
+		id = nevada_ind_13
+		icon = GFX_goal_generic_ammo_boxes_focus
+		cost = 30
+		prerequisite = {
+			focus = nevada_consolidation_1
+		}
+		relative_position_id = nevada_ind_12
+		x = 2
+		y = 0
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = ballistic_equipment_1
+				amount = 300
+				producer = USA
+			}
+		}
+	}
+	focus = {
+		id = nevada_ind_8
+		icon = GFX_goal_generic_advanced_firearms_focus
+		cost = 30
+		prerequisite = {
+			focus = nevada_ind_12
+		}
+		prerequisite = {
+			focus = nevada_ind_13
+		}
+		relative_position_id = nevada_ind_12
+		x = 1
+		y = 1
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = ballistic_equipment_3
+				amount = 75
+				producer = USA
+			}
+			add_tech_bonus = {
+				name = nevada_ind_8
+				bonus = 0.25
+				uses = 1
+				category = infantry_tech_category
+			}
+		}
+	}
+
+	focus = {
+		id = nevada_ind_14
+		icon = GFX_goal_food_various_vegetables
+		cost = 30
+		prerequisite = {
+			focus = nevada_consolidation_1
+		}
+		relative_position_id = nevada_consolidation_1
+		offset = {
+			x = 2
+			y = 0
+			trigger = {
+				OR = {
+					original_tag = DES
+					original_tag = TOF
+				}
+			}
+		}
+		x = 2
+		y = 2
+		completion_reward = {
+			capital_scope = {
+				add_extra_state_shared_building_slots = 3
+				set_temp_variable = { pop_add = 2000 }
+				add_state_population = yes
+			}
+		}
+	}
+	focus = {
+		id = nevada_ind_15
+		icon = GFX_goal_food_bitter_drink
+		cost = 30
+		prerequisite = {
+			focus = nevada_consolidation_1
+		}
+		relative_position_id = nevada_ind_14
+		x = 2
+		y = 0
+		completion_reward = {
+			capital_scope = {
+				add_extra_state_shared_building_slots = 2
+				set_temp_variable = { pop_add = 3000 }
+				add_state_population = yes
+			}
+		}
+}
+	focus = {
+		id = nevada_ind_9
+		icon = GFX_goal_generic_tobacco_agriculture
+		cost = 30
+		prerequisite = {
+			focus = nevada_ind_14
+		}
+		prerequisite = {
+			focus = nevada_ind_15
+		}
+		relative_position_id = nevada_ind_14
+		x =  1
+		y = 1
+		completion_reward = {
+			capital_scope = {
+				add_extra_state_shared_building_slots = 1
+				set_temp_variable = { pop_add = 4000 }
+				add_state_population = yes
+			}
+			add_tech_bonus = {
+				name = nevada_ind_9
+				bonus = 0.25
+				uses = 1
+				category = industry
+			}
+		}
+	}
+	focus = {
+		id = nevada_ind_16
+		icon = GFX_goal_generic_slums_focus
+		cost = 30
+		prerequisite = {
+			focus = nevada_consolidation_1
+		}
+		allow_branch = {
+			OR = {
+				original_tag = DES
+				original_tag = TOF
+			}
+		}
+		relative_position_id = nevada_consolidation_1
+		x = -3
+		y = 1
+		completion_reward = {
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 3
+				set_temp_variable = { pop_add = 1000 }
+				add_state_population = yes
+			}
+		}
+	}
+	#2nd Wargoals
+	focus = {
+		id = tof_wg_on_north
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		relative_position_id = nevada_consolidation_1
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = nevada_ind_16
+		}
+		prerequisite = {
+			focus = nevada_ind_7
+		}
+		prerequisite = {
+			focus = nevada_ind_10
+		}
+		prerequisite = {
+			focus = nevada_ind_11
+		}
+		allow_branch = {
+			original_tag = TOF
+		}
+		will_lead_to_war_with = GRD
+		will_lead_to_war_with = DES
+		bypass = {
+			GRD = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			DES = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			GRD = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+			DES = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = sok_wg_on_north
+		icon = GFX_goal_SOK_dice
+		cost = 30
+		relative_position_id = nevada_consolidation_1
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = nevada_ind_7
+		}
+		prerequisite = {
+			focus = nevada_ind_10
+		}
+		allow_branch = {
+			original_tag = SOK
+		}
+		will_lead_to_war_with = GRD
+		will_lead_to_war_with = DES
+		bypass = {
+			GRD = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			DES = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			GRD = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+			DES = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = grd_wg_on_south
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		relative_position_id = nevada_consolidation_1
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = nevada_ind_7
+		}
+		prerequisite = {
+			focus = nevada_ind_10
+		}
+		allow_branch = {
+			original_tag = GRD
+		}
+		will_lead_to_war_with = SOK
+		will_lead_to_war_with = TOF
+		bypass = {
+			SOK = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			TOF = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			SOK = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+			TOF = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = des_wg_on_south
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		relative_position_id = nevada_consolidation_1
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = nevada_ind_16
+		}
+		prerequisite = {
+			focus = nevada_ind_7
+		}
+		prerequisite = {
+			focus = nevada_ind_10
+		}
+		prerequisite = {
+			focus = nevada_ind_11
+		}
+		allow_branch = {
+			original_tag = DES
+		}
+		will_lead_to_war_with = SOK
+		will_lead_to_war_with = TOF
+		bypass = {
+			ai_has_no_other_wars_or_wargoals = yes
+			SOK = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			TOF = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			SOK = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+			TOF = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = nevada_consolidation_2
+		icon = GFX_focus_generic_self_management
+		cost = 30
+		available = {
+			owns_state = 210
+			owns_state = 307
+			owns_state = 54
+			owns_state = 11
+		}
+		relative_position_id = nevada_consolidation_1
+		x = 0
+		y = 3
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = nf_nevada_stockpiles_1
+				}
+				remove_ideas = nf_nevada_stockpiles_1
+			}
+			if = {
+				limit = {
+					has_idea = nf_nevada_stockpiles_2
+				}
+				remove_ideas = nf_nevada_stockpiles_2
+			}
+			if = {
+				limit = {
+					OR = {
+						original_tag = TOF
+						original_tag = SOK
+					}
+				}
+				GRD = {
+					ROOT = {
+						core_owned_states_of_prev = yes
+					}
+				}
+				DES = {
+					ROOT = {
+						core_owned_states_of_prev = yes
+					}
+				}
+				hidden_effect = { #Clearing the cores is more performant healthy here
+					every_owned_state = {
+						limit = {
+							OR = {
+								is_core_of = GRD
+								is_core_of = DES
+							}
+						}
+						on_core = yes #Triggers the raider 'on_core' action
+						remove_core_of = GRD
+						remove_claim_by = GRD
+						remove_core_of = DES
+						remove_claim_by = DES
+					}
+				}
+			}
+			else = {
+				SOK = {
+					ROOT = {
+						core_owned_states_of_prev = yes
+					}
+				}
+				TOF = {
+					ROOT = {
+						core_owned_states_of_prev = yes
+					}
+				}
+				hidden_effect = { #Clearing the cores is more performant healthy here
+					every_owned_state = {
+						limit = {
+							OR = {
+								is_core_of = SOK
+								is_core_of = TOF
+							}
+						}
+						on_core = yes #Triggers the raider 'on_core' action
+						remove_core_of = SOK
+						remove_claim_by = SOK
+						remove_core_of = TOF
+						remove_claim_by = TOF
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = nevada_ind_17
+		icon = GFX_goal_generic_creature_wanamingo
+		cost = 30
+		prerequisite = {
+			focus = nevada_consolidation_2
+		}
+		relative_position_id = nevada_consolidation_2
+		x = -3
+		y = 1
+		completion_reward = {
+			add_war_support = 0.075
+		}
+	}
+	focus = {
+		id = nevada_ind_18
+		icon = GFX_goal_generic_robots_focus
+		cost = 30
+		prerequisite = {
+			focus = nevada_consolidation_2
+		}
+		relative_position_id = nevada_consolidation_2
+		x = -1
+		y = 1
+		completion_reward = {
+			add_manpower = 500
+		}
+	}
+	focus = {
+		id = nevada_ind_19
+		icon = GFX_goal_BOS_generic_research
+		cost = 30
+		prerequisite = {
+			focus = nevada_consolidation_2
+		}
+		relative_position_id = nevada_consolidation_2
+		x = 1
+		y = 1
+		completion_reward = {
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = nevada_ind_20
+		icon = GFX_goal_generic_creature_radscorpion
+		cost = 30
+		prerequisite = {
+			focus = nevada_consolidation_2
+		}
+		relative_position_id = nevada_consolidation_2
+		x = 3
+		y = 1
+		completion_reward = {
+			add_stability = 0.075
+		}
+	}
+	focus = {
+		id = nevada_ind_21
+		icon = GFX_goal_generic_mentats
+		cost = 30
+		prerequisite = {
+			focus = nevada_ind_17
+		}
+		prerequisite = {
+			focus = nevada_ind_18
+		}
+		relative_position_id = nevada_ind_17
+		x = 1
+		y = 1
+		completion_reward = {
+			army_experience = 20
+		}
+	}
+	focus = {
+		id = nevada_ind_22
+		icon = GFX_goal_generic_data_focus
+		cost = 30
+		prerequisite = {
+			focus = nevada_ind_20
+		}
+		relative_position_id = nevada_ind_17
+		x = 7
+		y = 1
+		completion_reward = {
+			set_temp_variable = {
+				caps_to_add = 125
+			}
+			add_caps = yes
+		}
+	}
+	focus = {
+		id = nevada_ind_23
+		icon = GFX_goal_generic_metal_focus
+		cost = 30
+		prerequisite = {
+			focus = nevada_ind_19
+		}
+		prerequisite = {
+			focus = nevada_ind_20
+		}
+		relative_position_id = nevada_ind_17
+		x = 5
+		y = 1
+		completion_reward = {
+			random_owned_state = {
+				add_resource = {
+					type = metal
+					amount = 12
+				}
+			}
+		}
+	}
+	focus = {
+		id = nevada_ind_24
+		icon = GFX_goal_generic_regular_firearms_focus
+		cost = 30
+		prerequisite = {
+			focus = nevada_ind_17
+		}
+		relative_position_id = nevada_ind_17
+		x = -1
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = nevada_ind_24
+				bonus = 0.5
+				uses = 1
+				category = infantry_tech_category
+			}
+		}
+	}
+	focus = {
+		id = nevada_tvt_wg
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		prerequisite = {
+			focus = nevada_consolidation_2
+		}
+		bypass = {
+			TVT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = nevada_consolidation_2
+		x = 0
+		y = 2
+		will_lead_to_war_with = TVT
+		completion_reward = {
+			TVT = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = nevada_ind_25
+		icon = GFX_goal_ARM_ciudad_valles_land_acquisition
+		cost = 30
+		prerequisite = {
+			focus = nevada_ind_30
+			focus = nevada_ind_29
+		}
+		available = {
+			owns_state = 945
+		}
+		relative_position_id = nevada_ind_23
+		x = 1
+		y = 2
+		completion_reward = {
+			add_offsite_building = { type = arms_factory level = 3 }
+			add_tech_bonus = {
+				name = nevada_ind_25
+				bonus = 0.25
+				uses = 1
+				category = industry
+			}
+		}
+	}
+	focus = {
+		id = nevada_ind_26
+		icon = GFX_goal_generic_vidya
+		cost = 30
+		prerequisite = {
+			focus = nevada_tvt_wg
+		}
+		available = {
+			owns_state = 945
+		}
+		relative_position_id = nevada_tvt_wg
+		x = -4
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = nevada_ind_26
+				bonus = 0.25
+				uses = 1
+				category = electronics
+			}
+			add_tech_bonus = {
+				name = nevada_ind_26
+				bonus = 0.25
+				uses = 1
+				category = industry
+			}
+			add_tech_bonus = {
+				name = nevada_ind_26
+				bonus = 0.25
+				uses = 1
+				category = spec_force_tech_category
+			}
+			add_tech_bonus = {
+				name = nevada_ind_26
+				bonus = 0.25
+				uses = 1
+				category = cat_land_doctrine
+			}
+		}
+	}
+	focus = {
+		id = nevada_ind_27
+		icon = GFX_goal_ARM_robco_factory_reactivation
+		cost = 30
+		prerequisite = {
+			focus = nevada_tvt_wg
+		}
+		available = {
+			owns_state = 945
+		}
+		relative_position_id = nevada_tvt_wg
+		x = -2
+		y = 1
+		completion_reward = {
+			945 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = electricity_generator
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = nevada_ind_28
+		icon = GFX_goal_ARM_gai_plant_reactivation
+		cost = 30
+		prerequisite = {
+			focus = nevada_ind_26
+			focus = nevada_ind_27
+		}
+		available = {
+			owns_state = 945
+		}
+		relative_position_id = nevada_tvt_wg
+		x = -3
+		y = 2
+		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 3 }
+			add_tech_bonus = {
+				name = nevada_ind_28
+				bonus = 0.25
+				uses = 1
+				category = industry
+			}
+		}
+	}
+	focus = {
+		id = nevada_ind_29
+		icon = GFX_goal_chr_uktena
+		cost = 30
+		prerequisite = {
+			focus = nevada_tvt_wg
+		}
+		available = {
+			owns_state = 945
+		}
+		relative_position_id = nevada_tvt_wg
+		x = 4
+		y = 1
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = nevada_ind_30
+		icon = GFX_goal_generic_cyborg
+		cost = 30
+		prerequisite = {
+			focus = nevada_tvt_wg
+		}
+		available = {
+			owns_state = 945
+		}
+		relative_position_id = nevada_tvt_wg
+		x = 2
+		y = 1
+		completion_reward = {
+			945 = {
+				add_resource = {
+					type = advanced
+					amount = 12
+				}
+				add_resource = {
+					type = circuitry
+					amount = 8
+				}
+				add_resource = {
+					type = metal
+					amount = 4
+				}
+			}
+		}
+	}
+	focus = {
+		id = nevada_ind_31
+		icon = GFX_goal_chr_ulunsuti_builders
+		cost = 30
+		prerequisite = {
+			focus = nevada_ind_29
+		}
+		available = {
+			owns_state = 945
+		}
+		relative_position_id = nevada_ind_29
+		x = 1
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = nevada_ind_31
+				bonus = 0.25
+				uses = 4
+				category = industry
+			}
+		}
+	}
+	focus = {
+		id = nevada_ind_32
+		icon = GFX_goal_chr_serpent_scales
+		cost = 30
+		prerequisite = {
+			focus = nevada_ind_26
+		}
+		available = {
+			owns_state = 945
+		}
+		relative_position_id = nevada_ind_26
+		x = -1
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = nevada_ind_32
+				bonus = 0.25
+				uses = 1
+				category = infantry_tech_category
+			}
+			add_tech_bonus = {
+				name = nevada_ind_32
+				bonus = 0.25
+				uses = 1
+				category = power_armor_tech_category
+			}
+			add_tech_bonus = {
+				name = nevada_ind_32
+				bonus = 0.25
+				uses = 1
+				category = spec_force_equipment_tech_category
+			}
+			add_tech_bonus = {
+				name = nevada_ind_32
+				bonus = 0.25
+				uses = 1
+				category = support_tech_category
+			}
+			set_technology = { exoskin_armoured_special_forces = 1 }
+		}
+	}
+	focus = {
+		id = nevada_tvt_consolidation
+		icon = GFX_focus_generic_self_management
+		cost = 30
+		prerequisite = {
+			focus = nevada_tvt_wg
+		}
+		available = {
+			owns_state = 945
+		}
+		relative_position_id = nevada_tvt_wg
+		x = 0
+		y = 1
+		completion_reward = {
+			945 = {
+				add_core_of = ROOT
+				hidden_effect = { #Clearing the cores is more performant healthy here
+					on_core = yes #Triggers the raider 'on_core' action
+					remove_core_of = TVT
+					remove_claim_by = TVT
+				}
+			}
+		}
+	}
+	focus = {
+		id = des_unique
+		icon = GFX_goal_LNS_rising_star
+		cost = 30
+		relative_position_id = nevada_1
+		available = {
+			has_completed_focus = nevada_tvt_consolidation
+		}
+		allow_branch = {
+			original_tag = DES
+		}
+		x = 0
+		y = 12
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = DES_ranger_treaty_defied
+				add_idea = DES_ranger_treaty_defied_2
+			}
+			add_war_support = 0.05
+		}
+	}
+	#DES mini-industry tree
+	focus = {
+		id = des_ind_1
+		text = settler_enforce
+		icon = GFX_goal_generic_hard_boiled_detectives
+		cost = 30
+		prerequisite = {
+			focus = des_unique
+		}
+		relative_position_id = des_unique
+		x = -8
+		y = 1
+		available = {
+			water_generator > 1
+		}
+		completion_reward = {
+			modify_building_resources = {
+				building = water_generator
+				resource = water
+				amount = 1
+			}
+			add_tech_bonus = {
+				bonus = 0.33
+				uses = 1
+				category = building_tech
+			}
+			random_core_state = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = arms_factory
+					level = 4
+					instant_build = yes
+				}
+				set_temp_variable = { pop_add = 2000 }
+				add_state_population = yes
+			}
+		}
+	}
+	focus = {
+		id = des_ind_2
+		text = settler_brahmin
+		icon = GFX_goal_generic_camp
+		cost = 30
+		prerequisite = {
+			focus = des_ind_1
+		}
+		relative_position_id = des_unique
+		x = -7
+		y = 2
+		available = {
+			water_generator > 3
+		}
+		completion_reward = {
+			modify_building_resources = {
+				building = water_generator
+				resource = water
+				amount = 1
+			}
+			add_tech_bonus = {
+				bonus = 0.67
+				uses = 1
+				category = building_tech
+			}
+			random_core_state = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 4
+					instant_build = yes
+				}
+				set_temp_variable = { pop_add = 3000 }
+				add_state_population = yes
+			}
+		}
+	}
+	focus = {
+		id = des_ind_3
+		text = des_outreach
+		icon = GFX_goal_TTM_Water
+		cost = 30
+		prerequisite = {
+			focus = des_ind_2
+		}
+		prerequisite = {
+			focus = des_ind_4
+		}
+		relative_position_id = des_unique
+		x = -6
+		y = 3
+		available = {
+			water_generator > 9
+		}
+		completion_reward = {
+			set_technology = {
+				resource_generator_water_tech_5 = 1
+			}
+			random_core_state = {
+				add_extra_state_shared_building_slots = 8
+				add_building_construction = {
+					type = industrial_complex
+					level = 4
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				set_temp_variable = { pop_add = 5000 }
+				add_state_population = yes
+			}
+		}
+	}
+	focus = {
+		id = des_ind_4
+		text = settler_tato
+		icon = GFX_goal_food_various_fruits
+		cost = 30
+		prerequisite = {
+			focus = des_ind_5
+		}
+		relative_position_id = des_unique
+		x = -5
+		y = 2
+		available = {
+			water_generator > 7
+			has_tech = resource_generator_water_tech_3
+		}
+		completion_reward = {
+			set_technology = {
+				resource_generator_water_tech_4 = 1
+			}
+			random_core_state = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 4
+					instant_build = yes
+				}
+				set_temp_variable = { pop_add = 3000 }
+				add_state_population = yes
+			}
+		}
+	}
+	focus = {
+		id = des_ind_5
+		text = des_caravans
+		icon = GFX_goal_generic_gentlemen_sniper
+		cost = 30
+		prerequisite = {
+			focus = des_unique
+		}
+		relative_position_id = des_unique
+		x = -4
+		y = 1
+		available = {
+			water_generator > 5
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				ahead_reduction = 1
+				category = building_tech
+			}
+			random_core_state = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = arms_factory
+					level = 4
+					instant_build = yes
+				}
+				set_temp_variable = { pop_add = 2000 }
+				add_state_population = yes
+			}
+		}
+	}
+	#DES mini-research tree
+	focus = {
+		id = des_research_1
+		text = settler_gunsmiths
+		icon = GFX_goal_generic_focus_magazine_gunsandbullets_gun_laws
+		cost = 30
+		prerequisite = {
+			focus = des_unique
+		}
+		relative_position_id = des_unique
+		x = 8
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = des_research_1
+				bonus = 0.5
+				uses = 2
+				category = infantry_tech_category
+			}
+		}
+	}
+	focus = {
+		id = des_research_2
+		text = settler_oldworld
+		icon = GFX_goal_generic_land_doctrines_focus
+		cost = 30
+		prerequisite = {
+			focus = des_research_1
+		}
+		relative_position_id = des_unique
+		x = 7
+		y = 2
+		completion_reward = {
+			add_tech_bonus = {
+				name = des_research_2
+				bonus = 0.5
+				uses = 2
+				category = cat_land_doctrine
+			}
+		}
+	}
+	focus = {
+		id = des_research_3
+		text = des_intervention
+		icon = GFX_goal_generic_western
+		cost = 30
+		prerequisite = {
+			focus = des_research_2
+		}
+		prerequisite = {
+			focus = des_research_4
+		}
+		relative_position_id = des_unique
+		x = 6
+		y = 3
+		completion_reward = {
+			add_tech_bonus = {
+				name = des_research_3
+				bonus = 0.5
+				uses = 3
+				category = cat_land_doctrine
+			}
+		}
+	}
+	focus = {
+		id = des_research_4
+		text = des_veterans
+		icon = GFX_goal_generic_smoking_cowboy
+		cost = 30
+		prerequisite = {
+			focus = des_research_5
+		}
+		relative_position_id = des_unique
+		x = 5
+		y = 2
+		completion_reward = {
+			add_stability = 0.075
+		}
+	}
+	focus = {
+		id = des_research_5
+		text = settler_subsidize
+		icon = GFX_goal_NEW_Caps_for_Loyalty
+		cost = 30
+		prerequisite = {
+			focus = des_unique
+		}
+		relative_position_id = des_unique
+		x = 4
+		y = 1
+		completion_reward = {
+			army_experience = 20
+		}
+	}
+	focus = {
+		id = des_nevada_1
+		icon = GFX_goal_SOK_plasma_pistol
+		cost = 30
+		prerequisite = {
+			focus = des_unique
+		}
+		available = {
+			945 = {
+				is_fully_controlled_by = DES
+			}
+		}
+		relative_position_id = des_unique
+		x = -2
+		y = 1
+		completion_reward = {
+			add_offsite_building = { type = arms_factory level = 2 }
+		}
+	}
+	focus = {
+		id = des_nevada_2
+		icon = GFX_goal_SOK_10mm
+		cost = 30
+		prerequisite = {
+			focus = des_unique
+		}
+		available = {
+			945 = {
+				is_fully_controlled_by = DES
+			}
+		}
+		relative_position_id = des_unique
+		x = 0
+		y = 1
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	focus = {
+		id = des_nevada_3
+		icon = GFX_goal_SOK_dynamite
+		cost = 30
+		prerequisite = {
+			focus = des_unique
+		}
+		available = {
+			945 = {
+				is_fully_controlled_by = DES
+			}
+		}
+		relative_position_id = des_unique
+		x = 2
+		y = 1
+		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 2 }
+		}
+	}
+	focus = {
+		id = des_showdown
+		icon = GFX_goal_generic_cowboys
+		cost = 30
+		prerequisite = {
+			focus = des_nevada_1
+		}
+		prerequisite = {
+			focus = des_nevada_2
+		}
+		prerequisite = {
+			focus = des_nevada_3
+		}
+		relative_position_id = des_unique
+		x = 0
+		y = 2
+		completion_reward = {
+			country_event = nf_des.4
+			add_war_support = 0.1
+		}
+	}
+	focus = {
+		id = des_vargas_wins
+		text = des_reforming_the_rebel_rangers
+		icon = GFX_goal_NCR_Allisgood
+		cost = 15
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ttm_only_through_events
+				always = no
+			}
+		}
+		prerequisite = {
+			focus = des_showdown
+		}
+		relative_position_id = des_showdown
+		x = 0
+		y = 1
+		completion_reward = {
+			set_politics = {
+				ruling_party = people
+			}
+			hidden_effect = {
+				set_popularities = {
+					people = 100
+					ruler = 0
+					intellectuals = 0
+					elites = 0
+				}
+			}
+			remove_ideas = DES_ranger_treaty_defied_2
+			NCR = {
+				remove_opinion_modifier = {
+					target = DES
+					modifier = des_rejected_unification_treaty
+				}
+			}
+			hidden_effect = {
+				DES = {
+					remove_opinion_modifier = {
+						target = NCR
+						modifier = des_rogue_ranger_hates_quote_bad_guys_quote
+					}
+					remove_opinion_modifier = {
+						target = NEW
+						modifier = des_rogue_ranger_hates_quote_bad_guys_quote
+					}
+					remove_opinion_modifier = {
+						target = YKZ
+						modifier = des_rogue_ranger_hates_quote_bad_guys_quote
+					}
+					remove_opinion_modifier = {
+						target = JAC
+						modifier = des_rogue_ranger_hates_quote_bad_guys_quote
+					}
+					remove_opinion_modifier = {
+						target = VIP
+						modifier = des_rogue_ranger_hates_quote_bad_guys_quote
+					}
+					remove_opinion_modifier = {
+						target = TOF
+						modifier = des_rogue_ranger_hates_quote_bad_guys_quote
+					}
+					remove_opinion_modifier = {
+						target = SOK
+						modifier = des_rogue_ranger_hates_quote_bad_guys_quote
+					}
+					remove_opinion_modifier = {
+						target = TVT
+						modifier = des_rogue_ranger_hates_quote_bad_guys_quote
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = des_vargas_side_1
+		text = des_propaganda
+		icon = GFX_goal_generic_recruitment_focus
+		cost = 30
+		prerequisite = {
+			focus = des_vargas_wins
+		}
+		relative_position_id = des_vargas_wins
+		x = -3
+		y = 2
+		completion_reward = {
+			capital_scope = {
+				add_extra_state_shared_building_slots = 3
+				set_temp_variable = { pop_add = 10000 }
+				add_state_population = yes
+			}
+		}
+	}
+	focus = {
+		id = des_vargas_side_2
+		text = des_workbench
+		icon = GFX_goal_generic_slums_focus
+		cost = 30
+		prerequisite = {
+			focus = des_vargas_wins
+		}
+		relative_position_id = des_vargas_wins
+		x = 3
+		y = 2
+		completion_reward = {
+			army_experience = 10
+			add_tech_bonus = {
+				name = des_vargas_side_2
+				bonus = 0.4
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	focus = {
+		id = des_vargas_political_1
+		icon = GFX_goal_NCR_Generic_Bill
+		text = des_californians
+		cost = 30
+		available = {
+			OR = {
+				is_new_california_member = yes
+				owns_state = 253
+			}
+		}
+		prerequisite = {
+			focus = des_vargas_join_ncr
+		}
+		relative_position_id = des_vargas_wins
+		x = -2
+		y = 3
+		completion_reward = {
+			set_temp_variable = {
+				caps_to_add = 100
+			}
+			add_caps = yes
+			add_war_support = 0.05
+		}
+	}
+	focus = {
+		id = des_vargas_political_2
+		text = des_honours
+		icon = GFX_goal_NCR_Agricultural_Research
+		cost = 30
+		available = {
+			OR = {
+				is_new_california_member = yes
+				owns_state = 253
+			}
+		}
+		prerequisite = {
+			focus = des_vargas_join_ncr
+		}
+		relative_position_id = des_vargas_wins
+		x = 0
+		y = 3
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.05
+		}
+	}
+	focus = {
+		id = des_vargas_political_3
+		text = des_reorganize
+		icon = GFX_goal_NCR_Generic_Ranger
+		cost = 30
+		available = {
+			OR = {
+				is_new_california_member = yes
+				owns_state = 253
+			}
+		}
+		prerequisite = {
+			focus = des_vargas_join_ncr
+		}
+		relative_position_id = des_vargas_wins
+		x = 2
+		y = 3
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+	focus = {
+		id = des_vargas_join_ncr
+		text = des_treaty
+		icon = GFX_goal_ally_NCR
+		cost = 30
+		prerequisite = {
+			focus = des_vargas_ncr_1
+		}
+		prerequisite = {
+			focus = des_vargas_ncr_2
+		}
+		relative_position_id = des_vargas_wins
+		x = 0
+		y = 2
+		bypass = {
+			OR = {
+				is_new_california_member = yes
+				new_california_does_not_exist = yes
+			}
+		}
+		available = {
+			is_in_faction = no
+			is_subject = no
+			new_california_exists = yes
+			borders_new_california = yes
+		}
+		completion_reward = {
+			set_cosmetic_tag = NEVADA_RANGERS
+			ask_to_join_new_california = yes
+			945 = {
+				add_resource = {
+					type = advanced
+					amount = -10
+				}
+			}
+			253 = {
+				add_resource = {
+					type = advanced
+					amount = 10
+				}
+			}
+		}
+		ai_will_do = {
+			base = 5	# If completed des_vargas_wins via event, proceed to join NCR soon
+		}
+	}
+	focus = {
+		id = des_vargas_ncr_1
+		text = des_vargas_reconcilliation_1
+		icon = GFX_goal_NCR_Propaganda_1
+		cost = 30
+		prerequisite = {
+			focus = des_vargas_wins
+		}
+		relative_position_id = des_vargas_wins
+		x = -1
+		y = 1
+		completion_reward = {
+			every_country = {
+				limit = {
+					OR = {
+						AND = {
+							tag = NCR
+							country_exists = NCR
+						}
+						AND = {
+							tag = MOT
+							country_exists = MOT
+						}
+						tag = DES
+					}
+				}
+				add_tech_bonus = {
+					name = des_vargas_ncr_1
+					bonus = 0.25
+					uses = 1
+					category = infantry_tech_category
+				}
+			}
+			add_stability = 0.05
+		}
+		ai_will_do = {
+			base = 5	# If completed des_vargas_wins via event, proceed to join NCR soon
+		}
+	}
+	focus = {
+		id = des_vargas_ncr_2
+		text = des_vargas_reconcilliation_2
+		icon = GFX_goal_NCR_Propaganda_2
+		cost = 30
+		prerequisite = {
+			focus = des_vargas_wins
+		}
+		bypass = {
+			NOT = { country_exists = NCR }
+		}
+		relative_position_id = des_vargas_wins
+		x = 1
+		y = 1
+		completion_reward = {
+			add_manpower = 2000
+			add_war_support = 0.05
+		}
+		ai_will_do = {
+			base = 5	# If completed des_vargas_wins via event, proceed to join NCR soon
+		}
+	}
+	focus = {
+		id = des_vargas_capstone
+		icon = GFX_goal_NCR_Golden_Ranger
+		cost = 30
+		prerequisite = {
+			focus = des_vargas_political_1
+		}
+		prerequisite = {
+			focus = des_vargas_political_2
+		}
+		prerequisite = {
+			focus = des_vargas_political_3
+		}
+		available = {
+			OR = {
+				is_new_california_member = yes
+				owns_state = 253
+			}
+		}
+		relative_position_id = des_vargas_ncr_1
+		x = 1
+		y = 3
+		completion_reward = {
+			custom_effect_tooltip = ranger_tech_tt
+			hidden_effect = {
+				set_technology = {
+					ncr_reorgranger_tech = 1
+					ncr_rangercore_tech = 1
+					ncr_rangerlead_tech = 1
+					ncr_rangercanopeners_tech = 1
+					ncr_seth = 1
+				}
+			}
+			every_country = {
+				limit = {
+					OR = {
+						original_tag = DES
+						AND = {
+							original_tag = NCR
+							country_exists = NCR
+						}
+					}
+				}
+				every_owned_state = {
+					add_compliance = 10
+				}
+			}
+		}
+	}
+	focus = {
+		id = des_greater_capstone
+		icon = GFX_goal_NCR_Expand_Ranger_HQ
+		cost = 60
+		prerequisite = {
+			focus = des_vargas_capstone
+		}
+		available = {
+			is_new_california_member = yes
+		}
+		relative_position_id = des_showdown
+		x = 0
+		y = 6
+		completion_reward = {
+			set_capital = { state = 210 }
+			210 = {
+				add_extra_state_shared_building_slots = 6
+				set_temp_variable = { pop_add = 10000 }
+				add_state_population = yes
+			}
+			set_province_name = {
+				id = 3519
+				name = ranger_citadel
+			}
+			hidden_effect = {
+				210 = {
+					set_state_name = ranger_citadel
+				}
+			}
+			add_ideas = desertrangers
+		}
+	}
+	focus = {
+		id = sok_unique
+		icon = GFX_goal_BOS_seize_arroyo
+		cost = 30
+		relative_position_id = nevada_1
+		available = {
+			has_completed_focus = nevada_tvt_consolidation
+		}
+		allow_branch = {
+			original_tag = SOK
+		}
+		x = 0
+		y = 12
+		completion_reward = {
+			add_timed_idea = {
+				idea = generic_rapid_military_deployment
+				days = 1095
+			}
+		}
+	}
+	focus = {
+		id = sok_ykz
+		icon = GFX_goal_SOK_slave_collar
+		cost = 30
+		relative_position_id = sok_unique
+		prerequisite = {
+			focus = sok_unique
+		}
+		x = -2
+		y = 1
+		available = {
+			has_no_unused_wargoals = yes
+			OR = {
+				is_neighbor_of = YKZ
+				NOT = { country_exists = YKZ }
+			}
+		}
+		bypass = {
+			YKZ = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = YKZ
+		completion_reward = {
+			YKZ = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = sok_jac
+		icon = GFX_goal_SOK_ear
+		cost = 30
+		relative_position_id = sok_unique
+		prerequisite = {
+			focus = sok_unique
+		}
+		x = 0
+		y = 1
+		available = {
+			has_no_unused_wargoals = yes
+			OR = {
+				is_neighbor_of = JAC
+				NOT = { country_exists = JAC }
+			}
+		}
+		bypass = {
+			JAC = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = JAC
+		completion_reward = {
+			JAC = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = sok_vip
+		icon = GFX_goal_SOK_dynamite
+		cost = 30
+		relative_position_id = sok_unique
+		prerequisite = {
+			focus = sok_unique
+		}
+		x = 2
+		y = 1
+		available = {
+			has_no_unused_wargoals = yes
+			OR = {
+				is_neighbor_of = VIP
+				NOT = { country_exists = VIP }
+			}
+		}
+		bypass = {
+			VIP = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = VIP
+		completion_reward = {
+			VIP = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = sok_es_1
+		icon = GFX_goal_pal_yakuza
+		cost = 30
+		relative_position_id = sok_ykz
+		prerequisite = {
+			focus = sok_ykz
+		}
+		x = -1
+		y = 1
+		available = {
+			YKZ = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		bypass = {
+		}
+		completion_reward = {
+			army_experience = 30
+		}
+	}
+	focus = {
+		id = sok_vip_1
+		icon = GFX_goal_MDT_gorgon_eye
+		cost = 30
+		relative_position_id = sok_vip
+		prerequisite = {
+			focus = sok_vip
+		}
+		x = 1
+		y = 1
+		available = {
+			VIP = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		bypass = {
+		}
+		completion_reward = {
+			add_war_support = 0.1
+		}
+	}
+	focus = {
+		id = sok_teaching_raiders_our_way
+		icon = GFX_goal_generic_power_armour_raider_overboss
+		cost = 30
+		relative_position_id = sok_jac
+		prerequisite = {
+			focus = sok_ykz
+		}
+		prerequisite = {
+			focus = sok_jac
+		}
+		prerequisite = {
+			focus = sok_vip
+		}
+		x = 0
+		y = 1
+		available = {
+			YKZ = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			JAC = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			VIP = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			add_state_core = 171
+			add_state_core = 160
+			add_state_core = 327
+			hidden_effect = { #Clearing the cores is more performant healthy here
+				every_owned_state = {
+					limit = {
+						OR = {
+							state = 171
+							state = 160
+							state = 327
+						}
+					}
+					on_core = yes #Triggers the raider 'on_core' action
+				}
+			}
+		}
+	}
+	focus = {
+		id = sok_new
+		icon = GFX_goal_SOK_vt_boy_mini_nuke
+		cost = 30
+		relative_position_id = sok_teaching_raiders_our_way
+		prerequisite = {
+			focus = sok_teaching_raiders_our_way
+		}
+		x = 0
+		y = 1
+		available = {
+			has_no_unused_wargoals = yes
+			OR = {
+				is_neighbor_of = NEW
+				NOT = { country_exists = NEW }
+			}
+		}
+		bypass = {
+			NEW = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = NEW
+		completion_reward = {
+			NEW = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = sok_new_1
+		icon = GFX_goal_NEW_Jet_Beta_is_finished
+		cost = 30
+		relative_position_id = sok_teaching_raiders_our_way
+		prerequisite = {
+			focus = sok_new
+		}
+		x = -1
+		y = 2
+		available = {
+			OR = {
+				owns_state = 285
+				285 = {
+					OWNER = {
+						OR = {
+							is_subject_of = SOK
+							is_in_faction_with = SOK
+						}
+					}
+				}
+			}
+		}
+		bypass = {
+		}
+		completion_reward = {
+			set_temp_variable = {
+				caps_to_add = 300
+			}
+			add_caps = yes
+		}
+	}
+
+	focus = {
+		id = sok_new_2
+		icon = GFX_goal_NEW_renovating_the_shark_club
+		cost = 30
+		relative_position_id = sok_teaching_raiders_our_way
+		prerequisite = {
+			focus = sok_new
+		}
+		x = 1
+		y = 2
+		available = {
+			OR = {
+				owns_state = 285
+				285 = {
+					OWNER = {
+						OR = {
+							is_subject_of = SOK
+							is_in_faction_with = SOK
+						}
+					}
+				}
+			}
+		}
+		bypass = {
+		}
+		completion_reward = {
+			285 = {
+				add_core_of = SOK
+				hidden_effect = {
+					on_core = yes
+				}
+			}
+			swap_ruler_traits = {
+				remove = new_renos_menace_locked
+				add = new_renos_menace
+			}
+		}
+	}
+	focus = {
+		id = sok_vlt
+		icon = GFX_goal_SOK_vault_city
+		cost = 30
+		relative_position_id = sok_new_1
+		prerequisite = {
+			focus = sok_new_1
+		}
+		prerequisite = {
+			focus = sok_new_2
+		}
+		x = 1
+		y = 1
+		available = {
+			has_no_unused_wargoals = yes
+			OR = {
+				is_neighbor_of = VLT
+				NOT = { country_exists = VLT }
+			}
+		}
+		bypass = {
+			VLT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = VLT
+		completion_reward = {
+			VLT = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = sok_sln
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		relative_position_id = sok_teaching_raiders_our_way
+		prerequisite = {
+			focus = sok_teaching_raiders_our_way
+		}
+		x = -2
+		y = 1
+		available = {
+			has_no_unused_wargoals = yes
+			OR = {
+				is_neighbor_of = SLN
+				NOT = { country_exists = SLN }
+			}
+		}
+		bypass = {
+			SLN = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = SLN
+		completion_reward = {
+			SLN = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = sok_sln_1
+		icon = GFX_goal_imo_racree
+		cost = 30
+		relative_position_id = sok_sln
+		prerequisite = {
+			focus = sok_sln
+		}
+		x = -1
+		y = 1
+		available = {
+		}
+		bypass = {
+		}
+		completion_reward = {
+			add_manpower = 1500
+		}
+	}
+	focus = {
+		id = sok_psh
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		relative_position_id = sok_teaching_raiders_our_way
+		prerequisite = {
+			focus = sok_teaching_raiders_our_way
+		}
+		x = 2
+		y = 1
+		available = {
+			has_no_unused_wargoals = yes
+			OR = {
+				is_neighbor_of = PSH
+				NOT = { country_exists = PSH }
+			}
+		}
+		bypass = {
+			PSH = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = PSH
+		completion_reward = {
+			PSH = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = sok_psh_1
+		icon = GFX_goal_SOK_toolkit
+		cost = 30
+		relative_position_id = sok_psh
+		prerequisite = {
+			focus = sok_psh
+		}
+		available = {
+			PSH = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		x = 1
+		y = 1
+		available = {
+		}
+		bypass = {
+		}
+		completion_reward = {
+			371 = {
+				add_resource = {
+					type = metal
+					amount = 20
+				}
+			}
+		}
+	}
+	focus = {
+		id = sok_vlt_1
+		icon = GFX_goal_generic_helm_vault_2
+		cost = 30
+		relative_position_id = sok_vlt
+		prerequisite = {
+			focus = sok_vlt
+		}
+		x = -4
+		y = 1
+		available = {
+			controls_state = 291
+		}
+		bypass = {
+		}
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = heavy_infantry_equipment_2
+				amount = 1000
+			}
+		}
+	}
+	focus = {
+		id = sok_tdn
+		icon = GFX_goal_SOK_anti_chem
+		cost = 30
+		relative_position_id = sok_vlt
+		prerequisite = {
+			focus = sok_vlt
+		}
+		x = -2
+		y = 1
+		available = {
+			has_no_unused_wargoals = yes
+			OR = {
+				is_neighbor_of = TDN
+				NOT = { country_exists = TDN }
+			}
+		}
+		bypass = {
+			TDN = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = TDN
+		completion_reward = {
+			TDN = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = sok_vlt_2
+		icon = GFX_goal_SOK_pipboy
+		cost = 30
+		relative_position_id = sok_vlt
+		prerequisite = {
+			focus = sok_vlt
+		}
+		x = 0
+		y = 1
+		available = {
+			controls_state = 291
+		}
+		bypass = {
+		}
+		completion_reward = {
+			add_political_power = 100
+			every_unit_leader = {
+				add_logistics = 1
+			}
+		}
+	}
+	focus = {
+		id = sok_vlt_3
+		icon = GFX_goal_enc_screening
+		cost = 30
+		relative_position_id = sok_vlt
+		prerequisite = {
+			focus = sok_vlt
+		}
+		x = 4
+		y = 1
+		available = {
+			controls_state = 291
+		}
+		bypass = {
+		}
+		completion_reward = {
+			291 = {
+				add_compliance = 15
+				add_resistance = -15
+				add_resource = {
+					type = advanced
+					amount = -10
+				}
+			}
+			capital_scope = {
+				add_resource = {
+					type = advanced
+					amount = 10
+				}
+			}
+		}
+	}
+	focus = {
+		id = sok_mod
+		icon = GFX_goal_SOK_10mm
+		cost = 30
+		relative_position_id = sok_vlt
+		prerequisite = {
+			focus = sok_vlt
+		}
+		x = 2
+		y = 1
+		available = {
+			has_no_unused_wargoals = yes
+			OR = {
+				is_neighbor_of = MOD
+				NOT = { country_exists = MOD }
+			}
+		}
+		bypass = {
+			MOD = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = MOD
+		completion_reward = {
+			MOD = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = sok_kla
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		relative_position_id = sok_tdn
+		prerequisite = {
+			focus = sok_tdn
+		}
+		x = 1
+		y = 1
+		available = {
+			has_no_unused_wargoals = yes
+			OR = {
+				is_neighbor_of = KLA
+				NOT = { country_exists = KLA }
+			}
+		}
+		bypass = {
+			KLA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = KLA
+		completion_reward = {
+			KLA = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = sok_mxs
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		relative_position_id = sok_tdn
+		prerequisite = {
+			focus = sok_tdn
+		}
+		x = -1
+		y = 1
+		available = {
+			has_no_unused_wargoals = yes
+			OR = {
+				is_neighbor_of = MXS
+				NOT = { country_exists = MXS }
+			}
+		}
+		bypass = {
+			MXS = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = MXS
+		completion_reward = {
+			MXS = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = sok_fou
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		relative_position_id = sok_tdn
+		prerequisite = {
+			focus = sok_mxs
+		}
+		prerequisite = {
+			focus = sok_kla
+		}
+		x = 0
+		y = 2
+		available = {
+			has_no_unused_wargoals = yes
+			OR = {
+				is_neighbor_of = FOU
+				NOT = { country_exists = FOU }
+			}
+		}
+		bypass = {
+			FOU = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = FOU
+		completion_reward = {
+			FOU = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = sok_sla
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		relative_position_id = sok_mod
+		prerequisite = {
+			focus = sok_mod
+		}
+		x = -1
+		y = 1
+		available = {
+			has_no_unused_wargoals = yes
+			OR = {
+				is_neighbor_of = SLA
+				NOT = { country_exists = SLA }
+			}
+		}
+		bypass = {
+			SLA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = SLA
+		completion_reward = {
+			SLA = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = sok_cyc
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		relative_position_id = sok_mod
+		prerequisite = {
+			focus = sok_mod
+		}
+		x = 1
+		y = 1
+		available = {
+			has_no_unused_wargoals = yes
+			OR = {
+				is_neighbor_of = CYC
+				NOT = { country_exists = CYC }
+			}
+		}
+		bypass = {
+			CYC = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = CYC
+		completion_reward = {
+			CYC = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = sok_che
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		relative_position_id = sok_sla
+		prerequisite = {
+			focus = sok_sla
+		}
+		prerequisite = {
+			focus = sok_cyc
+		}
+		x = 1
+		y = 1
+		available = {
+			has_no_unused_wargoals = yes
+			OR = {
+				is_neighbor_of = CHE
+				NOT = { country_exists = CHE }
+			}
+		}
+		bypass = {
+			CHE = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = CHE
+		completion_reward = {
+			CHE = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = sok_integrate_2
+		icon = GFX_goal_SOK_plasma_pistol
+		cost = 30
+		relative_position_id = sok_vlt
+		prerequisite = {
+			focus = sok_che
+		}
+		prerequisite = {
+			focus = sok_fou
+		}
+		x = 0
+		y = 4
+		available = {
+			FOU = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			CHE = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			every_owned_state = {
+				add_compliance = 15
+				add_resistance = -15
+			}
+		}
+	}
+	focus = {
+		id = sok_pac
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		relative_position_id = sok_integrate_2
+		prerequisite = {
+			focus = sok_integrate_2
+		}
+		x = 0
+		y = 1
+		available = {
+			has_no_unused_wargoals = yes
+			OR = {
+				is_neighbor_of = PAC
+				NOT = { country_exists = PAC }
+			}
+		}
+		bypass = {
+			PAC = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = PAC
+		completion_reward = {
+			PAC = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = sok_eur
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		relative_position_id = sok_integrate_2
+		prerequisite = {
+			focus = sok_integrate_2
+		}
+		x = -2
+		y = 1
+		available = {
+			has_no_unused_wargoals = yes
+			OR = {
+				is_neighbor_of = EUR
+				NOT = { country_exists = EUR }
+			}
+		}
+		bypass = {
+			EUR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = EUR
+		completion_reward = {
+			EUR = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = sok_umb
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		relative_position_id = sok_integrate_2
+		prerequisite = {
+			focus = sok_integrate_2
+		}
+		x = 2
+		y = 1
+		available = {
+			has_no_unused_wargoals = yes
+			OR = {
+				is_neighbor_of = UMB
+				NOT = { country_exists = UMB }
+			}
+		}
+		bypass = {
+			UMB = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = UMB
+		completion_reward = {
+			UMB = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = sok_arr
+		icon = GFX_goal_SOK_return_reno
+		cost = 30
+		relative_position_id = sok_pac
+		x = 0
+		y = 1
+		allow_branch = {
+			original_tag = SOK
+		}
+		available = {
+			has_no_unused_wargoals = yes
+			OR = {
+				is_neighbor_of = ARR
+				AND = {
+					MXS = {
+						all_core_land_owned_by_prev_sphere = yes
+					}
+					UMB = {
+						all_core_land_owned_by_prev_sphere = yes
+					}
+					KLA = {
+						all_core_land_owned_by_prev_sphere = yes
+					}
+					NOT = { country_exists = ARR }
+				}
+			}
+		}
+		bypass = {
+			ARR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = ARR
+		completion_reward = {
+			ARR = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = sok_arr_a_sharpened_spear
+		icon = GFX_goal_generic_spear
+		cost = 30
+		relative_position_id = sok_arr
+		prerequisite = {
+			focus = sok_arr
+		}
+		x = -2
+		y = 1
+		available = {
+			ARR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		bypass = {
+		}
+		completion_reward = {
+			sok_upgrade_knowledge_of_arroyo_idea = yes
+		}
+	}
+	focus = {
+		id = sok_arr_a_canyon_of_memories
+		icon = GFX_goal_generic_canyon_focus
+		cost = 30
+		relative_position_id = sok_arr
+		prerequisite = {
+			focus = sok_arr
+		}
+		x = 0
+		y = 1
+		available = {
+			ARR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		bypass = {
+		}
+		completion_reward = {
+			sok_upgrade_knowledge_of_arroyo_idea = yes
+		}
+	}
+	focus = {
+		id = sok_arr_hunting_grounds
+		icon = GFX_goal_food_razor_grain
+		cost = 30
+		relative_position_id = sok_arr
+		prerequisite = {
+			focus = sok_arr
+		}
+		x = 2
+		y = 1
+		available = {
+			ARR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		bypass = {
+		}
+		completion_reward = {
+			sok_upgrade_knowledge_of_arroyo_idea = yes
+		}
+	}
+	focus = {
+		id = sok_arr_the_water_chip
+		icon = GFX_goal_generic_circuit_adv
+		cost = 30
+		relative_position_id = sok_arr
+		prerequisite = {
+			focus = sok_arr_a_sharpened_spear
+		}
+		prerequisite = {
+			focus = sok_arr_a_canyon_of_memories
+		}
+		x = -1
+		y = 2
+		available = {
+			ARR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		bypass = {
+		}
+		completion_reward = {
+			sok_upgrade_knowledge_of_arroyo_idea = yes
+		}
+	}
+	focus = {
+		id = sok_arr_the_temple_of_trials
+		icon = GFX_goal_tribal_generic
+		cost = 30
+		relative_position_id = sok_arr
+		prerequisite = {
+			focus = sok_arr_a_canyon_of_memories
+		}
+		prerequisite = {
+			focus = sok_arr_hunting_grounds
+		}
+		x = 1
+		y = 2
+		available = {
+			ARR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			has_completed_focus = sok_arr_a_sharpened_spear
+			has_completed_focus = sok_arr_a_canyon_of_memories
+			has_completed_focus = sok_arr_hunting_grounds
+			has_completed_focus = sok_arr_the_water_chip
+		}
+		bypass = {
+		}
+		completion_reward = {
+			sok_upgrade_knowledge_of_arroyo_idea = yes
+			country_event = nf_sok.4
+		}
+	}
+	focus = {
+		id = sok_norcal
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		relative_position_id = sok_pac
+		x = 0
+		y = 4
+		prerequisite = {
+			focus = sok_arr_the_water_chip
+		}
+		prerequisite = {
+			focus = sok_arr_the_temple_of_trials
+		}
+		available = {
+			has_no_unused_wargoals = yes
+			ARR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		bypass = {
+			RDS = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = NCR
+		will_lead_to_war_with = RDS
+		completion_reward = {
+			RDS = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+			swap_ruler_traits = {
+				remove = lord_of_the_sons_locked
+				add = lord_of_the_sons
+			}
+		}
+	}
+	focus = {
+		id = sok_gunderson_ranch
+		icon = GFX_goal_generic_brahmin_trade
+		cost = 30
+		relative_position_id = sok_norcal
+		prerequisite = {
+			focus = sok_norcal
+		}
+		x = -1
+		y = 1
+		available = {
+			controls_state = 60
+		}
+		bypass = {
+		}
+		completion_reward = {
+			set_temp_variable = {
+				caps_to_add = 200
+			}
+			add_caps = yes
+			60 = {
+				add_core_of = SOK
+				add_extra_state_shared_building_slots = 4
+				hidden_effect = {
+					on_core = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = sok_sac_city
+		icon = GFX_KHA_focus_boneyard_skyscraper_tfr
+		cost = 30
+		relative_position_id = sok_norcal
+		prerequisite = {
+			focus = sok_norcal
+		}
+		x = 1
+		y = 1
+		available = {
+			controls_state = 135
+		}
+		bypass = {
+		}
+		completion_reward = {
+			set_temp_variable = {
+				caps_to_add = 150
+			}
+			add_caps = yes
+			135 = {
+				add_core_of = SOK
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				hidden_effect = {
+					on_core = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = sok_navarro
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		relative_position_id = sok_norcal
+		prerequisite = {
+			focus = sok_norcal
+		}
+		x = -3
+		y = 1
+		available = {
+			has_no_unused_wargoals = yes
+			OR = {
+				is_neighbor_of = NAT
+				NOT = { country_exists = NAT }
+			}
+		}
+		bypass = {
+			NAT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = NAT
+		completion_reward = {
+			NAT = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = sok_shi
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		relative_position_id = sok_norcal
+		prerequisite = {
+			focus = sok_norcal
+		}
+		x = 3
+		y = 1
+		available = {
+			has_no_unused_wargoals = yes
+			OR = {
+				NOT = { country_exists = SHI }
+				AND = {
+					SHI = {
+						is_neighbor_of = SOK
+						SHI_lo_pan = {
+							is_country_leader = yes
+						}
+					}
+				}
+			}
+		}
+		bypass = {
+			OR = {
+				AND = {
+					SHI = {
+						is_neighbor_of = SOK
+						SHI_lo_pan = {
+							is_country_leader = no
+						}
+					}
+				}
+				SHI = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+		}
+		will_lead_to_war_with = SHI
+		completion_reward = {
+			SHI = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = sok_shi_1
+		icon = GFX_goal_shi_focus_golden_dragon
+		cost = 30
+		relative_position_id = sok_shi
+		prerequisite = {
+			focus = sok_shi
+		}
+		x = -1
+		y = 1
+		available = {
+			OR = {
+				controls_state = 163
+				SHI = {
+					SHI_lo_pan = {
+						is_country_leader = no
+					}
+				}
+			}
+		}
+		bypass = {
+		}
+		completion_reward = {
+			swap_ruler_traits = {
+				remove = disciple_of_the_dragon_locked
+				add = disciple_of_the_dragon
+			}
+		}
+	}
+	focus = {
+		id = sok_nat_1
+		icon = GFX_goal_BOS_vertibird_schematics
+		cost = 30
+		relative_position_id = sok_navarro
+		prerequisite = {
+			focus = sok_navarro
+		}
+		x = 1
+		y = 1
+		available = {
+			controls_state = 548
+		}
+		bypass = {
+		}
+		completion_reward = {
+			swap_ruler_traits = {
+				remove = raider_of_navarro_locked
+				add = raider_of_navarro
+			}
+		}
+	}
+	focus = {
+		id = sok_control_station_enclave
+		icon = GFX_goal_enc_power_armor_focus
+		cost = 30
+		relative_position_id = sok_nat_1
+		prerequisite = {
+			focus = sok_nat_1
+		}
+		prerequisite = {
+			focus = sok_shi_1
+		}
+		x = 2
+		y = 1
+		available = {
+		}
+		bypass = {
+		}
+		completion_reward = {
+			swap_ruler_traits = {
+				remove = frank_horrigans_fury_locked
+				add = frank_horrigans_fury
+			}
+		}
+	}
+	focus = {
+		id = grd_unique
+		icon = GFX_goal_BOS_tesla_cannon
+		cost = 30
+		relative_position_id = nevada_1
+		available = {
+			has_completed_focus = nevada_tvt_consolidation
+		}
+		allow_branch = {
+			original_tag = GRD
+		}
+		x = 0
+		y = 12
+		completion_reward = {
+			add_stability = 0.05
+			add_war_support = 0.05
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = grd_advanced_recruitment_strategies #"Advanced" - really just wargoals.
+		icon = GFX_goal_MOJ_aggressive_policy
+		cost = 30
+		relative_position_id = grd_unique
+		prerequisite = {
+			focus = grd_unique
+		}
+		x = -6
+		y = 1
+		completion_reward = {
+			add_war_support = 0.1
+			add_command_power = 100
+		}
+	}
+	focus = {
+		id = grd_vip_wg
+		icon = GFX_goal_MDT_gorgon_eye
+		cost = 30
+		relative_position_id = grd_advanced_recruitment_strategies
+		prerequisite = {
+			focus = grd_advanced_recruitment_strategies
+		}
+		x = -2
+		y = 1
+		available = {
+			has_no_unused_wargoals = yes
+			OR = {
+				is_neighbor_of = VIP
+				NOT = { country_exists = VIP }
+			}
+		}
+		bypass = {
+			VIP = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = VIP
+		completion_reward = {
+			VIP = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = grd_ykz_wg
+		icon = GFX_goal_pal_yakuza
+		cost = 30
+		relative_position_id = grd_advanced_recruitment_strategies
+		prerequisite = {
+			focus = grd_advanced_recruitment_strategies
+		}
+		x = 0
+		y = 1
+		available = {
+			has_no_unused_wargoals = yes
+			OR = {
+				is_neighbor_of = YKZ
+				NOT = { country_exists = YKZ }
+			}
+		}
+		bypass = {
+			YKZ = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = YKZ
+		completion_reward = {
+			YKZ = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = grd_jac_wg
+		icon = GFX_KHA_focus_synthesise_chems
+		cost = 30
+		relative_position_id = grd_advanced_recruitment_strategies
+		prerequisite = {
+			focus = grd_advanced_recruitment_strategies
+		}
+		x = 2
+		y = 1
+		available = {
+			has_no_unused_wargoals = yes
+			OR = {
+				is_neighbor_of = JAC
+				NOT = { country_exists = JAC }
+			}
+		}
+		bypass = {
+			JAC = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = JAC
+		completion_reward = {
+			JAC = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = grd_neighbors_beaten
+		icon = GFX_goal_BOS_victory_or_death
+		cost = 30
+		relative_position_id = grd_advanced_recruitment_strategies
+		prerequisite = {
+			focus = grd_vip_wg
+		}
+		prerequisite = {
+			focus = grd_ykz_wg
+		}
+		prerequisite = {
+			focus = grd_jac_wg
+		}
+		x = 0
+		y = 2
+		completion_reward = {
+			JAC = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			VIP = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			YKZ = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			hidden_effect = { #Clearing the cores is more performant healthy here
+				every_owned_state = {
+					limit = {
+						OR = {
+							is_core_of = JAC
+							is_core_of = VIP
+							is_core_of = YKZ
+						}
+					}
+					on_core = yes #Triggers the raider 'on_core' action
+				}
+			}
+		}
+	}
+	focus = {
+		id = grd_tactical_lessons
+		icon = GFX_goal_generic_land_doctrines_focus
+		cost = 30
+		relative_position_id = grd_neighbors_beaten
+		prerequisite = {
+			focus = grd_neighbors_beaten
+		}
+		x = -1
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.4
+				uses = 3
+				category = cat_land_doctrine
+			}
+		}
+	}
+	focus = {
+		id = grd_rush_of_laser
+		icon = GFX_goal_generic_laser_rifle_2
+		cost = 30
+		relative_position_id = grd_neighbors_beaten
+		prerequisite = {
+			focus = grd_neighbors_beaten
+		}
+		x = 0
+		y = 2
+		completion_reward = {
+			add_ideas = GRD_pristine_focusing_arrays
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = energy_weaponry_tech_category
+				category = plasma_weaponry_tech_category
+			}
+		}
+	}
+	focus = {
+		id = grd_power_armor_restoration
+		icon = GFX_goal_generic_BOS_focus_t51b_production
+		cost = 30
+		relative_position_id = grd_neighbors_beaten
+		prerequisite = {
+			focus = grd_neighbors_beaten
+		}
+		x = 1
+		y = 1
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = power_armor_equipment_4
+				amount = 300
+				producer = USA
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = support_maintenance_tech_category
+			}
+		}
+	}
+	focus = {
+		id = grd_acquiring_the_old_worlds_bones
+		icon = GFX_goal_MOJ_scribal_thought
+		cost = 30
+		relative_position_id = grd_unique
+		prerequisite = {
+			focus = grd_unique
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+			add_stability = 0.15
+		}
+	}
+	focus = {
+		id = grd_sok_deep_integration
+		icon = GFX_goal_SOK_return_reno
+		cost = 30
+		relative_position_id = grd_acquiring_the_old_worlds_bones
+		prerequisite = {
+			focus = grd_acquiring_the_old_worlds_bones
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = grd_sok_deep_integration
+				bonus = 0.5
+				uses = 2
+				category = power_armor_tech_category
+			}
+			54 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = grd_tof_deep_integration
+		icon = GFX_goal_SOK_anti_chem
+		cost = 30
+		relative_position_id = grd_acquiring_the_old_worlds_bones
+		prerequisite = {
+			focus = grd_acquiring_the_old_worlds_bones
+		}
+		x = -2
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = grd_tof_deep_integration
+				bonus = 0.5
+				uses = 2
+				category = support_tech_category
+			}
+			943 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = grd_des_deep_integration
+		icon = GFX_goal_SOK_10mm
+		cost = 30
+		relative_position_id = grd_acquiring_the_old_worlds_bones
+		prerequisite = {
+			focus = grd_acquiring_the_old_worlds_bones
+		}
+		x = 2
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = grd_des_deep_integration
+				bonus = 0.5
+				uses = 2
+				category = cat_land_doctrine
+			}
+			307 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = grd_tvt_deep_integration
+		icon = GFX_goal_NEW_bio_med_gel_experiments
+		cost = 30
+		relative_position_id = grd_acquiring_the_old_worlds_bones
+		prerequisite = {
+			focus = grd_sok_deep_integration
+		}
+		prerequisite = {
+			focus = grd_tof_deep_integration
+		}
+		prerequisite = {
+			focus = grd_des_deep_integration
+		}
+		x = 0
+		y = 2
+		completion_reward = {
+			army_experience = 75
+		}
+	}
+	focus = {
+		id = grd_repairing_guardian_citadel
+		icon = GFX_goal_MOJ_know_our_name
+		cost = 30
+		relative_position_id = grd_unique
+		prerequisite = {
+			focus = grd_unique
+		}
+		x = 6
+		y = 1
+		completion_reward = {
+			add_political_power = 200
+		}
+	}
+	focus = {
+		id = grd_outer_sanctum
+		icon = GFX_goal_generic_walls_focus
+		cost = 30
+		relative_position_id = grd_repairing_guardian_citadel
+		prerequisite = {
+			focus = grd_repairing_guardian_citadel
+		}
+		x = -2
+		y = 1
+		completion_reward = {
+			capital_scope = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = grd_armory_and_workshop
+		icon = GFX_goal_generic_pipe_weapons_focus
+		cost = 30
+		relative_position_id = grd_repairing_guardian_citadel
+		prerequisite = {
+			focus = grd_repairing_guardian_citadel
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+			capital_scope = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = grd_tangs_lab
+		icon = GFX_goal_BOS_generic_research
+		cost = 30
+		relative_position_id = grd_repairing_guardian_citadel
+		prerequisite = {
+			focus = grd_repairing_guardian_citadel
+		}
+		x = 2
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = grd_tangs_lab
+				bonus = 0.4
+				uses = 3
+				category = industry
+			}
+		}
+	}
+	focus = {
+		id = grd_repairs_finished
+		icon = GFX_goal_generic_slums_focus
+		cost = 30
+		relative_position_id = grd_repairing_guardian_citadel
+		prerequisite = {
+			focus = grd_outer_sanctum
+		}
+		prerequisite = {
+			focus = grd_armory_and_workshop
+		}
+		prerequisite = {
+			focus = grd_tangs_lab
+		}
+		x = 0
+		y = 2
+		completion_reward = {
+			set_temp_variable = { caps_to_add = 125 }
+			add_caps = yes
+			210 = {
+				set_temp_variable = { pop_add = 12500 }
+				add_state_population = yes
+			}
+		}
+	}
+	focus = {
+		id = grd_domestic_production
+		icon = GFX_goal_generic_tools
+		cost = 30
+		relative_position_id = grd_repairs_finished
+		prerequisite = {
+			focus = grd_repairs_finished
+		}
+		x = -1
+		y = 1
+		completion_reward = {
+			526 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_resource = {
+					type = water
+					amount = 4
+				}
+			}
+			944 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_resource = {
+					type = metal
+					amount = 4
+				}
+			}
+		}
+	}
+	focus = {
+		id = grd_economic_boom
+		icon = GFX_goal_generic_brahmin_trade
+		cost = 30
+		relative_position_id = grd_repairs_finished
+		prerequisite = {
+			focus = grd_repairs_finished
+		}
+		x = 0
+		y = 2
+		completion_reward = {
+			add_ideas = GRD_profits_of_human_contact
+			210 = {
+				add_state_modifier = {
+					modifier = {
+						caps_trade_node_route_limit = 1
+					}
+				}
+				set_temp_variable = {
+					development_to_add = 1.5
+				}
+				add_development_to_node = yes
+			}
+		}
+	}
+	focus = {
+		id = grd_grand_hallway_library
+		icon = GFX_goal_generic_books
+		cost = 30
+		relative_position_id = grd_repairs_finished
+		prerequisite = {
+			focus = grd_repairs_finished
+		}
+		x = 1
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = support_demolitions_tech_category
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = electronics
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = tool_tech
+			}
+		}
+	}
+	focus = {
+		id = grd_guardians_of_the_world_hole
+		icon = GFX_goal_MOJ_the_big_empty
+		cost = 30
+		relative_position_id = grd_unique
+		prerequisite = {
+			focus = grd_neighbors_beaten
+		}
+		prerequisite = {
+			focus = grd_tvt_deep_integration
+		}
+		prerequisite = {
+			focus = grd_repairs_finished
+		}
+		available = {
+			owns_state = 327
+		}
+		x = 0
+		y = 4
+		completion_reward = {
+			custom_effect_tooltip = grd_guardians_of_the_world_hole_tt
+			set_technology = { plasma_unlock_tech = 1 }
+		}
+	}
+	#215th Tree
+	focus = {
+		id = tof_unique
+		icon = GFX_generic_gold_bars
+		cost = 30
+		relative_position_id = nevada_1
+		available = {
+			has_completed_focus = nevada_tvt_consolidation
+		}
+		allow_branch = {
+			original_tag = TOF
+		}
+		x = 0
+		y = 12
+		completion_reward = {
+			unlock_decision_category_tooltip = tof_movies
+			set_country_flag = tof_movies
+		}
+	}
+	focus = {
+		id = tof_raider_pa
+		icon = GFX_goal_generic_power_armour_raider_2
+		cost = 30
+		relative_position_id = tof_unique
+		prerequisite = {
+			focus = tof_unique
+		}
+		x = -4
+		y = 1
+		completion_reward = {
+			set_technology = { power_armour_tech_level_tribal = 1 }
+		}
+	}
+	focus = {
+		id = tof_vipers
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		prerequisite = {
+			focus = tof_unique
+		}
+		relative_position_id = tof_unique
+		x = -2
+		y = 1
+		available = {
+			has_no_offensive_wars_or_wargoals = yes
+			OR = {
+				is_neighbor_of = VIP
+				NOT = { country_exists = VIP }
+			}
+		}
+		bypass = {
+			VIP = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = VIP
+		completion_reward = {
+			VIP = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = tof_rebuild_viper_city
+		icon = GFX_KHA_focus_camp_workshops
+		cost = 30
+		prerequisite = {
+			focus = tof_vipers
+		}
+		relative_position_id = tof_vipers
+		x = 1
+		y = 1
+		available = {
+			327 = {
+				is_fully_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			327 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = tof_ind_1
+		icon = GFX_KHA_focus_bikes
+		cost = 30
+		prerequisite = {
+			focus = tof_vipers
+		}
+		relative_position_id = tof_vipers
+		x = -1
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = tof_ind_1
+				bonus = 0.25
+				uses = 2
+				category = vehicle_tech_category
+			}
+		}
+	}
+	focus = {
+		id = tof_jackals
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		prerequisite = {
+			focus = tof_unique
+		}
+		relative_position_id = tof_unique
+		x = 2
+		y = 1
+		available = {
+			has_no_offensive_wars_or_wargoals = yes
+			OR = {
+				is_neighbor_of = JAC
+				NOT = { country_exists = JAC }
+			}
+		}
+		bypass = {
+			JAC = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = JAC
+		completion_reward = {
+			JAC = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = tof_ind_11
+		icon = GFX_goal_TTM_Dynamite
+		cost = 30
+		prerequisite = {
+			focus = tof_unique
+		}
+		relative_position_id = tof_unique
+		x = 4
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = tof_ind_11
+				bonus = 0.25
+				uses = 2
+				category = support_tech_category
+			}
+		}
+	}
+	focus = {
+		id = tof_rebuild_jackal_city
+		icon = GFX_KHA_focus_synthesise_chems
+		cost = 30
+		prerequisite = {
+			focus = tof_jackals
+		}
+		relative_position_id = tof_jackals
+		x = -1
+		y = 1
+		available = {
+			160 = {
+				is_fully_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			160 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = tof_ind_2
+		icon = GFX_KHA_focus_chem_deals
+		cost = 30
+		prerequisite = {
+			focus = tof_jackals
+		}
+		relative_position_id = tof_jackals
+		x = 1
+		y = 1
+		completion_reward = {
+			set_temp_variable = { caps_to_add = 150 }
+			add_caps = yes
+		}
+	}
+	focus = {
+		id = tof_consolidation_of_raiders
+		icon = GFX_focus_generic_self_management
+		cost = 30
+		prerequisite = {
+			focus = tof_vipers
+		}
+		prerequisite = {
+			focus = tof_jackals
+		}
+		available = {
+			JAC = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			VIP = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = tof_unique
+		x = 0
+		y = 3
+		completion_reward = {
+			JAC = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			VIP = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			hidden_effect = { #Clearing the cores is more performant healthy here
+				every_owned_state = {
+					limit = {
+						OR = {
+							is_core_of = JAC
+							is_core_of = VIP
+						}
+					}
+					on_core = yes #Triggers the raider 'on_core' action
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = tof_the_straw_that_broke_renos_back
+		icon = GFX_goal_NEW_generic_reno
+		cost = 30
+		prerequisite = {
+			focus = tof_consolidation_of_raiders
+		}
+		relative_position_id = tof_consolidation_of_raiders
+		x = -1
+		y = 1
+		available = {
+			285 = {
+				is_fully_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			285 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+						type = arms_factory
+						level = 3
+						instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = tof_raiders_of_the_lost_vault
+		icon = GFX_goal_generic_helm_vault_2
+		cost = 30
+		prerequisite = {
+			focus = tof_consolidation_of_raiders
+		}
+		relative_position_id = tof_consolidation_of_raiders
+		x = 1
+		y = 1
+		available = {
+			291 = {
+				is_fully_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			291 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+						type = industrial_complex
+						level = 3
+						instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = tof_heading_to_jericho
+		icon = GFX_goal_generic_slums_focus
+		cost = 30
+		prerequisite = {
+			focus = tof_consolidation_of_raiders
+		}
+		relative_position_id = tof_consolidation_of_raiders
+		x = 0
+		y = 2
+		completion_reward = {
+			add_political_power = 150
+		}
+	}
+
+	focus = {
+		id = tof_psh_wg
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		prerequisite = {
+			focus = tof_heading_to_jericho
+		}
+		relative_position_id = tof_heading_to_jericho
+		x = -3
+		y = 1
+		available = {
+			has_no_offensive_wars_or_wargoals = yes
+		}
+		bypass = {
+			PSH = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = PSH
+		completion_reward = {
+			PSH = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = tof_gra_wg
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		prerequisite = {
+			focus = tof_heading_to_jericho
+		}
+		relative_position_id = tof_heading_to_jericho
+		x = -1
+		y = 1
+		available = {
+			has_no_offensive_wars_or_wargoals = yes
+		}
+		bypass = {
+			GRA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = GRA
+		completion_reward = {
+			GRA = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = tof_ind_5
+		icon = GFX_goal_moj_sunset_sasparilla
+		cost = 30
+		prerequisite = {
+			focus = tof_gra_wg
+		}
+		relative_position_id = tof_gra_wg
+		x = -1
+		y = 1
+		completion_reward = {
+			set_temp_variable = { caps_to_add = 150 }
+			add_caps = yes
+		}
+	}
+	focus = {
+		id = tof_rip_wg
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		prerequisite = {
+			focus = tof_heading_to_jericho
+		}
+		relative_position_id = tof_heading_to_jericho
+		x = 1
+		y = 1
+		available = {
+			has_no_offensive_wars_or_wargoals = yes
+		}
+		bypass = {
+			RIP = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = RIP
+		completion_reward = {
+			RIP = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = tof_sln_wg
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		prerequisite = {
+			focus = tof_heading_to_jericho
+		}
+		relative_position_id = tof_heading_to_jericho
+		x = 3
+		y = 1
+		available = {
+			has_no_offensive_wars_or_wargoals = yes
+		}
+		bypass = {
+			SLN = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = SLN
+		completion_reward = {
+			SLN = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = tof_ind_6
+		icon = GFX_goal_MOJ_powder_gangers
+		cost = 30
+		prerequisite = {
+			focus = tof_rip_wg
+		}
+		relative_position_id = tof_rip_wg
+		x = 1
+		y = 1
+		completion_reward = {
+			add_war_support = 0.1
+			add_manpower = 750
+		}
+	}
+	focus = {
+		id = tof_rub
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		prerequisite = {
+			focus = tof_rip_wg
+		}
+		prerequisite = {
+			focus = tof_gra_wg
+		}
+		relative_position_id = tof_gra_wg
+		x = 1
+		y = 1
+		available = {
+			has_no_offensive_wars_or_wargoals = yes
+		}
+		bypass = {
+			RUB = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = RUB
+		completion_reward = {
+			RUB = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = tof_city_318
+		icon = GFX_goal_generic_helm_vault_2
+		cost = 30
+		prerequisite = {
+			focus = tof_rub
+		}
+		relative_position_id = tof_rub
+		x = 0
+		y = 1
+		available = {
+			425 = {
+				is_fully_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					425 = {
+						NOT = { is_core_of = ROOT }
+					}
+				}
+				425 = {
+					add_core_of = ROOT
+				}
+			}
+			425 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+				}
+				add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = tof_ind_7
+		icon = GFX_KHA_focus_avenge_bittersprings
+		cost = 30
+		prerequisite = {
+			focus = tof_rub
+		}
+		relative_position_id = tof_rub
+		x = -4
+		y = 1
+		#available = {
+			#What did they say to a Khan that was kicked off the map?
+			#He was destroyed! c:
+			#KHA = {
+			#	NOT = { has_war_with = TOF }
+			#	OR = {
+			#		exists = no
+			#		has_bittersprings_massacre_occurred = yes
+			#		is_subject = yes
+			#	}
+			#}
+		#}
+		completion_reward = {
+			add_tech_bonus = {
+				name = tof_ind_7
+				bonus = 0.25
+				uses = 1
+				category = cat_land_doctrine
+			}
+			capital_scope = {
+				add_extra_state_shared_building_slots = 2
+				set_temp_variable = { pop_add = 2500 }
+				add_state_population = yes
+			}
+		}
+	}
+	focus = {
+		id = tof_ind_8
+		icon = GFX_goal_generic_air_doctrines_focus
+		cost = 30
+		prerequisite = {
+			focus = tof_rub
+		}
+		relative_position_id = tof_rub
+		x = 4
+		y = 1
+		completion_reward = {
+			add_stability = 0.05
+		}
+	}
+	focus = {
+		id = tof_ves
+		icon = GFX_goal_generic_mountain_fortress
+		cost = 30
+		prerequisite = {
+			focus = tof_rub
+		}
+		relative_position_id = tof_rub
+		x = -2
+		y = 1
+		completion_reward = {
+			army_experience = 25
+		}
+	}
+	focus = {
+		id = tof_ind_9
+		icon = GFX_KHA_focus_warrior_scholars
+		cost = 30
+		prerequisite = {
+			focus = tof_city_318
+		}
+		relative_position_id = tof_city_318
+		x = -5
+		y = 1
+		available = {
+			num_of_controlled_states > 20
+		}
+		completion_reward = {
+			add_stability = -0.025
+			add_manpower = 5000
+		}
+	}
+	focus = {
+		id = tof_ind_10
+		icon = GFX_KHA_focus_synthetic_opioids
+		cost = 30
+		prerequisite = {
+			focus = tof_city_318
+		}
+		relative_position_id = tof_city_318
+		x = 5
+		y = 1
+		completion_reward = {
+			set_temp_variable = {
+				caps_to_add = 250
+			}
+			add_caps = yes
+			add_war_support = 0.05
+		}
+	}
+	focus = {
+		id = tof_crescent_valley
+		icon = GFX_goal_generic_canyon_focus
+		cost = 30
+		prerequisite = {
+			focus = tof_rub
+		}
+		relative_position_id = tof_rub
+		x = 2
+		y = 1
+		available = {
+			462 = {
+				is_fully_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			462 = {
+				add_extra_state_shared_building_slots = 4
+			}
+		}
+	}
+
+	focus = {
+		id = tof_eighties
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		prerequisite = {
+			focus = tof_city_318
+		}
+		relative_position_id = tof_city_318
+		x = -3
+		y = 1
+		available = {
+			has_no_offensive_wars_or_wargoals = yes
+		}
+		bypass = {
+			EHT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = EHT
+		completion_reward = {
+			EHT = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = tof_gold_hill
+		icon = GFX_goal_ancient_wealth
+		cost = 30
+		prerequisite = {
+			focus = tof_eighties
+		}
+		relative_position_id = tof_eighties
+		x = -1
+		y = 1
+		available = {
+			40 = {
+				is_fully_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					40 = {
+						NOT = { is_core_of = ROOT }
+					}
+				}
+				40 = {
+					add_core_of = ROOT
+				}
+			}
+			set_temp_variable = {
+				caps_to_add = 250
+			}
+			add_caps = yes
+			40 = {
+				add_extra_state_shared_building_slots = 3
+			}
+		}
+	}
+	focus = {
+		id = tof_coast_of_the_salt_lake
+		icon = GFX_goal_ARM_reynosa_dockyard_renovations
+		cost = 30
+		prerequisite = {
+			focus = tof_eighties
+		}
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+			}
+		}
+		relative_position_id = tof_eighties
+		x = 1
+		y = 1
+		completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = {
+				name = tof_coast_of_the_salt_lake
+				bonus = 0.5
+				uses = 2
+				category = naval_tech_category
+			}
+			add_tech_bonus = {
+				name = tof_coast_of_the_salt_lake
+				bonus = 0.5
+				uses = 2
+				category = cat_naval_doctrine
+			}
+		}
+	}
+	focus = {
+		id = tof_white_legs
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		prerequisite = {
+			focus = tof_city_318
+		}
+		relative_position_id = tof_city_318
+		x = 3
+		y = 1
+		available = {
+			has_no_offensive_wars_or_wargoals = yes
+		}
+		bypass = {
+			WHT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = WHT
+		completion_reward = {
+			WHT = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = tof_frisco
+		icon = GFX_goal_ARM_superior_mechanization
+		cost = 30
+		prerequisite = {
+			focus = tof_white_legs
+		}
+		relative_position_id = tof_white_legs
+		x = -1
+		y = 1
+		available = {
+			373 = {
+				is_fully_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					373 = {
+						NOT = { is_core_of = ROOT }
+					}
+				}
+				373 = {
+					add_core_of = ROOT
+				}
+			}
+			add_stability = 0.075
+			add_tech_bonus = {
+				name = tof_frisco
+				bonus = 0.5
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	focus = {
+		id = tof_lincoln
+		icon = GFX_goal_CAF_stocks
+		cost = 30
+		prerequisite = {
+			focus = tof_white_legs
+		}
+		relative_position_id = tof_white_legs
+		x = 1
+		y = 1
+		available = {
+			326 = {
+				is_fully_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					326 = {
+						NOT = { is_core_of = ROOT }
+					}
+				}
+				326 = {
+					add_core_of = ROOT
+				}
+			}
+			add_stability = 0.075
+			326 = {
+				add_extra_state_shared_building_slots = 3
+			}
+		}
+	}
+	focus = {
+		id = tof_tar
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		prerequisite = {
+			focus = tof_coast_of_the_salt_lake
+		}
+		relative_position_id = tof_coast_of_the_salt_lake
+		x = 1
+		y = 1
+		available = {
+			has_no_offensive_wars_or_wargoals = yes
+		}
+		bypass = {
+			TAR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = TAR
+		completion_reward = {
+			TAR = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+			if = {
+				limit = {
+					NOT = { owns_state = 341 }
+				}
+				add_state_claim = 341
+			}
+		}
+	}
+	focus = {
+		id = tof_clk
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		prerequisite = {
+			focus = tof_frisco
+		}
+		relative_position_id = tof_frisco
+		x = -1
+		y = 1
+		available = {
+			has_no_offensive_wars_or_wargoals = yes
+		}
+		bypass = {
+			CLK = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = CLK
+		completion_reward = {
+			CLK = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = tof_the_walls_of_jericho_fell
+		icon = GFX_goal_generic_scyscrapers_postwar
+		cost = 30
+		available = {
+			has_full_control_of_state = 213
+		}
+		allow_branch = {
+			original_tag = TOF
+		}
+		relative_position_id = tof_tar
+		x = 1
+		y = 1
+		completion_reward = {
+			213 = {
+				add_core_of = TOF
+				#Specifically cancel out raiding. Marianne spares this city.
+			}
+			set_capital = {state = 213 }
+		}
+	}
+	focus = {
+		id = tof_union_station
+		icon = GFX_goal_generic_train_1
+		cost = 30
+		available = {
+			has_full_control_of_state = 213
+		}
+		prerequisite = {
+			focus = tof_the_walls_of_jericho_fell
+		}
+		relative_position_id = tof_the_walls_of_jericho_fell
+		x = -3
+		y = 2
+		completion_reward = {
+			213 = {
+				add_extra_state_shared_building_slots = 1
+				set_temp_variable = { pop_add = 1000 }
+				add_state_population = yes
+			}
+		}
+	}
+	focus = {
+		id = tof_lines_in_the_sand
+		icon = GFX_goal_generic_infrastructure2
+		cost = 30
+		available = {
+			has_full_control_of_state = 213
+		}
+		prerequisite = {
+			focus = tof_union_station
+		}
+		relative_position_id = tof_union_station
+		x = -1
+		y = 1
+		completion_reward = {
+			213 = {
+				add_extra_state_shared_building_slots = 3
+				add_resource = {
+					type = metal
+					amount = 2
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				set_temp_variable = { pop_add = 2000 }
+				add_state_population = yes
+			}
+		}
+	}
+	focus = {
+		id = tof_riches_of_trade
+		icon = GFX_goal_bottlecap
+		cost = 30
+		available = {
+			has_full_control_of_state = 213
+		}
+		prerequisite = {
+			focus = tof_union_station
+		}
+		relative_position_id = tof_union_station
+		x = 1
+		y = 1
+		completion_reward = {
+			213 = {
+				add_extra_state_shared_building_slots = 2
+				add_resource = {
+					type = metal
+					amount = 2
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				set_temp_variable = { pop_add = 2000 }
+				add_state_population = yes
+			}
+		}
+	}
+	focus = {
+		id = tof_the_great_water_plant
+		icon = GFX_goal_water_generic
+		cost = 30
+		available = {
+			has_full_control_of_state = 213
+		}
+		prerequisite = {
+			focus = tof_the_walls_of_jericho_fell
+		}
+		relative_position_id = tof_the_walls_of_jericho_fell
+		x = 0
+		y = 1
+		completion_reward = {
+			213 = {
+				add_resource = {
+					type = water
+					amount = 5
+				}
+				set_temp_variable = { pop_add = 1000 }
+				add_state_population = yes
+			}
+		}
+	}
+	focus = {
+		id = tof_repairing_hands_of_god_damage
+		icon = GFX_goal_NCN_By_The_Sword_And_The_Cross
+		cost = 30
+		available = {
+			has_full_control_of_state = 213
+		}
+		prerequisite = {
+			focus = tof_the_great_water_plant
+		}
+		relative_position_id = tof_the_great_water_plant
+		x = -1
+		y = 1
+		completion_reward = {
+			213 = {
+				add_resource = {
+					type = water
+					amount = 5
+				}
+				set_temp_variable = { pop_add = 2000 }
+				add_state_population = yes
+			}
+			set_temp_variable = {
+				caps_to_add = 50
+			}
+			add_caps = yes
+		}
+	}
+	focus = {
+		id = tof_repairing_eighties_damage
+		icon = GFX_goal_80
+		cost = 30
+		available = {
+			has_full_control_of_state = 213
+		}
+		prerequisite = {
+			focus = tof_the_great_water_plant
+		}
+		relative_position_id = tof_the_great_water_plant
+		x = 1
+		y = 1
+		completion_reward = {
+			213 = {
+				add_resource = {
+					type = water
+					amount = 10
+				}
+				set_temp_variable = { pop_add = 2000 }
+				add_state_population = yes
+			}
+			set_temp_variable = {
+				caps_to_add = 25
+			}
+			add_caps = yes
+		}
+	}
+	focus = {
+		id = tof_utahs_great_resevoir
+		icon = GFX_goal_TTM_Water
+		cost = 30
+		available = {
+			has_full_control_of_state = 213
+		}
+		prerequisite = {
+			focus = tof_repairing_hands_of_god_damage
+		}
+		prerequisite = {
+			focus = tof_repairing_eighties_damage
+		}
+		relative_position_id = tof_the_great_water_plant
+		x = 0
+		y = 2
+		completion_reward = {
+			213 = {
+				add_resource = {
+					type = water
+					amount = 50
+				}
+				set_temp_variable = { pop_add = 5000 }
+				add_state_population = yes
+			}
+			set_temp_variable = {
+				caps_to_add = 75
+			}
+			add_caps = yes
+			add_stability = 0.1
+		}
+	}
+	focus = {
+		id = tof_the_hands_of_god
+		icon = GFX_goal_NCN_Hands_Of_God
+		cost = 30
+		available = {
+			has_full_control_of_state = 213
+		}
+		prerequisite = {
+			focus = tof_the_walls_of_jericho_fell
+		}
+		relative_position_id = tof_the_walls_of_jericho_fell
+		x = 3
+		y = 2
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = ballistic_equipment_4
+				amount = 25
+				producer = USA
+			}
+			213 = {
+				set_temp_variable = { pop_add = 1000 }
+				add_state_population = yes
+			}
+		}
+	}
+	focus = {
+		id = tof_uprooting_resistance_cells
+		icon = GFX_goal_NCN_.45_Auto_Pistol
+		cost = 30
+		available = {
+			has_full_control_of_state = 213
+		}
+		prerequisite = {
+			focus = tof_the_hands_of_god
+		}
+		relative_position_id = tof_the_hands_of_god
+		x = -1
+		y = 1
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = ballistic_equipment_4
+				amount = 100
+				producer = USA
+			}
+			213 = {
+				add_extra_state_shared_building_slots = 1
+				add_resource = {
+					type = circuitry
+					amount = 2
+				}
+				set_temp_variable = { pop_add = 2000 }
+				add_state_population = yes
+			}
+		}
+	}
+	focus = {
+		id = tof_finding_their_hideaways
+		text = tof_finding_their_hideouts
+		icon = GFX_goal_generic_bunkers_focus
+		cost = 30
+		available = {
+			has_full_control_of_state = 213
+		}
+		prerequisite = {
+			focus = tof_the_hands_of_god
+		}
+		relative_position_id = tof_the_hands_of_god
+		x = 1
+		y = 1
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = ballistic_equipment_4
+				amount = 50
+				producer = USA
+			}
+			213 = {
+				add_extra_state_shared_building_slots = 2
+				add_resource = {
+					type = circuitry
+					amount = 2
+				}
+				set_temp_variable = { pop_add = 2000 }
+				add_state_population = yes
+			}
+		}
+	}
+	focus = {
+		id = tof_jericho_renewed
+		text = tof_jericho_restored
+		icon = GFX_goal_generic_scyscrapers_prewar
+		cost = 30
+		available = {
+			has_full_control_of_state = 213
+		}
+		prerequisite = {
+			focus = tof_lines_in_the_sand
+		}
+		prerequisite = {
+			focus = tof_riches_of_trade
+		}
+		prerequisite = {
+			focus = tof_utahs_great_resevoir
+		}
+		prerequisite = {
+			focus = tof_uprooting_resistance_cells
+		}
+		prerequisite = {
+			focus = tof_finding_their_hideaways
+		}
+		relative_position_id = tof_utahs_great_resevoir
+		x = 0
+		y = 1
+		completion_reward = {
+			#Makes Jericho a node with New Canaan, Wendover, Star Citadel, New Vegas, Dog City and Twin Mothers
+			213 = {
+				hidden_effect = {
+					set_temp_variable = { new_node_target = THIS.id }
+					add_to_temp_array = { new_node_trade_array = 211 }
+					add_to_temp_array = { new_node_trade_array = 525 }
+					add_to_temp_array = { new_node_trade_array = 554 }
+					add_to_temp_array = { new_node_trade_array = 210 }
+					add_to_temp_array = { new_node_trade_array = 551 }
+					add_to_temp_array = { new_node_trade_array = 478 }
+					set_temp_variable = { new_node_map_x = 2165 }
+					set_temp_variable = { new_node_map_y = 960 }
+				}
+				create_map_node = yes
+				set_temp_variable = { pop_add = 35000 }
+				add_state_population = yes
+			}
+		}
+	}
+
+	focus = {
+		id = tof_repair_the_snake_river_canal
+		icon = GFX_goal_generic_construction2
+		cost = 30
+		prerequisite = {
+			focus = tof_jericho_renewed
+		}
+		relative_position_id = tof_jericho_renewed
+		x = -2
+		y = 1
+		available = {
+			set_temp_variable = { caps_diff = -2000 }
+			caps_cost_trigger = yes
+			has_full_control_of_state = 341
+			has_full_control_of_state = 352
+		}
+		completion_reward = {
+			set_temp_variable = {
+				caps_to_add = -2000
+			}
+			add_caps = yes
+			navy_experience = 100
+			add_tech_bonus = {
+				name = tof_repair_the_snake_river_canal
+				bonus = 1.5
+				uses = 3
+				category = naval_tech_category
+			}
+			add_tech_bonus = {
+				name = tof_repair_the_snake_river_canal
+				bonus = 1.5
+				uses = 3
+				category = cat_naval_doctrine
+			}
+			341 = {
+				add_resource = {
+					type = water
+					amount = 20
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+			}
+			352 = {
+				add_resource = {
+					type = water
+					amount = 20
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+			}
+			every_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = tof_ncn
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		prerequisite = {
+			focus = tof_jericho_renewed
+		}
+		relative_position_id = tof_jericho_renewed
+		x = 0
+		y = 1
+		available = {
+			has_no_offensive_wars_or_wargoals = yes
+		}
+		bypass = {
+			NCN = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = NCN
+		completion_reward = {
+			NCN = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = tof_a_cafe_of_broken_dreams
+		icon = GFX_goal_generic_ritas_cafe
+		cost = 30
+		prerequisite = {
+			focus = tof_jericho_renewed
+		}
+		available = {
+			set_temp_variable = { caps_diff = -2000 }
+			caps_cost_trigger = yes
+		}
+		relative_position_id = tof_jericho_renewed
+		x = 2
+		y = 1
+		completion_reward = {
+			set_temp_variable = {
+				caps_to_add = -2000
+			}
+			add_caps = yes
+			#Do this in secret first, so that it sets up the node right on the node map.
+			hidden_effect = {
+				set_province_name = {
+					id = 6300
+					name = TOF_CAFE_BROKEN_DREAMS
+				}
+				577 = {
+					set_state_name = TOF_CAFE_BROKEN_DREAMS
+				}
+			}
+			577 = {
+				hidden_effect = {
+					set_temp_variable = { new_node_target = THIS.id }
+					add_to_temp_array = { new_node_trade_array = 551 }
+					add_to_temp_array = { new_node_trade_array = 213 }
+					set_temp_variable = { new_node_map_x = 2155 }
+					set_temp_variable = { new_node_map_y = 900 }
+				}
+				create_map_node = yes
+				set_temp_variable = { pop_add = 15000 }
+				add_state_population = yes
+			}
+			set_province_name = {
+				id = 6300
+				name = TOF_CAFE_BROKEN_DREAMS
+			}
+			hidden_effect = {
+				577 = {
+					set_state_name = TOF_CAFE_BROKEN_DREAMS
+				}
+			}
+			add_country_leader_trait = cafe_manager
+		}
+	}
+	focus = {
+		id = tof_grand_raider_council
+		icon = GFX_KHA_focus_longhouse
+		cost = 30
+		prerequisite = {
+			focus = tof_repair_the_snake_river_canal
+		}
+		prerequisite = {
+			focus = tof_ncn
+		}
+		prerequisite = {
+			focus = tof_a_cafe_of_broken_dreams
+		}
+		available = {
+			set_temp_variable = { caps_diff = -4000 }
+			caps_cost_trigger = yes
+		}
+		relative_position_id = tof_ncn
+		x = 0
+		y = 1
+		completion_reward = {
+			set_temp_variable = {
+				caps_to_add = -4000
+			}
+			add_caps = yes
+			set_cosmetic_tag = TOF_FORMABLE
+			set_technology = { exploitation_tech_level_scientific = 1 }
+			set_technology = { habitation_tech_level_scientific = 1 }
+			set_technology = { tools_tech_level_scientific = 1 }
+		}
+	}
+}

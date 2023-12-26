@@ -1,0 +1,1799 @@
+####################################################
+####################################################
+#         Hangdog Focus Tree
+#           Written by Colonel
+#			Modifications by Silverfish, Tran, and Fored
+#
+####################################################
+focus_tree = {
+	id = han_nf
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			original_tag = HAN
+		}
+	}
+	default = no
+	focus = {
+		id = han_delinquents
+		icon = GFX_han_generic
+		cost = 7
+		x = 16
+		y = 0
+		completion_reward = {
+			country_event = {
+				id = nf_han.1
+			}
+		}
+	}
+	focus = {
+		id = han_howling_mad
+		icon = GFX_han_generic
+		cost = 7
+		prerequisite = {
+			focus = han_delinquents
+		}
+		x = 0
+		y = 1
+		relative_position_id = han_delinquents
+		completion_reward = {
+			country_event = {
+				id = nf_han.2
+			}
+		}
+	}
+	focus = {
+		id = han_dog_eat_dog
+		icon = GFX_han_generic
+		cost = 7
+		prerequisite = {
+			focus = han_howling_mad
+		}
+		x = 0
+		y = 1
+		relative_position_id = han_howling_mad
+		completion_reward = {
+			country_event = {
+				id = nf_han.3
+			}
+		}
+	}
+	focus = {
+		id = han_colorado_salvage
+		icon = GFX_goal_generic_scrap_metal
+		cost = 30
+		prerequisite = {
+			focus = han_dog_eat_dog
+		}
+		available = {
+			has_completed_focus = han_open_the_box
+		}
+		x = -12
+		y = 1
+		relative_position_id = han_dog_eat_dog
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+	focus = {
+		id = han_salvage_arms
+		icon = GFX_goal_generic_pipe_revolver
+		cost = 30
+		prerequisite = {
+			focus = han_colorado_salvage
+		}
+		x = -4
+		y = 1
+		relative_position_id = han_colorado_salvage
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_valid_state_for_arms_factory = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = han_fixing_factories
+		icon = GFX_goal_generic_diagnostic
+		cost = 45
+		prerequisite = {
+			focus = han_salvage_arms
+		}
+		x = -1
+		y = 1
+		relative_position_id = han_salvage_arms
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_valid_state_for_2_arms_factories = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = han_armaments
+		icon = GFX_goal_generic_focus_spears
+		cost = 45
+		prerequisite = {
+			focus = han_salvage_arms
+		}
+		x = 1
+		y = 1
+		relative_position_id = han_salvage_arms
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_valid_state_for_2_arms_factories = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = han_fully_equipped
+		icon = GFX_goal_generic_workshop
+		cost = 45
+		prerequisite = {
+			focus = han_armaments
+		}
+		prerequisite = {
+			focus = han_fixing_factories
+		}
+		x = 0
+		y = 2
+		relative_position_id = han_salvage_arms
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_valid_state_for_arms_factory = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 2
+				category = infantry_weapons_tech_category
+			}
+		}
+	}
+	focus = {
+		id = han_industry_temp_left
+		icon = GFX_goal_generic_large_scale_normal_industry_focus
+		cost = 60
+		prerequisite = {
+			focus = han_fully_equipped
+		}
+		x = 1
+		y = 1
+		relative_position_id = han_fully_equipped
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_valid_state_for_3_civilian_factories = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+				add_resource = {
+					type = metal
+					amount = 6
+				}
+			}
+		}
+	}
+	focus = {
+		id = han_metal_and_man
+		icon = GFX_goal_generic_metal_focus
+		cost = 60
+		prerequisite = {
+			focus = han_industry_temp_left
+		}
+		x = 1
+		y = 1
+		relative_position_id = han_industry_temp_left
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_valid_state_for_3_arms_factories = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+				add_resource = {
+					type = metal
+					amount = 6
+				}
+			}
+		}
+	}
+	focus = {
+		id = han_build_up
+		icon = GFX_goal_generic_whisky
+		cost = 30
+		prerequisite = {
+			focus = han_colorado_salvage
+		}
+		x = 4
+		y = 1
+		relative_position_id = han_colorado_salvage
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_valid_state_for_civilian_factory = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = han_civilian_restrutcture
+		icon = GFX_goal_brahmin_cart
+		cost = 45
+		prerequisite = {
+			focus = han_build_up
+		}
+		x = -1
+		y = 1
+		relative_position_id = han_build_up
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_valid_state_for_2_civilian_factories = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = han_heading_down
+		icon = GFX_goal_generic_building_focus
+		cost = 45
+		prerequisite = {
+			focus = han_build_up
+		}
+		x = 1
+		y = 1
+		relative_position_id = han_build_up
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_valid_state_for_2_civilian_factories = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = han_rebuild_the_past
+		icon = GFX_goal_TTM_Dynamite
+		cost = 45
+		prerequisite = {
+			focus = han_heading_down
+		}
+		prerequisite = {
+			focus = han_civilian_restrutcture
+		}
+		x = 0
+		y = 2
+		relative_position_id = han_build_up
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_valid_state_for_civilian_factory = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	focus = {
+		id = han_industry_temp_right
+		icon = GFX_goal_generic_military_industry_focus
+		cost = 60
+		prerequisite = {
+			focus = han_rebuild_the_past
+		}
+		x = -1
+		y = 1
+		relative_position_id = han_rebuild_the_past
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_valid_state_for_3_arms_factories = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+				add_resource = {
+					type = metal
+					amount = 6
+				}
+			}
+		}
+	}
+	focus = {
+		id = han_industry_revival
+		icon = GFX_goal_generic_protectron_conceptart_construction
+		cost = 60
+		prerequisite = {
+			focus = han_industry_temp_right
+		}
+		x = -1
+		y = 1
+		relative_position_id = han_industry_temp_right
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_valid_state_for_3_arms_factories = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+				add_resource = {
+					type = metal
+					amount = 6
+				}
+			}
+		}
+	}
+	focus = {
+		id = han_howling_forward
+		icon = GFX_goal_generic_scyscrapers_prewar
+		cost = 60
+		prerequisite = {
+			focus = han_industry_revival
+		}
+		prerequisite = {
+			focus = han_built_a_better_future
+		}
+		prerequisite = {
+			focus = han_metal_and_man
+		}
+		x = 0
+		y = 6
+		relative_position_id = han_colorado_salvage
+		completion_reward = {
+			if = {
+				limit = {
+					525 = {
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
+					}
+				}
+				525 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			else = {
+				add_offsite_building = {
+					type = arms_factory
+					level = 1
+				}
+			}
+			if = {
+				limit = {
+					525 = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 1
+							include_locked = yes
+						}
+					}
+				}
+				525 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			else = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 1
+				}
+			}
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = han_true_alpha
+		icon = GFX_bares_his_teeth
+		cost = 60
+		prerequisite = {
+			focus = han_dog_eat_dog
+		}
+		x = 0
+		y = 1
+		relative_position_id = han_dog_eat_dog
+		completion_reward = {
+			add_country_leader_trait = han_true_alpha_trait
+		}
+	}
+	focus = {
+		id = han_cleaning_up
+		icon = GFX_goal_generic_protectron_conceptart_police
+		cost = 60
+		prerequisite = {
+			focus = han_true_alpha
+		}
+		x = -2
+		y = 1
+		relative_position_id = han_true_alpha
+		completion_reward = {
+			han_salvage_improve = yes
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = han_remains_to_be_seen
+		icon = GFX_goal_generic_focus_magazine_backwood_get_off_my_lawn
+		cost = 60
+		prerequisite = {
+			focus = han_true_alpha
+		}
+		x = 0
+		y = 1
+		relative_position_id = han_true_alpha
+		completion_reward = {
+			han_salvage_improve = yes
+			set_temp_variable = { caps_to_add = 75 }
+			add_caps = yes
+		}
+	}
+	focus = {
+		id = han_fixing_up
+		icon = GFX_goal_generic_wrench_2
+		cost = 60
+		prerequisite = {
+			focus = han_true_alpha
+		}
+		x = 2
+		y = 1
+		relative_position_id = han_true_alpha
+		completion_reward = {
+			han_salvage_improve = yes
+			525 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = han_past_mistakes
+		icon = GFX_goal_generic_canister_nucleaer
+		cost = 60
+		prerequisite = {
+			focus = han_cleaning_up
+		}
+		prerequisite = {
+			focus = han_remains_to_be_seen
+		}
+		x = -1
+		y = 1
+		relative_position_id = han_remains_to_be_seen
+		completion_reward = {
+			han_salvage_improve = yes
+			add_resource = {
+				type = water
+				amount = 6
+				state = 185
+			}
+		}
+	}
+	focus = {
+		id = han_future_prospects
+		icon = GFX_goal_generic_mentats
+		cost = 60
+		prerequisite = {
+			focus = han_remains_to_be_seen
+		}
+		prerequisite = {
+			focus = han_fixing_up
+		}
+		x = 1
+		y = 1
+		relative_position_id = han_remains_to_be_seen
+		completion_reward = {
+			han_salvage_improve = yes
+			1423 = {
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+	focus = {
+		id = han_open_the_box
+		icon = GFX_goal_generic_the_box
+		cost = 90
+		prerequisite = {
+			focus = han_past_mistakes
+		}
+		prerequisite = {
+			focus = han_future_prospects
+		}
+		x = 1
+		y = 1
+		relative_position_id = han_past_mistakes
+		completion_reward = {
+			set_technology = {
+				dog_infantry_tech = 1
+			}
+		}
+	}
+	focus = {
+		id = han_arming_up
+		icon = GFX_goal_square_vault_generator
+		cost = 90
+		prerequisite = {
+			focus = han_open_the_box
+		}
+		available = {
+			is_bares_his_teeth_leader = yes
+			has_war = no
+			owns_state = 525
+		}
+		x = 0
+		y = 1
+		relative_position_id = han_open_the_box
+		completion_reward = {
+			custom_effect_tooltip = han_arming_up_tt
+			add_research_slot = 1
+			add_equipment_to_stockpile = {
+				type = ballistic_equipment_4
+				amount = 1500
+				producer = USA
+			}
+			hidden_effect = {
+				set_technology = {
+					tribal_tech_access_tech = 1
+				}
+				every_owned_state = {
+					clr_state_flag = do_not_exodus
+				}
+				if = {
+					limit = {
+						has_tech = ballistic_weaponry_tech_4
+					}
+					add_equipment_to_stockpile = {
+						type = ballistic_equipment_4
+						amount = 1500
+						producer = HAN
+					}
+				}
+				else_if = {
+					limit = {
+						has_tech = ballistic_weaponry_tech_3
+					}
+					set_technology = {
+						ballistic_weaponry_tech_4 = 1
+					}
+				}
+				else_if = {
+					limit = {
+						has_tech = ballistic_weaponry_tech_2
+					}
+					set_technology = {
+						ballistic_weaponry_tech_3 = 1
+					}
+				}
+				else_if = {
+					limit = {
+						has_tech = ballistic_weaponry_tech_1
+					}
+					set_technology = {
+						ballistic_weaponry_tech_2 = 1
+					}
+				}
+				else_if = {
+					limit = {
+						has_tech = standard_weaponry_tech
+					}
+					set_technology = {
+						ballistic_weaponry_tech_1 = 1
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = han_biting_down
+		icon = GFX_han_burning_sco
+		cost = 45
+		prerequisite = {
+			focus = han_arming_up
+		}
+		x = -2
+		y = 1
+		relative_position_id = han_arming_up
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			SCO = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = SCO
+		completion_reward = {
+			SCO = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = han_chew_toys
+		icon = GFX_han_burning_rob
+		cost = 45
+		prerequisite = {
+			focus = han_arming_up
+		}
+		x = 2
+		y = 1
+		relative_position_id = han_arming_up
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			ROB = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = ROB
+		completion_reward = {
+			ROB = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = han_conquest_of_steel
+		icon = GFX_han_burning_mxc
+		cost = 60
+		prerequisite = {
+			focus = han_arming_up
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+			OR = {
+				has_completed_focus = han_biting_down
+				has_completed_focus = han_chew_toys
+			}
+		}
+		x = 0
+		y = 1
+		relative_position_id = han_arming_up
+		bypass = {
+			MXC = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = MXC
+		completion_reward = {
+			MXC = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = han_sharper_teeth
+		icon = GFX_goal_tribal_generic
+		cost = 60
+		prerequisite = {
+			focus = han_chew_toys
+		}
+		prerequisite = {
+			focus = han_biting_down
+		}
+		prerequisite = {
+			focus = han_conquest_of_steel
+		}
+		available = {
+			MXC = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			SCO = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			ROB = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		x = 0
+		y = 1
+		relative_position_id = han_conquest_of_steel
+		completion_reward = {
+			add_ideas = han_sharper_teeth_idea
+			# MXC = {
+			# 	ROOT = {
+			# 		core_owned_states_of_prev = yes
+			# 	}
+			# }
+			# ROB = {
+			# 	ROOT = {
+			# 		core_owned_states_of_prev = yes
+			# 	}
+			# }
+			# SCO = {
+			# 	ROOT = {
+			# 		core_owned_states_of_prev = yes
+			# 	}
+			# }
+			custom_effect_tooltip = han_sharper_teeth_tt
+			hidden_effect = {
+				MXC = {
+					every_core_state = {
+						set_variable = { coring_cost_targeted_state_factor@HAN= -0.75 }
+					}
+				}
+				ROB = {
+					every_core_state = {
+						set_variable = { coring_cost_targeted_state_factor@HAN= -0.75 }
+					}
+				}
+				SCO = {
+					every_core_state = {
+						set_variable = { coring_cost_targeted_state_factor@HAN= -0.75 }
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = han_throw_bone
+		icon = GFX_goal_TTM_rob_game_over
+		cost = 30
+		prerequisite = {
+			focus = han_sharper_teeth
+		}
+		x = 1
+		y = 1
+		relative_position_id = han_sharper_teeth
+		available = {
+			ROB = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = han_throw_bone
+				bonus = 0.5
+				uses = 2
+				ahead_reduction = 1
+				category = spec_force_tech_category
+				category = power_armor_tech_category
+			}
+		}
+	}
+	focus = {
+		id = han_power_armor_woo
+		icon = GFX_goal_generic_van_buren_power_armour
+		cost = 30
+		prerequisite = {
+			focus = han_sharper_teeth
+		}
+		x = -1
+		y = 1
+		relative_position_id = han_sharper_teeth
+		available = {
+			MXC = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			set_technology = {
+				power_armour_tech_level_tribal = 1
+				power_armour_tech_level_settler = 1
+				stripped_pa_tech = 1
+			}
+			add_equipment_to_stockpile = {
+				type = power_armor_equipment_1
+				amount = 250
+				producer = USA
+			}
+		}
+	}
+	focus = {
+		id = han_new_tricks
+		icon = GFX_goal_generic_patty_cheesecake
+		cost = 30
+		prerequisite = {
+			focus = han_power_armor_woo
+		}
+		x = -1
+		y = 1
+		relative_position_id = han_power_armor_woo
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.4
+				uses = 3
+				category = infantry_tech_category
+				name = infantry_weapons_bonus
+			}
+		}
+	}
+	focus = {
+		id = han_bringing_mechanics_to_heel
+		icon = GFX_goal_generic_circuit_adv
+		cost = 30
+		prerequisite = {
+			focus = han_power_armor_woo
+		}
+		prerequisite = {
+			focus = han_throw_bone
+		}
+		available = {
+			owns_state = 524
+		}
+		x = 1
+		y = 1
+		relative_position_id = han_power_armor_woo
+		completion_reward = {
+			524 = {
+				damage_building = {
+					type = infrastructure
+					damage = 1
+				}
+				damage_building = {
+					type = industrial_complex
+					damage = 1
+				}
+				set_temp_variable = {
+					pop_add = 2500
+				}
+				add_state_population = yes
+				if = {
+					limit = {
+						NOT = { is_core_of = HAN }
+					}
+					add_core_of = HAN
+				}
+			}
+			add_equipment_to_stockpile = {
+				type = combat_robot_equipment
+				amount = 150
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = support_robot_equipment
+				amount = 200
+				producer = USA
+			}
+			525 = {
+				add_resource = {
+					type = metal
+					amount = 5
+				}
+				add_resource = {
+					type = circuitry
+					amount = 3
+				}
+			}
+		}
+	}
+	focus = {
+		id = han_old_dogs
+		icon = GFX_goal_generic_mistress_of_mystery
+		cost = 30
+		prerequisite = {
+			focus = han_throw_bone
+		}
+		x = 1
+		y = 1
+		relative_position_id = han_throw_bone
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.50
+				uses = 2
+				category = cat_land_doctrine
+			}
+		}
+	}
+	focus = {
+		id = han_bite_makes_right
+		icon = GFX_goal_generic_skull
+		cost = 30
+		prerequisite = {
+			focus = han_bringing_mechanics_to_heel
+		}
+		prerequisite = {
+			focus = han_new_tricks
+		}
+		x = -1
+		y = 1
+		relative_position_id = han_bringing_mechanics_to_heel
+		completion_reward = {
+			army_experience = 30
+			add_political_power = 75
+		}
+	}
+	focus = {
+		id = han_jaws_of_victory
+		icon = GFX_goal_generic_skull_2
+		cost = 30
+		prerequisite = {
+			focus = han_new_tricks
+		}
+		prerequisite = {
+			focus = han_old_dogs
+		}
+		x = 1
+		y = 1
+		relative_position_id = han_bringing_mechanics_to_heel
+		completion_reward = {
+			every_unit_leader = {
+				gain_xp = 100
+				add_attack = 1
+				add_planning = 1
+			}
+			army_experience = 30
+		}
+	}
+	focus = {
+		id = han_greatest_alphas
+		icon = GFX_goal_generic_wolf_pack
+		cost = 60		# Used to be 7 on Purpose
+		available = {
+			OR = {
+				date > 2278.1.1
+				has_war_with_caesars_legion = yes
+				owns_state = 5
+			}
+		}
+		prerequisite = {
+			focus = han_jaws_of_victory
+		}
+		prerequisite = {
+			focus = han_bite_makes_right
+		}
+		x = 0
+		y = 6
+		relative_position_id = han_arming_up
+		completion_reward = {
+			remove_ideas = han_sharper_teeth_idea
+			swap_ideas = {
+				remove_idea = han_the_scrap_metropolis
+				add_idea = han_the_scrap_empire
+			}
+			add_ideas = hanbiggerbite
+		}
+	}
+	focus = {
+		id = han_sound_dogs_of_war
+		icon = GFX_goal_TTM_Tribal_Vault_Girl
+		cost = 30
+		prerequisite = {
+			focus = han_dog_eat_dog
+		}
+		available = {
+			has_completed_focus = han_open_the_box
+		}
+		x = 13
+		y = 1
+		relative_position_id = han_dog_eat_dog
+		completion_reward = {
+			add_war_support = 0.1
+		}
+	}
+	focus = {
+		id = han_dynamite_salvagers
+		icon = GFX_goal_bobble_head_explosives
+		cost = 30
+		prerequisite = {
+			focus = han_sound_dogs_of_war
+		}
+		x = -5
+		y = 1
+		relative_position_id = han_sound_dogs_of_war
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = {
+						has_tech = demolitions_weaponry_tech
+					}
+				}
+				set_technology = {
+					demolitions_weaponry_tech = 1
+				}
+			}
+			else = {
+				add_tech_bonus = {
+					bonus = 0.30
+					uses = 1
+					category = support_demolitions_tech_category
+				}
+			}
+			add_equipment_to_stockpile = {
+				type = demolitions_equipment
+				amount = 250
+				producer = USA
+			}
+		}
+	}
+	focus = {
+		id = han_temp_1a
+		icon = GFX_goal_han_the_way_of_the_pack
+		cost = 30
+		prerequisite = {
+			focus = han_sound_dogs_of_war
+		}
+		available = {
+			has_country_leader = {
+				character = HAN_bares_his_teeth
+			}
+		}
+		x = 0
+		y = 1
+		relative_position_id = han_sound_dogs_of_war
+		completion_reward = {
+			add_tech_bonus = {
+				uses = 3
+				bonus = 0.4
+				category = cat_terror_tactics
+			}
+		}
+	}
+	focus = {
+		id = han_temp_2a_left
+		icon = GFX_goal_han_scrap_heap_weapons
+		cost = 30
+		prerequisite = {
+			focus = han_temp_1a
+		}
+		x = -1
+		y = 1
+		relative_position_id = han_temp_1a
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 200
+				producer = HAN
+			}
+			add_ideas = han_dog_scrap_weapons
+		}
+	}
+	focus = {
+		id = han_temp_2a_right
+		icon = GFX_goal_han_open_for_business
+		cost = 30
+		prerequisite = {
+			focus = han_temp_1a
+		}
+		x = 1
+		y = 1
+		relative_position_id = han_temp_1a
+		completion_reward = {
+			add_ideas = han_dog_scrap_trade
+		}
+	}
+	focus = {
+		id = han_temp_3a
+		icon = GFX_goal_han_armored_friends
+		cost = 30
+		prerequisite = {
+			focus = han_temp_2a_left
+			focus = han_temp_2a_right
+		}
+		x = 0
+		y = 2
+		relative_position_id = han_temp_1a
+		completion_reward = {
+			add_ideas = han_dog_garrison_resistance
+		}
+	}
+	focus = {
+		id = han_temp_4a
+		icon = GFX_goal_han_pushing_our_boundaries
+		cost = 30
+		prerequisite = {
+			focus = han_temp_3a
+		}
+		x = 0
+		y = 1
+		relative_position_id = han_temp_3a
+		completion_reward = {
+			add_ideas = han_dog_roaming_packs
+		}
+	}
+	focus = {
+		id = han_temp_5
+		icon = GFX_goal_han_denver_army
+		cost = 60
+		prerequisite = {
+			focus = han_the_big_bang
+		}
+		prerequisite = {
+			focus = han_temp_4a
+		}
+		prerequisite = {
+			focus = han_men_in_the_field
+		}
+		x = 0
+		y = 6
+		relative_position_id = han_sound_dogs_of_war
+		completion_reward = {
+			if = {
+				limit = {
+					has_country_leader = {
+						character = HAN_bares_his_teeth
+					}
+				}
+				add_ideas = han_dog_denver_dogs
+			}
+			else_if = {
+				limit = {
+					has_country_leader = {
+						character = HAN_warden
+					}
+				}
+				add_ideas = han_warden_denver_defender
+			}
+		}
+	}
+	focus = {
+		id = han_medicinal_salvagers
+		icon = GFX_goal_bobble_head_medicine
+		cost = 30
+		prerequisite = {
+			focus = han_sound_dogs_of_war
+		}
+		x = 5
+		y = 1
+		relative_position_id = han_sound_dogs_of_war
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = {
+						has_tech = med_company_tech_1
+					}
+				}
+				set_technology = {
+					med_company_tech_1 = 1
+				}
+			}
+			else = {
+				add_tech_bonus = {
+					bonus = 0.30
+					uses = 1
+					category = support_medical_tech_category
+				}
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 250
+				producer = USA
+			}
+		}
+	}
+	focus = {
+		id = han_old_world_salvagers
+		icon = GFX_goal_bobble_head_big_guns
+		cost = 30
+		prerequisite = {
+			focus = han_open_the_box
+		}
+		x = -4
+		y = 1
+		relative_position_id = han_open_the_box
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = {
+						has_tech = resource_generator_tech
+					}
+				}
+				set_technology = {
+					resource_generator_tech = 1
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+			random_owned_controlled_state = {
+				limit = {
+					infrastructure < 8
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = han_fortifications
+		icon = GFX_goal_generic_walls_focus
+		cost = 30
+		prerequisite = {
+			focus = han_old_world_salvagers
+		}
+		x = 0
+		y = 1
+		relative_position_id = han_old_world_salvagers
+		completion_reward = {
+			custom_effect_tooltip = han_fortifications_tt
+			hidden_effect = {
+				460 = {
+					add_building_construction = {
+						type = bunker
+						level = 1
+						province = 6682
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						province = 6788
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						province = 6786
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						province = 9124
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						province = 6785
+						instant_build = yes
+					}
+				}
+			}
+			add_ideas = hanfortbuild
+		}
+	}
+	focus = {
+		id = han_digging_up_resources
+		icon = GFX_goal_generic_blueprint
+		cost = 30
+		prerequisite = {
+			focus = han_fortifications
+		}
+		available = {
+			owns_state = 422
+		}
+		x = -1
+		y = 1
+		relative_position_id = han_fortifications
+		completion_reward = {
+			422 = {
+				add_resource = {
+					type = water
+					amount = 4
+				}
+				add_resource = {
+					type = metal
+					amount = 4
+				}
+				add_resource = {
+					type = energy
+					amount = 4
+				}
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = extraction_category
+			}
+		}
+	}
+	focus = {
+		id = han_advanced_digging
+		icon = GFX_goal_generic_dynomite_1
+		cost = 30
+		prerequisite = {
+			focus = han_fortifications
+		}
+		available = {
+			OR = {
+				owns_state = 524
+				ROB = {
+					is_in_faction = yes
+				}
+			}
+		}
+		x = 1
+		y = 1
+		relative_position_id = han_fortifications
+		completion_reward = {
+			524 = {
+				add_resource = {
+					type = composites
+					amount = 4
+				}
+				add_resource = {
+					type = circuitry
+					amount = 4
+				}
+				add_resource = {
+					type = advanced
+					amount = 4
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = support_tech_category
+			}
+			add_equipment_to_stockpile = {
+				type = demolitions_equipment
+				amount = 150
+				producer = USA
+			}
+		}
+	}
+	focus = {
+		id = han_sea_dogs
+		icon = GFX_goal_generic_boat_boat
+		cost = 30
+		prerequisite = {
+			focus = han_digging_up_resources
+		}
+		prerequisite = {
+			focus = han_advanced_digging
+		}
+		x = 0
+		y = 2
+		relative_position_id = han_fortifications
+		completion_reward = {
+			navy_experience = 30
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = naval_tech_category
+			}
+		}
+	}
+	focus = {
+		id = han_defense_appraoch
+		icon = GFX_goal_generic_mountain_fortress
+		cost = 30
+		prerequisite = {
+			focus = han_sea_dogs
+		}
+		x = 0
+		y = 1
+		relative_position_id = han_sea_dogs
+		completion_reward = {
+			army_experience = 30
+			every_unit_leader = {
+				add_defense = 2
+			}
+		}
+	}
+	focus = {
+		id = han_boom_crew
+		icon = GFX_goal_TTM_Dynamite
+		cost = 45
+		prerequisite = {
+			focus = han_dynamite_salvagers
+		}
+		x = 0
+		y = 1
+		relative_position_id = han_dynamite_salvagers
+		completion_reward = {
+			if = {
+				limit = {
+					OR = {
+						has_tech = flamer_demolitions_weaponry_tech_2
+						has_tech = explosive_demolitions_weaponry_tech_2
+					}
+				}
+				add_tech_bonus = {
+					bonus = 0.2
+					uses = 2
+					category = support_demolitions_flamer_tech_category
+				}
+			}
+			else = {
+				add_tech_bonus = {
+					bonus = 0.2
+					uses = 2
+					category = support_demolitions_tech_category
+				}
+			}
+			add_ideas = han_demo_new_1
+		}
+	}
+	focus = {
+		id = han_blasting_the_ruins
+		icon = GFX_goal_generic_dynomite_1
+		cost = 45
+		prerequisite = {
+			focus = han_boom_crew
+		}
+		x = -1
+		y = 1
+		relative_position_id = han_boom_crew
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_resource = {
+					type = metal
+					amount = 5
+				}
+			}
+		}
+	}
+	focus = {
+		id = han_blast_mining
+		icon = GFX_goal_pal_burn_the_city
+		cost = 45
+		prerequisite = {
+			focus = han_boom_crew
+		}
+		x = 1
+		y = 1
+		relative_position_id = han_boom_crew
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 2
+				category = extraction_category
+			}
+			random_owned_controlled_state = {
+				add_resource = {
+					type = composites
+					amount = 8
+				}
+			}
+		}
+	}
+	focus = {
+		id = han_demo_man
+		icon = GFX_goal_generic_grenade
+		cost = 45
+		prerequisite = {
+			focus = han_blasting_the_ruins
+		}
+		prerequisite = {
+			focus = han_blast_mining
+		}
+		x = 0
+		y = 2
+		relative_position_id = han_boom_crew
+		completion_reward = {
+			if = {
+				limit = {
+					has_tech = flamer_demolitions_weaponry_tech_2
+				}
+				add_tech_bonus = {
+					bonus = 0.5
+					uses = 1
+					category = support_demolitions_flamer_tech_category
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						has_tech = flamer_demolitions_weaponry_tech_2
+					}
+				}
+				set_technology = {
+					explosive_demolitions_weaponry_tech_2 = 1
+				}
+			}
+			add_equipment_to_stockpile = {
+				type = flamer_demolitions_equipment_2
+				amount = 100
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = explosive_demolitions_equipment_2
+				amount = 100
+				producer = USA
+			}
+		}
+	}
+	focus = {
+		id = han_the_big_bang
+		icon = GFX_goal_generic_nuke
+		cost = 60
+		prerequisite = {
+			focus = han_demo_man
+		}
+		x = 1
+		y = 1
+		relative_position_id = han_demo_man
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = han_demo_new_1
+				add_idea = handemomen
+			}
+		}
+	}
+	focus = {
+		id = han_health_to_the_masses
+		icon = GFX_goal_food_bitter_drink
+		cost = 45
+		prerequisite = {
+			focus = han_medicinal_salvagers
+		}
+		x = 0
+		y = 1
+		relative_position_id = han_medicinal_salvagers
+		completion_reward = {
+			525 = {
+				set_temp_variable = {
+					pop_add = 3500
+				}
+				add_state_population = yes
+			}
+			add_ideas = han_medic_new_1
+		}
+	}
+	focus = {
+		id = han_medic
+		icon = GFX_goal_chem_super_stim
+		cost = 45
+		prerequisite = {
+			focus = han_health_to_the_masses
+		}
+		x = -1
+		y = 1
+		relative_position_id = han_health_to_the_masses
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = {
+						has_tech = med_company_tech_2
+					}
+				}
+				set_technology = {
+					med_company_tech_2 = 1
+				}
+				add_tech_bonus = {
+					bonus = 0.4
+					uses = 1
+					category = support_medical_tech_category
+				}
+			}
+			else = {
+				add_tech_bonus = {
+					bonus = 0.4
+					uses = 2
+					category = support_medical_tech_category
+				}
+			}
+		}
+	}
+	focus = {
+		id = han_help_the_masses
+		icon = GFX_goal_food_various_vegetables
+		cost = 45
+		prerequisite = {
+			focus = han_health_to_the_masses
+		}
+		x = 1
+		y = 1
+		relative_position_id = han_health_to_the_masses
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+	focus = {
+		id = han_heroes_never_die
+		icon = GFX_goal_generic_automatron_splash
+		cost = 45
+		prerequisite = {
+			focus = han_medic
+		}
+		prerequisite = {
+			focus = han_help_the_masses
+		}
+		x = 0
+		y = 2
+		relative_position_id = han_health_to_the_masses
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = support_medical_tech_category
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment_1
+				amount = 500
+				producer = USA
+			}
+		}
+	}
+	focus = {
+		id = han_men_in_the_field
+		icon = GFX_goal_pal_pr_cyclops
+		cost = 60
+		prerequisite = {
+			focus = han_heroes_never_die
+		}
+		x = -1
+		y = 1
+		relative_position_id = han_heroes_never_die
+		completion_reward = {
+			swap_ideas = {
+				add_idea = hanmedicmen
+				remove_idea = han_medic_new_1
+			}
+		}
+	}
+	focus = {
+		id = han_building_a_better_future
+		icon = GFX_goal_generic_building_focus
+		cost = 30
+		prerequisite = {
+			focus = han_colorado_salvage
+		}
+		x = 0
+		y = 1
+		relative_position_id = han_colorado_salvage
+		completion_reward = {
+			every_owned_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+			add_tech_bonus = {
+				bonus = 0.4
+				uses = 1
+				category = habitation_category
+			}
+		}
+	}
+	focus = {
+		id = han_big_wrenches
+		icon = GFX_goal_generic_pipe_1
+		cost = 30
+		prerequisite = {
+			focus = han_building_a_better_future
+		}
+		x = -1
+		y = 1
+		relative_position_id = han_building_a_better_future
+		completion_reward = {
+			add_ideas = han_building_new_1
+		}
+	}
+	focus = {
+		id = han_biggest_wrench
+		icon = GFX_goal_generic_tools
+		cost = 30
+		prerequisite = {
+			focus = han_building_a_better_future
+		}
+		x = 1
+		y = 1
+		relative_position_id = han_building_a_better_future
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.4
+				uses = 2
+				category = tool_tech
+			}
+		}
+	}
+	focus = {
+		id = han_construction_of_the_dog_house
+		icon = GFX_goal_generic_welcome_home
+		cost = 45
+		prerequisite = {
+			focus = han_big_wrenches
+		}
+		prerequisite = {
+			focus = han_biggest_wrench
+		}
+		x = 0
+		y = 2
+		relative_position_id = han_building_a_better_future
+		completion_reward = {
+			swap_ideas = {
+				add_idea = hanbuildingmen
+				remove_idea = han_building_new_1
+			}
+		}
+	}
+	focus = {
+		id = han_built_a_better_future
+		icon = GFX_goal_generic_sledgehammers
+		cost = 60
+		prerequisite = {
+			focus = han_construction_of_the_dog_house
+		}
+		x = 0
+		y = 1
+		relative_position_id = han_construction_of_the_dog_house
+		completion_reward = {
+			every_owned_state = {
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+}

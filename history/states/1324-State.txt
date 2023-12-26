@@ -1,0 +1,36 @@
+
+state={
+	id=1324
+	name="STATE_1324"
+	provinces={
+		15014 15015 15016 15152 15153 15154
+	}
+	resources = {
+		water = 4
+		energy = 15
+		metal = 4
+	}
+	history = {
+		victory_points = {
+			15016 7
+		}
+		buildings = {
+			infrastructure = 3
+			15152 = {
+				bunker = 1
+			}
+			15014 = {
+				bunker = 1
+			}
+			15015 = {
+				bunker = 1
+			}
+			15016 = {
+				bunker = 1
+			}
+		}
+	}
+	state_category = rural
+	manpower = 981
+	local_supplies=0.000
+}

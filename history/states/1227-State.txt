@@ -1,0 +1,27 @@
+
+state={
+	id=1227
+	name="STATE_1227"
+	resources={
+		metal=4.000
+	}
+
+	history={
+		victory_points = {
+			13747 5
+		}
+		buildings = {
+			infrastructure = 3
+
+		}
+
+	}
+
+	provinces={
+		13745 13747 13748 13749 13759 13768 13769 13770
+	}
+	manpower=1321
+	buildings_max_level_factor=1.000
+	state_category=shanty
+	local_supplies=0.000
+}

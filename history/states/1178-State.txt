@@ -1,0 +1,24 @@
+state = {
+	id = 1178
+	name = "STATE_1178"
+	manpower = 13
+	state_category = enclave
+
+	resources = {
+		energy = 32
+	}
+
+	history = {
+		victory_points = {
+			13322 5
+		}
+		buildings = {
+			infrastructure = 2
+			13311 = { naval_base = 1 }
+		}
+	}
+
+	provinces = {
+		13311 13312 13316 13318 13319 13322
+	}
+}

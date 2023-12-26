@@ -1,0 +1,29 @@
+state = {
+	id = 756
+	name = "STATE_756"
+	resources={
+		water=8.000
+		circuitry=2.000
+		energy=14.000
+		metal=3
+	}
+
+	history={
+		victory_points = {
+			9581 15
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+
+		}
+
+	}
+
+	provinces={
+		9409 9416 9418 9421 9425 9581 9583 11088 11096 11103 11108 11112 11119 11120 11129 11133
+	}
+	manpower=14248
+	buildings_max_level_factor=1.000
+	state_category=town
+}

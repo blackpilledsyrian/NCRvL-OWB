@@ -1,0 +1,38 @@
+state={
+	id=1320
+	name="STATE_1320"
+	provinces={
+		15130 15131 15132 15139 15145 15146 15147
+	}
+	resources = {
+		water = 2
+		composites = 2
+	}
+	history = {
+		victory_points = {
+			15145 15
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			15132 = {
+				bunker = 2
+			}
+			15131 = {
+				bunker = 2
+			}
+			15130 = {
+				bunker = 2
+			}
+			15145 = {
+				bunker = 2
+			}
+			15146 = {
+				bunker = 2
+			}
+		}
+	}
+	state_category = large_town
+	manpower = 981
+	buildings_max_level_factor=1.000
+}

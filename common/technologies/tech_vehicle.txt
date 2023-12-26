@@ -1,0 +1,1994 @@
+technologies = {
+	@Col_1 = 8
+	@Col_2 = 11
+	@Col_3 = 14
+	@Col_4 = 17
+	@Col_5 = 20
+	@Col_6 = 23
+	@Col_7 = 26
+	@Col_8 = 29
+	@Col_9 = 32
+	@Col_10 = 36
+
+	@Row_1 = 0
+	@Row_2 = 2
+	@Row_3 = 4
+	@Row_4 = 6
+	@Row_5 = 8
+	@Row_6 = 10
+	@Row_bonus = 0
+	@Row_tank = 9
+
+	# Scrap Motorcycles
+
+	basic_supply_transport_tech = {
+		enable_equipments = {
+			supply_equipment_1
+		}
+
+		research_cost = 1
+		start_year = 2250
+		folder = {
+			name = fallout_vehicle_folder
+			position = { x = @Row_6 y = @Col_1 }
+		}
+
+		ai_will_do = {
+			factor = 1.5
+		}
+	}
+
+	bike_tech_1 = {
+		enable_equipments = {
+			bike_equipment_1
+		}
+		enable_subunits = {
+			motorized
+		}
+		on_research_complete = {
+			add_to_variable = {
+				tech_level_motorized = 1
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_template_containing_unit = motorized
+					}
+				}
+				hidden_effect = {
+					load_oob = "unlock_motorized"
+				}
+				custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			}
+		}
+		path = {
+			leads_to_tech = mobile_recon_vehicle_tech
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = mobile_medical_vehicle_tech
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = mobile_maintenance_vehicle_tech
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = mobile_logistics_vehicle_tech
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = motorisation_vehicle_tech
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			vehicles_tech_level_tribal = 1
+		}
+
+		research_cost = 1.2
+		start_year = 2275
+		folder = {
+			name = fallout_vehicle_folder
+			position = { x = @Row_3 y = @Col_1 }
+		}
+
+		categories = {
+			vehicle_tech_category
+			motorized_equipment_category
+			bike_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1.5
+			modifier = {
+				factor = 2
+				# is_major = yes
+			}
+			modifier = {
+				factor = 2
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+			modifier = {
+				factor = 1.5
+				date > "2276.1.1"
+			}
+			modifier = {
+				factor = 1.5
+				date > "2277.1.1"
+			}
+			modifier = {
+				factor = 1.5
+				date > "2278.1.1"
+			}
+		}
+	}
+
+	mobile_logistics_vehicle_tech = {
+
+		enable_subunits = {
+			motorized_logistics_company
+		}
+
+		dependencies = {
+			vehicles_tech_level_tribal = 1
+			logistics_company_tech_1 = 1
+		}
+
+		research_cost = 1.25
+		start_year = 2277
+		folder = {
+			name = fallout_vehicle_folder
+			position = { x = @Row_4 y = @Col_1 }
+		}
+
+		categories = {
+			vehicle_tech_category
+			motorized_equipment_category
+			bike_tech_category
+			support_logistics_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	mobile_recon_vehicle_tech = {
+
+		enable_subunits = {
+			motorized_recon_company
+		}
+
+		dependencies = {
+			vehicles_tech_level_tribal = 1
+			recon_company_tech_1 = 1
+		}
+
+		research_cost = 1.25
+		start_year = 2277
+		folder = {
+			name = fallout_vehicle_folder
+			position = { x = @Row_2 y = @Col_1 }
+		}
+
+		categories = {
+			vehicle_tech_category
+			motorized_equipment_category
+			bike_tech_category
+			support_recon_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	mobile_medical_vehicle_tech = {
+
+		enable_subunits = {
+			motorized_medical_chem_company
+		}
+
+		dependencies = {
+			vehicles_tech_level_tribal = 1
+			med_company_tech_1 = 1
+		}
+
+		research_cost = 1.25
+		start_year = 2277
+		folder = {
+			name = fallout_vehicle_folder
+			position = { x = @Row_1 y = @Col_1 }
+		}
+
+		categories = {
+			vehicle_tech_category
+			motorized_equipment_category
+			bike_tech_category
+			support_medical_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	mobile_maintenance_vehicle_tech = {
+
+		enable_subunits = {
+			motorized_maintenance_company
+		}
+
+		dependencies = {
+			vehicles_tech_level_tribal = 1
+			maintenance_company_tech_1 = 1
+		}
+
+		research_cost = 1.25
+		start_year = 2277
+		folder = {
+			name = fallout_vehicle_folder
+			position = { x = @Row_5 y = @Col_1 }
+		}
+
+		categories = {
+			vehicle_tech_category
+			motorized_equipment_category
+			bike_tech_category
+			support_maintenance_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	motorisation_vehicle_tech = {
+
+		category_vehicles = {
+			breakthrough = 0.04
+			reliability = 0.02
+		}
+
+		enable_subunits = {
+			motorized_heavy_infantry
+		}
+
+		path = {
+			leads_to_tech = light_motorized_equipment_vehicle_tech_1
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = heavy_motorized_equipment_vehicle_tech_1
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tracks_vehicle_tech_1
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = safety_hatches_vehicle_tech
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			vehicles_tech_level_settler = 1
+		}
+
+		research_cost = 1.25
+		start_year = 2276
+		folder = {
+			name = fallout_vehicle_folder
+			position = { x = @Row_3 y = @Col_2 }
+		}
+
+		categories = {
+			vehicle_tech_category
+			motorized_equipment_category
+			bike_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				# is_major = yes
+				NOT = { has_country_flag = robot_doctrine_ai }
+				NOT = { has_country_flag = super_mutant_doctrine_ai }
+			}
+			modifier = {
+				factor = 3
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+			modifier = {
+				factor = 1.25
+				date > "2277.1.1"
+			}
+			modifier = {
+				factor = 1.25
+				date > "2278.1.1"
+			}
+			modifier = {
+				factor = 1.25
+				date > "2279.1.1"
+			}
+		}
+	}
+
+	light_motorized_equipment_vehicle_tech_1 = {
+
+		enable_equipments = {
+			light_motorized_equipment_1
+		}
+
+		xor = { heavy_motorized_equipment_vehicle_tech_1 }
+
+		path = {
+			leads_to_tech = mobile_weapons_vehicle_tech
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			vehicles_tech_level_settler = 1
+		}
+
+		research_cost = 1.75
+		start_year = 2277
+		folder = {
+			name = fallout_vehicle_folder
+			position = { x = @Row_2 y = @Col_3 }
+		}
+
+		categories = {
+			vehicle_tech_category
+			motorized_equipment_category
+			bike_tech_category
+			car_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				# is_major = yes
+				NOT = { has_country_flag = robot_doctrine_ai }
+				NOT = { has_country_flag = super_mutant_doctrine_ai }
+			}
+			modifier = {
+				factor = 3
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = heavy_motorized_equipment_vehicle_tech_1
+			}
+			modifier = {
+				factor = 0
+				has_tech = heavy_motorized_equipment_vehicle_tech_1
+			}
+			modifier = {
+				factor = 1.25
+				date > "2278.1.1"
+			}
+			modifier = {
+				factor = 1.25
+				date > "2279.1.1"
+			}
+			modifier = {
+				factor = 1.25
+				date > "2280.1.1"
+			}
+		}
+	}
+
+	heavy_motorized_equipment_vehicle_tech_1 = {
+
+		enable_equipments = {
+			heavy_motorized_equipment_1
+		}
+
+		xor = { light_motorized_equipment_vehicle_tech_1 }
+
+		path = {
+			leads_to_tech = mobile_weapons_vehicle_tech
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			vehicles_tech_level_settler = 1
+		}
+
+		research_cost = 1.75
+		start_year = 2277
+		folder = {
+			name = fallout_vehicle_folder
+			position = { x = @Row_4 y = @Col_3 }
+		}
+
+		categories = {
+			vehicle_tech_category
+			motorized_equipment_category
+			bike_tech_category
+			truck_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				# is_major = yes
+				NOT = { has_country_flag = robot_doctrine_ai }
+				NOT = { has_country_flag = super_mutant_doctrine_ai }
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = light_motorized_equipment_vehicle_tech_1
+			}
+			modifier = {
+				factor = 0
+				has_tech = light_motorized_equipment_vehicle_tech_1
+			}
+			modifier = {
+				factor = 3
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+			modifier = {
+				factor = 1.25
+				date > "2278.1.1"
+			}
+			modifier = {
+				factor = 1.25
+				date > "2279.1.1"
+			}
+			modifier = {
+				factor = 1.25
+				date > "2280.1.1"
+			}
+		}
+	}
+
+	mobile_weapons_vehicle_tech = {
+
+		category_vehicles = {
+			soft_attack = 0.05
+			hard_attack = 0.03
+		}
+
+		enable_subunits = {
+			motorized_fireteam
+			motorized_demoteam
+			motorized_anti_tank
+		}
+
+		path = {
+			leads_to_tech = light_motorized_equipment_vehicle_tech_2
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = heavy_motorized_equipment_vehicle_tech_2
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			vehicles_tech_level_settler = 1
+		}
+
+		research_cost = 1.25
+		start_year = 2278
+		folder = {
+			name = fallout_vehicle_folder
+			position = { x = @Row_3 y = @Col_4 }
+		}
+
+		categories = {
+			vehicle_tech_category
+			motorized_equipment_category
+			bike_tech_category
+			support_demolitions_tech_category
+			support_fireteam_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				# is_major = yes
+				NOT = { has_country_flag = robot_doctrine_ai }
+				NOT = { has_country_flag = super_mutant_doctrine_ai }
+			}
+			modifier = {
+				factor = 3
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+			modifier = {
+				factor = 1.25
+				date > "2279.1.1"
+			}
+			modifier = {
+				factor = 1.25
+				date > "2280.1.1"
+			}
+			modifier = {
+				factor = 1.25
+				date > "2281.1.1"
+			}
+		}
+	}
+
+	light_motorized_equipment_vehicle_tech_2 = {
+
+		enable_equipments = {
+			light_motorized_equipment_2
+		}
+
+		xor = { heavy_motorized_equipment_vehicle_tech_2 }
+
+		path = {
+			leads_to_tech = fuel_booster_vehicle_tech
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = extra_plating_vehicle_tech
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = extra_gunports_vehicle_tech
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			vehicles_tech_level_settler = 1
+		}
+
+		research_cost = 1.75
+		start_year = 2279
+		folder = {
+			name = fallout_vehicle_folder
+			position = { x = @Row_2 y = @Col_5 }
+		}
+
+		categories = {
+			vehicle_tech_category
+			motorized_equipment_category
+			bike_tech_category
+			car_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				# is_major = yes
+				NOT = { has_country_flag = robot_doctrine_ai }
+				NOT = { has_country_flag = super_mutant_doctrine_ai }
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = heavy_motorized_equipment_vehicle_tech_2
+			}
+			modifier = {
+				factor = 0
+				has_tech = heavy_motorized_equipment_vehicle_tech_2
+			}
+			modifier = {
+				factor = 3
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+			modifier = {
+				factor = 1.25
+				date > "2280.1.1"
+			}
+			modifier = {
+				factor = 1.25
+				date > "2281.1.1"
+			}
+			modifier = {
+				factor = 1.25
+				date > "2282.1.1"
+			}
+		}
+	}
+
+	heavy_motorized_equipment_vehicle_tech_2 = {
+
+		enable_equipments = {
+			heavy_motorized_equipment_2
+		}
+
+		xor = { light_motorized_equipment_vehicle_tech_2 }
+
+		path = {
+			leads_to_tech = fuel_booster_vehicle_tech
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = extra_plating_vehicle_tech
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = extra_gunports_vehicle_tech
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			vehicles_tech_level_settler = 1
+		}
+
+		research_cost = 1.75
+		start_year = 2279
+		folder = {
+			name = fallout_vehicle_folder
+			position = { x = @Row_4 y = @Col_5 }
+		}
+
+		categories = {
+			vehicle_tech_category
+			motorized_equipment_category
+			bike_tech_category
+			truck_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				# is_major = yes
+				NOT = { has_country_flag = robot_doctrine_ai }
+				NOT = { has_country_flag = super_mutant_doctrine_ai }
+			}
+			modifier = {
+				factor = 3
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = light_motorized_equipment_vehicle_tech_2
+			}
+			modifier = {
+				factor = 0
+				has_tech = light_motorized_equipment_vehicle_tech_2
+			}
+			modifier = {
+				factor = 1.25
+				date > "2280.1.1"
+			}
+			modifier = {
+				factor = 1.25
+				date > "2281.1.1"
+			}
+			modifier = {
+				factor = 1.25
+				date > "2282.1.1"
+			}
+		}
+	}
+
+	fuel_booster_vehicle_tech = {
+
+		category_vehicles = {
+			maximum_speed = 0.1
+			reliability = -0.03
+		}
+
+		path = {
+			leads_to_tech = light_motorized_equipment_vehicle_tech_3
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			vehicles_tech_level_settler = 1
+		}
+
+		research_cost = 1.25
+		start_year = 2280
+		folder = {
+			name = fallout_vehicle_folder
+			position = { x = @Row_2 y = @Col_6 }
+		}
+
+		categories = {
+			vehicle_tech_category
+			motorized_equipment_category
+			bike_tech_category
+			car_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				# is_major = yes
+				NOT = { has_country_flag = robot_doctrine_ai }
+				NOT = { has_country_flag = super_mutant_doctrine_ai }
+			}
+			modifier = {
+				factor = 2
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+			modifier = {
+				factor = 1.25
+				date > "2281.1.1"
+			}
+			modifier = {
+				factor = 1.25
+				date > "2282.1.1"
+			}
+			modifier = {
+				factor = 1.25
+				date > "2283.1.1"
+			}
+		}
+	}
+
+	extra_gunports_vehicle_tech = {
+
+		category_vehicles = {
+			soft_attack = 0.08
+			hard_attack = 0.04
+			maximum_speed = -0.08
+		}
+
+		path = {
+			leads_to_tech = light_motorized_equipment_vehicle_tech_3
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = heavy_motorized_equipment_vehicle_tech_3
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			vehicles_tech_level_settler = 1
+		}
+
+		research_cost = 1.25
+		start_year = 2280
+		folder = {
+			name = fallout_vehicle_folder
+			position = { x = @Row_3 y = @Col_6 }
+		}
+
+		categories = {
+			vehicle_tech_category
+			motorized_equipment_category
+			bike_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				# is_major = yes
+				NOT = { has_country_flag = robot_doctrine_ai }
+				NOT = { has_country_flag = super_mutant_doctrine_ai }
+			}
+			modifier = {
+				factor = 2
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+			modifier = {
+				factor = 1.25
+				date > "2281.1.1"
+			}
+			modifier = {
+				factor = 1.25
+				date > "2282.1.1"
+			}
+			modifier = {
+				factor = 1.25
+				date > "2283.1.1"
+			}
+		}
+	}
+
+	extra_plating_vehicle_tech = {
+
+		category_vehicles = {
+			hardness = 0.05
+			max_strength = 1
+			supply_consumption = -0.05
+		}
+
+		path = {
+			leads_to_tech = heavy_motorized_equipment_vehicle_tech_3
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			vehicles_tech_level_settler = 1
+		}
+
+		research_cost = 1.25
+		start_year = 2280
+		folder = {
+			name = fallout_vehicle_folder
+			position = { x = @Row_4 y = @Col_6 }
+		}
+
+		categories = {
+			vehicle_tech_category
+			motorized_equipment_category
+			bike_tech_category
+			truck_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				# is_major = yes
+				NOT = { has_country_flag = robot_doctrine_ai }
+				NOT = { has_country_flag = super_mutant_doctrine_ai }
+			}
+			modifier = {
+				factor = 2
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+			modifier = {
+				factor = 1.25
+				date > "2281.1.1"
+			}
+			modifier = {
+				factor = 1.25
+				date > "2282.1.1"
+			}
+			modifier = {
+				factor = 1.25
+				date > "2283.1.1"
+			}
+		}
+	}
+
+	light_motorized_equipment_vehicle_tech_3 = {
+
+		enable_equipments = {
+			light_motorized_equipment_3
+		}
+
+		xor = { heavy_motorized_equipment_vehicle_tech_3 }
+
+		path = {
+			leads_to_tech = solar_power_vehicle_tech
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			vehicles_tech_level_scientific = 1
+		}
+
+		research_cost = 1.75
+		start_year = 2282
+		folder = {
+			name = fallout_vehicle_folder
+			position = { x = @Row_2 y = @Col_7 }
+		}
+
+		categories = {
+			vehicle_tech_category
+			motorized_equipment_category
+			bike_tech_category
+			car_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				# is_major = yes
+				NOT = { has_country_flag = robot_doctrine_ai }
+				NOT = { has_country_flag = super_mutant_doctrine_ai }
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = heavy_motorized_equipment_vehicle_tech_3
+			}
+			modifier = {
+				factor = 0
+				has_tech = heavy_motorized_equipment_vehicle_tech_3
+			}
+			modifier = {
+				factor = 2
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+			modifier = {
+				factor = 1.25
+				date > "2283.1.1"
+			}
+			modifier = {
+				factor = 1.25
+				date > "2284.1.1"
+			}
+			modifier = {
+				factor = 1.25
+				date > "2285.1.1"
+			}
+		}
+	}
+
+	heavy_motorized_equipment_vehicle_tech_3 = {
+
+		enable_equipments = {
+			heavy_motorized_equipment_3
+		}
+
+		xor = { light_motorized_equipment_vehicle_tech_3 }
+
+		path = {
+			leads_to_tech = vaccum_sealing_vehicle_tech
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			vehicles_tech_level_scientific = 1
+		}
+
+		research_cost = 1.75
+		start_year = 2282
+		folder = {
+			name = fallout_vehicle_folder
+			position = { x = @Row_4 y = @Col_7 }
+		}
+
+		categories = {
+			vehicle_tech_category
+			motorized_equipment_category
+			bike_tech_category
+			truck_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				# is_major = yes
+				NOT = { has_country_flag = robot_doctrine_ai }
+				NOT = { has_country_flag = super_mutant_doctrine_ai }
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = light_motorized_equipment_vehicle_tech_3
+			}
+			modifier = {
+				factor = 0
+				has_tech = light_motorized_equipment_vehicle_tech_3
+			}
+			modifier = {
+				factor = 2
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+			modifier = {
+				factor = 1.25
+				date > "2283.1.1"
+			}
+			modifier = {
+				factor = 1.25
+				date > "2284.1.1"
+			}
+			modifier = {
+				factor = 1.25
+				date > "2285.1.1"
+			}
+		}
+	}
+
+	solar_power_vehicle_tech = {
+
+		category_vehicles = {
+			supply_consumption = -0.1
+		}
+
+		path = {
+			leads_to_tech = light_motorized_equipment_vehicle_tech_4
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			vehicles_tech_level_scientific = 1
+		}
+
+		research_cost = 1.25
+		start_year = 2283
+		folder = {
+			name = fallout_vehicle_folder
+			position = { x = @Row_2 y = @Col_8 }
+		}
+
+		categories = {
+			vehicle_tech_category
+			motorized_equipment_category
+			bike_tech_category
+			car_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				# is_major = yes
+				NOT = { has_country_flag = robot_doctrine_ai }
+				NOT = { has_country_flag = super_mutant_doctrine_ai }
+			}
+			modifier = {
+				factor = 2
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+			modifier = {
+				factor = 1.25
+				date > "2284.1.1"
+			}
+			modifier = {
+				factor = 1.25
+				date > "2285.1.1"
+			}
+			modifier = {
+				factor = 1.25
+				date > "2286.1.1"
+			}
+		}
+	}
+
+	vaccum_sealing_vehicle_tech = {
+
+		category_vehicles = {
+			max_organisation = 3
+			acclimatization_cold_climate_gain_factor = 0.25
+			acclimatization_hot_climate_gain_factor = 0.25
+		}
+
+		path = {
+			leads_to_tech = heavy_motorized_equipment_vehicle_tech_4
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			vehicles_tech_level_scientific = 1
+		}
+
+		research_cost = 1.25
+		start_year = 2283
+		folder = {
+			name = fallout_vehicle_folder
+			position = { x = @Row_4 y = @Col_8 }
+		}
+
+		categories = {
+			vehicle_tech_category
+			motorized_equipment_category
+			bike_tech_category
+			truck_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				# is_major = yes
+				NOT = { has_country_flag = robot_doctrine_ai }
+				NOT = { has_country_flag = super_mutant_doctrine_ai }
+			}
+			modifier = {
+				factor = 2
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+			modifier = {
+				factor = 1.25
+				date > "2284.1.1"
+			}
+			modifier = {
+				factor = 1.25
+				date > "2285.1.1"
+			}
+			modifier = {
+				factor = 1.25
+				date > "2286.1.1"
+			}
+		}
+	}
+
+	light_motorized_equipment_vehicle_tech_4 = {
+
+		enable_equipments = {
+			light_motorized_equipment_4
+		}
+
+		dependencies = {
+			vehicles_tech_level_scientific = 1
+		}
+
+		research_cost = 1.75
+		start_year = 2285
+		folder = {
+			name = fallout_vehicle_folder
+			position = { x = @Row_2 y = @Col_9 }
+		}
+
+		categories = {
+			vehicle_tech_category
+			motorized_equipment_category
+			bike_tech_category
+			car_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				# is_major = yes
+				NOT = { has_country_flag = robot_doctrine_ai }
+				NOT = { has_country_flag = super_mutant_doctrine_ai }
+			}
+			modifier = {
+				factor = 2
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+			modifier = {
+				factor = 1.25
+				date > "2286.1.1"
+			}
+			modifier = {
+				factor = 1.25
+				date > "2287.1.1"
+			}
+			modifier = {
+				factor = 1.25
+				date > "2288.1.1"
+			}
+		}
+	}
+
+	heavy_motorized_equipment_vehicle_tech_4 = {
+
+		enable_equipments = {
+			heavy_motorized_equipment_4
+		}
+
+		dependencies = {
+			vehicles_tech_level_scientific = 1
+		}
+
+		research_cost = 1.75
+		start_year = 2285
+		folder = {
+			name = fallout_vehicle_folder
+			position = { x = @Row_4 y = @Col_9 }
+		}
+
+		categories = {
+			vehicle_tech_category
+			motorized_equipment_category
+			bike_tech_category
+			truck_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				# is_major = yes
+				NOT = { has_country_flag = robot_doctrine_ai }
+				NOT = { has_country_flag = super_mutant_doctrine_ai }
+			}
+			modifier = {
+				factor = 2
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+			modifier = {
+				factor = 1.25
+				date > "2286.1.1"
+			}
+			modifier = {
+				factor = 1.25
+				date > "2287.1.1"
+			}
+			modifier = {
+				factor = 1.25
+				date > "2288.1.1"
+			}
+		}
+	}
+
+	safety_hatches_vehicle_tech = {
+
+		category_vehicles = {
+			max_strength = 0.5
+			defense = 0.05
+		}
+
+		dependencies = {
+			vehicles_tech_level_settler = 1
+		}
+
+		path = {
+			leads_to_tech = wet_stowage_vehicle_tech
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.25
+		start_year = 2277
+		folder = {
+			name = fallout_vehicle_folder
+			position = { x = @Row_bonus y = @Col_3 }
+		}
+
+		categories = {
+			vehicle_tech_category
+			motorized_equipment_category
+			bike_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+		}
+	}
+
+	wet_stowage_vehicle_tech = {
+
+		category_vehicles = {
+			defense = 0.5
+			breakthrough = 0.05
+		}
+
+		dependencies = {
+			vehicles_tech_level_settler = 1
+		}
+
+		path = {
+			leads_to_tech = boarding_ramps_vehicle_tech
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.25
+		start_year = 2278
+		folder = {
+			name = fallout_vehicle_folder
+			position = { x = @Row_bonus y = @Col_4 }
+		}
+
+		categories = {
+			vehicle_tech_category
+			motorized_equipment_category
+			bike_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+		}
+	}
+
+	boarding_ramps_vehicle_tech = {
+
+		category_vehicles = {
+			soft_attack = 0.03
+			hard_attack = 0.03
+			maximum_speed = 0.03
+		}
+
+		dependencies = {
+			vehicles_tech_level_settler = 1
+		}
+
+		path = {
+			leads_to_tech = Compartmentalization_vehicle_tech
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.25
+		start_year = 2279
+		folder = {
+			name = fallout_vehicle_folder
+			position = { x = @Row_bonus y = @Col_5 }
+		}
+
+		categories = {
+			vehicle_tech_category
+			motorized_equipment_category
+			bike_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+		}
+	}
+
+	Compartmentalization_vehicle_tech = {
+
+		category_vehicles = {
+			reliability = 0.03
+			max_organisation = 2
+		}
+
+		dependencies = {
+			vehicles_tech_level_scientific = 1
+		}
+
+		path = {
+			leads_to_tech = mrap_effort_vehicle_tech
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.25
+		start_year = 2282
+		folder = {
+			name = fallout_vehicle_folder
+			position = { x = @Row_bonus y = @Col_7 }
+		}
+
+		categories = {
+			vehicle_tech_category
+			motorized_equipment_category
+			bike_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+		}
+	}
+
+	mrap_effort_vehicle_tech = {
+
+		category_vehicles = {
+			armor_value = 0.1
+			hardness = 0.05
+			maximum_speed = -0.05
+		}
+
+		dependencies = {
+			vehicles_tech_level_scientific = 1
+		}
+
+		research_cost = 1.25
+		start_year = 2285
+		folder = {
+			name = fallout_vehicle_folder
+			position = { x = @Row_bonus y = @Col_9 }
+		}
+
+		categories = {
+			vehicle_tech_category
+			motorized_equipment_category
+			bike_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+		}
+	}
+
+	tracks_vehicle_tech_1 = {
+
+		tank = {
+			maximum_speed = 0.08
+			default_morale = 0.02
+		}
+
+		dependencies = {
+			vehicles_tech_level_settler = 1
+		}
+
+		path = {
+			leads_to_tech = tank_equipment_vehicle_tech_1
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.25
+		start_year = 2276
+		folder = {
+			name = fallout_vehicle_folder
+			position = { x = @Row_tank y = @Col_2 }
+		}
+
+		categories = {
+			vehicle_tech_category
+			motorized_equipment_category
+			bike_tech_category
+			tank_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				# is_major = yes
+				OR = {
+					has_country_flag = grand_doctrine_ai
+					has_country_flag = elite_doctrine_ai
+				}
+				num_of_military_factories > 50
+			}
+			modifier = {
+				factor = 2
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+			modifier = {
+				factor = 1.25
+				date > "2277.1.1"
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+			modifier = {
+				factor = 1.25
+				date > "2278.1.1"
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+			modifier = {
+				factor = 1.25
+				date > "2279.1.1"
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+		}
+	}
+
+	tank_equipment_vehicle_tech_1 = {
+
+		enable_equipments = {
+			tank_equipment_1
+		}
+
+		enable_subunits = {
+			tank
+		}
+
+		dependencies = {
+			vehicles_tech_level_settler = 1
+		}
+
+		path = {
+			leads_to_tech = tracks_vehicle_tech_2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.75
+		start_year = 2277
+		folder = {
+			name = fallout_vehicle_folder
+			position = { x = @Row_tank y = @Col_3 }
+		}
+
+		categories = {
+			vehicle_tech_category
+			motorized_equipment_category
+			bike_tech_category
+			tank_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				# is_major = yes
+				OR = {
+					has_country_flag = grand_doctrine_ai
+					has_country_flag = elite_doctrine_ai
+				}
+				num_of_military_factories > 50
+			}
+			modifier = {
+				factor = 2
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+			modifier = {
+				factor = 1.25
+				date > "2278.1.1"
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+			modifier = {
+				factor = 1.25
+				date > "2279.1.1"
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+			modifier = {
+				factor = 1.25
+				date > "2280.1.1"
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+		}
+	}
+
+	tracks_vehicle_tech_2 = {
+
+		tank = {
+			max_strength = 1
+			breakthrough = 0.05
+		}
+
+		dependencies = {
+			vehicles_tech_level_settler = 1
+		}
+
+		path = {
+			leads_to_tech = tank_equipment_vehicle_tech_2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.25
+		start_year = 2278
+		folder = {
+			name = fallout_vehicle_folder
+			position = { x = @Row_tank y = @Col_4 }
+		}
+
+		categories = {
+			vehicle_tech_category
+			motorized_equipment_category
+			bike_tech_category
+			tank_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				# is_major = yes
+				OR = {
+					has_country_flag = grand_doctrine_ai
+					has_country_flag = elite_doctrine_ai
+				}
+				num_of_military_factories > 50
+			}
+			modifier = {
+				factor = 2
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+			modifier = {
+				factor = 1.25
+				date > "2279.1.1"
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+			modifier = {
+				factor = 1.25
+				date > "2280.1.1"
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+			modifier = {
+				factor = 1.25
+				date > "2281.1.1"
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+		}
+	}
+
+	tank_equipment_vehicle_tech_2 = {
+
+		enable_equipments = {
+			tank_equipment_2
+		}
+
+		dependencies = {
+			vehicles_tech_level_settler = 1
+		}
+
+		path = {
+			leads_to_tech = turret_vehicle_tech
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.75
+		start_year = 2279
+		folder = {
+			name = fallout_vehicle_folder
+			position = { x = @Row_tank y = @Col_5 }
+		}
+
+		categories = {
+			vehicle_tech_category
+			motorized_equipment_category
+			bike_tech_category
+			tank_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				# is_major = yes
+				OR = {
+					has_country_flag = grand_doctrine_ai
+					has_country_flag = elite_doctrine_ai
+				}
+				num_of_military_factories > 50
+			}
+			modifier = {
+				factor = 2
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+			modifier = {
+				factor = 1.25
+				date > "2280.1.1"
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+			modifier = {
+				factor = 1.25
+				date > "2281.1.1"
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+			modifier = {
+				factor = 1.25
+				date > "2282.1.1"
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+		}
+	}
+
+	turret_vehicle_tech = {
+
+		tank = {
+			soft_attack = 0.05
+			hard_attack = 0.05
+		}
+
+		dependencies = {
+			vehicles_tech_level_settler = 1
+		}
+
+		path = {
+			leads_to_tech = tank_equipment_vehicle_tech_3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.25
+		start_year = 2280
+		folder = {
+			name = fallout_vehicle_folder
+			position = { x = @Row_tank y = @Col_6 }
+		}
+
+		categories = {
+			vehicle_tech_category
+			motorized_equipment_category
+			bike_tech_category
+			tank_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				# is_major = yes
+				OR = {
+					has_country_flag = grand_doctrine_ai
+					has_country_flag = elite_doctrine_ai
+				}
+				num_of_military_factories > 50
+			}
+			modifier = {
+				factor = 2
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+			modifier = {
+				factor = 1.25
+				date > "2281.1.1"
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+			modifier = {
+				factor = 1.25
+				date > "2282.1.1"
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+			modifier = {
+				factor = 1.25
+				date > "2283.1.1"
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+		}
+	}
+
+	tank_equipment_vehicle_tech_3 = {
+
+		enable_equipments = {
+			tank_equipment_3
+		}
+
+		dependencies = {
+			vehicles_tech_level_scientific = 1
+		}
+
+		path = {
+			leads_to_tech = aps_vehicle_tech
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 2282
+		folder = {
+			name = fallout_vehicle_folder
+			position = { x = @Row_tank y = @Col_7 }
+		}
+
+		categories = {
+			vehicle_tech_category
+			motorized_equipment_category
+			bike_tech_category
+			tank_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				# is_major = yes
+				OR = {
+					has_country_flag = grand_doctrine_ai
+					has_country_flag = elite_doctrine_ai
+				}
+				num_of_military_factories > 50
+			}
+			modifier = {
+				factor = 2
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+			modifier = {
+				factor = 1.25
+				date > "2283.1.1"
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+			modifier = {
+				factor = 1.25
+				date > "2284.1.1"
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+			modifier = {
+				factor = 1.25
+				date > "2285.1.1"
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+		}
+	}
+
+	aps_vehicle_tech = {
+
+		tank = {
+			armor_value = 0.1
+		}
+
+		dependencies = {
+			vehicles_tech_level_scientific = 1
+		}
+
+		path = {
+			leads_to_tech = tank_equipment_vehicle_tech_4
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 2283
+		folder = {
+			name = fallout_vehicle_folder
+			position = { x = @Row_tank y = @Col_8 }
+		}
+
+		categories = {
+			vehicle_tech_category
+			motorized_equipment_category
+			bike_tech_category
+			tank_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				# is_major = yes
+				OR = {
+					has_country_flag = grand_doctrine_ai
+					has_country_flag = elite_doctrine_ai
+				}
+				num_of_military_factories > 50
+			}
+			modifier = {
+				factor = 2
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+			modifier = {
+				factor = 1.25
+				date > "2284.1.1"
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+			modifier = {
+				factor = 1.25
+				date > "2285.1.1"
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+			modifier = {
+				factor = 1.25
+				date > "2286.1.1"
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+		}
+	}
+
+	tank_equipment_vehicle_tech_4 = {
+
+		enable_equipments = {
+			tank_equipment_4
+		}
+
+		dependencies = {
+			vehicles_tech_level_scientific = 1
+		}
+
+		research_cost = 2
+		start_year = 2285
+		folder = {
+			name = fallout_vehicle_folder
+			position = { x = @Row_tank y = @Col_9 }
+		}
+
+		categories = {
+			vehicle_tech_category
+			motorized_equipment_category
+			bike_tech_category
+			tank_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				# is_major = yes
+				OR = {
+					has_country_flag = grand_doctrine_ai
+					has_country_flag = elite_doctrine_ai
+				}
+				num_of_military_factories > 50
+			}
+			modifier = {
+				factor = 2
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+			modifier = {
+				factor = 1.25
+				date > "2286.1.1"
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+			modifier = {
+				factor = 1.25
+				date > "2287.1.1"
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+			modifier = {
+				factor = 1.25
+				date > "2288.1.1"
+				has_country_flag = grand_motorized_doctrine_ai
+			}
+		}
+	}
+
+	chariot_vehicle_tech = {
+		enable_equipments = {
+			chariot_equipment_1
+		}
+		enable_subunits = {
+			chariot_unit
+		}
+
+		dependencies = {
+			blocked_tech = 1
+		}
+		on_research_complete_limit = {
+			NOT = {
+				has_template_containing_unit = chariot_unit
+			}
+		}
+		on_research_complete = {
+			hidden_effect = {
+				load_oob = "unlock_chariot"
+			}
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+
+		research_cost = 1.0
+		start_year = 2275
+		folder = {
+			name = fallout_vehicle_folder
+			position = { x = @Row_3 y = @Col_10 }
+		}
+
+		categories = {
+			vehicle_tech_category
+			motorized_equipment_category
+			bike_tech_category
+			civilized_tech_category
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 2
+				# is_major = yes
+			}
+
+			modifier = {
+				factor = 1.2
+				date > "2276.1.1"
+			}
+
+			modifier = {
+				factor = 1.2
+				date > "2277.1.1"
+			}
+
+			modifier = {
+				factor = 1.2
+				date > "2278.1.1"
+			}
+		}
+	}
+	railway_gun = {
+		enable_equipments = {
+			railway_gun_equipment_1
+		}
+		start_year = 2275
+		folder = {
+			name = fallout_vehicle_folder
+			position = { x = 4 y = 3 }
+		}
+		dependencies = {
+			blocked_tech = 1
+		}
+		categories = {
+			vehicle_tech_category
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

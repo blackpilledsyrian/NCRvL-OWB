@@ -1,0 +1,16 @@
+state = {
+	id = 648
+	name = "STATE_648"
+	impassable = yes
+	state_category = megalopolis
+	manpower = 38
+
+	history = {
+		owner = RES
+		add_core_of = RES
+	}
+
+	provinces = {
+		5685 6561
+	}
+}

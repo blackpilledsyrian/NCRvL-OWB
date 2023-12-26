@@ -1,0 +1,29 @@
+state = {
+	id = 770
+	name = "STATE_770"
+	manpower = 20840
+	state_category = city
+
+	resources = {
+		metal = 8
+		water = 8
+		circuitry = 5
+		energy = 14
+	}
+
+	history = {
+		victory_points = {
+			9565 20
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			dockyard = 1
+			industrial_complex = 1
+		}
+	}
+
+	provinces = {
+		724 9368 9373 9565 11004 11006 11011 11012 11020
+	}
+}

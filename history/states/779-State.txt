@@ -1,0 +1,23 @@
+state = {
+	id = 779
+	name = "STATE_779"
+	manpower = 6386
+	state_category = city
+
+	resources = {
+		composites = 2
+		energy = 15
+		water = 5
+	}
+
+	history = {
+		buildings = {
+			dockyard = 1
+			infrastructure = 5
+		}
+	}
+
+	provinces = {
+		715 2241 9323 9331 9516 9554 10941 10942 10949 10950 10951 10956 10960
+	}
+}

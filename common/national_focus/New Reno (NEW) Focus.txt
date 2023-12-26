@@ -1,0 +1,4943 @@
+focus_tree = {
+	id = reno_nf
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = NEW
+		}
+	}
+	default = no
+	focus = {
+		id = new_littlcity
+		icon = GFX_goal_NEW_generic_reno
+		x = 16
+		y = 0
+		cost = 7
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] newreworked_littlecity entered"
+			}
+			country_event = {
+				id = nf_reno.1
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] newreworked_littlecity exited"
+			}
+		}
+	}
+	focus = {
+		id = new_firstfamily
+		icon = GFX_goal_generic_NCR_diplomatic_focus
+		x = 16
+		y = 1
+		cost = 7
+		prerequisite = {
+			focus = new_littlcity
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] newreworked_firstfamily entered"
+			}
+			country_event = {
+				id = nf_reno.2
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] newreworked_firstfamily exited"
+			}
+		}
+	}
+	focus = {
+		id = new_king
+		icon = GFX_goal_NEW_Queen_to_f7
+		x = 16
+		y = 2
+		cost = 7
+		prerequisite = {
+			focus = new_firstfamily
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] newreworked_roadwar entered"
+			}
+			country_event = {
+				id = nf_reno.5
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] newreworked_roadwar exited"
+			}
+		}
+	}
+	focus = {
+		id = new_king2
+		icon = GFX_goal_NEW_generic_reno
+		x = 16
+		y = 3
+		cost = 7
+		prerequisite = {
+			focus = new_king
+		}
+		completion_reward = {
+			country_event = {
+				id = nf_reno.21
+			}
+		}
+	}
+	########## Old Salvatores branch
+	focus = {
+		id = new_salvatores
+		icon = GFX_goal_enc_welcome_vlt_citizens
+		relative_position_id = new_king2
+		x = -3
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = new_king2
+		}
+		completion_reward = {
+			add_political_power = 60
+			#hidden_effect = {
+			#load_oob = salvatoremobs
+			#}
+			add_equipment_to_stockpile = {
+				type = energy_equipment_2
+				amount = 350
+				producer = USA
+			}
+		}
+		ai_will_do = {
+			base = 5
+		}
+	}
+	focus = {
+		id = new_stash
+		icon = GFX_goal_generic_advanced_technology_focus
+		x = 0
+		y = 1
+		relative_position_id = new_salvatores
+		cost = 30
+		prerequisite = {
+			focus = new_salvatores
+		}
+		completion_reward = {
+			159 = {
+				add_resource = {
+					type = composites
+					amount = 6
+				}
+				add_resource = {
+					type = circuitry
+					amount = 6
+				}
+			}
+		}
+		ai_will_do = {
+			base = 10
+		}
+	}
+	#
+	focus = {
+		id = new_rainbow_confederation
+		icon = GFX_goal_new_rainbow_raiders
+		relative_position_id = new_king2
+		x = 5
+		y = 1
+		cost = 15
+		prerequisite = {
+			focus = new_king2
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = cat_land_doctrine
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = spec_force_tech_category
+			}
+			add_popularity = {
+				ideology = elites
+				popularity = 0.05
+			}
+		}
+		ai_will_do = {
+			base = 10
+		}
+	}
+	focus = {
+		id = new_ghoul_marriage
+		icon = GFX_goal_ghoul_head
+		relative_position_id = new_rainbow_confederation
+		x = 0
+		y = 1
+		cost = 15
+		prerequisite = {
+			focus = new_rainbow_confederation
+		}
+		completion_reward = {
+			add_political_power = 50
+			set_technology = {
+				ghoul_civilization = 1
+			}
+		}
+		ai_will_do = {
+			base = 10
+		}
+	}
+	###########
+	focus = {
+		id = new_thefamily
+		icon = GFX_goal_generic_backroom_planning
+		relative_position_id = new_king2
+		x = 0
+		y = 1
+		cost = 45
+		available = {
+			NOT = {
+				has_government = elites
+			}
+		}
+		prerequisite = {
+			focus = new_king2
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] newreworked_new_thefamily entered"
+			}
+			add_political_power = 75
+			add_popularity = {
+				ideology = intellectuals
+				popularity = 0.05
+			}
+			custom_effect_tooltip = wrightmobs_tt
+			hidden_effect = {
+				load_oob = wrightmobs
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] newreworked_new_thefamily exited"
+			}
+		}
+		ai_will_do = {
+			base = 10
+		}
+	}
+	focus = {
+		id = new_school
+		icon = GFX_goal_uoa_book
+		relative_position_id = new_thefamily
+		x = -1
+		y = 1
+		cost = 45
+		prerequisite = {
+			focus = new_thefamily
+		}
+		completion_reward = {
+			add_stability = 0.05
+			add_ideas = renoschools
+			add_popularity = {
+				ideology = intellectuals
+				popularity = 0.05
+			}
+		}
+		ai_will_do = {
+			base = 10
+		}
+	}
+	focus = {
+		id = new_church
+		icon = GFX_goal_NCN_Generic
+		relative_position_id = new_thefamily
+		x = 1
+		y = 1
+		cost = 45
+		prerequisite = {
+			focus = new_thefamily
+		}
+		completion_reward = {
+			add_stability = 0.1
+			add_popularity = {
+				ideology = intellectuals
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = new_wrightsvangraff
+		icon = GFX_goal_generic_focus_magazine_lal_married_a_robot
+		x = -1
+		y = 1
+		relative_position_id = new_church
+		cost = 45
+		prerequisite = {
+			focus = new_school
+		}
+		prerequisite = {
+			focus = new_church
+		}
+		completion_reward = {
+			army_experience = 25
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 2
+				category = infantry_weapons_tech_category
+			}
+			add_popularity = {
+				ideology = intellectuals
+				popularity = 0.05
+			}
+		}
+		ai_will_do = {
+			base = 10
+		}
+	}
+	focus = {
+		id = new_police
+		icon = GFX_goal_NEW_New_Reno_Police_Department
+		x = 1
+		y = 1
+		relative_position_id = new_wrightsvangraff
+		cost = 45
+		prerequisite = {
+			focus = new_wrightsvangraff
+		}
+		completion_reward = {
+			add_ideas = newrenopolice
+			custom_effect_tooltip = new_police_tt
+			set_technology = {
+				dog_equipment_tech_1 = 1
+				warden_doggos_tech = 1
+			}
+			hidden_effect = {
+				set_technology = {
+					super_mutant_aux_infantry_tech = 1
+				}
+				load_oob = newrenopolice
+			}
+			add_popularity = {
+				ideology = intellectuals
+				popularity = 0.05
+			}
+		}
+		ai_will_do = {
+			base = 10
+		}
+	}
+	focus = {
+		id = new_speakeasies
+		icon = GFX_goal_generic_whisky
+		x = -1
+		y = 1
+		relative_position_id = new_wrightsvangraff
+		cost = 45
+		prerequisite = {
+			focus = new_wrightsvangraff
+		}
+		completion_reward = {
+			add_ideas = renospeakeasies
+			add_popularity = {
+				ideology = intellectuals
+				popularity = 0.05
+			}
+		}
+		ai_will_do = {
+			base = 10
+		}
+	}
+	focus = {
+		id = new_gym
+		icon = GFX_goal_generic_creature_molerat
+		x = 1
+		y = 1
+		relative_position_id = new_speakeasies
+		cost = 45
+		available = {
+			NOT = {
+				has_government = elites
+			}
+		}
+		prerequisite = {
+			focus = new_speakeasies
+		}
+		prerequisite = {
+			focus = new_police
+		}
+		completion_reward = {
+			add_stability = 0.03
+			add_war_support = 0.03
+			set_temp_variable = {
+				caps_to_add = 100
+			}
+			add_caps = yes
+			add_popularity = {
+				ideology = intellectuals
+				popularity = 0.05
+			}
+		}
+		ai_will_do = {
+			base = 10
+		}
+	}
+	focus = {
+		id = new_renoproclamation
+		icon = GFX_goal_generic_backroom_planning
+		x = 17
+		y = 9
+		cost = 15
+		prerequisite = {
+			focus = new_ncr_buddies
+			focus = new_gym
+		}
+		completion_reward = {
+			#set_variable = {
+			#	var = reno_wright_support
+			#	value = party_popularity@intellectuals
+			#}
+			#set_variable = {
+			#	var = reno_bishop_support
+			#	value = party_popularity@people
+			#}
+			#set_variable = {
+			#	var = reno_mutant_support
+			#	value = party_popularity@elites
+			#}
+			if = {
+			}
+			else_if = {
+				limit = {
+					has_country_flag = new_brokentakeoverflag
+				}
+				news_event = nf_reno.31
+			}
+			else_if = {
+				limit = {
+					intellectuals > party_popularity@elites
+					intellectuals > party_popularity@ruler
+					intellectuals > party_popularity@people
+				}
+				news_event = nf_reno.3
+			}
+			else_if = {
+				limit = {
+					people > party_popularity@elites
+					people > party_popularity@ruler
+					people > party_popularity@intellectuals
+				}
+				news_event = nf_reno.25
+			}
+			else = {
+				custom_effect_tooltip = ren_who_wins_tt
+			}
+		}
+	}
+	focus = {
+		id = new_whitepawn
+		icon = GFX_goal_NEW_White_Pawn_to_E4
+		relative_position_id = new_king2
+		available = {
+			NOT = {
+				has_government = elites
+			}
+		}
+		prerequisite = {
+			focus = new_king2
+		}
+		x = 3
+		y = 1
+		cost = 45
+		completion_reward = {
+			add_political_power = 75
+			add_popularity = {
+				ideology = people
+				popularity = 0.05
+			}
+			add_corps_commander_role = {
+				character = NEW_mr_bishop
+				skill = 1
+				traits = {
+					lone_wolf_trait
+					charismatic_trait
+					intelligent_trait
+				}
+				attack_skill = 2
+				defense_skill = 2
+				planning_skill = 2
+				logistics_skill = 2
+			}
+		}
+		ai_will_do = {
+			base = 10
+		}
+	}
+	focus = {
+		id = new_jetbeta
+		icon = GFX_goal_NEW_Jet_Beta_is_finished
+		x = 0
+		y = 1
+		relative_position_id = new_whitepawn
+		cost = 45
+		prerequisite = {
+			focus = new_whitepawn
+		}
+		completion_reward = {
+			add_research_slot = 1
+			add_popularity = {
+				ideology = people
+				popularity = 0.05
+			}
+		}
+		ai_will_do = {
+			base = 10
+		}
+	}
+	focus = {
+		id = new_shark_club
+		icon = GFX_goal_NEW_renovating_the_shark_club
+		relative_position_id = new_jetbeta
+		cost = 45
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = new_jetbeta
+		}
+		completion_reward = {
+			285 = {
+				set_temp_variable = {
+					development_to_add = 1
+				}
+				add_development_to_node = yes
+			}
+			set_temp_variable = {
+				caps_to_add = 75
+			}
+			add_caps = yes
+			add_popularity = {
+				ideology = people
+				popularity = 0.05
+			}
+		}
+		ai_will_do = {
+			base = 10
+		}
+	}
+	focus = {
+		id = new_bishop_van_graff
+		icon = GFX_goal_generic_building_focus
+		relative_position_id = new_jetbeta
+		cost = 45
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = new_jetbeta
+		}
+		completion_reward = {
+			614 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_equipment_to_stockpile = {
+				type = spec_ops_equipment
+				amount = 150
+				producer = USA
+			}
+			add_popularity = {
+				ideology = people
+				popularity = 0.05
+			}
+		}
+		ai_will_do = {
+			base = 10
+		}
+	}
+	focus = {
+		id = new_jacuzzi_janissaries
+		icon = GFX_goal_generic_hot_woman_on_fishman_action
+		relative_position_id = new_bishop_van_graff
+		x = -1
+		y = 1
+		cost = 45
+		prerequisite = {
+			focus = new_shark_club
+			focus = new_bishop_van_graff
+		}
+		completion_reward = {
+			set_temp_variable = {
+				caps_to_add = 150
+			}
+			add_caps = yes
+			add_popularity = {
+				ideology = people
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = new_ncr_buddies
+		icon = GFX_goal_NCR_Rangers_Lead_the_War
+		x = 0
+		y = 1
+		relative_position_id = new_jacuzzi_janissaries
+		cost = 45
+		available = {
+			NOT = {
+				has_government = elites
+			}
+		}
+		prerequisite = {
+			focus = new_jacuzzi_janissaries
+		}
+		completion_reward = {
+			614 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			base = 10
+		}
+	}
+	focus = {
+		id = new_allroads
+		icon = GFX_goal_brahmin_cart
+		x = 8
+		y = 10
+		cost = 45
+		prerequisite = {
+			focus = new_renoproclamation
+		}
+		available = {
+			285 = {
+				is_owned_and_controlled_by = ROOT
+			}
+			295 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			285 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			295 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			base = 3
+			# Neutral Reno will prioritize building up over other tasks.
+			modifier = {
+				factor = 2
+				NEW_has_ai_behavior_neutrality = yes
+			}
+		}
+	}
+	focus = {
+		id = new_economic_convergence
+		icon = GFX_goal_generic_pip_2000_vi_1
+		x = 13
+		y = 10
+		cost = 60
+		prerequisite = {
+			focus = new_renoproclamation
+		}
+		available = {
+			285 = {
+				is_owned_and_controlled_by = ROOT
+			}
+			295 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			set_technology = {
+				electronics_tech_level_scientific = 1
+			}
+		}
+		ai_will_do = {
+			base = 3
+			# Neutral Reno will prioritize building up over other tasks.
+			modifier = {
+				factor = 2
+				NEW_has_ai_behavior_neutrality = yes
+			}
+		}
+	}
+	focus = {
+		id = new_pyramid_lake
+		icon = GFX_goal_TTM_Water
+		x = 15
+		y = 10
+		cost = 60
+		prerequisite = {
+			focus = new_renoproclamation
+		}
+		available = {
+			285 = {
+				is_owned_and_controlled_by = ROOT
+			}
+			295 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			set_temp_variable = {
+				caps_to_add = 200
+			}
+			add_caps = yes
+		}
+		ai_will_do = {
+			base = 3
+			# Neutral Reno will prioritize building up over other tasks.
+			modifier = {
+				factor = 2
+				NEW_has_ai_behavior_neutrality = yes
+			}
+		}
+	}
+	focus = {
+		id = new_expansion
+		icon = GFX_goal_generic_plasma_pistol_4
+		x = 4
+		y = 11
+		cost = 30
+		prerequisite = {
+			focus = new_allroads
+		}
+		available = {
+			285 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			295 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			base = 3
+			# Neutral Reno will prioritize building up over other tasks.
+			modifier = {
+				factor = 2
+				NEW_has_ai_behavior_neutrality = yes
+			}
+			modifier = {
+				factor = 2
+				NOT = {
+					is_major = yes
+				}
+			}
+			modifier = {
+				factor = 2
+				manpower_per_military_factory > 1000
+			}
+		}
+	}
+	focus = {
+		id = new_silverrush
+		icon = GFX_goal_NEW_a_new_silver_rush
+		x = 4
+		y = 12
+		cost = 30
+		prerequisite = {
+			focus = new_expansion
+		}
+		available = {
+			285 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			285 = {
+				add_resource = {
+					type = advanced
+					amount = 10
+				}
+			}
+		}
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 0.25
+				OR = {
+					check_variable = {
+						resource@advanced > 4
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					check_variable = {
+						resource@advanced < 0
+					}
+					check_variable = {
+						resource_imported@advanced < 0
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = new_sharkclub
+		icon = GFX_goal_TTM_Water
+		x = 3
+		y = 13
+		cost = 30
+		prerequisite = {
+			focus = new_silverrush
+		}
+		mutually_exclusive = {
+			focus = new_sharkclub2
+		}
+		available = {
+			285 = {
+				is_owned_and_controlled_by = ROOT
+			}
+			has_country_leader = {
+				name = "Mr Bishop"
+				ruling_only = yes
+			}
+		}
+		completion_reward = {
+			295 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			base = 3
+			# Neutral Reno will prioritize building up over other tasks.
+			modifier = {
+				factor = 2
+				NEW_has_ai_behavior_neutrality = yes
+			}
+			modifier = {
+				factor = 2
+				NOT = {
+					is_major = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = new_boxing
+		icon = GFX_goal_FFI_tag_team
+		x = 3
+		y = 14
+		cost = 30
+		prerequisite = {
+			focus = new_sharkclub
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_boxing entered"
+			}
+			add_war_support = 0.03
+			add_stability = 0.02
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_boxing exited"
+			}
+		}
+		ai_will_do = {
+			base = 2
+			# Neutral Reno will prioritize building up over other tasks.
+			modifier = {
+				factor = 2
+				NEW_has_ai_behavior_neutrality = yes
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					has_stability < 0.35
+					has_war_support < 0.35
+				}
+			}
+		}
+	}
+	focus = {
+		id = new_sharkclub2
+		icon = GFX_goal_generic_megaloader
+		x = 5
+		y = 13
+		cost = 30
+		prerequisite = {
+			focus = new_silverrush
+		}
+		mutually_exclusive = {
+			focus = new_sharkclub
+		}
+		available = {
+			NOT = {
+				has_country_leader = {
+					name = "Mr Bishop"
+					ruling_only = yes
+				}
+			}
+		}
+		completion_reward = {
+			285 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			base = 3
+			# Neutral Reno will prioritize building up over other tasks.
+			modifier = {
+				factor = 2
+				NEW_has_ai_behavior_neutrality = yes
+			}
+			modifier = {
+				factor = 2
+				NOT = {
+					is_major = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = new_boxing2
+		icon = GFX_goal_generic_swords
+		x = 5
+		y = 14
+		cost = 30
+		prerequisite = {
+			focus = new_sharkclub2
+		}
+		completion_reward = {
+			add_war_support = 0.05
+			add_stability = 0.05
+		}
+		ai_will_do = {
+			base = 2
+			# Neutral Reno will prioritize building up over other tasks.
+			modifier = {
+				factor = 2
+				NEW_has_ai_behavior_neutrality = yes
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					has_stability < 0.35
+					has_war_support < 0.35
+				}
+			}
+		}
+	}
+	focus = {
+		id = new_newcomic
+		icon = GFX_goal_generic_killer_rabbit2
+		x = 4
+		y = 15
+		cost = 30
+		prerequisite = {
+			focus = new_boxing
+			focus = new_boxing2
+		}
+		completion_reward = {
+			add_stability = 0.05
+		}
+		ai_will_do = {
+			base = 2
+			# Neutral Reno will prioritize building up over other tasks.
+			modifier = {
+				factor = 2
+				NEW_has_ai_behavior_neutrality = yes
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					has_stability < 0.35
+					has_war_support < 0.35
+				}
+			}
+		}
+	}
+	focus = {
+		id = new_catpaw
+		icon = GFX_goal_generic_focus_magazine_aat_fishmen
+		x = 7
+		y = 11
+		cost = 30
+		prerequisite = {
+			focus = new_allroads
+		}
+		available = {
+			285 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_catpaw entered"
+			}
+			285 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = caps_system_toggle
+						option = ENABLED
+					}
+				}
+				set_temp_variable = {
+					caps_to_add = 100
+				}
+				add_caps = yes
+			}
+			else = {
+				add_resource = {
+					type = metal
+					amount = 1
+					state = 285
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_catpaw exited"
+			}
+		}
+	}
+	focus = {
+		id = new_tipography
+		icon = GFX_goal_generic_patty_cheesecake
+		x = 7
+		y = 12
+		cost = 30
+		prerequisite = {
+			focus = new_catpaw
+		}
+		available = {
+			285 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+	focus = {
+		id = new_desperado2
+		icon = GFX_goal_food_prewar_food
+		x = 7
+		y = 13
+		cost = 30
+		prerequisite = {
+			focus = new_tipography
+		}
+		completion_reward = {
+			285 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			base = 3
+			# Neutral Reno will prioritize building up over other tasks.
+			modifier = {
+				factor = 2
+				NEW_has_ai_behavior_neutrality = yes
+			}
+			modifier = {
+				factor = 2
+				NOT = {
+					is_major = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = new_medicine
+		icon = GFX_goal_chem_super_stim
+		x = 7
+		y = 14
+		cost = 30
+		prerequisite = {
+			focus = new_desperado2
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_medicine entered"
+			}
+			if = {
+				limit = {
+					has_tech = med_company_tech_6
+				}
+				add_resource = {
+					type = metal
+					amount = 2
+					state = 285
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = med_company_tech_5
+				}
+				set_technology = {
+					med_company_tech_6 = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = med_company_tech_4
+				}
+				set_technology = {
+					med_company_tech_5 = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = med_company_tech_3
+				}
+				set_technology = {
+					med_company_tech_4 = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = med_company_tech_2
+				}
+				set_technology = {
+					med_company_tech_3 = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = med_company_tech_1
+				}
+				set_technology = {
+					med_company_tech_2 = 1
+				}
+			}
+			else = {
+				set_technology = {
+					med_company_tech_1 = 1
+				}
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = caps_system_toggle
+						option = ENABLED
+					}
+				}
+				set_temp_variable = {
+					caps_to_add = 150
+				}
+				add_caps = yes
+			}
+			else = {
+				add_resource = {
+					type = metal
+					amount = 5
+					state = 285
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_medicine exited"
+			}
+		}
+		ai_will_do = {
+			base = 2
+			# Neutral Reno will prioritize building up over other tasks.
+			modifier = {
+				factor = 2
+				NEW_has_ai_behavior_neutrality = yes
+			}
+			modifier = {
+				factor = 2
+				NOT = {
+					is_major = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = new_goldenglobes
+		icon = GFX_goal_generic_zippo_girl
+		x = 7
+		y = 15
+		cost = 30
+		prerequisite = {
+			focus = new_medicine
+		}
+		available = {
+			285 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			add_stability = 0.03
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = caps_system_toggle
+						option = ENABLED
+					}
+				}
+				set_temp_variable = {
+					caps_to_add = 150
+				}
+				add_caps = yes
+			}
+			else = {
+				add_resource = {
+					type = metal
+					amount = 3
+					state = 285
+				}
+			}
+		}
+	}
+	focus = {
+		id = new_chopshop
+		icon = GFX_goal_generic_truck_2
+		x = 10
+		y = 11
+		cost = 30
+		prerequisite = {
+			focus = new_allroads
+		}
+		available = {
+			285 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = motorized_equipment
+				amount = 350
+				producer = NEW
+			}
+			184 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = new_powerplant
+		icon = GFX_goal_generic_power_poles
+		x = 10
+		y = 12
+		cost = 30
+		prerequisite = {
+			focus = new_chopshop
+		}
+		available = {
+			285 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			add_resource = {
+				type = energy
+				amount = 15
+				state = 285
+			}
+		}
+	}
+	focus = {
+		id = new_rail
+		icon = GFX_goal_generic_train
+		x = 9
+		y = 14
+		cost = 30
+		prerequisite = {
+			focus = new_distillery
+		}
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_owned_by = NEW
+					region = 12
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = new_distillery
+		icon = GFX_goal_generic_nuka_girl_2
+		x = 9
+		y = 13
+		cost = 30
+		prerequisite = {
+			focus = new_powerplant
+		}
+		mutually_exclusive = {
+			focus = new_distillery2
+		}
+		available = {
+			614 = {
+				is_owned_and_controlled_by = ROOT
+			}
+			has_country_leader = {
+				name = "Christopher Wright"
+				ruling_only = yes
+			}
+		}
+		completion_reward = {
+			614 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			base = 3
+			# Neutral Reno will prioritize building up over other tasks.
+			modifier = {
+				factor = 2
+				NEW_has_ai_behavior_neutrality = yes
+			}
+			modifier = {
+				factor = 2
+				NOT = {
+					is_major = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = new_distillery2
+		icon = GFX_goal_generic_whisky
+		x = 11
+		y = 13
+		cost = 30
+		prerequisite = {
+			focus = new_powerplant
+		}
+		mutually_exclusive = {
+			focus = new_distillery
+		}
+		available = {
+			NOT = {
+				has_country_leader = {
+					name = "Christopher Wright"
+					ruling_only = yes
+				}
+			}
+		}
+		completion_reward = {
+			614 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_resource = {
+					type = water
+					amount = 6
+				}
+			}
+		}
+		ai_will_do = {
+			base = 3
+			# Neutral Reno will prioritize building up over other tasks.
+			modifier = {
+				factor = 2
+				NEW_has_ai_behavior_neutrality = yes
+			}
+			modifier = {
+				factor = 2
+				NOT = {
+					is_major = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = new_rail2
+		icon = GFX_goal_generic_scrap_metal
+		x = 11
+		y = 14
+		cost = 30
+		prerequisite = {
+			focus = new_distillery2
+		}
+		completion_reward = {
+			add_resource = {
+				type = metal
+				amount = 16
+				state = 614
+			}
+		}
+	}
+	focus = {
+		id = new_newpeople
+		icon = GFX_goal_generic_bubblegum
+		x = 10
+		y = 15
+		cost = 30
+		prerequisite = {
+			focus = new_rail
+			focus = new_rail2
+		}
+		available = {
+			285 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			add_ideas = new_citizens
+		}
+	}
+	focus = {
+		id = new_contracts
+		icon = GFX_goal_generic_recruitment_focus
+		x = 13
+		y = 11
+		cost = 30
+		prerequisite = {
+			focus = new_allroads
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_contracts entered"
+			}
+			add_ideas = contracts
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_contracts exited"
+			}
+		}
+		ai_will_do = {
+			base = 2
+			# Neutral Reno will prioritize building up over other tasks.
+			modifier = {
+				factor = 2
+				NEW_has_ai_behavior_neutrality = yes
+			}
+		}
+	}
+	focus = {
+		id = new_golgotha
+		icon = GFX_goal_pal_death_and_taxes
+		x = 13
+		y = 12
+		cost = 30
+		prerequisite = {
+			focus = new_contracts
+		}
+		completion_reward = {
+			add_ideas = golgotharestored
+		}
+		ai_will_do = {
+			base = 2
+			# Neutral Reno will prioritize building up over other tasks.
+			modifier = {
+				factor = 2
+				NEW_has_ai_behavior_neutrality = yes
+			}
+			modifier = {
+				factor = 2
+				check_variable = {
+					num_occupied_states > 0
+				}
+			}
+		}
+	}
+	focus = {
+		id = new_slvatorebar2
+		icon = GFX_goal_generic_ritas_cafe
+		x = 13
+		y = 13
+		cost = 30
+		prerequisite = {
+			focus = new_golgotha
+		}
+		available = {
+			285 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_slvatorebar2 entered"
+			}
+			285 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = caps_system_toggle
+						option = ENABLED
+					}
+				}
+				set_temp_variable = {
+					caps_to_add = -50
+				}
+				add_caps = yes
+			}
+			else = {
+				add_resource = {
+					type = metal
+					amount = -1
+					state = 285
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_slvatorebar2 exited"
+			}
+		}
+		ai_will_do = {
+			base = 2
+			# Neutral Reno will prioritize building up over other tasks.
+			modifier = {
+				factor = 2
+				NEW_has_ai_behavior_neutrality = yes
+			}
+		}
+	}
+	focus = {
+		id = new_chem2
+		icon = GFX_goal_generic_emote_help
+		x = 13
+		y = 14
+		cost = 30
+		prerequisite = {
+			focus = new_slvatorebar2
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_tech = med_company_tech_6
+				}
+				add_resource = {
+					type = metal
+					amount = 2
+					state = 285
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = med_company_tech_5
+				}
+				set_technology = {
+					med_company_tech_6 = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = med_company_tech_4
+				}
+				set_technology = {
+					med_company_tech_5 = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = med_company_tech_3
+				}
+				set_technology = {
+					med_company_tech_4 = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = med_company_tech_2
+				}
+				set_technology = {
+					med_company_tech_3 = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = med_company_tech_1
+				}
+				set_technology = {
+					med_company_tech_2 = 1
+				}
+			}
+			else = {
+				set_technology = {
+					med_company_tech_1 = 1
+				}
+			}
+			add_political_power = 50
+		}
+		ai_will_do = {
+			base = 2
+			# Neutral Reno will prioritize building up over other tasks.
+			modifier = {
+				factor = 2
+				NEW_has_ai_behavior_neutrality = yes
+			}
+		}
+	}
+	focus = {
+		id = new_arms
+		icon = GFX_goal_generic_advanced_firearms_focus
+		x = 13
+		y = 15
+		cost = 30
+		prerequisite = {
+			focus = new_chem2
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_arms entered"
+			}
+			if = {
+				limit = {
+					has_tech = ballistic_weaponry_tech_2
+				}
+				add_equipment_to_stockpile = {
+					type = ballistic_equipment_2
+					amount = 750
+					producer = NEW
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = {
+					type = ballistic_equipment_2
+					amount = 750
+					producer = USA
+				}
+			}
+			614 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = caps_system_toggle
+						option = ENABLED
+					}
+				}
+				set_temp_variable = {
+					caps_to_add = -100
+				}
+				add_caps = yes
+			}
+			else = {
+				add_resource = {
+					type = metal
+					amount = -1
+					state = 285
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_arms exited"
+			}
+		}
+		ai_will_do = {
+			base = 2
+			# Neutral Reno will prioritize building up over other tasks.
+			modifier = {
+				factor = 2
+				NEW_has_ai_behavior_neutrality = yes
+			}
+			modifier = {
+				factor = 2
+				check_variable = {
+					num_occupied_states > 0
+				}
+			}
+		}
+	}
+	focus = {
+		id = new_sanctuary
+		icon = GFX_goal_generic_scrap_city_housing
+		x = 9
+		y = 16
+		cost = 30
+		prerequisite = {
+			focus = new_newcomic
+			focus = new_goldenglobes
+			focus = new_newpeople
+			focus = new_arms
+		}
+		completion_reward = {
+			add_manpower = 1500
+		}
+		ai_will_do = {
+			base = 2
+			# Neutral Reno will prioritize building up over other tasks.
+			modifier = {
+				factor = 2
+				NEW_has_ai_behavior_neutrality = yes
+			}
+			modifier = {
+				factor = 2
+				has_manpower < 1500
+			}
+		}
+	}
+	focus = {
+		id = new_sweatshop
+		icon = GFX_goal_generic_crates
+		x = 7
+		y = 16
+		cost = 30
+		prerequisite = {
+			focus = new_newcomic
+			focus = new_goldenglobes
+			focus = new_newpeople
+			focus = new_arms
+		}
+		completion_reward = {
+			add_ideas = sweatshop
+		}
+		ai_will_do = {
+			base = 2
+			# Neutral Reno will prioritize building up over other tasks.
+			modifier = {
+				factor = 2
+				NEW_has_ai_behavior_neutrality = yes
+			}
+		}
+	}
+	focus = {
+		id = new_sierradepot
+		icon = GFX_goal_NEW_Sierra_Army_Depot
+		x = 8
+		y = 17
+		cost = 30
+		prerequisite = {
+			focus = new_sanctuary
+		}
+		prerequisite = {
+			focus = new_sweatshop
+		}
+		available = {
+			285 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			159 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_equipment_to_stockpile = {
+				type = energy_equipment_4
+				amount = 1000
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = ballistic_equipment_4
+				amount = 1000
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = power_armor_equipment_4
+				amount = 1000
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = spec_ops_equipment_5
+				amount = 1000
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = light_motorized_equipment_4
+				amount = 500
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = heavy_motorized_equipment_4
+				amount = 500
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = tank_equipment_4
+				amount = 300
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment_3
+				amount = 300
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = energy_fireteam_equipment_4
+				amount = 150
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = ballistic_fireteam_equipment_4
+				amount = 150
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = flamer_demolitions_equipment_4
+				amount = 150
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = explosive_demolitions_equipment_4
+				amount = 150
+				producer = USA
+			}
+		}
+		ai_will_do = {
+			base = 2
+			# Neutral Reno will prioritize building up over other tasks.
+			modifier = {
+				factor = 2
+				NEW_has_ai_behavior_neutrality = yes
+			}
+			modifier = {
+				factor = 2
+				NOT = {
+					is_major = yes
+				}
+			}
+			modifier = {
+				factor = 2
+				manpower_per_military_factory > 1000
+			}
+		}
+	}
+	focus = {
+		id = new_techslot
+		icon = GFX_goal_generic_focus_magazine_gunsandbullets_plasma
+		x = 8
+		y = 18
+		cost = 45
+		prerequisite = {
+			focus = new_sierradepot
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_techslot entered"
+			}
+			add_research_slot = 1
+			set_technology = {
+				robotics_tech_level_scientific = 1
+			}
+			159 = {
+				add_extra_state_shared_building_slots = 10
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes
+				}
+				add_resource = {
+					type = energy
+					amount = 20
+					state = 159
+				}
+				add_resource = {
+					type = composites
+					amount = 20
+					state = 159
+				}
+				add_resource = {
+					type = circuitry
+					amount = 20
+					state = 159
+				}
+				add_resource = {
+					type = advanced
+					amount = 20
+					state = 159
+				}
+			}
+			add_equipment_to_stockpile = {
+				type = combat_robot_equipment_3
+				amount = 500
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = support_robot_two_legs_equipment_4
+				amount = 500
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = support_robot_thruster_equipment_4
+				amount = 500
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = cnc_robot_equipment_3
+				amount = 250
+				producer = USA
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_techslot exited"
+			}
+		}
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 2
+				OR = {
+					has_cosmetic_tag = ENC_cosmetic_tag
+					NEW_has_ai_behavior_enclave = yes
+					# Neutral Reno will prioritize building up over other tasks.
+					NEW_has_ai_behavior_neutrality = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = new_expansionism
+		icon = GFX_goal_generic_outpost
+		x = 19
+		y = 10
+		cost = 30
+		prerequisite = {
+			focus = new_renoproclamation
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_expansionism entered"
+			}
+			add_political_power = 100
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_expansionism exited"
+			}
+		}
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 5
+				OR = {
+					has_cosmetic_tag = ENC_cosmetic_tag
+					has_cosmetic_tag = THR_cosmetic_tag
+				}
+			}
+			# If we're forcing the Enclave or Thradd to happen, don't let them bother
+			# with Klamath until the takeover happens and they have some doods.
+			modifier = {
+				factor = 0
+				OR = {
+					num_divisions < 15
+					AND = {
+						NOT = {
+							has_cosmetic_tag = ENC_cosmetic_tag
+						}
+						NEW_has_ai_behavior_enclave = yes
+					}
+					AND = {
+						NOT = {
+							has_cosmetic_tag = THR_cosmetic_tag
+						}
+						NEW_has_ai_behavior_thradd = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = new_loosends
+		icon = GFX_goal_pal_yakuza
+		x = 20
+		y = 11
+		cost = 45
+		prerequisite = {
+			focus = new_expansionism
+		}
+		bypass = {
+			YKZ = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = YKZ
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		completion_reward = {
+			YKZ = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 2
+				strength_ratio = {
+					tag = YKZ
+					ratio > 1
+				}
+			}
+			modifier = {
+				factor = 5
+				OR = {
+					has_cosmetic_tag = ENC_cosmetic_tag
+					has_cosmetic_tag = THR_cosmetic_tag
+				}
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					any_country = {
+						has_war_with = ROOT
+						is_neighbor_of = ROOT
+					}
+					strength_ratio = {
+						tag = YKZ
+						ratio < 0.85
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = new_connectsouth
+		icon = GFX_goal_NCR_Council_Hill
+		x = 18
+		y = 12
+		cost = 45
+		prerequisite = {
+			focus = new_loosends
+		}
+		available = {
+			has_government = people
+			YKZ = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		mutually_exclusive = {
+			focus = new_sake
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_connectsouth entered"
+			}
+			add_political_power = 75
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = caps_system_toggle
+						option = ENABLED
+					}
+				}
+				set_temp_variable = {
+					caps_to_add = 75
+				}
+				add_caps = yes
+			}
+			else = {
+				add_resource = {
+					type = metal
+					amount = 3
+					state = 285
+				}
+			}
+			add_opinion_modifier = {
+				modifier = connectsouth
+				target = NCR
+			}
+			reverse_add_opinion_modifier = {
+				modifier = connectsouth
+				target = NCR
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_connectsouth exited"
+			}
+		}
+		ai_will_do = {
+			base = 2
+		}
+	}
+	focus = {
+		id = new_sake
+		icon = GFX_goal_generic_rum
+		x = 2
+		y = 1
+		cost = 45
+		relative_position_id = new_loosends
+		prerequisite = {
+			focus = new_loosends
+		}
+		available = {
+			has_government = intellectuals
+			YKZ = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		mutually_exclusive = {
+			focus = new_connectsouth
+		}
+		completion_reward = {
+			285 = {
+				add_state_modifier = {
+					modifier = {
+						caps_node_base_modifier = 0.2
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 2
+		}
+	}
+	focus = {
+		id = new_spoils
+		icon = GFX_goal_generic_fusion_core
+		x = 18
+		y = 13
+		cost = 45
+		prerequisite = {
+			focus = new_connectsouth
+			focus = new_sake
+		}
+		available = {
+			YKZ = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_spoils entered"
+			}
+			285 = {
+				add_resource = {
+					type = metal
+					amount = 10
+				}
+				add_resource = {
+					type = energy
+					amount = 5
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_spoils exited"
+			}
+		}
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 0.25
+				OR = {
+					check_variable = {
+						resource@metal > 4
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					check_variable = {
+						resource@metal < 0
+					}
+					check_variable = {
+						resource_imported@metal < 0
+					}
+				}
+			}
+			modifier = {
+				factor = 0.25
+				OR = {
+					check_variable = {
+						resource@energy > 4
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					check_variable = {
+						resource@energy < 0
+					}
+					check_variable = {
+						resource_imported@energy < 0
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = new_lakes
+		icon = GFX_goal_generic_camp
+		x = 22
+		y = 13
+		cost = 45
+		prerequisite = {
+			focus = new_connectsouth
+			focus = new_sake
+		}
+		available = {
+			YKZ = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_lakes entered"
+			}
+			156 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_stability = 0.05
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_lakes exited"
+			}
+		}
+		ai_will_do = {
+			base = 2
+		}
+	}
+	focus = {
+		id = new_jackalsrush
+		icon = GFX_goal_generic_grenade
+		x = 20
+		y = 13
+		cost = 45
+		prerequisite = {
+			focus = new_connectsouth
+			focus = new_sake
+		}
+		bypass = {
+			JAC = {
+				OR = {
+					all_core_land_owned_by_prev_sphere = yes
+					exists = no
+				}
+			}
+		}
+		will_lead_to_war_with = JAC
+		completion_reward = {
+			JAC = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+		ai_will_do = {
+			base = 2
+		}
+	}
+	focus = {
+		id = new_shop
+		icon = GFX_goal_generic_welcome_home
+		x = 20
+		y = 14
+		cost = 45
+		prerequisite = {
+			focus = new_spoils
+			focus = new_lakes
+		}
+		prerequisite = {
+			focus = new_jackalsrush
+		}
+		available = {
+			YKZ = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		bypass = {
+			160 = {
+				is_core_of = NEW
+			}
+			171 = {
+				is_core_of = NEW
+			}
+			156 = {
+				is_core_of = NEW
+			}
+			735 = {
+				is_core_of = NEW
+			}
+			475 = {
+				is_core_of = NEW
+			}
+			284 = {
+				is_core_of = NEW
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_shop entered"
+			}
+			every_owned_state = {
+				limit = {
+					is_core_of = YKZ
+				}
+				add_core_of = NEW
+			}
+			every_owned_state = {
+				limit = {
+					is_core_of = JAC
+				}
+				add_core_of = NEW
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_shop exited"
+			}
+		}
+		ai_will_do = {
+			base = 3
+			modifier = {
+				factor = 2
+				has_manpower < 1500
+			}
+		}
+	}
+	focus = {
+		id = new_jackalsplunder
+		icon = GFX_goal_BRK_solidify_authority
+		x = 18
+		y = 14
+		cost = 45
+		prerequisite = {
+			focus = new_jackalsrush
+		}
+		prerequisite = {
+			focus = new_spoils
+		}
+		available = {
+			JAC = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			160 = {
+				add_manpower = -3000
+			}
+			custom_effect_tooltip = new_jackalsplunder_tt
+			hidden_effect = {
+				475 = {
+					add_state_modifier = {
+						modifier = {
+							recruitable_population_factor = 0.05
+							local_building_slots = 1
+						}
+					}
+				}
+				284 = {
+					add_state_modifier = {
+						modifier = {
+							recruitable_population_factor = 0.05
+							local_building_slots = 1
+						}
+					}
+				}
+				160 = {
+					add_state_modifier = {
+						modifier = {
+							recruitable_population_factor = 0.05
+							local_building_slots = 1
+						}
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 2
+		}
+	}
+	focus = {
+		id = new_klamathdeal
+		icon = GFX_goal_generic_hard_boiled_detectives
+		x = 28
+		y = 11
+		cost = 45
+		prerequisite = {
+			focus = new_expansionism
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			TDN = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			TDN = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+		ai_will_do = {
+			base = 2
+		}
+	}
+	focus = {
+		id = new_klamathagreements
+		icon = GFX_goal_generic_creature_gecko
+		x = -1
+		y = 1
+		relative_position_id = new_klamathdeal
+		cost = 45
+		prerequisite = {
+			focus = new_klamathdeal
+		}
+		mutually_exclusive = {
+			focus = new_occupationden
+		}
+		available = {
+			KLA = {
+				OR = {
+					exists = yes
+					is_puppet = no
+				}
+			}
+			OR = {
+				has_government = people
+			}
+			is_neighbor_of = KLA
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = new_brokentakeoverflag
+					}
+				}
+				if = {
+					limit = {
+						has_global_flag = debug_logs
+					}
+					log = "[GetDateText]: [Root.GetName] new_klamathagreements entered"
+				}
+				if = {
+					limit = {
+						KLA = {
+							is_ai = yes
+						}
+					}
+					KLA = {
+						become_puppet = yes
+						set_politics = {
+							ruling_party = elites
+						}
+						set_political_party = {
+							ideology = elites
+							popularity = 100
+						}
+						capital_scope = {
+							add_extra_state_shared_building_slots = 2
+							add_building_construction = {
+								type = industrial_complex
+								level = 1
+								instant_build = yes
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						KLA = {
+							is_ai = no
+						}
+					}
+					KLA = {
+						country_event = {
+							id = nf_reno.8
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = new_brokentakeoverflag
+				}
+				if = {
+					limit = {
+						KLA = {
+							is_ai = yes
+						}
+					}
+					KLA = {
+						become_puppet = yes
+					}
+					KLA = {
+						set_state_owner = 59
+					}
+				}
+				else_if = {
+					limit = {
+						KLA = {
+							is_ai = no
+						}
+					}
+					KLA = {
+						country_event = {
+							id = nf_reno.8
+						}
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 0
+				OR = {
+					has_cosmetic_tag = ENC_cosmetic_tag
+					has_cosmetic_tag = THR_cosmetic_tag
+				}
+			}
+		}
+	}
+	focus = {
+		id = new_debtwarriors
+		icon = GFX_goal_generic_smoking_cowboy
+		x = 26
+		y = 13
+		cost = 45
+		prerequisite = {
+			focus = new_klamathagreements
+			focus = new_occupationden
+		}
+		available = {
+			KLA = {
+				is_puppet_of = NEW
+			}
+		}
+		completion_reward = {
+			set_temp_variable = {
+				caps_to_add = 100
+			}
+			add_caps = yes
+			KLA = {
+				add_ideas = debtwarriorsklameth
+			}
+		}
+		ai_will_do = {
+			base = 2
+		}
+	}
+	focus = {
+		id = new_occupationden
+		icon = GFX_goal_generic_gentlemen_sniper
+		x = 1
+		y = 1
+		relative_position_id = new_klamathdeal
+		cost = 45
+		prerequisite = {
+			focus = new_klamathdeal
+		}
+		mutually_exclusive = {
+			focus = new_klamathagreements
+		}
+		available = {
+			OR = {
+				AND = {
+					KLA = {
+						exists = yes
+						is_subject = no
+					}
+					OR = {
+						has_government = intellectuals
+					}
+				}
+				KLA = {
+					OR = {
+						exists = no
+						is_subject = yes
+					}
+				}
+			}
+			is_neighbor_of = KLA
+		}
+		bypass = {
+			KLA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			KLA = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 0.5
+				OR = {
+					has_cosmetic_tag = ENC_cosmetic_tag
+					has_cosmetic_tag = THR_cosmetic_tag
+				}
+			}
+		}
+	}
+	focus = {
+		id = new_rat_farms
+		icon = GFX_goal_generic_creature_molerat
+		x = 1
+		y = 1
+		relative_position_id = new_occupationden
+		cost = 45
+		prerequisite = {
+			focus = new_klamathagreements
+			focus = new_occupationden
+		}
+		available = {
+			KLA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			OR = {
+				has_government = intellectuals
+			}
+		}
+		completion_reward = {
+			add_state_core = 454
+			add_resource = {
+				type = water
+				amount = 10
+				state = 454
+			}
+			add_state_core = 251
+			add_resource = {
+				type = water
+				amount = 10
+				state = 251
+			}
+			if = {
+				limit = {
+					has_country_flag = new_brokentakeoverflag
+				}
+				country_event = nf_reno.30
+			}
+		}
+		ai_will_do = {
+			base = 2
+		}
+	}
+	focus = {
+		id = new_endnorthslavers
+		icon = GFX_goal_enc_rangers_agreement
+		x = 28
+		y = 13
+		cost = 45
+		prerequisite = {
+			focus = new_klamathagreements
+			focus = new_occupationden
+		}
+		available = {
+			TDN = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			OR = {
+				has_government = people
+				has_government = intellectuals
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_endnorthslavers entered"
+			}
+			add_manpower = 1000
+			add_stability = 0.05
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_endnorthslavers exited"
+			}
+		}
+		ai_will_do = {
+			base = 2
+		}
+	}
+	focus = {
+		id = new_coreden
+		icon = GFX_goal_NEW_Mordinos_Tributaries
+		x = 28
+		y = 14
+		cost = 45
+		prerequisite = {
+			focus = new_endnorthslavers
+		}
+		bypass = {
+			57 = {
+				OR = {
+					is_core_of = NEW
+					is_core_of = KLA
+				}
+			}
+		}
+		completion_reward = {
+			57 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_core_of = NEW
+			}
+			59 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_core_of = NEW
+			}
+		}
+		ai_will_do = {
+			base = 3
+			modifier = {
+				factor = 2
+				has_manpower < 500
+			}
+		}
+	}
+	focus = {
+		id = new_savages
+		icon = GFX_goal_food_various_vegetables
+		x = 35
+		y = 11
+		cost = 45
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		prerequisite = {
+			focus = new_expansionism
+		}
+		bypass = {
+			126 = {
+				is_owned_and_controlled_by = ROOT
+			}
+			382 = {
+				is_owned_and_controlled_by = ROOT
+			}
+			585 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		will_lead_to_war_with = MOD
+		available = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				hidden_trigger = {
+					NOT = {
+						has_country_flag = restrict_ai_wargoal_focuses
+					}
+				}
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_savages entered"
+			}
+			set_country_flag = restrict_ai_wargoal_focuses
+			MOD = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_savages exited"
+			}
+			if = {
+				limit = {
+					has_country_flag = new_brokentakeoverflag
+				}
+				SLA = {
+					diplomatic_relation = {
+						country = MOD
+						relation = guarantee
+						active = no
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 2
+				strength_ratio = {
+					tag = MOD
+					ratio > 1
+				}
+			}
+			modifier = {
+				factor = 5
+				OR = {
+					has_cosmetic_tag = ENC_cosmetic_tag
+					has_cosmetic_tag = THR_cosmetic_tag
+				}
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					any_country = {
+						has_war_with = ROOT
+						is_neighbor_of = ROOT
+					}
+					strength_ratio = {
+						tag = MOD
+						ratio < 0.85
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = new_slavery
+		icon = GFX_goal_food_various_fruits
+		x = 33
+		y = 12
+		cost = 45
+		prerequisite = {
+			focus = new_savages
+		}
+		mutually_exclusive = {
+			focus = new_assimilation
+		}
+		available = {
+			MOD = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			OR = {
+				has_government = people
+				has_country_flag = new_brokentakeoverflag
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_slavery entered"
+			}
+			every_owned_state = {
+				limit = {
+					is_core_of = MOD
+				}
+				add_extra_state_shared_building_slots = 1
+				set_temp_variable = {
+					pop_add = 1200
+				}
+				add_state_population = yes
+			}
+			add_ideas = modoc
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_slavery exited"
+			}
+		}
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 2
+				has_manpower < 1500
+			}
+		}
+	}
+	focus = {
+		id = new_assimilation
+		icon = GFX_goal_generic_tractor_1
+		x = 37
+		y = 12
+		cost = 45
+		prerequisite = {
+			focus = new_savages
+		}
+		available = {
+			MOD = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			has_government = intellectuals
+		}
+		mutually_exclusive = {
+			focus = new_slavery
+		}
+		completion_reward = {
+			add_manpower = 800
+			add_stability = -0.05
+		}
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 2
+				has_manpower < 2000
+			}
+		}
+	}
+	focus = {
+		id = new_farmsteads
+		icon = GFX_goal_pal_vc_turn_around
+		relative_position_id = new_assimilation
+		x = -1
+		y = 1
+		cost = 45
+		will_lead_to_war_with = SLA
+		prerequisite = {
+			focus = new_slavery
+			focus = new_assimilation
+		}
+		bypass = {
+			SLA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_farmsteads entered"
+			}
+			SLA = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_farmsteads exited"
+			}
+		}
+		ai_will_do = {
+			base = 2
+		}
+	}
+	focus = {
+		id = new_hordes
+		icon = GFX_goal_generic_western
+		x = 34
+		y = 13
+		cost = 45
+		prerequisite = {
+			focus = new_assimilation
+			focus = new_slavery
+		}
+		available = {
+			SLA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			MOD = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_hordes entered"
+			}
+			custom_effect_tooltip = new_hordes_tt
+			hidden_effect = {
+				126 = {
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+						}
+						instant_build = yes
+					}
+				}
+				382 = {
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+						}
+						instant_build = yes
+					}
+				}
+				585 = {
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+						}
+						instant_build = yes
+					}
+				}
+				118 = {
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+						}
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = caps_system_toggle
+						option = ENABLED
+					}
+				}
+				set_temp_variable = {
+					caps_to_add = -100
+				}
+				add_caps = yes
+			}
+			else = {
+				add_resource = {
+					type = metal
+					amount = -1
+					state = 285
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_hordes exited"
+			}
+		}
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 2
+				any_country = {
+					is_neighbor_of = ROOT
+					OR = {
+						has_wargoal_against = ROOT
+						is_justifying_wargoal_against = ROOT
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = new_bet
+		icon = GFX_goal_NEW_generic_reno
+		x = 35
+		y = 14
+		cost = 45
+		prerequisite = {
+			focus = new_hordes
+		}
+		prerequisite = {
+			focus = new_farmsteads
+		}
+		available = {
+			382 = {
+				is_owned_and_controlled_by = ROOT
+			}
+			126 = {
+				is_owned_and_controlled_by = ROOT
+			}
+			585 = {
+				is_owned_and_controlled_by = ROOT
+			}
+			118 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			382 = {
+				add_core_of = NEW
+			}
+			126 = {
+				add_core_of = NEW
+			}
+			585 = {
+				add_core_of = NEW
+			}
+			118 = {
+				add_core_of = NEW
+			}
+		}
+		ai_will_do = {
+			base = 3
+			modifier = {
+				factor = 2
+				has_manpower < 1500
+			}
+		}
+	}
+	focus = {
+		id = new_cityofsins
+		icon = GFX_goal_NEW_generic_reno
+		x = 28
+		y = 15
+		cost = 45
+		prerequisite = {
+			focus = new_coreden
+		}
+		prerequisite = {
+			focus = new_shop
+		}
+		prerequisite = {
+			focus = new_bet
+		}
+		available = {
+			has_war = no
+			#is_in_faction = no
+			#is_dornan_not_leader = yes
+			#is_thradd_not_leader= yes
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_cityofsins entered"
+			}
+			add_war_support = 0.1
+			add_stability = 0.1
+			285 = {
+				set_temp_variable = {
+					development_to_add = 2
+				}
+				add_development_to_node = yes
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_cityofsins exited"
+			}
+		}
+		ai_will_do = {
+			base = 2
+			# Neutral Reno will prioritize building up over other tasks.
+			modifier = {
+				factor = 2
+				NEW_has_ai_behavior_neutrality = yes
+			}
+		}
+	}
+	focus = {
+		id = new_stateofreno
+		icon = GFX_goal_NCR_Kimball_Expansion_Reno
+		x = 24
+		y = 15
+		cost = 45
+		prerequisite = {
+			focus = new_coreden
+		}
+		prerequisite = {
+			focus = new_shop
+		}
+		prerequisite = {
+			focus = new_bet
+		}
+		available = {
+			has_war = no
+			is_in_faction = no
+			is_subject = no
+			OR = {
+				is_bishop_leader = yes
+				is_wright_leader = yes
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_stateofreno entered"
+			}
+			NEW = {
+				ask_to_join_new_california = yes
+			}
+			every_country = {
+				limit = {
+					OR = {
+						is_neighbor_of = NCR
+						news_is_west_tag = yes
+					}
+				}
+				news_event = { id = ncr_kimball.4 hours = 6 random_hours = 3 }
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_stateofreno exited"
+			}
+		}
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 0
+				NEW_has_ai_behavior_neutrality = yes
+			}
+		}
+	}
+	focus = {
+		id = new_mercmilitary
+		icon = GFX_goal_NEW_Mercenary_Military
+		x = -7
+		y = 1
+		cost = 30
+		relative_position_id = new_king2
+		prerequisite = {
+			focus = new_king2
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_mercmilitary entered"
+			}
+			army_experience = 30
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = infantry_tech_category
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = caps_system_toggle
+						option = ENABLED
+					}
+				}
+				set_temp_variable = {
+					caps_to_add = -50
+				}
+				add_caps = yes
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_mercmilitary exited"
+			}
+		}
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 3
+				any_country = {
+					is_neighbor_of = ROOT
+					OR = {
+						has_war_with = ROOT
+						has_wargoal_against = ROOT
+						is_justifying_wargoal_against = ROOT
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				any_country = {
+					ROOT = {
+						OR = {
+							is_justifying_wargoal_against = PREV
+							has_wargoal_against = PREV
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = new_precautions
+		icon = GFX_goal_generic_protectron_conceptart_default
+		x = -4
+		y = 1
+		cost = 60
+		relative_position_id = new_mercmilitary
+		prerequisite = {
+			focus = new_mercmilitary
+		}
+		available = {
+			285 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_precautions entered"
+			}
+			custom_effect_tooltip = new_precautions_tt
+			hidden_effect = {
+				285 = {
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+						}
+						instant_build = yes
+					}
+					# Note: The Stables victory point already gets outposts for being a border province
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = 9139	# New Reno
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = 9130	# Carson City
+						instant_build = yes
+					}
+				}
+				614 = {
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+						}
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = 9146	# New Reno Outskirts
+						instant_build = yes
+					}
+				}
+			}
+			add_political_power = 25
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = caps_system_toggle
+						option = ENABLED
+					}
+				}
+				set_temp_variable = {
+					caps_to_add = -50
+				}
+				add_caps = yes
+			}
+			else = {
+				add_resource = {
+					type = metal
+					amount = -1
+					state = 285
+				}
+			}
+		}
+		ai_will_do = {
+			base = 2
+			# Neutral Reno will prioritize building up over other tasks.
+			modifier = {
+				factor = 2
+				NEW_has_ai_behavior_neutrality = yes
+			}
+			modifier = {
+				factor = 2
+				any_country = {
+					is_neighbor_of = ROOT
+					OR = {
+						has_war_with = ROOT
+						has_wargoal_against = ROOT
+						is_justifying_wargoal_against = ROOT
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = new_radio
+		icon = GFX_goal_generic_communcation_focus
+		x = -2
+		y = 1
+		relative_position_id = new_mercmilitary
+		cost = 60
+		prerequisite = {
+			focus = new_mercmilitary
+		}
+		available = {
+			285 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = radar_tech
+			}
+			285 = {
+				add_building_construction = {
+					type = radar_station
+					level = 2
+					instant_build = yes
+				}
+			}
+			614 = {
+				add_building_construction = {
+					type = radar_station
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = caps_system_toggle
+						option = ENABLED
+					}
+				}
+				set_temp_variable = {
+					caps_to_add = -50
+				}
+				add_caps = yes
+			}
+			else = {
+				add_resource = {
+					type = metal
+					amount = -1
+					state = 285
+				}
+			}
+		}
+		ai_will_do = {
+			base = 2
+			# Neutral Reno will prioritize building up over other tasks.
+			modifier = {
+				factor = 2
+				NEW_has_ai_behavior_neutrality = yes
+			}
+		}
+	}
+	focus = {
+		id = new_hedge
+		icon = GFX_goal_generic_walls_focus
+		x = 0
+		y = 1
+		cost = 60
+		relative_position_id = new_radio
+		prerequisite = {
+			focus = new_radio
+		}
+		available = {
+			156 = {
+				is_owned_and_controlled_by = ROOT
+			}
+			171 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_hedge entered"
+			}
+			custom_effect_tooltip = new_hedge_tt
+			hidden_effect = {
+				156 = {
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+						}
+						instant_build = yes
+					}
+				}
+				171 = {
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+						}
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = caps_system_toggle
+						option = ENABLED
+					}
+				}
+				set_temp_variable = {
+					caps_to_add = -50
+				}
+				add_caps = yes
+			}
+			else = {
+				add_resource = {
+					type = metal
+					amount = -1
+					state = 285
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_hedge exited"
+			}
+		}
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 2
+				any_country = {
+					is_neighbor_of = ROOT
+					OR = {
+						has_wargoal_against = ROOT
+						is_justifying_wargoal_against = ROOT
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = new_airport
+		icon = GFX_goal_generic_airbases_focus
+		x = 0
+		y = 1
+		relative_position_id = new_precautions
+		cost = 60
+		prerequisite = {
+			focus = new_precautions
+		}
+		available = {
+			285 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = light_air_tech_category
+			}
+			285 = {
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			base = 2
+			# Neutral Reno will prioritize building up over other tasks.
+			modifier = {
+				factor = 2
+				NEW_has_ai_behavior_neutrality = yes
+			}
+			modifier = {
+				factor = 2
+				has_tech = fighter_tech_1
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					has_tech = vertibird_tech
+					has_tech = vertibird_cas_tech
+				}
+			}
+		}
+	}
+	focus = {
+		id = new_oldbirds
+		icon = GFX_goal_generic_ghouls_focus
+		relative_position_id = new_airport
+		x = 0
+		y = 1
+		cost = 60
+		prerequisite = {
+			focus = new_airport
+		}
+		available = {
+			has_tech = fighter_tech_1
+			has_tech = cas_bomber_tech_1
+		}
+		completion_reward = {
+			custom_effect_tooltip = new_oldbirds_tt
+			hidden_effect = {
+				load_oob = oldbirds
+			}
+		}
+		ai_will_do = {
+			base = 2
+			# Neutral Reno will prioritize building up over other tasks.
+			modifier = {
+				factor = 2
+				NEW_has_ai_behavior_neutrality = yes
+			}
+		}
+	}
+	focus = {
+		id = new_merc
+		icon = GFX_goal_NEW_american_pmc
+		relative_position_id = new_mercmilitary
+		x = 1
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = new_mercmilitary
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_merc entered"
+			}
+			add_ideas = genericmercs
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_merc exited"
+			}
+		}
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 3
+				any_country = {
+					is_neighbor_of = ROOT
+					OR = {
+						has_war_with = ROOT
+						has_wargoal_against = ROOT
+						is_justifying_wargoal_against = ROOT
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				any_country = {
+					ROOT = {
+						OR = {
+							is_justifying_wargoal_against = PREV
+							has_wargoal_against = PREV
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = new_vengefulsons
+		icon = GFX_goal_CES_numeri
+		x = -1
+		y = 1
+		relative_position_id = new_merc
+		available = {
+			OR = {
+				is_ai = yes
+				AND = {
+					set_temp_variable = {
+						caps_diff = -50
+					}
+					caps_cost_trigger = yes
+				}
+			}
+		}
+		cost = 30
+		prerequisite = {
+			focus = new_merc
+		}
+		mutually_exclusive = {
+			focus = new_pablos
+			focus = new_blackvultures
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_vengefulsons entered"
+			}
+			custom_effect_tooltip = RUNSWITHHATRED_CORPSLEAD_TT
+			custom_effect_tooltip = new_vengefulsons_tt
+			hidden_effect = {
+				load_oob = vengefulsons
+			}
+			add_ideas = vengefulsons
+			hidden_effect = {
+				add_corps_commander_role = {
+					Character = NEW_runs_with_hatred
+					skill = 3
+					traits = {
+						hot_blooded_trait
+						strong_trait
+						agile_trait
+						desert_fox
+					}
+					attack_skill = 5
+					defense_skill = 1
+					planning_skill = 1
+					logistics_skill = 1
+				}
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = caps_system_toggle
+						option = ENABLED
+					}
+				}
+				set_temp_variable = {
+					caps_to_add = -50
+				}
+				add_caps = yes
+			}
+			else = {
+				add_resource = {
+					type = metal
+					amount = -1
+					state = 285
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_vengefulsons exited"
+			}
+			add_tech_bonus = {
+				name = melee_bonus
+				bonus = 0.5
+				uses = 1
+				category = melee_weaponry_tech_category
+			}
+		}
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 3
+				any_country = {
+					is_neighbor_of = ROOT
+					OR = {
+						has_war_with = ROOT
+						has_wargoal_against = ROOT
+						is_justifying_wargoal_against = ROOT
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				any_country = {
+					ROOT = {
+						OR = {
+							is_justifying_wargoal_against = PREV
+							has_wargoal_against = PREV
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = new_pablos
+		icon = GFX_goal_generic_land_doctrines_focus
+		relative_position_id = new_merc
+		x = 3
+		y = 1
+		cost = 30
+		available = {
+			OR = {
+				is_ai = yes
+				AND = {
+					set_temp_variable = {
+						caps_diff = -50
+					}
+					caps_cost_trigger = yes
+				}
+			}
+		}
+		prerequisite = {
+			focus = new_merc
+		}
+		mutually_exclusive = {
+			focus = new_vengefulsons
+			focus = new_blackvultures
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_pablos entered"
+			}
+			custom_effect_tooltip = new_pablos_tt
+			custom_effect_tooltip = PABLO_CORPSLEAD_TT
+			hidden_effect = {
+				load_oob = pabloconquistadors
+				add_corps_commander_role = {
+					Character = NEW_pablo
+					skill = 3
+					traits = {
+						conqueror
+						lucky_trait
+						intelligent_trait
+					}
+					attack_skill = 1
+					defense_skill = 3
+					planning_skill = 2
+					logistics_skill = 2
+				}
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = caps_system_toggle
+						option = ENABLED
+					}
+				}
+				set_temp_variable = {
+					caps_to_add = -50
+				}
+				add_caps = yes
+			}
+			else = {
+				add_resource = {
+					type = metal
+					amount = -1
+					state = 285
+				}
+			}
+			add_ideas = pabloconquistadors
+			add_tech_bonus = {
+				name = ballistic_bonus
+				bonus = 0.5
+				uses = 1
+				category = ballistic_weaponry_tech_category
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_pablos exited"
+			}
+		}
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 3
+				any_country = {
+					is_neighbor_of = ROOT
+					OR = {
+						has_war_with = ROOT
+						has_wargoal_against = ROOT
+						is_justifying_wargoal_against = ROOT
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				any_country = {
+					ROOT = {
+						OR = {
+							is_justifying_wargoal_against = PREV
+							has_wargoal_against = PREV
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = new_blackvultures
+		icon = GFX_goal_generic_laser_muskets_focus
+		relative_position_id = new_merc
+		x = 1
+		y = 1
+		relative_position_id = new_merc
+		cost = 30
+		available = {
+			OR = {
+				is_ai = yes
+				AND = {
+					set_temp_variable = {
+						caps_diff = -50
+					}
+					caps_cost_trigger = yes
+				}
+			}
+		}
+		prerequisite = {
+			focus = new_merc
+		}
+		mutually_exclusive = {
+			focus = new_vengefulsons
+			focus = new_pablos
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_pablos entered"
+			}
+			custom_effect_tooltip = HASSAN_CORPSLEAD_TT
+			custom_effect_tooltip = new_blackvultures_tt
+			hidden_effect = {
+				load_oob = blackvultures
+				add_corps_commander_role = {
+					Character = NEW_hassan
+					skill = 3
+					traits = {
+						skilled_trait
+						strong_trait
+						enduring_trait
+						hill_fighter
+					}
+					attack_skill = 3
+					defense_skill = 1
+					planning_skill = 2
+					logistics_skill = 2
+				}
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = caps_system_toggle
+						option = ENABLED
+					}
+				}
+				set_temp_variable = {
+					caps_to_add = -50
+				}
+				add_caps = yes
+			}
+			else = {
+				add_resource = {
+					type = metal
+					amount = -1
+					state = 285
+				}
+			}
+			add_ideas = blackvultures
+			add_tech_bonus = {
+				name = ballistic_bonus
+				bonus = 0.5
+				uses = 1
+				category = energy_weaponry_tech_category
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_pablos exited"
+			}
+		}
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 3
+				any_country = {
+					is_neighbor_of = ROOT
+					OR = {
+						has_war_with = ROOT
+						has_wargoal_against = ROOT
+						is_justifying_wargoal_against = ROOT
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				any_country = {
+					ROOT = {
+						OR = {
+							is_justifying_wargoal_against = PREV
+							has_wargoal_against = PREV
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = new_gladiators
+		icon = GFX_goal_generic_robots_focus
+		x = 0
+		y = 1
+		relative_position_id = new_vengefulsons
+		cost = 30
+		available = {
+			OR = {
+				is_ai = yes
+				AND = {
+					set_temp_variable = {
+						caps_diff = -50
+					}
+					caps_cost_trigger = yes
+				}
+			}
+		}
+		prerequisite = {
+			focus = new_pablos
+			focus = new_vengefulsons
+			focus = new_blackvultures
+		}
+		mutually_exclusive = {
+			focus = new_roadpsychos
+			focus = new_nanjimiclan
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_gladiators entered"
+			}
+			custom_effect_tooltip = FRAZZ_CORPSLEAD_TT
+			if = {
+				limit = {
+					NOT = {
+						has_tech = robot_makeshift_automatons_tech
+					}
+				}
+				set_technology = {
+					robot_makeshift_automatons_tech = 1
+				}
+			}
+			custom_effect_tooltip = new_gladiators_tt
+			hidden_effect = {
+				load_oob = junkcitygladiators
+				add_corps_commander_role = {
+					Character = NEW_pit_master_frazz
+					skill = 4
+					traits = {
+						targeting_computer_trait
+						perceptive_trait
+						intelligent_trait
+						robotics_expert_trait
+						urban_assault_specialist
+					}
+					attack_skill = 2
+					defense_skill = 2
+					planning_skill = 2
+					logistics_skill = 4
+				}
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = caps_system_toggle
+						option = ENABLED
+					}
+				}
+				set_temp_variable = {
+					caps_to_add = -50
+				}
+				add_caps = yes
+			}
+			else = {
+				add_resource = {
+					type = metal
+					amount = -1
+					state = 285
+				}
+			}
+			add_ideas = junkcitygladiators
+			add_tech_bonus = {
+				name = robotic_bonus
+				bonus = 0.5
+				uses = 1
+				category = robotics_tech_category
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_gladiators exited"
+			}
+		}
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 3
+				any_country = {
+					is_neighbor_of = ROOT
+					OR = {
+						has_war_with = ROOT
+						has_wargoal_against = ROOT
+						is_justifying_wargoal_against = ROOT
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				any_country = {
+					ROOT = {
+						OR = {
+							is_justifying_wargoal_against = PREV
+							has_wargoal_against = PREV
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = new_roadpsychos
+		icon = GFX_goal_generic_jeep
+		x = 0
+		y = 1
+		relative_position_id = new_pablos
+		cost = 30
+		available = {
+			OR = {
+				is_ai = yes
+				AND = {
+					set_temp_variable = {
+						caps_diff = -50
+					}
+					caps_cost_trigger = yes
+				}
+			}
+		}
+		prerequisite = {
+			focus = new_vengefulsons
+			focus = new_pablos
+			focus = new_blackvultures
+		}
+		mutually_exclusive = {
+			focus = new_gladiators
+			focus = new_nanjimiclan
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_roadpsychos entered"
+			}
+			custom_effect_tooltip = MOCKINGBIRD_TT
+			custom_effect_tooltip = new_roadpsychos_tt
+			hidden_effect = {
+				load_oob = roadpsychos
+				add_corps_commander_role = {
+					Character = NEW_mockingbird
+					skill = 4
+					traits = {
+						reckless_trait
+						perceptive_trait
+						agile_trait
+						lead_foot_trait
+						desert_fox
+					}
+					attack_skill = 4
+					defense_skill = 2
+					planning_skill = 2
+					logistics_skill = 2
+				}
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = caps_system_toggle
+						option = ENABLED
+					}
+				}
+				set_temp_variable = {
+					caps_to_add = -50
+				}
+				add_caps = yes
+			}
+			else = {
+				add_resource = {
+					type = metal
+					amount = -1
+					state = 285
+				}
+			}
+			add_ideas = roadpsychos
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 0.5
+				uses = 1
+				category = vehicle_tech_category
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_roadpsychos exited"
+			}
+		}
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 3
+				any_country = {
+					is_neighbor_of = ROOT
+					OR = {
+						has_war_with = ROOT
+						has_wargoal_against = ROOT
+						is_justifying_wargoal_against = ROOT
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				any_country = {
+					ROOT = {
+						OR = {
+							is_justifying_wargoal_against = PREV
+							has_wargoal_against = PREV
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = new_nanjimiclan
+		icon = GFX_goal_ATE_omen_of_destruction
+		relative_position_id = new_blackvultures
+		x = 0
+		y = 1
+		cost = 30
+		available = {
+			OR = {
+				is_ai = yes
+				AND = {
+					set_temp_variable = {
+						caps_diff = -50
+					}
+					caps_cost_trigger = yes
+				}
+			}
+		}
+		prerequisite = {
+			focus = new_vengefulsons
+			focus = new_pablos
+			focus = new_blackvultures
+		}
+		mutually_exclusive = {
+			focus = new_gladiators
+			focus = new_roadpsychos
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_nanjimiclan entered"
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = caps_system_toggle
+						option = ENABLED
+					}
+				}
+				set_temp_variable = {
+					caps_to_add = -50
+				}
+				add_caps = yes
+			}
+			else = {
+				add_resource = {
+					type = metal
+					amount = -1
+					state = 285
+				}
+			}
+			custom_effect_tooltip = NANJIMI_TT
+			custom_effect_tooltip = new_nanjimiclan_tt
+			hidden_effect = {
+				load_oob = nanjimiclan
+				add_corps_commander_role = {
+					Character = NEW_kieva_nanjimi
+					skill = 4
+					traits = {
+						camouflage_trait
+						agile_trait
+						ninja_trait
+						intelligent_trait
+						paratrooper
+						naval_invader
+					}
+					attack_skill = 2
+					defense_skill = 2
+					planning_skill = 4
+					logistics_skill = 2
+				}
+			}
+			add_ideas = nanjimiclan
+			add_tech_bonus = {
+				name = melee_weaponry_tech_category
+				bonus = 0.5
+				uses = 1
+				category = vehicle_tech_category
+			}
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_nanjimiclan exited"
+			}
+		}
+	}
+	#	focus = {
+	#		id = new_thradd
+	#		icon = GFX_goal_BOS_steel_giants
+	#		relative_position_id = new_nanjimiclan
+	#		x = -2
+	#		y = 1
+	#
+	#		cost = 60
+	#
+	#
+	#		prerequisite = {
+	#			focus = new_gladiators
+	#			focus = new_nanjimiclan
+	#			focus = new_roadpsychos
+	#		}
+	#		mutually_exclusive = {
+	#
+	#			focus = new_roaring
+	#			focus = new_artillery
+	#		}
+	#
+	#		available = {
+	#			is_wright_leader = yes
+	#		}
+	#
+	#		completion_reward = {
+	#			if = {
+	#				limit = { has_global_flag = debug_logs }
+	#				log = "[GetDateText]: [Root.GetName] new_thradd entered"
+	#			}
+	#			create_corps_commander = {
+	#				name = "Thradd"
+	#				portrait_path = GFX_Portrait_NEW_thradd
+	#				skill = 4
+	#				id = 100013
+	#				traits = {
+	#
+	#				}
+	#				attack_skill = 5
+	#				defense_skill = 3
+	#				planning_skill = 3
+	#				logistics_skill = 2
+	#			}
+	#			hidden_effect = {
+	#				if = {
+	#					limit = {
+	#						AND = {
+	#							has_completed_focus = new_mutanttech
+	#						}
+	#					}
+	#
+	#					country_event = { id = nf_reno.4 }
+	#				}
+	#			}
+	#			if = {
+	#				limit = {
+	#					has_game_rule = {
+	#						rule = caps_system_toggle
+	#						option = ENABLED
+	#					}
+	#				}
+	#				set_temp_variable = { caps_to_add = -200 }
+	#				hidden_effect = {
+	#					add_caps = yes
+	#				}
+	#
+	#			}
+	#			else = {
+	#				add_resource = {
+	#					type = metal
+	#					amount = -2
+	#					state = 285
+	#				}
+	#			}
+	#			custom_effect_tooltip = new_thradd_tt
+	#			hidden_effect = {
+	#				set_technology = { super_mutant_aux_infantry_tech = 1 }
+	#				load_oob = thraddimmortals
+	#			}
+	#			add_ideas = thraddimmortals
+	#			if = {
+	#				limit = { has_global_flag = debug_logs }
+	#				log = "[GetDateText]: [Root.GetName] new_thradd exited"
+	#			}
+	#		}
+	#
+	#		ai_will_do = {
+	#			base = 2
+	#
+	#			modifier = {
+	#				factor = 3
+	#				any_country = {
+	#					is_neighbor_of = ROOT
+	#					OR = {
+	#						has_war_with = ROOT
+	#						has_wargoal_against = ROOT
+	#						is_justifying_wargoal_against = ROOT
+	#					}
+	#				}
+	#			}
+	#
+	#			modifier = {
+	#				factor = 2
+	#				any_country = {
+	#					ROOT = {
+	#						OR = {
+	#							is_justifying_wargoal_against = PREV
+	#							has_wargoal_against = PREV
+	#						}
+	#					}
+	#				}
+	#			}
+	#		}
+	#	}
+	focus = {
+		id = new_thradd
+		icon = GFX_goal_NEW_isotope_chapter
+		relative_position_id = new_nanjimiclan
+		x = -2
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = new_gladiators
+			focus = new_nanjimiclan
+			focus = new_roadpsychos
+		}
+		mutually_exclusive = {
+			focus = new_roaring
+			focus = new_artillery
+		}
+		completion_reward = {
+			custom_effect_tooltip = RUTHERFORD_CORPSLEAD_TT
+			custom_effect_tooltip = new_isotopestriketeams_tt
+			add_ideas = thraddimmortals
+			set_technology = {
+				special_forces_tech_level_scientific = 1
+				ghoul_paratrooper_tech = 1
+			}
+			hidden_effect = {
+				load_oob = new_isotopechapter
+				add_corps_commander_role = {
+					character = NEW_elder_rutherford
+					skill = 6
+					traits = {
+						charismatic_trait
+						intelligent_trait
+						bunker_kid_trait
+						rad_rat
+						paratrooper
+					}
+					attack_skill = 2
+					defense_skill = 5
+					planning_skill = 2
+					logistics_skill = 5
+				}
+			}
+		}
+	}
+	focus = {
+		id = new_roaring
+		icon = GFX_goal_generic_land_doctrines_focus
+		relative_position_id = new_nanjimiclan
+		x = 0
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = new_gladiators
+			focus = new_nanjimiclan
+			focus = new_roadpsychos
+		}
+		mutually_exclusive = {
+			focus = new_thradd
+			focus = new_artillery
+		}
+		available = {
+			is_bishop_leader = yes
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_roaring entered"
+			}
+			custom_effect_tooltip = JALABERT_TT
+			custom_effect_tooltip = new_roaring_tt
+			hidden_effect = {
+				load_oob = roaringbears
+				add_corps_commander_role = {
+					character = NEW_colonel_jalabert
+					skill = 6
+					traits = {
+						commando_trait
+						agile_trait
+						perceptive_trait
+						lead_foot_trait
+						desert_fox
+						hill_fighter
+					}
+					attack_skill = 5
+					defense_skill = 2
+					planning_skill = 2
+					logistics_skill = 5
+				}
+			}
+			add_ideas = roaringbears
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_roaring exited"
+			}
+			set_technology = {
+				vehicles_tech_level_scientific = 1
+				all_terrain_vehicles_tech = 1
+			}
+		}
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 3
+				any_country = {
+					is_neighbor_of = ROOT
+					OR = {
+						has_war_with = ROOT
+						has_wargoal_against = ROOT
+						is_justifying_wargoal_against = ROOT
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				any_country = {
+					ROOT = {
+						OR = {
+							is_justifying_wargoal_against = PREV
+							has_wargoal_against = PREV
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = new_artillery
+		icon = GFX_goal_generic_regular_firearms_focus
+		x = 0
+		y = 1
+		relative_position_id = new_roadpsychos
+		cost = 30
+		prerequisite = {
+			focus = new_gladiators
+			focus = new_nanjimiclan
+			focus = new_roadpsychos
+		}
+		mutually_exclusive = {
+			focus = new_thradd
+			focus = new_roaring
+		}
+		available = {
+			has_government = intellectuals
+		}
+		completion_reward = {
+			custom_effect_tooltip = TOBIAS_TT
+			custom_effect_tooltip = new_artillery_tt
+			hidden_effect = {
+				load_oob = hellhammers
+				add_corps_commander_role = {
+					character = NEW_tobias_halvorsen
+					skill = 6
+					traits = {
+						bloody_mess_trait
+						pyromaniac_trait
+						strong_trait
+						enduring_trait
+						urban_assault_specialist
+						fortress_buster
+					}
+					attack_skill = 5
+					defense_skill = 2
+					planning_skill = 5
+					logistics_skill = 2
+				}
+			}
+			add_ideas = hellhammers
+			set_technology = {
+				support_tech_level_scientific = 1
+			}
+		}
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 3
+				any_country = {
+					is_neighbor_of = ROOT
+					OR = {
+						has_war_with = ROOT
+						has_wargoal_against = ROOT
+						is_justifying_wargoal_against = ROOT
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				any_country = {
+					ROOT = {
+						OR = {
+							is_justifying_wargoal_against = PREV
+							has_wargoal_against = PREV
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = new_capsforloyalty
+		icon = GFX_goal_NEW_Caps_for_Loyalty
+		x = -8
+		y = 1
+		relative_position_id = new_mercmilitary
+		cost = 30
+		prerequisite = {
+			focus = new_mercmilitary
+		}
+		completion_reward = {
+			add_ideas = capsforloyalty
+		}
+		ai_will_do = {
+			base = 2
+		}
+	}
+	focus = {
+		id = new_tactics
+		icon = GFX_goal_generic_focus_magazine_gunsandbullets_gun_laws
+		x = -6
+		y = 1
+		relative_position_id = new_mercmilitary
+		cost = 30
+		prerequisite = {
+			focus = new_mercmilitary
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_land_doctrine
+			}
+		}
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 3
+				any_country = {
+					is_neighbor_of = ROOT
+					OR = {
+						has_war_with = ROOT
+						has_wargoal_against = ROOT
+						is_justifying_wargoal_against = ROOT
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				any_country = {
+					ROOT = {
+						OR = {
+							is_justifying_wargoal_against = PREV
+							has_wargoal_against = PREV
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = new_councilfunding
+		icon = GFX_goal_generic_land_doctrines_focus
+		x = 1
+		y = 1
+		relative_position_id = new_capsforloyalty
+		cost = 30
+		prerequisite = {
+			focus = new_capsforloyalty
+		}
+		prerequisite = {
+			focus = new_tactics
+		}
+		completion_reward = {
+			add_ideas = renomilitarycouncil
+		}
+		ai_will_do = {
+			base = 2
+		}
+	}
+	focus = {
+		id = new_enctech
+		icon = GFX_goal_generic_plasma_cutter
+		x = -1
+		y = 1
+		relative_position_id = new_councilfunding
+		cost = 30
+		prerequisite = {
+			focus = new_councilfunding
+		}
+		mutually_exclusive = {
+			focus = new_mutanttech
+		}
+		completion_reward = {
+			add_ideas = van_graff_advisors
+			set_technology = {
+				infantry_tech_level_scientific = 1
+			}
+		}
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 0
+				OR = {
+					NOT = {
+						has_completed_focus = new_king
+					}
+					is_salvatore_leader = yes
+				}
+				NEW_has_ai_behavior_neutrality = yes
+			}
+		}
+	}
+	focus = {
+		id = new_mutanttech
+		icon = GFX_goal_NEW_Super_Mutant_Technician
+		x = 1
+		y = 1
+		relative_position_id = new_councilfunding
+		cost = 30
+		prerequisite = {
+			focus = new_councilfunding
+		}
+		mutually_exclusive = {
+			focus = new_enctech
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_mutanttech entered"
+			}
+			add_ideas = mutanttact
+			if = {
+				limit = {
+					has_global_flag = debug_logs
+				}
+				log = "[GetDateText]: [Root.GetName] new_mutanttech exited"
+			}
+			set_technology = {
+				super_mutant_civilization = 1
+				super_mutant_nightkin_tech = 1
+			}
+		}
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 0
+				OR = {
+					NOT = {
+						has_completed_focus = new_king
+					}
+					is_wright_leader = yes
+				}
+				NEW_has_ai_behavior_neutrality = yes
+			}
+		}
+	}
+}
+
+# vim: set ft=pdx tw=79 :

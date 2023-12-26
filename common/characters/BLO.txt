@@ -1,0 +1,101 @@
+characters = {
+	BLO_el_bandido_sangriento = {
+		name = BLO_EL_BANDIDO_SANGRIENTO_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_BLO_bloody_bandit
+			}
+			army = {
+				large = GFX_Portrait_BLO_bloody_bandit
+			}
+		}
+		corps_commander = {
+			traits = {
+				cartel_bloodthirsty_leader
+			}
+			skill = 5
+			attack_skill = 6
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = -1
+		}
+		country_leader = {
+			desc = BLO_EL_BANDIDO_SANGRIENTO_DESC
+			ideology = cartel
+			traits = {
+				cartel_bloodthirsty
+				cartel_monolingual
+			}
+			expire = "3000.01.01.01"
+			id = -1
+		}
+	}
+	BLO_pedro_kosterlitzky = {
+		name = BLO_PEDRO_KOSTERLITZKY_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Ghoul_Mexico_Generic_5
+			}
+		}
+		country_leader = {
+			desc = BLO_PEDRO_KOSTERLITZKY_DESC
+			ideology = commune
+			traits = {
+				captain_of_industry
+				ideological_crusader
+			}
+			expire = "2283.1.1.12"
+			id = -1
+		}
+	}
+	BLO_nicolas_de_cos = {
+		name = BLO_NICOLAS_DE_COS_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Ghoul_Mexico_Generic_2
+			}
+		}
+		country_leader = {
+			desc = BLO_NICOLAS_DE_COS_DESC
+			ideology = ideocracy
+			traits = {
+				captain_of_industry
+				political_workhorse
+			}
+			expire = "3000.1.1.12"
+			id = -1
+		}
+	}
+	BLO_mariano_kosterlitzky = {
+		name = BLO_MARIANO_KOSTERLITZKY_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Ghoul_Mexico_Generic_5
+			}
+		}
+		country_leader = {
+			desc = BLO_MARIANO_KOSTERLITZKY_DESC
+			ideology = kritocracy
+			traits = {
+				war_industrialist
+				fortifications_expert
+			}
+			expire = "2295.1.1.12"
+			id = -1
+		}
+	}
+	BLO_cartel_leader_general = {
+		name = BLO_cartel_leader_general_name
+		portraits = {
+			army = {
+				large = GFX_Portrait_BLO_general
+				#small = gfx_sprite_type_name_or_file_path
+			}
+			civilian = {
+				large = GFX_Portrait_BLO_general
+				#small = gfx_sprite_type_name_or_file_path
+			}
+		}
+	}
+}

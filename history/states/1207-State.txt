@@ -1,0 +1,14 @@
+
+state={
+	id=1207
+	name="STATE_1207"
+	history={
+	}
+	provinces={
+		3224 8065 8067 8070 8811 9813
+	}
+	manpower=1000
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
+}

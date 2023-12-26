@@ -1,0 +1,25 @@
+state = {
+	id = 820
+	name = "STATE_820"
+	resources={
+		circuitry = 4
+	}
+
+	history={
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+		}
+		victory_points = {
+			10135 5
+		}
+
+	}
+
+	provinces={
+		10108 10129 10135 10150 10165 10871 10874 10877 10878 10879 10884 10890
+	}
+	manpower=22729
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

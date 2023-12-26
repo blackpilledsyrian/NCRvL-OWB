@@ -1,0 +1,7 @@
+spriteTypes = {
+###	Large
+	spriteType = {
+		name = "GFX_portrait_doctor_xian"
+		texturefile = "gfx/leaders/SHI/portrait_xian_reformed.dds"
+	}
+}

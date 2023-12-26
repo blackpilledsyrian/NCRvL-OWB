@@ -1,0 +1,448 @@
+﻿############################
+#  Maximlian			   #
+#						   #
+#           			   #
+# Coded by Wcht  & Faeelin #
+############################
+
+add_namespace = nf_navajo
+
+country_event = {#navajo
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_navajo.1" }
+	id = nf_navajo.1
+	title = nf_navajo.1.t
+	desc = nf_navajo.1.d
+	picture = GFX_event_navajo_2
+	is_triggered_only = yes
+
+	option = {
+		name = nf_navajo.1.a
+		ai_chance = {
+			base = 1
+		}
+		random_owned_state = {
+			limit = {
+				is_valid_state_for_2_arms_factories = yes
+			}
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+	option = {
+		name = nf_navajo.1.b
+		random_owned_state = {
+			limit = {
+				is_valid_state_for_2_civilian_factories = yes
+			}
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+}
+
+country_event = {#navajo
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_navajo.2" }
+	id = nf_navajo.2
+	title = nf_navajo.2.t
+	desc = nf_navajo.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_navajo.2.a
+		ai_chance = {
+			base = 1
+		}
+		add_ideas = navajoilandgas
+		random_owned_state = {
+			add_resource = {
+				type = metal
+				amount = 13
+			}
+			add_resource = {
+				type = energy
+				amount = 15
+			}
+		}
+
+	}
+	option = {
+		name = nf_navajo.2.b
+		add_ideas = navajo_wind_farm
+		random_owned_state = {
+			limit = {
+				is_valid_state_for_2_civilian_factories = yes
+			}
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+}
+
+country_event = {#navajo
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_navajo.3" }
+	id = nf_navajo.3
+	title = nf_navajo.3.t
+	desc = nf_navajo.3.d
+	picture = GFX_event_ces_navajo
+	is_triggered_only = yes
+
+	option = {
+		name = nf_navajo.3.a
+		ai_chance = {
+			base = 1
+		}
+		random_owned_state = {
+			add_resource = {
+				type = water
+				amount = 25
+			}
+		}
+	}
+	option = {
+		name = nf_navajo.3.b
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 2
+			category = spec_force_tech_category
+		}
+	}
+}
+
+news_event = {#reservation
+	id = nf_navajo.4
+	title = nf_navajo.4.t
+	desc = nf_navajo.4.d
+	picture = GFX_event_reservation_trade
+	is_triggered_only = yes
+
+	option = {
+		name = nf_navajo.4.a
+		add_equipment_to_stockpile = {
+			type = energy_equipment_2
+			amount = 500
+			producer = USA
+		}
+		add_equipment_to_stockpile = {
+			type = support_equipment_1
+			amount = 300
+			producer = USA
+		}
+		RES = {news_event = nf_navajo.5}
+	}
+
+}
+
+news_event = {#reservation
+	id = nf_navajo.5
+	title = nf_navajo.5.t
+	desc = nf_navajo.5.d
+	picture = GFX_event_reservation_trade
+	is_triggered_only = yes
+
+	option = {
+		name = nf_navajo.5.a
+
+		add_manpower = 350
+		if = {
+			limit = {
+				has_idea = NAV_slave_payments_RES
+			}
+			modify_timed_idea = {
+				idea = NAV_slave_payments_RES
+				days = 365
+			}
+		}
+		else = {
+			add_timed_idea = {
+				idea = NAV_slave_payments_RES
+				days = 365
+			}
+		}
+		NAV = {
+			set_temp_variable = { caps_to_add = 20 }
+			add_caps = yes
+		}
+		# set_temp_variable = {
+		# 	slaves_to_add = 0.90
+		# }
+		# add_slaves_to_nation = yes
+	}
+
+}
+
+news_event = {#reservation
+	id = nf_navajo.6
+	title = nf_navajo.6.t
+	desc = nf_navajo.6.d
+	picture = GFX_event_reservation_trade
+	is_triggered_only = yes
+
+	option = {
+		name = nf_navajo.6.a
+
+		add_manpower = 350
+		if = {
+			limit = {
+				has_idea = NAV_slave_payments_RES
+			}
+			modify_timed_idea = {
+				idea = NAV_slave_payments_RES
+				days = 365
+			}
+		}
+		else = {
+			add_timed_idea = {
+				idea = NAV_slave_payments_RES
+				days = 365
+			}
+		}
+		NAV = {
+			set_temp_variable = { caps_to_add = 20 }
+			add_caps = yes
+		}
+		# set_temp_variable = {
+		# 	slaves_to_add = 0.90
+		# }
+		# add_slaves_to_nation = yes
+	}
+
+}
+
+news_event = {#reservation
+	id = nf_navajo.7
+	title = nf_navajo.7.t
+	desc = nf_navajo.7.d
+	picture = GFX_event_reservation_trade
+	is_triggered_only = yes
+
+	option = {
+		name = nf_navajo.7.a
+		add_stability = -0.05
+		set_country_flag = NAV_ghouls_up_to_something
+	}
+
+}
+
+
+country_event = {#Ciphers
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_navajo.8" }
+	id = nf_navajo.8
+	title = nf_navajo.8.t
+	desc = nf_navajo.8.d
+	picture = GFX_event_navajo_1
+	is_triggered_only = yes
+
+	option = {
+		name = nf_navajo.8.a
+		every_state = {
+			limit = {
+				is_core_of = PNT
+			}
+			add_core_of = ROOT
+		}
+	}
+
+	option = {
+		name = nf_navajo.8.b
+		add_political_power = 350
+		add_ideas = NAV_cipher_clan
+	}
+
+}
+
+
+news_event = {# Navajo War
+	id = nf_navajo.9
+	title = nf_navajo.9.t
+	desc = nf_navajo.9.d
+	picture = GFX_event_navajo_1
+	is_triggered_only = yes
+
+	option = {
+		name = nf_navajo.9.a
+		end_puppet = NAV
+		CES = {
+			NAV = {
+				grant_wargoals_on_core_states_of_prev = yes
+			}
+		}
+		#NAV = { leave_faction = yes }
+	}
+}
+
+country_event = {# Navajo ask for Chinle
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_navajo.10" }
+	id = nf_navajo.10
+	title = nf_navajo.10.t
+	desc = nf_navajo.10.t
+	picture = GFX_event_navajo_1
+	is_triggered_only = yes
+
+	option = {
+		name = nf_navajo.10.a
+		NAV = { transfer_state = 164 }
+		164 = { add_core_of = NAV }
+		164 = {
+			remove_core_of = CES
+			remove_claim_by = CES
+		}
+		ai_chance = {
+			base = 1
+		}
+		add_to_variable = { NAV_loyalty = 1 }
+		custom_effect_tooltip = NAV_good_friends_tt
+	}
+	option = {
+		name = nf_navajo.10.b
+		add_to_variable = { NAV_resistance = 1 }
+		custom_effect_tooltip = NAV_plotting_tt
+
+	}
+}
+
+country_event = {# Navajo ask for New Cortez, Dove Creek
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_navajo.11" }
+	id = nf_navajo.11
+	title = nf_navajo.11.t
+	desc = nf_navajo.11.d
+	picture = GFX_event_navajo_1
+	is_triggered_only = yes
+
+	option = {
+		name = nf_navajo.11.a
+		NAV = { transfer_state = 482 }
+		482 = { add_core_of = NAV }
+		NAV = { transfer_state = 244 }
+		244 = { add_core_of = NAV }
+		244 = {
+			remove_core_of = CES
+			remove_claim_by = CES
+		}
+		482 = {
+			remove_core_of = CES
+			remove_claim_by = CES
+		}
+		ai_chance = {
+			base = 1
+		}
+		add_to_variable = { NAV_loyalty = 1 }
+		custom_effect_tooltip = NAV_good_friends_tt
+	}
+	option = {
+		name = nf_navajo.11.b
+		add_to_variable = { NAV_resistance = 1 }
+		custom_effect_tooltip = NAV_plotting_tt
+	}
+}
+
+country_event = {# Navajo ask for New Cortez, Dove Creek
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_navajo.12" }
+	id = nf_navajo.12
+	title = nf_navajo.12.t
+	desc = nf_navajo.12.d
+	picture = GFX_event_navajo_1
+	is_triggered_only = yes
+
+	option = {
+		name = nf_navajo.12.a
+		NAV = { transfer_state = 124 }
+		124 = { add_core_of = NAV }
+		NAV = { transfer_state = 608 }
+		608 = { add_core_of = NAV }
+		NAV = { transfer_state = 498 }
+		498 = { add_core_of = NAV }
+		NAV = { transfer_state = 144 }
+		144 = { add_core_of = NAV }
+		NAV = { transfer_state = 637 }
+		637 = { add_core_of = NAV }
+		124 = {
+			remove_core_of = CES
+			remove_claim_by = CES
+		}
+		608 = {
+			remove_core_of = CES
+			remove_claim_by = CES
+		}
+		498 = {
+			remove_core_of = CES
+			remove_claim_by = CES
+		}
+		144 = {
+			remove_core_of = CES
+			remove_claim_by = CES
+		}
+		637 = {
+			remove_core_of = CES
+			remove_claim_by = CES
+		}
+		ai_chance = {
+			base = 1
+		}
+		add_to_variable = { NAV_loyalty = 1 }
+		custom_effect_tooltip = NAV_good_friends_tt
+	}
+	option = {
+		name = nf_navajo.11.b
+		add_to_variable = { NAV_resistance = 1 }
+		custom_effect_tooltip = NAV_plotting_tt
+	}
+}
+
+country_event = {# Navajo ask for freedom
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_navajo.13" }
+	id = nf_navajo.13
+	title = nf_navajo.13.t
+	desc = nf_navajo.13.d
+	picture = GFX_event_navajo_1
+	is_triggered_only = yes
+
+	option = {
+		name = nf_navajo.13.a
+		end_puppet = NAV
+		add_ideas = CES_nav_loyalty
+		ai_chance = {
+			base = 1
+		}
+		NAV = { transfer_state = 439 }
+		439 = { add_core_of = NAV }
+		NAV = { transfer_state = 85 }
+		85 = { add_core_of = NAV }
+		NAV = { transfer_state = 402 }
+		402 = { add_core_of = NAV }
+		NAV = { transfer_state = 427 }
+		427 = { add_core_of = NAV }
+		439 = {
+			remove_core_of = CES
+			remove_claim_by = CES
+		}
+		85 = {
+			remove_core_of = CES
+			remove_claim_by = CES
+		}
+		402 = {
+			remove_core_of = CES
+			remove_claim_by = CES
+		}
+		427 = {
+			remove_core_of = CES
+			remove_claim_by = CES
+		}
+	}
+	option = {
+		name = nf_navajo.13.b
+
+	}
+}

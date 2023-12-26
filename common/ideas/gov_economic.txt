@@ -1,0 +1,1566 @@
+@CAPS_UNDISTURBED = 25
+@CAPS_ISOLATION = 25
+@CAPS_CIV = 25
+@CAPS_LOW_MOB = 20
+@CAPS_PART_MOB = 15
+@CAPS_WAR_MOB = 10
+@CAPS_TOT_MOB = 5
+@CAPS_TRADE_CLOSED = 0
+@CAPS_TRADE_EXPORT = 15
+@CAPS_TRADE_LIMITED = 5
+@CAPS_TRADE_FREE = 20
+@CAPS_NCR_MODIFIER = 0.2
+@CAPS_DENARIUS_MODIFIER = 0.3
+@CAPS_CAP_MODIFIER = 0
+ideas = {
+	economy = {
+		law = yes
+	#Generic Laws
+		undisturbed_isolation = {
+			picture = gov_idea_undisturbed_isolation
+			allowed = {
+				always = no
+			}
+			visible = {
+				use_generic_economic_laws = yes
+			}
+			cost = 150
+			removal_cost = -1
+			modifier = {
+				consumer_goods_expected_value = 0.4
+				production_speed_industrial_complex_factor = -0.5
+				production_speed_arms_factory_factor = -0.5
+				conversion_cost_civ_to_mil_factor = 0.5
+				conversion_cost_mil_to_civ_factor = 0.5
+				generate_wargoal_tension = 1
+				join_faction_tension = 0.2
+				lend_lease_tension = 0.5
+				send_volunteers_tension = 0.2
+				guarantee_tension = 0.75
+				evolution_income_source_modifier_2 = 0.4
+				caps_node_trade_modifier = 0.4
+			}
+			allowed_to_remove = {
+				OR = {
+					has_war_support > 0.5
+					has_war = yes
+				}
+				any_enemy_country = {
+					ic_ratio = {
+						tag = ROOT
+						ratio > 0.2
+					}
+				}
+			}
+			cancel_if_invalid = no
+		}
+		isolation = {
+			allowed = {
+				always = no
+			}
+			visible = {
+				use_generic_economic_laws = yes
+			}
+			cost = 150
+			removal_cost = -1
+			modifier = {
+				consumer_goods_expected_value = 0.35
+				production_speed_industrial_complex_factor = -0.4
+				production_speed_arms_factory_factor = -0.4
+				conversion_cost_civ_to_mil_factor = 0.4
+				conversion_cost_mil_to_civ_factor = 0.4
+				generate_wargoal_tension = 1
+				join_faction_tension = 0.2
+				send_volunteers_tension = 0.2
+				guarantee_tension = 0.5
+				evolution_income_source_modifier_2 = 0.35
+				caps_node_trade_modifier = 0.35
+			}
+			allowed_to_remove = {
+				OR = {
+					has_war_support > 0.6
+					has_war = yes
+				}
+			}
+			cancel_if_invalid = no
+		}
+		scavenging_law = {
+			allowed = {
+				use_generic_economic_laws = yes
+			}
+			# Redundant due to above allowed block @Tran
+			# visible = {
+			# 	use_generic_economic_laws = yes
+			# }
+			cost = 150
+			removal_cost = -1
+			modifier = {
+				consumer_goods_expected_value = 0.35
+				production_speed_industrial_complex_factor = -0.35
+				production_speed_arms_factory_factor = -0.35
+				conversion_cost_civ_to_mil_factor = -0.5
+				conversion_cost_mil_to_civ_factor = -0.5
+				local_resources_factor = 0.5
+				evolution_income_source_modifier_2 = 0.3
+				caps_node_trade_modifier = 0.3
+			}
+			cancel_if_invalid = no
+		}
+		civilian_economy = {
+			allowed = {
+				use_generic_economic_laws = yes
+			}
+			# Redundant due to above allowed block @Tran
+			# visible = {
+			# 	use_generic_economic_laws = yes
+			# }
+			available = {
+				NOT = {
+					original_tag = CES
+				}
+			}
+			cost = 150
+			removal_cost = -1
+			modifier = {
+				consumer_goods_expected_value = 0.3
+				production_speed_industrial_complex_factor = 0.15
+				production_speed_arms_factory_factor = -0.3
+				conversion_cost_civ_to_mil_factor = 0.3
+				conversion_cost_mil_to_civ_factor = 0.3
+				evolution_income_source_modifier_2 = 0.2
+				caps_node_trade_modifier = 0.2
+			}
+			default = yes
+
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 1000
+					has_idea = scavenging_law
+				}
+			}
+		}
+		low_economic_mobilisation = {
+			allowed = {
+				use_generic_economic_laws = yes
+			}
+			available = {
+				NOT = {
+					original_tag = CES
+				}
+			}
+			# Redundant due to above allowed block @Tran
+			# visible = {
+			# 	use_generic_economic_laws = yes
+			# }
+			cost = 150
+			removal_cost = -1
+			modifier = {
+				consumer_goods_expected_value = 0.25
+				production_speed_industrial_complex_factor = 0.10
+				production_speed_arms_factory_factor = -0.1
+				evolution_income_source_modifier_2 = 0.15
+				caps_node_trade_modifier = 0.15
+			}
+			cancel_if_invalid = no
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 1100
+					OR = {
+						has_idea = scavenging_law
+						has_idea = civilian_economy
+					}
+				}
+			}
+		}
+		partial_economic_mobilisation = {
+			allowed = {
+				use_generic_economic_laws = yes
+			}
+			available = {
+				NOT = {
+					original_tag = CES
+				}
+			}
+			# Redundant due to above allowed block @Tran
+			# visible = {
+			# 	use_generic_economic_laws = yes
+			# }
+			cost = 150
+			removal_cost = -1
+			modifier = {
+				consumer_goods_expected_value = 0.2
+				production_speed_industrial_complex_factor = 0.05
+				production_speed_arms_factory_factor = 0.1
+				conversion_cost_civ_to_mil_factor = -0.1
+				conversion_cost_mil_to_civ_factor = -0.1
+				evolution_income_source_modifier_2 = 0.1
+				caps_node_trade_modifier = 0.1
+			}
+			cancel_if_invalid = no
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 1200
+					OR = {
+						has_idea = scavenging_law
+						has_idea = civilian_economy
+						has_idea = low_economic_mobilisation
+					}
+				}
+			}
+		}
+		war_economy = {
+			allowed = {
+				use_generic_economic_laws = yes
+			}
+			available = {
+				OR = {
+					threat > 0.4
+					CES = {
+						has_war_with = NCR
+					}
+				}
+				NOT = {
+					original_tag = CES
+				}
+			}
+			cost = 150
+			removal_cost = -1
+			modifier = {
+				consumer_goods_expected_value = 0.15
+				production_speed_arms_factory_factor = 0.2
+				conversion_cost_civ_to_mil_factor = -0.2
+				conversion_cost_mil_to_civ_factor = -0.2
+			}
+			cancel_if_invalid = no
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 1300
+					OR = {
+						has_idea = scavenging_law
+						has_idea = civilian_economy
+						has_idea = low_economic_mobilisation
+						has_idea = partial_economic_mobilisation
+					}
+				}
+			}
+		}
+		tot_economic_mobilisation = {
+			allowed = {
+				use_generic_economic_laws = yes
+			}
+			available = {
+				OR = {
+					threat > 0.6
+					CES = {
+						has_war_with = NCR
+					}
+				}
+				NOT = {
+					original_tag = CES
+				}
+			}
+			# Redundant due to above allowed block @Tran
+			# visible = {
+			# 	use_generic_economic_laws = yes
+			# }
+			allowed_to_remove = {
+				if = {
+					limit = { original_tag = TLP }
+					NOT = { has_idea = army_with_a_state }
+				}
+			}
+			cost = 150
+			removal_cost = -1
+			modifier = {
+				consumer_goods_expected_value = 0.1
+				conscription = -0.03
+				production_speed_arms_factory_factor = 0.3
+				conversion_cost_civ_to_mil_factor = -0.3
+				conversion_cost_mil_to_civ_factor = -0.3
+				evolution_income_source_modifier_2 = -0.1
+				caps_node_trade_modifier = -0.1
+			}
+			cancel_if_invalid = no
+
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 1400
+					OR = {
+						has_idea = scavenging_law
+						has_idea = civilian_economy
+						has_idea = low_economic_mobilisation
+						has_idea = partial_economic_mobilisation
+						has_idea = war_economy
+					}
+				}
+				modifier = {
+					#Block unless nation has a lot of manpower
+					factor = 0
+					manpower_per_military_factory < 50
+				}
+				modifier = {
+					# never take this if we are on low conscription laws for safety
+					factor = 0
+					OR = {
+						has_idea = disarmed_nation
+						has_idea = volunteer_militia_conscription
+						has_idea = raider_bands
+						has_idea = tlaloc_stagnation
+						has_idea = frontier_militias
+						has_idea = born_warriors
+					}
+				}
+			}
+		}
+		economy_moore_no_checks = {
+			picture = economy_moores_law
+			cost = 150
+			removal_cost = -1
+			allowed = {
+				original_tag = NCR
+			}
+			available = {
+				has_completed_focus = ncr_secure_the_ncr
+			}
+			visible = {
+				has_completed_focus = ncr_secure_the_ncr
+			}
+			allowed_to_remove = {
+				has_completed_focus = ncr_moore_ncr_is_prosperity
+			}
+			modifier = {
+				political_power_factor = -0.25
+				stability_factor = -0.4
+				ruler_drift = 0.1
+				min_export = -0.05
+				production_speed_buildings_factor = 0.1
+				production_speed_industrial_complex_factor = 0.05
+				conversion_cost_civ_to_mil_factor = -0.5
+				production_factory_efficiency_gain_factor = 0.1
+				production_lack_of_resource_penalty_factor = -0.2
+				line_change_production_efficiency_factor = 0.2
+			}
+			cancel_if_invalid = no
+		}
+		economy_moore_prosperity = {
+			picture = economy_moores_law
+			cost = 150
+			removal_cost = -1
+			allowed = {
+				original_tag = NCR
+			}
+			available = {
+				has_completed_focus = ncr_moore_ncr_is_prosperity
+			}
+			visible = {
+				has_completed_focus = ncr_secure_the_ncr
+			}
+			allowed_to_remove = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_expected_value = 0.10
+				political_power_factor = 0.1
+				conscription = -0.03
+				ruler_drift = 0.15
+				min_export = -0.15
+				production_speed_buildings_factor = 0.2
+				production_speed_industrial_complex_factor = 0.05
+				conversion_cost_civ_to_mil_factor = -0.3
+				production_factory_efficiency_gain_factor = 0.1
+				line_change_production_efficiency_factor = 0.2
+				evolution_income_source_modifier_2 = -0.3
+			}
+			cancel_if_invalid = no
+		}
+	#Purposefully overtuned, since TNK cant core states.
+	#Dont nerf without changing other stuff
+		tnk_scientific_industry = {
+			picture = tnk_scientific_industry
+			level = 6
+			allowed = {
+				original_tag = TNK
+			}
+			modifier = {
+				global_building_slots_factor = 1.5
+				consumer_goods_expected_value = -0.20 #Dont Nerf
+				production_speed_buildings_factor = 0.2
+				fuel_gain_factor = 0.2
+				country_resource_energy = 60
+				country_resource_circuitry = 60
+				country_resource_water = 60
+				country_resource_composites = 60
+				country_resource_advanced = 60
+				country_resource_metal = 60
+			}
+			cancel_if_invalid = no
+		}
+	}
+	trade_laws = {
+		law = yes
+		free_trade = {
+			allowed = {
+				use_generic_trade_laws = yes
+			}
+			cost = 150
+			removal_cost = -1
+			modifier = {
+				min_export = 0.65
+				industrial_capacity_factory = 0.15
+				industrial_capacity_dockyard = 0.15
+				production_speed_buildings_factor = 0.15
+				research_speed_factor = 0.1
+				civilian_intel_to_others = 40.0
+				navy_intel_to_others = 40.0
+				army_intel_to_others = 20.0
+				caps_country_trade_modifier = 0.2
+				trade_opinion_factor = 0.15
+			}
+			cancel_if_invalid = no
+			ai_will_do = {
+				factor = 0
+				modifier = {
+					has_war = no
+					check_variable = {
+						resource@metal > 5
+					}
+					check_variable = {
+						resource@circuitry > 5
+					}
+					check_variable = {
+						resource@energy > 5
+					}
+					check_variable = {
+						resource@advanced > 5
+					}
+					add = 500
+				}
+				modifier = {
+					check_variable = {
+						resource@metal > 10
+					}
+					check_variable = {
+						resource@circuitry > 10
+					}
+					check_variable = {
+						resource@energy > 10
+					}
+					check_variable = {
+						resource@advanced > 10
+					}
+					check_variable = {
+						resource@water > 10
+					}
+					add = 500
+				}
+			}
+		}
+		export_focus = {
+			allowed = {
+				use_generic_trade_laws = yes
+			}
+			cost = 150
+			removal_cost = -1
+			modifier = {
+				min_export = 0.45
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+				production_speed_buildings_factor = 0.1
+				research_speed_factor = 0.05
+				civilian_intel_to_others = 20.0
+				navy_intel_to_others = 20.0
+				army_intel_to_others = 10.0
+				caps_country_trade_modifier = 0.15
+				trade_opinion_factor = 0.1
+				caps_flat_income_modifier = 1
+			}
+			cancel_if_invalid = no
+			ai_will_do = {
+				factor = 0
+				modifier = {
+					NOT = { has_idea = free_trade }
+					factor = 2
+				}
+				modifier = {
+					has_war = no
+					check_variable = {
+						resource@metal > 1
+					}
+					check_variable = {
+						resource@circuitry > 1
+					}
+					add = 499
+				}
+				modifier = {
+					has_idea = free_trade
+					check_variable = {
+						resource@metal > resource_consumed@metal
+					}
+					check_variable = {
+						resource@circuitry > resource_consumed@circuitry
+					}
+					check_variable = {
+						resource@energy > resource_consumed@energy
+					}
+					check_variable = {
+						resource@advanced > resource_consumed@advanced
+					}
+					check_variable = {
+						resource@water > resource_consumed@water
+					}
+					factor = 0.5
+				}
+				modifier = {
+					has_idea = limited_exports
+					has_war = yes
+					check_variable = {
+						resource@metal > 15
+					}
+					check_variable = {
+						resource@circuitry > 15
+					}
+					check_variable = {
+						resource@energy > 15
+					}
+					check_variable = {
+						resource@advanced > 15
+					}
+					check_variable = {
+						resource@water > 15
+					}
+					factor = 0.5
+				}
+			}
+		}
+		limited_exports = {
+			allowed = {
+				use_generic_trade_laws = yes
+			}
+			available = {
+				OR = {
+					AND = {
+						has_war = yes
+						any_enemy_country = {
+							ic_ratio = {
+								tag = ROOT
+								ratio > 0.2
+							}
+						}
+					}
+				}
+			}
+			default = yes
+			cost = 150
+			removal_cost = -1
+			modifier = {
+				min_export = 0.25
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+				production_speed_buildings_factor = 0.05
+				research_speed_factor = 0.01
+				civilian_intel_to_others = 10.0
+				navy_intel_to_others = 10.0
+				army_intel_to_others = 5.0
+				caps_country_trade_modifier = 0.1
+				trade_opinion_factor = 0.05
+				caps_flat_income_modifier = 2
+			}
+			cancel_if_invalid = no
+			ai_will_do = {
+				factor = 0
+				modifier = {
+					is_major = no
+					is_in_faction = yes
+					has_war = yes
+					add = 98
+				}
+			}
+		}
+		closed_economy = {
+			allowed = {
+				use_generic_trade_laws = yes
+			}
+			available = {
+				has_war = yes
+				OR = {
+					has_idea = war_economy
+					has_idea = tot_economic_mobilisation
+				}
+				OR = {
+					NOT = {
+						tag = NCR
+					}
+				}
+			}
+			allowed_to_remove = {
+				if = {
+					limit = {
+						OR = {
+							original_tag = TNK
+							original_tag = TVT
+						}
+					}
+					always = no
+				}
+			}
+			cost = 150
+			removal_cost = -1
+			modifier = {
+				min_export = 0
+				caps_country_trade_modifier = 0.05
+				political_power_gain = 0.05
+				caps_flat_income_modifier = 3
+			}
+			cancel_if_invalid = no
+			ai_will_do = {
+				factor = 0
+				modifier = {
+					factor = 0
+					is_major = no
+					is_in_faction = yes
+					has_war = yes
+				}
+			}
+		}
+		ncr_sphere = {
+			allowed = {
+				use_generic_trade_laws = yes
+			}
+			visible = {
+				OR = {
+					is_neighbor_of = NCR
+					any_neighbor_country = {
+						has_idea = ncr_sphere
+					}
+				}
+				NOT = {
+					has_war_with = NCR
+				}
+				NCR = { exists = yes }
+				OR = {
+					NOT = {
+						original_tag = CES
+						is_in_faction_with = CES
+					}
+					is_subject_of = NCR
+				}
+			}
+			available = {
+				NCR = {
+					OR = {
+						exists = yes
+						NOT = {
+							has_country_flag = ncr_crisis
+						}
+					}
+				}
+			}
+			cost = 150
+			removal_cost = -1
+			on_add = {
+				swap_ideas = {
+					remove_idea = currencygenericcap
+					add_idea = currencyncrdollar
+				}
+				# Doesn't apply on startup but thats handled via on action, this will work for any additional manipulation
+				add_opinion_modifier = {
+					target = NCR
+					modifier = ncr_bear_economy_sphere
+				}
+				reverse_add_opinion_modifier = {
+					target = NCR
+					modifier = ncr_bear_economy_sphere
+				}
+			}
+			on_remove = {
+				swap_ideas = {
+					remove_idea = currencyncrdollar
+					add_idea = currencygenericcap
+				}
+				remove_opinion_modifier = {
+					target = NCR
+					modifier = ncr_bear_economy_sphere
+				}
+				NCR = {
+					remove_opinion_modifier = {
+						target = PREV
+						modifier = ncr_bear_economy_sphere
+					}
+				}
+			}
+			cancel = {
+				has_war_with = NCR
+			}
+			modifier = {
+				min_export = 0.4
+				industrial_capacity_factory = 0.125
+				industrial_capacity_dockyard = 0.125
+				production_speed_buildings_factor = 0.125
+				research_speed_factor = 0.075
+				civilian_intel_to_others = 20.0
+				navy_intel_to_others = 20.0
+				army_intel_to_others = 10.0
+				caps_country_trade_modifier = 0.2
+				caps_flat_income_modifier = 5
+			}
+			targeted_modifier = {
+                tag = NCR
+                cic_to_target_factor = 0.05
+                mic_to_target_factor = 0.05
+                extra_trade_to_target_factor = 0.3
+                trade_cost_for_target_factor = -0.2
+            }
+			allowed_to_remove = {
+				OR = {
+					NCR = {
+						OR = {
+							exists = no
+							has_country_flag = ncr_crisis
+						}
+					}
+					has_war_with = NCR
+				}
+			}
+			cancel_if_invalid = no
+			ai_will_do = {
+				factor = 0
+				modifier = {
+					has_war = no
+					check_variable = {
+						resource@metal > 5
+					}
+					check_variable = {
+						resource@circuitry > 5
+					}
+					check_variable = {
+						resource@energy > 5
+					}
+					check_variable = {
+						resource@advanced > 5
+					}
+					add = 100
+				}
+			}
+		}
+		ncr_sphere2 = {
+			picture = idea_ncr_sphere
+			allowed = {
+				use_generic_trade_laws = yes
+			}
+			visible = {
+				has_country_flag = NCR_customs_union
+				NOT = {
+					has_war_with = NCR
+				}
+				NCR = { exists = yes }
+				OR = {
+					NOT = {
+						original_tag = CES
+						is_in_faction_with = CES
+					}
+					is_subject_of = NCR
+				}
+			}
+			available = {
+				NCR = {
+					OR = {
+						exists = yes
+						NOT = {
+							has_country_flag = ncr_crisis
+						}
+					}
+				}
+			}
+			cost = 150
+			removal_cost = -1
+			on_add = {
+				swap_ideas = {
+					remove_idea = currencygenericcap
+					add_idea = currencyncrdollar
+				}
+				# Doesn't apply on startup but thats handled via on action, this will work for any additional manipulation
+				add_opinion_modifier = {
+					target = NCR
+					modifier = ncr_bear_economy_sphere
+				}
+				reverse_add_opinion_modifier = {
+					target = NCR
+					modifier = ncr_bear_economy_sphere
+				}
+			}
+			on_remove = {
+				swap_ideas = {
+					remove_idea = currencyncrdollar
+					add_idea = currencygenericcap
+				}
+				remove_opinion_modifier = {
+					target = NCR
+					modifier = ncr_bear_economy_sphere
+				}
+				NCR = {
+					remove_opinion_modifier = {
+						target = PREV
+						modifier = ncr_bear_economy_sphere
+					}
+				}
+			}
+			modifier = {
+				min_export = 0.55
+				industrial_capacity_factory = 0.12
+				industrial_capacity_dockyard = 0.12
+				production_speed_buildings_factor = 0.14
+				research_speed_factor = 0.08
+				civilian_intel_to_others = 20.0
+				navy_intel_to_others = 20.0
+				army_intel_to_others = 10.0
+				caps_country_trade_modifier = 0.1
+				caps_flat_income_modifier = 4
+			}
+			targeted_modifier = {
+                tag = NCR
+                cic_to_target_factor = 0.15
+                mic_to_target_factor = 0.15
+                extra_trade_to_target_factor = 0.5
+                trade_cost_for_target_factor = -0.2
+            }
+			allowed_to_remove = {
+				has_war_with = NCR
+			}
+			cancel_if_invalid = no
+			ai_will_do = {
+				factor = 0
+				modifier = {
+					has_war = no
+					check_variable = {
+						resource@metal > 5
+					}
+					check_variable = {
+						resource@circuitry > 5
+					}
+					check_variable = {
+						resource@energy > 5
+					}
+					check_variable = {
+						resource@advanced > 5
+					}
+					add = 100
+				}
+			}
+		}
+		three_rivers_economy = {
+			picture = economy_flannel
+			available = {
+				NOT = {
+					has_war_with = WPG
+				}
+				WPG = { exists = yes }
+				is_the_second_coalition_member = yes
+				WPG = {
+					has_completed_focus = wpg_canadian_free_trade
+				}
+			}
+			visible = {
+				# Redundant due to the allowed block below @Tran
+				# is_canadian_nation = yes
+				NOT = {
+					OR = {
+						original_tag = VER
+						original_tag = LOI
+						original_tag = BGR
+						original_tag = STC
+					}
+				}
+			}
+			allowed = {
+				is_canadian_nation_allowed_block = yes
+				use_generic_trade_laws = yes
+			}
+			cost = 150
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.10
+				industrial_capacity_dockyard = 0.10
+				production_speed_buildings_factor = 0.15
+				research_speed_factor = 0.05
+				civilian_intel_to_others = 20.0
+				min_export = 0.35
+			}
+			allowed_to_remove = {
+				has_war_with = WPG
+			}
+			cancel_if_invalid = no
+			ai_will_do = {
+				factor = 0
+				modifier = {
+					has_war = no
+					check_variable = {
+						resource@metal > 5
+					}
+					check_variable = {
+						resource@circuitry > 5
+					}
+					check_variable = {
+						resource@energy > 5
+					}
+					check_variable = {
+						resource@advanced > 5
+					}
+					add = 100
+				}
+			}
+		}
+	}
+	hidden_ideas = {
+		currencygenericcap = {
+			picture = gov_idea_bottle_cap
+			#cost = 150
+			removal_cost = -1
+			available = {
+			}
+			# NOTE FOR CHANGING THESE MODIFIERS: The Caps GUI uses manual localisation with a tooltip to tell players the modifiers of their currency on hover
+			# If you change any of these numbers, you NEED to also update currencygenericcap_info for players to know what the true effects of the currency are
+			modifier = {
+				caps_flat_income_modifier = 10
+				#caps_country_trade_modifier = 0.30
+			}
+			cancel_if_invalid = no
+			ai_will_do = {
+				base = 1
+			}
+		}
+		currencycesdenarius = {
+			picture = gov_idea_legion_denarius
+			#cost = 150
+			removal_cost = -1
+			# NOTE FOR CHANGING THESE MODIFIERS: The Caps GUI uses manual localisation with a tooltip to tell players the modifiers of their currency on hover
+			# If you change any of these numbers, you NEED to also update currencycesdenarius_info for players to know what the true effects of the currency are
+			modifier = {
+				stability_factor = 0.05
+				caps_flat_income_modifier = 8
+				caps_income_modifier = -0.10
+				caps_expense_modifier = -0.25
+				#caps_country_trade_modifier = 0.30
+			}
+
+			cancel_if_invalid = no
+		}
+		currencyncrdollar = {
+			picture = gov_idea_ncr_dollar
+			#cost = 150
+			removal_cost = -1
+			# NOTE FOR CHANGING THESE MODIFIERS: The Caps GUI uses manual localisation with a tooltip to tell players the modifiers of their currency on hover
+			# If you change any of these numbers, you NEED to also update currencyncrdollar_info for players to know what the true effects of the currency are
+			modifier = {
+				caps_flat_income_modifier = 7
+				stability_factor = 0.05
+				caps_country_trade_modifier = 0.1
+			}
+			cancel_if_invalid = no
+		}
+		currencycad = {
+			picture = gov_idea_bottle_cap
+			#cost = 150
+			removal_cost = -1
+			# NOTE FOR CHANGING THESE MODIFIERS: The Caps GUI uses manual localisation with a tooltip to tell players the modifiers of their currency on hover
+			# If you change any of these numbers, you NEED to also update currencycad_info for players to know what the true effects of the currency are
+			modifier = {
+				caps_flat_income_modifier = 5
+				#caps_country_trade_modifier = 0.30
+			}
+			cancel_if_invalid = no
+		}
+		currencyusd = {
+			picture = gov_idea_USD
+			#cost = 150
+			removal_cost = -1
+			# NOTE FOR CHANGING THESE MODIFIERS: The Caps GUI uses manual localisation with a tooltip to tell players the modifiers of their currency on hover
+			# If you change any of these numbers, you NEED to also update currencyusd_info for players to know what the true effects of the currency are
+			modifier = {
+				caps_flat_income_modifier = 5
+				#caps_country_trade_modifier = 0.30
+			}
+			cancel_if_invalid = no
+		}
+		currencypeso = {
+			picture = gov_idea_peso
+
+			#cost = 150
+			removal_cost = -1
+			# NOTE FOR CHANGING THESE MODIFIERS: The Caps GUI uses manual localisation with a tooltip to tell players the modifiers of their currency on hover
+			# If you change any of these numbers, you NEED to also update currencypeso_info for players to know what the true effects of the currency are
+			modifier = {
+				caps_flat_income_modifier = 12
+				#caps_country_trade_modifier = 0.30
+			}
+			cancel_if_invalid = no
+		}
+		currencytexdollar = {
+			picture = gov_idea_texdollar
+			#cost = 150
+			removal_cost = -1
+			# NOTE FOR CHANGING THESE MODIFIERS: The Caps GUI uses manual localisation with a tooltip to tell players the modifiers of their currency on hover
+			# If you change any of these numbers, you NEED to also update currencytexdollar_info for players to know what the true effects of the currency are
+			modifier = {
+				consumer_goods_expected_value = -0.01
+				local_resources_factor = 0.03
+				caps_flat_income_modifier = 8
+				#caps_country_trade_modifier = 0.30
+			}
+
+			cancel_if_invalid = no
+		}
+		currencydriedcacaobean = {
+			picture = gov_idea_driedcacaobean
+			#cost = 150
+			removal_cost = -1
+			# NOTE FOR CHANGING THESE MODIFIERS: The Caps GUI uses manual localisation with a tooltip to tell players the modifiers of their currency on hover
+			# If you change any of these numbers, you NEED to also update currencydriedcacaobean_info for players to know what the true effects of the currency are
+			modifier = {
+				consumer_goods_expected_value = 0.01
+				stability_factor = -0.05
+				local_resources_factor = 0.06
+				caps_flat_income_modifier = 9
+				#caps country_trade_modifier = 0.30
+			}
+
+			cancel_if_invalid = no
+		}
+	}
+	army_wages_laws = {
+		law = yes
+		mothballed_divisions = {
+			picture = mothballed_divisions_icon
+			allowed = {
+				OR = {
+					NOT = { is_possible_army_wages_disabled_tag = yes }
+					original_tag = TBH
+					original_tag = LNS
+					original_tag = TEX
+					original_tag = NEW
+					original_tag = VLT
+				}
+			}
+			visible = {
+				has_global_flag = caps_enabled_global_flag
+				if = {
+					limit = {
+						OR = {
+							original_tag = LNS
+							original_tag = TBH
+							original_tag = TEX
+						}
+					}
+					NOT = { has_country_flag = army_wages_disabled }	# Every other tag does not have this flag changed dynamically. Limiting checks is good for CPU @Tran
+				}
+				else_if = {
+					limit = {
+						OR = {
+							original_tag = NEW
+							original_tag = VLT
+						}
+					}
+					NOT = { is_super_mutant_nation = yes }
+				}
+			}
+			level = 0
+			removal_cost = -1
+			cost = 25
+			available = {
+				custom_trigger_tooltip = {
+					NOT = {
+						has_country_flag = {
+							flag = caps_military_wage_lockout
+							value = 1
+						}
+					}
+					tooltip = caps_army_wages_lockout_tt
+				}
+			}
+			on_add = {
+				set_country_flag = {
+					flag = caps_military_wage_lockout
+					value = 1
+					days = 140
+				}
+				custom_effect_tooltip = caps_lockout_set_tt
+			}
+			modifier = {
+				caps_expense_modifier = -0.9
+				army_attack_factor = -0.225
+				army_org_factor = -0.585
+				army_morale_factor = -0.405
+			}
+			#cancel_if_invalid = no
+			ai_will_do = {
+				base = 1
+				modifier = {
+					set_temp_variable = { expense_modifier_from_law = -0.46 }
+					get_caps_ai_wage_willilngness = yes
+					add = temp_base_expense
+				}
+				modifier = {
+					set_temp_variable = { temp_ai_div = ai_wants_divisions }
+					multiply_temp_variable = { temp_ai_div = 0.1 }
+					add = temp_ai_div
+				}
+				modifier = {
+					set_temp_variable = { temp_divs = num_divisions }
+					multiply_temp_variable = { temp_divs = -0.1 }
+					add = temp_divs
+				}
+				modifier = {
+					has_war = yes
+					add = -300
+				}
+			}
+		}
+		national_guard = {
+			picture = national_guard_icon
+			allowed = {
+				OR = {
+					NOT = { is_possible_army_wages_disabled_tag = yes }
+					original_tag = TBH
+					original_tag = LNS
+					original_tag = TEX
+					original_tag = NEW
+					original_tag = VLT
+				}
+			}
+			visible = {
+				has_global_flag = caps_enabled_global_flag
+				if = {
+					limit = {
+						OR = {
+							original_tag = LNS
+							original_tag = TBH
+							original_tag = TEX
+						}
+					}
+					NOT = { has_country_flag = army_wages_disabled }	# Every other tag does not have this flag changed dynamically. Limiting checks is good for CPU @Tran
+				}
+				else_if = {
+					limit = {
+						OR = {
+							original_tag = NEW
+							original_tag = VLT
+						}
+					}
+					NOT = { is_super_mutant_nation = yes }
+				}
+			}
+			removal_cost = -1
+			cost = 25
+			level = 1
+			available = {
+				custom_trigger_tooltip = {
+					NOT = {
+						has_country_flag = {
+							flag = caps_military_wage_lockout
+							value = 1
+						}
+					}
+					tooltip = caps_army_wages_lockout_tt
+				}
+			}
+			on_add = {
+				set_country_flag = {
+					flag = caps_military_wage_lockout
+					value = 1
+					days = 140
+				}
+				custom_effect_tooltip = caps_lockout_set_tt
+			}
+			modifier = {
+				caps_expense_modifier = -0.45
+				army_attack_factor = -0.135
+				army_org_factor = -0.351
+				army_morale_factor = -0.243
+			}
+			#cancel_if_invalid = no
+			ai_will_do = {
+				base = 1
+				modifier = {
+					set_temp_variable = { expense_modifier_from_law = -0.45 }
+					get_caps_ai_wage_willilngness = yes
+					add = temp_base_expense
+				}
+				modifier = {
+					set_temp_variable = { temp_ai_div = ai_wants_divisions }
+					multiply_temp_variable = { temp_ai_div = 0.1 }
+					add = temp_ai_div
+				}
+				modifier = {
+					set_temp_variable = { temp_divs = num_divisions }
+					multiply_temp_variable = { temp_divs = -0.1 }
+					add = temp_divs
+				}
+				modifier = {
+					has_war = yes
+					add = -70
+				}
+			}
+		}
+		standard_military = {
+			picture = army_standard_icon
+			allowed = {
+				OR = {
+					NOT = {
+						is_super_mutant_nation_allowed_block = yes
+						is_brotherhood_nation_allowed_block = yes
+					}
+					original_tag = TBH
+					original_tag = LNS
+					original_tag = TEX
+					original_tag = NEW
+					original_tag = VLT
+				}
+			}
+			visible = {
+				has_global_flag = caps_enabled_global_flag
+				if = {
+					limit = {
+						OR = {
+							original_tag = LNS
+							original_tag = TBH
+							original_tag = TEX
+						}
+					}
+					NOT = { has_country_flag = army_wages_disabled }	# Every other tag does not have this flag changed dynamically. Limiting checks is good for CPU @Tran
+				}
+				else_if = {
+					limit = {
+						OR = {
+							original_tag = NEW
+							original_tag = VLT
+						}
+					}
+					NOT = { is_super_mutant_nation = yes }
+				}
+			}
+			level = 2
+			removal_cost = -1
+			cost = 25
+			default = yes
+			available = {
+				custom_trigger_tooltip = {
+					NOT = {
+						has_country_flag = {
+							flag = caps_military_wage_lockout
+							value = 1
+						}
+					}
+					tooltip = caps_army_wages_lockout_tt
+				}
+			}
+			cancel_if_invalid = no
+			modifier = {
+				caps_expense_modifier = 0
+				army_attack_factor = 0
+				army_org_factor = 0
+				army_morale_factor = 0
+			}
+			on_add = {
+				set_country_flag = {
+					flag = caps_military_wage_lockout
+					value = 1
+					days = 140
+				}
+				custom_effect_tooltip = caps_lockout_set_tt
+			}
+			ai_will_do = {
+				base = 15
+				modifier = {
+					set_temp_variable = { expense_modifier_from_law = 0.0 }
+					get_caps_ai_wage_willilngness = yes
+					add = temp_base_expense
+				}
+			}
+		}
+		family_stipend = {
+			picture = family_stipend_icon
+			allowed = {
+				OR = {
+					NOT = { is_possible_army_wages_disabled_tag = yes }
+					original_tag = TBH
+					original_tag = LNS
+					original_tag = TEX
+					original_tag = NEW
+					original_tag = VLT
+				}
+			}
+			visible = {
+				has_global_flag = caps_enabled_global_flag
+				if = {
+					limit = {
+						OR = {
+							original_tag = LNS
+							original_tag = TBH
+							original_tag = TEX
+						}
+					}
+					NOT = { has_country_flag = army_wages_disabled }	# Every other tag does not have this flag changed dynamically. Limiting checks is good for CPU @Tran
+				}
+				else_if = {
+					limit = {
+						OR = {
+							original_tag = NEW
+							original_tag = VLT
+						}
+					}
+					NOT = { is_super_mutant_nation = yes }
+				}
+			}
+			removal_cost = -1
+			level = 3
+			cost = 25
+			available = {
+				custom_trigger_tooltip = {
+					NOT = {
+						has_country_flag = {
+							flag = caps_military_wage_lockout
+							value = 1
+						}
+					}
+					tooltip = caps_army_wages_lockout_tt
+				}
+			}
+			on_add = {
+				set_country_flag = {
+					flag = caps_military_wage_lockout
+					value = 1
+					days = 140
+				}
+				custom_effect_tooltip = caps_lockout_set_tt
+			}
+			modifier = {
+				caps_expense_modifier = 0.175
+				special_forces_cap = 0.025
+				max_training = 0.05
+				experience_gain_army_unit_factor = 0.025
+				experience_gain_army_factor = 0.05
+			}
+			#cancel_if_invalid = no
+			ai_will_do = {
+				base = 1
+				modifier = {
+					set_temp_variable = { expense_modifier_from_law = 0.175 }
+					get_caps_ai_wage_willilngness = yes
+					add = temp_base_expense
+				}
+				modifier = {
+					set_temp_variable = { temp_ai_div = ai_wants_divisions }
+					multiply_temp_variable = { temp_ai_div = -0.1 }
+					add = temp_ai_div
+				}
+				modifier = {
+					set_temp_variable = { temp_divs = num_divisions }
+					multiply_temp_variable = { temp_divs = 0.1 }
+					add = temp_divs
+				}
+			}
+		}
+		lifetime_pension = {
+			picture = lifetime_pension_icon
+			allowed = {
+				OR = {
+					NOT = { is_possible_army_wages_disabled_tag = yes }
+					original_tag = TBH
+					original_tag = LNS
+					original_tag = TEX
+					original_tag = NEW
+					original_tag = VLT
+				}
+			}
+			visible = {
+				has_global_flag = caps_enabled_global_flag
+				if = {
+					limit = {
+						OR = {
+							original_tag = LNS
+							original_tag = TBH
+							original_tag = TEX
+						}
+					}
+					NOT = { has_country_flag = army_wages_disabled }	# Every other tag does not have this flag changed dynamically. Limiting checks is good for CPU @Tran
+				}
+				else_if = {
+					limit = {
+						OR = {
+							original_tag = NEW
+							original_tag = VLT
+						}
+					}
+					NOT = { is_super_mutant_nation = yes }
+				}
+			}
+			removal_cost = -1
+			cost = 25
+			level = 4
+			available = {
+				custom_trigger_tooltip = {
+					NOT = {
+						has_country_flag = {
+							flag = caps_military_wage_lockout
+							value = 1
+						}
+					}
+					tooltip = caps_army_wages_lockout_tt
+				}
+			}
+			on_add = {
+				set_country_flag = {
+					flag = caps_military_wage_lockout
+					value = 1
+					days = 140
+				}
+				custom_effect_tooltip = caps_lockout_set_tt
+			}
+			modifier = {
+				caps_expense_modifier = 0.35
+				special_forces_cap = 0.05
+				max_training = 0.10
+				experience_gain_army_unit_factor = 0.05
+				experience_gain_army_factor = 0.1
+			}
+			#cancel_if_invalid = no
+			ai_will_do = {
+				base = 1
+				modifier = {
+					set_temp_variable = { expense_modifier_from_law = 0.175 }
+					get_caps_ai_wage_willilngness = yes
+					add = temp_base_expense
+				}
+				modifier = {
+					set_temp_variable = { temp_ai_div = ai_wants_divisions }
+					multiply_temp_variable = { temp_ai_div = -0.1 }
+					add = temp_ai_div
+				}
+				modifier = {
+					set_temp_variable = { temp_divs = num_divisions }
+					multiply_temp_variable = { temp_divs = 0.1 }
+					add = temp_divs
+				}
+			}
+		}
+		mutant_wages_law = {
+			picture = gov_idea_bottle_cap
+			allowed = {
+				is_super_mutant_nation_allowed_block = yes
+			}
+			visible = {
+				has_country_flag = army_wages_disabled
+				is_super_mutant_nation = yes
+				has_global_flag = caps_enabled_global_flag
+			}
+			removal_cost = -1
+			cost = 0
+			modifier = {
+				caps_income_modifier = -0.75
+				caps_expense_modifier = -0.95
+			}
+			ai_will_do = {
+				base = 1
+			}
+			cancel_if_invalid = no
+		}
+		brotherhood_wages_law = {
+			picture = bunker_blues
+			allowed = {
+				is_brotherhood_nation_allowed_block = yes
+			}
+			visible = {
+				has_country_flag = army_wages_disabled
+				is_brotherhood_nation = yes
+				has_global_flag = caps_enabled_global_flag
+				if = {
+					limit = {
+						has_global_flag = texas_formed
+					}
+					NOT = {
+						tag = TEX
+					}
+				}
+			}
+			available = {
+				if = {
+					limit = {
+						original_tag = BOS
+					}
+					custom_trigger_tooltip = {
+						tooltip = lost_hills_cant_change_this_law
+						always = no
+					}
+				}
+			}
+			removal_cost = -1
+			cost = 0
+			modifier = {
+				caps_income_modifier = -0.5
+				caps_expense_modifier = -0.75
+				caps_node_trade_modifier = -0.5
+				caps_flat_income_modifier = 4.0
+				special_forces_min = 10
+			}
+			ai_will_do = {
+				base = 1
+			}
+			cancel_if_invalid = no
+		}
+		lost_hills_pensions = {
+			picture = national_guard_icon
+			allowed = {
+				original_tag = BOS
+			}
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = lost_hills_cant_change_this_law
+					always = no
+				}
+			}
+			removal_cost = -1
+			cost = 0
+			modifier = {
+				caps_income_modifier = -0.4
+				caps_expense_modifier = -0.40
+				caps_node_trade_modifier = -0.3
+				caps_flat_income_modifier = 4.0
+				special_forces_min = 10
+			}
+			ai_will_do = {
+				base = 1
+			}
+			cancel_if_invalid = no
+		}
+		lost_hills_wages = {
+			picture = army_standard_icon
+			allowed = {
+				original_tag = BOS
+			}
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = lost_hills_cant_change_this_law
+					always = no
+				}
+			}
+			removal_cost = -1
+			cost = 0
+			modifier = {
+				caps_income_modifier = 0.15
+				caps_expense_modifier = 0.05
+				caps_flat_income_modifier = 4.0
+				special_forces_min = 10
+			}
+			ai_will_do = {
+				base = 1
+			}
+			cancel_if_invalid = no
+		}
+	}
+}
+
+# vim: set ft=pdx ts=2 sw=2 tw=79 :

@@ -1,0 +1,19 @@
+state = {
+	id = 660
+	name = "STATE_660"
+	history={
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+		}
+		victory_points = {
+			19 5
+		}
+	}
+	provinces={
+		2013 630 2465 2555 19 2212 8730 2462 8644 2556 2590 2519
+	}
+	manpower = 926
+	state_category = rural
+	buildings_max_level_factor=1.000
+}

@@ -1,0 +1,22 @@
+state={
+	id=1288
+	name="STATE_1288"
+	provinces={
+		13584 13585 13589 13590 13593 16408 16409
+	}
+	resources = {
+		energy = 2
+	}
+	history = {
+		victory_points = {
+			13590 5
+		}
+		buildings = {
+			infrastructure = 3
+		}
+	}
+	state_category = rural
+	manpower = 688
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

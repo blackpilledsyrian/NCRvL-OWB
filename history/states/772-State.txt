@@ -1,0 +1,18 @@
+state = {
+	id = 772
+	name = "STATE_772"
+	manpower = 772
+	state_category = wasteland
+	impassable = yes
+
+	resources = {
+		metal = 12
+	}
+
+	history = {
+	}
+
+	provinces = {
+		495 9342 9351 9352 9557 10966 10977
+	}
+}

@@ -1,0 +1,3828 @@
+focus_tree = {
+	id = vegas_nf
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			original_tag = VEG
+		}
+	}
+	default = no
+	focus = {
+		id = veg_judgement
+		icon = GFX_goal_pal_burn_the_city
+		cost = 7
+		x = 21
+		y = 0
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_judgement entered"
+			}
+			country_event = { id = nf_vegas.1 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_judgement exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_software
+		icon = GFX_goal_pal_access_the_terminals
+		cost = 7
+		prerequisite = {
+			focus = veg_judgement
+		}
+		x = 21
+		y = 1
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_software entered"
+			}
+			country_event = { id = nf_vegas.2 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_software exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_families
+		icon = GFX_goal_VEG_Aligning_the_Families
+		cost = 7
+		prerequisite = {
+			focus = veg_software
+		}
+		x = 21
+		y = 2
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_families entered"
+			}
+			country_event = { id = nf_vegas.3 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_families exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_newvegas
+		icon = GFX_goal_pal_vc_turn_around
+		cost = 7
+		prerequisite = {
+			focus = veg_families
+		}
+		x = 21
+		y = 3
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_newvegas entered"
+			}
+			country_event = { id = nf_vegas.7 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_newvegas exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_oldauthority
+		icon = GFX_goal_VEG_Old_Authority
+		cost = 60
+		prerequisite = {
+			focus = veg_newvegas
+		}
+		mutually_exclusive = {
+			focus = veg_newmanagement
+		}
+		ai_will_do = {
+			modifier = {
+				factor = 0
+				OR = {
+					VEG_has_ai_behavior_joker = yes
+					VEG_has_ai_behavior_king = yes
+				}
+			}
+		}
+		x = 4
+		y = 4
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_oldauthority entered"
+			}
+			add_ideas = loyalsubordinates
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_oldauthority exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_newmanagement
+		icon = GFX_goal_VEG_New_Management
+		cost = 60
+		prerequisite = {
+			focus = veg_newvegas
+		}
+		mutually_exclusive = {
+			focus = veg_oldauthority
+		}
+		ai_will_do = {
+			modifier = {
+				factor = 0
+				OR = {
+					VEG_has_ai_behavior_house = yes
+				}
+			}
+		}
+		x = 14
+		y = 4
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_newmanagement entered"
+			}
+			add_ideas = potentialcoup
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_newmanagement exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_king
+		icon = GFX_goal_VEG_The_King
+		cost = 60
+		available = {
+			has_idea = kings
+		}
+		prerequisite = {
+			focus = veg_newmanagement
+		}
+		mutually_exclusive = {
+			focus = veg_joker
+		}
+		ai_will_do = {
+			modifier = {
+				factor = 0
+				OR = {
+					VEG_has_ai_behavior_joker = yes
+				}
+			}
+		}
+		x = 11
+		y = 5
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_king entered"
+			}
+			add_ideas = theking
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_king exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_everyman
+		icon = GFX_goal_VEG_Every_Man_a_King
+		cost = 60
+		prerequisite = {
+			focus = veg_king
+		}
+		x = 10
+		y = 6
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_everyman entered"
+			}
+			add_ideas = freesidesupport
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_everyman exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_rallying_support_against_the_strip
+		icon = GFX_goal_generic_national_unity
+		cost = 60
+		prerequisite = {
+			focus = veg_king
+		}
+		x = 13
+		y = 6
+		completion_reward = {
+			add_war_support = 0.1
+			add_command_power = 25
+		}
+	}
+	focus = {
+		id = veg_followers
+		icon = GFX_goal_VEG_Follower_Support
+		cost = 60
+		prerequisite = {
+			focus = veg_rallying_support_against_the_strip
+		}
+		x = 12
+		y = 7
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_followers entered"
+			}
+			add_ideas = followeradvisors
+			add_corps_commander_role = {
+				character = VEG_arcade_gannon
+				traits = {
+					intelligent_trait
+				}
+				skill = 4
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 3
+				logistics_skill = 5
+				legacy_id = -1
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_followers exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_muggers
+		icon = GFX_goal_VEG_Enlist_the_Muggers
+		cost = 15
+		prerequisite = {
+			focus = veg_followers
+		}
+		x = -1
+		y = 1
+		relative_position_id = veg_followers
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_muggers entered"
+			}
+			custom_effect_tooltip = load_maudsmuggers
+			hidden_effect = { load_oob = maudsmuggers }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_muggers exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_joker
+		icon = GFX_goal_VEG_The_Joker
+		cost = 60
+		available = {
+			has_idea = chairmen
+		}
+		prerequisite = {
+			focus = veg_newmanagement
+		}
+		mutually_exclusive = {
+			focus = veg_king
+		}
+		ai_will_do = {
+			modifier = {
+				factor = 0
+				OR = {
+					VEG_has_ai_behavior_king = yes
+				}
+			}
+		}
+		x = 18
+		y = 5
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_joker entered"
+			}
+			add_ideas = thejoker
+			add_political_power = 25
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_joker exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_thugs
+		icon = GFX_focus_generic_little_entente
+		cost = 60
+		prerequisite = {
+			focus = veg_joker
+		}
+		x = 15
+		y = 6
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_thugs entered"
+			}
+			add_manpower = 1200
+			custom_effect_tooltip = load_bennythugs
+			hidden_effect = { load_oob = bennythugs }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_thugs exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_hiredhelp
+		icon = GFX_goal_VEG_Hired_Help
+		cost = 60
+		prerequisite = {
+			focus = veg_joker
+		}
+		x = 17
+		y = 6
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_hiredhelp entered"
+			}
+			add_ideas = emilyortal
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_hiredhelp exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_familyman
+		icon = GFX_goal_VEG_Family_Man
+		cost = 60
+		prerequisite = {
+			focus = veg_joker
+		}
+		x = 21
+		y = 6
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_familyman entered"
+			}
+			add_ideas = threefamilies
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_familyman exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_gomorrahthugs
+		icon = GFX_goal_VEG_Gomorrah
+		cost = 60
+		prerequisite = {
+			focus = veg_familyman
+		}
+		mutually_exclusive = {
+			focus = veg_topsthugs
+			focus = veg_ultraluxethugs
+		}
+		x = 19
+		y = 7
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_gomorrahthugs entered"
+			}
+			add_political_power = 300
+			add_war_support = 0.1
+			add_stability = -0.1
+			custom_effect_tooltip = load_gommorrahthugs
+			hidden_effect = { load_oob = gomorrahthugs }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_gomorrahthugs exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_topsthugs
+		icon = GFX_goal_VEG_The_Tops
+		cost = 60
+		prerequisite = {
+			focus = veg_familyman
+		}
+		mutually_exclusive = {
+			focus = veg_ultraluxethugs
+			focus = veg_gomorrahthugs
+		}
+		x = 21
+		y = 7
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_topsthugs entered"
+			}
+			add_political_power = 300
+			add_war_support = 0.05
+			add_stability = 0.05
+			custom_effect_tooltip = load_topsthugs
+			hidden_effect = { load_oob = topsthugs }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_topsthugs exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_ultraluxethugs
+		icon = GFX_goal_VEG_The_Ultra-Luxe
+		cost = 60
+		prerequisite = {
+			focus = veg_familyman
+		}
+		mutually_exclusive = {
+			focus = veg_topsthugs
+			focus = veg_gomorrahthugs
+		}
+		x = 23
+		y = 7
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_ultraluxethugs entered"
+			}
+			add_political_power = 300
+			add_war_support = -0.1
+			add_stability = 0.1
+			custom_effect_tooltip = load_ultraluxethugs
+			hidden_effect = { load_oob = ultraluxethugs }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_ultraluxethugs exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_compensation
+		icon = GFX_goal_VEG_Family_Compensation
+		cost = 60
+		prerequisite = {
+			focus = veg_topsthugs
+			focus = veg_ultraluxethugs
+			focus = veg_gomorrahthugs
+		}
+		x = 21
+		y = 8
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_compensation entered"
+			}
+			add_ideas = repaiddebt
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_compensation exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_familysupremacy
+		icon = GFX_goal_VEG_Family_Supremacy
+		cost = 60
+		prerequisite = {
+			focus = veg_compensation
+		}
+		x = 20
+		y = 9
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_familysupremacy entered"
+			}
+			add_ideas = narcissism
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_familysupremacy exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_privatearmies
+		icon = GFX_goal_NCR_Buyout
+		cost = 60
+		prerequisite = {
+			focus = veg_compensation
+		}
+		x = 22
+		y = 9
+		available = {
+			211 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_privatearmies entered"
+			}
+			add_offsite_building = {
+				type = arms_factory
+				level = 3
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_privatearmies exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_aligned
+		icon = GFX_goal_VEG_Private_Armies
+		cost = 60
+		prerequisite = {
+			focus = veg_privatearmies
+		}
+		x = 22
+		y = 10
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_aligned entered"
+			}
+			swap_ideas = {
+				add_idea = threefamilies2
+				remove_idea = threefamilies
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_aligned exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_checkereddevil
+		icon = GFX_goal_VEG_Checkered_Devil
+		cost = 60
+		prerequisite = {
+			focus = veg_allin
+		}
+		available = {
+			date > 2278.1.1
+			has_war = no
+		}
+		x = 18
+		y = 12
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_checkereddevil entered"
+			}
+			add_ideas = cultofpersonality
+			ask_to_join_new_california = yes
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_checkereddevil exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_ultraluxe
+		icon = GFX_goal_VEG_The_Ultra-Luxe
+		cost = 60
+		prerequisite = {
+			focus = veg_newvegas
+		}
+		available = {
+			211 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		x = 7
+		y = 1
+		relative_position_id = veg_newvegas
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_ultraluxe entered"
+			}
+			211 = {
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			set_temp_variable = { caps_to_add = 75 }
+			add_caps = yes
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_ultraluxe exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_whitegloves
+		icon = GFX_goal_VEG_The_White_Glove_Society
+		cost = 60
+		available = {
+		has_idea = whitegloves
+		}
+		prerequisite = {
+			focus = veg_ultraluxe
+		}
+		mutually_exclusive = {
+			focus = veg_consig
+		}
+		x = -1
+		y = 1
+		relative_position_id = veg_ultraluxe
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_whitegloves entered"
+			}
+			custom_effect_tooltip = available_cultural_advisor
+			show_ideas_tooltip = VEG_marjorie_cultural_advisor
+			hidden_effect = {
+				if = {
+					limit = {
+						is_ai = yes
+					}
+					if = {
+						limit = {
+							count_triggers = {
+								amount = 3
+								VEG = { has_idea = VEG_mr_new_vegas_cultural_advisor }
+								VEG = { has_idea = VEG_michael_angelo_cultural_advisor }
+								VEG = { has_idea = VEG_nero_economic_advisor }
+								VEG = { has_idea = VEG_the_king_cultural_advisor }
+								VEG = { has_idea = VEG_benny_cultural_advisor }
+							}
+						}
+						if = {
+							limit = {
+								has_idea = VEG_mr_new_vegas_cultural_advisor
+								NOT = { has_country_flag = remove_advisor_for_majorie }
+							}
+							retire_character = VEG_mr_new_vegas
+							set_country_flag = remove_advisor_for_majorie
+						}
+						else_if = {
+							limit = {
+								has_idea = VEG_michael_angelo_cultural_advisor
+								NOT = { has_country_flag = remove_advisor_for_majorie }
+							}
+							retire_character = VEG_michael_angelo
+							set_country_flag = remove_advisor_for_majorie
+						}
+						activate_advisor = VEG_marjorie_cultural_advisor
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_whitegloves exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_wealthycontacts
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 60
+		prerequisite = {
+			focus = veg_whitegloves
+		}
+		x = 0
+		y = 1
+		relative_position_id = veg_whitegloves
+		available = {
+			has_idea = VEG_marjorie_cultural_advisor
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_wealthycontacts entered"
+			}
+			swap_ideas = {
+				add_idea = whitegloves2
+				remove_idea = whitegloves
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_wealthycontacts exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_meatonthemenu
+		icon = GFX_goal_VEG_The_Human_Banquet
+		cost = 60
+		prerequisite = {
+			focus = veg_wealthycontacts
+		}
+		mutually_exclusive = {
+			focus = veg_abandon
+		}
+		x = -2
+		y = 1
+		relative_position_id = veg_wealthycontacts
+		completion_reward = {
+			set_technology = {
+				exploitation_tech_level_scientific = 1
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_meatonthemenu entered"
+			}
+			swap_ideas = {
+				add_idea = whitegloves3
+				remove_idea = whitegloves2
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_meatonthemenu exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_abandon
+		icon = GFX_goal_VEG_Abandon_Cannibalism
+		cost = 60
+		prerequisite = {
+			focus = veg_wealthycontacts
+		}
+		mutually_exclusive = {
+			focus = veg_meatonthemenu
+		}
+		x = 0
+		y = 1
+		relative_position_id = veg_wealthycontacts
+		completion_reward = {
+			set_technology = {
+				electronics_tech_level_scientific = 1
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_abandon entered"
+			}
+			swap_ideas = {
+				add_idea = whitegloves4
+				remove_idea = whitegloves2
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_abandon exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_consig
+		icon = GFX_goal_VEG_The_Consiglieres
+		cost = 60
+		available = {
+		has_idea = consigs
+		}
+		prerequisite = {
+			focus = veg_ultraluxe
+		}
+		mutually_exclusive = {
+			focus = veg_whitegloves
+		}
+		x = 1
+		y = 1
+		relative_position_id = veg_ultraluxe
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_consig entered"
+			}
+			custom_effect_tooltip = available_army_chief
+			show_ideas_tooltip = VEG_motor_runner_high_command
+			hidden_effect = {
+				if = {
+					limit = {
+						is_ai = yes
+					}
+					activate_advisor = VEG_motor_runner_high_command
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_consig exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_skullsandsuits
+		icon = GFX_goal_VEG_Skulls_and_Suits
+		cost = 60
+		prerequisite = {
+			focus = veg_consig
+		}
+		available = {
+			has_idea = VEG_motor_runner_high_command
+		}
+		x = 0
+		y = 1
+		relative_position_id = veg_consig
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_skullsandsuits entered"
+			}
+			swap_ideas = {
+				add_idea = consigs2
+				remove_idea = consigs
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_skullsandsuits exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_cologne
+		icon = GFX_goal_VEG_Killer_Cologne
+		cost = 60
+		prerequisite = {
+			focus = veg_skullsandsuits
+		}
+		x = 0
+		y = 1
+		relative_position_id = veg_skullsandsuits
+		completion_reward = {
+			set_technology = {
+				special_forces_tech_level_scientific = 1
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_cologne entered"
+			}
+			swap_ideas = {
+				add_idea = consigs3
+				remove_idea = consigs2
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_cologne exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_gomorrah
+		icon = GFX_goal_VEG_Gomorrah
+		cost = 60
+		prerequisite = {
+			focus = veg_newvegas
+		}
+		x = 11
+		y = 1
+		relative_position_id = veg_newvegas
+		available = {
+			211 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_gomorrah entered"
+			}
+			211 = {
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			set_temp_variable = { caps_to_add = 75 }
+			add_caps = yes
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_gomorrah exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_khaganate
+		icon = GFX_goal_VEG_The_Khaganate
+		cost = 60
+		available = {
+		has_idea = false_khaganate
+		}
+		prerequisite = {
+			focus = veg_gomorrah
+		}
+		mutually_exclusive = {
+			focus = veg_omertas
+		}
+		x = -1
+		y = 1
+		relative_position_id = veg_gomorrah
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_khaganate entered"
+			}
+			custom_effect_tooltip = available_army_chief
+			show_ideas_tooltip = VEG_false_khan_high_command
+			hidden_effect = {
+				if = {
+					limit = {
+						is_ai = yes
+					}
+					activate_advisor = VEG_false_khan_high_command
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_khaganate exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_pickelhaube
+		icon = GFX_goal_VEG_Fancy_Pickelhaubes
+		cost = 60
+		prerequisite = {
+			focus = veg_khaganate
+		}
+		x = 0
+		y = 1
+		relative_position_id = veg_khaganate
+		available = {
+			has_idea = VEG_false_khan_high_command
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_pickelhaube entered"
+			}
+			swap_ideas = {
+				add_idea = false_khaganate2
+				remove_idea = false_khaganate
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_pickelhaube exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_buryhatchet
+		icon = GFX_goal_VEG_Burying_the_Hatchet
+		cost = 60
+		prerequisite = {
+			focus = veg_pickelhaube
+		}
+		x = 0
+		y = 1
+		relative_position_id = veg_pickelhaube
+		completion_reward = {
+			set_technology = {
+				infantry_tech_level_scientific = 1
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_buryhatchet entered"
+			}
+			#country_event = { id = nf_vegas.58 days = 1 }
+			division_template = {
+				name = "Great Khans Footrunners"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 2 y = 0 }
+				}
+				is_locked = yes
+				priority = 0
+			}
+			211 = {
+				create_unit = {
+					division = "name = \"First Foretrekkers\" division_template = \"Great Khans Footrunners\" start_experience_factor = 0.4 start_equipment_factor = 1.0"
+					owner = PREV
+				}
+				create_unit = {
+					division = "name = \"Second Foretrekkers\" division_template = \"Great Khans Footrunners\" start_experience_factor = 0.4 start_equipment_factor = 1.0"
+					owner = PREV
+				}
+				create_unit = {
+					division = "name = \"Third Foretrekkers\" division_template = \"Great Khans Footrunners\" start_experience_factor = 0.4 start_equipment_factor = 1.0"
+					owner = PREV
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_buryhatchet exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_omertas
+		icon = GFX_goal_VEG_The_Omertas
+		cost = 60
+		available = {
+		has_idea = omertas
+		}
+		prerequisite = {
+			focus = veg_gomorrah
+		}
+		mutually_exclusive = {
+			focus = veg_khaganate
+		}
+		x = 1
+		y = 1
+		relative_position_id = veg_gomorrah
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_omertas entered"
+			}
+			custom_effect_tooltip = available_economic_advisor
+			show_ideas_tooltip = VEG_nero_economic_advisor
+			hidden_effect = {
+				if = {
+					limit = {
+						is_ai = yes
+					}
+					if = {
+						limit = {
+							count_triggers = {
+								amount = 3
+								VEG = { has_idea = VEG_mr_new_vegas_cultural_advisor }
+								VEG = { has_idea = VEG_michael_angelo_cultural_advisor }
+								VEG = { has_idea = VEG_benny_cultural_advisor }
+								VEG = { has_idea = VEG_the_king_cultural_advisor }
+								VEG = { has_idea = VEG_marjorie_cultural_advisor }
+							}
+						}
+						if = {
+							limit = {
+								has_idea = VEG_mr_new_vegas_cultural_advisor
+								NOT = { has_country_flag = remove_advisor_for_nero }
+							}
+							retire_character = VEG_mr_new_vegas
+							set_country_flag = remove_advisor_for_nero
+						}
+						else_if = {
+							limit = {
+								has_idea = VEG_michael_angelo_cultural_advisor
+								NOT = { has_country_flag = remove_advisor_for_nero }
+							}
+							retire_character = VEG_michael_angelo
+							set_country_flag = remove_advisor_for_nero
+						}
+						activate_advisor = VEG_nero_economic_advisor
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_omertas exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_addiction
+		icon = GFX_goal_VEG_Addiction_For_Sale
+		cost = 60
+		prerequisite = {
+			focus = veg_omertas
+		}
+		x = 0
+		y = 1
+		relative_position_id = veg_omertas
+		available = {
+			has_idea = VEG_nero_economic_advisor
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_addiction entered"
+			}
+			swap_ideas = {
+				add_idea = omertas2
+				remove_idea = omertas
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_addiction exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_mobsters
+		icon = GFX_goal_generic_common_firearms_focus
+		cost = 60
+		prerequisite = {
+			focus = veg_addiction
+		}
+		x = 0
+		y = 1
+		relative_position_id = veg_addiction
+		completion_reward = {
+			set_technology = {
+				support_tech_level_scientific = 1
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_mobsters entered"
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_valid_state_for_3_arms_factories = yes
+					is_core_of = ROOT
+					NOT = {
+						is_capital = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+			add_equipment_to_stockpile = {
+				type = ballistic_equipment_2
+				amount = 500
+				producer = VEG
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_mobsters exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_tops
+		icon = GFX_goal_VEG_The_Tops
+		cost = 60
+		prerequisite = {
+			focus = veg_newvegas
+		}
+		available = {
+			211 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		x = 15
+		y = 1
+		relative_position_id = veg_newvegas
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_tops entered"
+			}
+			211 = {
+				add_extra_state_shared_building_slots = 2
+			}
+			set_temp_variable = { caps_to_add = 75 }
+			add_caps = yes
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_tops exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_chairmen
+		icon = GFX_goal_VEG_The_Chairmen
+		cost = 60
+		available = {
+		has_idea = chairmen
+		}
+		prerequisite = {
+			focus = veg_tops
+		}
+		mutually_exclusive = {
+			focus = veg_kings
+		}
+		x = -1
+		y = 1
+		relative_position_id = veg_tops
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_chairmen entered"
+			}
+			#show_ideas_tooltip = benny
+			custom_effect_tooltip = available_cultural_advisor
+			show_ideas_tooltip = VEG_benny_cultural_advisor
+			hidden_effect = {
+				if = {
+					limit = {
+						is_ai = yes
+					}
+					if = {
+						limit = {
+							count_triggers = {
+								amount = 3
+								VEG = { has_idea = VEG_mr_new_vegas_cultural_advisor }
+								VEG = { has_idea = VEG_michael_angelo_cultural_advisor }
+								VEG = { has_idea = VEG_nero_economic_advisor }
+								VEG = { has_idea = VEG_the_king_cultural_advisor }
+								VEG = { has_idea = VEG_marjorie_cultural_advisor }
+							}
+						}
+						if = {
+							limit = {
+								has_idea = VEG_mr_new_vegas_cultural_advisor
+								NOT = { has_country_flag = remove_advisor_for_benny }
+							}
+							retire_character = VEG_mr_new_vegas
+							set_country_flag = remove_advisor_for_benny
+						}
+						else_if = {
+							limit = {
+								has_idea = VEG_michael_angelo_cultural_advisor
+								NOT = { has_country_flag = remove_advisor_for_benny }
+							}
+							retire_character = VEG_michael_angelo
+							set_country_flag = remove_advisor_for_benny
+						}
+						activate_advisor = VEG_benny_cultural_advisor
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_chairmen exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_arms
+		icon = GFX_goal_generic_ammo_boxes_focus
+		cost = 60
+		prerequisite = {
+			focus = veg_chairmen
+		}
+		available = {
+			has_idea = VEG_benny_cultural_advisor
+		}
+		x = 0
+		y = 1
+		relative_position_id = veg_chairmen
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_arms entered"
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_valid_state_for_2_arms_factories = yes
+					is_core_of = ROOT
+					NOT = {
+						is_capital = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_arms exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_newdeal
+		icon = GFX_goal_generic_military_industry_focus
+		cost = 60
+		prerequisite = {
+			focus = veg_arms
+		}
+		x = 0
+		y = 1
+		relative_position_id = veg_arms
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_newdeal entered"
+			}
+			set_technology = {
+				tools_tech_level_scientific = 1
+			}
+			add_ideas = bennynewdeal
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_newdeal exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_kings
+		icon = GFX_goal_VEG_The_Kings
+		cost = 60
+		available = {
+		has_idea = kings
+		}
+		prerequisite = {
+			focus = veg_tops
+		}
+		mutually_exclusive = {
+			focus = veg_chairmen
+		}
+		x = 1
+		y = 1
+		relative_position_id = veg_tops
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_kings entered"
+			}
+			custom_effect_tooltip = available_cultural_advisor
+			show_ideas_tooltip = VEG_the_king_cultural_advisor
+			hidden_effect = {
+				if = {
+					limit = {
+						is_ai = yes
+					}
+					if = {
+						limit = {
+							count_triggers = {
+								amount = 3
+								VEG = { has_idea = VEG_mr_new_vegas_cultural_advisor }
+								VEG = { has_idea = VEG_michael_angelo_cultural_advisor }
+								VEG = { has_idea = VEG_benny_cultural_advisor }
+								VEG = { has_idea = VEG_nero_economic_advisor }
+								VEG = { has_idea = VEG_marjorie_cultural_advisor }
+							}
+						}
+						if = {
+							limit = {
+								has_idea = VEG_mr_new_vegas_cultural_advisor
+								NOT = { has_country_flag = remove_advisor_for_king }
+							}
+							retire_character = VEG_mr_new_vegas
+							set_country_flag = remove_advisor_for_king
+						}
+						else_if = {
+							limit = {
+								has_idea = VEG_michael_angelo_cultural_advisor
+								NOT = { has_country_flag = remove_advisor_for_king }
+							}
+							retire_character = VEG_michael_angelo
+							set_country_flag = remove_advisor_for_king
+						}
+						activate_advisor = VEG_the_king_cultural_advisor
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_kings exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_westside
+		icon = GFX_goal_generic_slums_focus
+		cost = 60
+		prerequisite = {
+			focus = veg_kings
+		}
+		x = 0
+		y = 1
+		relative_position_id = veg_kings
+		available = {
+			has_idea = VEG_the_king_cultural_advisor
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_westside entered"
+			}
+			if = {
+				limit = {
+					313 = {
+						OWNER = {
+							NOT = {
+								tag = ROOT
+							}
+						}
+					}
+				}
+				313 = {
+					OWNER = {
+						add_opinion_modifier = {
+							target = ROOT
+							modifier = medium_increase
+						}
+					}
+				}
+			}
+			313 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = {
+						all_provinces = yes
+					}
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_westside exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_north
+		icon = GFX_goal_generic_large_scale_normal_industry_focus
+		cost = 60
+		prerequisite = {
+			focus = veg_westside
+		}
+		x = 0
+		y = 1
+		relative_position_id = veg_westside
+		completion_reward = {
+			set_technology = {
+				habitation_tech_level_scientific = 1
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_north entered"
+			}
+			if = {
+				limit = {
+					344 = {
+						OWNER = {
+							NOT = {
+								tag = ROOT
+							}
+						}
+					}
+				}
+				344 = {
+					OWNER = {
+						add_opinion_modifier = {
+							target = ROOT
+							modifier = medium_increase
+						}
+					}
+				}
+			}
+			344 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = {
+						all_provinces = yes
+					}
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_north exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_outer_strip_politics
+		icon = GFX_KHA_focus_planning
+		cost = 60
+		prerequisite = {
+			focus = veg_oldauthority
+		}
+		x = 2
+		y = 5
+		completion_reward = {
+			add_war_support = 0.075
+			add_command_power = 25
+		}
+	}
+	focus = {
+		id = veg_economy
+		icon = GFX_goal_VEG_Economic_Miracle
+		cost = 60
+		prerequisite = {
+			focus = veg_oldauthority
+		}
+		x = 6
+		y = 5
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_economy entered"
+			}
+			add_ideas = goodbusiness
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_economy exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_janes_comfort
+		icon = GFX_goal_VEG_Jane
+		cost = 60
+		prerequisite = {
+			focus = veg_economy
+		}
+		x = 6
+		y = 6
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_economy entered"
+			}
+			add_timed_idea = {
+				idea = veg_comfy
+				days = 180
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_economy exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_platinumchip
+		icon = GFX_goal_VEG_The_Platinum_Chip
+		cost = 60
+		prerequisite = {
+			focus = veg_oldauthority
+		}
+		available = {
+			252 = {
+				controller = {
+					OR = {
+						tag = ROOT
+						is_in_faction_with = ROOT
+						VEG = {
+							gives_military_access_to = PREV
+						}
+						is_not_new_california_member = yes
+					}
+				}
+
+			}
+			OR = {
+				date > 2276.1.1
+			}
+		}
+		x = 0
+		y = 1
+		relative_position_id = veg_oldauthority
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_platinumchip entered"
+			}
+			country_event = nf_vegas.16
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_platinumchip exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_vault
+		icon = GFX_goal_VEG_The_Vault
+		cost = 60
+		available = {
+			has_country_flag = veg_chip_delivered
+			has_idea = platinumOS
+		}
+		prerequisite = {
+			focus = veg_platinumchip
+		}
+		x = 0
+		y = 1
+		relative_position_id = veg_platinumchip
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_vault entered"
+			}
+			country_event = nf_vegas.17
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_vault exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_securenorth
+		icon = GFX_goal_VEG_Thorn
+		cost = 60
+		prerequisite = {
+			focus = veg_outer_strip_politics
+		}
+		x = 2
+		y = 6
+		completion_reward = {
+			country_event = nf_vegas.63
+		}
+	}
+	focus = {
+		id = veg_rockthesuburbs
+		icon = GFX_goal_generic_slums_focus
+		cost = 60
+		prerequisite = {
+			focus = veg_outer_strip_politics
+		}
+		bypass = {
+			if = {
+				limit = {
+					OR = {
+						has_global_flag = VEG_status_jacobstown_global_flag
+						has_global_flag = VEG_status_boomers_and_jacobstown_global_flag
+					}
+				}
+				JCT = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+			FIE = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		available = {
+			has_completed_focus = veg_secure
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		x = 0
+		y = 6
+		will_lead_to_war_with = JCT
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_rockthesuburbs entered"
+			}
+			if = {
+				limit = {
+					OR = {
+						has_global_flag = VEG_status_jacobstown_global_flag
+						has_global_flag = VEG_status_boomers_and_jacobstown_global_flag
+					}
+					JCT = {
+						NOT = { all_core_land_owned_by_prev_sphere = yes }
+					}
+				}
+				JCT = {
+					ROOT = {
+						grant_wargoals_on_core_states_of_prev = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					FIE = {
+						NOT = { all_core_land_owned_by_prev_sphere = yes }
+					}
+				}
+				380 = {
+					add_core_of = VEG
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_rockthesuburbs exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_architect
+		icon = GFX_goal_VEG_Architect_of_Destiny
+		cost = 60
+		search_filters = {FOCUS_FILTER_RESEARCH}
+		prerequisite = {
+			focus = veg_vault
+		}
+		available = {
+		}
+		relative_position_id = veg_vault
+		x = 0
+		y = 1
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_architect entered"
+			}
+			add_research_slot = 1
+			set_technology = {
+				robotics_tech_level_scientific = 1
+			}
+			add_ideas = housealwayswins
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_architect exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_secure
+		text = veg_nwo
+		icon = GFX_goal_VEG_New_World_Order
+		cost = 60
+		available = {
+			date > 2278.1.1
+			has_war = no
+		}
+		prerequisite = {
+			focus = veg_architect
+		}
+		relative_position_id = veg_architect
+		x = 0
+		y = 1
+		completion_reward = {
+			ask_to_join_new_california = yes
+			add_ideas = militarypriorities
+		}
+	}
+	focus = {
+		id = veg_newvegastreaty
+		icon = GFX_goal_generic_supplies_focus
+		cost = 60
+		prerequisite = {
+			focus = veg_economy
+		}
+		allow_branch = {
+			always = no
+		}
+		available = {
+			borders_new_california = yes
+			at_peace_with_new_california = yes
+		}
+		x = 6
+		y = 7
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_newvegastreaty entered"
+			}
+			253 = {
+				add_resource = {
+					type = energy
+					amount = 20
+				}
+			}
+			211 = {
+				add_resource = {
+					type = energy
+					amount = 5
+				}
+			}
+			var:GLOBAL.ncr_leader = {
+				give_guarantee = VEG
+				give_military_access = VEG
+				add_ai_strategy = {
+					type = befriend
+					id = "VEG"
+					value = 200
+				}
+				VEG = {
+					add_ai_strategy = {
+						type = befriend
+						id = PREV
+						value = 200
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_newvegastreaty exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_ncrtradedeal
+		icon = GFX_goal_generic_NCR_diplomatic_focus
+		cost = 60
+		prerequisite = {
+			focus = veg_newvegastreaty
+		}
+		available = {
+			borders_new_california = yes
+			at_peace_with_new_california = yes
+		}
+		x = 6
+		y = 8
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_ncrtradedeal entered"
+			}
+			swap_ideas = {
+				remove_idea = goodbusiness
+				add_idea = goodbusiness2
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_ncrtradedeal exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_ncrrail
+		icon = GFX_goal_generic_metal_focus
+		cost = 60
+		prerequisite = {
+			focus = veg_ncrtradedeal
+		}
+		available = {
+			borders_new_california = yes
+			at_peace_with_new_california = yes
+		}
+		x = 6
+		y = 9
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_ncrrail entered"
+			}
+			211 = {
+				add_resource = {
+					type = metal
+					amount = 16
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_ncrrail exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_ncrembassy
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 60
+		prerequisite = {
+			focus = veg_ncrrail
+		}
+		available = {
+			borders_new_california = yes
+			at_peace_with_new_california = yes
+		}
+		x = 6
+		y = 10
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_ncrembassy entered"
+			}
+			capital_scope = {
+				add_extra_state_shared_building_slots = 2
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = 2
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_ncrembassy exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_ncrstatehood
+		icon = GFX_goal_generic_NCR_diplomatic_focus
+		cost = 60
+		prerequisite = {
+			focus = veg_ncrembassy
+		}
+		available = {
+			is_subject = no
+			is_in_faction = no
+			borders_new_california = yes
+			at_peace_with_new_california = yes
+		}
+		x = 6
+		y = 11
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_ncrstatehood entered"
+			}
+			var:GLOBAL.ncr_leader = {
+				country_event = nf_vegas.53
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_ncrstatehood exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_prepcity
+		icon = GFX_goal_generic_scyscrapers_prewar
+		cost = 60
+		prerequisite = {
+			focus = veg_economy
+		}
+		x = 8
+		y = 6
+		available = {
+			211 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_prepcity entered"
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = 2
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_prepcity exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_segregate
+		icon = GFX_goal_generic_walls_focus
+		cost = 60
+		prerequisite = {
+			focus = veg_prepcity
+		}
+		x = 8
+		y = 7
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_segregate entered"
+			}
+			add_ideas = wealthyclientele
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_segregate exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_revitalize
+		icon = GFX_goal_generic_slums_focus
+		cost = 60
+		prerequisite = {
+			focus = veg_everyman
+		}
+		x = 10
+		y = 7
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_revitalize entered"
+			}
+			add_ideas = middleclassclientele
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_revitalize exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_vault21
+		icon = GFX_goal_VEG_Vault_21
+		cost = 60
+		prerequisite = {
+			focus = veg_segregate
+			focus = veg_revitalize
+		}
+		x = 9
+		y = 8
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_vault21 entered"
+			}
+			country_event = nf_vegas.9
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_vault21 exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_cerulean
+		icon = GFX_goal_generic_robots_focus
+		cost = 60
+		prerequisite = {
+			focus = veg_vault21
+		}
+		x = 8
+		y = 9
+		available = {
+			211 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_cerulean entered"
+			}
+			211 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_cerulean exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_industry
+		icon = GFX_goal_generic_large_scale_normal_industry_focus
+		cost = 60
+		prerequisite = {
+			focus = veg_vault21
+		}
+		x = 10
+		y = 9
+		available = {
+			211 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_industry entered"
+			}
+			211 = {
+				if = {
+					limit = {
+						is_valid_state_for_3_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = industrial_complex
+						level = 3
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_industry exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_followersupport
+		icon = GFX_focus_research
+		cost = 60
+		prerequisite = {
+			focus = veg_cerulean
+		}
+		x = 8
+		y = 10
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_followersupport entered"
+			}
+			add_ideas = followerknowledge
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_followersupport exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_walls
+		icon = GFX_goal_generic_walls_focus
+		cost = 60
+		prerequisite = {
+			focus = veg_industry
+		}
+		x = 10
+		y = 10
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_walls entered"
+			}
+			add_ideas = concretefortress
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_walls exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_securitron
+		icon = GFX_goal_generic_data_focus
+		cost = 60
+		prerequisite = {
+			focus = veg_rallying_support_against_the_strip
+		}
+		x = 14
+		y = 7
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_securitron entered"
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = robotics_tech_category
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 4
+				category = encryption_tech
+				category = decryption_tech
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_securitron exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_vic
+		icon = GFX_goal_VEG_General_Victor
+		cost = 60
+		prerequisite = {
+			focus = veg_followers
+		}
+		prerequisite = {
+			focus = veg_securitron
+		}
+		x = 13
+		y = 8
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_vic entered"
+			}
+			country_event = nf_vegas.10
+			add_political_power = 100
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_vic exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_assassinate
+		icon = GFX_goal_VEG_Assassinate_House
+		cost = 60
+		prerequisite = {
+			focus = veg_vic
+		}
+		mutually_exclusive = {
+			focus = veg_warforvegas
+		}
+		available = {
+			is_subject = no
+			people > 0.7
+		}
+		x = -1
+		y = 1
+		relative_position_id = veg_vic
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_assassinate entered"
+			}
+			kill_country_leader = yes
+			remove_ideas = robotics_genius
+			set_politics = {
+				ruling_party = people
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_assassinate exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_warforvegas
+		icon = GFX_goal_VEG_War_for_Vegas
+		cost = 60
+		prerequisite = {
+			focus = veg_vic
+		}
+		available = {
+			num_of_controlled_states > 1
+			is_subject = no
+			people > 0.5
+		}
+		mutually_exclusive = {
+			focus = veg_assassinate
+		}
+		x = 1
+		y = 1
+		relative_position_id = veg_vic
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_warforvegas entered"
+			}
+			country_event = nf_vegas.15
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_warforvegas exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_peoplesvegas
+		icon = GFX_goal_VEG_Vegas_for_the_People
+		cost = 60
+		prerequisite = {
+			focus = veg_warforvegas
+			focus = veg_assassinate
+		}
+		x = 0
+		y = 2
+		relative_position_id = veg_vic
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_peoplesvegas entered"
+			}
+			add_ideas = trueindependence
+			remove_ideas = potentialcoup
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_peoplesvegas exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_the_needy_over_the_rich
+		icon = GFX_goal_generic_emote_help
+		cost = 60
+		prerequisite = {
+			focus = veg_peoplesvegas
+		}
+		x = -1
+		y = 1
+		relative_position_id = veg_peoplesvegas
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					OR = {
+						state = 154
+						state = 211
+						state = 313
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			add_manpower = 4000
+		}
+	}
+	focus = {
+		id = veg_mutants
+		icon = GFX_goal_mutant_nightkin
+		cost = 60
+		prerequisite = {
+			focus = veg_the_needy_over_the_rich
+		}
+		x = -1
+		y = 1
+		relative_position_id = veg_the_needy_over_the_rich
+		completion_reward = {
+			set_technology = {
+				super_mutant_civilization = 1
+				super_mutant_aux_infantry_tech = 1
+				super_mutant_nightkin_tech = 1
+			}
+		}
+	}
+	focus = {
+		id = veg_inspire_the_hopeless
+		icon = GFX_goal_generic_recruitment_focus
+		cost = 60
+		prerequisite = {
+			focus = veg_peoplesvegas
+		}
+		x = 1
+		y = 1
+		relative_position_id = veg_peoplesvegas
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_peoplesvegas entered"
+			}
+			add_stability = 0.15
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_peoplesvegas exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_deal_with_the_families
+		text = nf_vegas.67.t
+		icon = GFX_goal_VEG_Family_Man
+		cost = 60
+		prerequisite = {
+			focus = veg_the_needy_over_the_rich
+		}
+		prerequisite = {
+			focus = veg_inspire_the_hopeless
+		}
+		available = {
+			has_completed_focus = veg_lucky38
+		}
+		x = 0
+		y = 2
+		relative_position_id = veg_peoplesvegas
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_peoplesvegas entered"
+			}
+			country_event = nf_vegas.67
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_peoplesvegas exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_the_mojave_alliance
+		text = veg_mojave
+		icon = GFX_goal_generic_major_alliance
+		cost = 60
+		prerequisite = {
+			focus = veg_deal_with_the_families
+		}
+		available = {
+			date > 2278.1.1
+			has_war = no
+		}
+		x = 0
+		y = 1
+		relative_position_id = veg_deal_with_the_families
+		available = {
+		}
+		completion_reward = {
+			ask_to_join_new_california = yes
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = veg_first
+		icon = GFX_goal_VEG_Vegas_First
+		cost = 60
+		prerequisite = {
+			focus = veg_vic
+		}
+		mutually_exclusive = {
+			focus = veg_mojave
+		}
+		allow_branch = {
+			always = no
+		}
+		x = 12
+		y = 9
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_first entered"
+			}
+			add_ideas = unifiedvegas
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_first exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_mojave
+		icon = GFX_goal_VEG_Mojave_Alliance
+		cost = 60
+		allow_branch = {
+			always = no
+		}
+		prerequisite = {
+			focus = veg_vic
+		}
+		mutually_exclusive = {
+			focus = veg_first
+		}
+		bypass = {
+			MOJ = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			is_mojave_alliance_leader = yes
+		}
+		available = {
+			is_subject = no
+			OR = {
+				is_in_faction = no
+				is_faction_of_one = yes
+				is_northern_mojave_pact_leader = yes
+			}
+		}
+		x = 14
+		y = 9
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_mojave entered"
+			}
+			# if = {
+			# 	limit = {
+			# 		is_in_faction_with = KHA
+			# 	}
+			# 	create_or_join_mojave_alliance = yes
+			# 	KHA = { join_mojave_alliance = yes }
+			# }
+			# else = {
+			# 	create_or_join_mojave_alliance = yes
+			# }
+			create_or_join_mojave_alliance = yes
+			if = {
+				limit = {
+					MOJ = {
+						is_ai = yes
+					}
+				}
+				custom_effect_tooltip = "zusk note: redo this part of new vegas's tree"
+				#MOJ = { join_mojave_alliance = yes }
+			}
+			else = {
+				MOJ = {
+					country_event = { id = nf_vegas.8 }
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_mojave exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_raiderend
+		icon = GFX_goal_generic_major_war
+		cost = 60
+		prerequisite = {
+			focus = veg_first
+		}
+		bypass = {
+			if = {
+				limit = {
+					OR = {
+						has_global_flag = VEG_status_jacobstown_global_flag
+						has_global_flag = VEG_status_boomers_and_jacobstown_global_flag
+					}
+				}
+				JCT = {
+					OR = {
+						has_government = people
+						all_core_land_owned_by_prev_sphere = yes
+					}
+				}
+			}
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		x = 12
+		y = 10
+		will_lead_to_war_with = JCT
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_raiderend entered"
+			}
+			if = {
+				limit = {
+					OR = {
+						has_global_flag = VEG_status_jacobstown_global_flag
+						has_global_flag = VEG_status_boomers_and_jacobstown_global_flag
+					}
+					JCT = {
+						NOT = { has_government = people }
+						NOT = { all_core_land_owned_by_prev_sphere = yes }
+					}
+				}
+				JCT = {
+					ROOT = {
+						grant_wargoals_on_core_states_of_prev = yes
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_raiderend exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_mojavesecond
+		icon = GFX_goal_generic_major_war
+		cost = 60
+		prerequisite = {
+			focus = veg_raiderend
+		}
+		bypass = {
+			FIE = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			MRA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		x = 12
+		y = 11
+		will_lead_to_war_with = FIE
+		will_lead_to_war_with = MRA
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_mojavesecond entered"
+			}
+			if = {
+				limit = {
+					FIE = {
+						NOT = { all_core_land_owned_by_prev_sphere = yes }
+					}
+				}
+				FIE = {
+					ROOT = {
+						grant_wargoals_on_core_states_of_prev = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					MRA = {
+						NOT = { all_core_land_owned_by_prev_sphere = yes }
+					}
+				}
+				MRA = {
+					ROOT = {
+						grant_wargoals_on_core_states_of_prev = yes
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_mojavesecond exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_dambusters
+		icon = GFX_goal_generic_major_alliance
+		cost = 60
+		available = {
+			is_mojave_alliance_leader = yes
+		}
+		prerequisite = {
+			focus = veg_mojave
+		}
+		bypass = {
+			if = {
+				limit = {
+					OR = {
+						has_global_flag = VEG_status_boomers_global_flag
+						has_global_flag = VEG_status_boomers_and_jacobstown_global_flag
+					}
+				}
+				BOO = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_global_flag = VEG_status_jacobstown_global_flag
+						has_global_flag = VEG_status_boomers_and_jacobstown_global_flag
+					}
+				}
+				JCT = {
+					OR = {
+						all_core_land_owned_by_prev_sphere = yes
+						NOT = { has_government = people }
+					}
+				}
+			}
+			DAM = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		x = 14
+		y = 10
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_dambusters entered"
+			}
+			if = {
+				limit = {
+					OR = {
+						has_global_flag = VEG_status_boomers_global_flag
+						has_global_flag = VEG_status_boomers_and_jacobstown_global_flag
+					}
+				}
+				if = {
+					limit = {
+						BOO = {
+							is_ai = yes
+						}
+					}
+					BOO = { join_mojave_alliance = yes }
+				}
+				if = {
+					limit = {
+						BOO = {
+							is_ai = no
+						}
+					}
+					BOO = {
+						country_event = { id = nf_vegas.8 }
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_global_flag = VEG_status_jacobstown_global_flag
+						has_global_flag = VEG_status_boomers_and_jacobstown_global_flag
+					}
+				}
+				if = {
+					limit = {
+						JCT = {
+							has_government = people
+							is_ai = yes
+						}
+					}
+					JCT = { join_mojave_alliance = yes }
+				}
+				if = {
+					limit = {
+						JCT = {
+							has_government = people
+							is_ai = no
+						}
+					}
+					JCT = {
+						country_event = { id = nf_vegas.8 }
+					}
+				}
+			}
+			if = {
+				limit = {
+					DAM = {
+						is_ai = yes
+					}
+				}
+				DAM = { join_mojave_alliance = yes }
+			}
+			if = {
+				limit = {
+					DAM = {
+						is_ai = no
+					}
+				}
+				DAM = {
+					country_event = { id = nf_vegas.8 }
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_dambusters exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_mojavesecure
+		icon = GFX_goal_generic_military_deal
+		cost = 60
+		available = {
+			is_mojave_alliance_leader = yes
+		}
+		prerequisite = {
+			focus = veg_dambusters
+		}
+		bypass = {
+			OR = {
+				MOJ = {
+					OR = {
+						exists = no
+						AND = {
+							NOT = { is_subject_of = ROOT }
+							NOT = { is_in_faction_with = ROOT }
+						}
+					}
+				}
+				AND = {
+					if = {
+						limit = {
+							OR = {
+								has_global_flag = MOJ_status_black_mountain_global_flag
+								has_global_flag = MOJ_status_utobitha_global_flag
+							}
+						}
+						UTO = {
+							all_core_land_owned_by_prev_sphere = yes
+						}
+					}
+					FIE = {
+						all_core_land_owned_by_prev_sphere = yes
+					}
+					MRA = {
+						all_core_land_owned_by_prev_sphere = yes
+					}
+				}
+			}
+		}
+		x = 14
+		y = 11
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_mojavesecure entered"
+			}
+			if = {
+				limit = {
+					FIE = {
+						NOT = {
+							all_core_land_owned_by_prev_sphere = yes
+						}
+					}
+				}
+				FIE = {
+					ROOT = {
+						grant_wargoals_on_core_states_of_prev = yes
+					}
+				}
+			}
+			MOJ = {
+				country_event = nf_vegas.21
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_mojavesecure exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_yesman
+		icon = GFX_goal_VEG_Yes_Man
+		cost = 60
+		prerequisite = {
+			focus = veg_hiredhelp
+		}
+		x = 17
+		y = 7
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_yesman entered"
+			}
+			add_ideas = yesman
+			add_popularity = {
+				ideology = elites
+				popularity = 0.05
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_yesman exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_lowfriends
+		icon = GFX_goal_generic_ideological_fury_focus
+		cost = 60
+		prerequisite = {
+			focus = veg_yesman
+		}
+		mutually_exclusive = {
+			focus = veg_highfriends
+		}
+		x = 16
+		y = 8
+		available = {
+			has_idea = VEG_false_khan_high_command
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_lowfriends entered"
+			}
+			country_event = nf_vegas.11
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_lowfriends exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_highfriends
+		icon = GFX_goal_generic_ideological_fury_focus
+		cost = 60
+		prerequisite = {
+			focus = veg_yesman
+		}
+		mutually_exclusive = {
+			focus = veg_lowfriends
+		}
+		available = {
+			has_idea = VEG_benny_cultural_advisor
+		}
+		x = 18
+		y = 8
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_highfriends entered"
+			}
+			country_event = nf_vegas.12
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_highfriends exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_wrongpackage
+		icon = GFX_goal_VEG_Wrong_Package
+		cost = 60
+		prerequisite = {
+			focus = veg_lowfriends
+			focus = veg_highfriends
+		}
+		x = 17
+		y = 9
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_wrongpackage entered"
+			}
+			country_event = nf_vegas.13
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_wrongpackage exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_crackthevault
+		icon = GFX_goal_BOS_study_securitron_software
+		cost = 60
+		prerequisite = {
+			focus = veg_wrongpackage
+		}
+		x = 17
+		y = 10
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_crackthevault entered"
+			}
+			country_event = nf_vegas.47
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_crackthevault exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_allin
+		icon = GFX_goal_VEG_All-In
+		cost = 60
+		prerequisite = {
+			focus = veg_crackthevault
+		}
+		available = {
+			elites > 0.5
+		}
+		x = 17
+		y = 11
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_allin entered"
+			}
+			kill_country_leader = yes
+			remove_ideas = robotics_genius
+			set_politics = {
+				ruling_party = elites
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_allin exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_ringading
+		icon = GFX_goal_VEG_Ring-a-Ding-Ding
+		cost = 60
+		prerequisite = {
+			focus = veg_allin
+		}
+		x = 16
+		y = 12
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_ringading entered"
+			}
+			set_technology = {
+				robotics_tech_level_scientific = 1
+			}
+			add_ideas = brightlights
+			remove_ideas = potentialcoup
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_ringading exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_nevadapact
+		icon = GFX_goal_generic_nevada_pact
+		cost = 60
+		prerequisite = {
+			focus = veg_allin
+		}
+		x = 18
+		y = 12
+		allow_branch = {
+			always = no
+		}
+		available = {
+			is_subject = no
+			OR = {
+				is_in_faction = no
+				is_faction_of_one = yes
+				is_northern_mojave_pact_leader = yes
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_nevadapact entered"
+			}
+			add_ideas = cultofpersonality
+			if = {
+				limit = {
+					has_global_flag = nevadapact
+				}
+				if = {
+					limit = {
+						NEW = {
+							is_faction_leader = yes
+						}
+						NEW = { exists = yes }
+					}
+					NEW = {
+						country_event = { days = 1 id = nf_vegas.37 }
+					}
+				}
+				if = {
+					limit = {
+						DES = {
+							is_faction_leader = yes
+						}
+						DES = { exists = yes }
+					}
+					DES = {
+						country_event = { days = 1 id = nf_vegas.37 }
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = nevadapact
+					}
+				}
+				VEG = {
+					country_event = { days = 1 id = nf_vegas.30 }
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_nevadapact exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_lucky38
+		icon = GFX_goal_VEG_The_Lucky_38
+		cost = 60
+		prerequisite = {
+			focus = veg_newdeal
+			focus = veg_north
+		}
+		prerequisite = {
+			focus = veg_buryhatchet
+			focus = veg_mobsters
+		}
+		prerequisite = {
+			focus = veg_abandon
+			focus = veg_meatonthemenu
+			focus = veg_cologne
+		}
+		x = 32
+		y = 8
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_lucky38 entered"
+			}
+			add_political_power = 150
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_lucky38 exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_robco
+		icon = GFX_goal_generic_robots_focus
+		cost = 60
+		prerequisite = {
+			focus = veg_lucky38
+		}
+		x = 27
+		y = 9
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_robco entered"
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_valid_state_for_2_arms_factories = yes
+					is_core_of = ROOT
+					NOT = {
+						is_capital = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_ideas = robcoreborn
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_robco exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_firstbatch
+		icon = GFX_focus_generic_little_entente
+		cost = 60
+		prerequisite = {
+			focus = veg_robco
+		}
+		x = 26
+		y = 10
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_firstbatch entered"
+			}
+			custom_effect_tooltip = load_firstbatch
+			hidden_effect = { load_oob = firstbatch }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_firstbatch exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_expansion
+		icon = GFX_goal_generic_military_industry_focus
+		cost = 60
+		prerequisite = {
+			focus = veg_robco
+		}
+		x = 28
+		y = 10
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_expansion entered"
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_valid_state_for_2_arms_factories = yes
+					is_core_of = ROOT
+					NOT = {
+						is_capital = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_expansion exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_smallarms
+		icon = GFX_goal_generic_regular_firearms_focus
+		cost = 60
+		prerequisite = {
+			focus = veg_lucky38
+		}
+		x = 30
+		y = 9
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_smallarms entered"
+			}
+			army_experience = 20
+			add_tech_bonus = {
+				name = ballistic_bonus
+				bonus = 0.5
+				uses = 2
+				category = ballistic_weaponry_tech_category
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_smallarms exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_rapidresponse
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 60
+		prerequisite = {
+			focus = veg_lucky38
+		}
+		x = 34
+		y = 9
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_rapidresponse entered"
+			}
+			every_owned_state = {
+				limit = {
+					is_controlled_by = VEG
+					infrastructure < 10
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_rapidresponse exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_fourthfam
+		icon = GFX_goal_BOS_the_mojave_signal
+		cost = 60
+		prerequisite = {
+			focus = veg_lucky38
+		}
+		allow_branch = {
+			always = no
+		}
+		x = 37
+		y = 9
+		available = {
+			VEG = {
+				has_completed_focus = veg_assassinate
+				is_in_faction_with = MOJ
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_fourthfam entered"
+			}
+			add_research_slot = 1
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_fourthfam exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_elijah
+		icon = GFX_goal_BOS_elijahs_genius
+		cost = 60
+		prerequisite = {
+			focus = veg_fourthfam
+		}
+		x = 37
+		y = 10
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_elijah entered"
+			}
+			add_ideas = vegaselijahrestoration
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_elijah exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_t45d
+		icon = GFX_goal_generic_t45d_power_armour_focus
+		cost = 60
+		prerequisite = {
+			focus = veg_elijah
+		}
+		x = 37
+		y = 11
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_t45d entered"
+			}
+			set_technology = { t45d_pa_tech = 1 }
+			if = {
+				limit = {
+					NOT = { has_tech = stripped_pa_tech }
+				}
+				set_technology = { stripped_pa_tech = 1 }
+			}
+			if = {
+				limit = {
+					NOT = { has_tech = weight_support_frame_pa_tech_1 }
+				}
+				set_technology = { weight_support_frame_pa_tech_1 = 1 }
+			}
+			if = {
+				limit = {
+					NOT = { has_tech = weight_support_frame_pa_tech_2 }
+				}
+				set_technology = { weight_support_frame_pa_tech_2 = 1 }
+			}
+			if = {
+				limit = {
+					NOT = { has_tech = wasteland_pa_tech }
+				}
+				set_technology = { wasteland_pa_tech = 1 }
+			}
+			if = {
+				limit = {
+					NOT = { has_tech = simple_servo_tech }
+				}
+				set_technology = { simple_servo_tech = 1 }
+			}
+			if = {
+				limit = {
+					NOT = { has_tech = scav_pa_tech }
+				}
+				set_technology = { scav_pa_tech = 1 }
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_t45d exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_bossecurity
+		icon = GFX_goal_generic_t51b_power_armour_focus
+		cost = 60
+		prerequisite = {
+			focus = veg_t45d
+		}
+		x = 37
+		y = 12
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_bossecurity entered"
+			}
+			custom_effect_tooltip = load_vegassecurity
+			hidden_effect = { load_oob = vegassecurity }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_bossecurity exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_warlabs
+		icon = GFX_focus_wonderweapons
+		cost = 60
+		prerequisite = {
+			focus = veg_smallarms
+		}
+		prerequisite = {
+			focus = veg_rapidresponse
+		}
+		x = 32
+		y = 10
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_warlabs entered"
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = robotics_tech_category
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = infantry_tech_category
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = support_tech_category
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_warlabs exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_justlikethesim
+		icon = GFX_goal_generic_data_focus
+		cost = 60
+		prerequisite = {
+			focus = veg_warlabs
+		}
+		x = 32
+		y = 11
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_justlikethesim entered"
+			}
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.75
+				uses = 2
+				category = cat_land_doctrine
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_justlikethesim exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_security
+		icon = GFX_goal_rhineland
+		cost = 60
+		prerequisite = {
+			focus = veg_smallarms
+		}
+		x = 30
+		y = 10
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_security entered"
+			}
+			add_tech_bonus = {
+				name = infantry_tech_bonus
+				bonus = 0.5
+				uses = 2
+				category = infantry_tech_category
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_security exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_vehicles
+		icon = GFX_goal_generic_production
+		cost = 60
+		prerequisite = {
+			focus = veg_security
+		}
+		x = 30
+		y = 11
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_vehicles entered"
+			}
+			add_tech_bonus = {
+				name = vehicle_tech_bonus
+				bonus = 0.5
+				uses = 2
+				category = vehicle_tech_category
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_vehicles exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_mobile
+		icon = GFX_goal_generic_army_motorized
+		cost = 60
+		prerequisite = {
+			focus = veg_vehicles
+		}
+		x = 30
+		y = 12
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_mobile entered"
+			}
+			custom_effect_tooltip = load_vegasmobilewarfare
+			hidden_effect = { load_oob = vegasmobilewarfare }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_mobile exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_boomers
+		icon = GFX_goal_generic_air_doctrines_focus
+		cost = 60
+		prerequisite = {
+			focus = veg_mobile
+		}
+		x = 32
+		y = 13
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_boomers entered"
+			}
+			add_ideas = boomeragreement
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_boomers exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_militia
+		icon = GFX_goal_generic_common_firearms_focus
+		cost = 60
+		prerequisite = {
+			focus = veg_mobile
+		}
+		x = 30
+		y = 13
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_militia entered"
+			}
+			add_ideas = militiaarms
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_militia exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_lakemead
+		icon = GFX_goal_generic_air_bomber
+		cost = 60
+		prerequisite = {
+			focus = veg_boomers
+		}
+		available = {
+			has_tech = strat_bomber_tech_2
+		}
+		x = 32
+		y = 14
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_lakemead entered"
+			}
+			custom_effect_tooltip = load_lakemead
+			hidden_effect = { load_oob = lakemead }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_lakemead exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_handh
+		icon = GFX_goal_generic_military_industry_focus
+		cost = 60
+		prerequisite = {
+			focus = veg_rapidresponse
+		}
+		x = 34
+		y = 10
+		available = {
+			211 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_handh entered"
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = 1
+			}
+			add_ideas = handh
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_handh exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_zappsigns
+		icon = GFX_goal_generic_electricity_focus
+		cost = 60
+		prerequisite = {
+			focus = veg_handh
+		}
+		x = 34
+		y = 11
+		available = {
+			211 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_zappsigns entered"
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = 2
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_zappsigns exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_sewage
+		icon = GFX_goal_generic_slums_focus
+		cost = 60
+		prerequisite = {
+			focus = veg_zappsigns
+		}
+		x = 34
+		y = 12
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_sewage entered"
+			}
+			add_ideas = sanitarycity
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_sewage exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_securitrons1
+		icon = GFX_goal_BOS_study_securitron_software
+		cost = 60
+		prerequisite = {
+			focus = veg_expansion
+		}
+		x = 28
+		y = 11
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_securitrons1 entered"
+			}
+			add_ideas = securitron1
+			add_equipment_to_stockpile = {
+				type = security_robot_securitron_equipment_1
+				amount = 200
+				producer = VEG
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_securitrons1 exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_handys
+		icon = GFX_goal_generic_production
+		cost = 60
+		prerequisite = {
+			focus = veg_firstbatch
+		}
+		x = 26
+		y = 11
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_handys entered"
+			}
+			add_ideas = mrhandys
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_handys exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_gutsys
+		icon = GFX_goal_generic_robots_focus
+		cost = 60
+		prerequisite = {
+			focus = veg_handys
+		}
+		x = 26
+		y = 12
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_gutsys entered"
+			}
+			add_equipment_to_stockpile = {
+				type = support_robot_thruster_equipment_2
+				amount = 150
+				producer = VEG
+			}
+			add_ideas = mrgutsys
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_gutsys exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_expandeddeployment
+		icon = GFX_goal_BOS_study_securitron_software
+		cost = 60
+		prerequisite = {
+			focus = veg_securitrons1
+		}
+		x = 28
+		y = 12
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_expandeddeployment entered"
+			}
+			swap_ideas = {
+				add_idea = securitron2
+				remove_idea = securitron1
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_expandeddeployment exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_robotstrats
+		icon = GFX_goal_generic_land_doctrines_focus
+		cost = 60
+		prerequisite = {
+			focus = veg_gutsys
+		}
+		x = 26
+		y = 13
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_robotstrats entered"
+			}
+			add_ideas = robobrains
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_robotstrats exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_sentrybots
+		icon = GFX_goal_generic_advanced_firearms_focus
+		cost = 60
+		prerequisite = {
+			focus = veg_robotstrats
+		}
+		prerequisite = {
+			focus = veg_expandeddeployment
+		}
+		x = 27
+		y = 14
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_sentrybots entered"
+			}
+			add_ideas = sentrybots
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] veg_sentrybots exited"
+			}
+		}
+	}
+	focus = {
+		id = veg_prime
+		icon = GFX_goal_VEG_Vegas_Prime
+		cost = 60
+		prerequisite = {
+			focus = veg_sentrybots
+		}
+		prerequisite = {
+			focus = veg_lakemead
+		}
+		available = {
+			has_completed_focus = veg_architect
+			is_house_leader = yes
+			has_tech = platinum_os_tech
+			date > 2285.1.1
+		}
+		x = 2
+		y = 1
+		relative_position_id = veg_sentrybots
+		completion_reward = {
+			country_event = nf_vegas.18
+		}
+
+	}
+}
+# vim: set ft=pdx tw=79 :

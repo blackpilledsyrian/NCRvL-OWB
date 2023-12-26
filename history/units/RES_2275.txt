@@ -1,0 +1,126 @@
+﻿division_template = {
+	name = "Scavengers"
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Children of the Wastelands"
+	regiments = {
+		ghoul_infantry = { x = 0 y = 0 }
+		ghoul_infantry = { x = 0 y = 1 }
+		ghoul_infantry = { x = 1 y = 0 }
+		ghoul_infantry = { x = 1 y = 1 }
+		ghoul_infantry = { x = 2 y = 0 }
+		ghoul_infantry = { x = 2 y = 1 }
+		ghoul_infantry = { x = 2 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Smoothskin Slaves"
+	regiments = {
+		heavy_infantry = { x = 0 y = 0 }
+		heavy_infantry = { x = 0 y = 1 }
+		heavy_infantry = { x = 0 y = 2 }
+		heavy_infantry = { x = 1 y = 0 }
+		heavy_infantry = { x = 1 y = 1 }
+		heavy_infantry = { x = 1 y = 2 }
+		heavy_infantry = { x = 2 y = 0 }
+		heavy_infantry = { x = 2 y = 1 }
+		heavy_infantry = { x = 2 y = 2 }
+
+		ghoul_infantry = { x = 3 y = 0 }
+	}
+}
+
+units = {
+	division = {
+        name = "Gate Guards"
+		location = 6735
+		division_template = "Children of the Wastelands"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division = {
+        name = "Gate Guards"
+		location = 6735
+		division_template = "Children of the Wastelands"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division = {
+        name = "Sub Level Security"
+		location = 6582
+		division_template = "Children of the Wastelands"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+        name = "Scavengers"
+		location = 8097
+		division_template = "Scavengers"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+    }
+    division = {
+        name = "Gallup's Spoils"
+		location = 1580
+		division_template = "Smoothskin Slaves"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+}
+
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = energy_equipment_2
+			creator = "RES"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = heavy_infantry_equipment_1
+			creator = "RES"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = explosive_demolitions_equipment_2
+			creator = "RES"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = anti_tank_equipment_1
+			creator = "RES"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = energy_fireteam_equipment_2
+			creator = "RES"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+}

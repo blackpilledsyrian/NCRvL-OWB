@@ -1,0 +1,6740 @@
+﻿add_namespace = nf_legion
+# The White Legs Petition
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.1" }
+	id = nf_legion.1
+	title = nf_legion.1.t
+	desc = nf_legion.1.d
+	picture = GFX_event_CES_whitelegs
+	is_triggered_only = yes
+	# Ally
+	option = {
+		name = nf_legion.1.a
+		trigger = {
+			is_in_faction = no
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 100
+			}
+		}
+		#join_from_faction = yes
+		set_country_flag = accepted_petition
+		WHT = {
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.5
+			}
+		}
+		army_experience = 25
+		####
+		add_ai_strategy = {
+			type = befriend
+			id = CES
+			value = 100
+		}
+		CES = {
+			country_event = nf_legion.1000
+		}
+	}
+	# Refuse
+	option = {
+		name = nf_legion.1.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				is_historical_focus_on = no
+				factor = 50
+			}
+		}
+		CES = {
+			country_event = nf_legion.1001
+		}
+		set_country_flag = refused_petition
+	}
+}
+
+#White Legs Accept
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.1000" }
+	id = nf_legion.1000
+	title = nf_legion.1000.title
+	desc = nf_legion.1000.desc
+	picture = GFX_event_CES_whitelegs
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.1000.a
+		add_opinion_modifier = {
+			target = WHT
+			modifier = loyal_tribe
+		}
+		reverse_add_opinion_modifier = {
+			target = WHT
+			modifier = loyal_tribe
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_rule = can_send_volunteers
+				}
+			}
+			set_rule = {
+				can_send_volunteers = yes
+			}
+		}
+		else = {
+			add_ideas = southern_friends
+		}
+		add_ai_strategy = {
+			type = send_volunteers_desire
+			id = "WHT"
+			value = 300
+		}
+		add_ai_strategy = {
+			type = befriend
+			id = WHT
+			value = 50
+		}
+		add_ai_strategy = {
+			type = send_lend_lease_desire
+			id = WHT
+			value = 50
+		}
+	}
+}
+
+#White Legs Refuse
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.1001" }
+	id = nf_legion.1001
+	title = nf_legion.1001.title
+	desc = nf_legion.1001.desc
+	picture = GFX_event_CES_whitelegs
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.1001.a
+		add_opinion_modifier = {
+			target = WHT
+			modifier = disloyal_tribe
+		}
+		reverse_add_opinion_modifier = {
+			target = WHT
+			modifier = disloyal_tribe
+		}
+		add_ai_strategy = {
+			type = antagonize
+			id = WHT
+			value = 50
+		}
+		complete_national_focus = ces_white_legs_refuse
+	}
+}
+
+#White Legs Are Our Bitches
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.1002" }
+	id = nf_legion.1002
+	title = nf_legion.1002.title
+	desc = nf_legion.1002.desc
+	picture = GFX_event_legion_slaves
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.1002.a
+		custom_effect_tooltip = nf_legion.1002.a_tt
+		set_country_flag = WHT_legion_advisors
+		hidden_effect = {
+			every_state = {
+				limit = {
+					is_utah_state = yes
+				}
+				set_variable = {
+					coring_cost_targeted_state_factor@WHT = -0.5
+				}
+			}
+		}
+		if = {
+			limit = {
+				can_use_autonomy_system = yes
+			}
+			CES = {
+				set_autonomy = {
+					target = WHT
+					autonomy_state = autonomy_client_tribe
+				}
+			}
+		}
+		else = {
+			CES = {
+				WHT = {
+					become_puppet = yes
+				}
+			}
+		}
+		WHT = {
+			add_country_leader_role = {
+				character = WHT_salt_upon_wounds
+				promote_leader = yes
+				country_leader = {
+					expire = "3000.1.1.12"
+					ideology = warlordship
+					traits = {
+						warmonger
+					}
+				}
+			}
+		}
+	}
+}
+
+# The Eighties Petition
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.2" }
+	id = nf_legion.2
+	title = nf_legion.2.t
+	desc = nf_legion.2.d
+	picture = GFX_event_CES_whitelegs
+	is_triggered_only = yes
+	# Become Friends
+	option = {
+		name = nf_legion.2.a
+		trigger = {
+			is_in_faction = no
+		}
+		ai_chance = {
+			base = 7
+		}
+		set_country_flag = accepted_petition
+		army_experience = 25
+		add_opinion_modifier = {
+			target = CES
+			modifier = loyal_tribe
+		}
+		reverse_add_opinion_modifier = {
+			target = CES
+			modifier = loyal_tribe
+		}
+		add_ai_strategy = {
+			type = befriend
+			id = CES
+			value = 100
+		}
+		CES = {
+			country_event = nf_legion.2000
+		}
+	}
+	# Refuse
+	option = {
+		name = nf_legion.2.b
+		ai_chance = {
+			base = 3
+		}
+		set_country_flag = refused_petition
+		add_opinion_modifier = {
+			target = CES
+			modifier = disloyal_tribe
+		}
+		reverse_add_opinion_modifier = {
+			target = CES
+			modifier = disloyal_tribe
+		}
+		CES = {
+			country_event = nf_legion.2001
+		}
+	}
+}
+
+#Eighties Accept
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.2000" }
+	id = nf_legion.2000
+	title = nf_legion.2000.title
+	desc = nf_legion.2000.desc
+	picture = GFX_event_CES_whitelegs
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.2000.a
+		add_opinion_modifier = {
+			target = EHT
+			modifier = loyal_tribe
+		}
+		reverse_add_opinion_modifier = {
+			target = EHT
+			modifier = loyal_tribe
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_rule = can_send_volunteers
+				}
+			}
+			set_rule = {
+				can_send_volunteers = yes
+			}
+		}
+		else = {
+			add_ideas = southern_friends
+		}
+		add_ai_strategy = {
+			type = send_volunteers_desire
+			id = "EHT"
+			value = 300
+		}
+		add_ai_strategy = {
+			type = befriend
+			id = EHT
+			value = 50
+		}
+		add_ai_strategy = {
+			type = send_lend_lease_desire
+			id = EHT
+			value = 50
+		}
+	}
+}
+
+#Eighties Refuse
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.2001" }
+	id = nf_legion.2001
+	title = nf_legion.2001.title
+	desc = nf_legion.2001.desc
+	picture = GFX_event_CES_whitelegs
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.2001.a
+		add_ai_strategy = {
+			type = antagonize
+			id = EHT
+			value = 50
+		}
+	}
+}
+
+# Expedition to Blackfoot
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.3" }
+	id = nf_legion.3
+	title = nf_legion.3.t
+	desc = nf_legion.3.d
+	picture = GFX_event_CES_camp_2
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.3.a
+		add_ideas = legion_nf_weapon_maintenance
+	}
+	option = {
+		name = nf_legion.3.b
+		add_ideas = legion_nf_unit_tactics
+	}
+	option = {
+		name = nf_legion.3.c
+		add_ideas = legion_nf_explosives_creation
+	}
+	option = {
+		name = nf_legion.3.e
+		add_ideas = legion_nf_weapon_maintenance
+		add_ideas = legion_nf_unit_tactics
+		add_ideas = legion_nf_explosives_creation
+		add_to_variable = {
+			CES_stress_level = 1
+		}
+		custom_effect_tooltip = CES_stress_increase
+	}
+}
+
+# Death in the Canyons
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.4" }
+	id = nf_legion.4
+	title = nf_legion.4.t
+	desc = nf_legion.4.d
+	picture = GFX_event_ces_navajo
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.4.a
+		add_ideas = legion_nf_ridgers_pyre
+	}
+	option = {
+		name = nf_legion.4.b
+		add_ideas = legion_nf_kaibab_crucifiction
+	}
+	option = {
+		name = nf_legion.4.c
+		add_ideas = legion_nf_ridgers_pyre
+		add_ideas = legion_nf_kaibab_crucifiction
+		add_to_variable = {
+			CES_stress_level = 1
+		}
+		custom_effect_tooltip = CES_stress_increase
+	}
+}
+
+# The Malpais Legate
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.5" }
+	id = nf_legion.5
+	title = nf_legion.5.t
+	desc = nf_legion.5.d
+	picture = GFX_event_CES_malpais_legate
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.5.a
+		add_field_marshal_role = {
+			character = CES_malpais
+			skill = 5
+			legacy_id = 10008
+			traits = {
+				urban_assault_specialist
+				fortress_buster
+				strong_trait
+				agile_trait
+				conqueror
+			}
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 5
+			logistics_skill = 3
+		}
+		custom_effect_tooltip = legion_siege_battalion_tt
+		hidden_effect = {
+			load_oob = "legion_siege_battalion"
+		}
+	}
+	option = {
+		name = nf_legion.5.b
+		add_field_marshal_role = {
+			character = CES_malpais
+			skill = 5
+			legacy_id = 10008
+			traits = {
+				hill_fighter
+				strong_trait
+				agile_trait
+				charismatic_trait
+				conqueror
+			}
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 6
+		}
+		set_country_flag = ces_malpais_friend
+		custom_effect_tooltip = legion_malpais_friend_tt
+	}
+	option = {
+		name = nf_legion.5.c
+		add_field_marshal_role = {
+			character = CES_malpais
+			skill = 5
+			legacy_id = 10008
+			traits = {
+				desert_fox
+				strong_trait
+				agile_trait
+				lucky_trait
+				conqueror
+			}
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 6
+		}
+		custom_effect_tooltip = legion_chariots_tt
+		add_equipment_to_stockpile = {
+			type = light_motorized_equipment_1
+			amount = 250
+			producer = USA
+		}
+		hidden_effect = {
+			load_oob = "legion_chariots"
+		}
+	}
+	option = {
+		name = nf_legion.5.e
+		add_field_marshal_role = {
+			character = CES_malpais
+			skill = 6
+			legacy_id = 10008
+			traits = {
+				hill_fighter
+				desert_fox
+				strong_trait
+				agile_trait
+				conqueror
+			}
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 4
+			logistics_skill = 7
+		}
+		custom_effect_tooltip = legion_stress_caesar_tt
+		hidden_effect = {
+			load_oob = "legion_chariots"
+		}
+		hidden_effect = {
+			load_oob = "legion_recon_battalion"
+		}
+		add_to_variable = {
+			CES_stress_level = 1
+		}
+		set_country_flag = malpais_buddy
+	}
+}
+
+# Vulcan
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.6" }
+	id = nf_legion.6
+	title = nf_legion.6.t
+	desc = nf_legion.6.d
+	picture = GFX_event_CES_camp_1
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.6.a
+		add_ideas = legion_chariots_of_gods
+	}
+	option = {
+		name = nf_legion.6.b
+		add_ideas = ces_scribes_slaves
+	}
+	option = {
+		name = nf_legion.6.c
+		add_ideas = ces_scribes_slaves
+		add_ideas = legion_chariots_of_gods
+		add_to_variable = {
+			CES_stress_level = 1
+		}
+		custom_effect_tooltip = CES_stress_increase
+	}
+}
+
+# Glory
+news_event = {
+	id = nf_legion.7
+	title = nf_legion.7.t
+	desc = nf_legion.7.d
+	picture = GFX_event_CES_camp_1
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.7.a
+		add_political_power = 10
+	}
+}
+
+#Hoover Dam over
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.11" }
+	id = nf_legion.11
+	title = nf_legion.11.t
+	desc = nf_legion.11.d
+	picture = GFX_event_CES_hoover_dam
+	is_triggered_only = yes
+	option = {
+		#Lost the war
+		name = nf_legion.11.a
+		trigger = {
+			NOT = {
+				252 = {
+					controller = {
+						tag = ROOT
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			white_peace = NCR
+			white_peace = CES
+		}
+		set_country_flag = hoover_dam_lost
+		clr_country_flag = battle_for_hoover_dam
+	}
+	option = {
+		#Congrats u win
+		name = nf_legion.11.b
+		trigger = {
+			252 = {
+				controller = {
+					tag = ROOT
+				}
+			}
+		}
+		set_country_flag = hoover_dam_won
+		transfer_state = 252
+		transfer_state = 613
+		hidden_effect = {
+			white_peace = NCR
+			white_peace = CES
+		}
+		clr_country_flag = battle_for_hoover_dam
+	}
+}
+
+country_event = {
+	id = nf_legion.420
+	title = nf_legion.420.t
+	desc = nf_legion.420.d
+	picture = GFX_event_caesar_death
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.420.a
+		add_political_power = 300
+		add_stability = 0.1
+		add_war_support = 0.1
+	}
+	option = {
+		name = nf_legion.420.b
+		add_stability = -0.1
+		add_war_support = -0.1
+		country_event = nf_legion.70
+	}
+}
+
+#Event to the Khan's to join the legion from ces_the_great_khans
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.12" }
+	id = nf_legion.12
+	title = nf_legion.12.t
+	desc = nf_legion.12.d
+	picture = GFX_event_CES_caesar
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.12.a
+		join_from_faction = yes
+		CES = {
+			country_event = nf_legion.13
+		}
+	}
+	option = {
+		name = nf_legion.12.b
+		CES = {
+			country_event = nf_legion.14
+		}
+	}
+}
+
+#Response from the Khans - They Accept
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.13" }
+	id = nf_legion.13
+	title = nf_legion.13.t
+	desc = nf_legion.13.d
+	picture = GFX_event_CES_caesar
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.13.a
+	}
+}
+
+#Response from the Khans - They Decline
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.14" }
+	id = nf_legion.14
+	title = nf_legion.13.t
+	desc = nf_legion.14.d
+	picture = GFX_event_CES_caesar
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.14.a
+	}
+}
+
+# vim: set ft=pdx tw=79 :
+####################### New
+news_event = {
+	id = nf_legion.20
+	title = nf_legion.20.t
+	desc = nf_legion.20.d
+	picture = GFX_event_generic_settlement_3
+	trigger = {
+		tag = CES
+		date > 2275.01.01
+		owns_state = 518
+		owns_state = 519
+	}
+	mean_time_to_happen = {
+		days = 60
+	}
+	fire_only_once = yes
+	option = {
+		name = nf_legion.20.a
+		country_event = {
+			id = nf_legion.21
+			days = 30
+		}
+		custom_effect_tooltip = nf_legion.20.a_tt
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.21" }
+	id = nf_legion.21
+	title = nf_legion.21.t
+	desc = nf_legion.21.d
+	picture = GFX_event_CES_caesar
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_legion.21.a
+		country_event = {
+			id = nf_legion.22
+			days = 10
+		}
+		add_to_variable = {
+			CES_lucius_glory = 2
+		}
+	}
+	option = {
+		name = nf_legion.21.b
+		country_event = {
+			id = nf_legion.23
+			days = 30
+		}
+		custom_effect_tooltip = nf_legion.20.a_tt
+		add_to_variable = {
+			CES_vulpes_glory = 1
+		}
+	}
+	option = {
+		name = nf_legion.21.c
+		country_event = {
+			id = nf_legion.24
+			days = 30
+		}
+		custom_effect_tooltip = nf_legion.20.a_tt
+		add_to_variable = {
+			CES_aurelius_glory = 1
+		}
+		set_country_flag = aurelius_won
+	}
+	option = {
+		name = nf_legion.21.e
+		add_to_variable = {
+			CES_malp_glory = 1
+		}
+		custom_effect_tooltip = nf_legion.20.a_tt
+		set_country_flag = phx_doused
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.22" }
+	id = nf_legion.22
+	title = nf_legion.22.t
+	desc = nf_legion.22.d
+	picture = GFX_event_CES_caesar
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.22.a
+		add_political_power = 50
+		518 = {
+			if = {
+				limit = {
+					is_valid_state_for_2_civilian_factories = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		set_country_flag = phx_doused
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.23" }
+	id = nf_legion.23
+	title = nf_legion.23.t
+	desc = nf_legion.23.d
+	picture = GFX_event_CES_vulpes
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.23.a
+		add_political_power = 150
+		set_country_flag = phx_doused
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.24" }
+	id = nf_legion.24
+	title = nf_legion.24.t
+	desc = nf_legion.24.d
+	picture = GFX_event_CES_vulpes
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.24.a
+		hidden_effect = {
+			every_owned_state = {
+				limit = {
+					is_core_of = PHR
+				}
+				remove_core_of = PHR
+			}
+			518 = {
+				add_core_of = PHR
+			}
+			519 = {
+				add_core_of = PHR
+			}
+		}
+		release = PHR
+		PHR = {
+			declare_war_on = {
+				target = CES
+				type = annex_everything
+			}
+		}
+		hidden_effect = {
+			set_country_flag = phx_doused
+			518 = {
+				add_core_of = CES
+			}
+			519 = {
+				add_core_of = CES
+			}
+			93 = {
+				add_core_of = PHR
+			}
+			94 = {
+				add_core_of = PHR
+			}
+			631 = {
+				add_core_of = PHR
+			}
+			632 = {
+				add_core_of = PHR
+			}
+			596 = {
+				add_core_of = PHR
+			}
+			597 = {
+				add_core_of = PHR
+			}
+			502 = {
+				add_core_of = PHR
+			}
+			483 = {
+				add_core_of = PHR
+			}
+			442 = {
+				add_core_of = PHR
+			}
+			431 = {
+				add_core_of = PHR
+			}
+			411 = {
+				add_core_of = PHR
+			}
+			386 = {
+				add_core_of = PHR
+			}
+			381 = {
+				add_core_of = PHR
+			}
+			362 = {
+				add_core_of = PHR
+			}
+			35 = {
+				add_core_of = PHR
+			}
+			349 = {
+				add_core_of = PHR
+			}
+			318 = {
+				add_core_of = PHR
+			}
+			296 = {
+				add_core_of = PHR
+			}
+			289 = {
+				add_core_of = PHR
+			}
+			207 = {
+				add_core_of = PHR
+			}
+			388 = {
+				add_core_of = PHR
+			}
+		}
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.25" }
+	id = nf_legion.25
+	title = nf_legion.25.t
+	desc = nf_legion.25.d
+	picture = GFX_event_CES_caesar
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.22.a
+		add_political_power = 50
+		set_country_flag = phx_doused
+		518 = {
+			if = {
+				limit = {
+					is_valid_state_for_2_civilian_factories = yes
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			set_temp_variable = {
+				pop_add = -300
+			}
+			add_state_population = yes
+		}
+	}
+}
+
+news_event = {
+	id = nf_legion.26
+	title = nf_legion.26.t
+	desc = nf_legion.26.d
+	picture = GFX_event_event_auto_doc
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.26.a
+		custom_effect_tooltip = nf_legion.26.a_tt
+		set_country_flag = CES_stress
+	}
+}
+
+news_event = {
+	id = nf_legion.27
+	title = nf_legion.27.t
+	desc = nf_legion.27.d
+	picture = GFX_event_CES_caesar
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.27.a
+		army_experience = 25
+	}
+}
+
+news_event = {
+	id = nf_legion.28
+	title = nf_legion.28.t
+	desc = nf_legion.28.d
+	picture = GFX_event_CES_camp_1
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.28.a
+		if = {
+			limit = {
+				has_completed_focus = ces_rebirth_principes_doctrine
+			}
+			add_ideas = legion_select_few1
+		}
+		if = {
+			limit = {
+				has_completed_focus = ces_rebirth_triplex
+			}
+			add_ideas = legion_select_few2
+		}
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.29" }
+	id = nf_legion.29
+	title = nf_legion.29.t
+	desc = nf_legion.29.d
+	picture = GFX_event_CES_camp_1
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.29.a
+		add_political_power = 50
+		add_war_support = 0.1
+		add_to_variable = {
+			CES_aurelius_glory = 1
+		}
+		custom_effect_tooltip = nf_legion.aurelius_glory
+		518 = {
+			if = {
+				limit = {
+					is_valid_state_for_2_civilian_factories = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	option = {
+		name = nf_legion.29.b
+		army_experience = 20
+		add_stability = 0.1
+		add_to_variable = {
+			CES_vulpes_glory = 1
+		}
+		custom_effect_tooltip = nf_legion.vulpes_glory
+		518 = {
+			if = {
+				limit = {
+					is_valid_state_for_2_arms_factories = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.30" }
+	id = nf_legion.30
+	title = nf_legion.30.t
+	desc = {
+		text = nf_legion.30.d
+		trigger = {
+			NOT = {
+				has_country_flag = CES_burned_man
+			}
+		}
+	}
+	desc = {
+		text = nf_legion.30.de
+		trigger = {
+			has_country_flag = CES_burned_man
+		}
+	}
+	picture = GFX_event_ces_navajo
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.30.a
+		add_political_power = 100
+		add_to_variable = {
+			CES_lucius_glory = 1
+		}
+		custom_effect_tooltip = nf_legion.lucius_glory
+		set_country_flag = lucius_friend_navajo
+		add_to_variable = {
+			NAV.NAV_loyalty = 1
+		}
+		custom_effect_tooltip = NAV_good_friends_tt
+	}
+	option = {
+		name = nf_legion.30.b
+		army_experience = 40
+		add_to_variable = {
+			CES_malp_glory = 1
+		}
+		custom_effect_tooltip = nf_legion.malpais_glory
+		set_country_flag = navajo_hate_legion
+		add_to_variable = {
+			NAV.NAV_resistance = 1
+		}
+		custom_effect_tooltip = NAV_plotting_tt
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.31" }
+	id = nf_legion.31
+	title = nf_legion.31.t
+	desc = nf_legion.31.d
+	picture = GFX_event_CES_camp_1
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.31.a
+		add_to_variable = {
+			CES_aurelius_glory = 1
+		}
+		custom_effect_tooltip = nf_legion.aurelius_glory
+		518 = {
+			if = {
+				limit = {
+					is_valid_state_for_2_civilian_factories = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			else = {
+				OWNER = { add_offsite_building = { type = industrial_complex level = 2 } }
+			}
+			add_state_modifier = {
+				modifier = {
+					caps_trade_node_route_limit = 1
+				}
+			}
+		}
+		set_capital = { state = 518 }
+	}
+	option = {
+		name = nf_legion.31.b
+		add_to_variable = {
+			CES_lucius_glory = 1
+		}
+		custom_effect_tooltip = nf_legion.lucius_glory
+		520 = {
+			if = {
+				limit = {
+					is_valid_state_for_2_arms_factories = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			else = {
+				OWNER = { add_offsite_building = { type = arms_factory level = 2 } }
+			}
+			add_state_modifier = {
+				modifier = {
+					caps_trade_node_route_limit = 1
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.32" }
+	id = nf_legion.32
+	title = nf_legion.32.t
+	desc = {
+		text = nf_legion.32.d
+		trigger = {
+			NOT = {
+				has_country_flag = CES_burned_man
+			}
+		}
+	}
+	desc = {
+		text = nf_legion.32.de
+		trigger = {
+			has_country_flag = CES_burned_man
+		}
+	}
+	picture = GFX_event_twosun_car
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.32.a
+		add_political_power = 100
+		add_to_variable = {
+			CES_vulpes_glory = 1
+		}
+		custom_effect_tooltip = nf_legion.vulpes_glory
+		set_country_flag = lucius_friend_two_sun
+	}
+	option = {
+		name = nf_legion.32.b
+		trigger = {
+			NOT = {
+				has_country_flag = CES_burned_man
+			}
+		}
+		520 = {
+			if = {
+				limit = {
+					is_valid_state_for_2_civilian_factories = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		TWO = {
+			516 = {
+				remove_building = {
+					type = industrial_complex
+					level = 2
+				}
+			}
+		}
+		add_to_variable = {
+			CES_malp_glory = 1
+		}
+		custom_effect_tooltip = nf_legion.malpais_glory
+		set_country_flag = two_sun_hate_legion
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.33" }
+	id = nf_legion.33
+	title = nf_legion.33.t
+	desc = nf_legion.33.d
+	picture = GFX_event_CES_camp_2
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.33.a
+		news_event = {
+			id = nf_legion.34
+			days = 180
+		}
+		custom_effect_tooltip = nf_legion.33.a_tt
+	}
+	option = {
+		name = nf_legion.33.b
+		news_event = {
+			id = nf_legion.35
+			days = 180
+		}
+		custom_effect_tooltip = nf_legion.33.a_tt
+	}
+}
+
+news_event = {
+	id = nf_legion.34
+	title = nf_legion.34.t
+	desc = nf_legion.34.d
+	picture = GFX_event_CES_camp_2
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.34.a
+		203 = {
+			add_resource = {
+				type = water
+				amount = 35
+			}
+		}
+	}
+}
+
+news_event = {
+	id = nf_legion.35
+	title = nf_legion.35.t
+	desc = nf_legion.35.d
+	picture = GFX_event_CES_camp_2
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.35.a
+		203 = {
+			add_resource = {
+				type = energy
+				amount = 20
+			}
+		}
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.36" }
+	id = nf_legion.36
+	title = nf_legion.36.t
+	desc = nf_legion.36.d
+	picture = GFX_event_CES_camp_2
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.36.a
+		news_event = {
+			id = nf_legion.37
+			days = 180
+		}
+		custom_effect_tooltip = nf_legion.33.a_tt
+	}
+	option = {
+		name = nf_legion.36.b
+		news_event = {
+			id = nf_legion.38
+			days = 180
+		}
+		custom_effect_tooltip = nf_legion.33.a_tt
+	}
+}
+
+news_event = {
+	id = nf_legion.37
+	title = nf_legion.37.t
+	desc = nf_legion.37.d
+	picture = GFX_event_CES_camp_2
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.37.a
+		520 = {
+			add_resource = {
+				type = metal
+				amount = 20
+			}
+			add_state_modifier = {
+				modifier = {
+					state_production_speed_buildings_factor = 0.2
+				}
+			}
+		}
+		add_political_power = 75
+	}
+}
+
+news_event = {
+	id = nf_legion.38
+	title = nf_legion.38.t
+	desc = nf_legion.38.d
+	picture = GFX_event_CES_camp_2
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.38.a
+		520 = {
+			add_resource = {
+				type = advanced
+				amount = 10
+			}
+		}
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 1
+			category = industry
+		}
+		add_political_power = 75
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.39" }
+	id = nf_legion.39
+	title = nf_legion.39.t
+	desc = nf_legion.39.d
+	picture = GFX_event_CES_camp_2
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.39.a
+		country_event = nf_legion.40
+		custom_effect_tooltip = nf_legion.33.a_tt
+	}
+	option = {
+		name = nf_legion.39.b
+		country_event = nf_legion.41
+		custom_effect_tooltip = nf_legion.33.a_tt
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.40" }
+	id = nf_legion.40
+	title = nf_legion.40.t
+	desc = nf_legion.40.d
+	picture = GFX_event_CES_camp_2
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.40.a
+		516 = {
+			add_resource = {
+				type = circuitry
+				amount = 20
+			}
+		}
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.41" }
+	id = nf_legion.41
+	title = nf_legion.41.t
+	desc = nf_legion.41.d
+	picture = GFX_event_CES_camp_2
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.41.a
+		516 = {
+			add_resource = {
+				type = metal
+				amount = 35
+			}
+		}
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.42" }
+	id = nf_legion.42
+	title = nf_legion.42.t
+	desc = nf_legion.42.d
+	picture = GFX_event_CES_camp_2
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.42.a
+		if = {
+			limit = {
+				GDH = {
+					NOT = {
+						has_completed_focus = gdh_bull_market
+					}
+				}
+			}
+			GDH = {
+				news_event = nf_legion.109
+			}
+		}
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.43" }
+	id = nf_legion.43
+	title = nf_legion.43.t
+	desc = nf_legion.43.d
+	picture = GFX_event_CES_camp_2
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.43.a
+		set_temp_variable = {
+			caps_to_add = -10
+		}
+		add_caps = yes
+		CES = {
+			country_event = nf_legion.44
+		}
+		add_to_variable = { CES.ultima_aurelius = -1 }
+		custom_effect_tooltip = ces_add_gdh_aurelius_opinion
+	}
+	option = {
+		name = nf_legion.43.b
+		add_political_power = -25
+		CES = {
+			country_event = nf_legion.44
+		}
+		add_to_variable = { CES.ultima_vulpes = -1 }
+		custom_effect_tooltip = ces_add_gdh_vulpes_opinion
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.44" }
+	id = nf_legion.44
+	title = nf_legion.44.t
+	desc = nf_legion.44.d
+	picture = GFX_event_legion_scouts
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.44.a
+		add_political_power = 100
+		custom_effect_tooltip = nf_legion.vulpes_glory
+		add_to_variable = {
+			CES_vulpes_glory = 1
+		}
+	}
+}
+
+news_event = { # not used
+	id = nf_legion.45
+	title = nf_legion.45.t
+	desc = nf_legion.45.d
+	picture = GFX_event_legion_slaves
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.45.a
+		add_manpower = 1750
+		# set_temp_variable = {
+		# 	slaves_to_add = 1.75
+		# }
+		# add_slaves_to_nation = yes
+	}
+}
+
+news_event = {
+	id = nf_legion.46
+	title = nf_legion.46.t
+	desc = nf_legion.46.d
+	picture = GFX_event_lanius_planning
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.46.a
+		add_corps_commander_role = {
+			character = GDH_lucius_three_roads
+			skill = 3
+			traits = {
+				conqueror
+				enduring_trait
+			}
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+		}
+		add_manpower = 300
+	}
+}
+
+country_event = {
+	id =nf_legion.47
+	title = nf_legion.47.t
+	desc = nf_legion.47.d
+	picture = GFX_event_twosun_car
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.47.a
+		set_technology = {
+			chariot_vehicle_tech = 1
+			fireteam_weaponry_tech = 1
+		}
+		division_template = {
+			name = "Two Sun Veterans"
+			regiments = {
+				chariot_unit = { x = 0 y = 0 }
+				chariot_unit = { x = 0 y = 1 }
+				chariot_unit = { x = 0 y = 2 }
+				chariot_unit = { x = 1 y = 0 }
+				chariot_unit = { x = 1 y = 1 }
+				chariot_unit = { x = 1 y = 2 }
+				chariot_unit = { x = 2 y = 0 }
+				chariot_unit = { x = 2 y = 1 }
+				chariot_unit = { x = 2 y = 2 }
+				chariot_unit = { x = 3 y = 0 }
+			}
+		}
+		516 = {
+			create_unit = {
+				division = "name = \"Will's Finest\" division_template = \"Two Sun Veterans\" start_experience_factor = 1.0 start_equipment_factor = 1.0 force_equipment_variants = { chariot_equipment_1 = { owner = \"TWO\" } }"
+				owner = CES
+				count = 2
+			}
+		}
+	}
+}
+
+country_event = { # COW question
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.48" }
+	id = nf_legion.48
+	title = nf_legion.48.t
+	desc = nf_legion.48.d
+	picture = GFX_event_desert_rangers_marching
+	is_triggered_only = yes
+	immediate = {
+		TWO = { set_country_flag = two_can_conquer_cow }
+	}
+	option = {
+		name = nf_legion.48.a
+
+		set_global_flag = ces_ultima_to_two
+
+		trigger = {
+			ces_ultimo_has_influence_two = yes
+		}
+	}
+
+	option = {
+		name = nf_legion.48.b
+
+		set_global_flag = ces_ultima_to_gdh
+
+		trigger = {
+			ces_ultimo_has_influence_gdh = yes
+		}
+	}
+
+	option = {
+		name = nf_legion.48.c
+
+		set_global_flag = ces_ultima_friendship
+	}
+}
+
+###################### Civil War Stuff (starts at 70) ##############
+news_event = {
+	#Death of Caesar
+	id = nf_legion.70
+	title = nf_legion.70.t
+	desc = nf_legion.70.d
+	picture = GFX_event_caesar_death
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.70.a
+		hidden_effect = {
+			add_country_leader_role = {
+				Character = CES_caesar_council
+				Promote_leader = yes
+				Country_leader = {
+					ideology = benevolent_dictatorship
+					#expire = “3000.01.01.01”
+					traits = {
+					}
+					id = -1
+				}
+			}
+			CES_caesar_council = {
+				promote_character = yes
+				promote_character = benevolent_dictatorship
+			}
+			retire_character = CES_caesar
+		}
+		clr_country_flag = CES_stress
+		LAC = {
+			news_event = nf_legion.71
+		}
+		TWO = {
+			news_event = nf_legion.71
+		}
+		country_event = {
+			id = nf_legion.80
+			days = 7
+		}
+		hidden_effect = {
+			TWO = {
+				set_country_flag = two_ces_civilwar
+				mark_focus_tree_layout_dirty = yes
+			}
+		}
+		NAV = {
+			news_event = {
+				id = nf_legion.94
+				days = 7
+			}
+		}
+	}
+}
+
+news_event = {
+	#Death of Caesar
+	id = nf_legion.71
+	title = nf_legion.71.t
+	desc = nf_legion.71.d
+	picture = GFX_event_caesar_death
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.71.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = LAC
+					tag = TWO
+				}
+				is_caesars_legion_member = yes
+			}
+		}
+	}
+	option = {
+		name = nf_legion.71.b
+	}
+	option = {
+		name = nf_legion.71.c
+	}
+}
+
+news_event = {
+	#Aurelian Revolts
+	id = nf_legion.72
+	title = nf_legion.72.t
+	desc = nf_legion.72.d
+	picture = GFX_event_caesar_death
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.72.a
+		if = {
+			# If CES owns its core territory
+			limit = {
+				controls_state = 520
+			}
+			every_state = {
+				limit = {
+					OR = {
+						state = 518
+						state = 519
+					}
+					is_controlled_by = ROOT
+				}
+				AUR = {
+					transfer_state = PREV
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 330
+					controls_state = 335
+				}
+				AUR = {
+					transfer_state = 330
+					transfer_state = 335
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 207
+					controls_state = 94
+					controls_state = 318
+				}
+				AUR = {
+					transfer_state = 207
+					transfer_state = 94
+					transfer_state = 318
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 207
+					controls_state = 94
+					controls_state = 318
+				}
+				AUR = {
+					transfer_state = 207
+					transfer_state = 94
+					transfer_state = 318
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 62
+					controls_state = 516
+					controls_state = 247
+					controls_state = 283
+					controls_state = 297
+					controls_state = 588
+				}
+				AUR = {
+					transfer_state = 62
+					transfer_state = 516
+					transfer_state = 247
+					transfer_state = 283
+					transfer_state = 297
+					transfer_state = 588
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 335
+					controls_state = 330
+					controls_state = 2
+					controls_state = 444
+				}
+				AUR = {
+					transfer_state = 335
+					transfer_state = 330
+					transfer_state = 2
+					transfer_state = 444
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 395
+					controls_state = 517
+					controls_state = 146
+				}
+				AUR = {
+					transfer_state = 335
+					transfer_state = 330
+					transfer_state = 2
+					transfer_state = 444
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 93
+				}
+				AUR = {
+					transfer_state = 93
+				}
+			}
+		}
+		AUR = {
+			set_country_flag = CES_aurelian_legion_flag
+			set_politics = {
+				ruling_party = ruler
+			}
+			set_popularities = {
+				ruler = 70
+				people = 15
+				elites = 10
+				intellectuals = 5
+			}
+			set_party_name = {
+				ideology = ruler
+				long_name = "Aurelian's Loyalists"
+				name = "Aurelians"
+			}
+			set_capital = { state = 518 }
+			inherit_technology = CES
+			set_stability = 0.6
+			set_war_support = 0.5
+			CES = {
+				CES_aurelius = {
+					set_nationality = AUR
+				}
+			}
+			promote_character = CES_aurelius
+		}
+	}
+}
+
+news_event = {
+	#Vulpes  Revolts
+	id = nf_legion.73
+	title = nf_legion.73.t
+	desc = nf_legion.73.d
+	picture = GFX_event_CES_vulpes
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.73.a
+		if = {
+			limit = {
+				controls_state = 289
+				controls_state = 88
+			}
+			VLP = {
+				transfer_state = 289
+				transfer_state = 88
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 275
+				controls_state = 248
+			}
+			VLP = {
+				transfer_state = 275
+				transfer_state = 248
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 114
+				controls_state = 35
+				controls_state = 502
+			}
+			VLP = {
+				transfer_state = 114
+				transfer_state = 35
+				transfer_state = 502
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 442
+			}
+			VLP = {
+				transfer_state = 442
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 528
+				controls_state = 377
+				controls_state = 579
+				controls_state = 559
+				controls_state = 15
+				controls_state = 479
+				controls_state = 279
+			}
+			VLP = {
+				transfer_state = 528
+				transfer_state = 377
+				transfer_state = 579
+				transfer_state = 559
+				transfer_state = 15
+				transfer_state = 479
+				transfer_state = 279
+			}
+		}
+		VLP = {
+			set_politics = {
+				ruling_party = ruler
+			}
+			set_popularities = {
+				ruler = 70
+				people = 15
+				elites = 10
+				intellectuals = 5
+			}
+			set_party_name = {
+				ideology = ruler
+				long_name = "Vulpes' Loyalists"
+				name = "Wolves"
+			}
+			set_capital = { state = 289 }
+			inherit_technology = CES
+			set_stability = 0.6
+			set_war_support = 0.5
+			CES = {
+				CES_vulpes = {
+					set_nationality = VLP
+				}
+			}
+			promote_character = CES_vulpes
+		}
+	}
+}
+
+news_event = {
+	#Malpais
+	id = nf_legion.74
+	title = nf_legion.74.t
+	desc = nf_legion.74.d
+	picture = GFX_event_CES_malpais_legate
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.74.a
+		if = {
+			limit = {
+				controls_state = 563
+			}
+			MAL = {
+				transfer_state = 563
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 522
+			}
+			MAL = {
+				transfer_state = 522
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 633
+			}
+			MAL = {
+				transfer_state = 633
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 411
+			}
+			MAL = {
+				transfer_state = 411
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 431
+			}
+			MAL = {
+				transfer_state = 431
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 632
+			}
+			MAL = {
+				transfer_state = 632
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 501
+			}
+			MAL = {
+				transfer_state = 501
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 538
+			}
+			MAL = {
+				transfer_state = 538
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 232
+			}
+			MAL = {
+				transfer_state = 232
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 362
+			}
+			MAL = {
+				transfer_state = 362
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 501
+			}
+			MAL = {
+				transfer_state = 501
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 631
+			}
+			MAL = {
+				transfer_state = 631
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 244
+			}
+			MAL = {
+				transfer_state = 244
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 296
+			}
+			MAL = {
+				transfer_state = 296
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 482
+			}
+			MAL = {
+				transfer_state = 482
+			}
+		}
+		MAL = {
+			set_country_flag = CES_malpais_legion_flag
+			set_politics = {
+				ruling_party = ruler
+			}
+			set_popularities = {
+				ruler = 70
+				people = 15
+				elites = 10
+				intellectuals = 5
+			}
+			set_party_name = {
+				ideology = ruler
+				long_name = "Malpais' Loyalists"
+				name = "The Legion Loyalists"
+			}
+			set_capital = { state = 522 }
+			inherit_technology = CES
+			set_stability = 0.6
+			set_war_support = 0.5
+			CES = {
+				CES_malpais = {
+					set_nationality = MAL
+				}
+			}
+			promote_character = CES_malpais
+		}
+	}
+}
+
+news_event = {
+	#Lucius
+	id = nf_legion.75
+	title = nf_legion.75.t
+	desc = nf_legion.75.d
+	picture = GFX_event_caesar_death
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.75.a
+		if = {
+			limit = {
+				controls_state = 386
+			}
+			LUC = {
+				transfer_state = 386
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 381
+			}
+			LUC = {
+				transfer_state = 381
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 438
+			}
+			LUC = {
+				transfer_state = 438
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 317
+			}
+			LUC = {
+				transfer_state = 317
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 596
+			}
+			LUC = {
+				transfer_state = 596
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 349
+			}
+			LUC = {
+				transfer_state = 349
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 130
+			}
+			LUC = {
+				transfer_state = 130
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 553
+			}
+			LUC = {
+				transfer_state = 553
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 359
+			}
+			LUC = {
+				transfer_state = 359
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 49
+			}
+			LUC = {
+				transfer_state = 49
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 33
+			}
+			LUC = {
+				transfer_state = 33
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 604
+			}
+			LUC = {
+				transfer_state = 604
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 349
+			}
+			LUC = {
+				transfer_state = 349
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 242
+			}
+			LUC = {
+				transfer_state = 242
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 388
+			}
+			LUC = {
+				transfer_state = 388
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 520
+			}
+			LUC = {
+				transfer_state = 520
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 483
+			}
+			LUC = {
+				transfer_state = 438
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 597
+			}
+			LUC = {
+				transfer_state = 597
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 212
+			}
+			LUC = {
+				transfer_state = 212
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 483
+			}
+			LUC = {
+				transfer_state = 483
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 582
+			}
+			LUC = {
+				transfer_state = 582
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 427
+			}
+			LUC = {
+				transfer_state = 427
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 402
+			}
+			LUC = {
+				transfer_state = 402
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 439
+			}
+			LUC = {
+				transfer_state = 439
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 164
+			}
+			LUC = {
+				transfer_state = 164
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 85
+			}
+			LUC = {
+				transfer_state = 85
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 124
+			}
+			LUC = {
+				transfer_state = 124
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 85
+			}
+			LUC = {
+				transfer_state = 85
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 608
+			}
+			LUC = {
+				transfer_state = 608
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 498
+			}
+			LUC = {
+				transfer_state = 498
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 144
+			}
+			LUC = {
+				transfer_state = 144
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 175
+			}
+			LUC = {
+				transfer_state = 175
+			}
+		}
+		LUC = {
+			set_country_flag = CES_lucius_legion_flag
+			set_politics = {
+				ruling_party = ruler
+			}
+			set_popularities = {
+				ruler = 70
+				people = 15
+				elites = 10
+				intellectuals = 5
+			}
+			set_party_name = {
+				ideology = ruler
+				long_name = "The Old Guard"
+				name = "True to Caesar"
+			}
+			set_capital = { state = 529 }
+			inherit_technology = CES
+			set_stability = 0.6
+			set_war_support = 0.5
+			CES = {
+				CES_lucius = {
+					set_nationality = LUC
+				}
+			}
+			promote_character = CES_lucius
+		}
+	}
+}
+
+###
+country_event = {
+	## Lucius
+	id = nf_legion.76
+	title = nf_legion.76.t
+	desc = nf_legion.76.d
+	picture = GFX_event_ces_navajo
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.76.a
+		set_country_flag = CES_lucius_legion_flag
+		set_politics = {
+			ruling_party = ruler
+		}
+		set_cosmetic_tag = CES_lucius_legion
+		set_popularities = {
+			ruler = 70
+			people = 15
+			elites = 10
+			intellectuals = 5
+		}
+		set_party_name = {
+			ideology = ruler
+			long_name = "The Old Guard"
+			name = "True to Caesar"
+		}
+		set_capital = { state = 529 }
+		country_event = nf_legion.92
+		set_stability = 0.6
+		set_war_support = 0.5
+		promote_character = CES_lucius
+	}
+}
+
+country_event = {
+	### Vulpes
+	id = nf_legion.77
+	title = nf_legion.77.t
+	desc = nf_legion.77.d
+	picture = GFX_event_CES_vulpes
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.77.a
+		set_country_flag = CES_vulpes_legion_flag
+		set_politics = {
+			ruling_party = ruler
+		}
+		set_cosmetic_tag = CES_vulpes_legion
+		set_popularities = {
+			ruler = 70
+			people = 15
+			elites = 10
+			intellectuals = 5
+		}
+		set_party_name = {
+			ideology = ruler
+			long_name = "The Old Guard"
+			name = "True to Caesar"
+		}
+		promote_character = CES_vulpes
+	}
+}
+
+country_event = {
+	### Malpais
+	id = nf_legion.78
+	title = nf_legion.78.t
+	desc = nf_legion.78.d
+	picture = GFX_event_CES_malpais_legate
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.78.a
+		set_country_flag = CES_malpais_legion_flag
+		set_cosmetic_tag = CES_malpais_legion
+		set_politics = {
+			ruling_party = ruler
+		}
+		set_popularities = {
+			ruler = 70
+			people = 15
+			elites = 10
+			intellectuals = 5
+		}
+		set_party_name = {
+			ideology = ruler
+			long_name = "Malpais' Loyalists"
+			name = "The Legion Loyalists"
+		}
+		set_stability = 0.6
+		set_war_support = 0.5
+		event_target:CES_malpais_target = {
+			set_nationality = PREV
+		}
+		promote_character = CES_malpais
+	}
+}
+
+news_event = {
+	### Caesar is Sick
+	id = nf_legion.79
+	title = nf_legion.79.t
+	desc = nf_legion.79.d
+	picture = GFX_event_event_auto_doc
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.79.a
+		add_to_variable = {
+			CES_stress_level = 1
+		}
+		custom_effect_tooltip = CES_stress_increase
+		if = {
+			limit = {
+				check_variable = {
+					CES_stress_level > 5
+				}
+			}
+			news_event = nf_legion.70
+		}
+	}
+}
+
+country_event = {
+	###  Who Leads
+	id = nf_legion.80
+	title = nf_legion.80.t
+	desc = nf_legion.80.d
+	picture = GFX_event_CES_camp_2
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.80.a
+		trigger = {
+			check_variable = {
+				CES_lucius_glory > 3
+			}
+		}
+		ai_chance = {
+			base = 5
+		}
+		country_event = nf_legion.76
+		every_other_country = {
+			news_event = nf_legion_news.4
+		}
+	}
+	option = {
+		name = nf_legion.80.b
+		trigger = {
+			check_variable = {
+				CES_vulpes_glory > 3
+			}
+		}
+		ai_chance = {
+			base = 5
+		}
+		country_event = nf_legion.77
+		every_other_country = {
+			news_event = nf_legion_news.6
+		}
+	}
+	option = {
+		name = nf_legion.80.c
+		trigger = {
+			check_variable = {
+				CES_aurelius_glory > 3
+			}
+		}
+		ai_chance = {
+			base = 5
+		}
+		country_event = nf_legion.81
+		every_other_country = {
+			news_event = nf_legion_news.2
+		}
+	}
+	option = {
+		name = nf_legion.80.e
+		trigger = {
+			check_variable = {
+				CES_malp_glory > 3
+			}
+		}
+		ai_chance = {
+			base = 5
+		}
+		country_event = nf_legion.78
+		every_other_country = {
+			news_event = nf_legion_news.5
+		}
+	}
+	option = {
+		name = nf_legion.80.g
+		trigger = {
+			owns_state = 525
+			LAC = {
+				has_completed_focus = lac_the_march_west
+			}
+		}
+		ai_chance = {
+			base = 10
+		}
+		news_event = nf_legion.126
+		every_other_country = {
+			news_event = nf_legion_news.3
+		}
+	}
+	option = {
+		name = nf_legion.80.f
+		country_event = nf_legion.82
+	}
+}
+
+country_event = {
+	### Aurelian
+	id = nf_legion.81
+	title = nf_legion.81.t
+	desc = nf_legion.81.d
+	picture = GFX_event_ces_aurelius_flag
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.78.a
+		set_country_flag = CES_aurelian_legion_flag
+		set_cosmetic_tag = CES_aurelian_legion
+		set_politics = {
+			ruling_party = ruler
+		}
+		set_popularities = {
+			ruler = 70
+			people = 15
+			elites = 10
+			intellectuals = 5
+		}
+		promote_character = CES_aurelius
+	}
+}
+
+country_event = {
+	### Legion Civil War
+	id = nf_legion.82
+	title = nf_legion.82.t
+	desc = nf_legion.82.d
+	picture = GFX_event_CES_camp_1
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			CES = {
+				set_country_flag = CES_civil_war
+			}
+			if = {
+				limit = {
+					LAC = {
+						exists = yes
+					}
+				}
+				LAC = {
+					country_event = nf_lanius.21
+				}
+			}
+			every_country = {
+				limit = {
+					is_caesars_legion_member = yes
+				}
+				leave_caesars_legion = yes
+			}
+			every_other_country = {
+				hidden_effect = {
+					news_event = nf_legion_news.1
+				}
+			}
+			if = {
+				limit = {
+					RES = {
+						exists = yes
+					}
+				}
+				RES = {
+					country_event = {
+						id = nf_legion.128
+						days = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					EHT = {
+						exists = yes
+						has_completed_focus = EHT_ally_caesar
+					}
+				}
+				EHT = {
+					country_event = {
+						id = nf_legion.129
+						days = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					WHT = {
+						exists = yes
+						has_completed_focus = WHT_our_new_master
+					}
+				}
+				WHT = {
+					country_event = {
+						id = nf_legion.130
+						days = 1
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = nf_legion.82.a
+		create_or_join_aurelius_legion = yes
+		if = {
+			limit = {
+				GDH = {
+					exists = yes
+					has_completed_focus = gdh_profit
+				}
+			}
+			GDH = {
+				create_or_join_aurelius_legion = yes
+			}
+		}
+		set_country_flag = CES_aurelian_legion_flag
+		set_cosmetic_tag = CES_aurelian_legion
+		set_politics = {
+			ruling_party = ruler
+		}
+		set_popularities = {
+			ruler = 70
+			people = 15
+			elites = 10
+			intellectuals = 5
+		}
+		promote_character = CES_aurelius
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = CES_burned_man
+						owns_state = 5
+					}
+				}
+				malpais_breaks_off = yes
+				lucius_breaks_off = yes
+				vulpes_breaks_off = yes
+				transfer_units_fraction = {
+					target = LUC
+					size = 0.25
+					stockpile_ratio = 0.25
+					army_ratio = 0.25
+					navy_ratio = 0.25
+					air_ratio = 0.25
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = MAL
+					size = 0.33
+					stockpile_ratio = 0.33
+					army_ratio = 0.33
+					navy_ratio = 0.33
+					air_ratio = 0.33
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = VLP
+					size = 0.5
+					stockpile_ratio = 0.5
+					army_ratio = 0.5
+					navy_ratio = 0.5
+					air_ratio = 0.5
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = CES_burned_man
+					NOT = {
+						owns_state = 5
+					}
+				}
+				caius_breaks_off_malpais = yes
+				lucius_breaks_off = yes
+				vulpes_breaks_off = yes
+				transfer_units_fraction = {
+					target = LUC
+					size = 0.25
+					stockpile_ratio = 0.25
+					army_ratio = 0.25
+					navy_ratio = 0.25
+					air_ratio = 0.25
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = CAU
+					size = 0.33
+					stockpile_ratio = 0.33
+					army_ratio = 0.33
+					navy_ratio = 0.33
+					air_ratio = 0.33
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = VLP
+					size = 0.5
+					stockpile_ratio = 0.5
+					army_ratio = 0.5
+					navy_ratio = 0.5
+					air_ratio = 0.5
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						has_country_flag = CES_burned_man
+					}
+					LAC = { has_focus_tree = lac_revolter_focus_tree }
+					owns_state = 5
+				}
+				caius_breaks_off_lanius = yes
+				malpais_breaks_off = yes
+				lucius_breaks_off = yes
+				vulpes_breaks_off = yes
+				transfer_units_fraction = {
+					target = LUC
+					size = 0.20
+					stockpile_ratio = 0.20
+					army_ratio = 0.20
+					navy_ratio = 0.20
+					air_ratio = 0.20
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = MAL
+					size = 0.25
+					stockpile_ratio = 0.25
+					army_ratio = 0.25
+					navy_ratio = 0.25
+					air_ratio = 0.25
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = VLP
+					size = 0.34
+					stockpile_ratio = 0.34
+					army_ratio = 0.34
+					navy_ratio = 0.34
+					air_ratio = 0.34
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = CAU
+					size = 0.5
+					stockpile_ratio = 0.5
+					army_ratio = 0.5
+					navy_ratio = 0.5
+					air_ratio = 0.5
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = CES_burned_man
+					owns_state = 5
+					LAC = { has_focus_tree = lac_revolter_focus_tree }
+				}
+				lucius_breaks_off = yes
+				vulpes_breaks_off = yes
+				caius_breaks_off_lanius = yes
+				transfer_units_fraction = {
+					target = LUC
+					size = 0.25
+					stockpile_ratio = 0.25
+					army_ratio = 0.25
+					navy_ratio = 0.25
+					air_ratio = 0.25
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = VLP
+					size = 0.5
+					stockpile_ratio = 0.5
+					army_ratio = 0.33
+					navy_ratio = 0.33
+					air_ratio = 0.33
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = CAU
+					size = 0.33
+					stockpile_ratio = 0.5
+					army_ratio = 0.5
+					navy_ratio = 0.5
+					air_ratio = 0.5
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						has_country_flag = CES_burned_man
+						LAC = { has_focus_tree = lac_revolter_focus_tree }
+					}
+					owns_state = 5
+				}
+				malpais_breaks_off = yes
+				lucius_breaks_off = yes
+				vulpes_breaks_off = yes
+				lanius_breaks_off = yes
+				transfer_units_fraction = {
+					target = LUC
+					size = 0.20
+					stockpile_ratio = 0.20
+					army_ratio = 0.20
+					navy_ratio = 0.20
+					air_ratio = 0.20
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = MAL
+					size = 0.25
+					stockpile_ratio = 0.25
+					army_ratio = 0.25
+					navy_ratio = 0.25
+					air_ratio = 0.25
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = VLP
+					size = 0.34
+					stockpile_ratio = 0.34
+					army_ratio = 0.34
+					navy_ratio = 0.34
+					air_ratio = 0.34
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = LAN
+					size = 0.5
+					stockpile_ratio = 0.5
+					army_ratio = 0.5
+					navy_ratio = 0.5
+					air_ratio = 0.5
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						LAC = { has_focus_tree = lac_revolter_focus_tree }
+					}
+					has_country_flag = CES_burned_man
+					owns_state = 5
+				}
+				caius_breaks_off_malpais = yes
+				lucius_breaks_off = yes
+				vulpes_breaks_off = yes
+				lanius_breaks_off = yes
+				transfer_units_fraction = {
+					target = LUC
+					size = 0.20
+					stockpile_ratio = 0.20
+					army_ratio = 0.20
+					navy_ratio = 0.20
+					air_ratio = 0.20
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = CAU
+					size = 0.25
+					stockpile_ratio = 0.25
+					army_ratio = 0.25
+					navy_ratio = 0.25
+					air_ratio = 0.25
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = VLP
+					size = 0.34
+					stockpile_ratio = 0.34
+					army_ratio = 0.34
+					navy_ratio = 0.34
+					air_ratio = 0.34
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = LAN
+					size = 0.5
+					stockpile_ratio = 0.5
+					army_ratio = 0.5
+					navy_ratio = 0.5
+					air_ratio = 0.5
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+			}
+		}
+		AUR = {
+			declare_war_on = {
+				target = VLP
+				type = civil_war
+			}
+			add_civil_war_target = VLP
+			declare_war_on = {
+				target = LUC
+				type = civil_war
+			}
+			add_civil_war_target = LUC
+			if = {
+				limit = {
+					country_exists = MAL
+				}
+				declare_war_on = {
+					target = MAL
+					type = civil_war
+				}
+				add_civil_war_target = MAL
+			}
+			if = {
+				limit = {
+					country_exists = CAU
+				}
+				declare_war_on = {
+					target = CAU
+					type = civil_war
+				}
+				add_civil_war_target = CAU
+			}
+			if = {
+				limit = {
+					country_exists = LAN
+				}
+				declare_war_on = {
+					target = LAN
+					type = civil_war
+				}
+				add_civil_war_target = LAN
+			}
+		}
+		VLP = {
+			declare_war_on = {
+				target = AUR
+				type = civil_war
+			}
+			add_civil_war_target = AUR
+			declare_war_on = {
+				target = LUC
+				type = civil_war
+			}
+			add_civil_war_target = LUC
+			if = {
+				limit = {
+					country_exists = MAL
+				}
+				declare_war_on = {
+					target = MAL
+					type = civil_war
+				}
+				add_civil_war_target = MAL
+			}
+			if = {
+				limit = {
+					country_exists = CAU
+				}
+				declare_war_on = {
+					target = CAU
+					type = civil_war
+				}
+				add_civil_war_target = CAU
+			}
+			if = {
+				limit = {
+					country_exists = LAN
+				}
+				declare_war_on = {
+					target = LAN
+					type = civil_war
+				}
+				add_civil_war_target = LAN
+			}
+		}
+		LUC = {
+			declare_war_on = {
+				target = AUR
+				type = civil_war
+			}
+			add_civil_war_target = AUR
+			declare_war_on = {
+				target = VLP
+				type = civil_war
+			}
+			add_civil_war_target = VLP
+			if = {
+				limit = {
+					country_exists = MAL
+				}
+				declare_war_on = {
+					target = MAL
+					type = civil_war
+				}
+				add_civil_war_target = MAL
+			}
+			if = {
+				limit = {
+					country_exists = CAU
+				}
+				declare_war_on = {
+					target = CAU
+					type = civil_war
+				}
+				add_civil_war_target = CAU
+			}
+			if = {
+				limit = {
+					country_exists = LAN
+				}
+				declare_war_on = {
+					target = LAN
+					type = civil_war
+				}
+				add_civil_war_target = LAN
+			}
+		}
+		if = {
+			limit = {
+				MAL = {
+					exists = yes
+				}
+			}
+			MAL = {
+				declare_war_on = {
+					target = AUR
+					type = civil_war
+				}
+				add_civil_war_target = AUR
+				declare_war_on = {
+					target = VLP
+					type = civil_war
+				}
+				add_civil_war_target = VLP
+				declare_war_on = {
+					target = LUC
+					type = civil_war
+				}
+				add_civil_war_target = LUC
+				if = {
+					limit = {
+						country_exists = CAU
+					}
+					declare_war_on = {
+						target = CAU
+						type = civil_war
+					}
+					add_civil_war_target = CAU
+				}
+				if = {
+					limit = {
+						country_exists = LAN
+					}
+					declare_war_on = {
+						target = LAN
+						type = civil_war
+					}
+					add_civil_war_target = LAN
+				}
+			}
+		}
+	}
+	option = {
+		name = nf_legion.82.b
+		set_country_flag = CES_vulpes_legion_flag
+		set_politics = {
+			ruling_party = ruler
+		}
+		set_cosmetic_tag = CES_vulpes_legion
+		create_or_join_vulpes_legion = yes
+		if = {
+			limit = {
+				TWO = {
+					exists = yes
+				}
+			}
+			TWO = {
+				create_or_join_vulpes_legion = yes
+			}
+		}
+		set_popularities = {
+			ruler = 70
+			people = 15
+			elites = 10
+			intellectuals = 5
+		}
+		set_party_name = {
+			ideology = ruler
+			long_name = "The Old Guard"
+			name = "True to Caesar"
+		}
+		promote_character = CES_vulpes
+		if = {
+			limit = {
+				417 = {
+					OWNER = {
+						original_tag = CES
+					}
+				}
+			}
+			country_event = {
+				id = nf_legion.134
+				days = 3
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = CES_burned_man
+						owns_state = 5
+					}
+				}
+				malpais_breaks_off = yes
+				aurelian_breaks_off = yes
+				lucius_breaks_off = yes
+				transfer_units_fraction = {
+					target = LUC
+					size = 0.25
+					stockpile_ratio = 0.25
+					army_ratio = 0.25
+					navy_ratio = 0.25
+					air_ratio = 0.25
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = MAL
+					size = 0.33
+					stockpile_ratio = 0.33
+					army_ratio = 0.33
+					navy_ratio = 0.33
+					air_ratio = 0.33
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = AUR
+					size = 0.5
+					stockpile_ratio = 0.5
+					army_ratio = 0.5
+					navy_ratio = 0.5
+					air_ratio = 0.5
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = CES_burned_man
+					NOT = {
+						owns_state = 5
+					}
+				}
+				caius_breaks_off_malpais = yes
+				aurelian_breaks_off = yes
+				lucius_breaks_off = yes
+				transfer_units_fraction = {
+					target = LUC
+					size = 0.25
+					stockpile_ratio = 0.25
+					army_ratio = 0.25
+					navy_ratio = 0.25
+					air_ratio = 0.25
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = CAU
+					size = 0.33
+					stockpile_ratio = 0.33
+					army_ratio = 0.33
+					navy_ratio = 0.33
+					air_ratio = 0.33
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = AUR
+					size = 0.5
+					stockpile_ratio = 0.5
+					army_ratio = 0.5
+					navy_ratio = 0.5
+					air_ratio = 0.5
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						has_country_flag = CES_burned_man
+					}
+					LAC = { has_focus_tree = lac_revolter_focus_tree }
+					owns_state = 5
+				}
+				caius_breaks_off_lanius = yes
+				malpais_breaks_off = yes
+				lucius_breaks_off = yes
+				aurelian_breaks_off = yes
+				transfer_units_fraction = {
+					target = LUC
+					size = 0.20
+					stockpile_ratio = 0.20
+					army_ratio = 0.20
+					navy_ratio = 0.20
+					air_ratio = 0.20
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = MAL
+					size = 0.25
+					stockpile_ratio = 0.25
+					army_ratio = 0.25
+					navy_ratio = 0.25
+					air_ratio = 0.25
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = VLP
+					size = 0.34
+					stockpile_ratio = 0.34
+					army_ratio = 0.34
+					navy_ratio = 0.34
+					air_ratio = 0.34
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = CAU
+					size = 0.5
+					stockpile_ratio = 0.5
+					army_ratio = 0.5
+					navy_ratio = 0.5
+					air_ratio = 0.5
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = CES_burned_man
+					owns_state = 5
+					LAC = { has_focus_tree = lac_revolter_focus_tree }
+				}
+				lucius_breaks_off = yes
+				aurelian_breaks_off = yes
+				caius_breaks_off_lanius = yes
+				transfer_units_fraction = {
+					target = LUC
+					size = 0.25
+					stockpile_ratio = 0.25
+					army_ratio = 0.25
+					navy_ratio = 0.25
+					air_ratio = 0.25
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = AUR
+					size = 0.5
+					stockpile_ratio = 0.5
+					army_ratio = 0.33
+					navy_ratio = 0.33
+					air_ratio = 0.33
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = CAU
+					size = 0.33
+					stockpile_ratio = 0.5
+					army_ratio = 0.5
+					navy_ratio = 0.5
+					air_ratio = 0.5
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						has_country_flag = CES_burned_man
+						LAC = { has_focus_tree = lac_revolter_focus_tree }
+					}
+					owns_state = 5
+				}
+				malpais_breaks_off = yes
+				lucius_breaks_off = yes
+				aurelian_breaks_off = yes
+				lanius_breaks_off = yes
+				transfer_units_fraction = {
+					target = LUC
+					size = 0.20
+					stockpile_ratio = 0.20
+					army_ratio = 0.20
+					navy_ratio = 0.20
+					air_ratio = 0.20
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = MAL
+					size = 0.25
+					stockpile_ratio = 0.25
+					army_ratio = 0.25
+					navy_ratio = 0.25
+					air_ratio = 0.25
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = AUR
+					size = 0.34
+					stockpile_ratio = 0.34
+					army_ratio = 0.34
+					navy_ratio = 0.34
+					air_ratio = 0.34
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = LAN
+					size = 0.5
+					stockpile_ratio = 0.5
+					army_ratio = 0.5
+					navy_ratio = 0.5
+					air_ratio = 0.5
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						LAC = { has_focus_tree = lac_revolter_focus_tree }
+					}
+					has_country_flag = CES_burned_man
+					owns_state = 5
+				}
+				caius_breaks_off_malpais = yes
+				lucius_breaks_off = yes
+				aurelian_breaks_off = yes
+				lanius_breaks_off = yes
+				transfer_units_fraction = {
+					target = LUC
+					size = 0.20
+					stockpile_ratio = 0.20
+					army_ratio = 0.20
+					navy_ratio = 0.20
+					air_ratio = 0.20
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = MAL
+					size = 0.25
+					stockpile_ratio = 0.25
+					army_ratio = 0.25
+					navy_ratio = 0.25
+					air_ratio = 0.25
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = AUR
+					size = 0.34
+					stockpile_ratio = 0.34
+					army_ratio = 0.34
+					navy_ratio = 0.34
+					air_ratio = 0.34
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = LAN
+					size = 0.5
+					stockpile_ratio = 0.5
+					army_ratio = 0.5
+					navy_ratio = 0.5
+					air_ratio = 0.5
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				AUR = {
+					exists = yes
+				}
+			}
+			AUR = {
+				declare_war_on = {
+					target = VLP
+					type = civil_war
+				}
+				add_civil_war_target = VLP
+				declare_war_on = {
+					target = LUC
+					type = civil_war
+				}
+				add_civil_war_target = LUC
+				if = {
+					limit = {
+						country_exists = MAL
+					}
+					declare_war_on = {
+						target = MAL
+						type = civil_war
+					}
+					add_civil_war_target = MAL
+				}
+				if = {
+					limit = {
+						country_exists = CAU
+					}
+					declare_war_on = {
+						target = CAU
+						type = civil_war
+					}
+					add_civil_war_target = CAU
+				}
+				if = {
+					limit = {
+						country_exists = LAN
+					}
+					declare_war_on = {
+						target = LAN
+						type = civil_war
+					}
+					add_civil_war_target = LAN
+				}
+			}
+		}
+		if = {
+			limit = {
+				VLP = {
+					exists = yes
+				}
+			}
+			VLP = {
+				declare_war_on = {
+					target = AUR
+					type = civil_war
+				}
+				add_civil_war_target = AUR
+				declare_war_on = {
+					target = LUC
+					type = civil_war
+				}
+				add_civil_war_target = LUC
+				if = {
+					limit = {
+						country_exists = MAL
+					}
+					declare_war_on = {
+						target = MAL
+						type = civil_war
+					}
+					add_civil_war_target = MAL
+				}
+				if = {
+					limit = {
+						country_exists = CAU
+					}
+					declare_war_on = {
+						target = CAU
+						type = civil_war
+					}
+					add_civil_war_target = CAU
+				}
+				if = {
+					limit = {
+						country_exists = LAN
+					}
+					declare_war_on = {
+						target = LAN
+						type = civil_war
+					}
+					add_civil_war_target = LAN
+				}
+			}
+		}
+		if = {
+			limit = {
+				LUC = {
+					exists = yes
+				}
+			}
+			LUC = {
+				declare_war_on = {
+					target = AUR
+					type = civil_war
+				}
+				add_civil_war_target = AUR
+				declare_war_on = {
+					target = VLP
+					type = civil_war
+				}
+				add_civil_war_target = VLP
+				if = {
+					limit = {
+						country_exists = MAL
+					}
+					declare_war_on = {
+						target = MAL
+						type = civil_war
+					}
+					add_civil_war_target = MAL
+				}
+				if = {
+					limit = {
+						country_exists = CAU
+					}
+					declare_war_on = {
+						target = CAU
+						type = civil_war
+					}
+					add_civil_war_target = CAU
+				}
+				if = {
+					limit = {
+						country_exists = LAN
+					}
+					declare_war_on = {
+						target = LAN
+						type = civil_war
+					}
+					add_civil_war_target = LAN
+				}
+			}
+		}
+		if = {
+			limit = {
+				MAL = {
+					exists = yes
+				}
+			}
+			MAL = {
+				declare_war_on = {
+					target = AUR
+					type = civil_war
+				}
+				add_civil_war_target = AUR
+				declare_war_on = {
+					target = VLP
+					type = civil_war
+				}
+				add_civil_war_target = VLP
+				declare_war_on = {
+					target = LUC
+					type = civil_war
+				}
+				add_civil_war_target = LUC
+				if = {
+					limit = {
+						country_exists = CAU
+					}
+					declare_war_on = {
+						target = CAU
+						type = civil_war
+					}
+					add_civil_war_target = CAU
+				}
+				if = {
+					limit = {
+						country_exists = LAN
+					}
+					declare_war_on = {
+						target = LAN
+						type = civil_war
+					}
+					add_civil_war_target = LAN
+				}
+			}
+		}
+	}
+	option = {
+		name = nf_legion.82.c
+		create_or_join_lucius_legion = yes
+		set_country_flag = CES_lucius_legion_flag
+		set_politics = {
+			ruling_party = ruler
+		}
+		set_cosmetic_tag = CES_lucius_legion
+		set_popularities = {
+			ruler = 70
+			people = 15
+			elites = 10
+			intellectuals = 5
+		}
+		set_party_name = {
+			ideology = ruler
+			long_name = "The Old Guard"
+			name = "True to Caesar"
+		}
+		set_capital = { state = 529 }
+		country_event = nf_legion.92
+		set_stability = 0.6
+		set_war_support = 0.5
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = CES_burned_man
+						owns_state = 5
+					}
+				}
+				malpais_breaks_off = yes
+				aurelian_breaks_off = yes
+				vulpes_breaks_off = yes
+				transfer_units_fraction = {
+					target = VLP
+					size = 0.25
+					stockpile_ratio = 0.25
+					army_ratio = 0.25
+					navy_ratio = 0.25
+					air_ratio = 0.25
+				}
+				transfer_units_fraction = {
+					target = MAL
+					size = 0.33
+					stockpile_ratio = 0.33
+					army_ratio = 0.33
+					navy_ratio = 0.33
+					air_ratio = 0.33
+				}
+				transfer_units_fraction = {
+					target = AUR
+					size = 0.5
+					stockpile_ratio = 0.5
+					army_ratio = 0.5
+					navy_ratio = 0.5
+					air_ratio = 0.5
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = CES_burned_man
+					NOT = {
+						owns_state = 5
+					}
+				}
+				caius_breaks_off_malpais = yes
+				aurelian_breaks_off = yes
+				vulpes_breaks_off = yes
+				transfer_units_fraction = {
+					target = VLP
+					size = 0.25
+					stockpile_ratio = 0.25
+					army_ratio = 0.25
+					navy_ratio = 0.25
+					air_ratio = 0.25
+				}
+				transfer_units_fraction = {
+					target = MAL
+					size = 0.33
+					stockpile_ratio = 0.33
+					army_ratio = 0.33
+					navy_ratio = 0.33
+					air_ratio = 0.33
+				}
+				transfer_units_fraction = {
+					target = AUR
+					size = 0.5
+					stockpile_ratio = 0.5
+					army_ratio = 0.5
+					navy_ratio = 0.5
+					air_ratio = 0.5
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						has_country_flag = CES_burned_man
+					}
+					LAC = { has_focus_tree = lac_revolter_focus_tree }
+					owns_state = 5
+				}
+				caius_breaks_off_lanius = yes
+				malpais_breaks_off = yes
+				aurelian_breaks_off = yes
+				vulpes_breaks_off = yes
+				transfer_units_fraction = {
+					target = AUR
+					size = 0.20
+					stockpile_ratio = 0.20
+					army_ratio = 0.20
+					navy_ratio = 0.20
+					air_ratio = 0.20
+				}
+				transfer_units_fraction = {
+					target = MAL
+					size = 0.25
+					stockpile_ratio = 0.25
+					army_ratio = 0.25
+					navy_ratio = 0.25
+					air_ratio = 0.25
+				}
+				transfer_units_fraction = {
+					target = VLP
+					size = 0.34
+					stockpile_ratio = 0.34
+					army_ratio = 0.34
+					navy_ratio = 0.34
+					air_ratio = 0.34
+				}
+				transfer_units_fraction = {
+					target = CAU
+					size = 0.5
+					stockpile_ratio = 0.5
+					army_ratio = 0.5
+					navy_ratio = 0.5
+					air_ratio = 0.5
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = CES_burned_man
+					owns_state = 5
+					LAC = { has_focus_tree = lac_revolter_focus_tree }
+				}
+				aurelian_breaks_off = yes
+				vulpes_breaks_off = yes
+				caius_breaks_off_lanius = yes
+				transfer_units_fraction = {
+					target = AUR
+					size = 0.25
+					stockpile_ratio = 0.25
+					army_ratio = 0.25
+					navy_ratio = 0.25
+					air_ratio = 0.25
+				}
+				transfer_units_fraction = {
+					target = VLP
+					size = 0.5
+					stockpile_ratio = 0.5
+					army_ratio = 0.33
+					navy_ratio = 0.33
+					air_ratio = 0.33
+				}
+				transfer_units_fraction = {
+					target = CAU
+					size = 0.33
+					stockpile_ratio = 0.5
+					army_ratio = 0.5
+					navy_ratio = 0.5
+					air_ratio = 0.5
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						has_country_flag = CES_burned_man
+						LAC = { has_focus_tree = lac_revolter_focus_tree }
+					}
+					owns_state = 5
+				}
+				malpais_breaks_off = yes
+				aurelian_breaks_off = yes
+				vulpes_breaks_off = yes
+				lanius_breaks_off = yes
+				transfer_units_fraction = {
+					target = AUR
+					size = 0.20
+					stockpile_ratio = 0.20
+					army_ratio = 0.20
+					navy_ratio = 0.20
+					air_ratio = 0.20
+				}
+				transfer_units_fraction = {
+					target = MAL
+					size = 0.25
+					stockpile_ratio = 0.25
+					army_ratio = 0.25
+					navy_ratio = 0.25
+					air_ratio = 0.25
+				}
+				transfer_units_fraction = {
+					target = VLP
+					size = 0.34
+					stockpile_ratio = 0.34
+					army_ratio = 0.34
+					navy_ratio = 0.34
+					air_ratio = 0.34
+				}
+				transfer_units_fraction = {
+					target = LAN
+					size = 0.5
+					stockpile_ratio = 0.5
+					army_ratio = 0.5
+					navy_ratio = 0.5
+					air_ratio = 0.5
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						LAC = { has_focus_tree = lac_revolter_focus_tree }
+					}
+					has_country_flag = CES_burned_man
+					owns_state = 5
+				}
+				caius_breaks_off_malpais = yes
+				aurelian_breaks_off = yes
+				vulpes_breaks_off = yes
+				lanius_breaks_off = yes
+				transfer_units_fraction = {
+					target = AUR
+					size = 0.20
+					stockpile_ratio = 0.20
+					army_ratio = 0.20
+					navy_ratio = 0.20
+					air_ratio = 0.20
+				}
+				transfer_units_fraction = {
+					target = MAL
+					size = 0.25
+					stockpile_ratio = 0.25
+					army_ratio = 0.25
+					navy_ratio = 0.25
+					air_ratio = 0.25
+				}
+				transfer_units_fraction = {
+					target = VLP
+					size = 0.34
+					stockpile_ratio = 0.34
+					army_ratio = 0.34
+					navy_ratio = 0.34
+					air_ratio = 0.34
+				}
+				transfer_units_fraction = {
+					target = LAN
+					size = 0.5
+					stockpile_ratio = 0.5
+					army_ratio = 0.5
+					navy_ratio = 0.5
+					air_ratio = 0.5
+				}
+			}
+		}
+		AUR = {
+			declare_war_on = {
+				target = VLP
+				type = civil_war
+			}
+			add_civil_war_target = VLP
+			declare_war_on = {
+				target = LUC
+				type = civil_war
+			}
+			add_civil_war_target = LUC
+			if = {
+				limit = {
+					country_exists = MAL
+				}
+				declare_war_on = {
+					target = MAL
+					type = civil_war
+				}
+				add_civil_war_target = MAL
+			}
+			if = {
+				limit = {
+					country_exists = CAU
+				}
+				declare_war_on = {
+					target = CAU
+					type = civil_war
+				}
+				add_civil_war_target = CAU
+			}
+			if = {
+				limit = {
+					country_exists = LAN
+				}
+				declare_war_on = {
+					target = LAN
+					type = civil_war
+				}
+				add_civil_war_target = LAN
+			}
+		}
+		VLP = {
+			declare_war_on = {
+				target = AUR
+				type = civil_war
+			}
+			add_civil_war_target = AUR
+			declare_war_on = {
+				target = LUC
+				type = civil_war
+			}
+			add_civil_war_target = LUC
+			if = {
+				limit = {
+					country_exists = MAL
+				}
+				declare_war_on = {
+					target = MAL
+					type = civil_war
+				}
+				add_civil_war_target = MAL
+			}
+			if = {
+				limit = {
+					country_exists = CAU
+				}
+				declare_war_on = {
+					target = CAU
+					type = civil_war
+				}
+				add_civil_war_target = CAU
+			}
+			if = {
+				limit = {
+					country_exists = LAN
+				}
+				declare_war_on = {
+					target = LAN
+					type = civil_war
+				}
+				add_civil_war_target = LAN
+			}
+		}
+		LUC = {
+			declare_war_on = {
+				target = AUR
+				type = civil_war
+			}
+			add_civil_war_target = AUR
+			declare_war_on = {
+				target = VLP
+				type = civil_war
+			}
+			add_civil_war_target = VLP
+			if = {
+				limit = {
+					country_exists = MAL
+				}
+				declare_war_on = {
+					target = MAL
+					type = civil_war
+				}
+				add_civil_war_target = MAL
+			}
+			if = {
+				limit = {
+					country_exists = CAU
+				}
+				declare_war_on = {
+					target = CAU
+					type = civil_war
+				}
+				add_civil_war_target = CAU
+			}
+			if = {
+				limit = {
+					country_exists = LAN
+				}
+				declare_war_on = {
+					target = LAN
+					type = civil_war
+				}
+				add_civil_war_target = LAN
+			}
+		}
+		if = {
+			limit = {
+				MAL = {
+					exists = yes
+				}
+			}
+			MAL = {
+				declare_war_on = {
+					target = AUR
+					type = civil_war
+				}
+				add_civil_war_target = AUR
+				declare_war_on = {
+					target = VLP
+					type = civil_war
+				}
+				add_civil_war_target = VLP
+				declare_war_on = {
+					target = LUC
+					type = civil_war
+				}
+			}
+			add_civil_war_target = LUC
+			if = {
+				limit = {
+					country_exists = CAU
+				}
+				declare_war_on = {
+					target = CAU
+					type = civil_war
+				}
+				add_civil_war_target = CAU
+			}
+			if = {
+				limit = {
+					country_exists = LAN
+				}
+				declare_war_on = {
+					target = LAN
+					type = civil_war
+				}
+				add_civil_war_target = LAN
+			}
+		}
+		AUR = {
+			CES_lucius = {
+				set_nationality = CES
+			}
+		}
+		promote_character = CES_lucius
+	}
+	option = {
+		name = nf_legion.82.e
+		trigger = {
+			NOT = {
+				has_country_flag = CES_burned_man
+			}
+		}
+		create_or_join_malpais_legion = yes
+		set_country_flag = CES_malpais_legion_flag
+		set_cosmetic_tag = CES_malpais_legion
+		set_politics = {
+			ruling_party = ruler
+		}
+		set_popularities = {
+			ruler = 70
+			people = 15
+			elites = 10
+			intellectuals = 5
+		}
+		set_party_name = {
+			ideology = ruler
+			long_name = "Malpais' Loyalists"
+			name = "The Legion Loyalists"
+		}
+		set_stability = 0.6
+		set_war_support = 0.5
+		promote_character = CES_malpais
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						owns_state = 5
+					}
+				}
+				vulpes_breaks_off = yes
+				aurelian_breaks_off = yes
+				lucius_breaks_off = yes
+				transfer_units_fraction = {
+					target = LUC
+					size = 0.25
+					stockpile_ratio = 0.25
+					army_ratio = 0.25
+					navy_ratio = 0.25
+					air_ratio = 0.25
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = VLP
+					size = 0.33
+					stockpile_ratio = 0.33
+					army_ratio = 0.33
+					navy_ratio = 0.33
+					air_ratio = 0.33
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = AUR
+					size = 0.5
+					stockpile_ratio = 0.5
+					army_ratio = 0.5
+					navy_ratio = 0.5
+					air_ratio = 0.5
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						has_country_flag = CES_burned_man
+					}
+					LAC = { has_focus_tree = lac_revolter_focus_tree }
+					owns_state = 5
+				}
+				caius_breaks_off_lanius = yes
+				malpais_breaks_off = yes
+				lucius_breaks_off = yes
+				aurelian_breaks_off = yes
+				transfer_units_fraction = {
+					target = LUC
+					size = 0.20
+					stockpile_ratio = 0.20
+					army_ratio = 0.20
+					navy_ratio = 0.20
+					air_ratio = 0.20
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = VLP
+					size = 0.25
+					stockpile_ratio = 0.25
+					army_ratio = 0.25
+					navy_ratio = 0.25
+					air_ratio = 0.25
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = AUR
+					size = 0.34
+					stockpile_ratio = 0.34
+					army_ratio = 0.34
+					navy_ratio = 0.34
+					air_ratio = 0.34
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = CAU
+					size = 0.5
+					stockpile_ratio = 0.5
+					army_ratio = 0.5
+					navy_ratio = 0.5
+					air_ratio = 0.5
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						has_country_flag = CES_burned_man
+						LAC = { has_focus_tree = lac_revolter_focus_tree }
+					}
+					owns_state = 5
+				}
+				aurelian_breaks_off = yes
+				lucius_breaks_off = yes
+				vulpes_breaks_off = yes
+				lanius_breaks_off = yes
+				transfer_units_fraction = {
+					target = LUC
+					size = 0.20
+					stockpile_ratio = 0.20
+					army_ratio = 0.20
+					navy_ratio = 0.20
+					air_ratio = 0.20
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = AUR
+					size = 0.25
+					stockpile_ratio = 0.25
+					army_ratio = 0.25
+					navy_ratio = 0.25
+					air_ratio = 0.25
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = VLP
+					size = 0.34
+					stockpile_ratio = 0.34
+					army_ratio = 0.34
+					navy_ratio = 0.34
+					air_ratio = 0.34
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = LAN
+					size = 0.5
+					stockpile_ratio = 0.5
+					army_ratio = 0.5
+					navy_ratio = 0.5
+					air_ratio = 0.5
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+			}
+		}
+		AUR = {
+			declare_war_on = {
+				target = VLP
+				type = civil_war
+			}
+			add_civil_war_target = VLP
+			declare_war_on = {
+				target = LUC
+				type = civil_war
+			}
+			add_civil_war_target = LUC
+			if = {
+				limit = {
+					country_exists = MAL
+				}
+				declare_war_on = {
+					target = MAL
+					type = civil_war
+				}
+				add_civil_war_target = MAL
+			}
+			if = {
+				limit = {
+					country_exists = CAU
+				}
+				declare_war_on = {
+					target = CAU
+					type = civil_war
+				}
+				add_civil_war_target = CAU
+			}
+			if = {
+				limit = {
+					country_exists = LAN
+				}
+				declare_war_on = {
+					target = LAN
+					type = civil_war
+				}
+				add_civil_war_target = LAN
+			}
+		}
+		VLP = {
+			declare_war_on = {
+				target = AUR
+				type = civil_war
+			}
+			add_civil_war_target = AUR
+			declare_war_on = {
+				target = LUC
+				type = civil_war
+			}
+			add_civil_war_target = LUC
+			if = {
+				limit = {
+					country_exists = MAL
+				}
+				declare_war_on = {
+					target = MAL
+					type = civil_war
+				}
+				add_civil_war_target = MAL
+			}
+			if = {
+				limit = {
+					country_exists = CAU
+				}
+				declare_war_on = {
+					target = CAU
+					type = civil_war
+				}
+				add_civil_war_target = CAU
+			}
+			if = {
+				limit = {
+					country_exists = LAN
+				}
+				declare_war_on = {
+					target = LAN
+					type = civil_war
+				}
+				add_civil_war_target = LAN
+			}
+		}
+		LUC = {
+			declare_war_on = {
+				target = AUR
+				type = civil_war
+			}
+			add_civil_war_target = AUR
+			declare_war_on = {
+				target = VLP
+				type = civil_war
+			}
+			add_civil_war_target = VLP
+			if = {
+				limit = {
+					country_exists = MAL
+				}
+				declare_war_on = {
+					target = MAL
+					type = civil_war
+				}
+				add_civil_war_target = MAL
+			}
+			if = {
+				limit = {
+					country_exists = CAU
+				}
+				declare_war_on = {
+					target = CAU
+					type = civil_war
+				}
+				add_civil_war_target = CAU
+			}
+			if = {
+				limit = {
+					country_exists = LAN
+				}
+				declare_war_on = {
+					target = LAN
+					type = civil_war
+				}
+				add_civil_war_target = LAN
+			}
+		}
+		MAL = {
+			if = {
+				limit = {
+					MAL = {
+						exists = yes
+					}
+				}
+				declare_war_on = {
+					target = AUR
+					type = civil_war
+				}
+				add_civil_war_target = AUR
+				declare_war_on = {
+					target = VLP
+					type = civil_war
+				}
+				add_civil_war_target = VLP
+				declare_war_on = {
+					target = LUC
+					type = civil_war
+				}
+				add_civil_war_target = LUC
+			}
+			if = {
+				limit = {
+					country_exists = CAU
+				}
+				declare_war_on = {
+					target = CAU
+					type = civil_war
+				}
+				add_civil_war_target = CAU
+			}
+			if = {
+				limit = {
+					country_exists = LAN
+				}
+				declare_war_on = {
+					target = LAN
+					type = civil_war
+				}
+				add_civil_war_target = LAN
+			}
+		}
+	}
+	option = {
+		name = nf_legion.82.f
+		trigger = {
+			NOT  =  {
+				LAC = { has_focus_tree = lac_revolter_focus_tree }
+			}
+			owns_state = 5
+		}
+		create_or_join_lanius_legion = yes
+		if = {
+			limit = {
+				LAC = {
+					has_completed_focus = lac_hire_iron_alliance
+				}
+				IRN = {
+					owns_state = 490
+				}
+			}
+            IRN = {
+                invite_to_lanius_legion = yes
+            }
+		}
+		set_country_flag = CES_lanius_legion_flag
+		set_cosmetic_tag = CES_lanius_legion
+		set_politics = {
+			ruling_party = ruler
+		}
+		set_popularities = {
+			ruler = 70
+			people = 15
+			elites = 10
+			intellectuals = 5
+		}
+		retire_country_leader = yes
+		#CES = {
+		#	CES_Lanius = {
+		#		set_nationality = LAN
+		#	}
+		#}
+		add_country_leader_role = {
+			character = CES_Lanius
+			promote_leader = yes
+			country_leader = {
+				ideology = benevolent_dictatorship
+				desc = LAC_LANIUS_DESC
+				traits = {
+					lac_frontier_justice
+				}
+				expire = "3000.01.01.01"
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = CES_burned_man
+						LAC = { has_focus_tree = lac_revolter_focus_tree }
+					}
+					owns_state = 5
+				}
+				malpais_breaks_off = yes
+				aurelian_breaks_off = yes
+				vulpes_breaks_off = yes
+				lucius_breaks_off = yes
+				transfer_units_fraction = {
+					target = LUC
+					size = 0.20
+					stockpile_ratio = 0.20
+					army_ratio = 0.20
+					navy_ratio = 0.20
+					air_ratio = 0.20
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = MAL
+					size = 0.25
+					stockpile_ratio = 0.25
+					army_ratio = 0.25
+					navy_ratio = 0.25
+					air_ratio = 0.25
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = VLP
+					size = 0.34
+					stockpile_ratio = 0.34
+					army_ratio = 0.34
+					navy_ratio = 0.34
+					air_ratio = 0.34
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = AUR
+					size = 0.5
+					stockpile_ratio = 0.5
+					army_ratio = 0.5
+					navy_ratio = 0.5
+					air_ratio = 0.5
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						LAC = { has_focus_tree = lac_revolter_focus_tree }
+					}
+					has_country_flag = CES_burned_man
+					owns_state = 5
+				}
+				caius_breaks_off_malpais = yes
+				aurelian_breaks_off = yes
+				vulpes_breaks_off = yes
+				lucius_breaks_off = yes
+				transfer_units_fraction = {
+					target = LUC
+					size = 0.20
+					stockpile_ratio = 0.20
+					army_ratio = 0.20
+					navy_ratio = 0.20
+					air_ratio = 0.20
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = CAU
+					size = 0.25
+					stockpile_ratio = 0.25
+					army_ratio = 0.25
+					navy_ratio = 0.25
+					air_ratio = 0.25
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = VLP
+					size = 0.34
+					stockpile_ratio = 0.34
+					army_ratio = 0.34
+					navy_ratio = 0.34
+					air_ratio = 0.34
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = AUR
+					size = 0.5
+					stockpile_ratio = 0.5
+					army_ratio = 0.5
+					navy_ratio = 0.5
+					air_ratio = 0.5
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+			}
+		}
+		AUR = {
+			declare_war_on = {
+				target = VLP
+				type = civil_war
+			}
+			add_civil_war_target = VLP
+			declare_war_on = {
+				target = LUC
+				type = civil_war
+			}
+			add_civil_war_target = LUC
+			if = {
+				limit = {
+					country_exists = MAL
+				}
+				declare_war_on = {
+					target = MAL
+					type = civil_war
+				}
+				add_civil_war_target = MAL
+			}
+			if = {
+				limit = {
+					country_exists = CAU
+				}
+				declare_war_on = {
+					target = CAU
+					type = civil_war
+				}
+				add_civil_war_target = CAU
+			}
+			if = {
+				limit = {
+					country_exists = LAN
+				}
+				declare_war_on = {
+					target = LAN
+					type = civil_war
+				}
+				add_civil_war_target = LAN
+			}
+		}
+		VLP = {
+			declare_war_on = {
+				target = AUR
+				type = civil_war
+			}
+			add_civil_war_target = AUR
+			declare_war_on = {
+				target = LUC
+				type = civil_war
+			}
+			add_civil_war_target = LUC
+			if = {
+				limit = {
+					country_exists = MAL
+				}
+				declare_war_on = {
+					target = MAL
+					type = civil_war
+				}
+				add_civil_war_target = MAL
+			}
+			if = {
+				limit = {
+					country_exists = CAU
+				}
+				declare_war_on = {
+					target = CAU
+					type = civil_war
+				}
+				add_civil_war_target = CAU
+			}
+			if = {
+				limit = {
+					country_exists = LAN
+				}
+				declare_war_on = {
+					target = LAN
+					type = civil_war
+				}
+				add_civil_war_target = LAN
+			}
+		}
+		LUC = {
+			declare_war_on = {
+				target = AUR
+				type = civil_war
+			}
+			add_civil_war_target = AUR
+			declare_war_on = {
+				target = VLP
+				type = civil_war
+			}
+			add_civil_war_target = VLP
+			if = {
+				limit = {
+					country_exists = MAL
+				}
+				declare_war_on = {
+					target = MAL
+					type = civil_war
+				}
+				add_civil_war_target = MAL
+			}
+			if = {
+				limit = {
+					country_exists = CAU
+				}
+				declare_war_on = {
+					target = CAU
+					type = civil_war
+				}
+				add_civil_war_target = CAU
+			}
+			if = {
+				limit = {
+					country_exists = LAN
+				}
+				declare_war_on = {
+					target = LAN
+					type = civil_war
+				}
+				add_civil_war_target = LAN
+			}
+		}
+		if = {
+			limit = {
+				MAL = {
+					exists = yes
+				}
+			}
+			MAL = {
+				declare_war_on = {
+					target = AUR
+					type = civil_war
+				}
+				add_civil_war_target = AUR
+				declare_war_on = {
+					target = VLP
+					type = civil_war
+				}
+				add_civil_war_target = VLP
+				declare_war_on = {
+					target = LUC
+					type = civil_war
+				}
+				add_civil_war_target = LUC
+				if = {
+					limit = {
+						country_exists = CAU
+					}
+					declare_war_on = {
+						target = CAU
+						type = civil_war
+					}
+					add_civil_war_target = CAU
+				}
+				if = {
+					limit = {
+						country_exists = LAN
+					}
+					declare_war_on = {
+						target = LAN
+						type = civil_war
+					}
+					add_civil_war_target = LAN
+				}
+			}
+		}
+	}
+	option = {
+		name = nf_legion.82.g
+		trigger = {
+			OR = {
+				AND = {
+					LAC = { has_focus_tree = lac_revolter_focus_tree }
+					owns_state = 5
+				}
+				AND = {
+					NOT = {
+						LAC = { has_focus_tree = lac_revolter_focus_tree }
+						owns_state = 5
+					}
+					has_country_flag = CES_burned_man
+				}
+			}
+		}
+		create_or_join_hades_legion = yes
+		RES = {
+			invite_to_hades_legion = yes
+		}
+		set_country_flag = CES_caius_flag
+		set_cosmetic_tag = CES_caius_legion
+		set_politics = {
+			ruling_party = ruler
+		}
+		set_capital = { state = 5 }
+		set_popularities = {
+			ruler = 70
+			people = 15
+			elites = 10
+			intellectuals = 5
+		}
+		promote_character = CES_caius_drusus
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = CES_burned_man
+					}
+					LAC = { has_focus_tree = lac_revolter_focus_tree }
+					owns_state = 5
+				}
+				malpais_breaks_off = yes
+				aurelian_breaks_off = yes
+				vulpes_breaks_off = yes
+				lucius_breaks_off = yes
+				transfer_units_fraction = {
+					target = LUC
+					size = 0.20
+					stockpile_ratio = 0.20
+					army_ratio = 0.20
+					navy_ratio = 0.20
+					air_ratio = 0.20
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = MAL
+					size = 0.25
+					stockpile_ratio = 0.25
+					army_ratio = 0.25
+					navy_ratio = 0.25
+					air_ratio = 0.25
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = VLP
+					size = 0.34
+					stockpile_ratio = 0.34
+					army_ratio = 0.34
+					navy_ratio = 0.34
+					air_ratio = 0.34
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = AUR
+					size = 0.5
+					stockpile_ratio = 0.5
+					army_ratio = 0.5
+					navy_ratio = 0.5
+					air_ratio = 0.5
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					LAC = { has_focus_tree = lac_revolter_focus_tree }
+					has_country_flag = CES_burned_man
+					owns_state = 5
+				}
+				lucius_breaks_off = yes
+				vulpes_breaks_off = yes
+				aurelian_breaks_off = yes
+				transfer_units_fraction = {
+					target = LUC
+					size = 0.25
+					stockpile_ratio = 0.25
+					army_ratio = 0.25
+					navy_ratio = 0.25
+					air_ratio = 0.25
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = VLP
+					size = 0.5
+					stockpile_ratio = 0.5
+					army_ratio = 0.33
+					navy_ratio = 0.33
+					air_ratio = 0.33
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = AUR
+					size = 0.33
+					stockpile_ratio = 0.5
+					army_ratio = 0.5
+					navy_ratio = 0.5
+					air_ratio = 0.5
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						OR = {
+							LAC = { has_focus_tree = lac_revolter_focus_tree }
+							owns_state = 5
+						}
+					}
+					has_country_flag = CES_burned_man
+				}
+				caius_breaks_off_malpais = yes
+				aurelian_breaks_off = yes
+				vulpes_breaks_off = yes
+				lucius_breaks_off = yes
+				transfer_units_fraction = {
+					target = LUC
+					size = 0.20
+					stockpile_ratio = 0.20
+					army_ratio = 0.20
+					navy_ratio = 0.20
+					air_ratio = 0.20
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = CAU
+					size = 0.25
+					stockpile_ratio = 0.25
+					army_ratio = 0.25
+					navy_ratio = 0.25
+					air_ratio = 0.25
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = VLP
+					size = 0.34
+					stockpile_ratio = 0.34
+					army_ratio = 0.34
+					navy_ratio = 0.34
+					air_ratio = 0.34
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+				transfer_units_fraction = {
+					target = AUR
+					size = 0.5
+					stockpile_ratio = 0.5
+					army_ratio = 0.5
+					navy_ratio = 0.5
+					air_ratio = 0.5
+					keep_unit_leaders_trigger = {
+						always = yes
+					}
+				}
+			}
+		}
+		AUR = {
+			declare_war_on = {
+				target = VLP
+				type = civil_war
+			}
+			add_civil_war_target = VLP
+			declare_war_on = {
+				target = LUC
+				type = civil_war
+			}
+			add_civil_war_target = LUC
+			if = {
+				limit = {
+					country_exists = MAL
+				}
+				declare_war_on = {
+					target = MAL
+					type = civil_war
+				}
+				add_civil_war_target = MAL
+			}
+			if = {
+				limit = {
+					country_exists = CAU
+				}
+				declare_war_on = {
+					target = CAU
+					type = civil_war
+				}
+				add_civil_war_target = CAU
+			}
+			if = {
+				limit = {
+					country_exists = LAN
+				}
+				declare_war_on = {
+					target = LAN
+					type = civil_war
+				}
+				add_civil_war_target = LAN
+			}
+		}
+		VLP = {
+			declare_war_on = {
+				target = AUR
+				type = civil_war
+			}
+			add_civil_war_target = AUR
+			declare_war_on = {
+				target = LUC
+				type = civil_war
+			}
+			add_civil_war_target = LUC
+			if = {
+				limit = {
+					country_exists = MAL
+				}
+				declare_war_on = {
+					target = MAL
+					type = civil_war
+				}
+				add_civil_war_target = MAL
+			}
+			if = {
+				limit = {
+					country_exists = CAU
+				}
+				declare_war_on = {
+					target = CAU
+					type = civil_war
+				}
+				add_civil_war_target = CAU
+			}
+			if = {
+				limit = {
+					country_exists = LAN
+				}
+				declare_war_on = {
+					target = LAN
+					type = civil_war
+				}
+				add_civil_war_target = LAN
+			}
+		}
+		LUC = {
+			declare_war_on = {
+				target = AUR
+				type = civil_war
+			}
+			add_civil_war_target = AUR
+			declare_war_on = {
+				target = VLP
+				type = civil_war
+			}
+			add_civil_war_target = VLP
+			if = {
+				limit = {
+					country_exists = MAL
+				}
+				declare_war_on = {
+					target = MAL
+					type = civil_war
+				}
+				add_civil_war_target = MAL
+			}
+			if = {
+				limit = {
+					country_exists = CAU
+				}
+				declare_war_on = {
+					target = CAU
+					type = civil_war
+				}
+				add_civil_war_target = CAU
+			}
+			if = {
+				limit = {
+					country_exists = LAN
+				}
+				declare_war_on = {
+					target = LAN
+					type = civil_war
+				}
+				add_civil_war_target = LAN
+			}
+		}
+		if = {
+			limit = {
+				MAL = {
+					exists = yes
+				}
+			}
+			MAL = {
+				declare_war_on = {
+					target = AUR
+					type = civil_war
+				}
+				add_civil_war_target = AUR
+				declare_war_on = {
+					target = VLP
+					type = civil_war
+				}
+				add_civil_war_target = VLP
+				declare_war_on = {
+					target = LUC
+					type = civil_war
+				}
+				add_civil_war_target = LUC
+				if = {
+					limit = {
+						country_exists = CAU
+					}
+					declare_war_on = {
+						target = CAU
+						type = civil_war
+					}
+					add_civil_war_target = CAU
+				}
+				if = {
+					limit = {
+						country_exists = LAN
+					}
+					declare_war_on = {
+						target = LAN
+						type = civil_war
+					}
+					add_civil_war_target = LAN
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.83" }
+	id = nf_legion.83
+	title = nf_legion.83.t
+	desc = nf_legion.83.d
+	picture = GFX_event_zion
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.83.a
+		set_technology = {
+			infantry_tech_level_settler = 1
+		}
+		set_technology = {
+			support_tech_level_settler = 1
+		}
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.84" }
+	id = nf_legion.84
+	title = nf_legion.84.t
+	desc = nf_legion.84.d
+	picture = GFX_event_legion_slaves
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.84.a
+		custom_effect_tooltip = nf_legion.1002.a_tt
+		set_country_flag = EHT_legion_advisors
+		hidden_effect = {
+			every_state = {
+				limit = {
+					is_utah_state = yes
+				}
+				set_variable = {
+					coring_cost_targeted_state_factor@EHT = -0.5
+				}
+			}
+		}
+		if = {
+			limit = {
+				can_use_autonomy_system = yes
+			}
+			CES = {
+				set_autonomy = {
+					target = EHT
+					autonomy_state = autonomy_client_tribe
+				}
+			}
+		}
+		else = {
+			CES = {
+				EHT = {
+					become_puppet = yes
+				}
+			}
+		}
+		WHT = {
+			add_country_leader_role = {
+				character = WHT_salt_upon_wounds
+				promote_leader = yes
+				country_leader = {
+					expire = "3000.1.1.12"
+					ideology = warlordship
+					traits = {
+						warmonger
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.85" }
+	id = nf_legion.85
+	title = nf_legion.85.t
+	desc = nf_legion.85.d
+	picture = GFX_event_legion_slaves
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.85.a
+		complete_national_focus = ces_legionary_training
+	}
+	option = {
+		name = nf_legion.85.b
+		complete_national_focus = ces_auxiliaries
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.86" }
+	id = nf_legion.86
+	title = nf_legion.86.t
+	desc = nf_legion.86.d
+	picture = GFX_event_legion_slaves
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.86.a
+		complete_national_focus = ces_frumentarii_guide
+	}
+	option = {
+		name = nf_legion.86.b
+		complete_national_focus = ces_frumentarii_officers
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.88" }
+	id = nf_legion.88
+	title = nf_legion.88.t
+	desc = nf_legion.88.d
+	picture = GFX_event_legion_slaves
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.88.a
+		add_tech_bonus = {
+			name = land_doc_bonus
+			bonus = 0.5
+			uses = 2
+			category = cat_land_doctrine
+		}
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.89" }
+	id = nf_legion.89
+	title = nf_legion.89.t
+	desc = nf_legion.89.d
+	picture = GFX_event_legion_slaves
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.89.a
+		set_cosmetic_tag = CES_lucius_legion_mars
+	}
+	###
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.90" }
+	id = nf_legion.90
+	title = nf_legion.90.t
+	desc = nf_legion.90.d
+	picture = GFX_event_CES_burning
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.90.a
+		set_country_flag = CES_burned_man
+		subtract_from_variable = {
+			CES_stress_level = 2
+		}
+		custom_effect_tooltip = CES_stress_decrease
+		retire_character = CES_malpais
+	}
+	option = {
+		name = nf_legion.90.b
+		add_to_variable = {
+			CES_malp_glory = 1
+		}
+		custom_effect_tooltip = nf_legion.malpais_glory
+	}
+}
+
+### okay boomers
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.91" }
+	id = nf_legion.91
+	title = nf_legion.91.t
+	desc = nf_legion.91.d
+	picture = event_VEG_wall
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.91.a
+		set_technology = {
+			air_tech_level_settler = 1
+		}
+	}
+	option = {
+		name = nf_legion.91.b
+		set_technology = {
+			air_tech_level_settler = 1
+		}
+		add_doctrine_cost_reduction = {
+			name = air_doctrine_bonus
+			cost_reduction = 0.5
+			uses = 2
+			category = cat_air_doctrine
+		}
+		add_stability = -0.05
+		# add_to_variable = {
+		# 	CES_stress_level = 1
+		# }
+		# custom_effect_tooltip = CES_stress_increase
+	}
+}
+
+### Lucius
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.92" }
+	id = nf_legion.92
+	title = nf_legion.92.t
+	desc = nf_legion.92.d
+	picture = GFX_event_ces_lucius_flag
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.92.a
+		complete_national_focus = ces_fortress_legion
+		set_country_flag = lucius_wholesome
+	}
+	option = {
+		name = nf_legion.92.b
+		set_country_flag = lucius_good_boy
+		complete_national_focus = ces_cult_vulcan
+	}
+}
+
+news_event = {
+	id = nf_legion.93
+	title = nf_legion.93.t
+	desc = nf_legion.93.d
+	picture = GFX_event_ces_lucius_flag
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.93.a
+		set_cosmetic_tag = CES_good
+	}
+}
+
+news_event = {
+	#Death of Caesar
+	id = nf_legion.94
+	title = nf_legion.94.t
+	desc = nf_legion.94.d
+	picture = GFX_event_caesar_death
+	is_triggered_only = yes
+	option = {
+	}
+}
+
+## Caesar is Cured
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.95" }
+	id = nf_legion.95
+	title = nf_legion.95.t
+	desc = nf_legion.95.d
+	picture = GFX_event_event_auto_doc
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.95.a
+		clr_country_flag = CES_stress
+		set_variable = {
+			CES_stress_level = 0
+		}
+		custom_effect_tooltip = nf_legion.95.a_tt
+		set_country_flag = CES_healthy
+		ai_chance = {
+			base = 4
+			modifier = {
+				has_global_flag = death_of_caesar_enabled_flag
+				factor = 0
+			}
+		}
+	}
+	option = {
+		name = nf_legion.95.b
+		add_to_variable = {
+			CES_stress_level = 80
+		}
+		add_stability = -0.15
+		custom_effect_tooltip = nf_legion.95.b_tt
+		country_event = nf_legion.70
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_global_flag = life_of_caesar_enabled_flag
+				factor = 0
+			}
+		}
+	}
+}
+
+## Peace Treaty
+news_event = {
+	#
+	id = nf_legion.96
+	title = nf_legion.96.t
+	desc = nf_legion.96.d
+	picture = GFX_event_CES_hoover_dam
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.96.a
+		diplomatic_relation = {
+			country = CES
+			relation = non_aggression_pact
+			active = yes
+		}
+	}
+}
+
+news_event = {
+	#
+	id = nf_legion.97
+	title = nf_legion.97.t
+	desc = nf_legion.97.d
+	picture = GFX_event_legion_slaves
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.97.a
+		CES = {
+			set_temp_variable = { caps_to_add = 150 }
+			add_caps = yes
+			add_political_power = 50
+		}
+		add_manpower = 1000
+		add_political_power = -50
+	}
+}
+
+news_event = {
+	#
+	id = nf_legion.98
+	title = nf_legion.98.t
+	desc = nf_legion.98.d
+	picture = GFX_event_CES_hoover_dam
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.98.a
+		diplomatic_relation = {
+			country = NCR
+			relation = non_aggression_pact
+			active = no
+		}
+		NCR = {
+			ROOT = {
+				grant_wargoals_on_core_states_of_prev = yes
+			}
+		}
+	}
+}
+
+news_event = {
+	#
+	id = nf_legion.100
+	title = nf_legion.100.t
+	desc = nf_legion.100.d
+	picture = GFX_event_divide1
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.100.a
+	}
+}
+
+news_event = {
+	#
+	id = nf_legion.101
+	title = nf_legion.100.t
+	desc = nf_legion.100.d
+	picture = GFX_event_divide1
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.100.a
+		launch_nuke = {
+			state = 592
+			use_nuke = no
+		}
+		launch_nuke = {
+			state = 13
+			use_nuke = no
+		}
+		launch_nuke = {
+			state = 592
+			use_nuke = no
+		}
+		launch_nuke = {
+			state = 13
+			use_nuke = no
+		}
+		launch_nuke = {
+			state = 592
+			use_nuke = no
+		}
+		launch_nuke = {
+			state = 13
+			use_nuke = no
+		}
+	}
+}
+
+news_event = {
+	#
+	id = nf_legion.102
+	title = nf_legion.102.t
+	desc = nf_legion.102.d
+	picture = GFX_event_divide1
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.102.a
+		every_state = {
+			limit = {
+				is_core_of = MOS
+				is_owned_by = NCR
+			}
+			remove_building = { type = arms_factory  level = 2 }
+			remove_building = { type = industrial_complex  level = 2 }
+		}
+	}
+}
+
+news_event = {
+	#
+	id = nf_legion.103
+	title = nf_legion.103.t
+	desc = nf_legion.103.d
+	picture = GFX_event_divide1
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.102.a
+		every_state = {
+			limit = {
+				is_core_of = MOS
+				is_owned_by = NCR
+				is_core_of = NCR
+			}
+			remove_building = { type = arms_factory  level = 4 }
+			remove_building = { type = industrial_complex  level = 4 }
+		}
+	}
+}
+
+country_event = {
+	#
+	id = nf_legion.104
+	title = nf_legion.104.t
+	desc = nf_legion.104.d
+	picture = GFX_event_divide1
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.104.a
+		set_country_flag = CES_burned_man
+		subtract_from_variable = {
+			CES_stress_level = 1
+		}
+		custom_effect_tooltip = CES_stress_decrease
+		retire_character = CES_malpais
+	}
+	option = {
+		trigger = {
+			has_country_flag = malpais_buddy
+		}
+		name = nf_legion.104.b
+		add_to_variable = {
+			CES_stress_level = 1
+		}
+		custom_effect_tooltip = nf_legion.104.b_tt
+	}
+}
+
+news_event = {
+	#
+	id = nf_legion.105
+	title = nf_legion.105.t
+	desc = nf_legion.105.d
+	picture = GFX_event_ncr_won
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.105.a
+		add_ideas = ces_long_war_idea
+		custom_effect_tooltip = nf_legion.105.a_tt
+	}
+}
+
+news_event = {
+	#
+	id = nf_legion.106
+	title = nf_legion.106.t
+	desc = nf_legion.106.d
+	picture = GFX_event_ncr_won
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.106.a
+		add_manpower = -200
+		add_war_support = -0.05
+		67 = {
+			remove_building = {
+				type = infrastructure
+				level = 2
+			}
+			remove_building = {
+				type = arms_factory
+				level = 2
+			}
+			remove_building = {
+				type = bunker
+				level = 2
+				province = 952
+			}
+			remove_building = {
+				type = bunker2
+				level = 2
+				province = 952
+			}
+		}
+	}
+}
+
+news_event = {
+	#
+	id = nf_legion.107
+	title = nf_legion.107.t
+	desc = nf_legion.107.d
+	picture = GFX_event_nipton_massacre
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.102.a
+		if = {
+			limit = {
+				47 = {
+					is_owned_by = NCR
+				}
+			}
+			47 = {
+				remove_core_of = NCR
+			}
+		}
+		if = {
+			limit = {
+				47 = {
+					is_owned_by = MOT
+				}
+			}
+			47 = {
+				remove_core_of = MOT
+			}
+		}
+		add_stability = -0.05
+		47 = {
+			add_resistance_target = {
+				amount = 25
+				tooltip = CES_send_frumentarii_tt
+			}
+			force_enable_resistance = {
+				occupier = MOT
+				occupied = MRA
+			}
+			start_resistance = FIE
+		}
+		set_global_flag = nipton_massacred_flag
+	}
+}
+
+country_event = {
+	#
+	id = nf_legion.108
+	title = nf_legion.108.t
+	desc = nf_legion.108.d
+	picture = GFX_event_CES_malpais_legate
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.108.a
+		complete_national_focus = CES_legionary_inger
+	}
+	option = {
+		name = nf_legion.108.b
+		complete_national_focus = CES_legionary_support
+	}
+}
+
+news_event = {
+	#
+	id = nf_legion.109
+	title = nf_legion.109.t
+	desc = nf_legion.109.d
+	picture = GFX_event_sub_generic_hunting_mirelurk
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.109.a
+		GDH = {
+			complete_national_focus = gdh_bull_market
+		}
+	}
+}
+
+news_event = {
+	#
+	id = nf_legion.110
+	title = nf_legion.110.t
+	desc = nf_legion.110.d
+	picture = GFX_event_sub_generic_hunting_mirelurk
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.110.a
+		add_to_variable = {
+			CES_stress_level = 1
+		}
+		custom_effect_tooltip = CES_stress_decrease_2
+		add_war_support = 0.05
+	}
+}
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_legion.111" }
+	id = nf_legion.111
+	title = nf_legion.111.t
+	desc = nf_legion.111.d
+	picture = GFX_event_CES_caesar
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_legion.111.a
+		custom_effect_tooltip = nf_legion.lucius_glory
+		add_to_variable = {
+			CES_lucius_glory = 1
+		}
+		if = {
+			limit = { has_character = CES_lucius }
+			CES_lucius = {
+				promote_leader = yes
+				add_skill_level = 1
+				add_max_trait = 1
+			}
+		}
+	}
+	option = {
+		name = nf_legion.111.b
+		custom_effect_tooltip = nf_legion.vulpes_glory
+		add_to_variable = {
+			CES_vulpes_glory = 1
+		}
+		if = {
+			limit = {
+				has_character = CES_vulpes
+				NOT = { has_dlc = "La Resistance" }
+			}
+			CES_vulpes = {
+				add_skill_level = 1
+				add_max_trait = 1
+			}
+		}
+		if = {
+			limit = {
+				has_character = CES_vulpes
+				has_dlc = "La Resistance"
+				CES_vulpes = {
+					is_unit_leader = no
+				}
+			}
+			add_corps_commander_role = {
+				character = CES_vulpes
+				traits = {
+					perceptive_trait intelligent_trait tough_leader_trait
+				}
+				skill = 4
+				attack_skill = 2
+				defense_skill = 2
+				planning_skill = 5
+				logistics_skill = 3
+			}
+		}
+	}
+	option = {
+		name = nf_legion.111.c
+		custom_effect_tooltip = nf_legion.aurelius_glory
+		add_to_variable = {
+			CES_aurelius_glory = 1
+		}
+		if = {
+			limit = { has_character = CES_aurelius }
+			CES_aurelius = {
+				promote_leader = yes
+				add_skill_level = 1
+				add_max_trait = 1
+			}
+		}
+		set_country_flag = aurelius_won
+	}
+	option = {
+		name = nf_legion.111.e
+		trigger = {
+			OR = {
+				has_character = LAC_lanius
+				LAC = {
+					exists = yes
+					NOT = { has_focus_tree = lac_revolter_focus_tree }
+				}
+			}
+		}
+		if = {
+			limit = { has_character = LAC_lanius }
+			LAC_lanius = {
+				add_skill_level = 1
+				add_max_trait = 1
+			}
+		}
+		else_if = {
+			limit = { LAC = { has_character = LAC_lanius } }
+			LAC = {
+				LAC_lanius = {
+					add_skill_level = 1
+					add_max_trait = 1
+				}
+			}
+		}
+		ai_chance = {
+			base = 2
+			modifier = {
+				add = 3
+				has_character = LAC_lanius	# Bonus chance if Lanius already joined the Legion
+			}
+		}
+	}
+}
+
+news_event = {
+	#
+	id = nf_legion.113
+	title = nf_legion.113.t
+	desc = nf_legion.113.d
+	picture = GFX_event_sub_generic_boathouse
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.113.a
+		63 = {
+			add_core_of = CES
+			add_resource = {
+				type = circuitry
+				amount = 20
+			}
+			add_resource = {
+				type = advanced
+				amount = 10
+			}
+		}
+	}
+}
+
+news_event = {
+	#
+	id = nf_legion.114
+	title = nf_legion.114.t
+	desc = nf_legion.114.d
+	picture = GFX_event_followers_chillin
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.114.a
+		add_ideas = library
+		253 = {
+			add_core_of = CES
+		}
+	}
+}
+
+news_event = {
+	#
+	id = nf_legion.115
+	title = nf_legion.115.t
+	desc = nf_legion.115.d
+	picture = GFX_event_nipton_massacre
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.115.a
+		every_state = {
+			limit = {
+				is_core_of = NCR
+				is_owned_by = CES
+			}
+			add_resistance_target = {
+				amount = -25
+			}
+		}
+	}
+}
+
+news_event = {
+	#
+	id = nf_legion.116
+	title = nf_legion.116.t
+	desc = nf_legion.116.d
+	picture = GFX_event_sub_generic_quarry_2
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.116.a
+		every_state = {
+			limit = {
+				is_core_of = NCR
+				is_owned_by = CES
+			}
+			add_compliance = 25
+		}
+	}
+}
+
+news_event = {
+	#
+	id = nf_legion.117
+	title = nf_legion.117.t
+	desc = nf_legion.117.d
+	picture = GFX_event_sub_generic_reactor_1
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.117.a
+		add_offsite_building = {
+			type = arms_factory
+			level = 5
+		}
+		remove_ideas = national_spirit_rejection_of_automation
+		if = {
+			limit = {
+				has_idea = national_spirit_rejection_of_automation2
+			}
+			remove_ideas = national_spirit_rejection_of_automation2
+		}
+		if = {
+			limit = {
+				has_idea = national_spirit_rejection_of_automation3
+			}
+			remove_ideas = national_spirit_rejection_of_automation3
+		}
+	}
+}
+
+news_event = {
+	#
+	id = nf_legion.118
+	title = nf_legion.118.t
+	desc = nf_legion.118.d
+	picture = GFX_event_sub_generic_reactor_1
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.118.a
+		if = {
+			limit = {
+				has_tech = ballistic_weaponry_tech_2
+			}
+			add_equipment_to_stockpile = {
+				type = ballistic_equipment_2
+				amount = -500
+				producer = MOT
+			}
+		}
+		else = {
+			add_equipment_to_stockpile = {
+				type = ballistic_equipment_1
+				amount = -500
+				producer = MOT
+			}
+		}
+	}
+}
+
+news_event = {
+	#
+	id = nf_legion.119
+	title = nf_legion.119.t
+	desc = nf_legion.119.d
+	picture = GFX_event_sub_generic_reactor_1
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.118.a
+		if = {
+			limit = {
+				has_tech = energy_weaponry_tech_2
+			}
+			add_equipment_to_stockpile = {
+				type = energy_equipment_2
+				amount = -200
+				producer = MOJ
+			}
+		}
+		else = {
+			add_equipment_to_stockpile = {
+				type = energy_equipment_1
+				amount = -200
+				producer = MOJ
+			}
+		}
+	}
+}
+
+news_event = {
+	#
+	id = nf_legion.120
+	title = nf_legion.120.t
+	desc = nf_legion.120.d
+	picture = GFX_event_MOJ_ncr_treaty
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.120.a
+		if = {
+			limit = {
+				67 = {
+					is_core_of = MOT
+				}
+			}
+			every_owned_state = {
+				limit = {
+					is_core_of = FIE
+				}
+				force_enable_resistance = {
+					occupier = MOT
+					occupied = MRA
+				}
+				start_resistance = MRA
+			}
+		}
+		else = {
+			every_owned_state = {
+				limit = {
+					is_core_of = MRA
+				}
+				add_resistance = 20
+			}
+		}
+	}
+}
+country_event = {
+	#New Rome?
+	id = nf_legion.121
+	title = nf_legion.121.t
+	desc = nf_legion.121.d
+	picture = event_VEG_wall
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.121.a
+		set_capital = { state = 211 }
+		211 = {
+			add_core_of = CES
+			set_state_name = "Nova Roma"
+		}
+		add_political_power = 25
+		add_stability = -0.025
+	}
+	option = {
+		name = nf_legion.121.b
+		add_stability = 0.075
+	}
+}
+
+
+country_event = {
+	#Legion Demands
+	id = nf_legion.122
+	title = nf_legion.122.t
+	desc = nf_legion.122.d
+	picture = GFX_event_reservation_trade
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.122.a
+		RES = {
+			ROOT = {
+				grant_wargoals_on_core_states_of_prev = yes
+			}
+		}
+	}
+	option = {
+		name = nf_legion.122.b
+		RES = { country_event = nf_legion.123 }
+	}
+}
+
+country_event = {
+	#Legion Demands - Res Perspective
+	id = nf_legion.123
+	title = nf_legion.123.t
+	desc = nf_legion.123.d
+	picture = GFX_event_reservation_trade
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.123.a
+		CES = { news_event = nf_legion.124 }
+	}
+	option = {
+		name = nf_legion.123.b
+		CES = { news_event = nf_legion.125 }
+	}
+}
+news_event = {
+	#Legion Demands - Res gives us mininukes
+	id = nf_legion.124
+	title = nf_legion.124.t
+	desc = nf_legion.124.d
+	picture = GFX_event_reservation_trade
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.124.a
+		set_technology = { mininuke_unlock_tech = 1 }
+		add_equipment_to_stockpile = {
+			type = mininuke_equipment_1
+			amount = 3
+		}
+	}
+
+}
+
+news_event = {
+	#Legion Demands - Res gives us mininukes
+	id = nf_legion.125
+	title = nf_legion.125.t
+	desc = nf_legion.125.d
+	picture = GFX_event_reservation_trade
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.125.a
+		RES = {
+			ROOT = {
+				grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+			}
+		}
+	}
+}
+news_event = {
+	#Lanius leader
+	id = nf_legion.126
+	title = nf_legion.126.t
+	desc = nf_legion.126.d
+	picture = GFX_event_lanius_planning
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.126.a
+		set_country_flag = CES_lanius_legion_flag
+		set_cosmetic_tag = CES_lanius_legion
+		set_politics = {
+			ruling_party = ruler
+		}
+		set_popularities = {
+			ruler = 70
+			people = 15
+			elites = 10
+			intellectuals = 5
+		}
+		retire_country_leader = yes
+		add_country_leader_role = {
+			character = CES_Lanius
+			promote_leader = yes
+			country_leader = {
+				ideology = benevolent_dictatorship
+				desc = LAC_LANIUS_DESC
+				traits = {
+					lac_frontier_justice
+				}
+				expire = "3000.01.01.01"
+			}
+		}
+	}
+}
+
+country_event = {
+	#Navajo healing legion
+	id = nf_legion.127
+	title = nf_legion.127.t
+	desc = nf_legion.127.d
+	picture = GFX_event_CES_camp_2
+	is_triggered_only = yes
+	option = {
+		name = nf_legion.127.a
+
+		subtract_from_variable = { CES.CES_stress_level = 1 }
+		custom_effect_tooltip = caesar_was_healed_tt
+	}
+}
+country_event = {
+	#Legion CW (Reservation picks a side)
+	id = nf_legion.128
+	title = nf_legion.128.t
+	desc = nf_legion.128.d
+	picture = GFX_event_CES_camp_2
+	is_triggered_only = yes
+	option = {#Join Caius
+		name = nf_legion.128.a
+		trigger = {
+			CAU = {
+				exists = yes
+			}
+		}
+		create_or_join_hades_legion = yes
+	}
+	option = {
+		name = nf_legion.128.b
+		trigger = {
+			CAU = {
+				exists = no
+			}
+			NAV = {
+				exists = yes
+			}
+		}
+		create_or_join_aurelius_legion = yes
+	}
+	option = {
+		name = nf_legion.128.b
+		trigger = {
+			CAU = {
+				exists = no
+			}
+			NAV = {
+				exists = no
+			}
+		}
+		create_or_join_lucius_legion = yes
+	}
+}
+country_event = {
+	#Legion CW (Eghties pick a side)
+	id = nf_legion.129
+	title = nf_legion.129.t
+	desc = nf_legion.129.d
+	picture = GFX_event_CES_camp_2
+	is_triggered_only = yes
+	option = {#Join Lucius
+		name = nf_legion.129.a
+		trigger = {
+			LUC = {
+				exists = yes
+			}
+		}
+		create_or_join_lucius_legion = yes
+	}
+	option = {
+		name = nf_legion.129.b
+		trigger = {
+			AUR = {
+				exists = yes
+			}
+		}
+		create_or_join_aurelius_legion = yes
+	}
+}
+country_event = {
+	#Legion CW (White Legs pick a side)
+	id = nf_legion.130
+	title = nf_legion.130.t
+	desc = nf_legion.130.d
+	picture = GFX_event_CES_camp_2
+	is_triggered_only = yes
+	option = {#Join Lucius
+		name = nf_legion.130.a
+		trigger = {
+			LAN = {
+				exists = yes
+			}
+		}
+		create_or_join_lanius_legion = yes
+	}
+	option = {
+		name = nf_legion.130.b
+		trigger = {
+			MAL = {
+				exists = yes
+			}
+		}
+		create_or_join_malpais_legion = yes
+	}
+	option = {
+		name = nf_legion.130.c
+		trigger = {
+			AUR = {
+				exists = yes
+			}
+		}
+		create_or_join_aurelius_legion = yes
+	}
+}
+
+
+############################################
+### Legion news events
+###########################################
+add_namespace = nf_legion_news
+
+news_event = {
+	#Legion CW
+	id = nf_legion_news.1
+	title = nf_legion_news.1.t
+	desc = nf_legion_news.1.d
+	picture = GFX_event_caesar_death
+	is_triggered_only = yes
+	option = {
+		name = nf_legion_news.1.a
+	}
+}
+#Aurelius
+news_event = {
+	id = nf_legion_news.2
+	title = nf_legion_news.2.t
+	desc = nf_legion_news.2.d
+	picture = GFX_event_ces_aurelius_flag
+	is_triggered_only = yes
+	option = {
+		name = nf_legion_news.2.a
+	}
+}
+#Lanius
+news_event = {
+	id = nf_legion_news.3
+	title = nf_legion_news.3.t
+	desc = nf_legion_news.3.d
+	picture = GFX_event_ces_lanius_flag
+	is_triggered_only = yes
+	option = {
+		name = nf_legion_news.3.a
+	}
+}
+#Lucius
+news_event = {
+	id = nf_legion_news.4
+	title = nf_legion_news.4.t
+	desc = nf_legion_news.4.d
+	picture = GFX_event_ces_lucius_flag
+	is_triggered_only = yes
+	option = {
+		name = nf_legion_news.4.a
+	}
+}
+#Malpais
+news_event = {
+	id = nf_legion_news.5
+	title = nf_legion_news.5.t
+	desc = nf_legion_news.5.d
+	picture = GFX_event_ces_malpais_flag
+	is_triggered_only = yes
+	option = {
+		name = nf_legion_news.5.a
+	}
+}
+#Vulpes
+news_event = {
+	id = nf_legion_news.6
+	title = nf_legion_news.6.t
+	desc = nf_legion_news.6.d
+	picture = GFX_event_ces_vulpes_flag
+	is_triggered_only = yes
+	option = {
+		name = nf_legion_news.6.a
+	}
+}
+
+country_event = {
+	id = nf_legion.131
+	title = nf_legion.131.t
+	desc = nf_legion.131.d
+	picture = GFX_event_CES_camp_1
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = nf_legion.131.a
+	}
+}
+
+country_event = {
+	id = nf_legion.132
+	title = nf_legion.132.t
+	desc = nf_legion.132.d
+	picture = GFX_event_CES_camp_1
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = nf_legion.132.a
+	}
+}
+
+country_event = {
+	id = nf_legion.133
+	title = nf_legion.133.t
+	desc = nf_legion.133.d
+	picture = GFX_event_ces_ghoul_dogs_picture
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = nf_legion.133.a
+	}
+}
+country_event = {
+	id = nf_legion.134
+	title = nf_legion.134.t
+	desc = nf_legion.134.d
+	picture = GFX_event_ces_vulpes_flag
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = nf_legion.134.a
+		custom_effect_tooltip = ces_vlp_fantasticus_puppet_tt
+		hidden_effect = {
+			every_state = {
+				limit = {
+					owner = {
+						original_tag = CES
+					}
+					OR = {
+						is_core_of = MOT
+						is_core_of = MOJ
+						is_core_of = MRA
+						is_core_of = FIE
+					}
+				}
+				MOT = {
+					transfer_state = PREV
+				}
+				add_core_of = MOT
+			}
+			puppet = MOT
+			transfer_units_fraction= {
+				target = MOT
+				size = 0.1
+				stockpile_ratio = 0.1
+				army_ratio = 0.1
+				navy_ratio = 0.1
+				air_ratio = 0.1
+			}
+			MOT = {
+				set_capital = {
+					state = 417
+				}
+				set_cosmetic_tag = MOT_CES
+				load_focus_tree = ces_puppet_nf
+				add_country_leader_role = {
+					character = MOT_fantasticus
+					promote_leader = yes
+					country_leader = {
+						ideology = benevolent_dictatorship
+						desc = MOT_FANTASTICUS_DESC
+						traits = {
+						}
+						expire = "3000.01.01.01"
+					}
+				}
+				add_country_leader_role = {
+					character = MOT_fantasticus
+					promote_leader = yes
+					country_leader = {
+						ideology = theodemocracy
+						desc = MOT_FANTASTICUS_DESC
+						traits = {
+						}
+						expire = "3000.01.01.01"
+					}
+				}
+				add_country_leader_role = {
+					character = MOT_fantasticus
+					promote_leader = yes
+					country_leader = {
+						ideology = militarist_technocracy
+						desc = MOT_FANTASTICUS_DESC
+						traits = {
+						}
+						expire = "3000.01.01.01"
+					}
+				}
+				add_country_leader_role = {
+					character = MOT_fantasticus
+					promote_leader = yes
+					country_leader = {
+						ideology = technocracy
+						desc = MOT_FANTASTICUS_DESC
+						traits = {
+						}
+						expire = "3000.01.01.01"
+					}
+				}
+				set_country_flag = color_changed
+			}
+		}
+
+	}
+
+	option = {
+		name = nf_legion.134.b
+		custom_effect_tooltip = ces_vlp_fantasticus_tt
+		set_country_flag = vlp_fanasticus_advisor
+	}
+}
+add_namespace = nf_legion_mutants
+############################################
+#First event chain - Keen looks for Dr Henry
+############################################
+country_event = {
+	#Keen starts looking for Henry
+	id =  nf_legion_mutants.1
+	title = nf_legion_mutants.1.t
+	desc = nf_legion_mutants.1.d
+	picture = GFX_event_generic_mutant
+	is_triggered_only = yes
+	option = {
+		name = nf_legion_mutants.1.a
+		country_event = { id = nf_legion_mutants.2 days = 21 }
+	}
+}
+#Henry wasn't found so some scientisit captured by the Legion are forced to continue his research of nightkin condition
+country_event = {
+	id =  nf_legion_mutants.2
+	title = nf_legion_mutants.2.t
+	desc = nf_legion_mutants.2.d
+	picture = GFX_event_enc_henry_returns
+	is_triggered_only = yes
+	option = {
+		name = nf_legion_mutants.2.a
+		add_timed_idea = {
+			idea = CES_nightkin_research
+			days = 150
+		}
+		set_country_flag = ces_research_start
+	}
+}
+#Nighkin condition was cured
+country_event = {
+	id =  nf_legion_mutants.3
+	title = nf_legion_mutants.3.t
+	desc = nf_legion_mutants.3.d
+	picture = GFX_event_generic_mutant
+
+	is_triggered_only = no
+	trigger = {
+		tag = CES
+		has_country_flag = ces_research_start
+		NOT = {
+			has_idea = CES_nightkin_research
+		}
+	}
+	mean_time_to_happen = {days = 1}
+	fire_only_once = yes
+
+	option = {
+		name = nf_legion_mutants.3.a
+		swap_ideas = {
+			remove_idea = CES_nightkin_frumentaries
+			add_idea = CES_nightkin_frumentaries_2
+		}
+		custom_effect_tooltip = ces_nightkins_migration_tt
+		add_timed_idea = {
+			idea = CES_nightkin_migration
+			days = 80
+		}
+		clr_country_flag = ces_research_start
+	}
+}
+###################################################
+#Second event chain - Davison quest for Stealthboys
+###################################################
+country_event = {
+	#Davison looks for stealthboys in REPCONN, finds out that they are gone
+	id = nf_legion_mutants.4
+	title = nf_legion_mutants.4.t
+	desc = nf_legion_mutants.4.d
+	picture = GFX_event_generic_event_stealthboy
+	is_triggered_only = yes
+	option = {
+		name = nf_legion_mutants.4.a
+		add_manpower = -14
+		country_event = { id = nf_legion_mutants.5 days = 14 }
+	}
+}
+country_event = {
+	#Davison discovers that a huge stash of stealthboys could be located in the Area 51, goes there
+	id = nf_legion_mutants.5
+	title = nf_legion_mutants.5.t
+	desc = nf_legion_mutants.5.d
+	picture = GFX_event_sub_generic_nevada_sign
+	is_triggered_only = yes
+	option = {
+		name = nf_legion_mutants.5.a
+		add_state_claim = 389
+		set_country_flag = ces_quest_for_51
+	}
+}
+country_event = {
+	#Davison finds a stealthboys, but Antler asks him if this is something, he truly wants
+	id =  nf_legion_mutants.6
+	title = nf_legion_mutants.6.t
+	desc = nf_legion_mutants.6.d
+	picture = GFX_event_generic_event_stealthboy
+
+	is_triggered_only = no
+	trigger = {
+		tag = CES
+		has_country_flag = ces_quest_for_51
+		389 = { OWNER = { is_caesars_legion_member = yes } }
+	}
+	mean_time_to_happen = {days = 1}
+	fire_only_once = yes
+
+	option = {#Davison takes stealthboys
+		name = nf_legion_mutants.6.a
+		swap_ideas = {
+			remove_idea = CES_davison_schizophrenia
+			add_idea = CES_davison_schizophrenia_2
+		}
+		CES_davison_and_antler = {
+			set_character_name = ces_shizo_davison
+		}
+		313 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+		clr_country_flag = ces_quest_for_51
+	}
+	option = {#Davison leaves them
+		name = nf_legion_mutants.6.b
+		swap_ideas = {
+			remove_idea = CES_davison_schizophrenia
+			add_idea = CES_davison_schizophrenia_3
+		}
+		CES_davison_and_antler = {
+			set_character_name = ces_cured_davison
+		}
+		add_ideas = CES_stealthboy_stash
+		clr_country_flag = ces_quest_for_51
+	}
+}
+
+add_namespace = centurion_event
+country_event = {
+	id = centurion_event.1
+	title = centurion_event.1.title
+	desc = centurion_event.1.desc
+	picture = GFX_event_debug_centurion_encounter
+	is_triggered_only = yes
+	trigger = {
+		wild_wasteland = yes
+		NOT = { country_exists = MOT }
+		owns_state = 252
+		owns_state = 613
+		owns_state = 137
+		owns_state = 67
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = centurion_event.1.a
+		add_corps_commander_role = {
+			character = CES_debug_centurion
+			traits = {
+				charismatic_trait
+				intelligent_trait
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = 0
+		}
+		set_country_flag = CES_debug_centurion_flag
+	}
+}

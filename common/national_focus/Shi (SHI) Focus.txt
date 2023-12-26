@@ -1,0 +1,565 @@
+####################################################
+####################################################
+
+focus_tree = {
+	id = nf_shi
+	country = {
+		factor= 0
+		modifier = {
+			add = 75
+			tag = SHI
+		}
+	}
+
+	shared_focus = settler_schools
+	shared_focus = settler_palisade
+	shared_focus = settler_community
+
+
+	#### History
+
+	focus = {
+		id = shi_origin
+		icon = GFX_goal_shi_icon_3
+		cost = 7
+		x = 30
+		y = 1
+        completion_reward = {
+			country_event = {
+				id = nf_shi.8
+			}
+		}
+	}
+
+	focus = {
+		id = shi_chosen_one
+		icon = GFX_goal_shi_icon_1
+		cost = 7
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = shi_origin
+		}
+		relative_position_id = shi_origin
+		completion_reward = {
+			country_event = {
+				id = nf_shi.9
+			}
+		}
+	}
+
+	focus = {
+		id = shi_dream_of_the_bear_chamber
+		icon = GFX_goal_shi_icon_6
+		cost = 7
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = shi_chosen_one
+		}
+		relative_position_id = shi_chosen_one
+		completion_reward = {
+			country_event = {
+				id = nf_shi.10
+			}
+			unlock_all_available_generic_branches = yes
+		}
+	}
+
+	focus = {
+		id = shi_schools_debate
+		icon = GFX_goal_shi_icon_7
+		x = 2
+		y = 1
+		relative_position_id = shi_dream_of_the_bear_chamber
+		prerequisite = {
+			focus = shi_dream_of_the_bear_chamber
+		}
+		cost = 50
+		completion_reward = {
+			country_event = nf_shi.11
+		}
+	}
+
+	focus = {
+		id = shi_lessons_war
+		icon = GFX_goal_shi_icon_5
+		x = 1
+		y = 1
+		available = {
+			NAT = {
+				exists = no
+			}
+		}
+		relative_position_id = shi_schools_debate
+		prerequisite = {
+			focus = shi_schools_debate
+		}
+		cost = 50
+		completion_reward = {
+			country_event = nf_shi.14
+		}
+	}
+
+	focus = {
+		id = shi_brotherhood_armor_advice
+		icon = GFX_goal_bos_generic_stripped_pa
+		x = 1
+		y = 1
+		available = {
+			NAT = {
+				exists = no
+			}
+		}
+		relative_position_id = shi_lessons_war
+		prerequisite = {
+			focus = shi_lessons_war
+		}
+		cost = 50
+		completion_reward = {
+			hidden_effect = {	# Make sure any change to this is reflected in the tooltip correctly
+				set_technology = {
+					texas_brotherhood_pa_tech = 1
+				}
+				add_equipment_to_stockpile = {
+					type = power_armor_equipment_tbh	#NOTE# this armor is called Chinese PA for SHI, equipment was not added before tech
+					amount = 400
+					producer = SHI
+				}
+			}
+			custom_effect_tooltip = shi_armor_tt
+			add_popularity = {
+				ideology = intellectuals
+				popularity = 0.10
+			}
+		}
+	}
+
+	focus = {
+		id = shi_thinking_of_future
+		icon = GFX_goal_shi_icon_4
+		x = -1
+		y = 1
+		relative_position_id = shi_schools_debate
+		prerequisite = {
+			focus = shi_schools_debate
+		}
+		cost = 50
+		completion_reward = {
+			country_event = nf_shi.15
+		}
+	}
+
+	focus = {
+		id = shi_legalist_debate
+		icon = GFX_goal_shi_focus_golden_dragon
+		x = 1
+		y = 1
+		relative_position_id = shi_thinking_of_future
+		prerequisite = {
+			focus = shi_thinking_of_future
+		}
+		prerequisite = {
+			focus = shi_lessons_war
+		}
+		cost = 50
+		completion_reward = {
+			country_event = nf_shi.18
+		}
+	}
+
+	focus = {
+		id = shi_fuel_seaweed
+		icon = GFX_goal_generic_boat_anchor
+		cost = 50
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = shi_dream_of_the_bear_chamber
+		}
+		relative_position_id = shi_dream_of_the_bear_chamber
+		completion_reward = {
+			511 = {
+				add_resource = {
+					type = energy
+					amount = 16
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = shi_navarro_farms
+		icon = GFX_goal_cotton_2
+		cost = 50
+		x = 0
+		y = 1
+		available = {
+			NAT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			core_compliance = {
+				occupied_country_tag = NAT
+				value > 95
+			}
+		}
+		prerequisite = {
+			focus = shi_dream_of_the_bear_chamber
+		}
+		relative_position_id = shi_dream_of_the_bear_chamber
+		completion_reward = {
+			NAT = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			every_owned_state = {
+				limit = {
+					is_core_of = NAT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			56 = {
+				add_resource = {
+					type = water
+					amount = 10
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SHI_ncr_banking
+		icon = GFX_goal_NCR_Shady_Sands
+		x = -1
+		y = 1
+		relative_position_id = shi_fuel_seaweed
+		prerequisite = {
+			focus = shi_fuel_seaweed
+		}
+		cost = 50
+		available = {
+			NCR = {
+				exists = yes
+			}
+		}
+		bypass = {
+			NCR = {
+				exists = no
+			}
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 100
+			NCR = { news_event = nf_shi.13 }
+		}
+	}
+
+	focus = {
+		id = shi_ncr_golden_circle_trade
+		icon = GFX_goal_generic_creature_brahmin
+		x = -1
+		y = 1
+		relative_position_id = SHI_ncr_banking
+		prerequisite = {
+			focus = SHI_ncr_banking
+		}
+		cost = 50
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			163 = {
+				add_state_modifier = {
+					modifier = {
+						caps_node_base_modifier = 0.3
+					}
+				}
+				set_temp_variable = {
+					development_to_add = 1
+				}
+				add_development_to_node = yes
+			}
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.05
+			}
+		}
+	}
+
+	focus = {
+		id = SHI_brotherhood_bunker
+		icon = GFX_goal_bos_flag_shi
+		x = 1
+		y = 1
+		relative_position_id = shi_fuel_seaweed
+		prerequisite = {
+			focus = shi_fuel_seaweed
+		}
+		cost = 50
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_popularity = {
+				ideology = intellectuals
+				popularity = 0.10
+			}
+			BOS = {
+				news_event = nf_shi.12
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				ahead_reduction = 1
+				category = infantry_tech_category
+			}
+		}
+	}
+
+	focus = {
+		id = shi_vertibirds
+		icon = GFX_goal_generic_vertibird
+		x = -1
+		y = 1
+		relative_position_id = shi_thinking_of_future
+		prerequisite = {
+			focus = shi_thinking_of_future
+		}
+		prerequisite = {
+			focus = SHI_brotherhood_bunker
+		}
+		available = {
+			date > 2278.1.1
+		}
+		cost = 50
+		available = {
+			NAT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			set_technology = {
+				air_tech_level_scientific = 1
+				vertibird_unlock_tech = 1
+			}
+		}
+	}
+
+	focus = {
+		id = shi_kill_hubologists
+		icon = GFX_goal_hubologist
+		x = 0
+		y = 1
+		bypass = {
+			EUR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = shi_vertibirds
+		prerequisite = {
+			focus = shi_vertibirds
+		}
+		cost = 50
+		completion_reward = {
+			EUR = { ROOT = { grant_wargoals_on_core_states_of_prev = yes } }
+		}
+	}
+
+	focus = {
+		id = shi_fund_engineering
+		icon = GFX_goal_generic_what_is_plasma_anyway
+		x = -1
+		y = 1
+		relative_position_id = SHI_brotherhood_bunker
+		prerequisite = {
+			focus = SHI_ncr_banking
+		}
+		prerequisite = {
+			focus = SHI_brotherhood_bunker
+		}
+		cost = 50
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = electronics
+			}
+			activate_advisor = SHI_xian_idea_token
+		}
+	}
+
+	focus = {
+		id = shi_open_lo_pan_temple
+		icon = GFX_goal_pal_yakuza
+		x = -1
+		y = 1
+		relative_position_id = shi_fund_engineering
+		prerequisite = {
+			focus = shi_ncr_golden_circle_trade
+			focus = shi_fund_engineering
+		}
+		cost = 50
+		completion_reward = {
+			add_tech_bonus = {
+				name = doctrine_bonus
+				bonus = 0.5
+				uses = 3
+				category = spec_force_equipment_tech_category
+				category = power_armor_tech_category
+			}
+			add_popularity = {
+				ideology = elites
+				popularity = 0.10
+			}
+		}
+	}
+
+	focus = {
+		id = shi_debate_over_social_heierarchy
+		icon = GFX_goal_NCN_Mormon_Book
+		x = 1
+		y = 1
+		relative_position_id = shi_legalist_debate
+		prerequisite = {
+			focus = shi_legalist_debate
+			focus = shi_brotherhood_armor_advice
+		}
+		cost = 50
+		completion_reward = {
+			country_event = nf_shi.16
+		}
+	}
+
+	focus = {
+		id = shi_resolve_power_struggle
+		icon = GFX_goal_generic_focus_magazine_gunsandbullets_gun_laws
+		x = -3
+		y = 1
+		relative_position_id = shi_debate_over_social_heierarchy
+		# Requires 2/3 of the Pre-Req focuses
+		prerequisite = {
+			focus = shi_debate_over_social_heierarchy
+			focus = shi_kill_hubologists
+		}
+		prerequisite = {
+			focus = shi_debate_over_social_heierarchy
+			focus = shi_open_lo_pan_temple
+		}
+		prerequisite = {
+			focus = shi_kill_hubologists
+			focus = shi_open_lo_pan_temple
+		}
+		ai_will_do = {
+			factor = 20
+			modifier = {
+				factor = 0
+				NOT = { has_completed_focus = shi_debate_over_social_heierarchy }
+			}
+		}
+		cost = 50
+		completion_reward = {
+			country_event = nf_shi.17
+		}
+	}
+
+	focus = {
+		id = shi_ncr_friendship
+		icon = GFX_goal_NCR_Propaganda_3
+		x = 0	#NOTE# adjusted for alternative
+		y = 1
+		relative_position_id = shi_resolve_power_struggle
+		prerequisite = {
+			focus = shi_resolve_power_struggle
+		}
+		available = {
+			NCR = {
+				exists = yes
+				NOT = { has_war_with = SHI }
+			}
+		}
+		cost = 50
+		completion_reward = {
+			add_country_leader_trait = ncr_best_friend
+			ask_to_join_new_california = yes
+			set_cosmetic_tag = SHI_NCR
+		}
+	}
+	focus = {
+		id = shi_ncr_frienemies
+		icon = GFX_goal_pal_yakuza
+		x = 0
+		y = 2
+		relative_position_id = shi_resolve_power_struggle
+		prerequisite = {
+			focus = shi_ncr_friendship
+		}
+		available = {
+		}
+		cost = 50
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = united_kingdom_shi
+				add_idea = shi_dojo_truce
+			}
+			add_command_power = 75
+			set_party_name = { ideology = ruler  name = "The United Schools" long_name = "The Crane and Dragon Schools" }
+		}
+	}
+	#Post-NCR
+	focus = {
+		id = shi_bay_control
+		icon = GFX_goal_shi_icon_2
+		x = 0
+		y = 1
+		relative_position_id = shi_ncr_frienemies
+		prerequisite = {
+			focus = shi_ncr_frienemies
+		}
+		available = {
+			has_war = no
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = shi_ncr_wp_tt
+					has_global_flag = shi_ncr_wp
+				}
+				NCR = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+		}
+		cost = 50
+		completion_reward = {
+			add_nuclear_bombs = 1
+			random_owned_controlled_state = {
+				limit = {
+					is_valid_state_for_arms_factory = yes
+					is_valid_state_for_civilian_factory = yes
+					is_core_of = SHI
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dockyard		#NOTE# should be correct
+					level = 2
+					instant_build = yes
+				}
+			}
+			country_event = nf_shi.26
+		}
+	}
+}

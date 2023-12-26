@@ -1,0 +1,25 @@
+state = {
+	id = 659
+	name = "STATE_659"
+	resources = {
+		metal = 4
+		circuitry = 4
+		advanced = 2
+	}
+	history={
+		buildings = {
+			infrastructure = 4
+			arms_factory = 2
+			industrial_complex = 1
+		}
+		victory_points = {
+			7200 5
+		}
+	}
+	provinces={
+		7182 1483 2361 7200 7201 7199 2199
+	}
+	manpower = 7560
+	state_category = town
+	buildings_max_level_factor=1.000
+}

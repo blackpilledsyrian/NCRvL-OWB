@@ -1,0 +1,25 @@
+state = {
+	id = 505
+	name = "STATE_505"
+	manpower = 3725
+	state_category = town
+
+	resources = {
+		metal = 4
+		composites = 4
+	}
+
+	history = {
+		victory_points = {
+			3742 10
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+		}
+	}
+
+	provinces = {
+		2565 3719 3720 3734 3742 10435
+	}
+}

@@ -1,0 +1,163 @@
+﻿capital = 84
+oob = "WBH_2275"
+
+### Caps wage laws
+set_country_flag = army_wages_disabled
+
+set_technology = {
+	basic_supply_transport_tech = 1
+	infantry_tech_level_tribal = 1
+	infantry_tech_level_settler = 1
+	infantry_tech_level_scientific = 1
+	support_tech_level_tribal = 1
+	support_tech_level_settler = 1
+	support_tech_level_scientific = 1
+	special_forces_tech_level_tribal = 1
+	special_forces_tech_level_settler = 1
+	#special_forces_tech_level_scientific = 1
+	power_armour_tech_level_tribal = 1
+	power_armour_tech_level_settler = 1
+	power_armour_tech_level_scientific = 1
+	vehicles_tech_level_tribal = 1
+	vehicles_tech_level_settler = 1
+	#vehicles_tech_level_scientific = 1
+	robotics_tech_level_tribal = 1
+	robotics_tech_level_settler = 1
+	#robotics_tech_level_scientific = 1
+	air_tech_level_tribal = 1
+	air_tech_level_settler = 1
+	#air_tech_level_scientific = 1
+	naval_tech_level_tribal = 1
+	naval_tech_level_settler = 1
+	#naval_tech_level_scientific = 1
+	tools_tech_level_tribal = 1
+	tools_tech_level_settler = 1
+	#tools_tech_level_scientific = 1
+	habitation_tech_level_tribal = 1
+	habitation_tech_level_settler = 1
+	#habitation_tech_level_scientific = 1
+	exploitation_tech_level_tribal = 1
+	exploitation_tech_level_settler = 1
+	#exploitation_tech_level_scientific = 1
+	electronics_tech_level_tribal = 1
+	electronics_tech_level_settler = 1
+	#electronics_tech_level_scientific = 1
+	#
+	elite_army = 1
+	tool_engineering = 1
+	standard_weaponry_tech = 1
+	melee_weaponry_tech_1 = 1
+	ballistic_weaponry_tech_1 = 1
+	energy_weaponry_tech_1 = 1
+	energy_weapon_emitter_tech = 1
+	energy_weaponry_tech_2 = 1
+	support_weaponry = 1
+	#spec_ops_equipment_tech_1 = 1
+	#spec_ops_equipment_tech_2 = 1
+	#hardening_armour_tech = 1
+	stripped_pa_tech = 1
+	weight_support_frame_pa_tech_1 = 1
+	weight_support_frame_pa_tech_2 = 1
+	simple_servo_tech = 1
+	wasteland_pa_tech = 1
+	scav_pa_tech = 1
+}
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		nautics_tech_1 = 1
+		light_navy_hull_tech_1 = 1
+		waterproof_sealing_tech = 1
+		medium_navy_hull_tech_1 = 1
+		multi_deck_construction_tech = 1
+		heavy_navy_hull_tech_1 = 1
+		naval_module_tech = 1
+		naval_weapons_module_tech = 1
+		naval_support_module_tech = 1
+		naval_armour_tech_1 = 1
+		naval_communications_module_tech_1 = 1
+	}
+}
+
+if = {
+	limit = {
+		NOT = { has_dlc = "Man the Guns" }
+	}
+	set_technology = {
+		nautics_tech_non_mtg_1 = 1
+		light_navy_hull_tech_non_mtg_1 = 1
+		waterproof_sealing_tech_non_mtg = 1
+		medium_navy_hull_tech_non_mtg_1 = 1
+		multi_deck_construction_tech_non_mtg = 1
+		heavy_navy_hull_tech_non_mtg_1 = 1
+	}
+}
+
+set_stability = 0.35
+set_war_support = 0.62
+set_research_slots = 5
+
+set_country_flag = is_followers_black_listed_nation
+set_country_flag = is_brotherhood_nation
+set_country_flag = is_midwestern_brotherhood_nation
+set_country_flag = west_coast_canadian
+set_country_flag = elite_doctrine_ai
+set_country_flag = power_armor_doctrine_ai
+set_country_flag = infantry_energy_ai
+
+set_variable = { dont_return_stolen_territory@TRL = 1 }
+#To ban the cheese strat I used against garn in the 2.1 pre-release stream. :^) - Zusk
+
+add_opinion_modifier = { target = MLT modifier = boshatesmutants }
+add_opinion_modifier = { target = DIS modifier = boshatesmutants }
+
+set_politics = {
+	ruling_party = elites
+	elections_allowed = no
+}
+
+set_popularities = {
+	people = 0
+	elites = 85
+	intellectuals = 10
+	ruler = 5
+}
+
+recruit_character = WBH_THE_IMMORTAL
+recruit_character = WBH_STAR_PALADIN_RODRIGUEZ
+recruit_character = WBH_PALADIN_CONNOR
+recruit_character = WBH_KNIGHT_EDWARDS
+recruit_character = WBH_HEAD_PALADIN_BLAIR
+recruit_character = WBH_PALADIN_JETSON
+recruit_character = WBH_INQUISITOR_ABRAM
+recruit_character = WBH_PALADIN_TALSO
+recruit_character = WBH_KNIGHT_BOSTON
+recruit_character = WBH_SCOUT_CORMAC
+recruit_character = WBH_BLACK_PALADIN_LANDON
+recruit_character = WBH_INSTRUCTOR_MORTIS
+recruit_character = WBH_INQUISITOR_TORLAND
+recruit_character = WBH_INQUISITOR_FRITZ
+recruit_character = WBH_SCOUT_AMBROSONE
+recruit_character = WBH_KNIGHT_KAMALA
+recruit_character = WBH_PALADIN_JAKZIN
+
+create_or_join_northern_league = yes
+add_ideas = {
+	threat_to_all_people
+	bunkerblues
+	partial_economic_mobilisation
+	WBH_the_stalkers_of_seattle
+	# slavers_idea_2
+	#four_year_conscription
+	undesirables_law_raider
+	genericboswashingtonp1
+	wbh_tca_split
+}
+
+add_timed_idea = {
+	idea = brotherhood_chaotic_conflicts
+	days = 730
+}

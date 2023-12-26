@@ -1,0 +1,20 @@
+state = {
+	id = 299
+	name = "STATE_299"
+	manpower = 2130
+	state_category = rural
+
+	history = {
+		victory_points = {
+			7271 5
+		}
+		buildings = {
+			infrastructure = 1
+			air_base = 1
+		}
+	}
+
+	provinces = {
+		2483 2563 3726 7257 7258 7264 7265 7267 7269 7270 7271 7273 7276 7277
+	}
+}

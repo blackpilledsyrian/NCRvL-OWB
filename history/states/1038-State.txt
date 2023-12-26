@@ -1,0 +1,28 @@
+state = {
+	id = 1038
+	name = "STATE_1038"
+	manpower = 3523
+	state_category = large_town
+
+	resources = {
+		water = 16
+		metal = 8
+	}
+
+	history = {
+		owner = DRY
+		add_core_of = DRY
+		victory_points = {
+			12502 5
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 2
+			arms_factory = 1
+		}
+	}
+
+	provinces = {
+		12489 12490 12493 12496 12498 12501 12502 12506 12904
+	}
+}

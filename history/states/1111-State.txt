@@ -1,0 +1,28 @@
+state = {
+	id = 1111
+	name = "STATE_1111"
+	manpower = 9800
+	state_category = city
+
+	resources = {
+		composites = 2
+		water = 2
+		metal = 6
+		energy = 4
+	}
+
+	history = {
+		victory_points = {
+			13158 5
+		}
+		buildings = {
+			infrastructure = 6
+			industrial_complex = 3
+			dockyard = 2
+		}
+	}
+
+	provinces = {
+		13151 13154 13155 13158 13164 13166 13167
+	}
+}

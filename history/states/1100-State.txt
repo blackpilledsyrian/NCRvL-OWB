@@ -1,0 +1,25 @@
+state={
+	id=1100
+	name="STATE_1100"
+	provinces={
+		13121 14490 14491 15049
+	}
+	resources = {
+		metal = 12
+		composites = 5
+		circuitry = 8
+	}
+	history = {
+		victory_points = {
+			13121 20
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 3
+			arms_factory = 3
+		}
+	}
+	state_category = metropolis
+	manpower = 14782
+	buildings_max_level_factor=1.000
+}

@@ -1,0 +1,26 @@
+state = {
+	id = 1036
+	name = "STATE_1036"
+	manpower = 1062
+	state_category = shanty
+
+	resources = {
+		circuitry = 4
+	}
+
+	history = {
+		owner = DRY
+		add_core_of = DRY
+		victory_points = {
+			12505 5
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+		}
+	}
+
+	provinces = {
+		12472 12482 12483 12488 12494 12497 12505
+	}
+}

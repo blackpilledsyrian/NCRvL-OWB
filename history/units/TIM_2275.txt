@@ -1,0 +1,169 @@
+﻿division_template = {
+	division_names_group = _TIM_INF_01
+	name = "Militia Force"
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	division_names_group = _TIM_INF_01
+	name = "Lumberjacks"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Forest Giants"
+	regiments = {
+		behemoth = { x = 0 y = 0 }
+		behemoth = { x = 0 y = 1 }
+		behemoth = { x = 1 y = 0 }
+		behemoth = { x = 1 y = 1 }
+		behemoth = { x = 2 y = 0 }
+		behemoth = { x = 2 y = 1 }
+		behemoth = { x = 2 y = 2 }
+	}
+}
+
+division_template = {
+	division_names_group = _TIM_INF_01
+	name = "Eagle Scouts"
+	regiments = {
+		spec_ops = { x = 0 y = 0 }
+		spec_ops = { x = 0 y = 1 }
+		spec_ops = { x = 1 y = 0 }
+		spec_ops = { x = 1 y = 1 }
+	}
+	support = {
+		recon_company = { x = 0 y = 0 }
+	}
+}
+
+units = {
+	division = {
+		name = "Wallowa Lumberjacks"
+		location = 5748
+		division_template = "Lumberjacks"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Walla Walla Woodsmen"
+		location = 5748
+		division_template = "Forest Giants"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Kingsley Lumberjacks"
+		location = 5757
+		division_template = "Lumberjacks"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Pendleton Lumberjacks"
+		location = 1478
+		division_template = "Lumberjacks"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Condon Lumberjacks"
+		location = 7499
+		division_template = "Lumberjacks"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Greenhorn Lumberjacks"
+		location = 4311
+		division_template = "Lumberjacks"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Clarkston Rangers"
+		location = 1487
+		division_template = "Eagle Scouts"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Elkhorn Rangers"
+		location = 1462
+		division_template = "Eagle Scouts"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Enterprise Rangers"
+		location = 1972
+		division_template = "Eagle Scouts"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Tygh Valley Rangers"
+		location = 4300
+		division_template = "Eagle Scouts"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Warm Springs Rangers"
+		location = 4303
+		division_template = "Eagle Scouts"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Redmond Rangers"
+		location = 1976
+		division_template = "Eagle Scouts"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+}
+
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = melee_equipment_3
+			creator = "TIM"
+		}
+		requested_factories = 4
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = spec_ops_equipment_2
+			creator = "TIM"
+		}
+		requested_factories = 2
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "TIM"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+}

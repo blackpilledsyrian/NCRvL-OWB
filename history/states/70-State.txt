@@ -1,0 +1,31 @@
+state = {
+	id = 70
+	name = "STATE_70"
+	manpower = 35022
+	state_category = megalopolis
+
+	resources = {
+		energy = 2
+		metal = 8
+	}
+
+	history = {
+		owner = NCR
+		add_core_of = NCR
+		victory_points = {
+			4635 20
+		}
+		buildings = {
+			infrastructure = 6
+			arms_factory = 2
+			industrial_complex = 1
+			air_base = 2
+			anti_air_building = 3
+
+		}
+	}
+
+	provinces = {
+		1605 1606 2261 3306 3423 4593 4594 4634 4635 4636 4772 4958 5052
+	}
+}

@@ -1,0 +1,27 @@
+state = {
+	id = 487
+	name = "STATE_487"
+	manpower = 6487
+	state_category = town
+
+	resources = {
+		water = 10
+		energy = 4
+		metal = 1
+	}
+
+	history = {
+		victory_points = {
+			3804 10
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			arms_factory = 1
+		}
+	}
+
+	provinces = {
+		456 3804 3805 3807 3821 3822 3948 3949 3986 7304
+	}
+}

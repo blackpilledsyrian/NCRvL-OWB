@@ -1,0 +1,28 @@
+state = {
+	id = 819
+	name = "STATE_819"
+	resources={
+		water = 4
+	}
+
+	history={
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			10181 = {
+				naval_base = 2
+			}
+		}
+		victory_points = {
+			10181 10
+		}
+
+	}
+
+	provinces={
+		10029 10088 10095 10107 10139 10144 10175 10181 10283 10738 10868 10870 10888
+	}
+	manpower=31815
+	buildings_max_level_factor=1.000
+	state_category=shanty
+}

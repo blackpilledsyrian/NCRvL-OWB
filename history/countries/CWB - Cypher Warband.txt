@@ -1,0 +1,113 @@
+﻿capital = 937
+
+oob = "CWB_2275"
+
+set_technology = {
+	basic_supply_transport_tech = 1
+
+	infantry_tech_level_tribal = 1
+	special_forces_tech_level_tribal = 1
+	support_tech_level_tribal = 1
+	vehicles_tech_level_tribal = 1
+	air_tech_level_tribal = 1
+	naval_tech_level_tribal = 1
+	tools_tech_level_tribal = 1
+	habitation_tech_level_tribal = 1
+	exploitation_tech_level_tribal = 1
+	electronics_tech_level_tribal = 1
+	tribal_tech_visibility_tech = 1
+	tribal_tech_access_tech = 1
+
+	tribal_civilization = 1
+	tool_engineering = 1
+	melee_weaponry_tech_1 = 1
+	standard_weaponry_tech = 1
+	ballistic_weaponry_tech_1 = 1
+	unit_training_tech_1 = 1
+	pre_construction_industry_tech = 1
+	pre_agriculture_industry_tech = 1
+	pre_recycling_industry_tech = 1
+	basic_industry_tech = 1
+	support_weaponry = 1
+	terror_tactics = 1
+	spec_ops_equipment_tech_1 = 1
+}
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		nautics_tech_1 = 1
+		light_navy_hull_tech_1 = 1
+		naval_invasion_tech_1 = 1
+	}
+}
+if = {
+	limit = {
+		NOT = { has_dlc = "Man the Guns" }
+	}
+	set_technology = {
+		nautics_tech_non_mtg_1 = 1
+		light_navy_hull_tech_non_mtg_1 = 1
+		naval_invasion_tech_non_mtg_1 = 1
+	}
+}
+
+set_stability = 0.3
+set_war_support = 0.5
+set_research_slots = 4
+set_country_flag = is_tribal_nation
+set_country_flag = is_texas_nation
+set_country_flag = tribal_doctrine_ai
+set_country_flag = roman_doctrine_ai
+
+add_opinion_modifier = { target = ACH modifier = cwb_machine_foe }
+add_opinion_modifier = { target = EXE modifier = cwb_machine_foe }
+add_opinion_modifier = { target = HRO modifier = cwb_machine_foe }
+add_opinion_modifier = { target = MXC modifier = cwb_machine_foe }
+add_opinion_modifier = { target = ROB modifier = cwb_machine_foe }
+add_opinion_modifier = { target = TBH modifier = cwb_machine_foe }
+add_opinion_modifier = { target = TEX modifier = cwb_machine_foe }
+add_opinion_modifier = { target = TTM modifier = cwb_machine_foe }
+add_opinion_modifier = { target = WDN modifier = cwb_machine_foe }
+
+set_politics = {
+	ruling_party = ruler
+	elections_allowed = no
+}
+
+set_popularities = {
+	people = 0
+	elites = 0
+	intellectuals = 0
+	ruler = 100
+}
+add_ideas = {
+	cwb_luddite_crusade
+	tribal_nation
+	okc_savages
+}
+
+add_manpower = 1000
+
+902 = { add_claim_by = CWB }
+886 = { add_claim_by = CWB }
+888 = { add_claim_by = CWB }
+938 = { add_claim_by = CWB }
+891 = { add_claim_by = CWB }
+889 = { add_claim_by = CWB }
+890 = { add_claim_by = CWB }
+615 = { add_claim_by = CWB }
+891 = { add_claim_by = CWB }
+616 = { add_claim_by = CWB }
+868 = { add_claim_by = CWB }
+867 = { add_claim_by = CWB }
+883 = { add_claim_by = CWB }
+617 = { add_claim_by = CWB }
+618 = { add_claim_by = CWB }
+103 = { add_claim_by = CWB }
+869 = { add_claim_by = CWB }
+877 = { add_claim_by = CWB }
+
+recruit_character = CWB_helki_the_ripper

@@ -1,0 +1,1500 @@
+######################################
+####### GENERATED CODE WARNING #######
+######################################
+# This file is generated code - any
+# changes made directly to these files
+# will likely be lost on future
+# updates. If you need to tweak the
+# functionality in this file, please
+# contact wtchappell ('the witch') for
+# help in improving its functionality.
+######################################
+####### GENERATED CODE WARNING #######
+######################################
+
+
+#######################################################################
+#########     WRITTEN AND MAINTAINED BY ICODEMASTER   #################
+#######################################################################
+on_actions = {
+	on_startup = {
+		effect = {
+			#### NODE STARTUP
+			#### Lonestar
+			921 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 1.5 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### People's Junction
+			103 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 0 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### New Sterling
+			430 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 0 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### New Reno
+			285 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 1.5 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### Los Alamos
+			634 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 1.5 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### New Vegas
+			211 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 3 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### Shady Sands
+			253 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 0.75 }
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### Boneyard
+			350 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 0.5 }
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### New Canaan
+			551 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 2 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### Santa Rosalia
+			481 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 1 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### Dog City
+			525 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 0 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### Frisco City
+			373 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 1.5 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### La Paz
+			97 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 0.95 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### Arcata
+			39 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 0 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### Mojave Outpost
+			77 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 1 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### Gloria
+			274 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 3 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### Houston
+			880 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 0 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### Gente City
+			471 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 1 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### San Francisco
+			163 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 0 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### Castra Sol Rubrum
+			5 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 0.25 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### Flagstaff
+			520 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 0.25 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### Phoenix
+			518 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 2.25 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### Wendover
+			478 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 0 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### Arroyo
+			337 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 0.5 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### East Portland
+			23 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 0 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### Walla Walla
+			51 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 0 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### Ranger Citadel
+			210 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 0 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### The Penitentiary
+			572 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 2 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### Tierra City
+			101 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 0 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### Ultimo
+			444 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 0 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### Yuma
+			517 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 0 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### New Navajo
+			203 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 0 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### Twin Mothers
+			554 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 1 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### Sac-City
+			135 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = -2 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### Dayglow
+			63 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 0 }
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### Chihuahua
+			122 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 0.5 }
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### TV Town
+			945 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 0 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### Vault City
+			291 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 1 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### Two Sun
+			516 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 0.75 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### Pecos Colony
+			200 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 0 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### The Hub
+			1 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 1.5 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### T.A.A Estate
+			796 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 1 }
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### The Cannery
+			870 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 0 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### Robot City
+			524 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 1 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### Murtaugh
+			303 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 1.5 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### Navarro
+			548 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 0 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### Hopeville
+			13 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 0.5 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### Tumblehome
+			99 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 1 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### Crowshaven
+			71 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 1 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### Klamath
+			454 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 0.75 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### Fourways
+			369 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 1.5 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### Casper
+			1040 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 0 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### Maxson
+			245 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 3 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### Juarez City
+			528 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 2 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+			#### Eagle Rock
+			222 = {
+				### Add to global Array
+				add_to_array = {
+					array = global.nodes_states
+					value = THIS.id
+				}
+				### Economic Development
+				set_variable = {
+					economic_development_level = 10 }
+				###Register Main Node
+				set_state_flag = main_node_@CONTROLLER
+				### Initalize Member State
+				initialize_nodes_member_states = yes
+				### Add to controller
+				CONTROLLER = {
+					add_to_array = {
+						array = state_controlled_nodes
+						value = PREV.id
+					}
+				}
+				### Progress Updates
+				update_node_progress = yes
+				initialize_node_level = yes
+				update_node_base_value = yes
+
+			}
+		}
+	}
+}

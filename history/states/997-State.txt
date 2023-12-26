@@ -1,0 +1,35 @@
+
+state={
+	id=997
+	name="STATE_997"
+
+	resources = {
+		metal = 20
+		energy = 6
+		composites = 15
+	}
+
+	history={
+		victory_points = {
+			3740 10
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 2
+			7326 = {
+				bunker = 2
+
+			}
+
+		}
+
+	}
+
+	provinces={
+		2475 3624 3740 3757 3759 7248 7260 7272 7274 7285 7295 7303 7326 16972 16978 16979 16984 16985 16987
+	}
+	manpower=14621
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=0.000
+}

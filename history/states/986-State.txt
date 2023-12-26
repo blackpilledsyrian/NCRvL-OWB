@@ -1,0 +1,31 @@
+
+state={
+	id=986
+	name="STATE_986"
+
+	history={
+		victory_points = {
+			687 3
+		}
+		victory_points = {
+			2366 3
+		}
+		victory_points = {
+			7219 5
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+
+		}
+
+	}
+
+	provinces={
+		687 2222 2224 2366 2469 4387 7218 7219 7223 7224 7338 7339 7503
+	}
+	manpower=2919
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
+}

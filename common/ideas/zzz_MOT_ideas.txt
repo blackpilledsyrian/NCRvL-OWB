@@ -1,0 +1,477 @@
+ideas = {
+	country = {
+		## Starting Ideas ##
+		ncr_veg_treaty_of_new_vegas = {
+			picture = treaty_of_new_vegas
+			available = {
+				OR = {
+					tag = NCR
+					tag = MOT
+					tag = VEG
+				}
+				country_exists = VEG
+				NCR = { has_idea = ncr_veg_treaty_of_new_vegas }
+				MOT = { has_idea = ncr_veg_treaty_of_new_vegas }
+				VEG = { has_idea = ncr_veg_treaty_of_new_vegas }
+			}
+			on_add = {	# Doesn't apply on startup but thats handled via on action, this will work for any additional manipulation
+				VEG = {
+					add_opinion_modifier = {
+						target = NCR
+						modifier = ncr_mot_veg_treaty_new_vegas
+					}
+					reverse_add_opinion_modifier = {
+						target = NCR
+						modifier = ncr_mot_veg_treaty_new_vegas
+					}
+					add_opinion_modifier = {
+						target = MOT
+						modifier = ncr_mot_veg_treaty_new_vegas
+					}
+					reverse_add_opinion_modifier = {
+						target = MOT
+						modifier = ncr_mot_veg_treaty_new_vegas
+					}
+				}
+			}
+			# on_remove = {
+			# 	VEG = {
+			# 		remove_opinion_modifier = {
+			# 			target = NCR
+			# 			modifier = ncr_mot_veg_treaty_new_vegas
+			# 		}
+			# 		remove_opinion_modifier = {
+			# 			target = MOT
+			# 			modifier = ncr_mot_veg_treaty_new_vegas
+			# 		}
+			# 	}
+			# 	NCR = {
+			# 		remove_opinion_modifier = {
+			# 			target = VEG
+			# 			modifier = ncr_mot_veg_treaty_new_vegas
+			# 		}
+			# 	}
+			# 	MOT = {
+			# 		remove_opinion_modifier = {
+			# 			target = VEG
+			# 			modifier = ncr_mot_veg_treaty_new_vegas
+			# 		}
+			# 	}
+			# }
+			removal_cost = -1
+			modifier = {
+				# No modifier
+			}
+		}
+		mot_idea_support_from_shady_sands = {
+			picture = mot_council_hill
+			available = {
+				NCR = { exists = yes }
+				is_in_faction_with = NCR
+			}
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.1
+				army_attack_factor = 0.05
+				land_reinforce_rate = 0.05
+				weekly_manpower = 5
+			}
+			targeted_modifier = {
+                tag = NCR
+                extra_trade_to_target_factor = 0.5
+                trade_cost_for_target_factor = -0.3
+            }
+		}
+		MOT_NCRF_Labor = {
+			picture = brk_slavery_2
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			equipment_bonus = {
+				demolitions_equipment = {
+					build_cost_ic = 0.05
+					instant = yes
+				}
+			}
+			modifier = {
+				repair_speed_infrastructure_factor = 0.1
+				production_speed_buildings_factor = 0.05
+				consumer_goods_expected_value = -0.03
+				conscription_factor = -0.03
+			}
+		}
+		mot_idea_support_from_shady_sands_oliver = {
+			picture = mot_council_hill
+			available = {
+				NCR = { exists = yes }
+				is_in_faction_with = NCR
+			}
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.15
+				army_attack_factor = 0.05
+				land_reinforce_rate = 0.07
+				weekly_manpower = 5
+				army_org_factor = 0.02
+			}
+			targeted_modifier = {
+                tag = NCR
+                extra_trade_to_target_factor = 0.5
+                trade_cost_for_target_factor = -0.3
+            }
+		}
+		mot_idea_support_from_shady_sands_hanlon = {
+			picture = mot_council_hill
+			available = {
+				NCR = { exists = yes }
+				is_in_faction_with = NCR
+			}
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.15
+				production_factory_efficiency_gain_factor = 0.15
+				army_defence_factor = 0.04
+				land_reinforce_rate = 0.05
+				weekly_manpower = 5
+				production_speed_bunker_factor = 0.15
+			}
+			targeted_modifier = {
+                tag = NCR
+                extra_trade_to_target_factor = 0.5
+                trade_cost_for_target_factor = -0.3
+            }
+		}
+		mot_idea_pacification_not_emancipation = {
+			picture = mot_pacification_not_emancipation
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.1
+				compliance_gain = -0.04
+				resistance_target = 0.15
+				resistance_damage_to_garrison = 0.15
+				research_speed_factor = -0.075
+			}
+		}
+		mot_idea_pacification_not_emancipation_2 = {
+			picture = mot_pacification_not_emancipation
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.1
+				compliance_gain = -0.04
+				resistance_target = 0.1
+				resistance_damage_to_garrison = 0.1
+				required_garrison_factor = 0.05
+				research_speed_factor = -0.075
+			}
+		}
+		mot_rollup  = {
+			picture = mot_pacification_not_emancipation
+			removal_cost = -1
+			modifier = {
+				compliance_gain = 0.03
+				resistance_damage_to_garrison = 0.2
+				weekly_manpower = -2
+			}
+		}
+		mot_uprising  = {
+			picture = mot_pacification_not_emancipation
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.15
+				war_support_factor = -0.10
+			}
+		}
+		## Later Ideas ##
+		mot_idea_plan_the_offensive = {
+			#picture =
+			available = {
+				NOT = { has_war_with = MOJ }
+			}
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.05
+				planning_speed = 0.05
+			}
+		}
+		mot_flexibility = {
+			#picture =
+			available = {
+				NOT = { has_war_with = MOJ }
+			}
+			removal_cost = -1
+			modifier = {
+				planning_speed = 0.10
+			}
+		}
+		mot_khan_raiders = {
+			picture = khan_culture_icon
+			removal_cost = -1
+			modifier = {
+				weekly_manpower = -4
+				consumer_goods_expected_value = 0.03
+			}
+		}
+		mot_skimping_treaty = {
+			picture = generic_technical_doc
+			removal_cost = -1
+			modifier = {
+				country_resource_energy = 10
+			}
+		}
+		mot_californian_resiliance = {
+			picture = ncr_ranger_propaganda
+			removal_cost = -1
+			modifier = {
+				defensive_war_stability_factor = 0.35
+				offensive_war_stability_factor = 0.15
+				industrial_capacity_factory = 0.08
+				army_defence_factor = 0.02
+			}
+		}
+		mot_victory_in_the_mojave = {
+			picture = treaty_of_new_vegas
+			removal_cost = -1
+			modifier = {
+				compliance_gain = 0.03
+				resistance_damage_to_garrison = -0.2
+				stability_factor = 0.15
+				war_support_factor = 0.10
+			}
+		}
+		ncr_takes_power = {
+			picture = HEA_idea_blessing_of_steam
+			removal_cost = -1
+			modifier = {
+				country_resource_energy = -15
+			}
+		}
+
+
+		###Oliver Civil War
+		mot_oliv_unpopular_leader = {
+			picture = mot_oliver_hat
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.13
+				war_support_factor = -0.13
+				army_org_factor = -0.25
+				conscription_factor = -0.15
+				army_morale_factor = -0.15
+			}
+		}
+		mot_military_government = {
+			picture = mot_oliver_hat
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.05
+				war_support_factor = 0.15
+				army_org_factor = 0.12
+				conscription_factor = 0.1
+				army_morale_factor = 0.12
+				consumer_goods_expected_value = 0.08
+				max_command_power = 50
+			}
+		}
+		mot_oliv_full_spead = {
+			picture = generic_power_armour_t45
+			removal_cost = -1
+			modifier = {
+				consumer_goods_expected_value = 0.05
+				army_speed_factor = 0.1
+				army_fuel_consumption_factor = 0.15
+			}
+			equipment_bonus = {
+				power_armor_equipment = {
+					breakthrough = 0.1
+					build_cost_ic = -0.15
+					instant = yes
+				}
+			}
+		}
+		mot_oliv_waiting_is_good_actually = {
+			picture = generic_power_armour_t45
+			removal_cost = -1
+			modifier = {
+				army_defence_factor = 0.05
+				max_planning = 0.05
+			}
+			equipment_bonus = {
+				power_armor_equipment = {
+					reliability = 0.1
+					soft_attack = 0.15
+					hard_attack = 0.15
+					defense = 0.1
+					breakthrough = 0.1
+					instant = yes
+				}
+			}
+		}
+
+		#Hanlon Civil War
+		mot_han_waste_no_live = {
+			picture = generic_ranger_helm
+			removal_cost = -1
+			modifier = {
+				conscription_factor = -0.1
+				special_forces_min = 45
+			}
+		}
+		mot_han_waste_no_live_2 = {
+			picture = generic_ranger_helm
+			removal_cost = -1
+			modifier = {
+				conscription_factor = -0.15
+				special_forces_min = 30
+				resistance_target = -0.1
+
+			}
+			equipment_bonus = {
+				spec_ops_equipment = {
+					build_cost_ic = 0.05
+					soft_attack = 0.1
+					instant = yes
+				}
+			}
+		}
+		mot_han_follower_help = {
+			picture = generic_medicine
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			equipment_bonus = {
+				support_equipment = {
+					build_cost_ic = -0.2
+					instant = yes
+				}
+				category_medical_support = {
+					casualty_trickleback = 0.15
+					experience_loss_factor = -0.15
+					instant = yes
+				}
+			}
+		}
+		mot_han_the_good_fight = {
+			picture = generic_medicine
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				special_forces_min = 20
+				modifier_army_sub_unit_spec_ops_defence_factor = 0.075
+				army_org_factor = 0.1
+			}
+			equipment_bonus = {
+				spec_ops_equipment = {
+					build_cost_ic = 0.1
+					breakthrough = 0.1
+					instant = yes
+				}
+			}
+		}
+		#Farkas
+		mot_far_mojave_science = {
+			picture = generic_medicine
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.05
+				consumer_goods_expected_value = 0.05
+			}
+		}
+
+
+		####Free Mojave
+		mot_free_no_gods = {
+			picture = generic_peace_1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = -0.15
+				stability_factor = -0.1
+				conscription = 0.05
+				army_core_defence_factor = 0.15
+			}
+		}
+		mot_free_mojave_rangers = {
+			picture = generic_helm_ranger
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				special_forces_min = 25
+			}
+			equipment_bonus = {
+                spec_ops_equipment = {
+                    build_cost_ic = -0.1
+                    defense = 0.15
+                    instant = yes
+                }
+            }
+		}
+		mot_free_soup_kitchens = {
+			picture = generic_soup
+			removal_cost = -1
+			modifier = {
+				consumer_goods_expected_value = 0.02
+				compliance_gain = -0.01
+				resistance_target = 0.05
+				resistance_damage_to_garrison = 0.05
+			}
+		}
+		mot_free_soup_kitchens_2 = {
+			picture = generic_soup
+			removal_cost = -1
+			modifier = {
+				consumer_goods_expected_value = 0.05
+				compliance_gain = 0.01
+				stability_weekly = 0.002
+				production_speed_buildings_factor = 0.12
+			}
+		}
+		mot_free_refugees_from_cali = {
+			picture = generic_teddy_bear
+			removal_cost = -1
+			modifier = {
+				weekly_manpower = 20
+				exodus_national_appeal = 0.2
+			}
+		}
+		mot_free_bull_coming = {
+			picture = generic_soup
+			removal_cost = -1
+			modifier = {
+				army_org_factor = 0.1
+				max_dig_in_factor = 0.2
+				dig_in_speed_factor = 0.1
+			}
+		}
+	}
+}

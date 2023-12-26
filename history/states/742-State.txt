@@ -1,0 +1,36 @@
+state = {
+	id = 742
+	name = "STATE_742"
+	resources={
+		composites=2.000
+		metal=30.000
+		advanced=2.000
+	}
+
+	history={
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			9070 = {
+				bunker = 3
+
+			}
+			9536 = {
+				naval_base = 1
+
+			}
+
+		}
+		victory_points = {
+			9070 15
+		}
+
+	}
+
+	provinces={
+		747 3181 3184 3185 3192 5759 5830 6987 8712 9070 9334 9349 9396 9535 9536 11187 11190 11204 11211 11214 11216 11217 11223 11225 11236
+	}
+	manpower=22100
+	buildings_max_level_factor=1.000
+	state_category=town
+}

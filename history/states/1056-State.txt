@@ -1,0 +1,18 @@
+state={
+	id=1056
+	name="STATE_1056"
+
+	history={
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+		}
+	}
+
+	provinces={
+		12545 12543 12547 12559 12560 12557 12556 12568
+	}
+	manpower = 981
+	state_category = rural
+	buildings_max_level_factor=1.000
+}

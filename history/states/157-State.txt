@@ -1,0 +1,36 @@
+state = {
+	id = 157
+	name = "STATE_157"
+	manpower = 45675
+	state_category = prewar_megacity
+
+	resources = {
+		water = 7
+		metal = 12
+		energy = 10
+		composites = 9
+		circuitry = 8
+		advanced = 9
+	}
+
+	history = {
+		owner = NCR
+		add_core_of = NCR
+		victory_points = {
+			3418 50
+		}
+		buildings = {
+			infrastructure = 7
+			arms_factory = 7
+			industrial_complex = 8
+			radar_station = 2
+			3418 = {
+				bunker2 = 2
+			}
+		}
+	}
+
+	provinces = {
+		3421 3418 3420 3422
+	}
+}

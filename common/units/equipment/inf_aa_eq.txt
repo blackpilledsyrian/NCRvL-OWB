@@ -1,0 +1,78 @@
+equipments = {
+
+	anti_air_equipment = {
+		is_archetype = yes
+		is_buildable = no
+		is_convertable = yes
+		type = {
+			infantry
+			motorized
+		}
+		group_by = archetype
+
+		active = no
+
+		interface_category = interface_category_land
+
+		upgrades = {
+			#inf_production_upgrade
+			#inf_redundancy_upgrade
+			#inf_sidearms_upgrade
+			#inf_efficiency_upgrade
+			#sup_charge_upgrade
+			#sup_weight_upgrade
+		}
+
+		reliability = 0.8
+		defense = 3
+		breakthrough = 1
+		soft_attack = 2
+		hard_attack = 2
+		ap_attack = 20
+		air_attack = 45
+		maximum_speed = 4
+
+		#Space taken in convoy
+		lend_lease_cost = 2
+
+		build_cost_ic = 7.5
+
+		resources = {
+		}
+	}
+
+	anti_air_equipment_1 = {
+		archetype = anti_air_equipment
+		priority = 10
+		visual_level = 0
+		is_convertable = yes
+
+		resources = {
+			metal = 2
+			water = 1
+		}
+	}
+
+	anti_air_equipment_2 = {
+		archetype = anti_air_equipment
+		parent = anti_air_equipment_1
+		priority = 20
+		visual_level = 1
+		is_convertable = yes
+
+		defense = 3
+		breakthrough = 1
+		soft_attack = 3
+		hard_attack = 3
+		ap_attack = 25
+		air_attack = 60
+
+		build_cost_ic = 11.5
+
+		resources = {
+			metal = 2
+			water = 1
+			circuitry = 1
+		}
+	}
+}

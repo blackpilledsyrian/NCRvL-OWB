@@ -1,0 +1,2723 @@
+#########################################################
+#            The Mojave Territories Focus Tree          #
+#            Designed and Scripted by HappyNTH          #
+#    Civil War focuses designed and scripted by Sayruz  #
+#########################################################
+
+focus_tree = {
+	id = mot_nf
+	country = {
+		factor = 0
+		modifier = {
+			add = 100
+			tag = MOT
+		}
+	}
+	default = no
+
+	focus = {
+		id = mot_preparing_the_expedition
+		icon = GFX_goal_NCR_MojaveOutpost
+		allow_branch = {
+			NOT = {
+				has_country_flag = mot_cali_civil_war
+			}
+		}
+		cost = 7
+		x = 14
+		y = 0
+		completion_reward = {
+			country_event = nf_mot.1
+		}
+	}
+
+	focus = {
+		id = mot_the_battle_for_nipton
+		icon = GFX_goal_NCR_Mojave
+		cost = 7
+		prerequisite = {
+			focus = mot_preparing_the_expedition
+		}
+		x = 0
+		y = 1
+		relative_position_id = mot_preparing_the_expedition
+		completion_reward = {
+			country_event = nf_mot.2
+		}
+	}
+
+	focus = {
+		id = mot_capturing_the_dam
+		icon = GFX_goal_NCR_Ranger_Core
+		cost = 7
+		prerequisite = {
+			focus = mot_the_battle_for_nipton
+		}
+		x = 0
+		y = 1
+		relative_position_id = mot_the_battle_for_nipton
+		completion_reward = {
+			country_event = nf_mot.3
+		}
+	}
+
+	## The Coming Storm ##
+
+	focus = {
+		id = mot_the_coming_storm
+		icon = GFX_goal_BOS_the_mojave_signal
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_capturing_the_dam
+		}
+		x = -5
+		y = 1
+		relative_position_id = mot_capturing_the_dam
+		completion_reward = {
+			country_event = nf_mot.4
+		}
+	}
+
+	focus = {
+		id = mot_survey_our_enemy
+		icon = GFX_goal_MOJ_elijah
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_the_coming_storm
+		}
+		x = 0
+		y = 1
+		relative_position_id = mot_the_coming_storm
+		completion_reward = {
+			custom_effect_tooltip = mot_survey_our_enemy_tt
+			hidden_effect = {
+				add_intel = {
+					target = MOJ
+					army_intel = 20
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = mot_melt_their_steel
+		icon = GFX_goal_generic_handy_fuel
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_survey_our_enemy
+		}
+		prerequisite = {
+			focus = mot_secure_the_west
+		}
+		x = -1
+		y = 1
+		relative_position_id = mot_survey_our_enemy
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment_2
+				amount = 200
+				producer = USA
+			}
+		}
+	}
+
+	focus = {
+		id = mot_strength_in_numbers
+		icon = GFX_goal_NCR_Urban_Draft
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_survey_our_enemy
+		}
+		prerequisite = {
+			focus = mot_protect_route_95
+		}
+		x = 1
+		y = 1
+		relative_position_id = mot_survey_our_enemy
+		completion_reward = {
+			add_manpower = 500
+		}
+	}
+
+	focus = {
+		id = mot_make_our_final_preparations
+		icon = GFX_goal_NCR_Military_March
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		bypass = {
+			MOJ = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		prerequisite = {
+			focus = mot_strength_in_numbers
+		}
+		prerequisite = {
+			focus = mot_melt_their_steel
+		}
+		x = 1
+		y = 1
+		relative_position_id = mot_melt_their_steel
+		completion_reward = {
+			add_timed_idea = {
+				idea = mot_idea_plan_the_offensive
+				days = 90
+			}
+			set_temp_variable = { change_preperation = -10 }
+			change_preperation = yes
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 0.1
+				check_variable = { global.op_sun_countdown > 90 }
+				country_exists = MOJ
+			}
+			modifier = {
+				factor = 10
+				check_variable = { global.op_sun_countdown < 61 }
+			}
+		}
+	}
+
+	focus = {
+		id = mot_secure_the_west
+		icon = GFX_goal_generic_western
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_the_coming_storm
+		}
+		x = -2
+		y = 1
+		relative_position_id = mot_the_coming_storm
+		completion_reward = {
+			552 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 3200
+				}
+			}
+			set_temp_variable = { change_preperation = -5 }
+			change_preperation = yes
+		}
+	}
+
+	focus = {
+		id = mot_solidify_military_leadership
+		icon = GFX_goal_generic_land_doctrines_focus
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_secure_the_west
+		}
+		x = 0
+		y = 2
+		relative_position_id = mot_secure_the_west
+		completion_reward = {
+			add_political_power = 100
+			set_temp_variable = { change_preperation = -5 }
+			change_preperation = yes
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 2
+				check_variable = { global.op_sun_countdown < 180 }
+			}
+		}
+	}
+
+	focus = {
+		id = mot_protect_route_95
+		icon = GFX_goal_generic_protectron_conceptart_primm_slimm
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_the_coming_storm
+		}
+		x = 2
+		y = 1
+		relative_position_id = mot_the_coming_storm
+		completion_reward = {
+			137 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 3211
+				}
+			}
+			set_temp_variable = { change_preperation = -5 }
+			change_preperation = yes
+		}
+	}
+
+	focus = {
+		id = mot_promote_major_moore
+		icon = GFX_goal_NCR_Weapon_Standardization
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		cost = 30
+		prerequisite = {
+			focus = mot_protect_route_95
+		}
+		x = 0
+		y = 2
+		relative_position_id = mot_protect_route_95
+		completion_reward = {
+			custom_effect_tooltip = mot_promote_colonel_moore_tt
+			hidden_effect = {
+				#create_corps_commander = { #This wasn't updated properly since BtB, but I was hesitant to properly delete it, @McGebe [2022.11.15.]
+				#	name = "Col. Cassandra Moore"
+				#	picture = GFX_Portrait_NCR_moore
+				#	skill = 3
+				#	attack_skill = 3
+				#	defense_skill = 2
+				#	planning_skill = 3
+				#	logistics_skill = 2
+				#	traits = { enduring_trait agile_trait cult_of_personality_trait }
+				#	id = 12179
+				#	female = yes
+				#}
+				MOT_moore = { promote_leader = yes }
+			}
+			set_temp_variable = { change_preperation = -5 }
+			change_preperation = yes
+		}
+	}
+
+	## Our Route Home ##
+
+	focus = {
+		id = mot_dealing_with_capitol_hill
+		icon = GFX_goal_NCR_Council_Hill
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_capturing_the_dam
+		}
+		x = 4
+		y = 1
+		relative_position_id = mot_capturing_the_dam
+		completion_reward = {
+			custom_effect_tooltip = mot_unlock_ncr_interations_tt
+			hidden_effect = {
+				set_variable = { mot_gov_op = 0.15 }
+				set_variable = { mot_people_op = 0.2 }
+			}
+		}
+	}
+
+	focus = {
+		id = mot_our_route_home
+		icon = GFX_goal_NCR_Long15
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_dealing_with_capitol_hill
+		}
+		x = -1
+		y = 1
+		relative_position_id = mot_dealing_with_capitol_hill
+		completion_reward = {
+			every_state = {
+				limit = {
+					OR = {
+						state = 47
+						state = 77
+						state = 589
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = mot_deploy_the_fresh_battalions
+		icon = GFX_goal_NCR_Urban_Draft
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_dealing_with_capitol_hill
+		}
+		x = 1
+		y = 1
+		relative_position_id = mot_dealing_with_capitol_hill
+		completion_reward = {
+			custom_effect_tooltip = mot_deploy_the_fresh_battalions_tt
+			hidden_effect = {
+				if = {
+					limit = {
+						NOT = { has_template = "Mojave Troopers" }
+					}
+					division_template = {
+						name = "Mojave Troopers"
+						template_counter= 68
+						division_names_group = _NCR_INF_01
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+							infantry = { x = 1 y = 2 }
+							infantry = { x = 2 y = 0 }
+							infantry = { x = 2 y = 1 }
+							infantry = { x = 2 y = 2 }
+							infantry = { x = 3 y = 0 }
+						}
+						support = {
+							anti_tank_company = { x = 0 y = 0 }
+						}
+					}
+				}
+				77 = {
+					create_unit = {
+						division = "name = \"1st Boneyard Platoon\" division_template = \"Mojave Troopers\" start_experience_factor = 0.35 start_equipment_factor = 1.0"
+						owner = MOT
+						prioritize_location = 2313
+					}
+					create_unit = {
+						division = "name = \"2nd Boneyard Platoon\" division_template = \"Mojave Troopers\" start_experience_factor = 0.35 start_equipment_factor = 1.0"
+						owner = MOT
+						prioritize_location = 2313
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = mot_guns_from_back_home
+		icon = GFX_goal_generic_ballastic_patch
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_our_route_home
+		}
+		prerequisite = {
+			focus = mot_deploy_the_fresh_battalions
+		}
+		x = 1
+		y = 1
+		relative_position_id = mot_our_route_home
+		completion_reward = {
+			custom_effect_tooltip = mot_guns_from_back_home_tt
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 600
+				producer = NCR
+			}
+		}
+	}
+
+	focus = {
+		id = mot_form_up_the_first_recon
+		icon = GFX_goal_generic_focus_magazine_aat_sniper
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_guns_from_back_home
+		}
+		x = 0
+		y = 1
+		relative_position_id = mot_guns_from_back_home
+		completion_reward = {
+			custom_effect_tooltip = mot_form_up_the_first_recon_tt
+			hidden_effect = {
+				division_template = {
+					name = "Reconnaissance Battalion"
+
+					is_locked = yes
+					priority = 2
+
+					regiments = {
+						spec_ops = { x = 0 y = 0 }
+						spec_ops = { x = 0 y = 1 }
+						spec_ops = { x = 0 y = 2 }
+						spec_ops = { x = 1 y = 0 }
+						spec_ops = { x = 1 y = 1 }
+						spec_ops = { x = 1 y = 2 }
+						spec_ops = { x = 2 y = 0 }
+						spec_ops = { x = 2 y = 1 }
+						spec_ops = { x = 2 y = 2 }
+						spec_ops = { x = 3 y = 0 }
+					}
+					support = {
+						anti_tank_company = { x = 0 y = 0 }
+						recon_company = { x = 0 y = 1 }
+					}
+				}
+				77 = {
+					create_unit = {
+						division = "name = \"1st Recon\" division_template = \"Reconnaissance Battalion\" start_experience_factor = 0.75 start_equipment_factor = 1"
+						owner = MOT
+						prioritize_location = 2313
+					}
+				}
+			}
+		}
+	}
+
+	## One-focus Restoration ##
+
+	focus = {
+		id = mot_the_second_turbine
+		icon = GFX_goal_energy
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_capturing_the_dam
+		}
+		x = 0
+		y = 1
+		relative_position_id = mot_capturing_the_dam
+		available = {
+			controls_state = 252
+		}
+		select_effect = {
+			252 = {
+				for_each_loop = {
+					array = dam_turbine_primary
+					if = {
+						limit = { check_variable = { v = 0 } }
+						set_variable = { dam_turbine_primary^i = 1 }
+						set_temp_variable = { break = 1 }
+					}
+				}
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = mot_the_second_turbine_tt
+			252 = {
+				for_each_loop = {
+					array = dam_turbine_primary
+					if = {
+						limit = { check_variable = { v = 1 } }
+						set_variable = { dam_turbine_primary^i = 2 }
+						set_temp_variable = { break = 1 }
+					}
+				}
+				add_resource = {
+					type = energy
+					amount = 20
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = mot_baker_militarisation_act
+		icon = GFX_goal_NCR_Military_March
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_the_second_turbine
+		}
+		x = 0
+		y = 1
+		relative_position_id = mot_the_second_turbine
+		completion_reward = {
+			77 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = mot_divert_planners
+		icon = GFX_goal_generic_outpost
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_baker_militarisation_act
+		}
+		mutually_exclusive = {
+			focus = mot_local_call_to_arms
+		}
+		x = -1
+		y = 1
+		relative_position_id = mot_baker_militarisation_act
+		completion_reward = {
+			every_state = {
+				limit = {
+					OR = {
+						state = 47
+						state = 67
+						state = 137
+					}
+				}
+				add_resistance = 7.5
+			}
+			set_temp_variable = { change_preperation = -10 }
+			change_preperation = yes
+		}
+		ai_will_do = {
+			modifier = {	# Don't take this if Sunburst has already started
+				factor = 0
+				has_global_flag = moj_mot_operation_sunburst
+			}
+		}
+	}
+
+	focus = {
+		id = mot_local_call_to_arms
+		icon = GFX_goal_generic_NCR_diplomatic_focus
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_baker_militarisation_act
+		}
+		mutually_exclusive = {
+			focus = mot_divert_planners
+		}
+		x = 1
+		y = 1
+		relative_position_id = mot_baker_militarisation_act
+		completion_reward = {
+			every_state = {
+				limit = {
+					OR = {
+						state = 47
+						state = 67
+						state = 613
+					}
+				}
+				add_compliance = 3.5
+			}
+			set_temp_variable = { change_preperation = -5 }
+			change_preperation = yes
+		}
+		ai_will_do = {
+			modifier = {	# Low value if Sunburst has already started
+				factor = 0.25
+				has_global_flag = moj_mot_operation_sunburst
+			}
+		}
+	}
+
+	## Operation: Sunburst ##
+	focus = {
+		id = mot_operation_sunburst
+		icon = GFX_goal_MOJ_energy_boom
+		cost = 30
+		prerequisite = {
+			focus = mot_form_up_the_first_recon
+		}
+		prerequisite = {
+			focus = mot_make_our_final_preparations
+		}
+		x = 0
+		y = 5
+		relative_position_id = mot_capturing_the_dam
+		will_lead_to_war_with = MOJ
+
+		available = {
+			NOT = {
+				has_war_with = MOJ
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		bypass = {
+			OR = {
+				has_war_with = MOJ
+				owns_state = 417
+				MOJ = { exists = no }
+			}
+		}
+		completion_reward = {
+			set_temp_variable = { global.op_sun_countdown_temp = 30 }
+			change_op_sun_countdown = yes
+		}
+	}
+
+	## Mojave Indsutry Subtree ##
+	focus = {
+		id = mot_riches_of_the_mojave
+		icon = GFX_goal_moj_sunset_sasparilla
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_operation_sunburst
+		}
+		x = -8
+		y = 1
+		relative_position_id = mot_operation_sunburst
+		completion_reward = {
+			add_resource = {
+				state = 552
+				type = metal
+				amount = 7
+			}
+			add_resource = {
+				state = 47
+				type = circuitry
+				amount = 4
+			}
+		}
+	}
+
+	focus = {
+		id = mot_the_i40
+		icon = GFX_goal_generic_infrastructure2
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_riches_of_the_mojave
+		}
+		x = 0
+		y = 1
+		relative_position_id = mot_riches_of_the_mojave
+		available = {
+			controls_state = 620
+			#controls_state = 939
+		}
+		completion_reward = {
+			every_state = {
+				limit = {
+					OR = {
+						state = 620
+						#state = 939
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = mot_cottonwood_port
+		icon = GFX_goal_generic_boat
+		cost = 30
+		prerequisite = {
+			focus = mot_the_i40
+		}
+		prerequisite = {
+			focus = mot_establish_camp_forlorn_hope
+			focus = mot_reinforce_camp_spotlight
+		}
+		x = 1
+		y = 1
+		relative_position_id = mot_the_i40
+		available = {
+			controls_state = 67
+			has_completed_focus = mot_the_old_world_wall
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		completion_reward = {
+			67 = {
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 952
+				}
+				if = {
+					limit = {
+						is_valid_state_for_dockyard = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = mot_garrison_primm
+		icon = GFX_goal_NCR_Big_Jims_Army
+		cost = 30
+		prerequisite = {
+			focus = mot_the_i40
+		}
+		x = -1
+		y = 1
+		relative_position_id = mot_the_i40
+		available = {
+			controls_state = 47
+			has_completed_focus = mot_the_old_world_wall
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		completion_reward = {
+			add_manpower = -40
+			47 = {
+				add_resistance = -2
+				add_compliance = -2
+				increase_state_control = yes
+			}
+		}
+	}
+
+	focus = {
+		id = mot_bittersprings
+		icon = GFX_KHA_focus_avenge_bittersprings
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_garrison_primm
+			focus = mot_cottonwood_port
+		}
+		prerequisite = {
+			focus = mot_the_second_campaign
+		}
+		prerequisite = {
+			focus = mot_the_nipton_deal
+		}
+		x = 5
+		y = 1
+		relative_position_id = mot_garrison_primm
+		completion_reward = {
+			custom_effect_tooltip = mot_bittersprings_march_tt
+			# hidden_effect = { KHA = { country_event = { id = nf_khans.3 days = 4 } } }
+		}
+	}
+
+	## Bull Focuses because HOI4 is a fuck ##
+
+	focus = {
+		id = mot_the_bulls_soft_bellow
+		icon = GFX_goal_CES_generic_focus
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_operation_sunburst
+		}
+		x = 2
+		y = 1
+		relative_position_id = mot_operation_sunburst
+		available = {
+			NOT = { has_war_with = MOJ }
+		}
+		completion_reward = {
+			add_war_support = 0.05
+			army_experience = 20
+		}
+		ai_will_do = {
+			base = 2
+			# After Sunburst has ended, this is high priority (to get to Old World Wall)
+			modifier = {
+				factor = 5
+				has_global_flag = moj_mot_operation_sunburst
+			}
+		}
+	}
+
+	focus = {
+		id = mot_assemble_the_mojave_defence_committee
+		icon = GFX_goal_generic_focus_magazine_gunsandbullets_take_aim
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_the_bulls_soft_bellow
+		}
+		x = 0
+		y = 1
+		relative_position_id = mot_the_bulls_soft_bellow
+		completion_reward = {
+			country_event = nf_mot.5
+			hidden_effect = {
+				set_variable = { mot_oli_han_bal = 0.25 }
+			}
+		}
+		ai_will_do = {
+			base = 10	# Huge priority (to get to Old World Wall)
+		}
+	}
+
+	## Pacification of the Mojave Subtree ##
+	focus = {
+		id = mot_the_issue_of_the_locals
+		icon = GFX_goal_MOJ_ncr_pact
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_operation_sunburst
+		}
+		x = -4
+		y = 1
+		relative_position_id = mot_operation_sunburst
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = mot_idea_pacification_not_emancipation
+				add_idea = mot_idea_pacification_not_emancipation_2
+			}
+		}
+		ai_will_do = {
+			base = 2
+		}
+	}
+
+	focus = {
+		id = mot_establish_camp_forlorn_hope
+		icon = GFX_goal_generic_bunkers_focus
+		cost = 30
+		prerequisite = {
+			focus = mot_the_issue_of_the_locals
+		}
+		x = -1
+		y = 1
+		relative_position_id = mot_the_issue_of_the_locals
+		available = {
+			controls_state = 137
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		completion_reward = {
+			137 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 3211
+					instant_build = yes
+				}
+				add_resource = {
+					type = water
+					amount = 12
+				}
+				increase_state_control = yes
+			}
+		}
+	}
+
+	focus = {
+		id = mot_reinforce_camp_spotlight
+		icon = GFX_goal_generic_spotlight
+		cost = 30
+		prerequisite = {
+			focus = mot_the_issue_of_the_locals
+		}
+		x = 1
+		y = 1
+		relative_position_id = mot_the_issue_of_the_locals
+		available = {
+			controls_state = 67
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		completion_reward = {
+			67 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 2316
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				increase_state_control = yes
+			}
+		}
+	}
+
+	focus = {
+		id = mot_the_nipton_deal
+		icon = GFX_goal_pal_back_to_raiding
+		cost = 30
+		prerequisite = {
+			focus = mot_establish_camp_forlorn_hope
+			focus = mot_reinforce_camp_spotlight
+		}
+		x = 1
+		y = 1
+		relative_position_id = mot_establish_camp_forlorn_hope
+		available = {
+			controls_state = 47
+			has_completed_focus = mot_assemble_the_mojave_defence_committee
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		completion_reward = {
+			47 = {
+				add_compliance = 15
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			add_stability = -0.05
+		}
+	}
+
+	focus = {
+		id = mot_the_second_campaign
+		icon = GFX_goal_NCR_Bears_Roar
+		cost = 30
+		prerequisite = {
+			focus = mot_assemble_the_mojave_defence_committee
+		}
+		prerequisite = {
+			focus = mot_establish_camp_forlorn_hope
+			focus = mot_reinforce_camp_spotlight
+		}
+		x = -3
+		y = 1
+		relative_position_id = mot_assemble_the_mojave_defence_committee
+		available = {
+			has_completed_focus = mot_the_old_world_wall
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		completion_reward = {
+			country_event = nf_mot.8
+		}
+	}
+
+	## Legion Coming Subtree ##
+
+	focus = {
+		id = mot_the_old_world_wall
+		icon = GFX_goal_NCR_Oldworldwall
+		cost = 30
+		prerequisite = {
+			focus = mot_assemble_the_mojave_defence_committee
+		}
+		x = 0
+		y = 1
+		relative_position_id = mot_assemble_the_mojave_defence_committee
+		available = {
+			controls_state = 252
+			custom_trigger_tooltip = {
+				tooltip = hoover_1st_battle_not_ongoing
+				NOT = { has_global_flag = first_battle_ongoing }
+			}
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		bypass = {
+			has_completed_focus = mot_victory_at_the_dam
+		}
+		completion_reward = {
+			country_event = nf_mot.9
+		}
+		ai_will_do = {
+			base = 10	# Huge priority
+		}
+	}
+
+	focus = {
+		id = mot_emergency_ctte_divide
+		icon = GFX_goal_generic_canyon_focus
+		cost = 30
+		prerequisite = {
+			focus = mot_assemble_the_mojave_defence_committee
+		}
+		x = -1
+		y = 2
+		relative_position_id = mot_assemble_the_mojave_defence_committee
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = mot_emergency_ctte_divide_trig
+				has_global_flag = divide_blocked
+			}
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		completion_reward = {
+			country_event = nf_mot.10
+		}
+	}
+
+	focus = {
+		id = mot_emergency_ctte_vegas
+		icon = GFX_goal_VEG_War_for_Vegas
+		cost = 30
+		prerequisite = {
+			focus = mot_assemble_the_mojave_defence_committee
+		}
+		x = 1
+		y = 2
+		relative_position_id = mot_assemble_the_mojave_defence_committee
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = mot_emergency_ctte_vegas_trig
+				211 = {
+					controller = {
+						NOT = { is_new_california_member = yes }
+						NOT = { has_idea = ncr_veg_treaty_of_new_vegas }
+					}
+				}
+			}
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		completion_reward = {
+			country_event = nf_mot.11
+		}
+	}
+
+	## NCR Diplo Subtree Kinda ##
+	focus = {
+		id = mot_an_encouraging_victory
+		icon = GFX_goal_NCR_Ranger_Can_Openers
+		cost = 30
+		prerequisite = {
+			focus = mot_operation_sunburst
+		}
+		x = 8
+		y = 1
+		relative_position_id = mot_operation_sunburst
+		available = {
+			NOT = { has_war_with = MOT }
+			owns_state = 573
+			owns_state = 46
+			owns_state = 417
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		completion_reward = {
+			add_to_variable = {
+				var = mot_gov_op
+				value = -0.15
+				tooltip = mot_gov_op_sig_up
+			}
+			add_to_variable = {
+				var = mot_people_op
+				value = -0.15
+				tooltip = mot_people_op_sig_up
+			}
+			add_stability = 0.05
+		}
+		ai_will_do = {
+			base = 5
+		}
+	}
+
+	focus = {
+		id = mot_tools_left_behind
+		icon = GFX_goal_BOS_tesla_cannon
+		cost = 30
+		prerequisite = {
+			focus = mot_an_encouraging_victory
+		}
+		x = 1
+		y = 1
+		relative_position_id = mot_an_encouraging_victory
+		available = {
+			controls_state = 252
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		select_effect = {
+			252 = {
+				for_each_loop = {
+					array = dam_turbine_primary
+					if = {
+						limit = { check_variable = { v = 0 } }
+						set_variable = { dam_turbine_primary^i = 1 }
+						set_temp_variable = { break = 1 }
+					}
+				}
+				for_each_loop = {
+					array = dam_turbine_primary
+					if = {
+						limit = { check_variable = { v = 0 } }
+						set_variable = { dam_turbine_primary^i = 1 }
+						set_temp_variable = { break = 1 }
+					}
+				}
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = mot_3_4_turbines_tt
+			252 = {
+				for_each_loop = {
+					array = dam_turbine_primary
+					if = {
+						limit = { check_variable = { v = 1 } }
+						set_variable = { dam_turbine_primary^i = 2 }
+						set_temp_variable = { break = 1 }
+					}
+				}
+				for_each_loop = {
+					array = dam_turbine_primary
+					if = {
+						limit = { check_variable = { v = 1 } }
+						set_variable = { dam_turbine_primary^i = 2 }
+						set_temp_variable = { break = 1 }
+					}
+				}
+
+				add_resource = {
+					type = energy
+					amount = 40
+				}
+			}
+		}
+		ai_will_do = {
+			base = 3
+		}
+	}
+
+	focus = {
+		id = mot_the_heavy_corps
+		icon = GFX_goal_NCR_Heavy_Troops
+		cost = 30
+		prerequisite = {
+			focus = mot_an_encouraging_victory
+		}
+		x = -1
+		y = 1
+		relative_position_id = mot_an_encouraging_victory
+		available = {
+			has_tech = stripped_pa_tech
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = mot_form_up_the_heavy_corp
+			hidden_effect = {
+				division_template = {
+					name = "NCR Heavy Corps"
+
+					is_locked = yes
+					priority = 2
+
+					regiments = {
+						power_armour = { x = 0 y = 0 }
+						power_armour = { x = 0 y = 1 }
+						power_armour = { x = 0 y = 2 }
+						power_armour = { x = 1 y = 0 }
+						power_armour = { x = 1 y = 1 }
+						power_armour = { x = 1 y = 2 }
+						power_armour_fireteam_infantry = { x = 2 y = 0 }
+						power_armour_fireteam_infantry = { x = 2 y = 1 }
+					}
+				}
+				589 = {
+					create_unit = {
+						division = "name = \"1st Heavy Division\" division_template = \"NCR Heavy Corps\" start_experience_factor = 0.75 start_equipment_factor = 1"
+						owner = MOT
+						prioritize_location = 2313
+					}
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.4
+				uses = 2
+				category = power_armor_tech_category
+			}
+		}
+	}
+
+	focus = {
+		id = mot_lessons_from_the_war
+		icon = GFX_goal_generic_focus_magazine_gunsandbullets_gun_laws
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_the_heavy_corps
+			focus = mot_tools_left_behind
+		}
+		x = 1
+		y = 1
+		relative_position_id = mot_the_heavy_corps
+		completion_reward = {
+			add_tech_bonus = {
+				category = cat_land_doctrine
+				uses = 2
+				bonus = 0.8
+			}
+		}
+		ai_will_do = {
+			base = 3
+		}
+	}
+
+	focus = {
+		id = mot_revisiting_the_treaty
+		icon = GFX_goal_VEG_Family_Man
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_assemble_the_mojave_defence_committee
+		}
+		x = 3
+		y = 1
+		relative_position_id = mot_assemble_the_mojave_defence_committee
+		available = {
+			has_completed_focus = mot_the_old_world_wall
+		}
+		completion_reward = {
+			country_event = nf_mot.12
+		}
+		ai_will_do = {
+			base = 2
+		}
+	}
+
+
+	focus = {
+		id = mot_call_up_second_draft
+		icon = GFX_goal_NCR_Big_Jim_Draft
+		cost = 30
+		prerequisite = {
+			focus = mot_revisiting_the_treaty
+		}
+		prerequisite = {
+			focus = mot_lessons_from_the_war
+		}
+		mutually_exclusive = {
+			focus = mot_family_diplomacy
+		}
+		x = 1
+		y = 1
+		relative_position_id = mot_revisiting_the_treaty
+		available = {
+			has_country_flag = mot_veg_oliver_plan
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = mot_call_up_second_draft_tt
+			hidden_effect = {
+				if = {
+					limit = {
+						NOT = { has_template = "Mojave Troopers" }
+					}
+					division_template = {
+						name = "Mojave Troopers"
+						template_counter= 68
+						division_names_group = _NCR_INF_01
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+							infantry = { x = 1 y = 2 }
+							infantry = { x = 2 y = 0 }
+							infantry = { x = 2 y = 1 }
+							infantry = { x = 2 y = 2 }
+							infantry = { x = 3 y = 0 }
+						}
+						support = {
+							anti_tank_company = { x = 0 y = 0 }
+						}
+					}
+				}
+				589 = {
+					create_unit = {
+						division = "name = \"1st Redding-Mojave Platoon\" division_template = \"Mojave Troopers\" start_experience_factor = 0.35 start_equipment_factor = 1.0"
+						owner = MOT
+						prioritize_location = 2313
+					}
+					create_unit = {
+						division = "name = \"2nd Redding-Mojave Platoon\" division_template = \"Mojave Troopers\" start_experience_factor = 0.35 start_equipment_factor = 1.0"
+						owner = MOT
+						prioritize_location = 2313
+					}
+					create_unit = {
+						division = "name = \"3rd Redding-Mojave Platoon\" division_template = \"Mojave Troopers\" start_experience_factor = 0.35 start_equipment_factor = 1.0"
+						owner = MOT
+						prioritize_location = 2313
+					}
+				}
+			}
+			add_manpower = 300
+		}
+	}
+
+	focus = {
+		id = mot_family_diplomacy
+		icon = GFX_goal_VEG_Aligning_the_Families
+		cost = 30
+		prerequisite = {
+			focus = mot_revisiting_the_treaty
+		}
+		prerequisite = {
+			focus = mot_lessons_from_the_war
+		}
+		mutually_exclusive = {
+			focus = mot_call_up_second_draft
+		}
+		x = 3
+		y = 1
+		relative_position_id = mot_revisiting_the_treaty
+		available = {
+			has_country_flag = mot_veg_hanlon_plan
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		completion_reward = {
+			VEG = { country_event = nf_mot.13 }
+			custom_effect_tooltip = mot_family_diplomacy_tt
+			effect_tooltip = {
+				VEG = {
+					add_stability = -0.15
+					add_war_support = -0.1
+				}
+			}
+		}
+	}
+
+	## 1st Battle lil bit
+	focus = {
+		id = mot_victory_at_the_dam
+		icon = GFX_goal_NCR_Triumph
+		allow_branch = {
+			NOT = {
+				has_country_flag = mot_cali_civil_war
+			}
+		}
+		cost = 30
+		x = 0
+		y = 6
+		relative_position_id = mot_operation_sunburst
+		#mutually_exclusive = {
+		#	focus = mot_the_long_march_home
+		#}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = mot_victory_at_the_dam_trig
+				always = no
+			}
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = mot_victory_at_the_dam_tt
+		}
+	}
+
+	## Post-1st Battle Vegas/Diplomacy Sub
+
+	focus = {
+		id = mot_appoint_ambassador_crocker
+		icon = GFX_goal_generic_NCR_diplomatic_focus
+		allow_branch = {
+			NOT = {
+				has_country_flag = mot_cali_civil_war
+			}
+		}
+		cost = 30
+		x = -1
+		y = 2
+		relative_position_id = mot_family_diplomacy
+		#allow_branch = {
+		#	NOT = { has_completed_focus = mot_the_long_march_home }
+		#}
+		available = {
+			has_completed_focus = mot_victory_at_the_dam
+			OR = {
+				has_completed_focus = mot_call_up_second_draft
+				has_completed_focus = mot_family_diplomacy
+			}
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		bypass = {
+			owns_state = 211
+		}
+		completion_reward = {
+			every_other_country = {
+				limit = { owns_state = 211 }
+				custom_effect_tooltip = mot_crocker_tt
+				hidden_effect = {
+					ROOT = {
+						add_intel = {
+							target = PREV
+							civilian_intel = 15
+							army_intel = 10
+						}
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = mot_an_offer
+		icon = GFX_goal_VEG_Ring-a-Ding-Ding
+		cost = 30
+		prerequisite = {
+			focus = mot_appoint_ambassador_crocker
+		}
+		available = {
+			VEG = {
+				NOT = { is_new_california_member = yes }
+			}
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		x = -1
+		y = 1
+		bypass = {
+			VEG = { is_in_faction_with = NCR }
+		}
+		relative_position_id = mot_appoint_ambassador_crocker
+		mutually_exclusive = {
+			focus = mot_we_can_refuse
+		}
+		completion_reward = {
+			custom_effect_tooltip = mot_an_offer_tt
+			if = {
+				limit = {
+					VEG = {
+						has_country_leader = {
+							character = VEG_benny
+						}
+					}
+				}
+				VEG = {
+					invite_to_root_faction = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = mot_we_can_refuse
+		icon = GFX_goal_VEG_The_Human_Banquet
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_appoint_ambassador_crocker
+		}
+		x = 1
+		y = 1
+		relative_position_id = mot_appoint_ambassador_crocker
+		mutually_exclusive = {
+			focus = mot_an_offer
+		}
+		completion_reward = {
+			set_temp_variable = {
+				caps_to_add = 150
+			}
+			add_caps = yes
+		}
+	}
+
+	focus = {
+		id = mot_mp_deployments
+		icon = GFX_goal_NEW_New_Reno_Police_Department
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_an_offer
+			focus = mot_we_can_refuse
+		}
+		x = 1
+		y = 1
+		relative_position_id = mot_an_offer
+		completion_reward = {
+			add_tech_bonus = {
+				category = infantry_tech_category
+				uses = 2
+				bonus = 1
+			}
+		}
+	}
+
+	focus = {
+		id = mot_more_than_two_at_the_table
+		icon = GFX_goal_VEG_The_Joker
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_mp_deployments
+		}
+		x = 2
+		y = 1
+		relative_position_id = mot_mp_deployments
+		completion_reward = {
+			if = {
+				limit = {
+					VEG = {
+						has_country_leader = {
+							character = VEG_benny
+						}
+					}
+				}
+				VEG = {
+					invite_to_root_faction = yes
+				}
+			}
+			else =  {
+				VEG = { set_country_flag = benny_prick }
+			}
+			custom_effect_tooltip = mot_benny_prick_tt
+		}
+	}
+
+	focus = {
+		id = mot_restoring_hoover
+		icon = GFX_goal_generic_wrench
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_more_than_two_at_the_table
+		}
+		x = -2
+		y = 1
+		relative_position_id = mot_more_than_two_at_the_table
+		completion_reward = {
+			custom_effect_tooltip = mot_restoring_hoover_tt
+		}
+	}
+
+	focus = {
+		id = mot_hoover_fob
+		icon = GFX_goal_generic_outpost
+		cost = 30
+		prerequisite = {
+			focus = mot_more_than_two_at_the_table
+		}
+		x = 0
+		y = 1
+		relative_position_id = mot_more_than_two_at_the_table
+		available = {
+			controls_state = 252
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		completion_reward = {
+			252 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 6603
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = anti_air_building
+					level = 2
+					instant_build = yes
+				}
+				if = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = mot_on_our_own
+		icon = GFX_goal_NCR_Bastion_By_the_Sea
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_more_than_two_at_the_table
+		}
+		x = 2
+		y = 1
+		relative_position_id = mot_more_than_two_at_the_table
+		completion_reward = {
+			add_ideas = mot_californian_resiliance
+		}
+	}
+
+	## Post-1st Battle Resistance/Development Sub
+
+	focus = {
+		id = mot_supply_and_demand
+		icon = GFX_goal_generic_brahmin_trade
+		allow_branch = {
+			NOT = {
+				has_country_flag = mot_cali_civil_war
+			}
+		}
+		cost = 30
+		x = -3
+		y = 2
+		relative_position_id = mot_bittersprings
+		#allow_branch = {
+		#	NOT = { has_completed_focus = mot_the_long_march_home }
+		#}
+		available = {
+			has_completed_focus = mot_victory_at_the_dam
+			has_completed_focus = mot_bittersprings
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		completion_reward = {
+			country_event = nf_mot.6
+			add_dynamic_modifier = { modifier = mot_supply_bonus }
+		}
+	}
+
+	focus = {
+		id = mot_act_now
+		icon = GFX_goal_generic_scrap_metal
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_supply_and_demand
+		}
+		x = -1
+		y = 1
+		relative_position_id = mot_supply_and_demand
+		completion_reward = {
+			137 = {
+				add_compliance = -10
+				add_resource = {
+					type = metal
+					amount = 8
+				}
+				add_resource = {
+					type = water
+					amount = 5
+				}
+			}
+			47 = {
+				add_compliance = -5
+				add_resource = {
+					type = advanced
+					amount = 3
+				}
+			}
+
+		}
+	}
+
+	focus = {
+		id = mot_been_working_on_the_railway
+		icon = GFX_goal_generic_train
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_supply_and_demand
+		}
+		x = 1
+		y = 1
+		relative_position_id = mot_supply_and_demand
+		available = {
+			controls_state = 77
+		}
+		completion_reward = {
+			every_state = {
+				limit = {
+					state = 77 # Long 15
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = mot_first_supply_shipment
+		icon = GFX_goal_generic_supplies_focus
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_been_working_on_the_railway
+		}
+		prerequisite = {
+			focus = mot_act_now
+		}
+		x = 1
+		y = 1
+		relative_position_id = mot_act_now
+		completion_reward = {
+			set_temp_variable = { mot_supply_change = 40 }
+			change_mot_supply = yes
+		}
+	}
+
+	focus = {
+		id = mot_review_bittersprings
+		icon = GFX_goal_generic_tomahawk_1
+		cost = 30
+		prerequisite = {
+			focus = mot_first_supply_shipment
+		}
+		available = {
+			NOT = {
+				has_war_with = CES
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		x = 2
+		y = 1
+		relative_position_id = mot_first_supply_shipment
+		completion_reward = {
+			add_stability = -0.1
+			custom_effect_tooltip = mot_review_bittersprings_tt
+			country_event = { id = nf_mot.28 }
+		}
+		ai_will_do = {
+			base = 2
+		}
+	}
+
+	focus = {
+		id = mot_the_mojave_line
+		icon = GFX_goal_generic_train_1
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_first_supply_shipment
+		}
+		x = -2
+		y = 1
+		relative_position_id = mot_first_supply_shipment
+		completion_reward = {
+			custom_effect_tooltip = mot_the_mojave_line_tt
+			47 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			552 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			set_technology = {
+				railway_gun = 1
+			}
+			create_railway_gun = {
+				equipment = railway_gun_equipment_1
+				name = "The Bear's Justice"
+			}
+		}
+	}
+
+	focus = {
+		id = mot_camp_maccaren_primacy
+		icon = GFX_goal_NCR_Milcenters
+		cost = 30
+		prerequisite = {
+			focus = mot_the_mojave_line
+		}
+		x = 0
+		y = 1
+		relative_position_id = mot_the_mojave_line
+		available = {
+			controls_state = 613
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		completion_reward = {
+			set_capital = { state = 613 }
+			613 = {
+				add_resource = {
+					type = metal
+					amount = 12
+				}
+				add_resource = {
+					type = energy
+					amount = 8
+				}
+				add_resource = {
+					type = water
+					amount = 12
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = mot_open_the_divide
+		icon = GFX_goal_generic_infrastructure2
+		cost = 30
+		prerequisite = {
+			focus = mot_camp_maccaren_primacy
+		}
+		available = {
+			13 = {
+				owner = {
+					is_in_faction_with = MOT
+				}
+			}
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		x = -2
+		y = 1
+		relative_position_id = mot_camp_maccaren_primacy
+		completion_reward = {
+			set_temp_variable = { mot_supply_change = 40 }
+			change_mot_supply = yes
+			add_ideas = mot_han_waste_no_live_2
+		}
+	}
+
+	focus = {
+		id = mot_reinforce_searchlight
+		icon = GFX_goal_NCR_Standards
+		cost = 30
+		prerequisite = {
+			focus = mot_the_mojave_line
+		}
+		x = 2
+		y = 1
+		relative_position_id = mot_the_mojave_line
+		available = {
+			set_temp_variable = { mot_supply_check = 60 }
+			custom_trigger_tooltip = {
+				tooltip = mot_supply_check_tt
+				check_variable = { var = mot_supply value = mot_supply_check compare = greater_than_or_equals }
+			}
+			controls_state = 67
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		completion_reward = {
+			set_temp_variable = { mot_supply_change = -60 }
+			change_mot_supply = yes
+			67 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 2316
+					instant_build = yes
+				}
+				increase_state_control = yes
+			}
+		}
+	}
+
+	focus = {
+		id = mot_reinforce_forlorn_hope
+		icon = GFX_goal_NCR_Army_of_Mobility
+		cost = 30
+		prerequisite = {
+			focus = mot_the_mojave_line
+		}
+		x = -2
+		y = 1
+		relative_position_id = mot_the_mojave_line
+		available = {
+			set_temp_variable = { mot_supply_check = 40 }
+			custom_trigger_tooltip = {
+				tooltip = mot_supply_check_tt
+				check_variable = { var = mot_supply value = mot_supply_check compare = greater_than_or_equals }
+			}
+			controls_state = 137
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		completion_reward = {
+			set_temp_variable = { mot_supply_change = -40 }
+			change_mot_supply = yes
+			137 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 3211
+					instant_build = yes
+				}
+				add_resource = {
+					type = energy
+					amount = 8
+				}
+				increase_state_control = yes
+			}
+		}
+	}
+
+	focus = {
+		id = mot_operation_rollup
+		icon = GFX_goal_NCR_The_Tip_of_the_Spear
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_camp_maccaren_primacy
+		}
+		x = 0
+		y = 1
+		relative_position_id = mot_camp_maccaren_primacy
+		completion_reward = {
+			set_temp_variable = { mot_supply_change = 80 }
+			change_mot_supply = yes
+			add_timed_idea = { idea = mot_rollup days = 60 }
+		}
+	}
+
+	focus = {
+		id = mot_ranger_stations_on_i40
+		icon = GFX_goal_NCR_Rangers_Lead_the_War
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_camp_maccaren_primacy
+		}
+		x = 2
+		y = 1
+		relative_position_id = mot_camp_maccaren_primacy
+		completion_reward = {
+			every_owned_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_ideas = {
+				mot_han_the_good_fight
+			}
+		}
+	}
+
+	## Post-1st Battle Legion/Army Sub
+
+	focus = {
+		id = mot_the_great_debate
+		icon = GFX_goal_NCR_Blast_from_the_Past
+		allow_branch = {
+			NOT = {
+				has_country_flag = mot_cali_civil_war
+			}
+		}
+		cost = 30
+		x = 0
+		y = 2
+		relative_position_id = mot_victory_at_the_dam
+		#allow_branch = {
+		#	NOT = { has_completed_focus = mot_the_long_march_home }
+		#}
+		available = {
+			has_completed_focus = mot_supply_and_demand
+			has_completed_focus = mot_appoint_ambassador_crocker
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					check_variable = { mot_oli_han_bal < 0.5 }
+				}
+				custom_effect_tooltip = mot_oliver_dominant_tt
+				set_country_flag = mot_oliver_dominant
+			}
+			else_if = {
+				limit = {
+					check_variable = { mot_oli_han_bal > 0.4 }
+				}
+				custom_effect_tooltip = mot_hanlon_dominant_tt
+				set_country_flag = mot_hanlon_dominant
+			}
+			else = {
+				custom_effect_tooltip = mot_debate_tie_tt
+				hidden_effect = {
+					set_country_flag = mot_oliver_dominant
+					set_country_flag = mot_hanlon_dominant
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = mot_promote_chief_hanlon
+		icon = GFX_goal_NCR_Rangergeneral
+		cost = 7
+		prerequisite = {
+			focus = mot_the_great_debate
+		}
+		x = -2
+		y = 1
+		relative_position_id = mot_the_great_debate
+		mutually_exclusive = {
+			focus = mot_cement_olivers_authority
+		}
+		available = {
+			has_country_flag = mot_hanlon_dominant
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = mot_promote_chief_hanlon_tt
+			add_to_variable = {
+				var = mot_gov_op
+				value = 0.05
+				tooltip = mot_gov_op_small_down
+			}
+			hidden_effect = {
+				add_country_leader_role = {
+					character = MOT_josh_hanlon
+					promote_leader = yes
+					country_leader = {
+						desc = MOT_JOSH_HANLON_DESC
+						ideology = constitutional_republic
+						traits = {
+							dislikes_caesars_legion
+							war_industrialist
+						}
+						expire = "3000.01.01.01"
+						id = -1
+					}
+				}
+				retire_country_leader = yes
+				set_character_name = {
+					character = MOT_josh_hanlon
+					name = MOT_JOSH_HANLON_LEADER_NAME
+				}
+				every_country = {
+					limit = {
+						OR = {
+							is_neighbor_of = MOT
+							tag = MOT
+						}
+					}
+					news_event = { id = news_cali.7 hours = 6 random_hours = 3 }
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = mot_cement_olivers_authority
+		icon = GFX_goal_NCR_Buyout
+		cost = 7
+		prerequisite = {
+			focus = mot_the_great_debate
+		}
+		x = 2
+		y = 1
+		relative_position_id = mot_the_great_debate
+		mutually_exclusive = {
+			focus = mot_promote_chief_hanlon
+		}
+		available = {
+			has_country_flag = mot_oliver_dominant
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		completion_reward = {
+			add_country_leader_trait = political_workhorse
+		}
+	}
+
+	focus = {
+		id = mot_a_shared_vision
+		icon = GFX_goal_NCR_rapid_advance
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_promote_chief_hanlon
+			focus = mot_cement_olivers_authority
+		}
+		x = 2
+		y = 1
+		relative_position_id = mot_promote_chief_hanlon
+		completion_reward = {
+			every_unit_leader = {
+				limit = {
+					has_id = 820
+				}
+				add_attack = 1
+			}
+			every_unit_leader = {
+				limit = {
+					has_id = 821
+				}
+				add_planning = 1
+			}
+		}
+	}
+
+	focus = {
+		id = mot_baja_redeployments
+		icon = GFX_goal_NCR_Bajastate
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_a_shared_vision
+		}
+		bypass = {
+			NCR = { exists = no }
+		}
+		available = {
+			#NCR = {
+			#	OR = {
+			#		has_completed_focus = ncr_bajastate
+			#		has_completed_focus = ncr_integration
+			#		has_completed_focus = ncr_retake
+			#	}
+			#}
+		}
+		x = -1
+		y = 1
+		relative_position_id = mot_a_shared_vision
+		completion_reward = {
+			custom_effect_tooltip = mot_baja_redeployments_tt
+			hidden_effect = {
+				load_oob = ncr_ranger_baja
+			}
+		}
+	}
+
+	focus = {
+		id = mot_trouble_from_under_black_mount
+		icon = GFX_goal_moj_uto
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_a_shared_vision
+		}
+		x = 1
+		y = 1
+		relative_position_id = mot_a_shared_vision
+		completion_reward = {
+			news_event = nf_mot.24
+		}
+	}
+
+	focus = {
+		id = mot_staring_the_bear_in_the_mouth
+		icon = GFX_goal_CES_protect_the_bull
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_baja_redeployments
+		}
+		prerequisite = {
+			focus = mot_trouble_from_under_black_mount
+		}
+		x = 1
+		y = 1
+		relative_position_id = mot_baja_redeployments
+		completion_reward = {
+			add_tech_bonus = {
+				uses = 1
+				bonus = 0.4
+				ahead_reduction = 2
+				category = infantry_weapons_tech_category
+				name = infantry_weapons_bonus
+			}
+		}
+	}
+
+	focus = {
+		id = mot_the_hardpoint_gambit
+		icon = GFX_goal_NCR_Military_March
+		cost = 30
+		prerequisite = {
+			focus = mot_staring_the_bear_in_the_mouth
+		}
+		prerequisite = {
+			focus = mot_operational_flexibility
+		}
+		x = -1
+		y = 1
+		available = {
+			NOT = {
+				has_war_with = VEG
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		relative_position_id = mot_staring_the_bear_in_the_mouth
+		mutually_exclusive = {
+			focus = mot_hoover_must_not_fall
+		}
+		bypass = {
+			owns_state = 211
+		}
+		completion_reward = {
+			VEG = { country_event = nf_mot.20 }
+			custom_effect_tooltip = mot_the_hardpoint_gambit_tt
+		}
+	}
+
+	focus = {
+		id = mot_hoover_must_not_fall
+		icon = GFX_goal_NCR_Ranger_Core
+		cost = 30
+		prerequisite = {
+			focus = mot_staring_the_bear_in_the_mouth
+		}
+		prerequisite = {
+			focus = mot_operational_security
+		}
+		x = 1
+		y = 1
+		relative_position_id = mot_staring_the_bear_in_the_mouth
+		mutually_exclusive = {
+			focus = mot_the_hardpoint_gambit
+		}
+		available = {
+			set_temp_variable = { mot_supply_check = 60 }
+			custom_trigger_tooltip = {
+				tooltip = mot_supply_check_tt
+				check_variable = { var = mot_supply value = mot_supply_check compare = greater_than_or_equals }
+			}
+			controls_state = 252
+			has_war_with = CES
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		completion_reward = {
+			set_temp_variable = { mot_supply_change = -60 }
+			change_mot_supply = yes
+			252 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 6603
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = mot_caesar_delenda_est
+		icon = GFX_goal_RRG_poison_bull
+		cost = 30
+		prerequisite = {
+			focus = mot_the_hardpoint_gambit
+			focus = mot_hoover_must_not_fall
+		}
+		x = 1
+		y = 1
+		relative_position_id = mot_the_hardpoint_gambit
+		available = {
+			has_war_with = CES
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		completion_reward = {
+			add_research_slot = 1
+			set_technology = {
+				oldworldarmour = 1
+				ncr_reorgranger_tech = 1
+				ncr_rangercore_tech = 1
+				ncr_rangerlead_tech = 1
+				ncr_rangercanopeners_tech = 1
+				ncr_seth = 1
+			}
+		}
+	}
+
+	# Hanlon / Supply Unique
+
+	focus = {
+		id = mot_operation_bastion
+		icon = GFX_goal_NCR_Aradeshfort
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_promote_chief_hanlon
+		}
+		prerequisite = {
+			focus = mot_first_supply_shipment
+		}
+		x = -3
+		y = 1
+		relative_position_id = mot_promote_chief_hanlon
+		bypass = {
+			has_completed_focus = mot_promote_chief_hanlon
+			NOT = { has_idea = mot_idea_support_from_shady_sands }
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = mot_idea_support_from_shady_sands
+				add_idea = mot_idea_support_from_shady_sands_hanlon
+			}
+		}
+	}
+
+	focus = {
+		id = mot_disobey_baker_decree
+		icon = GFX_goal_NCR_Protege
+		cost = 30
+		prerequisite = {
+			focus = mot_operation_bastion
+		}
+		x = 1
+		y = 1
+		relative_position_id = mot_operation_bastion
+		available = {
+			has_completed_focus = mot_camp_maccaren_primacy
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		completion_reward = {
+			add_offsite_building = {
+				type = industrial_complex
+				level = 1
+			}
+			add_to_variable = {
+				var = mot_gov_op
+				value = 0.05
+				tooltip = mot_gov_op_small_down
+			}
+			add_to_variable = {
+				var = mot_people
+				value = 0.1
+				tooltip = mot_people_op_medium_down
+			}
+			NCR = { news_event = nf_mot.16 }
+		}
+	}
+
+	focus = {
+		id = mot_operational_flexibility
+		icon = GFX_goal_NCR_Newgeneral
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_disobey_baker_decree
+		}
+		prerequisite = {
+			focus = mot_baja_redeployments
+		}
+		x = 2
+		y = 1
+		relative_position_id = mot_disobey_baker_decree
+		completion_reward = {
+			add_ideas = mot_flexibility
+		}
+	}
+
+	# Oliver / Diplomacy Unique
+
+	focus = {
+		id = mot_ncrs_finest
+		icon = GFX_goal_NCR_Urban_Draft
+		cost = 30
+		prerequisite = {
+			focus = mot_cement_olivers_authority
+		}
+		prerequisite = {
+			focus = mot_mp_deployments
+		}
+
+		x = 3
+		y = 1
+		relative_position_id = mot_cement_olivers_authority
+		available = {
+			has_idea = mot_idea_support_from_shady_sands
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		bypass = {
+			has_completed_focus = mot_cement_olivers_authority
+			NOT = { has_idea = mot_idea_support_from_shady_sands }
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = mot_idea_support_from_shady_sands
+				add_idea = mot_idea_support_from_shady_sands_oliver
+			}
+		}
+	}
+
+	focus = {
+		id = mot_demilitarisation_of_baker
+		icon = GFX_goal_NCR_MojaveOutpost
+		cost = 30
+		prerequisite = {
+			focus = mot_ncrs_finest
+		}
+		x = -1
+		y = 1
+		relative_position_id = mot_ncrs_finest
+		available = {
+			has_completed_focus = mot_camp_maccaren_primacy
+			NCR = { exists = yes }
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		completion_reward = {
+			add_to_variable = {
+				var = mot_gov_op
+				value = -0.15
+				tooltip = mot_gov_op_sig_up
+			}
+			add_to_variable = {
+				var = mot_people_op
+				value = -0.15
+				tooltip = mot_people_op_sig_up
+			}
+			NCR = { news_event = nf_mot.15 }
+		}
+	}
+
+	focus = {
+		id = mot_operational_security
+		icon = GFX_goal_NCR_Patrol
+		cost = 30
+		available = {
+			NOT = {
+				has_country_flag = mot_crisis_in_california
+			}
+		}
+		prerequisite = {
+			focus = mot_trouble_from_under_black_mount
+		}
+		prerequisite = {
+			focus = mot_demilitarisation_of_baker
+		}
+		x = 1
+		y = 1
+		relative_position_id = mot_trouble_from_under_black_mount
+		completion_reward = {
+			country_event = nf_mot.25
+			# Idea that contrasts Operational Flexibility focus
+		}
+	}
+}

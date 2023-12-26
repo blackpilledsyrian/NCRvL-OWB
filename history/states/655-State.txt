@@ -1,0 +1,19 @@
+state = {
+	id = 655
+	name = "STATE_655"
+
+	history = {
+		buildings = {
+			infrastructure = 1
+		}
+	}
+
+	provinces={
+		12450
+	}
+
+	impassable = yes
+	manpower = 56
+	state_category = wasteland
+	buildings_max_level_factor=1.000
+}

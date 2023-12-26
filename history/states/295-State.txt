@@ -1,0 +1,28 @@
+state = {
+	id = 295
+	name = "STATE_295"
+	manpower = 8295
+	state_category = city
+
+	resources = {
+		water = 3
+		metal = 3
+		energy = 2
+	}
+
+	history = {
+		owner = NEW
+		add_core_of = NEW
+		victory_points = {
+			8371 5
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+		}
+	}
+
+	provinces = {
+		2686 2688 2690 3595 3596 3597 8371 8776 8777 8779 8780
+	}
+}

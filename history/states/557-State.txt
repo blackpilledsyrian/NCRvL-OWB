@@ -1,0 +1,26 @@
+state = {
+	id = 557
+	name = "STATE_557"
+	manpower = 4235
+	state_category = large_town
+
+	resources = {
+		metal = 8
+		composites = 2
+	}
+
+	history = {
+		victory_points = {
+			2100 5
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			arms_factory = 1
+		}
+	}
+
+	provinces = {
+		679 2097 2098 2100 2101 2118 3770 3796 3800 3810 3979 7213 7214 7395
+	}
+}

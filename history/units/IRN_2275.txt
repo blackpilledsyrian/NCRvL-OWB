@@ -1,0 +1,206 @@
+﻿division_template = {
+	name = "Militia Force"
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Iron Pact Battlegroup"
+
+	division_names_group = _IRN_INF_01
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+	}
+	support = {
+		fireteam_support = {x = 0 y = 0}
+	}
+}
+
+division_template = {
+	name = "Ironsquire"
+
+	regiments = {
+		spec_ops = { x = 0 y = 0 }
+		spec_ops = { x = 0 y = 1 }
+		spec_ops = { x = 0 y = 2 }
+		spec_ops = { x = 1 y = 0 }
+		spec_ops = { x = 1 y = 1 }
+	}
+	support = {
+		fireteam_support = {x = 0 y = 0}
+	}
+}
+
+#Super beefy template!
+division_template = {
+	name = "Ironguard"
+
+	regiments = {
+		power_armour = { x = 0 y = 0 }
+		power_armour = { x = 0 y = 1 }
+		power_armour = { x = 0 y = 2 }
+		power_armour = { x = 1 y = 0 }
+		power_armour = { x = 1 y = 1 }
+		power_armour = { x = 1 y = 2 }
+		power_armour_fireteam_infantry = { x = 2 y = 0 }
+		power_armour_fireteam_infantry = { x = 2 y = 1 }
+	}
+}
+
+units = {
+	division = {
+		name = "Grant's Pass Militia"
+		location = 8011
+		division_template = "Militia Force"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Paxton Militia"
+		location = 7986
+		division_template = "Militia Force"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Platte Crossings Militia"
+		location = 8001
+		division_template = "Militia Force"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Wellfleet Militia"
+		location = 1803
+		division_template = "Militia Force"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Red Willow Militia"
+		location = 7815
+		division_template = "Militia Force"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Rust Warriors"
+		location = 7819
+		division_template = "Iron Pact Battlegroup"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Iron Warriors"
+		location = 9008
+		division_template = "Iron Pact Battlegroup"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Steel Warriors"
+		location = 9010
+		division_template = "Iron Pact Battlegroup"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "The Ironsquires"
+		location = 9009
+		division_template = "Ironsquire"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "The Rustsquires"
+		location = 9011
+		division_template = "Ironsquire"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "The Steelsquires"
+		location = 9010
+		division_template = "Ironsquire"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "The Ironguard"
+		location = 9009
+		division_template = "Ironguard"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "The Steelguard"
+		location = 9010
+		division_template = "Ironguard"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "The Bulletguard"
+		location = 9007
+		division_template = "Ironguard"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "The Rustguard"
+		location = 9011
+		division_template = "Ironguard"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+}
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = power_armor_equipment_1
+			creator = "IRN"
+		}
+		requested_factories = 2
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = spec_ops_equipment_1
+			creator = "IRN"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ballistic_equipment_1
+			creator = "IRN"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = fireteam_equipment_1
+			creator = "IRN"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+}

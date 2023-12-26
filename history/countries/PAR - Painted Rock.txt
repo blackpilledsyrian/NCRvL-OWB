@@ -1,0 +1,143 @@
+﻿capital = 891
+oob = "PAR_2275"
+
+set_technology = {
+	basic_supply_transport_tech = 1
+	infantry_tech_level_tribal = 1
+	#infantry_tech_level_settler = 1
+	#infantry_tech_level_scientific = 1
+	support_tech_level_tribal = 1
+	#support_tech_level_settler = 1
+	#support_tech_level_scientific = 1
+	special_forces_tech_level_tribal = 1
+	#special_forces_tech_level_settler = 1
+	#special_forces_tech_level_scientific = 1
+	#power_armour_tech_level_settler = 1
+	#power_armour_tech_level_scientific = 1
+	vehicles_tech_level_tribal = 1
+	#vehicles_tech_level_settler = 1
+	#vehicles_tech_level_scientific = 1
+	#robotics_tech_level_tribal = 1
+	#robotics_tech_level_settler = 1
+	#robotics_tech_level_scientific = 1
+	air_tech_level_tribal = 1
+	#air_tech_level_settler = 1
+	#air_tech_level_scientific = 1
+	naval_tech_level_tribal = 1
+	#naval_tech_level_settler = 1
+	#naval_tech_level_scientific = 1
+	tools_tech_level_tribal = 1
+	#tools_tech_level_settler = 1
+	#tools_tech_level_scientific = 1
+	habitation_tech_level_tribal = 1
+	#habitation_tech_level_settler = 1
+	#habitation_tech_level_scientific = 1
+	exploitation_tech_level_tribal = 1
+	#exploitation_tech_level_settler = 1
+	#exploitation_tech_level_scientific = 1
+	electronics_tech_level_tribal = 1
+	#electronics_tech_level_settler = 1
+	#electronics_tech_level_scientific = 1
+	tribal_tech_visibility_tech = 1
+	tribal_tech_access_tech = 1
+	tribal_civilization = 1
+	tool_engineering = 1
+	standard_weaponry_tech = 1
+	melee_weaponry_tech_1 = 1
+	melee_weaponry_tech_2 = 1
+	heavy_infantry_tech_1 = 1
+	pre_construction_industry_tech = 1
+	pre_agriculture_industry_tech = 1
+	pre_recycling_industry_tech = 1
+	basic_industry_tech = 1
+	support_weaponry = 1
+	unit_training_tech_1 = 1
+	unit_training_tech_2 = 1
+	unit_training_tech_3 = 1
+	terror_tactics = 1
+	raider_reckless_aggression = 1
+}
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		nautics_tech_1 = 1
+		light_navy_hull_tech_1 = 1
+		naval_invasion_tech_1 = 1
+	}
+}
+if = {
+	limit = {
+		NOT = { has_dlc = "Man the Guns" }
+	}
+	set_technology = {
+		nautics_tech_non_mtg_1 = 1
+		light_navy_hull_tech_non_mtg_1 = 1
+		naval_invasion_tech_non_mtg_1 = 1
+	}
+}
+
+set_stability = 0.4
+set_war_support = 0.5
+set_convoys = 25
+set_research_slots = 4
+set_country_flag = is_raider_nation
+set_country_flag = is_texas_nation
+
+add_opinion_modifier = { target = LAC modifier = par_lac_affinity }
+
+set_politics = {
+	ruling_party = ruler
+	elections_allowed = no
+}
+
+set_popularities = {
+	people = 0
+	elites = 0
+	intellectuals = 0
+	ruler = 100
+}
+
+add_manpower = 1500
+
+add_ideas = {
+	warriors_of_the_rock
+	ancestral_mesa_paintings
+	tribal_nation
+	okc_savages
+	undesirables_law_raider
+}
+
+902 = { add_claim_by = PAR }
+887 = { add_claim_by = PAR }
+886 = { add_claim_by = PAR }
+888 = { add_claim_by = PAR }
+108 = { add_claim_by = PAR }
+891 = { add_claim_by = PAR }
+889 = { add_claim_by = PAR }
+890 = { add_claim_by = PAR }
+615 = { add_claim_by = PAR }
+937 = { add_claim_by = PAR }
+616 = { add_claim_by = PAR }
+868 = { add_claim_by = PAR }
+867 = { add_claim_by = PAR }
+883 = { add_claim_by = PAR }
+617 = { add_claim_by = PAR }
+618 = { add_claim_by = PAR }
+103 = { add_claim_by = PAR }
+869 = { add_claim_by = PAR }
+877 = { add_claim_by = PAR }
+676 = { add_claim_by = PAR }
+899 = { add_claim_by = PAR }
+898 = { add_claim_by = PAR }
+
+recruit_character = PAR_dyed_blood
+
+random_character = {
+	limit = {
+		is_character = PAR_dyed_blood
+	}
+	save_global_event_target_as = PAR_dyed_blood_target
+}

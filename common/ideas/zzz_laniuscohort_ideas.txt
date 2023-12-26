@@ -1,0 +1,1037 @@
+ideas = {
+	#These ideas are applied as a result of the continuous focus on the LAC revolter tree.
+	hidden_ideas = {
+		lac_temple_of_artemis = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				caps_flat_income_modifier = 10
+			}
+		}
+		lac_temple_of_ares = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_org_factor = 0.1
+			}
+		}
+		lac_temple_of_poseidon = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				compliance_gain = 0.02
+			}
+		}
+		lac_temple_of_athena = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_speed_buildings_factor = 0.1
+			}
+		}
+		lac_temple_of_aphrodite = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				conscription_factor = 0.1
+			}
+		}
+		lac_temple_of_diana = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				research_speed_factor = 0.1
+			}
+		}
+	}
+
+	country = {
+		#Lanius faction stuff
+		lanius_countdown_dog_city = {
+			picture = LAC_blank_slate
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			available = {
+				has_active_mission = lanius_countdown_dog_city
+			}
+			removal_cost = -1
+			modifier = {
+				cant_faction_call = 1
+				cant_faction_join = 1
+				weekly_manpower = 5
+				caps_flat_income_modifier = -5
+				consumer_goods_expected_value = 0.03
+			}
+		}
+		lac_blank_slate = {
+			picture = LAC_blank_slate
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				consumer_goods_expected_value = 0.05
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_arms_factory_factor = 0.1
+				production_factory_max_efficiency_factor = 0.1
+				line_change_production_efficiency_factor = 0.15
+				equipment_conversion_speed = 0.2
+			}
+			research_bonus = {
+				robotics_tech_category = -0.8
+				energy_weaponry_tech_category = -0.8
+			}
+		}
+		lac_engineers = {
+			picture = LAC_blank_slate
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				consumer_goods_expected_value = -0.05
+				production_speed_industrial_complex_factor = 0.05
+				production_speed_arms_factory_factor = 0.05
+			}
+		}
+		lac_cult_of_mars_idea = {
+			picture = LAC_cult_of_mars
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.1
+				non_core_manpower = 0.1
+				army_speed_factor = 0.1
+				attrition = -0.1
+				stability_factor = -0.1
+				political_power_gain = -0.25
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					soft_attack = 0.1
+				}
+			}
+		}
+		lac_mustering_cohort = {
+			picture = LAC_mustering_cohort
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				# Old modifiers
+				# conscription_factor = 0.15
+				# conscription = 0.01
+				# army_morale_factor = 0.1
+				# land_reinforce_rate = 0.1
+				# training_time_army_factor = 0.2
+				# experience_gain_army_factor = -0.1
+				# supply_consumption_factor = 0.15
+				# attrition = 0.05
+				# max_dig_in = -1
+				# weekly_manpower = 7
+				# caps_flat_income_modifier = -10
+
+				# New modifiers as used in 4.2.7
+				conscription_factor = 0.15
+				conscription = 0.01
+				land_reinforce_rate = 0.02
+				supply_consumption_factor = 0.15
+				attrition = 0.1
+				max_dig_in = -2
+				caps_income_modifier = -0.3
+			}
+		}
+		lac_plunder_goes_east = {
+			picture = LAC_mustering_cohort
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				weekly_manpower = -7
+				caps_flat_income_modifier = -20
+			}
+		}
+		lac_damn_were_awesome = {
+			picture = LAC_mustering_cohort
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				weekly_manpower = 7
+				caps_flat_income_modifier = 20
+			}
+		}
+		lac_loot_from_theeast_1 = {
+			picture = LAC_mustering_cohort
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				caps_flat_income_modifier = 10
+				weekly_manpower = -7
+			}
+		}
+		lac_loot_from_theeast_2 = {
+			picture = LAC_mustering_cohort
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				caps_flat_income_modifier = 20
+				weekly_manpower = -7
+			}
+		}
+		lac_loot_from_theeast_3 = {
+			picture = LAC_mustering_cohort
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				caps_flat_income_modifier = 35
+				weekly_manpower = -7
+			}
+		}
+		lac_loot_from_theeast_4 = {
+			picture = LAC_mustering_cohort
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				caps_flat_income_modifier = 55
+				weekly_manpower = -7
+			}
+		}
+		lac_brotherhood_slaves = {
+			picture = shottol
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				local_resources_factor = 0.05
+				industrial_capacity_factory = 0.05
+			}
+		}
+		lac_cohort_of_east = {
+			picture = LAC_mustering_cohort
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				# Old modifiers
+				# conscription_factor = 0.15
+				# conscription = 0.01
+				# army_morale_factor = 0.1
+				# land_reinforce_rate = 0.1
+				# training_time_army_factor = 0.1
+				# supply_consumption_factor = 0.1
+				# attrition = 0.05
+				# max_dig_in = -0.5
+				# caps_flat_income_modifier = -20
+
+				# New modifiers as used in 4.2.7
+				conscription_factor = 0.15
+				conscription = 0.01
+				land_reinforce_rate = 0.02
+				supply_consumption_factor = 0.1
+				attrition = 0.05
+				max_dig_in = -1
+				caps_income_modifier = -0.2
+			}
+		}
+		lac_cohort_of_east_2 = {
+			picture = LAC_mustering_cohort
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				# Old modifiers
+				# conscription_factor = 0.1
+				# army_morale_factor = 0.15
+				# land_reinforce_rate = 0.1
+				# training_time_army_factor = 0.1
+				# caps_flat_income_modifier = -35
+
+				# New modifiers as used in 4.2.7
+				conscription_factor = 0.1
+				modifier_army_sub_unit_category_leg_infantry_speed_factor = 0.15
+				land_reinforce_rate = 0.02
+				supply_consumption_factor = 0.05
+				caps_income_modifier = -0.1
+			}
+		}
+		lac_came_west = {
+			picture = LAC_mustering_cohort
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			targeted_modifier = {
+				tag = VEG
+				attack_bonus_against = 0.2
+			}
+			targeted_modifier = {
+				tag = NCR
+				attack_bonus_against = 0.1
+			}
+			targeted_modifier = {
+				tag = moj
+				attack_bonus_against = 0.1
+			}
+		}
+		lac_cohort_of_east_3 = {
+			picture = LAC_mustering_cohort
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				# Old modifiers
+				# army_morale_factor = 0.15
+				# land_reinforce_rate = 0.1
+				# caps_flat_income_modifier = -40
+
+				# New modifiers as used in 4.2.7
+				modifier_army_sub_unit_category_leg_infantry_speed_factor = 0.25
+				land_reinforce_rate = 0.02
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+		national_spirit_tribal_warfare = {
+			picture = LAC_the_conquering_frontier
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			research_bonus = {
+				infantry_tech_category = 0.1
+			}
+		}
+		national_spirit_tribal_warfare1 = {
+			picture = LAC_the_conquering_frontier
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			research_bonus = {
+				infantry_tech_category = 0.2
+			}
+		}
+		lac_research_faster = {
+			picture = LAC_the_conquering_frontier
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				army_org_factor = 0.05
+				mobilization_speed = 0.05
+			}
+			# Research bonus removed for 4.2.7 changes
+			# research_bonus = {
+			# 	tribal_tech_category = 0.05
+			# }
+		}
+		lanius_spy_agency = {
+			picture = Bitter_Loser
+			modifier = {
+				encryption = 0.25
+				decryption = 0.25
+			}
+		}
+		legion_nf_shottol_god_of_dogs = {
+			picture = shottol
+			modifier = {
+				modifier_army_sub_unit_dog_company_attack_factor = 0.15
+				# modifier_army_sub_unit_dog_company_speed_factor = 0.15	# Useless on support dogs since they don't affect speed @Tran
+				modifier_army_sub_unit_dog_company_defence_factor = 0.15
+			}
+		}
+		lac_steel_army = {
+			picture = shottol
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.20
+			}
+			equipment_bonus = {
+				chariot_equipment = {
+					build_cost_ic = -0.05
+					soft_attack = 0.05
+					instant = yes
+				}
+			}
+		}
+		lac_thunder_army = {
+			picture = shottol
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.20
+			}
+			equipment_bonus = {
+				chariot_equipment = {
+					build_cost_ic = 0.3
+					soft_attack = 0.15
+					instant = yes
+				}
+			}
+		}
+		lac_survivors_army = {
+			picture = shottol
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.20
+			}
+			equipment_bonus = {
+				chariot_equipment = {
+					build_cost_ic = -0.2
+					soft_attack = -0.1
+					reliability = -0.01
+					instant = yes
+				}
+			}
+		}
+		lac_legacy_of_pallus = {
+
+			picture = LAC_blank_slate
+
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				exodus_national_appeal = -0.2
+				exodus_nomadicity = -0.4 #Do not nerf this without adjusting the above 'local appeal' value. This is meant to make NM factories 'sticky' and to ensue that LAC has a good industial base by the time he reaches HAN
+				army_defence_factor = -0.15
+				army_speed_factor = -0.15
+				production_speed_infrastructure_factor = -0.2
+				experience_gain_army = 0.05
+			}
+		}
+		lac_beast_of_the_east = {
+			picture = lanius
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				political_power_gain = 0.05
+				exodus_national_appeal = -0.15
+				required_garrison_factor = -0.05
+			}
+			removal_cost = -1
+		}
+		lac_eastern_praetorians = {
+			picture = legionary_unit_tactics
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				resistance_damage_to_garrison = -0.05
+				planning_speed = 0.1
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					soft_attack = 0.07
+				}
+				demolitions_equipment = {
+					instant = yes
+					soft_attack = 0.07
+				}
+			}
+			removal_cost = -1
+		}
+		lac_pride_through_purpose = {
+			picture = lanius_rome
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				war_support_factor = 0.05
+				attrition = -0.1
+				coordination_bonus = 0.025
+			}
+			removal_cost = -1
+		}
+
+
+		##############################
+		##### LAC Conquest Ideas #####
+		##############################
+		lac_decimation_1 = {
+			picture = LAC_blank_slate
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_morale_factor = 0.05
+				war_support_factor = 0.05
+				supply_consumption_factor = -0.05
+				stability_factor = -0.03
+				production_speed_buildings_factor = -0.05
+				line_change_production_efficiency_factor = -0.05
+				production_factory_efficiency_gain_factor = -0.05
+				local_resources_factor = -0.05
+			}
+		}
+		lac_decimation_2 = {
+			picture = LAC_blank_slate
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_morale_factor = 0.1
+				war_support_factor = 0.1
+				supply_consumption_factor = -0.1
+				stability_factor = -0.06
+				production_speed_buildings_factor = -0.1
+				line_change_production_efficiency_factor = -0.1
+				production_factory_efficiency_gain_factor = -0.1
+				local_resources_factor = -0.1
+			}
+		}
+		lac_decimation_3 = {
+			picture = LAC_blank_slate
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_morale_factor = 0.15
+				war_support_factor = 0.15
+				supply_consumption_factor = -0.15
+				stability_factor = -0.1
+				production_speed_buildings_factor = -0.15
+				line_change_production_efficiency_factor = -0.15
+				production_factory_efficiency_gain_factor = -0.15
+				local_resources_factor = -0.15
+			}
+		}
+		lac_crucify_1 = {
+			picture = legion_crucifixion
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				offensive_war_stability_factor = 0.1
+				land_reinforce_rate = 0.5
+				justify_war_goal_time = -0.1
+				stability_factor = -0.1
+				non_core_manpower = -0.02
+				supply_consumption_factor = 0.05
+			}
+		}
+		lac_crucify_2 = {
+			picture = LAC_blank_slate
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				offensive_war_stability_factor = 0.2
+				land_reinforce_rate = 0.1
+				justify_war_goal_time = -0.15
+				stability_factor = -0.15
+				non_core_manpower = -0.04
+				supply_consumption_factor = 0.1
+			}
+		}
+		lac_crucify_3 = {
+			picture = LAC_blank_slate
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				offensive_war_stability_factor = 0.4
+				land_reinforce_rate = 0.15
+				justify_war_goal_time = -0.2
+				army_leader_start_attack_level = 1
+				stability_factor = -0.2
+				non_core_manpower = -0.08
+				supply_consumption_factor = 0.15
+			}
+		}
+		lac_recruit_1 = {
+			picture = LAC_blank_slate
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				command_power_gain = 0.5
+				weekly_manpower = 10
+				war_support_factor = -0.04
+				army_morale_factor = -0.05
+				mobilization_speed = 0.05
+			}
+		}
+		lac_recruit_2 = {
+			picture = LAC_blank_slate
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				command_power_gain = 0.1
+				weekly_manpower = 15
+				war_support_factor = -0.07
+				army_morale_factor = -0.1
+				mobilization_speed = -0.1
+			}
+		}
+		lac_recruit_3 = {
+			picture = LAC_blank_slate
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				command_power_gain = 0.1
+				command_power_gain_mult = 0.15
+				weekly_manpower = 15
+				army_leader_start_level = 1
+				war_support_factor = -0.1
+				army_morale_factor = -0.15
+				mobilization_speed = -0.15
+			}
+		}
+		lac_basking_in_glory = {
+			picture = LAC_blank_slate
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+		}
+
+		############################
+		### LAC Revolter Focuses ###
+		############################
+		lac_legacy_of_the_populares = {
+			picture = LAC_blank_slate
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				resistance_target = 0.15
+				resistance_growth = 0.15
+				compliance_gain = 0.02
+				caps_expense_modifier = 0.2
+				mobilization_speed = -0.2
+				political_power_factor = 0.15
+				production_speed_arms_factory_factor = -0.2
+			}
+			removal_cost = -1
+		}
+		lac_legacy_of_the_freeman = {
+			picture = generic_crowbar
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				experience_gain_army = 0.33
+			}
+			removal_cost = -1
+		}
+		lac_legacy_of_the_populares_2 = {
+			picture = LAC_blank_slate
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				compliance_gain = 0.04
+				resistance_target = -0.04
+			}
+			removal_cost = -1
+		}
+		lac_promise_land_rights = {
+			picture = LAC_blank_slate
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				caps_expense_modifier = -0.25
+				consumer_goods_expected_value = 0.25
+				production_speed_arms_factory_factor = -0.25
+				stability_weekly = 0.002
+			}
+			removal_cost = -1
+		}
+		lac_decimation = {
+			picture = LAC_blank_slate
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				training_time_factor = 0.25
+				industrial_capacity_factory = -0.25
+				resistance_growth = 0.4
+				resistance_target = 0.4
+				compliance_gain = -0.06
+				stability_weekly = 0.002
+			}
+			removal_cost = -1
+		}
+		lac_army_testudo = {
+			picture = LAC_blank_slate
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				army_org_factor = 0.10
+				max_dig_in_factor = 0.15
+			}
+			removal_cost = -1
+		}
+		lac_army_quincunx = {
+			picture = LAC_blank_slate
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				army_org_factor = 0.15
+				max_dig_in_factor = -0.15
+				dig_in_speed_factor = 0.3
+				caps_expense_modifier = 0.02
+			}
+			removal_cost = -1
+		}
+		lac_army_velites = {
+			picture = LAC_blank_slate
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				army_defence_factor = 0.06
+				caps_expense_modifier = 0.02
+			}
+			removal_cost = -1
+		}
+		lac_army_hastati = {
+			picture = LAC_blank_slate
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				army_attack_factor = 0.05
+			}
+			removal_cost = -1
+		}
+		lac_army_liberti = {
+			picture = LAC_blank_slate
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				conscription_factor = 0.09
+				caps_expense_modifier = 0.02
+			}
+			removal_cost = -1
+		}
+		lac_army_speculatores = {
+			picture = LAC_blank_slate
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				intel_network_gain_factor = 0.1
+				breakthrough_factor = 0.05
+			}
+			removal_cost = -1
+		}
+		lac_cura_annonae = {
+			picture = LAC_blank_slate
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				resistance_growth = -0.1
+				compliance_gain = 0.01
+				production_speed_buildings_factor = 0.1
+			}
+			removal_cost = -1
+		}
+		lac_edict_of_caracalla = {
+			picture = LAC_blank_slate
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				resistance_growth = -0.1
+				compliance_gain = 0.01
+				production_speed_buildings_factor = 0.1
+			}
+			removal_cost = -1
+		}
+		lac_set_an_example = {
+			picture = LAC_blank_slate
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				war_support_factor = 0.05
+				industrial_capacity_factory = 0.1
+			}
+			removal_cost = -1
+		}
+		lac_sol_castra = {
+			picture = LAC_blank_slate
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				war_support_factor = 0.05
+				industrial_capacity_factory = 0.1
+			}
+			removal_cost = -1
+		}
+		lac_paying_off_veterans = {
+			picture = LAC_blank_slate
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				caps_expense_modifier = 0.5
+				evolution_income_source_modifier_2 = -0.5
+				resistance_target = 0.25
+				resistance_growth = 0.25
+				stability_factor = -0.10
+			}
+			removal_cost = -1
+		}
+	}
+}

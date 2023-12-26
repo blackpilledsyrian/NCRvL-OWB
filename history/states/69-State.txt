@@ -1,0 +1,28 @@
+state = {
+	id = 69
+	name = "STATE_69"
+
+	history={
+		victory_points = {
+			1518 10
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 1
+			arms_factory = 2
+			dockyard = 1
+			air_base = 1
+			1518 = {
+				naval_base = 2
+			}
+		}
+
+	}
+
+	provinces = {
+		1515 1518 1954 1955 1957 2348 2485 2529 4005 4006 4007 7203 8575 8576
+	}
+	manpower=7500
+	buildings_max_level_factor=1.000
+	state_category=town
+}

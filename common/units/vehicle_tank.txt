@@ -1,0 +1,78 @@
+sub_units = {
+	tank = {
+		sprite = heavy_armor
+		map_icon_category = armored
+		priority = 2503
+		ai_priority = 2503
+		active = yes
+		training_time = 180
+
+		type = {
+			armor
+		}
+
+		group = mobile
+
+		categories = {
+			category_army
+			category_front_line
+			category_vehicles
+		}
+
+		forest = {
+			movement = -0.1
+			attack = -0.1
+			defence = -0.1
+		}
+		hills = {
+			movement = -0.1
+			attack = -0.1
+			defence = -0.1
+		}
+		mountain = 	{
+			movement = -0.25
+			attack = -0.25
+			defence = -0.25
+		}
+		jungle = {
+			attack = -0.1
+			movement = -0.2
+		}
+		marsh = {
+			attack = -0.1
+			movement = -0.2
+		}
+		urban = {
+			movement = -0.15
+		}
+		amphibious = {
+			attack = -0.5
+			movement = -0.5
+		}
+		river = {
+			attack = -0.2
+			movement = -0.2
+		}
+		fort = {
+			attack = 0.3
+		}
+
+		combat_width = 3
+
+		essential = {
+			tank_equipment
+		}
+		transport = tank_equipment
+		need = {
+			tank_equipment = 20
+		}
+
+		manpower = 80 # 500
+		max_organisation = 10
+		default_morale = 0.3
+		max_strength = 30
+		weight = 3
+		suppression = 1
+		supply_consumption = 1.35
+	}
+}

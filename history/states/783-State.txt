@@ -1,0 +1,33 @@
+state = {
+	id = 783
+	name = "STATE_783"
+	resources={
+		metal = 4
+		advanced = 4
+	}
+
+	history={
+		buildings = {
+			infrastructure = 5
+			arms_factory = 2
+			industrial_complex = 1
+			9354 = {
+				naval_base = 4
+			}
+			714 = {
+				naval_base = 2
+			}
+		}
+		victory_points = {
+			9354 30
+		}
+
+	}
+
+	provinces={
+		714 722 2237 9270 9327 9328 9329 9346 9347 9354 9359 10943 10944 10955 10957 10959 10964 10967 10971 10972 10980 10990
+	}
+	manpower=71000
+	buildings_max_level_factor=1.000
+	state_category=large_city
+}

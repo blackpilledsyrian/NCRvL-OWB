@@ -1,0 +1,24 @@
+
+state={
+	id=1216
+	name="STATE_1216"
+
+	history={
+		victory_points = {
+			14010 5
+		}
+		buildings = {
+			infrastructure = 2
+
+		}
+
+	}
+
+	provinces={
+		13960 13961 13976 13978 14000 14001 14009 14010
+	}
+	manpower=312
+	buildings_max_level_factor=1.000
+	state_category=shanty
+	local_supplies=0.000
+}

@@ -1,0 +1,1944 @@
+#######################################
+###--                             --###
+##--  Designed by CGS and Rhacius  --##
+##--        Scripted by CGS		   --##
+##--    Final Scripting by Tran    --##
+###--                             --###
+#######################################
+focus_tree = {
+	id = RES_nf
+	country = {
+		factor = 0
+		modifier = {
+			add = 25	# Do not adjust without tweaking the factor for the Green tree
+			tag = RES
+			NOT = { has_country_flag = res_green_flag }
+		}
+	}
+	continuous_focus_position = { x = 1500 y = 0 }
+	default = no
+
+	focus = {
+		id = res_nuclear_testing_facility
+		icon = GFX_goal_RES_Main_Facility
+		cost = 7
+		x = 7
+		y = 0
+		completion_reward = {
+			country_event = nf_events_res.1
+		}
+	}
+
+	focus = {
+		id = res_expedition_outside
+		icon = GFX_goal_RES_Main_Backpack
+		cost = 7
+		x = 0
+		y = 1
+		relative_position_id = res_nuclear_testing_facility
+		prerequisite = {
+			focus = res_nuclear_testing_facility
+		}
+		completion_reward = {
+			country_event = nf_events_res.2
+		}
+	}
+	focus = {
+		id = res_clarks_dream
+		icon = GFX_goal_RES_Main_Clark_Face
+		cost = 7
+		x = 0
+		y = 1
+		relative_position_id = res_expedition_outside
+		prerequisite = {
+			focus = res_expedition_outside
+		}
+		completion_reward = {
+			country_event = nf_events_res.3
+			hidden_effect = {
+				country_event = {
+					id = nf_events_res.6
+					days = 7
+				}
+			}
+		}
+	}
+	focus = {
+		id = res_trading_post
+		icon = GFX_goal_RES_Main_Middle_Trading_Post
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = res_clarks_dream
+		available = {
+			has_completed_focus = res_clarks_dream
+		}
+		completion_reward = {
+			country_event = nf_events_res.4
+			634 = {
+				add_state_modifier = {
+					modifier = {
+						state_production_speed_bunker_factor = 0.1
+					}
+				}
+			}
+			unlock_decision_category_tooltip = res_town_category
+		}
+	}
+	focus = {
+		id = res_acquiring_slaves
+		icon = GFX_goal_RES_Main_Middle_Slave
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = res_clarks_dream
+		available = {
+			has_completed_focus = res_clarks_dream
+		}
+		completion_reward = {
+			country_event = nf_events_res.5
+		}
+	}
+	focus = {
+		id = res_hank_focus
+		icon = GFX_goal_RES_Main_Middle_Hank
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = res_trading_post
+		prerequisite = {
+			focus = res_trading_post
+		}
+		prerequisite = {
+			focus = res_acquiring_slaves
+		}
+		completion_reward = {
+			custom_effect_tooltip = unlock_advisor_hank_tt
+			activate_advisor = RES_hank_economic_advisor
+		}
+	}
+	focus = {
+		id = res_slaves_rad_protection
+		icon = GFX_goal_RES_Main_Middle_Hazmat_Suit
+		cost = 30
+		x = 2
+		y = 1
+		relative_position_id = res_trading_post
+		prerequisite = {
+			focus = res_trading_post
+		}
+		prerequisite = {
+			focus = res_acquiring_slaves
+		}
+		completion_reward = {
+			add_manpower = 200
+			add_stability = 0.05
+		}
+	}
+	focus = {
+		id = res_betty_focus
+		icon = GFX_goal_RES_Main_Middle_Betty
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = res_hank_focus
+		prerequisite = {
+			focus = res_hank_focus
+		}
+		prerequisite = {
+			focus = res_slaves_rad_protection
+		}
+		completion_reward = {
+			custom_effect_tooltip = unlock_advisor_betty_tt
+			activate_advisor = RES_betty_cultural_advisor
+		}
+	}
+	focus = {
+		id = res_scaven_pickers
+		icon = GFX_goal_RES_Main_Middle_Scavenger
+		cost = 30
+		x = 2
+		y = 1
+		relative_position_id = res_hank_focus
+		prerequisite = {
+			focus = res_hank_focus
+		}
+		prerequisite = {
+			focus = res_slaves_rad_protection
+		}
+		completion_reward = {
+			add_war_support = 0.07
+			every_owned_state = {
+				set_temp_variable = { pop_add = 550 }
+				add_state_population_no_state_name = yes
+			}
+		}
+	}
+	focus = {
+		id = res_horatio_focus
+		icon = GFX_goal_RES_Main_Middle_Horatio
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = res_betty_focus
+		prerequisite = {
+			focus = res_betty_focus
+		}
+		prerequisite = {
+			focus = res_scaven_pickers
+		}
+		completion_reward = {
+			custom_effect_tooltip = unlock_advisor_horatio_tt
+			activate_advisor = RES_horatio_high_command
+		}
+	}
+	focus = {
+		id = res_smooch
+		icon = GFX_goal_RES_Main_Middle_Smooch
+		cost = 30
+		x = 2
+		y = 1
+		relative_position_id = res_betty_focus
+		prerequisite = {
+			focus = res_betty_focus
+		}
+		prerequisite = {
+			focus = res_scaven_pickers
+		}
+		completion_reward = {
+			#add_ideas = res_smooch_1
+			if = {
+				limit = { has_idea = chems_banned }
+				swap_ideas = {
+					remove_idea = chems_banned
+					add_idea = chems_legalised
+				}
+			}
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = res_gallup
+		icon = GFX_goal_RES_Main_Left_Big_Building
+		cost = 30
+		x = -2
+		y = 1
+		relative_position_id = res_horatio_focus
+		prerequisite = {
+			focus = res_horatio_focus
+		}
+		prerequisite = {
+			focus = res_smooch
+		}
+		completion_reward = {
+			282 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_manpower = 300
+		}
+	}
+	focus = {
+		id = res_trade_ces
+		icon = GFX_goal_RES_Main_Left_Legion_Slave
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = res_gallup
+		available = {
+			if = {
+				limit = {
+					NOT = {
+						is_ai = yes
+					}
+				}
+				set_temp_variable = {
+					caps_diff = -75
+				}
+				caps_cost_trigger = yes
+			}
+		}
+		prerequisite = {
+			focus = res_gallup
+		}
+		completion_reward = {
+			set_temp_variable = { caps_to_add = -75 }
+			add_caps = yes
+			add_manpower = 1000
+		}
+	}
+	focus = {
+		id = res_trade_nav
+		icon = GFX_goal_RES_Main_Left_Vase
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = res_gallup
+		available = {
+			if = {
+				limit = {
+					NOT = {
+						is_ai = yes
+					}
+				}
+				set_temp_variable = {
+					caps_diff = -75
+				}
+				caps_cost_trigger = yes
+			}
+		}
+		bypass = {
+			NAV = { exists = no }
+		}
+		prerequisite = {
+			focus = res_gallup
+		}
+		completion_reward = {
+			set_temp_variable = { caps_to_add = -75 }
+			add_caps = yes
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 3
+				category = industry
+			}
+		}
+	}
+	focus = {
+		id = res_trade_lac
+		icon = GFX_goal_RES_Main_Left_Lanius
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = res_trade_ces
+		available = {
+			LAC = { ASF = { all_core_land_owned_by_prev_sphere = yes } }
+			if = {
+				limit = {
+					NOT = {
+						is_ai = yes
+					}
+				}
+				set_temp_variable = {
+					caps_diff = -75
+				}
+				caps_cost_trigger = yes
+			}
+		}
+		bypass = {
+			LAC = { exists = no }
+		}
+		prerequisite = {
+			focus = res_trade_ces
+		}
+		prerequisite = {
+			focus = res_trade_nav
+		}
+		completion_reward = {
+			set_temp_variable = { caps_to_add = -75 }
+			add_caps = yes
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 3
+				category = cat_land_doctrine
+			}
+		}
+	}
+	focus = {
+		id = res_trade_two
+		icon = GFX_goal_RES_Main_Left_Car
+		cost = 30
+		x = 2
+		y = 1
+		relative_position_id = res_trade_ces
+		available = {
+			if = {
+				limit = {
+					NOT = {
+						is_ai = yes
+					}
+				}
+				set_temp_variable = {
+					caps_diff = -75
+				}
+				caps_cost_trigger = yes
+			}
+		}
+		bypass = {
+			TWO = { exists = no }
+		}
+		prerequisite = {
+			focus = res_trade_ces
+		}
+		prerequisite = {
+			focus = res_trade_nav
+		}
+		completion_reward = {
+			set_temp_variable = { caps_to_add = -75 }
+			add_caps = yes
+			every_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = res_trade_smooch
+		icon = GFX_goal_RES_Main_Left_Smooch_Sneak
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = res_trade_lac
+		prerequisite = {
+			focus = res_trade_lac
+		}
+		prerequisite = {
+			focus = res_trade_two
+		}
+		completion_reward = {
+			# sell smooch + 25% cut
+			every_neighbor_country = {
+				add_stability = -0.01
+			}
+			set_temp_variable = { caps_to_add = 150 }
+			add_caps = yes
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 200
+				producer = RES
+			}
+		}
+	}
+	focus = {
+		id = res_chem_kits
+		icon = GFX_goal_RES_Main_Left_Radaway
+		cost = 30
+		x = 2
+		y = 1
+		relative_position_id = res_trade_lac
+		prerequisite = {
+			focus = res_trade_lac
+		}
+		prerequisite = {
+			focus = res_trade_two
+		}
+		completion_reward = {
+			set_temp_variable = { caps_to_add = 50 }
+			add_caps = yes
+			add_tech_bonus = {
+				ahead_reduction = 1
+				bonus = 0.5
+				uses = 1
+				category = support_medical_tech_category
+			}
+		}
+	}
+	focus = {
+		id = res_expand_trading_post
+		icon = GFX_goal_RES_Main_Left_Trader_Spot
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = res_trade_smooch
+		prerequisite = {
+			focus = res_trade_smooch
+		}
+		prerequisite = {
+			focus = res_chem_kits
+		}
+		completion_reward = {
+			634 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker2
+					level = 2
+					instant_build = yes
+					province = 8066
+				}
+				add_state_modifier = {
+					modifier = {
+						local_supplies = 0.1
+						local_org_regain = 0.1
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = res_jilian
+		icon = GFX_goal_RES_Main_Left_Woman
+		cost = 30
+		x = 2
+		y = 1
+		relative_position_id = res_trade_smooch
+		prerequisite = {
+			focus = res_trade_smooch
+		}
+		prerequisite = {
+			focus = res_chem_kits
+		}
+		completion_reward = {
+			country_event = nf_events_res.9
+			89 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = res_road
+		icon = GFX_goal_RES_Main_Left_Train
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = res_expand_trading_post
+		prerequisite = {
+			focus = res_expand_trading_post
+		}
+		prerequisite = {
+			focus = res_jilian
+		}
+		completion_reward = {
+			every_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			set_temp_variable = { chosen_newborn_var = 7 }
+			res_add_newborn = yes
+			hidden_effect = {
+				if = {
+					limit = {
+						is_ai = yes
+						has_completed_focus = res_ghoulification
+						has_completed_focus = res_born_ghouls
+						has_completed_focus = res_green_room
+					}
+					random_list = {
+						90 = {
+							country_event = nf_events_green_res.1
+							modifier = {
+								factor = 2
+								any_allied_country = { is_ai = no }
+							}
+						}
+						5 = { # Nothing
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = res_town
+		icon = GFX_goal_RES_Main_Left_House
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = res_horatio_focus
+		prerequisite = {
+			focus = res_horatio_focus
+		}
+		prerequisite = {
+			focus = res_smooch
+		}
+		completion_reward = {
+			89 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				set_temp_variable = { pop_add = 700 }
+				add_state_population_no_state_name = yes
+			}
+		}
+	}
+	focus = {
+		id = res_sub_level_1
+		icon = GFX_goal_RES_Main_Right_Sub_Level_1
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = res_smooch
+		prerequisite = {
+			focus = res_horatio_focus
+		}
+		prerequisite = {
+			focus = res_smooch
+		}
+		completion_reward = {
+			add_stability = 0.05
+			add_ideas = res_level_1_idea
+		}
+	}
+	focus = {
+		id = res_town_scavenging
+		icon = GFX_goal_RES_Middle_Scavenge
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = res_town
+		prerequisite = {
+			focus = res_town
+		}
+		prerequisite = {
+			focus = res_sub_level_1
+		}
+		completion_reward = {
+			282 = {
+				add_resource = {
+					type = metal
+					amount = 8
+				}
+				add_resource = {
+					type = advanced
+					amount = 5
+				}
+				add_resource = {
+					type = composites
+					amount = 3
+				}
+			}
+		}
+	}
+	focus = {
+		id = res_colonel_green_focus
+		icon = GFX_goal_RES_Colonel_Green
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = res_town_scavenging
+		prerequisite = {
+			focus = res_town_scavenging
+		}
+		completion_reward = {
+			hidden_effect = {
+				add_field_marshal_role = {
+					character = RES_colonel_green
+					skill = 4
+					attack_skill = 3
+					defense_skill = 5
+					planning_skill = 2
+					logistics_skill = 4
+					traits = { strong_trait enduring_trait intelligent_trait rad_rat }
+				}
+			}
+			custom_effect_tooltip = res_colonel_green_tt
+			army_experience = 15
+			add_popularity = {
+				ideology = elites
+				popularity = 0.1
+			}
+		}
+	}
+	focus = {
+		id = res_elite
+		icon = GFX_goal_RES_Middle_Ghoul
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = res_colonel_green_focus
+		prerequisite = {
+			focus = res_colonel_green_focus
+		}
+		completion_reward = {
+			division_template = {
+				name = "Elite Ghoul Guards"
+				regiments = {
+					ghoul_infantry = { x = 0 y = 0 }
+					ghoul_infantry = { x = 0 y = 1 }
+					ghoul_infantry = { x = 0 y = 2 }
+					ghoul_infantry = { x = 1 y = 0 }
+					ghoul_infantry = { x = 1 y = 1 }
+					ghoul_infantry = { x = 1 y = 2 }
+					ghoul_infantry = { x = 2 y = 0 }
+					ghoul_infantry = { x = 2 y = 1 }
+					ghoul_infantry = { x = 2 y = 2 }
+					ghoul_infantry = { x = 3 y = 0 }
+				}
+				support = {
+					fireteam_support = { x = 0 y = 0 }
+					recon_company = { x = 0 y = 1 }
+				}
+			}
+			634 = {
+				create_unit = {
+					division = "name = \"Colonel Green's best\" division_template = \"Elite Ghoul Guards\" start_experience_factor = 1.0 start_equipment_factor = 1.0 force_equipment_variants = { energy_equipment_3 = { owner = \"USA\" } ballistic_fireteam_equipment_4 = { owner = \"USA\" } }"
+					owner = RES
+					allow_spawning_on_enemy_provs = no
+					count = 3
+				}
+			}
+			add_popularity = {
+				ideology = elites
+				popularity = 0.05
+			}
+			add_war_support = 0.075
+		}
+	}
+	focus = {
+		id = res_nuclear_nellie
+		icon = GFX_goal_RES_Middle_Nelly
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = res_elite
+		prerequisite = {
+			focus = res_elite
+		}
+		completion_reward = {
+			set_technology = { artillery_ammo_unlock_tech = 1 }
+			custom_effect_tooltip = res_added_nuke_tt
+			country_event = nf_events_green_res.1
+		}
+	}
+	focus = {
+		id = res_ghoulification
+		icon = GFX_goal_RES_Middle_Feral
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = res_nuclear_nellie
+		prerequisite = {
+			focus = res_nuclear_nellie
+		}
+		completion_reward = {
+			res_increase_project_progress = yes
+			set_temp_variable = { chosen_newborn_var = 4 }
+			res_add_newborn = yes
+			hidden_effect = {
+				if = {
+					limit = {
+						is_ai = yes
+						has_completed_focus = res_road
+						has_completed_focus = res_born_ghouls
+						has_completed_focus = res_green_room
+					}
+					random_list = {
+						90 = {
+							country_event = nf_events_green_res.1
+							modifier = {
+								factor = 2
+								any_allied_country = { is_ai = no }
+							}
+						}
+						5 = { # Nothing
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = res_born_ghouls
+		icon = GFX_goal_RES_Middle_Handprint
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = res_nuclear_nellie
+		prerequisite = {
+			focus = res_nuclear_nellie
+		}
+		completion_reward = {
+			res_increase_project_progress = yes
+			set_temp_variable = { chosen_newborn_var = 2 }
+			res_add_newborn = yes
+			hidden_effect = {
+				if = {
+					limit = {
+						is_ai = yes
+						has_completed_focus = res_road
+						has_completed_focus = res_ghoulification
+						has_completed_focus = res_green_room
+					}
+					random_list = {
+						90 = {
+							country_event = nf_events_green_res.1
+							modifier = {
+								factor = 2
+								any_allied_country = { is_ai = no }
+							}
+						}
+						5 = { # Nothing
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = res_sub_level_2
+		icon = GFX_goal_RES_Main_Right_Level_2
+		cost = 30
+		x = 2
+		y = 1
+		relative_position_id = res_smooch
+		prerequisite = {
+			focus = res_horatio_focus
+		}
+		prerequisite = {
+			focus = res_smooch
+		}
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 250
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 250
+			}
+		}
+	}
+	focus = {
+		id = res_gas_masks
+		icon = GFX_goal_RES_Main_Right_Gas_Mask
+		cost = 30
+		x = -1
+		y = 1
+		relative_position_id = res_sub_level_2
+		mutually_exclusive = {
+			focus = res_filtration_system
+		}
+		prerequisite = {
+			focus = res_sub_level_2
+		}
+		completion_reward = {
+			hidden_effect = {
+				country_event = {
+					id = nf_events_res.7
+					days = 7
+				}
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 400
+			}
+		}
+	}
+	focus = {
+		id = res_filtration_system
+		icon = GFX_goal_RES_Main_Right_Water_Bottle
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = res_sub_level_2
+		mutually_exclusive = {
+			focus = res_gas_masks
+		}
+		prerequisite = {
+			focus = res_sub_level_2
+		}
+		completion_reward = {
+			89 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = water_generator
+					level = 2
+					instant_build = yes
+				}
+			}
+			hidden_effect = {
+				country_event = {
+					id = nf_events_res.8
+					days = 7
+				}
+			}
+		}
+	}
+	focus = {
+		id = res_machines
+		icon = GFX_goal_RES_Main_Right_Machine
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = res_gas_masks
+		prerequisite = {
+			focus = res_gas_masks
+			focus = res_filtration_system
+		}
+		completion_reward = {
+			set_temp_variable = { workshops_to_add = 3 }
+			RES_add_workshops = yes
+		}
+	}
+	focus = {
+		id = res_shooting_range
+		icon = GFX_goal_RES_Main_Right_Target
+		cost = 30
+		x = 2
+		y = 1
+		relative_position_id = res_gas_masks
+		prerequisite = {
+			focus = res_gas_masks
+			focus = res_filtration_system
+		}
+		completion_reward = {
+			army_experience = 50
+			transfer_generic_officer_law_to_veterans = yes
+		}
+	}
+	focus = {
+		id = res_ammo
+		icon = GFX_goal_RES_Main_Right_Bullet
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = res_machines
+		prerequisite = {
+			focus = res_machines
+		}
+		prerequisite = {
+			focus = res_shooting_range
+		}
+		completion_reward = {
+			set_technology = {
+				mininuke_unlock_tech = 1
+			}
+			add_ideas = res_ammo_idea
+			set_temp_variable = { workshops_to_add = 1 }
+			RES_add_workshops = yes
+		}
+	}
+	focus = {
+		id = res_chems
+		icon = GFX_goal_RES_Main_Right_Chem_Lab
+		cost = 30
+		x = 2
+		y = 1
+		relative_position_id = res_machines
+		prerequisite = {
+			focus = res_machines
+		}
+		prerequisite = {
+			focus = res_shooting_range
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = support_medical_tech_category
+			}
+		}
+	}
+	focus = {
+		id = res_weapons
+		icon = GFX_goal_RES_Main_Right_Comics
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = res_ammo
+		prerequisite = {
+			focus = res_ammo
+		}
+		prerequisite = {
+			focus = res_chems
+		}
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1000
+				producer = RES
+			}
+		}
+	}
+	focus = {
+		id = res_armour
+		icon = GFX_goal_RES_Main_Right_Metal_Armor
+		cost = 30
+		x = 2
+		y = 1
+		relative_position_id = res_ammo
+		prerequisite = {
+			focus = res_ammo
+		}
+		prerequisite = {
+			focus = res_chems
+		}
+		completion_reward = {
+			add_ideas = res_armor_idea
+			set_temp_variable = { workshops_to_add = 1 }
+			RES_add_workshops = yes
+		}
+	}
+	focus = {
+		id = res_green_room
+		icon = GFX_goal_RES_Main_Green_Room
+		cost = 30
+		x = 1
+		y = 1
+		relative_position_id = res_weapons
+		prerequisite = {
+			focus = res_weapons
+		}
+		prerequisite = {
+			focus = res_armour
+		}
+		completion_reward = {
+			res_increase_project_progress = yes
+			set_temp_variable = { chosen_newborn_var = 6 }
+			res_add_newborn = yes
+			hidden_effect = {
+				if = {
+					limit = {
+						is_ai = yes
+						has_completed_focus = res_road
+						has_completed_focus = res_ghoulification
+						has_completed_focus = res_born_ghouls
+					}
+					random_list = {
+						90 = {
+							country_event = nf_events_green_res.1
+							modifier = {
+								factor = 2
+								any_allied_country = { is_ai = no }
+							}
+						}
+						5 = { # Nothing
+						}
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+        id = resg_going_green
+        icon = GFX_goal_RES_Green
+        cost = 7
+        x = 0
+        y = 2
+        relative_position_id = res_nuclear_nellie
+        prerequisite = {
+			focus = res_nuclear_nellie
+		}
+        completion_reward = {
+            country_event = {
+                id = nf_events_green_res.2
+            }
+        }
+    }
+
+    ### Left Side ###
+    focus = {
+        id = resg_maintain_status
+        icon = GFX_goal_RES_Green_Legion_Fist
+        cost = 30
+        x = -4
+        y = 1
+        prerequisite = {
+            focus = resg_going_green
+        }
+        relative_position_id = resg_going_green
+        completion_reward = {
+            add_stability = 0.2
+        }
+    }
+    # Conquer navajo
+    focus = {
+        id = resg_master_of_aeronautics
+        icon = GFX_goal_RES_Green_Legion_Planes
+        cost = 30
+        x = -3
+        y = 1
+        prerequisite = {
+            focus = resg_maintain_status
+        }
+        relative_position_id = resg_maintain_status
+        completion_reward = {
+            set_technology = {
+                air_tech_level_scientific = 1
+            }
+            add_nuclear_bombs = 1
+        }
+    }
+    focus = {
+        id = resg_us_pilots
+        icon = GFX_goal_RES_Green_Legion_Pilot
+        cost = 30
+        x = 0
+        y = 1
+        prerequisite = {
+            focus = resg_master_of_aeronautics
+        }
+        relative_position_id = resg_master_of_aeronautics
+        completion_reward = {
+            air_experience = 150
+        }
+    }
+
+    # center part of left subtree
+    focus = {
+        id = resg_friends_of_drussus
+        icon = GFX_goal_RES_Green_Legion_Sussy
+        cost = 30
+        x = -1
+        y = 1
+        prerequisite = {
+            focus = resg_maintain_status
+        }
+        relative_position_id = resg_maintain_status
+        completion_reward = {
+            CES = {
+                add_equipment_to_stockpile = {
+                    type = energy_equipment_2
+                    amount = 2000
+                    producer = USA
+                }
+            }
+            add_political_power = 100
+            set_temp_variable = { caps_to_add = 100 }
+            add_caps = yes
+        }
+    }
+    focus = {
+        id = resg_ghoul_friendly_arizona
+        icon = GFX_goal_RES_Green_Legion_Ghoul_Arizona
+        cost = 30
+        x = 0
+        y = 1
+        prerequisite = {
+            focus = resg_friends_of_drussus
+        }
+        relative_position_id = resg_friends_of_drussus
+        completion_reward = {
+            add_manpower = 1000
+            custom_effect_tooltip = resg_ghoul_friendly_arizona_tt
+            hidden_effect = {
+                every_state = {
+                    limit = {
+                        is_arizona_state = yes
+                        OWNER = { is_west_legion_member = yes }
+                    }
+                    add_manpower = 500
+                    if = {
+                        limit = { OWNER = { original_tag = RES } }
+                        add_manpower = 500
+                    }
+                }
+            }
+        }
+    }
+    focus = {
+        id = resg_fortifying_our_positions
+        icon = GFX_goal_RES_Green_Legion_Wall
+        cost = 30
+        x = 1
+        y = 1
+        prerequisite = {
+            focus = resg_maintain_status
+        }
+        relative_position_id = resg_maintain_status
+        completion_reward = {
+            add_ideas = resg_fortifying_our_positions_idea
+        }
+    }
+    focus = {
+        id = resg_ghoul_army
+        icon = GFX_goal_RES_Green_Legion_Ghoul
+        cost = 30
+        x = 0
+        y = 1
+        prerequisite = {
+            focus = resg_fortifying_our_positions
+        }
+        relative_position_id = resg_fortifying_our_positions
+        completion_reward = {
+            add_ideas = resg_ghoul_army_idea
+        }
+    }
+
+    # deepen legion ties
+    focus = {
+        id = resg_deepen_legion_ties
+        icon = GFX_goal_RES_Green_Legion_Guy
+        cost = 30
+        x = 1
+        y = 1
+        prerequisite = {
+            focus = resg_ghoul_friendly_arizona
+        }
+        prerequisite = {
+            focus = resg_ghoul_army
+        }
+        relative_position_id = resg_ghoul_friendly_arizona
+        completion_reward = {
+            set_technology = { legion_training_tech = 1 }
+        }
+    }
+    focus = {
+        id = resg_adapt_legion_doctrine
+        icon = GFX_goal_RES_Green_Legion_Soldier
+        cost = 30
+        x = -1
+        y = 1
+        prerequisite = {
+            focus = resg_deepen_legion_ties
+        }
+        relative_position_id = resg_deepen_legion_ties
+        completion_reward = {
+            army_experience = 70
+        }
+    }
+
+    # bear hunting
+    focus = {
+        id = resg_bear_hunting
+        icon = GFX_goal_RES_Green_Legion_Bear_Hat
+        cost = 30
+        x = -1
+        y = 1
+        available = {
+            has_war_with = NCR
+        }
+        bypass = {
+            NCR = {
+                exists = no
+            }
+        }
+        prerequisite = {
+            focus = resg_ghoul_friendly_arizona
+        }
+        relative_position_id = resg_ghoul_friendly_arizona
+        completion_reward = {
+            add_ideas = resg_bear_hunting_idea
+        }
+    }
+
+    # expand production
+    focus = {
+        id = resg_expand_production
+        icon = GFX_goal_RES_Green_Legion_Sun
+        cost = 30
+        x = 0
+        y = 2
+        prerequisite = {
+            focus = resg_bear_hunting
+        }
+        prerequisite = {
+            focus = resg_adapt_legion_doctrine
+        }
+        relative_position_id = resg_bear_hunting
+        completion_reward = {
+            set_temp_variable = { workshops_to_add = 4 }
+            RES_add_workshops = yes
+        }
+    }
+    focus = {
+        id = resg_ultimate_deterent
+        icon = GFX_goal_RES_Red_Button
+        cost = 30
+        x = 0
+        y = 1
+        prerequisite = {
+            focus = resg_expand_production
+        }
+        relative_position_id = resg_expand_production
+        completion_reward = {
+            custom_effect_tooltip = res_armed_nuke_green_tt
+            hidden_effect = {
+                # Setup nellie target states
+                add_to_array = { res_nellie_targets_array = 4.id }	# Ocotillo/Tanditown
+                add_to_array = { res_nellie_targets_array = 252.id }	# Hoover Dam
+                add_to_array = { res_nellie_targets_array = 211.id }	# New Vegas
+                add_to_array = { res_nellie_targets_array = 99.id }	# Tumblehome/Pharmville and Blythe
+            }
+        }
+    }
+
+    # army with a state spirit
+    focus = {
+        id = resg_army_with_spirit
+        icon = GFX_goal_RES_Green_Spirit
+        cost = 30
+        x = 0
+        y = 2
+        prerequisite = {
+            focus = resg_deepen_legion_ties
+        }
+        relative_position_id = resg_deepen_legion_ties
+        completion_reward = {
+            add_ideas = resg_army_with_spirit_idea
+        }
+    }
+
+    ### Navajo Compromise ###
+    focus = {
+        id = resg_navajo_compromise
+        icon = GFX_goal_RES_Green_Navajo_Ally
+        cost = 30
+        x = 0
+        y = 1
+        prerequisite = {
+            focus = resg_going_green
+        }
+        relative_position_id = resg_going_green
+        completion_reward = {
+            custom_effect_tooltip = resg_navajo_compromise_tt
+            hidden_effect = {
+                load_oob = RES_navajo
+                division_template = {
+                    name = "Navajo Skinwalkers"
+                     regiments = {
+                        spec_ops = { x = 0 y = 0 }
+                        spec_ops = { x = 0 y = 1 }
+                        spec_ops = { x = 1 y = 0 }
+                        spec_ops = { x = 1 y = 1 }
+                        spec_ops = { x = 2 y = 0 }
+                        spec_ops = { x = 2 y = 1 }
+                    }
+                }
+                capital_scope = {
+                    create_unit = {
+                        division = "name = \"Anaye\" division_template = \"Navajo Skinwalkers\" start_experience_factor = 0.8 start_equipment_factor = 1"
+                        owner = RES
+                    }
+                }
+            }
+        }
+    }
+    focus = {
+        id = resg_reservation_airbase
+        icon = GFX_goal_RES_Green_Navajo_Ally_Air_Base
+        cost = 30
+        x = -1
+        y = 1
+        prerequisite = {
+            focus = resg_navajo_compromise
+        }
+        relative_position_id = resg_navajo_compromise
+        completion_reward = {
+            282 = {
+                set_building_level = {
+                    type = air_base
+                    level = 5
+                    instant_build = yes
+                }
+            }
+            add_doctrine_cost_reduction = {
+                name = air_doctrine_bonus
+                cost_reduction = 0.5
+                uses = 3
+                category = cat_air_doctrine
+            }
+        }
+    }
+    focus = {
+        id = resg_reservation_keeping_them
+        icon = GFX_goal_RES_Green_Navajo_Ally_Give_Guns
+        cost = 30
+        x = 1
+        y = 1
+        prerequisite = {
+            focus = resg_navajo_compromise
+        }
+        relative_position_id = resg_navajo_compromise
+        completion_reward = {
+            NAV = {
+                add_equipment_to_stockpile = {
+                    type = energy_equipment_2
+                    amount = 2000
+                    producer = USA
+                }
+            }
+            add_tech_bonus = {
+                bonus = 1
+                uses = 1
+                category = spec_force_equipment_tech_category
+            }
+        }
+    }
+    focus = {
+        id = resg_not_all_smoothskins
+        icon = GFX_goal_RES_Green_Navajo_Ally_Together
+        cost = 30
+        x = 0
+        y = 2
+        prerequisite = {
+            focus = resg_reservation_airbase
+        }
+        prerequisite = {
+            focus = resg_reservation_keeping_them
+        }
+        relative_position_id = resg_navajo_compromise
+        completion_reward = {
+            add_stability = 0.1
+            add_war_support = 0.1
+        }
+    }
+    # left
+    focus = {
+        id = resg_civilian_industry
+        icon = GFX_goal_RES_Green_Navajo_Ally_Building
+        cost = 30
+        x = -1
+        y = 1
+        prerequisite = {
+            focus = resg_not_all_smoothskins
+        }
+        relative_position_id = resg_not_all_smoothskins
+        completion_reward = {
+            282 = {
+                if = {
+                    limit = {
+                        is_valid_state_for_2_arms_factories = yes
+                    }
+                    add_extra_state_shared_building_slots = 2
+                    add_building_construction = {
+                        type = industrial_complex
+                        level = 2
+                        instant_build = yes
+                    }
+                }
+            }
+        }
+    }
+    focus = {
+        id = resg_first_harvest
+        icon = GFX_goal_RES_Green_Navajo_Ally_Harvest_Wheat
+        cost = 30
+        x = -1
+        y = 1
+        prerequisite = {
+            focus = resg_civilian_industry
+        }
+        relative_position_id = resg_civilian_industry
+        completion_reward = {
+            add_manpower = 500
+            add_tech_bonus = {
+                bonus = 1.0
+                uses = 2
+                category = agriculture_tech
+            }
+        }
+    }
+    focus = {
+        id = resg_welcome_the_silversmiths
+        icon = GFX_goal_RES_Green_Navajo_Ally_Company_Logo
+        cost = 30
+        x = 1
+        y = 1
+        prerequisite = {
+            focus = resg_civilian_industry
+        }
+        relative_position_id = resg_civilian_industry
+        completion_reward = {
+            NAV = {
+                set_temp_variable = { caps_to_add = 75 }
+                add_caps = yes
+            }
+            add_political_power = 75
+            add_ideas = navajo_silversmith_companies
+        }
+    }
+    # right
+    focus = {
+        id = resg_skinwalkers_patrols
+        icon = GFX_goal_RES_Green_Navajo_Ally_Skinwalker
+        cost = 30
+        x = 1
+        y = 1
+        prerequisite = {
+            focus = resg_not_all_smoothskins
+        }
+        relative_position_id = resg_not_all_smoothskins
+        completion_reward = {
+            add_ideas = NAV_skinwalkers_idea
+        }
+    }
+
+    focus = {
+        id = resg_rio_grande_fleet
+        icon = GFX_goal_RES_Green_Navajo_Ally_Boat
+        cost = 30
+        x = 1
+        y = 1
+        prerequisite = {
+            focus = resg_skinwalkers_patrols
+        }
+        relative_position_id = resg_skinwalkers_patrols
+        completion_reward = {
+            269 = {
+                if = {
+                    limit = {
+                        is_valid_state_for_dockyard = yes
+                    }
+                    add_extra_state_shared_building_slots = 1
+                    add_building_construction = {
+                        type = dockyard
+                        level = 1
+                        instant_build = yes
+                    }
+                }
+            }
+            282 = {
+                if = {
+                    limit = {
+                        is_valid_state_for_dockyard = yes
+                    }
+                    add_extra_state_shared_building_slots = 1
+                    add_building_construction = {
+                        type = dockyard
+                        level = 1
+                        instant_build = yes
+                    }
+                }
+            }
+            NAV = {
+                add_tech_bonus = {
+                    bonus = 0.5
+                    uses = 2
+                    category = naval_tech_category
+                }
+            }
+            add_tech_bonus = {
+                bonus = 0.5
+                uses = 2
+                category = naval_tech_category
+            }
+        }
+    }
+
+    # limited expansion
+    focus = {
+        id = resg_limited_expansion
+        icon = GFX_goal_RES_Green_Navajo_Ally_Bunker_Expansion
+        cost = 30
+        x = 0
+        y = 1
+        prerequisite = {
+            focus = resg_first_harvest
+        }
+        relative_position_id = resg_first_harvest
+        completion_reward = {
+            set_temp_variable = { workshops_to_add = 2 }
+            RES_add_workshops = yes
+        }
+    }
+
+    # stand against the bull
+    focus = {
+        id = resg_stand_against_bull
+        icon = GFX_goal_CES_VA_bull
+        cost = 30
+        x = 0
+        y = 2
+        available = {
+            has_completed_focus = res_road
+        }
+        prerequisite = {
+            focus = resg_first_harvest
+        }
+        prerequisite = {
+            focus = resg_skinwalkers_patrols
+        }
+        relative_position_id = resg_skinwalkers_patrols
+        completion_reward = {
+            add_ideas = resg_stand_against_bull_idea
+            set_technology = {
+            	railway_gun = 1
+            }
+			create_railway_gun = {
+				equipment = railway_gun_equipment_1
+				name = "The Raging Bull"
+			}
+        }
+    }
+
+    ## modern arms
+    focus = {
+        id = resg_modern_arms
+        icon = GFX_goal_RES_Green_Laser
+        cost = 30
+        x = -1
+        y = 1
+        prerequisite = {
+            focus = resg_army_with_spirit
+            focus = resg_limited_expansion
+        }
+        relative_position_id = resg_limited_expansion
+        completion_reward = {
+        	RES = {
+        		add_research_slot = 1
+                add_equipment_to_stockpile = {
+                    type = energy_equipment_3
+                    amount = 2500
+                    producer = USA
+                }
+            }
+        }
+    }
+
+    ### Right side of the tree ###
+    focus = {
+        id = resg_dismantle_cult
+        icon = GFX_goal_RES_Green_Clark_Book
+        cost = 30
+        x = 4
+        y = 1
+        prerequisite = {
+            focus = resg_going_green
+        }
+        relative_position_id = resg_going_green
+        completion_reward = {
+            add_stability = 0.1
+        }
+    }
+
+    # exile rhomb
+    focus = {
+        id = resg_exile_opposition
+        icon = GFX_goal_RES_Green_Leaving
+        cost = 30
+        x = -1
+        y = 1
+        prerequisite = {
+            focus = resg_dismantle_cult
+        }
+        relative_position_id = resg_dismantle_cult
+        completion_reward = {
+            country_event = {
+                id = nf_events_green_res.3
+            }
+        }
+    }
+    focus = {
+        id = resg_sgt_hank
+        icon = GFX_goal_RES_Green_Hank
+        cost = 30
+        x = -1
+        y = 1
+        prerequisite = {
+            focus = resg_exile_opposition
+        }
+        relative_position_id = resg_exile_opposition
+        completion_reward = {
+            country_event = {
+                id = nf_events_green_res.4
+            }
+        }
+    }
+    focus = {
+        id = resg_owe_up
+        icon = GFX_goal_RES_Green_Podium
+        cost = 30
+        x = 1
+        y = 1
+        prerequisite = {
+            focus = resg_exile_opposition
+        }
+        relative_position_id = resg_exile_opposition
+        completion_reward = {
+            # popularities
+        }
+    }
+    focus = {
+        id = resg_close_mines
+        icon = GFX_goal_RES_Green_Sun_Slave
+        cost = 30
+        x = 0
+        y = 2
+        prerequisite = {
+            focus = resg_sgt_hank
+        }
+        prerequisite = {
+            focus = resg_owe_up
+        }
+        relative_position_id = resg_exile_opposition
+        completion_reward = {
+            custom_effect_tooltip = resg_remove_sub_level_2_tt
+            hidden_effect = {
+                set_variable = { res_sub_level_2_manpower_var = 0 }
+                add_to_variable = { res_sub_level_2_factory_efficiency_var = -0.1 }
+                add_to_variable = { res_sub_level_2_factory_output_var = -0.05 }
+            }
+            # Old Effect
+            # remove_dynamic_modifier = { modifier = res_sub_level_2_dynamic_modifier }
+            add_tech_bonus = {
+                bonus = 1
+                uses = 2
+                ahead_reduction = 1
+                category = tool_tech
+                category = industry_specialisation_category
+            }
+        }
+    }
+
+    # end experimentation
+    focus = {
+        id = resg_end_human_experimentation
+        icon = GFX_goal_RES_Green_Break_and_Free
+        cost = 30
+        x = 1
+        y = 1
+        prerequisite = {
+            focus = resg_dismantle_cult
+        }
+        relative_position_id = resg_dismantle_cult
+        completion_reward = {
+            # event
+            add_stability = 0.1
+            add_tech_bonus = {
+                bonus = 0.5
+                uses = 1
+                category = electronics
+            }
+            add_tech_bonus = {
+                bonus = 0.5
+                uses = 1
+                category = industry
+            }
+            add_tech_bonus = {
+                bonus = 0.5
+                uses = 1
+                category = support_tech_category
+            }
+        }
+    }
+
+    # convince born ghouls
+    focus = {
+        id = resg_convince_born
+        icon = GFX_goal_RES_Green_Newborns
+        cost = 30
+        x = 0
+        y = 2
+        prerequisite = {
+            focus = resg_end_human_experimentation
+        }
+        relative_position_id = resg_end_human_experimentation
+        completion_reward = {
+            add_stability = 0.25
+
+            add_popularity = {
+                ideology = elites
+                popularity = 0.1
+            }
+        }
+    }
+
+    # grant limited freedoms
+    focus = {
+        id = resg_grant_freedoms
+        icon = GFX_goal_RES_Green_Collar_Bird
+        cost = 30
+        x = 1
+        y = 1
+        prerequisite = {
+            focus = resg_close_mines
+        }
+        prerequisite = {
+            focus = resg_convince_born
+        }
+        relative_position_id = resg_close_mines
+        completion_reward = {
+            every_owned_state = {
+                set_temp_variable = { pop_add = 2000 }
+				add_state_population_no_state_name = yes
+            }
+            add_political_power = 100
+        }
+    }
+
+    # old world knowledge
+    focus = {
+        id = resg_old_world_knowledge
+        icon = GFX_goal_RES_Green_Science
+        cost = 30
+        x = 4
+        y = 2
+        prerequisite = {
+            focus = resg_end_human_experimentation
+        }
+        relative_position_id = resg_end_human_experimentation
+        completion_reward = {
+            add_ideas = resg_old_world_knowledge_idea
+        }
+    }
+    focus = {
+        id = resg_boulder
+        icon = GFX_goal_RES_Green_Science_Boulder
+        cost = 30
+        x = -3
+        y = 1
+        available = {
+            OR = {
+                owns_state = 568
+                568 = {
+                    OWNER = {
+                        is_ally_with = RES
+                        custom_trigger_tooltip = {
+                            tooltip = resg_is_ally_with_tooltip_workaround_tt	# The autogenned tooltip for is_ally_with doesnt skip to the next line properly
+                            always = yes
+                        }
+                    }
+                }
+            }
+        }
+        prerequisite = {
+            focus = resg_old_world_knowledge
+        }
+        relative_position_id = resg_old_world_knowledge
+        completion_reward = {
+            add_tech_bonus = {
+                bonus = 1
+                ahead_reduction = 1
+                uses = 1
+                category = support_tech_category
+            }
+		    set_technology = {
+		    	implant_tech_access_tech = 1
+		    	implant_rejection_therapy_tech = 1
+		    	implant_neural_interface_tech = 1
+		    	implant_signal_translation_tech = 1
+		    	implant_safety_regulation_tech = 1
+		    	implant_shock_absorbers_equipment_tech = 1
+		    }
+    	}
+    }
+    focus = {
+        id = resg_hoover
+        icon = GFX_goal_RES_Green_Science_Hoover
+        cost = 30
+        x = -1
+        y = 1
+        available = {
+            OR = {
+                owns_state = 252
+                252 = {
+                    OWNER = {
+                        is_ally_with = RES
+                        custom_trigger_tooltip = {
+                            tooltip = resg_is_ally_with_tooltip_workaround_tt	# The autogenned tooltip for is_ally_with doesnt skip to the next line properly
+                            always = yes
+                        }
+                    }
+                }
+            }
+        }
+        prerequisite = {
+            focus = resg_old_world_knowledge
+        }
+        relative_position_id = resg_old_world_knowledge
+        select_effect = {
+            252 = {
+                for_each_loop = {
+                    array = dam_turbine_primary
+                    if = {
+                        limit = { check_variable = { v = 0 } }
+                        set_variable = { dam_turbine_primary^i = 1 }
+                        set_temp_variable = { break = 1 }
+                    }
+                }
+                for_each_loop = {
+                    array = dam_turbine_primary
+                    if = {
+                        limit = { check_variable = { v = 0 } }
+                        set_variable = { dam_turbine_primary^i = 1 }
+                        set_temp_variable = { break = 1 }
+                    }
+                }
+            }
+        }
+        completion_reward = {
+            custom_effect_tooltip = resg_hoover_tt #TODO
+            252 = {
+                for_each_loop = {
+                    array = dam_turbine_primary
+                    if = {
+                        limit = { check_variable = { v = 1 } }
+                        set_variable = { dam_turbine_primary^i = 2 }
+                        set_temp_variable = { break = 1 }
+                    }
+                }
+                for_each_loop = {
+                    array = dam_turbine_primary
+                    if = {
+                        limit = { check_variable = { v = 1 } }
+                        set_variable = { dam_turbine_primary^i = 2 }
+                        set_temp_variable = { break = 1 }
+                    }
+                }
+                add_resource = {
+                    type = energy
+                    amount = 40
+                }
+            }
+        }
+    }
+    focus = {
+        id = resg_paradise
+        icon = GFX_goal_RES_Green_Science_Paradise
+        cost = 30
+        x = 1
+        y = 1
+        available = {
+            TTM = {
+                all_core_land_owned_by_prev_sphere = yes
+            }
+        }
+        prerequisite = {
+            focus = resg_old_world_knowledge
+        }
+        relative_position_id = resg_old_world_knowledge
+        completion_reward = {
+        	CES = {
+        		add_to_variable = { geck_count = 1 }
+        	}
+            custom_effect_tooltip = res_geck_tt
+            every_core_state = {
+            	add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+        }
+    }
+    focus = {
+        id = resg_satellite
+        icon = GFX_goal_RES_Green_Science_Satellite
+        cost = 30
+        x = 3
+        y = 1
+        available = {
+            OR = {
+                HRO = {
+                    all_core_land_owned_by_prev_sphere = yes
+                }
+            }
+        }
+        prerequisite = {
+            focus = resg_old_world_knowledge
+        }
+        relative_position_id = resg_old_world_knowledge
+        completion_reward = {
+            add_ideas = ach_houston_secrets_2_recon
+        }
+    }
+}

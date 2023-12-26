@@ -1,0 +1,34 @@
+state = {
+	id = 21
+	name = "STATE_21"
+	resources={
+		energy=4.000
+		metal=12.000
+	}
+
+	history={
+		victory_points = {
+			3644 25
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 3
+			arms_factory = 2
+			dockyard = 1
+			air_base = 1
+			3644 = {
+				naval_base = 8
+
+			}
+
+		}
+
+	}
+
+	provinces={
+		1526 1961 3644 3670 3674 3675 7208 9261 9263
+	}
+	manpower=20500
+	buildings_max_level_factor=1.000
+	state_category=metropolis
+}

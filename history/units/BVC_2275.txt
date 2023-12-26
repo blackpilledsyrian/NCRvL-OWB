@@ -1,0 +1,185 @@
+﻿division_template = {
+	name = "Combatientes Locales"
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Bandidos Armados"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 2 y = 0 }
+	}
+}
+units = {
+	division = {
+		name = "Bandidos de Ensenada"
+		location = 823
+		division_template = "Bandidos Armados"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Bandidos de Tijuana"
+		location = 4817
+		division_template = "Bandidos Armados"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Bandidos de Bahi"
+		location = 4659
+		division_template = "Bandidos Armados"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Bandidos de Rosalia"
+		location = 4670
+		division_template = "Bandidos Armados"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Bandidos de Puertecitos"
+		location = 9077
+		division_template = "Bandidos Armados"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Bandidos de La Yaqui"
+		location = 4677
+		division_template = "Bandidos Armados"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Bandidos de Guaycura"
+		location = 4687
+		division_template = "Bandidos Armados"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Bandidos de El Marron"
+		location = 782
+		division_template = "Bandidos Armados"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Bandidos de Mexicali"
+		location = 4640
+		division_template = "Bandidos Armados"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Bandidos de Cirios"
+		location = 4655
+		division_template = "Bandidos Armados"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Bandidos de Los Algodones"
+		location = 5789
+		division_template = "Bandidos Armados"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Bandidos de Ocotillo"
+		location = 4642
+		division_template = "Bandidos Armados"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Bandidos de La Paz"
+		location = 4689
+		division_template = "Bandidos Armados"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Guardia de Guarez"
+		location = 4694
+		division_template = "Bandidos Armados"
+		start_experience_factor = 1
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Guardia de Pancho Villa"
+		location = 4818
+		division_template = "Bandidos Armados"
+		start_experience_factor = 1
+		start_equipment_factor = 1
+	}
+}
+
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_1
+			creator = "BVC"
+		}
+		requested_factories = 4
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = bike_equipment_1
+			creator = "BVC"
+		}
+		requested_factories = 3
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = demolitions_equipment_1
+			creator = "BVC"
+		}
+		requested_factories = 2
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = fireteam_equipment_1
+			creator = "BVC"
+		}
+		requested_factories = 2
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "BVC"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = supply_equipment_1
+			creator = "BVC"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+}

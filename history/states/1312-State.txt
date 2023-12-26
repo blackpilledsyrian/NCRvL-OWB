@@ -1,0 +1,24 @@
+state = {
+	id = 1312
+	name = "STATE_1312"
+	manpower = 1012
+	state_category = shanty
+
+	resources = {
+		water = 5
+		circuitry = 5
+	}
+
+	history = {
+		victory_points = {
+			15077 5
+		}
+		buildings = {
+			infrastructure = 3
+		}
+	}
+
+	provinces = {
+		15069 15076 15077 15078 15079 15080 15089 15090
+	}
+}

@@ -1,0 +1,22 @@
+state={
+	id=1261
+	name="STATE_1261"
+	resources = {
+		metal = 4
+	}
+	provinces={
+		14414 14415 14418 14419 14424 14425 14426 14428
+	}
+	history={
+		victory_points = {
+			14419 5
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+		}
+	}
+	state_category = pastoral
+	manpower = 212
+	buildings_max_level_factor=1.000
+}

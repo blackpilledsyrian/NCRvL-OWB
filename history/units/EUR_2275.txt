@@ -1,0 +1,198 @@
+﻿division_template = {
+	name = "Portmasters"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+}
+division_template = {
+	name = "Eureka Motorgangers"
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 2 y = 0 }
+	}
+}
+division_template = {
+	name = "True Fishermen"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+	}
+	support = {
+		recon_company = { x = 0 y = 0 }
+		dog_company = { x = 1 y = 0 }
+		fireteam_support = { x = 2 y = 0 }
+	}
+}
+division_template = {
+	name = "Metalbreakers"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+	}
+	support = {
+		demolitions_support = { x = 0 y = 0 }
+		anti_tank_company = { x = 1 y = 0 }
+	}
+}
+division_template = {
+	name = "Regulators"
+	regiments = {
+		spec_ops = { x = 0 y = 0 }
+		spec_ops = { x = 0 y = 1 }
+		spec_ops = { x = 0 y = 2 }
+		spec_ops = { x = 1 y = 0 }
+		spec_ops = { x = 1 y = 1 }
+		spec_ops = { x = 1 y = 2 }
+		spec_ops = { x = 2 y = 0 }
+		spec_ops = { x = 2 y = 1 }
+		spec_ops = { x = 2 y = 2 }
+		spec_ops = { x = 3 y = 0 }
+	}
+	support = {
+		anti_tank_company = { x = 0 y = 0 }
+		demolitions_support = { x = 1 y = 0 }
+	}
+}
+division_template = {
+	name = "Enclave Auxiliaries"
+	template_counter= 73
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+	}
+	support = {
+		demolitions_support = { x = 0 y = 0 }
+		medical_chem_company = { x = 1 y = 0 }
+	}
+}
+division_template = {
+	name = "Rapid Response Division"
+	template_counter= 90
+	regiments = {
+		power_armour = { x = 0 y = 0 }
+		power_armour = { x = 0 y = 1 }
+		power_armour = { x = 0 y = 2 }
+		power_armour = { x = 1 y = 0 }
+		power_armour = { x = 1 y = 1 }
+		power_armour = { x = 1 y = 2 }
+		power_armour = { x = 2 y = 0 }
+		power_armour = { x = 2 y = 1 }
+	}
+	support = {
+		demolitions_support = { x = 0 y = 0 }
+		medical_chem_company = { x = 1 y = 0 }
+	}
+}
+
+# division_template = {
+	# name = "Mech Test"
+	# regiments = {
+		# motorized = { x = 0 y = 0 }
+	# }
+# }
+# division_template = {
+	# name = "Robot Test"
+	# regiments = {
+		# light_robot = { x = 0 y = 0 }
+	# }
+# }
+# division_template = {
+	# name = "Tank Test"
+	# regiments = {
+		# medium_armor = { x = 0 y = 0 }
+	# }
+# }
+
+units = {
+	division = {
+		name = "Boneyard's Best"
+		location = 1191
+		division_template = "Regulators"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Humboldters"
+		location = 1191
+		division_template = "Regulators"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Sourpuss Division"
+		location = 1191
+		division_template = "Portmasters"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "The Old Portmasters"
+		location = 1191
+		division_template = "Portmasters"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Enclave Remnants"
+		location = 2065
+		division_template = "Rapid Response Division"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1
+		force_equipment_variants = {
+            energy_equipment_2 = { owner = "USA" }
+            enclave_power_armour_equipment_1 = { owner = "USA" }
+            explosive_demolitions_equipment_2 = { owner = "USA" }
+        }
+	}
+	division = {
+		name = "Enclave Remnants"
+		location = 2065
+		division_template = "Rapid Response Division"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1
+		force_equipment_variants = {
+            energy_equipment_2 = { owner = "USA" }
+            enclave_power_armour_equipment_1 = { owner = "USA" }
+            explosive_demolitions_equipment_2 = { owner = "USA" }
+        }
+	}
+}
+
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = ballistic_equipment_1
+			creator = "EUR"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+}

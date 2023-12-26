@@ -1,0 +1,28 @@
+state = {
+	id = 250
+	name = "STATE_250"
+	manpower = 16546
+	state_category = large_town
+
+	resources = {
+		water = 6
+		energy = 3
+		composites = 7
+	}
+
+	history = {
+		victory_points = {
+			239 5
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 2
+			industrial_complex = 1
+			3754 = { naval_base = 2 }
+		}
+	}
+
+	provinces = {
+		239 2482 3694 3700 3701 3754 3970 3971 7268 7431
+	}
+}
