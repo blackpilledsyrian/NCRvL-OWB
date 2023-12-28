@@ -1,0 +1,260 @@
+ideas = {
+	country = {
+		WHT_legion_training_idea = {
+			picture = legion_crucifixion
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.05
+				supply_consumption_factor = -0.05
+				experience_gain_army_unit_factor = 0.05
+			}
+		}
+		WHT_tenant_farmers = {
+			picture = generic_food_good
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.1
+				country_resource_water = 10
+			}
+		}
+		WHT_savages = {
+			picture = savage_idea
+			allowed = {
+				always = no
+			}
+			modifier = {
+				breakthrough_factor = 0.05
+				equipment_capture_factor = 0.5
+				boost_resistance_factor = 0.25
+				required_garrison_factor = -0.25
+				resistance_damage_to_garrison = -0.2
+				civilian_intel_to_others = 10
+				navy_intel_to_others = 10
+				army_intel_to_others = 10
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			research_bonus = {
+				electronics = -0.2
+				industry = -0.2
+			}
+		}
+		WHT_savages2 = {
+			picture = savage_idea
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			research_bonus = {
+				electronics = -0.2
+				industry = -0.2
+			}
+			modifier = {
+				breakthrough_factor = 0.05
+				modifier_army_sub_unit_dog_infantry_attack_factor = 0.1
+				modifier_army_sub_unit_dog_infantry_max_org_factor = 0.1
+				boost_resistance_factor = 0.25
+				required_garrison_factor = -0.25
+				resistance_damage_to_garrison = -0.2
+				civilian_intel_to_others = 10
+				navy_intel_to_others = 10
+				army_intel_to_others = 10
+			}
+		}
+		WHT_widespread_illiteracy = {
+			picture = generic_illiteracy
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.1
+				research_speed_factor = -0.15
+				trade_opinion_factor = -0.2
+			}
+		}
+		WHT_limited_literacy = {
+			picture = generic_illiteracy
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = -0.05
+				trade_opinion_factor = -0.1
+			}
+		}
+		white_legs_strength = {
+			picture = generic_morale_bonus
+			allowed = {
+				has_war = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.075
+				surrender_limit = 0.05				#Super high surrender limit modifiers aren't fun for the attacking country
+			}
+		}
+		white_legs_cunning = {
+			picture = generic_morale_bonus
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				training_time_army_factor = -0.05
+				planning_speed = 0.15
+				army_speed_factor = 0.05
+			}
+		}
+		WHT_standing_army = {
+			picture = generic_research_bonus
+			allowed = {
+				is_raider_nation_allowed_block = yes
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				conscription = 0.04
+			}
+		}
+		nice_legs = {
+			picture = generic_morale_bonus
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				resistance_damage_to_garrison = -0.1
+				supply_consumption_factor = -0.05
+			}
+		}
+		god_of_sky = {
+			picture = generic_religion
+			removal_cost = -1
+			modifier = {
+				army_morale_factor = 0.05
+				army_attack_factor = 0.05
+			}
+		}
+		WHT_settling_down = {
+			picture = VEG_Potential_Coup
+			removal_cost = -1
+			modifier = {
+				production_factory_max_efficiency_factor = 0.03
+				line_change_production_efficiency_factor = 0.05
+				monthly_population = 0.25
+			}
+		}
+		wht_leg_ferocity = {
+			picture = VEG_Potential_Coup
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			targeted_modifier = {
+				tag = NCN
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+		}
+		wht_leg_ferocity_alt = {
+			picture = VEG_Potential_Coup
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			targeted_modifier = {
+				tag = BRI
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+			targeted_modifier = {
+				tag = FAR
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+		}
+		pain_makers = {
+			picture = generic_research_bonus
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				supply_consumption_factor = -0.1
+				army_speed_factor = 0.05
+			}
+		}
+		brahmin_horn_formation = {
+			picture = brahmin_baron
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.05
+				army_defence_factor = 0.1
+			}
+		}
+		WHT_mormon_soldiers_idea = {
+			picture = ncn_way_of_the_canaanite
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				mobilization_speed = 0.15
+				research_speed_factor = 0.05
+			}
+		}
+		wht_caesar_lessons = {
+			picture = legion_recruitment_drive
+			allowed = {
+			}
+			removal_cost = -1
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+			}
+			modifier = {
+				training_time_army_factor = -0.075
+			}
+		}
+		god_of_salt = {
+			picture = generic_manpower_bonus
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				heat_attrition_factor = -0.05
+				winter_attrition_factor = -0.05
+				consumer_goods_expected_value = -0.05
+			}
+		}
+		god_of_the_lake = {
+			picture = generic_religion
+			allowed = {
+				NCN = {
+					exists = yes
+				}
+			}
+			removal_cost = -1
+			targeted_modifier = {
+				tag = NCN
+				attack_bonus_against = 0.05
+				defense_bonus_against = 0.05
+			}
+		}
+	}
+}
