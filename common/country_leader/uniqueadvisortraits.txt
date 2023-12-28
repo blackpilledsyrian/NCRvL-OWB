@@ -876,6 +876,8 @@ leader_traits = {
 		random = no
 		stability_factor = -0.05
 		political_power_factor = -0.03
+		local_resources_factor = 0.15
+		industrial_capacity_factory = 0.05
 		custom_modifier_tooltip = advisor_cant_be_removed_tt
 	}
 	vlt_brain_renewal_teacher = {
