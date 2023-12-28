@@ -1,0 +1,29 @@
+state = {
+	id = 336
+	name = "STATE_336"
+	manpower = 4100
+	state_category = megalopolis
+
+	resources = {
+		water = 4
+		metal = 8
+	}
+
+	history = {
+		owner = VLT
+		add_core_of = VLT
+		victory_points = {
+			2695 10
+		}
+		buildings = {
+			arms_factory = 2
+			industrial_complex = 3
+			infrastructure = 3
+			2695 = { bunker = 2 }
+		}
+	}
+
+	provinces = {
+		2670 2673 2691 2693 2695 2699 2700 2703 2710 2711 3592
+	}
+}

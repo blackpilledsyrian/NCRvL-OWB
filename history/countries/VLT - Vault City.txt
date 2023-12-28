@@ -109,8 +109,8 @@ add_ideas = {
 #Gecko Power Plant Setup
 
 set_variable = { vlt_gecko_power_var = 15 }
-set_variable = { vlt_gecko_manpower_var = -1 }
-set_variable = { vlt_gecko_construction_var = -1 }
+set_variable = { vlt_gecko_manpower_var = 0 }
+set_variable = { vlt_gecko_construction_var = 0 }
 
 339 = {
 	add_dynamic_modifier = { modifier = vlt_gecko_powerplant }
