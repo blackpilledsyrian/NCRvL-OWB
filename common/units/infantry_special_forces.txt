@@ -187,7 +187,7 @@ sub_units = {
 			category_fireteams
 		}
 
-		combat_width = 2
+		combat_width = 1.5
 
 		# Size Definitions
 		max_strength = 40
@@ -275,7 +275,7 @@ sub_units = {
 			category_anti_tank
 		}
 
-		combat_width = 2
+		combat_width = 1.5
 
 		# Size Definitions
 		max_strength = 40
@@ -363,7 +363,7 @@ sub_units = {
 			category_demolitions
 		}
 
-		combat_width = 2
+		combat_width = 1.5
 
 		# Size Definitions
 		max_strength = 40

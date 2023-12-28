@@ -343,7 +343,7 @@
   ncr_oregon_conquest_desc:0 "While the Mojave's riches are secured, the Republic will need a new frontier to feed our growing people. Oregon's cannibals and mutants are a threat and occupy fertile, rich land. Why not save the Wasteland by securing it?"
   ncr_oregon_conquest_tt:0 "The Republic will gain claims on all of Oregon not in its faction."
   ncr_vlt_taxation:0 "Taxation, Not Tyranny"
-  ncr_vlt_taxation_desc:0 "Vault City, Arroyo, the Shi. All three have stayed hidden behind their little walls all their lives, while ignoring the NCR being right besides their doors. But I'm not a tyrant, despite what some people claim. Let's see if the three of them can come to understand how NCR taxes work..."
+  ncr_vlt_taxation_desc:0 "Vault City and Arroyo have stayed hidden behind their little walls all their lives, while ignoring the cannibals in their backyard. But I'm not a tyrant, despite what some people claim. I'll let them clean out these pests in the north then tax the settlers who move there instead. Let's see if Oregon can come to understand how NCR taxes work..."
   ncr_vlt_conquest_tt:0 "If Vault City does not exist, you will get a wargoal to free the city -- once you've dealt with the  §R[CES.GetNameWithFlag]§!, anyway."
   NCR_cult_renewal:0 "The Cult of Renewal"
   NCR_cult_renewal_desc:0 "A Gecko religion that promises salvation to all ghoulkind has spread among our citizens. More and more of them have travelled to Gecko, seeking salvation. An annoyance, but useful for encouraging the growth of sophisticated industries in that little town."

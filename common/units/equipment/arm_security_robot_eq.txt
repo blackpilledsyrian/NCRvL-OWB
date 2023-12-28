@@ -57,28 +57,28 @@ equipments = {
 		is_convertable = yes
 
 		#Misc Abilities
-		maximum_speed = 5.5
-		reliability = 0.8
+		maximum_speed = 6
+		reliability = 0.85
 
 		#Defensive Abilities
-		defense = 14
-		breakthrough = 5.5
-		hardness = 0.45
-		armor_value = 30
+		defense = 15
+		breakthrough = 10
+		hardness = 0.5
+		armor_value = 35
 		suppression = 1.5
 
 		fuel_consumption = 0.4
 
 		#Offensive Abilities
-		soft_attack = 10
-		hard_attack = 10
-		ap_attack = 20
-		air_attack = 1.5
+		soft_attack = 12.5
+		hard_attack = 12.5
+		ap_attack = 30
+		air_attack = 3
 
 		#Space taken in convoy
 		lend_lease_cost = 10
 
-		build_cost_ic = 24.5
+		build_cost_ic = 20
 		resources = {
 			metal = 2
 			composites = 1

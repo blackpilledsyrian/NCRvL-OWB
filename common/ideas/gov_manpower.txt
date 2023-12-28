@@ -93,14 +93,6 @@ ideas = {
 				}
 			}
 			available = {
-				OR = {
-					AND = {
-						has_war = yes
-						enemies_strength_ratio > 0.15
-					}
-					is_major = no
-					date > 2276.1.1
-				}
 				NOT = { has_idea = isolation }
 			}
 			visible = {
@@ -143,17 +135,6 @@ ideas = {
 				}
 			}
 			available = {
-				OR = {
-					AND = {
-						has_war = yes
-						enemies_strength_ratio > 0.2
-					}
-					AND = {
-						is_major = no
-						has_war = yes
-					}
-					date > 2278.1.1
-				}
 				NOT = { has_idea = isolation }
 			}
 			visible = {
@@ -196,17 +177,6 @@ ideas = {
 				}
 			}
 			available = {
-				OR = {
-					AND = {
-						has_war = yes
-						enemies_strength_ratio > 0.3
-					}
-					AND = {
-						is_major = no
-						has_war = yes
-					}
-					date > 2280.1.1
-				}
 				NOT = { has_idea = isolation }
 			}
 			visible = {
@@ -249,17 +219,6 @@ ideas = {
 				}
 			}
 			available = {
-				OR = {
-					AND = {
-						has_war = yes
-						enemies_strength_ratio > 0.4
-					}
-					AND = {
-						is_major = no
-						has_war = yes
-					}
-					date > 2282.1.1
-				}
 				NOT = { has_idea = isolation }
 			}
 			visible = {
@@ -310,15 +269,6 @@ ideas = {
 				}
 			}
 			available = {
-				has_war = yes
-				OR = {
-					AND = {
-						is_major = no
-						enemies_strength_ratio > 0.5
-					}
-					enemies_strength_ratio > 0.8
-					date > 2285.1.1
-				}
 				NOT = { has_idea = isolation }
 			}
 			visible = {
@@ -491,10 +441,10 @@ ideas = {
 					is_major = no
 				}
 				OR = {
-					num_of_controlled_states > 18
+					num_of_controlled_states > 14
 					AND = {
 						is_major = no
-						num_of_controlled_states > 9
+						num_of_controlled_states > 8
 					}
 				}
 			}
@@ -534,10 +484,10 @@ ideas = {
 					is_major = no
 				}
 				OR = {
-					num_of_controlled_states > 30
+					num_of_controlled_states > 15
 					AND = {
 						is_major = no
-						num_of_controlled_states > 15
+						num_of_controlled_states > 12
 					}
 				}
 			}
@@ -622,14 +572,6 @@ ideas = {
 			level = 3
 			picture = adelitas_militias
 			available = {
-				OR = {
-					AND = {
-						has_war = yes
-						enemies_strength_ratio > 0.2
-					}
-					is_major = no
-					date > 2278.1.1
-				}
 			}
 			allowed = {
 				is_mexican_nation_allowed_block = yes
@@ -668,14 +610,6 @@ ideas = {
 			level = 2
 			picture = standing_garrisons
 			available = {
-				OR = {
-					AND = {
-						has_war = yes
-						enemies_strength_ratio > 0.3
-					}
-					is_major = no
-					date > 2280.1.1
-				}
 			}
 			allowed = {
 				is_mexican_nation_allowed_block = yes
@@ -716,18 +650,6 @@ ideas = {
 				has_unique_manpower_law = no
 			}
 			available = {
-				has_war = yes
-				OR = {
-					AND = {
-						is_major = no
-						enemies_strength_ratio > 0.4
-					}
-					AND = {
-						is_major = yes
-						enemies_strength_ratio > 0.8
-					}
-					date > 2280.1.1
-				}
 			}
 			ai_will_do = {
 				base = 5
@@ -827,7 +749,6 @@ ideas = {
 				has_regional_or_cultural_manpower_law = no
 			}
 			available = {
-				has_war = yes
 			}
 			ai_will_do = {
 				factor = 20
@@ -868,11 +789,6 @@ ideas = {
 				}
 			}
 			available = {
-				has_war = yes
-				OR = {
-					enemies_strength_ratio > 0.3
-					is_major = no
-				}
 			}
 			modifier = {
 				conscription = 0.15
@@ -895,8 +811,6 @@ ideas = {
 				has_regional_or_cultural_manpower_law = no
 			}
 			available = {
-				has_war = yes
-				enemies_strength_ratio > 0.6
 			}
 			ai_will_do = {
 				factor = 10
@@ -963,7 +877,6 @@ ideas = {
 				}
 			}
 			available = {
-				has_war = yes
 			}
 			ai_will_do = {
 				factor = 1
@@ -1001,8 +914,6 @@ ideas = {
 				}
 			}
 			available = {
-				has_war = yes
-				enemies_strength_ratio > 0.30
 			}
 			ai_will_do = {
 				factor = 40
@@ -1042,8 +953,6 @@ ideas = {
 				}
 			}
 			available = {
-				has_war = yes
-				enemies_strength_ratio > 0.60
 			}
 			ai_will_do = {
 				factor = 80
@@ -1081,8 +990,6 @@ ideas = {
 				}
 			}
 			available = {
-				has_war = yes
-				enemies_strength_ratio > 0.90
 			}
 			ai_will_do = {
 				factor = 120
@@ -1601,6 +1508,7 @@ ideas = {
 			}
 			modifier = {
 				conscription = 0.1
+				special_forces_cap = 0.05
 				stability_factor = 0.1
 			}
 			cancel_if_invalid = no

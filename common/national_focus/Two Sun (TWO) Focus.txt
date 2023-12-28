@@ -804,11 +804,6 @@ focus_tree = {
 		available = {
 			has_completed_focus = two_track_two_1
 		}
-		bypass = {
-			hidden_trigger = {
-				is_ai = yes
-			}
-		}
 		completion_reward = {
 			hidden_effect = {
 				add_to_variable = { TWO.tracks_building = 0.05 }
@@ -826,11 +821,6 @@ focus_tree = {
 		relative_position_id = two_track_two_1
 		available = {
 			has_completed_focus = two_track_two_1
-		}
-		bypass = {
-			hidden_trigger = {
-				is_ai = yes
-			}
 		}
 		completion_reward = {
 			hidden_effect = {

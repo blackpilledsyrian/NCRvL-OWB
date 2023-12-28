@@ -7,7 +7,9 @@ ideas = {
             }
             modifier = {
                 conscription = 0.02
-                breakthrough_factor = 0.05
+                special_forces_cap = 0.05
+                special_forces_min = 40
+                breakthrough_factor = 0.1
                 research_speed_factor = -0.15
                 justify_war_goal_time = -0.5
                 custom_modifier_tooltip = cwb_luddite_crusade_tt

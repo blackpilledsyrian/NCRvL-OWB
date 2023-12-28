@@ -11,6 +11,7 @@ ideas = {
 			removal_cost = -1
 			modifier = {
 				special_forces_min = 100
+				special_forces_cap = 0.05
 				caps_flat_income_modifier = 5 #No node #Actually they indeed do have a node and did even when this was put in according to git blame... so I'm nerfing this from 20 to 5 @Tran
 				modifier_army_sub_unit_power_armour_attack_factor = 0.1
 				modifier_army_sub_unit_power_armour_speed_factor = 0.1

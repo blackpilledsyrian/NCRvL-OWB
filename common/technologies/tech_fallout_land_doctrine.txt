@@ -370,6 +370,9 @@ technologies = {
 		combat_robot = {
 			combat_width = -0.2
 		}
+		security_robot = {
+			combat_width = -0.2
+		}
 		land_reinforce_rate = 0.05
 		industrial_capacity_factory = 0.1
 

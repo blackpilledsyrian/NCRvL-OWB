@@ -42,8 +42,8 @@ division_template = {
 		police_infantry = { x = 3 y = 0 }
 		police_infantry = { x = 3 y = 1 }
 		police_infantry = { x = 3 y = 2 }
-		demolitions_infantry = { x = 4 y = 0 }
-		demolitions_infantry = { x = 4 y = 1 }
+		fireteam_infantry = { x = 4 y = 0 }
+		fireteam_infantry = { x = 4 y = 1 }
 	}
 	support = {
 		anti_tank_company = { x = 0 y = 0 }
