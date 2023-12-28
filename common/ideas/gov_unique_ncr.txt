@@ -570,14 +570,6 @@ ideas = {
 				original_tag = NCR
 			}
 			available = {
-				OR = {
-					AND = {
-						has_war = yes
-						enemies_strength_ratio > 0.15
-					}
-					is_major = no
-					date > 2276.1.1
-				}
 				NOT = { has_idea = ncr_war_exhausted_economy }
 			}
 			ai_will_do = {
@@ -606,17 +598,6 @@ ideas = {
 				original_tag = NCR
 			}
 			available = {
-				OR = {
-					AND = {
-						has_war = yes
-						enemies_strength_ratio > 0.2
-					}
-					AND = {
-						is_major = no
-						has_war = yes
-					}
-					date > 2278.1.1
-				}
 				NOT = { has_idea = ncr_war_exhausted_economy }
 			}
 			ai_will_do = {
@@ -645,17 +626,6 @@ ideas = {
 				original_tag = NCR
 			}
 			available = {
-				OR = {
-					AND = {
-						has_war = yes
-						enemies_strength_ratio > 0.3
-					}
-					AND = {
-						is_major = no
-						has_war = yes
-					}
-					date > 2280.1.1
-				}
 				NOT = { has_idea = ncr_war_exhausted_economy }
 			}
 			ai_will_do = {
@@ -692,18 +662,6 @@ ideas = {
 				original_tag = NCR
 			}
 			available = {
-				# uses_generic_manpower_laws = yes
-				OR = {
-					AND = {
-						has_war = yes
-						enemies_strength_ratio > 0.4
-					}
-					AND = {
-						is_major = no
-						has_war = yes
-					}
-					date > 2282.1.1
-				}
 				NOT = { has_idea = ncr_war_exhausted_economy }
 			}
 			ai_will_do = {
@@ -739,15 +697,6 @@ ideas = {
 				original_tag = NCR
 			}
 			available = {
-				has_war = yes
-				OR = {
-					AND = {
-						is_major = no
-						enemies_strength_ratio > 0.5
-					}
-					enemies_strength_ratio > 0.8
-					date > 2285.1.1
-				}
 				NOT = { has_idea = ncr_war_exhausted_economy }
 			}
 			ai_will_do = {

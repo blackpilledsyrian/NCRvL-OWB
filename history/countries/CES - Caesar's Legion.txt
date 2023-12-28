@@ -36,6 +36,7 @@ set_technology = {
 	electronics_tech_level_tribal = 1
 	air_tech_level_tribal = 1
 	naval_tech_level_tribal = 1
+	naval_tech_level_settler = 1
 	habitation_tech_level_tribal = 1
 	habitation_tech_level_settler = 1
 	tribal_tech_visibility_tech = 1

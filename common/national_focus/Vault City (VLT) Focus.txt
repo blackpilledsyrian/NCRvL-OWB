@@ -1352,7 +1352,6 @@ focus_tree = {
 			add_equipment_to_stockpile = { type = cnc_robot_equipment_2 amount = 100 producer = USA }
 			set_technology = {
 				robotics_tech_level_scientific = 1
-				sentinel_unit_tech = 1
 			}
 		}
 	}
@@ -1592,7 +1591,6 @@ focus_tree = {
 						is_core_of = CYC
 						is_core_of = PAL
 						is_core_of = SLN
-						is_core_of = VIP
 						is_core_of = CHE
 						is_core_of = SHO
 					}
@@ -1613,16 +1611,27 @@ focus_tree = {
 				transfer_troops = yes
 			}
 			annex_country = {
-				target = VIP
-				transfer_troops = yes
-			}
-			annex_country = {
 				target = CHE
 				transfer_troops = yes
 			}
 			annex_country = {
 				target = SHO
 				transfer_troops = yes
+			}
+			DES = {
+				every_state = {
+					limit = {
+						OR = {
+							is_core_of = VIP
+						}
+					}
+					set_state_flag = do_not_exodus
+					add_core_of = DES
+				}
+				annex_country = {
+					target = VIP
+					transfer_troops = yes
+				}
 			}
 		}
 		ai_will_do = {
@@ -1937,6 +1946,7 @@ focus_tree = {
 			set_technology = {
 				power_armour_tech_level_scientific = 1
 				texas_brotherhood_pa_tech = 1
+				sentinel_unit_tech = 1
 			}
 			add_tech_bonus = {
 				bonus = 0.4

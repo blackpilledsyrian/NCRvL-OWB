@@ -87,9 +87,9 @@ set_politics = {
 
 # Don't change these randomly, they're tied to the election variables
 set_popularities = {
-	people = 50
+	people = 0
 	elites = 0
-	intellectuals = 50
+	intellectuals = 100
 	ruler = 0
 }
 

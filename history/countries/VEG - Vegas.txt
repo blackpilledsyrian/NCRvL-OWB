@@ -147,6 +147,7 @@ recruit_character = VEG_michael_angelo
 recruit_character = VEG_marjorie
 recruit_character = VEG_victor
 recruit_character = VEG_arcade_gannon
+recruit_character = VEG_pdq88b_carlson
 
 random_character = {
 	limit = {

@@ -694,7 +694,7 @@ focus_tree = {
 	focus = {
 		id = ncr_mojave_affair
 		icon = GFX_goal_NCR_Mojave
-		cost = 30
+		cost = 7
 		x = 2
 		y = 11
 		available = {
@@ -714,7 +714,7 @@ focus_tree = {
 	focus = {
 		id = ncr_bolster_mojave_deps
 		icon = GFX_goal_NCR_Mojave_Redeploy
-		cost = 30
+		cost = 7
 		prerequisite = { focus = ncr_mojave_affair }
 		x = 0
 		y = 1
@@ -751,7 +751,7 @@ focus_tree = {
 	focus = {
 		id = ncr_send_direct_aid
 		icon = GFX_goal_NCR_phone
-		cost = 30
+		cost = 7
 		prerequisite = { focus = ncr_bolster_mojave_deps }
 		x = 0
 		y = 1
@@ -788,7 +788,7 @@ focus_tree = {
 	focus = {
 		id = ncr_research_for_expeditions
 		icon = GFX_goal_generic_data_focus
-		cost = 30
+		cost = 7
 		prerequisite = { focus = ncr_mojave_affair }
 		x = 2
 		y = 1
@@ -817,7 +817,7 @@ focus_tree = {
 	focus = {
 		id = ncr_advertise_to_people
 		icon = GFX_goal_NCR_Propaganda_3
-		cost = 30
+		cost = 7
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
 		prerequisite = { focus = ncr_research_for_expeditions }
 		x = 0
@@ -847,33 +847,9 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = ncr_federalise_mot
-		icon = GFX_goal_NCR_sweet_success
-		cost = 30
-		prerequisite = { focus = ncr_send_direct_aid }
-		prerequisite = { focus = ncr_advertise_to_people }
-		mutually_exclusive = {
-			focus = ncr_return_to_hoover
-		}
-		x = 2
-		y = 1
-		relative_position_id = ncr_send_direct_aid
-		available = {
-			OR = {
-				has_global_flag = fbhd_boulder_city_miracle_flag
-				has_global_flag = fbhd_mot_hold_dam
-			}
-			date > 2280.01.01
-			NOT = { has_country_flag = ncr_crisis }
-		}
-		completion_reward = {
-			MOT = { news_event = ncr_expansion.19 }
-		}
-	}
-	focus = {
 		id = ncr_lost_not_forgotten
 		icon = GFX_goal_NCR_Long_march
-		cost = 30
+		cost = 7
 		x = 6
 		y = 0
 		relative_position_id = ncr_mojave_affair
@@ -980,13 +956,13 @@ focus_tree = {
 	focus = {
 		id = ncr_lessons_from_desert
 		icon = GFX_goal_NCR_Petersonswar
-		cost = 30
+		cost = 7
 		prerequisite = { focus = ncr_lost_not_forgotten }
 		x = 0
 		y = 1
 		relative_position_id = ncr_lost_not_forgotten
 		available = {
-			NOT = { has_completed_focus = ncr_federalise_mot }
+			NOT = { has_completed_focus = ncr_mojave_affair }
 			NOT = { has_country_flag = ncr_crisis }
 		}
 		completion_reward = {
@@ -1009,13 +985,13 @@ focus_tree = {
 	focus = {
 		id = ncr_retool_rangers
 		icon = GFX_goal_NCR_Expand_Ranger_HQ
-		cost = 30
+		cost = 7
 		prerequisite = { focus = ncr_lessons_from_desert }
 		x = 0
 		y = 1
 		relative_position_id = ncr_lessons_from_desert
 		available = {
-			NOT = { has_completed_focus = ncr_federalise_mot }
+			NOT = { has_completed_focus = ncr_mojave_affair }
 			NOT = { has_country_flag = ncr_crisis }
 		}
 		completion_reward = {
@@ -1031,13 +1007,13 @@ focus_tree = {
 	focus = {
 		id = ncr_reorganise_mojave_remnants
 		icon = GFX_goal_NCR_Newgeneral
-		cost = 30
+		cost = 7
 		prerequisite = { focus = ncr_lost_not_forgotten }
 		x = -2
 		y = 1
 		relative_position_id = ncr_lost_not_forgotten
 		available = {
-			NOT = { has_completed_focus = ncr_federalise_mot }
+			NOT = { has_completed_focus = ncr_mojave_affair }
 			NOT = { has_country_flag = ncr_crisis }
 		}
 		completion_reward = {
@@ -1050,13 +1026,13 @@ focus_tree = {
 	focus = {
 		id = ncr_welcome_mojave_commanders
 		icon = GFX_goal_NCR_Mojavehero
-		cost = 30
+		cost = 7
 		prerequisite = { focus = ncr_reorganise_mojave_remnants }
 		x = 0
 		y = 1
 		relative_position_id = ncr_reorganise_mojave_remnants
 		available = {
-			NOT = { has_completed_focus = ncr_federalise_mot }
+			NOT = { has_completed_focus = ncr_mojave_affair }
 			NOT = { has_country_flag = ncr_crisis }
 		}
 		completion_reward = {
@@ -1074,422 +1050,24 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = ncr_return_to_hoover
-		icon = GFX_goal_ncr_power_armor2
-		cost = 30
-		search_filters = { FOCUS_FILTER_ANNEXATION }
-		prerequisite = { focus = ncr_retool_rangers }
-		prerequisite = { focus = ncr_welcome_mojave_commanders }
-		mutually_exclusive = {
-			focus = ncr_federalise_mot
-		}
-		x = 0
-		y = 1
-		relative_position_id = ncr_welcome_mojave_commanders
-		available = {
-			NOT = { has_completed_focus = ncr_federalise_mot }
-			NOT = { CES = { owns_state = 252 } }
-			OR = {
-				has_completed_focus = ncr_follower_advisor
-				has_completed_focus = ncr_back_in_business
-				AND = {
-					has_completed_focus = ncr_domestic_demand
-					has_completed_focus = ncr_promise_of_progress
-				}
-			}
-			date > 2280.01.01
-			NOT = { has_country_flag = ncr_crisis }
-		}
-		completion_reward = {
-			custom_effect_tooltip = ncr_return_to_hoover_tt
-			hidden_effect = {
-				every_state = {
-					limit = {
-						is_central_mojave_state = yes
-						NOT = { is_owned_by = NCR }
-					}
-					add_claim_by = NCR
-				}
-				every_other_country = {
-					limit = {
-						any_owned_state = { is_central_mojave_state = yes }
-						is_not_new_california_member = yes
-						NOT = { is_puppet_of = NCR }
-					}
-					NCR = {
-						create_wargoal = {
-							target = PREV
-							type = take_claimed_state
-						}
-					}
-				}
-			}
-		}
-	}
-	focus = {
-		id = ncr_shining_city_of_wastes
-		icon = GFX_goal_VEG_The_Lucky_38
-		cost = 30
-		prerequisite = {
-			focus = ncr_federalise_mot
-			focus = ncr_return_to_hoover
-		}
-		x = 0
-		y = 1
-		relative_position_id = ncr_federalise_mot
-		available = {
-			OR = {
-				controls_state = 380
-				controls_state = 613
-			}
-			NOT = { has_country_flag = ncr_crisis }
-		}
-		completion_reward = {
-			custom_effect_tooltip = ncr_shining_city_of_wastes_tt
-		}
-	}
-	focus = {
-		id = ncr_light_them_up
-		icon = GFX_goal_generic_light_poles
-		cost = 30
-		prerequisite = {
-			focus = ncr_federalise_mot
-			focus = ncr_return_to_hoover
-		}
-		x = -2
-		y = 1
-		available = {
-			NOT = {
-				MOT = {
-					has_completed_focus = mot_tools_left_behind
-				}
-			}
-		}
-		relative_position_id = ncr_federalise_mot
-		available = {
-			OR = {
-				controls_state = 380
-				controls_state = 613
-			}
-			NOT = { has_country_flag = ncr_crisis }
-		}
-		select_effect = {
-			252 = {
-				for_each_loop = {
-					array = dam_turbine_primary
-					if = {
-						limit = { check_variable = { v = 0 } }
-						set_variable = { dam_turbine_primary^i = 1 }
-						set_temp_variable = { break = 1 }
-					}
-				}
-				for_each_loop = {
-					array = dam_turbine_primary
-					if = {
-						limit = { check_variable = { v = 0 } }
-						set_variable = { dam_turbine_primary^i = 1 }
-						set_temp_variable = { break = 1 }
-					}
-				}
-			}
-		}
-		completion_reward = {
-			custom_effect_tooltip = mot_3_4_turbines_tt
-			252 = {
-				for_each_loop = {
-					array = dam_turbine_primary
-					if = {
-						limit = { check_variable = { v = 1 } }
-						set_variable = { dam_turbine_primary^i = 2 }
-						set_temp_variable = { break = 1 }
-					}
-				}
-				for_each_loop = {
-					array = dam_turbine_primary
-					if = {
-						limit = { check_variable = { v = 1 } }
-						set_variable = { dam_turbine_primary^i = 2 }
-						set_temp_variable = { break = 1 }
-					}
-				}
-
-				add_resource = {
-					type = energy
-					amount = 40
-				}
-			}
-			MOT = {
-				unlock_national_focus = mot_tools_left_behind
-			}
-		}
-	}
-
-	focus = {
-		id = ncr_reach_to_benny
-		icon = GFX_goal_VEG_Ring-a-Ding-Ding
-		cost = 30
-		prerequisite = { focus = ncr_shining_city_of_wastes }
-		mutually_exclusive = { focus = ncr_tolerate_autonomy_no_more }
-		x = -2
-		y = 1
-		relative_position_id = ncr_shining_city_of_wastes
-		available = {
-			OR = {
-				controls_state = 380
-				controls_state = 613
-			}
-			# Has built the railway
-			VEG = {
-				has_country_leader = { id = 10022 ruling_only = yes } #
-				is_in_faction = no
-				is_subject = no
-			}
-			NOT = { has_country_flag = ncr_crisis }
-		}
-		completion_reward = {
-			custom_effect_tooltip = ncr_reach_to_benny_tt
-			VEG = {
-				invite_to_new_california = yes
-			}
-
-
-		}
-	}
-	focus = {
-		id = ncr_tolerate_autonomy_no_more
-		icon = GFX_goal_VEG_War_for_Vegas
-		cost = 30
-		search_filters = { FOCUS_FILTER_ANNEXATION }
-		prerequisite = { focus = ncr_shining_city_of_wastes }
-		mutually_exclusive = { focus = ncr_reach_to_benny }
-		x = 0
-		y = 1
-		relative_position_id = ncr_shining_city_of_wastes
-		available = {
-			OR = {
-				controls_state = 380
-				controls_state = 613
-			}
-			NOT = { has_country_flag = ncr_crisis }
-			# Has built the railway
-		}
-		bypass = {
-			OR = {
-				has_war_with = VEG
-				VEG = { NCR = { sphere_controls_all_core_land_of_prev = yes } }
-			}
-		}
-		completion_reward = {
-			VEG = { ROOT = { grant_wargoals_on_core_states_of_prev = yes } }
-		}
-	}
-	focus = {
-		id = ncr_new_state_of_union
-		icon = GFX_goal_VEG_Aligning_the_Families
-		cost = 30
-		prerequisite = {
-			focus = ncr_reach_to_benny
-			focus = ncr_tolerate_autonomy_no_more
-		}
-		x = 1
-		y = 1
-		relative_position_id = ncr_reach_to_benny
-		available = {
-			VEG = { NCR = { sphere_controls_all_core_land_of_prev = yes } }
-			NOT = { has_country_flag = ncr_crisis }
-			# Has built hub in NV
-		}
-		completion_reward = {
-			custom_effect_tooltip = ncr_new_state_of_union_tt
-			VEG = { NCR = { core_all_core_states_of_prev = yes } }
-			every_state = {
-				limit = { is_central_mojave_state = yes }
-				add_core_of = NCR
-			}
-			hidden_effect = {
-				every_country = {
-					limit = {
-						OR = {
-							is_neighbor_of = NCR
-							is_neighbor_of = CES
-							news_is_west_tag = yes
-						}
-					}
-					news_event = { id = news_cali.15 hours = 6 random_hours = 3 }
-				}
-			}
-		}
-	}
-	focus = {
-		id = ncr_monster_across_colorado
-		icon = GFX_goal_NCR_Damassault
-		cost = 30
-		prerequisite = {
-			focus = ncr_federalise_mot
-			focus = ncr_return_to_hoover
-		}
-		x = 0
-		y = 1
-		relative_position_id = ncr_return_to_hoover
-		available = {
-			NOT = { has_country_flag = ncr_crisis }
-		}
-		bypass = {
-			OR = {
-				any_country_with_original_tag = {
-					original_tag_to_check = CES
-					has_war_with = NCR
-				}
-				all_country_with_original_tag = {
-					original_tag_to_check = CES
-					exists = no
-				}
-			}
-		}
-		completion_reward = {
-			custom_effect_tooltip = ncr_monster_across_colorado_tt
-			every_owned_state = {
-				limit = {
-					OR = {
-						region = 3
-						region = 32
-						state = 99
-						state = 147
-						state = 107
-						state = 4
-					}
-				}
-				add_building_construction = {
-					type = coastal_bunker
-					level = 2
-					province = {
-						all_provinces = yes
-						limit_to_naval_base = yes
-					}
-				}
-			}
-		}
-	}
-	focus = {
-		id = ncr_gearing_up_for_war
-		icon = GFX_goal_NCR_Standard_Weapons
-		cost = 30
-		prerequisite = {
-			focus = ncr_federalise_mot
-			focus = ncr_return_to_hoover
-		}
-		x = 2
-		y = 1
-		relative_position_id = ncr_return_to_hoover
-		available = {
-			NOT = { has_country_flag = ncr_crisis }
-		}
-		bypass = {
-			OR = {
-				any_country_with_original_tag = {
-					original_tag_to_check = CES
-					has_war_with = NCR
-				}
-				all_country_with_original_tag = {
-					original_tag_to_check = CES
-					exists = no
-				}
-			}
-		}
-		completion_reward = {
-			random_owned_state = {
-				limit = {
-					is_valid_state_for_civilian_factory = yes
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				limit = {
-					is_valid_state_for_civilian_factory = yes
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				limit = {
-					is_valid_state_for_civilian_factory = yes
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_owned_state = {
-				limit = {
-					is_valid_state_for_civilian_factory = yes
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-	}
-
-
-	focus = {
-		id = ncr_prepare_for_inevitable
-		icon = GFX_goal_lac_ncr
-		cost = 30
-		prerequisite = { focus = ncr_monster_across_colorado }
-		mutually_exclusive = { focus = ncr_back_foot }
-		x = 0
-		y = 1
-		relative_position_id = ncr_monster_across_colorado
-		available = {
-			NOT = { has_country_flag = ncr_crisis }
-		}
-		completion_reward = {
-			every_country = {
-				limit = {
-					original_tag = CES
-				}
-				NCR = {
-					add_intel = {
-						target = PREV
-						civilian_intel = 15
-						army_intel = 10
-						airforce_intel = 10
-						navy_intel = 15
-					}
-				}
-			}
-			add_tech_bonus = {
-				name = ncr_prepare_for_inevitable_tech_tt
-				category = infantry_weapons_tech_category
-				bonus = 1
-				uses = 2
-			}
-		}
-	}
-	focus = {
 		id = ncr_back_foot
 		icon = GFX_goal_CES_protect_the_bull
-		cost = 30
+		cost = 7
 		search_filters = { FOCUS_FILTER_ANNEXATION }
-		prerequisite = { focus = ncr_monster_across_colorado }
-		mutually_exclusive = { focus = ncr_prepare_for_inevitable }
-		x = 2
-		y = 1
-		relative_position_id = ncr_monster_across_colorado
+		available = {
+			date > 2079.9.15
+		}
+		prerequisite = {
+			focus = ncr_send_direct_aid
+			focus = ncr_retool_rangers
+		}
+		prerequisite = {
+			focus = ncr_welcome_mojave_commanders
+			focus = ncr_advertise_to_people
+		}
+		x = 0
+		y = 5
+		relative_position_id = ncr_artillery_only
 		will_lead_to_war_with = CES
 		available = {
 			NOT = { has_country_flag = ncr_crisis }
@@ -1505,30 +1083,6 @@ focus_tree = {
 					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
 				}
 			}
-		}
-	}
-	focus = {
-		id = ncr_arizona_rangers
-		icon = GFX_goal_NCR_Rangers_Lead_the_War
-		cost = 30
-		prerequisite = {
-			focus = ncr_prepare_for_inevitable
-			focus = ncr_back_foot
-		}
-		x = 1
-		y = 1
-		relative_position_id = ncr_prepare_for_inevitable
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = ncr_arizona_rangers_trig_tt
-				any_controlled_state = {
-					is_arizona_state = yes
-				}
-			}
-			NOT = { has_country_flag = ncr_crisis }
-		}
-		completion_reward = {
-			# TODO
 		}
 	}
 	########################### ##
@@ -1744,7 +1298,7 @@ focus_tree = {
 	focus = {
 		id = ncr_support_hayes
 		icon = GFX_goal_NCR_Hayes_Canditate
-		cost = 30
+		cost = 15
 		search_filters = { FOCUS_FILTER_INTERNAL_AFFAIRS }
 		available = {
 			NOT = { has_country_flag = ncr_crisis }
@@ -1767,7 +1321,7 @@ focus_tree = {
 	focus = {
 		id = ncr_judiciary_act
 		icon = GFX_goal_NCR_Hayes_Justice
-		cost = 30
+		cost = 15
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY }
 		available = {
 			NOT = { has_country_flag = ncr_crisis }
@@ -1786,7 +1340,7 @@ focus_tree = {
 	focus = {
 		id = ncr_schooling
 		icon = GFX_goal_NCR_Hayes_Reading
-		cost = 30
+		cost = 15
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY }
 		available = {
 			NOT = { has_country_flag = ncr_crisis }
@@ -1809,7 +1363,7 @@ focus_tree = {
 	focus = {
 		id = ncr_baseball_leagues
 		icon = GFX_goal_NCR_Hayes_Batter
-		cost = 30
+		cost = 15
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY }
 		available = {
 			NOT = { has_country_flag = ncr_crisis }
@@ -1828,7 +1382,7 @@ focus_tree = {
 	focus = {
 		id = ncr_tariffs
 		icon = GFX_goal_NCR_Hayes_Free_Trade
-		cost = 30
+		cost = 15
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY }
 		available = {
 			has_country_flag = ncr_vote_no_confidence
@@ -1857,7 +1411,7 @@ focus_tree = {
 	focus = {
 		id = ncr_war_on_redding
 		icon = GFX_goal_NCR_Hayes_Taxes
-		cost = 30
+		cost = 15
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY }
 		available = {
 			NOT = { has_country_flag = ncr_crisis }
@@ -2460,335 +2014,11 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = ncr_shi_kimball_1
-		icon = GFX_goal_NCR_Shi_Good_Bear
-		cost = 30
-		available = {
-			NOT = { has_country_flag = ncr_crisis }
-			has_completed_focus = ncr_kimball_vindication
-			NAT = {
-				exists = no
-			}
-		}
-		bypass = {
-			SHI = {
-				exists = no
-			}
-		}
-		prerequisite = {
-			focus = ncr_shi_business
-		}
-		x = -1
-		y = 1
-		relative_position_id = ncr_shi_business
-		completion_reward = {
-			if = {
-				limit = {
-					NCR = {
-						owns_state = 548
-					}
-				}
-				SHI = {
-					add_stability = -0.05
-					add_popularity = {
-						ideology = ruler
-						popularity = 0.05
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					SHI = {
-						owns_state = 548
-					}
-				}
-				add_stability = -0.05
-				SHI = {
-					add_popularity = {
-						ideology = ruler
-						popularity = 0.05
-					}
-				}
-			}
-			else = {
-				add_stability = -0.05
-				SHI = {
-					add_stability = -0.05
-					add_popularity = {
-						ideology = ruler
-						popularity = 0.05
-					}
-				}
-			}
-		}
-	}
-	focus = {
-		id = ncr_shi_kimball_2
-		icon = GFX_goal_NCR_Shi_Honey
-		cost = 30
-		available = {
-			NOT = { has_country_flag = ncr_crisis }
-			has_completed_focus = ncr_kimball_vindication
-		}
-		prerequisite = {
-			focus = ncr_shi_kimball_1
-		}
-		bypass = {
-			SHI = {
-				exists = no
-			}
-		}
-		x = 0
-		y = 1
-		relative_position_id = ncr_shi_kimball_1
-		completion_reward = {
-			if = {
-				limit = {
-					NCR = {
-						owns_state = 548
-					}
-				}
-				SHI = {
-					add_stability = -0.1
-					add_popularity = {
-						ideology = ruler
-						popularity = 0.1
-					}
-					swap_ideas = {
-						remove_idea = ncr_sphere
-						add_idea = ncr_sphere2
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					SHI = {
-						owns_state = 548
-					}
-				}
-				add_stability = -0.1
-				SHI = {
-					add_popularity = {
-						ideology = ruler
-						popularity = 0.1
-					}
-				}
-			}
-			else = {
-				add_stability = -0.1
-				SHI = {
-					add_stability = -0.1
-					add_popularity = {
-						ideology = ruler
-						popularity = 0.1
-					}
-				}
-			}
-		}
-	}
-	focus = {
-		id = ncr_shi_murphy_1
-		icon = GFX_goal_NCR_Murphy_Shi_Ranger
-		cost = 30
-		available = {
-			NOT = { has_country_flag = ncr_crisis }
-			has_completed_focus = ncr_new_hand_on_the_tiller
-			NAT = {
-				exists = no
-			}
-		}
-		prerequisite = {
-			focus = ncr_shi_business
-		}
-		bypass = {
-			SHI = {
-				exists = no
-			}
-		}
-		x = 1
-		y = 1
-		relative_position_id = ncr_shi_business
-		completion_reward = {
-			if = {
-				limit = {
-					NCR = {
-						owns_state = 548
-					}
-				}
-				SHI = {
-					add_stability = -0.15
-				}
-			}
-			else_if = {
-				limit = {
-					SHI = {
-						owns_state = 548
-					}
-				}
-				SHI = {
-					every_owned_state = {
-						limit = {
-							OR = {
-								is_core_of = NAT
-							}
-						}
-					add_resistance = 35
-					}
-				}
-			}
-			else = {
-				SHI = {
-					add_stability = -0.1
-				}
-			}
-		}
-	}
-	focus = {
-		id = ncr_shi_murphy_2
-		icon = GFX_goal_NCR_Murphy_Ranger_Flag
-		cost = 30
-		search_filters = { FOCUS_FILTER_ANNEXATION }
-		available = {
-			NOT = { has_country_flag = ncr_crisis }
-			has_completed_focus = ncr_new_hand_on_the_tiller
-		}
-		prerequisite = {
-			focus = ncr_shi_murphy_1
-		}
-		bypass = {
-			SHI = {
-				OR = {
-					all_core_land_owned_by_prev_sphere = yes
-					exists = no
-				}
-			}
-		}
-		x = 0
-		y = 1
-		will_lead_to_war_with = SHI
-		relative_position_id = ncr_shi_murphy_1
-		completion_reward = {
-			if = {
-				limit = {
-					NCR = {
-						owns_state = 548
-					}
-				}
-				add_stability = -0.15
-				SHI = {
-					NCR = {
-						grant_wargoals_on_core_states_of_prev = yes
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					SHI = {
-						owns_state = 548
-					}
-				}
-				custom_effect_tooltip = ncr_navarro_rising_tt
-				hidden_effect = {
-					puppet = NAT
-					NAT = {
-						transfer_state = 56
-						transfer_state = 353
-						load_oob = NCR_Navarro_Rangers
-						declare_war_on = {
-							target = SHI
-							type = annex_everything
-						}
-					}
-					declare_war_on = {
-						target = SHI
-						type = annex_everything
-					}
-					56 = {
-						teleport_armies = {
-							limit = {
-								original_tag = SHI
-							}
-							to_province = 2422
-						}
-					}
-					353 = {
-						teleport_armies = {
-							limit = {
-								original_tag = SHI
-							}
-							to_province = 2422
-						}
-					}
-				}
-			}
-			else = {
-				SHI = {
-					NCR = {
-						grant_wargoals_on_core_states_of_prev = yes
-					}
-				}
-			}
-		}
-	}
-	focus = {
-		id = ncr_shi_enemy
-		icon = GFX_goal_NCR_Shi_Shoot
-		cost = 30
-		search_filters = { FOCUS_FILTER_ANNEXATION }
-		available = {
-			NOT = { has_country_flag = ncr_crisis }
-			OR = {
-				SHI = {
-					has_completed_focus = shi_resolve_power_struggle
-					NOT = {
-						has_government = ruler
-					}
-				}
-			}
-		}
-		mutually_exclusive = {
-			focus = ncr_shi_ally
-		}
-		bypass = {
-			SHI = {
-				OR = {
-					all_core_land_owned_by_prev_sphere = yes
-					exists = no
-				}
-			}
-		}
-		will_lead_to_war_with = SHI
-		prerequisite = {
-			focus = ncr_shi_murphy_2
-			focus = ncr_shi_kimball_2
-		}
-		x = -2
-		y = 1
-		relative_position_id = ncr_shi_murphy_2
-		completion_reward = {
-			SHI = {
-				NCR = {
-					grant_wargoals_on_core_states_of_prev = yes
-				}
-			}
-		}
-	}
-
-	focus = {
 		id = ncr_shi_ally
 		icon = GFX_goal_NCR_Shi_Handshake
 		cost = 30
 		available = {
 			NOT = { has_country_flag = ncr_crisis }
-			has_completed_focus = ncr_kimball_vindication
-			SHI = {
-				has_completed_focus = shi_resolve_power_struggle
-				has_government = ruler
-				is_subject = no
-			}
-		}
-		mutually_exclusive = {
-			focus = ncr_shi_enemy
 		}
 		bypass = {
 			SHI = {
@@ -2796,12 +2026,11 @@ focus_tree = {
 			}
 		}
 		prerequisite = {
-			focus = ncr_shi_murphy_2
-			focus = ncr_shi_kimball_2
+			focus = ncr_shi_business
 		}
 		x = 0
 		y = 1
-		relative_position_id = ncr_shi_murphy_2
+		relative_position_id = ncr_shi_business
 		completion_reward = {
 			SHI = {
 				invite_to_new_california = yes
@@ -2862,7 +2091,7 @@ focus_tree = {
 	focus = {
 		id = ncr_rapid_boat
 		icon = GFX_goal_generic_boat
-		cost = 30
+		cost = 15
 		available = {
 			NOT = { has_country_flag = ncr_crisis }
 		}
@@ -2894,7 +2123,7 @@ focus_tree = {
 	focus = {
 		id = ncr_southern_fleet
 		icon = GFX_goal_NCR_Seabear
-		cost = 30
+		cost = 15
 		available = {
 			NOT = { has_country_flag = ncr_crisis }
 		}
@@ -2911,7 +2140,7 @@ focus_tree = {
 	focus = {
 		id = ncr_deep_ocean_warfare
 		icon = GFX_goal_NCR_Rebuild_the_13
-		cost = 30
+		cost = 15
 		available = {
 			NOT = { has_country_flag = ncr_crisis }
 		}
@@ -2932,7 +2161,7 @@ focus_tree = {
 	focus = {
 		id = ncr_naval_extensions
 		icon = GFX_goal_NCR_Bastion_By_the_Sea
-		cost = 30
+		cost = 15
 		available = {
 			NOT = { has_country_flag = ncr_crisis }
 		}
@@ -2955,7 +2184,7 @@ focus_tree = {
 	focus = {
 		id = ncr_setting_sun_navies_rule
 		icon = GFX_goal_generic_boat_battleship
-		cost = 30
+		cost = 15
 		available = {
 			NOT = { has_country_flag = ncr_crisis }
 		}
@@ -2970,6 +2199,9 @@ focus_tree = {
 		relative_position_id = ncr_naval_extensions
 
 		completion_reward = {
+			set_technology = {
+				naval_tech_level_scientific = 1
+			}
 			custom_effect_tooltip = ncr_setting_sun_navies_awesome_tt
 			navy_experience = 50
 		}
@@ -3177,15 +2409,15 @@ focus = {
 			limit = {
 				is_core_of = BVC
 			}
-			add_extra_state_shared_building_slots = 2
+			add_extra_state_shared_building_slots = 4
 			add_building_construction = {
 				type = infrastructure
-				level = 1
+				level = 2
 				instant_build = yes
 			}
 			add_building_construction = {
 				type = industrial_complex
-				level = 1
+				level = 2
 				instant_build = yes
 			}
 		}
@@ -5546,7 +4778,7 @@ focus = {
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
 		cancelable = no
 		prerequisite = { focus = ncr_bear_roars }
-		x = -3
+		x = -7
 		y = 1
 		available = {
 			has_country_leader = {
@@ -7368,93 +6600,88 @@ focus = {
 		}
 	}
 	focus = {
-		id = ncr_vlt_taxation
-		icon = GFX_goal_NCR_Kimball_Expansion_Taxes
-		cost = 30
-		search_filters = { FOCUS_FILTER_ANNEXATION }
-		cancelable = no
-		prerequisite = { focus = ncr_department_external_affairs }
-		x = -1
-		y = 1
-		available = {
-			OR = {
-				VLT = { exists = yes }
-				ARR = { exists = yes }
-				SHI = { exists = yes }
-			}
-		}
-		bypass = {
-			owns_state = 291
-			has_war_with = VLT
-		}
+        id = ncr_vlt_taxation
+        icon = GFX_goal_NCR_Kimball_Expansion_Taxes
+        cost = 30
+        search_filters = { FOCUS_FILTER_ANNEXATION }
+        cancelable = no
+        prerequisite = { focus = ncr_department_external_affairs }
+        x = -1
+        y = 1
+        available = {
+        }
+        relative_position_id = ncr_department_external_affairs
+        completion_reward = {
+        	custom_effect_tooltip = NCR_tax_oregon_tt
+	        hidden_effect = {
+	            ARR = {
+	                annex_country = {
+	                    target = DIS
+	                    transfer_troops = no
+	                }
+	                annex_country = {
+	                    target = MLT
+	                    transfer_troops = no
+	                }
+	                annex_country = {
+	                    target = TRL
+	                    transfer_troops = no
+	                }
+	                annex_country = {
+	                    target = CCW
+	                    transfer_troops = no
+	                }
+	                annex_country = {
+	                    target = RBT
+	                    transfer_troops = no
+	                }
+	                annex_country = {
+	                    target = PMR
+	                    transfer_troops = no
+	                }
+	                every_state = {
+	                    limit = {
+	                        or = {
+	                            is_core_of = DIS
+	                            is_core_of = MLT
+	                            is_core_of = TRL
+	                            is_core_of = CCW
+	                            is_core_of = RBT
+	                            is_core_of = PMR
 
-		relative_position_id = ncr_department_external_affairs
-		completion_reward = {
-			if = {
-				limit = {
-					VLT = { exists = yes }
-				}
-				VLT = {
-					country_event = ncr_kimball.5
-				}
-			}
-			if = {
-				limit = {
-					ARR = { exists = yes }
-				}
-				ARR = {
-					country_event = ncr_kimball.5
-				}
-			}
-			if = {
-				limit = {
-					SHI = { exists = yes }
-				}
-				SHI = {
-					country_event = ncr_kimball.5
-				}
-			}
-			if = {
-				limit = {
-					ARR = { exists = no }
-					NOT = {
-						ARR = {
-							all_core_land_owned_by_prev_sphere = yes
-						}
-					}
-				}
-				ARR = {
-					ROOT = { grant_wargoals_on_core_states_of_prev = yes }
-				}
-			}
-			if = {
-				limit = {
-					VLT = { exists = no }
-					NOT = {
-						VLT = {
-							all_core_land_owned_by_prev_sphere = yes
-						}
-					}
-				}
-				VLT = {
-					ROOT = { grant_wargoals_on_core_states_of_prev = yes }
-				}
-			}
-			if = {
-				limit = {
-					SHI = { exists = no }
-					NOT = {
-						SHI = {
-							all_core_land_owned_by_prev_sphere = yes
-						}
-					}
-				}
-				SHI = {
-					ROOT = { grant_wargoals_on_core_states_of_prev = yes }
-				}
-			}
-		}
-	}
+	                        }
+	                    }
+	                    add_core_of = ARR
+	                }
+	            }
+	            VLT = {
+	                annex_country = {
+	                    target = BDT
+	                    transfer_troops = yes
+	                }
+	                annex_country = {
+	                    target = TIM
+	                    transfer_troops = yes
+	                }
+	                annex_country = {
+	                    target = MDT
+	                    transfer_troops = no
+	                }
+	                every_state = {
+	                    limit = {
+	                        or = {
+	                            is_core_of = RBT
+	                            is_core_of = TIM
+	                            is_core_of = MDT
+
+	                        }
+	                    }
+	                    add_core_of = VLT
+	                }
+	            }
+	        }
+	    }
+    }
 	focus = {
 		id = ncr_kimball_pay_taxes
 		icon =GFX_goal_NCR_Kimball_Expansion_Kimball_Head
@@ -7746,6 +6973,7 @@ focus = {
 			focus = ncr_brahmin_car
 		}
 		completion_reward = {
+			add_research_slot = 1
 			add_war_support = 0.1
 			add_ideas = ncr_hayes_tension
 		}
@@ -8129,6 +7357,7 @@ focus = {
 			focus = ncr_boat_renovations
 		}
 		completion_reward = {
+			news_event = ncr_hayes.3
 			army_experience = 50
 			add_war_support = -0.05
 			add_tech_bonus = {
@@ -8136,6 +7365,48 @@ focus = {
 				uses = 2
 				ahead_reduction = 2
 				category = power_armor_tech_category
+			}
+			if = {
+				limit = {
+					has_idea = ncr_war_exhausted_economy
+				}
+				add_ideas = ncr_remilitarised_economy
+			}
+			else_if = {
+				limit = {
+					has_idea = ncr_rural_revitalisation
+				}
+				swap_ideas = {
+					remove_idea = ncr_rural_revitalisation
+					add_idea = ncr_bear_roars
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ncr_giant_awakes
+				}
+				swap_ideas = {
+					remove_idea = ncr_giant_awakes
+					add_idea = ncr_remilitarised_economy
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ncr_remilitarised_economy
+				}
+				swap_ideas = {
+					remove_idea = ncr_remilitarised_economy
+					add_idea = ncr_bear_roars
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ncr_emergency_measures
+				}
+				swap_ideas = {
+					remove_idea = ncr_emergency_measures
+					add_idea = ncr_emergency_measures
+				}
 			}
 		}
 	}
@@ -8240,54 +7511,16 @@ focus = {
 		x = 0
 		y = 1
 		completion_reward = {
-			# Skips Complacent Hegemony, Rural Revitalization and Awakening Giant
-			add_research_slot = 1
-			if = {
-				limit = {
-					has_idea = ncr_war_exhausted_economy
-				}
-				add_ideas = ncr_remilitarised_economy
-			}
-			else_if = {
-				limit = {
-					has_idea = ncr_rural_revitalisation
-				}
-				swap_ideas = {
-					remove_idea = ncr_rural_revitalisation
-					add_idea = ncr_bear_roars
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = ncr_giant_awakes
-				}
-				swap_ideas = {
-					remove_idea = ncr_giant_awakes
-					add_idea = ncr_remilitarised_economy
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = ncr_remilitarised_economy
-				}
-				swap_ideas = {
-					remove_idea = ncr_remilitarised_economy
-					add_idea = ncr_bear_roars
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = ncr_emergency_measures
-				}
-				swap_ideas = {
-					remove_idea = ncr_emergency_measures
-					add_idea = ncr_emergency_measures
-				}
-			}
-			else = {
-				add_political_power = 150
-			}
-			news_event = ncr_hayes.3
+			add_political_power = 150
+			every_state = {
+                limit = {
+                    OR = {
+                        is_core_of = CES
+                        is_core_of = LAC
+                    }
+                }
+                add_core_of = NCR
+            }
 		}
 	}
 
@@ -8782,7 +8015,12 @@ focus = {
 				uses = 1
 				category = support_demolitions_tech_category
 			}
-			#add_ideas = blastfromthepast #This idea is missing
+			add_equipment_to_stockpile = {
+				type = explosive_demolitions_equipment_4
+				amount = 1000
+				producer = USA
+			}
+			add_ideas = blastfromthepast
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] ncr_blast exited"
@@ -9731,3088 +8969,6 @@ focus = {
 			base = 50	# We want the AI to get the civil war over with
 		}
 	}
-
-	###########################
-	#  Flynn Vice Presidency  #
-	###########################
-	focus = {
-		id = ncr_red_disunion
-		icon = GFX_goal_NCR_Barons_Blood_Flag
-		allow_branch = {
-			NOT = {
-				OR = {
-					has_country_flag = RDS_commie_tree_unlock
-					has_country_flag = RDS_sheriff_tree_unlock
-					has_country_flag = RDS_flynn_independent_flag
-				}
-			}
-		}
-		cost = 7
-		x = 34
-		y = 37
-		available = {
-			has_government = elites
-			has_country_flag = ncr_crisis
-		}
-		completion_reward = {
-			add_political_power = 100
-			country_event = ncr_red.1
-		}
-	}
-	####INDUSTRY BARONS######
-	focus = {
-		id = ncr_red_trade_situation
-		icon = GFX_goal_NCR_Barons_Traders_Sign
-		cost = 30
-		available = {
-			owns_state = 141
-		}
-		relative_position_id = ncr_red_disunion
-		prerequisite = {
-			focus = ncr_red_disunion
-		}
-		x = -4
-		y = 1
-		completion_reward = {
-			rds_trade_buff = yes
-			135 = {
-				set_temp_variable = {
-					development_to_add = 1
-				}
-				add_development_to_node = yes
-				add_state_modifier = {
-					modifier = {
-						caps_node_base_modifier = 0.30
-					}
-				}
-			}
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 3
-				add_building_construction = {
-					type = industrial_complex
-					level = 3
-					instant_build = yes
-				}
-			}
-		}
-	}
-	focus = {
-		id = ncr_red_shake_dragon_hand
-		icon = GFX_goal_NCR_Barons_Dragon
-		cost = 30
-		relative_position_id = ncr_red_disunion
-		prerequisite = {
-			focus = ncr_red_trade_situation
-		}
-		x = -6
-		y = 2
-		completion_reward = {
-			set_temp_variable = { caps_to_add = 50 }
-			add_caps = yes
-			rds_trade_buff = yes
-			diplomatic_relation = {
-				country = SHI
-				relation = docking_rights
-				active = yes
-			}
-			SHI = {
-				diplomatic_relation = {
-					country = RDS
-					relation = docking_rights
-					active = yes
-				}
-				add_ideas = bar_reno_support
-			}
-		}
-	}
-	focus = {
-		id = ncr_red_buy_guns_van_graffs
-		icon = GFX_goal_NCR_Barons_Plasma_Gun
-		cost = 30
-		relative_position_id = ncr_red_disunion
-		available = {
-			NEW = {
-				exists = yes
-			}
-			NOT = {
-				has_war_with = NEW
-			}
-		}
-		bypass = {
-			NEW = { exists = no }
-		}
-		prerequisite = {
-			focus = ncr_red_trade_situation
-		}
-		x = -4
-		y = 2
-		completion_reward = {
-			add_equipment_to_stockpile = {
-				type = plasma_equipment_1
-				amount = 300
-				producer = USA
-			}
-			rds_trade_buff = yes
-			add_ideas = bar_reno_guns
-			NEW = {
-				add_ideas = bar_reno_support
-				random_owned_state = {
-					add_extra_state_shared_building_slots = 4
-					add_building_construction = {
-						type = industrial_complex
-						level = 3
-						instant_build = yes
-					}
-				}
-			}
-		}
-	}
-	focus = {
-		id = ncr_red_redding_calling
-		icon = GFX_goal_NCR_Barons_VB_Costume
-		cost = 30
-		relative_position_id = ncr_red_shake_dragon_hand
-		prerequisite = {
-			focus = ncr_red_shake_dragon_hand
-		}
-		x = 0
-		y = 1
-		completion_reward = {
-			rds_trade_buff = yes
-			add_ideas = bar_vault_researchers
-			VLT = {
-				add_ideas = bar_reno_support
-			}
-		}
-	}
-	focus = {
-		id = ncr_red_jewel_of_california
-		icon = GFX_goal_NCR_Barons_Redding
-		cost = 30
-		relative_position_id = ncr_red_redding_calling
-		prerequisite = {
-			focus = ncr_red_redding_calling
-		}
-		available = {
-			has_idea = bar_trade_cutoff_4
-		}
-		x = 1
-		y = 1
-		completion_reward = {
-			rds_trade_buff = yes
-			141 = {
-				hidden_effect = {
-					set_temp_variable = { new_node_target = THIS.id }
-					set_temp_variable = { new_node_economic_development = 1 }
-					add_to_temp_array = { new_node_trade_array = 337 }
-					add_to_temp_array = { new_node_trade_array = 285 }
-					add_to_temp_array = { new_node_trade_array = 135 }
-					add_to_temp_array = { new_node_trade_array = 163 }
-					add_to_temp_array = { new_node_trade_array = 291 }
-					add_to_temp_array = { new_node_trade_array = 478 }
-					set_temp_variable = { new_node_map_x = 2165 }
-					set_temp_variable = { new_node_map_y = 960 }
-				}
-				create_map_node = yes
-			}
-			141 = {
-				add_extra_state_shared_building_slots = 4
-				add_building_construction = {
-					type = industrial_complex
-					level = 4
-					instant_build = yes
-				}
-			}
-		}
-	}
-	focus = {
-		id = ncr_red_arroyo_trade
-		icon = GFX_goal_NCR_Barons_Water
-		cost = 30
-		relative_position_id = ncr_red_redding_calling
-		prerequisite = {
-			focus = ncr_red_redding_calling
-		}
-		x = -1
-		y = 1
-		completion_reward = {
-			rds_trade_buff = yes
-			rds_wroker_unrest_down = yes
-			141 = {
-				add_resource = {
-					type = water
-					amount = 10
-				}
-				add_resource = {
-					type = metal
-					amount = -10
-				}
-			}
-			337 = {
-				add_resource = {
-					type = metal
-					amount = 10
-				}
-			}
-		}
-	}
-	####INDUSTRY BARONS######
-
-	####POLITICAL BARONS#####
-	focus = {
-		id = ncr_red_support_calhoun
-		icon = GFX_goal_NCR_Barons_Calhoun
-		cost = 30
-		relative_position_id = ncr_red_disunion
-		mutually_exclusive = {
-			focus = ncr_red_support_moore
-			focus = ncr_red_california_bleeding
-		}
-		prerequisite = {
-			focus = ncr_red_disunion
-		}
-		x = -2
-		y = 1
-		completion_reward = {
-			add_popularity = {
-				ideology = people
-				popularity = 0.05
-			}
-			custom_effect_tooltip = rds_support_calhoun_tt
-			rds_sheriff_unrest_up = yes
-			rds_wroker_unrest_down = yes
-		}
-	}
-	focus = {
-		id = ncr_red_california_bleeding
-		icon = GFX_goal_NCR_Barons_Chill
-		cost = 30
-		relative_position_id = ncr_red_disunion
-		mutually_exclusive = {
-			focus = ncr_red_support_calhoun
-			focus = ncr_red_support_moore
-		}
-		prerequisite = {
-			focus = ncr_red_disunion
-		}
-		x = 0
-		y = 1
-		completion_reward = {
-			add_popularity = {
-				ideology = ruler
-				popularity = 0.05
-			}
-			custom_effect_tooltip = rds_support_all_tt
-			rds_sheriff_unrest_down = yes
-			rds_worker_unrest_up = yes
-		}
-	}
-	focus = {
-		id = ncr_red_support_moore
-		icon = GFX_goal_NCR_Barons_Moore
-		cost = 30
-		relative_position_id = ncr_red_disunion
-		available = {
-			NCR = {
-				NOT = {
-					has_completed_focus = ncr_eliminate_barons
-				}
-			}
-		}
-		mutually_exclusive = {
-			focus = ncr_red_support_calhoun
-			focus = ncr_red_california_bleeding
-		}
-		prerequisite = {
-			focus = ncr_red_disunion
-		}
-		x = 2
-		y = 1
-		completion_reward = {
-			add_popularity = {
-				ideology = elites
-				popularity = 0.05
-			}
-			custom_effect_tooltip = rds_support_moore_tt
-			rds_sheriff_unrest_up = yes
-			rds_worker_unrest_up = yes
-		}
-	}
-	focus = {
-		id = ncr_red_congress_in_exile
-		icon = GFX_goal_NCR_Barons_Congress_Exile
-		cost = 30
-		relative_position_id = ncr_red_disunion
-		prerequisite = {
-			focus = ncr_red_support_calhoun
-			focus = ncr_red_support_moore
-			focus = ncr_red_california_bleeding
-		}
-		x = -2
-		y = 2
-		completion_reward = {
-			add_ideas = ncr_congress_up_north
-			add_popularity = {
-				ideology = intellectuals
-				popularity = 0.1
-			}
-			add_country_leader_role = {
-				character = RDS_wendell_peterson
-				promote_leader = yes
-				Country_leader = {
-					ideology = ideocracy
-					expire = "3000.01.01.01"
-					traits = {
-						political_workhorse
-						dislikes_caesars_legion
-					}
-				}
-			}
-			rds_sheriff_unrest_up = yes
-			rds_wroker_unrest_down = yes
-		}
-	}
-	focus = {
-		id = ncr_red_maxwell_initiative
-		icon = GFX_goal_NCR_Barons_Maxwell
-		cost = 30
-		relative_position_id = ncr_red_disunion
-		prerequisite = {
-			focus = ncr_red_congress_in_exile
-			focus = ncr_red_welcome_refuges
-			focus = ncr_red_direct_aid
-		}
-		mutually_exclusive = {
-			focus = ncr_red_flynn_economic_plan
-			focus = ncr_red_lawrence_sheriffs
-		}
-		x = -2
-		y = 3
-		completion_reward = {
-			141 = {
-				add_extra_state_shared_building_slots = 4
-				add_building_construction = {
-					type = arms_factory
-					level = 4
-					instant_build = yes
-				}
-			}
-			rds_wroker_unrest_down = yes
-		}
-	}
-	focus = {
-		id = ncr_red_welcome_refuges
-		icon = GFX_goal_NCR_Barons_Refuges
-		cost = 30
-		relative_position_id = ncr_red_disunion
-		prerequisite = {
-			focus = ncr_red_support_calhoun
-			focus = ncr_red_support_moore
-			focus = ncr_red_california_bleeding
-		}
-		x = 0
-		y = 2
-		completion_reward = {
-			add_ideas = bar_northern_oasis
-			rds_worker_unrest_up = yes
-			hidden_effect = {
-				country_event = { id = ncr_red.7 days = 14 }
-			}
-		}
-	}
-	focus = {
-		id = ncr_red_flynn_economic_plan
-		icon = GFX_goal_NCR_Barons_Flynn
-		cost = 30
-		relative_position_id = ncr_red_disunion
-		prerequisite = {
-			focus = ncr_red_congress_in_exile
-			focus = ncr_red_welcome_refuges
-			focus = ncr_red_direct_aid
-		}
-		mutually_exclusive = {
-			focus = ncr_red_lawrence_sheriffs
-			focus = ncr_red_maxwell_initiative
-		}
-		x = 0
-		y = 3
-		completion_reward = {
-			add_timed_idea = {
-				idea = bar_flynn_plan
-				days = 360
-			}
-			141 = {
-				add_extra_state_shared_building_slots = 6
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
-	focus = {
-		id = ncr_red_direct_aid
-		icon = GFX_goal_NCR_Barons_Sheriff
-		cost = 30
-		relative_position_id = ncr_red_disunion
-		prerequisite = {
-			focus = ncr_red_support_moore
-			focus = ncr_red_support_calhoun
-			focus = ncr_red_california_bleeding
-		}
-		x = 2
-		y = 2
-		completion_reward = {
-			country_event = ncr_red.8
-		}
-	}
-	focus = {
-		id = ncr_red_lawrence_sheriffs
-		icon = GFX_goal_NCR_Barons_Lawrence
-		cost = 30
-		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
-		relative_position_id = ncr_red_disunion
-		prerequisite = {
-			focus = ncr_red_congress_in_exile
-			focus = ncr_red_welcome_refuges
-			focus = ncr_red_direct_aid
-		}
-		mutually_exclusive = {
-			focus = ncr_red_flynn_economic_plan
-			focus = ncr_red_maxwell_initiative
-		}
-		x = 2
-		y = 3
-		completion_reward = {
-			custom_effect_tooltip = ncr_red_mobilize_sheriff_tt
-			rds_worker_unrest_up = yes
-			rds_sheriff_unrest_down = yes
-			add_war_support = 0.05
-			hidden_effect = {
-				load_oob = RDS_2275
-			}
-		}
-	}
-	focus = {
-		id = ncr_red_pacify_people
-		icon = GFX_goal_NCR_Barons_RWC
-		cost = 30
-		relative_position_id = ncr_red_disunion
-		prerequisite = {
-			focus = ncr_red_maxwell_initiative
-			focus = ncr_red_flynn_economic_plan
-			focus = ncr_red_lawrence_sheriffs
-		}
-		available = {
-			THIS = {
-				has_war = no
-			}
-			OR = {
-				has_political_power > 50
-				is_ai = yes
-			}
-		}
-		x = -1
-		y = 4
-		completion_reward = {
-			add_political_power = -50
-			if = {
-				limit = {
-					has_idea = bar_workers_unrest
-				}
-				remove_ideas = bar_workers_unrest
-			}
-			else_if = {
-				limit = {
-					has_idea = bar_workers_unrest_2
-				}
-				remove_ideas = bar_workers_unrest_2
-			}
-			else_if = {
-				limit = {
-					has_idea = bar_workers_unrest_3
-				}
-				remove_ideas = bar_workers_unrest_3
-			}
-			else_if = {
-				limit = {
-					has_idea = bar_workers_unrest_4
-				}
-				remove_ideas = bar_workers_unrest_4
-			}
-		}
-	}
-	focus = {
-		id = ncr_red_pacify_sheriffs
-		icon = GFX_goal_NCR_Barons_Jim_Sheriffs
-		cost = 30
-		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
-		relative_position_id = ncr_red_disunion
-		prerequisite = {
-			focus = ncr_red_lawrence_sheriffs
-			focus = ncr_red_flynn_economic_plan
-			focus = ncr_red_maxwell_initiative
-		}
-		available = {
-			THIS = {
-				has_war = no
-			}
-			OR = {
-				has_political_power > 50
-				is_ai = yes
-			}
-		}
-		x = 1
-		y = 4
-		completion_reward = {
-			add_war_support = 0.05
-			add_political_power = -50
-			if = {
-				limit = {
-					has_idea = bar_sheriff_unrest
-				}
-				remove_ideas = bar_sheriff_unrest
-			}
-			else_if = {
-				limit = {
-					has_idea = bar_sheriff_unrest_2
-				}
-				remove_ideas = bar_sheriff_unrest_2
-			}
-			else_if = {
-				limit = {
-					has_idea = bar_sheriff_unrest_3
-				}
-				remove_ideas = bar_sheriff_unrest_3
-			}
-			else_if = {
-				limit = {
-					has_idea = bar_sheriff_unrest_4
-				}
-				remove_ideas = bar_sheriff_unrest_4
-			}
-		}
-	}
-	focus = {
-		id = ncr_red_flynn_address
-		icon = GFX_goal_NCR_Barons_Flynn_Speech
-		cost = 30
-		relative_position_id = ncr_red_disunion
-		prerequisite = {
-			focus = ncr_red_pacify_people
-		}
-		prerequisite = {
-			focus = ncr_red_pacify_sheriffs
-		}
-		x = 0
-		y = 5
-		completion_reward = {
-			country_event = ncr_red.5
-		}
-	}
-	####ARMY BARONS#####
-	focus = {
-		id = ncr_red_check_savings
-		icon = GFX_goal_NCR_Barons_Piggy_Bank
-		cost = 30
-		relative_position_id = ncr_red_disunion
-		prerequisite = {
-			focus = ncr_red_disunion
-		}
-		x = 4
-		y = 1
-		completion_reward = {
-			set_temp_variable = { caps_to_add = 250 }
-			add_caps = yes
-			hidden_effect = {
-				country_event = { id = ncr_red.16  days = 7}
-			}
-		}
-	}
-	focus = {
-		id = ncr_red_yakuza
-		icon = GFX_goal_NCR_Barons_Red_Dragons
-		cost = 30
-		relative_position_id = ncr_red_disunion
-		available = {
-			set_temp_variable = { caps_diff = -100 }
-			caps_cost_trigger = yes
-			YKZ = {
-				exists = yes
-				NOT = {
-					has_war_with = ROOT
-				}
-			}
-		}
-		bypass = {
-			YKZ = {
-				exists = no
-			}
-		}
-		prerequisite = {
-			focus = ncr_red_check_savings
-		}
-		x = 6
-		y = 2
-		completion_reward = {
-			custom_effect_tooltip = ncr_bar_mercs_dragons_tt
-			add_corps_commander_role = {
-				character = RDS_Naga
-				desc = "NCR_BAR_NAGA_desc"
-				traits = {
-					perceptive_trait
-				}
-				skill = 3
-				attack_skill = 3
-				defense_skill = 1
-				planning_skill = 3
-				logistics_skill = 1
-			}
-			custom_effect_tooltip = ncr_bar_naga_tt
-			rds_merc_army_buff = yes
-			set_temp_variable = { caps_to_add = -100 }
-			add_caps = yes
-			YKZ = {
-				set_temp_variable = { caps_to_add = 100 }
-				add_caps = yes
-			}
-			hidden_effect = {
-				load_oob = RDS_Yakuza_Mercs
-			}
-		}
-	}
-	focus = {
-		id = ncr_red_mercs
-		icon = GFX_goal_NCR_Barons_Eureka_Merc
-		cost = 30
-		relative_position_id = ncr_red_check_savings
-		available = {
-			if = {
-				limit = {
-					NOT = { is_ai = yes }
-				}
-				set_temp_variable = { caps_diff = -50 }
-				caps_cost_trigger = yes
-			}
-			EUR = {
-				exists = yes
-				NOT = {
-					has_war_with = ROOT
-				}
-			}
-		}
-		prerequisite = {
-			focus = ncr_red_check_savings
-		}
-		x = 0
-		y = 1
-		completion_reward = {
-			custom_effect_tooltip = ncr_bar_mercs_tt
-			set_temp_variable = { caps_to_add = -50 }
-			rds_merc_army_buff = yes
-			add_caps = yes
-			EUR = {
-				set_temp_variable = { caps_to_add = 50 }
-				add_caps = yes
-			}
-			hidden_effect = {
-				load_oob = RDS_Eureka_Mercs
-			}
-		}
-	}
-	focus = {
-		id = ncr_red_vlt_protectrons
-		icon = GFX_goal_NCR_Barons_Protectron
-		cost = 30
-		relative_position_id = ncr_red_yakuza
-		available = {
-			if = {
-				limit = {
-					NOT = { is_ai = yes }
-				}
-				set_temp_variable = { caps_diff = -50 }
-				caps_cost_trigger = yes
-			}
-			VLT = {
-				exists = yes
-				NOT = {
-					has_war_with = ROOT
-				}
-			}
-		}
-		prerequisite = {
-			focus = ncr_red_yakuza
-		}
-		bypass = {
-			VLT = {
-				exists = no
-			}
-		}
-		x = 0
-		y = 1
-		completion_reward = {
-			custom_effect_tooltip = ncr_robots_tt
-			add_ideas = bar_police_protectrons
-			rds_merc_army_buff = yes
-			set_temp_variable = { caps_to_add = -50 }
-			add_caps = yes
-			VLT = {
-				set_temp_variable = { caps_to_add = 50 }
-				add_caps = yes
-			}
-			hidden_effect = {
-				load_oob = RDS_Vault_Robots
-				if = {
-					limit = {
-						NOT = {
-							has_tech = robot_makeshift_automatons_tech
-							}
-					}
-					set_technology = {
-						robot_makeshift_automatons_tech = 1
-					}
-				}
-			}
-		}
-	}
-	focus = {
-		id = ncr_red_merc_city
-		icon = GFX_goal_NCR_Barons_Merc
-		cost = 30
-		relative_position_id = ncr_red_vlt_protectrons
-		available = {
-			has_idea = bar_mercenary_army_3
-		}
-		prerequisite = {
-			focus = ncr_red_vlt_protectrons
-		}
-		x = 0
-		y = 1
-		completion_reward = {
-			rds_merc_army_buff = yes
-			army_experience = 15
-			capital_scope = {
-				add_extra_state_shared_building_slots = 3
-				add_building_construction = {
-					type = arms_factory
-					level = 3
-					instant_build = yes
-				}
-			}
-		}
-	}
-
-	#######BARONS TREEE######
-
-	##################################
-	#######Flynn Independce Tree######
-	##################################
-	focus = {
-		id = ncr_fln_strings_break_free
-		icon = GFX_goal_RDS_Flynn_Strings
-		cost = 14
-		x = 50
-		y = 11
-		allow_branch = {
-			has_country_flag = RDS_flynn_independent_flag
-		}
-		completion_reward = {
-			country_event = red_flynn.2
-		}
-	}
-	focus = {
-		id = ncr_fln_deal_with_old_barons
-		icon = GFX_goal_RDS_Flynn_Rat
-		cost = 30
-		prerequisite = {
-			focus = ncr_fln_strings_break_free
-		}
-		relative_position_id = ncr_fln_strings_break_free
-		x = -3
-		y = 1
-		completion_reward = {
-			add_stability = -0.10
-			add_political_power = -100
-			141 = {
-				set_temp_variable = { pop_add = -471 }
-				add_state_population = yes
-			}
-		}
-	}
-	focus = {
-		id = ncr_fln_new_generation
-		icon = GFX_goal_RDS_Flynn_New_Man
-		cost = 30
-		prerequisite = {
-			focus = ncr_fln_deal_with_old_barons
-		}
-		relative_position_id = ncr_fln_deal_with_old_barons
-		x = 1
-		y = 1
-		completion_reward = {
-			add_ideas = bar_breaking_the_strings_new_generation
-		}
-	}
-	focus = {
-		id = ncr_fln_praise_farmers
-		icon = GFX_goal_RDS_Flynn_Farmer
-		cost = 30
-		search_filters = { FOCUS_FILTER_STABILITY }
-		prerequisite = {
-			focus = ncr_fln_strings_break_free
-		}
-		relative_position_id = ncr_fln_strings_break_free
-		x = -1
-		y = 1
-		completion_reward = {
-			add_stability = 0.05
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
-	focus = {
-		id = ncr_fln_praise_miners
-		icon = GFX_goal_RDS_Flynn_Miner
-		cost = 30
-		search_filters = { FOCUS_FILTER_STABILITY }
-		prerequisite = {
-			focus = ncr_fln_strings_break_free
-		}
-		relative_position_id = ncr_fln_strings_break_free
-		x = 1
-		y = 1
-		completion_reward = {
-			add_stability = 0.05
-			141 = {
-				add_resource = {
-					type = metal
-					amount = 6
-				}
-			}
-		}
-	}
-	focus = {
-		id = ncr_fln_no_shady_or_boneyard
-		icon = GFX_goal_RDS_Flynn_Man
-		cost = 30
-		prerequisite = {
-			focus = ncr_fln_praise_farmers
-		}
-		prerequisite = {
-			focus = ncr_fln_praise_miners
-		}
-		relative_position_id = ncr_fln_strings_break_free
-		x = 0
-		y = 2
-		completion_reward = {
-			add_ideas = bar_breaking_the_strings_praise_the_working_man
-			custom_effect_tooltip = rds_chill_workers_tt
-			hidden_effect = {
-				if = {
-					limit = {
-						has_idea = bar_workers_unrest
-					}
-					remove_ideas = bar_workers_unrest
-				}
-				else_if = {
-					limit = {
-						has_idea = bar_workers_unrest_2
-					}
-					remove_ideas = bar_workers_unrest_2
-				}
-				else_if = {
-					limit = {
-						has_idea = bar_workers_unrest_3
-					}
-					remove_ideas = bar_workers_unrest_3
-				}
-				else_if = {
-					limit = {
-						has_idea = bar_workers_unrest_4
-					}
-					remove_ideas = bar_workers_unrest_4
-				}
-			}
-		}
-	}
-	focus = {
-		id = ncr_fln_deal_with_old_sheriffs
-		icon = GFX_goal_RDS_Flynn_Hat_Rat
-		cost = 30
-		prerequisite = {
-			focus = ncr_fln_strings_break_free
-		}
-		relative_position_id = ncr_fln_strings_break_free
-		x = 3
-		y = 1
-		completion_reward = {
-			add_war_support = -0.15
-			add_manpower = -24
-			if = {
-				limit = {
-					has_character = RDS_Lawrence_Greene
-				}
-				retire_character = RDS_Lawrence_Greene
-			}
-		}
-	}
-	focus = {
-		id = ncr_fln_contact_oconnell
-		icon = GFX_goal_RDS_Flynn_Connel
-		cost = 30
-		prerequisite = {
-			focus = ncr_fln_deal_with_old_sheriffs
-		}
-		relative_position_id = ncr_fln_deal_with_old_sheriffs
-		x = -1
-		y = 1
-		completion_reward = {
-			if = {
-				limit = {
-					has_character = RDS_Harry_OConnor
-					RDS_Harry_OConnor = {
-						is_unit_leader = yes
-					}
-				}
-				RDS_Harry_OConnor = {
-					add_planning = 1
-					promote_leader = yes
-				}
-			}
-			add_ideas = bar_breaking_the_strings_protector_of_true_man
-			custom_effect_tooltip = rds_sheriff_shut_tt
-			hidden_effect = {
-				if = {
-					limit = {
-						has_idea = bar_sheriff_unrest
-					}
-					remove_ideas = bar_sheriff_unrest
-				}
-				else_if = {
-					limit = {
-						has_idea = bar_sheriff_unrest_2
-					}
-					remove_ideas = bar_sheriff_unrest_2
-				}
-				else_if = {
-					limit = {
-						has_idea = bar_sheriff_unrest_3
-					}
-					remove_ideas = bar_sheriff_unrest_3
-				}
-				else_if = {
-					limit = {
-						has_idea = bar_sheriff_unrest_4
-					}
-					remove_ideas = bar_sheriff_unrest_4
-				}
-			}
-		}
-	}
-	focus = {
-		id = ncr_fln_only_man
-		icon = GFX_goal_RDS_Flynn_Hand
-		cost = 30
-		prerequisite = {
-			focus = ncr_fln_contact_oconnell
-		}
-		prerequisite = {
-			focus = ncr_fln_new_generation
-		}
-		prerequisite = {
-			focus = ncr_fln_no_shady_or_boneyard
-		}
-		relative_position_id = ncr_fln_strings_break_free
-		x = 0
-		y = 3
-		completion_reward = {
-			custom_effect_tooltip = rds_strings_broken_tt
-			hidden_effect = {
-				swap_ideas = {
-					remove_idea = bar_breaking_the_strings
-					add_idea = bar_breaking_the_strings_2
-				}
-				remove_ideas = {
-					bar_breaking_the_strings_new_generation
-					bar_breaking_the_strings_praise_the_working_man
-					bar_breaking_the_strings_protector_of_true_man
-				}
-			}
-		}
-	}
-	focus = {
-		id = ncr_fln_parasites_among_us
-		icon = GFX_goal_RDS_Flynn_Spider
-		cost = 30
-		prerequisite = {
-			focus = ncr_fln_only_man
-		}
-		relative_position_id = ncr_fln_only_man
-		x = -3
-		y = 1
-		completion_reward = {
-			add_timed_idea = {
-				idea = bar_fighting_the_parasites
-				days = 200
-			}
-		}
-	}
-	focus = {
-		id = ncr_fln_the_fate_of_parasites
-		icon = GFX_goal_RDS_Flynn_Scales
-		cost = 30
-		available = {
-			owns_state = 253
-			owns_state = 350
-		}
-		prerequisite = {
-			focus = ncr_fln_parasites_among_us
-		}
-		relative_position_id = ncr_fln_parasites_among_us
-		x = -1
-		y = 1
-		completion_reward = {
-			country_event = red_flynn.3
-		}
-	}
-	focus = {
-		id = ncr_fln_free_from_parasites
-		icon = GFX_goal_RDS_Flynn_Wings
-		cost = 30
-		search_filters = { FOCUS_FILTER_STABILITY }
-		available = {
-			NOT = {
-				has_idea = bar_fighting_the_parasites
-			}
-		}
-		prerequisite = {
-			focus = ncr_fln_the_fate_of_parasites
-		}
-		relative_position_id = ncr_fln_the_fate_of_parasites
-		x = 1
-		y = 1
-		completion_reward = {
-			add_stability = 0.1
-			add_ideas = bar_free_from_parasites
-		}
-	}
-	focus = {
-		id = ncr_fln_true_man_inside
-		icon = GFX_goal_RDS_Flynn_Man_3
-		cost = 30
-		prerequisite = {
-			focus = ncr_fln_only_man
-		}
-		relative_position_id = ncr_fln_only_man
-		x = 0
-		y = 1
-		completion_reward = {
-			add_ideas = bar_true_man_society
-		}
-	}
-	focus = {
-		id = ncr_fln_free_society
-		icon = GFX_goal_RDS_Flynn_Man_4
-		cost = 30
-		prerequisite = {
-			focus = ncr_fln_true_man_inside
-		}
-		relative_position_id = ncr_fln_true_man_inside
-		x = 0
-		y = 1
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = bar_true_man_society
-				add_idea = bar_true_man_society_2
-			}
-		}
-	}
-	focus = {
-		id = ncr_fln_free_science
-		icon = GFX_goal_RDS_Flynn_Scienctists
-		cost = 30
-		prerequisite = {
-			focus = ncr_fln_true_man_inside
-		}
-		relative_position_id = ncr_fln_true_man_inside
-		x = -2
-		y = 1
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-	focus = {
-		id = ncr_fln_reject_morality
-		icon = GFX_goal_RDS_Flynn_Scalpel
-		cost = 30
-		prerequisite = {
-			focus = ncr_fln_free_science
-		}
-		prerequisite = {
-			focus = ncr_fln_free_society
-		}
-		relative_position_id = ncr_fln_free_science
-		x = 1
-		y = 1
-		completion_reward = {
-			add_stability = -0.1
-			add_ideas = bar_no_stop_science
-		}
-	}
-	focus = {
-		id = ncr_fln_free_industry
-		icon = GFX_goal_RDS_Flynn_Working_Man
-		cost = 30
-		available = {
-			has_completed_focus = ncr_fln_free_society
-		}
-		prerequisite = {
-			focus = ncr_fln_true_man_inside
-		}
-		relative_position_id = ncr_fln_true_man_inside
-		x = 2
-		y = 1
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = bar_true_man_society_2
-				add_idea = bar_true_man_society_3
-			}
-		}
-	}
-	focus = {
-		id = ncr_fln_free_projects
-		icon = GFX_goal_RDS_Flynn_Building
-		cost = 30
-		available = {
-			has_completed_focus = ncr_fln_buff_vault_city
-			owns_state = 141
-		}
-		prerequisite = {
-			focus = ncr_fln_free_industry
-		}
-		prerequisite = {
-			focus = ncr_fln_free_society
-		}
-		relative_position_id = ncr_fln_free_industry
-		x = -1
-		y = 1
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = bar_true_man_society_3
-				add_idea = bar_true_man_society_4
-			}
-			141 = {
-				add_extra_state_shared_building_slots = 8
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
-	focus = {
-		id = ncr_fln_parasites_around_us
-		icon = GFX_goal_RDS_Flynn_Rats
-		cost = 30
-		prerequisite = {
-			focus = ncr_fln_only_man
-		}
-		relative_position_id = ncr_fln_only_man
-		x = 3
-		y = 1
-		completion_reward = {
-			if = {
-				limit = {
-					has_idea = ncr_disarmed_nation
-				}
-				swap_ideas = {
-					remove_idea = ncr_disarmed_nation
-					add_idea = ncr_volunteer_militia_conscription
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = ncr_volunteer_militia_conscription
-				}
-				swap_ideas = {
-					remove_idea = ncr_volunteer_militia_conscription
-					add_idea = ncr_funded_militia_conscription
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = ncr_volunteer_militia_conscription
-				}
-				swap_ideas = {
-					remove_idea = ncr_volunteer_militia_conscription
-					add_idea = ncr_two_year_conscription
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = ncr_two_year_conscription
-				}
-				swap_ideas = {
-					remove_idea = ncr_two_year_conscription
-					add_idea = ncr_four_year_conscription
-				}
-			}
-			else = {
-				add_manpower = 934
-			}
-		}
-	}
-	focus = {
-		id = ncr_fln_call_the_true_man
-		icon = GFX_goal_RDS_Flynn_Man_2
-		cost = 30
-		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
-		prerequisite = {
-			focus = ncr_fln_parasites_around_us
-		}
-		relative_position_id = ncr_fln_parasites_around_us
-		x = 1
-		y = 1
-		completion_reward = {
-			add_war_support = 0.1
-			custom_effect_tooltip = rds_spawn_true_man_tt
-			hidden_effect = {
-				load_oob = RDS_Flynn_Fighters
-			}
-		}
-	}
-	focus = {
-		id = ncr_fln_weaken_the_parasites
-		icon = GFX_goal_RDS_Flynn_Plasma
-		cost = 30
-		available = {
-			has_completed_focus = ncr_fln_leader_of_reno
-		}
-		prerequisite = {
-			focus = ncr_fln_call_the_true_man
-		}
-		relative_position_id = ncr_fln_call_the_true_man
-		x = -1
-		y = 1
-		completion_reward = {
-			add_equipment_to_stockpile = {
-				type = plasma_equipment_1
-				amount = 400
-				producer = USA
-			}
-		}
-	}
-	focus = {
-		id = ncr_fln_redding_shrugged
-		icon = GFX_goal_RDS_Flynn_Man_Staircase
-		cost = 30
-		available = {
-			owns_state = 253
-			owns_state = 350
-			owns_state = 520
-		}
-		prerequisite = {
-			focus = ncr_fln_free_from_parasites
-		}
-		prerequisite = {
-			focus = ncr_fln_reject_morality
-		}
-		prerequisite = {
-			focus = ncr_fln_free_projects
-		}
-		prerequisite = {
-			focus = ncr_fln_weaken_the_parasites
-		}
-		relative_position_id = ncr_fln_free_society
-		x = 0
-		y = 2
-		completion_reward = {
-			country_event = red_flynn.4
-		}
-	}
-
-	###FLYNN EXPANSION###
-	focus = {
-		id = ncr_fln_true_man_around
-		icon = GFX_goal_RDS_Flynn_Man_5
-		cost = 30
-		allow_branch = {
-			has_country_flag = RDS_flynn_independent_flag
-		}
-		available = {
-			has_completed_focus = ncr_fln_only_man
-		}
-		relative_position_id = ncr_fln_only_man
-		x = 10
-		y = 0
-		completion_reward = {
-			create_or_join_big_circle = yes
-		}
-	}
-	focus = {
-		id = ncr_fln_ally_reno
-		icon = GFX_goal_RDS_Flynn_Reno
-		cost = 30
-		search_filters = { FOCUS_FILTER_ANNEXATION }
-		bypass = {
-			NEW = {
-				all_core_land_owned_by_prev_sphere = yes
-			}
-		}
-		prerequisite = {
-			focus = ncr_fln_true_man_around
-		}
-		relative_position_id = ncr_fln_true_man_around
-		x = -3
-		y = 1
-		completion_reward = {
-			if = {
-				limit = {
-					NEW = {
-						exists = yes
-					}
-				}
-				NEW = {
-					invite_to_big_circle = yes
-				}
-			}
-			else_if = {
-				limit = {
-					NEW = {
-						exists = no
-					}
-				}
-				NEW = {
-					RDS = {
-						grant_wargoals_on_core_states_of_prev = yes
-					}
-				}
-			}
-		}
-	}
-	focus = {
-		id = ncr_fln_leader_of_reno
-		icon = GFX_goal_RDS_Flynn_Tiaret
-		cost = 30
-		available = {
-			NEW = {
-				all_core_land_owned_by_prev_sphere = yes
-			}
-		}
-		bypass = {
-			NCR = {
-				has_opinion_modifier = rejected_invitation_to_big_circle
-			}
-		}
-		prerequisite = {
-			focus = ncr_fln_ally_reno
-		}
-		relative_position_id = ncr_fln_ally_reno
-		x = 1
-		y = 1
-		completion_reward = {
-			set_technology = {
-				plasma_unlock_tech = 1
-			}
-			remove_trait = {
-				character = NCR_mama_van_graff
-				slot = economic_advisor
-				trait = van_graff_ncr_advisor
-			}
-			add_trait = {
-				character = NCR_mama_van_graff
-				slot = economic_advisor
-				trait = van_graff_ncr_advisor_good
-			}
-			give_resource_rights = { receiver = NEW state = 135 }
-		}
-	}
-	focus = {
-		id = ncr_fln_ally_vault_city
-		icon = GFX_goal_RDS_Flynn_VC
-		cost = 30
-		search_filters = { FOCUS_FILTER_ANNEXATION }
-		bypass = {
-			VLT = {
-				all_core_land_owned_by_prev_sphere = yes
-			}
-		}
-		prerequisite = {
-			focus = ncr_fln_ally_reno
-		}
-		relative_position_id = ncr_fln_ally_reno
-		x = -1
-		y = 1
-		completion_reward = {
-			if = {
-				limit = {
-					VLT = {
-						exists = yes
-					}
-				}
-				VLT = {
-					invite_to_big_circle = yes
-				}
-			}
-			else_if = {
-				limit = {
-					VLT = {
-						exists = no
-					}
-				}
-				VLT = {
-					RDS = {
-						grant_wargoals_on_core_states_of_prev = yes
-					}
-				}
-			}
-		}
-	}
-	focus = {
-		id = ncr_fln_buff_vault_city
-		icon = GFX_goal_RDS_Flynn_VB
-		cost = 30
-		available = {
-			VLT = {
-				all_core_land_owned_by_prev_sphere = yes
-			}
-		}
-		bypass = {
-			NCR = {
-				has_opinion_modifier = rejected_invitation_to_big_circle
-			}
-		}
-		prerequisite = {
-			focus = ncr_fln_ally_vault_city
-		}
-		relative_position_id = ncr_fln_ally_vault_city
-		x = 1
-		y = 1
-		completion_reward = {
-			set_technology = {
-				habitation_tech_level_scientific = 1
-				exploitation_tech_level_scientific = 1
-				tools_tech_level_scientific = 1
-			}
-			add_resource = {
-				type = advanced
-				amount = -4
-				state = 489
-			}
-			add_resource = {
-				type = composites
-				amount = -4
-				state = 489
-			}
-			VLT = {
-				add_resource = {
-					type = advanced
-					amount = 4
-					state = 291
-				}
-				add_resource = {
-					type = composites
-					amount = 4
-					state = 291
-				}
-			}
-
-		}
-	}
-	focus = {
-		id = ncr_fln_true_man_from_distant_lands
-		icon = GFX_goal_RDS_Flynn_Todd
-		cost = 30
-		search_filters = { FOCUS_FILTER_STABILITY }
-		bypass = {
-			TAA = {
-				exists = no
-			}
-		}
-		prerequisite = {
-			focus = ncr_fln_true_man_around
-		}
-		relative_position_id = ncr_fln_true_man_around
-		x = 0
-		y = 1
-		completion_reward = {
-			add_stability = 0.05
-			add_opinion_modifier = {
-				target = TAA
-				modifier = rds_great_minds
-			}
-			reverse_add_opinion_modifier = {
-				target = TAA
-				modifier = rds_great_minds
-			}
-		}
-	}
-	focus = {
-		id = ncr_fln_ally_arroyo
-		icon = GFX_goal_RDS_Flynn_Chosen_One
-		cost = 30
-		search_filters = { FOCUS_FILTER_ANNEXATION }
-		bypass = {
-			ARR = {
-				all_core_land_owned_by_prev_sphere = yes
-			}
-		}
-		prerequisite = {
-			focus = ncr_fln_true_man_around
-		}
-		relative_position_id = ncr_fln_true_man_around
-		x = 3
-		y = 1
-		completion_reward = {
-			if = {
-				limit = {
-					ARR = {
-						exists = yes
-					}
-				}
-				ARR = {
-					invite_to_big_circle = yes
-				}
-			}
-			else_if = {
-				limit = {
-					ARR = {
-						exists = no
-					}
-				}
-				ARR = {
-					RDS = {
-						grant_wargoals_on_core_states_of_prev = yes
-					}
-				}
-			}
-		}
-	}
-	focus = {
-		id = ncr_fln_choosen_one
-		icon = GFX_goal_RDS_Flynn_Investor
-		cost = 30
-		available = {
-			ARR = {
-				all_core_land_owned_by_prev_sphere = yes
-			}
-			467 = { OWNER = { is_big_circle_member = yes } }
-		}
-		bypass = {
-			NCR = {
-				has_opinion_modifier = rejected_invitation_to_big_circle
-			}
-		}
-		prerequisite = {
-			focus = ncr_fln_ally_arroyo
-		}
-		relative_position_id = ncr_fln_ally_arroyo
-		x = -1
-		y = 1
-		completion_reward = {
-			add_ideas = bar_max_sec_experience
-		}
-	}
-	focus = {
-		id = ncr_fln_ally_shi
-		icon = GFX_goal_RDS_Flynn_Dragon
-		cost = 30
-		search_filters = { FOCUS_FILTER_ANNEXATION }
-		bypass = {
-			SHI = {
-				all_core_land_owned_by_prev_sphere = yes
-			}
-		}
-		bypass = {
-			SHI = {
-				exists = no
-			}
-		}
-		prerequisite = {
-			focus = ncr_fln_ally_arroyo
-		}
-		relative_position_id = ncr_fln_ally_arroyo
-		x = 1
-		y = 1
-		completion_reward = {
-			if = {
-				limit = {
-					SHI = {
-						exists = yes
-					}
-				}
-				SHI = {
-					invite_to_big_circle = yes
-				}
-			}
-			else_if = {
-				limit = {
-					SHI = {
-						exists = no
-					}
-				}
-				SHI = {
-					RDS = {
-						grant_wargoals_on_core_states_of_prev = yes
-					}
-				}
-			}
-		}
-	}
-	focus = {
-		id = ncr_fln_buff_shi
-		icon = GFX_goal_RDS_Flynn_Vertibird
-		cost = 30
-		available = {
-			245 = { OWNER = { is_big_circle_member = yes } }
-		}
-		bypass = {
-			SHI = {
-				exists = no
-			}
-		}
-		prerequisite = {
-			focus = ncr_fln_ally_shi
-		}
-		relative_position_id = ncr_fln_ally_shi
-		x = -1
-		y = 1
-		completion_reward = {
-			custom_effect_tooltip = rds_give_maxson_tt
-			hidden_effect = {
-				245 = {
-					remove_core_of = RDS
-					add_core_of = SHI
-				}
-				SHI = {
-					transfer_state = 245
-				}
-				set_technology = {
-					vertibird_unlock_tech = 1
-				}
-			}
-		}
-	}
-	focus = {
-		id = ncr_fln_the_threat_for_true_man
-		icon = GFX_goal_RDS_Flynn_Man_Bear
-		cost = 30
-		search_filters = { FOCUS_FILTER_ANNEXATION }
-		prerequisite = {
-			focus = ncr_fln_leader_of_reno
-		}
-		prerequisite = {
-			focus = ncr_fln_true_man_from_distant_lands
-		}
-		prerequisite = {
-			focus = ncr_fln_choosen_one
-		}
-		will_lead_to_war_with = NCR
-		will_lead_to_war_with = BON
-		relative_position_id = ncr_fln_true_man_around
-		x = 0
-		y = 3
-		completion_reward = {
-			BON = {
-				RDS = {
-					grant_wargoals_on_core_states_of_prev = yes
-				}
-			}
-			NCR = {
-				RDS = {
-					grant_wargoals_on_core_states_of_prev = yes
-				}
-			}
-		}
-	}
-	focus = {
-		id = ncr_fln_the_last_threat_for_true_man
-		icon = GFX_goal_RDS_Flynn_Bull
-		cost = 30
-		search_filters = { FOCUS_FILTER_ANNEXATION }
-		available = {
-			has_completed_focus = ncr_fln_free_from_parasites
-		}
-		prerequisite = {
-			focus = ncr_fln_the_threat_for_true_man
-		}
-		prerequisite = {
-			focus = ncr_fln_buff_shi
-		}
-		prerequisite = {
-			focus = ncr_fln_buff_vault_city
-		}
-		relative_position_id = ncr_fln_the_threat_for_true_man
-		x = 0
-		y = 1
-		completion_reward = {
-			CES = {
-				RDS = {
-					grant_wargoals_on_core_states_of_prev = yes
-				}
-			}
-		}
-	}
-	##################################
-	#######Flynn Independce Tree######
-	##################################
-
-
-	##################################
-	#######REDDING PEOPLE TREE########
-	##################################
-	focus = {
-		id = ncr_rpr_only_people
-		icon = GFX_goal_NCR_People_Start
-		cost = 14
-		search_filters = { FOCUS_FILTER_STABILITY }
-		x = 50
-		y = 11
-		allow_branch = {
-			has_country_flag = RDS_commie_tree_unlock
-		}
-		completion_reward = {
-			add_stability = 0.1
-		}
-	}
-	focus = {
-		id = ncr_rpr_sheriff_support
-		icon = GFX_goal_cowboy_hat
-		cost = 28
-		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
-		prerequisite = {
-			focus = ncr_rpr_only_people
-		}
-		relative_position_id = ncr_rpr_only_people
-		x = -3
-		y = 1
-		completion_reward = {
-			add_war_support = 0.05
-			if = {
-				limit = {
-					has_idea = bar_sheriff_unrest
-				}
-				remove_ideas = bar_sheriff_unrest
-			}
-			else_if = {
-				limit = {
-					has_idea = bar_sheriff_unrest_2
-				}
-				remove_ideas = bar_sheriff_unrest_2
-			}
-			else_if = {
-				limit = {
-					has_idea = bar_sheriff_unrest_3
-				}
-				remove_ideas = bar_sheriff_unrest_3
-			}
-			else_if = {
-				limit = {
-					has_idea = bar_sheriff_unrest_4
-				}
-				remove_ideas = bar_sheriff_unrest_4
-			}
-		}
-	}
-	focus = {
-		id = ncr_rpr_took_baron_stuff
-		icon = GFX_goal_cap_and_cash
-		cost = 28
-		prerequisite = {
-			focus = ncr_rpr_only_people
-		}
-		relative_position_id = ncr_rpr_only_people
-		x = 0
-		y = 1
-		completion_reward = {
-			add_stability = -0.1
-			168 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-			543 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-			421 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-			584 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-			every_owned_state = {
-				add_extra_state_shared_building_slots = 1
-			}
-		}
-	}
-	focus = {
-		id = ncr_rpr_support_calhoun
-		icon = GFX_goal_NCR_Calhoun
-		cost = 28
-		available = {
-			BON = {
-				exists = yes
-				NOT = {
-					has_war_with = ROOT
-				}
-			}
-		}
-		prerequisite = {
-			focus = ncr_rpr_only_people
-		}
-		bypass = {
-			BON = {
-				OR = {
-					exists = no
-					has_war_with = ROOT
-				}
-			}
-		}
-		relative_position_id = ncr_rpr_only_people
-		x = 3
-		y = 1
-		completion_reward = {
-			add_opinion_modifier = {
-				target = BON
-				modifier = rds_the_good_fight
-			}
-			BON = {
-				add_opinion_modifier = {
-					target = RDS
-					modifier = rds_the_good_fight
-				}
-			}
-			add_political_power = -100
-			add_manpower = -847
-			BON = {
-				add_manpower = 847
-				add_political_power = 100
-			}
-		}
-	}
-	focus = {
-		id = ncr_rpr_future_of_redding
-		icon = GFX_goal_bobble_head_speech
-		cost = 28
-		prerequisite = {
-			focus = ncr_rpr_sheriff_support
-		}
-		prerequisite = {
-			focus = ncr_rpr_took_baron_stuff
-		}
-		prerequisite = {
-			focus = ncr_rpr_support_calhoun
-		}
-		relative_position_id = ncr_rpr_only_people
-		x = 0
-		y = 2
-		completion_reward = {
-			country_event = ncr_red.9
-		}
-	}
-	focus = {
-		id = ncr_rpr_support_farmers
-		icon = GFX_goal_food_various_vegetables
-		cost = 28
-		available = {
-			has_country_flag = rds_support_farmers_flag
-		}
-		prerequisite = {
-			focus = ncr_rpr_future_of_redding
-		}
-		mutually_exclusive = {
-			focus = ncr_rpr_support_miners
-		}
-		relative_position_id = ncr_rpr_future_of_redding
-		x = -2
-		y = 1
-		completion_reward = {
-			add_country_leader_trait = farmer_majority
-		}
-	}
-	focus = {
-		id = ncr_rpr_peoples_militia
-		icon = GFX_goal_commie_soldier_2
-		cost = 28
-		prerequisite = {
-			focus = ncr_rpr_support_farmers
-		}
-		relative_position_id = ncr_rpr_support_farmers
-		x = -2
-		y = 1
-		completion_reward = {
-			add_ideas = bar_peoples_militia
-		}
-	}
-	focus = {
-		id = ncr_rpr_people_of_california
-		icon = GFX_goal_generic_bb_gun
-		cost = 28
-		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
-		available = {
-			NCR = {
-				exists = yes
-			}
-		}
-		prerequisite = {
-			focus = ncr_rpr_support_farmers
-		}
-		relative_position_id = ncr_rpr_support_farmers
-		x = 0
-		y = 1
-		completion_reward = {
-			NCR = {
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = -781
-					producer = NCR
-				}
-				add_stability = -0.05
-				add_manpower = -781
-			}
-			add_equipment_to_stockpile = {
-				type = infantry_equipment
-				amount = 781
-				producer = NCR
-			}
-			add_war_support = 0.1
-			add_manpower = 781
-		}
-	}
-	focus = {
-		id = ncr_rpr_redding_tunnels_hide
-		icon = GFX_goal_generic_outpost
-		cost = 28
-		prerequisite = {
-			focus = ncr_rpr_peoples_militia
-		}
-		relative_position_id = ncr_rpr_peoples_militia
-		x = 1
-		y = 2
-		completion_reward = {
-			add_offsite_building = { type = industrial_complex level = 3 }
-			add_ideas = bar_tunnel_defense
-		}
-	}
-	focus = {
-		id = ncr_rpr_invite_followers
-		icon = GFX_goal_enc_education_by_followers
-		cost = 28
-		prerequisite = {
-			focus = ncr_rpr_support_miners
-			focus = ncr_rpr_support_farmers
-		}
-		relative_position_id = ncr_rpr_future_of_redding
-		x = 0
-		y = 2
-		completion_reward = {
-			if = {
-				limit = {
-					has_global_flag = followers_system_toggle_enabled_global_flag
-					NOT = {
-						has_country_flag = followers_established
-					}
-				}
-				establish_followers = yes
-			}
-			add_tech_bonus = {
-				bonus = 0.5
-				uses = 2
-				category = support_medical_tech_category
-			}
-		}
-	}
-	focus = {
-		id = ncr_rpr_ranch_2_hospital
-		icon = GFX_goal_VEG_Follower_Support
-		cost = 28
-		prerequisite = {
-			focus = ncr_rpr_invite_followers
-		}
-		relative_position_id = ncr_rpr_invite_followers
-		x = 0
-		y = 1
-		completion_reward = {
-			add_ideas = followers_doctors
-			set_province_name = {
-					id = 1776
-					name = rds_com_hospital
-				}
-		}
-	}
-	focus = {
-		id = ncr_rpr_support_miners
-		icon = GFX_goal_generic_helm_gas_mask
-		cost = 28
-		available = {
-			has_country_flag = rds_support_miners_flag
-		}
-		prerequisite = {
-			focus = ncr_rpr_future_of_redding
-		}
-		mutually_exclusive = {
-			focus = ncr_rpr_support_farmers
-		}
-		relative_position_id = ncr_rpr_future_of_redding
-		x = 2
-		y = 1
-		completion_reward = {
-			retire_country_leader = yes
-			add_country_leader_role = {
-				character = RDS_Daniel
-				promote_leader = yes
-				country_leader = {
-					ideology = unlimited_democracy
-					expire = "3000.01.01.01"
-					traits = {
-						well_liked_leader
-					}
-				}
-			}
-			hidden_effect = {
-				set_cosmetic_tag = RDS_People_Republic_Miners
-			}
-		}
-	}
-	focus = {
-		id = ncr_rpr_wanamingo_mine
-		icon = GFX_goal_generic_creature_wanamingo
-		cost = 28
-		prerequisite = {
-			focus = ncr_rpr_support_miners
-		}
-		relative_position_id = ncr_rpr_support_miners
-		x = 0
-		y = 1
-		completion_reward = {
-			add_tech_bonus = {
-				bonus = 0.5
-				uses = 2
-				category = cat_land_doctrine
-			}
-			add_ideas = NAV_wanamingo_idea
-		}
-	}
-	focus = {
-		id = ncr_rpr_our_protectors
-		icon = GFX_goal_generic_smoking_cowboy
-		cost = 28
-		prerequisite = {
-			focus = ncr_rpr_support_miners
-		}
-		relative_position_id = ncr_rpr_support_miners
-		x = 2
-		y = 1
-		completion_reward = {
-			army_experience = 25
-			add_ideas = bar_common_protectors
-		}
-	}
-	focus = {
-		id = ncr_rpr_redding_tunnels_build
-		icon = GFX_goal_generic_grenade_launcher
-		cost = 28
-		prerequisite = {
-			focus = ncr_rpr_our_protectors
-		}
-		relative_position_id = ncr_rpr_our_protectors
-		x = -1
-		y = 2
-		completion_reward = {
-			add_offsite_building = { type = arms_factory level = 3 }
-			add_ideas = bar_reused_equipment
-			add_equipment_to_stockpile = {
-				type = infantry_equipment
-				amount = 480
-					producer = USA
-			}
-		}
-	}
-	focus = {
-		id = ncr_rpr_good_man
-		icon = GFX_goal_TTM_Followers_Flag
-		cost = 28
-		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
-		available = {
-			OR = {
-				has_completed_focus = ncr_rpr_redding_tunnels_build
-				has_completed_focus = ncr_rpr_redding_tunnels_hide
-			}
-		}
-		prerequisite = {
-			focus = ncr_rpr_ranch_2_hospital
-		}
-		relative_position_id = ncr_rpr_ranch_2_hospital
-		x = 0
-		y = 1
-		completion_reward = {
-			add_war_support = 0.15
-			custom_effect_tooltip = rds_good_fight_tt
-			if = {
-				limit = {
-					BON = {
-						has_war_with = NCR
-					}
-				}
-				add_ideas = bar_help_the_good_fight
-			}
-		}
-	}
-	focus = {
-		id = ncr_rpr_good_man_needs_us
-		icon = GFX_goal_generic_focus_magazine_robcofun_wastelad
-		cost = 28
-		available = {
-			BON = {
-				exists = yes
-				has_war = no
-			}
-		}
-		prerequisite = {
-			focus = ncr_rpr_good_man
-		}
-		mutually_exclusive = {
-			focus = ncr_rpr_good_man_needs_help
-		}
-		relative_position_id = ncr_rpr_good_man
-		x = -2
-		y = 1
-		completion_reward = {
-			custom_effect_tooltip = rds_debate_result_tt
-			if = {
-				limit = {
-					has_country_flag = rds_support_miners_flag
-				}
-				BON = {
-					country_event = ncr_red.11
-				}
-			}
-			else_if = {
-				limit = {
-					has_country_flag = rds_support_farmers_flag
-				}
-				BON = {
-					country_event = ncr_red.10
-					change_tag_from = ROOT
-				}
-			}
-		}
-	}
-	focus = {
-		id = ncr_rpr_good_man_needs_help
-		icon = GFX_goal_generic_emote_help
-		cost = 28
-		search_filters = { FOCUS_FILTER_ANNEXATION }
-		available = {
-			BON = {
-				exists = no
-			}
-		}
-		mutually_exclusive = {
-			focus = ncr_rpr_good_man_needs_us
-		}
-		prerequisite = {
-			focus = ncr_rpr_good_man
-		}
-		will_lead_to_war_with = NCR
-		relative_position_id = ncr_rpr_good_man
-		x = 2
-		y = 1
-		completion_reward = {
-			add_manpower = 1935
-			add_ideas = bar_fight_against_tyranny
-			NCR = { ROOT = { grant_wargoals_on_core_states_of_prev = yes } }
-			BON = { ROOT = { grant_wargoals_on_core_states_of_prev = yes } }
-			mark_focus_tree_layout_dirty = yes
-		}
-	}
-	focus = {
-		id = ncr_rpr_peoples_califronia
-		icon = GFX_goal_commie_propaganda
-		cost = 28
-		allow_branch = {
-			has_completed_focus = ncr_rpr_good_man_needs_help
-		}
-		available = {
-			owns_state = 350
-			owns_state = 253
-		}
-		relative_position_id = ncr_rpr_good_man
-		x = 0
-		y = 2
-		completion_reward = {
-			set_cosmetic_tag = RDS_Cali_People_Republic
-
-			hidden_effect = {
-				set_country_leader_name = {
-					ideology = people
-					name = RDS_California_Council_name
-				}
-				set_country_leader_portrait = {
-					ideology = people
-					portrait = GFX_Portrait_RDS_cwk
-				}
-			}
-		}
-	}
-	##################################
-	#######REDDING PEOPLE TREE########
-	##################################
-
-	##################################
-	#######REDDING SHERIFFS TREE######
-	##################################
-	focus = {
-		id = ncr_srf_pardon_some_barons
-		icon = GFX_goal_ancient_wealth
-		allow_branch = {
-			has_country_flag = RDS_sheriff_tree_unlock
-		}
-		mutually_exclusive = {
-			focus = ncr_srf_baron_trials
-		}
-		cost = 14
-		x = 48
-		y = 11
-		completion_reward = {
-			add_stability = -0.05
-			add_ideas = bar_soft_baron_trials
-		}
-	}
-	focus = {
-		id = ncr_srf_sheriffs_for_people
-		icon = GFX_goal_generic_the_kids_arent_alright
-		prerequisite = {
-			focus = ncr_srf_pardon_some_barons
-		}
-		relative_position_id = ncr_srf_pardon_some_barons
-		cost = 14
-		x = 0
-		y = 1
-		completion_reward = {
-			if = {
-				limit = {
-					has_idea = bar_workers_unrest
-				}
-				remove_ideas = bar_workers_unrest
-				141 = {
-					add_extra_state_shared_building_slots = 3
-					add_building_construction = {
-						type = industrial_complex
-						level = 3
-						instant_build = yes
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = bar_workers_unrest_2
-				}
-				remove_ideas = bar_workers_unrest_2
-				141 = {
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = industrial_complex
-						level = 2
-						instant_build = yes
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = bar_workers_unrest_3
-				}
-				remove_ideas = bar_workers_unrest_3
-				141 = {
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = industrial_complex
-						level = 1
-						instant_build = yes
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = bar_workers_unrest_4
-				}
-				remove_ideas = bar_workers_unrest_4
-				141 = {
-					add_extra_state_shared_building_slots = 2
-				}
-			}
-		}
-	}
-	focus = {
-		id = ncr_srf_new_outlook
-		icon = GFX_goal_generic_put_that_pistol_down
-		prerequisite = {
-			focus = ncr_srf_sheriffs_for_people
-		}
-		relative_position_id = ncr_srf_sheriffs_for_people
-		cost = 14
-		x = 0
-		y = 1
-		completion_reward = {
-			retire_country_leader = yes
-			add_country_leader_role = {
-				character = RDS_Harry_OConnor
-				promote_leader = yes
-				country_leader = {
-					ideology = benevolent_dictatorship
-					expire = "3000.01.01.01"
-					traits = {
-						smooth_talking_charmer
-					}
-				}
-			}
-			add_ideas = bar_old_guard_riots
-		}
-	}
-	focus = {
-		id = ncr_srf_baron_trials
-		icon = GFX_goal_arr_maxsec_prison
-		allow_branch = {
-			has_country_flag = RDS_sheriff_tree_unlock
-		}
-		mutually_exclusive = {
-			focus = ncr_srf_pardon_some_barons
-		}
-		cost = 14
-		search_filters = { FOCUS_FILTER_STABILITY }
-		x = 50
-		y = 11
-		completion_reward = {
-			add_stability = 0.05
-			add_timed_idea = {
-				idea = bar_baron_trials
-				days = 90
-			}
-		}
-	}
-	focus = {
-		id = ncr_srf_people_for_sheriffs
-		icon = GFX_goal_cowboy_hat
-		prerequisite = {
-			focus = ncr_srf_baron_trials
-		}
-		relative_position_id = ncr_srf_baron_trials
-		cost = 14
-		x = 0
-		y = 1
-		completion_reward = {
-			if = {
-				limit = {
-					has_idea = bar_workers_unrest
-				}
-				remove_ideas = bar_workers_unrest
-				141 = {
-					add_extra_state_shared_building_slots = 3
-					add_building_construction = {
-						type = arms_factory
-						level = 3
-						instant_build = yes
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = bar_workers_unrest_2
-				}
-				remove_ideas = bar_workers_unrest_2
-				add_stability = -0.05
-				141 = {
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = arms_factory
-						level = 2
-						instant_build = yes
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = bar_workers_unrest_3
-				}
-				remove_ideas = bar_workers_unrest_3
-				add_stability = -0.10
-				141 = {
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = arms_factory
-						level = 1
-						instant_build = yes
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = bar_workers_unrest_4
-				}
-				remove_ideas = bar_workers_unrest_4
-				add_stability = -0.15
-				141 = {
-					add_extra_state_shared_building_slots = 2
-				}
-			}
-		}
-	}
-	focus = {
-		id = ncr_srf_the_old_guard
-		icon = GFX_goal_generic_smoking_cowboy
-		prerequisite = {
-			focus = ncr_srf_people_for_sheriffs
-		}
-		relative_position_id = ncr_srf_people_for_sheriffs
-		cost = 14
-		x = 0
-		y = 1
-		completion_reward = {
-			army_experience = 30
-			add_country_leader_trait = old_but_gold
-		}
-	}
-	focus = {
-		id = ncr_srf_redding_independence
-		icon = GFX_goal_generic_freedom
-		prerequisite = {
-			focus = ncr_srf_new_outlook
-			focus = ncr_srf_the_old_guard
-		}
-		relative_position_id = ncr_srf_the_old_guard
-		cost = 30
-		x = -1
-		y = 1
-		completion_reward = {
-			BON = {
-				country_event = ncr_red.12
-			}
-			custom_effect_tooltip = rds_remove_cores_tt
-			hidden_effect = {
-				every_state = {
-					limit = {
-						is_core_of = RDS
-						NOT = {
-							is_owned_and_controlled_by = RDS
-						}
-					}
-					remove_core_of = RDS
-				}
-			}
-
-		}
-	}
-	focus = {
-		id = ncr_srf_redding_calhoun
-		icon = GFX_goal_NCR_Calhoun
-		available = {
-			NOT = {
-				has_completed_focus = ncr_srf_redding_moore
-			}
-			has_country_flag = rds_bon_agrees
-		}
-		bypass = {
-			BON = {
-				NOT = {
-					has_war_with = NCR
-				}
-			}
-		}
-		prerequisite = {
-			focus = ncr_srf_redding_independence
-		}
-		relative_position_id = ncr_srf_redding_independence
-		cost = 30
-		x = -1
-		y = 1
-		completion_reward = {
-			BON = {
-				add_ideas = bar_help_from_sheriffs
-			}
-		}
-	}
-	focus = {
-		id = ncr_srf_redding_moore
-		icon = GFX_goal_NCR_Moore
-		available = {
-			NOT = {
-				has_completed_focus = ncr_srf_redding_calhoun
-			}
-			has_country_flag = rds_ncr_agrees
-		}
-		bypass = {
-			NCR = {
-				NOT = {
-					has_war_with = BON
-				}
-			}
-		}
-		prerequisite = {
-			focus = ncr_srf_redding_independence
-		}
-		relative_position_id = ncr_srf_redding_independence
-		cost = 30
-		x = 1
-		y = 1
-		completion_reward = {
-			NCR = {
-				add_ideas = bar_help_from_sheriffs
-			}
-		}
-	}
-	focus = {
-		id = ncr_srf_redding_none
-		icon = GFX_goal_lever_action_cowboy
-		available = {
-			NOT = {
-				OR = {
-					has_completed_focus = ncr_srf_redding_calhoun
-					has_completed_focus = ncr_srf_redding_moore
-				}
-			}
-			has_country_flag = rds_none_agrees
-		}
-		prerequisite = {
-			focus = ncr_srf_redding_independence
-		}
-		relative_position_id = ncr_srf_redding_independence
-		cost = 30
-		x = 0
-		y = 2
-		completion_reward = {
-			add_ideas = bar_fight_the_power
-		}
-	}
-	focus = {
-		id = ncr_srf_cooperative_redding
-		icon = GFX_goal_generic_generator_old
-		prerequisite = {
-			focus = ncr_srf_new_outlook
-		}
-		relative_position_id = ncr_srf_new_outlook
-		cost = 30
-		x = -2
-		y = 1
-		completion_reward = {
-			add_tech_bonus = {
-				bonus = 0.75
-				uses = 1
-				category = industry
-			}
-			add_tech_bonus = {
-				bonus = 0.75
-				uses = 1
-				category = electronics
-			}
-			141 = {
-				add_extra_state_shared_building_slots = 4
-				add_building_construction = {
-					type = industrial_complex
-					level = 4
-					instant_build = yes
-				}
-			}
-		}
-	}
-	focus = {
-		id = ncr_srf_use_baron_connection
-		icon = GFX_goal_cap_and_cash
-		prerequisite = {
-			focus = ncr_srf_cooperative_redding
-		}
-		available = {
-			set_temp_variable = {
-				caps_diff = -50
-			}
-			caps_cost_trigger = yes
-		}
-		relative_position_id = ncr_srf_cooperative_redding
-		cost = 30
-		x = -4
-		y = 1
-		completion_reward = {
-			set_temp_variable = { caps_to_add = -50 }
-			add_caps = yes
-			add_ideas = bar_baron_connections
-		}
-	}
-	focus = {
-		id = ncr_srf_revive_redding
-		icon = GFX_goal_ancient_wealth_2
-		prerequisite = {
-			focus = ncr_srf_use_baron_connection
-		}
-		available = {
-			set_temp_variable = {
-				caps_diff = -100
-			}
-			caps_cost_trigger = yes
-		}
-		relative_position_id = ncr_srf_use_baron_connection
-		cost = 30
-		x = 0
-		y = 1
-		completion_reward = {
-			set_temp_variable = { caps_to_add = -100 }
-			add_caps = yes
-			141 = {
-				add_extra_state_shared_building_slots = 4
-				add_building_construction = {
-					type = industrial_complex
-					level = 4
-					instant_build = yes
-				}
-			}
-		}
-	}
-	focus = {
-		id = ncr_srf_thinking_big
-		icon = GFX_goal_brahmin_deals
-		prerequisite = {
-			focus = ncr_srf_cooperative_redding
-		}
-		relative_position_id = ncr_srf_cooperative_redding
-		cost = 30
-		x = -2
-		y = 1
-		completion_reward = {
-			create_or_join_big_circle = yes
-			EUR = {
-				invite_to_big_circle = yes
-			}
-			NEW = {
-				invite_to_big_circle = yes
-			}
-			SHI = {
-				invite_to_big_circle = yes
-			}
-		}
-	}
-	focus = {
-		id = ncr_srf_coop_economy
-		icon = GFX_goal_generic_money
-		available = {
-			OR = {
-				EUR = {
-					is_big_circle_member = yes
-				}
-				NEW = {
-					is_big_circle_member = yes
-				}
-				SHI = {
-					is_big_circle_member = yes
-				}
-			}
-		}
-		bypass = {
-			EUR = {
-				is_not_big_circle_member = yes
-			}
-			NEW = {
-				is_not_big_circle_member = yes
-			}
-			SHI = {
-				is_not_big_circle_member = yes
-			}
-		}
-		prerequisite = {
-			focus = ncr_srf_thinking_big
-		}
-		relative_position_id = ncr_srf_thinking_big
-		cost = 30
-		x = 0
-		y = 1
-		completion_reward = {
-			every_country = {
-				limit = {
-					is_big_circle_member = yes
-				}
-				add_ideas = bar_the_big_circle
-				random_owned_state = {
-					add_extra_state_shared_building_slots = 3
-					add_building_construction = {
-						type = industrial_complex
-						level = 3
-						instant_build = yes
-					}
-				}
-			}
-		}
-	}
-	focus = {
-		id = ncr_srf_calm_old_guard
-		icon = GFX_goal_generic_gentlemen_sniper
-		prerequisite = {
-			focus = ncr_srf_cooperative_redding
-		}
-		relative_position_id = ncr_srf_cooperative_redding
-		cost = 30
-		x = 0
-		y = 1
-		completion_reward = {
-			add_war_support = -0.1
-			add_manpower = -13
-			remove_ideas = bar_old_guard_riots
-			hidden_effect = {
-				retire_character = RDS_Lawrence_Greene
-			}
-		}
-	}
-	focus = {
-		id = ncr_srf_new_sheriffs
-		icon = GFX_goal_generic_new_sheriff_in_town
-		prerequisite = {
-			focus = ncr_srf_calm_old_guard
-		}
-		relative_position_id = ncr_srf_calm_old_guard
-		cost = 30
-		x = 0
-		y = 1
-		completion_reward = {
-			add_tech_bonus = {
-				bonus = 0.75
-				uses = 2
-				category = cat_land_doctrine
-			}
-			add_ideas = bar_new_blood
-		}
-	}
-	focus = {
-		id = ncr_srf_redding_of_the_future
-		icon = GFX_goal_pal_vault_city
-		prerequisite = {
-			focus = ncr_srf_new_sheriffs
-		}
-		prerequisite = {
-			focus = ncr_srf_revive_redding
-		}
-		prerequisite = {
-			focus = ncr_srf_coop_economy
-		}
-		relative_position_id = ncr_srf_new_sheriffs
-		cost = 30
-		x = -1
-		y = 1
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = bar_baron_connections
-				add_idea = bar_future_redding
-			}
-			set_cosmetic_tag = RDS_Sheriff_Republic
-		}
-	}
-	###Old Guard
-	focus = {
-		id = ncr_srf_strong_redding
-		icon = GFX_goal_generic_structure_wood
-		available = {
-			has_completed_focus = ncr_srf_redding_independence
-		}
-		prerequisite = {
-			focus = ncr_srf_the_old_guard
-		}
-		relative_position_id = ncr_srf_the_old_guard
-		cost = 30
-		x = 2
-		y = 1
-		completion_reward = {
-			add_tech_bonus = {
-				bonus = 0.5
-				uses = 2
-				category = industry
-			}
-			141 = {
-				add_extra_state_shared_building_slots = 4
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
-	focus = {
-		id = ncr_srf_old_dog
-		icon = GFX_goal_ncr_cowboy
-		prerequisite = {
-			focus = ncr_srf_strong_redding
-		}
-		relative_position_id = ncr_srf_strong_redding
-		cost = 30
-		x = 0
-		y = 1
-		completion_reward = {
-			add_ideas = bar_old_dog
-		}
-	}
-	focus = {
-		id = ncr_srf_and_new_tricks
-		icon = GFX_goal_generic_laser_rifle_1
-		available = {
-			set_temp_variable = {
-				caps_diff = -100
-			}
-			caps_cost_trigger = yes
-		}
-		prerequisite = {
-			focus = ncr_srf_old_dog
-		}
-		relative_position_id = ncr_srf_old_dog
-		cost = 30
-		x = 0
-		y = 1
-		completion_reward = {
-			set_temp_variable = { caps_to_add = -100 }
-			add_caps = yes
-			NEW = {
-				set_temp_variable = { caps_to_add = 100 }
-				add_caps = yes
-			}
-			set_technology = {
-				energy_weaponry_tech_1 = 2
-			}
-		}
-	}
-	focus = {
-		id = ncr_srf_welcome_weaponsmiths
-		icon = GFX_goal_NCR_Army_Weapon_Gun_Runners
-		prerequisite = {
-			focus = ncr_srf_strong_redding
-		}
-		relative_position_id = ncr_srf_strong_redding
-		cost = 30
-		x = 2
-		y = 1
-		completion_reward = {
-			135 = {
-				set_temp_variable = {
-					org_selector = 1
-				}
-				organization_add_to_node = yes
-				add_extra_state_shared_building_slots = 4
-				add_building_construction = {
-					type = arms_factory
-					level = 3
-					instant_build = yes
-				}
-			}
-		}
-	}
-	focus = {
-		id = ncr_srf_protected_not_isolated
-		icon = GFX_goal_pal_back_to_raiding
-		prerequisite = {
-			focus = ncr_srf_welcome_weaponsmiths
-		}
-		relative_position_id = ncr_srf_welcome_weaponsmiths
-		cost = 30
-		x = 0
-		y = 1
-		completion_reward = {
-			create_or_join_big_circle = yes
-			if = {
-				limit = {
-					EUR = {
-						OR = {
-							has_government = elites
-							has_government = people
-						}
-					}
-				}
-				EUR = {
-					invite_to_big_circle = yes
-				}
-			}
-		}
-	}
-	focus = {
-		id = ncr_srf_baron_stashes
-		icon = GFX_goal_generic_pistol_single_action
-		prerequisite = {
-			focus = ncr_srf_strong_redding
-		}
-		relative_position_id = ncr_srf_strong_redding
-		cost = 30
-		x = 4
-		y = 1
-		completion_reward = {
-			add_equipment_to_stockpile = {
-				type = infantry_equipment
-				amount = 1000
-				producer = RDS
-			}
-		}
-	}
-	focus = {
-		id = ncr_srf_ranches_2_workshops
-		icon = GFX_goal_generic_tinker_workbench
-		prerequisite = {
-			focus = ncr_srf_baron_stashes
-		}
-		relative_position_id = ncr_srf_baron_stashes
-		cost = 30
-		x = 0
-		y = 1
-		completion_reward = {
-			421 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-			168 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-			543 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-			584 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-	}
-	focus = {
-		id = ncr_srf_redding_stronghold
-		icon = GFX_goal_generic_western
-		prerequisite = {
-			focus = ncr_srf_and_new_tricks
-		}
-		prerequisite = {
-			focus = ncr_srf_protected_not_isolated
-		}
-		prerequisite = {
-			focus = ncr_srf_ranches_2_workshops
-		}
-		relative_position_id = ncr_srf_and_new_tricks
-		cost = 30
-		x = 1
-		y = 1
-		completion_reward = {
-			add_ideas = bar_redding_stronghold
-			custom_effect_tooltip = rds_sheriff_forts_tt
-			hidden_effect = {
-				489 = {
-					add_building_construction = {
-						type = bunker
-						level = 1
-						instant_build = yes
-						province = 4619
-					}
-					add_building_construction = {
-						type = bunker
-						level = 1
-						instant_build = yes
-						province = 2075
-					}
-					add_building_construction = {
-						type = bunker
-						level = 1
-						instant_build = yes
-						province = 2264
-					}
-					add_building_construction = {
-						type = bunker
-						level = 1
-						instant_build = yes
-						province = 4827
-					}
-					add_building_construction = {
-						type = bunker
-						level = 1
-						instant_build = yes
-						province = 2262
-					}
-				}
-				455 = {
-					add_building_construction = {
-						type = bunker
-						level = 1
-						instant_build = yes
-						province = 8766
-					}
-					add_building_construction = {
-						type = bunker
-						level = 1
-						instant_build = yes
-						province = 4828
-					}
-					add_building_construction = {
-						type = bunker
-						level = 1
-						instant_build = yes
-						province = 3921
-					}
-					add_building_construction = {
-						type = bunker
-						level = 1
-						instant_build = yes
-						province = 3292
-					}
-					add_building_construction = {
-						type = bunker
-						level = 1
-						instant_build = yes
-						province = 5051
-					}
-					add_building_construction = {
-						type = bunker
-						level = 1
-						instant_build = yes
-						province = 2460
-					}
-				}
-			}
-		}
-	}
-
 	###########################
 	#  Dharmic Path
 	############################

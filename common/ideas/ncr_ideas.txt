@@ -83,6 +83,25 @@ ideas = {
 			}
 		}
 
+		blastfromthepast = {
+
+			picture = generic_catastrophe
+
+			allowed = {
+				always = no
+			}
+
+			equipment_bonus = {
+				demolitions_equipment = {
+					build_cost_ic = -0.05
+					soft_attack = 0.05
+					hard_attack = 0.05
+					instant = yes
+				}
+			}
+
+			removal_cost = -1
+		}
 
 		ncr_command_power_good = {
 
@@ -699,7 +718,8 @@ ideas = {
 			}
 			modifier = {
 				special_forces_min = 85
-				conscription_factor = -0.14
+				special_forces_cap = 0.1
+				conscription_factor = -0.15
 				modifier_army_sub_unit_power_armour_attack_factor = 0.05
 				modifier_army_sub_unit_power_armour_speed_factor = 0.05
 			}

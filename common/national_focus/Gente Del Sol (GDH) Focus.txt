@@ -1289,6 +1289,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		completion_reward = {
+			add_research_slot = 1
 			custom_effect_tooltip = gdh_technological_tyrant_tt
 		}
 	}

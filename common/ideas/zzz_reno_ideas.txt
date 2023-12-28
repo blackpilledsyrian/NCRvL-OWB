@@ -636,7 +636,10 @@ ideas = {
 			}
 
 			removal_cost = -1
-
+			modifier = {
+				special_forces_cap = 0.05
+				special_forces_min = 40
+			}
 			research_bonus = {
 				cat_land_doctrine = 0.1
 				infantry_tech_category = 0.1

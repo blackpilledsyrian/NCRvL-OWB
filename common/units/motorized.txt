@@ -172,7 +172,7 @@ sub_units = {
 			category_vehicles
 		}
 
-		combat_width = 2
+		combat_width = 1.5
 
 		#Size Definitions
 		max_strength = 10
@@ -250,7 +250,7 @@ sub_units = {
 			category_vehicles
 		}
 
-		combat_width = 2
+		combat_width = 1.5
 
 		#Size Definitions
 		max_strength = 10
@@ -328,7 +328,7 @@ sub_units = {
 			category_vehicles
 		}
 
-		combat_width = 2
+		combat_width = 1.5
 
 		#Size Definitions
 		max_strength = 10

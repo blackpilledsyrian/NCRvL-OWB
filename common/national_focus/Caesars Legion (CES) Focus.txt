@@ -4279,7 +4279,7 @@ focus_tree = {
         y = 1
         relative_position_id = ces_thesis1
         available = {
-            controls_state = 253
+            controls_state = 350
         }
         prerequisite = {
             focus = ces_thesis1
@@ -4290,11 +4290,10 @@ focus_tree = {
                     OR = {
                         is_core_of = NCR
                         is_core_of = VEG
+                        is_core_of = MOT
                     }
                 }
-                add_resistance_target = {
-                    amount = -10
-                }
+                add_core_of = CES
             }
         }
     }
@@ -4325,11 +4324,12 @@ focus_tree = {
         relative_position_id = ces_the_academy
         prerequisite = {
             focus = ces_the_academy
-        }
-        prerequisite = {
             focus = ces_justice
         }
         completion_reward = {
+            set_technology = {
+                naval_tech_level_scientific = 1
+            }
             swap_ideas = {
                 remove_idea = roman_citizens
                 add_idea = roman_citizens2
@@ -5488,7 +5488,7 @@ focus_tree = {
                     set_technology = {
                         infantry_tech_level_settler = 1
                         support_tech_level_settler = 1
-                        vehicles_tech_level_settler = 1
+                        vehicles_tech_level_scientific = 1
                         legion_centurions_tech = 1
                         legion_vexillarius_tech = 1
                         legion_training_tech = 1
@@ -5533,7 +5533,7 @@ focus_tree = {
                     set_technology = {
                         infantry_tech_level_settler = 1
                         support_tech_level_settler = 1
-                        special_forces_tech_level_settler = 1
+                        special_forces_tech_level_scientific = 1
                         legion_centurions_tech = 1
                         legion_vexillarius_tech = 1
                         legion_training_tech = 1
@@ -6044,7 +6044,6 @@ focus_tree = {
         y = 1
         completion_reward = {
             set_technology = {
-                warden_doggos_tech = 1
                 special_forces_tech_level_scientific = 1
             }
         }
@@ -6805,11 +6804,11 @@ focus_tree = {
         available = {
             if = {
                 limit = { NOT = { is_ai = yes } }
-                has_army_experience > 20
+                has_army_experience > 10
             }
         }
         completion_reward = {
-            army_experience = -20
+            army_experience = -10
             add_ideas = lac_army_hastati
             add_manpower = 2000
         }
@@ -6827,11 +6826,11 @@ focus_tree = {
         available = {
             if = {
                 limit = { NOT = { is_ai = yes } }
-                has_army_experience > 20
+                has_army_experience > 10
             }
         }
         completion_reward = {
-            army_experience = -20
+            army_experience = -10
             add_ideas = lac_army_testudo
         }
     }
@@ -6848,11 +6847,11 @@ focus_tree = {
         available = {
             if = {
                 limit = { NOT = { is_ai = yes } }
-                has_army_experience > 35
+                has_army_experience > 15
             }
         }
         completion_reward = {
-            army_experience = -35
+            army_experience = -15
             add_tech_bonus = {
                 bonus = 0.75
                 uses = 2
@@ -6873,11 +6872,11 @@ focus_tree = {
         available = {
             if = {
                 limit = { NOT = { is_ai = yes } }
-                has_army_experience > 35
+                has_army_experience > 15
             }
         }
         completion_reward = {
-            army_experience = -35
+            army_experience = -15
             add_ideas = CES_frontier_toll
             add_war_support = 0.1
         }
@@ -6895,11 +6894,11 @@ focus_tree = {
         available = {
             if = {
                 limit = { NOT = { is_ai = yes } }
-                has_army_experience > 50
+                has_army_experience > 25
             }
         }
         completion_reward = {
-            army_experience = -50
+            army_experience = -25
             add_ideas = CES_merciless_cohort
         }
     }
@@ -7769,6 +7768,7 @@ focus_tree = {
         cost = 30
         prerequisite = {
             focus = ces_legate_honor
+            focus = ces_infiltrate_ncr
         }
         relative_position_id = ces_legate_honor
         x = 0
@@ -7841,6 +7841,7 @@ focus_tree = {
         cost = 30
         prerequisite = {
             focus = ces_burned_man
+            focus = ces_infiltrate_ncr
         }
         relative_position_id = ces_burned_man
         x = 0

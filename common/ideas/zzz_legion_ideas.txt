@@ -882,8 +882,8 @@ ideas = {
 			}
 			removal_cost = -1
 			modifier = {
-				compliance_gain = 0.03
-				resistance_growth = -0.05
+				special_forces_cap = 0.15
+				special_forces_min = 20
 			}
 		}
 		ces_fortress_arizona = {
@@ -1124,6 +1124,7 @@ ideas = {
 				modifier_army_sub_unit_infantry_defence_factor = 0.05
 				modifier_army_sub_unit_heavy_infantry_defence_factor = 0.05
 				special_forces_min = 10 #special_forces_cap = 0.01
+				special_forces_cap = 0.1
 				own_operative_detection_chance_factor = -0.25
 				operation_outcome = 0.1
 			}
@@ -1842,6 +1843,7 @@ ideas = {
 				modifier_army_sub_unit_power_armour_attack_factor = 0.1
 				modifier_army_sub_unit_power_armour_defence_factor = 0.1
 				special_forces_min = 40 #special_forces_cap = 0.02
+				special_forces_cap = 0.1
 				conscription_factor = -0.04
 			}
 			equipment_bonus = {

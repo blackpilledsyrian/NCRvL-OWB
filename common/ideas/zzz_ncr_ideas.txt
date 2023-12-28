@@ -82,7 +82,6 @@ ideas = {
 				mobilization_speed = 0.33
 				stability_factor = -0.33
 				caps_income_modifier = -0.33
-				caps_expense_modifier = 0.33
 			}
 		}
 
@@ -801,6 +800,7 @@ ideas = {
 			modifier = {
 				max_planning = 0.05
 				planning_speed = 0.15
+				special_forces_cap = 0.05
 			}
 		}
 
@@ -821,6 +821,7 @@ ideas = {
 			modifier = {
 				max_planning = 0.05
 				planning_speed = 0.15
+				special_forces_cap = 0.05
 			}
 			equipment_bonus = {
 				support_equipment = {
@@ -1456,6 +1457,7 @@ ideas = {
 				send_volunteers_tension = -1
 				diplomacy_distance_factor = 0.25
 				special_forces_min = 10
+				special_forces_cap = 0.1
 			}
 		}
 
@@ -1476,6 +1478,7 @@ ideas = {
 				send_volunteers_tension = -1
 				diplomacy_distance_factor = 0.25
 				special_forces_min = 30
+				special_forces_cap = 0.2
 				decryption = 1.5
 				civilian_intel_factor = 0.2
 				army_intel_factor = 0.2

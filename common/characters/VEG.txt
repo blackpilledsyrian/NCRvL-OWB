@@ -1,0 +1,740 @@
+characters = {
+	VEG_mr_house = {
+		name = VEG_MR_HOUSE_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_House_animated
+			}
+		}
+		country_leader = {
+			desc = VEG_MR_HOUSE_DESC
+			ideology = indifferent_despotism
+			traits = {
+				captain_of_industry
+				isolationist
+			}
+			expire = "3000.1.1.1"
+			id = -1
+		}
+	}
+	VEG_benny = {
+		instance = {
+			allowed = {
+				has_dlc = "La Resistance"
+			}
+			name = VEG_BENNY_NAME
+			portraits = {
+				civilian = {
+					large = GFX_Portrait_VEG_benny
+					small = GFX_idea_Benny
+				}
+			}
+			country_leader = {
+				desc = VEG_BENNY_DESC
+				ideology = conspiratory_oligarchy
+				traits = {
+					veg_rigged_from_the_start
+					expert_negotiator
+				}
+				expire = "3000.1.1.1"
+				id = 10022
+			}
+			advisor = {
+				cost = 100
+				slot = cultural_advisor
+				idea_token = VEG_benny_cultural_advisor
+				allowed = {
+					OR = {
+						original_tag = VEG					# Unlocked via focus
+						original_tag = MOJ					# Unlocked via focus
+					}
+				}
+				visible = {
+					OR = {
+						AND = {
+							has_completed_focus = moj_work_with_benny
+							NOT = {
+								VEG = {
+									has_completed_focus = veg_allin
+								}
+							}
+						}
+						original_tag = VEG
+					}
+				}
+				available = {
+					if = {
+						limit = {
+							original_tag = VEG
+						}
+						has_completed_focus = veg_chairmen
+					}
+					else = {
+						has_completed_focus = moj_work_with_benny
+					}
+				}
+				traits = {
+					benny_trait
+				}
+				ai_will_do = {
+					factor = 10
+				}
+			}
+		}
+		instance = {
+			allowed = {
+				NOT = {
+					has_dlc = "La Resistance"
+				}
+			}
+			name = VEG_BENNY_NAME
+			portraits = {
+				civilian = {
+					large = GFX_Portrait_VEG_benny
+					small = GFX_idea_Benny
+				}
+			}
+			country_leader = {
+				desc = VEG_BENNY_DESC
+				ideology = conspiratory_oligarchy
+				traits = {
+					veg_rigged_from_the_start
+					expert_negotiator
+				}
+				expire = "3000.1.1.1"
+				id = 10022
+			}
+			advisor = {
+				cost = 100
+				slot = cultural_advisor
+				idea_token = VEG_benny_cultural_advisor
+				allowed = {
+					OR = {
+						original_tag = VEG					# Unlocked via focus
+						original_tag = MOJ					# Unlocked via focus
+					}
+				}
+				visible = {
+					OR = {
+						AND = {
+							has_completed_focus = moj_work_with_benny
+							NOT = {
+								VEG = {
+									has_completed_focus = veg_allin
+								}
+							}
+						}
+						original_tag = VEG
+					}
+				}
+				available = {
+					if = {
+						limit = {
+							original_tag = VEG
+						}
+						has_completed_focus = veg_chairmen
+					}
+					else = {
+						has_completed_focus = moj_work_with_benny
+					}
+				}
+				traits = {
+					benny_trait_non_lar
+				}
+				ai_will_do = {
+					factor = 10
+				}
+			}
+		}
+	}
+	VEG_the_king = {
+		name = VEG_THE_KING_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_VEG_king
+				small = GFX_idea_The_King
+			}
+		}
+		country_leader = {
+			desc = VEG_THE_KING_DESC
+			ideology = kings_way
+			traits = {
+				popular_figurehead
+				smooth_talking_charmer
+			}
+			expire = "3000.1.1.1"
+			id = 10023
+		}
+		advisor = {
+			cost = 100
+			slot = cultural_advisor
+			idea_token = VEG_the_king_cultural_advisor
+			allowed = {
+				original_tag = VEG				# Unlocked via focus
+			}
+			available = {
+				has_completed_focus = veg_kings
+			}
+			traits = {
+				the_king_trait
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	VEG_pdq88b_wiggum = {
+		name = VEG_PDQ88B_WIGGUM_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Settler_Generic_26
+			}
+		}
+		country_leader = {
+			desc = VEG_PDQ88B_WIGGUM_DESC
+			ideology = ideocracy
+			traits = {
+				war_industrialist
+				fortification_engineer
+			}
+			expire = "2283.1.1.12"
+			id = -1
+		}
+	}
+	###############################
+	# Military Staff
+	###############################
+	VEG_offensive_protocols = {
+		name = VEG_OFFENSIVE_PROTOCOLS
+		portraits = {
+			army = {
+				small = GFX_idea_offensive_protocols
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = army_chief
+			ledger = army
+			idea_token = VEG_offensive_protocols_army_chief
+			allowed = {
+				original_tag = VEG
+			}
+			traits = {
+				aggressive_ai
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	VEG_pdq88b_carlson = {
+		name = "PDQ-88b Carlson"
+		portraits = {
+		}
+		advisor = {
+			slot = research_advisor
+			idea_token = NCR_pdq88b_carlson_research_advisor
+			ledger = army
+			allowed = {
+				original_tag = VEG
+			}
+			traits = {
+				military_theorist
+			}
+			research_bonus = {
+				cat_land_doctrine = 0.1
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	VEG_defensive_protocols = {
+		name = VEG_DEFENSIVE_PROTOCOLS
+		portraits = {
+			army = {
+				small = GFX_idea_defensive_protocols
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = army_chief
+			ledger = army
+			idea_token = VEG_defensive_protocols_army_chief
+			allowed = {
+				original_tag = VEG
+			}
+			traits = {
+				reserved_ai
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	VEG_unorthodox_protocols = {
+		name = VEG_UNORTHODOX_PROTOCOLS
+		portraits = {
+			army = {
+				small = GFX_idea_unorthodox_protocols
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = army_chief
+			ledger = army
+			idea_token = VEG_unorthodox_protocols_army_chief
+			allowed = {
+				original_tag = VEG
+			}
+			traits = {
+				unpredictable_ai
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	VEG_subroutine_alpha = {
+		name = VEG_SUBROUTINE_ALPHA
+		portraits = {
+			army = {
+				small = GFX_idea_subroutine_alpha
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			ledger = army
+			idea_token = VEG_subroutine_alpha_high_command
+			desc = subroutine_alpha_desc
+			allowed = {
+				original_tag = VEG
+			}
+			traits = {
+				internal_repair
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	VEG_subroutine_beta = {
+		name = VEG_SUBROUTINE_BETA
+		portraits = {
+			army = {
+				small = GFX_idea_subroutine_beta
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			ledger = army
+			idea_token = VEG_subroutine_beta_high_command
+			desc = subroutine_beta_desc
+			allowed = {
+				original_tag = VEG
+			}
+			traits = {
+				pre_simulated_tactics
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	VEG_subroutine_gamma = {
+		name = VEG_SUBROUTINE_GAMMA
+		portraits = {
+			army = {
+				small = GFX_idea_subroutine_gamma
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			ledger = army
+			idea_token = VEG_subroutine_gamma_high_command
+			desc = subroutine_gamma_desc
+			allowed = {
+				original_tag = VEG
+			}
+			traits = {
+				adaptive_learning
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	VEG_militia_leader_mick = {
+		name = VEG_MILITIA_LEADER_MICK
+		portraits = {
+			army = {
+				small = GFX_idea_militia_leader_mick
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			ledger = army
+			idea_token = VEG_militia_leader_mick_high_command
+			allowed = {
+				original_tag = VEG
+			}
+			traits = {
+				armed_politeness
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	VEG_false_khan = {
+		name = VEG_FALSE_KHAN
+		portraits = {
+			army = {
+				small = GFX_idea_False_Khan
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			ledger = army
+			idea_token = VEG_false_khan_high_command
+			allowed = {
+				original_tag = VEG				# Unlocked via focus
+			}
+			available = {
+				has_completed_focus = veg_khaganate
+			}
+			traits = {
+				false_khan
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	VEG_motor_runner = {
+		name = VEG_MOTOR_RUNNER
+		portraits = {
+			army = {
+				small = GFX_idea_Motor_Runner
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			ledger = army
+			idea_token = VEG_motor_runner_high_command
+			allowed = {
+				original_tag = VEG				# Unlocked via focus
+			}
+			available = {
+				has_completed_focus = veg_consig
+			}
+			traits = {
+				motor_runner
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	###############################
+	# Economic Policy - Advisors
+	###############################
+	VEG_nero = {
+		name = VEG_NERO
+		portraits = {
+			army = {
+				small = GFX_idea_Nero
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = economic_advisor
+			idea_token = VEG_nero_economic_advisor
+			allowed = {
+				original_tag = VEG				# Unlocked via focus
+			}
+			available = {
+				has_completed_focus = veg_omertas
+			}
+			traits = {
+				nero_trait
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	VEG_pacer = {
+		name = VEG_PACER
+		portraits = {
+			army = {
+				small = GFX_idea_pacer_minister
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = economic_advisor
+			idea_token = VEG_pacer_economic_advisor
+			allowed = {
+				original_tag = VEG
+			}
+			available = {
+				has_completed_focus = veg_kings
+			}
+			visible = {
+				original_tag = VEG
+			}
+			traits = {
+				pacer
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	VEG_duke = {
+		name = VEG_DUKE
+		portraits = {
+			army = {
+				small = GFX_idea_duke_minister
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = economic_advisor
+			idea_token = VEG_duke_economic_advisor
+			allowed = {
+				original_tag = VEG
+			}
+			available = {
+				has_completed_focus = veg_consig
+			}
+			visible = {
+				original_tag = VEG
+			}
+			traits = {
+				duke
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	VEG_phillipe = {
+		name = VEG_PHILLIPE
+		portraits = {
+			army = {
+				small = GFX_idea_phil_minister
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = economic_advisor
+			idea_token = VEG_phillipe_economic_advisor
+			allowed = {
+				original_tag = VEG
+			}
+			available = {
+				has_completed_focus = veg_whitegloves
+			}
+			visible = {
+				original_tag = VEG
+			}
+			traits = {
+				phillipe
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	VEG_jessup = {
+		name = VEG_JESSUP
+		portraits = {
+			army = {
+				small = GFX_idea_jessup_minister
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = economic_advisor
+			idea_token = VEG_jessup_economic_advisor
+			allowed = {
+				original_tag = VEG
+			}
+			available = {
+				has_completed_focus = veg_khaganate
+			}
+			traits = {
+				jessup
+			}
+			visible = {
+				original_tag = VEG
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	VEG_swank = {
+		name = VEG_SWANK
+		portraits = {
+			army = {
+				large = GFX_Portrait_VEG_swank
+				small = GFX_idea_swank_minister
+			}
+			civilian = {
+				large = GFX_Portrait_VEG_swank
+				small = GFX_idea_swank_minister
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = economic_advisor
+			idea_token = VEG_swank_economic_advisor
+			allowed = {
+				original_tag = VEG
+			}
+			available = {
+				has_completed_focus = veg_chairmen
+			}
+			traits = {
+				swank
+			}
+			visible = {
+				original_tag = VEG
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	###############################
+	# Cultural Policy - Advisors
+	###############################
+	VEG_mr_new_vegas = {
+		name = VEG_MR_NEW_VEGAS
+		portraits = {
+			army = {
+				small = GFX_idea_mr_new_vegas
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = cultural_advisor
+			idea_token = VEG_mr_new_vegas_cultural_advisor
+			allowed = {
+				original_tag = VEG
+			}
+			traits = {
+				beloved_personality
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	VEG_michael_angelo = {
+		name = VEG_MICHAEL_ANGELO
+		portraits = {
+			army = {
+				small = GFX_idea_michael_angelo
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = cultural_advisor
+			idea_token = VEG_michael_angelo_cultural_advisor
+			allowed = {
+				original_tag = VEG
+			}
+			traits = {
+				sensitive_artist
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	VEG_marjorie = {
+		name = VEG_MARJORIE
+		portraits = {
+			army = {
+				small = GFX_idea_Marjorie
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = cultural_advisor
+			idea_token = VEG_marjorie_cultural_advisor
+			allowed = {
+				original_tag = VEG				# Unlocked via focus
+			}
+			available = {
+				has_completed_focus = veg_whitegloves
+			}
+			traits = {
+				majorie_trait
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	###############################
+	# Unit/Navy Leaders
+	###############################
+	VEG_securitron_ai = {
+		name = VEG_SECURITRON_AI
+		portraits = {
+			army = {
+				large = GFX_Portrait_VEG_securitron_1
+			}
+		}
+		corps_commander = {
+			traits = {
+				strong_trait
+				intelligent_trait
+			}
+			skill = 3
+			attack_skill = 1
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 1
+			legacy_id = -1
+		}
+	}
+	VEG_victor = {
+		name = VEG_victor_name
+		portraits = {
+			army = {
+				large = GFX_Portrait_VEG_victor
+				#small = gfx_sprite_type_name_or_file_path
+			}
+			civilian = {
+				large = GFX_Portrait_VEG_victor
+				#small = gfx_sprite_type_name_or_file_path
+			}
+		}
+	}
+	VEG_arcade_gannon = {
+		name = VEG_arcade_gannon_name
+		portraits = {
+			army = {
+				large = GFX_Portrait_VEG_arcade
+				#small = gfx_sprite_type_name_or_file_path
+			}
+			civilian = {
+				large = GFX_Portrait_VEG_arcade
+				#small = gfx_sprite_type_name_or_file_path
+			}
+		}
+	}
+}

@@ -2898,13 +2898,6 @@ technologies = {
 				heavy_infantry_equipment = 5
 			}
 		}
-		motorized_heavy_infantry = {
-			supply_consumption = 0.01
-			need = {
-				dogs_equipment = 25
-				heavy_infantry_equipment = 5
-			}
-		}
 		spec_ops = {
 			supply_consumption = 0.01
 			need = {
@@ -2913,6 +2906,13 @@ technologies = {
 			}
 		}
 		power_armour = {
+			supply_consumption = 0.01
+			need = {
+				dogs_equipment = 25
+				power_armor_equipment = 5
+			}
+		}
+		sentinel_unit = {
 			supply_consumption = 0.01
 			need = {
 				dogs_equipment = 25

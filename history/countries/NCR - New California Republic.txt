@@ -44,12 +44,16 @@ set_technology = {
 	settled_civilization = 1
 	anti_tank_equipment_tech_1 = 1
 	spec_ops_equipment_tech_1 = 1
+	spec_ops_equipment_tech_2 = 1
 	tool_engineering = 1
 	basic_industry_tech = 1
 	pre_construction_industry_tech = 1
 	pre_agriculture_industry_tech = 1
 	agriculture_industry_tech_1 = 1
 	agriculture_industry_tech_2 = 1
+	stripped_pa_tech = 1
+	weight_support_frame_pa_tech_1 = 1
+	weight_support_frame_pa_tech_2 = 1
 }
 
 

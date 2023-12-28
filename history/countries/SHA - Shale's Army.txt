@@ -1,0 +1,170 @@
+﻿capital = 932
+
+oob = "SHA_2275"
+
+### Caps wage laws
+set_country_flag = army_wages_disabled
+
+set_technology = {
+	basic_supply_transport_tech = 1
+	infantry_tech_level_tribal = 1
+	infantry_tech_level_settler = 1
+	#infantry_tech_level_scientific = 1
+
+	#power_armour_tech_level_settler = 1
+	#power_armour_tech_level_scientific = 1
+
+	special_forces_tech_level_tribal = 1
+	#special_forces_tech_level_settler = 1
+	#special_forces_tech_level_scientific = 1
+
+	support_tech_level_tribal = 1
+	support_tech_level_settler = 1
+	#support_tech_level_scientific = 1
+
+	#vehicles_tech_level_scientific = 1
+	vehicles_tech_level_tribal = 1
+	vehicles_tech_level_settler = 1
+
+	#robotics_tech_level_tribal = 1
+	#robotics_tech_level_settler = 1
+	#robotics_tech_level_scientific = 1
+
+	air_tech_level_tribal = 1
+	air_tech_level_settler = 1
+	#air_tech_level_scientific = 1
+
+	naval_tech_level_tribal = 1
+	#naval_tech_level_settler = 1
+	#naval_tech_level_scientific = 1
+
+	tools_tech_level_tribal = 1
+	tools_tech_level_settler = 1
+	#tools_tech_level_scientific = 1
+
+	exploitation_tech_level_tribal = 1
+	exploitation_tech_level_settler = 1
+	#exploitation_tech_level_scientific = 1
+
+	habitation_tech_level_tribal = 1
+	#habitation_tech_level_settler = 1
+	#habitation_tech_level_scientific = 1
+
+	#electronics_tech_level_scientific = 1
+	electronics_tech_level_tribal = 1
+	electronics_tech_level_settler = 1
+
+	tool_engineering = 1
+	standard_weaponry_tech = 1
+	melee_weaponry_tech_1 = 1
+	melee_weaponry_tech_2 = 1
+	pre_construction_industry_tech = 1
+	pre_recycling_industry_tech = 1
+	basic_industry_tech = 1
+	support_weaponry = 1
+
+	super_mutant_civilization = 1
+}
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		nautics_tech_1 = 1
+		light_navy_hull_tech_1 = 1
+	}
+}
+if = {
+	limit = {
+		NOT = { has_dlc = "Man the Guns" }
+	}
+	set_technology = {
+		nautics_tech_non_mtg_1 = 1
+		light_navy_hull_tech_non_mtg_1 = 1
+	}
+}
+
+set_stability = 0.4
+set_war_support = 0.4
+set_research_slots = 4
+set_country_flag = is_super_mutant_nation
+set_country_flag = has_unique_manpower_law
+set_country_flag = is_texas_nation
+set_country_flag = super_mutant_doctrine_ai
+
+add_opinion_modifier = { target = TBH modifier = sha_vengeful_general }
+reverse_add_opinion_modifier = { target = TBH modifier = sha_successor_attis }
+add_opinion_modifier = { target = TEX modifier = sha_vengeful_general }
+reverse_add_opinion_modifier = { target = TEX modifier = sha_successor_attis }
+add_opinion_modifier = { target = LOS modifier = sha_attis_grave }
+
+set_politics = {
+	ruling_party = ruler
+	elections_allowed = no
+}
+
+set_popularities = {
+	people = 0
+	elites = 0
+	intellectuals = 0
+	ruler = 100
+}
+
+add_ideas = {
+	sha_forceful_mutation
+	attis_army_remnants_idea
+	SHA_attis_sucessor
+	officer_law_mutant_instinct
+	mutant_wages_law
+	normies_law_none
+}
+
+set_truce = {
+	target = TBH
+	days = 730
+}
+set_truce = {
+	target = TAA
+	days = 730
+}
+set_truce = {
+	target = EDN
+	days = 365
+}
+
+recruit_character = SHA_shale
+recruit_character = SHA_gond_scourge
+recruit_character = SHA_neil_sandman
+recruit_character = SHA_erkal_ripper
+recruit_character = SHA_conquerer_cwick
+recruit_character = SHA_masticator
+recruit_character = SHA_battlemasta
+recruit_character = SHA_thumbface
+recruit_character = SHA_calix
+
+random_character = {
+	limit = {
+		is_character = SHA_shale
+	}
+	save_global_event_target_as = SHA_shale_target
+}
+
+create_equipment_variant = {
+	name = "Raiding Boat"
+	type = ship_hull_light_1
+	name_group = TRL_LIGHT
+	parent_version = 0
+	modules = {
+		fixed_ship_command_slot = ship_command_module_1
+		fixed_ship_engine_slot = light_ship_oars_module
+		fixed_ship_battery_slot = ship_light_mounted_gun_module
+		# fixed_ship_battery_slot_1 = ship_light_mounted_gun_module
+		fixed_ship_detection_slot = empty
+		# fixed_ship_detection_slot_1 = empty
+		fixed_ship_point_defense_slot = empty
+		mid_1_custom_slot = light_ship_oars_module
+		rear_1_custom_slot = empty
+		rear_2_custom_slot = ship_light_mounted_gun_module
+	}
+}

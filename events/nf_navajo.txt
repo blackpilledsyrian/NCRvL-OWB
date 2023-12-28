@@ -305,12 +305,6 @@ country_event = {# Navajo ask for Chinle
 		add_to_variable = { NAV_loyalty = 1 }
 		custom_effect_tooltip = NAV_good_friends_tt
 	}
-	option = {
-		name = nf_navajo.10.b
-		add_to_variable = { NAV_resistance = 1 }
-		custom_effect_tooltip = NAV_plotting_tt
-
-	}
 }
 
 country_event = {# Navajo ask for New Cortez, Dove Creek
@@ -340,11 +334,6 @@ country_event = {# Navajo ask for New Cortez, Dove Creek
 		}
 		add_to_variable = { NAV_loyalty = 1 }
 		custom_effect_tooltip = NAV_good_friends_tt
-	}
-	option = {
-		name = nf_navajo.11.b
-		add_to_variable = { NAV_resistance = 1 }
-		custom_effect_tooltip = NAV_plotting_tt
 	}
 }
 
@@ -394,11 +383,6 @@ country_event = {# Navajo ask for New Cortez, Dove Creek
 		add_to_variable = { NAV_loyalty = 1 }
 		custom_effect_tooltip = NAV_good_friends_tt
 	}
-	option = {
-		name = nf_navajo.11.b
-		add_to_variable = { NAV_resistance = 1 }
-		custom_effect_tooltip = NAV_plotting_tt
-	}
 }
 
 country_event = {# Navajo ask for freedom
@@ -440,9 +424,5 @@ country_event = {# Navajo ask for freedom
 			remove_core_of = CES
 			remove_claim_by = CES
 		}
-	}
-	option = {
-		name = nf_navajo.13.b
-
 	}
 }
