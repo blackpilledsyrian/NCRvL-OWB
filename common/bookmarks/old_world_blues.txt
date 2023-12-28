@@ -15,7 +15,7 @@ bookmarks = {
 				vaultcityexpedition
 			}
 			focuses = {
-				ncr_federalise_mot
+				ncr_back_foot
 				ncr_bear_roars
 				ncr_dreams_of_old
 			}

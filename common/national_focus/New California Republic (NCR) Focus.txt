@@ -1065,9 +1065,9 @@ focus_tree = {
 			focus = ncr_welcome_mojave_commanders
 			focus = ncr_advertise_to_people
 		}
-		x = 0
-		y = 5
-		relative_position_id = ncr_artillery_only
+		x = 1
+		y = 1
+		relative_position_id = ncr_advertise_to_people
 		will_lead_to_war_with = CES
 		available = {
 			NOT = { has_country_flag = ncr_crisis }
