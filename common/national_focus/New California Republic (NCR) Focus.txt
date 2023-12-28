@@ -6657,7 +6657,7 @@ focus = {
 	            VLT = {
 	                annex_country = {
 	                    target = BDT
-	                    transfer_troops = yes
+	                    transfer_troops = no
 	                }
 	                annex_country = {
 	                    target = TIM
@@ -6670,7 +6670,7 @@ focus = {
 	                every_state = {
 	                    limit = {
 	                        or = {
-	                            is_core_of = RBT
+	                            is_core_of = BDT
 	                            is_core_of = TIM
 	                            is_core_of = MDT
 
