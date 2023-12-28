@@ -1055,7 +1055,7 @@ focus_tree = {
 		cost = 7
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		available = {
-			date > 2079.9.15
+			date > 2279.9.15
 		}
 		prerequisite = {
 			focus = ncr_send_direct_aid
