@@ -1,0 +1,648 @@
+on_actions = {
+	on_startup = {
+		effect = {
+
+            #Eureka
+
+			# Arcata <> Navarro
+			39 = {
+				add_to_array = {
+					array = trade_connections
+					value = 548.id
+				}
+			}
+        			# Arcata <> Arroyo
+			39 = {
+				add_to_array = {
+					array = trade_connections
+					value = 337.id
+				}
+			}
+        			# Arcata <> San Francisco
+			39 = {
+				add_to_array = {
+					array = trade_connections
+					value = 163.id
+				}
+			}
+        			# Arcata <> New Reno 
+			39 = {
+				add_to_array = {
+					array = trade_connections
+					value = 285.id
+				}
+			}
+
+                    #Timberline
+
+        			# Walla Walla <> Crowshaven 
+			51 = {
+				add_to_array = {
+					array = trade_connections
+					value = 71.id
+				}
+			}
+        			# Walla Walla <> The Maw 
+			51 = {
+				add_to_array = {
+					array = trade_connections
+					value = 274.id
+				}
+			}
+        			# Walla Walla <> Arroyo
+			51 = {
+				add_to_array = {
+					array = trade_connections
+					value = 337.id
+				}
+			}                                         
+        			# Walla Walla <> Klamath
+			51 = {
+				add_to_array = {
+					array = trade_connections
+					value = 454.id
+				}
+			}
+
+                    #Ranger
+
+        			# TV Town <> Guardian Citadel 
+			945 = {
+				add_to_array = {
+					array = trade_connections
+					value = 210.id
+				}
+			}
+        			# TV Town <> Shady Sand 
+			945 = {
+				add_to_array = {
+					array = trade_connections
+					value = 253.id
+				}
+			}
+        			# TV Town <> New Reno 
+			945 = {
+				add_to_array = {
+					array = trade_connections
+					value = 285.id
+				}
+			}
+        			# TV Town <> New Vegas
+			945 = {
+				add_to_array = {
+					array = trade_connections
+					value = 211.id
+				}
+			}		
+
+                    #Shi/Eureka
+
+        			# Navarro <> Arcata 
+			548 = {
+				add_to_array = {
+					array = trade_connections
+					value = 39.id
+				}
+			}
+        			# Navarro <> Sac-City 
+			548 = {
+				add_to_array = {
+					array = trade_connections
+					value = 135.id
+				}
+			}
+        			# Navarro <> Maxson 
+			548 = {
+				add_to_array = {
+					array = trade_connections
+					value = 245.id
+				}
+			}
+        			# Navarro <> San Francisco
+			548 = {
+				add_to_array = {
+					array = trade_connections
+					value = 	163.id
+				}
+			}
+
+                    #Baja
+
+        			# Tijuana <> The Boneyard 
+			548 = {
+				add_to_array = {
+					array = trade_connections
+					value = 350.id
+				}
+			}
+        			# Tijuana <> La Paz 
+			548 = {
+				add_to_array = {
+					array = trade_connections
+					value = 97.id
+				}
+			}
+        			# Tijuana <> Maxson
+			548 = {
+				add_to_array = {
+					array = trade_connections
+					value = 245.id
+				}
+			}
+        			# Tijuana <> Tumblehome
+			548 = {
+				add_to_array = {
+					array = trade_connections
+					value = 99.id
+				}
+			}
+        			# Santa Rosalia <> Dayglow
+			481 = {
+				add_to_array = {
+					array = trade_connections
+					value = 63.id
+				}
+			}
+        			# Santa Rosalia <> La Paz
+			481 = {
+				add_to_array = {
+					array = trade_connections
+					value = 97.id
+				}
+			}
+        			# La Paz <> Tierra City
+			97 = {
+				add_to_array = {
+					array = trade_connections
+					value = 101.id
+				}
+			}
+        			# La Paz <> Santa Rosalia
+			97 = {
+				add_to_array = {
+					array = trade_connections
+					value = 481.id
+				}
+			}
+
+                    #Eighties
+
+        			# Murtaugh <> New Canaan 
+			303 = {
+				add_to_array = {
+					array = trade_connections
+					value = 551.id
+				}
+			}
+        			# Murtaugh <> O'Brien
+			303 = {
+				add_to_array = {
+					array = trade_connections
+					value = 369.id
+				}
+			}
+                    #Two Sun / Gente
+        			# Ultimo <> Gente City 
+			444 = {
+				add_to_array = {
+					array = trade_connections
+					value = 471.id
+				}
+			}
+        			# Ultimo <> Two Sun
+			444 = {
+				add_to_array = {
+					array = trade_connections
+					value = 516.id
+				}
+			}
+
+        			# Tierra City <> Gente City 
+			101 = {
+				add_to_array = {
+					array = trade_connections
+					value = 471.id
+				}
+			}
+        			# Tierra City <> Two Sun
+			101 = {
+				add_to_array = {
+					array = trade_connections
+					value = 516.id
+				}
+			}
+
+			
+                    #Reservation
+
+        			# Los Alamos <> Flagstaff 
+			634 = {
+				add_to_array = {
+					array = trade_connections
+					value = 520.id
+				}
+			}
+        			# Los Alamos <> New Navajo 
+			634 = {
+				add_to_array = {
+					array = trade_connections
+					value = 203.id
+				}
+			}
+        			# Los Alamos <> Castra Sol Rubrum 
+			634 = {
+				add_to_array = {
+					array = trade_connections
+					value = 5.id
+				}
+			}
+
+                    #Navajo
+
+        			# New Navajo <> Flagstaff 
+			203 = {
+				add_to_array = {
+					array = trade_connections
+					value = 520.id
+				}
+			}
+        			# New Navajo <> Los Alamos 
+			203 = {
+				add_to_array = {
+					array = trade_connections
+					value = 634.id
+				}
+			}
+        			# New Navajo <> The Penitentiary
+			203 = {
+				add_to_array = {
+					array = trade_connections
+					value = 572.id
+				}
+			}
+                    #Port Maw
+
+        			# The Maw <> Walla Walla 
+			274 = {
+				add_to_array = {
+					array = trade_connections
+					value = 51.id
+				}
+			}
+        			# The Maw <> West Portland
+			274 = {
+				add_to_array = {
+					array = trade_connections
+					value = 23.id
+				}
+			}
+        			# The Maw <> Arroyo
+			274 = {
+				add_to_array = {
+					array = trade_connections
+					value = 337.id
+				}
+			}
+        			# West Portland <> Walla Walla 
+			23 = {
+				add_to_array = {
+					array = trade_connections
+					value = 51.id
+				}
+			}
+        			# West Portland <> The Maw
+			23 = {
+				add_to_array = {
+					array = trade_connections
+					value = 274.id
+				}
+			}
+        			# West Portland <> Arroyo
+			23 = {
+				add_to_array = {
+					array = trade_connections
+					value = 337.id
+				}
+			}
+                    #Bone Dancers
+
+        			# Crowshaven <> Walla Walla 
+			71 = {
+				add_to_array = {
+					array = trade_connections
+					value = 51.id
+				}
+			}
+        			# Crowshaven <> Klamath
+			71 = {
+				add_to_array = {
+					array = trade_connections
+					value = 454.id
+				}
+			}
+        			# Crowshaven <> Arroyo
+			71 = {
+				add_to_array = {
+					array = trade_connections
+					value = 337.id
+				}
+			}
+                    #Klamath
+
+        			# Klamath <> Vault City
+			454 = {
+				add_to_array = {
+					array = trade_connections
+					value = 291.id
+				}
+			}
+        			# Klamath <> Crowhaven
+			454 = {
+				add_to_array = {
+					array = trade_connections
+					value = 71.id
+				}
+			}
+        			# Klamath <> Arroyo
+			454 = {
+				add_to_array = {
+					array = trade_connections
+					value = 337.id
+				}
+			}
+        			# Klamath <> FourWay
+			454 = {
+				add_to_array = {
+					array = trade_connections
+					value = 54.id
+				}
+			}
+                    #FourWay
+
+        			# FourWay <> Vault City
+			369 = {
+				add_to_array = {
+					array = trade_connections
+					value = 291.id
+				}
+			}
+        			# FourWay <> New Reno
+			369 = {
+				add_to_array = {
+					array = trade_connections
+					value = 285.id
+				}
+			}
+        			# FourWay <> Arroyo
+			369 = {
+				add_to_array = {
+					array = trade_connections
+					value = 337.id
+				}
+			}
+                    #NCR
+
+        			# Maxson <> The Hub
+			245 = {
+				add_to_array = {
+					array = trade_connections
+					value = 1.id
+				}
+			}
+        			# Maxson <> San Francisco
+			245 = {
+				add_to_array = {
+					array = trade_connections
+					value = 163.id
+				}
+			}
+        			# Maxson <> Dayglow
+			245 = {
+				add_to_array = {
+					array = trade_connections
+					value = 63.id
+				}
+			}
+        			# Hopeville <> The Hub
+			13 = {
+				add_to_array = {
+					array = trade_connections
+					value = 1.id
+				}
+			}
+        			# Hopeville <> Shady Sand
+			13 = {
+				add_to_array = {
+					array = trade_connections
+					value = 253.id
+				}
+			}
+        			# Hopeville <> New Vegas
+			13 = {
+				add_to_array = {
+					array = trade_connections
+					value = 211.id
+				}
+			}
+        			# Mojave Outpost <> The Hub
+			77 = {
+				add_to_array = {
+					array = trade_connections
+					value = 1.id
+				}
+			}
+        			# Mojave Outpost <> Shady Sand
+			77 = {
+				add_to_array = {
+					array = trade_connections
+					value = 253.id
+				}
+			}
+        			# Mojave Outpost <> New Vegas
+			77 = {
+				add_to_array = {
+					array = trade_connections
+					value = 211.id
+				}
+			}
+        			# Tumblehome <> The Boneyard
+			99 = {
+				add_to_array = {
+					array = trade_connections
+					value = 350.id
+				}
+			}
+        			# Tumblehome <> Dayglow
+			99 = {
+				add_to_array = {
+					array = trade_connections
+					value = 63.id
+				}
+			}
+        			# Tumblehome <> Mojave Outpost
+			99 = {
+				add_to_array = {
+					array = trade_connections
+					value = 77.id
+				}
+			}
+                    #White Legs
+
+        			# Frisco City<> Flagstaff 
+			373 = {
+				add_to_array = {
+					array = trade_connections
+					value = 520.id
+				}
+			}
+        			# Frisco City<> Wendover 
+			373 = {
+				add_to_array = {
+					array = trade_connections
+					value = 478.id
+				}
+			}
+       			# Frisco City<> New Canaan
+			373 = {
+				add_to_array = {
+					array = trade_connections
+					value = 551.id
+				}
+			}
+                    #Eagle Rock
+
+        			# Eagle Rock<> New Navajo 
+			222 = {
+				add_to_array = {
+					array = trade_connections
+					value = 203.id
+				}
+			}
+        			# Eagle Rock<> The Penitentiary
+			222 = {
+				add_to_array = {
+					array = trade_connections
+					value = 572.id
+				}
+			}
+       			# Eagle Rock<> New Canaan
+			222 = {
+				add_to_array = {
+					array = trade_connections
+					value = 551.id
+				}
+			}
+                    #Black Canyon
+
+        			# The Penitentiary<> New Navajo 
+			572 = {
+				add_to_array = {
+					array = trade_connections
+					value = 203.id
+				}
+			}
+        			# The Penitentiary<> Dog City
+			572 = {
+				add_to_array = {
+					array = trade_connections
+					value = 525.id
+				}
+			}
+       			# The Penitentiary<> Eagle Rock
+			572 = {
+				add_to_array = {
+					array = trade_connections
+					value = 222.id
+				}
+			}
+                    #Robot City
+
+        			# Robot City<> Twin Mothers
+			524 = {
+				add_to_array = {
+					array = trade_connections
+					value = 554.id
+				}
+			}
+        			# Robot City<> Dog City
+			524 = {
+				add_to_array = {
+					array = trade_connections
+					value = 525.id
+				}
+			}
+       			# Robot City<> New Sterling
+			524 = {
+				add_to_array = {
+					array = trade_connections
+					value = 430.id
+				}
+			}
+                    #Legion
+
+        		# Juárez City<> Gente City
+			528 = {
+				add_to_array = {
+					array = trade_connections
+					value = 471.id
+				}
+			}
+        		# Juárez City<> Castra Sol Rubrum
+			528 = {
+				add_to_array = {
+					array = trade_connections
+					value = 5.id
+				}
+			}
+       			# Juárez City<> Pecos
+			528 = {
+				add_to_array = {
+					array = trade_connections
+					value = 200.id
+				}
+			}
+        		# Chihuahua<> Gente City
+			122 = {
+				add_to_array = {
+					array = trade_connections
+					value = 471.id
+				}
+			}
+        		# Chihuahua<> Castra Sol Rubrum
+			122 = {
+				add_to_array = {
+					array = trade_connections
+					value = 5.id
+				}
+			}
+       			# Chihuahua<> Pecos
+			122 = {
+				add_to_array = {
+					array = trade_connections
+					value = 200.id
+				}
+			}
+        		# Pecos<> Lonestar
+			200 = {
+				add_to_array = {
+					array = trade_connections
+					value = 921.id
+				}
+			}
+        		# Pecos<> Castra Sol Rubrum
+			200 = {
+				add_to_array = {
+					array = trade_connections
+					value = 5.id
+				}
+			}
+       			# Pecos<> T.A.A
+			200 = {
+				add_to_array = {
+					array = trade_connections
+					value = 796.id
+				}
+			}
+		}		     
+    }
+}
