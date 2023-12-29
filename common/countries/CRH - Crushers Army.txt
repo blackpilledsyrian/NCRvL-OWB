@@ -1,0 +1,3 @@
+graphical_culture = settler_gfx
+graphical_culture_2d = supermutant_2d
+color = { 26 150 20 }
