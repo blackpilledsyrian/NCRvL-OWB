@@ -1427,7 +1427,6 @@ country_event = { #focus end of war
 
 	option = {
 		name = nf_attis.42.a
-		set_stability = 0.0
 		add_ideas = cru_crush_idea
 	}
 }

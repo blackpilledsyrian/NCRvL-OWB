@@ -3532,7 +3532,6 @@ focus_tree = {
 		relative_position_id = attis_crusher
 		completion_reward = {
 			add_war_support = 0.15
-			add_stability = -0.1
 			add_manpower = -2492
 			every_owned_state = {
 				set_temp_variable = { pop_add = -471 }
@@ -3552,7 +3551,6 @@ focus_tree = {
 		}
 		relative_position_id = attis_crusher
 		completion_reward = {
-			add_stability = -0.1
 			swap_ideas = {
 				remove_idea = uoa_fev_volunteers
 				add_idea = sha_forceful_mutation
