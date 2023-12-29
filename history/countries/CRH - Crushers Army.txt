@@ -67,9 +67,6 @@ set_technology = {
 	basic_industry_tech = 1
 	support_weaponry = 1
 	naval_invasion_tech_1 = 1
-	glider_tech = 1
-	fighter_tech_1 = 1
-	strat_bomber_tech_1 = 1
 	spec_ops_equipment_tech_1 = 1
 }
 
