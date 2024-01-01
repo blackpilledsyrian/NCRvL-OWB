@@ -1,0 +1,23 @@
+state = {
+	id = 916
+	name = "STATE_916"
+	history={
+		owner = CRH
+		add_core_of = CRH
+		add_core_of = UOA
+		victory_points = {
+			11473 15
+		}
+		buildings = {
+			infrastructure = 4
+
+		}
+
+	}
+	provinces={
+		11447 11453 11454 11456 11464 11466 11467 11470 11473 11479 11481 11487 11491
+	}
+	manpower=7000
+	buildings_max_level_factor=1.000
+	state_category=town
+}

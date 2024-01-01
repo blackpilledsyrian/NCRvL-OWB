@@ -700,7 +700,10 @@ country_event = {
 	desc = {
 		text = nf_attis.22.d.uoa
 		trigger = {
-			original_tag = UOA
+			OR = {
+				original_tag = UOA
+				original_tag = CRH
+			}
 		}
 	}
 	desc = {
@@ -716,14 +719,37 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = {
-					NOT = { original_tag = UOA }
-					UOA = {
+					NOT = { original_tag = CRH }
+					CRH = {
 						exists = yes
 						NOT = { is_subject_of = ROOT }
 					}
 				}
 				declare_war_on = {
-					target = UOA
+					target = CRH
+					type = annex_everything
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = { original_tag = CRH }
+				}
+				CRH = {
+					ROOT = {
+						grant_wargoals_on_core_states_of_prev = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = { original_tag = CRH }
+					CRH = {
+						exists = yes
+						NOT = { is_subject_of = ROOT }
+					}
+				}
+				declare_war_on = {
+					target = CRH
 					type = annex_everything
 				}
 			}
@@ -1252,44 +1278,38 @@ country_event = {
 				target_country = CRH
 				character = UOA_lieutenant_crusher
 			}
-			CRH = {
+			add_field_marshal_role = {
+				character = UOA_lieutenant_crusher
+				traits = {
+					warchief_trait
+					strong_trait
+					enduring_trait
+					urban_assault_specialist
+				}
+				skill = 5
+				attack_skill = 6
+				defense_skill = 2
+				planning_skill = 2
+				logistics_skill = 2
+			}
+			promote_character = UOA_lieutenant_crusher
+			UOA = {
 				create_new_owb_country = yes
 				924 = {
-					transfer_state_to = CRH
+					transfer_state_to = UOA
 				}
 				set_country_flag = UOA_crusher_tag
 				set_country_flag = super_mutant_doctrine_ai
 				set_country_flag = is_super_mutant_nation
 				set_country_flag = has_unique_manpower_law
-				load_focus_tree = {
-					tree = attis_army_nf
-				}
-				add_field_marshal_role = {
-					character = UOA_lieutenant_crusher
-					traits = {
-						warchief_trait
-						strong_trait
-						enduring_trait
-						urban_assault_specialist
-					}
-					skill = 5
-					attack_skill = 6
-					defense_skill = 2
-					planning_skill = 2
-					logistics_skill = 2
-				}
-				add_ideas = uoa_crusher_join_sha
-				add_ideas = attis_army_remnants_idea
+
 				load_oob = uoa_crusher_oob
-				promote_character = UOA_lieutenant_crusher
 				add_equipment_to_stockpile = {
 					type = infantry_equipment
 					amount = 800
 				}
-				add_ideas = uoa_crusher_join_sha
-				add_ideas = attis_army_remnants_idea
 				declare_war_on = {
-					target = UOA
+					target = CRH
 					type = annex_everything
 				}
 			}
@@ -1315,18 +1335,7 @@ country_event = {
 	}
 
 	option = {
-		name = nf_attis.37.a
-	}
-
-	option = {
 		name = nf_attis.37.b
-		random_other_country = {
-			limit = {
-				original_tag = UOA
-				NOT = { tag = UOA }
-			}
-			change_tag_from = PREV
-		}
 	}
 }
 
@@ -1341,9 +1350,6 @@ country_event = {
 
 	option = {
 		name = nf_attis.38.a
-		FROM = {
-			become_puppet = yes
-		}
 	}
 	option = {
 		name = nf_attis.38.b
@@ -1421,7 +1427,6 @@ country_event = { #focus end of war
 
 	option = {
 		name = nf_attis.42.a
-		set_stability = 0.0
 		add_ideas = cru_crush_idea
 	}
 }

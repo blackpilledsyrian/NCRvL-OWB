@@ -55,6 +55,80 @@ focus_tree = {
 	}
 
 	focus = {
+		id = early_unification_war
+		icon = GFX_goal_attis_army
+		cost = 7
+		x = 5
+		y = -8
+		prerequisite = {
+			focus = attis_3
+		}
+		relative_position_id = attis_3
+		available = {
+			date > 2277.01.01
+		}
+		bypass = {
+			IMO = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			UOA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			SHA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			CBN = {
+				all_core_land_owned_by_prev_sphere = yes
+			}		
+			LOS = {
+				all_core_land_owned_by_prev_sphere = yes
+			}	
+			EDN = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = shale_striking_eden
+		will_lead_to_war_with = UOA
+		will_lead_to_war_with = IMO
+		will_lead_to_war_with = SHA
+		will_lead_to_war_with = CBN
+		will_lead_to_war_with = LOS
+		will_lead_to_war_with = EDN
+		completion_reward = {
+			SHA = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			IMO = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			UOA = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			CBN = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			LOS = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			EDN = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+
+	focus = {
 		id = mutant_industry
 		icon = GFX_goal_generic_helm_mutant
 		cost = 30
@@ -1464,6 +1538,7 @@ focus_tree = {
 		}
 		relative_position_id = shale_striking_eden
 		will_lead_to_war_with = UOA
+		will_lead_to_war_with = CRH
 		will_lead_to_war_with = IMO
 		completion_reward = {
 			custom_effect_tooltip = shale_reunite_the_army_tt
@@ -1474,6 +1549,7 @@ focus_tree = {
 						original_tag = SHA
 						original_tag = UOA
 						original_tag = IMO
+						original_tag = CRH
 					}
 				}
 				country_event = nf_attis.22
@@ -3456,7 +3532,6 @@ focus_tree = {
 		relative_position_id = attis_crusher
 		completion_reward = {
 			add_war_support = 0.15
-			add_stability = -0.1
 			add_manpower = -2492
 			every_owned_state = {
 				set_temp_variable = { pop_add = -471 }
@@ -3476,7 +3551,6 @@ focus_tree = {
 		}
 		relative_position_id = attis_crusher
 		completion_reward = {
-			add_stability = -0.1
 			swap_ideas = {
 				remove_idea = uoa_fev_volunteers
 				add_idea = sha_forceful_mutation
@@ -4005,7 +4079,7 @@ focus_tree = {
 				limit = {
 					is_texan_state = yes
 				}
-				add_claim_by = IMO
+				add_claim_by = CRH
 			}
 		}
 	}

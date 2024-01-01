@@ -1,0 +1,27 @@
+state = {
+	id = 924
+	name = "STATE_924"
+	history={
+		owner = CRH
+		add_core_of = CRH
+		add_core_of = UOA
+		victory_points = {
+			11574 10
+		}
+		buildings = {
+			infrastructure = 4
+			dockyard = 2
+			air_base = 1
+			11574 = {
+				naval_base = 2
+			}
+		}
+
+	}
+	provinces={
+		11543 11547 11555 11563 11574 11576 11584 11722
+	}
+	manpower=10000
+	buildings_max_level_factor=1.000
+	state_category=town
+}
