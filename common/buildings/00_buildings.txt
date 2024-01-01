@@ -56,7 +56,7 @@ buildings = {
 		max_level = 10
 		value = 1
 		damage_factor = 0.5
-
+		allied_build = yes
 		infrastructure_construction_effect = yes
 	}
 
@@ -68,11 +68,11 @@ buildings = {
 		per_level_extra_cost = 500
 		provincial = yes
 		only_costal = yes
+		allied_build = yes
 		is_port = yes
 		icon_frame = 6
 		max_level = 10
 		value = 1
-		allied_build = yes
 
 		infrastructure_construction_effect = yes
 	}
@@ -89,7 +89,6 @@ buildings = {
 		damage_factor = 0.1
 		allied_build = yes
 		always_shown = yes
-
 		infrastructure_construction_effect = yes
 	}
 
@@ -101,7 +100,6 @@ buildings = {
 		allied_build = no
 		icon_frame = 20
 		max_level = 1
-
 		infrastructure_construction_effect = yes
 	}
 
@@ -131,7 +129,7 @@ buildings = {
 		land_fort = 2
 		max_level = 2
 		value = 2
-
+		allied_build = yes
 		infrastructure_construction_effect = yes
 	}
 
@@ -147,7 +145,7 @@ buildings = {
 		naval_fort = 1
 		max_level = 8
 		value = 1
-
+		allied_build = yes
 		infrastructure_construction_effect = yes
 	}
 
@@ -177,7 +175,7 @@ buildings = {
 		max_level = 5 # This is the max unlock level
 		damage_factor = 0.3
 		value = 1
-
+		allied_build = yes
 		infrastructure_construction_effect = yes
 	}
 
@@ -190,7 +188,7 @@ buildings = {
 		max_level = 10 # This is the max unlock level
 		damage_factor = 0.5
 		value = 4
-
+		allied_build = yes
 		infrastructure_construction_effect = yes
 	}
 
