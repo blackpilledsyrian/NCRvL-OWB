@@ -3355,13 +3355,11 @@ focus_tree = {
 		allow_branch = {
 			tag = CRH
 		}
+		available = {
+			date > 2275.8.28
+		}
 		prerequisite = {
 			focus = attis_3
-		}
-		bypass = {
-			NOT = {
-				has_war_with = UOA
-			}
 		}
 		relative_position_id = attis_3
 		completion_reward = {
@@ -3378,10 +3376,8 @@ focus_tree = {
 		prerequisite = {
 			focus = attis_crusher
 		}
-		bypass = {
-			NOT = {
-				has_war_with = UOA
-			}
+		available = {
+			date > 2275.8.28
 		}
 		relative_position_id = attis_crusher
 		completion_reward = {
@@ -3398,10 +3394,8 @@ focus_tree = {
 		prerequisite = {
 			focus = attis_crusher
 		}
-		bypass = {
-			NOT = {
-				has_war_with = UOA
-			}
+		available = {
+			date > 2275.8.28
 		}
 		relative_position_id = attis_crusher
 		completion_reward = {
@@ -3421,10 +3415,8 @@ focus_tree = {
 		prerequisite = {
 			focus = attis_crusher
 		}
-		bypass = {
-			NOT = {
-				has_war_with = UOA
-			}
+		available = {
+			date > 2275.8.28
 		}
 		relative_position_id = attis_crusher
 		completion_reward = {
@@ -3453,10 +3445,8 @@ focus_tree = {
 		prerequisite = {
 			focus = attis_crusher
 		}
-		bypass = {
-			NOT = {
-				has_war_with = UOA
-			}
+		available = {
+			date > 2275.8.28
 		}
 		relative_position_id = attis_crusher
 		completion_reward = {
@@ -3491,10 +3481,8 @@ focus_tree = {
 		prerequisite = {
 			focus = seize_resources
 		}
-		bypass = {
-			NOT = {
-				has_war_with = UOA
-			}
+		available = {
+			date > 2275.8.28
 		}
 		relative_position_id = attis_crusher
 		completion_reward = {
