@@ -59,7 +59,7 @@ focus_tree = {
 		icon = GFX_goal_attis_army
 		cost = 7
 		x = 5
-		y = -8
+		y = 1
 		prerequisite = {
 			focus = attis_3
 		}
@@ -87,7 +87,6 @@ focus_tree = {
 				all_core_land_owned_by_prev_sphere = yes
 			}
 		}
-		relative_position_id = shale_striking_eden
 		will_lead_to_war_with = UOA
 		will_lead_to_war_with = IMO
 		will_lead_to_war_with = SHA
@@ -3729,70 +3728,13 @@ focus_tree = {
 	}
 
 	focus = {
-		id = loyal_commander
-		icon = GFX_goal_attis_army
-		cost = 28
-		x = -2
-		y = 9
-		prerequisite = {
-			focus = united_warband
-		}
-		mutually_exclusive = {
-			focus = separate_way
-		}
-		relative_position_id = attis_crusher
-		completion_reward = {
-			hidden_effect = {
-				CRH = {
-					every_owned_state = {
-						set_state_flag = do_not_decimate
-					}
-				}
-				transfer_units_fraction = {
-					target = SHA
-					size = 1.0
-					stockpile_ratio = 1.0
-					army_ratio = 1.0
-					navy_ratio = 1.0
-					air_ratio = 1.0
-					keep_unit_leaders_trigger = {
-						always = no
-					}
-				}
-			}
-			SHA = {
-				change_tag_from = ROOT
-			}
-			CRH = {
-				every_owned_state = {
-					add_core_of = SHA
-					transfer_state_to = SHA
-				}
-				UOA_lieutenant_crusher = {
-					set_nationality = SHA
-				}
-			}
-			hidden_effect = {
-				CRH = {
-					every_owned_state = {
-						clr_state_flag = do_not_decimate
-					}
-				}
-			}
-		}
-	}
-
-	focus = {
 		id = separate_way
 		icon = GFX_goal_mutant_war_focus
 		cost = 28
-		x = 2
+		x = 0
 		y = 9
 		prerequisite = {
 			focus = united_warband
-		}
-		mutually_exclusive = {
-			focus = loyal_commander
 		}
 		relative_position_id = attis_crusher
 		completion_reward = {
@@ -3807,7 +3749,7 @@ focus_tree = {
 		id = cru_calls_for_unity
 		icon = GFX_goal_attis_army
 		cost = 28
-		x = 2
+		x = 0
 		y = 10
 		allow_branch = {
 			tag = CRH
@@ -3868,7 +3810,7 @@ focus_tree = {
 		id = crusher_ethos_of_the_army
 		icon = GFX_goal_mutant_self_management
 		cost = 28
-		x = 2
+		x = 0
 		y = 11
 		available = {
 			IMO = {
@@ -3891,7 +3833,7 @@ focus_tree = {
 		id = crusher_ancient_techniques_of_the_ironmongers
 		icon = GFX_goal_imo_battlewagon
 		cost = 28
-		x = 0
+		x = -2
 		y = 12
 		available = {
 			IMO = {
@@ -3928,7 +3870,7 @@ focus_tree = {
 		id = crusher_mysteries_of_the_spores
 		icon = GFX_goal_BDT_geck_corrupted
 		cost = 28
-		x = 2
+		x = 0
 		y = 12
 		available = {
 			EDN = {
@@ -3965,7 +3907,7 @@ focus_tree = {
 		id = crusher_the_dreams_of_unity
 		icon = GFX_goal_unity_viola
 		cost = 28
-		x = 4
+		x = 2
 		y = 12
 		available = {
 			SHA = {
