@@ -1,0 +1,688 @@
+every_possible_country = {
+	limit = {
+		OR = {
+			original_tag = NEW
+			is_allowed_super_mutant_generic_high_command = yes
+		}
+	}
+	generate_character = {
+		token_base = generic_super_mutant_command_one
+		portraits = {
+			army = {
+				small = "GFX_idea_mutant_generic6"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			ledger = army
+			visible = {
+				if = {
+					limit = {
+						original_tag = NEW
+					}
+					has_cosmetic_tag = THR_cosmetic_tag
+				}
+				else = {
+					always = yes
+				}
+			}
+			traits = {
+				aggressive_attacker
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	generate_character = {
+		token_base = generic_super_mutant_command_two
+		portraits = {
+			army = {
+				small = "GFX_idea_mutant_generic13"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			ledger = army
+			visible = {
+				if = {
+					limit = {
+						original_tag = NEW
+					}
+					has_cosmetic_tag = THR_cosmetic_tag
+				}
+				else = {
+					always = yes
+				}
+			}
+			traits = {
+				old_soldier
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	generate_character = {
+		token_base = generic_super_mutant_command_three
+		portraits = {
+			army = {
+				small = "GFX_idea_karm_the_brilliant"	# We ran out of unique generic icons and this isn't a significant or canon character so I opted to use it @Tran
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = high_command
+			ledger = army
+			visible = {
+				if = {
+					limit = {
+						original_tag = NEW
+					}
+					has_cosmetic_tag = THR_cosmetic_tag
+				}
+				else = {
+					always = yes
+				}
+			}
+			traits = {
+				brains_and_brawn
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+}
+
+every_possible_country = {
+	limit = {
+		OR = {
+			original_tag = NEW
+			is_allowed_super_mutant_generic_chiefs = yes
+		}
+	}
+	generate_character = {
+		token_base = generic_super_mutant_army_chief_one
+		portraits = {
+			army = {
+				small = "GFX_idea_mutant_generic16"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = army_chief
+			ledger = army
+			visible = {
+				if = {
+					limit = {
+						original_tag = NEW
+					}
+					has_cosmetic_tag = THR_cosmetic_tag
+				}
+				else = {
+					always = yes
+				}
+			}
+			traits = {
+				power_of_hunger
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	generate_character = {
+		token_base = generic_super_mutant_army_chief_two
+		portraits = {
+			army = {
+				small = "GFX_idea_mutant_generic14"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = army_chief
+			ledger = army
+			visible = {
+				if = {
+					limit = {
+						original_tag = NEW
+					}
+					has_cosmetic_tag = THR_cosmetic_tag
+				}
+				else = {
+					always = yes
+				}
+			}
+			traits = {
+				power_of_might
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	generate_character = {
+		token_base = generic_super_mutant_navy_chief
+		portraits = {
+			army = {
+				small = "GFX_idea_mutant_generic17"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = navy_chief
+			ledger = navy
+			visible = {
+				if = {
+					limit = {
+						original_tag = NEW
+					}
+					has_cosmetic_tag = THR_cosmetic_tag
+				}
+				else = {
+					always = yes
+				}
+			}
+			traits = {
+				strong_rower
+			}
+			ai_will_do = {
+				factor = 5
+			}
+		}
+	}
+}
+
+every_possible_country = {
+	limit = {
+		OR = {
+			original_tag = NEW
+			is_allowed_super_mutant_generic_theorists = yes
+		}
+	}
+	generate_character = {
+		token_base = generic_super_mutant_research_advisor_one
+		portraits = {
+			army = {
+				small = "GFX_idea_mutant_generic11"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = research_advisor
+			ledger = army
+			visible = {
+				if = {
+					limit = {
+						original_tag = NEW
+					}
+					has_cosmetic_tag = THR_cosmetic_tag
+				}
+				else = {
+					always = yes
+				}
+			}
+			traits = {
+				military_theorist
+			}
+			research_bonus = {
+				cat_land_doctrine = 0.1
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	generate_character = {
+		token_base = generic_super_mutant_research_advisor_two
+		portraits = {
+			army = {
+				small = "GFX_idea_mutant_generic1"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = research_advisor
+			ledger = army
+			visible = {
+				if = {
+					limit = {
+						original_tag = NEW
+					}
+					has_cosmetic_tag = THR_cosmetic_tag
+				}
+				else = {
+					always = yes
+				}
+			}
+			research_bonus = {
+				cat_outsider_warfare = 0.15
+			}
+			traits = {
+				military_theorist
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+}
+
+every_possible_country = {
+	limit = {
+		AND = {
+			OR = {
+				original_tag = NEW
+				is_allowed_super_mutant_generic_theorists = yes
+			}
+			original_tag = CRH
+		}
+	}
+	generate_character = {
+		token_base = generic_super_mutant_research_advisor_three
+		portraits = {
+			army = {
+				small = "GFX_idea_mutant_generic11"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = research_advisor
+			ledger = air
+			available = {
+				hidden_trigger = {
+					tag = CRH
+				}
+			}
+			visible = {
+				tag = CRH
+			}
+			modifier = {
+				air_doctrine_cost_factor = -0.1
+			}
+			traits = {
+				air_warfare_theorist
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+}
+
+every_possible_country = {
+	limit = {
+		OR = {
+			original_tag = NEW
+			is_allowed_super_mutant_generic_political_advisors = yes
+		}
+	}
+	generate_character = {
+		token_base = generic_super_mutant_economic_advisor_one
+		portraits = {
+			army = {
+				small = "GFX_idea_mutant_generic3"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = economic_advisor
+			visible = {
+				if = {
+					limit = {
+						original_tag = NEW
+					}
+					has_cosmetic_tag = THR_cosmetic_tag
+				}
+				else = {
+					always = yes
+				}
+			}
+			traits = {
+				settlement_builder
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	generate_character = {
+		token_base = generic_super_mutant_economic_advisor_two
+		portraits = {
+			army = {
+				small = "GFX_idea_mutant_generic2"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = economic_advisor
+			visible = {
+				if = {
+					limit = {
+						original_tag = NEW
+					}
+					has_cosmetic_tag = THR_cosmetic_tag
+				}
+				else = {
+					always = yes
+				}
+			}
+			traits = {
+				mutie_tough
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	generate_character = {
+		token_base = generic_super_mutant_economic_advisor_three
+		portraits = {
+			army = {
+				small = "GFX_idea_mutant_generic12"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = economic_advisor
+			visible = {
+				if = {
+					limit = {
+						original_tag = NEW
+					}
+					has_cosmetic_tag = THR_cosmetic_tag
+				}
+				else = {
+					always = yes
+				}
+			}
+			traits = {
+				mutie_scavenger
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	generate_character = {
+		token_base = generic_super_mutant_economic_advisor_four
+		portraits = {
+			army = {
+				small = "GFX_idea_mutant_generic9"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = economic_advisor
+			visible = {
+				if = {
+					limit = {
+						original_tag = NEW
+					}
+					has_cosmetic_tag = THR_cosmetic_tag
+				}
+				else = {
+					always = yes
+				}
+			}
+			traits = {
+				war_industrialist
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	generate_character = {
+		token_base = generic_super_mutant_cultural_one
+		portraits = {
+			army = {
+				small = "GFX_idea_mutant_generic5"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = cultural_advisor
+			visible = {
+				if = {
+					limit = {
+						original_tag = NEW
+					}
+					has_cosmetic_tag = THR_cosmetic_tag
+				}
+				else = {
+					always = yes
+				}
+			}
+			available = {
+				has_government = people
+			}
+			traits = {
+				man_of_community
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	generate_character = {
+		token_base = generic_super_mutant_cultural_two
+		portraits = {
+			army = {
+				small = "GFX_idea_mutant_generic15"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = cultural_advisor
+			visible = {
+				if = {
+					limit = {
+						original_tag = NEW
+					}
+					has_cosmetic_tag = THR_cosmetic_tag
+				}
+				else = {
+					always = yes
+				}
+			}
+			available = {
+				has_government = people
+			}
+			traits = {
+				honest_speaker
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	generate_character = {
+		token_base = generic_super_mutant_cultural_four
+		portraits = {
+			army = {
+				small = "GFX_idea_mutant_generic4"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = cultural_advisor
+			visible = {
+				if = {
+					limit = {
+						original_tag = NEW
+					}
+					has_cosmetic_tag = THR_cosmetic_tag
+				}
+				else = {
+					always = yes
+				}
+			}
+			available = {
+				if = {
+					limit = {
+						original_tag = JCT
+					}
+					NOT = {
+						has_government = people
+					}
+				}
+			}
+			traits = {
+				slaving_bastard
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	generate_character = {
+		token_base = generic_super_mutant_command_five
+		portraits = {
+			army = {
+				small = "GFX_idea_mutant_generic10"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = cultural_advisor
+			visible = {
+				if = {
+					limit = {
+						original_tag = NEW
+					}
+					has_cosmetic_tag = THR_cosmetic_tag
+				}
+				else = {
+					always = yes
+				}
+			}
+			traits = {
+				war_monger
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+}
+
+every_possible_country = {
+	limit = {
+		NOT = {
+			original_tag = TRL
+		}
+		is_allowed_super_mutant_generic_political_advisors = yes
+	}
+	generate_character = {
+		token_base = generic_super_mutant_cultural_three
+		portraits = {
+			army = {
+				small = "GFX_idea_mutant_generic8"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = cultural_advisor
+			visible = {
+				if = {
+					limit = {
+						original_tag = NEW
+					}
+					has_cosmetic_tag = THR_cosmetic_tag
+				}
+				else = {
+					always = yes
+				}
+			}
+			available = {
+				if = {
+					limit = {
+						original_tag = JCT
+					}
+					NOT = {
+						has_government = people
+					}
+				}
+			}
+			traits = {
+				consuming_hunger
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	generate_character = {
+		token_base = generic_super_mutant_cultural_six
+		portraits = {
+			army = {
+				small = "GFX_idea_mutant_generic7"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = cultural_advisor
+			visible = {
+				if = {
+					limit = {
+						original_tag = NEW
+					}
+					has_cosmetic_tag = THR_cosmetic_tag
+				}
+				else = {
+					always = yes
+				}
+			}
+			available = {
+				if = {
+					limit = {
+						original_tag = JCT
+					}
+					NOT = {
+						has_government = people
+					}
+				}
+			}
+			traits = {
+				slave_master
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	generate_character = {
+		token_base = generic_super_mutant_air_chief
+		portraits = {
+			army = {
+				small = "GFX_idea_mutant_generic18"
+			}
+		}
+		advisor = {
+			cost = 100
+			slot = air_chief
+			visible = {
+				if = {
+					limit = {
+						original_tag = NEW
+					}
+					has_cosmetic_tag = THR_cosmetic_tag
+				}
+				else = {
+					always = yes
+				}
+			}
+			ledger = air
+			traits = {
+				ample_legroom
+			}
+			ai_will_do = {
+				factor = 5
+			}
+		}
+	}
+}
