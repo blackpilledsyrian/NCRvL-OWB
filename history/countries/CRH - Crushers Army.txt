@@ -139,7 +139,6 @@ add_timed_idea = {
 	days = 240
 }
 
-recruit_character = UOA_keats
 recruit_character = UOA_lieutenant_crusher
 recruit_character = UOA_chauncey_ferocious
 recruit_character = UOA_numbers_scars
@@ -149,12 +148,6 @@ random_character = {
 		is_character = UOA_lieutenant_crusher
 	}
 	save_global_event_target_as = UOA_lieutenant_crusher_target
-}
-random_character = {
-	limit = {
-		is_character = UOA_keats
-	}
-	save_global_event_target_as = UOA_keats_target
 }
 
 create_equipment_variant = {

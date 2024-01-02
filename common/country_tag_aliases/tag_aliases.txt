@@ -1,0 +1,144 @@
+# tag aliases are country tags that maps to different countries depending on a set of triggers
+
+#TAG = { #name of alias tag. must be 3 letters and different from any other tags. once this is defined, it will be available in any script that uses country tags
+#
+#	# you can map an alias directly to an event target or another variable. only use one of the following entries
+#	# if any of these are used, the alias will be mapped to that specific variable/event target and no other check will be done
+#	variable = var_name
+#	global_event_target = event_target_name
+#	event_target = event_target_name
+#
+#	# if an alias is not mapped directly to a variable/event target, it will be searched within a list of countries that can be definied below
+#	# you can use any combination of these below
+#	# while checking for triggers/variables, current scope will be the country we are checking and PREV will be the scope that uses the alias
+#	# if none of the following targets are defined, the game will check all existing countries but this is highly discouraged for performance reasons
+#	original_tag = GER # pick a country that has original_tag of GER
+#	targets = { GER FRA ENG } # search within the list of tags/variables
+#	target_array = array_name # search within an array
+#
+#	# by default alias will return the first existing country that it matches and fulfils the triggers. you can also define a scoring system like this and it will pick the tag with the highest score > 0
+#	country_score = {
+#		base = 1
+#		modifier = {
+#			add = 10
+#			# if mapped tag is in same faction with the country in scope that calls this alias give it a higher score
+#			is_in_faction_with = PREV
+#		}
+#		modifier = {
+#			add = 5
+#			# if the mapped tag has fascism give it a higher score
+#			has_government = fascism
+#		}
+#	}
+#
+#	fallback = GER # if the alias can't match anything, use this one as fallback (no triggers or weight will be checked)
+#
+#	# you can define a list of trigger, in that case it will chech is tags that this alias is mapped to and return only if the triggers are true
+#	OR = {
+#		#only accept targets that is ally with us or is fascist
+#		is_in_faction_with = PREV
+#		has_government = fascism
+#	}
+#	# trigger 2
+#	# trigger 3
+#	# ...
+#}
+
+
+MAL = {
+	original_tag = CES
+	has_country_flag = CES_malpais_legion_flag
+}
+
+AUR = {
+	original_tag = CES
+	has_country_flag = CES_aurelian_legion_flag
+}
+CAU = {
+	original_tag = CES
+	has_country_flag = CES_caius_flag
+}
+
+
+VLP = {
+	original_tag = CES
+	has_country_flag = CES_vulpes_legion_flag
+}
+
+LUC = {
+	original_tag = CES
+	has_country_flag = CES_lucius_legion_flag
+}
+
+
+LAN = {
+	original_tag = CES
+	has_country_flag = CES_lanius_legion_flag
+}
+
+THR = {
+	original_tag = NEW
+	has_government = ruler
+	is_thradd_leader = yes
+}
+
+TEX = {
+	targets = { TBH LNS }
+	OR = {
+		has_cosmetic_tag = TEX_provisional
+		has_cosmetic_tag = TEX_LNS
+		has_cosmetic_tag = TEX_stateflag
+		has_cosmetic_tag = TEX_chile
+		has_cosmetic_tag = TEX_proper
+		has_cosmetic_tag = TEX_proper_LNS
+		has_cosmetic_tag = TEX_proper_stateflag
+		has_cosmetic_tag = TEX_proper_chile
+	}
+}
+
+NVS = {
+	fallback = NAT
+	original_tag = NAT
+	has_country_flag = NAV_SHI
+}
+NVT = {
+	fallback = NAT
+	original_tag = NAT
+	has_country_flag = NAV_TR
+}
+
+NVR = {
+	fallback = NAT
+	original_tag = NAT
+	has_country_flag = NAV_RD
+}
+
+WDN = {
+	original_tag = HAN
+	has_country_flag = HAN_warden_revolter
+}
+
+THN = {
+	original_tag = EHT
+	has_country_flag = EHT_thunderbird_lord
+}
+
+BON = {
+	original_tag = NCR
+	has_country_flag = NCR_boneyard_flag
+}
+
+RDS = {
+	original_tag = NCR
+	has_country_flag = NCR_redding_flag
+}
+
+FRE = {
+	original_tag = STN
+	has_government = people
+	has_cosmetic_tag = STN_freedoms_army
+}
+DOD = {
+	original_tag = BGC
+	has_country_flag = DOD_revolter
+}
