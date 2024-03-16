@@ -1,26 +1,38 @@
+
 state={
 	id=1358
 	name="STATE_1358"
-	provinces={
-		14810 14811 14812 14813 14814 14815 14817 14819 14820 14823 14828
+	resources={
+		water=5.000
+		energy=2.000
+		metal=10.000
+		composites=4.000
+		circuitry=4.000
 	}
-	resources = {
-		water = 5
-		energy = 5
-		metal = 15
-		composites = 5
-		circuitry = 5
-	}
-	history = {
+
+	history={
 		victory_points = {
 			14828 12
+		}
+		victory_points = {
+			14646 5
+		}
+		victory_points = {
+			14825 4
 		}
 		buildings = {
 			infrastructure = 3
 			industrial_complex = 2
+			arms_factory = 1
 		}
+
 	}
-	state_category = large_town
-	manpower = 1723
+
+	provinces={
+		14646 14807 14811 14813 14815 14817 14818 14824 14825 14828 15119
+	}
+	manpower=5377
 	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=0.000
 }

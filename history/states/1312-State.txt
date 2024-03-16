@@ -1,11 +1,11 @@
 state = {
 	id = 1312
 	name = "STATE_1312"
-	manpower = 1012
+	manpower = 1712
 	state_category = shanty
 
 	resources = {
-		water = 5
+		water = 4
 		circuitry = 5
 	}
 

@@ -10,18 +10,6 @@ state={
 		}
 		buildings = {
 			infrastructure = 3
-			15164 = {
-				bunker = 2
-			}
-			15168 = {
-				bunker = 2
-			}
-			15169 = {
-				bunker = 2
-			}
-			15162 = {
-				bunker = 2
-			}
 		}
 	}
 	state_category = town

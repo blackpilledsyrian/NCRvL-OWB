@@ -5,7 +5,7 @@ state={
 		14683 14684 14685 14686 15173 15174 15175 15176 15177 15178 15179 15195
 	}
 	resources = {
-		metal = 12
+		metal = 8
 	}
 	history = {
 		victory_points = {
@@ -14,18 +14,9 @@ state={
 		buildings = {
 			infrastructure = 2
 			arms_factory = 1
-			15173 = {
-				bunker = 2
-			}
-			15174 = {
-				bunker = 2
-			}
-			14683 = {
-				bunker = 2
-			}
 		}
 	}
 	state_category = town
-	manpower = 1529
+	manpower = 2829
 	buildings_max_level_factor=1.000
 }

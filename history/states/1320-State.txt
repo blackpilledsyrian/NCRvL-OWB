@@ -15,24 +15,9 @@ state={
 		buildings = {
 			infrastructure = 3
 			arms_factory = 1
-			15132 = {
-				bunker = 2
-			}
-			15131 = {
-				bunker = 2
-			}
-			15130 = {
-				bunker = 2
-			}
-			15145 = {
-				bunker = 2
-			}
-			15146 = {
-				bunker = 2
-			}
 		}
 	}
 	state_category = large_town
-	manpower = 981
+	manpower = 3681
 	buildings_max_level_factor=1.000
 }

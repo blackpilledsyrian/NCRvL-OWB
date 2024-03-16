@@ -1,7 +1,7 @@
 state = {
 	id = 1317
 	name = "STATE_1317" #For the Lost
-	manpower = 1912
+	manpower = 2912
 	state_category = town
 
 	history = {
@@ -11,15 +11,6 @@ state = {
 		buildings = {
 			infrastructure = 3
 			industrial_complex = 1
-			15133 = {
-				bunker = 2
-			}
-			15134 = {
-				bunker = 2
-			}
-			15135 = {
-				bunker = 2
-			}
 		}
 	}
 

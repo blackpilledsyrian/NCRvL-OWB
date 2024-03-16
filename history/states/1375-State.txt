@@ -1,38 +1,21 @@
+
 state={
 	id=1375
 	name="STATE_1375"
-	provinces={
-		14666 14667 14668 15240 15260
-	}
-	resources = {
-		metal = 5
-	}
-	history = {
-		victory_points = {
-			14668 5
-		}
+
+	history={
 		buildings = {
-			infrastructure = 3
-			arms_factory = 1
-			14668 = {
-				naval_base = 2
-				coastal_bunker = 5
-			}
-			14667 = {
-				coastal_bunker = 5
-			}
-			14666 = {
-				bunker = 3
-			}
-			15240 = {
-				bunker = 3
-			}
-			15260 = {
-				bunker = 3
-			}
+			infrastructure = 2
+
 		}
+
 	}
-	state_category = pastoral
-	manpower = 892
+
+	provinces={
+		671 12796 12811 13436 13484 14564 14572 14577 14579 14584 14618
+	}
+	manpower=100
 	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
 }

@@ -1,19 +1,35 @@
+
 state={
 	id=1363
 	name="STATE_1363"
-	provinces={
-		14977 14978 14979 14980 14983 14984 14986 14987
+	resources={
+		metal=4.000
+		composites=2.000
+		circuitry=3.000
 	}
-	history = {
+
+	history={
 		victory_points = {
 			14984 5
 		}
+		victory_points = {
+			16331 5
+		}
+		victory_points = {
+			14095 5
+		}
 		buildings = {
 			infrastructure = 3
-			industrial_complex = 1
+			industrial_complex = 2
+			arms_factory = 1
 		}
 	}
-	state_category = shanty
-	manpower = 131
+
+	provinces={
+		12850 13123 14095 14944 14945 14946 14976 14977 14978 14979 14980 14983 14984 14986 14987 14989 16331 16400
+	}
+	manpower=6607
 	buildings_max_level_factor=1.000
+	state_category=city
+	local_supplies=0.000
 }

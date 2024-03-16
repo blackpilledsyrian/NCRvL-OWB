@@ -1,24 +1,20 @@
+
 state={
 	id=1327
 	name="STATE_1327"
-	provinces={
-		14940 14941 14942 14943 16331
-	}
-	resources = {
-		energy = 2
-		metal = 15
-		composites = 2
-	}
-	history = {
-		victory_points = {
-			16331 15
-		}
+	history={
 		buildings = {
-			infrastructure = 3
-			industrial_complex = 1
+			infrastructure = 2
+
 		}
+
 	}
-	state_category = large_town
-	manpower = 3285
+
+	provinces={
+		456 494 701 3532 4192 8395 8429 8670 9009 21036
+	}
+	manpower=100
 	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
 }

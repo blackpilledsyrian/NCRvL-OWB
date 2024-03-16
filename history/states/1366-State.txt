@@ -1,23 +1,36 @@
-state={
-	id=1366
-	name="STATE_1366"
-	provinces={
-		14845 14856 14857 14858 14859 14860 14861 15110 15111
-	}
+
+state = {
+	id = 1366
+	name = "STATE_1366"
 	resources = {
-		water = 12
-		energy = 6
-		metal = 6
+		water = 4.000
+		metal = 2.000
+		composites = 2.000
 	}
-	history = {
+
+	history={
 		victory_points = {
-			14857 15
+			14836 5
+		}
+		victory_points = {
+			13308 5
+		}
+		victory_points = {
+			14831 5
 		}
 		buildings = {
 			infrastructure = 2
+			13314 = {
+				naval_base = 1
+			}
 		}
 	}
-	state_category = pastoral
-	manpower = 112
-	buildings_max_level_factor=1.000
+
+	provinces={
+		14864 14836 14835 14837 15116 14647 14841 14831 13308 13314 13313
+	}
+	manpower= 2581
+	buildings_max_level_factor = 1.000
+	state_category = town
+	local_supplies = 0.000
 }

@@ -1,8 +1,8 @@
 state = {
 	id = 1304
 	name = "STATE_1304"
-	manpower = 611
-	state_category = rural
+	manpower = 1311
+	state_category = shanty
 
 	resources = {
 		composites = 2

@@ -2,20 +2,20 @@
 state={
 	id=1381
 	name="STATE_1381"
-	provinces={
-		16347 16348 16350 16351 16354 16356 16358 16359
-	}
-	history = {
-		victory_points = {
-			16347 5
-		}
+
+	history={
 		buildings = {
-			infrastructure = 3
-			16356 = {
-				naval_base = 1
-			}
+			infrastructure = 2
+
 		}
+
 	}
-	state_category = rural
-	manpower = 561
+
+	provinces={
+		8 1899 2554 6499 7507 12754 14717 14808 15108 17198
+	}
+	manpower=100
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
 }

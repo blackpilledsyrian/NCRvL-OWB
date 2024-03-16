@@ -6,7 +6,7 @@ state={
 	}
 	resources = {
 		metal = 5
-		composites = 4
+		composites = 3
 	}
 	history = {
 		victory_points = {
@@ -15,30 +15,9 @@ state={
 		buildings = {
 			infrastructure = 3
 			arms_factory = 1
-			15197 = {
-				bunker = 2
-			}
-			14687 = {
-				bunker = 2
-			}
-			14688 = {
-				bunker = 2
-			}
-			15072 = {
-				bunker = 4
-			}
-			15071 = {
-				bunker = 2
-			}
-			15180 = {
-				bunker = 2
-			}
-			15181 = {
-				bunker = 2
-			}
 		}
 	}
 	state_category = rural
-	manpower = 112
+	manpower = 612
 	buildings_max_level_factor=1.000
 }

@@ -3,25 +3,29 @@ state={
 	id=1332
 	name="STATE_1332"
 	resources={
-		metal=12.000
+		metal=9.000
+		water=2.000
+		circuitry=2.000
 	}
 
 	history={
 		victory_points = {
-			14757 5
+			14611 5
 		}
 		buildings = {
 			infrastructure = 2
 			industrial_complex = 1
+			dockyard = 1
+
 		}
 
 	}
 
 	provinces={
-		14745 14746 14747 14752 14756 14757 14758 14765
+		14611 14612 14747 14752 14755 14756 14757 14758 14765 14766
 	}
-	manpower=781
+	manpower=4094
 	buildings_max_level_factor=1.000
-	state_category=shanty
+	state_category=large_town
 	local_supplies=0.000
 }
