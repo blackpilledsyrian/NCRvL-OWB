@@ -7,6 +7,12 @@ state={
 		victory_points = {
 			13982 5
 		}
+		victory_points = {
+			13909 5
+		}
+		victory_points = {
+			14010 5
+		}
 		buildings = {
 			infrastructure = 2
 			arms_factory = 1
@@ -16,10 +22,10 @@ state={
 	}
 
 	provinces={
-		13974 13980 13981 13982 13983 13984 14004 14008 14011
+		13909 13960 13961 13974 13976 13978 13981 13982 13983 14000 14001 14004 14008 14009 14010 14011
 	}
-	manpower=412
+	manpower=2724
 	buildings_max_level_factor=1.000
-	state_category=rural
+	state_category=shanty
 	local_supplies=0.000
 }

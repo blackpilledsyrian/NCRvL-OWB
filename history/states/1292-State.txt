@@ -6,12 +6,12 @@ state={
 		13513 13514 13515 13517 13518 13523 13524 13525 13526 13527 13529 13530
 	}
 	resources = {
-		water = 16
-		metal = 14
+		water = 4
+		metal = 10
 	}
 	history = {
 		victory_points = {
-			13524 5
+			13524 20
 		}
 		buildings = {
 			infrastructure = 3

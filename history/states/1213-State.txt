@@ -2,14 +2,8 @@
 state={
 	id=1213
 	name="STATE_1213"
-	resources={
-		composites=5.000
-	}
 
 	history={
-		victory_points = {
-			13935 5
-		}
 		buildings = {
 			infrastructure = 2
 
@@ -18,10 +12,10 @@ state={
 	}
 
 	provinces={
-		13918 13921 13925 13927 13928 13932 13934 13935 13936
+		6468 7281 7290 14627 14800 14816 14820 14821
 	}
-	manpower=417
+	manpower=100
 	buildings_max_level_factor=1.000
-	state_category=shanty
+	state_category=rural
 	local_supplies=0.000
 }

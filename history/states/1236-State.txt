@@ -2,18 +2,27 @@
 state={
 	id=1236
 	name="STATE_1236"
-	provinces={
-		12851 13820 13821 13822 13823 13824 13852 13854 16377 16378
-	}
+
 	history={
 		victory_points = {
 			13824 5
 		}
+		victory_points = {
+			13844 5
+		}
 		buildings = {
 			infrastructure = 3
+			industrial_complex = 1
+
 		}
+
 	}
-	manpower= 961
+
+	provinces={
+		12851 13821 13822 13823 13824 13825 13826 13828 13844 13847 13850 13852 13853 13854 16404
+	}
+	manpower=2392
 	buildings_max_level_factor=1.000
-	state_category=rural
+	state_category=shanty
+	local_supplies=0.000
 }

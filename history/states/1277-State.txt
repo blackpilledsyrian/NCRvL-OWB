@@ -6,6 +6,7 @@ state={
 	}
 	resources = {
 		circuitry = 5
+		water = 3
 	}
 	history = {
 		victory_points = {
@@ -13,9 +14,10 @@ state={
 		}
 		buildings = {
 			infrastructure = 2
+			14335 = { naval_base = 1 }
 		}
 	}
-	state_category = pastoral
-	manpower = 217
+	state_category = shanty
+	manpower = 1217
 	buildings_max_level_factor=1.000
 }

@@ -2,23 +2,28 @@
 state={
 	id=1262
 	name="STATE_1262"
+	resources={
+		metal=2.000
+	}
 
 	history={
 		victory_points = {
-			14410 5
+			14419 5
+		}
+		victory_points = {
+			14475 5
 		}
 		buildings = {
-			infrastructure = 2
-
+			infrastructure = 3
+			arms_factory = 1
 		}
-
 	}
 
 	provinces={
-		14315 14317 14410 14416 14417 14420 14423
+		1467 14419 14420 14423 14425 14426 14428 14465 14473 14474 14475 14480 14481
 	}
-	manpower=312
+	manpower=1524
 	buildings_max_level_factor=1.000
-	state_category=pastoral
+	state_category=shanty
 	local_supplies=0.000
 }
