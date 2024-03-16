@@ -116,7 +116,7 @@ equipments = {
 
 		naval_range = 1100 #base is 900
 
-		max_strength = 72 #base is 52
+		max_strength = 75 #base is 52
 
 		fuel_consumption = 0.4
 
@@ -223,7 +223,7 @@ equipments = {
 		surface_visibility = 32
 		reliability = 0.75
 		naval_range = 1400 #base is 1200
-		max_strength = 98 #base is 78
+		max_strength = 100 #base is 78
 		armor_value = 6 #base is 2 from previous
 
 		build_cost_ic = 1600
@@ -322,7 +322,7 @@ equipments = {
 		surface_visibility = 27
 		reliability = 0.8
 		naval_range = 1600 #base is 1400
-		max_strength = 124 #base is 104
+		max_strength = 125 #base is 104
 		armor_value = 7 #base is 4
 
 		build_cost_ic = 2050
