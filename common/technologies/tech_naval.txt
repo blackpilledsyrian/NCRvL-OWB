@@ -1256,6 +1256,10 @@ technologies = {
 			leads_to_tech = naval_invasion_tech_2
 			research_cost_coeff = 1
 		}
+		
+		enable_equipments = {
+			floating_harbor_equipment_1
+		}
 
 		research_cost = 1.2
 		start_year = 2275
