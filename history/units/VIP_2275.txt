@@ -1,0 +1,133 @@
+﻿division_template = {
+	name = "Pit Snakes"
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Venomguard"
+	template_counter= 245
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+	}
+	support = {
+		dog_company = { x = 0 y = 0 }
+	}
+}
+
+units = {
+    division = {
+        name = "Faust's Chosen"
+        location = 9184
+        division_template = "Venomguard"
+        start_experience_factor = 0.2
+        start_equipment_factor = 0.9
+    }
+    division = {
+        name = "Serpent's Offspring"
+        location = 4948
+        division_template = "Venomguard"
+        start_experience_factor = 0.2
+        start_equipment_factor = 0.6
+    }
+    division = {
+        name = "Pit Viper Vanguard"
+        location = 9192
+        division_template = "Venomguard"
+        start_experience_factor = 0.2
+        start_equipment_factor = 0.6
+    }
+    division = {
+        name = "Awakened"
+        location = 9192
+        division_template = "Venomguard"
+        start_experience_factor = 0.2
+        start_equipment_factor = 0.6
+    }
+    division = {
+        name = "Rhombus' Reckoning"
+        location = 3453
+        division_template = "Venomguard"
+        start_experience_factor = 0.2
+        start_equipment_factor = 0.4
+    }
+    division = {
+        name = "Hub's Folly"
+        location = 3456
+        division_template = "Venomguard"
+        start_experience_factor = 0.2
+        start_equipment_factor = 0.4
+    }
+    division = {
+        name = "Shadow Fangs"
+        location = 1659
+        division_template = "Venomguard"
+        start_experience_factor = 0.2
+        start_equipment_factor = 0.4
+    }
+    division = {
+        name = "Desert Shadows"
+        location = 1534
+        division_template = "Venomguard"
+        start_experience_factor = 0.2
+        start_equipment_factor = 0.4
+    }
+    division = {
+        name = "Sands of Treachery"
+        location = 8794
+        division_template = "Venomguard"
+        start_experience_factor = 0.2
+        start_equipment_factor = 0.4
+    }
+}
+
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = melee_equipment_1
+			creator = "VIP"
+		}
+		requested_factories = 2
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = dogs_equipment_1
+			creator = "VIP"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = demolitions_equipment_1
+			creator = "VIP"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "VIP"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+}
