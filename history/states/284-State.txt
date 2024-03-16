@@ -1,0 +1,22 @@
+#Fallon
+state = {
+	id = 284
+	name = "STATE_284"
+	manpower = 9000
+	state_category = town
+
+	history = {
+		owner = JAC
+		add_core_of = JAC
+		victory_points = {
+			8784 5
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+		}
+	}
+	provinces = {
+		2502 3587 3588 8783 8784 3393 3455 2674 8785
+	}
+}

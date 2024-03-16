@@ -4,11 +4,15 @@ state={
 	name="STATE_1189"
 	resources={
 		circuitry=3.000
+		energy=2.000
 	}
 
 	history={
 		victory_points = {
 			14550 5
+		}
+		victory_points = {
+			14538 5
 		}
 		buildings = {
 			infrastructure = 3
@@ -19,10 +23,10 @@ state={
 	}
 
 	provinces={
-		14301 14302 14325 14537 14548 14549 14550
+		14301 14302 14537 14538 14539 14548 14549 14550 14551 14552 14553 14554
 	}
-	manpower=1112
+	manpower=4724
 	buildings_max_level_factor=1.000
-	state_category=town
+	state_category=large_town
 	local_supplies=0.000
 }

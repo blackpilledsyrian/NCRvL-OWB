@@ -4,6 +4,7 @@ state={
 	name="STATE_1264"
 	resources={
 		water=2.000
+		metal=2.000
 	}
 
 	history={
@@ -12,17 +13,17 @@ state={
 		}
 		buildings = {
 			infrastructure = 2
-			industrial_complex = 1
+			industrial_complex = 2
 
 		}
 
 	}
 
 	provinces={
-		14312 14313 14314 14382 14421 14422
+		14313 14314 14315 14416 14417 14421 14422
 	}
-	manpower=512
+	manpower=2323
 	buildings_max_level_factor=1.000
-	state_category=rural
+	state_category=shanty
 	local_supplies=0.000
 }

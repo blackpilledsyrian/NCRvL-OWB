@@ -1,19 +1,25 @@
+
 state={
 	id=1252
 	name="STATE_1252"
-	provinces={
-		14641 14644 14788
-	}
-	history = {
+
+	history={
 		victory_points = {
 			14788 5
 		}
 		buildings = {
 			infrastructure = 2
 			industrial_complex = 1
+
 		}
+
 	}
-	state_category = rural
-	manpower = 1293
+
+	provinces={
+		14641 14644 14788
+	}
+	manpower=1293
 	buildings_max_level_factor=1.000
+	state_category=shanty
+	local_supplies=0.000
 }

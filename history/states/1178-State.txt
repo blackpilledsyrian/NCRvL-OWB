@@ -1,24 +1,30 @@
-state = {
-	id = 1178
-	name = "STATE_1178"
-	manpower = 13
-	state_category = enclave
 
-	resources = {
-		energy = 32
+state={
+	id=1178
+	name="STATE_1178"
+	resources={
+		energy=22.000
+		water=10.000
+		metal=3.000
 	}
 
-	history = {
+	history={
 		victory_points = {
-			13322 5
+			13322 10
 		}
 		buildings = {
-			infrastructure = 2
-			13311 = { naval_base = 1 }
+			infrastructure = 3
+			13311 = {
+				naval_base = 1
+			}
 		}
 	}
 
-	provinces = {
-		13311 13312 13316 13318 13319 13322
+	provinces={
+		13304 13305 13309 13310 13311 13312 13316 13318 13319 13322
 	}
+	manpower=3135
+	buildings_max_level_factor=1.000
+	state_category=shanty
+	local_supplies=0.000
 }

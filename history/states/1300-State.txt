@@ -16,7 +16,7 @@ state={
 			industrial_complex = 1
 		}
 	}
-	state_category = rural
-	manpower = 212
+	state_category = shanty
+	manpower = 1212
 	buildings_max_level_factor=1.000
 }

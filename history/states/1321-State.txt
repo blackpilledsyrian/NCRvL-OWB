@@ -5,7 +5,7 @@ state={
 		15155 15156 15157 15158 15161 15167 15170 15171
 	}
 	resources = {
-		advanced = 5
+		advanced = 4
 	}
 	history = {
 		victory_points = {
@@ -15,7 +15,7 @@ state={
 			infrastructure = 2
 		}
 	}
-	state_category = rural
-	manpower = 732
+	state_category = shanty
+	manpower = 1732
 	buildings_max_level_factor=1.000
 }

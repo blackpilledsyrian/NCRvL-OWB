@@ -5,7 +5,7 @@ state={
 		13533 13536 13537 13539 13540 13541 13542 13543 13544 13545
 	}
 	resources = {
-		metal = 2
+		metal = 6
 	}
 	history={
 		victory_points = {

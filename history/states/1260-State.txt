@@ -1,21 +1,28 @@
+
 state={
 	id=1260
 	name="STATE_1260"
-	resources = {
-		water = 4
+	resources={
+		water=4.000
 	}
-	provinces={
-		14318 14319 14320 14321 14322 14407 14408 14409 14413 14427
-	}
+
 	history={
 		victory_points = {
-			14322 5
+			14408 5
+		}
+		victory_points = {
+			14410 5
 		}
 		buildings = {
 			infrastructure = 3
 		}
 	}
-	state_category = pastoral
-	manpower = 201
+
+	provinces={
+		14317 14318 14319 14320 14321 14407 14408 14409 14410 14424 14427
+	}
+	manpower=1201
 	buildings_max_level_factor=1.000
+	state_category=shanty
+	local_supplies=0.000
 }

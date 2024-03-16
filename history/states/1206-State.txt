@@ -2,16 +2,14 @@
 state={
 	id=1206
 	name="STATE_1206"
-	provinces={
-		12860 12861 12863 12864 12865 12867 12868 12871 13784
+	resources={
+		energy=8.000
+		metal=12.000
+		composites=4.000
+		circuitry=4.000
+		advanced=4.000
 	}
-	resources = {
-		energy = 8
-		metal = 12
-		composites = 4
-		circuitry = 4
-		advanced = 4
-	}
+
 	history = {
 		victory_points = {
 			12868 80
@@ -24,9 +22,16 @@ state={
 			industrial_complex = 4
 			arms_factory = 5
 			air_base = 3
+
 		}
+
 	}
-	state_category = prewar_megacity
-	manpower = 48000
+
+	provinces={
+		12860 12861 12865 12868 12871 13784 13883 13884 13890 13892
+	}
+	manpower=51222
 	buildings_max_level_factor=1.000
+	state_category=prewar_megacity
+	local_supplies=0.000
 }

@@ -3,7 +3,7 @@ state={
 	id=1119
 	name="STATE_1119"
 	provinces={
-		14086 14087 14088 14102 14103 14108 14110
+		14086 14088 14091 14098 14102 14103 14104 14106 14107 14108 14109 14110 14112
 	}
 	resources = {
 		energy = 5
@@ -12,9 +12,13 @@ state={
 		victory_points = {
 			14102 5
 		}
+		victory_points = {
+			14098 3
+		}
 		buildings = {
 			infrastructure = 3
 			industrial_complex = 2
+
 		}
 	}
 	state_category = town

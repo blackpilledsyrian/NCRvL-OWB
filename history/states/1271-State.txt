@@ -19,10 +19,10 @@ state={
 	}
 
 	provinces={
-		13621 13644 13713 13714 13715 14151
+		13621 13644 13713 13715 14151 14350 14377
 	}
 	manpower=2400
 	buildings_max_level_factor=1.000
-	state_category=rural
+	state_category=town
 	local_supplies=0.000
 }

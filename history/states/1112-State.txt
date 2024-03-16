@@ -4,20 +4,14 @@ state = {
 	manpower = 1500
 	state_category = rural
 
-	resources = {
-		metal = 2
-	}
-
 	history = {
-		victory_points = {
-			13162 5
-		}
 		buildings = {
-			infrastructure = 3
+			infrastructure = 2
+
 		}
 	}
 
 	provinces={
-		13156 13160 13162 13163 13168 13169 13170
+		2 18 674 4086 6804 8679 8689 9716
 	}
 }

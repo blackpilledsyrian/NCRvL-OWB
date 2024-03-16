@@ -1,21 +1,19 @@
+
 state={
 	id=1275
 	name="STATE_1275"
-	resources = {
-		water = 4
-	}
-	provinces={
-		14329 14330 14354 14355 14356 14371 14372 14373
-	}
+
 	history={
-		victory_points = {
-			14330 5
-		}
 		buildings = {
 			infrastructure = 2
 		}
 	}
-	state_category = pastoral
-	manpower = 317
+
+	provinces={
+		17158
+	}
+	manpower=100
 	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
 }

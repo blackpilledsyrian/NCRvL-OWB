@@ -2,26 +2,18 @@
 state={
 	id=1138
 	name="STATE_1138"
-	resources={
-		water=8.000
-	}
 
 	history={
-		victory_points = {
-			14239 5
-		}
 		buildings = {
 			infrastructure = 2
-
 		}
-
 	}
 
 	provinces={
-		14215 14217 14223 14224 14225 14228 14233 14239
+		110 600 1403 14555 14743 14900
 	}
-	manpower=362
+	manpower=100
 	buildings_max_level_factor=1.000
-	state_category=town
+	state_category=rural
 	local_supplies=0.000
 }

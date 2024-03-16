@@ -20,7 +20,7 @@ state={
 			infrastructure = 2
 		}
 	}
-	state_category = pastoral
-	manpower = 618
+	state_category = town
+	manpower = 2618
 	buildings_max_level_factor=1.000
 }

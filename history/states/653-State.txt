@@ -29,7 +29,7 @@ state={
 	}
 	name = "STATE_653"
 	provinces={
-		7363 684 7502 2558 7504 7340 8636 34 8635
+		684 2558 7340 7363 7502 7504 8635 8636
 	}
 	manpower = 22468
 	state_category = large_city

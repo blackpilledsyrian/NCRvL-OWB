@@ -3,6 +3,7 @@ state = {
 	name = "STATE_66"
 	resources={
 	}
+
 	history={
 		victory_points = {
 			3902 5
@@ -14,6 +15,7 @@ state = {
 			infrastructure = 3
 		}
 	}
+
 	provinces={
 		1941 1953 2525 3900 3897 3901 3902 3903
 	}

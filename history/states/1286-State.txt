@@ -1,22 +1,19 @@
 
 state={
-	id= 1286
-	name= "STATE_1286"
+	id=1286
+	name="STATE_1286"
+
 	history={
-		victory_points = {
-			14521 5
-		}
 		buildings = {
 			infrastructure = 2
-			industrial_complex = 1
 		}
 	}
 
 	provinces={
-		14496 14497 14498 14521 14522
+		17159
 	}
-	manpower= 213
-	buildings_max_level_factor= 1.000
-	state_category= pastoral
-	local_supplies= 0.000
+	manpower=100
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
 }

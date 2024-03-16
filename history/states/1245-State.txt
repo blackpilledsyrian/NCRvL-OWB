@@ -1,18 +1,44 @@
-state={
-	id=1245
-	name="STATE_1245"
-	provinces={
-		14704 14705 15030 15031 15036 15040 15043 15044
+
+state = {
+	id = 1245
+	name = "STATE_1245"
+	resources = {
+		water = 4.000
 	}
-	history = {
+
+	history={
 		victory_points = {
 			15044 5
 		}
+		victory_points = {
+			15027 5
+		}
+		victory_points = {
+			14699 3
+		}
 		buildings = {
-			infrastructure = 2
+			infrastructure = 3
+			14699 = {
+				naval_base = 1
+				bunker = 2
+			}
+			14698 = {
+				coastal_bunker = 2
+			}
+			15027 = {
+				bunker = 2
+			}
+			15028 = {
+				bunker = 2
+			}
 		}
 	}
-	state_category = shanty
-	manpower = 1112
-	buildings_max_level_factor=1.000
+
+	provinces = {
+		14697 14698 14699 14700 14701 14704 14705 15027 15028 15030 15031 15036 15040 15041 15042 15043 15044
+	}
+	manpower = 3224
+	buildings_max_level_factor = 1.000
+	state_category = large_town
+	local_supplies = 0.000
 }

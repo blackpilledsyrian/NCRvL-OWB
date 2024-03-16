@@ -1,11 +1,11 @@
 
 state={
-	id= 1195
-	name= "STATE_1195"
+	id=1195
+	name="STATE_1195"
 	resources={
-		water= 5.000
-		energy= 4.000
-		metal= 4.000
+		water=5.000
+		energy=3.000
+		metal=2.000
 	}
 
 	history={
@@ -22,10 +22,10 @@ state={
 	}
 
 	provinces={
-		14344 14345 14346
+		14343 14344 14345 14346
 	}
-	manpower= 4101
-	buildings_max_level_factor= 1.000
-	state_category= large_town
-	local_supplies= 0.000
+	manpower=5101
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=0.000
 }

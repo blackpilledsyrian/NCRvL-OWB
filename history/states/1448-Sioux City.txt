@@ -5,9 +5,8 @@ state={
 
 	history={
 		victory_points = {
-			21084 5
+			21083 5
 		}
-
 	}
 
 	provinces={

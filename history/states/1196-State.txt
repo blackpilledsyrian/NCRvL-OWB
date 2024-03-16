@@ -7,7 +7,7 @@ state={
 	}
 	resources = {
 		water = 5
-		energy = 4
+		energy = 2
 		metal = 4
 	}
 	history = {
@@ -20,6 +20,6 @@ state={
 		}
 	}
 	state_category = town
-	manpower = 2512
+	manpower = 3512
 	buildings_max_level_factor=1.000
 }

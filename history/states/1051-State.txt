@@ -5,15 +5,12 @@ state = {
 	state_category = rural
 
 	history = {
-		victory_points = {
-			12613 3
-		}
 		buildings = {
 			infrastructure = 2
 		}
 	}
 
 	provinces = {
-		12625 12613 12603 12593 12597 12606 12624 12590
+		6620 7730 9683 14869 14953
 	}
 }

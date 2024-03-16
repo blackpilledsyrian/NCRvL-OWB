@@ -1,0 +1,28 @@
+state = {
+	id = 239
+	name = "STATE_239"
+	manpower = 4000
+	state_category = shanty
+
+	resources = {
+		circuitry = 4
+		metal = 8
+		water = 4
+	}
+
+	history = {
+		owner = UMB
+		add_core_of = UMB
+		victory_points = {
+			4915 5
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+		}
+	}
+
+	provinces = {
+		1258 2170 2725 4912 4913 4914 4915 4916 4917 4918
+	}
+}

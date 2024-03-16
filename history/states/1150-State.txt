@@ -1,22 +1,28 @@
+
 state={
 	id=1150
 	name="STATE_1150"
-	provinces={
-		14255 14256 14262 14263 14394 14395
+	resources={
+		composites=5.000
+		advanced=5.000
 	}
-	resources = {
-		composites = 5
-		advanced = 5
-	}
-	history = {
+
+	history={
 		victory_points = {
 			14395 5
 		}
 		buildings = {
 			infrastructure = 2
+
 		}
+
 	}
-	state_category = shanty
-	manpower = 212
+
+	provinces={
+		14255 14256 14262 14264 14284 14285 14287 14392 14394 14395 14396
+	}
+	manpower=1212
 	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
 }

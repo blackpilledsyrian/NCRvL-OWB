@@ -1,21 +1,32 @@
+
 state={
 	id=1243
 	name="STATE_1243"
-	provinces={
-		13666 13667 13668 13669 13670 13674
+	resources={
+		water=4.000
+		energy=3.000
+		metal=3.000
 	}
+
 	history={
 		victory_points = {
 			13668 5
 		}
+		victory_points = {
+			13660 10
+		}
 		buildings = {
 			infrastructure = 3
+
 		}
+
 	}
-	resources = {
-		water = 4
+
+	provinces={
+		13660 13661 13663 13665 13666 13667 13668 13669 13673 13674 13675
 	}
-	state_category = shanty
-	manpower = 1100
+	manpower=7900
 	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
 }

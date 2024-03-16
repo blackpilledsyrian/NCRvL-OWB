@@ -13,6 +13,6 @@ state={
 		}
 	}
 	state_category = shanty
-	manpower = 571
+	manpower = 1571
 	buildings_max_level_factor=1.000
 }

@@ -1,0 +1,21 @@
+state = {
+	id = 191
+	name = "STATE_191"
+	manpower = 4000
+	state_category = rural
+
+	history = {
+		owner = LUM
+		add_core_of = LUM
+		victory_points = {
+			6949 5
+		}
+		buildings = {
+			infrastructure = 2
+		}
+	}
+
+	provinces = {
+		6802 6803 6805 6944 6947 6948 6949 6950 9174
+	}
+}

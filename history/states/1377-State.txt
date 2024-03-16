@@ -1,34 +1,64 @@
+
 state={
 	id=1377
 	name="STATE_1377"
-	provinces={
-		14664 14665 15236 15237 15239 15256 15257 15259
+	resources={
+		water=2.000
+		metal=7.000
 	}
-	resources = {
-		water = 2
-		metal = 2
-	}
-	history = {
+
+	history={
 		victory_points = {
 			15239 5
 		}
+		victory_points = {
+			15253 5
+		}
 		buildings = {
 			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 1
 			14665 = {
 				naval_base = 1
 			}
 			14664 = {
-				bunker = 3
+				bunker = 2
 			}
 			15236 = {
-				bunker = 3
+				bunker = 2
 			}
 			15237 = {
-				bunker = 3
+				bunker = 2
+			}
+			14666 = {
+				bunker = 2
+			}
+			15240 = {
+				bunker = 2
+			}
+			15260 = {
+				bunker = 2
+			}
+			15238 = {
+				bunker = 2
+			}
+			14656 = {
+				bunker = 2
+			}
+			14665 = {
+				coastal_bunker = 2
+			}
+			14666 = {
+				coastal_bunker = 2
 			}
 		}
 	}
-	state_category = pastoral
-	manpower = 617
+
+	provinces={
+		14655 14656 14664 14665 14666 15236 15237 15238 15239 15240 15249 15252 15253 15256 15257 15259 15260
+	}
+	manpower=3967
 	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
 }

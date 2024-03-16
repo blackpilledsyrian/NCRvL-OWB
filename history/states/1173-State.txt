@@ -15,7 +15,7 @@ state={
 			infrastructure = 1
 		}
 	}
-	state_category = pastoral
-	manpower = 371
+	state_category = shanty
+	manpower = 1371
 	buildings_max_level_factor=1.000
 }

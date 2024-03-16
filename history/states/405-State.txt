@@ -1,0 +1,21 @@
+state = {
+	id = 405
+	name = "STATE_405"
+	manpower = 2405
+	state_category = rural
+
+	history = {
+		owner = DSL
+		add_core_of = DSL
+		victory_points = {
+			8152 5
+		}
+		buildings = {
+			infrastructure = 2
+		}
+	}
+
+	provinces = {
+		1797 6882 6909 6911 6914 8152 8987
+	}
+}

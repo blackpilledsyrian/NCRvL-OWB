@@ -1,0 +1,23 @@
+state = {
+	id = 129
+	name = "STATE_129"
+	manpower = 2000
+	state_category = rural
+
+	history = {
+		owner = GLW
+		add_core_of = GLW
+		victory_points = {
+			6957 10
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			6957 = { bunker = 2 }
+		}
+	}
+
+	provinces = {
+		6925 6926 6934 6935 6957 9024
+	}
+}

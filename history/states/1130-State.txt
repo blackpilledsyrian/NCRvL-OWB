@@ -10,17 +10,19 @@ state={
 		victory_points = {
 			13702 5
 		}
+		victory_points = {
+			13706 5
+		}
 		buildings = {
 			infrastructure = 4
-
 		}
 
 	}
 
 	provinces={
-		13698 13699 13700 13702
+		13699 13702 13706 13728
 	}
-	manpower=256
+	manpower=1777
 	buildings_max_level_factor=1.000
 	state_category=shanty
 	local_supplies=0.000

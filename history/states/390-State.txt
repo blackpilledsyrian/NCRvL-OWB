@@ -1,0 +1,28 @@
+state = {
+	id = 390
+	name = "STATE_390"
+	manpower = 4390
+	state_category = shanty
+
+	resources = {
+		water = 2
+		metal = 6
+	}
+
+	history = {
+		owner = BAG
+		add_core_of = BAG
+		victory_points = {
+			8168 5
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			arms_factory = 1
+		}
+	}
+
+	provinces = {
+		1270 6778 6927 6929 6930 6931 6938 8166 8167 8168 8171 8172 8173
+	}
+}

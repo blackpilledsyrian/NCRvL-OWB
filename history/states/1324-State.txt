@@ -7,7 +7,7 @@ state={
 	}
 	resources = {
 		water = 4
-		energy = 15
+		energy = 10
 		metal = 4
 	}
 	history = {
@@ -16,21 +16,9 @@ state={
 		}
 		buildings = {
 			infrastructure = 3
-			15152 = {
-				bunker = 1
-			}
-			15014 = {
-				bunker = 1
-			}
-			15015 = {
-				bunker = 1
-			}
-			15016 = {
-				bunker = 1
-			}
 		}
 	}
-	state_category = rural
-	manpower = 981
+	state_category = town
+	manpower = 1981
 	local_supplies=0.000
 }

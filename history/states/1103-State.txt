@@ -8,19 +8,23 @@ state={
 		metal=8.000
 	}
 
-	history={
+	history
 		victory_points = {
 			15056 5
 		}
+		victory_points = {
+			14714 5
+		}
 		buildings = {
 			infrastructure = 2
-
+			14714 = {
+				naval_base = 1
+			}
 		}
-
 	}
 
 	provinces={
-		15045 15046 15055 15056 15058 20280
+		14713 14714 14715 14716 15045 15046 15048 15055 15056 15058 20280
 	}
 	manpower=981
 	buildings_max_level_factor=1.000

@@ -1,0 +1,24 @@
+state = {
+	id = 355
+	name = "STATE_355"
+	manpower = 12355
+	state_category = city
+
+	history = {
+		owner = WHD
+		add_core_of = WHD
+		victory_points = {
+			19972 10
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 2
+			arms_factory = 1
+			air_base = 1
+		}
+	}
+
+	provinces = {
+		6797 6851 9020 9031 19971 19972
+	}
+}

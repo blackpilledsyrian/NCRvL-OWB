@@ -1,23 +1,36 @@
+
 state={
 	id=1335
 	name="STATE_1335"
-	provinces={
-		14484 14613 14614 14615 14769
+	resources={
+		water=7.000
+		circuitry=4.000
+		advanced=3.000
 	}
-	resources = {
-		water = 12
-		circuitry = 5
-		advanced = 5
-	}
-	history = {
+
+	history={
 		victory_points = {
 			14484 10
 		}
+		victory_points = {
+			14617 5
+		}
+		victory_points = {
+			14767 5
+		}
 		buildings = {
 			infrastructure = 3
-			arms_factory = 1
+			arms_factory = 2
+
 		}
+
 	}
-	state_category = town
-	manpower = 2782
+
+	provinces={
+		14484 14613 14614 14616 14617 14619 14620 14760 14761 14763 14764 14767 14769 14770 14771
+	}
+	manpower=5987
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=0.000
 }

@@ -1,0 +1,24 @@
+#Ormat
+state={
+	id=947
+	name="STATE_947"
+	history={
+		owner = VIP
+		add_core_of = VIP
+		victory_points = {
+			8789 10
+		}
+		buildings = {
+			infrastructure = 4
+			arms_factory = 2
+			industrial_complex = 3
+		}
+
+	}
+	provinces={
+		8790 8792 8791 8789 9185 8787 8786 9191 3392 3456
+	}
+	manpower=32843
+	buildings_max_level_factor=1.000
+	state_category = megalopolis
+}

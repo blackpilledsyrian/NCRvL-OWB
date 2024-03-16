@@ -3,12 +3,16 @@ state={
 	id=1240
 	name="STATE_1240"
 	resources={
-		water=8.000
+		water=3.000
+		metal=6.000
 	}
 
 	history={
 		victory_points = {
 			13649 5
+		}
+		victory_points = {
+			13657 10
 		}
 		buildings = {
 			infrastructure = 4
@@ -19,10 +23,10 @@ state={
 	}
 
 	provinces={
-		13646 13648 13649 13650 13652 13654
+		13648 13649 13652 13653 13654 13655 13657 13658 13659
 	}
-	manpower=510
+	manpower=7610
 	buildings_max_level_factor=1.000
-	state_category=rural
+	state_category=town
 	local_supplies=0.000
 }
