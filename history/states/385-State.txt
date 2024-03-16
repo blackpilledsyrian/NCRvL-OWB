@@ -1,0 +1,26 @@
+state = {
+	id = 385
+	name = "STATE_385"
+	manpower = 1200
+	state_category = shanty
+
+	history = {
+		owner = HXL
+		add_core_of = HXL
+		victory_points = {
+			6918 5
+		}
+		buildings = {
+			infrastructure = 2
+			6918 = {
+				naval_base = 2
+				bunker = 2
+				coastal_bunker = 2
+			}
+		}
+	}
+
+	provinces = {
+		6913 6915 6916 6917 6918 8149 8158
+	}
+}

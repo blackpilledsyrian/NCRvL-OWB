@@ -1,0 +1,29 @@
+state = {
+	id = 510
+	name = "STATE_510"
+	manpower = 3510
+	state_category = large_town
+
+	resources = {
+		water = 2
+		metal = 6
+	}
+
+	history = {
+		owner = WHD
+		add_core_of = WHD
+		victory_points = {
+			9036 10
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 2
+			air_base = 1
+		}
+	}
+
+	provinces = {
+		1799 6871 6875 6879 6881 6883 9036
+	}
+}

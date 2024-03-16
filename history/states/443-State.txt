@@ -1,0 +1,22 @@
+state = {
+	id = 443
+	name = "STATE_443"
+	manpower = 1443
+	state_category = rural
+
+	history = {
+		owner = WHD
+		add_core_of = WHD
+		victory_points = {
+			8160 5
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+		}
+	}
+
+	provinces = {
+		1222 6867 6878 6921 8153 8154 8160 8162
+	}
+}
