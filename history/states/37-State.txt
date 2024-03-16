@@ -47,4 +47,6 @@ state = {
 	provinces = {
 		1471 1951 3883 3884 3885 3886 3887 3888 3889 3890 3891 3895 4032 4336 4337 8566 8567
 	}
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
 }
