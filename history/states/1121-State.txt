@@ -3,15 +3,9 @@ state={
 	id=1121
 	name="STATE_1121"
 	provinces={
-		13988 13989 13990 14085 14092 14093 16402
-	}
-	resources = {
-		energy = 4
+		9926 14623 14635 14772 14801 14810 14819 14822
 	}
 	history = {
-		victory_points = {
-			13989 5
-		}
 		buildings = {
 			infrastructure = 2
 		}

@@ -2,7 +2,7 @@ state={
 	id=1106
 	name="STATE_1106"
 	provinces={
-		14689 14690 14847 14850 14851
+		14689 14690 14691 14847 14848 14849 14850 14851
 	}
 	resources = {
 		water = 4
@@ -11,22 +11,25 @@ state={
 		victory_points = {
 			14690 5
 		}
+		victory_points = {
+			14849 3
+		}
 		buildings = {
 			infrastructure = 4
 			industrial_complex = 1
-			14850 = {
-				bunker = 3
-			}
 			14689 = {
-				bunker = 4
+				bunker = 2
 			}
 			14847 = {
-				bunker = 4
-			}
-			14690 = {
-				bunker = 4
+				bunker = 2
 			}
 			14851 = {
+				bunker = 2
+			}
+			14691 = {
+				bunker = 2
+			}
+			14848 = {
 				bunker = 2
 			}
 		}

@@ -1,15 +1,14 @@
+
 state={
 	id=1125
 	name="STATE_1125"
-	provinces={
-		13676 13677 13678
+	resources={
+		water=3.000
+		metal=7.000
+		circuitry=7.000
+		advanced=2.000
 	}
-	resources = {
-		water = 4
-		metal = 9
-		circuitry = 8
-		advanced = 2
-	}
+
 	history={
 		victory_points = {
 			13676 15
@@ -21,9 +20,16 @@ state={
 			infrastructure = 7
 			industrial_complex = 2
 			arms_factory = 3
+
 		}
+
 	}
-	state_category = megalopolis
-	manpower = 8500
+
+	provinces={
+		13676 13677 13678 13680 13681
+	}
+	manpower=12500
 	buildings_max_level_factor=1.000
+	state_category=megalopolis
+	local_supplies=0.000
 }

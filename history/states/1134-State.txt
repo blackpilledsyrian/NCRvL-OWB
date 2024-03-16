@@ -11,6 +11,9 @@ state={
 		victory_points = {
 			14114 5
 		}
+		victory_points = {
+			14247 2
+		}
 		buildings = {
 			infrastructure = 2
 
@@ -19,9 +22,9 @@ state={
 	}
 
 	provinces={
-		14114 14199 14200 14202 14203 14204 14205 14244 14245 14251
+		14114 14196 14198 14199 14200 14202 14203 14204 14205 14246 14247 14251 14254
 	}
-	manpower=512
+	manpower=2128
 	buildings_max_level_factor=1.000
 	state_category=shanty
 	local_supplies=0.000

@@ -3,9 +3,8 @@ state={
 	id=1143
 	name="STATE_1143"
 	resources={
-		water=8.000
-		energy=8.000
-		metal=8.000
+		water=2.000
+		metal=5.000
 	}
 
 	history={
@@ -15,6 +14,9 @@ state={
 		victory_points = {
 			14078 1
 		}
+		victory_points = {
+			14090 3
+		}
 		buildings = {
 			infrastructure = 1
 
@@ -23,9 +25,9 @@ state={
 	}
 
 	provinces={
-		14119 14121 14135 14145
+		14074 14078 14081 14082 14090 14099 14119 14121
 	}
-	manpower=313
+	manpower=734
 	buildings_max_level_factor=1.000
 	state_category=shanty
 	local_supplies=0.000

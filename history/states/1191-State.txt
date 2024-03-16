@@ -1,28 +1,35 @@
-state = {
-	id = 1191
-	name = "STATE_1191"
-	manpower = 7111
-	state_category = large_city
 
-	resources = {
-		water = 12
-		energy = 12
-		metal = 12
-		composites = 2
+state={
+	id=1191
+	name="STATE_1191"
+	resources={
+		water=7.000
+		energy=5.000
+		metal=7.000
+		composites=2.000
 	}
 
-	history = {
+	history={
 		victory_points = {
-			12881 25
+			12881 15
+		}
+		victory_points = {
+			14541 5
 		}
 		buildings = {
 			infrastructure = 4
 			industrial_complex = 1
 			arms_factory = 1
+
 		}
+
 	}
 
-	provinces = {
-		12875 12881
+	provinces={
+		12874 12875 12876 12881 14541 14542 14556 14557
 	}
+	manpower=10223
+	buildings_max_level_factor=1.000
+	state_category=large_city
+	local_supplies=0.000
 }

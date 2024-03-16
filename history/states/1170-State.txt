@@ -6,7 +6,7 @@ state={
 	}
 	resources = {
 		energy = 6
-		metal = 6
+		metal = 5
 	}
 	history = {
 		victory_points = {
@@ -16,9 +16,10 @@ state={
 			infrastructure = 2
 			industrial_complex = 2
 			arms_factory = 1
+			14162 = { naval_base = 2 }
 		}
 	}
-	state_category = town
-	manpower = 3188
+	state_category = large_town
+	manpower = 7188
 	buildings_max_level_factor=1.000
 }

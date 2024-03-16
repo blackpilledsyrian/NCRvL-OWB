@@ -4,20 +4,15 @@ state={
 	name="STATE_1135"
 
 	history={
-		victory_points = {
-			14247 2
-		}
 		buildings = {
-			infrastructure = 1
-
+			infrastructure = 2
 		}
-
 	}
 
 	provinces={
-		14196 14198 14246 14247 14253 14254
+		17221
 	}
-	manpower=496
+	manpower=100
 	buildings_max_level_factor=1.000
 	state_category=pastoral
 	local_supplies=0.000

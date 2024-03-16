@@ -1,18 +1,19 @@
+
 state={
 	id=1144
 	name="STATE_1144"
-	provinces={
-		14118 14134 14137 14138 14139 14142 14146
-	}
-	history = {
-		victory_points = {
-			14118 5
-		}
+
+	history={
 		buildings = {
 			infrastructure = 2
 		}
 	}
-	state_category = pastoral
-	manpower = 71
+
+	provinces={
+		17210
+	}
+	manpower=100
 	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
 }
