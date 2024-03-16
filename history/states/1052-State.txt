@@ -11,17 +11,17 @@ state = {
 
 	history = {
 		victory_points = {
-			12623 5 #Nerfed from 20, @McGebe
+			12623 5 
 		}
 		victory_points = {
 			12609 3
 		}
 		buildings = {
-			infrastructure = 3 #Nerfed from 5, @McGebe
+			infrastructure = 3 
 		}
 	}
 
 	provinces = {
-		12623 12617 12601 12600 12619 12629 12605 12616 12628 12622 12609
+		12600 12601 12605 12609 12616 12617 12619 12622 12623 12628 12629
 	}
 }
