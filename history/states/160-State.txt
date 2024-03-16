@@ -1,0 +1,27 @@
+state = {
+	id = 160
+	name = "STATE_160"
+	resources={
+		metal = 8
+		composites = 4
+	}
+
+	history={
+		owner = JAC
+		add_core_of = JAC
+		victory_points = {
+			9184 10
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			air_base = 1
+		}
+	}
+	provinces={
+		4948 8807 9183 9179 9184 9188 9189 9190 9192 9193 9196 9182 8788
+	}
+	manpower=7000
+	buildings_max_level_factor=1.000
+	state_category=town
+}
