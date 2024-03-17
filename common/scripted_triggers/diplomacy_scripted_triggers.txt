@@ -1,0 +1,1357 @@
+#	Triggers to control if diplomatic actions are enabled:
+#		Format:
+#
+#		<diplomatic action tag>_enabled_trigger = {
+#			<trigger contents>
+#		}
+#
+#		ROOT is the country initiating the diplomatic action.
+#		FROM is the recipient or target of the diplomatic action.
+#
+#		Note:  For cleaner tooltips, it is recommended that you use
+#			if triggers within the enable triggers, and a single
+#			custom_trigger_tooltip trigger within each if trigger.
+#
+#		Example: (Germany is prevented from declaring war on the Soviet Union.)
+#
+#		DIPLOMACY_WAR_ENABLE_TRIGGER = {
+#			if = {
+#				limit = {
+#					tag = GER
+#				}
+#				custom_trigger_tooltip = {
+#					tooltip = PREVENT_GER_WAR_ON_SOV
+#					FROM = {
+#						NOT = {
+#							tag = SOV
+#						}
+#					}
+#				}
+#			}
+#		}
+
+### FACTIONS ###
+DIPLOMACY_JOIN_FACTION_ENABLE_TRIGGER_OVERRIDES_GAME = {
+	# always use our trigger instead of vanilla one
+	always = yes
+}
+DIPLOMACY_JOIN_FACTION_ENABLE_TRIGGER = {  # Join faction
+	# ROOT is asking to join
+	# FROM has to accept or not
+
+	if = {
+		limit = { has_global_flag = allow_join_faction_default_global_flag }
+
+		# All variations of flag unused, disabled for CPU. If any are implemented later, re-enable the if statement below this and comment out the next one @Tran
+
+		# if = {
+		# 	limit = { FROM = { is_faction_leader = yes } }
+		# 	custom_trigger_tooltip = {
+		# 		tooltip = "[GetCanAskToJoinFactionTT]"
+		# 		has_country_flag = can_join_faction_@FROM
+		# 	}
+		# }
+		custom_trigger_tooltip = {
+			tooltip = allow_join_faction_default_tt
+			always = no
+		}
+	}
+	else_if = {
+		limit = { has_global_flag = allow_join_faction_coop_global_flag }
+		FROM = { is_ai = no }
+		is_ai = no
+	}
+	within_reachable_land_distance_of_from = yes
+}
+
+DIPLOMACY_OFFER_JOIN_FACTION_ENABLE_TRIGGER_OVERRIDES_GAME = {
+	# always use our trigger instead of vanilla one
+	always = yes
+}
+DIPLOMACY_OFFER_JOIN_FACTION_ENABLE_TRIGGER = {
+	# ROOT is inviting FROM
+	# FROM is the one we want to invite
+	if = {
+		limit = { has_global_flag = allow_join_faction_default_global_flag }
+
+		# All variations of flag unused, disabled for CPU. If any are implemented later, re-enable the if statement below this and comment out the next one @Tran
+
+		# if = {
+		# 	limit = { is_faction_leader = yes }
+		# 	custom_trigger_tooltip = {
+		# 		tooltip = "[GetCanOfferToJoinFactionTT]"
+
+		# 		FROM = { has_country_flag = can_join_faction_@ROOT }
+		# 	}
+		# }
+		custom_trigger_tooltip = {
+			tooltip = allow_join_faction_default_tt
+			always = no
+		}
+	}
+	else_if = {
+		limit = { has_global_flag = allow_join_faction_coop_global_flag }
+		FROM = { is_ai = no }
+		is_ai = no
+	}
+	within_reachable_land_distance_of_from = yes
+}
+
+DIPLOMACY_DISMANTLE_FACTION_ENABLE_TRIGGER = {
+	if = {
+		limit = {
+			has_global_flag = allow_dismantle_faction_allowed_global_flag
+		}
+	}
+	else_if = {
+		limit = {
+			has_global_flag = allow_dismantle_faction_nostarter_global_flag
+		}
+		custom_trigger_tooltip = {
+			tooltip = RULE_DISMANTLE_FACTION_NOSTARTER_TT
+			NOT = {
+				is_new_california_leader = yes
+				is_caesars_legion_leader = yes
+				is_western_brotherhood_of_steel_leader = yes
+				is_children_of_the_gate_leader = yes
+				is_mormon_alliance_leader = yes
+				is_northern_league_leader = yes
+			}
+		}
+	}
+	else = {
+		custom_trigger_tooltip = {
+			tooltip = RULE_DISMANTLE_FACTION_BLOCKED_TT
+			always = no
+		}
+	}
+}
+
+DIPLOMACY_CALL_ALLY_ENABLE_TRIGGER = {
+	# "Call Ally" Legion Stuff.
+	if = {
+		limit = {
+			check_variable = {
+				var = modifier@cant_faction_call
+				value = 1
+				compare = greater_than_or_equals
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = cant_faction_call_tt
+			always = no
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = {
+				check_variable = {
+					var = modifier@cant_faction_join
+					value = 1
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = ally_cant_faction_join_tt
+			always = no
+		}
+	}
+	else_if = {
+		limit = {
+			is_caesars_legion_member = yes
+			FROM = { is_caesars_legion_member = yes }
+		}
+		#Sub(ordinate) - Sub
+		if = {
+			limit = {
+				is_not_caesars_legion_leader = yes
+				is_subject = no
+				FROM = {
+					is_not_caesars_legion_leader = yes
+					is_subject = no
+				}
+				NOT = {
+					FROM = {
+						any_neighbor_country = {
+							OR = {
+								original_tag = ROOT
+								has_war_with = ROOT
+							}
+						}
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = subordinates_must_neighbor_eachother_tt
+				always = no
+			}
+		}
+		# Sub Call - CES Answer
+		else_if = {
+			limit = {
+				is_not_caesars_legion_leader = yes
+				is_subject = no
+				FROM = {
+					is_caesars_legion_leader = yes
+					is_subject = no
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = subordinates_cant_call_in_legion_proper_tt
+				always = no
+			}
+		}
+		# CES Call - Sub Answer
+	}
+	else_if = {
+		limit = {
+			original_tag = MOT
+			OR = {
+				has_war_with = MOJ
+				has_war_with = VEG
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = mot_cant_call_tt
+			always = no
+		}
+	}
+	else_if = {
+		limit = {
+			original_tag = NEW
+			is_new_california_member = yes
+			OR = {
+				NOT = { has_completed_focus = new_shop }
+				NOT = { has_completed_focus = new_coreden }
+				NOT = { has_completed_focus = new_bet }
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = new_cant_call_tt
+			always = no
+		}
+	}
+}
+
+DIPLOMACY_JOIN_ALLY_ENABLE_TRIGGER  = {
+	# "Join Ally" Legion Stuff.
+	if = {
+		limit = {
+			check_variable = {
+				var = modifier@cant_faction_join
+				value = 1
+				compare = greater_than_or_equals
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = cant_faction_join_tt
+			always = no
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = {
+				check_variable = {
+					var = modifier@cant_faction_call
+					value = 1
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = ally_cant_faction_call_tt
+			always = no
+		}
+	}
+	else_if = {
+		limit = {
+			is_caesars_legion_member = yes
+			FROM = { is_caesars_legion_member = yes }
+		}
+		# Sub(ordinate) - Sub
+		if = {
+			limit = {
+				is_not_caesars_legion_leader = yes
+				is_subject = no
+				FROM = {
+					is_not_caesars_legion_leader = yes
+					is_subject = no
+				}
+				NOT = {
+					FROM = {
+						any_neighbor_country = {
+							OR = {
+								original_tag = ROOT
+								has_war_with = ROOT
+							}
+						}
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = subordinates_must_neighbor_eachother_tt
+				always = no
+			}
+		}
+		# CES Join - Sub Answer
+		else_if = {
+			limit = {
+				is_caesars_legion_leader = yes
+				is_subject = no
+				FROM = {
+					is_not_caesars_legion_leader = yes
+					is_subject = no
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = legion_proper_too_busy_to_help_subordinate_tt
+				always = no
+			}
+		}
+		# Sub Join - CES Answer
+		else_if = {
+			limit = {
+				FROM = {
+					check_variable = {
+						var = modifier@cant_faction_join
+						value = 1
+						compare = greater_than_or_equals
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = cant_faction_join_tt
+				always = no
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = {
+				original_tag = MOT
+				OR = {
+					has_war_with = MOJ
+					has_war_with = VEG
+				}
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = mot_cant_join_tt
+			always = no
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = {
+				original_tag = NEW
+				is_new_california_member = yes
+				OR = {
+					NOT = { has_completed_focus = new_shop }
+					NOT = { has_completed_focus = new_coreden }
+					NOT = { has_completed_focus = new_bet }
+				}
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = new_cant_join_tt
+			always = no
+		}
+	}
+}
+
+# This specifically overrides the rule check as to whether or not you can guarantee other ideologies
+DIPLOMACY_GUARANTEE_ENABLE_TRIGGER_OVERRIDES_GAME = {
+	NOT = {
+		# Disable dynamic guarantees for AI
+		is_ai = yes
+		has_global_flag = allow_guarantees_limited_global_flag
+	}
+}
+
+DIPLOMACY_GUARANTEE_ENABLE_TRIGGER = {
+	# Disable dynamic guarantees for AI
+	if = {
+		limit = { is_ai = yes }
+		always = no
+	}
+	else_if = {
+		limit = {
+			tag = TLA
+		}
+		always = no
+	}
+	else_if = {
+		limit = {
+			has_global_flag = allow_guarantees_limited_global_flag
+		}
+		within_reachable_land_distance_of_from = yes
+	}
+	else = {
+		if = {
+			limit = {
+				has_global_flag = allow_guarantees_always_free_global_flag
+			}
+			within_reachable_land_distance_of_from = yes
+		}
+		else_if = {
+			limit = {
+				has_global_flag = allow_guarantees_same_ideology_global_flag
+			}
+			custom_trigger_tooltip = {
+				tooltip = RULE_ALLOW_GUARANTEES_SAME_IDEOLOGY_TOOLTIP
+				has_government = FROM
+			}
+			within_reachable_land_distance_of_from = yes
+		}
+		else = {
+			custom_trigger_tooltip = {
+				tooltip = RULE_ALLOW_GUARANTEES_BLOCKED_TOOLTIP
+				always = no
+			}
+		}
+	}
+}
+
+DIPLOMACY_REVOKE_GUARANTEE_ENABLE_TRIGGER = {
+	if = {
+		limit = {
+			has_global_flag = allow_revoke_guarantees_blocked_global_flag
+		}
+		custom_trigger_tooltip = {
+			tooltip = RULE_ALLOW_REVOKE_GUARANTEES_BLOCKED_TOOLTIP
+			always = no
+		}
+	}
+	else_if = {
+		limit = {
+			ROOT = { tag = LNS }
+			FROM = {
+				tag = LUB
+				has_idea = LNS_idea_lubbock_expedition
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = LNS_lubbock_exp_no_revoke_tt
+			always = no
+		}
+	}
+	else_if = {
+		limit = {
+			ROOT = { tag = TLA }
+			FROM = {
+				OR = {
+					original_tag = ARM
+					original_tag = FFI
+					original_tag = PET
+					original_tag = RRG
+					original_tag = TVR
+				}
+				NOT = { has_wargoal_against = TLA }
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = TLA_guarantees_no_revoke_tt
+			always = no
+		}
+	}
+	else_if = { # legacy of the chosen one alliance between Modoc and the Slags
+		limit = {
+			OR = {
+				AND = {
+					ROOT = { original_tag = MOD }
+					FROM = { original_tag =  SLA }
+					MOD = { has_idea = mod_legacy_of_the_chosen_one }
+				}
+				AND = {
+					ROOT = { original_tag = SLA }
+					FROM = { original_tag =  MOD }
+					SLA = { has_idea = mod_legacy_of_the_chosen_one }
+				}
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = mod_legacy_of_the_chosen_one_tt
+			always = no
+		}
+	}
+}
+
+DIPLOMACY_RELEASE_NATION_ENABLE_TRIGGER = {
+	if = {
+		limit = {
+			FROM = { original_tag = USA }
+		}
+		custom_trigger_tooltip = {
+			tooltip = CSLA_RELEASE_USA_TT
+			NOT = { FROM = { tag = USA } }
+		}
+	}
+	if = {
+		limit = {
+			has_global_flag = allow_release_nations_free_global_flag
+		}
+		hidden_trigger = {
+			always = yes
+		}
+	}
+	else_if = {
+		limit = {
+			has_global_flag = allow_release_nations_peace_only_global_flag
+		}
+		custom_trigger_tooltip = {
+			tooltip = RULE_ALLOW_RELEASE_NATIONS_PEACE_ONLY_TOOLTIP
+			has_war = no
+		}
+	}
+	else = {
+		custom_trigger_tooltip = {
+			tooltip = RULE_ALLOW_RELEASE_NATIONS_BLOCKED_TOOLTIP
+			always = no
+		}
+	}
+	if = {
+		limit = {
+			FROM = {
+				tag = TLA
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = RULE_NOT_ALLOWED_TO_RELEASE_TLALOC
+			NOT = { FROM = { tag = TLA } }
+		}
+	}
+	else_if = {
+		limit = {
+			OR = {
+				original_tag = VLT
+				original_tag = TTM
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = RULE_NOT_ALLOW_RELEASE_DECISION
+			NOT = { FROM = { original_tag = BOO } }
+		}
+	}
+	else_if = {
+		limit = {
+			OR = {
+				original_tag = TRL
+				AND = {
+					original_tag = NEW
+					has_cosmetic_tag = THR_cosmetic_tag
+				}
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = RULE_NOT_ALLOW_RELEASE_DECISION
+			NOT = { FROM = { original_tag = UTO } }
+		}
+	}
+	else_if = {
+		limit = {
+			original_tag = RRG
+		}
+		custom_trigger_tooltip = {
+			tooltip = RULE_NOT_ALLOW_RELEASE_EVENT
+			NOT = { FROM = { original_tag = TAA } }
+		}
+	}
+}
+
+DIPLOMACY_MILACC_ENABLE_TRIGGER = { # Trigger for *asking* for mil acc
+	if = {
+		limit = {
+			has_global_flag = allow_access_free_global_flag
+		}
+		within_reachable_land_distance_of_from = yes
+	}
+	else_if = {
+		limit = {
+			has_global_flag = allow_access_same_ideology_global_flag
+		}
+		custom_trigger_tooltip = {
+			tooltip = RULE_ALLOW_MILITARY_ACCESS_SAME_IDEOLOGY_TT
+			has_government = FROM
+		}
+		within_reachable_land_distance_of_from = yes
+	}
+	else = {
+		custom_trigger_tooltip = {
+			tooltip = RULE_ALLOW_MILITARY_ACCESS_BLOCKED_TT
+			always = no
+		}
+	}
+}
+
+DIPLOMACY_REVOKE_MILACC_ENABLE_TRIGGER = { # Trigger for revoking *your* mil acc in another nation
+	if = {
+		limit = {
+			original_tag = MOT
+			FROM = { original_tag = VEG }
+			NCR = { has_idea = ncr_veg_treaty_of_new_vegas }
+			MOT = { has_idea = ncr_veg_treaty_of_new_vegas }
+			VEG = { has_idea = ncr_veg_treaty_of_new_vegas }
+		}
+		custom_trigger_tooltip = {
+			tooltip = ncr_veg_treaty_of_new_vegas_tt
+			always = no
+		}
+	}
+}
+
+DIPLOMACY_OFFER_MILACC_ENABLE_TRIGGER = { # Triger for *offering* mil acc
+	if = {
+		limit = {
+			has_global_flag = allow_access_free_global_flag
+		}
+		within_reachable_land_distance_of_from = yes
+	}
+	else_if = {
+		limit = {
+			has_global_flag = allow_access_same_ideology_global_flag
+		}
+		custom_trigger_tooltip = {
+			tooltip = RULE_ALLOW_MILITARY_ACCESS_SAME_IDEOLOGY_TT
+			has_government = FROM
+		}
+		within_reachable_land_distance_of_from = yes
+	}
+	else = {
+		custom_trigger_tooltip = {
+			tooltip = RULE_ALLOW_MILITARY_ACCESS_BLOCKED_TT
+			always = no
+		}
+	}
+}
+
+DIPLOMACY_REVOKE_OFFER_MILACC_ENABLE_TRIGGER = { # Trigger for revoking *another's* mil acc in your nation
+	if = {
+		limit = {
+			FROM = { original_tag = MOT }
+			original_tag = VEG
+			NCR = { has_idea = ncr_veg_treaty_of_new_vegas }
+			MOT = { has_idea = ncr_veg_treaty_of_new_vegas }
+			VEG = { has_idea = ncr_veg_treaty_of_new_vegas }
+		}
+		custom_trigger_tooltip = {
+			tooltip = ncr_veg_treaty_of_new_vegas_tt
+			always = no
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { original_tag = VLT }
+			EAS = { has_idea = vlt_eas_cooperation }
+		}
+		custom_trigger_tooltip = {
+			tooltip = vlt_eas_cooperation_tt
+			always = no
+		}
+	}
+	else_if = { # legacy of the chosen one alliance between Modoc and the Slags
+		limit = {
+			OR = {
+				AND = {
+					FROM = { original_tag =  SLA}
+					MOD = { has_idea = mod_legacy_of_the_chosen_one }
+				}
+				AND = {
+					FROM = { original_tag =  MOD}
+					SLA = { has_idea = mod_legacy_of_the_chosen_one }
+				}
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = mod_legacy_of_the_chosen_one_tt
+			always = no
+		}
+	}
+
+}
+
+DIPLOMACY_NONAGGRESSIONPACT_ENABLE_TRIGGER = {
+	within_reachable_land_distance_of_from = yes
+}
+
+DIPLOMACY_REVOKE_NONAGGRESSIONPACT_ENABLE_TRIGGER = {
+	if = {
+		limit = {
+			OR = {
+				original_tag = NCR
+				original_tag = MOT
+				original_tag = VEG
+			}
+			FROM = {
+				OR = {
+					original_tag = NCR
+					original_tag = MOT
+					original_tag = VEG
+				}
+			}
+			NCR = { has_idea = ncr_veg_treaty_of_new_vegas }
+			MOT = { has_idea = ncr_veg_treaty_of_new_vegas }
+			VEG = { has_idea = ncr_veg_treaty_of_new_vegas }
+		}
+		custom_trigger_tooltip = {
+			tooltip = ncr_veg_treaty_of_new_vegas_tt
+			always = no
+		}
+	}
+	else_if = {
+		limit = {
+			OR = {
+				original_tag = NCR
+				original_tag = SHI
+			}
+			FROM = {
+				OR = {
+					original_tag = NCR
+					original_tag = SHI
+				}
+			}
+			NCR = { has_idea = ncr_bos_idea_allgood_truce }
+			SHI = { has_idea = ncr_bos_idea_allgood_truce }
+		}
+		custom_trigger_tooltip = {
+			tooltip = allgood_truce_tt
+			always = no
+		}
+	}
+	else_if = {
+		limit = {
+			OR = {
+				original_tag = NCR
+				original_tag = BOS
+			}
+			FROM = {
+				OR = {
+					original_tag = NCR
+					original_tag = BOS
+				}
+			}
+			BOS = {
+				has_dynamic_modifier = {
+					modifier = bos_tension_dynamic_modifier
+				}
+			}
+			NCR = {
+				has_dynamic_modifier = {
+					modifier = bos_ncr_tension_dynamic_modifier
+				}
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = ncr_bos_truce_tt
+			always = no
+		}
+	}
+	else_if = {
+		limit = {
+			original_tag = TLA
+			FROM = {
+				OR = {
+					original_tag = ARM
+					original_tag = FFI
+					original_tag = PET
+					original_tag = RRG
+					original_tag = TVR
+				}
+			}
+			TLA = {
+				has_idea = tla_the_guarantees
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = TLA_pact_no_revoke_tt
+			always = no
+		}
+	}
+}
+
+DIPLOMACY_DOCKING_RIGHTS_ENABLE_TRIGGER = {
+	if = {
+		limit = {
+			has_global_flag = allow_access_free_global_flag
+		}
+		within_reachable_land_distance_of_from = yes
+	}
+	else_if = {
+		limit = {
+			has_global_flag = allow_access_same_ideology_global_flag
+		}
+		custom_trigger_tooltip = {
+			tooltip = RULE_ALLOW_MILITARY_ACCESS_SAME_IDEOLOGY_TT
+			has_government = FROM
+		}
+		within_reachable_land_distance_of_from = yes
+	}
+	else = {
+		custom_trigger_tooltip = {
+			tooltip = RULE_ALLOW_MILITARY_ACCESS_BLOCKED_TT
+			always = no
+		}
+	}
+}
+
+DIPLOMACY_OFFER_DOCKING_RIGHTS_ENABLE_TRIGGER = {
+	if = {
+		limit = {
+			has_global_flag = allow_access_free_global_flag
+		}
+		within_reachable_land_distance_of_from = yes
+	}
+	else_if = {
+		limit = {
+			has_global_flag = allow_access_same_ideology_global_flag
+		}
+		custom_trigger_tooltip = {
+			tooltip = RULE_ALLOW_MILITARY_ACCESS_SAME_IDEOLOGY_TT
+			has_government = FROM
+		}
+		within_reachable_land_distance_of_from = yes
+	}
+	else = {
+		custom_trigger_tooltip = {
+			tooltip = RULE_ALLOW_MILITARY_ACCESS_BLOCKED_TT
+			always = no
+		}
+	}
+}
+
+has_mutually_positive_opinion_with_prev = {
+	custom_trigger_tooltip = {
+		tooltip = has_mutually_positive_opinion_with_prev_tt
+		has_opinion = {
+			value > 0
+			target = PREV
+		}
+		PREV = {
+			has_opinion = {
+				value > 0
+				target = PREV
+			}
+		}
+	}
+}
+
+calculate_land_distance_of_prev = {
+	set_temp_variable = { distance_in_km = modifier@diplomacy_distance }
+	multiply_temp_variable = { distance_in_km = modifier@diplomacy_distance_factor }
+	set_temp_variable = { distance = distance_in_km }
+	divide_temp_variable = { distance = 1.793 }
+}
+
+within_reachable_land_distance_of_prev = {
+	if = {
+		limit = {
+			is_neighbor_of = PREV
+		}
+		custom_trigger_tooltip = {
+			tooltip = is_neighbor_of_prev_tt
+			# Nothing here, faster than always = yes
+		}
+	}
+	else = {
+		calculate_land_distance_of_prev = yes
+		custom_trigger_tooltip = {
+			check_variable = { closest_distance_to@PREV < distance }
+			tooltip = within_reachable_land_distance_of_prev_tt
+		}
+	}
+}
+
+within_reachable_land_distance_of_from = {
+	FROM = {
+		PREV = {
+			within_reachable_land_distance_of_prev = yes
+		}
+	}
+}
+
+DIPLOMACY_LEND_LEASE_ENABLE_TRIGGER = {
+	# Check wherever the target is at war before checking everything else
+	# stops the script is target is invalid regardless
+	if = {
+		limit = {
+			OR = {
+				FROM = {
+					has_war = yes
+				}
+				is_ai = no
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					var = modifier@bos_can_only_lend_lease_or_send_volunteers_to_brotherhood_countries
+					value = 1
+					compare = greater_than_or_equals
+				}
+				NOT = {
+					is_in_array = {
+						array = global.bos_ledger_members
+						value = FROM.id
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = bos_can_only_lend_lease_or_send_volunteers_to_brotherhood_countries_tt
+				always = no
+			}
+		}
+		else_if = {
+			limit = {
+				has_global_flag = allow_lend_lease_limited_global_flag
+			}
+			within_reachable_land_distance_of_from = yes
+		}
+		else_if = {
+			limit = {
+				has_global_flag = allow_lend_lease_free_global_flag
+			}
+			within_reachable_land_distance_of_from = yes
+		}
+		else_if = {
+			limit = {
+				has_global_flag = allow_lend_lease_same_ideology_global_flag
+			}
+			custom_trigger_tooltip = {
+				tooltip = RULE_ALLOW_LEND_LEASE_SAME_IDEOLOGY_TT
+				has_government = FROM
+			}
+			within_reachable_land_distance_of_from = yes
+		}
+		else_if = {
+			limit = {
+				has_global_flag = allow_lend_lease_same_faction_global_flag
+			}
+			custom_trigger_tooltip = {
+				tooltip = RULE_ALLOW_LEND_LEASE_SAME_FACTION_TT
+				is_in_faction_with = FROM
+			}
+			within_reachable_land_distance_of_from = yes
+		}
+		else = {
+			custom_trigger_tooltip = {
+				tooltip = RULE_ALLOW_LEND_LEASE_BLOCKED_TT
+				always = no
+			}
+		}
+	}
+	else = {
+		always = no
+	}
+}
+
+DIPLOMACY_INCOMING_LEND_LEASE_ENABLE_TRIGGER = {
+	if = {
+		limit = {
+			has_global_flag = allow_lend_lease_same_ideology_global_flag
+		}
+		custom_trigger_tooltip = {
+			tooltip = RULE_ALLOW_LEND_LEASE_SAME_IDEOLOGY_TT
+			has_government = FROM
+		}
+		within_reachable_land_distance_of_from = yes
+	}
+	else_if = {
+		limit = {
+			has_global_flag = allow_lend_lease_same_faction_global_flag
+		}
+		custom_trigger_tooltip = {
+			tooltip = RULE_ALLOW_LEND_LEASE_SAME_FACTION_TT
+			is_in_faction_with = FROM
+		}
+		within_reachable_land_distance_of_from = yes
+	}
+	else = {
+		custom_trigger_tooltip = {
+			tooltip = RULE_ALLOW_LEND_LEASE_BLOCKED_TT
+			always = no
+		}
+	}
+}
+
+DIPLOMACY_REQUEST_LICENSED_PRODUCTION_ENABLE_TRIGGER = {
+	if = {
+		limit = {
+			OR = {
+				FROM = {
+					is_ai = yes
+				}
+				ROOT = {
+					is_ai = yes
+				}
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = RULE_ALLOW_LICENSING_BLOCKED_FOR_AI_TT
+			always = no
+		}
+	}
+	else = {
+		# limit = {
+		# 	FROM = {
+		# 		is_ai = no
+		# 	}
+		# }
+		if = {
+			limit = {
+				has_global_flag = allow_licensing_free_global_flag
+			}
+			within_reachable_land_distance_of_from = yes
+		}
+		else_if = {
+			limit = {
+				has_global_flag = allow_licensing_same_ideology_global_flag
+			}
+			custom_trigger_tooltip = {
+				tooltip = RULE_ALLOW_LICENSING_SAME_IDEOLOGY_TT
+				has_government = FROM
+			}
+			within_reachable_land_distance_of_from = yes
+		}
+		else_if = {
+			limit = {
+				has_global_flag = allow_licensing_same_faction_global_flag
+			}
+			custom_trigger_tooltip = {
+				tooltip = RULE_ALLOW_LICENSING_SAME_FACTION_TT
+				is_in_faction_with = FROM
+			}
+			within_reachable_land_distance_of_from = yes
+		}
+		else = {
+			custom_trigger_tooltip = {
+				tooltip = RULE_ALLOW_LICENSING_BLOCKED_TT
+				always = no
+			}
+		}
+	}
+}
+
+DIPLOMACY_GENERATE_WARGOAL_ENABLE_TRIGGER = {
+	# block AI from justifying on non-neighbors to reduce useless AI diplo calculations
+	if = {
+		limit = { is_ai = yes }
+		FROM = {
+			is_neighbor_of = ROOT
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				var = modifier@cant_justify_on_countries
+				value = 1
+				compare = greater_than_or_equals
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = cant_justify_on_countries_tt
+			always = no
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = {
+				check_variable = {
+					var = modifier@cant_be_justified_on
+					value = 1
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = cant_be_justified_on_tt
+			always = no
+		}
+	}
+	else_if = {
+		limit = {
+			has_global_flag = allow_wargoals_limited_global_flag
+		}
+		# This is fine
+	}
+	else_if = {
+		limit = {
+			has_global_flag = allow_wargoals_always_free_global_flag
+		}
+		# This is fine
+	}
+	else_if = {
+		limit = {
+			has_global_flag = allow_wargoals_free_25_global_flag
+		}
+		threat > 0.24
+	}
+	else_if = {
+		limit = {
+			has_global_flag = allow_wargoals_free_50_global_flag
+		}
+		threat > 0.49
+	}
+	else_if = {
+		limit = {
+			has_global_flag = allow_wargoals_free_75_global_flag
+		}
+		threat > 0.74
+	}
+	else_if = {
+		limit = {
+			has_global_flag = allow_wargoals_free_100_global_flag
+		}
+		threat > 0.99
+	}
+	else = {
+		custom_trigger_tooltip = {
+			tooltip = RULE_WARGOALS_BLOCKED_TT
+			always = no
+		}
+	}
+	within_reachable_land_distance_of_from = yes
+}
+
+DIPLOMACY_BOOST_PARTY_POPULARITY_ENABLE_TRIGGER = {
+	# Not allowed in OWB. Custom game rules are hidden.
+	custom_trigger_tooltip = {
+		tooltip = RULE_BOOST_PARTY_BLOCKED_TT
+		always = no
+	}
+}
+
+DIPLOMACY_STAGE_COUP_ENABLE_TRIGGER = {
+	# Not allowed in OWB. Custom game rules are hidden.
+	custom_trigger_tooltip = {
+		tooltip = RULE_COUP_BLOCKED_TT
+		always = no
+	}
+}
+
+DIPLOMACY_LEAVE_FACTION_ENABLE_TRIGGER = {
+	# Leaving factions manually is currently disabled completely. This is a needless drain on performance unless that changes @Tran
+	#
+	# if = {
+	# 	limit = {
+	# 		has_global_flag = allow_leave_faction_blocked_global_flag
+	# 	}
+	# 	custom_trigger_tooltip = {
+	# 		tooltip = RULE_ALLOW_LEAVE_FACTION_BLOCKED_TOOLTIP
+	# 		always = no
+	# 	}
+	# }
+	# else_if = {
+	# 	limit = {
+	# 		check_variable = {
+	# 			var = modifier@cant_leave_faction
+	# 			value = 1
+	# 			compare = greater_than_or_equals
+	# 		}
+	# 	}
+		custom_trigger_tooltip = {
+			tooltip = cant_leave_faction_tt
+			always = no
+		}
+	# }
+}
+
+DIPLOMACY_ASSUME_FACTION_LEADERSHIP_ENABLE_TRIGGER = {
+	if = {
+		limit = {
+			has_global_flag = allow_take_over_faction_blocked_global_flag
+		}
+		custom_trigger_tooltip = {
+			tooltip = RULE_ASSUME_LEADERSHIP_BLOCKED_TOOLTIP
+			always = no
+		}
+	}
+	# Default disabled, OWB isn't designed, or balanced around assuming faction leadership.
+	# Please don't put any code here.
+}
+
+DIPLOMACY_KICK_FROM_FACTION_ENABLE_TRIGGER = {
+	if = {
+		limit = {
+			has_global_flag = allow_kick_faction_blocked_global_flag
+		}
+		custom_trigger_tooltip = {
+			tooltip = RULE_KICK_FROM_FACTION_BLOCKED_TOOLTIP
+			always = no
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = {
+				check_variable = {
+					var = modifier@cant_be_kicked_from_the_faction
+					value = 1
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = cant_be_kicked_from_the_faction_tt
+			always = no
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				var = modifier@cant_kick_from_the_faction
+				value = 1
+				compare = greater_than_or_equals
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = cant_kick_from_the_faction_tt
+			always = no
+		}
+	}
+}
+
+DIPLOMACY_SEND_VOLUNTEERS_ENABLE_TRIGGER = {
+	# Check wherever the target is at war before checking everything else
+	# stops the script is target is invalid regardless
+	if = {
+		limit = { is_ai = yes }
+		FROM = {
+			has_war = yes
+		}
+	}
+
+	if = {
+		limit = {
+			FROM = {
+				check_variable = {
+					var = modifier@cant_sent_volunteers_to_this_country
+					value = 1
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = cant_sent_volunteers_to_this_country_tt
+			always = no
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				var = modifier@bos_can_only_lend_lease_or_send_volunteers_to_brotherhood_countries
+				value = 1
+				compare = greater_than_or_equals
+			}
+		}
+		if = {
+			limit = {
+				is_in_array = {
+					array = global.bos_ledger_members
+					value = FROM.id
+				}
+			}
+			#No trigger = yes
+		}
+		else = {
+			custom_trigger_tooltip = {
+				tooltip = bos_can_only_lend_lease_or_send_volunteers_to_brotherhood_countries_tt
+				always = no
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			original_tag = EUR
+		}
+		if = {
+			limit = {
+				any_of = {
+					array = EUR.volunteer_targets
+					value = v
+
+					FROM = {
+						controls_state = v
+					}
+				}
+			}
+			#No trigger = yes
+		}
+		else_if = {
+			limit = {
+				NOT = { is_neighbor_of = FROM }
+			}
+			custom_trigger_tooltip = {
+				tooltip = eur_cant_send_tt
+				always = no
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			has_global_flag = allow_volunteers_limited_global_flag
+		}
+		within_reachable_land_distance_of_from = yes
+	}
+	else_if = {
+		limit = {
+			has_global_flag = allow_volunteers_always_free_global_flag
+		}
+		within_reachable_land_distance_of_from = yes
+	}
+	else_if = {
+		limit = {
+			has_global_flag = allow_volunteers_same_ideology_global_flag
+		}
+		custom_trigger_tooltip = {
+			tooltip = RULE_VOLUNTEERS_SAME_IDEOLOGY_TT
+			has_government = FROM
+		}
+		within_reachable_land_distance_of_from = yes
+	}
+	else = {
+		custom_trigger_tooltip = {
+			tooltip = RULE_VOLUNTEERS_BLOCKED_TT
+			always = no
+		}
+	}
+}
+
+DIPLOMACY_IMPROVERELATION_ENABLE_TRIGGER = {
+	if = {
+		limit = {
+			has_global_flag = base_game_improve_relations_system_enabled_global_flag
+		}
+	}
+	else = {
+		custom_trigger_tooltip = {
+			tooltip = RULE_IMPROVERELATIONS_BLOCKED_TT
+			always = no
+		}
+	}
+}
+
+DIPLOMACY_EMBARGO_ENABLE_TRIGGER = {
+	# This really ought to be dependent on a gamerule but due to some time constraints I was not able to do so myself at time of writing. Removed for non-AI for the sake of performance @Tran
+	if = {
+		limit = {
+			is_ai = yes
+		}
+		always = no
+	}
+	else = {
+		within_reachable_land_distance_of_from = yes
+	}
+}
+
+DIPLOMACY_REQUEST_INTERNATIONAL_MARKET_ACCESS_RIGHTS_ENABLE_TRIGGER = {
+	### AAT quick mock up to prevent market usage
+	if = {
+		limit = {
+			always = yes
+		}
+		always = no
+	}
+	else = {
+		within_reachable_land_distance_of_from = yes
+	}
+}
