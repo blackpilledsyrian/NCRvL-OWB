@@ -1,0 +1,15 @@
+ncr_leg_escalation_decisions_cat = {
+	icon = GFX_decision_category_friends_legion
+	#visible = {
+	#	#is_ai = no
+	#	CES = {
+	#		has_war_with = NCR
+	#	}
+	#}
+	#allowed = {
+	#	original_tag = CES
+	#}
+	picture = GFX_decision_cat_picture_legion_glory
+	priority = 900
+	visible_when_empty = no
+}
