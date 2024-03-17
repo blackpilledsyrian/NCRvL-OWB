@@ -1,0 +1,37 @@
+ideas = {
+	country = {
+		#No fun allowed.
+		escalation_no_fun_idea = {
+			picture = ENG_the_war_to_end_all_wars
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			#available = {
+			#	has_active_mission = lanius_countdown_dog_city
+			#}
+			removal_cost = -1
+			modifier = {
+				cant_faction_join = 1
+			}
+		}
+		escalation_no_fun_idea_2 = { #Ignore this
+			picture = ENG_the_war_to_end_all_wars
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			#available = {
+			#	has_active_mission = lanius_countdown_dog_city
+			#}
+			removal_cost = -1
+			modifier = {
+				cant_faction_call = 1
+			}
+		}
+	}
+}
