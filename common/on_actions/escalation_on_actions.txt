@@ -1,0 +1,145 @@
+on_actions = {
+    on_startup = {
+        effect = {
+            every_country = {
+                limit = {
+                    OR = {
+                        original_tag = EUR
+                        original_tag = BVC
+                        original_tag = PAR
+                        original_tag = CWB
+                        original_tag = VEG
+                        original_tag = SHI
+                        original_tag = IRN
+                        original_tag = WHT
+                        original_tag = ARR
+                        original_tag = NAV
+                        original_tag = RES
+                        original_tag = LAC
+                        original_tag = SHA
+                        original_tag = IMO
+                        original_tag = CRH
+                        original_tag = EHT
+                        original_tag = NEW
+                        original_tag = VLT
+                        original_tag = TIM
+                        original_tag = TWO
+                        original_tag = GDH
+                    }
+                }
+				#add_ideas = escalation_no_fun_idea #Test if it works on warstart
+            }
+            #every_country = {
+            #    limit = {
+            #        OR = {
+            #            original_tag = CES
+            #            original_tag = NCR
+            #        }
+            #    }
+			#	add_ideas = escalation_no_fun_idea_2
+            #}
+        }
+    }
+    on_war_relation_added = {
+        effect = {
+            if = {
+                limit = {
+                    ROOT = {
+                        original_tag = CES
+                    }
+                    FROM = {
+                        original_tag = NCR
+                    }
+                }
+                every_country = {
+                    limit = {
+                        OR = {
+                            original_tag = CES
+                            original_tag = NCR
+                            original_tag = EUR
+                            original_tag = BVC
+                            original_tag = PAR
+                            original_tag = CWB
+                            original_tag = VEG
+                            original_tag = SHI
+                            original_tag = IRN
+                            original_tag = WHT
+                            original_tag = ARR
+                            original_tag = NAV
+                            original_tag = RES
+                            original_tag = LAC
+                            original_tag = SHA
+                            original_tag = IMO
+                            original_tag = CRH
+                            original_tag = EHT
+                            original_tag = NEW
+                            original_tag = VLT
+                            original_tag = TIM
+                            original_tag = MOT
+                            original_tag = TWO
+                            original_tag = GDH
+                        }
+                    }
+                    activate_targeted_decision = {
+                        target = CES
+                        decision = initial_wave
+                    }
+                    activate_targeted_decision = {
+                        target = CES
+                        decision = first_wave_of_escalation
+                    }
+                    activate_targeted_decision = {
+                        target = CES
+                        decision = second_wave_of_escalation
+                    }
+                    activate_targeted_decision = {
+                        target = CES
+                        decision = third_wave_of_escalation
+                    }
+                }
+            }
+        }
+    }
+    on_war_relation_added = {
+        effect = {
+            if = {
+                limit = {
+                    ROOT = {
+                        original_tag = CES
+                    }
+                    FROM = {
+                        original_tag = NCR
+                    }
+                }
+				every_country = {
+					limit = {
+						OR = {
+							original_tag = EUR
+							original_tag = BVC
+							original_tag = PAR
+							original_tag = CWB
+							original_tag = VEG
+							original_tag = SHI
+							original_tag = IRN
+							original_tag = WHT
+							original_tag = ARR
+							original_tag = NAV
+							original_tag = RES
+							original_tag = LAC
+							original_tag = SHA
+							original_tag = IMO
+							original_tag = CRH
+							original_tag = EHT
+							original_tag = NEW
+							original_tag = VLT
+							original_tag = TIM
+							original_tag = TWO
+							original_tag = GDH
+						}
+					}
+					add_ideas = escalation_no_fun_idea
+				}
+            }
+        }
+    }
+}

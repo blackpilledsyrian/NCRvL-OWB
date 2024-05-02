@@ -1,0 +1,13 @@
+﻿l_english:
+  ncr_leg_escalation_decisions_cat:0 "§OThe NCR-Legion Escalation§!"
+  ncr_leg_escalation_decisions_cat_desc:0 "Not everyone is in the NCR-Legion War immediately. Slowly new fronts will open in waves. These are visible in the §YDecisions Below§!. They can still join a faction or send volunteers if not in one."
+  initial_wave:0 "§RBaja Front Opens§!"
+  first_wave_of_escalation:0 "§RAerial Theater Opens§!"
+  second_wave_of_escalation:0 "§RNorth Vegas Front Opens§!"
+  third_wave_of_escalation:0 "§RUtah Front Opens§!"
+  
+  escalation_no_fun_idea:0 "Escalation Mechanic Trigger"
+  escalation_no_fun_idea_desc:0 "This nation must wait until it can call its allies in wars. This National Spirit will be §Rautomatically removed§! through a decision once the §RNCR is at war with the Legion§!. They can still freely join a faction and or send volunteers, but they will eventually be forced into war on side of their respective faction."
+  escalation_no_fun_idea_2:0 "Escalation Mechanic Trigger Call In" #This is useless
+  escalation_no_fun_idea_2_desc:0 "This nation must wait until it can call its allies in wars. This National Spirit will be §Rautomatically removed§! through a mission timeout which occurs some weeks after the war started, these missions are visible in the decisions. They can still freely join a faction and or send volunteers, but they will eventually be forced into war on side of their respective faction." 
+  

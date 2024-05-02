@@ -1,0 +1,370 @@
+# Annex decisions
+ncr_leg_escalation_decisions_cat = {
+	initial_wave = { #Two Sun, Gente, Baja and Vegas join the war
+		icon = generic_ignite_civil_war
+		allowed = {
+			always = no
+		}
+		available = {
+			always = no
+		}
+		fire_only_once = yes
+
+		activation = {
+			always = no
+		}
+		#visible = {
+		#	CES = {
+		#		has_war_with = NCR
+		#	}
+		#}
+		#cancel_trigger = {
+		#	OR = {	
+		#		CES = {
+		#			exists = no
+		#		}
+		#		NCR = {
+		#			exists = no
+		#		}
+		#	}
+		#}
+		is_good = yes
+		days_mission_timeout = 30 #1 Month
+		timeout_effect = {
+			#Legion
+			CES = { #Add them to faction incase they have forgor
+				add_to_faction = TWO
+				add_to_faction = GDH
+			}
+			TWO = { #Really hope this 'merges' the wars and I dont have to add a million declare wars to account for
+				declare_war_on = {
+					target = NCR
+					type = annex_everything
+				}
+			}
+			GDH = {
+				declare_war_on = {
+					target = NCR
+					type = annex_everything
+				}
+			}
+			#NCR
+			NCR = { #Add them to faction incase they have forgor
+				add_to_faction = VEG
+				add_to_faction = BVC
+			}
+			CES = { #NCR members only get defensive wars to avoid problems
+				declare_war_on = {
+					target = VEG
+					type = annex_everything
+				}
+				declare_war_on = {
+					target = BVC
+					type = annex_everything
+				}
+			}
+			hidden_effect = {
+                every_country = {
+                    limit = {
+                        OR = {
+                            original_tag = BVC
+                            original_tag = VEG
+                            original_tag = TWO
+                            original_tag = GDH
+                        }
+                    }
+					remove_ideas = escalation_no_fun_idea
+				}
+			}
+		}
+	}
+	first_wave_of_escalation = { #Navajo, Reservation, Shi, Eureka, join
+		icon = generic_ignite_civil_war
+		allowed = {
+			always = no
+		}
+		available = {
+			always = no
+		}
+		fire_only_once = yes
+
+		activation = {
+			always = no
+		}
+		#visible = {
+		#	CES = {
+		#		has_war_with = NCR
+		#	}
+		#}
+		#cancel_trigger = {
+		#	OR = {	
+		#		CES = {
+		#			exists = no
+		#		}
+		#		NCR = {
+		#			exists = no
+		#		}
+		#	}
+		#}
+		is_good = yes
+		days_mission_timeout = 100 #100 Days after the war starts, 70 after initial wave
+		timeout_effect = {
+			#Legion
+			CES = { #Add them to faction incase they have forgor
+				add_to_faction = NAV
+				add_to_faction = RES
+			}
+			NAV = {
+				declare_war_on = {
+					target = NCR
+					type = annex_everything
+				}
+			}
+			RES = {
+				declare_war_on = {
+					target = NCR
+					type = annex_everything
+				}
+			}
+			#NCR
+			NCR = { #Add them to faction incase they have forgor
+				add_to_faction = EUR
+				add_to_faction = SHI #Watch our for the Air controllers !!1
+			}
+			CES = { #NCR members only get defensive wars to avoid problems
+				declare_war_on = {
+					target = EUR
+					type = annex_everything
+				}
+				declare_war_on = {
+					target = SHI
+					type = annex_everything
+				}
+			}
+			hidden_effect = {
+                every_country = {
+                    limit = {
+                        OR = {
+                            original_tag = NAV
+                            original_tag = RES
+                            original_tag = EUR
+                            original_tag = SHI
+                        }
+                    }
+					remove_ideas = escalation_no_fun_idea
+				}
+			}
+		}
+	}
+	second_wave_of_escalation = { #Reno, Arroyo, White Legs, Iron Alliance join. Northern Vegas Front Opens
+		icon = generic_ignite_civil_war
+		allowed = {
+			always = no
+		}
+		available = {
+			always = no
+		}
+		fire_only_once = yes
+
+		activation = {
+			always = no
+		}
+		#visible = {
+		#	CES = {
+		#		has_war_with = NCR
+		#	}
+		#}
+		#cancel_trigger = {
+		#	OR = {	
+		#		CES = {
+		#			exists = no
+		#		}
+		#		NCR = {
+		#			exists = no
+		#		}
+		#	}
+		#}
+		is_good = yes
+		days_mission_timeout = 200 #200 Days after the war starts, 100 days after first wave
+		timeout_effect = {
+			#Legion
+			CES = { #Add them to faction incase they have forgor
+				add_to_faction = IRN
+				add_to_faction = WHT
+			}
+			IRN = {
+				declare_war_on = {
+					target = NCR
+					type = annex_everything
+				}
+			}
+			WHT = {
+				declare_war_on = {
+					target = NCR
+					type = annex_everything
+				}
+			}
+			#NCR
+			NCR = { #Add them to faction incase they have forgor
+				add_to_faction = NEW
+				add_to_faction = ARR #Idk maybe Arroyo not, change later if too soon/late
+			}
+			CES = { #NCR members only get defensive wars to avoid problems
+				declare_war_on = {
+					target = NEW
+					type = annex_everything
+				}
+				declare_war_on = {
+					target = ARR
+					type = annex_everything
+				}
+			}
+			hidden_effect = {
+                every_country = {
+                    limit = {
+                        OR = {
+                            original_tag = IRN
+                            original_tag = WHT
+                            original_tag = NEW
+                            original_tag = ARR
+                        }
+                    }
+					remove_ideas = escalation_no_fun_idea
+				}
+			}
+		}
+	}
+	third_wave_of_escalation = { #Timberline, Vault City, Rogue Rangers, Eighties, LAC, Texas, Cyphers join war. The big clash for Utah!
+		icon = generic_ignite_civil_war
+		allowed = {
+			always = no
+		}
+		available = {
+			always = no
+		}
+		fire_only_once = yes
+
+		activation = {
+			always = no
+		}
+		#visible = {
+		#	CES = {
+		#		has_war_with = NCR
+		#	}
+		#}
+		#cancel_trigger = {
+		#	OR = {	
+		#		CES = {
+		#			exists = no
+		#		}
+		#		NCR = {
+		#			exists = no
+		#		}
+		#	}
+		#}
+		is_good = yes
+		days_mission_timeout = 350 #350 Days after the war starts, 150 days after second wave
+		timeout_effect = {
+			#Legion
+			CES = { #Add them to faction incase they have forgor
+				add_to_faction = EHT
+				add_to_faction = CWB
+				add_to_faction = PAR #I dont know if it breaks if these guys dont actually exists, but its experimental, put a check here if else
+				add_to_faction = LAC #Same here
+				add_to_faction = SHA #oh god theres more
+				add_to_faction = IMO #does anyone even play these, wait yeah i vaugely remember someone once did
+				add_to_faction = CRH #Why do they exist on the map? Probably to be played, so just put it here
+			}
+			EHT = {
+				declare_war_on = {
+					target = NCR
+					type = annex_everything
+				}
+			}
+			CWB = {
+				declare_war_on = {
+					target = NCR
+					type = annex_everything
+				}
+			}
+			PAR = {
+				declare_war_on = {
+					target = NCR
+					type = annex_everything
+				}
+			}
+			LAC = {
+				declare_war_on = {
+					target = NCR
+					type = annex_everything
+				}
+			}
+			SHA = {
+				declare_war_on = {
+					target = NCR
+					type = annex_everything
+				}
+			}
+			IMO = {
+				declare_war_on = {
+					target = NCR
+					type = annex_everything
+				}
+			}
+			CRH = {
+				declare_war_on = {
+					target = NCR
+					type = annex_everything
+				}
+			}
+			#NCR
+			NCR = { #Add them to faction incase they have forgor
+				add_to_faction = VLT
+				add_to_faction = TIM
+				add_to_faction = DES
+			}
+			CES = { #NCR members only get defensive wars to avoid problems
+				declare_war_on = {
+					target = VLT
+					type = annex_everything
+				}
+				declare_war_on = {
+					target = TIM
+					type = annex_everything
+				}
+				declare_war_on = {
+					target = DES
+					type = annex_everything
+				}
+			}
+			hidden_effect = {
+                every_country = {
+                    limit = {
+                        OR = {
+                            original_tag = EHT
+                            original_tag = CWB
+                            original_tag = PAR
+                            original_tag = LAC
+                            original_tag = SHA
+                            original_tag = IMO
+                            original_tag = CRH
+                            original_tag = VLT
+                            original_tag = TIM
+                            original_tag = DES
+                        }
+                    }
+					remove_ideas = escalation_no_fun_idea
+				}
+                #every_country = {
+                #    limit = {
+                #        OR = {
+                #            original_tag = NCR
+                #            original_tag = CES
+                #        }
+                #    }
+				#	remove_ideas = escalation_no_fun_idea_2
+				#}
+			}
+		}
+	}
+}
