@@ -48,7 +48,8 @@
   ncr_ac_purge-industrialists_tt:0 "Prosecute Barons"
   ncr_dep_of_railroads:0 "The Department of Railways"
   ncr_dep_of_railroads_desc:0 "While the rest of the Wateland relies on salvage, the Republic, unique among the Wasteland, can build a railway. Power armour is fine and all, but can it ship thirty thousand men in a few hours?"
-
+  ncr_strength_and_security:0 "Promises of Strength and Security"
+  ncr_strength_and_security_desc:0 "Murphy's bid for power may have been repelled, but with the 2278 election approaching it won't be long before leadership is challenged once more. To stem any rise in discontent we must deliver the Republic from her economic downturn, and reaffirm to the people that we--and we alone--are capable of protecting their freedoms."
   ncr_urban_industry_hubs:0 "Develop Urban Industry Hubs"
   ncr_urban_industry_hubs_desc:0 "While our rural areas need drastic help to ensure they'll thrive far into the future, we also need to make sure our urban areas keep pace."
   ncr_murphy_industry_hubs_maxson_tt:0 "§RMurphy's§! actions will please Maxson's entrepeneurs."
