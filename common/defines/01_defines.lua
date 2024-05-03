@@ -426,8 +426,8 @@ NDefines.NDiplomacy.EMBARGO_DIFFERENT_IDEOLOGY_AT_OFFENSIVE_WAR_AI_WEIGHT = 10  
 NDefines.NDiplomacy.EMBARGO_RECIPIENT_IS_MAJOR_AI_WEIGHT = 0        -- Ai weight for recipient being major. Vanilla is 10. OWB treats major status differenty
 
 -- NO UNITS FOR YOU BAD PLAYER, never again 40 width demo teams.
-NDefines.NMilitary.MAX_DIVISION_BRIGADE_WIDTH = 5			-- Max width of regiments in division designer.
-NDefines.NMilitary.MAX_DIVISION_BRIGADE_HEIGHT = 5			-- Max height of regiments in division designer.
+NDefines.NMilitary.MAX_DIVISION_BRIGADE_WIDTH = 6			-- Max width of regiments in division designer.
+NDefines.NMilitary.MAX_DIVISION_BRIGADE_HEIGHT = 4			-- Max height of regiments in division designer.
 NDefines.NMilitary.MAX_DIVISION_SUPPORT_WIDTH = 5			-- Max width of support in division designer.
 NDefines.NMilitary.MAX_DIVISION_SUPPORT_HEIGHT = 1			-- Max height of support in division designer.
 
