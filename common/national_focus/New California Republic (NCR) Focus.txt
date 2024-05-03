@@ -2515,6 +2515,22 @@ focus = {
 		custom_effect_tooltip = ncr_stockmen_association_promises_tt
 	}
 }
+focus = {
+	id = ncr_strength_and_security
+	icon = GFX_goal_NCR_Standards
+	cost = 30
+	available = {
+		NOT = { has_country_flag = ncr_crisis }
+	}
+	prerequisite = { focus = ncr_kimball_vindication }
+	x = -5
+	y = 1
+	relative_position_id = ncr_kimball_vindication
+	completion_reward = {
+		add_ideas = ncr_idea_war_ready_economy
+	}
+}
+
 
 	############################
 	#   Kimball Re-Election    #

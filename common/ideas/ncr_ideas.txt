@@ -58,6 +58,14 @@ ideas = {
 				agriculture_tech = 0.1
 			}
 		}
+		ncr_idea_war_ready_economy = {
+			picture = VEG_Good_Business
+			modifier = {
+				production_speed_industrial_complex_factor = -0.1
+				production_speed_arms_factory_factor = 0.1
+				production_factory_max_efficiency_factor = 0.05
+			}
+		}
 		ncr_osi_expanded_idea_2 = {
 
 			picture = generic_medicine
