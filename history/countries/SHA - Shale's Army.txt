@@ -118,6 +118,7 @@ add_ideas = {
 	officer_law_mutant_instinct
 	mutant_wages_law
 	normies_law_none
+	aeronautics_ineptitude
 }
 
 set_truce = {

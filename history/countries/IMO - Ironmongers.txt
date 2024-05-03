@@ -113,6 +113,7 @@ add_ideas = {
 	imo_racree_infestation_4
 	officer_law_mutant_instinct
 	two_invitations_imo_idea
+	aeronautics_ineptitude
 }
 
 add_timed_idea = {

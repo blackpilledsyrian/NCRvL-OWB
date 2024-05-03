@@ -3,13 +3,11 @@ state={
 	name = "STATE_89"
 	manpower = 134
 	state_category = megalopolis
-	impassable = yes
 
 	history={
 		owner = RES
 		add_core_of = RES
 	}
-	impassable = yes
 	provinces={
 		6625
 	}

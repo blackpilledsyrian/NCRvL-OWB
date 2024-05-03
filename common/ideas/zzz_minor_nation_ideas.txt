@@ -25,6 +25,34 @@ ideas = {
             }
             removal_cost = -1
         }
+        aeronautics_ineptitude = {
+            picture = generic_atom
+            allowed = {
+                always = no
+            }
+            modifier = {
+                air_doctrine_cost_factor = 0.15
+                experience_gain_air_factor = -0.15
+            }
+            equipment_bonus = {
+                fighter_equipment = {
+                    build_cost_ic = 0.33
+                    instant = yes
+                }
+                cas_equipment = {
+                    build_cost_ic = 0.33
+                    instant = yes
+                }
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            research_bonus = {
+                air_tech_category = -0.25
+                cat_automated_warfare = -0.25
+            }
+            removal_cost = -1
+        }
         sun_victors_against_pallus = {
             picture = pantheon_lon
             removal_cost = -1

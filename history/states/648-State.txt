@@ -1,7 +1,6 @@
 state = {
 	id = 648
 	name = "STATE_648"
-	impassable = yes
 	state_category = megalopolis
 	manpower = 38
 
