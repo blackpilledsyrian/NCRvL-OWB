@@ -8,7 +8,7 @@ state={
 		metal=8.000
 	}
 
-	history
+	history = {
 		victory_points = {
 			15056 5
 		}
