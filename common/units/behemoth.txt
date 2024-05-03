@@ -25,6 +25,9 @@ sub_units = {
 		urban = {
 			attack = 0.2
 		}
+		amphibious = {
+			attack = 0.3
+		}
 		fort = {
 			attack = 0.3
 		}
@@ -47,7 +50,7 @@ sub_units = {
 		}
 
 		manpower = 25 # 500
-		max_organisation = 30
+		max_organisation = 40
 		default_morale = 0.3
 		max_strength = 175
 		suppression = 1
