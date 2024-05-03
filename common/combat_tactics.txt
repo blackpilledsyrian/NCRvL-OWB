@@ -444,6 +444,6 @@ tactic_masterful_blitz = { #Improved version of Blitz for Soviets
 	picture = SOV_tank_desant_blitz
 
 	attacker_movement_speed = 0.5
-	attacker = 0.2
-	defender = -0.2
+	attacker = 0.1
+	defender = -0.1
 }
