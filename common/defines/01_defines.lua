@@ -428,7 +428,7 @@ NDefines.NDiplomacy.EMBARGO_RECIPIENT_IS_MAJOR_AI_WEIGHT = 0        -- Ai weight
 -- NO UNITS FOR YOU BAD PLAYER, never again 40 width demo teams.
 NDefines.NMilitary.MAX_DIVISION_BRIGADE_WIDTH = 6			-- Max width of regiments in division designer.
 NDefines.NMilitary.MAX_DIVISION_BRIGADE_HEIGHT = 4			-- Max height of regiments in division designer.
-NDefines.NMilitary.MAX_DIVISION_SUPPORT_WIDTH = 5			-- Max width of support in division designer.
+NDefines.NMilitary.MAX_DIVISION_SUPPORT_WIDTH = 6			-- Max width of support in division designer.
 NDefines.NMilitary.MAX_DIVISION_SUPPORT_HEIGHT = 1			-- Max height of support in division designer.
 
 NDefines.NMilitary.MAX_ARMY_EXPERIENCE = 650			--Max army experience a country can store

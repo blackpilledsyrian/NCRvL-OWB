@@ -5,8 +5,8 @@ state = {
 	state_category = shanty
 
 	history = {
-		owner = GLW
-		add_core_of = GLW
+		owner = LUM
+		add_core_of = LUM
 		victory_points = {
 			6928 5
 		}

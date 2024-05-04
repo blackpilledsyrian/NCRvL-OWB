@@ -883,11 +883,6 @@ focus_tree = {
 		y = 1
 		available = {
 			ai_has_no_other_wars_or_wargoals = yes
-			TAA = {
-				is_subject = no
-				is_neighbor_of = ROOT
-				owns_state = 797
-			}
 		}
 		prerequisite = {
 			focus = shale_the_path_of_glory

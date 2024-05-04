@@ -29,28 +29,28 @@ division_template = {
 units = {
     division = {
         name = "Faust's Chosen"
-        location = 9184
+        location = 8789
         division_template = "Venomguard"
         start_experience_factor = 0.2
         start_equipment_factor = 0.9
     }
     division = {
         name = "Serpent's Offspring"
-        location = 4948
+        location = 8789
         division_template = "Venomguard"
         start_experience_factor = 0.2
         start_equipment_factor = 0.6
     }
     division = {
         name = "Pit Viper Vanguard"
-        location = 9192
+        location = 8789
         division_template = "Venomguard"
         start_experience_factor = 0.2
         start_equipment_factor = 0.6
     }
     division = {
         name = "Awakened"
-        location = 9192
+        location = 8789
         division_template = "Venomguard"
         start_experience_factor = 0.2
         start_equipment_factor = 0.6
