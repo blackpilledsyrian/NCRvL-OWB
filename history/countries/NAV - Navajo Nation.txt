@@ -134,8 +134,9 @@ if = {
 		can_use_autonomy_system = yes
 	}
 	CES = {
-		NAV = {
-			become_puppet = yes
+		set_autonomy = {
+			target = NAV
+			autonomy_state = autonomy_client_tribe
 		}
 		set_autonomy = {
 			target = NAV

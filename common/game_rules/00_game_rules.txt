@@ -2153,13 +2153,13 @@ allow_take_over_faction = {
 allow_base_game_faction_system = {
 	name = "RULE_FACTION_SYSTEM"
 	group = "RULE_GROUP_GENERAL_FOREIGN_POLICY"
-	default = {
+	option = {
 		name = "DEFAULT"
 		text = "RULE_FACTION_SYSTEM_DEFAULT"
 		desc = "RULE_FACTION_SYSTEM_DEFAULT_DESC"
 		allow_achievements = yes
 	}
-	option = {
+	default = {
 		name = "COOP"
 		text = "RULE_FACTION_SYSTEM_COOP"
 		desc = "RULE_FACTION_SYSTEM_COOP_DESC"
@@ -2205,7 +2205,7 @@ change_base_diplomacy = {
 		desc = "RULE_CHANGE_BASE_DIPLOMACY_DECREASED_50_DESC"
 		allow_achievements = yes
 	}
-	default = {
+	option = {
 		name = "BASE_VALUE"
 		text = "RULE_CHANGE_BASE_DIPLOMACY_BASE_VALUE"
 		desc = "RULE_CHANGE_BASE_DIPLOMACY_BASE_VALUE_DESC"
@@ -2235,7 +2235,7 @@ change_base_diplomacy = {
 		desc = "RULE_CHANGE_BASE_DIPLOMACY_INCREASED_200_DESC"
 		allow_achievements = yes
 	}
-	option = {
+	default = {
 		name = "INCREASED_UNLIMTED"
 		text = "RULE_CHANGE_BASE_DIPLOMACY_INCREASED_UNLIMTED"
 		desc = "RULE_CHANGE_BASE_DIPLOMACY_INCREASED_UNLIMTED_DESC"

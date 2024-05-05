@@ -112,7 +112,7 @@ buildings = {
 		disabled_in_dmz = yes
 		icon_frame = 10
 		land_fort = 1
-		max_level = 6
+		max_level = 4
 		value = 1
 
 		infrastructure_construction_effect = yes

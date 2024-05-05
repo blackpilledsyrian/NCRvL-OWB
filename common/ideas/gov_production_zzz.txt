@@ -379,6 +379,20 @@ ideas = {
 			}
 			traits = { explosive_weapon_manufacturer }
 		}
+		lock_and_load_fireteams = {
+			picture = lock_and_load_company
+			allowed = {
+				is_mexican_nation_allowed_block = no
+				NOT = {
+					is_nation_with_no_generic_manufacturer = yes
+					has_unique_fireteam_producer = yes
+				}
+			}
+			research_bonus = {
+				support_fireteam_tech_category = 0.15
+			}
+			traits = { fireteam_weapon_manufacturer }
+		}
 		greasers = {
 			picture = greasers
 			allowed = {
