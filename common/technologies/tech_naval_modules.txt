@@ -38,11 +38,11 @@ technologies = {
 	naval_module_tech = {
 
 		category_screen_ship = {
-			max_organisation = 2
+			max_organisation = 5
 		}
 
 		category_capital_ship = {
-			max_organisation = 2
+			max_organisation = 5
 		}
 
 		path = {
@@ -96,7 +96,7 @@ technologies = {
 
 	naval_weapons_module_tech = {
 
-		naval_damage_factor = 0.02
+		naval_damage_factor = 0.05
 
 		path = {
 			leads_to_tech = naval_hard_point_tech
@@ -150,7 +150,7 @@ technologies = {
 
 	naval_hard_point_tech = {
 
-		naval_hit_chance = 0.03
+		naval_hit_chance = 0.05
 
 		path = {
 			leads_to_tech = naval_light_weapon_module_tech_1
@@ -928,19 +928,19 @@ technologies = {
 
 		light_ship_unit = {
 			lg_attack = 0.05
-			lg_armor_piercing = 0.025
+			lg_armor_piercing = 0.05
 		}
 		medium_ship_screen_unit = {
 			lg_attack = 0.05
-			lg_armor_piercing = 0.025
+			lg_armor_piercing = 0.05
 		}
 		heavy_ship_unit = {
 			lg_attack = 0.05
-			lg_armor_piercing = 0.025
+			lg_armor_piercing = 0.05
 		}
 		super_heavy_ship_unit = {
 			lg_attack = 0.05
-			lg_armor_piercing = 0.025
+			lg_armor_piercing = 0.05
 		}
 
 		path = {
@@ -982,19 +982,19 @@ technologies = {
 
 		light_ship_unit = {
 			lg_attack = 0.05
-			lg_armor_piercing = 0.025
+			lg_armor_piercing = 0.05
 		}
 		medium_ship_screen_unit = {
 			lg_attack = 0.05
-			lg_armor_piercing = 0.025
+			lg_armor_piercing = 0.05
 		}
 		heavy_ship_unit = {
 			lg_attack = 0.05
-			lg_armor_piercing = 0.025
+			lg_armor_piercing = 0.05
 		}
 		super_heavy_ship_unit = {
 			lg_attack = 0.05
-			lg_armor_piercing = 0.025
+			lg_armor_piercing = 0.05
 		}
 
 		path = {
@@ -1077,19 +1077,19 @@ technologies = {
 
 		light_ship_unit = {
 			lg_attack = 0.05
-			lg_armor_piercing = 0.025
+			lg_armor_piercing = 0.05
 		}
 		medium_ship_screen_unit = {
 			lg_attack = 0.05
-			lg_armor_piercing = 0.025
+			lg_armor_piercing = 0.05
 		}
 		heavy_ship_unit = {
 			lg_attack = 0.05
-			lg_armor_piercing = 0.025
+			lg_armor_piercing = 0.05
 		}
 		super_heavy_ship_unit = {
 			lg_attack = 0.05
-			lg_armor_piercing = 0.025
+			lg_armor_piercing = 0.05
 		}
 
 		path = {
@@ -1583,24 +1583,20 @@ technologies = {
 	naval_heavy_weapon_tech_1 = {
 
 		light_ship_unit = {
-			lg_attack = 0.025
-			hg_attack = 0.025
-			hg_armor_piercing = 0.025
+			hg_attack = 0.05
+			hg_armor_piercing = 0.05
 		}
 		medium_ship_screen_unit = {
-			lg_attack = 0.025
-			hg_attack = 0.025
-			hg_armor_piercing = 0.025
+			hg_attack = 0.05
+			hg_armor_piercing = 0.05
 		}
 		heavy_ship_unit = {
-			lg_attack = 0.025
-			hg_attack = 0.025
-			hg_armor_piercing = 0.025
+			hg_attack = 0.05
+			hg_armor_piercing = 0.05
 		}
 		super_heavy_ship_unit = {
-			lg_attack = 0.025
-			hg_attack = 0.025
-			hg_armor_piercing = 0.025
+			hg_attack = 0.05
+			hg_armor_piercing = 0.05
 		}
 
 		path = {
@@ -1641,24 +1637,20 @@ technologies = {
 	naval_heavy_weapon_tech_2 = {
 
 		light_ship_unit = {
-			lg_attack = 0.025
-			hg_attack = 0.025
-			hg_armor_piercing = 0.025
+			hg_attack = 0.05
+			hg_armor_piercing = 0.05
 		}
 		medium_ship_screen_unit = {
-			lg_attack = 0.025
-			hg_attack = 0.025
-			hg_armor_piercing = 0.025
+			hg_attack = 0.05
+			hg_armor_piercing = 0.05
 		}
 		heavy_ship_unit = {
-			lg_attack = 0.025
-			hg_attack = 0.025
-			hg_armor_piercing = 0.025
+			hg_attack = 0.05
+			hg_armor_piercing = 0.05
 		}
 		super_heavy_ship_unit = {
-			lg_attack = 0.025
-			hg_attack = 0.025
-			hg_armor_piercing = 0.025
+			hg_attack = 0.05
+			hg_armor_piercing = 0.05
 		}
 
 		path = {
@@ -1740,24 +1732,20 @@ technologies = {
 	naval_heavy_weapon_tech_3 = {
 
 		light_ship_unit = {
-			lg_attack = 0.025
-			hg_attack = 0.025
-			hg_armor_piercing = 0.025
+			hg_attack = 0.05
+			hg_armor_piercing = 0.05
 		}
 		medium_ship_screen_unit = {
-			lg_attack = 0.025
-			hg_attack = 0.025
-			hg_armor_piercing = 0.025
+			hg_attack = 0.05
+			hg_armor_piercing = 0.05
 		}
 		heavy_ship_unit = {
-			lg_attack = 0.025
-			hg_attack = 0.025
-			hg_armor_piercing = 0.025
+			hg_attack = 0.05
+			hg_armor_piercing = 0.05
 		}
 		super_heavy_ship_unit = {
-			lg_attack = 0.025
-			hg_attack = 0.025
-			hg_armor_piercing = 0.025
+			hg_attack = 0.05
+			hg_armor_piercing = 0.05
 		}
 
 		path = {
@@ -1918,19 +1906,19 @@ technologies = {
 
 		light_ship_unit = {
 			hg_attack = 0.05
-			hg_armor_piercing = 0.025
+			hg_armor_piercing = 0.05
 		}
 		medium_ship_screen_unit = {
 			hg_attack = 0.05
-			hg_armor_piercing = 0.025
+			hg_armor_piercing = 0.05
 		}
 		heavy_ship_unit = {
 			hg_attack = 0.05
-			hg_armor_piercing = 0.025
+			hg_armor_piercing = 0.05
 		}
 		super_heavy_ship_unit = {
 			hg_attack = 0.05
-			hg_armor_piercing = 0.025
+			hg_armor_piercing = 0.05
 		}
 
 		path = {
@@ -1972,19 +1960,19 @@ technologies = {
 
 		light_ship_unit = {
 			hg_attack = 0.05
-			hg_armor_piercing = 0.025
+			hg_armor_piercing = 0.05
 		}
 		medium_ship_screen_unit = {
 			hg_attack = 0.05
-			hg_armor_piercing = 0.025
+			hg_armor_piercing = 0.05
 		}
 		heavy_ship_unit = {
 			hg_attack = 0.05
-			hg_armor_piercing = 0.025
+			hg_armor_piercing = 0.05
 		}
 		super_heavy_ship_unit = {
 			hg_attack = 0.05
-			hg_armor_piercing = 0.025
+			hg_armor_piercing = 0.05
 		}
 
 		path = {
@@ -2067,19 +2055,19 @@ technologies = {
 
 		light_ship_unit = {
 			hg_attack = 0.05
-			hg_armor_piercing = 0.025
+			hg_armor_piercing = 0.05
 		}
 		medium_ship_screen_unit = {
 			hg_attack = 0.05
-			hg_armor_piercing = 0.025
+			hg_armor_piercing = 0.05
 		}
 		heavy_ship_unit = {
 			hg_attack = 0.05
-			hg_armor_piercing = 0.025
+			hg_armor_piercing = 0.05
 		}
 		super_heavy_ship_unit = {
 			hg_attack = 0.05
-			hg_armor_piercing = 0.025
+			hg_armor_piercing = 0.05
 		}
 
 		path = {
@@ -2978,7 +2966,7 @@ technologies = {
 
 	naval_damage_protection_tech_1 = {
 
-		naval_critical_effect_factor = -0.04
+		naval_critical_effect_factor = -0.05
 
 		path = {
 			leads_to_tech = naval_damage_protection_tech_2
@@ -3016,7 +3004,7 @@ technologies = {
 
 	naval_damage_protection_tech_2 = {
 
-		naval_critical_effect_factor = -0.04
+		naval_critical_effect_factor = -0.05
 
 		path = {
 			leads_to_tech = naval_command_module_tech_4
@@ -3372,7 +3360,7 @@ technologies = {
 
 	naval_fire_protection_tech_1 = {
 
-		critical_receive_chance = -0.04
+		critical_receive_chance = -0.05
 
 		path = {
 			leads_to_tech = naval_fire_protection_tech_2
@@ -3410,7 +3398,7 @@ technologies = {
 
 	naval_fire_protection_tech_2 = {
 
-		critical_receive_chance = -0.04
+		critical_receive_chance = -0.05
 
 		path = {
 			leads_to_tech = naval_fire_protection_tech_3
@@ -3448,7 +3436,7 @@ technologies = {
 
 	naval_fire_protection_tech_3 = {
 
-		critical_receive_chance = -0.04
+		critical_receive_chance = -0.05
 
 		path = {
 			leads_to_tech = naval_storage_module_tech_2

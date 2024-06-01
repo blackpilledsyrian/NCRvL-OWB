@@ -7,8 +7,8 @@ equipment_modules = {
 
 		add_stats = {
 			build_cost_ic = 25
-			lg_attack = 0.2
-			anti_air_attack = 0.6
+			lg_attack = 0.5
+			anti_air_attack = 0.5
 			supply_consumption = 0.0005
 		}
 
@@ -25,8 +25,8 @@ equipment_modules = {
 
 		add_stats = {
 			build_cost_ic = 50
-			lg_attack = 0.4
-			anti_air_attack = 1.2
+			lg_attack = 1
+			anti_air_attack = 1.5
 			supply_consumption = 0.0008
 		}
 
@@ -47,8 +47,8 @@ equipment_modules = {
 
 		add_stats = {
 			build_cost_ic = 75
-			lg_attack = 0.6
-			anti_air_attack = 1.8
+			lg_attack = 1.5
+			anti_air_attack = 2.5
 			supply_consumption = 0.001
 		}
 
@@ -74,8 +74,8 @@ equipment_modules = {
 
 		add_stats = {
 			build_cost_ic = 100
-			lg_attack = 0.8
-			anti_air_attack = 2.4
+			lg_attack = 2
+			anti_air_attack = 3.5
 			supply_consumption = 0.002
 		}
 
@@ -106,8 +106,8 @@ equipment_modules = {
 
 		add_stats = {
 			build_cost_ic = 125
-			lg_attack = 1
-			anti_air_attack = 3
+			lg_attack = 2.5
+			anti_air_attack = 4.5
 			supply_consumption = 0.005
 			fuel_consumption = 0.025
 		}
@@ -144,8 +144,8 @@ equipment_modules = {
 
 		add_stats = {
 			build_cost_ic = 150
-			lg_attack = 1.2
-			anti_air_attack = 3.6
+			lg_attack = 3
+			anti_air_attack = 5.5
 			supply_consumption = 0.01
 			fuel_consumption = 0.05
 		}
@@ -186,8 +186,8 @@ equipment_modules = {
 
 		add_stats = {
 			build_cost_ic = 200
-			lg_attack = 1.6
-			anti_air_attack = 4.8
+			lg_attack = 3.5
+			anti_air_attack = 6.5
 			supply_consumption = 0.02
 			fuel_consumption = 0.1
 		}

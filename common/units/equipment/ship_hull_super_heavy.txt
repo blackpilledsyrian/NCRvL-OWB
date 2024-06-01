@@ -83,9 +83,9 @@ equipments = {
 		}
 
 		default_modules = {
-			fixed_ship_command_slot = empty
+			fixed_ship_command_slot = ship_command_module_1
 			fixed_ship_engine_slot = super_heavy_ship_oars_module
-			fixed_ship_battery_slot = empty
+			fixed_ship_battery_slot = ship_heavy_mounted_gun_module
 			# fixed_ship_battery_slot_1 = empty
 			fixed_ship_detection_slot = empty
 			# fixed_ship_detection_slot_1 = empty
@@ -114,7 +114,7 @@ equipments = {
 
 		anti_air_attack = 0
 
-		armor_value = 5
+		armor_value = 15
 
 		surface_detection = 28
 		surface_visibility = 40
@@ -123,7 +123,7 @@ equipments = {
 
 		naval_range = 2400
 
-		max_strength = 200
+		max_strength = 250
 
 		fuel_consumption = 0.8
 

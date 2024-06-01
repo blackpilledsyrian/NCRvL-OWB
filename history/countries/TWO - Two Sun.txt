@@ -67,7 +67,18 @@ if = {
 	set_technology = {
 		nautics_tech_1 = 1
 		light_navy_hull_tech_1 = 1
+		waterproof_sealing_tech = 1
+		medium_navy_hull_tech_1 = 1
+		multi_deck_construction_tech = 1
+		heavy_navy_hull_tech_1 = 1
+		heavy_navy_hull_tech_2 = 1
 		naval_invasion_tech_1 = 1
+		naval_module_tech = 1
+		naval_weapons_module_tech = 1
+		naval_pd_module_tech_1 = 1
+		naval_hard_point_tech = 1
+		naval_armour_tech_1 = 1
+		naval_support_module_tech = 1
 	}
 }
 

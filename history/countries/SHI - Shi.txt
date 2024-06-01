@@ -74,6 +74,7 @@ if = {
 		nautics_tech_1 = 1
 		nautics_tech_2 = 1
 		light_navy_hull_tech_1 = 1
+		light_navy_hull_tech_2 = 1
 		waterproof_sealing_tech = 1
 		medium_navy_hull_tech_1 = 1
 		multi_deck_construction_tech = 1

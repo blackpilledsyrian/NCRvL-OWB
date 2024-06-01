@@ -68,9 +68,9 @@ equipments = {
 		}
 
 		default_modules = {
-			fixed_ship_command_slot = empty
+			fixed_ship_command_slot = ship_command_module_1
 			fixed_ship_engine_slot = medium_ship_oars_module
-			fixed_ship_battery_slot = empty
+			fixed_ship_battery_slot = ship_medium_mounted_gun_module
 			# fixed_ship_battery_slot_1 = empty
 			fixed_ship_detection_slot = empty
 			# fixed_ship_detection_slot_1 = empty
@@ -98,9 +98,9 @@ equipments = {
 		naval_speed = 8
 		reliability = 0.7
 
-		naval_range = 900 # base is 700
+		naval_range = 1900 # base is 700
 
-		max_strength = 60 # base is 40
+		max_strength = 80 # base is 40
 
 		fuel_consumption = 0.2
 
@@ -181,9 +181,9 @@ equipments = {
 		}
 
 		default_modules = {
-			fixed_ship_command_slot = empty
+			fixed_ship_command_slot = ship_command_module_1
 			fixed_ship_engine_slot = medium_ship_oars_module
-			fixed_ship_battery_slot = empty
+			fixed_ship_battery_slot = ship_medium_mounted_gun_module
 			# fixed_ship_battery_slot_1 = empty
 			fixed_ship_detection_slot = empty
 			# fixed_ship_detection_slot_1 = empty
@@ -204,8 +204,8 @@ equipments = {
 		surface_detection = 24
 		surface_visibility = 21
 		reliability = 0.75
-		naval_range = 1100 #base is 900
-		max_strength = 80 # base is 60
+		naval_range = 2100 #base is 900
+		max_strength = 100 # base is 60
 
 		build_cost_ic = 800
 			resources = {
@@ -276,9 +276,9 @@ equipments = {
 		}
 
 		default_modules = {
-			fixed_ship_command_slot = empty
+			fixed_ship_command_slot = ship_command_module_1
 			fixed_ship_engine_slot = medium_ship_oars_module
-			fixed_ship_battery_slot = empty
+			fixed_ship_battery_slot = ship_medium_mounted_gun_module
 			# fixed_ship_battery_slot_1 = empty
 			fixed_ship_detection_slot = empty
 			# fixed_ship_detection_slot_1 = empty
@@ -300,8 +300,8 @@ equipments = {
 		surface_detection = 28
 		surface_visibility = 18
 		reliability = 0.8
-		naval_range = 1300 # base is 1100
-		max_strength = 100 # base is 80
+		naval_range = 2300 # base is 1100
+		max_strength = 120 # base is 80
 		armor_value = 4 #base is 1
 
 		build_cost_ic = 1050
@@ -374,9 +374,9 @@ equipments = {
 		}
 
 		default_modules = {
-			fixed_ship_command_slot = empty
+			fixed_ship_command_slot = ship_command_module_1
 			fixed_ship_engine_slot = medium_ship_oars_module
-			fixed_ship_battery_slot = empty
+			fixed_ship_battery_slot = ship_medium_mounted_gun_module
 			# fixed_ship_battery_slot_1 = empty
 			fixed_ship_detection_slot = empty
 			# fixed_ship_detection_slot_1 = empty
@@ -395,8 +395,8 @@ equipments = {
 		surface_detection = 32
 		surface_visibility = 15
 		reliability = 0.85
-		naval_range = 1600 # base is 1400
-		max_strength = 120 # base is 100
+		naval_range = 2600 # base is 1400
+		max_strength = 140 # base is 100
 		armor_value = 6  #base is 0
 
 		build_cost_ic = 1500
@@ -471,9 +471,9 @@ equipments = {
 		}
 
 		default_modules = {
-			fixed_ship_command_slot = empty
+			fixed_ship_command_slot = ship_command_module_1
 			fixed_ship_engine_slot = medium_ship_oars_module
-			fixed_ship_battery_slot = empty
+			fixed_ship_battery_slot = ship_medium_mounted_gun_module
 			# fixed_ship_battery_slot_1 = empty
 			fixed_ship_detection_slot = empty
 			# fixed_ship_detection_slot_1 = empty
@@ -493,8 +493,8 @@ equipments = {
 		surface_detection = 36
 		surface_visibility = 12
 		reliability = 0.9
-		naval_range = 1700 #base is 1500
-		max_strength = 140 #base is 118
+		naval_range = 3000 #base is 1500
+		max_strength = 160 #base is 118
 		armor_value = 8 #base is 0
 
 		build_cost_ic = 2050
@@ -583,9 +583,9 @@ equipments = {
 		}
 
 		default_modules = {
-			fixed_ship_command_slot = empty
-			fixed_ship_engine_slot = medium_ship_sail_module
-			fixed_ship_battery_slot = empty
+			fixed_ship_command_slot = ship_command_module_1
+			fixed_ship_engine_slot = medium_ship_oars_module
+			fixed_ship_battery_slot = ship_medium_mounted_gun_module
 			# fixed_ship_battery_slot_1 = empty
 			fixed_ship_detection_slot = empty
 			# fixed_ship_detection_slot_1 = empty

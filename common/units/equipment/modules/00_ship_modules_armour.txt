@@ -7,7 +7,7 @@ equipment_modules = {
 
 		add_stats = {
 			build_cost_ic = 80
-			armor_value = 1
+			armor_value = 2
 			surface_visibility = 4
 			max_strength = 5
 		}
@@ -24,7 +24,7 @@ equipment_modules = {
 
 		add_stats = {
 			build_cost_ic = 160
-			armor_value = 2
+			armor_value = 4
 			surface_visibility = 6
 			max_strength = 10
 		}
@@ -41,7 +41,7 @@ equipment_modules = {
 
 		add_stats = {
 			build_cost_ic = 320
-			armor_value = 4
+			armor_value = 8
 			surface_visibility = 8
 			max_strength = 15
 		}
@@ -58,7 +58,7 @@ equipment_modules = {
 
 		add_stats = {
 			build_cost_ic = 640
-			armor_value = 8
+			armor_value = 16
 			surface_visibility = 12
 			max_strength = 20
 		}
@@ -148,7 +148,7 @@ equipment_modules = {
 
 		add_stats = {
 			build_cost_ic = 240
-			armor_value = 3
+			armor_value = 4
 			surface_visibility = 8
 			max_strength = 15
 		}
@@ -166,7 +166,7 @@ equipment_modules = {
 
 		add_stats = {
 			build_cost_ic = 480
-			armor_value = 6
+			armor_value = 12
 			surface_visibility = 12
 			max_strength = 20
 		}
@@ -184,7 +184,7 @@ equipment_modules = {
 
 		add_stats = {
 			build_cost_ic = 960
-			armor_value = 10
+			armor_value = 20
 			surface_visibility = 16
 			max_strength = 25
 		}
@@ -202,7 +202,7 @@ equipment_modules = {
 
 		add_stats = {
 			build_cost_ic = 1920
-			armor_value = 16
+			armor_value = 32
 			surface_visibility = 22
 			max_strength = 30
 		}
@@ -220,7 +220,7 @@ equipment_modules = {
 
 		add_stats = {
 			build_cost_ic = 320
-			armor_value = 4
+			armor_value = 8
 			surface_visibility = 10
 			max_strength = 20
 		}
@@ -238,7 +238,7 @@ equipment_modules = {
 
 		add_stats = {
 			build_cost_ic = 640
-			armor_value = 8
+			armor_value = 16
 			surface_visibility = 15
 			max_strength = 25
 		}
@@ -258,7 +258,7 @@ equipment_modules = {
 
 		add_stats = {
 			build_cost_ic = 1280
-			armor_value = 13
+			armor_value = 26
 			surface_visibility = 20
 			max_strength = 30
 		}
@@ -278,7 +278,7 @@ equipment_modules = {
 
 		add_stats = {
 			build_cost_ic = 2560
-			armor_value = 20
+			armor_value = 40
 			surface_visibility = 27
 			max_strength = 35
 		}
@@ -296,7 +296,7 @@ equipment_modules = {
 
 		add_stats = {
 			build_cost_ic = 400
-			armor_value = 5
+			armor_value = 10
 			surface_visibility = 12
 			max_strength = 25
 		}
@@ -314,7 +314,7 @@ equipment_modules = {
 
 		add_stats = {
 			build_cost_ic = 800
-			armor_value = 10
+			armor_value = 20
 			surface_visibility = 18
 			max_strength = 30
 		}
@@ -332,7 +332,7 @@ equipment_modules = {
 
 		add_stats = {
 			build_cost_ic = 1600
-			armor_value = 16
+			armor_value = 32
 			surface_visibility = 24
 			max_strength = 35
 		}
@@ -350,7 +350,7 @@ equipment_modules = {
 
 		add_stats = {
 			build_cost_ic = 3200
-			armor_value = 24
+			armor_value = 48
 			surface_visibility = 32
 			max_strength = 40
 		}
