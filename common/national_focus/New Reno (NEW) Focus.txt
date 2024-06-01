@@ -930,7 +930,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			285 = {
+			295 = {
 				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = industrial_complex
@@ -1033,7 +1033,7 @@ focus_tree = {
 				}
 				log = "[GetDateText]: [Root.GetName] new_catpaw entered"
 			}
-			285 = {
+			295 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
@@ -1096,7 +1096,7 @@ focus_tree = {
 			focus = new_tipography
 		}
 		completion_reward = {
-			285 = {
+			295 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = industrial_complex
@@ -1357,7 +1357,7 @@ focus_tree = {
 			focus = new_distillery2
 		}
 		available = {
-			614 = {
+			184 = {
 				is_owned_and_controlled_by = ROOT
 			}
 			has_country_leader = {
@@ -1366,7 +1366,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			614 = {
+			184 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = industrial_complex
@@ -1411,7 +1411,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			614 = {
+			184 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
@@ -1556,7 +1556,7 @@ focus_tree = {
 				}
 				log = "[GetDateText]: [Root.GetName] new_slvatorebar2 entered"
 			}
-			285 = {
+			184 = {
 				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = industrial_complex
@@ -1708,7 +1708,7 @@ focus_tree = {
 					producer = USA
 				}
 			}
-			614 = {
+			184 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory

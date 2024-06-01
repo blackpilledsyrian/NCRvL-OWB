@@ -117,20 +117,10 @@
 		relative_position_id = ncr_puppet_ncrta
 
 		completion_reward = {
-				create_country_leader = {
-					name = "NCR Military Government"
-					desc = "ncr_puppet_military_leader_desc"
-					picture = "gfx/leaders/puppets/ncr_puppet_ruler_leader.dds"
-					expire = "3000.1.1"
-					ideology = military_government
-					traits = { po_loyal_puppet }
-				}
-
 			set_politics = {
 				ruling_party = ruler
 				elections_allowed =  no
 			}
-
 			add_popularity = {
 				ideology = ruler
 				popularity = 0.25
@@ -199,21 +189,10 @@
 				}
 				promote_character = BAG_goddard
 			}
-			else_if = {
-				create_country_leader = {
-					name = "NCR Expeditionary Government"
-					desc = "ncr_puppet_expeditionary_leader_desc"
-					picture = "gfx/leaders/puppets/ncr_puppet_intellectuals_leader.dds"
-					expire = "3000.1.1"
-					ideology = technocracy
-					traits = { po_loyal_puppet }
-				}
-			}
 			set_politics = {
 				ruling_party = intellectuals
 				elections_allowed =  no
 			}
-
 			add_popularity = {
 				ideology = intellectuals
 				popularity = 0.25
@@ -419,19 +398,10 @@
 		relative_position_id = ncr_puppet_ncrta
 
 		completion_reward = {
-			create_country_leader = {
-				name = "NCR Barons"
-				desc = "ncr_puppet_baron_leader_desc"
-				picture = "gfx/leaders/puppets/ncr_puppet_elites_leader.dds"
-				expire = "3000.1.1"
-				ideology = conspiratory_oligarchy
-				traits = { po_loyal_puppet }
-			}
 			set_politics = {
 				ruling_party = elites
 				elections_allowed =  no
 			}
-
 			add_popularity = {
 				ideology = elites
 				popularity = 0.25

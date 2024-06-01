@@ -63,16 +63,16 @@ equipments = {
 		}
 
 		default_modules = {
-			fixed_ship_command_slot = ship_command_module_1
+			fixed_ship_command_slot = empty
 			fixed_ship_engine_slot = light_ship_oars_module
-			fixed_ship_battery_slot = ship_light_mounted_gun_module
+			fixed_ship_battery_slot = empty
 			# fixed_ship_battery_slot_1 = empty
 			fixed_ship_detection_slot = empty
 			# fixed_ship_detection_slot_1 = empty
 			fixed_ship_point_defense_slot = empty
 			mid_1_custom_slot = empty
 			rear_1_custom_slot = empty
-			# rear_2_custom_slot = ship_light_mounted_gun_module
+			# rear_2_custom_slot = empty
 		}
 
 		lg_armor_piercing = 0
@@ -165,17 +165,17 @@ equipments = {
 		}
 
 		default_modules = {
-			fixed_ship_command_slot = ship_command_module_1
+			fixed_ship_command_slot = empty
 			fixed_ship_engine_slot = light_ship_oars_module
-			fixed_ship_battery_slot = ship_light_mounted_gun_module
-			# fixed_ship_battery_slot_1 = ship_light_mounted_gun_module
-			fixed_ship_detection_slot = ship_detection_module_1
+			fixed_ship_battery_slot = empty
+			# fixed_ship_battery_slot_1 = empty
+			fixed_ship_detection_slot = empty
 			# fixed_ship_detection_slot_1 = empty
-			fixed_ship_point_defense_slot = ship_pd_module_1
+			fixed_ship_point_defense_slot = empty
 			front_1_custom_slot = empty
-			mid_1_custom_slot = light_ship_oars_module
+			mid_1_custom_slot = empty
 			rear_1_custom_slot = empty
-			rear_2_custom_slot = ship_light_mounted_gun_module
+			rear_2_custom_slot = empty
 		}
 
 		surface_detection = 24
@@ -251,19 +251,19 @@ equipments = {
 		}
 
 		default_modules = {
-			fixed_ship_command_slot = ship_command_module_1
+			fixed_ship_command_slot = empty
 			fixed_ship_engine_slot = light_ship_oars_module
-			fixed_ship_battery_slot = ship_light_mounted_gun_module
-			# fixed_ship_battery_slot_1 = ship_light_mounted_gun_module
-			fixed_ship_detection_slot = ship_detection_module_1
-			# fixed_ship_detection_slot_1 = ship_detection_module_1
+			fixed_ship_battery_slot = empty
+			# fixed_ship_battery_slot_1 = empty
+			fixed_ship_detection_slot = empty
+			# fixed_ship_detection_slot_1 = empty
 			fixed_ship_armour_slot = empty
-			fixed_ship_point_defense_slot = ship_pd_module_1
-			# fixed_ship_point_defense_slot_1 = ship_pd_module_1
+			fixed_ship_point_defense_slot = empty
+			# fixed_ship_point_defense_slot_1 = empty
 			front_1_custom_slot = empty
-			mid_1_custom_slot = light_ship_oars_module
-			rear_1_custom_slot = ship_detection_module_1
-			rear_2_custom_slot = ship_light_mounted_gun_module
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = empty
+			rear_2_custom_slot = empty
 		}
 
 		surface_detection = 28
@@ -347,21 +347,21 @@ equipments = {
 		}
 
 		default_modules = {
-			fixed_ship_command_slot = ship_command_module_1
+			fixed_ship_command_slot = empty
 			fixed_ship_engine_slot = light_ship_oars_module
-			fixed_ship_battery_slot = ship_light_mounted_gun_module
-			# fixed_ship_battery_slot_1 = ship_light_mounted_gun_module
-			fixed_ship_detection_slot = ship_detection_module_1
-			# fixed_ship_detection_slot_1 = ship_detection_module_1
-			fixed_ship_armour_slot = light_ship_armour_module_1
-			fixed_ship_point_defense_slot = ship_pd_module_1
-			# fixed_ship_point_defense_slot_1 = ship_pd_module_1
-			fixed_ship_communication_slot = ship_communications_module_1
+			fixed_ship_battery_slot = empty
+			# fixed_ship_battery_slot_1 = empty
+			fixed_ship_detection_slot = empty
+			# fixed_ship_detection_slot_1 = empty
+			fixed_ship_armour_slot = empty
+			fixed_ship_point_defense_slot = empty
+			# fixed_ship_point_defense_slot_1 = empty
+			fixed_ship_communication_slot = empty
 			# fixed_ship_storage_slot = empty
-			front_1_custom_slot = light_ship_subsurface_module_1
-			mid_1_custom_slot = light_ship_oars_module
-			rear_1_custom_slot = light_ship_torpedoes_module
-			rear_2_custom_slot = ship_light_mounted_gun_module
+			front_1_custom_slot = empty
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = empty
+			rear_2_custom_slot = empty
 		}
 
 		surface_detection = 32
@@ -447,22 +447,22 @@ equipments = {
 		}
 
 		default_modules = {
-			fixed_ship_command_slot = ship_command_module_1
+			fixed_ship_command_slot = empty
 			fixed_ship_engine_slot = light_ship_oars_module
-			fixed_ship_battery_slot = ship_light_mounted_gun_module
-			# fixed_ship_battery_slot_1 = ship_light_mounted_gun_module
-			fixed_ship_detection_slot = ship_detection_module_1
-			# fixed_ship_detection_slot_1 = ship_detection_module_1
-			fixed_ship_armour_slot = light_ship_armour_module_1
-			fixed_ship_point_defense_slot = ship_pd_module_1
-			# fixed_ship_point_defense_slot_1 = ship_pd_module_1
-			fixed_ship_communication_slot = ship_communications_module_1
-			# fixed_ship_storage_slot = light_ship_storage_module_1
-			front_1_custom_slot = light_ship_subsurface_module_1
-			front_2_custom_slot = ship_light_mounted_gun_module
-			mid_1_custom_slot = light_ship_oars_module
-			rear_1_custom_slot = light_ship_torpedoes_module
-			rear_2_custom_slot = ship_light_mounted_gun_module
+			fixed_ship_battery_slot = empty
+			# fixed_ship_battery_slot_1 = empty
+			fixed_ship_detection_slot = empty
+			# fixed_ship_detection_slot_1 = empty
+			fixed_ship_armour_slot = empty
+			fixed_ship_point_defense_slot = empty
+			# fixed_ship_point_defense_slot_1 = empty
+			fixed_ship_communication_slot = empty
+			# fixed_ship_storage_slot = empty
+			front_1_custom_slot = empty
+			front_2_custom_slot = empty
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = empty
+			rear_2_custom_slot = empty
 		}
 
 		surface_detection = 36

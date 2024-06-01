@@ -784,6 +784,16 @@ focus_tree = {
 		relative_position_id = eur_the_growing_port
 
 		completion_reward = {
+			add_offsite_building = {
+				type = dockyard
+				level = 3
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				ahead_reduction = 2
+				category = naval_tech_category
+			}
 			custom_effect_tooltip = eur_remove_convoys_20_tt
 			hidden_effect = {
 				add_equipment_to_stockpile = {
@@ -809,6 +819,16 @@ focus_tree = {
 		relative_position_id = eur_sell_excess_convoys
 
 		completion_reward = {
+			add_offsite_building = {
+				type = dockyard
+				level = 3
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 4
+				ahead_reduction = 1
+				category = naval_module_tech_category
+			}
 			custom_effect_tooltip = eur_export_convoys_tt
 		}
 	}
@@ -824,6 +844,21 @@ focus_tree = {
 		relative_position_id = eur_the_growing_port
 
 		completion_reward = {
+			add_offsite_building = {
+				type = dockyard
+				level = 3
+			}
+			add_doctrine_cost_reduction = {
+				cost_reduction = 1
+				uses = 3
+				category = caf_land_doctrine_xp
+			}
+			add_doctrine_cost_reduction = {
+				name = naval_doctrine_bonus
+				cost_reduction = 1
+				uses = 3
+				category = cat_naval_doctrine
+			}
 			navy_experience = 30
 			army_experience = 15
 		}
@@ -840,27 +875,47 @@ focus_tree = {
 		relative_position_id = eur_the_growing_port
 
 		completion_reward = {
+			add_offsite_building = {
+				type = dockyard
+				level = 3
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = cat_land_doctrine
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				ahead_reduction = 1
+				category = naval_invasion_tech_category
+			}
 			custom_effect_tooltip = eur_navy_to_army_tt
 		}
 	}
-	#focus = {
-	#	id = eur_joint_force_support
-	#	icon = GFX_goal_generic_ammo_boxes_focus
-	#	cost = 30
-	#	x = 1
-	#	y = 1
-	#	prerequisite = {
-	#		focus = eur_joint_force_drills
-	#	}
-	#	prerequisite = {
-	#		focus = eur_prioritize_army_training
-	#	}
-	#	relative_position_id = eur_prioritize_army_training
+	focus = {
+		id = eur_joint_force_support
+		icon = GFX_goal_generic_ammo_boxes_focus
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = eur_joint_force_drills
+		}
+		relative_position_id = eur_prioritize_army_training
 
-	#	completion_reward = {
-	#		custom_effect_tooltip = eur_attaches_tt
-	#	}
-	#}
+		completion_reward = {
+			add_offsite_building = {
+				type = dockyard
+				level = 3
+			}
+			set_technology = {
+				naval_tech_level_scientific = 1
+			}
+			navy_experience = 100
+			army_experience = 50
+		}
+	}
 	focus = {
 		id = eur_mercenary_expansion
 		icon = GFX_goal_BOS_steel_cage
@@ -1420,8 +1475,6 @@ focus_tree = {
 
 		completion_reward = {
 			remove_ideas = eur_mercenary_army
-			custom_effect_tooltip = eur_begin_reforms_tt
-			clr_country_flag = scavenging_disabled
 		}
 	}
 	focus = {
@@ -1436,12 +1489,12 @@ focus_tree = {
 		relative_position_id = eur_begin_army_reforms
 
 		completion_reward = {
-			country_lock_all_division_template = no
 			add_tech_bonus = {
 				bonus = 0.75
 				uses = 2
 				category = cat_land_doctrine
 			}
+			country_lock_all_division_template = no
 		}
 	}
 	focus = {
@@ -1457,10 +1510,6 @@ focus_tree = {
 
 		completion_reward = {
 			add_ideas = eur_standing_army
-			set_rule = {
-				can_send_volunteers = no
-			}
-			custom_effect_tooltip = eur_no_more_mercs_tt
 		}
 	}
 	focus = {
@@ -1536,9 +1585,6 @@ focus_tree = {
 			focus = eur_begin_local_development
 			focus = eur_begin_weapons_production
 		}
-		mutually_exclusive = {
-			focus = eur_begin_weapons_production2
-		}
 		relative_position_id = eur_begin_local_development
 
 		completion_reward = {
@@ -1561,9 +1607,6 @@ focus_tree = {
 			focus = eur_begin_local_development
 			focus = eur_begin_weapons_production
 		}
-		mutually_exclusive = {
-			focus = eur_begin_local_development2
-		}
 		relative_position_id = eur_begin_weapons_production
 
 		completion_reward = {
@@ -1585,9 +1628,6 @@ focus_tree = {
 		prerequisite = {
 			focus = eur_begin_local_development2
 			focus = eur_begin_weapons_production2
-		}
-		mutually_exclusive = {
-			focus = eur_begin_weapons_production3
 		}
 		relative_position_id = eur_begin_local_development2
 
@@ -1624,9 +1664,6 @@ focus_tree = {
 		prerequisite = {
 			focus = eur_begin_local_development2
 			focus = eur_begin_weapons_production2
-		}
-		mutually_exclusive = {
-			focus = eur_begin_local_development3
 		}
 		relative_position_id = eur_begin_weapons_production2
 
@@ -2441,7 +2478,6 @@ focus_tree = {
 		completion_reward = {
 			set_temp_variable = { caps_to_add = -25 }
 			add_caps = yes
-			country_lock_all_division_template = no
 			custom_effect_tooltip = eur_power_armor_specialization1_tt
 		}
 	}

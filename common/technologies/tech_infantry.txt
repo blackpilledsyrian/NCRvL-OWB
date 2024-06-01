@@ -2301,11 +2301,11 @@ technologies = {
 		}
 		super_mutant_nightkin_infantry = {
 			hardness = 0.15
-			max_strength = 0.10
+			max_strength = 1
 		}
 		ghoul_paratrooper = {
 			hardness = 0.15
-			max_strength = 0.10
+			max_strength = 1
 		}
 
 		path = {

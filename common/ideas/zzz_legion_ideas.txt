@@ -286,6 +286,7 @@ ideas = {
 				conversion_cost_mil_to_civ_factor = -0.3
 				production_speed_industrial_complex_factor = -0.3
 				production_speed_arms_factory_factor = -0.3
+				production_speed_dockyard_factor = -0.3
 			}
 		}
 		legionary_state1 = {
@@ -304,7 +305,8 @@ ideas = {
 				conversion_cost_civ_to_mil_factor = -0.2				#20
 				conversion_cost_mil_to_civ_factor = -0.2				#20
 				production_speed_industrial_complex_factor = -0.15				#20
-				production_speed_arms_factory_factor = -0.15				#20
+				production_speed_arms_factory_factor = -0.15
+				production_speed_dockyard_factor = -0.15				#20
 			}
 		}
 		legionary_state2 = {
@@ -324,6 +326,7 @@ ideas = {
 				conversion_cost_mil_to_civ_factor = -0.15				#20
 				production_speed_industrial_complex_factor = -0.05
 				production_speed_arms_factory_factor = -0.05
+				production_speed_dockyard_factor = -0.05
 			}
 		}
 		legionary_state3 = {
@@ -341,6 +344,7 @@ ideas = {
 				conversion_cost_mil_to_civ_factor = -0.1				#20
 				production_speed_industrial_complex_factor = 0.05				#20
 				production_speed_arms_factory_factor = 0.05				#20
+				production_speed_dockyard_factor = 0.05
 				consumer_goods_expected_value = 0.01
 			}
 		}
@@ -358,6 +362,7 @@ ideas = {
 				local_resources_factor = 0.05				#15
 				production_speed_industrial_complex_factor = 0.1				#20
 				production_speed_arms_factory_factor = 0.1				#20
+				production_speed_dockyard_factor = 0.1
 				consumer_goods_expected_value = -0.01
 			}
 		}
@@ -373,9 +378,10 @@ ideas = {
 			modifier = {
 				monthly_population = 0.05
 				global_building_slots_factor = 0.1
-				local_resources_factor = 0.05				#15
-				production_speed_industrial_complex_factor = 0.1				#20
-				production_speed_arms_factory_factor = 0.1				#20
+				local_resources_factor = 0.1				#15
+				production_speed_industrial_complex_factor = 0.15				#20
+				production_speed_arms_factory_factor = 0.15				#20
+				production_speed_dockyard_factor = 0.15
 				consumer_goods_expected_value = -0.03
 			}
 		}
@@ -391,9 +397,10 @@ ideas = {
 			modifier = {
 				monthly_population = 0.1
 				global_building_slots_factor = 0.15
-				local_resources_factor = 0.1				#15
-				production_speed_industrial_complex_factor = 0.15				#20
-				production_speed_arms_factory_factor = 0.15				#20
+				local_resources_factor = 0.15				#15
+				production_speed_industrial_complex_factor = 0.2				#20
+				production_speed_arms_factory_factor = 0.2				#20
+				production_speed_dockyard_factor = 0.2
 				consumer_goods_expected_value = -0.05
 			}
 		}
@@ -825,6 +832,8 @@ ideas = {
 				stability_factor = 0.1
 				political_power_gain = 0.1
 				monthly_population = 0.1
+				production_speed_dockyard_factor = 0.1
+				industrial_capacity_dockyard = 0.1
 			}
 		}
 		roman_citizens2 = {
@@ -841,6 +850,8 @@ ideas = {
 				war_support_factor = 0.1
 				political_power_gain = 0.1
 				monthly_population = 0.15
+				production_speed_dockyard_factor = 0.25
+				industrial_capacity_dockyard = 0.25
 			}
 		}
 		ces_tithes = {
@@ -937,6 +948,7 @@ ideas = {
 			modifier = {
 				war_support_factor = 0.1
 				production_speed_arms_factory_factor = 0.1
+				production_speed_dockyard_factor = 0.1
 				conversion_cost_civ_to_mil_factor = -0.2
 				conscription_factor = -0.03
 				core_creation_cost_factor = -0.2
@@ -956,6 +968,7 @@ ideas = {
 			modifier = {
 				war_support_factor = 0.1
 				production_speed_arms_factory_factor = 0.1
+				production_speed_dockyard_factor = 0.1
 				conversion_cost_civ_to_mil_factor = 0.2
 				conscription_factor = -0.02
 				core_creation_cost_factor = -0.2
@@ -981,6 +994,7 @@ ideas = {
 			modifier = {
 				war_support_factor = 0.1
 				production_speed_arms_factory_factor = 0.1
+				production_speed_dockyard_factor = 0.1
 				conversion_cost_civ_to_mil_factor = 0.2
 				core_creation_cost_factor = -0.2
 				experience_gain_army_factor = 0.2
@@ -1008,6 +1022,7 @@ ideas = {
 			modifier = {
 				war_support_factor = 0.15
 				production_speed_arms_factory_factor = 0.1
+				production_speed_dockyard_factor = 0.1
 				conversion_cost_civ_to_mil_factor = 0.2
 				max_fuel_factor = 0.1
 				core_creation_cost_factor = -0.2
@@ -1037,6 +1052,7 @@ ideas = {
 			modifier = {
 				war_support_factor = 0.15
 				production_speed_arms_factory_factor = 0.15
+				production_speed_dockyard_factor = 0.15
 				conversion_cost_civ_to_mil_factor = 0.2
 				max_fuel_factor = 0.1
 				core_creation_cost_factor = -0.2
@@ -2261,7 +2277,7 @@ ideas = {
 			modifier = {
 				stability_factor = -0.075
                 land_night_attack = 0.05
-				modifier_army_sub_unit_super_mutant_nightkin_infantry_attack_factor = 0.05
+				modifier_army_sub_unit_behemoth_attack_factor = 0.05
 			}
 		}
 		CES_nightkin_frumentaries_2 = {
@@ -2275,8 +2291,8 @@ ideas = {
 			removal_cost = -1
 			modifier = {
                 land_night_attack = 0.15
-				modifier_army_sub_unit_super_mutant_nightkin_infantry_attack_factor = 0.15
-				modifier_army_sub_unit_super_mutant_nightkin_infantry_speed_factor = 0.1
+				modifier_army_sub_unit_behemoth_attack_factor = 0.15
+				modifier_army_sub_unit_behemoth_speed_factor = 0.1
 			}
 		}
 		CES_davison_schizophrenia = {
@@ -2349,9 +2365,9 @@ ideas = {
 			}
 			removal_cost = -1
 			modifier = {
-				modifier_army_sub_unit_super_mutant_nightkin_infantry_attack_factor = 0.05
-				modifier_army_sub_unit_super_mutant_nightkin_infantry_defence_factor = 0.05
-				modifier_army_sub_unit_super_mutant_nightkin_infantry_speed_factor = 0.05
+				modifier_army_sub_unit_behemoth_factor = 0.05
+				modifier_army_sub_unit_behemoth_defence_factor = 0.05
+				modifier_army_sub_unit_behemoth_speed_factor = 0.05
 			}
 		}
 		CES_nightkin_research = {

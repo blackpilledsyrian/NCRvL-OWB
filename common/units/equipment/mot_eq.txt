@@ -33,9 +33,9 @@ equipments = {
 		visual_level = 0
 		defense = 1
 		breakthrough = 1
-		armor_value = 5
+		armor_value = 10
 		ap_attack = 1
-		hardness = 0.05
+		hardness = 0.1
 		fuel_consumption = 0.1
 
 		#Space taken in convoy
@@ -59,9 +59,9 @@ equipments = {
 
 		maximum_speed = 10
 		reliability = 0.85
-		armor_value = 10
+		armor_value = 15
 		ap_attack = 2
-		hardness = 0.15
+		hardness = 0.20
 		fuel_consumption = 0.2
 
 		build_cost_ic = 6.0
@@ -84,9 +84,9 @@ equipments = {
 
 		maximum_speed = 11
 		reliability = 0.85
-		armor_value = 15
+		armor_value = 20
 		ap_attack = 4
-		hardness = 0.25
+		hardness = 0.3
 		fuel_consumption = 0.3
 
 		build_cost_ic = 9
@@ -109,9 +109,9 @@ equipments = {
 
 		maximum_speed = 12
 		reliability = 0.85
-		armor_value = 20
+		armor_value = 25
 		ap_attack = 6.5
-		hardness = 0.35
+		hardness = 0.40
 		fuel_consumption = 0.4
 
 		build_cost_ic = 12.5
@@ -134,9 +134,9 @@ equipments = {
 
 		maximum_speed = 13
 		reliability = 0.8
-		armor_value = 30
+		armor_value = 35
 		ap_attack = 9
-		hardness = 0.45
+		hardness = 0.5
 		fuel_consumption = 0.5
 
 		build_cost_ic = 16.5

@@ -1,0 +1,23 @@
+state = {
+	id = 539
+	name = "STATE_539"
+	manpower = 20540
+	state_category = city
+
+	history = {
+		owner = SHI
+		add_core_of = SHI
+		victory_points = {
+			4835 10
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			dockyard = 2
+		}
+	}
+
+	provinces = {
+		1013 1030 2426 4612 4734 4834 4835
+	}
+}

@@ -21,10 +21,10 @@ equipments = {
 		#Space taken in convoy
 		lend_lease_cost = 1
 
-		build_cost_ic = 1.5
+		build_cost_ic = 1
 
 		# Defensive Abilities
-		defense = 6
+		defense = 8
 		breakthrough = 1
 		maximum_speed = 4
 
@@ -45,7 +45,7 @@ equipments = {
 		reliability = 0.85
 
 		# Defensive Abilities
-		defense = 5
+		defense = 7
 		breakthrough = 1.5
 		hardness = 0
 		armor_value = 0
@@ -58,7 +58,7 @@ equipments = {
 
 		lend_lease_cost = 1
 
-		build_cost_ic = 1.5
+		build_cost_ic = 1
 
 		priority = 5
 
@@ -91,7 +91,7 @@ equipments = {
 		reliability = 0.9
 
 		# Defensive Abilities
-		defense = 7
+		defense = 9
 		breakthrough = 3
 
 		# Offensive Abilities
@@ -100,7 +100,7 @@ equipments = {
 		ap_attack = 7.5
 		air_attack = 0
 
-		build_cost_ic = 2.5
+		build_cost_ic = 2
 
 		resources = {
 			metal = 1
@@ -116,7 +116,7 @@ equipments = {
 		visual_level = 3
 
 		# Defensive Abilities
-		defense = 8.5
+		defense = 11.5
 		breakthrough = 2
 
 		# Offensive Abilities
@@ -125,7 +125,7 @@ equipments = {
 		ap_attack = 5
 		air_attack = 0.8
 
-		build_cost_ic = 2.5
+		build_cost_ic = 2
 
 		resources = {
 			metal = 2
@@ -142,7 +142,7 @@ equipments = {
 		reliability = 0.80
 
 		# Defensive Abilities
-		defense = 9
+		defense = 11
 		breakthrough = 2
 		hardness = 0
 		armor_value = 0
@@ -155,7 +155,7 @@ equipments = {
 
 		lend_lease_cost = 1
 
-		build_cost_ic = 3
+		build_cost_ic = 2.5
 
 		priority = 25
 		resources = {
@@ -176,7 +176,7 @@ equipments = {
 		reliability = 0.9
 
 		# Defensive Abilities
-		defense = 9
+		defense = 11
 		breakthrough = 4.5
 
 		# Offensive Abilities
@@ -185,7 +185,7 @@ equipments = {
 		ap_attack = 10
 		air_attack = 0
 
-		build_cost_ic = 5
+		build_cost_ic = 4.5
 
 		resources = {
 			metal = 2
@@ -201,7 +201,7 @@ equipments = {
 		visual_level = 5
 
 		#Defensive Abilities
-		defense = 11.5
+		defense = 14.5
 		breakthrough = 3
 
 		#Offensive Abilities
@@ -210,7 +210,7 @@ equipments = {
 		ap_attack = 7
 		air_attack = 1.2
 
-		build_cost_ic = 4
+		build_cost_ic = 3.5
 
 		resources = {
 			metal = 3
@@ -227,7 +227,7 @@ equipments = {
 		reliability = 0.80
 
 		# Defensive Abilities
-		defense = 10
+		defense = 12
 		breakthrough = 2.5
 
 		# Offensive Abilities
@@ -236,7 +236,7 @@ equipments = {
 		ap_attack = 15
 		air_attack = 1.5
 
-		build_cost_ic = 4.5
+		build_cost_ic = 4
 
 		resources = {
 			metal = 2
@@ -256,7 +256,7 @@ equipments = {
 		reliability = 0.9
 
 		# Defensive Abilities
-		defense = 11
+		defense = 13
 		breakthrough = 6
 
 		# Offensive Abilities
@@ -265,7 +265,7 @@ equipments = {
 		ap_attack = 15
 		air_attack = 0
 
-		build_cost_ic = 7
+		build_cost_ic = 6.5
 
 		resources = {
 			metal = 3
@@ -281,7 +281,7 @@ equipments = {
 		visual_level = 8
 
 		#Defensive Abilities
-		defense = 14.5
+		defense = 17.5
 		breakthrough = 4
 
 		#Offensive Abilities
@@ -290,7 +290,7 @@ equipments = {
 		ap_attack = 9
 		air_attack = 1.6
 
-		build_cost_ic = 6.5
+		build_cost_ic = 6
 
 		resources = {
 			metal = 4
@@ -307,7 +307,7 @@ equipments = {
 		reliability = 0.80
 
 		# Defensive Abilities
-		defense = 13.5
+		defense = 15.5
 		breakthrough = 3
 
 		# Offensive Abilities
@@ -316,7 +316,7 @@ equipments = {
 		ap_attack = 20
 		air_attack = 2
 
-		build_cost_ic = 7
+		build_cost_ic = 6.5
 
 		resources = {
 			metal = 3
@@ -333,7 +333,7 @@ equipments = {
 		visual_level = 9
 
 		#Defensive Abilities
-		defense = 17
+		defense = 20
 		breakthrough = 4.5
 
 		#Offensive Abilities
@@ -342,7 +342,7 @@ equipments = {
 		ap_attack = 11
 		air_attack = 2
 
-		build_cost_ic = 8.5
+		build_cost_ic = 8
 
 		resources = {
 			metal = 4
@@ -359,7 +359,7 @@ equipments = {
 		reliability = 0.80
 
 		# Defensive Abilities
-		defense = 15
+		defense = 17
 		breakthrough = 3.5
 
 		# Offensive Abilities
@@ -368,7 +368,7 @@ equipments = {
 		ap_attack = 25
 		air_attack = 2.5
 
-		build_cost_ic = 9
+		build_cost_ic = 8.5
 
 		resources = {
 			metal = 4
@@ -385,7 +385,7 @@ equipments = {
 		visual_level = 13
 
 		# Defensive Abilities
-		defense = 18
+		defense = 21
 		breakthrough = 5
 		hardness = 0
 		armor_value = 0
@@ -398,7 +398,7 @@ equipments = {
 
 		lend_lease_cost = 1
 
-		build_cost_ic = 12
+		build_cost_ic = 11.5
 
 		resources = {
 			composites = 2
@@ -418,7 +418,7 @@ equipments = {
 		visual_level = 14
 
 		# Defensive Abilities
-		defense = 20
+		defense = 23
 		breakthrough = 6
 		hardness = 0
 		armor_value = 0
@@ -431,7 +431,7 @@ equipments = {
 
 		lend_lease_cost = 1
 
-		build_cost_ic = 13.5
+		build_cost_ic = 13
 
 		resources = {
 			composites = 2
@@ -452,7 +452,7 @@ equipments = {
 		reliability = 0.8
 
 		# Defensive Abilities
-		defense = 16
+		defense = 18
 		breakthrough = 3.5
 		hardness = 0
 		armor_value = 0
@@ -465,7 +465,7 @@ equipments = {
 
 		lend_lease_cost = 1
 
-		build_cost_ic = 12
+		build_cost_ic = 11.5
 
 		resources = {
 			composites = 2
@@ -485,7 +485,7 @@ equipments = {
 		visual_level = 16
 
 		# Defensive Abilities
-		defense = 17
+		defense = 19
 		breakthrough = 4
 		hardness = 0
 		armor_value = 0
@@ -498,7 +498,7 @@ equipments = {
 
 		lend_lease_cost = 1
 
-		build_cost_ic = 13.5
+		build_cost_ic = 13
 
 		resources = {
 			composites = 2

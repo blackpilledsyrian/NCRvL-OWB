@@ -52,7 +52,6 @@ set_technology = {
 	heavy_infantry_tech_1 = 1
 	fireteam_weaponry_tech = 1
 	demolitions_weaponry_tech = 1
-	explosive_demolitions_weaponry_tech_2 = 1
 	anti_tank_equipment_tech_1 = 1
 	anti_tank_tech_1 = 1
 	ghoul_civilization = 1

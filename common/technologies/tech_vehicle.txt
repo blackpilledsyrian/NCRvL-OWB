@@ -997,7 +997,7 @@ technologies = {
 		category_vehicles = {
 			supply_consumption = -0.1
 		}
-
+		org_loss_when_moving = -0.1
 		path = {
 			leads_to_tech = light_motorized_equipment_vehicle_tech_4
 			research_cost_coeff = 1

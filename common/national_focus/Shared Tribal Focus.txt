@@ -363,6 +363,9 @@ shared_focus = {
 		}
 		custom_effect_tooltip = gentribal_dogs_tt
 		hidden_effect = { set_technology = { mansbestfriend = 1 } }
+		set_technology = {
+			warden_doggos_tech = 1
+		}
 		if = {
 			limit = { has_global_flag = debug_logs }
 			log = "[GetDateText]: [Root.GetName] gentribal_dogs exited"

@@ -56,6 +56,7 @@ set_technology = {
 	spec_ops_equipment_tech_2 = 1
 	anti_tank_equipment_tech_1 = 1
 	demolitions_weaponry_tech = 1
+	flamer_demolitions_weaponry_tech_2 = 1
 	fireteam_weaponry_tech = 1
 	logistics_company_tech_1 = 1
 	unit_training_tech_1 = 1
@@ -73,6 +74,7 @@ set_technology = {
 	tbh_lawkeepers_tech_3 = 1
 	resource_generator_water_tech_1 = 1
 	grand_army = 1
+	grand_battle_plan_owb = 1
 	tactics_doctrine_tech = 1
 }
 
@@ -212,7 +214,7 @@ add_opinion_modifier = {
 	modifier = des_rogue_ranger_hates_quote_bad_guys_quote
 }
 
-add_manpower = 200	# Low MP in states at start, just a minor bump
+add_manpower = 1250	# Low MP in states at start, just a minor bump
 
 #Ranger divisions use it
 add_equipment_to_stockpile = {

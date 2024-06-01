@@ -1339,7 +1339,8 @@ ideas = {
 			}
 			modifier = {
 				caps_expense_modifier = 0.175
-				special_forces_cap = 0.025
+				special_forces_cap = 0.05
+				special_forces_min = 20
 				max_training = 0.05
 				experience_gain_army_unit_factor = 0.025
 				experience_gain_army_factor = 0.05
@@ -1422,7 +1423,8 @@ ideas = {
 			}
 			modifier = {
 				caps_expense_modifier = 0.35
-				special_forces_cap = 0.05
+				special_forces_cap = 0.1
+				special_forces_min = 40
 				max_training = 0.10
 				experience_gain_army_unit_factor = 0.05
 				experience_gain_army_factor = 0.1

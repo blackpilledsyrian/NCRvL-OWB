@@ -100,46 +100,4 @@ on_actions = {
             }
         }
     }
-    on_war_relation_added = {
-        effect = {
-            if = {
-                limit = {
-                    ROOT = {
-                        original_tag = CES
-                    }
-                    FROM = {
-                        original_tag = NCR
-                    }
-                }
-				every_country = {
-					limit = {
-						OR = {
-							original_tag = EUR
-							original_tag = BVC
-							original_tag = PAR
-							original_tag = CWB
-							original_tag = VEG
-							original_tag = SHI
-							original_tag = IRN
-							original_tag = WHT
-							original_tag = ARR
-							original_tag = NAV
-							original_tag = RES
-							original_tag = LAC
-							original_tag = SHA
-							original_tag = IMO
-							original_tag = CRH
-							original_tag = EHT
-							original_tag = NEW
-							original_tag = VLT
-							original_tag = TIM
-							original_tag = TWO
-							original_tag = GDH
-						}
-					}
-					add_ideas = escalation_no_fun_idea
-				}
-            }
-        }
-    }
 }

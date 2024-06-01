@@ -21,10 +21,10 @@ equipments = {
 		reliability = 0.85
 
 		# Defensive Abilities
-		hardness = 0.05
+		hardness = 0.1
 		armor_value = 4
 		breakthrough = 2
-		defense = 3
+		defense = 4.5
 		ap_attack = 10
 
 		build_cost_ic = 3.5
@@ -43,8 +43,8 @@ equipments = {
 		maximum_speed = 4.5
 
 		breakthrough = 4
-		defense = 1.5
-		hardness = 0.05
+		defense = 3
+		hardness = 0.1
 		armor_value = 4
 		ap_attack = 12
 		soft_attack = 2
@@ -68,8 +68,8 @@ equipments = {
 		maximum_speed = 5
 
 		breakthrough = 6
-		defense = 3
-		hardness = 0.1
+		defense = 4.5
+		hardness = 0.15
 		armor_value = 7
 		ap_attack = 14
 		soft_attack = 3
@@ -94,8 +94,8 @@ equipments = {
 		maximum_speed = 5.5
 
 		breakthrough = 8
-		defense = 4.5
-		hardness = 0.15
+		defense = 6
+		hardness = 0.2
 		armor_value = 10
 		ap_attack = 16
 		soft_attack = 4
@@ -121,8 +121,8 @@ equipments = {
 		maximum_speed = 6
 
 		breakthrough = 10
-		defense = 6
-		hardness = 0.2
+		defense = 7.5
+		hardness = 0.25
 		armor_value = 13
 		ap_attack = 19
 		soft_attack = 5
@@ -149,8 +149,8 @@ equipments = {
 		maximum_speed = 6.5
 
 		breakthrough = 12
-		defense = 7.5
-		hardness = 0.25
+		defense = 9
+		hardness = 0.3
 		armor_value = 16
 		ap_attack = 20
 		soft_attack = 6
@@ -181,8 +181,8 @@ equipments = {
 		maximum_speed = 6.5
 
 		breakthrough = 14
-		defense = 9
-		hardness = 0.35
+		defense = 10.5
+		hardness = 0.4
 		armor_value = 25
 		ap_attack = 13
 		soft_attack = 7

@@ -16,6 +16,8 @@
 	}
 	support = {
 		anti_tank_company = { x = 0 y = 0 }
+		maintenance_company = { x = 2 y = 0}
+		fireteam_support = { x = 1 y = 0 }
 	}
 }
 
@@ -37,6 +39,8 @@ division_template = {
 	}
 	support = {
 		anti_tank_company = { x = 0 y = 0 }
+		fireteam_support = { x = 1 y = 0 }
+		demolitions_support = { x = 2 y = 0 }
 	}
 }
 
@@ -128,7 +132,25 @@ instant_effect = {
 	}
 	add_equipment_production = {
 		equipment = {
-			type = spec_ops_equipment_1
+			type = spec_ops_equipment_2
+			creator = "MOT"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ballistic_fireteam_equipment_2
+			creator = "MOT"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
 			creator = "MOT"
 		}
 		requested_factories = 1

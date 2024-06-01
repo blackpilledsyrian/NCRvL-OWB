@@ -61,7 +61,7 @@ technologies = {
 	river_fleet_navy_doctrine = {
 
 		category_screen_ship = {
-			max_organisation = 3
+			max_organisation = 5
 		}
 		spec_ops = {
 			amphibious = {
@@ -228,9 +228,9 @@ technologies = {
 	assault_parties_navy_doctrine = {
 
 		category_screen_ship = {
-			surface_visibility = -0.02
-			lg_attack = 0.02
-			hg_attack = 0.02
+			surface_visibility = -0.05
+			lg_attack = 0.05
+			hg_attack = 0.05
 		}
 
 		path = {
@@ -278,8 +278,8 @@ technologies = {
 	suicide_runs_navy_doctrine = {
 
 		category_screen_ship = {
-			lg_attack = 0.03
-			hg_attack = 0.03
+			lg_attack = 0.05
+			hg_attack = 0.05
 		}
 
 		naval_retreat_speed = -0.1
@@ -372,9 +372,9 @@ technologies = {
 	force_concentration_navy_doctrine = {
 
 		category_capital_ship = {
-			max_organisation = 4
-			lg_attack = 0.04
-			hg_attack = 0.04
+			max_organisation = 5
+			lg_attack = 0.05
+			hg_attack = 0.05
 		}
 
 		XOR = { dispersed_formations_navy_doctrine }
@@ -496,8 +496,8 @@ technologies = {
 		category_capital_ship = {
 			lg_armor_piercing = 0.1
 			hg_armor_piercing = 0.1
-			lg_attack = 0.06
-			hg_attack = 0.06
+			lg_attack = 0.05
+			hg_attack = 0.05
 			surface_visibility = 0.1
 		}
 
@@ -683,7 +683,7 @@ technologies = {
 	barge_focus_navy_doctrine = {
 
 		category_capital_ship = {
-			max_organisation = 7
+			max_organisation = 5
 		}
 
 		path = {
@@ -743,7 +743,7 @@ technologies = {
 	destroyer_focus_navy_doctrine = {
 
 		category_capital_ship = {
-			max_organisation = 8
+			max_organisation = 5
 		}
 
 		path = {
@@ -922,8 +922,8 @@ technologies = {
 	wolfpacks_navy_doctrine = {
 
 		category_screen_ship = {
-			lg_attack = 0.03
-			hg_attack = 0.03
+			lg_attack = 0.05
+			hg_attack = 0.05
 			naval_speed = 0.05
 		}
 
@@ -1169,7 +1169,7 @@ technologies = {
 			naval_speed = 0.1
 		}
 
-		naval_damage_factor = 0.03
+		naval_damage_factor = 0.1
 
 		path = {
 			leads_to_tech = rapid_redeployment_navy_doctrine
@@ -1291,7 +1291,7 @@ technologies = {
 	sail_focus_navy_doctrine = {
 
 		category_screen_ship = {
-			max_organisation = 10
+			max_organisation = 20
 			lg_attack = 0.05
 			hg_attack = 0.05
 		}

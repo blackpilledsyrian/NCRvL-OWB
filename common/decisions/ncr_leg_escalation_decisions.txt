@@ -185,7 +185,7 @@ ncr_leg_escalation_decisions_cat = {
 		#	}
 		#}
 		is_good = yes
-		days_mission_timeout = 200 #200 Days after the war starts, 100 days after first wave
+		days_mission_timeout = 180 #180 Days after the war starts, 80 days after first wave
 		timeout_effect = {
 			#Legion
 			CES = { #Add them to faction incase they have forgor
@@ -207,6 +207,7 @@ ncr_leg_escalation_decisions_cat = {
 			#NCR
 			NCR = { #Add them to faction incase they have forgor
 				add_to_faction = NEW
+				add_to_faction = DES
 				add_to_faction = ARR #Idk maybe Arroyo not, change later if too soon/late
 			}
 			CES = { #NCR members only get defensive wars to avoid problems
@@ -218,6 +219,10 @@ ncr_leg_escalation_decisions_cat = {
 					target = ARR
 					type = annex_everything
 				}
+				declare_war_on = {
+					target = DES
+					type = annex_everything
+				}
 			}
 			hidden_effect = {
                 every_country = {
@@ -227,6 +232,7 @@ ncr_leg_escalation_decisions_cat = {
                             original_tag = WHT
                             original_tag = NEW
                             original_tag = ARR
+                            original_tag = DES
                         }
                     }
 					remove_ideas = escalation_no_fun_idea
@@ -263,7 +269,7 @@ ncr_leg_escalation_decisions_cat = {
 		#	}
 		#}
 		is_good = yes
-		days_mission_timeout = 350 #350 Days after the war starts, 150 days after second wave
+		days_mission_timeout = 280 #280 Days after the war starts, 100 days after second wave
 		timeout_effect = {
 			#Legion
 			CES = { #Add them to faction incase they have forgor
@@ -321,7 +327,6 @@ ncr_leg_escalation_decisions_cat = {
 			NCR = { #Add them to faction incase they have forgor
 				add_to_faction = VLT
 				add_to_faction = TIM
-				add_to_faction = DES
 			}
 			CES = { #NCR members only get defensive wars to avoid problems
 				declare_war_on = {
@@ -330,10 +335,6 @@ ncr_leg_escalation_decisions_cat = {
 				}
 				declare_war_on = {
 					target = TIM
-					type = annex_everything
-				}
-				declare_war_on = {
-					target = DES
 					type = annex_everything
 				}
 			}
@@ -350,7 +351,6 @@ ncr_leg_escalation_decisions_cat = {
                             original_tag = CRH
                             original_tag = VLT
                             original_tag = TIM
-                            original_tag = DES
                         }
                     }
 					remove_ideas = escalation_no_fun_idea

@@ -1,0 +1,30 @@
+state = {
+	id = 96
+	name = "STATE_96"
+	manpower = 5900
+	state_category = megalopolis
+
+	resources = {
+		water = 4
+		metal = 4
+	}
+
+	history = {
+		owner = ARR
+		add_core_of = ARR
+		victory_points = {
+			7152 5
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 3
+			7152 = {
+				bunker = 1
+			}
+		}
+	}
+
+	provinces = {
+		1277 1298 1751 4189 7134 7135 7150 7151 7152 8586
+	}
+}

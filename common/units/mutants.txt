@@ -32,7 +32,8 @@ sub_units = {
 		max_organisation = 60
 		default_morale = 0.3
 		manpower = 25 # 1000
-		defense = 0.25
+		defense = 0.4
+		breakthrough = 0.1
 
 		# Misc Abilities
 		training_time = 120
@@ -141,10 +142,10 @@ sub_units = {
 		max_organisation = 75
 		default_morale = 0.4
 		manpower = 25 # 1000
-		soft_attack = 0.1
-		hard_attack = 0.1
-		defense = 0.1
-		breakthrough = 0.1
+		soft_attack = 0.15
+		hard_attack = 0.15
+		defense = 0.15
+		breakthrough = 0.15
 
 		training_time = 150
 		suppression = 1
@@ -158,20 +159,33 @@ sub_units = {
 		jungle = {
 			attack = 0.05
 			defence = 0.05
+			movement = 0.05
+		}
+		forest = {
+			attack = 0.05
+			defence = 0.05
+			movement = 0.05
 		}
 		marsh = {
 			attack = 0.05
 			defence = 0.05
+			movement = 0.05
+		}
+		hills = {
+			attack = 0.15
+			defence = 0.15
+			movement = 0.15
 		}
 		mountain = {
-			attack = 0.05
-			defence = 0.05
+			attack = 0.15
+			defence = 0.15
+			movement = 0.15
 		}
 		desert = {
 			attack = 0.05
 			defence = 0.05
+			movement = 0.05
 		}
-
 		radiation = {
 			attack = 0.1
 			defence = 0.1
@@ -237,12 +251,22 @@ sub_units = {
 			defence = 0.05
 			movement = 0.05
 		}
+		forest = {
+			attack = 0.05
+			defence = 0.05
+			movement = 0.05
+		}
 		marsh = {
 			attack = 0.05
 			defence = 0.05
 			movement = 0.05
 		}
 		mountain = {
+			attack = 0.05
+			defence = 0.05
+			movement = 0.05
+		}
+		hills = {
 			attack = 0.05
 			defence = 0.05
 			movement = 0.05

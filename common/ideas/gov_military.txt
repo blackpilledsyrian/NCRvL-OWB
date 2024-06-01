@@ -1,0 +1,610 @@
+###VARS
+##OFFICIER
+ideas = {
+	officer_training_laws = {
+		law = yes
+	# Generic
+		officer_law_local_heroes = {
+			picture = officer_business_man
+			cost = 100
+			removal_cost = -1
+			level = 5
+			allowed = {
+				OR = {
+					use_generic_officer_training_laws = yes
+					original_tag = NEW
+					original_tag = VLT
+				}
+			}
+			visible = {
+				if = {
+					limit = {
+						OR = {
+							original_tag = NEW
+							original_tag = VLT
+						}
+					}
+					is_super_mutant_nation = no
+				}
+			}
+			modifier = {
+				political_power_gain = 0.1
+				military_leader_cost_factor = -0.3
+			}
+			default = yes
+			cancel_if_invalid = no
+		}
+		officer_law_local_legends = {
+			picture = officer_merc
+			cost = 100
+			removal_cost = -1
+			level = 4
+			allowed = {
+				OR = {
+					use_generic_officer_training_laws = yes
+					original_tag = NEW
+					original_tag = VLT
+				}
+			}
+			visible = {
+				if = {
+					limit = {
+						OR = {
+							original_tag = NEW
+							original_tag = VLT
+						}
+					}
+					is_super_mutant_nation = no
+				}
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			modifier = {
+				special_forces_min = 5
+				max_command_power = 10
+				political_power_gain = 0.05
+				military_leader_cost_factor = -0.15
+				max_planning = 0.01
+				planning_speed = 0.01
+			}
+			cancel_if_invalid = no
+		}
+		officer_law_professional_mercenaries = {
+			cost = 100
+			removal_cost = -1
+			level = 3
+			picture = officer_raider
+			allowed = {
+				OR = {
+					use_generic_officer_training_laws = yes
+					original_tag = NEW
+					original_tag = VLT
+				}
+			}
+			visible = {
+				if = {
+					limit = {
+						OR = {
+							original_tag = NEW
+							original_tag = VLT
+						}
+					}
+					is_super_mutant_nation = no
+				}
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			modifier = {
+				special_forces_min = 10
+				max_command_power = 15
+				army_leader_start_level = 1
+				army_leader_start_logistics_level = 1
+				army_leader_start_defense_level = 1
+				max_planning = 0.02
+				planning_speed = 0.02
+			}
+			cancel_if_invalid = no
+		}
+		officer_law_veterans = {
+			cost = 100
+			removal_cost = -1
+			level = 2
+			allowed = {
+				OR = {
+					use_generic_officer_training_laws = yes
+					original_tag = NEW
+					original_tag = VLT
+				}
+			}
+			visible = {
+				if = {
+					limit = {
+						OR = {
+							original_tag = NEW
+							original_tag = VLT
+						}
+					}
+					is_super_mutant_nation = no
+				}
+			}
+			picture = officer_soldier
+			ai_will_do = {
+				factor = 1
+			}
+			modifier = {
+				special_forces_min = 30
+				special_forces_cap = 0.025
+				max_command_power = 20
+				political_power_gain = -0.05
+				military_leader_cost_factor = 0.15
+				army_leader_start_level = 1
+				army_leader_start_logistics_level = 1
+				army_leader_start_defense_level = 1
+				max_planning = 0.03
+				planning_speed = 0.03
+			}
+			cancel_if_invalid = no
+		}
+		officer_law_military_academy = {
+			cost = 100
+			removal_cost = -1
+			level = 1
+			picture = officer_army_commander
+			allowed = {
+				OR = {
+					use_generic_officer_training_laws = yes
+					original_tag = NEW
+					original_tag = VLT
+				}
+			}
+			visible = {
+				if = {
+					limit = {
+						OR = {
+							original_tag = NEW
+							original_tag = VLT
+						}
+					}
+					is_super_mutant_nation = no
+				}
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			allowed_to_remove = {
+				if = {
+					limit = { original_tag = TLP }
+					NOT = { has_idea = always_ready_always_there }
+				}
+			}
+			modifier = {
+				special_forces_min = 40
+				special_forces_cap = 0.05
+				max_command_power = 25
+				political_power_gain = -0.1
+				military_leader_cost_factor = 0.3
+				army_leader_start_level = 2
+				army_leader_start_attack_level = 1
+				army_leader_start_defense_level = 1
+				army_leader_start_planning_level = 1
+				army_leader_start_logistics_level = 1
+				max_planning = 0.04
+				planning_speed = 0.04
+			}
+			cancel_if_invalid = no
+		}
+		tnk_rule_of_six = {
+			picture = tnk_rule_of_six
+			cost = 150
+			removal_cost = -1
+			level = 6
+			allowed = {
+				original_tag = TNK
+			}
+			modifier = {
+				political_power_factor = -0.25
+				compliance_gain = 0.07
+				command_power_gain_mult = 0.1
+				max_planning = 0.25
+				planning_speed = -0.25
+			}
+			default = no
+			cancel_if_invalid = no
+		}
+		toc_officer_law = {
+			picture = training_warden
+			cost = 250
+			removal_cost = -1
+			level = 5
+			visible = {
+				OR = {
+					original_tag = TOC
+					original_tag = VSH
+					original_tag = PAS
+				}
+			}
+			modifier = {
+				training_time_factor = 0.05
+				army_attack_factor = 0.05
+				army_speed_factor = 0.05
+				justify_war_goal_time = -0.05
+				non_core_manpower = -0.05
+				army_leader_start_level = 1
+				army_leader_start_attack_level = 1
+				army_leader_start_defense_level = 1
+				army_leader_start_planning_level = 1
+				army_leader_start_logistics_level = 2
+			}
+			default = no
+			cancel_if_invalid = no
+		}
+	# Mutants
+		officer_law_mutant_instinct = {
+			picture = mutant_instinct
+			cost = 100
+			removal_cost = -1
+			level = 5
+			allowed = {
+				is_super_mutant_nation_allowed_block = yes
+			}
+			visible = {
+				if = {
+					limit = {
+						OR = {
+							original_tag = NEW
+							original_tag = VLT
+						}
+					}
+					is_super_mutant_nation = yes
+				}
+			}
+			modifier = {
+				political_power_gain = 0.1
+				military_leader_cost_factor = -0.4
+			}
+			cancel_if_invalid = no
+		}
+		officer_law_mutant_dumdum = {
+			picture = mutant_dumdum
+			cost = 100
+			removal_cost = -1
+			level = 4
+			allowed = {
+				is_super_mutant_nation_allowed_block = yes
+			}
+			visible = {
+				if = {
+					limit = {
+						OR = {
+							original_tag = NEW
+							original_tag = VLT
+						}
+					}
+					is_super_mutant_nation = yes
+				}
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			modifier = {
+				special_forces_min = 5 #special_forces_cap = 0.01
+				max_command_power = 10
+				political_power_gain = 0.05
+				military_leader_cost_factor = -0.3
+			}
+			cancel_if_invalid = no
+		}
+		officer_law_mutant_second = {
+			cost = 100
+			removal_cost = -1
+			level = 3
+			picture = mutant_secondgen
+			allowed = {
+				is_super_mutant_nation_allowed_block = yes
+			}
+			visible = {
+				if = {
+					limit = {
+						OR = {
+							original_tag = NEW
+							original_tag = VLT
+						}
+					}
+					is_super_mutant_nation = yes
+				}
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			modifier = {
+				special_forces_min = 10 #special_forces_cap = 0.02
+				max_command_power = 15
+				military_leader_cost_factor = -0.2
+				army_leader_start_level = 1
+				army_leader_start_logistics_level = 1
+				army_leader_start_defense_level = 1
+				army_org_Factor = 0.01
+			}
+			cancel_if_invalid = no
+		}
+		officer_law_mutant_first = {
+			cost = 100
+			removal_cost = -1
+			level = 2
+			allowed = {
+				is_super_mutant_nation_allowed_block = yes
+			}
+			visible = {
+				if = {
+					limit = {
+						OR = {
+							original_tag = NEW
+							original_tag = VLT
+						}
+					}
+					is_super_mutant_nation = yes
+				}
+			}
+			picture = mutant_firstgen
+			ai_will_do = {
+				factor = 1
+			}
+			modifier = {
+				special_forces_min = 15 #special_forces_cap = 0.03
+				max_command_power = 20
+				political_power_gain = -0.05
+				military_leader_cost_factor = -0.1
+				army_leader_start_level = 1
+				army_leader_start_logistics_level = 1
+				army_leader_start_defense_level = 1
+				army_org_Factor = 0.01
+			}
+			cancel_if_invalid = no
+		}
+		officer_law_mutant_master = {
+			cost = 100
+			removal_cost = -1
+			level = 1
+			picture = mutant_master
+			allowed = {
+				is_super_mutant_nation_allowed_block = yes
+			}
+			visible = {
+				if = {
+					limit = {
+						OR = {
+							original_tag = NEW
+							original_tag = VLT
+						}
+					}
+					is_super_mutant_nation = yes
+				}
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			allowed_to_remove = {
+				if = {
+					limit = { original_tag = TLP }
+					NOT = { has_idea = always_ready_always_there }
+				}
+			}
+			modifier = {
+				special_forces_min = 20 #special_forces_cap = 0.04
+				max_command_power = 25
+				political_power_gain = -0.1
+				army_leader_start_level = 2
+				army_leader_start_attack_level = 1
+				army_leader_start_defense_level = 1
+				army_leader_start_planning_level = 1
+				army_leader_start_logistics_level = 1
+				army_org_Factor = 0.02
+			}
+			cancel_if_invalid = no
+		}
+		officer_law_moore_loyals = {
+			cost = 100
+			removal_cost = -1
+			level = 1
+			picture = officer_moores_law
+			allowed = {
+				original_tag = NCR
+			}
+			available = {
+				has_completed_focus = ncr_secure_the_ncr
+			}
+			visible = {
+				has_completed_focus = ncr_secure_the_ncr
+			}
+			allowed_to_remove = {
+				always = no
+			}
+			modifier = {
+				army_leader_start_level = 1
+				army_leader_start_attack_level = 1
+				max_command_power_mult = 0.2
+				army_leader_cost_factor = -0.2
+				political_power_factor = 0.1
+			}
+			cancel_if_invalid = no
+		}
+	}
+	army_training_laws = {
+		law = yes
+	# Generic
+		training_law_none = {
+			cost = 100
+			removal_cost = -1
+			level = 5
+			picture = training_bruised
+			allowed = {
+				use_generic_army_training_laws = yes
+				#original_tag = NEW
+				#original_tag = VLT
+			}
+			#visible = {
+				#if = {
+					#limit = {
+						#OR = {
+							#original_tag = NEW
+							#original_tag = VLT
+						#}
+					#}
+					#is_super_mutant_nation = no
+				#}
+			#}
+			modifier = {
+				training_time_factor = -0.1
+			}
+			default = yes
+			cancel_if_invalid = no
+		}
+		training_law_wasteland = {
+			cost = 100
+			removal_cost = -1
+			level = 4
+			picture = training_holodisk
+			allowed = {
+				use_generic_army_training_laws = yes
+				#original_tag = NEW
+				#original_tag = VLT
+			}
+			#visible = {
+				#if = {
+					#limit = {
+						#OR = {
+							#original_tag = NEW
+							#original_tag = VLT
+						#}
+					#}
+					#is_super_mutant_nation = no
+				#}
+			#}
+			modifier = {
+				army_org_Factor = 0.025
+				justify_war_goal_time = -0.05
+				training_time_factor = -0.05
+			}
+			cancel_if_invalid = no
+		}
+		training_law_mercenaries = {
+			cost = 100
+			removal_cost = -1
+			level = 3
+			picture = training_wastelander
+			allowed = {
+				use_generic_army_training_laws = yes
+				#original_tag = NEW
+				#original_tag = VLT
+			}
+			#visible = {
+				#if = {
+					#limit = {
+						#OR = {
+							#original_tag = NEW
+							#original_tag = VLT
+						#}
+					#}
+					#is_super_mutant_nation = no
+				#}
+			#}
+			ai_will_do = {
+				factor = 1
+			}
+			modifier = {
+				army_org_Factor = 0.05
+				justify_war_goal_time = -0.08
+			}
+			cancel_if_invalid = no
+		}
+		training_law_veterans = {
+			cost = 100
+			removal_cost = -1
+			level = 2
+			picture = training_soldier
+			allowed = {
+				use_generic_army_training_laws = yes
+				#original_tag = NEW
+				#original_tag = VLT
+			}
+			#visible = {
+				#if = {
+					#limit = {
+						#OR = {
+							#original_tag = NEW
+							#original_tag = VLT
+						#}
+					#}
+					#is_super_mutant_nation = no
+				#}
+			#}
+			ai_will_do = {
+				factor = 1
+			}
+			modifier = {
+				army_org_Factor = 0.075
+				justify_war_goal_time = -0.1
+				training_time_factor = 0.1
+			}
+			cancel_if_invalid = no
+		}
+		training_law_military_academy = {
+			cost = 100
+			removal_cost = -1
+			level = 1
+			picture = training_army_commander
+			allowed = {
+				use_generic_army_training_laws = yes
+				#original_tag = NEW
+				#original_tag = VLT
+			}
+			#visible = {
+				#if = {
+					#limit = {
+						#OR = {
+							#original_tag = NEW
+							#original_tag = VLT
+						#}
+					#}
+					#is_super_mutant_nation = no
+				#}
+			#}
+			allowed_to_remove = {
+				if = {
+					limit = { original_tag = TLP }
+					NOT = { has_idea = always_ready_always_there }
+				}
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			modifier = {
+				army_org_Factor = 0.1
+				justify_war_goal_time = -0.15
+				training_time_factor = 0.2
+			}
+			cancel_if_invalid = no
+		}
+	# TNK
+		tnk_simple_commands = {
+			cost = 100
+			removal_cost = -1
+			level = 1
+			picture = tnk_simple_commands
+			allowed = {
+				original_tag = TNK
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			modifier = {
+				training_time_factor = -0.15
+				attrition = 0.1
+				decryption_factor = -0.1
+			}
+			cancel_if_invalid = no
+		}
+	}
+}

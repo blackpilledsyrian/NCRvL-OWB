@@ -214,7 +214,7 @@ sub_units = {
 			movement = 0.05
 			attack = 0.05
 		}
-		forest = {
+		jungle = {
 			movement = 0.05
 			attack = 0.05
 		}

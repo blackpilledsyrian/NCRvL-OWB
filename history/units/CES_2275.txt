@@ -460,6 +460,14 @@ units = {
 	}
 
 	division = {
+		name = "22nd Legion"
+		location = 8079
+		division_template = "Legionary"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+
+	division = {
 		name = "23rd Legion"
 		location = 6578
 		division_template = "Legionary"

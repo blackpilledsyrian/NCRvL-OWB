@@ -1,0 +1,41 @@
+state = {
+	id = 163
+	name = "STATE_163"
+	resources={
+		water = 10
+		metal = 16
+		composites = 10
+		energy = 6
+		circuitry = 14
+		advanced = 12
+	}
+
+	history={
+		owner = SHI
+		add_core_of = SHI
+		victory_points = {
+			2422 25
+		}
+		victory_points = {
+			2419 10
+		}
+		buildings = {
+			infrastructure = 5
+			arms_factory = 2
+			industrial_complex = 2
+			dockyard = 3
+			air_base = 1
+			2422 = {
+				naval_base = 5
+
+			}
+		}
+	}
+
+	provinces={
+		1038 2422 2419 2420 2421 4836 5039 5040
+	}
+	manpower=55000
+	buildings_max_level_factor=1.000
+	state_category=megalopolis
+}

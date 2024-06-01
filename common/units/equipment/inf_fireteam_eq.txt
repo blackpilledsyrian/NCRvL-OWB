@@ -23,7 +23,7 @@ equipments = {
 		}
 
 		reliability = 0.8
-		defense = 15
+		defense = 17
 		breakthrough = 1
 		soft_attack = 7
 		hard_attack = 3.5
@@ -59,7 +59,7 @@ equipments = {
 		is_convertable = yes
 
 		reliability = 0.85
-		defense = 18.5
+		defense = 20.5
 		breakthrough = 3
 		soft_attack = 11
 		hard_attack = 5.5
@@ -83,7 +83,7 @@ equipments = {
 		is_convertable = yes
 
 		reliability = 0.85
-		defense = 23
+		defense = 25
 		breakthrough = 5
 		soft_attack = 15.5
 		hard_attack = 7
@@ -108,7 +108,7 @@ equipments = {
 		is_convertable = yes
 
 		reliability = 0.85
-		defense = 27.5
+		defense = 29.5
 		breakthrough = 7
 		soft_attack = 20
 		hard_attack = 8.5
@@ -133,7 +133,7 @@ equipments = {
 		is_convertable = yes
 		reliability = 0.8
 
-		defense = 17.5
+		defense = 18.5
 		breakthrough = 2
 		soft_attack = 7.5
 		hard_attack = 10.5
@@ -157,7 +157,7 @@ equipments = {
 		is_convertable = yes
 		reliability = 0.8
 
-		defense = 21.5
+		defense = 22.5
 		breakthrough = 4
 		soft_attack = 10
 		hard_attack = 14.5
@@ -182,7 +182,7 @@ equipments = {
 		is_convertable = yes
 		reliability = 0.8
 
-		defense = 25.5
+		defense = 26.5
 		breakthrough = 6
 		soft_attack = 12.5
 		hard_attack = 18.5
@@ -208,7 +208,7 @@ equipments = {
 		is_convertable = yes
 		reliability = 0.8
 
-		defense = 31
+		defense = 33
 		breakthrough = 7
 		soft_attack = 22
 		hard_attack = 21
