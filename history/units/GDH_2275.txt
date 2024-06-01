@@ -1,0 +1,159 @@
+﻿division_template = {
+	name = "Militia Force"
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Fuerza Milicia"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+	support = {
+		anti_tank_company = { x = 0 y = 0 }
+		logistics_company = { x = 1 y = 0 }
+		fireteam_support = { x = 2 y = 0 }
+	}
+	priority = 0
+}
+
+division_template = {
+	name = "Gente Revivalists"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+		anti_tank_company = { x = 0 y = 0 }
+		recon_company = { x = 1 y = 0 }
+		demolitions_support = { x = 2 y = 0 }
+	}
+}
+
+##### Starting Units #####
+# 0.1: Trained
+# 0.3: Regular
+# 0.75: Seasoned
+# 0.9: Vetrans
+units = {
+
+	# Revivalists
+
+	division = {
+		name = "Gente-Ciudad Revivalists"
+		location = 7775
+		division_template = "Gente Revivalists"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "Puerto Libertad-Ciudad Revivalists"
+		location = 786
+		division_template = "Gente Revivalists"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "Tierra-Ciudad Revivalists"
+		location = 2196
+		division_template = "Gente Revivalists"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "Revivalistas Occidentales"
+		location = 7763
+		division_template = "Gente Revivalists"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+
+	# Milicia
+
+	division = {
+		name = "Gente Guardia Portuaria"
+		location = 7553
+		division_template = "Fuerza Milicia"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "Tierra Guardia Portuaria"
+		location = 7535
+		division_template = "Fuerza Milicia"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "Puerto Libertad Guardia Portuaria"
+		location = 7547
+		division_template = "Fuerza Milicia"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+}
+
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = ballistic_equipment_1
+			creator = "GDH"
+		}
+		requested_factories = 2
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "GDH"
+		}
+		requested_factories = 2
+		progress = 0.6
+		efficiency = 80
+	}
+	add_equipment_production = {
+		equipment = {
+			type = anti_tank_equipment_1
+			creator = "GDH"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ballistic_fireteam_equipment_2
+			creator = "GDH"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = explosive_demolitions_equipment_2
+			creator = "GDH"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+}

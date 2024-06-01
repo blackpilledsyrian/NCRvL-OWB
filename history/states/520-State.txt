@@ -1,0 +1,37 @@
+state = {
+	id = 520
+	name = "STATE_520"
+	manpower = 39480
+	state_category = megalopolis
+
+	resources = {
+		energy = 8
+		metal = 20
+		water = 10
+		composites = 16
+	}
+
+	history = {
+		owner = CES
+		add_core_of = CES
+		add_core_of = FLA
+		victory_points = {
+			8951 50
+		}
+		buildings = {
+			infrastructure = 5
+			arms_factory = 3
+			industrial_complex = 5
+			anti_air_building = 3
+			radar_station = 1
+			air_base = 2
+			8951 = {
+				bunker = 1
+			}
+		}
+	}
+
+	provinces = {
+		8951 8954 8952 8958 8959 8956 8957 8960
+	}
+}

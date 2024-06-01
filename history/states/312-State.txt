@@ -2,7 +2,7 @@ state = {
 	id = 312
 	name = "STATE_312"
 	manpower = 15312
-	state_category = rural
+	state_category = town
 
 	history = {
 		owner = SHI
@@ -13,6 +13,7 @@ state = {
 		buildings = {
 			infrastructure = 2
 			industrial_complex = 1
+			dockyard = 1
 		}
 	}
 

@@ -33,17 +33,25 @@ division_template = {
 		police_infantry = { x = 0 y = 0 }
 		police_infantry = { x = 0 y = 1 }
 		police_infantry = { x = 0 y = 2 }
+		police_infantry = { x = 0 y = 3 }
 		police_infantry = { x = 1 y = 0 }
 		police_infantry = { x = 1 y = 1 }
 		police_infantry = { x = 1 y = 2 }
+		police_infantry = { x = 1 y = 3 }
 		police_infantry = { x = 2 y = 0 }
 		police_infantry = { x = 2 y = 1 }
 		police_infantry = { x = 2 y = 2 }
+		police_infantry = { x = 2 y = 3 }
 		police_infantry = { x = 3 y = 0 }
 		police_infantry = { x = 3 y = 1 }
 		police_infantry = { x = 3 y = 2 }
+		police_infantry = { x = 3 y = 3 }
 		fireteam_infantry = { x = 4 y = 0 }
 		fireteam_infantry = { x = 4 y = 1 }
+		demolitions_infantry = { x = 5 y = 0 }
+		demolitions_infantry = { x = 5 y = 1 }
+		anti_tank_infantry = { x = 4 y = 2 }
+		anti_tank_infantry = { x = 5 y = 2 }
 	}
 	support = {
 		anti_tank_company = { x = 0 y = 0 }
@@ -51,6 +59,7 @@ division_template = {
 		demolitions_support = { x = 2 y = 0 }
 		fireteam_support = { x = 3 y = 0 }
 		anti_air_support = { x = 4 y = 0 }
+		recon_company = { x = 5 y = 0 }
 	}
 	priority = 1
 }
@@ -80,8 +89,29 @@ units = {
 		start_equipment_factor = 1
 	}
 	division = {
+		name = "2nd Elite Rangers"
+		location = 5021
+		division_template = "Elite Rangers"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "3rd Elite Rangers"
+		location = 8743
+		division_template = "Elite Rangers"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1
+	}
+	division = {
 		name = "Snake's Rangers"
 		location = 9645
+		division_template = "Rangers"
+		start_experience_factor = 1
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Abigail's Rangers"
+		location = 1589
 		division_template = "Rangers"
 		start_experience_factor = 1
 		start_equipment_factor = 1

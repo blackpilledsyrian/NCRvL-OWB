@@ -1,0 +1,24 @@
+state = {
+	id = 474
+	name = "STATE_474"
+	manpower = 15474
+	state_category = large_town
+
+	history = {
+		owner = SHI
+		add_core_of = SHI
+		victory_points = {
+			5035 10
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 2
+			arms_factory = 1
+			dockyard = 1
+		}
+	}
+
+	provinces = {
+		1041 2299 5035 5036 5037 5038
+	}
+}

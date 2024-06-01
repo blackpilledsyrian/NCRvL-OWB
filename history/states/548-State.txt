@@ -1,0 +1,37 @@
+state = {
+	id = 548
+	name = "STATE_548"
+	manpower = 11500
+	state_category = megalopolis
+
+	resources = {
+		metal = 8
+		composites = 6
+		energy = 12
+		circuitry = 6
+		advanced = 6
+	}
+
+	history = {
+		owner = NAT
+		add_core_of = NAT
+		victory_points = {
+			3434 30
+		}
+		buildings = {
+			infrastructure = 5
+			arms_factory = 2
+			industrial_complex = 2
+			dockyard = 2
+			anti_air_building = 2
+			radar_station = 1
+			air_base = 4
+			3434 = { bunker = 1 }
+			3436 = { naval_base = 1 }
+		}
+	}
+
+	provinces = {
+		1078 1761 1763 2298 3434 3435 3436 3437 3440 3441 4748 4749 4750 4897 4898 4901 8581 8582 8583
+	}
+}

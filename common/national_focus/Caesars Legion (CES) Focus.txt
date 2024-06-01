@@ -1987,22 +1987,27 @@ focus_tree = {
         completion_reward = {
             custom_effect_tooltip = ces_legionary_naval_academy_tt
             519 = {
-                if = {
-                    limit = {
-                        is_valid_state_for_3_dockyards = yes
-                    }
-                    add_extra_state_shared_building_slots = 3
-                    add_building_construction = {
-                        type = dockyard
-                        level = 3
-                        instant_build = yes
-                    }
-                }
+                add_extra_state_shared_building_slots = 4
                 add_building_construction = {
-                    type = naval_base
+                    type = dockyard
                     level = 3
                     instant_build = yes
-                    province = 6632
+                }
+            }
+        518 = {
+                add_extra_state_shared_building_slots = 4
+                add_building_construction = {
+                    type = dockyard
+                    level = 3
+                    instant_build = yes
+                }
+            }
+        386 = {
+                add_extra_state_shared_building_slots = 4
+                add_building_construction = {
+                    type = dockyard
+                    level = 3
+                    instant_build = yes
                 }
             }
         }
@@ -2680,20 +2685,41 @@ focus_tree = {
             focus = ces_legionary_charioteers
         }
         completion_reward = {
+            custom_effect_tooltip = ces_two_sun_influence_tt
             if = {
                 limit = {
                     has_global_flag = debug_logs
                 }
                 log = "[GetDateText]: [Root.GetName] ces_legend_cannonball entered"
             }
-            swap_ideas = {
-                remove_idea = two_sun_cliens
-                add_idea = two_sun_cliens2
-            }
-            TWO = {
+            hidden_effect = {
                 swap_ideas = {
                     remove_idea = two_sun_cliens
                     add_idea = two_sun_cliens2
+                }
+                TWO = {
+                    swap_ideas = {
+                        remove_idea = two_sun_cliens
+                        add_idea = two_sun_cliens2
+                    }
+                }
+                TWO = { transfer_state = 207 }
+                207 = { add_core_of = TWO }
+                TWO = { transfer_state = 94 }
+                94 = { add_core_of = TWO }
+                TWO = { transfer_state = 35 }
+                35 = { add_core_of = TWO }
+                207 = {
+                    remove_core_of = CES
+                    remove_claim_by = CES
+                }
+                94 = {
+                    remove_core_of = CES
+                    remove_claim_by = CES
+                }
+                35 = {
+                    remove_core_of = CES
+                    remove_claim_by = CES
                 }
             }
             if = {
@@ -3501,7 +3527,7 @@ focus_tree = {
         search_filters = { FOCUS_FILTER_GLORY_LUCIUS FOCUS_FILTER_GLORY_MALPAIS }
         available = {
         }
-        cost = 60
+        cost = 15
         prerequisite = {
             focus = ces_southern_bastion
         }
@@ -4334,6 +4360,22 @@ focus_tree = {
                 remove_idea = roman_citizens
                 add_idea = roman_citizens2
             }
+            every_owned_state = {
+                limit = {
+                    is_coastal = yes
+                }
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = infrastructure
+                    level = 1
+                    instant_build = yes
+                }
+                add_building_construction = {
+                    type = dockyard
+                    level = 1
+                    instant_build = yes
+                }
+            }
         }
     }
     #### Expansion
@@ -5103,7 +5145,7 @@ focus_tree = {
     focus = {
         id = ces_loyal_tribe
         icon = GFX_goal_CES_Will_Faster
-        cost = 30
+        cost = 15
         x = 24
         y = 1
         relative_position_id = ces_caesar_son_of_mars
@@ -5121,7 +5163,7 @@ focus_tree = {
     focus = {
         id = ces_two_nas
         icon = GFX_goal_CES_Cult_of_Nas
-        cost = 30
+        cost = 15
         x = -1
         y = 1
         relative_position_id = ces_loyal_tribe
@@ -5167,7 +5209,7 @@ focus_tree = {
     focus = {
         id = ces_outsiders_gente
         icon = GFX_goal_CES_Gente_Charisma
-        cost = 30
+        cost = 15
         x = 4
         y = 0
         relative_position_id = ces_loyal_tribe
@@ -5184,7 +5226,7 @@ focus_tree = {
         id = ces_legionaries_loan
         icon = GFX_goal_CES_Lean
         search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_GLORY_AURELIUS }
-        cost = 30
+        cost = 15
         x = 1
         y = 1
         relative_position_id = ces_outsiders_gente
@@ -5286,7 +5328,7 @@ focus_tree = {
     focus = {
         id = ces_friendship
         icon = GFX_goal_CES_Gente_Two_Friends
-        cost = 30
+        cost = 15
         x = 0
         y = 1
         relative_position_id = ces_cowboy_country
@@ -5315,7 +5357,7 @@ focus_tree = {
     focus = {
         id = ces_two_conquest_cow
         icon = GFX_goal_CES_Lumine_Motus
-        cost = 30
+        cost = 15
         x = 0
         y = 3
         relative_position_id = ces_loyal_tribe
@@ -5351,7 +5393,7 @@ focus_tree = {
     focus = {
         id = ces_gdh_take_shore
         icon = GFX_goal_CES_Gente_Star
-        cost = 30
+        cost = 15
         x = 0
         y = 3
         relative_position_id = ces_outsiders_gente
@@ -5411,7 +5453,7 @@ focus_tree = {
         id = ces_upgrade_port
         icon = GFX_goal_CES_Bull_Navy
         search_filters = { FOCUS_FILTER_INDUSTRY }
-        cost = 30
+        cost = 15
         x = 0
         y = 1
         relative_position_id = ces_friendship
@@ -5429,23 +5471,32 @@ focus_tree = {
         completion_reward = {
             reduce_legionary_state = yes
             444 = {
-                if = {
-                    limit = {
-                        is_valid_state_for_2_dockyards = yes
-                    }
-                    add_extra_state_shared_building_slots = 2
-                    add_building_construction = {
-                        type = dockyard
-                        level = 2
-                        instant_build = yes
-                    }
+                    add_extra_state_shared_building_slots = 5
+                add_building_construction = {
+                    type = dockyard
+                    level = 5
+                    instant_build = yes
                 }
                 add_building_construction = {
                     type = naval_base
-                    level = 2
+                    level = 5
                     instant_build = yes
                     province = 5310
                 }
+            }
+            add_tech_bonus = {
+                bonus = 1
+                uses = 3
+                category = naval_tech_category
+            }
+            add_doctrine_cost_reduction = {
+                cost_reduction = 1
+                uses = 3
+                category = cat_naval_doctrine
+            }
+            add_offsite_building = {
+                type = dockyard
+                level = 5
             }
         }
     }
@@ -6045,6 +6096,7 @@ focus_tree = {
         completion_reward = {
             set_technology = {
                 special_forces_tech_level_scientific = 1
+                warden_doggos_tech = 1
             }
         }
     }
@@ -7853,23 +7905,16 @@ focus_tree = {
         }
         completion_reward = {
             custom_effect_tooltip = ces_river_wars_tt
-            if = {
-                limit = {
-                    owns_state = 438
-                }
                 438 = {
-                    add_extra_state_shared_building_slots = 1
+                    add_extra_state_shared_building_slots = 5
                     add_building_construction = {
                         type = dockyard
-                        level = 1
+                        level = 3
                         instant_build = yes
                     }
                     add_building_construction = {
-                        type = naval_base
-                        level = 3
-                        province = {
-                            id = 9073
-                        }
+                        type = arms_factory
+                        level = 1
                         instant_build = yes
                     }
                     hidden_effect = {
@@ -7892,16 +7937,11 @@ focus_tree = {
                         }
                     }
                 }
-            }
-            if = {
-                limit = {
-                    owns_state = 553
-                }
                 553 = {
-                    add_extra_state_shared_building_slots = 3
+                    add_extra_state_shared_building_slots = 5
                     add_building_construction = {
                         type = dockyard
-                        level = 2
+                        level = 3
                         instant_build = yes
                     }
                     add_building_construction = {
@@ -7921,9 +7961,21 @@ focus_tree = {
                         }
                     }
                 }
+                359 = {
+                    add_extra_state_shared_building_slots = 5
+                    add_building_construction = {
+                        type = dockyard
+                        level = 3
+                        instant_build = yes
+                    }
+                    add_building_construction = {
+                        type = arms_factory
+                        level = 1
+                        instant_build = yes
+                    }
+                }
             }
         }
-    }
     focus = {
         id = ces_biding_our_time
         icon = GFX_goal_CES_Lost_Dam_Biding_Our_Time
@@ -8119,6 +8171,34 @@ focus_tree = {
         will_lead_to_war_with = MOJ
         completion_reward = {
             start_second_battle_events = yes
+            every_country = {
+                limit = {
+                    OR = {
+                        original_tag = EUR
+                        original_tag = BVC
+                        original_tag = PAR
+                        original_tag = CWB
+                        original_tag = VEG
+                        original_tag = SHI
+                        original_tag = IRN
+                        original_tag = WHT
+                        original_tag = ARR
+                        original_tag = NAV
+                        original_tag = RES
+                        original_tag = LAC
+                        original_tag = SHA
+                        original_tag = IMO
+                        original_tag = CRH
+                        original_tag = EHT
+                        original_tag = NEW
+                        original_tag = VLT
+                        original_tag = TIM
+                        original_tag = TWO
+                        original_tag = GDH
+                    }
+                }
+                add_ideas = escalation_no_fun_idea
+            }
         }
     }
     focus = {
@@ -9385,7 +9465,7 @@ focus_tree = {
         relative_position_id = ces_every_tool
         completion_reward = {
             set_technology = {
-                super_mutant_nightkin_tech = 1
+                super_mutant_behemoth = 1
             }
             add_ideas = CES_nightkin_frumentaries
             hidden_effect = {

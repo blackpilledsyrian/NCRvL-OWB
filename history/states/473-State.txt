@@ -1,0 +1,31 @@
+state = {
+	id = 473
+	name = "STATE_473"
+	manpower = 25473
+	state_category = large_city
+
+	resources = {
+		circuitry = 8
+	}
+
+	history = {
+		owner = SHI
+		add_core_of = SHI
+		victory_points = {
+			2416 15
+		}
+		victory_points = {
+			9212 5
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 2
+			industrial_complex = 2
+			dockyard = 1
+		}
+	}
+
+	provinces = {
+		1029 1047 2416 2418 2423 2425 2440 2610 4614 9209 9211 9212 9220 9221
+	}
+}

@@ -2878,59 +2878,50 @@ technologies = {
 		}
 	}
 
-	warden_doggos_tech = { #This is the silliest shit I've ever done, but I love it
+	warden_doggos_tech = {
 		research_cost = 1.0
 		folder = {
 			name = fallout_focus_tree_folder
 			position = { x = @Row_other y = @Col_4 }
 		}
-		on_research_complete = {
-			custom_effect_tooltip = warden_doggos_tech_tt
-			hidden_effect = {
-				add_ideas = warden_doggos_cost_idea
+		org_loss_when_moving = -0.1
+		land_reinforce_rate = 0.02
+		coordination_bonus = 0.02
+		dog_company = {
+			forest = {
+				movement = 0.05
+				attack = 0.05
+				defence = 0.1
 			}
-		}
-		training_time_factor = 0.10
-		heavy_infantry = {
-			supply_consumption = 0.01
-			need = {
-				dogs_equipment = 25
-				heavy_infantry_equipment = 5
+			jungle = {
+				movement = 0.05
+				attack = 0.05
+				defence = 0.1
 			}
-		}
-		spec_ops = {
-			supply_consumption = 0.01
-			need = {
-				dogs_equipment = 25
-				spec_ops_equipment = 5
+			marsh = {
+				movement = 0.05
+				attack = 0.05
+				defence = 0.1
 			}
-		}
-		power_armour = {
-			supply_consumption = 0.01
-			need = {
-				dogs_equipment = 25
-				power_armor_equipment = 5
+			hills = {
+				movement = 0.05
+				attack = 0.05
+				defence = 0.1
 			}
-		}
-		sentinel_unit = {
-			supply_consumption = 0.01
-			need = {
-				dogs_equipment = 25
-				power_armor_equipment = 5
+			mountain = {
+				movement = 0.05
+				attack = 0.05
+				defence = 0.1
 			}
-		}
-		support_robot = { #Yeah this is new. It's still nothing compared to implants on the others.
-			supply_consumption = 0.01
-			need = {
-				dogs_equipment = 25
-				support_equipment = 5
+			plains = {
+				movement = 0.05
+				attack = 0.05
+				defence = 0.1
 			}
-		}
-		combat_robot = {
-			supply_consumption = 0.01
-			need = {
-				dogs_equipment = 25
-				support_equipment = 5
+			desert = {
+				movement = 0.05
+				attack = 0.05
+				defence = 0.1
 			}
 		}
 		dependencies = {

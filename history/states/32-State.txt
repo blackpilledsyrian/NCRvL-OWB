@@ -1,0 +1,35 @@
+state = {
+	id = 32
+	name = "STATE_32"
+	manpower = 3500
+	state_category = megalopolis
+
+	resources = {
+		energy = 6
+		water = 2
+	}
+
+	history = {
+		owner = ARR
+		add_core_of = ARR
+		victory_points = {
+			2728 5
+		}
+		buildings = {
+			infrastructure = 4
+			dockyard = 1
+			industrial_complex = 1
+			arms_factory = 3
+			5005 = {
+				naval_base = 1
+			}
+			2728 = {
+				bunker = 1
+			}
+		}
+	}
+
+	provinces = {
+		1743 1744 2728 5004 5005 5006
+	}
+}

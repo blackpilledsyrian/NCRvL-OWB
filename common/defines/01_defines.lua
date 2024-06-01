@@ -111,8 +111,8 @@ NDefines.NCountry.DEFAULT_WAR_SUPPORT = 0.5  -- Vanilla is 0.5. Default war supp
 
 NDefines.NCountry.WAR_SUPPORT_TENSION_IMPACT = 0.15  -- Total impact of world tension, vanilla is 0.4.
 NDefines.NCountry.ARMY_SCORE_MULTIPLIER = 0.15
-NDefines.NCountry.SPECIAL_FORCES_CAP_BASE = 0.02  -- Max ammount of special forces battalions is total number of non-special forces battalions multiplied by this and modified by a country modifier
-NDefines.NCountry.SPECIAL_FORCES_CAP_MIN = 20  -- You can have a minimum of this many special forces battalions, regardless of the number of non-special forces battalions you have, this can also be modified by a country modifier
+NDefines.NCountry.SPECIAL_FORCES_CAP_BASE = 0.1  -- Max ammount of special forces battalions is total number of non-special forces battalions multiplied by this and modified by a country modifier
+NDefines.NCountry.SPECIAL_FORCES_CAP_MIN = 40  -- You can have a minimum of this many special forces battalions, regardless of the number of non-special forces battalions you have, this can also be modified by a country modifier
 NDefines.NCountry.STARTING_COMMAND_POWER = 20   -- starting command power for every country. Vanilla is 0
 NDefines.NCountry.CIVIL_WAR_INVOLVEMENT_MIN_TENSION = 0  -- base value of world tension to involve other sides to the civil war. Vanilla is 0.5
 NDefines.NCountry.POPULATION_YEARLY_GROWTH_BASE = 0.015  -- Vanilla is 0.015. Basic population growth per year, used for monthly manpower gain

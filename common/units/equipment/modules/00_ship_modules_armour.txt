@@ -1,0 +1,362 @@
+equipment_modules = {
+
+	light_ship_armour_module_1 = {
+		category = light_ship_armour_module
+		gfx = ship_armour_module_1
+		sfx = sfx_ui_sd_module_turret
+
+		add_stats = {
+			build_cost_ic = 80
+			armor_value = 2
+			surface_visibility = 4
+			max_strength = 5
+		}
+
+		multiply_stats = {
+			naval_speed = -0.15
+		}
+	}
+
+	medium_ship_armour_module_1 = {
+		category = medium_ship_armour_module
+		gfx = ship_armour_module_1
+		sfx = sfx_ui_sd_module_turret
+
+		add_stats = {
+			build_cost_ic = 160
+			armor_value = 4
+			surface_visibility = 6
+			max_strength = 10
+		}
+
+		multiply_stats = {
+			naval_speed = -0.15
+		}
+	}
+
+	heavy_ship_armour_module_1 = {
+		category = heavy_ship_armour_module
+		gfx = ship_armour_module_1
+		sfx = sfx_ui_sd_module_turret
+
+		add_stats = {
+			build_cost_ic = 320
+			armor_value = 8
+			surface_visibility = 8
+			max_strength = 15
+		}
+
+		multiply_stats = {
+			naval_speed = -0.15
+		}
+	}
+
+	super_heavy_ship_armour_module_1 = {
+		category = super_heavy_ship_armour_module
+		gfx = ship_armour_module_1
+		sfx = sfx_ui_sd_module_turret
+
+		add_stats = {
+			build_cost_ic = 640
+			armor_value = 16
+			surface_visibility = 12
+			max_strength = 20
+		}
+
+		multiply_stats = {
+			naval_speed = -0.15
+		}
+	}
+
+	light_ship_armour_module_2 = {
+		category = light_ship_armour_module
+		parent = light_ship_armour_module_1
+		gfx = ship_armour_module_2
+		sfx = sfx_ui_sd_module_turret
+
+		add_stats = {
+			build_cost_ic = 160
+			armor_value = 2
+			surface_visibility = 6
+			max_strength = 10
+		}
+
+		multiply_stats = {
+			naval_speed = -0.175
+		}
+	}
+
+	medium_ship_armour_module_2 = {
+		category = medium_ship_armour_module
+		parent = medium_ship_armour_module_1
+		gfx = ship_armour_module_2
+		sfx = sfx_ui_sd_module_turret
+
+		add_stats = {
+			build_cost_ic = 320
+			armor_value = 4
+			surface_visibility = 9
+			max_strength = 15
+		}
+
+		multiply_stats = {
+			naval_speed = -0.175
+		}
+	}
+
+	heavy_ship_armour_module_2 = {
+		category = heavy_ship_armour_module
+		parent = heavy_ship_armour_module_1
+		gfx = ship_armour_module_2
+		sfx = sfx_ui_sd_module_turret
+
+		add_stats = {
+			build_cost_ic = 640
+			armor_value = 7
+			surface_visibility = 12
+			max_strength = 20
+		}
+
+		multiply_stats = {
+			naval_speed = -0.175
+		}
+	}
+
+	super_heavy_ship_armour_module_2 = {
+		category = super_heavy_ship_armour_module
+		parent = super_heavy_ship_armour_module_1
+		gfx = ship_armour_module_2
+		sfx = sfx_ui_sd_module_turret
+
+		add_stats = {
+			build_cost_ic = 1280
+			armor_value = 12
+			surface_visibility = 17
+			max_strength = 25
+		}
+
+		multiply_stats = {
+			naval_speed = -0.175
+		}
+	}
+
+	light_ship_armour_module_3 = {
+		category = light_ship_armour_module
+		parent = light_ship_armour_module_2
+		gfx = ship_armour_module_3
+		sfx = sfx_ui_sd_module_turret
+
+		add_stats = {
+			build_cost_ic = 240
+			armor_value = 4
+			surface_visibility = 8
+			max_strength = 15
+		}
+
+		multiply_stats = {
+			naval_speed = -0.2
+		}
+	}
+
+	medium_ship_armour_module_3 = {
+		category = medium_ship_armour_module
+		parent = medium_ship_armour_module_2
+		gfx = ship_armour_module_3
+		sfx = sfx_ui_sd_module_turret
+
+		add_stats = {
+			build_cost_ic = 480
+			armor_value = 12
+			surface_visibility = 12
+			max_strength = 20
+		}
+
+		multiply_stats = {
+			naval_speed = -0.2
+		}
+	}
+
+	heavy_ship_armour_module_3 = {
+		category = heavy_ship_armour_module
+		parent = heavy_ship_armour_module_2
+		gfx = ship_armour_module_3
+		sfx = sfx_ui_sd_module_turret
+
+		add_stats = {
+			build_cost_ic = 960
+			armor_value = 20
+			surface_visibility = 16
+			max_strength = 25
+		}
+
+		multiply_stats = {
+			naval_speed = -0.2
+		}
+	}
+
+	super_heavy_ship_armour_module_3 = {
+		category = super_heavy_ship_armour_module
+		parent = super_heavy_ship_armour_module_2
+		gfx = ship_armour_module_3
+		sfx = sfx_ui_sd_module_turret
+
+		add_stats = {
+			build_cost_ic = 1920
+			armor_value = 32
+			surface_visibility = 22
+			max_strength = 30
+		}
+
+		multiply_stats = {
+			naval_speed = -0.2
+		}
+	}
+
+	light_ship_armour_module_4 = {
+		category = light_ship_armour_module
+		parent = light_ship_armour_module_3
+		gfx = ship_armour_module_4
+		sfx = sfx_ui_sd_module_turret
+
+		add_stats = {
+			build_cost_ic = 320
+			armor_value = 8
+			surface_visibility = 10
+			max_strength = 20
+		}
+
+		multiply_stats = {
+			naval_speed = -0.225
+		}
+	}
+
+	medium_ship_armour_module_4 = {
+		category = medium_ship_armour_module
+		parent = medium_ship_armour_module_3
+		gfx = ship_armour_module_4
+		sfx = sfx_ui_sd_module_turret
+
+		add_stats = {
+			build_cost_ic = 640
+			armor_value = 16
+			surface_visibility = 15
+			max_strength = 25
+		}
+
+		multiply_stats = {
+			naval_speed = -0.225
+		}
+	}
+
+	heavy_ship_armour_module_4 = {
+		category = heavy_ship_armour_module
+		parent = heavy_ship_armour_module_3
+		gfx = ship_armour_module_4
+		sfx = sfx_ui_sd_module_turret
+
+		add_equipment_type = capital_ship
+
+		add_stats = {
+			build_cost_ic = 1280
+			armor_value = 26
+			surface_visibility = 20
+			max_strength = 30
+		}
+
+		multiply_stats = {
+			naval_speed = -0.225
+		}
+	}
+
+	super_heavy_ship_armour_module_4 = {
+		category = super_heavy_ship_armour_module
+		parent = super_heavy_ship_armour_module_3
+		gfx = ship_armour_module_4
+		sfx = sfx_ui_sd_module_turret
+
+		add_equipment_type = capital_ship
+
+		add_stats = {
+			build_cost_ic = 2560
+			armor_value = 40
+			surface_visibility = 27
+			max_strength = 35
+		}
+
+		multiply_stats = {
+			naval_speed = -0.225
+		}
+	}
+
+	light_ship_armour_module_5 = {
+		category = light_ship_armour_module
+		parent = light_ship_armour_module_4
+		gfx = ship_armour_module_5
+		sfx = sfx_ui_sd_module_turret
+
+		add_stats = {
+			build_cost_ic = 400
+			armor_value = 10
+			surface_visibility = 12
+			max_strength = 25
+		}
+
+		multiply_stats = {
+			naval_speed = -0.25
+		}
+	}
+
+	medium_ship_armour_module_5 = {
+		category = medium_ship_armour_module
+		parent = medium_ship_armour_module_4
+		gfx = ship_armour_module_5
+		sfx = sfx_ui_sd_module_turret
+
+		add_stats = {
+			build_cost_ic = 800
+			armor_value = 20
+			surface_visibility = 18
+			max_strength = 30
+		}
+
+		multiply_stats = {
+			naval_speed = -0.25
+		}
+	}
+
+	heavy_ship_armour_module_5 = {
+		category = heavy_ship_armour_module
+		parent = heavy_ship_armour_module_4
+		gfx = ship_armour_module_5
+		sfx = sfx_ui_sd_module_turret
+
+		add_stats = {
+			build_cost_ic = 1600
+			armor_value = 32
+			surface_visibility = 24
+			max_strength = 35
+		}
+
+		multiply_stats = {
+			naval_speed = -0.25
+		}
+	}
+
+	super_heavy_ship_armour_module_5 = {
+		category = super_heavy_ship_armour_module
+		parent = super_heavy_ship_armour_module_4
+		gfx = ship_armour_module_5
+		sfx = sfx_ui_sd_module_turret
+
+		add_stats = {
+			build_cost_ic = 3200
+			armor_value = 48
+			surface_visibility = 32
+			max_strength = 40
+		}
+
+		multiply_stats = {
+			naval_speed = -0.25
+		}
+	}
+}

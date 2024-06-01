@@ -202,6 +202,9 @@ focus_tree = {
 		x = -1
 		y = 2
 		completion_reward = {
+			BVC = {
+				news_event = nf_gente.43
+			}
 			gdh_arms_production_boost = yes
 			22 = {
 				add_extra_state_shared_building_slots = 4
@@ -211,8 +214,16 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			BVC = {
-				news_event = nf_gente.43
+			add_doctrine_cost_reduction = {
+				name = naval_doctrine_bonus
+				cost_reduction = 0.5
+				uses = 2
+				category = cat_naval_doctrine
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = cat_land_doctrine
 			}
 		}
 	}
@@ -491,6 +502,12 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			add_tech_bonus = {
+				bonus = 1
+				ahead_reduction = 1
+				uses = 1
+				category = naval_tech_category
+			}
 		}
 	}
 
@@ -665,13 +682,11 @@ focus_tree = {
 				add_unit_leader_trait = fortress_buster
 				add_unit_leader_trait = urban_assault_specialist
 			}
-			add_relation_modifier = {
-				target = BLP
-				modifier = GDH_goul_friends
-			}
-			add_relation_modifier = {
-				target = BVC
-				modifier = GDH_goul_friends
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				ahead_reduction = 1
+				category = naval_invasion_tech_category
 			}
 		}
 	}
@@ -1169,6 +1184,12 @@ focus_tree = {
 					}
 				}
 			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 4
+				ahead_reduction = 1
+				category = naval_module_tech_category
+			}
 		}
 	}
 	focus = {
@@ -1409,13 +1430,14 @@ focus_tree = {
 				}
 			}
 			add_tech_bonus = {
-				bonus = 0.3
+				bonus = 1
+				ahead_reduction = 2
 				uses = 2
 				category = naval_tech_category
 			}
 			add_doctrine_cost_reduction = {
 				name = naval_doctrine_bonus
-				cost_reduction = 0.3
+				cost_reduction = 1
 				uses = 2
 				category = cat_naval_doctrine
 			}
@@ -1911,6 +1933,7 @@ focus_tree = {
 					}
 				}
 			}
+			navy_experience = 50
 		}
 	}
 	focus = {
@@ -2016,6 +2039,9 @@ focus_tree = {
 		y = 3
 		completion_reward = {
 			ask_to_join_caesars_legion = yes
+			army_experience = 100
+			navy_experience = 100
+			air_experience = 100
 		}
 	}
 }

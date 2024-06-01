@@ -131,7 +131,7 @@ focus_tree = {
 				limit = {
 					is_core_of = MES
 				}
-				add_state_modifier = { modifier = { resistance_target = -0.2 } }
+				add_core_of = LAC
 			}
 		}
 	}
@@ -199,7 +199,7 @@ focus_tree = {
 				limit = {
 					is_core_of = ASF
 				}
-				add_state_modifier = { modifier = { resistance_target = -0.2 } }
+				add_core_of = LAC
 			}
 		}
 	}
@@ -267,7 +267,7 @@ focus_tree = {
 				limit = {
 					is_core_of = EDA
 				}
-				add_state_modifier = { modifier = { resistance_target = -0.2 } }
+				add_core_of = LAC
 			}
 		}
 	}
@@ -629,7 +629,7 @@ focus_tree = {
 				limit = {
 					is_core_of = SUF
 				}
-				add_state_modifier = { modifier = { resistance_target = -0.2 } }
+				add_core_of = LAC
 			}
 		}
 	}
@@ -649,6 +649,12 @@ focus_tree = {
 		completion_reward = {
 			country_event = nf_lanius.7
 			set_country_flag = executives_2_flag
+			every_state = {
+				limit = {
+					is_core_of = EXE
+				}
+				add_core_of = LAC
+			}
 		}
 		ai_will_do = {
 			factor = 5	# Advisor is good, higher prio for this inbetween wargoals

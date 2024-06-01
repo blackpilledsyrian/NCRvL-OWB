@@ -1,0 +1,29 @@
+state = {
+	id = 511
+	name = "STATE_511"
+	manpower = 14511
+	state_category = town
+
+	resources = {
+		water = 10
+		energy = 4
+	}
+
+	history = {
+		owner = SHI
+		add_core_of = SHI
+		victory_points = {
+			1060 10
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			dockyard = 2
+			9223 = { naval_base = 4 }
+		}
+	}
+
+	provinces = {
+		1039 1060 2417 2611 4743 4744 4761 4852 9214 9216 9217 9222 9223
+	}
+}

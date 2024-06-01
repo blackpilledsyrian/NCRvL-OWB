@@ -63,7 +63,16 @@ if = {
 		nautics_tech_1 = 1
 		light_navy_hull_tech_1 = 1
 		waterproof_sealing_tech = 1
+		medium_navy_hull_tech_1 = 1
+		multi_deck_construction_tech = 1
+		heavy_navy_hull_tech_1 = 1
 		naval_invasion_tech_1 = 1
+		naval_module_tech = 1
+		naval_weapons_module_tech = 1
+		naval_pd_module_tech_1 = 1
+		naval_hard_point_tech = 1
+		naval_armour_tech_1 = 1
+		naval_support_module_tech = 1
 	}
 }
 if = {
@@ -218,6 +227,18 @@ recruit_character = EUR_george_jackson
 recruit_character = EUR_morgan_heath
 recruit_character = EUR_lisa_tess
 recruit_character = EUR_tom_barrow
+add_offsite_building = {
+	type = industrial_complex
+	level = 5
+}
+add_offsite_building = {
+	type = arms_factory
+	level = 5
+}
+add_offsite_building = {
+	type = dockyard
+	level = 5
+}
 set_variable = {
     bribe_cost = 30
 }

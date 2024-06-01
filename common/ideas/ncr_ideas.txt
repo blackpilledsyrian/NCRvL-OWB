@@ -191,9 +191,9 @@ ideas = {
 			picture = corruption_10
 			modifier = {
 				caps_income_modifier = -0.05
-				stability_factor = 0.05
-				political_power_factor = -0.2
-				consumer_goods_expected_value = 0.07
+				stability_factor = 0.1
+				political_power_factor = -0.15
+				consumer_goods_expected_value = 0.5
 			}
 		}
 		ncr_corruption_tolerated = {
@@ -379,6 +379,18 @@ ideas = {
 			}
 			equipment_bonus = {
 				ship_hull_light = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				ship_hull_medium = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				ship_hull_heavy = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				ship_hull_super_heavy = {
 					build_cost_ic = -0.1
 					instant = yes
 				}

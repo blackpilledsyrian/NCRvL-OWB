@@ -28,6 +28,9 @@ characters = {
 				popular_figurehead
 				expert_negotiator
 				logistics_tsar
+				war_industrialist
+				political_workhorse
+				fortifications_expert
 			}
 			expire = "3000.01.01.01"
 			id = -1
@@ -61,45 +64,39 @@ characters = {
 				popular_figurehead
 				expert_negotiator
 				logistics_tsar
+				captain_of_industry
+				well_liked_leader
+				compassionate_gentleman
 			}
-
 			expire = "2292.1.1.12"
 			id = -1
-		}
-	}
-	BVC_rómulo_robles = {
-		name = "Rómulo Robles"
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_Raider_Generic_5
-			}
 		}
 		country_leader = {
 			ideology = meritocracy
 			traits = {
-				war_industrialist
-				political_workhorse
-				fortifications_expert
+				warmonger
+				popular_figurehead
+				expert_negotiator
+				logistics_tsar
+				captain_of_industry
+				well_liked_leader
+				compassionate_gentleman
 			}
 			expire = "2292.1.1.12"
 			id = -1
 		}
-	}
-	BVC_porfirio_almonte = {
-		name = "Porfirio Almonte"
-		portraits = {
-			civilian = {
-				large = GFX_Portrait_Raider_Generic_10
-			}
-		}
 		country_leader = {
 			ideology = conspiratory_oligarchy
 			traits = {
-				compassionate_gentleman
-				well_liked_leader
+				warmonger
+				popular_figurehead
+				expert_negotiator
+				logistics_tsar
 				captain_of_industry
+				well_liked_leader
+				compassionate_gentleman
 			}
-			expire = "2284.1.1.12"
+			expire = "2292.1.1.12"
 			id = -1
 		}
 	}

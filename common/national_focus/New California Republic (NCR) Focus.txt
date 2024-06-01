@@ -1056,6 +1056,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		available = {
 			date > 2279.9.15
+			has_war = no
 		}
 		prerequisite = {
 			focus = ncr_send_direct_aid
@@ -1082,6 +1083,34 @@ focus_tree = {
 				ROOT = {
 					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
 				}
+			}
+			every_country = {
+				limit = {
+					OR = {
+						original_tag = EUR
+						original_tag = BVC
+						original_tag = PAR
+						original_tag = CWB
+						original_tag = VEG
+						original_tag = SHI
+						original_tag = IRN
+						original_tag = WHT
+						original_tag = ARR
+						original_tag = NAV
+						original_tag = RES
+						original_tag = LAC
+						original_tag = SHA
+						original_tag = IMO
+						original_tag = CRH
+						original_tag = EHT
+						original_tag = NEW
+						original_tag = VLT
+						original_tag = TIM
+						original_tag = TWO
+						original_tag = GDH
+					}
+				}
+				add_ideas = escalation_no_fun_idea
 			}
 		}
 	}
@@ -2118,6 +2147,54 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			591 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 3
+					province = {
+						id = 2661
+					}
+					instant_build = yes
+				}
+			}
+			396 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 3
+					province = {
+						id = 1996
+					}
+					instant_build = yes
+				}
+			}
+			245 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 3
+					province = {
+						id = 3428
+					}
+					instant_build = yes
+				}
+			}
 		}
 	}
 	focus = {
@@ -2202,6 +2279,22 @@ focus_tree = {
 			set_technology = {
 				naval_tech_level_scientific = 1
 			}
+			736 = {
+				add_extra_state_shared_building_slots = 15
+				add_building_construction = {
+					type = dockyard
+					level = 5
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 7
+					province = {
+						id = 9625
+					}
+					instant_build = yes
+				}
+			}
 			custom_effect_tooltip = ncr_setting_sun_navies_awesome_tt
 			navy_experience = 50
 		}
@@ -2237,7 +2330,7 @@ focus = {
 focus = {
 	id = ncr_baja_blues
 	icon = GFX_goal_generic_raider_sign_hidden_cache
-	cost = 45
+	cost = 30
 	prerequisite = {
 		focus = ncr_forceful_empire
 	}
@@ -2257,7 +2350,7 @@ focus = {
 	id = ncr_conquer_baja
 	icon = GFX_goal_NCR_Retake
 	search_filters = {FOCUS_FILTER_ANNEXATION}
-	cost = 45
+	cost = 30
 	prerequisite = {
 		focus = ncr_baja_blues
 	}
@@ -2383,7 +2476,7 @@ focus = {
 focus = {
 	id = ncr_baja_annexation
 	icon = GFX_goal_NCR_Agricultural_Research
-	cost = 45
+	cost = 30
 	cancelable = no
 	prerequisite = { focus = ncr_conquer_baja }
 	available = {
@@ -2409,7 +2502,7 @@ focus = {
 			limit = {
 				is_core_of = BVC
 			}
-			add_extra_state_shared_building_slots = 4
+			add_extra_state_shared_building_slots = 5
 			add_building_construction = {
 				type = infrastructure
 				level = 2
@@ -2418,6 +2511,11 @@ focus = {
 			add_building_construction = {
 				type = industrial_complex
 				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = dockyard
+				level = 1
 				instant_build = yes
 			}
 		}
@@ -2435,7 +2533,7 @@ focus = {
 focus = {
 	id = baja_spoils
 	icon = GFX_goal_NCR_Bajastate
-	cost = 45
+	cost = 30
 	cancelable = no
 	available = {
 		NOT = { has_country_flag = ncr_crisis }
@@ -3386,7 +3484,7 @@ focus = {
 	focus = {
 		id = ncr_peace_and_power
 		icon = GFX_goal_NCR_Council_Hill
-		cost = 45
+		cost = 30
 		search_filters = { FOCUS_FILTER_NCR_ELECTION }
 		available = {
 			NOT = { has_country_flag = ncr_crisis }
@@ -3600,7 +3698,7 @@ focus = {
 	focus = {
 		id = ncr_urban_industry_hubs
 		icon = GFX_goal_NCR_Industry1
-		cost = 45
+		cost = 30
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		available = {
 			NOT = { has_country_flag = ncr_crisis }
@@ -3632,7 +3730,7 @@ focus = {
 	focus = {
 		id = ncr_slumbering_giant_waking
 		icon = GFX_goal_NCR_Rangers_Lead_the_War
-		cost = 45
+		cost = 30
 		search_filters = { FOCUS_FILTER_IDEAS }
 		available = {
 			NOT = { has_country_flag = ncr_crisis }
@@ -3836,16 +3934,21 @@ focus = {
 			add_opinion_modifier = { target = BVC modifier = sympathies }
 			every_state = {
 				limit = {
-					is_baja_california_state = yes
+					is_core_of = BVC
 				}
 				add_building_construction = {
 					type = infrastructure
 					level = 1
 					instant_build = yes
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = water_generator
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dockyard
 					level = 1
 					instant_build = yes
 				}
@@ -5642,7 +5745,12 @@ focus = {
 		relative_position_id = ncr_state_department
 		completion_reward = {
 			TIM = {
-				invite_to_new_california = yes
+				create_or_join_new_california = yes
+				hidden_effect = {
+					add_ideas = {
+						ncr_sphere
+					}
+				}
 			}
 		}
 	}
@@ -5656,9 +5764,10 @@ focus = {
 		relative_position_id = ncr_timberline
 		completion_reward = {
 			TIM = {
+				add_political_power = 300
 				custom_effect_tooltip = ncrtimberlinett
 				hidden_effect = {
-						add_to_variable = { coring_cost_country_factor = -0.5 }
+						add_to_variable = { coring_cost_country_factor = -0.75 }
 				}
 			}
 		}

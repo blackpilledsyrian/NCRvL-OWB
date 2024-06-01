@@ -3691,7 +3691,7 @@ technologies = {
 
 	tactics_spec_ops_elite_tech = {
 
-		special_forces_cap = 0.05
+		special_forces_cap = 0.1
 		category_special_forces = {
 			soft_attack = 0.05
 			hard_attack = 0.05

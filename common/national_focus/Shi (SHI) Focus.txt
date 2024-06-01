@@ -75,7 +75,7 @@ focus_tree = {
 		prerequisite = {
 			focus = shi_dream_of_the_bear_chamber
 		}
-		cost = 50
+		cost = 45
 		completion_reward = {
 			country_event = nf_shi.11
 		}
@@ -95,7 +95,7 @@ focus_tree = {
 		prerequisite = {
 			focus = shi_schools_debate
 		}
-		cost = 50
+		cost = 45
 		completion_reward = {
 			country_event = nf_shi.14
 		}
@@ -115,7 +115,7 @@ focus_tree = {
 		prerequisite = {
 			focus = shi_lessons_war
 		}
-		cost = 50
+		cost = 45
 		completion_reward = {
 			hidden_effect = {	# Make sure any change to this is reflected in the tooltip correctly
 				set_technology = {
@@ -144,7 +144,7 @@ focus_tree = {
 		prerequisite = {
 			focus = shi_schools_debate
 		}
-		cost = 50
+		cost = 45
 		completion_reward = {
 			country_event = nf_shi.15
 		}
@@ -162,7 +162,7 @@ focus_tree = {
 		prerequisite = {
 			focus = shi_lessons_war
 		}
-		cost = 50
+		cost = 45
 		completion_reward = {
 			country_event = nf_shi.18
 		}
@@ -171,7 +171,7 @@ focus_tree = {
 	focus = {
 		id = shi_fuel_seaweed
 		icon = GFX_goal_generic_boat_anchor
-		cost = 50
+		cost = 45
 		x = -2
 		y = 1
 		prerequisite = {
@@ -191,7 +191,7 @@ focus_tree = {
 	focus = {
 		id = shi_navarro_farms
 		icon = GFX_goal_cotton_2
-		cost = 50
+		cost = 45
 		x = 0
 		y = 1
 		available = {
@@ -217,9 +217,17 @@ focus_tree = {
 				limit = {
 					is_core_of = NAT
 				}
-				add_extra_state_shared_building_slots = 1
-			}
-			56 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
 				add_resource = {
 					type = water
 					amount = 10
@@ -237,7 +245,7 @@ focus_tree = {
 		prerequisite = {
 			focus = shi_fuel_seaweed
 		}
-		cost = 50
+		cost = 45
 		available = {
 			NCR = {
 				exists = yes
@@ -267,7 +275,7 @@ focus_tree = {
 		prerequisite = {
 			focus = SHI_ncr_banking
 		}
-		cost = 50
+		cost = 45
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
@@ -300,7 +308,7 @@ focus_tree = {
 		prerequisite = {
 			focus = shi_fuel_seaweed
 		}
-		cost = 50
+		cost = 45
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = yes
@@ -334,10 +342,7 @@ focus_tree = {
 		prerequisite = {
 			focus = SHI_brotherhood_bunker
 		}
-		available = {
-			date > 2278.1.1
-		}
-		cost = 50
+		cost = 45
 		available = {
 			NAT = {
 				all_core_land_owned_by_prev_sphere = yes
@@ -365,7 +370,7 @@ focus_tree = {
 		prerequisite = {
 			focus = shi_vertibirds
 		}
-		cost = 50
+		cost = 45
 		completion_reward = {
 			EUR = { ROOT = { grant_wargoals_on_core_states_of_prev = yes } }
 		}
@@ -383,7 +388,7 @@ focus_tree = {
 		prerequisite = {
 			focus = SHI_brotherhood_bunker
 		}
-		cost = 50
+		cost = 45
 		completion_reward = {
 			add_tech_bonus = {
 				bonus = 0.5
@@ -404,7 +409,7 @@ focus_tree = {
 			focus = shi_ncr_golden_circle_trade
 			focus = shi_fund_engineering
 		}
-		cost = 50
+		cost = 45
 		completion_reward = {
 			add_tech_bonus = {
 				name = doctrine_bonus
@@ -430,7 +435,7 @@ focus_tree = {
 			focus = shi_legalist_debate
 			focus = shi_brotherhood_armor_advice
 		}
-		cost = 50
+		cost = 45
 		completion_reward = {
 			country_event = nf_shi.16
 		}
@@ -462,7 +467,7 @@ focus_tree = {
 				NOT = { has_completed_focus = shi_debate_over_social_heierarchy }
 			}
 		}
-		cost = 50
+		cost = 45
 		completion_reward = {
 			country_event = nf_shi.17
 		}
@@ -483,7 +488,7 @@ focus_tree = {
 				NOT = { has_war_with = SHI }
 			}
 		}
-		cost = 50
+		cost = 45
 		completion_reward = {
 			add_country_leader_trait = ncr_best_friend
 			ask_to_join_new_california = yes
@@ -501,7 +506,7 @@ focus_tree = {
 		}
 		available = {
 		}
-		cost = 50
+		cost = 45
 		completion_reward = {
 			swap_ideas = {
 				remove_idea = united_kingdom_shi
@@ -533,15 +538,22 @@ focus_tree = {
 				}
 			}
 		}
-		cost = 50
+		cost = 45
 		completion_reward = {
-			add_nuclear_bombs = 1
-			random_owned_controlled_state = {
-				limit = {
-					is_valid_state_for_arms_factory = yes
-					is_valid_state_for_civilian_factory = yes
-					is_core_of = SHI
-				}
+			add_research_slot = 1
+			country_event = nf_shi.26
+			add_tech_bonus = {
+				bonus = 1
+				uses = 3
+				ahead_reduction = 1
+				category = naval_tech_category
+			}
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 3
+				category = cat_naval_doctrine
+			}
+			474 = {
 				add_extra_state_shared_building_slots = 5
 				add_building_construction = {
 					type = arms_factory
@@ -559,7 +571,78 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			country_event = nf_shi.26
+			511 = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dockyard		#NOTE# should be correct
+					level = 2
+					instant_build = yes
+				}
+			}
+			163 = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dockyard		#NOTE# should be correct
+					level = 2
+					instant_build = yes
+				}
+			}
+			539 = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dockyard		#NOTE# should be correct
+					level = 2
+					instant_build = yes
+				}
+			}
+			132 = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dockyard		#NOTE# should be correct
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 	}
 }

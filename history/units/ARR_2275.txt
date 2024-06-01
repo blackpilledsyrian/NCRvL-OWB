@@ -1,0 +1,145 @@
+﻿division_template = {
+	name = "Militia Force"
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Settlement-Guard"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+	}
+}
+division_template = {
+	name = "The Chosen"
+	regiments = {
+		spec_ops = { x = 0 y = 0 }
+		spec_ops = { x = 0 y = 1 }
+		spec_ops = { x = 0 y = 2 }
+		spec_ops = { x = 0 y = 3 }
+		spec_ops = { x = 1 y = 0 }
+		spec_ops = { x = 1 y = 1 }
+		spec_ops = { x = 1 y = 2 }
+		spec_ops = { x = 1 y = 3 }
+		spec_ops = { x = 2 y = 0 }
+		spec_ops = { x = 2 y = 1 }
+		spec_ops = { x = 2 y = 2 }
+		spec_ops = { x = 2 y = 3 }
+		spec_ops = { x = 3 y = 0 }
+		spec_ops = { x = 3 y = 1 }
+		spec_ops = { x = 3 y = 2 }
+		spec_ops = { x = 3 y = 3 }
+		anti_tank_infantry = { x = 4 y = 0 }
+		anti_tank_infantry = { x = 4 y = 1 }
+		anti_tank_infantry = { x = 4 y = 2 }
+		anti_tank_infantry = { x = 4 y = 3 }
+		anti_tank_infantry = { x = 5 y = 0 }
+		anti_tank_infantry = { x = 5 y = 1 }
+		anti_tank_infantry = { x = 5 y = 2 }
+		anti_tank_infantry = { x = 5 y = 3 }
+	}
+	support = {
+		anti_tank_company = { x = 0 y = 0 }
+	}
+}
+units = {
+	division = {
+		name = "The Chosen's Ones"
+		location = 2722
+		division_template = "The Chosen"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Arroyo-Guard"
+		location = 2722
+		division_template = "Settlement-Guard"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Arroyo Sentries"
+		location = 2722
+		division_template = "Settlement-Guard"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Sixes-Guard"
+		location = 2728
+		division_template = "Settlement-Guard"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Sixes Sentries"
+		location = 2728
+		division_template = "Settlement-Guard"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Temple Sentries"
+		location = 7152
+		division_template = "Settlement-Guard"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Temple-Guard"
+		location = 7152
+		division_template = "Settlement-Guard"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+}
+
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = ballistic_equipment_1
+			creator = "ARR"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = anti_tank_equipment_1
+			creator = "ARR"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "ARR"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = spec_ops_equipment_1
+			creator = "ARR"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+}

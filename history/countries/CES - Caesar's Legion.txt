@@ -78,6 +78,7 @@ if = {
 		heavy_navy_hull_tech_1 = 1
 		naval_module_tech = 1
 		naval_armour_tech_1 = 1
+		naval_hard_point_tech = 1
 		naval_pd_module_tech_1 = 1
 		naval_communications_module_tech_1 = 1
 		naval_weapons_module_tech = 1

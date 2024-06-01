@@ -406,8 +406,17 @@ technologies = {
 			ship_hull_light_5
 		}
 
-		enable_equipment_modules = {
-			light_ship_torpedoes_module
+		light_ship_unit = {
+			torpedo_attack = 0.2
+		}
+		medium_ship_screen_unit = {
+			torpedo_attack = 0.2
+		}
+		heavy_ship_unit = {
+			torpedo_attack = 0.2
+		}
+		super_heavy_ship_unit = {
+			torpedo_attack = 0.2
 		}
 
 		path = {
@@ -753,6 +762,11 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
+		path = {
+			leads_to_tech = naval_wonders_of_the_past_tech
+			research_cost_coeff = 1
+		}
+
 		dependencies = {
 			naval_tech_level_settler = 1
 		}
@@ -791,11 +805,6 @@ technologies = {
 
 		path = {
 			leads_to_tech = naval_armor_reinforcement_tech
-			research_cost_coeff = 1
-		}
-
-		path = {
-			leads_to_tech = naval_wonders_of_the_past_tech
 			research_cost_coeff = 1
 		}
 
@@ -862,8 +871,8 @@ technologies = {
 
 	waterproof_sealing_tech = {
 
-		critical_receive_chance = -0.03
-		naval_critical_effect_factor = -0.03
+		critical_receive_chance = -0.1
+		naval_critical_effect_factor = -0.1
 
 		path = {
 			leads_to_tech = medium_navy_hull_tech_1
@@ -1043,8 +1052,8 @@ technologies = {
 
 	naval_manuals_tech = {
 
-		critical_receive_chance = -0.03
-		naval_critical_effect_factor = -0.03
+		critical_receive_chance = -0.1
+		naval_critical_effect_factor = -0.1
 
 		research_cost = 1.5
 		start_year = 2281
@@ -1145,8 +1154,8 @@ technologies = {
 
 	naval_emergency_sealing_tech = {
 
-		critical_receive_chance = -0.03
-		naval_critical_effect_factor = -0.03
+		critical_receive_chance = -0.1
+		naval_critical_effect_factor = -0.1
 
 		research_cost = 1.5
 		start_year = 2284
@@ -1190,11 +1199,11 @@ technologies = {
 		}
 
 		research_cost = 1.5
-		start_year = 2284
+		start_year = 2282
 
 		folder = {
 			name = fallout_naval_folder
-			position = { x = @Row_6 y = @Col_7 }
+			position = { x = @Row_6 y = @Col_5 }
 		}
 
 		dependencies = {
@@ -1220,15 +1229,15 @@ technologies = {
 		}
 
 		research_cost = 1.5
-		start_year = 2287
+		start_year = 2283
 
 		folder = {
 			name = fallout_naval_folder
-			position = { x = @Row_6 y = @Col_9 }
+			position = { x = @Row_6 y = @Col_6 }
 		}
 
 		dependencies = {
-			naval_tech_level_scientific = 1
+			naval_tech_level_settler = 1
 		}
 
 		categories = {
