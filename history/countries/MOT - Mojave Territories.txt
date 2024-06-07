@@ -173,6 +173,11 @@ recruit_character = MOT_ignatio_rivas
 recruit_character = MOT_julie_farkas
 recruit_character = MOT_fantasticus
 
+add_timed_idea = {
+	idea = hoover_dam_battle_preperations
+	days = 1000
+}
+
 create_equipment_variant = {
 	name = "River Boat"
 	type = ship_hull_light_1

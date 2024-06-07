@@ -2061,7 +2061,7 @@ focus_tree = {
 			custom_effect_tooltip = eur_power_armor_tt
 			add_tech_bonus = {
 				bonus = 0.5
-				uses = 1
+				uses = 2
 				category = power_armor_tech_category
 			}
 		}

@@ -202,14 +202,10 @@ sub_units = {
 		combat_width = 1.5
 
 		# Size Definitions
-		max_strength = 40
+		max_strength = 25
 		max_organisation = 10
-		default_morale = 0.25
+		default_morale = 0.2
 		manpower = 20 # 1000
-		soft_attack = 0.20
-		hard_attack = 0.20
-		defense = 0.20
-		breakthrough = 0.2
 		ap_attack = 0.3
 
 		# Misc Abilities
@@ -220,7 +216,7 @@ sub_units = {
 		supply_consumption = 0.6
 
 		jungle = {
-			movement = -0.15
+			movement = -0.1
 		}
 		forest = {
 			movement = -0.1
@@ -229,16 +225,13 @@ sub_units = {
 			movement = -0.15
 		}
 		hills = {
-			movement = -0.1
+			movement = -0.15
 		}
 		mountain = {
 			movement = -0.15
 		}
-		plains = {
-			movement = -0.05
-		}
 		desert = {
-			movement = -0.05
+			movement = -0.1
 		}
 		urban = {
 			attack = 0.15
@@ -290,13 +283,13 @@ sub_units = {
 		combat_width = 1.5
 
 		# Size Definitions
-		max_strength = 40
+		max_strength = 25
 		max_organisation = 10
-		default_morale = 0.25
+		default_morale = 0.2
 		manpower = 20 # 1000
-		soft_attack = 0.20
-		hard_attack = 0.20
-		defense = 0.20
+		soft_attack = 0.2
+		hard_attack = 0.2
+		defense = 0.2
 		breakthrough = 0.2
 		ap_attack = 0.1
 
@@ -308,7 +301,7 @@ sub_units = {
 		supply_consumption = 0.6
 
 		jungle = {
-			movement = -0.15
+			movement = -0.1
 		}
 		forest = {
 			movement = -0.1
@@ -317,16 +310,13 @@ sub_units = {
 			movement = -0.15
 		}
 		hills = {
-			movement = -0.1
+			movement = -0.15
 		}
 		mountain = {
 			movement = -0.15
 		}
-		plains = {
-			movement = -0.05
-		}
 		desert = {
-			movement = -0.05
+			movement = -0.1
 		}
 		urban = {
 			attack = 0.15
@@ -378,14 +368,10 @@ sub_units = {
 		combat_width = 1.5
 
 		# Size Definitions
-		max_strength = 40
+		max_strength = 25
 		max_organisation = 10
-		default_morale = 0.25
+		default_morale = 0.2
 		manpower = 20 # 1000
-		soft_attack = 0.20
-		hard_attack = 0.20
-		defense = 0.20
-		breakthrough = 0.2
 		ap_attack = 0.3
 
 		# Misc Abilities
@@ -396,22 +382,22 @@ sub_units = {
 		supply_consumption = 0.6
 
 		jungle = {
-			movement = -0.08
+			movement = -0.1
 		}
 		forest = {
-			movement = -0.08
+			movement = -0.1
 		}
 		marsh = {
-			movement = -0.12
+			movement = -0.15
 		}
 		hills = {
-			movement = -0.12
+			movement = -0.15
 		}
 		mountain = {
-			movement = -0.12
+			movement = -0.15
 		}
 		desert = {
-			movement = -0.08
+			movement = -0.1
 		}
 		urban = {
 			attack = 0.15
@@ -424,7 +410,7 @@ sub_units = {
 			movement = 0.15
 		}
 		amphibious = {
-			movement = -0.12
+			movement = -0.15
 		}
 
 		can_be_parachuted = yes

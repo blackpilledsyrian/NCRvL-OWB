@@ -93,7 +93,6 @@ fbhd_bw_hoover = { # Script to start the initial border war for Hoover Dam
 				on_win = bhd.5
 				on_lose = bhd.6
 				on_cancel = bhd.7
-				terrain_factor = 0.2
 			}
 			defender = {
 				state = 252
@@ -108,7 +107,6 @@ fbhd_bw_hoover = { # Script to start the initial border war for Hoover Dam
 				on_win = bhd.8
 				on_lose = bhd.9
 				on_cancel = bhd.10
-				terrain_factor = 0.2
 			}
 		}
 		meta_effect = {

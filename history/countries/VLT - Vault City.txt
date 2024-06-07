@@ -12,6 +12,7 @@ set_technology = {
 	special_forces_tech_level_tribal = 1
 	special_forces_tech_level_settler = 1
 	#special_forces_tech_level_scientific = 1
+	power_armour_tech_level_tribal = 1
 	power_armour_tech_level_settler = 1
 	power_armour_tech_level_scientific = 1
 	vehicles_tech_level_tribal = 1

@@ -1,6 +1,6 @@
 # Annex decisions
 ncr_leg_escalation_decisions_cat = {
-	initial_wave = { #Two Sun, Gente, Baja and Vegas join the war
+	initial_wave = {
 		icon = generic_ignite_civil_war
 		allowed = {
 			always = no
@@ -33,10 +33,17 @@ ncr_leg_escalation_decisions_cat = {
 		timeout_effect = {
 			#Legion
 			CES = { #Add them to faction incase they have forgor
+				add_to_faction = RES
 				add_to_faction = TWO
 				add_to_faction = GDH
 			}
-			TWO = { #Really hope this 'merges' the wars and I dont have to add a million declare wars to account for
+			RES = {
+				declare_war_on = {
+					target = NCR
+					type = annex_everything
+				}
+			}
+			TWO = {
 				declare_war_on = {
 					target = NCR
 					type = annex_everything
@@ -50,16 +57,21 @@ ncr_leg_escalation_decisions_cat = {
 			}
 			#NCR
 			NCR = { #Add them to faction incase they have forgor
-				add_to_faction = VEG
 				add_to_faction = BVC
+				add_to_faction = VEG
+				add_to_faction = SHI
 			}
 			CES = { #NCR members only get defensive wars to avoid problems
+				declare_war_on = {
+					target = BVC
+					type = annex_everything
+				}
 				declare_war_on = {
 					target = VEG
 					type = annex_everything
 				}
 				declare_war_on = {
-					target = BVC
+					target = SHI
 					type = annex_everything
 				}
 			}
@@ -69,7 +81,9 @@ ncr_leg_escalation_decisions_cat = {
                         OR = {
                             original_tag = BVC
                             original_tag = VEG
+                            original_tag = SHI
                             original_tag = TWO
+                            original_tag = RES
                             original_tag = GDH
                         }
                     }
@@ -78,7 +92,7 @@ ncr_leg_escalation_decisions_cat = {
 			}
 		}
 	}
-	first_wave_of_escalation = { #Navajo, Reservation, Shi, Eureka, join
+	first_wave_of_escalation = {
 		icon = generic_ignite_civil_war
 		allowed = {
 			always = no
@@ -112,7 +126,8 @@ ncr_leg_escalation_decisions_cat = {
 			#Legion
 			CES = { #Add them to faction incase they have forgor
 				add_to_faction = NAV
-				add_to_faction = RES
+				add_to_faction = PAR
+				add_to_faction = CWB
 			}
 			NAV = {
 				declare_war_on = {
@@ -120,7 +135,13 @@ ncr_leg_escalation_decisions_cat = {
 					type = annex_everything
 				}
 			}
-			RES = {
+			PAR = {
+				declare_war_on = {
+					target = NCR
+					type = annex_everything
+				}
+			}
+			CWB = {
 				declare_war_on = {
 					target = NCR
 					type = annex_everything
@@ -129,7 +150,7 @@ ncr_leg_escalation_decisions_cat = {
 			#NCR
 			NCR = { #Add them to faction incase they have forgor
 				add_to_faction = EUR
-				add_to_faction = SHI #Watch our for the Air controllers !!1
+				add_to_faction = ARR #Watch our for the Air controllers !!1
 			}
 			CES = { #NCR members only get defensive wars to avoid problems
 				declare_war_on = {
@@ -137,7 +158,7 @@ ncr_leg_escalation_decisions_cat = {
 					type = annex_everything
 				}
 				declare_war_on = {
-					target = SHI
+					target = ARR
 					type = annex_everything
 				}
 			}
@@ -146,9 +167,10 @@ ncr_leg_escalation_decisions_cat = {
                     limit = {
                         OR = {
                             original_tag = NAV
-                            original_tag = RES
+                            original_tag = CWB
+                            original_tag = PAR
                             original_tag = EUR
-                            original_tag = SHI
+                            original_tag = ARR
                         }
                     }
 					remove_ideas = escalation_no_fun_idea
@@ -156,7 +178,7 @@ ncr_leg_escalation_decisions_cat = {
 			}
 		}
 	}
-	second_wave_of_escalation = { #Reno, Arroyo, White Legs, Iron Alliance join. Northern Vegas Front Opens
+	second_wave_of_escalation = {
 		icon = generic_ignite_civil_war
 		allowed = {
 			always = no
@@ -189,16 +211,37 @@ ncr_leg_escalation_decisions_cat = {
 		timeout_effect = {
 			#Legion
 			CES = { #Add them to faction incase they have forgor
+				add_to_faction = IMO
+				add_to_faction = SHA
+				add_to_faction = CRH
 				add_to_faction = IRN
-				add_to_faction = WHT
+				add_to_faction = LAC
 			}
-			IRN = {
+			IMO = {
 				declare_war_on = {
 					target = NCR
 					type = annex_everything
 				}
 			}
-			WHT = {
+			SHA = {
+				declare_war_on = {
+					target = NCR
+					type = annex_everything
+				}
+			}
+			CRH = {
+				declare_war_on = {
+					target = NCR
+					type = annex_everything
+				}
+			}
+			LAC = {
+				declare_war_on = {
+					target = NCR
+					type = annex_everything
+				}
+			}
+			IRN = {
 				declare_war_on = {
 					target = NCR
 					type = annex_everything
@@ -207,8 +250,7 @@ ncr_leg_escalation_decisions_cat = {
 			#NCR
 			NCR = { #Add them to faction incase they have forgor
 				add_to_faction = NEW
-				add_to_faction = DES
-				add_to_faction = ARR #Idk maybe Arroyo not, change later if too soon/late
+				add_to_faction = TIM
 			}
 			CES = { #NCR members only get defensive wars to avoid problems
 				declare_war_on = {
@@ -216,11 +258,7 @@ ncr_leg_escalation_decisions_cat = {
 					type = annex_everything
 				}
 				declare_war_on = {
-					target = ARR
-					type = annex_everything
-				}
-				declare_war_on = {
-					target = DES
+					target = TIM
 					type = annex_everything
 				}
 			}
@@ -228,11 +266,13 @@ ncr_leg_escalation_decisions_cat = {
                 every_country = {
                     limit = {
                         OR = {
+                            original_tag = IMO
+                            original_tag = SHA
+                            original_tag = CRH
+                            original_tag = LAC
                             original_tag = IRN
-                            original_tag = WHT
                             original_tag = NEW
-                            original_tag = ARR
-                            original_tag = DES
+                            original_tag = TIM
                         }
                     }
 					remove_ideas = escalation_no_fun_idea
@@ -240,7 +280,7 @@ ncr_leg_escalation_decisions_cat = {
 			}
 		}
 	}
-	third_wave_of_escalation = { #Timberline, Vault City, Rogue Rangers, Eighties, LAC, Texas, Cyphers join war. The big clash for Utah!
+	third_wave_of_escalation = {
 		icon = generic_ignite_civil_war
 		allowed = {
 			always = no
@@ -274,12 +314,7 @@ ncr_leg_escalation_decisions_cat = {
 			#Legion
 			CES = { #Add them to faction incase they have forgor
 				add_to_faction = EHT
-				add_to_faction = CWB
-				add_to_faction = PAR #I dont know if it breaks if these guys dont actually exists, but its experimental, put a check here if else
-				add_to_faction = LAC #Same here
-				add_to_faction = SHA #oh god theres more
-				add_to_faction = IMO #does anyone even play these, wait yeah i vaugely remember someone once did
-				add_to_faction = CRH #Why do they exist on the map? Probably to be played, so just put it here
+				add_to_faction = WHT
 			}
 			EHT = {
 				declare_war_on = {
@@ -287,37 +322,7 @@ ncr_leg_escalation_decisions_cat = {
 					type = annex_everything
 				}
 			}
-			CWB = {
-				declare_war_on = {
-					target = NCR
-					type = annex_everything
-				}
-			}
-			PAR = {
-				declare_war_on = {
-					target = NCR
-					type = annex_everything
-				}
-			}
-			LAC = {
-				declare_war_on = {
-					target = NCR
-					type = annex_everything
-				}
-			}
-			SHA = {
-				declare_war_on = {
-					target = NCR
-					type = annex_everything
-				}
-			}
-			IMO = {
-				declare_war_on = {
-					target = NCR
-					type = annex_everything
-				}
-			}
-			CRH = {
+			WHT = {
 				declare_war_on = {
 					target = NCR
 					type = annex_everything
@@ -326,7 +331,7 @@ ncr_leg_escalation_decisions_cat = {
 			#NCR
 			NCR = { #Add them to faction incase they have forgor
 				add_to_faction = VLT
-				add_to_faction = TIM
+				add_to_faction = DES
 			}
 			CES = { #NCR members only get defensive wars to avoid problems
 				declare_war_on = {
@@ -334,7 +339,7 @@ ncr_leg_escalation_decisions_cat = {
 					type = annex_everything
 				}
 				declare_war_on = {
-					target = TIM
+					target = DES
 					type = annex_everything
 				}
 			}
@@ -343,14 +348,9 @@ ncr_leg_escalation_decisions_cat = {
                     limit = {
                         OR = {
                             original_tag = EHT
-                            original_tag = CWB
-                            original_tag = PAR
-                            original_tag = LAC
-                            original_tag = SHA
-                            original_tag = IMO
-                            original_tag = CRH
+                            original_tag = WHT
                             original_tag = VLT
-                            original_tag = TIM
+                            original_tag = DES
                         }
                     }
 					remove_ideas = escalation_no_fun_idea

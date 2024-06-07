@@ -2381,7 +2381,12 @@ technologies = {
 				radio_equipment = 5
 			}
 		}
-		militia = {
+		recon_company = {
+			need = {
+				radio_equipment = 5
+			}
+		}
+		mobile_recon_company = {
 			need = {
 				radio_equipment = 5
 			}

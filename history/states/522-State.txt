@@ -2,7 +2,7 @@ state = {
 	id = 522
 	name = "STATE_522"
 	manpower = 38522
-	state_category = megalopolis
+	state_category = prewar_megacity
 
 	resources = {
 		water = 2
@@ -19,8 +19,9 @@ state = {
 		}
 		buildings = {
 			infrastructure = 5
-			arms_factory = 2
-			industrial_complex = 2
+			arms_factory = 6
+			industrial_complex = 7
+			dockyard = 6
 			anti_air_building = 3
 			radar_station = 1
 			air_base = 1

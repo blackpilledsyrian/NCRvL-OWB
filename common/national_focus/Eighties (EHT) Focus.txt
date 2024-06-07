@@ -123,7 +123,7 @@ focus_tree = {
 	focus = {
 		id = EHT_ruby
 		icon = GFX_goal_generic_ruby_focus
-		cost = 60
+		cost = 30
 		prerequisite = {
 			focus = EHT_focus_the_oasis
 		}
@@ -874,7 +874,7 @@ focus_tree = {
 	focus = {
 		id = EHT_focus_breathe_of_elders
 		icon = GFX_goal_generic_data_focus
-		cost = 60
+		cost = 30
 		prerequisite = { focus = EHT_focus_sedentary }
 		available = {
 			num_of_factories > 20
@@ -903,7 +903,7 @@ focus_tree = {
 	focus = {
 		id = EHT_wisdom_next_generation
 		icon = GFX_goal_80
-		cost = 60
+		cost = 30
 		prerequisite = { focus = EHT_focus_nomadic }
 		available = {
 			num_of_factories > 20
@@ -932,7 +932,7 @@ focus_tree = {
 	focus = {
 		id = EHT_focus_people_of_the_wind
 		icon = GFX_goal_brahmin_cart
-		cost = 60
+		cost = 30
 		prerequisite = {
 			focus = EHT_focus_breathe_of_elders
 			focus = EHT_wisdom_next_generation
@@ -956,7 +956,7 @@ focus_tree = {
 	focus = {
 		id = EHT_focus_city_of_banners
 		icon = GFX_goal_generic_canyon_focus
-		cost = 60
+		cost = 30
 		prerequisite = {
 			focus = EHT_focus_breathe_of_elders
 			focus = EHT_wisdom_next_generation
@@ -991,7 +991,7 @@ focus_tree = {
 	focus = {
 		id = EHT_focus_wisdom_of_the_new_generation
 		icon = GFX_goal_generic_human_warriors
-		cost = 60
+		cost = 30
 		prerequisite = {
 			focus = EHT_focus_city_of_banners
 		}
@@ -1021,7 +1021,7 @@ focus_tree = {
 		id = EHT_focus_ready_to_return
 		text = EHT_focus_ready_to_return
 		icon = GFX_goal_80
-		cost = 60
+		cost = 30
 		#prerequisite = {
 		#	focus = EHT_focus_camp_weaponsmiths
 		#	focus = EHT_focus_wendover_armoury
@@ -1298,17 +1298,17 @@ focus_tree = {
 			focus = EHT_retaking_the_road
 		}
 		available = {
-			RUB = {
+			HAM = {
 				all_core_land_owned_by_prev_sphere = yes
 			}
 			ai_has_no_other_wars_or_wargoals = yes
 		}
 		bypass = {
-			GRA = {
+			MUR = {
 				all_core_land_owned_by_prev_sphere = yes
 			}
 		}
-		will_lead_to_war_with = GRA
+		will_lead_to_war_with = MUR
 		x = 1
 		y = 1
 		relative_position_id = EHT_build_more_roads
@@ -1317,7 +1317,7 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] EHT_focus_grab_destiny entered"
 			}
-			GRA = {
+			MUR = {
 				ROOT = {
 					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
 				}
@@ -1331,13 +1331,13 @@ focus_tree = {
 
 	focus = {
 		id = EHT_grab_luggage
-		icon = GFX_goal_NEW_Caps_for_Loyalty
+		icon = GFX_goal_ancient_wealth
 		cost = 30
 		prerequisite = {
 			focus = EHT_focus_grab_destiny
 		}
 		available = {
-			owns_state = 425
+			owns_state = 303
 		}
 		x = 0
 		y = 1
@@ -1347,8 +1347,7 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] EHT_grab_luggage entered"
 			}
-			country_event = nf_80s.5
-			425 = { add_core_of = EHT }
+			303 = { add_core_of = EHT }
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] EHT_grab_luggage exited"
@@ -1526,7 +1525,7 @@ focus_tree = {
 
 	focus = {
 		id = EHT_focus_eastport_promotion
-		icon = GFX_goal_ancient_wealth
+		icon = GFX_goal_NEW_Caps_for_Loyalty
 		cost = 30
 		relative_position_id = EHT_swing_east
 		x = 0
@@ -1633,7 +1632,7 @@ focus_tree = {
 	focus = {
 		id = EHT_focus_desert_living
 		icon = GFX_icon_apc_desert
-		cost = 60
+		cost = 30
 		prerequisite = {
 			focus = EHT_focus_utah_road_war_second
 		}
@@ -1738,7 +1737,7 @@ focus_tree = {
 	focus = {
 		id = EHT_focus_mineral_deposits
 		icon = GFX_goal_generic_metal_focus
-		cost = 60
+		cost = 30
 		prerequisite = {
 			focus = EHT_focus_utah_road_war_second
 		}
@@ -1785,7 +1784,7 @@ focus_tree = {
 	focus = {
 		id = EHT_ally_white_legs
 		icon = GFX_goal_white_leg_warrior
-		cost = 60
+		cost = 30
 		prerequisite = { focus = EHT_focus_admit_caravans }
 		available = {
 			WHT = { exists = yes }
@@ -2039,12 +2038,10 @@ focus_tree = {
 				limit = {
 					OR = {
 						is_core_of = RUB
-						is_core_of = GRA
 						is_core_of = RIP
 						is_core_of = HAM
 						is_core_of = EAS
 						is_core_of = MUR
-						is_core_of = ANO
 					}
 				}
 				add_core_of = EHT
@@ -2123,7 +2120,7 @@ focus_tree = {
     focus = {
         id = EHT_western_bridgehead
         icon = GFX_goal_WHT_generic_flag
-        cost = 60
+        cost = 30
         relative_position_id = EHT_ally_white_legs
         prerequisite = { focus = EHT_ally_white_legs }
         x = -1
@@ -2148,7 +2145,7 @@ focus_tree = {
     focus = {
         id = EHT_ally_mormons
         icon = GFX_goal_NCN_Mormon_Book
-        cost = 60
+        cost = 30
         relative_position_id = EHT_focus_admit_caravans
         prerequisite = {focus = EHT_focus_admit_caravans }
         available = {
@@ -2215,7 +2212,7 @@ focus_tree = {
     focus = {
 		id = EHT_eastern_dockyard
 		icon = GFX_goal_NCN_Generic
-		cost = 60
+		cost = 30
 		prerequisite = { focus = EHT_ally_mormons }
 		x = 1
 		y = 1
@@ -2267,7 +2264,7 @@ focus_tree = {
     focus = {
         id = EHT_eastern_bridgehead
         icon = GFX_goal_80
-        cost = 60
+        cost = 30
         relative_position_id = EHT_eastern_dockyard
         prerequisite = { focus = EHT_eastern_dockyard }
         x = 1
@@ -2291,7 +2288,7 @@ focus_tree = {
 	focus = {
 		id = EHT_western_dockyard
 		icon = GFX_goal_80
-		cost = 60
+		cost = 30
 		prerequisite = { focus = EHT_western_bridgehead }
 		x = -1
 		y = 1

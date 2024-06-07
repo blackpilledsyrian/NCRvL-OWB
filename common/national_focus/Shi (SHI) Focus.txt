@@ -318,9 +318,6 @@ focus_tree = {
 				ideology = intellectuals
 				popularity = 0.10
 			}
-			BOS = {
-				news_event = nf_shi.12
-			}
 			add_tech_bonus = {
 				bonus = 1
 				uses = 1
@@ -353,26 +350,6 @@ focus_tree = {
 				air_tech_level_scientific = 1
 				vertibird_unlock_tech = 1
 			}
-		}
-	}
-
-	focus = {
-		id = shi_kill_hubologists
-		icon = GFX_goal_hubologist
-		x = 0
-		y = 1
-		bypass = {
-			EUR = {
-				all_core_land_owned_by_prev_sphere = yes
-			}
-		}
-		relative_position_id = shi_vertibirds
-		prerequisite = {
-			focus = shi_vertibirds
-		}
-		cost = 45
-		completion_reward = {
-			EUR = { ROOT = { grant_wargoals_on_core_states_of_prev = yes } }
 		}
 	}
 
@@ -450,14 +427,8 @@ focus_tree = {
 		# Requires 2/3 of the Pre-Req focuses
 		prerequisite = {
 			focus = shi_debate_over_social_heierarchy
-			focus = shi_kill_hubologists
 		}
 		prerequisite = {
-			focus = shi_debate_over_social_heierarchy
-			focus = shi_open_lo_pan_temple
-		}
-		prerequisite = {
-			focus = shi_kill_hubologists
 			focus = shi_open_lo_pan_temple
 		}
 		ai_will_do = {

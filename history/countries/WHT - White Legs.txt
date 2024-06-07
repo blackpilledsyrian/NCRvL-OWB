@@ -60,6 +60,21 @@ set_technology = {
 	spec_ops_equipment_tech_1 = 1
 }
 
+354 = { add_claim_by = WHT }
+576 = { add_claim_by = WHT }
+484 = { add_claim_by = WHT }
+384 = { add_claim_by = WHT }
+628 = { add_claim_by = WHT }
+953 = { add_claim_by = WHT }
+954 = { add_claim_by = WHT }
+956 = { add_claim_by = WHT }
+611 = { add_claim_by = WHT }
+957 = { add_claim_by = WHT }
+403 = { add_claim_by = WHT }
+324 = { add_claim_by = WHT }
+472 = { add_claim_by = WHT }
+456 = { add_claim_by = WHT }
+
 if = {
 	limit = {
 		has_dlc = "Man the Guns"

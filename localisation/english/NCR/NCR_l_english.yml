@@ -195,7 +195,7 @@
   ncr_support_allgood_tt:0 "§gWe can increase Senator Murphy's Senate support by taking subsequent national focuses. President Kimball's staff will be doing the same, however, so keep an eye on the decisions tab to make sure you're staying ahead!§!\n\n"
   ncr_expose_blatant_corruption:0 "Expose Blatant Corruption"
   ncr_expose_blatant_corruption_desc:0 "While most Senators somewhat regularly take bribes, there's a small group of the NCR's Senators that do so somewhat more carelessly than others. With some pretty basic recon techniques, we should be able to catch some important Senators in act. By holding the threat of exposing more over everyones' heads, we might be able to bring some Senators to our side."
-  ncr_expose_blatant_corruption_tt:0 "\nThe §YNCR Economy§! will require §M2% fewer consumer goods§!."
+  ncr_expose_blatant_corruption_tt:0 "\nThe §YNCR Economy§! will require §M5% fewer consumer goods§!."
   ncr_denounce_kimball_rhetoric:0 "Denounce Kimball's Rhetoric"
   ncr_denounce_kimball_rhetoric_desc:0 "In an attempt to win Senators to his side, President Kimball is seeking to stoke militaristic rhetoric. Surely a sharp speech by Allgood denouncing such an autocratic move as the antithesis of everything the Republic stands for, we could surely gain some popular support and push Senators to our side..."
   ncr_focus_on_maxson:0 "Focus the Navarro"

@@ -1875,7 +1875,10 @@ focus_tree = {
 		x = 0
 		y = 1
 		completion_reward = {
-			set_politics = {
+			remove_ideas = DES_ranger_treaty_defied_2
+			custom_effect_tooltip = ranger_unlock_tt
+			hidden_effect = {
+				set_politics = {
 				ruling_party = people
 			}
 			hidden_effect = {
@@ -1886,14 +1889,16 @@ focus_tree = {
 					elites = 0
 				}
 			}
-			remove_ideas = DES_ranger_treaty_defied_2
-			NCR = {
-				remove_opinion_modifier = {
-					target = DES
-					modifier = des_rejected_unification_treaty
+				NCR = {
+					remove_opinion_modifier = {
+						target = DES
+						modifier = des_rejected_unification_treaty
+					}
 				}
-			}
-			hidden_effect = {
+				set_division_template_lock = {
+					division_template = "Rangers"
+					is_locked = no
+				}
 				DES = {
 					remove_opinion_modifier = {
 						target = NCR
@@ -1990,7 +1995,7 @@ focus_tree = {
 		y = 3
 		completion_reward = {
 			set_temp_variable = {
-				caps_to_add = 100
+				caps_to_add = 500
 			}
 			add_caps = yes
 			add_war_support = 0.05
@@ -2167,7 +2172,6 @@ focus_tree = {
 		available = {
 			OR = {
 				is_new_california_member = yes
-				owns_state = 253
 			}
 		}
 		relative_position_id = des_vargas_ncr_1
@@ -2184,19 +2188,16 @@ focus_tree = {
 					ncr_seth = 1
 				}
 			}
-			every_country = {
+			every_state = {
 				limit = {
-					OR = {
-						original_tag = DES
-						AND = {
-							original_tag = NCR
-							country_exists = NCR
-						}
+					or = {
+						is_core_of = VIP
+						is_core_of = PSH
+						is_core_of = GRA
+						is_core_of = SKY
 					}
 				}
-				every_owned_state = {
-					add_compliance = 10
-				}
+				add_core_of = DES
 			}
 		}
 	}
@@ -2214,7 +2215,6 @@ focus_tree = {
 		x = 0
 		y = 6
 		completion_reward = {
-			custom_effect_tooltip = ranger_unlock_tt
 			set_capital = { state = 210 }
 			210 = {
 				add_extra_state_shared_building_slots = 6
@@ -2228,10 +2228,6 @@ focus_tree = {
 			hidden_effect = {
 				210 = {
 					set_state_name = ranger_citadel
-				}
-				set_division_template_lock = {
-					division_template = "Rangers"
-					is_locked = no
 				}
 			}
 			add_ideas = desertrangers

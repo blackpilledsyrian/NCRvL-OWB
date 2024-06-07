@@ -1,0 +1,687 @@
+characters = {
+	EHT_FLAGMAN = {
+		name = EHT_FLAGMAN_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_EHT_flagman
+			}
+		}
+		country_leader = {
+			desc = EHT_FLAGMAN_DESC
+			ideology = militarist_technocracy
+			traits = {
+				road_warrior
+			}
+			expire = "2280.1.1.12"
+			id = -1
+		}
+	}
+
+	EHT_THUNDERBIRD = {
+		name = EHT_THUNDERBIRD_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_EHT_thunderbird
+			}
+		}
+		country_leader = {
+			desc = EHT_THUNDERBIRD_DESC
+			ideology = warlordship
+			traits = {
+				road_warrior
+			}
+			expire = "3000.01.01.01"
+			id = -1
+		}
+		corps_commander = {
+			traits = {
+				perceptive_trait
+				agile_trait
+				lucky_trait
+				lead_foot_trait
+				desert_fox
+			}
+			skill = 4
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
+
+	EHT_FURIOSA = {
+		name = EHT_FURIOSA_NAME
+		portraits = {
+			army = {
+				small = GFX_idea_generic_advisor29
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = EHT_furiosa_army_chief
+			ledger = army
+			allowed = {
+				original_tag = EHT
+			}
+			available = {
+				has_country_flag = EHT_defend_our_turf
+			}
+			traits = {
+				EHT_furiosa_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+
+	EHT_MAJOR_KALASHNIKOV = {
+		name = EHT_MAJOR_KALASHNIKOV_NAME
+		portraits = {
+			army = {
+				small = GFX_idea_generic_advisor23
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = EHT_major_kalishnakov_army_chief
+			ledger = army
+			allowed = {
+				original_tag = EHT
+			}
+			available = {
+				has_country_flag = EHT_speed_key_to_victory
+			}
+			traits = {
+				EHT_major_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+
+	EHT_GUTGASH = {
+		name = EHT_GUTGASH_NAME
+		portraits = {
+			army = {
+				small = GFX_idea_generic_advisor19
+			}
+		}
+		advisor = {
+			slot = navy_chief
+			idea_token = EHT_gutgash_navy_chief
+			ledger = navy
+			allowed = {
+				tag = EHT
+			}
+			traits = {
+				raider_navy_buff
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+
+	EHT_CAPTAIN_JEDEDIAH = {
+		name = EHT_CAPTAIN_JEDEDIAH_NAME
+		portraits = {
+			army = {
+				small = GFX_idea_generic_advisor40
+			}
+		}
+		advisor = {
+			slot = air_chief
+			idea_token = EHT_captain_jedediah_air_chief
+			ledger = air
+			allowed = {
+				tag = EHT
+			}
+			traits = {
+				raider_air_buff
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+
+	EHT_BIG_BEAR = {
+		name = EHT_BIG_BEAR_NAME
+		portraits = {
+			army = {
+				small = GFX_idea_generic_advisor25
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = EHT_big_bear_high_command
+			allowed = {
+				original_tag = EHT
+			}
+			available = {
+				has_country_flag = EHT_big_bear_flag
+			}
+			traits = {
+				EHT_big_bear_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+
+	EHT_DAVISON = {
+		name = EHT_DAVISON_NAME
+		portraits = {
+			army = {
+				small = GFX_idea_generic_advisor10
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = EHT_davison_high_command
+			allowed = {
+				original_tag = EHT
+			}
+			available = {
+				has_country_flag = EHT_davison_flag
+			}
+			traits = {
+				EHT_driver_davison_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+
+	EHT_TOECUTTER = {
+		name = EHT_TOECUTTER_NAME
+		portraits = {
+			army = {
+				small = GFX_idea_generic_advisor24
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = EHT_toecutter_high_command
+			allowed = {
+				original_tag = EHT
+			}
+			traits = {
+				aggressive_attacker
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+
+	EHT_MASTER_BLASTER = {
+		name = EHT_MASTER_BLASTER_NAME
+		portraits = {
+			army = {
+				small = GFX_idea_raider_generic_3
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = EHT_master_blaster_high_command
+			allowed = {
+				original_tag = EHT
+			}
+			traits = {
+				EHT_brawn_and_brains
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+
+	EHT_ANGRY_ALVIN = {
+		name = EHT_ANGRY_ALVIN_NAME
+		portraits = {
+			army = {
+				small = GFX_idea_EHT_angry_alvin
+				large = GFX_Portrait_EHT_angry_alvin
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = EHT_angry_alvin_high_command
+			allowed = {
+				original_tag = EHT
+			}
+			traits = {
+				EHT_eighties_fighting_tricks
+			}
+			research_bonus = {
+				melee_weaponry_tech_category = 0.1
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		corps_commander = {
+			traits = {
+				strong_trait
+				enduring_trait
+				charismatic_trait
+				desert_fox
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+			legacy_id = -1
+		}
+	}
+
+	EHT_JEET = {
+		name = EHT_JEET_NAME
+		portraits = {
+			army = {
+				small = GFX_idea_WHT_tribal_1
+			}
+		}
+		advisor = {
+			slot = research_advisor
+			idea_token = EHT_jeet_research_advisor
+			allowed = {
+				original_tag = EHT
+			}
+			traits = {
+				EHT_ground_combat_specialist
+			}
+			research_bonus = {
+				cat_land_doctrine = 0.1
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+
+	EHT_DEEPDOG = {
+		name = EHT_DEEPDOG_NAME
+		portraits = {
+			army = {
+				small = GFX_idea_tribal_generic_10
+			}
+		}
+		advisor = {
+			slot = research_advisor
+			idea_token = EHT_deepdog_search_advisor
+			allowed = {
+				original_tag = EHT
+			}
+			traits = {
+				EHT_drive_master
+			}
+			research_bonus = {
+				cat_grand_army = 0.2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+
+	EHT_HANGNAIL = {
+		name = EHT_HANGNAIL_NAME
+		portraits = {
+			army = {
+				small = GFX_idea_tribal_generic_10
+			}
+		}
+		advisor = {
+			slot = research_advisor
+			idea_token = EHT_deepdog_search_advisor
+			allowed = {
+				original_tag = EHT
+			}
+			traits = {
+				EHT_terror_tactics
+			}
+			research_bonus = {
+				cat_terror_tactics = 0.15
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+
+	EHT_WINDWAKER = {
+		name = EHT_WINDWAKER_NAME
+		portraits = {
+			civilian = {
+				small = GFX_idea_generic_advisor16
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = EHT_windwaker_economic_advisor
+			allowed = {
+				original_tag = EHT
+			}
+			available = {
+				has_country_flag = EHT_windwaker_flag
+			}
+			traits = {
+				EHT_taxation_and_tyranny
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+
+	EHT_STONEFOOT = {
+		name = EHT_STONEFOOT_NAME
+		portraits = {
+			civilian = {
+				small = GFX_idea_generic_advisor15
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = EHT_stonefoot_economic_advisor
+			allowed = {
+				original_tag = EHT
+			}
+			available = {
+				has_country_flag = EHT_stonefoot_flag
+			}
+			traits = {
+				EHT_lord_of_the_lash
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+
+	EHT_QUEEN_OF_QUINN = {
+		name = EHT_QUEEN_OF_QUINN_NAME
+		portraits = {
+			civilian = {
+				small = GFX_idea_generic_advisor1
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = EHT_queen_of_quinn_economic_advisor
+			allowed = {
+				original_tag = EHT
+			}
+			available = {
+				GRA = {
+					exists = no
+				}
+			}
+			traits = {
+				EHT_sweatshop_organizer
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+
+	EHT_ADMINISTRATOR_BREEN = {
+		name = EHT_ADMINISTRATOR_BREEN_NAME
+		portraits = {
+			civilian = {
+				small = GFX_idea_generic_advisor18
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = EHT_administrator_breen_economic_advisor
+			allowed = {
+				original_tag = EHT
+			}
+			available = {
+				GRA = {
+					exists = no
+				}
+			}
+			traits = {
+				EHT_the_administrator
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+
+	EHT_WEZ = {
+		name = EHT_WEZ_NAME
+		portraits = {
+			civilian = {
+				small = GFX_idea_raider_generic_10
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = EHT_wez_economic_advisor
+			allowed = {
+				tag = EHT
+			}
+			traits = {
+				wall_painter
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+
+	EHT_PAPPAGALLO = {
+		name = EHT_PAPPAGALLO_NAME
+		portraits = {
+			civilian = {
+				small = GFX_idea_settler_generic_17
+				large = GFX_Portrait_Settler_Generic_17
+			}
+		}
+		country_leader = {
+			ideology = town_hall_democracy
+			traits = {
+				well_liked_leader
+			}
+			expire = "3000.01.01.01"
+			id = -1
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = EHT_pappagallo_economic_advisor
+			allowed = {
+				tag = EHT
+			}
+			traits = {
+				settlement_builder
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+
+	EHT_LORD_HUMUNGUS = {
+		name = EHT_LORD_HUMUNGUS_NAME
+		portraits = {
+			army = {
+				small = GFX_idea_generic_advisor7
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = EHT_lord_humungus_advisor
+			allowed = {
+				tag = EHT
+			}
+			traits = {
+				war_industrialist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+
+	EHT_LITTLE_BEAR = {
+		name = EHT_LITTLE_BEAR_NAME
+		portraits = {
+			civilian = {
+				small = GFX_idea_generic_advisor17
+			}
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = EHT_little_bear_cultural_advisor
+			allowed = {
+				original_tag = EHT
+			}
+			available = {
+				has_country_flag = EHT_little_bear_flag
+			}
+			traits = {
+				EHT_political_mastermind_eighties
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+
+	EHT_MECHA_NICK = {
+		name = EHT_MECHA_NICK_NAME
+		portraits = {
+			civilian = {
+				small = GFX_idea_generic_advisor10
+			}
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = EHT_mecha_nick_cultural_advisor
+			allowed = {
+				original_tag = EHT
+			}
+			available = {
+				has_country_flag = EHT_mecha_nick_flag
+			}
+			traits = {
+				military_quartermaster
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+
+	EHT_TOADIE = {
+		name = EHT_TOADIE_NAME
+		portraits = {
+			civilian = {
+				small = GFX_idea_settler_generic_23
+			}
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = EHT_toadie_cultural_advisor
+			allowed = {
+				original_tag = EHT
+			}
+			traits = {
+				power_broker
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+
+	EHT_BLACKFINGER = {
+		name = EHT_BLACKFINGER_NAME
+		portraits = {
+			civilian = {
+				small = GFX_idea_raider_generic_5
+			}
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = EHT_blackfinger_cultural_advisor
+			allowed = {
+				original_tag = EHT
+			}
+			traits = {
+				org_2_opinion_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+
+	EHT_NOE = {
+		name = NOE_NOE_NAME
+		portraits = {
+			civilian = {
+				small = GFX_idea_NOE_leader
+				large = GFX_Portrait_NOE_leader
+			}
+		}
+		country_leader = {
+			desc = NOE_NOE_DESC
+			ideology = ideocracy
+			expire = "3000.01.01.01"
+			id = -1
+		}
+		advisor = {
+			cost = 100
+			slot = cultural_advisor
+			allowed = {
+				original_tag = EHT
+			}
+			available = {
+				NOT = { country_exists = NOE }
+			}
+			traits = {
+				tribal_peaceful
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+}

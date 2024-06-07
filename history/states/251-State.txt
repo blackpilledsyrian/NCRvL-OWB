@@ -1,0 +1,26 @@
+state = {
+	id = 251
+	name = "STATE_251"
+	manpower = 3550
+	state_category = megalopolis
+
+	resources = {
+		water = 12
+		energy = 4
+	}
+
+	history = {
+		owner = ARR
+		add_core_of = ARR
+		victory_points = {
+			2602 15 #This is a important defensive chokepoint
+		}
+		buildings = {
+			infrastructure = 1
+		}
+	}
+
+	provinces = {
+		2510 2601 2602 4349 4179 4180
+	}
+}

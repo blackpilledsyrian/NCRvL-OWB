@@ -1245,6 +1245,9 @@ focus_tree = {
 		prerequisite = { focus = NAV_shoshone }
 		mutually_exclusive = {focus = NAV_yakama }
 		completion_reward = {
+			set_technology = {
+				air_tech_level_scientific = 1
+			}
 			set_temp_variable = { caps_to_add = 300 }
 			add_caps = yes
 		}

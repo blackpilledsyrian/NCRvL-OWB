@@ -1,0 +1,1100 @@
+characters = {
+	DES_rogue_ranger = {
+		name = DES_ROGUE_RANGER_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_DES_leader
+			}
+			army = {
+				large = GFX_Portrait_DES_leader
+				small = GFX_idea_DES_advisor_1
+			}
+		}
+		country_leader = {
+			desc = ROGUE_RANGER_DESC
+			ideology = benevolent_dictatorship
+			expire = "3000.01.01.01"
+			traits = {
+				isolationist
+				veteran_ranger
+			}
+		}
+		field_marshal = {
+			traits = {
+				charismatic_trait
+				enduring_trait
+				gunslinger_trait
+				ferocious_loyalty_trait
+				ranger_trait
+			}
+			skill = 5
+			attack_skill = 6
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = DES_rogue_ranger_army_chief
+			ledger = army
+			available = {
+				not_already_hired_except_as = army_chief
+				has_completed_focus = des_rogue_ranger
+			}
+			allowed = {
+				original_tag = DES
+			}
+			traits = {
+				DES_wrath_upon_evil
+			}
+			cost = 200
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = DES_rogue_ranger_high_command
+			ledger = army
+			available = {
+				not_already_hired_except_as = high_command
+				has_completed_focus = des_rogue_ranger
+			}
+			allowed = {
+				original_tag = DES
+			}
+			traits = {
+				DES_smite_the_wicked
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	DES_snake_vargas = {
+		name = DES_snake_vargas
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_DES_snake
+				small = GFX_idea_snake_vargas
+			}
+			army = {
+				large = GFX_Portrait_DES_snake
+				small = GFX_idea_snake_vargas
+			}
+		}
+		country_leader = {
+			desc = DES_snake_vargas_country_leader
+			ideology = peoples_militia
+			expire = "3000.01.01.01"
+			id = 10081
+			traits = {
+				DES_ranger_general
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = DES_snake_vargas_army_chief
+			ledger = army
+			available = {
+				not_already_hired_except_as = army_chief
+				has_completed_focus = des_vargas_wins
+			}
+			allowed = {
+				original_tag = DES
+			}
+			traits = {
+				DES_lifelong_ranger
+			}
+			cost = 200
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = DES_snake_vargas_high_command
+			ledger = army
+			available = {
+				not_already_hired_except_as = high_command
+				has_completed_focus = des_vargas_wins
+			}
+			allowed = {
+				original_tag = DES
+			}
+			traits = {
+				DES_the_dispatcher
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		field_marshal = {
+			traits = {
+				perceptive_trait
+				agile_trait
+				commando_trait
+				sniper_trait
+				ranger_trait
+			}
+			skill = 5
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+	DES_hell_razor = {
+		name = DES_hell_razor
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_DES_razer
+				small = GFX_idea_DES_advisor_2
+			}
+			army = {
+				large = GFX_Portrait_DES_razer
+				small = GFX_idea_DES_advisor_2
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = DES_hell_razor_army_chief
+			ledger = army
+			available = {
+				not_already_hired_except_as = army_chief
+				has_completed_focus = des_unique
+			}
+			allowed = {
+				original_tag = DES
+			}
+			traits = {
+				DES_berserker
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = DES_hell_razor_high_command
+			ledger = army
+			available = {
+				not_already_hired_except_as = high_command
+			}
+			allowed = {
+				original_tag = DES
+			}
+			traits = {
+				DES_brigand
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		advisor = {
+			slot = research_advisor
+			idea_token = DES_hell_razor_research_advisor
+			allowed = {
+				original_tag = DES
+			}
+			available = {
+				not_already_hired_except_as = research_advisor
+			}
+			traits = {
+				DES_elite_barbarians
+			}
+			research_bonus = {
+				cat_elite_army = 0.15
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		corps_commander = {
+			traits = {
+				strong_trait
+				enduring_trait
+				bruiser_trait
+				ranger_trait
+			}
+			skill = 4
+			attack_skill = 7
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+	DES_thrasher_sagarra = {
+		name = DES_thrasher_sagarra
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_DES_thrasher
+				small = GFX_idea_gilbert_sagarra
+			}
+			army = {
+				large = GFX_Portrait_DES_thrasher
+				small = GFX_idea_gilbert_sagarra
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = DES_thrasher_sagarra_army_chief
+			ledger = army
+			available = {
+				not_already_hired_except_as = army_chief
+				has_completed_focus = des_unique
+			}
+			allowed = {
+				original_tag = DES
+			}
+			traits = {
+				DES_tactically_minded
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = DES_thrasher_sagarra_high_command
+			ledger = army
+			available = {
+				not_already_hired_except_as = high_command
+			}
+			allowed = {
+				original_tag = DES
+			}
+			traits = {
+				DES_tactical_advisor
+			}
+			on_add = {
+				ROOT = {
+					custom_effect_tooltip = DES_tactical_advisor_idea_add_tt
+					hidden_effect = { add_ideas = DES_tactical_advisor }
+				}
+			}
+			on_remove = {
+				ROOT = {
+					custom_effect_tooltip = DES_tactical_advisor_idea_remove_tt
+					hidden_effect = { remove_ideas = DES_tactical_advisor }
+				}
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = DES_thrasher_sagarra_cultural_advisor
+			allowed = {
+				original_tag = DES
+			}
+			available = {
+				not_already_hired_except_as = cultural_advisor
+			}
+			traits = {
+				DES_tactical_historian
+			}
+			research_bonus = {
+				cat_land_doctrine = 0.05
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 10003
+			}
+		}
+		corps_commander = {
+			traits = {
+				intelligent_trait
+				perceptive_trait
+				awareness_trait
+				finesse_trait
+				ranger_trait
+			}
+			skill = 4
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 6
+			logistics_skill = 2
+		}
+	}
+	DES_angela_deth = {
+		name = DES_angela_deth
+		portraits = {
+			army = {
+				large = GFX_Portrait_DES_angela_deth
+				small = GFX_idea_DES_advisor_18
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = DES_angela_deth_army_chief
+			ledger = army
+			available = {
+				not_already_hired_except_as = army_chief
+				OR = {
+					has_completed_focus = des_vargas_join_ncr
+					tag = BON
+				}
+			}
+			visible = {
+				OR = {
+					NOT = {
+						has_completed_focus = des_rogue_ranger
+					}
+					tag = BON
+				}
+			}
+			allowed = {
+				OR = {
+					original_tag = NCR
+					original_tag = DES
+				}
+			}
+			traits = {
+				DES_victory_march
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = DES_angela_deth_high_command
+			ledger = army
+			available = {
+				not_already_hired_except_as = high_command
+				OR = {
+					has_completed_focus = des_vargas_join_ncr
+					tag = BON
+				}
+			}
+			visible = {
+				OR = {
+					NOT = {
+						has_completed_focus = des_rogue_ranger
+					}
+					tag = BON
+				}
+			}
+			allowed = {
+				OR = {
+					original_tag = NCR
+					original_tag = DES
+				}
+			}
+			traits = {
+				DES_alpha_team_leader
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = DES_angela_deth_economic_advisor
+			ledger = civilian
+			available = {
+				not_already_hired_except_as = economic_advisor
+				OR = {
+					has_completed_focus = des_vargas_join_ncr
+					tag = BON
+				}
+			}
+			visible = {
+				OR = {
+					NOT = {
+						has_completed_focus = des_rogue_ranger
+					}
+					tag = BON
+				}
+			}
+			allowed = {
+				OR = {
+					original_tag = NCR
+					original_tag = DES
+				}
+			}
+			traits = {
+				DES_diy_expert
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		corps_commander = {
+			visible = {
+				OR = {
+					has_completed_focus = des_vargas_join_ncr
+					tag = BON
+				}
+			}
+			traits = {
+				strong_trait
+				agile_trait
+				urban_assault_specialist
+				urban_assault_specialist_II
+				fortress_buster
+				ranger_trait
+			}
+			skill = 4
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+	DES_mark_anderson = {
+		name = DES_mark_anderson
+		portraits = {
+			army = {
+				large = GFX_Portrait_DES_mark_anderson
+				small = GFX_idea_DES_advisor_19
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = DES_mark_anderson_high_command
+			ledger = army
+			allowed = {
+				original_tag = DES
+			}
+			traits = {
+				DES_strategic_organizer
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		corps_commander = {
+			traits = {
+				strong_trait
+				lucky_trait
+				skilled_trait
+				inspirational_trait
+				ranger_trait
+			}
+			skill = 3
+			attack_skill = 1
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 1
+		}
+	}
+	DES_koal_morales = {
+		name = DES_koal_morales
+		portraits = {
+			army = {
+				large = GFX_Portrait_DES_koal_morales
+				small = GFX_idea_DES_advisor_16
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = DES_koal_morales_high_command
+			ledger = army
+			allowed = {
+				original_tag = DES
+			}
+			research_bonus = {
+				support_demolitions_tech_category = 0.15
+			}
+			traits = {
+				DES_molotov_expert
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		corps_commander = {
+			traits = {
+				intelligent_trait
+				lucky_trait
+				bloody_mess_trait
+				pyromaniac_trait
+				ranger_trait
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	DES_frederica_mercury = {
+		name = DES_frederica_mercury
+		portraits = {
+			army = {
+				small = GFX_idea_DES_advisor_15
+			}
+		}
+		advisor = {
+			slot = air_chief
+			idea_token = DES_frederica_mercury_air_chief
+			ledger = army
+			allowed = {
+				original_tag = DES
+			}
+			traits = {
+				DES_made_in_heaven
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	DES_veteran_ranger_rigby = {
+		name = DES_veteran_ranger_rigby
+		portraits = {
+			army = {
+				large = GFX_Portrait_DES_veteran_ranger_rigby
+				small = GFX_idea_DES_advisor_4
+			}
+		}
+		advisor = {
+			slot = navy_chief
+			idea_token = DES_veteran_ranger_rigby_navy_chief
+			ledger = army
+			allowed = {
+				original_tag = DES
+			}
+			traits = {
+				DES_amphibious_operations_specialist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		corps_commander = {
+			traits = {
+				enduring_trait
+				agile_trait
+				aqua_boy_trait
+				swamp_fox
+				swamp_fox_II
+				naval_invader
+				ranger_trait
+			}
+			skill = 3
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 5
+		}
+	}
+	DES_tycho_jr_jr = {
+		name = DES_tycho_jr_jr
+		portraits = {
+			army = {
+				large = GFX_Portrait_DES_tycho_jr_jr
+				small = GFX_idea_DES_advisor_5
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = DES_tycho_jr_jr_army_chief
+			ledger = army
+			available = {
+				not_already_hired_except_as = army_chief
+			}
+			allowed = {
+				original_tag = DES
+			}
+			traits = {
+				DES_family_history
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		corps_commander = {
+			traits = {
+				charismatic_trait
+				lucky_trait
+				local_leader_trait
+				ranger_trait
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	DES_veteran_ranger_holstadt = {
+		name = DES_veteran_ranger_holstadt
+		portraits = {
+			army = {
+				small = GFX_idea_DES_advisor_21
+				large = GFX_Portrait_DES_veteran_ranger_holstadt
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = DES_veteran_ranger_holstadt_high_command
+			ledger = army
+			allowed = {
+				original_tag = DES
+			}
+			traits = {
+				DES_ranger_instructor
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		corps_commander = {
+			traits = {
+				agile_trait
+				charismatic_trait
+				commando_trait
+				ranger_trait
+			}
+			skill = 3
+			attack_skill = 1
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 1
+		}
+	}
+	DES_veteran_ranger_trippy = {
+		name = DES_veteran_ranger_trippy
+		portraits = {
+			army = {
+				large = GFX_Portrait_DES_veteran_ranger_trippy
+				small = GFX_idea_DES_advisor_6
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = DES_veteran_ranger_trippy_army_chief
+			ledger = army
+			available = {
+				not_already_hired_except_as = army_chief
+			}
+			allowed = {
+				original_tag = DES
+			}
+			traits = {
+				DES_night_and_day
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		corps_commander = {
+			traits = {
+				perceptive_trait
+				agile_trait
+				night_person_trait
+				chem_reliant
+				camouflage_trait
+				ranger_trait
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 3
+		}
+	}
+	DES_rusty_shackleford = {
+		name = DES_rusty_shackleford
+		portraits = {
+			army = {
+				large = GFX_Portrait_DES_rusty_shackleford
+				small = GFX_idea_DES_advisor_8
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = DES_rusty_shackleford_army_chief
+			ledger = army
+			allowed = {
+				original_tag = DES
+			}
+			traits = {
+				DES_law_enforcer
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		corps_commander = {
+			traits = {
+				enduring_trait
+				lucky_trait
+				gunslinger_trait
+				ranger_trait
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 1
+		}
+	}
+	DES_the_way_of_the_ranger = {
+		name = DES_the_way_of_the_ranger
+		portraits = {
+			army = {
+				small = GFX_idea_DES_advisor_14
+			}
+		}
+		advisor = {
+			slot = research_advisor
+			idea_token = DES_the_way_of_the_ranger_research_advisor
+			allowed = {
+				original_tag = DES
+			}
+			research_bonus = {
+				cat_land_doctrine = 0.05
+			}
+			traits = {
+				DES_learn_by_doing
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	DES_tycho_senior_jr = {
+		name = DES_tycho_senior_jr
+		portraits = {
+			army = {
+				small = GFX_idea_DES_advisor_17
+			}
+		}
+		advisor = {
+			slot = research_advisor
+			idea_token = DES_tycho_senior_jr_research_advisor
+			allowed = {
+				original_tag = DES
+			}
+			traits = {
+				DES_son_of_arizona
+			}
+			research_bonus = {
+				spec_force_tech_category = 0.15
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	DES_dexter_cunningham = {
+		name = DES_dexter_cunningham
+		portraits = {
+			army = {
+				small = GFX_idea_DES_advisor_11
+			}
+		}
+		advisor = {
+			slot = research_advisor
+			idea_token = DES_dexter_cunningham_research_advisor
+			allowed = {
+				original_tag = DES
+			}
+			traits = {
+				DES_trooper_organization
+			}
+			research_bonus = {
+				cat_grand_army = 0.2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10004
+			}
+		}
+	}
+	DES_henry_dundy = {
+		name = DES_henry_dundy
+		portraits = {
+			army = {
+				small = GFX_idea_DES_advisor_3
+			}
+		}
+		advisor = {
+			slot = research_advisor
+			idea_token = DES_henry_dundy_research_advisor
+			allowed = {
+				original_tag = DES
+			}
+			traits = {
+				DES_settlement_protections
+			}
+			research_bonus = {
+				cat_terror_tactics = 0.15
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	DES_elias_wordsworth = {
+		name = DES_elias_wordsworth
+		portraits = {
+			army = {
+				small = GFX_idea_elias_wordsworth
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = DES_elias_wordsworth_economic_advisor
+			allowed = {
+				original_tag = DES
+			}
+			traits = {
+				DES_head_trader
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	DES_herschel_smith = {
+		name = DES_herschel_smith
+		portraits = {
+			army = {
+				small = GFX_idea_DES_advisor_12
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = DES_herschel_smith_economic_advisor
+			allowed = {
+				original_tag = DES
+			}
+			traits = {
+				DES_alcoholic_workhorse
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10007
+			}
+		}
+	}
+	DES_mr_manners = {
+		name = DES_mr_manners
+		portraits = {
+			army = {
+				small = GFX_idea_DES_advisor_20
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = DES_mr_manners_economic_advisor
+			allowed = {
+				original_tag = DES
+			}
+			traits = {
+				DES_mannerite
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10006
+			}
+		}
+	}
+	DES_john_ashbourne = {
+		name = DES_john_ashbourne
+		portraits = {
+			army = {
+				small = GFX_idea_DES_advisor_10
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = DES_john_ashbourne_economic_advisor
+			allowed = {
+				original_tag = DES
+			}
+			traits = {
+				DES_arms_organizer
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	DES_kai_cooke = {
+		name = DES_kai_cooke
+		portraits = {
+			army = {
+				small = GFX_idea_DES_advisor_9
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = DES_kai_cooke_economic_advisor
+			allowed = {
+				original_tag = DES
+			}
+			traits = {
+				DES_head_mechanic
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	DES_jane_maddocks = {
+		name = DES_jane_maddocks
+		portraits = {
+			army = {
+				small = GFX_idea_DES_advisor_13
+			}
+		}
+		advisor = {
+			slot = economic_advisor
+			idea_token = DES_jane_maddocks_economic_advisor
+			allowed = {
+				original_tag = DES
+			}
+			traits = {
+				DES_goods_supplier
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	DES_doctor_verdrehtnerv = {
+		name = DES_doctor_verdrehtnerv
+		portraits = {
+			army = {
+				small = GFX_idea_doctor_verdrehtnerv
+			}
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = DES_doctor_verdrehtnerv_cultural_advisor
+			allowed = {
+				original_tag = DES
+			}
+			traits = {
+				DES_head_physician
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	DES_charming_jack = {
+		name = DES_charming_jack
+		portraits = {
+			army = {
+				small = GFX_idea_DES_advisor_7
+			}
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = DES_charming_jack_cultural_advisor
+			allowed = {
+				original_tag = DES
+			}
+			traits = {
+				DES_private_investigator
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	DES_randy_aldgate = {
+		name = DES_randy_aldgate
+		portraits = {
+			army = {
+				small = GFX_idea_randy_aldgate
+			}
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = DES_randy_aldgate_cultural_advisor
+			allowed = {
+				original_tag = DES
+			}
+			traits = {
+				DES_head_recruiter
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	DES_patrick_fitzpatrick = {
+		name = DES_patrick_fitzpatrick
+		portraits = {
+			army = {
+				small = GFX_idea_patrick_fitzpatrick
+			}
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = DES_patrick_fitzpatrick_cultural_advisor
+			allowed = {
+				original_tag = DES
+			}
+			traits = {
+				DES_head_quartermaster
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	DES_scribe_theresa_brown = {
+		name = DES_scribe_theresa_brown
+		portraits = {
+			army = {
+				small = GFX_idea_scribe_theresa
+			}
+		}
+		advisor = {
+			slot = cultural_advisor
+			idea_token = DES_scribe_theresa_cultural_advisor
+			available = {
+				has_completed_focus = nevada_consolidation_1
+			}
+			allowed = {
+				original_tag = DES
+			}
+			traits = {
+				DES_head_researcher
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+}
