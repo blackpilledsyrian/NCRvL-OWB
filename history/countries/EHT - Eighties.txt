@@ -92,17 +92,6 @@ set_country_flag = is_utah_nation
 
 set_country_flag = unique_advisor_set
 
-74 = { add_claim_by = EHT }
-303 = { add_claim_by = EHT }
-436 = { add_claim_by = EHT }
-354 = { add_claim_by = EHT }
-576 = { add_claim_by = EHT }
-484 = { add_claim_by = EHT }
-384 = { add_claim_by = EHT }
-628 = { add_claim_by = EHT }
-953 = { add_claim_by = EHT }
-954 = { add_claim_by = EHT }
-
 reverse_add_opinion_modifier = { target = NCR modifier = eht_devils_of_utah }
 reverse_add_opinion_modifier = { target = NEW modifier = eht_devils_of_utah }
 reverse_add_opinion_modifier = { target = VLT modifier = eht_devils_of_utah }

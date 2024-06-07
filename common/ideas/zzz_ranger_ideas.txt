@@ -20,7 +20,36 @@ ideas = {
 				army_org_factor = 0.05
 				modifier_army_sub_unit_police_infantry_speed_factor = 0.05
 				modifier_army_sub_unit_spec_ops_speed_factor = 0.05
-				justify_war_goal_time = -0.25
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+			}
+			equipment_bonus = {
+				spec_ops_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+			}
+			equipment_bonus = {
+				fireteam_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+			}
+			equipment_bonus = {
+				anti_tank_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+			}
+			equipment_bonus = {
+				demolitions_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
 			}
 		}
 

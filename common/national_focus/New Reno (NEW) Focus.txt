@@ -2750,6 +2750,12 @@ focus_tree = {
 				amount = 10
 				state = 251
 			}
+			add_state_core = 426
+			add_resource = {
+				type = water
+				amount = 10
+				state = 426
+			}
 			if = {
 				limit = {
 					has_country_flag = new_brokentakeoverflag

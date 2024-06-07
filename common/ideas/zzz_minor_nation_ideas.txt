@@ -6,6 +6,15 @@ ideas = {
         ######
         # MOS
         ######
+        hoover_dam_battle_preperations = {
+            picture = propaganda_drinking
+            allowed = {
+                always = no
+            }
+            modifier = {
+                land_reinforce_rate = 1
+            }
+        }
         okc_savages = {
             picture = savage_idea
             allowed = {

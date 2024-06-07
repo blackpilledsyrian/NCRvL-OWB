@@ -147,6 +147,11 @@ add_ideas = {
 	partial_economic_mobilisation
 }
 
+add_timed_idea = {
+	idea = hoover_dam_battle_preperations
+	days = 1000
+}
+
 set_rule = {
 	can_send_volunteers = no
 }

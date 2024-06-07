@@ -79,7 +79,7 @@ sub_units = {
 		max_strength = 35
 		max_organisation = 50
 		default_morale = 0.1
-		defense = 0.1
+		defense = 0.3
 		breakthrough = 0.1
 		manpower = 25 # 1000
 
@@ -219,20 +219,14 @@ sub_units = {
 		max_strength = 20
 		max_organisation = 45
 		default_morale = 0.25
-		manpower = 25 # 500
-		defense = -0.1
-		breakthrough = -0.2
-		soft_attack = -0.2
-		hard_attack = -0.2
-		maximum_speed = 0.1
+		manpower = 20 # 500
+		breakthrough = -0.95
+		maximum_speed = 0.25
 
 		# Misc Abilities
-		training_time = 80
+		training_time = 50
 		suppression = 2
 		weight = 0.4
-
-		# Stat % nerfs
-		air_attack = -0.3
 
 		supply_consumption = 0.2
 
@@ -242,14 +236,14 @@ sub_units = {
 			infantry_equipment = 15
 		}
 		urban = {
-			movement = 0.2
-			attack = 0.2
-			defence = 0.2
+			movement = 0.5
+			attack = 0.25
+			defence = 0.25
 		}
 		fort = {
-			movement = 0.2
-			attack = 0.2
-			defence = 0.2
+			movement = 0.5
+			attack = 0.25
+			defence = 0.25
 		}
 	}
 

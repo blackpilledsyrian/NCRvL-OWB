@@ -3058,6 +3058,11 @@ technologies = {
 				resource = metal
 				amount = 2
 			}
+			modify_building_resources = {
+				building = metal_generator
+				resource = composites
+				amount = 2
+			}
 		}
 
 		dependencies = {

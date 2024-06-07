@@ -1,0 +1,21 @@
+state = {
+	id = 426
+	name = "STATE_426"
+	manpower = 2550
+	state_category = shanty
+
+	history = {
+		owner = KLA
+		add_core_of = KLA
+		victory_points = {
+			4187 5
+		}
+		buildings = {
+			infrastructure = 2
+		}
+	}
+
+	provinces = {
+		2218 2293 4153 4154 4155 4185 4186 4187 6597 6598 6599
+	}
+}

@@ -24,7 +24,7 @@ ideas = {
 			}
 			equipment_bonus = {
 				power_armor_equipment = {
-					build_cost_ic = -0.25
+					build_cost_ic = -0.15
 					instant = yes
 				}
 			}

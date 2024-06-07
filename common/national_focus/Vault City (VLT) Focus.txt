@@ -549,7 +549,7 @@ focus_tree = {
 		available = {
 			has_country_flag = vlt_lynette_win
 		}
-		x = -4
+		x = 0
 		y = 1
 		relative_position_id = vlt_the_election_of_2275
 		completion_reward = {
@@ -889,7 +889,7 @@ focus_tree = {
 		prerequisite = {
 			focus = vlt_nevada_pact_baby
 		}
-		x = -2
+		x = -1
 		y = 1
 		relative_position_id = vlt_nevada_pact_baby
 		completion_reward = {
@@ -931,7 +931,7 @@ focus_tree = {
 				all_core_land_owned_by_prev_sphere = yes
 			}
 		}
-		x = 0
+		x = 1
 		y = 1
 		relative_position_id = vlt_nevada_pact_baby
 		completion_reward = {
@@ -994,72 +994,6 @@ focus_tree = {
 			}
 		}
 	}
-
-	focus = {
-		id = vlt_PAL_attack
-		icon = GFX_goal_pal_cannibal_followup_raider
-		cost  = 45
-		prerequisite = {
-			focus = vlt_breadbasket
-		}
-		prerequisite = {
-			focus = vlt_automated_helpers3
-		}
-		bypass = {
-			VIP = {
-				all_core_land_owned_by_prev_sphere = yes
-			}
-		}
-		x = -1
-		y = 1
-		relative_position_id = vlt_breadbasket
-		completion_reward = {
-			VIP = {
-				ROOT = {
-					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = vlt_PAL_free
-		icon = GFX_goal_ancient_wealth
-		cost  = 45
-		prerequisite = {
-			focus = vlt_PAL_attack
-		}
-		x = 0
-		y = 1
-		available = {
-			VIP = {
-				all_core_land_owned_by_prev_sphere = yes
-			}
-		}
-		relative_position_id = vlt_PAL_attack
-		completion_reward = {
-			291 = {
-				set_temp_variable = {
-					development_to_add = 2
-				}
-				add_development_to_node = yes
-				add_state_modifier = {
-					modifier = {
-						caps_node_base_modifier = 0.2
-					}
-				}
-			}
-			if = {
-				limit = {
-					VIP = {
-						is_puppet_of = VLT
-					}
-				}
-				VIP = { add_research_slot = 1 }
-			}
-			custom_effect_tooltip = VLT_PAL_free_tt
-		}
-	}
 	focus = {
 		id = vlt_better_in_our_hands
 		icon = GFX_goal_GDH_golden_gun
@@ -1075,7 +1009,7 @@ focus_tree = {
 				all_core_land_owned_by_prev_sphere = yes
 			}
 		}
-		x = 2
+		x = 3
 		y = 1
 		relative_position_id = vlt_nevada_pact_baby
 		completion_reward = {
@@ -1174,11 +1108,14 @@ focus_tree = {
 			ai_has_no_other_wars_or_wargoals = yes
 		}
 		prerequisite = {
-			focus = vlt_better_in_our_hands
+			focus = vlt_breadbasket
 		}
-		x = 2
+		prerequisite = {
+			focus = vlt_automated_helpers3
+		}
+		x = -1
 		y = 1
-		relative_position_id = vlt_better_in_our_hands
+		relative_position_id = vlt_breadbasket
 		completion_reward = {
 			if = {
 				limit = {
@@ -1206,7 +1143,7 @@ focus_tree = {
 				all_core_land_owned_by_prev_sphere = yes
 			}
 		}
-		x = -1
+		x = 0
 		y = 1
 		relative_position_id = vlt_cute_racoons
 		completion_reward = {
@@ -1287,7 +1224,7 @@ focus_tree = {
 				has_war_with = VLT
 			}
 		}
-		x = -4
+		x = -3
 		y = 1
 		relative_position_id = vlt_nevada_pact_baby
 		completion_reward = {
@@ -1517,7 +1454,6 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = vlt_tv_town_ours
-			focus = vlt_PAL_free
 			focus = vlt_nevada_air_force
 		}
 		x = -4
@@ -1566,9 +1502,6 @@ focus_tree = {
 			SLN = {
 				is_puppet_of = VLT
 			}
-			VIP = {
-				is_puppet_of = VLT
-			}
 			CHE = {
 				is_puppet_of = VLT
 			}
@@ -1578,7 +1511,6 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = vlt_tv_town_ours
-			focus = vlt_PAL_free
 			focus = vlt_nevada_air_force
 		}
 		x = 2
@@ -1618,22 +1550,6 @@ focus_tree = {
 				target = SHO
 				transfer_troops = yes
 			}
-			DES = {
-				every_state = {
-					limit = {
-						OR = {
-							is_core_of = VIP
-						}
-					}
-					set_state_flag = do_not_exodus
-					add_core_of = DES
-				}
-				annex_country = {
-					target = VIP
-					transfer_troops = yes
-				}
-			}
-		}
 		ai_will_do = {
 			modifier = {
 				factor = 100

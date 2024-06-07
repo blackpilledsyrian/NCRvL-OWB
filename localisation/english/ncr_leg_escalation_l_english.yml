@@ -1,9 +1,9 @@
 ﻿l_english:
   ncr_leg_escalation_decisions_cat:0 "§OThe NCR-Legion Escalation§!"
   ncr_leg_escalation_decisions_cat_desc:0 "Not everyone is in the NCR-Legion War immediately. Slowly new fronts will open in waves. These are visible in the §YDecisions Below§!. They can still join a faction or send volunteers if not in one."
-  initial_wave:0 "§RBaja Front Opens§!"
-  first_wave_of_escalation:0 "§RAerial Theater Opens§!"
-  second_wave_of_escalation:0 "§RNorth Vegas Front Opens§!"
+  initial_wave:0 "§RMain Front Opens§!"
+  first_wave_of_escalation:0 "§ROregon&Oklahoma Theater Opens§!"
+  second_wave_of_escalation:0 "§RTexas&Timber Theater Opens§!"
   third_wave_of_escalation:0 "§RUtah Front Opens§!"
   
   escalation_no_fun_idea:0 "Escalation Mechanic Trigger"

@@ -1516,7 +1516,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ncr_support_allgood
 		completion_reward = {
-			add_to_variable = { ncr_consumer_goods = -0.02 }
+			add_to_variable = { ncr_consumer_goods = -0.05 }
 			force_update_dynamic_modifier = yes
 			custom_effect_tooltip = ncr_expose_blatant_corruption_tt
 			force_update_dynamic_modifier = yes
@@ -3653,6 +3653,7 @@ focus = {
 		y = 1
 		relative_position_id = ncr_rural_revitalisation_act
 		completion_reward = {
+			retire_character = NCR_alice_mclafferty
 			custom_effect_tooltip = ncr_campaigns_against_corruption_tt
 			unlock_decision_category_tooltip = NCR_anti_corruption_campaigns
 		}
@@ -3708,7 +3709,7 @@ focus = {
 		y = 1
 		relative_position_id = ncr_tackle_consumerism
 		completion_reward = {
-			random_owned_state = {
+			245 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = industrial_complex
@@ -3716,7 +3717,47 @@ focus = {
 					instant_build = yes
 				}
 			}
-			random_owned_state = {
+			70 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			489 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			591 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			589 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			1 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			141 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = industrial_complex
@@ -6749,10 +6790,6 @@ focus = {
 	                    transfer_troops = no
 	                }
 	                annex_country = {
-	                    target = TRL
-	                    transfer_troops = no
-	                }
-	                annex_country = {
 	                    target = CCW
 	                    transfer_troops = no
 	                }
@@ -6769,7 +6806,6 @@ focus = {
 	                        or = {
 	                            is_core_of = DIS
 	                            is_core_of = MLT
-	                            is_core_of = TRL
 	                            is_core_of = CCW
 	                            is_core_of = RBT
 	                            is_core_of = PMR
@@ -6788,20 +6824,35 @@ focus = {
 	                    target = TIM
 	                    transfer_troops = yes
 	                }
-	                annex_country = {
-	                    target = MDT
-	                    transfer_troops = no
-	                }
 	                every_state = {
 	                    limit = {
 	                        or = {
 	                            is_core_of = BDT
 	                            is_core_of = TIM
-	                            is_core_of = MDT
 
 	                        }
 	                    }
 	                    add_core_of = VLT
+	                }
+	            }
+	            NEW = {
+	                annex_country = {
+	                    target = TRL
+	                    transfer_troops = no
+	                }
+	                annex_country = {
+	                    target = MDT
+	                    transfer_troops = yes
+	                }
+	                every_state = {
+	                    limit = {
+	                        or = {
+	                            is_core_of = TRL
+	                            is_core_of = MDT
+
+	                        }
+	                    }
+	                    add_core_of = NEW
 	                }
 	            }
 	        }
@@ -6998,7 +7049,6 @@ focus = {
 			focus = ncr_dreams_of_old
 		}
 		completion_reward = {
-			add_stability = -0.075
 			set_temp_variable = { caps_to_add = 300 }
 			add_caps = yes
 			add_manpower = -50
@@ -7039,14 +7089,11 @@ focus = {
 		x = -1
 		y = 1
 		completion_reward = {
-			add_tech_bonus = {
-				name = robotics_tech_category
-				bonus = 1
-				uses = 2
-				category = robotics_tech_category
+			set_technology = {
+				robotics_tech_level_scientific = 1
 			}
 			add_ideas = ncr_robotic_republicans
-			add_equipment_to_stockpile = { type = support_robot_thruster_equipment_2 amount = 125 producer = USA }
+			add_equipment_to_stockpile = { type = cnc_robot_equipment_3 amount = 150 producer = USA }
 		}
 	}
 	focus = {
@@ -7552,12 +7599,15 @@ focus = {
 		x = 0
 		y = 1
 		completion_reward = {
-			set_technology = {
-				robotics_tech_level_scientific = 1
+			add_tech_bonus = {
+				name = robotics_tech_category
+				bonus = 1
+				uses = 2
+				category = robotics_tech_category
 			}
 			add_tech_bonus = {
-				bonus = 2
-				uses = 1
+				bonus = 1
+				uses = 2
 				category = cat_land_doctrine
 			}
 		}
