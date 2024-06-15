@@ -1088,6 +1088,7 @@ focus_tree = {
 				limit = {
 					OR = {
 						original_tag = EUR
+						original_tag = DES
 						original_tag = BVC
 						original_tag = PAR
 						original_tag = CWB
