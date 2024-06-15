@@ -496,6 +496,10 @@ MP_mod_decisions = {
 				target = CLK
 				transfer_troops = no
 			}
+			annex_country = {
+				target = ANO
+				transfer_troops = no
+			}
 			every_state = {
 				limit = {
 					is_core_of = WHT
@@ -543,14 +547,6 @@ MP_mod_decisions = {
 			}
 			annex_country = {
 				target = MUR
-				transfer_troops = no
-			}
-			annex_country = {
-				target = ANO
-				transfer_troops = no
-			}
-			annex_country = {
-				target = GRA
 				transfer_troops = no
 			}
 			every_state = {
@@ -843,10 +839,6 @@ MP_mod_decisions = {
 				target = SLN
 				transfer_troops = no
 			}
-			annex_country = {
-				target = VIP
-				transfer_troops = no
-			}
 			every_state = {
 				limit = {
 					is_core_of = VLT
@@ -952,6 +944,14 @@ MP_mod_decisions = {
 			}
 			annex_country = {
 				target = SKY
+				transfer_troops = no
+			}
+			annex_country = {
+				target = GRA
+				transfer_troops = no
+			}
+			annex_country = {
+				target = VIP
 				transfer_troops = no
 			}
 			every_state = {

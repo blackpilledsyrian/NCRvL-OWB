@@ -1,6 +1,7 @@
 ﻿l_english:
   ncr_leg_escalation_decisions_cat:0 "§OThe NCR-Legion Escalation§!"
   ncr_leg_escalation_decisions_cat_desc:0 "Not everyone is in the NCR-Legion War immediately. Slowly new fronts will open in waves. These are visible in the §YDecisions Below§!. They can still join a faction or send volunteers if not in one."
+
   initial_wave:0 "§RMain Front Opens§!"
   first_wave_of_escalation:0 "§ROregon&Oklahoma Theater Opens§!"
   second_wave_of_escalation:0 "§RTexas&Timber Theater Opens§!"
@@ -8,6 +9,9 @@
   
   escalation_no_fun_idea:0 "Escalation Mechanic Trigger"
   escalation_no_fun_idea_desc:0 "This nation must wait until it can call its allies in wars. This National Spirit will be §Rautomatically removed§! through a decision once the §RNCR is at war with the Legion§!. They can still freely join a faction and or send volunteers, but they will eventually be forced into war on side of their respective faction."
-  escalation_no_fun_idea_2:0 "Escalation Mechanic Trigger Call In" #This is useless
-  escalation_no_fun_idea_2_desc:0 "This nation must wait until it can call its allies in wars. This National Spirit will be §Rautomatically removed§! through a mission timeout which occurs some weeks after the war started, these missions are visible in the decisions. They can still freely join a faction and or send volunteers, but they will eventually be forced into war on side of their respective faction." 
+  
+  escalation_0_tt:0 "§Y[RES.GetNameWithFlag]§! Joins §Y[CES.GetName]§! in War\n§Y[TWO.GetNameWithFlag]§! Joins §Y[CES.GetName]§! in War\n§Y[GDH.GetNameWithFlag]§! Joins §Y[CES.GetName]§! in War\n\n\n§Y[BVC.GetNameWithFlag]§! Joins §Y[NCR.GetName]§! in War\n§Y[VEG.GetNameWithFlag]§! Joins §Y[NCR.GetName]§! in War\n§Y[SHI.GetNameWithFlag]§! Joins §Y[NCR.GetName]§! in War"
+  escalation_1_tt:0 "§Y[NAV.GetNameWithFlag]§! Joins §Y[CES.GetName]§! in War\n§Y[PAR.GetNameWithFlag]§! Joins §Y[CES.GetName]§! in War\n§Y[CWB.GetNameWithFlag]§! Joins §Y[CES.GetName]§! in War\n\n\n§Y[ARR.GetNameWithFlag]§! Joins §Y[NCR.GetName]§! in War\n§Y[EUR.GetNameWithFlag]§! Joins §Y[ARR.GetName]§! in War"
+  escalation_2_tt:0 "§Y[IMO.GetNameWithFlag]§! Joins §Y[CES.GetName]§! in War\n§Y[SHA.GetNameWithFlag]§! Joins §Y[CES.GetName]§! in War\n§Y[CRH.GetNameWithFlag]§! Joins §Y[CES.GetName]§! in War\n§Y[IRN.GetNameWithFlag]§! Joins §Y[CES.GetName]§! in War\n§Y[LAC.GetNameWithFlag]§! Joins §Y[CES.GetName]§! in War\n\n\n§Y[NEW.GetNameWithFlag]§! Joins §Y[NCR.GetName]§! in War\n§Y[TIM.GetNameWithFlag]§! Joins §Y[NCR.GetName]§! in War"
+  escalation_3_tt:0 "§Y[EHT.GetNameWithFlag]§! Joins §Y[CES.GetName]§! in War\n§Y[WHT.GetNameWithFlag]§! Joins §Y[CES.GetName]§! in War\n\n\n§Y[VLT.GetNameWithFlag]§! Joins §Y[NCR.GetName]§! in War\n§Y[DES.GetNameWithFlag]§! Joins §Y[NCR.GetName]§! in War"
   

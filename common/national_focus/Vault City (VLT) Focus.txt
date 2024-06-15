@@ -1550,6 +1550,7 @@ focus_tree = {
 				target = SHO
 				transfer_troops = yes
 			}
+		}
 		ai_will_do = {
 			modifier = {
 				factor = 100
@@ -1566,7 +1567,7 @@ focus_tree = {
 		available = {
 			has_country_flag = vlt_first_citizen_selected
 		}
-		x = 3
+		x = 8
 		y = 1
 		relative_position_id = vlt_the_election_of_2275
 		completion_reward = {
