@@ -1054,9 +1054,7 @@ focus_tree = {
 		mutually_exclusive = { focus = NAV_navajo_lets_make_a_deal }
 		available = {
 			RES = {
-				NOT = {
-					has_completed_focus = resg_navajo_compromise
-				}
+				is_ai = yes
 			}
 		}
 		bypass = {

@@ -2953,6 +2953,11 @@ technologies = {
 				resource = metal
 				amount = 2
 			}
+			modify_building_resources = {
+				building = metal_generator
+				resource = composites
+				amount = 2
+			}
 		}
 
 		path = {
@@ -3002,6 +3007,11 @@ technologies = {
 			modify_building_resources = {
 				building = metal_generator
 				resource = metal
+				amount = 2
+			}
+			modify_building_resources = {
+				building = metal_generator
+				resource = composites
 				amount = 2
 			}
 		}
@@ -3202,6 +3212,11 @@ technologies = {
 				resource = water
 				amount = 2
 			}
+			modify_building_resources = {
+				building = water_generator
+				resource = energy
+				amount = 1
+			}
 		}
 
 		path = {
@@ -3249,6 +3264,11 @@ technologies = {
 				resource = water
 				amount = 2
 			}
+			modify_building_resources = {
+				building = water_generator
+				resource = energy
+				amount = 1
+			}
 		}
 
 		path = {
@@ -3295,6 +3315,11 @@ technologies = {
 				building = water_generator
 				resource = water
 				amount = 2
+			}
+			modify_building_resources = {
+				building = water_generator
+				resource = energy
+				amount = 1
 			}
 		}
 
