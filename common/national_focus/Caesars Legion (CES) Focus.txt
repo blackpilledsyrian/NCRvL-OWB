@@ -4382,7 +4382,7 @@ focus_tree = {
     focus = {
         id = ces_dam_start
         icon = GFX_goal_CES_The_Rubicon
-        cost = 15
+        cost = 30
         x = -11
         y = 1
         relative_position_id = ces_caesar_son_of_mars
@@ -4417,7 +4417,7 @@ focus_tree = {
     focus = {
         id = ces_map_dam
         icon = GFX_goal_CES_Map_Dam
-        cost = 15
+        cost = 30
         relative_position_id = ces_dam_start
         prerequisite = {
             focus = ces_dam_start
@@ -4447,7 +4447,7 @@ focus_tree = {
     focus = {
         id = ces_broken_boulder
         icon = GFX_goal_CES_Broken_Boulder
-        cost = 15
+        cost = 30
         relative_position_id = ces_dam_start
         prerequisite = {
             focus = ces_dam_start
@@ -4477,7 +4477,7 @@ focus_tree = {
     focus = {
         id = ces_brotherhood_steal
         icon = GFX_goal_CES_BOS_Steal
-        cost = 15
+        cost = 30
         bypass = {
             MOJ = {
                 exists = no
@@ -4534,7 +4534,7 @@ focus_tree = {
     focus = {
         id = ces_unfair_advantage
         icon = GFX_goal_CES_MOT_Steal
-        cost = 15
+        cost = 30
         relative_position_id = ces_map_dam
         prerequisite = {
             focus = ces_map_dam
@@ -4588,7 +4588,7 @@ focus_tree = {
     focus = {
         id = ces_colorado_blues
         icon = GFX_goal_CES_Axe
-        cost = 15
+        cost = 30
         relative_position_id = ces_unfair_advantage
         prerequisite = {
             focus = ces_unfair_advantage
@@ -4635,7 +4635,7 @@ focus_tree = {
     focus = {
         id = ces_raider_rumble
         icon = GFX_goal_CES_Mojave_Raiders
-        cost = 15
+        cost = 30
         relative_position_id = ces_brotherhood_steal
         prerequisite = {
             focus = ces_brotherhood_steal
@@ -4692,7 +4692,7 @@ focus_tree = {
     focus = {
         id = ces_legate_glory
         icon = GFX_goal_CES_malpais_legate
-        cost = 15
+        cost = 30
         relative_position_id = ces_colorado_blues
         prerequisite = {
             focus = ces_raider_rumble
@@ -4734,7 +4734,7 @@ focus_tree = {
     focus = {
         id = ces_vulpes_dam
         icon = GFX_goal_CES_Dont_Ask
-        cost = 15
+        cost = 30
         relative_position_id = ces_raider_rumble
         prerequisite = {
             focus = ces_raider_rumble
@@ -5501,115 +5501,12 @@ focus_tree = {
         }
     }
     focus = {
-        id = ces_oklahoma
-        icon = GFX_goal_CES_oklahoma
-        cost = 15
-        x = 4
-        y = 0
-        relative_position_id = ces_outsiders_gente
-        prerequisite = {
-            focus = ces_caesar_son_of_mars
-        }
-        mutually_exclusive = {
-        }
-        completion_reward = {
-            add_political_power = 100
-        }
-    }
-    focus = {
-        id = ces_painted_rock
-        icon = GFX_goal_CES_painted_rock
-        cost = 15
-        x = 1
-        y = 1
-        relative_position_id = ces_oklahoma
-        prerequisite = {
-            focus = ces_oklahoma
-        }
-        mutually_exclusive = {
-            focus = ces_cypher_warband
-        }
-        available = {
-            PAR = { owns_state = 868 }
-        }
-        completion_reward = {
-            PAR = {
-                d_join_caesars_legion = yes
-                hidden_effect = {
-                    set_technology = {
-                        infantry_tech_level_settler = 1
-                        support_tech_level_settler = 1
-                        vehicles_tech_level_scientific = 1
-                        legion_centurions_tech = 1
-                        legion_vexillarius_tech = 1
-                        legion_training_tech = 1
-                        fireteam_weaponry_tech = 1
-                        chariot_vehicle_tech = 1
-                        ces_at_tech = 1
-                        ces_two_tech = 1
-                        all_terrain_vehicles_tech = 1
-                        armored_chariots_tech = 1
-                    }
-                    add_ideas = {
-                        cultofmars
-                        national_spirit_rejection_of_automation
-                        legion_training
-                        two_masters_of_the_motor_2
-                    }
-                }
-            }
-            custom_effect_tooltip = cespaintedrocktt
-        }
-    }
-    focus = {
-        id = ces_cypher_warband
-        icon = GFX_goal_CES_cypher_warband
-        cost = 15
-        x = -1
-        y = 1
-        relative_position_id = ces_oklahoma
-        prerequisite = {
-            focus = ces_oklahoma
-        }
-        mutually_exclusive = {
-            focus = ces_painted_rock
-        }
-        available = {
-            CWB = { owns_state = 868 }
-        }
-        completion_reward = {
-            CWB = {
-                d_join_caesars_legion = yes
-                hidden_effect = {
-                    set_technology = {
-                        infantry_tech_level_settler = 1
-                        support_tech_level_settler = 1
-                        special_forces_tech_level_scientific = 1
-                        legion_centurions_tech = 1
-                        legion_vexillarius_tech = 1
-                        legion_training_tech = 1
-                        ces_at_tech = 1
-                        ces_navajo_scouts_tech = 1
-                        ces_navajo_skin_walkers_tech = 1
-                    }
-                    add_ideas = {
-                        cultofmars
-                        national_spirit_rejection_of_automation
-                        legion_training
-                        nav_pathfinders
-                    }
-                }
-            }
-            custom_effect_tooltip = cescypherwarbandtt
-        }
-    }
-    focus = {
         id = ces_texas
         icon = GFX_goal_CES_texas
         cost = 15
         x = 5
         y = 0
-        relative_position_id = ces_oklahoma
+        relative_position_id = ces_outsiders_gente
         prerequisite = {
             focus = ces_caesar_son_of_mars
         }
