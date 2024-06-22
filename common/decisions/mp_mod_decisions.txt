@@ -5,11 +5,12 @@ MP_mod_decisions = {
 			original_tag = CES
 		}
 		available = {
+			is_ai = no
 			date > 2278.1.1
 			LAC = { is_ai = yes }
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 0
 		}
 		fire_only_once = yes
 		complete_effect = {
@@ -76,11 +77,12 @@ MP_mod_decisions = {
 			}
 		}
 		available = {
+			is_ai = no
 			date > 2278.1.1
 			NAV = { is_ai = yes }
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 0
 		}
 		fire_only_once = yes
 		complete_effect = {
@@ -121,11 +123,12 @@ MP_mod_decisions = {
 			}
 		}
 		available = {
+			is_ai = no
 			date > 2277.1.1
 			TWO = { is_ai = yes }
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 0
 		}
 		fire_only_once = yes
 		complete_effect = {
@@ -162,11 +165,12 @@ MP_mod_decisions = {
 			}
 		}
 		available = {
+			is_ai = no
 			date > 2276.1.1
 			GDH = { is_ai = yes }
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 0
 		}
 		fire_only_once = yes
 		complete_effect = {
@@ -190,11 +194,12 @@ MP_mod_decisions = {
 			}
 		}
 		available = {
+			is_ai = no
 			date > 2277.1.1
 			RES = { is_ai = yes }
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 0
 		}
 		fire_only_once = yes
 		complete_effect = {
@@ -219,11 +224,12 @@ MP_mod_decisions = {
 			}
 		}
 		available = {
+			is_ai = no
 			date > 2278.7.1
 			IRN = { is_ai = yes }
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 0
 		}
 		fire_only_once = yes
 		complete_effect = {
@@ -280,12 +286,13 @@ MP_mod_decisions = {
 			}
 		}
 		available = {
+			is_ai = no
 			date > 2278.7.1
 			PAR = { is_ai = yes }
 			CWB = { is_ai = yes }
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 0
 		}
 		fire_only_once = yes
 		complete_effect = {
@@ -340,6 +347,7 @@ MP_mod_decisions = {
 			}
 		}
 		available = {
+			is_ai = no
 			date > 2279.1.1
 			LAC = { has_completed_focus = lac_the_march_west }
 			IMO = { is_ai = yes }
@@ -347,7 +355,7 @@ MP_mod_decisions = {
 			UOA = { is_ai = yes }
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 0
 		}
 		fire_only_once = yes
 		complete_effect = {
@@ -452,11 +460,12 @@ MP_mod_decisions = {
 			}
 		}
 		available = {
+			is_ai = no
 			date > 2278.7.1
 			WHT = { is_ai = yes }
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 0
 		}
 		fire_only_once = yes
 		complete_effect = {
@@ -517,11 +526,12 @@ MP_mod_decisions = {
 			}
 		}
 		available = {
+			is_ai = no
 			date > 2278.7.1
 			EHT = { is_ai = yes }
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 0
 		}
 		fire_only_once = yes
 		complete_effect = {
@@ -566,11 +576,12 @@ MP_mod_decisions = {
 			}
 		}
 		available = {
+			is_ai = no
 			date > 2277.7.1
 			VEG = { is_ai = yes }
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 0
 		}
 		fire_only_once = yes
 		complete_effect = {
@@ -595,10 +606,12 @@ MP_mod_decisions = {
 			}
 		}
 		available = {
+			is_ai = no
 			date > 2277.7.1
+			MOT = { is_ai = yes }
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 0
 		}
 		fire_only_once = yes
 		complete_effect = {
@@ -623,11 +636,12 @@ MP_mod_decisions = {
 			}
 		}
 		available = {
+			is_ai = no
 			date > 2277.7.1
 			SHI = { is_ai = yes }
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 0
 		}
 		fire_only_once = yes
 		complete_effect = {
@@ -653,6 +667,7 @@ MP_mod_decisions = {
 			}
 		}
 		available = {
+			is_ai = no
 			date > 2277.7.1
 			EUR = { is_ai = yes }
 			if = {
@@ -665,7 +680,7 @@ MP_mod_decisions = {
 			}
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 0
 		}
 		fire_only_once = yes
 		complete_effect = {
@@ -691,11 +706,12 @@ MP_mod_decisions = {
 			}
 		}
 		available = {
+			is_ai = no
 			date > 2277.7.1
 			ARR = { is_ai = yes }
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 0
 		}
 		fire_only_once = yes
 		complete_effect = {
@@ -741,11 +757,12 @@ MP_mod_decisions = {
 			}
 		}
 		available = {
+			is_ai = no
 			date > 2278.1.1
 			TIM = { is_ai = yes }
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 0
 		}
 		fire_only_once = yes
 		complete_effect = {
@@ -803,11 +820,12 @@ MP_mod_decisions = {
 			}
 		}
 		available = {
+			is_ai = no
 			date > 2278.7.1
 			VLT = { is_ai = yes }
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 0
 		}
 		fire_only_once = yes
 		complete_effect = {
@@ -857,11 +875,12 @@ MP_mod_decisions = {
 			}
 		}
 		available = {
+			is_ai = no
 			date > 2278.7.1
 			NEW = { is_ai = yes }
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 0
 		}
 		fire_only_once = yes
 		complete_effect = {
@@ -910,11 +929,12 @@ MP_mod_decisions = {
 			}
 		}
 		available = {
+			is_ai = no
 			date > 2278.7.1
 			DES = { is_ai = yes }
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 0
 		}
 		fire_only_once = yes
 		complete_effect = {
@@ -971,11 +991,12 @@ MP_mod_decisions = {
 			}
 		}
 		available = {
+			is_ai = no
 			date > 2277.7.1
 			BVC = { is_ai = yes }
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 0
 		}
 		fire_only_once = yes
 		complete_effect = {
