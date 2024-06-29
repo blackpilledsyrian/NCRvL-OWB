@@ -112,6 +112,14 @@ reverse_add_opinion_modifier = {
 }
 
 set_truce = {
+	target = TBH
+	days = 1460
+}
+set_truce = {
+	target = LNS
+	days = 1460
+}
+set_truce = {
 	target = EDN
 	days = 730
 }

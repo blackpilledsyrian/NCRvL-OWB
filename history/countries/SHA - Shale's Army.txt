@@ -123,11 +123,11 @@ add_ideas = {
 
 set_truce = {
 	target = TBH
-	days = 730
+	days = 1460
 }
 set_truce = {
-	target = TAA
-	days = 730
+	target = LNS
+	days = 1460
 }
 set_truce = {
 	target = EDN

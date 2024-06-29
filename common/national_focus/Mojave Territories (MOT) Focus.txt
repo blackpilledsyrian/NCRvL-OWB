@@ -502,8 +502,6 @@ focus_tree = {
 			hidden_effect = {
 				division_template = {
 					name = "Reconnaissance Battalion"
-
-					is_locked = yes
 					priority = 2
 
 					regiments = {
@@ -1325,8 +1323,6 @@ focus_tree = {
 			hidden_effect = {
 				division_template = {
 					name = "NCR Heavy Corps"
-
-					is_locked = yes
 					priority = 2
 
 					regiments = {

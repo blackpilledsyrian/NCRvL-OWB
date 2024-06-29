@@ -39,6 +39,8 @@ set_technology = {
 	#electronics_tech_level_scientific = 1
 	tribal_tech_visibility_tech = 1
 	tribal_tech_access_tech = 1
+	spec_ops_equipment_tech_1 = 1
+	heavy_infantry_tech_1 = 1
 	tool_engineering = 1
 	standard_weaponry_tech = 1
 	melee_weaponry_tech_1 = 1
@@ -53,11 +55,9 @@ set_technology = {
 	demolitions_weaponry_tech = 1
 	terror_tactics = 1
 	melee_weaponry_tech_2 = 1
-	heavy_infantry_tech_1 = 1
 	glider_tech = 1
 	cargo_plane_tech_1 = 1
 	elaborate_disruption_doctrine = 1
-	spec_ops_equipment_tech_1 = 1
 }
 
 354 = { add_claim_by = WHT }

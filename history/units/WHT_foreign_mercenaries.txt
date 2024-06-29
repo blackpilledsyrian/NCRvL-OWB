@@ -1,0 +1,34 @@
+﻿units = {
+
+	division = {
+		name = "Death Bringers"
+		location = 1532
+		division_template = "Foreign Heroes"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "Raiders"
+		location = 1532
+		division_template = "Foreign Heroes"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "Oregon Tribals"
+		location = 1532
+		division_template = "Foreign Heroes"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+
+	division = {
+		name = "Soldiers of the Khan"
+		location = 1532
+		division_template = "Foreign Heroes"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+}

@@ -127,23 +127,11 @@ set_country_flag = grand_motorized_doctrine_ai
 
 set_truce = {
 	target = TBH
-	days = 730
+	days = 1460
 }
 set_truce = {
-	target = RRG
-	days = 730
-}
-set_truce = {
-	target = ARM
-	days = 730
-}
-set_truce = {
-	target = TAA
-	days = 730
-}
-set_truce = {
-	target = PER
-	days = 730
+	target = LNS
+	days = 1460
 }
 set_truce = {
 	target = EDN

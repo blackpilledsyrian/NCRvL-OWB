@@ -1865,6 +1865,16 @@ focus_tree = {
 		will_lead_to_war_with = LNS
 		will_lead_to_war_with = TBH
 		completion_reward = {
+			hidden_effect = {
+				set_truce = {
+					target = LNS
+					days = 0
+				}
+				set_truce = {
+					target = TBH
+					days = 0
+				}
+			}
 			LNS = {
 				ROOT = {
 					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
@@ -3307,6 +3317,16 @@ focus_tree = {
 		will_lead_to_war_with = LNS
 		will_lead_to_war_with = TBH
 		completion_reward = {
+			hidden_effect = {
+				set_truce = {
+					target = LNS
+					days = 0
+				}
+				set_truce = {
+					target = TBH
+					days = 0
+				}
+			}
 			LNS = {
 				ROOT = {
 					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
@@ -3976,6 +3996,16 @@ focus_tree = {
 		will_lead_to_war_with = LNS
 		will_lead_to_war_with = TBH
 		completion_reward = {
+			hidden_effect = {
+				set_truce = {
+					target = LNS
+					days = 0
+				}
+				set_truce = {
+					target = TBH
+					days = 0
+				}
+			}
 			LNS = {
 				ROOT = {
 					grant_wargoals_on_core_states_of_prev_force_ai_war = yes

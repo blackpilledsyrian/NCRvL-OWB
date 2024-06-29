@@ -2055,10 +2055,6 @@ focus_tree = {
 		cost = 60
 		prerequisite = { focus = EHT_tribal_refugees }
 		available = {
-			TWO = {
-				is_subject_of = CES
-				has_idea = two_masters_of_the_motor_2
-			}
 		}
 		x = 2
 		y = 1

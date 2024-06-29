@@ -2902,6 +2902,11 @@ technologies = {
 				resource = metal
 				amount = 2
 			}
+			modify_building_resources = {
+				building = metal_generator
+				resource = composites
+				amount = 1
+			}
 		}
 
 		path = {
@@ -2956,7 +2961,7 @@ technologies = {
 			modify_building_resources = {
 				building = metal_generator
 				resource = composites
-				amount = 2
+				amount = 1
 			}
 		}
 
@@ -3164,6 +3169,11 @@ technologies = {
 				building = water_generator
 				resource = water
 				amount = 2
+			}
+			modify_building_resources = {
+				building = water_generator
+				resource = energy
+				amount = 1
 			}
 		}
 
@@ -3411,7 +3421,7 @@ technologies = {
 			modify_building_resources = {
 				building = electricity_generator
 				resource = energy
-				amount = 4
+				amount = 5
 			}
 		}
 
@@ -3462,7 +3472,7 @@ technologies = {
 			modify_building_resources = {
 				building = electricity_generator
 				resource = energy
-				amount = 4
+				amount = 5
 			}
 		}
 
@@ -3518,7 +3528,7 @@ technologies = {
 			modify_building_resources = {
 				building = electricity_generator
 				resource = energy
-				amount = 4
+				amount = 5
 			}
 		}
 
@@ -3569,7 +3579,7 @@ technologies = {
 			modify_building_resources = {
 				building = electricity_generator
 				resource = energy
-				amount = 4
+				amount = 5
 			}
 		}
 
@@ -3665,13 +3675,13 @@ technologies = {
 			modify_building_resources = {
 				building = circuitry_generator
 				resource = circuitry
-				amount = 4
+				amount = 5
 
 			}
 			modify_building_resources = {
 				building = circuitry_generator
 				resource = advanced
-				amount = 1
+				amount = 2
 			}
 		}
 
@@ -3722,12 +3732,12 @@ technologies = {
 			modify_building_resources = {
 				building = circuitry_generator
 				resource = circuitry
-				amount = 4
+				amount = 5
 			}
 			modify_building_resources = {
 				building = circuitry_generator
 				resource = advanced
-				amount = 1
+				amount = 2
 			}
 		}
 
