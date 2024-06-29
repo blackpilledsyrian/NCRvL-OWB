@@ -352,7 +352,7 @@ MP_mod_decisions = {
 			LAC = { has_completed_focus = lac_the_march_west }
 			IMO = { is_ai = yes }
 			SHA = { is_ai = yes }
-			UOA = { is_ai = yes }
+			CRH = { is_ai = yes }
 		}
 		ai_will_do = {
 			factor = 0
@@ -368,7 +368,7 @@ MP_mod_decisions = {
 				transfer_troops = yes
 			}
 			annex_country = {
-				target = UOA
+				target = CRH
 				transfer_troops = no
 			}
 			annex_country = {
