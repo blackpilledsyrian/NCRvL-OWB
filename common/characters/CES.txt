@@ -193,14 +193,14 @@ characters = {
 			id = -1
 		}
 		advisor = {
-			slot = research_advisor
+			slot = theorist
 			idea_token = CES_aurelius_command
 			ledger = army
 			allowed = {
 				original_tag = CES
 			}
 			available = {
-				not_already_hired_except_as = research_advisor
+				not_already_hired_except_as = theorist
 				OR = {
 					is_caesar_leader = yes
 					is_aurelius_leader = yes

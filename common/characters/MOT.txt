@@ -326,7 +326,7 @@ characters = {
 			}
 		}
 		advisor = {
-			slot = research_advisor
+			slot = theorist
 			idea_token = MOT_augustine_perry_research_advisor
 			desc = MOT_augustine_perry_desc
 			ledger = army
@@ -356,7 +356,7 @@ characters = {
 			}
 		}
 		advisor = {
-			slot = research_advisor
+			slot = theorist
 			idea_token = MOT_ash_winters_research_advisor
 			desc = MOT_ash_winters_desc
 			ledger = army
@@ -386,7 +386,7 @@ characters = {
 			}
 		}
 		advisor = {
-			slot = research_advisor
+			slot = theorist
 			idea_token = MOT_corporal_sterling_research_advisor
 			desc = MOT_corporal_sterling_desc
 			ledger = army

@@ -207,7 +207,7 @@ sub_units = {
 		default_morale = 0.2
 		manpower = 20 # 1000
 		ap_attack = 0.3
-
+		defense = -0.5
 		# Misc Abilities
 		training_time = 180
 		suppression = 1
@@ -373,6 +373,7 @@ sub_units = {
 		default_morale = 0.2
 		manpower = 20 # 1000
 		ap_attack = 0.3
+		defense = -0.5
 
 		# Misc Abilities
 		training_time = 180

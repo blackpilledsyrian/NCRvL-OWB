@@ -196,13 +196,13 @@ characters = {
 			}
 		}
 		advisor = {
-			slot = research_advisor
+			slot = theorist
 			idea_token = DES_hell_razor_research_advisor
 			allowed = {
 				original_tag = DES
 			}
 			available = {
-				not_already_hired_except_as = research_advisor
+				not_already_hired_except_as = theorist
 			}
 			traits = {
 				DES_elite_barbarians
@@ -760,7 +760,7 @@ characters = {
 			}
 		}
 		advisor = {
-			slot = research_advisor
+			slot = theorist
 			idea_token = DES_the_way_of_the_ranger_research_advisor
 			allowed = {
 				original_tag = DES
@@ -785,7 +785,7 @@ characters = {
 			}
 		}
 		advisor = {
-			slot = research_advisor
+			slot = theorist
 			idea_token = DES_tycho_senior_jr_research_advisor
 			allowed = {
 				original_tag = DES
@@ -810,7 +810,7 @@ characters = {
 			}
 		}
 		advisor = {
-			slot = research_advisor
+			slot = theorist
 			idea_token = DES_dexter_cunningham_research_advisor
 			allowed = {
 				original_tag = DES
@@ -835,7 +835,7 @@ characters = {
 			}
 		}
 		advisor = {
-			slot = research_advisor
+			slot = theorist
 			idea_token = DES_henry_dundy_research_advisor
 			allowed = {
 				original_tag = DES

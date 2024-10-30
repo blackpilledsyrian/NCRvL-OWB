@@ -530,7 +530,7 @@ characters = {
 			}
 		}
 		advisor = {
-			slot = research_advisor
+			slot = theorist
 			idea_token = VLT_dweller_elena_research_advisor
 			allowed = {
 				original_tag = VLT

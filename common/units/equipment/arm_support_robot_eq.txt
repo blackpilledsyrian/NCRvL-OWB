@@ -22,26 +22,26 @@ equipments = {
 
 		#Misc Abilities
 		maximum_speed = 4
-		reliability = 0.75
+		reliability = 0.8
 
 		#Defensive Abilities
-		defense = 13
-		breakthrough = 3
-		hardness = 0.35
-		armor_value = 6
+		defense = 14
+		breakthrough = 4
+		hardness = 0.4
+		armor_value = 11
 
 		fuel_consumption = 0.2
 
 		#Offensive Abilities
-		soft_attack = 4
-		hard_attack = 4
-		ap_attack = 3
+		soft_attack = 5
+		hard_attack = 5
+		ap_attack = 4
 		air_attack = 0
 
 		#Space taken in convoy
 		lend_lease_cost = 10
 
-		build_cost_ic = 4.5
+		build_cost_ic = 3.5
 		resources = {
 		}
 
@@ -56,26 +56,26 @@ equipments = {
 
 		#Misc Abilities
 		maximum_speed = 4
-		reliability = 0.75
+		reliability = 0.8
 
 		#Defensive Abilities
-		defense = 13
-		breakthrough = 3
-		hardness = 0.35
-		armor_value = 6
+		defense = 14
+		breakthrough = 4
+		hardness = 0.4
+		armor_value = 11
 
 		#Offensive Abilities
-		soft_attack = 4
-		hard_attack = 4
-		ap_attack = 3
-		air_attack = 0
+		soft_attack = 5
+		hard_attack = 5
+		ap_attack = 8
+		air_attack = 1
 
 		fuel_consumption = 0.2
 
 		#Space taken in convoy
 		lend_lease_cost = 10
 
-		build_cost_ic = 4.5
+		build_cost_ic = 3.5
 		resources = {
 			metal = 1
 			circuitry = 1
@@ -92,27 +92,27 @@ equipments = {
 
 		#Misc Abilities
 		maximum_speed = 4
-		reliability = 0.8
+		reliability = 0.85
 
 		#Defensive Abilities
-		defense = 17
-		breakthrough = 5
-		hardness = 0.5
-		armor_value = 15
+		defense = 18
+		breakthrough = 6
+		hardness = 0.55
+		armor_value = 20
 		suppression = 0.3
 
 		#Offensive Abilities
-		soft_attack = 7
-		hard_attack = 6
-		ap_attack = 5
-		air_attack = 1
+		soft_attack = 8
+		hard_attack = 7
+		ap_attack = 10
+		air_attack = 2
 
 		fuel_consumption = 0.3
 
 		#Space taken in convoy
 		lend_lease_cost = 10
 
-		build_cost_ic = 9
+		build_cost_ic = 8
 		resources = {
 			metal = 2
 			circuitry = 1
@@ -129,27 +129,27 @@ equipments = {
 
 		#Misc Abilities
 		maximum_speed = 4
-		reliability = 0.8
+		reliability = 0.85
 
 		#Defensive Abilities
-		defense = 21
-		breakthrough = 5.5
-		hardness = 0.55
-		armor_value = 20
+		defense = 22
+		breakthrough = 6.5
+		hardness = 0.6
+		armor_value = 25
 		suppression = 0.3
 
 		#Offensive Abilities
-		soft_attack = 10
-		hard_attack = 8.5
-		ap_attack = 8
-		air_attack = 1.5
+		soft_attack = 11
+		hard_attack = 9.5
+		ap_attack = 13
+		air_attack = 2.5
 
 		fuel_consumption = 0.4
 
 		#Space taken in convoy
 		lend_lease_cost = 10
 
-		build_cost_ic = 12.5
+		build_cost_ic = 11.5
 		resources = {
 			metal = 2
 			circuitry = 1
@@ -167,27 +167,27 @@ equipments = {
 
 		#Misc Abilities
 		maximum_speed = 5
-		reliability = 0.8
+		reliability = 0.85
 
 		#Defensive Abilities
-		defense = 25
-		breakthrough = 6
-		hardness = 0.6
-		armor_value = 25
+		defense = 26
+		breakthrough = 7
+		hardness = 0.65
+		armor_value = 30
 		suppression = 0.3
 
 		#Offensive Abilities
-		soft_attack = 13
-		hard_attack = 11
-		ap_attack = 11
-		air_attack = 2
+		soft_attack = 14
+		hard_attack = 12
+		ap_attack = 16
+		air_attack = 3
 
 		fuel_consumption = 0.5
 
 		#Space taken in convoy
 		lend_lease_cost = 10
 
-		build_cost_ic = 16.5
+		build_cost_ic = 15.5
 		resources = {
 			metal = 2
 			circuitry = 1
@@ -206,27 +206,27 @@ equipments = {
 
 		#Misc Abilities
 		maximum_speed = 6
-		reliability = 0.8
+		reliability = 0.85
 
 		#Defensive Abilities
-		defense = 29
-		breakthrough = 6.5
-		hardness = 0.65
-		armor_value = 30
+		defense = 30
+		breakthrough = 7.5
+		hardness = 0.7
+		armor_value = 35
 		suppression = 0.3
 
 		#Offensive Abilities
-		soft_attack = 16
-		hard_attack = 13.5
-		ap_attack = 14
-		air_attack = 2.5
+		soft_attack = 17
+		hard_attack = 14.5
+		ap_attack = 19
+		air_attack = 3.5
 
 		fuel_consumption = 0.6
 
 		#Space taken in convoy
 		lend_lease_cost = 10
 
-		build_cost_ic = 21
+		build_cost_ic = 20
 		resources = {
 			composites = 1
 			circuitry = 2
@@ -245,26 +245,26 @@ equipments = {
 
 		#Misc Abilities
 		maximum_speed = 6
-		reliability = 0.75
+		reliability = 0.8
 
 		#Defensive Abilities
-		defense = 14
-		breakthrough = 8
-		hardness = 0.5
-		armor_value = 9
+		defense = 15
+		breakthrough = 9
+		hardness = 0.55
+		armor_value = 14
 
 		#Offensive Abilities
-		soft_attack = 6
-		hard_attack = 7
-		ap_attack = 6
-		air_attack = 0.6
+		soft_attack = 7
+		hard_attack = 8
+		ap_attack = 11
+		air_attack = 1.6
 
 		fuel_consumption = 0.4
 
 		#Space taken in convoy
 		lend_lease_cost = 10
 
-		build_cost_ic = 9
+		build_cost_ic = 8
 		resources = {
 			metal = 2
 			circuitry = 1
@@ -281,26 +281,26 @@ equipments = {
 
 		#Misc Abilities
 		maximum_speed = 6
-		reliability = 0.75
+		reliability = 0.8
 
 		#Defensive Abilities
-		defense = 17
-		breakthrough = 9
-		hardness = 0.55
-		armor_value = 12
+		defense = 18
+		breakthrough = 10
+		hardness = 0.6
+		armor_value = 17
 
 		#Offensive Abilities
-		soft_attack = 8.5
-		hard_attack = 10
-		ap_attack = 10
-		air_attack = 0.9
+		soft_attack = 9.5
+		hard_attack = 11
+		ap_attack = 15
+		air_attack = 1.9
 
 		fuel_consumption = 0.5
 
 		#Space taken in convoy
 		lend_lease_cost = 10
 
-		build_cost_ic = 12.5
+		build_cost_ic = 11.5
 		resources = {
 			metal = 2
 			circuitry = 1
@@ -318,26 +318,26 @@ equipments = {
 
 		#Misc Abilities
 		maximum_speed = 7.5
-		reliability = 0.75
+		reliability = 0.8
 
 		#Defensive Abilities
-		defense = 20
-		breakthrough = 10
-		hardness = 0.6
-		armor_value = 15
+		defense = 21
+		breakthrough = 11
+		hardness = 0.65
+		armor_value = 20
 
 		#Offensive Abilities
-		soft_attack = 11
-		hard_attack = 13
-		ap_attack = 14
-		air_attack = 1.2
+		soft_attack = 12
+		hard_attack = 14
+		ap_attack = 19
+		air_attack = 2.2
 
 		fuel_consumption = 0.6
 
 		#Space taken in convoy
 		lend_lease_cost = 10
 
-		build_cost_ic = 16.5
+		build_cost_ic = 15.5
 		resources = {
 			metal = 2
 			circuitry = 1
@@ -356,26 +356,26 @@ equipments = {
 
 		#Misc Abilities
 		maximum_speed = 9
-		reliability = 0.75
+		reliability = 0.8
 
 		#Defensive Abilities
-		defense = 23
-		breakthrough = 11
-		hardness = 0.65
-		armor_value = 18
+		defense = 24
+		breakthrough = 12
+		hardness = 0.7
+		armor_value = 23
 
 		#Offensive Abilities
-		soft_attack = 13.5
-		hard_attack = 16
-		ap_attack = 18
-		air_attack = 1.5
+		soft_attack = 14.5
+		hard_attack = 17
+		ap_attack = 23
+		air_attack = 2.5
 
 		fuel_consumption = 0.7
 
 		#Space taken in convoy
 		lend_lease_cost = 10
 
-		build_cost_ic = 21
+		build_cost_ic = 20
 		resources = {
 			composites = 1
 			circuitry = 2
@@ -395,26 +395,26 @@ equipments = {
 
 		#Misc Abilities
 		maximum_speed = 7
-		reliability = 0.85
+		reliability = 0.9
 
 		#Defensive Abilities
-		defense = 23
-		breakthrough = 7
-		hardness = 0.55
+		defense = 24
+		breakthrough = 8
+		hardness = 0.6
 		armor_value = 10
 
 		fuel_consumption = 0.4
 
 		#Offensive Abilities
-		soft_attack = 15
-		hard_attack = 15
-		ap_attack = 17
-		air_attack = 0
+		soft_attack = 16
+		hard_attack = 16
+		ap_attack = 22
+		air_attack = 1
 
 		#Space taken in convoy
 		lend_lease_cost = 10
 
-		build_cost_ic = 21.5
+		build_cost_ic = 20.5
 		resources = {
 			composites = 2
 			circuitry = 1
@@ -434,27 +434,27 @@ equipments = {
 
 		#Misc Abilities
 		maximum_speed = 5
-		reliability = 0.9
+		reliability = 0.95
 
 		#Defensive Abilities
-		defense = 17.5
-		breakthrough = 14.5
-		hardness = 0.75
-		armor_value = 45
+		defense = 18.5
+		breakthrough = 15.5
+		hardness = 0.8
+		armor_value = 50
 		suppression = 2
 
 		fuel_consumption = 0.8
 
 		#Offensive Abilities
-		soft_attack = 18
-		hard_attack = 18
-		ap_attack = 18
-		air_attack = 3.5
+		soft_attack = 19
+		hard_attack = 19
+		ap_attack = 23
+		air_attack = 4.5
 
 		#Space taken in convoy
 		lend_lease_cost = 10
 
-		build_cost_ic = 35
+		build_cost_ic = 34
 		resources = {
 			composites = 2
 			circuitry = 1
