@@ -220,7 +220,7 @@ characters = {
 			}
 		}
 		advisor = {
-			slot = research_advisor
+			slot = theorist
 			idea_token = NCR_enclave_advisor_advisor_4_idea_token
 			desc = ENC_generic_advisor_4_desc
 			ledger = army
@@ -688,7 +688,7 @@ characters = {
 			}
 		}
 		advisor = {
-			slot = research_advisor
+			slot = theorist
 			idea_token = NCR_ranger_jackson_research_advisor
 			desc = NCR_ranger_jackson_desc
 			ledger = army
@@ -715,7 +715,7 @@ characters = {
 			}
 		}
 		advisor = {
-			slot = research_advisor
+			slot = theorist
 			idea_token = NCR_mr_fantastic_research_advisor
 			ledger = army
 			removal_cost = 300

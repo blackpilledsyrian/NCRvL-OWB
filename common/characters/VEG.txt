@@ -232,7 +232,7 @@ characters = {
 		portraits = {
 		}
 		advisor = {
-			slot = research_advisor
+			slot = theorist
 			idea_token = NCR_pdq88b_carlson_research_advisor
 			ledger = army
 			allowed = {
