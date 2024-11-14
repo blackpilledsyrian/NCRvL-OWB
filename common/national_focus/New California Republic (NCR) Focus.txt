@@ -5538,7 +5538,6 @@ focus = {
 		x = -3
 		y = 1
 		available = {
-
 		}
 		relative_position_id = ncr_california_first_and_foremost
 		completion_reward = {
@@ -6469,7 +6468,15 @@ focus = {
 		y = 1
 		relative_position_id = ncr_cal_restore_nevada_rangers
 		completion_reward = {
-
+			DES = {
+				random_owned_state = {
+					add_extra_state_shared_building_slots = 8
+					add_building_construction = {
+						type = arms_factory
+						level = 5
+					}
+				}
+			}
 		}
 	}
 	focus = {
@@ -9624,8 +9631,7 @@ focus = {
 			x = 3
 			y = 0
 			trigger = {
-				has_completed_focus = ncr_put_down_revanchists
-			}
+				has_country_flag = Moore			}
 		}
 		completion_reward = {
 			country_event = ncr_order.1
@@ -9649,8 +9655,7 @@ focus = {
 			x = 4
 			y = 0
 			trigger = {
-				has_completed_focus = ncr_put_down_revanchists
-			}
+				has_country_flag = Moore			}
 		}
 		x = -4
 		y = 1
@@ -10595,7 +10600,7 @@ focus = {
 #AGI strategy
 #armor
 ### closed bracket in faction effect
-=======
+#=======
 ######################################
 #    New California Republic Tree    #
 #   Planned + Scripted by Faeelin    #
@@ -10727,7 +10732,7 @@ focus_tree = {
 		available = {
 			controls_state = 1
 			has_country_flag = ncr_hub_intervention
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		completion_reward = {
 			add_stability = 0.05
@@ -10743,7 +10748,7 @@ focus_tree = {
 		icon = GFX_goal_generic_books
 		cost = 30
 		available = {
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		search_filters = { FOCUS_FILTER_STABILITY }
 		prerequisite = { focus = ncr_deploy_troopers_to_hub }
@@ -10770,7 +10775,7 @@ focus_tree = {
 		relative_position_id = ncr_deploy_troopers_to_hub
 		available = {
 			controls_state = 1
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		completion_reward = {
 			if = {
@@ -10792,7 +10797,7 @@ focus_tree = {
 		relative_position_id = ncr_deploy_troopers_to_hub
 		available = {
 			controls_state = 1
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		completion_reward = {
 			1 = {
@@ -10814,7 +10819,7 @@ focus_tree = {
 		relative_position_id = ncr_raid_gang_hqs
 		available = {
 			controls_state = 1
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		completion_reward = {
 			1 = {
@@ -10851,7 +10856,7 @@ focus_tree = {
 		relative_position_id = ncr_urban_warfare_lessons
 		available = {
 			controls_state = 1
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		completion_reward = {
 			1 = {
@@ -10884,7 +10889,7 @@ focus_tree = {
 		relative_position_id = ncr_urban_warfare_lessons
 		available = {
 			NOT = { has_completed_focus = ncr_ctte_for_national_security }
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		completion_reward = {
 			custom_effect_tooltip = ncr_permanent_hub_advisors_tt
@@ -10902,7 +10907,7 @@ focus_tree = {
 		available = {
 			controls_state = 1
 			has_manpower > 200
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		completion_reward = {
 			ROOT = {
@@ -10926,7 +10931,7 @@ focus_tree = {
 		relative_position_id = ncr_cultivate_national_guard
 		available = {
 			controls_state = 1
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		completion_reward = {
 			1 = {
@@ -10960,7 +10965,7 @@ focus_tree = {
 		relative_position_id = ncr_early_sotu
 		available = {
 			253 = { OWNER = { is_new_california_member = yes } }
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		completion_reward = {
 			253 = {
@@ -10988,7 +10993,7 @@ focus_tree = {
 			VLT = {
 				has_country_flag = vlt_selection_has_not_happened
 			}
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		relative_position_id = ncr_refurbish_bazaar
 		completion_reward = {
@@ -11005,7 +11010,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ncr_refurbish_bazaar
 		available = {
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		completion_reward = {
 			add_tech_bonus = {
@@ -11033,7 +11038,7 @@ focus_tree = {
 		relative_position_id = ncr_refurbish_bazaar
 		available = {
 			controls_state = 253
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		completion_reward = {
 			253 = {
@@ -11050,7 +11055,7 @@ focus_tree = {
 		cost = 30
 		available = {
 			controls_state = 253
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		prerequisite = {
 			focus = ncr_powerplant1
@@ -11090,7 +11095,7 @@ focus_tree = {
 		relative_position_id = ncr_powerplant1
 		available = {
 			controls_state = 253
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		completion_reward = {
 			custom_effect_tooltip = ncr_capital_forts_tt
@@ -11213,7 +11218,7 @@ focus_tree = {
 		relative_position_id = ncr_capital_forts
 		available = {
 			controls_state = 253
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		completion_reward = {
 			add_timed_idea = {
@@ -11232,7 +11237,7 @@ focus_tree = {
 		cost = 30
 		available = {
 			controls_state = 135
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		prerequisite = { focus = ncr_capital_forts }
 		x = 4
@@ -11272,7 +11277,7 @@ focus_tree = {
 		relative_position_id = ncr_capital_forts
 		available = {
 			controls_state = 253
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		completion_reward = {
 			253 = {
@@ -11363,7 +11368,7 @@ focus_tree = {
 			NOT = { has_completed_focus = ncr_lost_not_forgotten }
 			has_equipment = { infantry_equipment > 500 }
 			has_equipment = { support_equipment > 200 }
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		completion_reward = {
 			send_equipment = {
@@ -11456,7 +11461,7 @@ focus_tree = {
 				tooltip = ncr_lost_not_forgotten_trig_tt
 				always = no
 			}
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		completion_reward = {
 			effect_tooltip = { news_event = ncr_crisis.5 }
@@ -11561,7 +11566,7 @@ focus_tree = {
 		relative_position_id = ncr_lost_not_forgotten
 		available = {
 			NOT = { has_completed_focus = ncr_mojave_affair }
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		completion_reward = {
 			random_unit_leader = {
@@ -11590,7 +11595,7 @@ focus_tree = {
 		relative_position_id = ncr_lessons_from_desert
 		available = {
 			NOT = { has_completed_focus = ncr_mojave_affair }
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		completion_reward = {
 			add_tech_bonus = {
@@ -11612,7 +11617,7 @@ focus_tree = {
 		relative_position_id = ncr_lost_not_forgotten
 		available = {
 			NOT = { has_completed_focus = ncr_mojave_affair }
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		completion_reward = {
 			set_temp_variable = { deployed_divs = 5 }
@@ -11631,7 +11636,7 @@ focus_tree = {
 		relative_position_id = ncr_reorganise_mojave_remnants
 		available = {
 			NOT = { has_completed_focus = ncr_mojave_affair }
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		completion_reward = {
 			custom_effect_tooltip = ncr_gorobets_tsu_tt
@@ -11669,7 +11674,7 @@ focus_tree = {
 		relative_position_id = ncr_advertise_to_people
 		will_lead_to_war_with = CES
 		available = {
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		bypass = {
 			CES = {
@@ -11731,7 +11736,7 @@ focus_tree = {
 		relative_position_id = ncr_early_sotu
 		available = {
 			NOT = { has_idea = ncr_bos_idea_allgood_truce }
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		completion_reward = {
 			country_event = ncr_early.7
@@ -11747,7 +11752,7 @@ focus_tree = {
 			NOT = {
 				has_completed_focus = ncr_support_allgood
 			}
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 			has_country_flag = ncr_vote_no_confidence
 		}
 		x = -4
@@ -11784,7 +11789,7 @@ focus_tree = {
 		cost = 30
 		search_filters = {  FOCUS_FILTER_IDEAS }
 		available = {
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 			has_country_flag = ncr_vote_no_confidence
 		}
 		prerequisite = { focus = ncr_support_kimball }
@@ -11805,7 +11810,7 @@ focus_tree = {
 		cost = 30
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY }
 		available = {
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 			has_country_flag = ncr_vote_no_confidence
 		}
 		prerequisite = { focus = ncr_support_kimball }
@@ -11827,7 +11832,7 @@ focus_tree = {
 		icon = GFX_goal_generic_esp_smg
 		cost = 30
 		available = {
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 			has_country_flag = ncr_vote_no_confidence
 		}
 		prerequisite = { focus = ncr_stoke_militarism }
@@ -11847,7 +11852,7 @@ focus_tree = {
 		icon = GFX_goal_generic_focus_happy_cactus
 		cost = 30
 		available = {
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 			has_country_flag = ncr_vote_no_confidence
 		}
 		prerequisite = { focus = ncr_stoke_militarism }
@@ -11872,7 +11877,7 @@ focus_tree = {
 		cost = 30
 		search_filters = { FOCUS_FILTER_STABILITY }
 		available = {
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 			has_country_flag = ncr_vote_no_confidence
 		}
 		prerequisite = { focus = ncr_stoke_militarism }
@@ -11928,7 +11933,7 @@ focus_tree = {
 		cost = 15
 		search_filters = { FOCUS_FILTER_INTERNAL_AFFAIRS }
 		available = {
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 			has_country_flag = ncr_vote_no_confidence
 		}
 		prerequisite = { focus = ncr_motion_of_no_confidence }
@@ -11951,7 +11956,7 @@ focus_tree = {
 		cost = 15
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY }
 		available = {
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 			has_country_flag = ncr_vote_no_confidence
 		}
 		prerequisite = { focus = ncr_support_hayes }
@@ -11970,7 +11975,7 @@ focus_tree = {
 		cost = 15
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY }
 		available = {
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 			has_country_flag = ncr_vote_no_confidence
 		}
 		prerequisite = { focus = ncr_support_hayes }
@@ -11993,7 +11998,7 @@ focus_tree = {
 		cost = 15
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY }
 		available = {
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 			has_country_flag = ncr_vote_no_confidence
 		}
 		prerequisite = { focus = ncr_schooling }
@@ -12013,7 +12018,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY }
 		available = {
 			has_country_flag = ncr_vote_no_confidence
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		prerequisite = { focus = ncr_judiciary_act }
 		x = -1
@@ -12041,7 +12046,7 @@ focus_tree = {
 		cost = 15
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY }
 		available = {
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 			has_country_flag = ncr_vote_no_confidence
 		}
 		prerequisite = { focus = ncr_judiciary_act }
@@ -12069,7 +12074,7 @@ focus_tree = {
 			NOT = {
 				has_completed_focus = ncr_support_kimball
 			}
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 			has_country_flag = ncr_vote_no_confidence
 		}
 		x = 4
@@ -12106,7 +12111,7 @@ focus_tree = {
 		cost = 30
 		search_filters = {  FOCUS_FILTER_IDEAS }
 		available = {
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 			has_country_flag = ncr_vote_no_confidence
 		}
 		prerequisite = { focus = ncr_support_allgood }
@@ -12129,7 +12134,7 @@ focus_tree = {
 		cost = 30
 		search_filters = { FOCUS_FILTER_IDEAS FOCUS_FILTER_STABILITY }
 		available = {
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 			has_country_flag = ncr_vote_no_confidence
 		}
 		prerequisite = { focus = ncr_support_allgood }
@@ -12150,7 +12155,7 @@ focus_tree = {
 		icon = GFX_goal_NCR_Pokersiege
 		cost = 30
 		available = {
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 			has_country_flag = ncr_vote_no_confidence
 		}
 		prerequisite = { focus = ncr_denounce_kimball_rhetoric }
@@ -12168,7 +12173,7 @@ focus_tree = {
 		icon = GFX_goal_NCR_The_Capital_Fund
 		cost = 30
 		available = {
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 			has_country_flag = ncr_vote_no_confidence
 		}
 		prerequisite = { focus = ncr_denounce_kimball_rhetoric }
@@ -12197,7 +12202,7 @@ focus_tree = {
 				tooltip = ncr_produce_concrete_evidence_trig
 				NOT = { has_country_flag = maxson_probe_shut }
 			}
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 			has_country_flag = ncr_vote_no_confidence
 		}
 		completion_reward = {
@@ -12222,7 +12227,7 @@ focus_tree = {
 				tooltip = ncr_vonc_autocomplete
 				always = no
 			}
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 			has_country_flag = ncr_vote_no_confidence
 		}
 		allow_branch = {
@@ -12252,7 +12257,7 @@ focus_tree = {
 				tooltip = ncr_vonc_autocomplete
 				always = no
 			}
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		allow_branch = {
 			NOT = {
@@ -12282,7 +12287,7 @@ focus_tree = {
 		will_lead_to_war_with = MOS
 		available = {
 			ai_has_no_other_wars_or_wargoals = yes
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		bypass = {
 			MOS = {
@@ -12306,7 +12311,7 @@ focus_tree = {
 		}
 		available = {
 			MOS = { NCR = { sphere_controls_all_core_land_of_prev = yes } }
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		x = 0
 		y = 1
@@ -12355,7 +12360,7 @@ focus_tree = {
 		icon = GFX_goal_NCR_Caravan
 		cost = 30
 		available = {
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		prerequisite = {
 			focus = ncr_developtheeasternroute
@@ -12427,7 +12432,7 @@ focus_tree = {
 		icon = GFX_goal_NCR_Reno_Bishop
 		cost = 30
 		available = {
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		x = -3
 		y = 1
@@ -12447,7 +12452,7 @@ focus_tree = {
 		cost = 30
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		available = {
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		x = 0
 		y = 1
@@ -12493,7 +12498,7 @@ focus_tree = {
 			NOT = {
 				has_war_with = NEW
 			}
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		relative_position_id = ncr_ask_for_the_sierra_army_depot
 		completion_reward = {
@@ -12513,7 +12518,7 @@ focus_tree = {
 				exists = yes
 				is_neighbor_of = NCR
 			}
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		prerequisite = {
 			focus = ncr_spear_chop_shop
@@ -12555,7 +12560,7 @@ focus_tree = {
 		relative_position_id = ncr_spear_chop_shop
 		available = {
 			NAT = { NCR = { sphere_controls_all_core_land_of_prev = yes } }
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 
 		prerequisite = {
@@ -12600,7 +12605,7 @@ focus_tree = {
 		relative_position_id = ncr_kimball_vindication
 		available = {
 			ai_has_no_other_wars_or_wargoals = yes
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		prerequisite = {
 			focus = ncr_kimball_vindication
@@ -12627,7 +12632,7 @@ focus_tree = {
 		icon = GFX_goal_NCR_Shi_Dragon
 		cost = 30
 		available = {
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		x = 2
 		y = 1
@@ -12645,7 +12650,7 @@ focus_tree = {
 		icon = GFX_goal_NCR_Shi_Handshake
 		cost = 30
 		available = {
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		bypass = {
 			SHI = {
@@ -12677,7 +12682,7 @@ focus_tree = {
 		relative_position_id = ncr_rapid_expansion
 		available = {
 			RAP = { NCR = { sphere_controls_all_core_land_of_prev = yes } }
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		completion_reward = {
 			add_timed_idea = {
@@ -12720,7 +12725,7 @@ focus_tree = {
 		icon = GFX_goal_generic_boat
 		cost = 15
 		available = {
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		prerequisite = {
 			focus = ncr_rapidsettlement
@@ -12800,7 +12805,7 @@ focus_tree = {
 		icon = GFX_goal_NCR_Seabear
 		cost = 15
 		available = {
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		prerequisite = {
 			focus = ncr_rapid_boat
@@ -12817,7 +12822,7 @@ focus_tree = {
 		icon = GFX_goal_NCR_Rebuild_the_13
 		cost = 15
 		available = {
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		prerequisite = {
 			focus = ncr_southern_fleet
@@ -12838,7 +12843,7 @@ focus_tree = {
 		icon = GFX_goal_NCR_Bastion_By_the_Sea
 		cost = 15
 		available = {
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		prerequisite = {
 			focus = ncr_southern_fleet
@@ -12861,7 +12866,7 @@ focus_tree = {
 		icon = GFX_goal_generic_boat_battleship
 		cost = 15
 		available = {
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		prerequisite = {
 			focus = ncr_naval_extensions
@@ -14085,7 +14090,7 @@ focus = {
 		cost = 30
 		search_filters = { FOCUS_FILTER_NCR_ELECTION }
 		available = {
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		prerequisite = { focus = ncr_new_hand_on_the_tiller }
 		x = 7
@@ -14102,7 +14107,7 @@ focus = {
 		cost = 30
 		search_filters = { FOCUS_FILTER_NCR_ELECTION }
 		available = {
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		prerequisite = { focus = ncr_new_hand_on_the_tiller }
 		x = 5
@@ -14132,7 +14137,7 @@ focus = {
 					has_war_with = NCR
 				}
 			}
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		bypass = {
 			ARR = {
@@ -14156,7 +14161,7 @@ focus = {
 		cost = 30
 		search_filters = { FOCUS_FILTER_NCR_ELECTION FOCUS_FILTER_STABILITY }
 		available = {
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		prerequisite = { focus = ncr_the_northern_shield }
 		x = 0
@@ -14172,7 +14177,7 @@ focus = {
 		cost = 30
 		search_filters = { FOCUS_FILTER_IDEAS }
 		available = {
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		x = 10
 		y = 1
@@ -14244,7 +14249,7 @@ focus = {
 		cost = 30
 		cancelable = no
 		available = {
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		prerequisite = { focus = ncr_rural_revitalisation_act }
 		x = -2
@@ -14262,7 +14267,7 @@ focus = {
 		cost = 45
 		search_filters = { FOCUS_FILTER_IDEAS }
 		available = {
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		prerequisite = { focus = ncr_rural_revitalisation_act }
 		x = 0
@@ -14299,7 +14304,7 @@ focus = {
 		cost = 30
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		available = {
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		prerequisite = { focus = ncr_tackle_consumerism }
 		x = 0
@@ -14331,7 +14336,7 @@ focus = {
 		cost = 30
 		search_filters = { FOCUS_FILTER_IDEAS }
 		available = {
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		prerequisite = { focus = ncr_urban_industry_hubs }
 		x = 0
@@ -14372,7 +14377,7 @@ focus = {
 		icon = GFX_goal_NCR_Agricultural_Research
 		cost = 30
 		available = {
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		prerequisite = { focus = ncr_rural_revitalisation_act }
 		x = 2
@@ -14392,7 +14397,7 @@ focus = {
 		icon = GFX_goal_NCR_Shady_Sands
 		cost = 30
 		available = {
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		prerequisite = { focus = ncr_campaigns_against_corruption }
 		x = 0
@@ -14419,7 +14424,7 @@ focus = {
 				exists = yes
 				NOT = { has_war_with = NCR }
 			}
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		x = 0
 		y = 1
@@ -14443,7 +14448,7 @@ focus = {
 					sphere_controls_all_core_land_of_prev = yes
 				}
 			}
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		x = -3
 		y = 1
@@ -14461,7 +14466,7 @@ focus = {
 		}
 		available = {
 			253 = { is_owned_and_controlled_by = ROOT }
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		relative_position_id = ncr_new_hand_on_the_tiller
 		x = 3
@@ -14481,7 +14486,7 @@ focus = {
 		icon = GFX_goal_NCR_Murphy_Ranger_Reading
 		cost = 30
 		available = {
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		prerequisite = {
 			focus = ncr_gammacore
@@ -14498,7 +14503,7 @@ focus = {
 		icon = GFX_goal_NCR_Murphy_NCR_Ranger
 		cost = 30
 		available = {
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		prerequisite = {
 			focus = ncr_reorgranger1
@@ -14517,7 +14522,7 @@ focus = {
 		cost = 30
 		cancelable = no
 		available = {
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		prerequisite = { focus = ncr_agri_research }
 		x = 0
@@ -14589,7 +14594,7 @@ focus = {
 		cancelable = no
 		available = {
 			has_completed_focus = ncr_baja_trade_agreement
-			NOT = { has_country_flag = ncr_crisis }
+			NOT = { has_completed_focus = ncr_california_in_crisis}
 		}
 		prerequisite = { focus = ncr_slumbering_giant_waking }
 		x = 0
@@ -15983,8 +15988,7 @@ focus = {
 			has_completed_focus = ncr_moore_victorious
 		}
 		allow_branch = {
-			has_completed_focus = ncr_put_down_revanchists
-		}
+			has_country_flag = Moore		}
 		relative_position_id = ncr_bear_roars
 		completion_reward = {
 			add_ideas = NCR_cali_first
@@ -16093,30 +16097,88 @@ focus = {
 		x = -3
 		y = 1
 		available = {
-			CES = {
-				exists = no
-			}
 		}
 		relative_position_id = ncr_california_first_and_foremost
 		completion_reward = {
-			custom_effect_tooltip = ncr_oregon_wargoal_tt
-			hidden_effect = {
-				every_state = {
-					limit = {
-						OR = {
-							region = 11
-							region = 59
-							region = 58
-						}
-						OWNER = {
-							is_not_californian_hegemony_member = yes
-						}
-					}
-					ROOT = {
-						grant_wargoals_on_core_states_of_prev_force_ai_war = yes
-					}
-				}
-			}
+        	custom_effect_tooltip = NCR_tax_oregon_tt
+	        hidden_effect = {
+	            ARR = {
+	                annex_country = {
+	                    target = DIS
+	                    transfer_troops = no
+	                }
+	                annex_country = {
+	                    target = MLT
+	                    transfer_troops = no
+	                }
+	                annex_country = {
+	                    target = CCW
+	                    transfer_troops = no
+	                }
+	                annex_country = {
+	                    target = RBT
+	                    transfer_troops = no
+	                }
+	                annex_country = {
+	                    target = PMR
+	                    transfer_troops = no
+	                }
+	                every_state = {
+	                    limit = {
+	                        or = {
+	                            is_core_of = DIS
+	                            is_core_of = MLT
+	                            is_core_of = CCW
+	                            is_core_of = RBT
+	                            is_core_of = PMR
+
+	                        }
+	                    }
+	                    add_core_of = ARR
+	                }
+	            }
+	            VLT = {
+	                annex_country = {
+	                    target = BDT
+	                    transfer_troops = no
+	                }
+	                annex_country = {
+	                    target = TIM
+	                    transfer_troops = yes
+	                }
+	                every_state = {
+	                    limit = {
+	                        or = {
+	                            is_core_of = BDT
+	                            is_core_of = TIM
+
+	                        }
+	                    }
+	                    add_core_of = VLT
+	                }
+	            }
+	            NEW = {
+	                annex_country = {
+	                    target = TRL
+	                    transfer_troops = no
+	                }
+	                annex_country = {
+	                    target = MDT
+	                    transfer_troops = yes
+	                }
+	                every_state = {
+	                    limit = {
+	                        or = {
+	                            is_core_of = TRL
+	                            is_core_of = MDT
+
+	                        }
+	                    }
+	                    add_core_of = NEW
+	                }
+	            }
+	        }
+	    }
 		}
 	}
 	focus = {
@@ -16198,17 +16260,44 @@ focus = {
 			}
 		}
 		relative_position_id = ncr_california_first_and_foremost
+		bypass = {
+			CES = {
+				has_war_with = NCR
+			}
+		}
 		completion_reward = {
-			every_country = {
-				limit = {
-					OR = {
-						original_tag = CES
-						is_caesars_legion_member = yes
-					}
-				}
+			CES = {
 				ROOT = {
 					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
 				}
+			}
+			every_country = {
+				limit = {
+					OR = {
+						original_tag = EUR
+						original_tag = BVC
+						original_tag = PAR
+						original_tag = CWB
+						original_tag = VEG
+						original_tag = SHI
+						original_tag = IRN
+						original_tag = WHT
+						original_tag = ARR
+						original_tag = NAV
+						original_tag = RES
+						original_tag = LAC
+						original_tag = SHA
+						original_tag = IMO
+						original_tag = CRH
+						original_tag = EHT
+						original_tag = NEW
+						original_tag = VLT
+						original_tag = TIM
+						original_tag = TWO
+						original_tag = GDH
+					}
+				}
+				add_ideas = escalation_no_fun_idea
 			}
 		}
 	}
@@ -16274,8 +16363,7 @@ focus = {
 		allow_branch = {
 			NOT = {
 				has_country_flag = ncr_hayes_expansion
-				has_completed_focus = ncr_put_down_revanchists
-			}
+				has_country_flag = Moore			}
 		}
 		relative_position_id = ncr_bear_roars
 		completion_reward = {
@@ -16829,9 +16917,28 @@ focus = {
 		x = 1
 		y = 1
 		relative_position_id = ncr_cal_peace_in_our_times
+		available = {
+			TIM = {
+				owns_state = 493
+			}
+			NCR = {
+				OR = {
+					is_neighbor_of = TIM
+					any_allied_country = {
+						is_neighbor_of = TIM
+					}
+				}
+			}
+		}
+		relative_position_id = ncr_state_department
 		completion_reward = {
-			BOS = {
-				country_event = ncr_dharma.14
+			TIM = {
+				create_or_join_new_california = yes
+				hidden_effect = {
+					add_ideas = {
+						ncr_sphere
+					}
+				}
 			}
 		}
 	}
@@ -16852,9 +16959,13 @@ focus = {
 		y = 1
 		relative_position_id = ncr_cal_lost_hills_reformers
 		completion_reward = {
-			BOS = {
-				country_event = ncr_dharma.15
-			}
+			TIM = {
+				add_political_power = 300
+				custom_effect_tooltip = ncrtimberlinett
+				hidden_effect = {
+						add_to_variable = { coring_cost_country_factor = -0.75 }
+				}
+				add_ideas = ncr_new_ranger_corps
 		}
 	}
 	focus = {
@@ -16864,88 +16975,33 @@ focus = {
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		prerequisite = {
 			focus = ncr_cal_peace_in_our_times
+			DES = {
+				owns_state = 947
+				owns_state = 371
+				owns_state = 389
+				owns_state = 425
+			}
 		}
 		x = 3
 		y = 1
 		relative_position_id = ncr_cal_peace_in_our_times
 		completion_reward = {
-			if = {
+			210 = {
+				add_extra_state_shared_building_slots = 6
+				set_temp_variable = { pop_add = 15000 }
+				add_state_population = yes
+				set_state_name = ranger_citadel
+			}
+			every_state = {
 				limit = {
-					210 = {
-						OWNER = {
-							is_dharma_way_member = yes
-							NOT = {
-								tag = DES
-							}
+					or = {
+						is_core_of = VIP
+						is_core_of = PSH
+						is_core_of = SKY
+						is_core_of = GRA
 						}
-					}
 				}
-				custom_effect_tooltip = ncr_cal_nevada_tt
-				hidden_effect = {
-					every_state = {
-						limit = {
-							OWNER = {
-								is_dharma_way_member = yes
-							}
-							OR = {
-								region = 56
-								region = 57
-								region = 12
-							}
-						}
-						DES = {
-							transfer_state = PREV
-						}
-						add_core_of = DES
-					}
-					DES = {
-						become_puppet = yes
-						set_cosmetic_tag = DES_NCR
-						load_focus_tree = ncr_puppet_nf
-						set_capital = {state = 210 }
-						210 = {
-							add_extra_state_shared_building_slots = 6
-							set_temp_variable = { pop_add = 15000 }
-							add_state_population = yes
-							set_state_name = ranger_citadel
-						}
-						set_province_name = {
-							id = 3519
-							name = ranger_citadel
-						}
-						add_ideas = desertrangers
-						retire_country_leader = yes
-						BON = {
-							DES_angela_deth = {
-								set_nationality = DES
-							}
-						}
-						add_country_leader_role = {
-							character = DES_angela_deth
-							promote_leader = yes
-							country_leader = {
-								ideology = unlimited_democracy
-								expire = "3000.01.01.01"
-								traits = {
-									DES_ranger_general
-								}
-							}
-						}
-					}
-				}
-			}
-			else = {
-				custom_effect_tooltip = ncr_cal_nevada_retake_tt
-				every_country = {
-					limit = {
-						owns_state = 210
-					}
-					BON = {
-						grant_wargoals_on_core_states_of_prev_force_ai_war = yes
-					}
-				}
-				set_country_flag = ncr_cal_restore_des
-			}
+
 		}
 	}
 	focus = {
@@ -16953,21 +17009,7 @@ focus = {
 		icon = GFX_goal_NCR_Calhoun_Expansion_David
 		cost = 30
 		available = {
-			NAV = {
-				exists = yes
-				custom_trigger_tooltip = {
-					check_variable = { NAV_resistance > NAV_loyalty }
-					tooltip = ncr_cal_navajo_tt
-				}
-			}
-		}
-		bypass = {
-			NAV = {
-				OR = {
-					exists = no
-					is_dharma_way_member = yes
-				}
-			}
+			has_completed_focus = ncr_baja_republic
 		}
 		prerequisite = {
 			focus = ncr_cal_restore_nevada_rangers
@@ -16976,9 +17018,7 @@ focus = {
 		y = 1
 		relative_position_id = ncr_cal_restore_nevada_rangers
 		completion_reward = {
-			NAV = {
-				country_event = ncr_dharma.16
-			}
+
 		}
 	}
 	focus = {
@@ -17026,7 +17066,13 @@ focus = {
 		y = 1
 		relative_position_id = ncr_cal_doctors_without_borders
 		completion_reward = {
-			custom_effect_tooltip = ncr_cal_raiders_tt
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 7
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+				}
+			}
 		}
 	}
 	focus = {
@@ -19713,15 +19759,13 @@ focus = {
 		}
 		allow_branch = {
 			NOT = {
-				has_completed_focus = ncr_put_down_revanchists
-			}
+				has_country_flag = Moore			}
 		}
 		offset = {
 			x = -3
 			y = 0
 			trigger = {
-				has_completed_focus = ncr_mossman_conspiracy
-			}
+			has_country_flag = Calhoun			}
 		}
 		completion_reward = {
 			BON = {
@@ -20111,8 +20155,7 @@ focus = {
 			x = 3
 			y = 0
 			trigger = {
-				has_completed_focus = ncr_put_down_revanchists
-			}
+				has_country_flag = Moore			}
 		}
 		completion_reward = {
 			country_event = ncr_order.1
@@ -20135,8 +20178,7 @@ focus = {
 			x = 4
 			y = 0
 			trigger = {
-				has_completed_focus = ncr_put_down_revanchists
-			}
+				has_country_flag = Moore			}
 		}
 		x = -4
 		y = 1
@@ -21061,7 +21103,7 @@ focus = {
 	#	}
 	#}
 }
-
+}
 ##3 flynn
 ## Techs to add
 # oldworldarmour
