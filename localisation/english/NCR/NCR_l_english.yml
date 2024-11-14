@@ -622,8 +622,8 @@
 
   ncr_cal_restore_nevada_rangers:0 "Protectors of Nevada"
   ncr_cal_restore_nevada_rangers_desc:0 "Long ago, Angela Deth was part of the original Arizonan Desert Rangers. I myself recall spending weeks familiarizing myself with the group's exploits and culture, though some of their historical claims seem more far-fetched than what I and others remember. Nevertheless, Deth had been on a path of vengeance, violence, and was planning a trip to Colorado for some reason. I shall seek to meet her to keep her here in order to create a more whole and unified Rangers, and reintroduce the love and passion Deth once had into both our Nevada Rangers, and perhaps Deth herself."
-  ncr_cal_navajo_reservation_legion_revolt:0 "David and Goliath"
-  ncr_cal_navajo_reservation_legion_revolt_desc:0 "Although the Navajo are not of the many faiths of the Followers, I believe a Christian analogy fits their situation best: That of the little boy, David, against the fierce giant, Goliath. But in this case, David is the little boy of the Navajo, desperate to grow up and free themselves of the shackles imposed on them by Caesar's Goliath. Let me tell them of a world where they do not have to live in Goliath's shadow, where they can go their own way. A better world that only they have the ability to create, with our help."
+  ncr_des_arm_invest:0 "David and Goliath"
+  ncr_des_arm_invest_desc:0 "Although the Desert Ranger are not of the many faiths of the Followers, I believe a Christian analogy fits their situation best: That of the little boy, David, against the fierce giant, Goliath. But in this case, David is the little boy of the Nevada, desperate to grow up and free themselves of the shackles imposed on them by Wasteland. Let me tell them of a world where they do not have to live in Goliath's shadow, where they can go their own way. A better world that only they have the ability to create, with our help."
 
   ncr_cal_doctors_without_borders:0 "Doctors Without Borders"
   ncr_cal_doctors_without_borders_desc:0 "I do not understand this sudden surge of Followers across America, from California to the far regions of Canada, even Texas and Mexico, the whole wasteland seems to have caught a form of Follower fever. But we are not one to turn down helping our fellow man, mutant, or other living being. We shall do all we can to aid them in these trying times."
@@ -633,7 +633,7 @@
   ncr_cal_new_canaan:0 "Love Thy Neighbor"
   ncr_cal_new_canaan_desc:0 "I did not know him all that well, but that Joshua Graham fellow always struck me as the most neutral of the three of us. I admit even I have my failings and biases, I am only human. But he grew up in a faith unlike many others in the wastes. The old NCR had made countless trading expeditions with his land of New Canaan, let me see if those trades cannot be resumed under the Californian Way."
   ncr_cal_californian_federation:0 "A Brighter World"
-  ncr_cal_californian_federation_desc:0 "The light of democracy shines upon the American Southwest once more. The NCR Hall of Congress stands proudly, but with a new flag and symbol. Caesar and his Legion are dead and buried, even if their memory will live on. But I have had enough adventures, and I am not fit to lead forever, let alone as a singular king or president. Let me enact an election, let us see if we cannot find us a new Tandi for the new era."
+  ncr_cal_californian_federation_desc:0 "The light of democracy shines upon the American Southwest once more. The NCR Hall of Congress stands proudly, but with a new flag and symbol. Caesar and his Legion will be vanquished, even if their memory will live on."
 
 
 
@@ -1667,3 +1667,5 @@
   ncr_ncrvl.1.d:0  "Sparked by an inconclusive Senate and Presidential election earlier in the year, the NCR has been thrown into complete chaos as a coup has been launched against the crippled Senate. Led by members of the military and civil service, the coup's ringleaders have declared a \"Committee for National Security\", citing the need for political stability in the face of the Republic's many internal and external foes. While initially promising fresh elections, hope for a return to democracy evapourated after they signed into law the "Law to Remedy the Distress of People and California". The Decree effectively abolishes the federal foundations of the NCR, centralizes power in Shady Sand. \n\nThe governments of Boneyard, Dayglow and Redding were quick to denounce the Decree as illegitimate and label the Committee's assention to power as little more than a military coup. But if the Republic is to survive, perhaps the time has come for a Leader."
   ncr_ncrvl.1.a:0 "Moore will save us !"
   ncr_ncrvl.1.b:0 "Calhoun will save us !"
+
+  shining_future:0 "A Shining Future"

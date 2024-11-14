@@ -1525,5 +1525,16 @@ ideas = {
 			}
 		}
 
+		shining_future = {
+			allowed = {
+				always = no
+			}
+
+			modifier = {
+				army_core_attack_factor = 0.05
+				army_core_attack_factor = 0.10
+			}
+		}
+
 	}
 }

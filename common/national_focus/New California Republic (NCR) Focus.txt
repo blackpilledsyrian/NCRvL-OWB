@@ -5424,9 +5424,6 @@ focus = {
 		prerequisite = { focus = ncr_bear_roars }
 		x = -7
 		y = 1
-		available = {
-			has_completed_focus = ncr_moore_victorious
-		}
 		allow_branch = {
 			has_country_flag = Moore
 		}
@@ -5695,16 +5692,6 @@ focus = {
 			has_war = no
 		}
 		will_lead_to_war_with = CES
-		available = {
-			has_completed_focus = ncr_moore_ncr_is_prosperity
-			OR = {
-				borders_caesars_legion = yes
-				caesars_legion_does_not_exist = yes
-				CES = {
-					all_core_land_owned_by_prev_sphere = yes
-				}
-			}
-		}
 		relative_position_id = ncr_california_first_and_foremost
 		bypass = {
 			CES = {
@@ -6302,9 +6289,6 @@ focus = {
 		prerequisite = { focus = ncr_bear_roars }
 		x = 7
 		y = 1
-		available = {
-			has_completed_focus = ncr_from_many_one
-		}
 		allow_branch = {
 			has_country_flag = Calhoun
 		}
@@ -6455,7 +6439,7 @@ focus = {
 		}
 	}
 	focus = {
-		id = ncr_cal_navajo_reservation_legion_revolt
+		id = ncr_des_arm_invest
 		icon = GFX_goal_NCR_Calhoun_Expansion_David
 		cost = 30
 		available = {
@@ -6599,7 +6583,12 @@ focus = {
 		y = 1
 		relative_position_id = ncr_cal_new_canaan
 		completion_reward = {
-			country_event = ncr_dharma.18
+			every_country = {
+				limit = {
+					is_in_faction_with = NCR
+				}
+				add_idea = shining_future
+			}
 		}
 	}
 	###################
@@ -9577,13 +9566,13 @@ focus = {
 			owns_state = 141
 		}
 		prerequisite = {
-			focus = ncr_calhoun_comes_marching_home
+			focus = ncr_we_are_the_republic		
 		}
 		prerequisite = {
-			focus = ncr_and_the_californian_way
+			focus = ncr_and_the_californian_way	
 		}
 		prerequisite = {
-			focus = ncr_we_are_the_republic
+			focus = ncr_calhoun_comes_marching_home	
 		}
 		x = 0
 		y = 1
@@ -10210,6 +10199,16 @@ focus = {
 						type = arms_factory
 						level = 5
 					}
+				}
+				any_owned_state = {
+					add_resource = {
+                    type = circuitry
+                    amount = 20
+                	}
+					add_resource = {
+                    type = composites
+                    amount = 20
+                	}
 				}
 
 			}
