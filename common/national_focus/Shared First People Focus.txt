@@ -1,0 +1,5277 @@
+#!gfx:interface\z_fallout_national_focuses.gfx
+focus_tree = {
+	id = cmc_nf
+	country = {
+		factor = 0
+		modifier = {
+			OR = {
+				original_tag = CMC
+				original_tag = CHO
+				original_tag = CHR
+			}
+			add = 0
+		}
+	}
+	default = no
+	###############################
+	# Historic Focuses
+	###############################
+	focus = {
+		id = fp_history_1
+		icon = GFX_goal_gpf_historic
+		cost = 7
+		x = 14
+		y = 0
+		available = {
+		}
+		completion_reward = {
+			country_event = {
+				id = nf_event_fp.1
+			}
+		}
+	}
+	focus = {
+		id = fp_history_2
+		icon = GFX_goal_gpf_historic
+		cost = 7
+		prerequisite = {
+			focus = fp_history_1
+		}
+		relative_position_id = fp_history_1
+		x = 0
+		y = 1
+		completion_reward = {
+			country_event = {
+				id = nf_event_fp.2
+			}
+		}
+	}
+	focus = {
+		id = fp_history_3
+		icon = GFX_goal_gpf_historic
+		cost = 7
+		prerequisite = {
+			focus = fp_history_2
+		}
+		relative_position_id = fp_history_2
+		x = 0
+		y = 1
+		completion_reward = {
+			country_event = {
+				id = nf_event_fp.3
+			}
+		}
+	}
+	###############################
+	# Shared Industry Branch
+	###############################
+	focus = {
+		id = fp_industry
+		icon = GFX_goal_pal_vault_city
+		cost = 60
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = {
+			focus = fp_history_3
+		}
+		relative_position_id = fp_history_3
+		x = -19
+		y = 1
+		completion_reward = {
+			capital_scope = {
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			custom_effect_tooltip = fp_industry_tt
+		}
+	}
+	focus = {
+		id = fp_support_clans
+		icon = GFX_goal_tribal_generic
+		cost = 60
+		search_filters = {
+			FOCUS_FILTER_CLANS_SUPPORT
+		}
+		prerequisite = {
+			focus = fp_industry
+		}
+		mutually_exclusive = {
+			focus = fp_support_cities
+		}
+		relative_position_id = fp_industry
+		x = -2
+		y = 1
+		completion_reward = {
+			set_temp_variable = {
+				fp_support_var_temp = 3
+			}
+			add_fp_clan_support = yes
+			add_political_power = 100
+		}
+	}
+	focus = {
+		id = fp_support_cities
+		icon = GFX_goal_generic_slums_focus
+		cost = 60
+		search_filters = {
+			FOCUS_FILTER_CITY_SUPPORT
+		}
+		prerequisite = {
+			focus = fp_industry
+		}
+		mutually_exclusive = {
+			focus = fp_support_clans
+		}
+		relative_position_id = fp_industry
+		x = 2
+		y = 1
+		completion_reward = {
+			set_temp_variable = {
+				fp_support_var_temp = 3
+			}
+			add_fp_city_support = yes
+			add_political_power = 100
+		}
+	}
+	focus = {
+		id = fp_improve_clan_housing
+		icon = GFX_goal_fp_clan_housing
+		cost = 60
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+			FOCUS_FILTER_CLANS_SUPPORT
+		}
+		prerequisite = {
+			focus = fp_support_clans
+			focus = fp_support_cities
+		}
+		mutually_exclusive = {
+			focus = fp_reclaim_skyscrapers
+		}
+		relative_position_id = fp_support_clans
+		x = -1
+		y = 1
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_capital = no
+					is_valid_state_for_2_civilian_factories = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			set_temp_variable = {
+				fp_support_var_temp = 2
+			}
+			add_fp_clan_support = yes
+		}
+	}
+	focus = {
+		id = fp_reclaim_skyscrapers
+		icon = GFX_goal_generic_scyscrapers_prewar
+		cost = 60
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+			FOCUS_FILTER_CITY_SUPPORT
+		}
+		prerequisite = {
+			focus = fp_support_cities
+			focus = fp_support_clans
+		}
+		mutually_exclusive = {
+			focus = fp_improve_clan_housing
+		}
+		relative_position_id = fp_support_clans
+		x = 1
+		y = 1
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_capital = yes
+					is_valid_state_for_3_civilian_factories = yes
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+			set_temp_variable = {
+				fp_support_var_temp = 2
+			}
+			add_fp_city_support = yes
+		}
+	}
+	focus = {
+		id = fp_clan_farmsteads
+		icon = GFX_goal_food_various_vegetables
+		cost = 60
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+			FOCUS_FILTER_CLANS_SUPPORT
+		}
+		prerequisite = {
+			focus = fp_support_cities
+			focus = fp_support_clans
+		}
+		mutually_exclusive = {
+			focus = fp_free_streets
+		}
+		relative_position_id = fp_support_cities
+		x = -1
+		y = 1
+		completion_reward = {
+			set_temp_variable = {
+				fp_increase_temp = 0.03
+			}
+			add_to_variable = {
+				fp_conscription_var = fp_increase_temp
+			}
+			custom_effect_tooltip = fp_conscript_increase_tt
+			set_temp_variable = {
+				fp_support_var_temp = 2
+			}
+			add_fp_clan_support = yes
+		}
+	}
+	focus = {
+		id = fp_free_streets
+		icon = GFX_goal_generic_megaloader
+		cost = 60
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+			FOCUS_FILTER_CITY_SUPPORT
+		}
+		prerequisite = {
+			focus = fp_support_cities
+			focus = fp_support_clans
+		}
+		mutually_exclusive = {
+			focus = fp_clan_farmsteads
+		}
+		relative_position_id = fp_support_cities
+		x = 1
+		y = 1
+		completion_reward = {
+			set_temp_variable = {
+				fp_increase_temp = 0.25
+			}
+			add_to_variable = {
+				fp_infrastructure_speed_var = fp_increase_temp
+			}
+			custom_effect_tooltip = fp_infrastructure_increase_tt
+			set_temp_variable = {
+				fp_support_var_temp = 2
+			}
+			add_fp_city_support = yes
+		}
+	}
+	focus = {
+		id = fp_black_drink_bottling_plant
+		icon = GFX_goal_fp_black_brew
+		cost = 60
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+			FOCUS_FILTER_CLANS_SUPPORT
+			FOCUS_FILTER_CAPS
+		}
+		prerequisite = {
+			focus = fp_improve_clan_housing
+			focus = fp_reclaim_skyscrapers
+		}
+		prerequisite = {
+			focus = fp_clan_farmsteads
+			focus = fp_free_streets
+		}
+		mutually_exclusive = {
+			focus = fp_organized_scavenging_teams
+		}
+		relative_position_id = fp_support_clans
+		x = -1
+		y = 2
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_capital = no
+					is_valid_state_for_civilian_factory = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			set_temp_variable = {
+				caps_to_add = 200
+			}
+			add_caps = yes
+			set_temp_variable = {
+				fp_support_var_temp = 3
+			}
+			add_fp_clan_support = yes
+		}
+	}
+	focus = {
+		id = fp_organized_scavenging_teams
+		icon = GFX_goal_generic_building_focus
+		cost = 60
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+			FOCUS_FILTER_CITY_SUPPORT
+		}
+		prerequisite = {
+			focus = fp_improve_clan_housing
+			focus = fp_reclaim_skyscrapers
+		}
+		prerequisite = {
+			focus = fp_clan_farmsteads
+			focus = fp_free_streets
+		}
+		mutually_exclusive = {
+			focus = fp_black_drink_bottling_plant
+		}
+		relative_position_id = fp_support_cities
+		x = 1
+		y = 2
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_capital = yes
+				}
+				add_resource = {
+					type = metal
+					amount = 4
+				}
+				add_resource = {
+					type = composites
+					amount = 4
+				}
+				add_resource = {
+					type = circuitry
+					amount = 4
+				}
+			}
+			set_temp_variable = {
+				fp_support_var_temp = 3
+			}
+			add_fp_city_support = yes
+		}
+	}
+	focus = {
+		id = fp_reopen_coal_mines
+		icon = GFX_goal_pal_the_below
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+			FOCUS_FILTER_CLANS_SUPPORT
+		}
+		cost = 60
+		prerequisite = {
+			focus = fp_black_drink_bottling_plant
+			focus = fp_organized_scavenging_teams
+		}
+		available = {
+			set_temp_variable = {
+				support_check_temp = 3
+			}
+			custom_trigger_tooltip = {
+				check_variable = {
+					fp_clan_support_var > support_check_temp
+				}
+				tooltip = fp_enough_clan_support_tt
+			}
+		}
+		relative_position_id = fp_black_drink_bottling_plant
+		x = -1
+		y = 1
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_capital = no
+					is_valid_state_for_2_civilian_factories = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = fp_fund_local_arms_factories
+		icon = GFX_goal_generic_lever_action
+		cost = 60
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+			FOCUS_FILTER_CLANS_SUPPORT
+		}
+		prerequisite = {
+			focus = fp_black_drink_bottling_plant
+			focus = fp_organized_scavenging_teams
+		}
+		available = {
+			set_temp_variable = {
+				support_check_temp = 3
+			}
+			custom_trigger_tooltip = {
+				check_variable = {
+					fp_clan_support_var > support_check_temp
+				}
+				tooltip = fp_enough_clan_support_tt
+			}
+		}
+		relative_position_id = fp_black_drink_bottling_plant
+		x = 1
+		y = 1
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					is_capital = no
+					is_valid_state_for_arms_factory = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					is_capital = no
+					is_valid_state_for_arms_factory = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = fp_traditional_values
+		icon = GFX_goal_generic_spear
+		cost = 60
+		search_filters = {
+			FOCUS_FILTER_CLANS_SUPPORT
+		}
+		prerequisite = {
+			focus = fp_black_drink_bottling_plant
+		}
+		available = {
+			set_temp_variable = {
+				support_check_temp = 5
+			}
+			custom_trigger_tooltip = {
+				check_variable = {
+					fp_clan_support_var > support_check_temp
+				}
+				tooltip = fp_enough_clan_support_tt
+			}
+		}
+		relative_position_id = fp_black_drink_bottling_plant
+		x = 0
+		y = 3
+		completion_reward = {
+			custom_effect_tooltip = traditional_values_tt
+		}
+	}
+	focus = {
+		id = fp_ancestral_ways
+		icon = GFX_goal_generic_desert
+		cost = 60
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+			FOCUS_FILTER_CLANS_SUPPORT
+		}
+		prerequisite = {
+			focus = fp_traditional_values
+		}
+		prerequisite = {
+			focus = fp_bunker_research_slot
+		}
+		available = {
+			set_temp_variable = {
+				support_check_temp = 7
+			}
+			custom_trigger_tooltip = {
+				check_variable = {
+					fp_clan_support_var > support_check_temp
+				}
+				tooltip = fp_enough_clan_support_tt
+			}
+		}
+		relative_position_id = fp_traditional_values
+		x = 0
+		y = 2
+		completion_reward = {
+			set_technology = {
+				tribal_production_tech_2 = 1
+				tribal_climate_tech = 1
+			}
+		}
+	}
+	focus = {
+		id = fp_repair_industrial_complexes
+		icon = GFX_goal_generic_workshop
+		cost = 60
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+			FOCUS_FILTER_CITY_SUPPORT
+		}
+		prerequisite = {
+			focus = fp_black_drink_bottling_plant
+			focus = fp_organized_scavenging_teams
+		}
+		available = {
+			set_temp_variable = {
+				support_check_temp = 3
+			}
+			custom_trigger_tooltip = {
+				check_variable = {
+					fp_city_support_var > support_check_temp
+				}
+				tooltip = fp_enough_city_support_tt
+			}
+		}
+		relative_position_id = fp_organized_scavenging_teams
+		x = -1
+		y = 1
+		completion_reward = {
+			set_temp_variable = {
+				fp_increase_temp = 0.1
+			}
+			add_to_variable = {
+				fp_industrial_speed_var = fp_increase_temp
+			}
+			custom_effect_tooltip = fp_industry_increase_tt
+			random_owned_controlled_state = {
+				limit = {
+					is_capital = yes
+					is_valid_state_for_civilian_factory = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = fp_hunt_down_weapon_stashes
+		icon = GFX_goal_generic_supplies_focus
+		cost = 60
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+			FOCUS_FILTER_CITY_SUPPORT
+		}
+		prerequisite = {
+			focus = fp_black_drink_bottling_plant
+			focus = fp_organized_scavenging_teams
+		}
+		available = {
+			set_temp_variable = {
+				support_check_temp = 3
+			}
+			custom_trigger_tooltip = {
+				check_variable = {
+					fp_city_support_var > support_check_temp
+				}
+				tooltip = fp_enough_city_support_tt
+			}
+		}
+		relative_position_id = fp_organized_scavenging_teams
+		x = 1
+		y = 1
+		completion_reward = {
+			if = {
+				limit = {
+					has_tech = ballistic_weaponry_tech_4
+				}
+				add_equipment_to_stockpile = {
+					type = ballistic_equipment_4
+					amount = 500
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = ballistic_weaponry_tech_3
+				}
+				add_equipment_to_stockpile = {
+					type = ballistic_equipment_3
+					amount = 500
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = ballistic_weaponry_tech_2
+				}
+				add_equipment_to_stockpile = {
+					type = ballistic_equipment_2
+					amount = 500
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = ballistic_weaponry_tech_1
+				}
+				add_equipment_to_stockpile = {
+					type = ballistic_equipment_1
+					amount = 500
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = standard_weaponry_tech
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_1
+					amount = 500
+				}
+			}
+		}
+	}
+	focus = {
+		id = fp_the_new_expansion
+		icon = GFX_KHA_focus_planning
+		cost = 60
+		search_filters = {
+			FOCUS_FILTER_CITY_SUPPORT
+		}
+		prerequisite = {
+			focus = fp_organized_scavenging_teams
+		}
+		available = {
+			set_temp_variable = {
+				support_check_temp = 5
+			}
+			custom_trigger_tooltip = {
+				check_variable = {
+					fp_city_support_var > support_check_temp
+				}
+				tooltip = fp_enough_city_support_tt
+			}
+		}
+		relative_position_id = fp_organized_scavenging_teams
+		x = 0
+		y = 3
+		completion_reward = {
+			custom_effect_tooltip = new_expansion_tt
+		}
+	}
+	focus = {
+		id = fp_tools_of_war
+		icon = GFX_goal_generic_focus_magazine_gunsandbullets_lasers
+		cost = 60
+		search_filters = {
+			FOCUS_FILTER_CITY_SUPPORT
+		}
+		prerequisite = {
+			focus = fp_the_new_expansion
+		}
+		prerequisite = {
+			focus = fp_bunker_research_slot
+		}
+		available = {
+			set_temp_variable = {
+				support_check_temp = 7
+			}
+			custom_trigger_tooltip = {
+				check_variable = {
+					fp_city_support_var > support_check_temp
+				}
+				tooltip = fp_enough_city_support_tt
+			}
+		}
+		relative_position_id = fp_the_new_expansion
+		x = 0
+		y = 2
+		completion_reward = {
+			add_to_variable = {
+				fatman_uses = 10
+			}
+			custom_effect_tooltip = fp_tools_of_war_tt
+		}
+	}
+	focus = {
+		id = fp_dismantle_old_bunkers
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+			FOCUS_FILTER_INDUSTRY
+		}
+		icon = GFX_goal_generic_contraptions_girl
+		cost = 60
+		prerequisite = {
+			focus = fp_black_drink_bottling_plant
+			focus = fp_organized_scavenging_teams
+		}
+		relative_position_id = fp_industry
+		x = 0
+		y = 4
+		completion_reward = {
+			capital_scope = {
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = industry
+			}
+		}
+	}
+	focus = {
+		id = fp_new_world_tactics
+		icon = GFX_goal_pal_pr_riper
+		cost = 60
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+			FOCUS_FILTER_CLANS_SUPPORT
+		}
+		prerequisite = {
+			focus = fp_dismantle_old_bunkers
+		}
+		mutually_exclusive = {
+			focus = fp_old_world_knowledge
+		}
+		relative_position_id = fp_dismantle_old_bunkers
+		x = -1
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = fp_new_world_tactics
+				bonus = 0.75
+				uses = 2
+				category = cat_grand_army
+			}
+			set_temp_variable = {
+				fp_support_var_temp = 1
+			}
+			add_fp_clan_support = yes
+		}
+	}
+	focus = {
+		id = fp_old_world_knowledge
+		icon = GFX_goal_generic_blueprint
+		cost = 60
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+			FOCUS_FILTER_CITY_SUPPORT
+		}
+		prerequisite = {
+			focus = fp_dismantle_old_bunkers
+		}
+		mutually_exclusive = {
+			focus = fp_new_world_tactics
+		}
+		relative_position_id = fp_dismantle_old_bunkers
+		x = 1
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = electronics_bonus
+				bonus = 0.75
+				uses = 2
+				category = electronics
+			}
+			set_temp_variable = {
+				fp_support_var_temp = 1
+			}
+			add_fp_city_support = yes
+		}
+	}
+	focus = {
+		id = fp_weapons_fit_for_the_wastes
+		icon = GFX_goal_generic_bow_1
+		cost = 60
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+			FOCUS_FILTER_CLANS_SUPPORT
+		}
+		prerequisite = {
+			focus = fp_new_world_tactics
+			focus = fp_old_world_knowledge
+		}
+		mutually_exclusive = {
+			focus = fp_future_of_war
+		}
+		relative_position_id = fp_new_world_tactics
+		x = 0
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = weapon_bonus
+				bonus = 0.5
+				uses = 2
+				category = ballistic_weaponry_tech_category
+			}
+			set_temp_variable = {
+				fp_support_var_temp = 1
+			}
+			add_fp_clan_support = yes
+		}
+	}
+	focus = {
+		id = fp_future_of_war
+		icon = GFX_goal_generic_laser_pistol
+		cost = 60
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+			FOCUS_FILTER_CITY_SUPPORT
+		}
+		prerequisite = {
+			focus = fp_new_world_tactics
+			focus = fp_old_world_knowledge
+		}
+		mutually_exclusive = {
+			focus = fp_weapons_fit_for_the_wastes
+		}
+		relative_position_id = fp_old_world_knowledge
+		x = 0
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = weapon_bonus
+				bonus = 0.5
+				uses = 2
+				category = energy_weaponry_tech_category
+			}
+			set_temp_variable = {
+				fp_support_var_temp = 1
+			}
+			add_fp_city_support = yes
+		}
+	}
+	focus = {
+		id = fp_bunker_research_slot
+		icon = GFX_goal_pal_access_the_terminals
+		cost = 60
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = {
+			focus = fp_weapons_fit_for_the_wastes
+			focus = fp_future_of_war
+		}
+		relative_position_id = fp_dismantle_old_bunkers
+		x = 0
+		y = 3
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = fp_clear_rivers
+		icon = GFX_goal_generic_hot_woman_on_fishman_action
+		cost = 60
+		prerequisite = {
+			focus = fp_industry
+		}
+		relative_position_id = fp_industry
+		x = 8
+		y = 1
+		completion_reward = {
+			add_manpower = -15
+			capital_scope = {
+				add_extra_state_shared_building_slots = 2
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_capital = no
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_capital = no
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+	focus = {
+		id = fp_river_commerce
+		icon = GFX_goal_generic_boat
+		cost = 60
+		prerequisite = {
+			focus = fp_clear_rivers
+		}
+		relative_position_id = fp_clear_rivers
+		x = -2
+		y = 1
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_valid_state_for_2_dockyards = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_equipment_to_stockpile = {
+				type = convoy
+				amount = 50
+			}
+		}
+	}
+	focus = {
+		id = fp_river_fleet
+		icon = GFX_goal_generic_naval_doctrines_focus
+		cost = 60
+		prerequisite = {
+			focus = fp_river_commerce
+		}
+		relative_position_id = fp_river_commerce
+		x = 1
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = ship_bonus
+				bonus = 1
+				uses = 2
+				category = naval_tech_category
+			}
+		}
+	}
+	focus = {
+		id = fp_river_defense
+		icon = GFX_goal_generic_outpost
+		cost = 60
+		prerequisite = {
+			focus = fp_river_commerce
+		}
+		relative_position_id = fp_river_commerce
+		x = -1
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = gpf_coastal_forts_tt
+			hidden_effect = {
+				every_owned_state = {
+					limit = {
+						is_coastal = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						instant_build = yes
+						province = {
+							all_provinces = yes
+							limit_to_coastal = yes
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = fp_help_needed
+		icon = GFX_goal_generic_recruitment_focus
+		cost = 60
+		prerequisite = {
+			focus = fp_clear_rivers
+		}
+		relative_position_id = fp_clear_rivers
+		x = 2
+		y = 1
+		completion_reward = {
+			add_manpower = 250
+		}
+	}
+	focus = {
+		id = fp_foreign_mercenaries
+		icon = GFX_goal_generic_f76_player2
+		cost = 60
+		prerequisite = {
+			focus = fp_help_needed
+		}
+		relative_position_id = fp_help_needed
+		x = -1
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = fp_foreign_mercenaries_tt
+			hidden_effect = {
+				division_template = {
+					name = "River Patrol"
+					regiments = {
+						infantry = {
+							x = 0
+							y = 0
+						}
+						infantry = {
+							x = 0
+							y = 1
+						}
+						infantry = {
+							x = 0
+							y = 2
+						}
+						infantry = {
+							x = 1
+							y = 0
+						}
+						infantry = {
+							x = 1
+							y = 1
+						}
+						infantry = {
+							x = 1
+							y = 2
+						}
+					}
+				}
+				capital_scope = {
+					create_unit = {
+						division = "name = \"River Patrol\" division_template = \"River Patrol\" start_experience_factor = 1.0 start_equipment_factor = 1.0"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"River Patrol\" division_template = \"River Patrol\" start_experience_factor = 1.0 start_equipment_factor = 1.0"
+						owner = ROOT
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = fp_trained_hunters
+		icon = GFX_goal_pal_pr_shoshone
+		cost = 60
+		prerequisite = {
+			focus = fp_help_needed
+		}
+		relative_position_id = fp_help_needed
+		x = 1
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = spec_force_equipment_tech_category
+			}
+			add_ideas = {
+				gpf_trained_hunters
+			}
+		}
+	}
+	###############################
+	# CMC
+	###############################
+	focus = {
+		id = cmc_family_business
+		icon = GFX_goal_cmc_family_business
+		cost = 60
+		prerequisite = {
+			focus = fp_history_3
+		}
+		allow_branch = {
+			original_tag = CMC
+		}
+		relative_position_id = fp_history_3
+		x = -2
+		y = 1
+		completion_reward = {
+			set_temp_variable = {
+				caps_to_add = 100
+			}
+			add_caps = yes
+		}
+	}
+	focus = {
+		id = cmc_pitboss
+		icon = GFX_goal_BDT_shoeshone_legacy
+		cost = 60
+		prerequisite = {
+			focus = cmc_family_business
+		}
+		relative_position_id = cmc_family_business
+		x = -2
+		y = 1
+		completion_reward = {
+			activate_advisor = CMC_pit_boss_liam_cultural_advisor
+		}
+	}
+	focus = {
+		id = cmc_black_sheep
+		icon = GFX_goal_generic_nadia_box_art
+		cost = 60
+		prerequisite = {
+			focus = cmc_family_business
+		}
+		relative_position_id = cmc_family_business
+		x = 2
+		y = 1
+		completion_reward = {
+			activate_advisor = CMC_aspen_economic_advisor
+		}
+	}
+	focus = {
+		id = cmc_unrest_in_the_house
+		icon = GFX_goal_generic_light_poles
+		cost = 15
+		prerequisite = {
+			focus = cmc_pitboss
+		}
+		prerequisite = {
+			focus = cmc_black_sheep
+		}
+		relative_position_id = cmc_family_business
+		x = -1
+		y = 2
+		completion_reward = {
+			add_ideas = {
+				cmc_divided_family
+			}
+		}
+	}
+	focus = {
+		id = cmc_the_criminal_element
+		icon = GFX_goal_generic_hazard_chemical
+		cost = 15
+		prerequisite = {
+			focus = cmc_pitboss
+		}
+		prerequisite = {
+			focus = cmc_black_sheep
+		}
+		relative_position_id = cmc_family_business
+		x = 1
+		y = 2
+		completion_reward = {
+			add_ideas = {
+				cmc_criminal_underground_start
+			}
+		}
+	}
+	focus = {
+		id = cmc_a_night_to_remember
+		icon = GFX_goal_cmc_a_night_to_remember
+		cost = 30
+		prerequisite = {
+			focus = cmc_independent_police_force
+			focus = cmc_protection_price
+		}
+		relative_position_id = cmc_unrest_in_the_house
+		x = 1
+		y = 4
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = cmc_independent_police_force
+				}
+				country_event = {
+					id = nf_event_cmc.1
+				}
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = cmc_protection_price
+				}
+				country_event = {
+					id = nf_event_cmc.2
+				}
+			}
+			else = {
+				country_event = {
+					id = nf_event_cmc.3
+				}
+			}
+		}
+	}
+	focus = {
+		id = cmc_proving_her_name
+		icon = GFX_goal_generic_mistress_of_mystery
+		cost = 60
+		prerequisite = {
+			focus = cmc_a_night_to_remember
+		}
+		available = {
+			has_country_flag = cmc_law_prevails
+		}
+		mutually_exclusive = {
+			focus = cmc_bird_in_a_cage
+		}
+		relative_position_id = cmc_a_night_to_remember
+		x = -2
+		y = 1
+		completion_reward = {
+			add_country_leader_trait = crazy_songbird
+		}
+	}
+	focus = {
+		id = cmc_rooting_out_corruption
+		icon = GFX_goal_generic_esp_deliverer
+		cost = 60
+		prerequisite = {
+			focus = cmc_proving_her_name
+		}
+		relative_position_id = cmc_proving_her_name
+		x = -1
+		y = 1
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = cmc_criminal_underground_lower
+				add_idea = cmc_criminal_underground_purged
+			}
+		}
+	}
+	focus = {
+		id = cmc_preemptive_measures
+		icon = GFX_goal_focus_spy
+		cost = 60
+		prerequisite = {
+			focus = cmc_proving_her_name
+		}
+		relative_position_id = cmc_proving_her_name
+		x = 1
+		y = 1
+		completion_reward = {
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+					CMC = {
+						has_intelligence_agency = yes
+					}
+				}
+				create_operative_leader = {
+					name = "Liam"
+					GFX = GFX_Portrait_Settler_Generic_11
+					traits = {
+						operative_smooth_talker
+						operative_barter
+					}
+					bypass_recruitment = no
+					available_to_spy_master = yes
+					nationalities = {
+						CMC
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_dlc = "La Resistance"
+				}
+				create_intelligence_agency = yes
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						has_dlc = "La Resistance"
+					}
+				}
+				custom_effect_tooltip = cmc_preemptive_measures_liam_tt
+				set_country_flag = cmc_preemptive_measures_flag
+			}
+		}
+	}
+	focus = {
+		id = cmc_bird_in_a_cage
+		icon = GFX_goal_cmc_bird_in_a_cage
+		cost = 60
+		prerequisite = {
+			focus = cmc_a_night_to_remember
+		}
+		available = {
+			has_country_flag = cmc_criminals_pulling_strings
+		}
+		mutually_exclusive = {
+			focus = cmc_proving_her_name
+		}
+		relative_position_id = cmc_a_night_to_remember
+		x = 2
+		y = 1
+		completion_reward = {
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+				}
+				add_country_leader_trait = caged_songbird_lar
+			}
+			else = {
+				add_country_leader_trait = caged_songbird
+			}
+		}
+	}
+	focus = {
+		id = cmc_crime_does_pay
+		icon = GFX_goal_cmc_taking_a_cut
+		cost = 60
+		prerequisite = {
+			focus = cmc_bird_in_a_cage
+		}
+		relative_position_id = cmc_bird_in_a_cage
+		x = -1
+		y = 1
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = cmc_criminal_underground_higher
+				add_idea = cmc_criminal_underground_organized
+			}
+		}
+	}
+	focus = {
+		id = cmc_new_queen_of_the_red_river
+		icon = GFX_goal_cmc_new_queen
+		cost = 60
+		prerequisite = {
+			focus = cmc_bird_in_a_cage
+		}
+		relative_position_id = cmc_bird_in_a_cage
+		x = 1
+		y = 1
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = CMC_aspen_economic_advisor
+				}
+				deactivate_advisor = CMC_aspen_economic_advisor
+				activate_advisor = CMC_aspen_queen_economic_advisor
+			}
+			else = {
+				custom_effect_tooltip = cmc_new_queen_of_the_red_river_tt
+			}
+		}
+	}
+	focus = {
+		id = cmc_looking_for_entertainment
+		icon = GFX_goal_cmc_looking_for_entertainment
+		cost = 60
+		prerequisite = {
+			focus = cmc_rooting_out_corruption
+		}
+		prerequisite = {
+			focus = cmc_preemptive_measures
+		}
+		relative_position_id = cmc_proving_her_name
+		x = 0
+		y = 2
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_valid_state_for_civilian_factory = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_stability = 0.1
+		}
+	}
+	focus = {
+		id = cmc_looking_for_an_escape
+		icon = GFX_goal_cmc_looking_for_an_escape
+		cost = 60
+		prerequisite = {
+			focus = cmc_crime_does_pay
+		}
+		prerequisite = {
+			focus = cmc_new_queen_of_the_red_river
+		}
+		relative_position_id = cmc_bird_in_a_cage
+		x = 0
+		y = 2
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_valid_state_for_civilian_factory = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			set_temp_variable = {
+				caps_to_add = 150
+			}
+			add_caps = yes
+		}
+	}
+	focus = {
+		id = cmc_looking_for_love
+		icon = GFX_goal_cmc_looking_for_love
+		cost = 60
+		prerequisite = {
+			focus = cmc_looking_for_entertainment
+			focus = cmc_looking_for_an_escape
+		}
+		relative_position_id = cmc_a_night_to_remember
+		x = 0
+		y = 4
+		completion_reward = {
+			give_guarantee = TUB
+			country_event = {
+				id = nf_event_cmc.4
+			}
+		}
+	}
+	focus = {
+		id = cmc_another_night_to_remember
+		icon = GFX_goal_cmc_another_night_to_remember
+		cost = 30
+		prerequisite = {
+			focus = cmc_looking_for_love
+		}
+		relative_position_id = cmc_looking_for_love
+		x = 0
+		y = 1
+		completion_reward = {
+			add_opinion_modifier = {
+				target = TUB
+				modifier = cmc_shared_bonds
+			}
+			reverse_add_opinion_modifier = {
+				target = TUB
+				modifier = cmc_shared_bonds
+			}
+			add_stability = 0.1
+			hidden_effect = {
+				CMC = {
+					country_event = {
+						id = nf_event_cmc.200
+						days = 270
+					}
+				}
+				TUB = {
+					country_event = {
+						id = nf_event_cmc.200
+						days = 270
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = cmc_looking_for_closure
+		icon = GFX_goal_generic_focus_magazine_robcofun_wastelad
+		cost = 60
+		prerequisite = {
+			focus = cmc_another_night_to_remember
+		}
+		mutually_exclusive = {
+			focus = cmc_looking_for_revenge
+		}
+		available = {
+			has_country_flag = cmc_law_prevails
+		}
+		relative_position_id = cmc_another_night_to_remember
+		x = -1
+		y = 1
+		completion_reward = {
+			capital_scope = {
+				add_resource = {
+					type = circuitry
+					amount = 5
+				}
+				add_resource = {
+					type = advanced
+					amount = 5
+				}
+			}
+			add_tech_bonus = {
+				name = doctrine_bonus
+				bonus = 1
+				uses = 1
+				category = cat_land_doctrine
+			}
+		}
+	}
+	focus = {
+		id = cmc_looking_for_revenge
+		icon = GFX_goal_generic_bloody_sacrifice
+		cost = 60
+		prerequisite = {
+			focus = cmc_another_night_to_remember
+		}
+		available = {
+			has_country_flag = cmc_criminals_pulling_strings
+		}
+		mutually_exclusive = {
+			focus = cmc_looking_for_closure
+		}
+		relative_position_id = cmc_another_night_to_remember
+		x = 1
+		y = 1
+		completion_reward = {
+			country_event = {
+				id = nf_event_cmc.6
+			}
+		}
+	}
+	focus = {
+		id = cmc_previous_commitments
+		icon = GFX_goal_TBH_startup_icon
+		cost = 60
+		prerequisite = {
+			focus = cmc_looking_for_closure
+			focus = cmc_looking_for_revenge
+		}
+		available = {
+			set_temp_variable = {
+				caps_diff = -750
+			}
+			caps_cost_trigger = yes
+		}
+		relative_position_id = cmc_another_night_to_remember
+		x = 0
+		y = 2
+		completion_reward = {
+			if = {
+				limit = {
+					TUB = {
+						exists = yes
+					}
+				}
+				TBH = {
+					country_event = nf_event_cmc.8
+				}
+			}
+			else_if = {
+				limit = {
+					TUB = {
+						exists = no
+					}
+					OR = {
+						TEX = {
+							exists = yes
+						}
+						TBH = {
+							exists = yes
+						}
+					}
+				}
+				TBH = {
+					news_event = nf_event_cmc.16
+				}
+			}
+			else_if = {
+				limit = {
+					TUB = {
+						exists = no
+					}
+					TEX = {
+						exists = no
+					}
+					TBH = {
+						exists = no
+					}
+				}
+				TBH = {
+					ROOT = {
+						grant_wargoals_on_core_states_of_prev = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = cmc_light_up_the_night
+		icon = GFX_goal_generic_power_poles
+		cost = 60
+		prerequisite = {
+			focus = fp_history_3
+		}
+		allow_branch = {
+			original_tag = CMC
+		}
+		relative_position_id = fp_history_3
+		x = 6
+		y = 1
+		completion_reward = {
+			883 = {
+				add_resource = {
+					type = energy
+					amount = 10
+				}
+			}
+		}
+	}
+	focus = {
+		id = cmc_casino1
+		icon = GFX_goal_fp_invest_in_cmc
+		cost = 60
+		prerequisite = {
+			focus = cmc_light_up_the_night
+		}
+		relative_position_id = cmc_light_up_the_night
+		x = -2
+		y = 1
+		completion_reward = {
+			cmc_open_casino = yes
+			random_owned_controlled_state = {
+				limit = {
+					is_valid_state_for_civilian_factory = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = cmc_casino2
+		icon = GFX_goal_fp_invest_in_cmc2
+		cost = 60
+		prerequisite = {
+			focus = cmc_light_up_the_night
+		}
+		relative_position_id = cmc_light_up_the_night
+		x = 0
+		y = 1
+		completion_reward = {
+			cmc_open_casino = yes
+			random_owned_controlled_state = {
+				limit = {
+					is_valid_state_for_civilian_factory = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = cmc_casino3
+		icon = GFX_goal_fp_invest_in_cmc3
+		cost = 60
+		prerequisite = {
+			focus = cmc_light_up_the_night
+		}
+		relative_position_id = cmc_light_up_the_night
+		x = 2
+		y = 1
+		completion_reward = {
+			cmc_open_casino = yes
+			random_owned_controlled_state = {
+				limit = {
+					is_valid_state_for_civilian_factory = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = cmc_along_the_route
+		icon = GFX_goal_generic_sign_welcome
+		cost = 60
+		allow_branch = {
+			original_tag = CMC
+		}
+		prerequisite = {
+			focus = cmc_casino1
+			focus = cmc_casino2
+			focus = cmc_casino3
+		}
+		relative_position_id = cmc_casino2
+		x = 0
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = roadside_attraction_tt
+			add_political_power = 100
+		}
+	}
+	focus = {
+		id = cmc_the_pops
+		icon = GFX_goal_cmc_the_pops
+		cost = 60
+		prerequisite = {
+			focus = cmc_along_the_route
+		}
+		relative_position_id = cmc_along_the_route
+		x = -2
+		y = 1
+		completion_reward = {
+			cmc_open_roadside = yes
+			set_temp_variable = {
+				caps_to_add = 50
+			}
+			add_caps = yes
+		}
+	}
+	focus = {
+		id = cmc_ritas_cafe
+		icon = GFX_goal_generic_ritas_cafe
+		cost = 60
+		prerequisite = {
+			focus = cmc_along_the_route
+		}
+		relative_position_id = cmc_along_the_route
+		x = 2
+		y = 1
+		completion_reward = {
+			cmc_open_roadside = yes
+			add_offsite_building = {
+				type = water_generator
+				level = 1
+			}
+		}
+	}
+	focus = {
+		id = cmc_largest_peanut
+		icon = GFX_goal_cmc_largest_peanut
+		cost = 60
+		prerequisite = {
+			focus = cmc_along_the_route
+		}
+		relative_position_id = cmc_along_the_route
+		x = 0
+		y = 1
+		completion_reward = {
+			cmc_open_roadside = yes
+			random_owned_controlled_state = {
+				add_resource = {
+					type = composites
+					amount = 2
+				}
+			}
+		}
+	}
+	focus = {
+		id = cmc_40_miles_of_bad_road
+		icon = GFX_goal_generic_motorcycle
+		cost = 30
+		prerequisite = {
+			focus = cmc_the_pops
+			focus = cmc_ritas_cafe
+			focus = cmc_largest_peanut
+		}
+		relative_position_id = cmc_largest_peanut
+		mutually_exclusive = {
+			focus = cmc_cab_driver_once_more_down_the_street
+		}
+		x = -1
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = car_bonus
+				bonus = 0.75
+				uses = 2
+				category = motorized_equipment_category
+			}
+		}
+	}
+	focus = {
+		id = cmc_cab_driver_once_more_down_the_street
+		icon = GFX_goal_generic_nice_car
+		cost = 30
+		prerequisite = {
+			focus = cmc_the_pops
+			focus = cmc_ritas_cafe
+			focus = cmc_largest_peanut
+		}
+		relative_position_id = cmc_largest_peanut
+		mutually_exclusive = {
+			focus = cmc_40_miles_of_bad_road
+		}
+		x = 1
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = mechanized_bonus
+				bonus = 0.75
+				uses = 2
+				category = truck_tech_category
+			}
+		}
+	}
+	focus = {
+		id = cmc_respectable_business
+		icon = GFX_goal_CAF_treaty
+		cost = 30
+		prerequisite = {
+			focus = cmc_unrest_in_the_house
+		}
+		prerequisite = {
+			focus = cmc_the_criminal_element
+		}
+		mutually_exclusive = {
+			focus = cmc_taking_a_cut
+		}
+		relative_position_id = cmc_unrest_in_the_house
+		x = -1
+		y = 1
+		completion_reward = {
+			add_ideas = cmc_gambling_act
+		}
+	}
+	focus = {
+		id = cmc_armed_bouncers
+		icon = GFX_goal_generic_brass_knuckles
+		cost = 30
+		prerequisite = {
+			focus = cmc_respectable_business
+		}
+		relative_position_id = cmc_respectable_business
+		x = -1
+		y = 1
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_valid_state_for_2_arms_factories = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = cmc_patrol_the_Streets
+		icon = GFX_goal_cmc_patrol_the_Streets
+		cost = 30
+		prerequisite = {
+			focus = cmc_respectable_business
+		}
+		relative_position_id = cmc_respectable_business
+		x = 1
+		y = 1
+		completion_reward = {
+			add_manpower = 1000
+		}
+	}
+	focus = {
+		id = cmc_independent_police_force
+		icon = GFX_goal_generic_protectron_conceptart_police
+		cost = 30
+		prerequisite = {
+			focus = cmc_armed_bouncers
+		}
+		prerequisite = {
+			focus = cmc_patrol_the_Streets
+		}
+		relative_position_id = cmc_respectable_business
+		x = 0
+		y = 2
+		completion_reward = {
+			custom_effect_tooltip = cmc_independent_police_force_tt
+			swap_ideas = {
+				remove_idea = cmc_criminal_underground_start
+				add_idea = cmc_criminal_underground_lower
+			}
+			set_country_flag = cmc_law_prevails
+		}
+	}
+	focus = {
+		id = cmc_taking_a_cut
+		icon = GFX_goal_cmc_taking_a_cut
+		cost = 30
+		prerequisite = {
+			focus = cmc_unrest_in_the_house
+		}
+		prerequisite = {
+			focus = cmc_the_criminal_element
+		}
+		mutually_exclusive = {
+			focus = cmc_respectable_business
+		}
+		relative_position_id = cmc_the_criminal_element
+		x = 1
+		y = 1
+		completion_reward = {
+			set_temp_variable = {
+				caps_to_add = 150
+			}
+			add_caps = yes
+		}
+	}
+	focus = {
+		id = cmc_sponsor_chem_pushers
+		icon = GFX_goal_generic_mentats
+		cost = 30
+		prerequisite = {
+			focus = cmc_taking_a_cut
+		}
+		relative_position_id = cmc_taking_a_cut
+		x = -1
+		y = 1
+		completion_reward = {
+			clr_country_flag = bans_drugs
+			add_ideas = {
+				chems_legalised
+			}
+			custom_effect_tooltip = allow_chem_abilities_tt
+		}
+	}
+	focus = {
+		id = cmc_good_business
+		icon = GFX_goal_CAF_stocks
+		cost = 30
+		prerequisite = {
+			focus = cmc_taking_a_cut
+		}
+		relative_position_id = cmc_taking_a_cut
+		x = 1
+		y = 1
+		completion_reward = {
+			set_country_flag = slavery_allowed
+			# add_ideas = {
+			# 	slavers_idea_2
+			# }
+		}
+	}
+	focus = {
+		id = cmc_protection_price
+		icon = GFX_goal_pal_vc_turn_around
+		cost = 30
+		prerequisite = {
+			focus = cmc_sponsor_chem_pushers
+		}
+		prerequisite = {
+			focus = cmc_good_business
+		}
+		relative_position_id = cmc_taking_a_cut
+		x = 0
+		y = 2
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = cmc_criminal_underground_start
+				add_idea = cmc_criminal_underground_higher
+			}
+			set_country_flag = cmc_criminals_pulling_strings
+		}
+	}
+	focus = {
+		id = cmc_going_to_the_river
+		icon = GFX_goal_cmc_going_to_the_river
+		cost = 30
+		available = {
+			has_completed_focus = cmc_a_night_to_remember
+		}
+		allow_branch = {
+			original_tag = CMC
+		}
+		relative_position_id = cmc_light_up_the_night
+		x = -1
+		y = 6
+		completion_reward = {
+			add_war_support = 0.1
+		}
+	}
+	focus = {
+		id = cmc_an_old_grudge
+		icon = GFX_goal_generic_esp_knife
+		cost = 60
+		prerequisite = {
+			focus = cmc_going_to_the_river
+		}
+		mutually_exclusive = {
+			focus = cmc_scrapper_hive
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		relative_position_id = cmc_going_to_the_river
+		x = 0
+		y = 2
+		bypass = {
+			SCA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = SCA
+		completion_reward = {
+			SCA = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+			custom_effect_tooltip = cmc_going_to_the_river_tt
+		}
+	}
+	focus = {
+		id = cmc_americas_biggest_scrapyard
+		icon = GFX_goal_generic_scyscrapers_prewar
+		cost = 30
+		prerequisite = {
+			focus = cmc_an_old_grudge
+		}
+		available = {
+			has_country_flag = cmc_law_prevails
+			SCA = {
+				is_subject_of = CMC
+			}
+		}
+		bypass = {
+			AND = {
+				has_country_flag = cmc_criminals_pulling_strings
+				SCA = {
+					is_subject_of = CMC
+				}
+			}
+		}
+		relative_position_id = cmc_an_old_grudge
+		x = -1
+		y = 1
+		completion_reward = {
+			set_state_owner = 888
+			set_state_controller = 888
+			set_state_owner = 886
+			set_state_controller = 886
+			SCA = {
+				set_state_owner = 887
+				set_state_controller = 887
+			}
+		}
+	}
+	focus = {
+		id = cmc_so_much_scrap
+		icon = GFX_goal_generic_scyscrapers_postwar
+		cost = 30
+		prerequisite = {
+			focus = cmc_an_old_grudge
+		}
+		available = {
+			has_country_flag = cmc_criminals_pulling_strings
+			SCA = {
+				all_core_land_controlled_by_prev_sphere = yes
+			}
+		}
+		bypass = {
+			has_country_flag = cmc_law_prevails
+			SCA = {
+				all_core_land_controlled_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = cmc_an_old_grudge
+		x = 1
+		y = 1
+		completion_reward = {
+			add_ideas = {
+				cmc_scrapper_resistance
+			}
+		}
+	}
+	focus = {
+		id = cmc_last_lodge
+		icon = GFX_KHA_focus_backhand_support
+		cost = 60
+		prerequisite = {
+			focus = cmc_going_to_the_river
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		relative_position_id = cmc_going_to_the_river
+		x = -2
+		y = 2
+		bypass = {
+			NOT = {
+				country_exists = TLL
+			}
+		}
+		completion_reward = {
+			set_truce = {
+				target = TLL
+				days = 365
+			}
+			TLL = {
+				set_truce = {
+					target = ROOT
+					days = 365
+				}
+			}
+			add_ideas = {
+				cmc_lodge_trade
+			}
+			TLL = {
+				add_ideas = {
+					tll_cmc_trade
+				}
+			}
+		}
+	}
+	focus = {
+		id = cmc_the_choir_awakens
+		icon = GFX_goal_psyker_knowledge
+		cost = 30
+		available = {
+			CHC = {
+				TLP = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+		}
+		allow_branch = {
+			original_tag = CMC
+		}
+		relative_position_id = cmc_light_up_the_night
+		x = 3
+		y = 6
+		completion_reward = {
+			add_tech_bonus = {
+				name = spec_ops_bonus
+				bonus = 0.75
+				uses = 1
+				category = spec_force_tech_category
+			}
+			add_doctrine_cost_reduction = {
+				name = spec_ops_bonus2
+				cost_reduction = 0.75
+				uses = 1
+				category = caf_land_doctrine_xp
+			}
+		}
+	}
+	focus = {
+		id = cmc_patrols_end
+		icon = GFX_goal_psyker_power
+		cost = 30
+		prerequisite = {
+			focus = cmc_the_choir_awakens
+		}
+		available = {
+			CHC = {
+				TLP = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+		}
+		relative_position_id = cmc_the_choir_awakens
+		x = 0
+		y = 1
+		completion_reward = {
+			add_ideas = {
+				cmc_last_patrol_refugees
+			}
+		}
+	}
+	focus = {
+		id = cmc_scrapper_hive
+		icon = GFX_goal_generic_psyker
+		cost = 30
+		prerequisite = {
+			focus = cmc_patrols_end
+		}
+		available = {
+			CHC = {
+				SCA = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+		}
+		mutually_exclusive = {
+			focus = cmc_an_old_grudge
+		}
+		relative_position_id = cmc_patrols_end
+		x = 0
+		y = 1
+		completion_reward = {
+			add_timed_idea = {
+				idea = cmc_quick_training
+				days = 90
+			}
+		}
+	}
+	focus = {
+		id = cmc_the_choir_sings
+		icon = GFX_goal_psyker_ascension
+		cost = 60
+		prerequisite = {
+			focus = cmc_scrapper_hive
+		}
+		relative_position_id = cmc_scrapper_hive
+		x = 0
+		y = 1
+		bypass = {
+			CHC = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			CHC = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = cmc_cypher
+		icon = GFX_goal_HEA_focus_declaration_of_crusade
+		cost = 60
+		prerequisite = {
+			focus = cmc_last_lodge
+		}
+		prerequisite = {
+			focus = cmc_americas_biggest_scrapyard
+			focus = cmc_so_much_scrap
+			focus = cmc_the_choir_sings
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		relative_position_id = cmc_going_to_the_river
+		x = 0
+		y = 4
+		bypass = {
+			CWB = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = CWB
+		completion_reward = {
+			CWB = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = cmc_red_river_economic_zone
+		icon = GFX_goal_cmc_going_to_the_river
+		cost = 30
+		prerequisite = {
+			focus = cmc_cypher
+		}
+		available = {
+			OR = {
+				SCA = {
+					OR = {
+						is_subject_of = CMC
+						exists = no
+					}
+				}
+				CWB = {
+					OR = {
+						is_subject_of = CMC
+						exists = no
+					}
+				}
+			}
+		}
+		relative_position_id = cmc_cypher
+		x = 0
+		y = 1
+		completion_reward = {
+			set_country_flag = reduced_cmc_coring_cost
+			custom_effect_tooltip = cmc_red_river_economic_zone_tt
+		}
+	}
+	focus = {
+		id = cmc_the_lawson_experience
+		icon = GFX_goal_cap_and_cash
+		cost = 60
+		prerequisite = {
+			focus = cmc_red_river_economic_zone
+		}
+		available = {
+			has_completed_focus = cmc_americas_biggest_scrapyard
+		}
+		bypass = {
+			has_country_flag = cmc_criminals_pulling_strings
+			SCA = {
+				is_subject_of = CMC
+			}
+		}
+		relative_position_id = cmc_red_river_economic_zone
+		x = -1
+		y = 1
+		completion_reward = {
+			cmc_open_casino = yes
+			SCA = {
+				add_ideas = {
+					sca_lawson_profits
+				}
+			}
+		}
+	}
+	focus = {
+		id = cmc_long_term_operations
+		icon = GFX_goal_generic_helm_army
+		cost = 60
+		prerequisite = {
+			focus = cmc_red_river_economic_zone
+		}
+		available = {
+			has_completed_focus = cmc_so_much_scrap
+		}
+		bypass = {
+			has_country_flag = cmc_law_prevails
+			SCA = {
+				all_core_land_controlled_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = cmc_red_river_economic_zone
+		x = 1
+		y = 1
+		completion_reward = {
+			country_event = {
+				id = nf_event_cmc.5
+			}
+		}
+	}
+	focus = {
+		id = cmc_nothing_left_standing
+		icon = GFX_goal_NEW_rebuild_cult
+		cost = 60
+		prerequisite = {
+			focus = cmc_red_river_economic_zone
+		}
+		prerequisite = {
+			focus = cmc_the_choir_sings
+		}
+		available = {
+			CHC = {
+				all_core_land_controlled_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = cmc_red_river_economic_zone
+		x = 4
+		y = 1
+		completion_reward = {
+			883 = {
+				add_resource = {
+					type = composites
+					amount = 4
+				}
+				add_resource = {
+					type = advanced
+					amount = 3
+				}
+				add_resource = {
+					type = energy
+					amount = 6
+				}
+			}
+			890 = {
+				add_resource = {
+					type = composites
+					amount = -4
+				}
+				add_resource = {
+					type = advanced
+					amount = -3
+				}
+				add_resource = {
+					type = energy
+					amount = -6
+				}
+			}
+			set_province_name = {
+				id = 12215
+				name = VICTORY_POINTS_12215_CMC
+			}
+			custom_effect_tooltip = cmc_nothing_left_standing_tt
+		}
+	}
+	###############################
+	# CHO Branch
+	###############################
+	focus = {
+		id = cho_storytellers_and_storykeepers
+		icon = GFX_goal_cho_storytellers
+		cost = 60
+		prerequisite = {
+			focus = fp_history_3
+		}
+		allow_branch = {
+			original_tag = CHO
+		}
+		relative_position_id = fp_history_3
+		x = 0
+		y = 1
+		completion_reward = {
+			add_political_power = 90
+		}
+	}
+	focus = {
+		id = cho_building_the_library
+		icon = GFX_goal_generic_books
+		cost = 60
+		prerequisite = {
+			focus = cho_storytellers_and_storykeepers
+		}
+		relative_position_id = cho_storytellers_and_storykeepers
+		x = -4
+		y = 1
+		completion_reward = {
+			869 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = cho_holotape_archives
+		icon = GFX_goal_generic_data_focus
+		cost = 60
+		prerequisite = {
+			focus = cho_building_the_library
+		}
+		relative_position_id = cho_building_the_library
+		x = -2
+		y = 1
+		completion_reward = {
+			add_tech_bonus = {
+				name = cho_holotape_archives
+				bonus = 1
+				uses = 1
+				category = cat_terror_tactics
+			}
+		}
+	}
+	focus = {
+		id = cho_physical_records
+		icon = GFX_goal_pal_electronic_plans
+		cost = 60
+		prerequisite = {
+			focus = cho_building_the_library
+		}
+		relative_position_id = cho_building_the_library
+		x = 0
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = cho_physical_records_tt
+		}
+	}
+	focus = {
+		id = cho_scriptorium
+		icon = GFX_goal_cho_scriptorium
+		cost = 60
+		prerequisite = {
+			focus = cho_building_the_library
+		}
+		relative_position_id = cho_building_the_library
+		x = 2
+		y = 1
+		completion_reward = {
+			add_ideas = {
+				cho_new_books
+			}
+		}
+	}
+	focus = {
+		id = cho_defenders_of_history
+		icon = GFX_goal_BRK_council_of_defense
+		cost = 60
+		prerequisite = {
+			focus = cho_holotape_archives
+			focus = cho_physical_records
+			focus = cho_scriptorium
+		}
+		relative_position_id = cho_holotape_archives
+		x = 0
+		y = 3
+		completion_reward = {
+			custom_effect_tooltip = cho_defender_of_history_tt
+			hidden_effect = {
+				load_oob = cho_defenders_of_history
+			}
+		}
+	}
+	focus = {
+		id = cho_shields_of_wisdom
+		icon = GFX_goal_generic_focus_magazine_gunsandbullets_gun_laws
+		cost = 60
+		prerequisite = {
+			focus = cho_holotape_archives
+			focus = cho_physical_records
+			focus = cho_scriptorium
+		}
+		relative_position_id = cho_scriptorium
+		x = 0
+		y = 3
+		completion_reward = {
+			869 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = cho_opening_the_library
+		icon = GFX_goal_ORO_City
+		cost = 60
+		prerequisite = {
+			focus = cho_holotape_archives
+		}
+		prerequisite = {
+			focus = cho_physical_records
+		}
+		prerequisite = {
+			focus = cho_scriptorium
+		}
+		relative_position_id = cho_physical_records
+		x = 0
+		y = 1
+		completion_reward = {
+			country_event = {
+				id = nf_event_cho.1
+			}
+		}
+	}
+	focus = {
+		id = cho_cherokee_wing
+		icon = GFX_goal_bobble_head_science
+		cost = 60
+		prerequisite = {
+			focus = cho_opening_the_library
+		}
+		relative_position_id = cho_opening_the_library
+		x = -1
+		y = 1
+		completion_reward = {
+			869 = {
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			CHR = {
+				add_timed_idea = {
+					idea = cho_knowledge_exchange
+					days = 120
+				}
+			}
+			CHO = {
+				add_timed_idea = {
+					idea = cho_knowledge_exchange
+					days = 120
+				}
+			}
+		}
+	}
+	focus = {
+		id = cho_PIT_wing
+		icon = GFX_goal_gpf_the_pit
+		cost = 60
+		prerequisite = {
+			focus = cho_opening_the_library
+		}
+		available = {
+			has_completed_focus = fp_reopen_the_PIT
+		}
+		relative_position_id = cho_opening_the_library
+		x = 1
+		y = 1
+		completion_reward = {
+			869 = {
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_idea = gpf_new_students
+				}
+				modify_timed_idea = {
+					idea = gpf_new_students
+					days = 120
+				}
+			}
+			else = {
+				add_timed_idea = {
+					idea = gpf_new_students
+					days = 120
+				}
+			}
+		}
+	}
+	focus = {
+		id = cho_the_basement
+		icon = GFX_goal_generic_vault_door_2
+		cost = 30
+		prerequisite = {
+			focus = cho_opening_the_library
+		}
+		relative_position_id = cho_opening_the_library
+		x = 0
+		y = 3
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 12127
+				}
+			}
+		}
+	}
+	focus = {
+		id = cho_nuclear_fission
+		icon = GFX_goal_generic_pioneer_scouts
+		cost = 60
+		prerequisite = {
+			focus = cho_the_basement
+		}
+		mutually_exclusive = {
+			focus = cho_esp_and_you
+		}
+		relative_position_id = cho_the_basement
+		x = -1
+		y = 1
+		completion_reward = {
+			add_nuclear_bombs = 1
+			custom_effect_tooltip = cho_nuclear_fission_tt
+			add_stability = -0.1
+		}
+	}
+	focus = {
+		id = cho_esp_and_you
+		icon = GFX_goal_generic_psyker
+		cost = 60
+		prerequisite = {
+			focus = cho_the_basement
+		}
+		mutually_exclusive = {
+			focus = cho_nuclear_fission
+		}
+		relative_position_id = cho_the_basement
+		x = 1
+		y = 1
+		completion_reward = {
+			country_event = {
+				id = nf_event_cho.3
+			}
+			add_war_support = -0.1
+		}
+	}
+	focus = {
+		id = cho_makato_achili
+		icon = GFX_goal_ncn_peacekeepers
+		cost = 60
+		prerequisite = {
+			focus = cho_storytellers_and_storykeepers
+		}
+		relative_position_id = cho_storytellers_and_storykeepers
+		x = 4
+		y = 1
+		completion_reward = {
+			add_stability = 0.1
+			add_war_support = 0.1
+		}
+	}
+	focus = {
+		id = cho_deus_ex_machina
+		icon = GFX_goal_TTM_1
+		cost = 60
+		prerequisite = {
+			focus = cho_makato_achili
+		}
+		available = {
+			has_completed_focus = fp_expeditions_boon
+		}
+		relative_position_id = cho_makato_achili
+		x = 0
+		y = 4
+		completion_reward = {
+			set_technology = {
+				electronics_tech_level_settler = 1
+			}
+		}
+	}
+	focus = {
+		id = cho_guided_by_spirits
+		icon = GFX_goal_TTM_Golden_Fruit
+		cost = 60
+		prerequisite = {
+			focus = cho_deus_ex_machina
+		}
+		mutually_exclusive = {
+			focus = cho_intentional_manipulation
+		}
+		relative_position_id = cho_deus_ex_machina
+		x = -1
+		y = 1
+		completion_reward = {
+			869 = {
+				add_resource = {
+					type = circuitry
+					amount = 4
+				}
+				add_resource = {
+					type = advanced
+					amount = 4
+				}
+			}
+			add_opinion_modifier = {
+				target = TTM
+				modifier = cho_kindred_spirit
+			}
+			reverse_add_opinion_modifier = {
+				target = TTM
+				modifier = cho_kindred_spirit
+			}
+		}
+	}
+	focus = {
+		id = cho_intentional_manipulation
+		icon = GFX_goal_TTM_Diana_Angry
+		cost = 60
+		prerequisite = {
+			focus = cho_deus_ex_machina
+		}
+		mutually_exclusive = {
+			focus = cho_guided_by_spirits
+		}
+		relative_position_id = cho_deus_ex_machina
+		x = 1
+		y = 1
+		completion_reward = {
+			add_ideas = {
+				cho_wary_of_false_gods
+			}
+			add_opinion_modifier = {
+				target = TTM
+				modifier = cho_manipulator
+			}
+		}
+	}
+	focus = {
+		id = cho_living_history
+		icon = GFX_goal_cho_living_history
+		cost = 60
+		prerequisite = {
+			focus = cho_makato_achili
+		}
+		relative_position_id = cho_makato_achili
+		x = -3
+		y = 1
+		completion_reward = {
+			add_ideas = {
+				mutant_law_ghoul
+			}
+		}
+	}
+	focus = {
+		id = cho_ghoul_immigrants
+		icon = GFX_goal_generic_ghouls_focus
+		cost = 60
+		prerequisite = {
+			focus = cho_living_history
+		}
+		relative_position_id = cho_living_history
+		x = 0
+		y = 1
+		completion_reward = {
+			add_manpower = 1000
+		}
+	}
+	focus = {
+		id = cho_food_for_thought
+		icon = GFX_goal_food_prewar_food
+		cost = 60
+		prerequisite = {
+			focus = cho_ghoul_immigrants
+		}
+		relative_position_id = cho_ghoul_immigrants
+		x = -1
+		y = 1
+		completion_reward = {
+			add_ideas = {
+				cho_increased_food_production
+			}
+		}
+	}
+	focus = {
+		id = cho_integrity_of_the_home
+		icon = GFX_goal_generic_vault_tec_workshop
+		cost = 60
+		prerequisite = {
+			focus = cho_ghoul_immigrants
+		}
+		relative_position_id = cho_ghoul_immigrants
+		x = 1
+		y = 1
+		completion_reward = {
+			869 = {
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = building_Tech
+			}
+		}
+	}
+	focus = {
+		id = cho_ghoul_town
+		icon = GFX_goal_generic_cities_focus
+		cost = 60
+		prerequisite = {
+			focus = cho_food_for_thought
+		}
+		prerequisite = {
+			focus = cho_integrity_of_the_home
+		}
+		relative_position_id = cho_food_for_thought
+		x = 1
+		y = 1
+		completion_reward = {
+			set_province_name = {
+				id = 12110
+				name = VICTORY_POINTS_12110_CHO
+			}
+			869 = {
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = cho_the_tattooed_man
+		icon = GFX_goal_ATE_baron		#	TODO replace
+		cost = 60
+		prerequisite = {
+			focus = cho_ghoul_town
+		}
+		relative_position_id = cho_ghoul_town
+		x = 0
+		y = 1
+		completion_reward = {
+			add_corps_commander_role = {
+				character = CHO_tattooed_man
+				traits = {
+					charismatic_trait
+					intelligent_trait
+					mysterious_stranger_trait
+				}
+				skill = 3
+				attack_skill = 2
+				defense_skill = 1
+				planning_skill = 3
+				logistics_skill = 2
+				legacy_id = -1
+			}
+		}
+	}
+	focus = {
+		id = cho_an_evening_of_stories
+		icon = GFX_goal_TTM_Fire_2
+		cost = 60
+		prerequisite = {
+			focus = cho_the_tattooed_man
+		}
+		relative_position_id = cho_the_tattooed_man
+		x = 0
+		y = 1
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = cho_the_girl_and_the_devil
+		icon = GFX_goal_mutant_war_focus
+		cost = 60
+		prerequisite = {
+			focus = cho_an_evening_of_stories
+		}
+		relative_position_id = cho_an_evening_of_stories
+		x = -3
+		y = 1
+		bypass = {
+			DSP = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			DSP = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = cho_the_hunter_and_the_alligator
+		icon = GFX_goal_TTM_Dinosaur_Bones
+		cost = 60
+		prerequisite = {
+			focus = cho_an_evening_of_stories
+		}
+		relative_position_id = cho_an_evening_of_stories
+		x = -1
+		y = 1
+		bypass = {
+			GAM = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			GAM = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = cho_mississippi_queen
+		icon = GFX_goal_cho_mississippi_queen
+		cost = 60
+		prerequisite = {
+			focus = cho_the_girl_and_the_devil
+		}
+		prerequisite = {
+			focus = cho_the_hunter_and_the_alligator
+		}
+		available = {
+			AND = {
+				DSP = {
+					ROOT = {
+						country_owns_all_core_land_of_prev = yes
+					}
+				}
+				GAM = {
+					ROOT = {
+						country_owns_all_core_land_of_prev = yes
+					}
+				}
+			}
+		}
+		relative_position_id = cho_an_evening_of_stories
+		x = -2
+		y = 2
+		completion_reward = {
+			DSP = {
+				ROOT = {
+					core_all_core_states_of_prev = yes
+				}
+			}
+			GAM = {
+				ROOT = {
+					core_all_core_states_of_prev = yes
+				}
+			}
+			TPM = {
+				ROOT = {
+					claim_core_states_of_prev = yes
+				}
+			}
+			BAM = {
+				ROOT = {
+					claim_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = cho_shreveport_roads
+		icon = GFX_goal_cap_and_cash
+		cost = 60
+		prerequisite = {
+			focus = cho_mississippi_queen
+		}
+		prerequisite = {
+			focus = cho_the_girl_and_the_devil
+		}
+		relative_position_id = cho_mississippi_queen
+		x = -1
+		y = 1
+		completion_reward = {
+			871 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			set_temp_variable = {
+				caps_to_add = 75
+			}
+			add_caps = yes
+		}
+	}
+	focus = {
+		id = cho_bound_in_chains
+		icon = GFX_goal_CES_slaves
+		cost = 60
+		prerequisite = {
+			focus = cho_mississippi_queen
+		}
+		prerequisite = {
+			focus = cho_the_hunter_and_the_alligator
+		}
+		relative_position_id = cho_mississippi_queen
+		x = 1
+		y = 1
+		completion_reward = {
+			add_ideas = {
+				cho_gator_chain_gang
+			}
+		}
+	}
+	focus = {
+		id = cho_the_nameless_choctaw
+		icon = GFX_goal_generic_tomahawk_2
+		cost = 60
+		prerequisite = {
+			focus = cho_an_evening_of_stories
+		}
+		relative_position_id = cho_an_evening_of_stories
+		x = 2
+		y = 1
+		completion_reward = {
+			country_event = {
+				id = nf_event_cho.2
+			}
+		}
+	}
+	focus = {
+		id = cho_the_monster_below_the_temple
+		icon = GFX_goal_NEW_for_the_master
+		cost = 60
+		prerequisite = {
+			focus = cho_the_nameless_choctaw
+		}
+		relative_position_id = cho_the_nameless_choctaw
+		x = -1
+		y = 1
+		completion_reward = {
+			add_ideas = {
+				cho_monster_slayer
+			}
+			hidden_effect = {
+				add_ideas = {
+					cho_monster_slayer_hidden
+				}
+			}
+		}
+	}
+	focus = {
+		id = cho_the_false_knights
+		icon = GFX_goal_generic_power_armour_x01
+		cost = 60
+		prerequisite = {
+			focus = cho_the_nameless_choctaw
+		}
+		relative_position_id = cho_the_nameless_choctaw
+		x = 1
+		y = 1
+		completion_reward = {
+			add_ideas = {
+				cho_armor_piercer
+			}
+		}
+	}
+	focus = {
+		id = cho_old_spirits_for_a_new_world
+		icon = GFX_goal_TTM_Project_Luna
+		cost = 60
+		prerequisite = {
+			focus = cho_makato_achili
+		}
+		relative_position_id = cho_makato_achili
+		x = 4
+		y = 1
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_valid_state_for_arms_factory = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = cho_kashehotapalo
+		icon = GFX_goal_ARM_jungle_bonuses
+		cost = 60
+		prerequisite = {
+			focus = cho_old_spirits_for_a_new_world
+		}
+		relative_position_id = cho_old_spirits_for_a_new_world
+		x = -1
+		y = 1
+		completion_reward = {
+			add_ideas = {
+				cho_idea_kashehotapalo
+			}
+		}
+	}
+	focus = {
+		id = cho_na_losa_chitto
+		icon = GFX_goal_cho_na_losa_chitto
+		cost = 60
+		prerequisite = {
+			focus = cho_old_spirits_for_a_new_world
+		}
+		relative_position_id = cho_old_spirits_for_a_new_world
+		x = 1
+		y = 1
+		completion_reward = {
+			add_ideas = {
+				cho_idea_na_losa_chitto
+			}
+		}
+	}
+	focus = {
+		id = cho_wings_of_thunder_and_lightning
+		icon = GFX_goal_generic_vim_girl
+		cost = 60
+		prerequisite = {
+			focus = cho_old_spirits_for_a_new_world
+		}
+		relative_position_id = cho_old_spirits_for_a_new_world
+		x = 0
+		y = 2
+		completion_reward = {
+			if = {
+				limit = {
+					has_tech = aerodynamics_tech_1
+				}
+				air_experience = 25
+			}
+			else = {
+				set_technology = {
+					aerodynamics_tech_1 = 1
+				}
+			}
+		}
+	}
+	focus = {
+		id = cho_heloha
+		icon = GFX_goal_generic_airplane
+		cost = 60
+		prerequisite = {
+			focus = cho_wings_of_thunder_and_lightning
+		}
+		mutually_exclusive = {
+			focus = cho_melatha
+		}
+		relative_position_id = cho_wings_of_thunder_and_lightning
+		x = -1
+		y = 1
+		completion_reward = {
+			if = {
+				limit = {
+					has_tech = strat_bomber_tech_1
+				}
+				add_equipment_to_stockpile = {
+					type = strategic_bomber_equipment_1
+					amount = 50
+					producer = CHO
+				}
+			}
+			else = {
+				set_technology = {
+					strat_bomber_tech_1 = 1
+				}
+			}
+		}
+	}
+	focus = {
+		id = cho_melatha
+		icon = GFX_goal_generic_vehicle_plane
+		cost = 60
+		prerequisite = {
+			focus = cho_wings_of_thunder_and_lightning
+		}
+		mutually_exclusive = {
+			focus = cho_heloha
+		}
+		relative_position_id = cho_wings_of_thunder_and_lightning
+		x = 1
+		y = 1
+		completion_reward = {
+			if = {
+				limit = {
+					has_tech = fighter_tech_1
+				}
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_2
+					amount = 50
+					producer = CHO
+				}
+			}
+			else = {
+				set_technology = {
+					fighter_tech_1 = 1
+				}
+			}
+		}
+	}
+	focus = {
+		id = cho_kowi_anukasha
+		icon = GFX_goal_food_bitter_drink
+		cost = 60
+		prerequisite = {
+			focus = cho_old_spirits_for_a_new_world
+		}
+		relative_position_id = cho_old_spirits_for_a_new_world
+		x = 2
+		y = 2
+		completion_reward = {
+			custom_effect_tooltip = cho_kowi_anukasha_tt
+		}
+	}
+	###############################
+	# CHR Branch
+	###############################
+	focus = {
+		id = chr_science_without_restraints
+		icon = GFX_goal_generic_vidya
+		cost = 60
+		prerequisite = {
+			focus = fp_history_3
+		}
+		allow_branch = {
+			original_tag = CHR
+		}
+		relative_position_id = fp_history_3
+		x = 1
+		y = 1
+		completion_reward = {
+			country_event = {
+				id = nf_event_chr.1
+			}
+		}
+	}
+	focus = {
+		id = chr_office_for_unusual_research
+		icon = GFX_goal_BOS_generic_research
+		cost = 60
+		prerequisite = {
+			focus = chr_science_without_restraints
+		}
+		relative_position_id = chr_science_without_restraints
+		x = -3
+		y = 1
+		completion_reward = {
+			617 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = chr_project_uktena
+		icon = GFX_goal_chr_uktena
+		cost = 60
+		prerequisite = {
+			focus = chr_office_for_unusual_research
+		}
+		relative_position_id = chr_office_for_unusual_research
+		x = 0
+		y = 1
+		completion_reward = {
+			unlock_decision_category_tooltip = CHR_project_uktena
+			617 = {
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = chr_ulunsuti_builders
+		icon = GFX_goal_chr_ulunsuti_builders
+		cost = 60
+		prerequisite = {
+			focus = chr_project_uktena
+		}
+		relative_position_id = chr_project_uktena
+		x = -3
+		y = 1
+		completion_reward = {
+			unlock_decision_tooltip = chr_ulusunti_bots_decision
+			add_equipment_to_stockpile = {
+				type = support_robot_two_legs_equipment_1
+				amount = 100
+				producer = USA
+			}
+		}
+	}
+	focus = {
+		id = chr_uktenas_gaze
+		icon = GFX_goal_chr_uktenas_gaze
+		cost = 60
+		prerequisite = {
+			focus = chr_project_uktena
+		}
+		relative_position_id = chr_project_uktena
+		x = -1
+		y = 1
+		completion_reward = {
+			unlock_decision_tooltip = chr_uktenas_gaze_decision
+			custom_effect_tooltip = chr_wartime_abilities_tt
+			add_tech_bonus = {
+				name = computer_buff
+				bonus = 0.75
+				ahead_reduction = 1
+				uses = 2
+				category = electronics
+			}
+		}
+	}
+	focus = {
+		id = chr_serpent_scales
+		icon = GFX_goal_chr_serpent_scales
+		cost = 60
+		prerequisite = {
+			focus = chr_project_uktena
+		}
+		relative_position_id = chr_project_uktena
+		x = 1
+		y = 1
+		completion_reward = {
+			add_ideas = {
+				chr_serpent_scale_armor
+			}
+			add_tech_bonus = {
+				name = power_armor_buff
+				bonus = 0.75
+				ahead_reduction = 1
+				uses = 2
+				category = power_armor_tech_category
+			}
+		}
+	}
+	focus = {
+		id = chr_pestilent_breath
+		icon = GFX_goal_chr_pestilent_breath
+		cost = 60
+		prerequisite = {
+			focus = chr_project_uktena
+		}
+		relative_position_id = chr_project_uktena
+		x = 3
+		y = 1
+		completion_reward = {
+			unlock_decision_tooltip = chr_pestilent_breath_decision
+			custom_effect_tooltip = chr_wartime_abilities_tt
+			add_tech_bonus = {
+				name = power_armor_buff
+				bonus = 0.75
+				ahead_reduction = 1
+				uses = 2
+				category = agriculture_tech
+			}
+		}
+	}
+	focus = {
+		id = chr_the_shape_of_things_to_come
+		icon = GFX_goal_TTM_Project_Luna
+		cost = 60
+		prerequisite = {
+			focus = chr_science_without_restraints
+		}
+		relative_position_id = chr_science_without_restraints
+		x = 3
+		y = 1
+		completion_reward = {
+			103 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = chr_psychic_nullifiers
+		icon = GFX_goal_psyker_nullifier
+		cost = 60
+		prerequisite = {
+			focus = chr_the_shape_of_things_to_come
+		}
+		available = {
+			CMC = {
+				has_war_with = CHC
+			}
+		}
+		relative_position_id = chr_the_shape_of_things_to_come
+		x = -1
+		y = 1
+		completion_reward = {
+			CMC = {
+				add_ideas = {
+					chr_psychic_nullifiers_idea
+				}
+			}
+			hidden_effect = {
+				add_ideas = {
+					chr_psychic_nullifiers_hidden
+				}
+			}
+		}
+	}
+	focus = {
+		id = chr_sky_hellions
+		icon = GFX_goal_chr_hellion
+		cost = 60
+		prerequisite = {
+			focus = chr_the_shape_of_things_to_come
+		}
+		relative_position_id = chr_the_shape_of_things_to_come
+		x = 1
+		y = 1
+		completion_reward = {
+			set_technology = {
+				air_tech_level_scientific = 1
+				vertibird_unlock_tech = 1
+			}
+		}
+	}
+	###############################
+	# Alliance Focus Branch
+	###############################
+	focus = {
+		id = fp_the_alliance
+		icon = GFX_goal_generic_generic_diplomatic_focus
+		cost = 12.9
+		prerequisite = {
+			focus = fp_history_3
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = fp_has_not_started_joint_focus_tt
+				all_other_country = {
+					NOT = {
+						focus_progress = {
+							focus = fp_the_alliance
+							progress > 0
+						}
+					}
+				}
+			}
+		}
+		relative_position_id = fp_history_3
+		x = 17
+		y = 1
+		cancelable = no
+		completion_reward = {
+			custom_effect_tooltip = fp_the_joint_focus_tt
+			hidden_effect = {
+				CMC = {
+					unlock_national_focus = fp_the_alliance
+				}
+				CHO = {
+					unlock_national_focus = fp_the_alliance
+				}
+				CHR = {
+					unlock_national_focus = fp_the_alliance
+				}
+			}
+			every_country = {
+				tooltip = fp_member_tt
+				limit = {
+					OR = {
+						original_tag = CMC
+						original_tag = CHO
+						original_tag = CHR
+					}
+				}
+				add_political_power = 150
+				hidden_effect = {
+					country_event = {
+						id = nf_event_fp.200
+						days = 60
+					}
+				}
+			}
+			custom_effect_tooltip = fp_the_joint_focus_bonus_tt
+			add_political_power = 25
+		}
+	}
+
+
+	focus = {
+		id = fp_shared_education
+		icon = GFX_goal_generic_books
+		cost = 12.9
+		search_filters = {FOCUS_FILTER_RESEARCH}
+		prerequisite = {
+			focus = fp_the_alliance
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = fp_has_not_started_joint_focus_tt
+				all_other_country = {
+					NOT = {
+						focus_progress = {
+							focus = fp_shared_education
+							progress > 0
+						}
+					}
+				}
+			}
+		}
+		relative_position_id = fp_the_alliance
+		x = -4
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = fp_the_joint_focus_tt
+			hidden_effect = {
+				CMC = {
+					unlock_national_focus = fp_shared_education
+				}
+				CHO = {
+					unlock_national_focus = fp_shared_education
+				}
+				CHR = {
+					unlock_national_focus = fp_shared_education
+				}
+				every_country = {
+					limit = {
+						OR = {
+							original_tag = CMC
+							original_tag = CHO
+							original_tag = CHR
+						}
+					}
+					add_to_tech_sharing_group = first_peoples_federation_sharing
+				}
+			}
+			custom_effect_tooltip = fp_the_join_tech_sharing_tt
+			custom_effect_tooltip = fp_the_joint_focus_bonus_tt
+			add_political_power = 25
+		}
+	}
+	focus = {
+		id = fp_into_the_PIT
+		icon = GFX_goal_gpf_into_the_pit
+		cost = 12.9
+		search_filters = {FOCUS_FILTER_RESEARCH}
+		prerequisite = {
+			focus = fp_shared_education
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = fp_has_not_started_joint_focus_tt
+				all_other_country = {
+					NOT = {
+						focus_progress = {
+							focus = fp_into_the_PIT
+							progress > 0
+						}
+					}
+				}
+			}
+		}
+		relative_position_id = fp_shared_education
+		x = 0
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = fp_the_joint_focus_tt
+			hidden_effect = {
+				CMC = {
+					unlock_national_focus = fp_into_the_PIT
+				}
+				CHO = {
+					unlock_national_focus = fp_into_the_PIT
+				}
+				CHR = {
+					unlock_national_focus = fp_into_the_PIT
+				}
+			}
+			every_country = {
+				tooltip = fp_member_tt
+				limit = {
+					OR = {
+						original_tag = CMC
+						original_tag = CHO
+						original_tag = CHR
+					}
+				}
+				add_timed_idea = {
+					idea = gpf_pit_preparations
+					days = 100
+				}
+			}
+			custom_effect_tooltip = fp_the_joint_focus_bonus_tt
+			hidden_effect = {
+				modify_timed_idea = {
+					idea = gpf_pit_preparations
+					days = 30
+				}
+			}
+			custom_effect_tooltip = fp_into_the_PIT_bonus_tt
+		}
+	}
+	focus = {
+		id = fp_clear_out_PIT_raiders
+		icon = GFX_goal_generic_skull
+		cost = 12.9
+		prerequisite = {
+			focus = fp_into_the_PIT
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = fp_has_not_started_joint_focus_tt
+				all_other_country = {
+					NOT = {
+						focus_progress = {
+							focus = fp_clear_out_PIT_raiders
+							progress > 0
+						}
+					}
+				}
+			}
+		}
+		relative_position_id = fp_into_the_PIT
+		x = 0
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = fp_the_joint_focus_tt
+			hidden_effect = {
+				CMC = {
+					unlock_national_focus = fp_clear_out_PIT_raiders
+				}
+				CHO = {
+					unlock_national_focus = fp_clear_out_PIT_raiders
+				}
+				CHR = {
+					unlock_national_focus = fp_clear_out_PIT_raiders
+				}
+			}
+			every_country = {
+				tooltip = fp_member_tt
+				limit = {
+					OR = {
+						original_tag = CMC
+						original_tag = CHO
+						original_tag = CHR
+					}
+				}
+				country_event = { id = nf_event_fp.5 }
+			}
+			custom_effect_tooltip = fp_the_joint_focus_bonus_event_tt
+			set_country_flag = fp_clear_out_pit_raiders_starter
+		}
+	}
+	focus = {
+		id = fp_the_archives
+		icon = GFX_goal_generic_data_focus
+		cost = 12.9
+		search_filters = {FOCUS_FILTER_RESEARCH}
+		prerequisite = {
+			focus = fp_clear_out_PIT_raiders
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = fp_has_not_started_joint_focus_tt
+				all_other_country = {
+					NOT = {
+						focus_progress = {
+							focus = fp_the_archives
+							progress > 0
+						}
+					}
+				}
+			}
+		}
+		relative_position_id = fp_clear_out_PIT_raiders
+		x = -1
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = fp_the_joint_focus_tt
+			hidden_effect = {
+				CMC = {
+					unlock_national_focus = fp_the_archives
+				}
+				CHO = {
+					unlock_national_focus = fp_the_archives
+				}
+				CHR = {
+					unlock_national_focus = fp_the_archives
+				}
+			}
+			CMC = {
+				add_tech_bonus = {
+					bonus = 0.5
+					ahead_reduction = 1
+					uses = 3
+					category = building_Tech
+				}
+			}
+			CHO = {
+				add_tech_bonus = {
+					bonus = 0.5
+					ahead_reduction = 1
+					uses = 2
+					category = support_medical_tech_category
+				}
+				add_tech_bonus = {
+					bonus = 0.5
+					ahead_reduction = 1
+					uses = 1
+					category = agriculture_tech
+				}
+
+			}
+			CHR = {
+				add_tech_bonus = {
+					bonus = 0.5
+					ahead_reduction = 1
+					uses = 3
+					category = robotics_tech_category
+				}
+			}
+			custom_effect_tooltip = fp_the_joint_focus_bonus_tt
+			add_tech_bonus = {
+				bonus = 0.15
+				uses = 1
+				category = scavenging_tech
+			}
+		}
+	}
+	focus = {
+		id = fp_usable_equipment
+		icon = GFX_goal_generic_supplies_focus
+		cost = 12.9
+		search_filters = {FOCUS_FILTER_RESEARCH}
+		prerequisite = {
+			focus = fp_clear_out_PIT_raiders
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = fp_has_not_started_joint_focus_tt
+				all_other_country = {
+					NOT = {
+						focus_progress = {
+							focus = fp_usable_equipment
+							progress > 0
+						}
+					}
+				}
+			}
+		}
+		relative_position_id = fp_clear_out_PIT_raiders
+		x = 1
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = fp_the_joint_focus_tt
+			hidden_effect = {
+				CMC = {
+					unlock_national_focus = fp_usable_equipment
+				}
+				CHO = {
+					unlock_national_focus = fp_usable_equipment
+				}
+				CHR = {
+					unlock_national_focus = fp_usable_equipment
+				}
+			}
+			every_country = {
+				tooltip = fp_member_tt
+				limit = {
+					OR = {
+						original_tag = CMC
+						original_tag = CHO
+						original_tag = CHR
+					}
+				}
+				add_tech_bonus = {
+					bonus = 0.5
+					ahead_reduction = 1
+					uses = 3
+					category = industry
+				}
+			}
+			custom_effect_tooltip = fp_the_joint_focus_bonus_tt
+			random_owned_controlled_state = {
+				add_resource = {
+					type = metal
+					amount = 2
+				}
+			}
+		}
+	}
+	focus = {
+		id = fp_reopen_the_PIT
+		icon = GFX_goal_gpf_the_pit
+		cost = 12.9
+		search_filters = {FOCUS_FILTER_RESEARCH}
+		prerequisite = {
+			focus = fp_the_archives
+		}
+		prerequisite = {
+			focus = fp_usable_equipment
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = fp_has_not_started_joint_focus_tt
+				all_other_country = {
+					NOT = {
+						focus_progress = {
+							focus = fp_reopen_the_PIT
+							progress > 0
+						}
+					}
+				}
+			}
+		}
+		relative_position_id = fp_clear_out_PIT_raiders
+		x = 0
+		y = 2
+		completion_reward = {
+			custom_effect_tooltip = fp_the_joint_focus_tt
+			hidden_effect = {
+				CMC = {
+					unlock_national_focus = fp_reopen_the_PIT
+				}
+				CHO = {
+					unlock_national_focus = fp_reopen_the_PIT
+				}
+				CHR = {
+					unlock_national_focus = fp_reopen_the_PIT
+				}
+
+				modify_tech_sharing_bonus = {
+					id = first_peoples_federation_sharing
+					bonus = 0.15
+				}
+			}
+			custom_effect_tooltip = fp_buff_first_peoples_federation_sharing
+			custom_effect_tooltip = fp_the_joint_focus_bonus_tt
+			add_timed_idea = {
+				idea = gpf_new_students
+				days = 60
+			}
+
+		}
+	}
+	focus = {
+		id = fp_the_expedition
+		icon = GFX_goal_generic_backpack
+		cost = 30
+		prerequisite = {
+			focus = fp_the_alliance
+		}
+		available = {
+			AND = {
+				has_country_flag = fp_unknown_woman_appared
+				custom_trigger_tooltip = {
+					tooltip = fp_has_not_started_joint_focus_tt
+					all_other_country = {
+						NOT = {
+							focus_progress = {
+								focus = fp_the_expedition
+								progress > 0
+							}
+						}
+					}
+				}
+			}
+		}
+		relative_position_id = fp_the_alliance
+		x = 0
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = fp_the_joint_focus_tt
+			hidden_effect = {
+				CMC = {
+					unlock_national_focus = fp_the_expedition
+				}
+				CHO = {
+					unlock_national_focus = fp_the_expedition
+				}
+				CHR = {
+					unlock_national_focus = fp_the_expedition
+				}
+			}
+			unlock_decision_category_tooltip = fp_expedition_west_category
+		}
+	}
+	focus = {
+		id = fp_expeditions_boon
+		icon = GFX_goal_generic_vault_stash
+		cost = 60
+		prerequisite = {
+			focus = fp_the_expedition
+		}
+		available = {
+			AND = {
+				has_country_flag = fp_expedition_encounter_05
+				custom_trigger_tooltip = {
+					tooltip = fp_has_not_started_joint_focus_tt
+					all_other_country = {
+						NOT = {
+							focus_progress = {
+								focus = fp_expeditions_boon
+								progress > 0
+							}
+						}
+					}
+				}
+			}
+
+		}
+		relative_position_id = fp_the_expedition
+		x = 0
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = fp_the_joint_focus_tt
+			hidden_effect = {
+				CMC = {
+					unlock_national_focus = fp_expeditions_boon
+				}
+				CHO = {
+					unlock_national_focus = fp_expeditions_boon
+				}
+				CHR = {
+					unlock_national_focus = fp_expeditions_boon
+				}
+			}
+			every_country = {
+				tooltip = fp_member_tt
+				limit = {
+					OR = {
+						original_tag = CMC
+						original_tag = CHO
+						original_tag = CHR
+					}
+				}
+				set_technology = {
+					spec_ops_horses_tech = 1
+				}
+			}
+		}
+	}
+	focus = {
+		id = fp_outriders
+		icon = GFX_goal_generic_cowboys
+		cost = 60
+		prerequisite = {
+			focus = fp_expeditions_boon
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = fp_has_not_started_joint_focus_tt
+				all_other_country = {
+					NOT = {
+						focus_progress = {
+							focus = fp_outriders
+							progress > 0
+						}
+					}
+				}
+			}
+		}
+		relative_position_id = fp_expeditions_boon
+		x = -1
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = fp_the_joint_focus_tt
+			hidden_effect = {
+				CMC = {
+					unlock_national_focus = fp_outriders
+				}
+				CHO = {
+					unlock_national_focus = fp_outriders
+				}
+				CHR = {
+					unlock_national_focus = fp_outriders
+				}
+			}
+			every_country = {
+				tooltip = fp_member_tt
+				limit = {
+					OR = {
+						original_tag = CMC
+						original_tag = CHO
+						original_tag = CHR
+					}
+				}
+				custom_effect_tooltip = fp_outriders_tt
+			}
+				hidden_effect = {
+				CMC = {
+					division_template = {
+						name = "Outriders"
+						regiments = {
+							spec_ops_cavalry = { x = 0 y = 0 }
+							spec_ops_cavalry = { x = 0 y = 1 }
+							spec_ops_cavalry = { x = 0 y = 2 }
+							spec_ops_cavalry = { x = 1 y = 0 }
+							spec_ops_cavalry = { x = 1 y = 1 }
+							spec_ops_cavalry = { x = 1 y = 2 }
+						}
+						support = {
+							recon_company = { x = 0 y = 0 }
+							logistics_company = { x = 0 y = 1 }
+						}
+
+					}
+					capital_scope = {
+						create_unit = {
+							division = "name = \"Outriders\" division_template = \"Outriders\" start_experience_factor = 2.0 start_equipment_factor = 1.5"
+							owner = CMC
+						}
+						create_unit = {
+							division = "name = \"Outriders\" division_template = \"Outriders\" start_experience_factor = 2.0 start_equipment_factor = 1.5"
+							owner = CMC
+						}
+						create_unit = {
+							division = "name = \"Outriders\" division_template = \"Outriders\" start_experience_factor = 2.0 start_equipment_factor = 1.5"
+							owner = CMC
+
+						}
+					}
+				}
+				CHO = {
+					division_template = {
+						name = "Outriders"
+						regiments = {
+							spec_ops_cavalry = { x = 0 y = 0 }
+							spec_ops_cavalry = { x = 0 y = 1 }
+							spec_ops_cavalry = { x = 0 y = 2 }
+							spec_ops_cavalry = { x = 1 y = 0 }
+							spec_ops_cavalry = { x = 1 y = 1 }
+							spec_ops_cavalry = { x = 1 y = 2 }
+						}
+						support = {
+							recon_company = { x = 0 y = 0 }
+							logistics_company = { x = 0 y = 1 }
+						}
+
+					}
+					capital_scope = {
+						create_unit = {
+							division = "name = \"Outriders\" division_template = \"Outriders\" start_experience_factor = 2.0 start_equipment_factor = 1.5"
+							owner = CHO
+						}
+						create_unit = {
+							division = "name = \"Outriders\" division_template = \"Outriders\" start_experience_factor = 2.0 start_equipment_factor = 1.5"
+							owner = CHO
+						}
+						create_unit = {
+							division = "name = \"Outriders\" division_template = \"Outriders\" start_experience_factor = 2.0 start_equipment_factor = 1.5"
+							owner = CHO
+						}
+					}
+				}
+				CHR = {
+					division_template = {
+						name = "Outriders"
+						regiments = {
+							spec_ops_cavalry = { x = 0 y = 0 }
+							spec_ops_cavalry = { x = 0 y = 1 }
+							spec_ops_cavalry = { x = 0 y = 2 }
+							spec_ops_cavalry = { x = 1 y = 0 }
+							spec_ops_cavalry = { x = 1 y = 1 }
+							spec_ops_cavalry = { x = 1 y = 2 }
+						}
+						support = {
+							recon_company = { x = 0 y = 0 }
+							logistics_company = { x = 1 y = 0 }
+						}
+
+					}
+					capital_scope = {
+						create_unit = {
+							division = "name = \"Outriders\" division_template = \"Outriders\" start_experience_factor = 2.0 start_equipment_factor = 1.5"
+							owner = CHR
+						}
+						create_unit = {
+							division = "name = \"Outriders\" division_template = \"Outriders\" start_experience_factor = 2.0 start_equipment_factor = 1.5"
+							owner = CHR
+						}
+						create_unit = {
+							division = "name = \"Outriders\" division_template = \"Outriders\" start_experience_factor = 2.0 start_equipment_factor = 1.5"
+							owner = CHR
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = fp_horse_breeding
+		icon = GFX_goal_gpf_horsies
+		cost = 60
+		prerequisite = {
+			focus = fp_expeditions_boon
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = fp_has_not_started_joint_focus_tt
+				all_other_country = {
+					NOT = {
+						focus_progress = {
+							focus = fp_horse_breeding
+							progress > 0
+						}
+					}
+				}
+			}
+		}
+		relative_position_id = fp_expeditions_boon
+		x = 1
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = fp_the_joint_focus_tt
+			hidden_effect = {
+				CMC = {
+					unlock_national_focus = fp_horse_breeding
+				}
+				CHO = {
+					unlock_national_focus = fp_horse_breeding
+				}
+				CHR = {
+					unlock_national_focus = fp_horse_breeding
+				}
+			}
+			every_country = {
+				tooltip = fp_member_tt
+				limit = {
+					OR = {
+						original_tag = CMC
+						original_tag = CHO
+						original_tag = CHR
+					}
+				}
+				country_event = { id = nf_event_fp.9 }
+			}
+
+		}
+	}
+	focus = {
+		id = fp_internal_trade
+		icon = GFX_continuous_caps
+		cost = 12.9
+		prerequisite = {
+			focus = fp_the_alliance
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = fp_has_not_started_joint_focus_tt
+				all_other_country = {
+					NOT = {
+						focus_progress = {
+							focus = fp_internal_trade
+							progress > 0
+						}
+					}
+				}
+			}
+		}
+		relative_position_id = fp_the_alliance
+		x = 5
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = fp_the_joint_focus_tt
+			hidden_effect = {
+				CMC = {
+					unlock_national_focus = fp_internal_trade
+				}
+				CHO = {
+					unlock_national_focus = fp_internal_trade
+				}
+				CHR = {
+					unlock_national_focus = fp_internal_trade
+				}
+			}
+			every_country = {
+				tooltip = fp_member_tt
+				limit = {
+					OR = {
+						original_tag = CMC
+						original_tag = CHO
+						original_tag = CHR
+					}
+				}
+				add_ideas = {
+					gpf_trade_pact_1
+				}
+			}
+		}
+	}
+	focus = {
+		id = fp_free_trade
+		icon = GFX_goal_brahmin_cart
+		cost = 12.9
+		prerequisite = {
+			focus = fp_internal_trade
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = fp_has_not_started_joint_focus_tt
+				all_other_country = {
+					NOT = {
+						focus_progress = {
+							focus = fp_free_trade
+							progress > 0
+						}
+					}
+				}
+			}
+		}
+		relative_position_id = fp_internal_trade
+		x = 0
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = fp_the_joint_focus_tt
+			hidden_effect = {
+				CMC = {
+					unlock_national_focus = fp_free_trade
+				}
+				CHO = {
+					unlock_national_focus = fp_free_trade
+				}
+				CHR = {
+					unlock_national_focus = fp_free_trade
+				}
+			}
+			every_country = {
+				tooltip = fp_member_tt
+				limit = {
+					OR = {
+						original_tag = CMC
+						original_tag = CHO
+						original_tag = CHR
+					}
+				}
+				swap_ideas = {
+					remove_idea = gpf_trade_pact_1
+					add_idea = gpf_trade_pact_2
+				}
+			}
+		}
+	}
+	focus = {
+		id = fp_infrastructure_projects
+		icon = GFX_goal_generic_protectron_conceptart_construction
+		cost = 60
+		prerequisite = {
+			focus = fp_free_trade
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = fp_has_not_started_joint_focus_tt
+				all_other_country = {
+					NOT = {
+						focus_progress = {
+							focus = fp_infrastructure_projects
+							progress > 0
+						}
+					}
+				}
+			}
+		}
+		relative_position_id = fp_free_trade
+		x = -1
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = fp_the_joint_focus_tt
+			hidden_effect = {
+				CMC = {
+					unlock_national_focus = fp_infrastructure_projects
+				}
+				CHO = {
+					unlock_national_focus = fp_infrastructure_projects
+				}
+				CHR = {
+					unlock_national_focus = fp_infrastructure_projects
+				}
+			}
+			every_country = {
+				tooltip = fp_member_tt
+				limit = {
+					OR = {
+						original_tag = CMC
+						original_tag = CHO
+						original_tag = CHR
+					}
+				}
+				add_ideas = {
+					gpf_infrastrucutre_projects
+				}
+			}
+		}
+	}
+	focus = {
+		id = fp_lacrosse
+		icon = GFX_goal_fp_lacrosse
+		cost = 60
+		prerequisite = {
+			focus = fp_free_trade
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = fp_has_not_started_joint_focus_tt
+				all_other_country = {
+					NOT = {
+						focus_progress = {
+							focus = fp_lacrosse
+							progress > 0
+						}
+					}
+				}
+			}
+		}
+		relative_position_id = fp_free_trade
+		x = 1
+		y = 1
+		cancelable = no
+		completion_reward = {
+			custom_effect_tooltip = fp_the_joint_focus_tt
+			hidden_effect = {
+				CMC = {
+					unlock_national_focus = fp_lacrosse
+				}
+				CHO = {
+					unlock_national_focus = fp_lacrosse
+				}
+				CHR = {
+					unlock_national_focus = fp_lacrosse
+				}
+			}
+			every_country = {
+				tooltip = fp_member_tt
+				limit = {
+					OR = {
+						original_tag = CMC
+						original_tag = CHO
+						original_tag = CHR
+					}
+				}
+				country_event = { id = nf_event_fp.4 }
+			}
+			custom_effect_tooltip = fp_the_joint_focus_bonus_tt
+			army_experience	= 10
+		}
+	}
+	focus = {
+		id = fp_restore_highways
+		icon = GFX_goal_original_highwayman
+		cost = 60
+		prerequisite = {
+			focus = fp_infrastructure_projects
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = fp_has_not_started_joint_focus_tt
+				all_other_country = {
+					NOT = {
+						focus_progress = {
+							focus = fp_restore_highways
+							progress > 0
+						}
+					}
+				}
+			}
+		}
+		relative_position_id = fp_infrastructure_projects
+		x = -1
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = fp_the_joint_focus_tt
+			hidden_effect = {
+				CMC = {
+					unlock_national_focus = fp_restore_highways
+				}
+				CHO = {
+					unlock_national_focus = fp_restore_highways
+				}
+				CHR = {
+					unlock_national_focus = fp_restore_highways
+				}
+			}
+			every_country = {
+				tooltip = fp_member_tt
+				limit = {
+					OR = {
+						original_tag = CMC
+						original_tag = CHO
+						original_tag = CHR
+					}
+				}
+				custom_effect_tooltip = fp_restore_highways_tt
+				hidden_effect = {
+					capital_scope = {
+						add_building_construction = {
+							type = infrastructure
+							level = 3
+							instant_build = yes
+						}
+					}
+				}
+			}
+			custom_effect_tooltip = fp_the_joint_focus_bonus_tt
+			capital_scope = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = fp_connect_settlements
+		icon = GFX_KHA_focus_town_slums
+		cost = 60
+		prerequisite = {
+			focus = fp_restore_highways
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = fp_has_not_started_joint_focus_tt
+				all_other_country = {
+					NOT = {
+						focus_progress = {
+							focus = fp_connect_settlements
+							progress > 0
+						}
+					}
+				}
+			}
+		}
+		relative_position_id = fp_restore_highways
+		x = 0
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = fp_the_joint_focus_tt
+			hidden_effect = {
+				CMC = {
+					unlock_national_focus = fp_connect_settlements
+				}
+				CHO = {
+					unlock_national_focus = fp_connect_settlements
+				}
+				CHR = {
+					unlock_national_focus = fp_connect_settlements
+				}
+			}
+			every_country = {
+				tooltip = fp_member_tt
+				limit = {
+					OR = {
+						original_tag = CMC
+						original_tag = CHO
+						original_tag = CHR
+					}
+				}
+				custom_effect_tooltip = fp_connect_settlements_tt
+				hidden_effect = {
+					random_owned_controlled_state = {
+						limit = {
+							is_capital = no
+						}
+						add_building_construction = {
+							type = infrastructure
+							level = 2
+							instant_build = yes
+						}
+					}
+				}
+			}
+			custom_effect_tooltip = fp_the_joint_focus_bonus_tt
+			random_owned_controlled_state = {
+				limit = {
+					is_capital = no
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = fp_reopen_train_stations
+		icon = GFX_goal_generic_infrastructure2
+
+		cost = 60
+		prerequisite = {
+			focus = fp_infrastructure_projects
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = fp_has_not_started_joint_focus_tt
+				all_other_country = {
+					NOT = {
+						focus_progress = {
+							focus = fp_reopen_train_stations
+							progress > 0
+						}
+					}
+				}
+			}
+		}
+		relative_position_id = fp_infrastructure_projects
+		x = 1
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = fp_the_joint_focus_tt
+			hidden_effect = {
+				CMC = {
+					unlock_national_focus = fp_reopen_train_stations
+				}
+				CHO = {
+					unlock_national_focus = fp_reopen_train_stations
+				}
+				CHR = {
+					unlock_national_focus = fp_reopen_train_stations
+				}
+			}
+			add_ideas = {
+				gpf_train_network
+			}
+		}
+	}
+	focus = {
+		id = fp_passenger_trains
+		icon = GFX_goal_generic_train_2
+		cost = 60
+		prerequisite = {
+			focus = fp_reopen_train_stations
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = fp_has_not_started_joint_focus_tt
+				all_other_country = {
+					NOT = {
+						focus_progress = {
+							focus = fp_passenger_trains
+							progress > 0
+						}
+					}
+				}
+			}
+		}
+		relative_position_id = fp_reopen_train_stations
+		x = 0
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = fp_the_joint_focus_tt
+			hidden_effect = {
+				CMC = {
+					unlock_national_focus = fp_passenger_trains
+				}
+				CHO = {
+					unlock_national_focus = fp_passenger_trains
+				}
+				CHR = {
+					unlock_national_focus = fp_passenger_trains
+				}
+			}
+			every_country = {
+				tooltip = fp_member_tt
+				limit = {
+					OR = {
+						original_tag = CMC
+						original_tag = CHO
+						original_tag = CHR
+					}
+				}
+				add_manpower = 500
+			}
+			custom_effect_tooltip = fp_the_joint_focus_bonus_tt
+			add_manpower = 100
+		}
+	}
+	focus = {
+		id = fp_protect_caravans
+		icon = GFX_goal_generic_brahmin_trade
+		cost = 60
+		prerequisite = {
+			focus = fp_free_trade
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = fp_has_not_started_joint_focus_tt
+				all_other_country = {
+					NOT = {
+						focus_progress = {
+							focus = fp_protect_caravans
+							progress > 0
+						}
+					}
+				}
+			}
+		}
+		relative_position_id = fp_free_trade
+		x = 2
+		y = 2
+		completion_reward = {
+			custom_effect_tooltip = fp_the_joint_focus_tt
+			hidden_effect = {
+				CMC = {
+					unlock_national_focus = fp_protect_caravans
+				}
+				CHO = {
+					unlock_national_focus = fp_protect_caravans
+				}
+				CHR = {
+					unlock_national_focus = fp_protect_caravans
+				}
+			}
+			every_country = {
+				tooltip = fp_member_tt
+				limit = {
+					OR = {
+						original_tag = CMC
+						original_tag = CHO
+						original_tag = CHR
+					}
+				}
+				add_ideas = {
+					gpf_protected_caravans
+				}
+			}
+		}
+	}
+	focus = {
+		id = fp_attract_foreign_caravan_companies
+		icon = GFX_goal_NCR_Brahminbill
+		cost = 60
+		prerequisite = {
+			focus = fp_protect_caravans
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = fp_has_not_started_joint_focus_tt
+				all_other_country = {
+					NOT = {
+						focus_progress = {
+							focus = fp_attract_foreign_caravan_companies
+							progress > 0
+						}
+					}
+				}
+			}
+		}
+		relative_position_id = fp_protect_caravans
+		x = 0
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = fp_the_joint_focus_tt
+			hidden_effect = {
+				CMC = {
+					unlock_national_focus = fp_attract_foreign_caravan_companies
+				}
+				CHO = {
+					unlock_national_focus = fp_attract_foreign_caravan_companies
+				}
+				CHR = {
+					unlock_national_focus = fp_attract_foreign_caravan_companies
+				}
+			}
+			every_country = {
+				tooltip = fp_member_tt
+				limit = {
+					OR = {
+						original_tag = CMC
+						original_tag = CHO
+						original_tag = CHR
+					}
+				}
+				country_event = { id = nf_event_fp.8 }
+			}
+		}
+	}
+	focus = {
+		id = fp_economic_growth
+		icon = GFX_goal_VEG_Economic_Miracle
+		cost = 60
+		prerequisite = {
+			focus = fp_connect_settlements
+		}
+		prerequisite = {
+			focus = fp_passenger_trains
+		}
+		prerequisite = {
+			focus = fp_attract_foreign_caravan_companies
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = fp_has_not_started_joint_focus_tt
+				all_other_country = {
+					NOT = {
+						focus_progress = {
+							focus = fp_economic_growth
+							progress > 0
+						}
+					}
+				}
+			}
+		}
+		relative_position_id = fp_passenger_trains
+		x = 0
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = fp_the_joint_focus_tt
+			hidden_effect = {
+				CMC = {
+					unlock_national_focus = fp_economic_growth
+				}
+				CHO = {
+					unlock_national_focus = fp_economic_growth
+				}
+				CHR = {
+					unlock_national_focus = fp_economic_growth
+				}
+			}
+			103 = {
+				set_temp_variable = { development_to_add = 1.0 }
+				add_development_to_node = yes
+				add_state_modifier = {
+					modifier =	{ caps_node_base_modifier = 0.10 }
+
+				}
+			}
+		}
+	}
+	###############################
+	# Fate of the Federation
+	###############################
+	focus = {
+		id = gpf_fate_of_the_federation
+		icon = GFX_goal_gpf_combine
+		cost = 60
+		allow_branch = {
+			OR = {
+				original_tag = CMC
+				original_tag = CHO
+				original_tag = CHR
+			}
+		}
+		available = {
+			AND = {
+				has_completed_focus = fp_economic_growth
+				has_completed_focus = fp_reopen_the_PIT
+				has_completed_focus = fp_expeditions_boon
+				CMC = {
+					AND = {
+						is_in_faction_with = CHO
+						is_in_faction_with = CHR
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				OR = {
+					CMC = {
+						is_ai = no
+					}
+					CHO = {
+						is_ai = no
+					}
+					CHR = {
+						is_ai = no
+					}
+				}
+			}
+			modifier ={
+				factor = 0
+				original_tag = CHR
+			}
+		}
+		relative_position_id = fp_history_3
+		x = 0
+		y = 15
+		offset = {
+			x = 0
+			y = -8
+			trigger = {
+				tag = CHR
+			}
+		}
+		offset = {
+			x = 0
+			y = -2
+			trigger = {
+				tag = CHO
+			}
+		}
+		completion_reward = {
+			country_event = {
+				id = nf_event_fp.100
+			}
+		}
+	}
+	# focus = {
+	#		id = gpf_federation_apart
+	#		icon = GFX_goal_gpf_combine
+	#		cost = 60
+	#		prerequisite = {
+	#			focus = gpf_fate_of_the_federation
+	#		}
+	#		relative_position_id = gpf_fate_of_the_federation
+	#		x = -3
+	#		y = 1
+	#		completion_reward = {
+	#		}
+	# }
+	focus = {
+		id = gpf_federation_merge
+		icon = GFX_goal_generic_focus_magazine_lal_married_a_robot
+		cost = 60
+		prerequisite = {
+			focus = gpf_fate_of_the_federation
+		}
+		relative_position_id = gpf_fate_of_the_federation
+		x = 0
+		y = 1
+		completion_reward = {
+			if = {
+				limit = {
+					original_tag = CMC
+				}
+				CHO = {
+					CMC = {
+						core_all_core_states_of_prev = yes
+					}
+				}
+				CHR = {
+					CMC = {
+						core_all_core_states_of_prev = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					original_tag = CHO
+				}
+				CMC = {
+					CHO = {
+						core_all_core_states_of_prev = yes
+					}
+				}
+				CHR = {
+					CHO = {
+						core_all_core_states_of_prev = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					original_tag = CHR
+				}
+				CMC = {
+					CHR = {
+						core_all_core_states_of_prev = yes
+					}
+				}
+				CHO = {
+					CHR = {
+						core_all_core_states_of_prev = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = gpf_a_new_ruling_body
+		icon = GFX_goal_generic_focus_magazine_tesla_robots_rule
+		cost = 60
+		prerequisite = {
+			focus = gpf_federation_merge
+		}
+		relative_position_id = gpf_federation_merge
+		x = 2
+		y = 1
+		completion_reward = {
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = gpf_scientific_advisor
+		icon = GFX_goal_gpf_scientific_advisor
+		cost = 60
+		prerequisite = {
+			focus = gpf_a_new_ruling_body
+		}
+		available = {
+			NOT = {
+				original_tag = CHR
+			}
+		}
+		relative_position_id = gpf_a_new_ruling_body
+		x = -2
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = gpf_scientific_advisor_tt
+		}
+	}
+	focus = {
+		id = gpf_cultural_advisor
+		icon = GFX_goal_gpf_cultural_advisor
+		cost = 60
+		prerequisite = {
+			focus = gpf_a_new_ruling_body
+		}
+		available = {
+			NOT = {
+				original_tag = CHO
+			}
+		}
+		relative_position_id = gpf_a_new_ruling_body
+		x = 0
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = gpf_cultural_advisor_tt
+		}
+	}
+	focus = {
+		id = gpf_economic_advisor
+		icon = GFX_goal_cmc_family_business
+		cost = 60
+		prerequisite = {
+			focus = gpf_a_new_ruling_body
+		}
+		available = {
+			NOT = {
+				original_tag = CMC
+			}
+		}
+		relative_position_id = gpf_a_new_ruling_body
+		x = 2
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = gpf_economic_advisor_tt
+		}
+	}
+	focus = {
+		id = gpf_a_new_capital
+		icon = GFX_goal_generic_scyscrapers_prewar
+		cost = 60
+		prerequisite = {
+			focus = gpf_federation_merge
+		}
+		relative_position_id = gpf_federation_merge
+		x = -2
+		y = 1
+		completion_reward = {
+			set_capital = { state = 103 }
+			103 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = yes
+				}
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = gpf_gateway_to_the_plains
+		icon = GFX_goal_VEG_Economic_Miracle
+		cost = 60
+		prerequisite = {
+			focus = gpf_a_new_capital
+		}
+		relative_position_id = gpf_a_new_capital
+		x = 0
+		y = 1
+		completion_reward = {
+			103 = {
+				set_temp_variable = {
+					development_to_add = 1
+				}
+				add_development_to_node = yes
+				add_state_modifier = {
+					modifier = {
+						caps_node_base_modifier = 0.1
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = gpf_the_state_of_sequoyah
+		icon = GFX_goal_gpf_combine
+		cost = 60
+		prerequisite = {
+			focus = gpf_gateway_to_the_plains
+		}
+		prerequisite = {
+			focus = gpf_economic_advisor
+			focus = gpf_cultural_advisor
+			focus = gpf_scientific_advisor
+		}
+		available = {
+			hidden_trigger = {
+				CMC = {
+					ROOT = {
+						country_owns_all_core_land_of_prev = yes
+					}
+				}
+				CHO = {
+					ROOT = {
+						country_owns_all_core_land_of_prev = yes
+					}
+				}
+				CHR = {
+					ROOT = {
+						country_owns_all_core_land_of_prev = yes
+					}
+				}
+			}
+			has_war = no
+			custom_trigger_tooltip = {
+				tooltip = gpf_the_state_of_sequoyah_tt
+			}
+		}
+		relative_position_id = gpf_scientific_advisor
+		x = 0
+		y = 1
+		completion_reward = {
+			set_cosmetic_tag = GPF_sequoyah
+		}
+	}
+	###############################
+	# Monster of the East
+	###############################
+	# focus = {
+	#		id = gpf_a_monster_approaches
+	#		icon = GFX_goal_CES_lanius
+	#		cost = 12.9
+	#		prerequisite = {
+	#		}
+	#		available = {
+	#			LAC = {
+	#				 has_completed_focus = lac_triumphant_campaign
+	#			}
+	#		}
+	#		relative_position_id = gpf_fate_of_the_federation
+	#		x = 7
+	#		y = 0
+	#		completion_reward = {
+	#			custom_effect_tooltip = fp_the_joint_focus_tt
+	#			hidden_effect = {
+	#				 CMC = {
+	#						unlock_national_focus = gpf_a_monster_approaches
+	#				 }
+	#				 CHO = {
+	#						unlock_national_focus = gpf_a_monster_approaches
+	#				 }
+	#				 CHR = {
+	#						unlock_national_focus = gpf_a_monster_approaches
+	#				 }
+	#			}
+	#			every_country = {
+	#				 tooltip = fp_member_tt
+	#				 limit = {
+	#						OR = {
+	#							original_tag = CMC
+	#							original_tag = CHO
+	#							original_tag = CHR
+	#						}
+	#				 }
+	#			}
+	#		}
+	# }
+}
