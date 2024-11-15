@@ -1,0 +1,284 @@
+ideas = {
+	country = {
+        ######
+        # PAR
+        ######
+        warriors_of_the_rock = {
+            picture = generic_blood
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                monthly_population = -0.05
+                mobilization_speed = 0.5
+                war_support_factor = 1
+                experience_gain_army = 0.2
+                justify_war_goal_time = -0.25
+            }
+        }
+        ancestral_mesa_paintings = {
+            picture = par_the_mesa
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            equipment_bonus = {
+                infantry_equipment = {
+                    build_cost_ic = -0.1
+					reliability = -0.1
+                    instant = yes
+                }
+            }
+            modifier = {
+				equipment_upgrade_xp_cost = 0.35
+            }
+			research_bonus = {
+                tribal_tech_category = 0.05
+            }
+        }
+        par_dwayne_eco_idea_1 = {
+            picture = generic_flamer
+            allowed = {
+                original_tag = PAR
+            }
+            modifier = {
+			   production_factory_start_efficiency_factor = 0.1
+			   production_factory_efficiency_gain_factor = -0.05 
+            }
+			removal_cost = -1
+        }
+        par_dwayne_eco_idea_2 = {
+            picture = generic_flamer
+            allowed = {
+                original_tag = PAR
+            }
+            modifier = {
+			   production_factory_start_efficiency_factor = 0.1
+			   production_factory_max_efficiency_factor = 0.05
+			   production_factory_efficiency_gain_factor = -0.1 
+            }
+			removal_cost = -1
+        }
+        par_early_tech_idea_1 = {
+            picture = generic_flamer
+            allowed = {
+                original_tag = PAR
+            }
+            modifier = {
+				research_speed_factor = 0.1
+            }
+			removal_cost = -1
+        }
+        par_early_tech_idea_2 = {
+            picture = generic_flamer
+            allowed = {
+                original_tag = PAR
+            }
+            modifier = {
+				max_planning_factor = 0.05
+				research_speed_factor = 0.1
+            }
+			removal_cost = -1
+        }
+        par_early_stats_idea_1 = {
+            picture = generic_flamer
+            allowed = {
+                original_tag = PAR
+            }
+			equipment_bonus = {
+				motorized_equipment = {
+					maximum_speed = -0.15
+					reliability = -0.15
+					build_cost_ic = -0.15
+					instant = yes
+				}
+			}
+			removal_cost = -1
+        }
+        par_early_stats_idea_2 = {
+            picture = generic_flamer
+            allowed = {
+                original_tag = PAR
+            }
+			equipment_bonus = {
+				motorized_equipment = {
+					maximum_speed = -0.15
+					reliability = -0.15
+					build_cost_ic = -0.15
+					instant = yes
+				}
+				heavy_infantry_equipment = {
+					soft_attack = 0.15
+					breakthrough = 0.1
+					build_cost_ic = 0.125
+					armor_value = 0.25
+					instant = yes
+				}
+			}
+			removal_cost = -1
+        }
+        par_medium_stats = {
+            picture = generic_fucked_economy
+            allowed = {
+                original_tag = PAR
+            }
+            modifier = {
+				local_resources_factor = 0.2
+            }
+			removal_cost = -1
+        }
+        par_decent_stats = {
+            picture = generic_fucked_economy
+            allowed = {
+                original_tag = PAR
+            }
+            modifier = {
+				grant_medal_cost_factor = -0.75
+				local_resources_factor = 0.2
+            }
+			removal_cost = -1
+        }
+        par_chariots_1 = {
+            picture = generic_legion_flag
+            allowed = {
+                original_tag = PAR
+            }
+			modifier = {
+				army_fuel_consumption_factor = -0.1
+			}
+			equipment_bonus = {
+				chariot_equipment = {
+					build_cost_ic = 0.05
+					soft_attack = 0.15
+					instant = yes
+				}
+			}
+			removal_cost = -1
+        }
+        par_chariots_2 = {
+            picture = generic_legion_flag
+            allowed = {
+                original_tag = PAR
+            }
+			modifier = {
+				army_fuel_consumption_factor = -0.1
+			}
+			equipment_bonus = {
+				chariot_equipment = {
+					build_cost_ic = 0.05
+					soft_attack = 0.25
+					instant = yes
+				}
+			}
+			removal_cost = -1
+        }
+        par_chariots_3 = {
+            picture = generic_legion_flag
+            allowed = {
+                original_tag = PAR
+            }
+			modifier = {
+				army_fuel_consumption_factor = -0.1
+			}
+			equipment_bonus = {
+				chariot_equipment = {
+					build_cost_ic = 0.05
+					armor_value = 0.5
+					hardness = 0.3
+					soft_attack = 0.25
+					instant = yes
+				}
+			}
+			removal_cost = -1
+        }
+        par_tank_1 = {
+            picture = generic_vehicle_great_war_tank
+            allowed = {
+                original_tag = PAR
+            }
+			modifier = {
+				#army_fuel_consumption_factor = -0.25
+			}
+			equipment_bonus = {
+				tank_equipment = {
+					build_cost_ic = -0.025
+					armor_value = -0.15
+					reliability = 0.05
+					instant = yes
+				}
+			}
+			removal_cost = -1
+        }
+        par_tank_2 = {
+            picture = generic_vehicle_great_war_tank
+            allowed = {
+                original_tag = PAR
+            }
+			modifier = {
+				#army_fuel_consumption_factor = -0.25
+			}
+			equipment_bonus = {
+				tank_equipment = {
+					build_cost_ic = -0.025
+					armor_value = -0.15
+					reliability = 0.1
+					soft_attack = 0.05
+					instant = yes
+				}
+			}
+			removal_cost = -1
+        }
+        par_enforcer_1 = {
+            picture = two_cars
+            allowed = {
+                original_tag = PAR
+            }
+            modifier = {
+				modifier_army_sub_unit_motorized_heavy_infantry_attack_factor = 0.05
+            }
+			removal_cost = -1
+        }
+        par_enforcer_2 = {
+            picture = two_cars
+            allowed = {
+                original_tag = PAR
+            }
+            modifier = {
+				modifier_army_sub_unit_motorized_heavy_infantry_attack_factor = 0.05
+            }
+			equipment_bonus = {
+				heavy_infantry_equipment = {
+					maximum_speed = 0.1
+					defense = 0.1
+					instant = yes
+				}
+			}
+			removal_cost = -1
+        }
+        par_enforcer_3 = {
+            picture = two_cars
+            allowed = {
+                original_tag = PAR
+            }
+            modifier = {
+				modifier_army_sub_unit_motorized_heavy_infantry_attack_factor = 0.05
+				modifier_army_sub_unit_motorized_heavy_infantry_max_org_factor = 0.05
+            }
+			equipment_bonus = {
+				heavy_infantry_equipment = {
+					maximum_speed = 0.1
+					defense = 0.1
+					instant = yes
+				}
+			}
+			removal_cost = -1
+        }
+	}
+}
