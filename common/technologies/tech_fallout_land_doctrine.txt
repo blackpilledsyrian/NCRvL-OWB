@@ -2270,7 +2270,7 @@ technologies = {
 			set_temp_variable = { temp = 5 }
 			set_temp_variable = { total_unit = num_battalions_with_type@heavy_infantry }
 			add_to_temp_variable = {total_unit = num_battalions_with_type@recon_company }
-			add_to_temp_variable = {total_unit = num_battalions_with_type@mobile_recon_company }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@mobile_motorized_company }
 			add_to_temp_variable = {total_unit = num_battalions_with_type@police_infantry }
 			add_to_temp_variable = {total_unit = num_battalions_with_type@infantry }
 			add_to_temp_variable = {total_unit = num_battalions_with_type@motorized }
