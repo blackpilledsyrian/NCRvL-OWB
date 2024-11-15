@@ -334,7 +334,7 @@ technologies = {
 	infantry_perk_tech_7 = {
 
 		xp_research_type = army
-		xp_unlock_cost = 100
+		xp_unlock_cost = 75
 		doctrine = yes
 
 		hidden_modifier = {
@@ -721,7 +721,7 @@ technologies = {
 	special_forces_perk_tech_7 = {
 
 		xp_research_type = army
-		xp_unlock_cost = 100
+		xp_unlock_cost = 75
 		doctrine = yes
 
 		hidden_modifier = {
@@ -1031,7 +1031,7 @@ technologies = {
 	robot_perk_tech_7 = {
 
 		xp_research_type = army
-		xp_unlock_cost = 100
+		xp_unlock_cost = 75
 		doctrine = yes
 
 		hidden_modifier = {
@@ -1362,7 +1362,7 @@ technologies = {
 	vehicle_perk_tech_7 = {
 
 		xp_research_type = army
-		xp_unlock_cost = 100
+		xp_unlock_cost = 75
 		doctrine = yes
 
 		#enable_subunits = {
@@ -1519,136 +1519,136 @@ technologies = {
 		infantry = {
 			default_morale = 0.01
 			urban = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			marsh = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			amphibious = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		heavy_infantry = {
 			default_morale = 0.01
 			urban = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			marsh = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			amphibious = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		dog_infantry = {
 			default_morale = 0.01
 			urban = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			marsh = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			amphibious = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		ghoul_infantry = {
 			default_morale = 0.01
 			urban = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			marsh = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			amphibious = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		skate_infantry = {
 			default_morale = 0.01
 			urban = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			marsh = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			amphibious = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		super_mutant_infantry = {
 			default_morale = 0.01
 			urban = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			marsh = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			amphibious = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		super_mutant_aux_infantry = {
 			default_morale = 0.01
 			urban = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			marsh = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			amphibious = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		police_infantry = {
 			default_morale = 0.01
 			urban = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			marsh = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			amphibious = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		militia = {
 			default_morale = 0.01
 			urban = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			marsh = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			amphibious = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 
@@ -1689,121 +1689,121 @@ technologies = {
 		spec_ops = {
 			default_morale = 0.01
 			urban = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			marsh = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			amphibious = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		spec_ops_cavalry = {
 			default_morale = 0.01
 			urban = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			marsh = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			amphibious = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		power_armour = {
 			default_morale = 0.01
 			urban = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			marsh = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			amphibious = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		power_armour_fireteam_infantry = {
 			default_morale = 0.01
 			urban = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			marsh = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			amphibious = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		power_armour_demolitions_infantry = {
 			default_morale = 0.01
 			urban = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			marsh = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			amphibious = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		ghoul_paratrooper = {
 			default_morale = 0.01
 			urban = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			marsh = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			amphibious = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		crusader_unit = {
 			default_morale = 0.01
 			urban = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			marsh = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			amphibious = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		super_mutant_nightkin_infantry = {
 			default_morale = 0.01
 			urban = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			marsh = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			amphibious = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 
@@ -1844,61 +1844,61 @@ technologies = {
 		combat_robot = {
 			default_morale = 0.01
 			urban = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			marsh = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			amphibious = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		support_robot = {
 			default_morale = 0.01
 			urban = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			marsh = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			amphibious = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		security_robot = {
 			default_morale = 0.01
 			urban = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			marsh = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			amphibious = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		super_heavy_robot = {
 			default_morale = 0.01
 			urban = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			marsh = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			amphibious = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 
@@ -1939,91 +1939,91 @@ technologies = {
 		motorized = {
 			default_morale = 0.01
 			urban = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			marsh = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			amphibious = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		motorized_heavy_infantry = {
 			default_morale = 0.01
 			urban = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			marsh = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			amphibious = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		motorized_fireteam = {
 			default_morale = 0.01
 			urban = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			marsh = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			amphibious = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		motorized_demoteam = {
 			default_morale = 0.01
 			urban = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			marsh = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			amphibious = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		tank = {
 			default_morale = 0.01
 			urban = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			marsh = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			amphibious = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		chariot_unit = {
 			default_morale = 0.01
 			urban = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			marsh = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			amphibious = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 
@@ -2064,100 +2064,100 @@ technologies = {
 		infantry = {
 			default_morale = 0.01
 			plains = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			desert = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		heavy_infantry = {
 			default_morale = 0.01
 			plains = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			desert = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		dog_infantry = {
 			default_morale = 0.01
 			plains = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			desert = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		ghoul_infantry = {
 			default_morale = 0.01
 			plains = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			desert = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		skate_infantry = {
 			default_morale = 0.01
 			plains = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			desert = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		super_mutant_infantry = {
 			default_morale = 0.01
 			plains = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			desert = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		super_mutant_aux_infantry = {
 			default_morale = 0.01
 			plains = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			desert = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		police_infantry = {
 			default_morale = 0.01
 			plains = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			desert = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		militia = {
 			default_morale = 0.01
 			plains = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			desert = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 
@@ -2198,89 +2198,89 @@ technologies = {
 		spec_ops = {
 			default_morale = 0.01
 			plains = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			desert = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		spec_ops_cavalry = {
 			default_morale = 0.01
 			plains = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			desert = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		power_armour = {
 			default_morale = 0.01
 			plains = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			desert = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		power_armour_fireteam_infantry = {
 			default_morale = 0.01
 			plains = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			desert = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		power_armour_demolitions_infantry = {
 			default_morale = 0.01
 			plains = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			desert = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		ghoul_paratrooper = {
 			default_morale = 0.01
 			plains = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			desert = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		crusader_unit = {
 			default_morale = 0.01
 			plains = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			desert = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		super_mutant_nightkin_infantry = {
 			default_morale = 0.01
 			plains = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			desert = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 
@@ -2321,45 +2321,45 @@ technologies = {
 		combat_robot = {
 			default_morale = 0.01
 			plains = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			desert = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		support_robot = {
 			default_morale = 0.01
 			plains = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			desert = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		security_robot = {
 			default_morale = 0.01
 			plains = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			desert = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		super_heavy_robot = {
 			default_morale = 0.01
 			plains = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			desert = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 
@@ -2400,67 +2400,67 @@ technologies = {
 		motorized = {
 			default_morale = 0.01
 			plains = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			desert = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		motorized_heavy_infantry = {
 			default_morale = 0.01
 			plains = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			desert = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		motorized_fireteam = {
 			default_morale = 0.01
 			plains = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			desert = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		motorized_demoteam = {
 			default_morale = 0.01
 			plains = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			desert = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		tank = {
 			default_morale = 0.01
 			plains = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			desert = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		chariot_unit = {
 			default_morale = 0.01
 			plains = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			desert = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 
@@ -2501,100 +2501,100 @@ technologies = {
 		infantry = {
 			default_morale = 0.01
 			mountain = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			hills = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		heavy_infantry = {
 			default_morale = 0.01
 			mountain = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			hills = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		dog_infantry = {
 			default_morale = 0.01
 			mountain = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			hills = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		ghoul_infantry = {
 			default_morale = 0.01
 			mountain = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			hills = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		skate_infantry = {
 			default_morale = 0.01
 			mountain = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			hills = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		super_mutant_infantry = {
 			default_morale = 0.01
 			mountain = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			hills = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		super_mutant_aux_infantry = {
 			default_morale = 0.01
 			mountain = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			hills = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		police_infantry = {
 			default_morale = 0.01
 			mountain = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			hills = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		militia = {
 			default_morale = 0.01
 			mountain = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			hills = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 
@@ -2635,89 +2635,89 @@ technologies = {
 		spec_ops = {
 			default_morale = 0.01
 			mountain = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			hills = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		spec_ops_cavalry = {
 			default_morale = 0.01
 			mountain = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			hills = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		power_armour = {
 			default_morale = 0.01
 			mountain = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			hills = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		power_armour_fireteam_infantry = {
 			default_morale = 0.01
 			mountain = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			hills = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		power_armour_demolitions_infantry = {
 			default_morale = 0.01
 			mountain = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			hills = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		ghoul_paratrooper = {
 			default_morale = 0.01
 			mountain = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			hills = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		crusader_unit = {
 			default_morale = 0.01
 			mountain = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			hills = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		super_mutant_nightkin_infantry = {
 			default_morale = 0.01
 			mountain = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			hills = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 
@@ -2758,45 +2758,45 @@ technologies = {
 		combat_robot = {
 			default_morale = 0.01
 			mountain = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			hills = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		support_robot = {
 			default_morale = 0.01
 			mountain = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			hills = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		security_robot = {
 			default_morale = 0.01
 			mountain = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			hills = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		super_heavy_robot = {
 			default_morale = 0.01
 			mountain = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			hills = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 
@@ -2837,67 +2837,67 @@ technologies = {
 		motorized = {
 			default_morale = 0.01
 			mountain = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			hills = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		motorized_heavy_infantry = {
 			default_morale = 0.01
 			mountain = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			hills = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		motorized_fireteam = {
 			default_morale = 0.01
 			mountain = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			hills = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		motorized_demoteam = {
 			default_morale = 0.01
 			mountain = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			hills = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		tank = {
 			default_morale = 0.01
 			mountain = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			hills = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		chariot_unit = {
 			default_morale = 0.01
 			mountain = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			hills = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 
@@ -2938,100 +2938,100 @@ technologies = {
 		infantry = {
 			default_morale = 0.01
 			jungle = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			forest = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		heavy_infantry = {
 			default_morale = 0.01
 			jungle = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			forest = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		dog_infantry = {
 			default_morale = 0.01
 			jungle = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			forest = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		ghoul_infantry = {
 			default_morale = 0.01
 			jungle = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			forest = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		skate_infantry = {
 			default_morale = 0.01
 			jungle = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			forest = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		super_mutant_infantry = {
 			default_morale = 0.01
 			jungle = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			forest = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		super_mutant_aux_infantry = {
 			default_morale = 0.01
 			jungle = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			forest = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		police_infantry = {
 			default_morale = 0.01
 			jungle = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			forest = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		militia = {
 			default_morale = 0.01
 			jungle = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			forest = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 
@@ -3072,89 +3072,89 @@ technologies = {
 		spec_ops = {
 			default_morale = 0.01
 			jungle = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			forest = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		spec_ops_cavalry = {
 			default_morale = 0.01
 			jungle = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			forest = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		power_armour = {
 			default_morale = 0.01
 			jungle = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			forest = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		power_armour_fireteam_infantry = {
 			default_morale = 0.01
 			jungle = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			forest = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		power_armour_demolitions_infantry = {
 			default_morale = 0.01
 			jungle = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			forest = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		ghoul_paratrooper = {
 			default_morale = 0.01
 			jungle = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			forest = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		crusader_unit = {
 			default_morale = 0.01
 			jungle = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			forest = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		super_mutant_nightkin_infantry = {
 			default_morale = 0.01
 			jungle = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			forest = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 
@@ -3195,45 +3195,45 @@ technologies = {
 		combat_robot = {
 			default_morale = 0.01
 			jungle = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			forest = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		support_robot = {
 			default_morale = 0.01
 			jungle = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			forest = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		security_robot = {
 			default_morale = 0.01
 			jungle = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			forest = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		super_heavy_robot = {
 			default_morale = 0.01
 			jungle = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			forest = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 
@@ -3274,67 +3274,67 @@ technologies = {
 		motorized = {
 			default_morale = 0.01
 			jungle = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			forest = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		motorized_heavy_infantry = {
 			default_morale = 0.01
 			jungle = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			forest = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		motorized_fireteam = {
 			default_morale = 0.01
 			jungle = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			forest = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		motorized_demoteam = {
 			default_morale = 0.01
 			jungle = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			forest = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		tank = {
 			default_morale = 0.01
 			jungle = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			forest = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		chariot_unit = {
 			default_morale = 0.01
 			jungle = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 			forest = {
-				attack = 0.10
-				defence = 0.10
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 
@@ -3699,7 +3699,7 @@ technologies = {
 		}
 
 		xp_research_type = army
-		xp_unlock_cost = 100
+		xp_unlock_cost = 75
 		doctrine = yes
 
 		folder = {
