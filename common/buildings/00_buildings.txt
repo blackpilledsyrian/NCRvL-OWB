@@ -11,11 +11,17 @@ buildings = {
 		base_cost = 2000
 		icon_frame = 3
 		infrastructure = yes
-		max_level = 10
 		value = 1
-
+		level_cap = {
+			state_max = 10
+		}
+		infrastructure_construction_effect = yes
 		show_modifier = yes
-		max_fuel_building = 1 #k
+		country_modifiers = {
+			modifiers = {
+				max_fuel_building = 1 #k
+			}
+		}
 	}
 
 	arms_factory = {
@@ -24,13 +30,18 @@ buildings = {
 		base_cost_conversion = 4000
 		military_production = 1
 		icon_frame = 2
-		max_level = 30
-		shares_slots = yes
 		value = 8
 		infrastructure_construction_effect = yes
-
+		level_cap = {
+			shares_slots = yes
+			state_max = 30
+		}
 		show_modifier = yes
-		max_fuel_building = 0.2 #k
+		country_modifiers = {
+			modifiers = {
+				max_fuel_building = 0.2 #k
+			}
+		}
 	}
 
 	industrial_complex = {
@@ -39,13 +50,19 @@ buildings = {
 		base_cost_conversion = 9000
 		general_production = 1
 		icon_frame = 1
-		max_level = 30
-		shares_slots = yes
 		value = 5
 		infrastructure_construction_effect = yes
+		level_cap = {
+			shares_slots = yes
+			state_max = 30
+		}
 
 		show_modifier = yes
-		max_fuel_building = 0.2 #k
+		country_modifiers = {
+			modifiers = {
+				max_fuel_building = 0.2 #k
+			}
+		}
 	}
 
 	air_base = {
@@ -53,11 +70,13 @@ buildings = {
 		base_cost = 1000
 		icon_frame = 5
 		air_base = yes
-		max_level = 10
 		value = 1
 		damage_factor = 0.5
 		allied_build = yes
 		infrastructure_construction_effect = yes
+		level_cap = {
+			state_max = 10
+		}
 	}
 
 	naval_base = {
@@ -66,24 +85,26 @@ buildings = {
 		always_shown = yes
 		base_cost = 2000
 		per_level_extra_cost = 500
-		provincial = yes
+		spawn_point = naval_base_spawn
 		only_costal = yes
 		allied_build = yes
 		is_port = yes
 		icon_frame = 6
-		max_level = 10
 		value = 1
-
+		level_cap = {
+			province_max = 10
+		}
 		infrastructure_construction_effect = yes
 	}
 
 	supply_node = {
 		show_on_map = 1
 		base_cost = 7000
-		provincial = yes
 		disabled_in_dmz = yes
 		icon_frame = 21
-		max_level = 1
+		level_cap = {
+			province_max = 1
+		}
 		centered = yes
 		supply_node = yes
 		damage_factor = 0.1
@@ -95,11 +116,12 @@ buildings = {
 	rail_way = {
 		base_cost = 200
 		per_level_extra_cost = 100
-		provincial = yes
 		disabled_in_dmz = yes
 		allied_build = no
 		icon_frame = 20
-		max_level = 1
+		level_cap = {
+			province_max = 1
+		}
 		infrastructure_construction_effect = yes
 	}
 
@@ -108,11 +130,12 @@ buildings = {
 		has_destroyed_mesh = yes
 		base_cost = 1000
 		per_level_extra_cost = 1000
-		provincial = yes
 		disabled_in_dmz = yes
 		icon_frame = 10
 		land_fort = 1
-		max_level = 6
+		level_cap = {
+			province_max = 6
+		}
 		value = 1
 
 		infrastructure_construction_effect = yes
@@ -123,11 +146,12 @@ buildings = {
 		has_destroyed_mesh = yes
 		base_cost = 2000
 		per_level_extra_cost = 2000
-		provincial = yes
 		disabled_in_dmz = yes
 		icon_frame = 7
 		land_fort = 2
-		max_level = 2
+		level_cap = {
+			province_max = 2
+		}
 		value = 2
 		allied_build = yes
 		infrastructure_construction_effect = yes
@@ -138,12 +162,13 @@ buildings = {
 		has_destroyed_mesh = yes
 		base_cost = 500
 		per_level_extra_cost = 500
-		provincial = yes
 		disabled_in_dmz = yes
 		only_costal = yes
 		icon_frame = 8
 		naval_fort = 1
-		max_level = 6
+		level_cap = {
+			province_max = 8
+		}
 		value = 1
 		allied_build = yes
 		infrastructure_construction_effect = yes
@@ -156,13 +181,20 @@ buildings = {
 		only_costal = yes
 		naval_production = 1
 		icon_frame = 4
-		max_level = 20
 		shares_slots = yes
 		value = 5
 		infrastructure_construction_effect = yes
+		level_cap = {
+			shares_slots = yes
+			state_max = 20
+		}
 
 		show_modifier = yes
-		max_fuel_building = 0.2 #k
+		country_modifiers = {
+			modifiers = {
+				max_fuel_building = 0.2 #k
+			}
+		}
 	}
 
 	anti_air_building = {
@@ -172,7 +204,9 @@ buildings = {
 		anti_air = yes
 		disabled_in_dmz = yes
 		air_defence = 1
-		max_level = 5 # This is the max unlock level
+		level_cap = {
+			state_max = 5
+		}
 		damage_factor = 0.3
 		value = 1
 		allied_build = yes
@@ -185,24 +219,53 @@ buildings = {
 		icon_frame = 11
 		radar = yes
 		#max_level = 0 # max: 5
-		max_level = 10 # This is the max unlock level
+		level_cap = {
+			state_max = 10 # This is the max unlock level
+		}
 		damage_factor = 0.5
 		value = 4
 		allied_build = yes
 		infrastructure_construction_effect = yes
 	}
 
-	#rocket_site = {
-	#	show_on_map = 1
-	#	base_cost = 6400
-	#	icon_frame = 12
-	#	rocket_production = 5
-	#	rocket_launch_capacity = 1
-	#	max_level = 5
-	#	shares_slots = yes
-	#	value = 1
-	#	infrastructure_construction_effect = yes
-	#}
+	mega_gun_emplacement = {
+		dlc_allowed = { has_dlc = Gotterdammerung }
+		hide_if_missing_tech = yes
+		show_on_map = 1
+		base_cost = 20000
+		damage_factor = 0 # This building can't be damaged by regular strat bombing
+		icon_frame = 24
+		value = 1
+		disabled_in_dmz = yes
+		infrastructure_construction_effect = yes
+		gun_emplacement = yes
+		spawn_point = rocket_site_spawn
+		level_cap = {
+			state_max = 1
+			shares_slots = yes
+			exclusive_with = rocket_site
+		}
+		#Building utilizes equipment "explosive_ammo_equipment" as ammunition for the air mission barrage
+	}
+
+	rocket_site = {
+		hide_if_missing_tech = yes
+		show_on_map = 1
+		base_cost = 6400
+		icon_frame = 12
+		rocket_production = 0
+		rocket_launch_capacity = 1
+		value = 1
+		tags = { specialization_rockets }
+		infrastructure_construction_effect = yes
+		disabled_in_dmz = yes
+		spawn_point = rocket_site_spawn
+		level_cap = {
+			state_max = 2
+			shares_slots = yes
+			exclusive_with = mega_gun_emplacement
+		}
+	}
 
 	# Resource Buildings
 	metal_generator = {
@@ -212,13 +275,20 @@ buildings = {
 		local_resources_metal = 5
 		local_resources_composites = 1
 		refinery = yes
-		max_level = 3
 		shares_slots = yes
 		value = 5
 		infrastructure_construction_effect = yes
+		level_cap = {
+			shares_slots = yes
+			state_max = 3
+		}
 
 		show_modifier = yes
-		max_fuel_building = 0.05 #k
+		country_modifiers = {
+			modifiers = {
+				max_fuel_building = 0.05 #k
+			}
+		}
 	}
 
 	water_generator = {
@@ -228,13 +298,20 @@ buildings = {
 		local_resources_water = 5
 		local_resources_energy = 1
 		refinery = yes
-		max_level = 3
 		shares_slots = yes
 		value = 5
 		infrastructure_construction_effect = yes
+		level_cap = {
+			shares_slots = yes
+			state_max = 3
+		}
 
 		show_modifier = yes
-		max_fuel_building = 0.05 #k
+		country_modifiers = {
+			modifiers = {
+				max_fuel_building = 0.05 #k
+			}
+		}
 	}
 
 	electricity_generator = {
@@ -243,13 +320,20 @@ buildings = {
 		icon_frame = 15
 		local_resources_energy = 5
 		refinery = yes
-		max_level = 3
 		shares_slots = yes
 		value = 5
 		infrastructure_construction_effect = yes
+		level_cap = {
+			shares_slots = yes
+			state_max = 3
+		}
 
 		show_modifier = yes
-		max_fuel_building = 1.0 #k
+		country_modifiers = {
+			modifiers = {
+				max_fuel_building = 0.05 #k
+			}
+		}
 	}
 
 	circuitry_generator = {
@@ -259,12 +343,55 @@ buildings = {
 		local_resources_circuitry = 5
 		local_resources_advanced = 1
 		refinery = yes
-		max_level = 3
 		shares_slots = yes
 		value = 5
 		infrastructure_construction_effect = yes
+		level_cap = {
+			shares_slots = yes
+			state_max = 3
+		}
 
 		show_modifier = yes
-		max_fuel_building = 0.05 #k
+		country_modifiers = {
+			modifiers = {
+				max_fuel_building = 0.05 #k
+			}
+		}
+	}
+}
+
+
+spawn_points = {
+	nuclear_reactor_spawn = {
+		type = state
+		max = 1
+	}
+
+	special_project_facility_spawn = {
+		type = province
+		max = 1
+	}
+
+	rocket_site_spawn = {
+		type = state
+		max = 1
+	}
+
+	naval_base_spawn = {
+		type = province
+		max = 1
+		only_costal = yes
+	}
+
+	dam_spawn = {
+		type = province
+		max = 1
+		disable_auto_nudging = yes
+	}
+
+	locks_spawn = {
+		type = province
+		max = 1
+		disable_auto_nudging = yes
 	}
 }
