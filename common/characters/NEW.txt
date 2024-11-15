@@ -859,7 +859,7 @@ characters = {
 			}
 		}
 		advisor = {
-			slot = research_advisor
+			slot = theorist
 			idea_token = NEW_big_shot_bob_research_advisor
 			ledger = army
 			allowed = {
@@ -877,35 +877,35 @@ characters = {
 			}
 		}
 	}
-	NEW_ferath = {
-		name = NEW_ferath
-		portraits = {
-			army = {
-				small = GFX_idea_deathclaw_minister
-			}
-		}
-		advisor = {
-			slot = cultural_advisor
-			idea_token = NEW_ferath_cultural_advisor
-			desc = NEW_ferath_desc
-			allowed = {
-				original_tag = NEW
-			}
-			available = {
-				has_completed_focus = new_brokendeadlyclawslovelyhearts
-			}
-			visible = {
-				has_country_flag = new_brokentakeoverflag
-			}
-			traits = {
-				kind_hearted
-			}
-			cost = 100
-			ai_will_do = {
-				factor = 10
-			}
-		}
-	}
+	# NEW_ferath = {
+	# 	name = NEW_ferath
+	# 	portraits = {
+	# 		army = {
+	# 			small = GFX_idea_deathclaw_minister
+	# 		}
+	# 	}
+	# 	advisor = {
+	# 		slot = cultural_advisor
+	# 		idea_token = NEW_ferath_cultural_advisor
+	# 		desc = NEW_ferath_desc
+	# 		allowed = {
+	# 			original_tag = NEW
+	# 		}
+	# 		available = {
+	# 			has_completed_focus = new_brokendeadlyclawslovelyhearts
+	# 		}
+	# 		visible = {
+	# 			has_country_flag = new_brokentakeoverflag
+	# 		}
+	# 		traits = {
+	# 			kind_hearted
+	# 		}
+	# 		cost = 100
+	# 		ai_will_do = {
+	# 			factor = 10
+	# 		}
+	# 	}
+	# }
 	NEW_tommy_the_balls = {
 		name = NEW_tommy_the_balls_name
 		portraits = {

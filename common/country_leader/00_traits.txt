@@ -2350,140 +2350,6 @@ leader_traits = {
 		}
 	}
 
-	air_bomber_interception_1 = { # Bomber Interception mission efficiency increased by 4%
-		sprite = 1
-		air_interception_attack_factor = 0.02
-		air_interception_defence_factor = 0.02
-		air_interception_agility_factor = 0.02
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	air_bomber_interception_2 = { # Bomber Interception mission efficiency increased by 8%
-		sprite = 1
-		air_interception_attack_factor = 0.03
-		air_interception_defence_factor = 0.03
-		air_interception_agility_factor = 0.03
-
-		ai_will_do = {
-			factor = 2
-		}
-	}
-
-	air_bomber_interception_3 = { # Bomber Interception mission efficiency increased by 12%
-		sprite = 1
-		air_interception_attack_factor = 0.05
-		air_interception_defence_factor = 0.05
-		air_interception_agility_factor = 0.05
-
-		ai_will_do = {
-			factor = 3
-		}
-	}
-
-	air_air_superiority_1 = { # Air Superiority mission efficiency increased by 4%
-		sprite = 1
-		air_air_superiority_attack_factor = 0.02
-		air_air_superiority_defence_factor = 0.02
-		air_air_superiority_agility_factor = 0.02
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	air_air_superiority_2 = { # Air Superiority mission efficiency increased by 8%
-		sprite = 1
-		air_air_superiority_attack_factor = 0.03
-		air_air_superiority_defence_factor = 0.03
-		air_air_superiority_agility_factor = 0.03
-
-		ai_will_do = {
-			factor = 2
-		}
-	}
-
-	air_air_superiority_3 = { # Air Superiority mission efficiency increased by 12%
-		sprite = 1
-		air_air_superiority_attack_factor = 0.05
-		air_air_superiority_defence_factor = 0.05
-		air_air_superiority_agility_factor = 0.05
-
-		ai_will_do = {
-			factor = 3
-		}
-	}
-
-	air_close_air_support_1 = { # Close Air Support mission efficiency increased by 4%
-		sprite = 1
-		air_close_air_support_attack_factor = 0.02
-		air_close_air_support_defence_factor = 0.02
-		air_close_air_support_agility_factor = 0.02
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	air_close_air_support_2 = { # Close Air Support mission efficiency increased by 8%
-		sprite = 1
-		air_close_air_support_attack_factor = 0.03
-		air_close_air_support_defence_factor = 0.03
-		air_close_air_support_agility_factor = 0.03
-
-		ai_will_do = {
-			factor = 2
-		}
-	}
-
-	air_close_air_support_3 = { # Close Air Support mission efficiency increased by 12%
-		sprite = 1
-		air_close_air_support_attack_factor = 0.05
-		air_close_air_support_defence_factor = 0.05
-		air_close_air_support_agility_factor = 0.05
-
-		ai_will_do = {
-			factor = 3
-		}
-	}
-
-	air_strategic_bombing_1 = { # Strategic Bombing mission efficiency increased by 4%
-		sprite = 2
-		air_strategic_bomber_attack_factor = 0.01
-		air_strategic_bomber_defence_factor = 0.01
-		air_strategic_bomber_agility_factor = 0.01
-		air_strategic_bomber_bombing_factor = 0.03
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	air_strategic_bombing_2 = { # Strategic Bombing mission efficiency increased by 8%
-		sprite = 2
-		air_strategic_bomber_attack_factor = 0.02
-		air_strategic_bomber_defence_factor = 0.02
-		air_strategic_bomber_agility_factor = 0.02
-		air_strategic_bomber_bombing_factor = 0.05
-
-		ai_will_do = {
-			factor = 2
-		}
-	}
-
-	air_strategic_bombing_3 = { # Strategic Bombing mission efficiency increased by 12%
-		sprite = 2
-		air_strategic_bomber_attack_factor = 0.03
-		air_strategic_bomber_defence_factor = 0.03
-		air_strategic_bomber_agility_factor = 0.03
-		air_strategic_bomber_bombing_factor = 0.09
-
-		ai_will_do = {
-			factor = 3
-		}
-	}
 
 	# Removed?
 	air_tactical_bombing_1 = { # Tactical Bombing mission efficiency increased
@@ -2507,39 +2373,6 @@ leader_traits = {
 	air_tactical_bombing_3 = { # Tactical Bombing mission efficiency increased
 		sprite = 2
 		air_cas_present_factor = 0.2
-
-		ai_will_do = {
-			factor = 3
-		}
-	}
-
-	air_airborne_1 = { # Paratrooper drop efficiency increased by 4%
-		sprite = 1
-		air_paradrop_attack_factor = 0.01
-		air_paradrop_defence_factor = 0.03
-		air_paradrop_agility_factor = 0.03
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	air_airborne_2 = { # Paratrooper drop efficiency increased by 8%
-		sprite = 1
-		air_paradrop_attack_factor = 0.02
-		air_paradrop_defence_factor = 0.05
-		air_paradrop_agility_factor = 0.05
-
-		ai_will_do = {
-			factor = 2
-		}
-	}
-
-	air_airborne_3 = { # Paratrooper drop efficiency increased by 12%
-		sprite = 1
-		air_paradrop_attack_factor = 0.03
-		air_paradrop_defence_factor = 0.07
-		air_paradrop_agility_factor = 0.07
 
 		ai_will_do = {
 			factor = 3
@@ -4231,6 +4064,85 @@ PET_the_boards = {
 	sta_proud_parents = {
 		random = no
 		required_compliance_for_coring_factor = -0.15
+	}
+	###those trait need to be present for some reason or their cause a debug message
+	soh_a_power_armored_fist = {
+		random = no
+		required_garrison_factor = -0.30
+		compliance_growth = -0.25
+		non_core_manpower = 0.06
+	}
+	soh_spirit_of_the_midwest = {
+		random = no
+		required_garrison_factor = -0.30
+		non_core_manpower = 0.09
+	}
+	kha_true_heir = {
+		random = no
+		sprite = 5
+		compliance_gain = 0.01
+		army_defence_factor = 0.05
+		max_planning = 0.05
+		industry_free_repair_factor = 0.25
+		winter_attrition_factor = -0.20
+		global_building_slots_factor = 0.05
+		elites_drift = 0.1
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	COM_the_american_sulla = {
+		random = no
+		stability_factor = 0.025
+		political_power_gain = -0.05
+		caps_income_modifier = 0.2
+		army_defence_factor = 0.035
+		army_morale_factor = 0.035
+	}
+	COM_secretary_of_the_north = {
+		random = no
+		stability_factor = -0.025
+		political_power_gain = 0.05
+		caps_income_modifier = 0.1
+		army_defence_factor = 0.025
+		army_morale_factor = 0.025
+	}
+
+	unb_harbringer_of_destruction = {
+		random = no
+		land_reinforce_rate = 0.05
+		resistance_growth = -0.15
+	}
+	unb_harbringer_of_destruction_locked = {
+		random = no
+		custom_modifier_tooltip = unb_harbringer_of_destruction_locked_tt
+	}
+	unb_master_of_horses = {
+		random = no
+		army_speed_factor = 0.1
+		mobilization_speed = 0.25
+	}
+	unb_master_of_horses_locked = {
+		random = no
+		custom_modifier_tooltip = unb_master_of_horses_locked_tt
+	}
+	unb_emperor_of_manitoba = {
+		random = no
+		political_power_factor = 0.15
+		stability_factor = 0.15
+	}
+	unb_emperor_of_manitoba_locked = {
+		random = no
+		custom_modifier_tooltip = unb_emperor_of_manitoba_locked_tt
+	}
+	unb_king_of_thieves = {
+		random = no
+		consumer_goods_expected_value = -0.05
+		caps_raider_self_bonus = 0.05
+	}
+	unb_king_of_thieves_locked = {
+		random = no
+		custom_modifier_tooltip = unb_king_of_thieves_locked_tt
 	}
 }
 # vim: set ft=pdx ts=2 sw=2 tw=79 :

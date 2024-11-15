@@ -1417,14 +1417,15 @@ ARB = {
 	color_ui = rgb { 220 220 220 }
 }
 
-WAK = {
-	color = rgb { 53 197 116 }
-	color_ui = rgb { 53 197 116 }
-}
 
 SBR = {
 	color = rgb { 172 94 92 }
 	color_ui = rgb { 172 94 92 }
+}
+
+MIN = {
+	color = rgb { 148 40 0 }
+	color_ui = rgb { 148 40 0 }
 }
 
 DUN = {

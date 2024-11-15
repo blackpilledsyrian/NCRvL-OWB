@@ -328,39 +328,39 @@ ideas = {
 			}
 			cancel_if_invalid = no
 		}
-		true_man_economy = {
-			allowed = {
-				OR = {
-					original_tag = NCR
-					original_tag = RDS
-					original_tag = BON
-				}
-			}
-			picture = economy_true_man_flynn
-			available = {
-				has_completed_focus = ncr_fln_only_man
-			}
-			visible = {
-				tag = RDS
-			}
-			cost = 150
-			removal_cost = -1
-			modifier = {
-				stability_factor = -0.15
-				consumer_goods_expected_value = -0.1
-				conversion_cost_mil_to_civ_factor = -0.5
-				production_speed_arms_factory_factor = 0.25
-				production_speed_industrial_complex_factor = 0.05
-				industrial_capacity_factory = 0.15
-				industrial_capacity_dockyard = 0.15
-			}
-			cancel_if_invalid = no
-			allowed_to_remove = {
-				NOT = {
-					tag = RDS
-				}
-			}
-		}
+		# true_man_economy = {
+		# 	allowed = {
+		# 		OR = {
+		# 			original_tag = NCR
+		# 			original_tag = RDS
+		# 			original_tag = BON
+		# 		}
+		# 	}
+		# 	picture = economy_true_man_flynn
+		# 	available = {
+		# 		has_completed_focus = ncr_fln_only_man
+		# 	}
+		# 	visible = {
+		# 		tag = RDS
+		# 	}
+		# 	cost = 150
+		# 	removal_cost = -1
+		# 	modifier = {
+		# 		stability_factor = -0.15
+		# 		consumer_goods_expected_value = -0.1
+		# 		conversion_cost_mil_to_civ_factor = -0.5
+		# 		production_speed_arms_factory_factor = 0.25
+		# 		production_speed_industrial_complex_factor = 0.05
+		# 		industrial_capacity_factory = 0.15
+		# 		industrial_capacity_dockyard = 0.15
+		# 	}
+		# 	cancel_if_invalid = no
+		# 	allowed_to_remove = {
+		# 		NOT = {
+		# 			tag = RDS
+		# 		}
+		# 	}
+		# }
 	}
 	trade_laws = {
 		law = yes

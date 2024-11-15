@@ -1033,4 +1033,50 @@ technologies = {
 			}
 		}
 	}
+
+	implant_a_question_of_morals_tech = {
+
+political_power_gain = -0.25
+stability_factor = -0.2
+
+dependencies = {
+	implant_tech_access_tech = 1
+	implant_safety_regulation_override_tech = 1
+	implant_killswitch_tech = 1
+}
+
+on_research_complete = {
+	custom_effect_tooltip = implant_tech_bad_idea_1
+	hidden_effect = {
+		if = {
+			limit = {
+				original_tag = MET
+			}
+			country_event = nf_met.5
+		}
+	}
+}
+
+path = {
+	leads_to_tech = implant_cybernetic_warform_tech
+	research_cost_coeff = 1
+}
+
+research_cost = 3
+start_year = 2275
+
+folder = {
+	name = fallout_tech_implant_folder
+	position = { x = @Row_13 y = @Col_5 }
+}
+
+categories = {
+	support_medical_tech_category
+	implant_tech
+}
+
+ai_will_do = {
+	factor = 0
+}
+}
 }

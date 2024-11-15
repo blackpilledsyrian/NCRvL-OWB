@@ -33,44 +33,44 @@ characters = {
 			planning_skill = 2
 			logistics_skill = 2
 		}
-		advisor = {
-			slot = army_chief
-			idea_token = DES_rogue_ranger_army_chief
-			ledger = army
-			available = {
-				not_already_hired_except_as = army_chief
-				has_completed_focus = des_rogue_ranger
-			}
-			allowed = {
-				original_tag = DES
-			}
-			traits = {
-				DES_wrath_upon_evil
-			}
-			cost = 200
-			ai_will_do = {
-				factor = 10
-			}
-		}
-		advisor = {
-			slot = high_command
-			idea_token = DES_rogue_ranger_high_command
-			ledger = army
-			available = {
-				not_already_hired_except_as = high_command
-				has_completed_focus = des_rogue_ranger
-			}
-			allowed = {
-				original_tag = DES
-			}
-			traits = {
-				DES_smite_the_wicked
-			}
-			cost = 150
-			ai_will_do = {
-				factor = 10
-			}
-		}
+		# advisor = {
+		# 	slot = army_chief
+		# 	idea_token = DES_rogue_ranger_army_chief
+		# 	ledger = army
+		# 	available = {
+		# 		not_already_hired_except_as = army_chief
+		# 		has_completed_focus = des_rogue_ranger
+		# 	}
+		# 	allowed = {
+		# 		original_tag = DES
+		# 	}
+		# 	traits = {
+		# 		DES_wrath_upon_evil
+		# 	}
+		# 	cost = 200
+		# 	ai_will_do = {
+		# 		factor = 10
+		# 	}
+		# }
+		# advisor = {
+		# 	slot = high_command
+		# 	idea_token = DES_rogue_ranger_high_command
+		# 	ledger = army
+		# 	available = {
+		# 		not_already_hired_except_as = high_command
+		# 		has_completed_focus = des_rogue_ranger
+		# 	}
+		# 	allowed = {
+		# 		original_tag = DES
+		# 	}
+		# 	traits = {
+		# 		DES_smite_the_wicked
+		# 	}
+		# 	cost = 150
+		# 	ai_will_do = {
+		# 		factor = 10
+		# 	}
+		# }
 	}
 	DES_snake_vargas = {
 		name = DES_snake_vargas
@@ -196,13 +196,13 @@ characters = {
 			}
 		}
 		advisor = {
-			slot = research_advisor
+			slot = theorist
 			idea_token = DES_hell_razor_research_advisor
 			allowed = {
 				original_tag = DES
 			}
 			available = {
-				not_already_hired_except_as = research_advisor
+				not_already_hired_except_as = theorist
 			}
 			traits = {
 				DES_elite_barbarians
@@ -345,12 +345,7 @@ characters = {
 				}
 			}
 			visible = {
-				OR = {
-					NOT = {
-						has_completed_focus = des_rogue_ranger
-					}
-					tag = BON
-				}
+				has_completed_Focus = des_vargas_join_ncr
 			}
 			allowed = {
 				OR = {
@@ -378,12 +373,7 @@ characters = {
 				}
 			}
 			visible = {
-				OR = {
-					NOT = {
-						has_completed_focus = des_rogue_ranger
-					}
-					tag = BON
-				}
+				has_completed_Focus = des_vargas_join_ncr
 			}
 			allowed = {
 				OR = {
@@ -411,12 +401,7 @@ characters = {
 				}
 			}
 			visible = {
-				OR = {
-					NOT = {
-						has_completed_focus = des_rogue_ranger
-					}
-					tag = BON
-				}
+				has_completed_Focus = des_vargas_join_ncr
 			}
 			allowed = {
 				OR = {
@@ -760,7 +745,7 @@ characters = {
 			}
 		}
 		advisor = {
-			slot = research_advisor
+			slot = theorist
 			idea_token = DES_the_way_of_the_ranger_research_advisor
 			allowed = {
 				original_tag = DES
@@ -785,7 +770,7 @@ characters = {
 			}
 		}
 		advisor = {
-			slot = research_advisor
+			slot = theorist
 			idea_token = DES_tycho_senior_jr_research_advisor
 			allowed = {
 				original_tag = DES
@@ -810,7 +795,7 @@ characters = {
 			}
 		}
 		advisor = {
-			slot = research_advisor
+			slot = theorist
 			idea_token = DES_dexter_cunningham_research_advisor
 			allowed = {
 				original_tag = DES
@@ -835,7 +820,7 @@ characters = {
 			}
 		}
 		advisor = {
-			slot = research_advisor
+			slot = theorist
 			idea_token = DES_henry_dundy_research_advisor
 			allowed = {
 				original_tag = DES

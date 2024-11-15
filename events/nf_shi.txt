@@ -787,8 +787,20 @@ country_event = {
 			limit = { has_idea = shi_two_schools_1c_2b }
 			remove_ideas = shi_two_schools_1c_2b
 		}
-		else = {
+		else_if = {
+			limit = { has_idea = shi_two_schools_1c_2c }
 			remove_ideas = shi_two_schools_1c_2c
+		}
+		else_if = {
+			limit = { has_idea = shi_two_schools_1a }
+			remove_ideas = shi_two_schools_1a
+		}
+		else_if = {
+			limit = { has_idea = shi_two_schools_1b }
+			remove_ideas = shi_two_schools_1b
+		}
+		else = {
+			remove_ideas = shi_two_schools
 		}
 		custom_effect_tooltip = spacer_tt
 		# Ideology Specific Effects

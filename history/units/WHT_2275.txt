@@ -7,7 +7,6 @@
 		militia = { x = 1 y = 1 }
 	}
 }
-
 division_template = {
 	name = "White Leg Warband"
 	regiments = {

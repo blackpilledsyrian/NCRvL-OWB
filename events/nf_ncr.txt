@@ -691,10 +691,6 @@ country_event = { # Reno Annexation
 		ai_chance = {
 			base = 0
 		}
-		if = {
-			limit = {
-				can_use_autonomy_system = yes
-			}
 			NCR = {
 				NEW = {
 					become_puppet = yes
@@ -704,12 +700,6 @@ country_event = { # Reno Annexation
 					autonomy_state = autonomy_protected_state
 				}
 			}
-		}
-		else = {
-			NCR = {
-				puppet = NEW
-			}
-		}
 		hidden_effect = {
 			every_country = {
 				limit = {
@@ -967,10 +957,6 @@ country_event = { #Kimballs creates Canyonlands
 				clr_state_flag = do_not_exodus
 			}
 			FRI = {
-				if = {
-					limit = {
-						can_use_autonomy_system = yes
-					}
 					NCR = {
 						FRI = {
 							become_puppet = yes
@@ -980,12 +966,6 @@ country_event = { #Kimballs creates Canyonlands
 							autonomy_state = autonomy_incorporated_territory
 						}
 					}
-				}
-				else = {
-					NCR = {
-						puppet = FRI
-					}
-				}
 				#retire_ideology_leader = people
 				add_country_leader_role = {
 					character = FRI_big_jim
@@ -1986,11 +1966,12 @@ country_event = { # A President of Necessity
 		add_ideas = ncr_idea_constitutional_uncertainty
 	}
 }
+add_namespace = ncr_ncrvl
 
-news_event = { # Chaos in Shady Sands
-	id = ncr_crisis.2
-	title = ncr_crisis.2.t
-	desc = ncr_crisis.2.d
+news_event = { # Chaos in Shady Sands NCRVL
+	id = ncr_ncrvl.1 
+	title = ncr_ncrvl.1.t
+	desc = ncr_ncrvl.1.d
 	picture = GFX_event_NCR_battle
 
 	# major = yes
@@ -2000,35 +1981,21 @@ news_event = { # Chaos in Shady Sands
 		trigger = {
 			tag = NCR
 		}
-		name = ncr_crisis.2.a
-		set_country_flag = ncr_crisis
+		name = ncr_ncrvl.1.a
+		#set_country_flag = ncr_crisis
 		complete_national_focus = ncr_california_in_crisis
+		complete_national_focus = ncr_put_down_revanchists
 	}
 	option = {
 		trigger = {
-			is_in_faction_with = NCR
-			NOT = { tag = NCR }
-			NOT = { tag = MOT }
+			tag = NCR
 		}
-		name = ncr_crisis.2.b
-		leave_new_california = yes
+		name = ncr_ncrvl.1.b
+		complete_national_focus = ncr_california_in_crisis
+		complete_national_focus  = ncr_mossman_conspiracy
 	}
 
-	option = {
-		trigger = {
-			tag = MOT
-		}
-		name = ncr_crisis.2.c
-	}
 
-	option = {
-		trigger = {
-			NOT = { is_in_faction_with = NCR }
-			NOT = { tag = NCR }
-			NOT = { tag = MOT }
-		}
-		name = ncr_crisis.2.e
-	}
 }
 
 country_event = { # Nothing Good Lasts Forever
@@ -2443,6 +2410,7 @@ country_event = { # The Night of the Muffled Rifle
 	option = { # We forge a new path forwards!
 		name = ncr_order.1.a
 		complete_national_focus = ncr_dissolve_committee
+		add_ideas = ncr_ranger_divide
 		hidden_effect = {
 			retire_character = NCR_mossman_character
 		}
@@ -2486,7 +2454,6 @@ country_event = { # There Was Only Ever One
 		custom_effect_tooltip = MOORE_TT
 		hidden_effect = {
 			country_event = ncr_order.6
-			create_or_join_californian_hegemony = yes
 			if = {
 				limit = {
 					MOT = {
@@ -2826,7 +2793,7 @@ country_event = {
 	option = {
 		name = ncr_order.16.a
 		46 = {
-			set_temp_variable = { pop_add = -15241 }
+			set_temp_variable = { pop_add = -5651 }
 			add_state_population_no_state_name = yes
 		}
 		set_victory_points = {
@@ -2835,6 +2802,15 @@ country_event = {
 		}
 		46 = {
 			set_state_name = "Ghost Valley"
+			add_extra_state_shared_building_slots = 10
+			add_building_construction = {
+				type = arms_factory
+				level = 4
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+			}
 		}
 	}
 }
@@ -2880,8 +2856,37 @@ country_event = { #Dead Man Waiting
 		country_event = ncr_dharma.2
 		DES = {
 			DES_angela_deth = {
-				set_nationality = BON
+				set_nationality = NCR
 			}
+		}
+		hidden_effect = {
+			retire_character = NCR_mossman_character
+		}
+		set_popularities = {
+			ruler = 80
+			people = 0
+			elites = 0
+			intellectuals = 20
+		}
+			create_country_leader = {
+				name = "Bill Calhoun"
+				desc = "Calhoun_DESC"
+				picture = GFX_Portrait_NCR_calhoun_follower
+				expire = "3000.1.1"
+				ideology = peoples_militia
+				traits = {
+					follower_buddy
+					well_liked_leader
+					expert_negotiator
+				}
+				set_party_name = {
+					ideology = people
+					long_name = "Follower of the Apocalypse"
+					name = "FOTA"
+				}
+		}
+		set_politics = {
+			ruling_party = people
 		}
 	}
 }
@@ -5041,50 +5046,50 @@ country_event = {#Murphy meets with Luchas
 		army_experience = 30
 	}
 }
-country_event = {#Murphy and Mojave
-	id = ncr_murphy.11
-	title = ncr_murphy.11.t
-	desc = ncr_murphy.11.d
-	picture = GFX_event_NCR_mojave_camp
+# country_event = {#Murphy and Mojave
+# 	id = ncr_murphy.11
+# 	title = ncr_murphy.11.t
+# 	desc = ncr_murphy.11.d
+# 	picture = GFX_event_NCR_mojave_camp
 
-	is_triggered_only = yes
+# 	is_triggered_only = yes
 
-	option = {
-		name = ncr_murphy.11.a
-		trigger = {
-			MOT = {
-				NOT = {
-					has_completed_focus = mot_civilian_rule
-				}
-			}
-		}
-		MOT = {
-			news_event = ncr_murphy.111
-		}
-		MOT = {
-			every_owned_state = {
-				limit = {
-					NOT = {
-						is_core_of = MOT
-					}
-				}
-				add_resistance = -10
-			}
-		}
-	}
-	option = {
-		name = ncr_murphy.11.a
-		trigger = {
-			MOT = {
-				has_completed_focus = mot_civilian_rule
-			}
-		}
-		MOT = {
-			add_stability = 0.15
-			news_event = ncr_murphy.112
-		}
-	}
-}
+# 	option = {
+# 		name = ncr_murphy.11.a
+# 		trigger = {
+# 			MOT = {
+# 				NOT = {
+# 					has_completed_focus = mot_civilian_rule
+# 				}
+# 			}
+# 		}
+# 		MOT = {
+# 			news_event = ncr_murphy.111
+# 		}
+# 		MOT = {
+# 			every_owned_state = {
+# 				limit = {
+# 					NOT = {
+# 						is_core_of = MOT
+# 					}
+# 				}
+# 				add_resistance = -10
+# 			}
+# 		}
+# 	}
+# 	option = {
+# 		name = ncr_murphy.11.a
+# 		trigger = {
+# 			MOT = {
+# 				has_completed_focus = mot_civilian_rule
+# 			}
+# 		}
+# 		MOT = {
+# 			add_stability = 0.15
+# 			news_event = ncr_murphy.112
+# 		}
+# 	}
+# }
 #Mojave gets supporty
 news_event = {
 	id = ncr_murphy.111

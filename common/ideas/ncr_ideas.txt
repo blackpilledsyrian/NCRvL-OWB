@@ -149,7 +149,7 @@ ideas = {
 				production_speed_buildings_factor = 0.05
 			}
 		}
-		ncr_idea_war_ready_economy = {
+		ncr_idea_war_ready_economy_2 = {
 			picture = VEG_Good_Business
 			modifier = {
 				local_resources_factor = 0.05
@@ -1326,41 +1326,41 @@ ideas = {
 				compliance_gain = 0.03
 			}
 		}
-		NCR_supporting_the_populace = {
-			picture = gov_idea_ncr_dollar
-			allowed = {
-				always = no
-			}
-			cancel = {
-                has_completed_focus = mot_civilian_rule
-            }
-			allowed_civil_war = {
-				always = yes
-			}
-			removal_cost = -1
-			modifier = {
-				industrial_capacity_factory = -0.1
-				caps_income_modifier = -0.1
-			}
-		}
-		NCR_not_a_question_of_citizenship = {
-			picture = generic_soup
-			allowed = {
-				always = no
-			}
-			cancel = {
-                has_completed_focus = mot_civilian_rule
-            }
-			allowed_civil_war = {
-				always = yes
-			}
-			removal_cost = -1
-			modifier = {
-				stability_factor = 0.1
-				compliance_gain = 0.02
-				non_core_manpower = 0.05
-			}
-		}
+		# NCR_supporting_the_populace = {
+		# 	picture = gov_idea_ncr_dollar
+		# 	allowed = {
+		# 		always = no
+		# 	}
+		# 	cancel = {
+        #         has_completed_focus = mot_civilian_rule
+        #     }
+		# 	allowed_civil_war = {
+		# 		always = yes
+		# 	}
+		# 	removal_cost = -1
+		# 	modifier = {
+		# 		industrial_capacity_factory = -0.1
+		# 		caps_income_modifier = -0.1
+		# 	}
+		# }
+		# NCR_not_a_question_of_citizenship = {
+		# 	picture = generic_soup
+		# 	allowed = {
+		# 		always = no
+		# 	}
+		# 	cancel = {
+        #         has_completed_focus = mot_civilian_rule
+        #     }
+		# 	allowed_civil_war = {
+		# 		always = yes
+		# 	}
+		# 	removal_cost = -1
+		# 	modifier = {
+		# 		stability_factor = 0.1
+		# 		compliance_gain = 0.02
+		# 		non_core_manpower = 0.05
+		# 	}
+		# }
 		NCR_protectors_of_justice = {
 			picture = generic_helm_ranger
 			allowed = {

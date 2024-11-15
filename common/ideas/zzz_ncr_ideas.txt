@@ -1525,5 +1525,46 @@ ideas = {
 			}
 		}
 
+		shining_future = {
+			allowed = {
+				always = no
+			}
+
+			modifier = {
+				army_core_attack_factor = 0.05
+				army_core_defense_factor = 0.10
+			}
+		}
+
+		ncr_arr_pa_buff = {
+			equipment_bonus = {
+				power_armor_equipment = {
+					instant = yes
+					hardness = 0.1
+					soft_attack = 0.1
+				}
+			}
+		}
+
+		ncr_new_no_clue_buff = {
+			equipment_bonus = {
+				tank_equipment = {
+					instant = yes
+					hardness = 0.1
+					hard_attack = 0.1
+				}
+			}
+		}
+
+		ncr_vlt_meme_is_keeping_me_in_is_basement = {
+			equipment_bonus = {
+				power_armor_equipment = {
+					instant = yes
+					hard_attack = 0.1
+					defense  = 0.1
+				}
+			}
+		}
+
 	}
 }

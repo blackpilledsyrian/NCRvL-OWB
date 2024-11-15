@@ -423,7 +423,7 @@ characters={
 			}
 		}
 		advisor = {
-			slot = research_advisor
+			slot = theorist
 			idea_token = land_doctrine_guy
 			visible = {
 				original_tag = EUR
@@ -724,7 +724,7 @@ characters={
 			}
 		}
 		advisor = {
-			slot = research_advisor
+			slot = theorist
 			idea_token = NEW_orion_moreno_research_advisor
 			ledger = army
 			allowed = {
