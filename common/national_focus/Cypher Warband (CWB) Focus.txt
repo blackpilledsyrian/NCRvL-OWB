@@ -70,22 +70,23 @@ focus_tree = {
 		}
 		relative_position_id = CWB_shared_our_future
 		completion_reward = {
-			902 = { add_claim_by = ROOT }
-			886 = { add_claim_by = ROOT }
-			888 = { add_claim_by = ROOT }
-			938 = { add_claim_by = ROOT }
 			891 = { add_claim_by = ROOT }
+			938 = { add_claim_by = ROOT }
+			886 = { add_claim_by = ROOT }
+			887 = { add_claim_by = ROOT }
+			888 = { add_claim_by = ROOT }
+			898 = { add_claim_by = ROOT }
+			899 = { add_claim_by = ROOT }
+			902 = { add_claim_by = ROOT }
 			889 = { add_claim_by = ROOT }
 			890 = { add_claim_by = ROOT }
-			615 = { add_claim_by = ROOT }
-			891 = { add_claim_by = ROOT }
-			616 = { add_claim_by = ROOT }
 			868 = { add_claim_by = ROOT }
 			867 = { add_claim_by = ROOT }
 			883 = { add_claim_by = ROOT }
-			617 = { add_claim_by = ROOT }
-			618 = { add_claim_by = ROOT }
+			615 = { add_claim_by = ROOT }
+			616 = { add_claim_by = ROOT }
 			103 = { add_claim_by = ROOT }
+			617 = { add_claim_by = ROOT }
 			869 = { add_claim_by = ROOT }
 			877 = { add_claim_by = ROOT }
 		}
