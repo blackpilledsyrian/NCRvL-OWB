@@ -96,3 +96,4 @@ ces_two_sun_influence_tt:0 "§YTwo Sun's§! influence will spread over our state
 ranger_unlock_tt:0 "§YWe will now be able to reform the undisplined Rangers Abigail raised to take over Nevada.§!"
 hoover_dam_battle_preperations:0 "Hoover Dam Battle Preperations"
 hoover_dam_battle_preperations_desc:0 "Bull and Bear over the Dam, at each other's throats... but a light from Vegas? Ball spinning on the wheel, more than two at the table, placing bets. All lose in different ways, a dam of corpses, towns of corpses, scattered across the sand. But whose, in what shares? Even the dealer doesn't know. Forecast: A rain of blood will flood the desert and not purify it."
+tooltip_2radio:0 "§RAll affected units will require 5 more Radios per battalion§! (§YTotal Need/Total Stockpile:§! [?total_unit|R0]/[?radios_stored|R0])"

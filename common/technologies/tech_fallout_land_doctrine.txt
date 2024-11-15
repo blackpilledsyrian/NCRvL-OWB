@@ -2267,6 +2267,34 @@ technologies = {
 			set_technology = {
 				grunt_level_radio_unlock_tech = 1
 			}
+			set_temp_variable = { temp = 5 }
+			set_temp_variable = { total_unit = num_battalions_with_type@heavy_infantry }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@recon_company }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@mobile_recon_company }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@police_infantry }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@infantry }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@motorized }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@motorized_heavy_infantry }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@motorized_demoteam }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@motorized_fireteam }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@motorized_anti_tank }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@ghoul_infantry }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@dog_infantry }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@skate_infantry }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@fireteam_infantry }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@demolitions_infantry }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@anti_tank_infantry }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@spec_ops }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@spec_ops_cavalry }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@ghoul_paratrooper }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@power_armour }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@power_armour_fireteam_infantry }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@power_armour_demolitions_infantry }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@power_armour_anti_tank_infantry }
+
+			multiply_temp_variable = { total_unit = temp }
+			set_temp_variable = { radios_stored = num_equipment@radio_equipment }
+			custom_effect_tooltip = tooltip_2radio
 		}
 
 		path = {
@@ -2374,6 +2402,7 @@ technologies = {
 
 		on_research_complete = {
 			custom_effect_tooltip = doctrine_radio_equipment_deployment_tech_tt
+
 		}
 
 		heavy_infantry = {
