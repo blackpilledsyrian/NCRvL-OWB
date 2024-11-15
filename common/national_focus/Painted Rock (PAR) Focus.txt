@@ -328,7 +328,6 @@ focus_tree = {
                         #chariot_vehicle_tech = 1
                         ces_at_tech = 1
                         ces_two_tech = 1
-                        all_terrain_vehicles_tech = 1
                         armored_chariots_tech = 1
                     }
                     add_ideas = {
