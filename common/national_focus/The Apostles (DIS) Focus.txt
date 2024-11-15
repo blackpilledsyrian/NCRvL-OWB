@@ -1,0 +1,736 @@
+####################################################
+#         Apostles Focus Tree
+#           Written by Zusk
+#
+####################################################
+
+focus_tree = {
+	id = apostles_nf
+	country = {
+		factor = 0
+		modifier = {
+			add = 0
+			tag = DIS
+		}
+	}
+	default = no
+
+	shared_focus = lurk_aquatic_construction
+	shared_focus = lurk_consult_the_oracles
+
+	focus = {
+		id = lake_heretics
+		icon = GFX_goal_HEA_focus_the_prophet_prevails
+		cost = 7
+		x = 15
+		y = 0
+		completion_reward = {
+			country_event = nf_dis.1
+		}
+	}
+
+	focus = {
+		id = lake_exiled
+		icon = GFX_KHA_focus_border_clashes
+		cost = 7
+		prerequisite = {
+			focus = lake_heretics
+		}
+		x = 0
+		y = 1
+		relative_position_id = lake_heretics
+		completion_reward = {
+			country_event = nf_dis.2
+		}
+	}
+
+	focus = {
+		id = lake_assault_of_diamond_peak
+		icon = GFX_goal_generic_cities_focus
+		cost = 7
+		prerequisite = {
+			focus = lake_exiled
+		}
+		x = 0
+		y = 1
+		relative_position_id = lake_exiled
+		completion_reward = {
+			country_event = nf_dis.3
+			hidden_effect = { set_country_flag = generic_unlock_focus }
+		}
+	}
+
+	focus = {
+		id = lake_recovering_from_the_assault
+		icon = GFX_goal_generic_national_unity
+		cost = 30
+		available = {
+			shared_focus_tree_unlocked = yes
+		}
+		x = 0
+		y = 1
+		relative_position_id = lake_assault_of_diamond_peak
+		completion_reward = {
+			remove_ideas = lake_wounds_from_the_bonepicker_war
+			add_timed_idea = {
+				idea = lake_recovering_from_the_bonepicker_war
+				days = 365
+			}
+		}
+	}
+
+	focus = {
+		id = lake_bonepicker_weapons
+		icon = GFX_goal_CES_blacksmith
+		cost = 30
+		prerequisite = {
+			focus = lake_recovering_from_the_assault
+		}
+		x = -1
+		y = 1
+		relative_position_id = lake_recovering_from_the_assault
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 500
+			}
+		}
+	}
+
+	focus = {
+		id = lake_lessons_from_the_bonepicker_war
+		icon = GFX_goal_generic_land_doctrines_focus
+		cost = 30
+		prerequisite = {
+			focus = lake_recovering_from_the_assault
+		}
+		x = -3
+		y = 1
+		relative_position_id = lake_recovering_from_the_assault
+		completion_reward = {
+			add_tech_bonus = {
+				name = lake_lessons_from_the_bonepicker_war
+				bonus = 0.75
+				uses = 1
+				category = cat_outsider_warfare
+			}
+		}
+	}
+
+	focus = {
+		id = lake_settle_the_mountain
+		icon = GFX_focus_generic_self_management
+		cost = 30
+		prerequisite = {
+			focus = lake_recovering_from_the_assault
+		}
+		available = {
+			owns_state = 600
+		}
+		x = 1
+		y = 1
+		relative_position_id = lake_recovering_from_the_assault
+		completion_reward = {
+			add_manpower = 750
+			600 = {
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+
+	focus = {
+		id = lake_invite_traders
+		icon = GFX_goal_NCR_Exodus
+		cost = 30
+		prerequisite = {
+			focus = lake_recovering_from_the_assault
+		}
+		x = 3
+		y = 1
+		relative_position_id = lake_recovering_from_the_assault
+		completion_reward = {
+			set_temp_variable = { caps_to_add = 200 }
+			add_caps = yes
+		}
+	}
+
+	focus = {
+		id = lake_rebuild_the_mountain_fortress
+		icon = GFX_goal_generic_mountain_fortress
+		cost = 60
+		prerequisite = {
+			focus = lake_bonepicker_weapons
+		}
+		prerequisite = {
+			focus = lake_settle_the_mountain
+		}
+		available = {
+			NOT = { has_idea = lake_recovering_from_the_bonepicker_war }
+			controls_state = 600
+		}
+		x = 0
+		y = 2
+		relative_position_id = lake_recovering_from_the_assault
+		completion_reward = {
+			if = {
+				limit = { owns_state = 600 }
+				add_war_support = 0.3
+				add_stability = 0.15
+				set_capital = { state = 600 }
+				600 = {
+					add_extra_state_shared_building_slots = 5
+					custom_effect_tooltip = lake_heavily_fortify_the_state
+					hidden_effect = {
+						add_building_construction = {
+							type = bunker
+							level = 2
+							instant_build = yes
+							province = {
+								all_provinces = yes
+							}
+						}
+						add_building_construction = {
+							type = bunker
+							level = 1
+							instant_build = yes
+							province = {
+								id = 5011
+								id = 4348
+								id = 2509
+							}
+						}
+						add_building_construction = {
+							type = bunker2
+							level = 1
+							instant_build = yes
+							province = 4346
+						}
+					}
+				}
+			}
+			if = {
+				limit = { owns_state = 600 }
+				600 = {
+					add_extra_state_shared_building_slots = 1
+					custom_effect_tooltip = lake_fortify_the_state
+					hidden_effect = {
+						add_building_construction = {
+							type = bunker
+							level = 2
+							instant_build = yes
+							province = {
+								id = 5010
+								id = 5011
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = lake_mend_the_lurker_schism
+		icon = GFX_goal_tripartite_pact
+		cost = 30
+		mutually_exclusive = {
+			focus = lake_preemptive_defenses
+		}
+		prerequisite = {
+			focus = lake_rebuild_the_mountain_fortress
+		}
+		available = {
+			country_exists = MLT
+			NOT = { MLT = { has_war_with = DIS } }
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 15
+				has_country_flag = DIS_mend_schism
+			}
+		}
+		x = -3
+		y = 1
+		relative_position_id = lake_rebuild_the_mountain_fortress
+		completion_reward = {
+			custom_effect_tooltip = mend_the_schism_tt
+			hidden_effect = {
+				MLT = { country_event = nf_dis.4 }
+			}
+		}
+	}
+
+#	focus = {
+#		id = lake_expand_the_defenses_north
+#		icon = GFX_goal_generic_bunkers_focus
+#		cost = 30
+#		prerequisite = {
+#			focus = lake_mend_the_lurker_schism
+#		}
+#		available = {
+#			country_exists = MLT
+#			NOT = { MLT = { has_war_with = DIS } }
+#			MLT = { is_subject = no }
+#			custom_trigger_tooltip = {
+#				tooltip = "We have mended the schism"
+#				has_country_flag = mended_schism
+#			}
+#		}
+#		x = -1
+#		y = 1
+#		relative_position_id = lake_mend_the_lurker_schism
+#		completion_reward = {
+#			if = {
+#				limit = { owns_state = 251 }
+#				251 = {
+#					add_extra_state_shared_building_slots = 1
+#					custom_effect_tooltip = lake_fortify_the_state
+#					hidden_effect = {
+#						add_building_construction = {
+#							type = bunker
+#							level = 1
+#							instant_build = yes
+#							province = {
+#								id = 4346
+#								id = 2509
+#								id = 4179
+#							}
+#						}
+#					}
+#				}
+#			}
+#			MLT = {
+#				if = {
+#					limit = { owns_state = 358 }
+#					custom_effect_tooltip = nf_mlt_coastal_fort_358_tt
+#					hidden_effect = {
+#						358 = {
+#							add_building_construction = {
+#								type = bunker
+#								level = 1
+#								instant_build = yes
+#								province = {
+#									id = 2522
+#									id = 4201
+#									id = 4200
+#								}
+#							}
+#						}
+#					}
+#				}
+#				if = {
+#					limit = { owns_state = 451 }
+#					custom_effect_tooltip = nf_mlt_coastal_fort_451_tt
+#					hidden_effect = {
+#						451 = {
+#							add_building_construction = {
+#								type = bunker
+#								level = 1
+#								instant_build = yes
+#								province = {
+#									id = 4343
+#									id = 4108
+#									id = 7125
+#									id = 7126
+#									id = 1394
+#								}
+#							}
+#						}
+#					}
+#				}
+#			}
+#		}
+#	}
+#
+#	focus = {
+#		id = lake_teamwork_among_the_tribes
+#		icon = GFX_focus_generic_the_giant_wakes
+#		cost = 30
+#		prerequisite = {
+#			focus = lake_mend_the_lurker_schism
+#		}
+#		available = {
+#			country_exists = MLT
+#			NOT = { MLT = { has_war_with = DIS } }
+#			MLT = { is_subject = no }
+#			custom_trigger_tooltip = {
+#				tooltip = "We have mended the schism"
+#				has_country_flag = mended_schism
+#			}
+#		}
+#		x = 1
+#		y = 1
+#		relative_position_id = lake_mend_the_lurker_schism
+#		completion_reward = {
+#			every_unit_leader = {
+#				add_defense = 1
+#			}
+#			add_offsite_building = {
+#				type = arms_factory
+#				level = 2
+#			}
+#			MLT = {
+#				every_unit_leader = {
+#					add_defense = 1
+#				}
+#				add_offsite_building = {
+#					type = arms_factory
+#					level = 2
+#				}
+#			}
+#		}
+#	}
+#
+#	focus = {
+#		id = lake_mutant_fighting_tactics
+#		icon = GFX_goal_NEW_Super_Mutant_Technician
+#		cost = 30
+#		prerequisite = {
+#			focus = lake_expand_the_defenses_north
+#		}
+#		prerequisite = {
+#			focus = lake_teamwork_among_the_tribes
+#		}
+#		bypass = {
+#			NOT = { country_exists = TRL }
+#		}
+#		available = {
+#			country_exists = MLT
+#			NOT = { MLT = { has_war_with = DIS } }
+#			MLT = { is_subject = no }
+#			custom_trigger_tooltip = {
+#				tooltip = "We have mended the schism"
+#				has_country_flag = mended_schism
+#			}
+#		}
+#		x = 0
+#		y = 2
+#		relative_position_id = lake_mend_the_lurker_schism
+#		completion_reward = {
+#			add_ideas = lake_mutant_fighting_tactics
+#			MLT = {
+#				add_ideas = lake_mutant_fighting_tactics
+#			}
+#		}
+#	}
+
+	focus = {
+		id = lake_preemptive_defenses
+		icon = GFX_goal_generic_small_arms
+		cost = 30
+		mutually_exclusive = {
+			focus = lake_mend_the_lurker_schism
+		}
+		prerequisite = {
+			focus = lake_rebuild_the_mountain_fortress
+		}
+		bypass = {
+				MLT = { has_war_with = DIS }
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 15
+				NOT = { has_country_flag = DIS_mend_schism }
+			}
+		}
+		x = 0
+		y = 1
+		relative_position_id = lake_rebuild_the_mountain_fortress
+		completion_reward = {
+			if = {
+				limit = { owns_state = 150 }
+				150 = {
+					add_extra_state_shared_building_slots = 1
+					custom_effect_tooltip = lake_fortify_the_northern_border
+					hidden_effect = {
+						add_building_construction = {
+							type = bunker
+							level = 1
+							instant_build = yes
+							province = {
+								id = 7128
+								id = 7129
+								id = 2604
+								id = 5012
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = { owns_state = 600 }
+				600 = {
+					add_extra_state_shared_building_slots = 1
+					custom_effect_tooltip = lake_fortify_the_northern_border
+					hidden_effect = {
+						add_building_construction = {
+							type = bunker
+							level = 1
+							instant_build = yes
+							province = {
+								id = 1350
+								id = 5011
+							}
+						}
+					}
+				}
+			}
+			#if = {
+			#	limit = { owns_state = 251 }
+			#	251 = {
+			#		add_extra_state_shared_building_slots = 1
+			#		custom_effect_tooltip = lake_fortify_the_northern_border
+			#		hidden_effect = {
+			#			add_building_construction = {
+			#				type = bunker
+			#				level = 1
+			#				instant_build = yes
+			#				province = {
+			#					id = 2292
+			#					id = 4346
+			#				}
+			#			}
+			#		}
+			#	}
+			#}
+			if = {
+				limit = { owns_state = 86 }
+				86 = {
+					add_extra_state_shared_building_slots = 1
+					custom_effect_tooltip = lake_fortify_the_northern_border
+					hidden_effect = {
+						add_building_construction = {
+							type = bunker
+							level = 1
+							instant_build = yes
+							province = {
+								id = 1748
+								id = 1300
+								id = 4198
+								id = 7130
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = lake_mutant_fighting_tactics
+		icon = GFX_goal_NEW_Super_Mutant_Technician
+		cost = 30
+		prerequisite = {
+			focus = lake_lurker_training
+		}
+		prerequisite = {
+			focus = lake_the_big_one
+		}
+		bypass = {
+			NOT = { country_exists = TRL }
+		}
+		mutually_exclusive = {
+			focus = lake_moving_back_to_the_swamp
+		}
+		x = 3
+		y = 2
+		relative_position_id = lake_preemptive_defenses
+		completion_reward = {
+			add_ideas = lake_mutant_fighting_tactics
+		}
+	}
+
+	focus = {
+		id = lake_gardens_atop_the_mountain
+		icon = GFX_KHA_focus_farm_agriculture
+		cost = 30
+		prerequisite = {
+			focus = lake_rebuild_the_mountain_fortress
+		}
+		x = 3
+		y = 1
+		relative_position_id = lake_rebuild_the_mountain_fortress
+		completion_reward = {
+			600 = {
+				add_manpower = 2000
+			}
+		}
+	}
+
+	focus = {
+		id = lake_lurker_training
+		icon = GFX_goal_generic_pipe_weapons_focus
+		cost = 30
+		prerequisite = {
+			focus = lake_preemptive_defenses
+		}
+		x = -1
+		y = 1
+		relative_position_id = lake_preemptive_defenses
+		completion_reward = {
+			army_experience = 25
+			every_unit_leader = {
+				add_defense = 3
+			}
+		}
+	}
+
+	focus = {
+		id = lake_the_big_one
+		icon = GFX_goal_generic_supplies_focus
+		cost = 30
+		prerequisite = {
+			focus = lake_preemptive_defenses
+		}
+		x = 1
+		y = 1
+		relative_position_id = lake_preemptive_defenses
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 2500
+			}
+		}
+	}
+
+	focus = {
+		id = lake_mirelurk_fighting_tactics
+		icon = GFX_goal_generic_creature_mirelurk
+		cost = 30
+		prerequisite = {
+			focus = lake_the_big_one
+		}
+		prerequisite = {
+			focus = lake_lurker_training
+		}
+		mutually_exclusive = {
+			focus = lake_moving_back_to_the_swamp
+		}
+		bypass = {
+			NOT = { country_exists = MLT }
+		}
+		x = -3
+		y = 2
+		relative_position_id = lake_preemptive_defenses
+		completion_reward = {
+			add_ideas = lake_mirelurk_fighting_tactics
+		}
+	}
+
+	focus = {
+		id = lake_moving_back_to_the_swamp
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		prerequisite = {
+			focus = lake_lurker_training
+		}
+		prerequisite = {
+			focus = lake_the_big_one
+		}
+		mutually_exclusive = {
+			focus = lake_mirelurk_fighting_tactics
+			focus = lake_mutant_fighting_tactics
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		will_lead_to_war_with = MLT
+		bypass = {
+			MLT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		x = 0
+		y = 3
+		relative_position_id = lake_rebuild_the_mountain_fortress
+		completion_reward = {
+			MLT = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = lake_banish_the_coral_court
+		icon = GFX_focus_generic_self_management
+		cost = 30
+		prerequisite = {
+			focus = lake_moving_back_to_the_swamp
+			focus = lake_mirelurk_fighting_tactics
+			focus = lake_mutant_fighting_tactics
+		}
+		x = -1
+		y = 1
+		available = {
+			MLT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = lake_moving_back_to_the_swamp
+		completion_reward = {
+			MLT = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = lake_muttfruit_for_everyone
+		icon = GFX_goal_lurker_offer_muttfruit
+		cost = 30
+		prerequisite = {
+			focus = lake_moving_back_to_the_swamp
+			focus = lake_mirelurk_fighting_tactics
+			focus = lake_mutant_fighting_tactics
+		}
+		available = {
+			MLT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		x = 1
+		y = 1
+		relative_position_id = lake_moving_back_to_the_swamp
+		completion_reward = {
+			capital_scope = {
+				add_resource = {
+					type = water
+					amount = 8
+				}
+			}
+			every_owned_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+
+	focus = {
+		id = lake_spread_the_cult_of_the_ruddy_man
+		icon = GFX_goal_land_flag
+		cost = 30
+		prerequisite = {
+			focus = lake_muttfruit_for_everyone
+		}
+		prerequisite = {
+			focus = lake_banish_the_coral_court
+		}
+		available = {
+			MLT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		x = 0
+		y = 2
+		relative_position_id = lake_moving_back_to_the_swamp
+		completion_reward = {
+			set_variable = { coring_cost_country_factor = -0.70 }
+			custom_effect_tooltip = dis_75_percent_core_cost_reduction_tt
+		}
+	}
+}

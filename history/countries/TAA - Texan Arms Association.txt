@@ -1,0 +1,165 @@
+﻿capital = 796
+oob = "TAA_2275"
+
+set_technology = {
+	basic_supply_transport_tech = 1
+	infantry_tech_level_tribal = 1
+	infantry_tech_level_settler = 1
+	infantry_tech_level_scientific = 1
+	support_tech_level_tribal = 1
+	support_tech_level_settler = 1
+	support_tech_level_scientific = 1
+	special_forces_tech_level_tribal = 1
+	special_forces_tech_level_settler = 1
+	#special_forces_tech_level_scientific = 1
+	#power_armour_tech_level_settler = 1
+	#power_armour_tech_level_scientific = 1
+	vehicles_tech_level_tribal = 1
+	vehicles_tech_level_settler = 1
+	#vehicles_tech_level_scientific = 1
+	robotics_tech_level_tribal = 1
+	robotics_tech_level_settler = 1
+	#robotics_tech_level_scientific = 1
+	air_tech_level_tribal = 1
+	air_tech_level_settler = 1
+	#air_tech_level_scientific = 1
+	naval_tech_level_tribal = 1
+	naval_tech_level_settler = 1
+	#naval_tech_level_scientific = 1
+	tools_tech_level_tribal = 1
+	tools_tech_level_settler = 1
+	#tools_tech_level_scientific = 1
+	habitation_tech_level_tribal = 1
+	habitation_tech_level_settler = 1
+	#habitation_tech_level_scientific = 1
+	exploitation_tech_level_tribal = 1
+	exploitation_tech_level_settler = 1
+	#exploitation_tech_level_scientific = 1
+	electronics_tech_level_tribal = 1
+	electronics_tech_level_settler = 1
+	#electronics_tech_level_scientific = 1
+	tribal_civilization = 1
+	settled_civilization = 1
+	tool_engineering = 1
+	standard_weaponry_tech = 1
+	ballistic_weaponry_tech_1 = 1
+	melee_weaponry_tech_1 = 1
+	support_weaponry = 1
+	demolitions_weaponry_tech = 1
+	fireteam_weaponry_tech = 1
+	bike_tech_1 = 1
+}
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		nautics_tech_1 = 1
+		light_navy_hull_tech_1 = 1
+		#waterproof_sealing_tech = 1
+	}
+}
+if = {
+	limit = {
+		NOT = { has_dlc = "Man the Guns" }
+	}
+	set_technology = {
+		nautics_tech_non_mtg_1 = 1
+		light_navy_hull_tech_non_mtg_1 = 1
+		waterproof_sealing_tech_non_mtg = 1
+	}
+}
+
+set_stability = 0.35
+set_war_support = 0.45
+set_research_slots = 4
+set_country_flag = is_settler_nation
+
+set_country_flag = dont_give_settler_generic_political_advisors
+set_country_flag = dont_give_settler_generic_high_command
+set_country_flag = dont_give_settler_generic_theorists
+set_country_flag = dont_give_settler_generic_chiefs
+set_country_flag = no_generic_chief
+set_country_flag = no_generic_political_advisors
+set_country_flag = no_generic_high_command
+set_country_flag = no_generic_theorists
+set_country_flag = no_generic_advisor
+set_country_flag = is_texas_nation
+set_country_flag = grand_doctrine_ai
+set_country_flag = grand_infantry_doctrine_ai
+set_country_flag = infantry_ballistic_ai
+
+set_truce = {
+	target = SHA
+	days = 730
+}
+set_truce = {
+	target = IMO
+	days = 730
+}
+
+add_ideas = {
+	TAA_the_master_gunsmiths
+}
+
+set_popularities = {
+	people = 10
+	elites = 82
+	intellectuals = 2
+	ruler = 6
+}
+
+set_politics = {
+	ruling_party = elites
+	elections_allowed = no
+}
+
+recruit_character = TAA_todd_howitzer
+#recruit_character = TAA_jonas_schofield
+#recruit_character = TAA_carnot_loring
+#recruit_character = TAA_horace_trimble
+recruit_character = TAA_material
+recruit_character = TAA_profit
+recruit_character = TAA_captain
+recruit_character = TAA_earth
+recruit_character = TAA_killing
+recruit_character = TAA_wealth
+recruit_character = TAA_wheeling
+recruit_character = TAA_mastermind
+recruit_character = TAA_grit
+recruit_character = TAA_armed
+recruit_character = TAA_hired
+recruit_character = TAA_soil
+recruit_character = TAA_navy
+recruit_character = TAA_airforce
+recruit_character = TAA_grand_doctrine
+recruit_character = TAA_generic_doctrine
+recruit_character = RIO_elder_miller
+
+set_party_name = { ideology = elites  long_name = TAA_elites_party_long name = TAA_elites_party }
+set_party_name = { ideology = intellectuals  long_name = TAA_intellectuals_party_long name = TAA_intellectuals_party }
+set_party_name = { ideology = ruler  long_name = TAA_ruler_party_long name = TAA_ruler_party }
+set_party_name = { ideology = people  long_name = TAA_people_party_long name = TAA_people_party }
+
+# TAA Starts with many of their Military Factories going to Rio until the revolt, this helps them get off the ground
+add_equipment_to_stockpile = {
+	type = ballistic_equipment_1
+	amount = 250
+	producer = TAA
+}
+add_equipment_to_stockpile = {
+	type = support_equipment_1
+	amount = 50
+	producer = TAA
+}
+add_equipment_to_stockpile = {
+	type = demolitions_equipment_1
+	amount = 50
+	producer = TAA
+}
+add_equipment_to_stockpile = {
+	type = fireteam_equipment_1
+	amount = 50
+	producer = TAA
+}

@@ -1,0 +1,314 @@
+################################
+# Created By Mikael Kerularius #
+################################
+
+focus_tree = {
+	id = car_nf
+	country = {
+		factor = 0
+		modifier = {
+			add = 0
+			original_tag = CAR
+		}
+	}
+	default = no
+
+	shared_focus = improve_the_hideout
+	shared_focus = incorporate_slavers
+	shared_focus = doped_soldiers
+	shared_focus = starting_the_flow
+
+	focus = {
+		id = car_menace
+		icon = GFX_goal_ATE_omen_of_destruction
+		cost = 7
+		x = 11
+		y = 0
+		completion_reward = {
+			country_event = nf_car.1
+		}
+	}
+	focus = {
+		id = car_giant
+		icon = GFX_goal_TBH_conscription_2
+		cost = 7
+		prerequisite = {
+			focus = car_menace
+		}
+		relative_position_id = car_menace
+		x = 0
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = car_fake_event
+			hidden_effect = {
+				if = {
+					limit = {
+						NOT = {
+							has_global_flag = CAR_kerensky_chef_enabled_global_flag
+						}
+					}
+					country_event = nf_car.2
+				}
+				if = {
+					limit = {
+						has_global_flag = CAR_kerensky_chef_enabled_global_flag
+					}
+					country_event = nf_car.4
+				}
+			}
+		}
+	}
+	focus = {
+		id = car_reach_out
+		icon = GFX_goal_tripartite_pact
+		cost = 7
+		prerequisite = {
+			focus = car_giant
+		}
+		relative_position_id = car_giant
+		x = 0
+		y = 1
+		completion_reward = {
+			country_event = nf_car.3
+			unlock_all_available_generic_branches = yes
+		}
+	}
+	focus = {
+		id = car_coalition
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		cost = 30
+		available = {
+			has_completed_focus = car_reach_out
+		}
+		x = 3
+		y = 3
+		completion_reward = {
+			add_stability = 0.10
+			add_war_support = 0.10
+		}
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	focus = {
+		id = car_rally
+		icon = GFX_goal_NCR_Infantry_Drills
+		cost = 30
+		prerequisite = {
+			focus = car_coalition
+		}
+		relative_position_id = car_coalition
+		x = -1
+		y = 1
+		completion_reward = {
+			add_ideas = car_rally_men
+			add_manpower = 100
+		}
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	focus = {
+		id = car_survival
+		icon = GFX_KHA_focus_army_1
+		cost = 30
+		prerequisite = {
+			focus = car_rally
+		}
+		relative_position_id = car_rally
+		x = -1
+		y = 1
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = car_rally_men
+				add_idea = car_survival_men
+			}
+		}
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	focus = {
+		id = car_military
+		icon = GFX_goal_generic_workshop
+		cost = 30
+		prerequisite = {
+			focus = car_coalition
+		}
+		relative_position_id = car_coalition
+		x = 1
+		y = 1
+		completion_reward = {
+			884 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	focus = {
+		id = car_industry
+		icon = GFX_goal_generic_military_industry_focus
+		cost = 30
+		prerequisite = {
+			focus = car_military
+		}
+		relative_position_id = car_military
+		x = 1
+		y = 1
+		completion_reward = {
+			884 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	focus = {
+		id = car_soldiers
+		icon = GFX_goal_generic_military_sphere
+		cost = 30
+		prerequisite = {
+			focus = car_rally
+		}
+		prerequisite = {
+			focus = car_military
+		}
+		relative_position_id = car_coalition
+		x = 0
+		y = 2
+		completion_reward = {
+			custom_effect_tooltip = car_volunteer
+			hidden_effect = {
+				load_oob = CAR_reinforcement
+			}
+		}
+	}
+	focus = {
+		id = car_slaying_giant
+		icon = GFX_goal_generic_texas2
+		cost = 30
+		prerequisite = {
+			focus = car_soldiers
+		}
+		prerequisite = {
+			focus = car_industry
+		}
+		prerequisite = {
+			focus = car_survival
+		}
+		bypass = {
+			TBH = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = car_coalition
+		x = 0
+		y = 3
+		completion_reward = {
+			TBH = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 0.5
+				date < 2276.6.1
+			}
+		}
+	}
+	focus = {
+		id = car_houston_take_over
+		icon = GFX_goal_generic_satellite
+		cost = 30
+		prerequisite = {
+			focus = car_slaying_giant
+		}
+		bypass = {
+			HRO = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		available = {
+			owns_state = 892
+		}
+		relative_position_id = car_slaying_giant
+		x = 0
+		y = 1
+		completion_reward = {
+			HRO = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = car_raiders_paradise
+		icon = GFX_goal_generic_secret_weapon
+		cost = 30
+		prerequisite = {
+			focus = car_houston_take_over
+		}
+		available = {
+			owns_state = 880
+			owns_state = 892
+		}
+		relative_position_id = car_houston_take_over
+		x = 0
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = car_core_east
+			custom_effect_tooltip = car_raider_empire
+			884 = {
+				set_temp_variable = {
+					pop_add = 20000
+				}
+				add_state_population = yes
+				set_state_category = metropolis
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+			hidden_effect = {
+				set_cosmetic_tag = CAR_raider_cosmetic
+			}
+			hidden_effect = {
+				add_state_core = 879
+				add_state_core = 880
+				add_state_core = 882
+				add_state_core = 894
+				add_state_core = 895
+				add_state_core = 896
+				add_state_core = 892
+				add_state_core = 893
+				add_state_core = 900
+				add_state_core = 901
+				add_state_core = 878
+				add_state_core = 881
+			}
+		}
+		ai_will_do = {
+			factor = 25
+		}
+	}
+}
+

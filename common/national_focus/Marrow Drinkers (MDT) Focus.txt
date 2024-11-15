@@ -1,0 +1,2007 @@
+####################################################
+#         Marrow Drinker Focus Tree
+#           Written by Zusk
+#
+####################################################
+
+focus_tree = {
+	id = mdt_nf
+	country = {
+		factor = 0
+		modifier = {
+			add = 0
+			tag = MDT
+		}
+	}
+	default = no
+
+	shared_focus = oregon_cannibal_the_oregon_trails
+	shared_focus = oregon_cannibal_question_of_cannibalism
+
+	focus = {
+		id = mdt_once_a_viper
+		icon = GFX_KHA_focus_slave_trade_own_ruler
+		cost = 7
+		x = 15
+		y = 0
+		completion_reward = {
+			country_event = nf_mdt.1
+		}
+	}
+
+	focus = {
+		id = mdt_then_nobody
+		icon = GFX_goal_generic_mesmetron
+		cost = 7
+		prerequisite = {
+			focus = mdt_once_a_viper
+		}
+		x = 0
+		y = 1
+		relative_position_id = mdt_once_a_viper
+		completion_reward = {
+			country_event = nf_mdt.2
+		}
+	}
+
+	focus = {
+		id = mdt_until_they_found_the_truth
+		icon = GFX_goal_generic_grognak
+		cost = 7
+		prerequisite = {
+			focus = mdt_then_nobody
+		}
+		x = 0
+		y = 1
+		relative_position_id = mdt_then_nobody
+		completion_reward = {
+			country_event = nf_mdt.3
+			hidden_effect = { set_country_flag = generic_unlock_focus }
+		}
+	}
+
+	focus = {
+		id = mdt_rise_of_the_gorgons
+		icon = GFX_goal_MDT_gorgon_eye
+		cost = 30
+		available = {
+			shared_focus_tree_unlocked = yes
+		}
+		x = 0
+		y = 1
+		relative_position_id = mdt_until_they_found_the_truth
+		completion_reward = {
+			add_war_support = 0.15
+			add_manpower = 750
+		}
+	}
+
+	focus = {
+		id = mdt_schemes_against_the_trolls
+		icon = GFX_goal_mutant_supremacy
+		cost = 30
+		prerequisite = {
+			focus = mdt_rise_of_the_gorgons
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 15
+				OR = {
+					AND = {
+						NOT = { has_country_flag = MDT_quick_aggression_flag }
+						date > 2276.4.1
+					}
+					has_country_flag = MDT_quick_aggression_flag
+				}
+			}
+		}
+		x = -2
+		y = 1
+		relative_position_id = mdt_rise_of_the_gorgons
+		completion_reward = {
+			add_political_power = 150
+		}
+	}
+
+	focus = {
+		id = mdt_send_heroes_to_the_vulnerable_north
+		icon = GFX_KHA_focus_army_2
+		cost = 30
+		prerequisite = {
+			focus = mdt_schemes_against_the_trolls
+		}
+		x = -1
+		y = 1
+		relative_position_id = mdt_schemes_against_the_trolls
+		completion_reward = {
+			add_offsite_building = {
+				type = industrial_complex
+				level = 2
+			}
+			if = {
+				limit = { country_exists = RBT }
+				RBT = {
+					add_manpower = 750
+					custom_effect_tooltip = mdt_serpent_guard
+					hidden_effect = {
+						load_oob = "RBT_serpent_guard"
+					}
+				}
+			}
+			else = {
+				add_manpower = 750
+			}
+		}
+	}
+
+	focus = {
+		id = mdt_gifts_for_our_future_subjects
+		icon = GFX_goal_NCR_Weapon_Standardization
+		cost = 30
+		prerequisite = {
+			focus = mdt_schemes_against_the_trolls
+		}
+		x = 1
+		y = 1
+		relative_position_id = mdt_schemes_against_the_trolls
+		completion_reward = {
+			add_offsite_building = {
+				type = arms_factory
+				level = 2
+			}
+			if = {
+				limit = { country_exists = RBT }
+				RBT = {
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = 750
+					}
+					add_offsite_building = {
+						type = arms_factory
+						level = 3
+					}
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 750
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = mdt_hatch_the_scheme
+		icon = GFX_goal_mutant_war_focus
+		cost = 30
+		prerequisite = {
+			focus = mdt_gifts_for_our_future_subjects
+		}
+		prerequisite = {
+			focus = mdt_send_heroes_to_the_vulnerable_north
+		}
+		x = 0
+		y = 2
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		relative_position_id = mdt_schemes_against_the_trolls
+		will_lead_to_war_with = TRL
+		bypass = {
+			RBT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			CCW = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			TRL = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					country_exists = RBT
+					RBT = {
+						is_subject = no
+					}
+				}
+				RBT = {
+					custom_effect_tooltip = mdt_envoy_for_war
+					country_event = nf_mdt.4
+				}
+			}
+			else = {
+				RBT = {
+					ROOT = {
+						grant_wargoals_on_core_states_of_prev = yes
+					}
+				}
+			}
+			TRL = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+			CCW = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+			add_timed_idea = {
+				idea = mdt_the_gorgons_scheme
+				days = 365
+			}
+		}
+	}
+
+	focus = {
+		id = mdt_magics_of_the_sorceress
+		icon = GFX_goal_generic_wizard_hat
+		cost = 30
+		prerequisite = {
+			focus = mdt_rise_of_the_gorgons
+		}
+		x = 2
+		y = 1
+		relative_position_id = mdt_rise_of_the_gorgons
+		completion_reward = {
+			add_political_power = 150
+		}
+	}
+
+	focus = {
+		id = mdt_mesmerizing_relics
+		icon = GFX_goal_generic_mesmetron
+		cost = 30
+		prerequisite = {
+			focus = mdt_alchemical_enthrallment
+		}
+		prerequisite = {
+			focus = mdt_enchanted_collars
+		}
+		x = 0
+		y = 2
+		relative_position_id = mdt_magics_of_the_sorceress
+		completion_reward = {
+			set_technology = { oregon_mesmetronfieldequipment = 1 }
+		}
+	}
+
+	focus = {
+		id = mdt_enchanted_collars
+		icon = GFX_goal_generic_slave_collars
+		cost = 30
+		prerequisite = {
+			focus = mdt_magics_of_the_sorceress
+		}
+		x = -1
+		y = 1
+		relative_position_id = mdt_magics_of_the_sorceress
+		completion_reward = {
+			add_stability = 0.15
+		}
+	}
+
+	focus = {
+		id = mdt_alchemical_enthrallment
+		icon = GFX_goal_generic_mentats
+		cost = 30
+		prerequisite = {
+			focus = mdt_magics_of_the_sorceress
+		}
+		x = 1
+		y = 1
+		relative_position_id = mdt_magics_of_the_sorceress
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				ahead_reduction = 2
+				uses = 2
+				category = support_medical_tech_category
+			}
+		}
+	}
+
+	focus = {
+		id = mdt_mesmerize_the_cave_trolls
+		icon = GFX_goal_NEW_enslave_warren
+		cost = 30
+		dynamic = yes #In this circumstance, is to ensure that the seed the focus uses is always random
+		prerequisite = {
+			focus = mdt_hatch_the_scheme
+		}
+		prerequisite = {
+			focus = mdt_mesmerizing_relics
+		}
+		available = {
+			TRL = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		bypass = {
+			is_subject = yes
+		}
+		x = 0
+		y = 4
+		relative_position_id = mdt_rise_of_the_gorgons
+		completion_reward = {
+			hidden_effect = {
+				if = {
+					limit = {
+						country_exists = BDT
+					}
+					BDT = { country_event = nf_bonedancers.4 }
+				}
+			}
+			TRL = {
+				custom_effect_tooltip = mdt_if_they_are_puppeted_annex
+				hidden_effect = {
+					if = {
+						limit = { is_subject_of = MDT }
+						MDT = {
+							annex_country = {
+								target = PREV
+								transfer_troops = yes
+							}
+						}
+					}
+				}
+			}
+			CCW = {
+				custom_effect_tooltip = mdt_if_they_are_puppeted_annex
+				hidden_effect = {
+					if = {
+						limit = { is_subject_of = MDT }
+						MDT = {
+							annex_country = {
+								target = PREV
+								transfer_troops = yes
+							}
+						}
+					}
+				}
+			}
+			CCW = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			TRL = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			TRL = {
+				custom_effect_tooltip = mdt_convert_unit_leaders
+				hidden_effect = {
+					every_unit_leader = {
+						limit = {
+							NOT = { is_character = TRL_the_first }
+						}
+						set_temp_variable = { malfunction_chance = random }
+						if = {
+							limit = {
+								check_variable = {
+									malfunction_chance < 0.1
+								}
+							}
+							retire = yes
+						}
+						else = {
+							if = {
+								limit = {
+									is_character = TRL_beatrice
+								}
+								remove_country_leader_role = {
+									character = TRL_beatrice
+									ideology = technocracy
+								}
+							}
+							if = {
+								limit = {
+									is_character = TRL_pittman
+								}
+								remove_country_leader_role = {
+									character = TRL_pittman
+									ideology = militarist_oligarchy
+								}
+							}
+							else_if = {
+								limit = {
+									is_character = TRL_bonesnarl
+								}
+								remove_country_leader_role = {
+									character = TRL_bonesnarl
+									ideology = peoples_militia
+								}
+							}
+							add_unit_leader_trait = brainwashed_trait
+							if = {
+								limit = {
+									has_trait = exiled_leader
+								}
+								remove_unit_leader_trait = exiled_leader
+							}
+							set_nationality = MDT
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				TRL = {
+					add_country_leader_role = {
+						character = TRL_stomper_the_stupid
+						promote_leader = yes
+						country_leader = {
+							desc = TRL_stomper_the_stupid_desc
+							ideology = technocracy
+							expire = "3000.01.01.01"
+							id = -1
+						}
+					}
+					add_country_leader_role = {
+						character = TRL_foo_pig_the_friendly
+						promote_leader = yes
+						country_leader = {
+							desc = TRL_foo_pig_the_friendly_desc
+							ideology = militarist_oligarchy
+							expire = "3000.01.01.01"
+							id = -1
+						}
+					}
+					add_country_leader_role = {
+						character = TRL_selfish_sally
+						promote_leader = yes
+						country_leader = {
+							desc = TRL_selfish_sally_desc
+							ideology = peoples_militia
+							expire = "3000.01.01.01"
+							id = -1
+						}
+					}
+				}
+			}
+			MDT_rename_states = yes
+		}
+	}
+
+	focus = {
+		id = mdt_the_matter_of_our_new_subject
+		icon = GFX_goal_MDT_attack_rbt
+		cost = 60
+		prerequisite = {
+			focus = mdt_mesmerize_the_cave_trolls
+		}
+		bypass = {
+			OR = {
+				custom_trigger_tooltip  = {
+					tooltip = mdt_has_not_accepted_pact_of_servitude
+					NOT = { RBT = { has_country_flag = MDT_envoy_accepted } }
+				}
+				NOT = { country_exists = RBT }
+			}
+		}
+		x = -2
+		y = 1
+		relative_position_id = mdt_mesmerize_the_cave_trolls
+		completion_reward = {
+			RBT = {
+				custom_effect_tooltip = mdt_pact_perpetual
+				country_event = nf_mdt.7
+			}
+		}
+	}
+
+	focus = {
+		id = mdt_compliance_is_appreciated
+		icon = GFX_goal_BRK_slave_rights
+		cost = 60
+		prerequisite = {
+			focus = mdt_the_matter_of_our_new_subject
+		}
+		mutually_exclusive = {
+			focus = mdt_compliance_by_force
+		}
+		available = {
+			RBT = {
+				is_subject_of = MDT
+			}
+		}
+		x = -1
+		y = 1
+		relative_position_id = mdt_the_matter_of_our_new_subject
+		completion_reward = {
+			449 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = mdt_compliance_by_force
+		icon = GFX_KHA_focus_slave_1
+		cost = 60
+		prerequisite = {
+			focus = mdt_the_matter_of_our_new_subject
+		}
+		mutually_exclusive = {
+			focus = mdt_compliance_is_appreciated
+		}
+		bypass = {
+			RBT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+			NOT = {
+				RBT = {
+					is_subject_of = MDT
+				}
+			}
+		}
+		x = 1
+		y = 1
+		relative_position_id = mdt_the_matter_of_our_new_subject
+
+		will_lead_to_war_with = RBT
+		completion_reward = {
+			RBT = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = mdt_mesmerize_our_new_pets
+		icon = GFX_goal_MDT_enslave_rib_breaker
+		cost = 60
+		dynamic = yes #In this circumstance, is to ensure that the seed the focus uses is always random
+		prerequisite = {
+			focus = mdt_compliance_is_appreciated
+			focus = mdt_compliance_by_force
+		}
+		available = {
+			RBT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		bypass = {
+			is_subject = yes
+		}
+		x = 0
+		y = 2
+		relative_position_id = mdt_the_matter_of_our_new_subject
+		completion_reward = {
+			RBT = {
+				custom_effect_tooltip = mdt_if_they_are_puppeted_annex
+				hidden_effect = {
+					if = {
+						limit = { is_subject_of = MDT }
+						MDT = {
+							annex_country = {
+								target = PREV
+								transfer_troops = yes
+							}
+						}
+					}
+				}
+			}
+			RBT = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			custom_effect_tooltip = oregon_cannibal_new_line
+			RBT = {
+				custom_effect_tooltip = mdt_convert_unit_leaders
+				hidden_effect = {
+					every_unit_leader = {
+						set_temp_variable = { malfunction_chance = random }
+						if = {
+							limit = {
+								check_variable = {
+									malfunction_chance < 0.1
+								}
+							}
+							retire = yes
+						}
+						else = {
+							if = {
+								limit = {
+									is_character = RBT_doras
+								}
+								remove_country_leader_role = {
+									character = RBT_doras
+									ideology = warlordship
+								}
+							}
+							add_unit_leader_trait = brainwashed_trait
+							if = {
+								limit = {
+									has_trait = exiled_leader
+								}
+								remove_unit_leader_trait = exiled_leader
+							}
+							set_nationality = MDT
+						}
+					}
+				}
+			}
+			MDT_rename_states = yes
+		}
+	}
+
+	focus = {
+		id = mdt_mastery_over_mutants
+		icon = GFX_goal_generic_slave_mutant
+		cost = 60
+		prerequisite = {
+			focus = mdt_mesmerize_the_cave_trolls
+		}
+		x = 2
+		y = 1
+		available = {
+			TRL = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = mdt_mesmerize_the_cave_trolls
+		completion_reward = {
+			# if = {
+			# 	limit = { NOT = { has_idea = slavery_outlawed } }
+			# 	add_to_variable= { slave_number_display = 5 }
+			# 	custom_effect_tooltip = add_5k_slaves
+			# }
+			# else = {
+				add_political_power = 300
+			# }
+		}
+	}
+
+	focus = {
+		id = mdt_labouring_giants
+		icon = GFX_goal_behemoth
+		cost = 60
+		prerequisite = {
+			focus = mdt_mastery_over_mutants
+		}
+		x = 1
+		y = 1
+		available = {
+			TRL = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = mdt_mastery_over_mutants
+		completion_reward = {
+			235 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = mdt_blessing_crater_lake
+		icon = GFX_goal_fev_pool
+		cost = 60
+		prerequisite = {
+			focus = mdt_mastery_over_mutants
+		}
+		x = -1
+		y = 1
+		available = {
+			TRL = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = mdt_mastery_over_mutants
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = agriculture_tech
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = scavenging_tech
+			}
+		}
+	}
+
+	focus = {
+		id = mdt_breaking_the_first
+		icon = GFX_goal_MDT_enslave_the_first
+		cost = 60
+		dynamic = yes #In this circumstance, is to ensure that the seed the focus uses is always random
+		prerequisite = {
+			focus = mdt_blessing_crater_lake
+		}
+		prerequisite = {
+			focus = mdt_labouring_giants
+		}
+		x = 0
+		y = 2
+		available = {
+			TRL = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = mdt_mastery_over_mutants
+		completion_reward = {
+			custom_effect_tooltip = mdt_first_commander
+
+			hidden_effect = {
+				TRL = {
+					TRL_the_first = {
+						remove_country_leader_role = {
+							ideology = warlordship
+						}
+						add_corps_commander_role = {
+							character = TRL_the_first
+							traits = { brainwashed_trait }
+							skill = 3
+							attack_skill = 4
+							defense_skill = 1
+							planning_skill = 2
+							logistics_skill = 1
+							legacy_id = -1
+						}
+					}
+
+					add_country_leader_role = {
+						character = TRL_conehead_the_cowardly
+						promote_leader = yes
+						country_leader = {
+							desc = TRL_conehead_the_cowardly_desc
+							ideology = warlordship
+							expire = "3000.01.01.01"
+							id = -1
+						}
+					}
+				}
+			}
+			every_possible_country = {
+				limit = {
+					has_character = TRL_the_first
+				}
+				random_character = {
+					limit = {
+						is_character = TRL_the_first
+					}
+					set_nationality = MDT
+				}
+			}
+			custom_effect_tooltip = oregon_cannibal_new_line
+			custom_effect_tooltip = mdt_super_mutants_loyal
+			set_technology = { super_mutant_aux_infantry_tech = 1 }
+			MDT_rename_states = yes
+		}
+	}
+
+	focus = {
+		id = mdt_cultists_of_the_sea
+		icon = GFX_goal_mlt_ritual_of_black_hollows_night
+		cost = 60
+		prerequisite = {
+			focus = mdt_the_matter_of_our_new_subject
+		}
+		x = -5
+		y = 2
+		relative_position_id = mdt_mesmerize_the_cave_trolls
+		#We need a bit of a power base before we want to expand
+		#Also, AI MDT has issues building battleplans through puppets territory.
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 1
+				has_completed_focus = mdt_mesmerize_our_new_pets
+			}
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		will_lead_to_war_with = MLT
+		bypass = {
+			MLT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			DIS = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			MLT = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+			custom_effect_tooltip = oregon_cannibal_new_line
+			DIS = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = mdt_coral_riches
+		icon = GFX_goal_lurker_coral
+		cost = 60
+		prerequisite = {
+			focus = mdt_cultists_of_the_sea
+		}
+		x = -1
+		y = 1
+		available = {
+			MLT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = mdt_cultists_of_the_sea
+		completion_reward = {
+			set_temp_variable = { caps_to_add = 200 }
+			add_caps = yes
+		}
+	}
+
+	focus = {
+		id = mdt_oracles_of_the_gorgon_queen
+		icon = GFX_goal_HEA_focus_the_prophet_prevails
+		cost = 60
+		prerequisite = {
+			focus = mdt_cultists_of_the_sea
+		}
+		x = 1
+		y = 1
+		available = {
+			MLT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = mdt_cultists_of_the_sea
+		completion_reward = {
+			358 = {
+				if = {
+					limit = {
+						is_valid_state_for_3_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = industrial_complex
+						level = 3
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = mdt_breaking_the_coast
+		icon = GFX_goal_MDT_enslave_mlt
+		cost = 60
+		prerequisite = {
+			focus = mdt_coral_riches
+			focus = mdt_oracles_of_the_gorgon_queen
+		}
+		available = {
+			MLT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			DIS = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		bypass = {
+			is_subject = yes
+		}
+		x = 0
+		y = 2
+		relative_position_id = mdt_cultists_of_the_sea
+		completion_reward = {
+			custom_effect_tooltip = mdt_mlulu_commander
+			hidden_effect = {
+				MLT = {
+					MLT_mlulu = {
+						remove_country_leader_role = {
+							ideology = militarist_oligarchy
+						}
+						add_corps_commander_role = {
+							character = MLT_mlulu
+							traits = { strong_trait enduring_trait swamp_fox }
+							skill = 4
+							attack_skill = 4
+							defense_skill = 4
+							planning_skill = 1
+							logistics_skill = 1
+							legacy_id = -1
+						}
+					}
+
+					add_country_leader_role = {
+						character = MLT_TINYSHELL
+						promote_leader = yes
+						country_leader = {
+							desc = MLT_TINYSHELL_DESC
+							ideology = militarist_oligarchy
+							expire = "3000.01.01.01"
+							id = -1
+						}
+					}
+				}
+				every_possible_country = {
+					limit = {
+						has_character = MLT_mlulu
+					}
+					random_character = {
+						limit = {
+							is_character = MLT_mlulu
+						}
+						set_nationality = MDT
+					}
+				}
+			}
+			MLT = {
+				custom_effect_tooltip = mdt_if_they_are_puppeted_annex
+				hidden_effect = {
+					if = {
+						limit = { is_subject_of = MDT }
+						MDT = {
+							annex_country = {
+								target = PREV
+								transfer_troops = yes
+							}
+						}
+					}
+				}
+			}
+			DIS = {
+				custom_effect_tooltip = mdt_if_they_are_puppeted_annex
+				hidden_effect = {
+					if = {
+						limit = { is_subject_of = MDT }
+						MDT = {
+							annex_country = {
+								target = PREV
+								transfer_troops = yes
+							}
+						}
+					}
+				}
+			}
+			MLT = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			DIS = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			custom_effect_tooltip = oregon_cannibal_new_line
+			MLT = {
+				custom_effect_tooltip = mdt_convert_unit_leaders
+				hidden_effect = {
+					every_unit_leader = {
+						set_temp_variable = { malfunction_chance = random }
+						if = {
+							limit = {
+								check_variable = {
+									malfunction_chance < 0.1
+								}
+							}
+							retire = yes
+						}
+						else = {
+							add_unit_leader_trait = brainwashed_trait
+							if = {
+								limit = {
+									has_trait = exiled_leader
+								}
+								remove_unit_leader_trait = exiled_leader
+							}
+							set_nationality = MDT
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					DIS = {
+						all_core_land_owned_by_prev_sphere = yes
+					}
+				}
+				DIS = {
+					ROOT = {
+						core_owned_states_of_prev = yes
+					}
+				}
+				custom_effect_tooltip = oregon_cannibal_new_line
+				DIS = {
+					custom_effect_tooltip = mdt_convert_unit_leaders
+					hidden_effect = {
+						every_unit_leader = {
+							set_temp_variable = { malfunction_chance = random }
+							if = {
+								limit = {
+									check_variable = {
+										malfunction_chance < 0.1
+									}
+								}
+								retire = yes
+							}
+							else = {
+								if = {
+									limit = {
+										is_character = DIS_prophet_vadim
+									}
+									remove_country_leader_role = {
+										character = DIS_prophet_vadim
+										ideology = tribal_council
+									}
+								}
+								add_unit_leader_trait = brainwashed_trait
+								if = {
+									limit = {
+										has_trait = exiled_leader
+									}
+									remove_unit_leader_trait = exiled_leader
+								}
+								set_nationality = MDT
+							}
+						}
+					}
+				}
+			}
+			MDT_rename_states = yes
+		}
+	}
+
+	focus = {
+		id = mdt_necromancers_of_the_wastes
+		icon = GFX_goal_BRK_night_of_horros
+		cost = 60
+		prerequisite = {
+			focus = mdt_mastery_over_mutants
+		}
+		x = 5
+		y = 2
+		relative_position_id = mdt_mesmerize_the_cave_trolls
+		will_lead_to_war_with = BDT
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 1
+				has_completed_focus = mdt_mesmerize_our_new_pets
+			}
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			OR = {
+				BDT = {
+					custom_trigger_tooltip = {
+						tooltip = bdt_treaty_of_bend_tt
+						has_non_aggression_pact_with = ROOT
+					}
+				}
+				BDT = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+		}
+		completion_reward = {
+			#Next to the Wargoal Chemult Station never mentioned nor renamed as the other, but Klamath due to the mapchanges have some actual mapnames. I'll change the wargoal to them right now,
+			#But we should address the map changes in the focus tree ASAP. @McGebe
+			BDT = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = mdt_hypnotised_gecko_warriors
+		icon = GFX_goal_generic_creature_gecko
+		cost = 60
+		prerequisite = {
+			focus = mdt_necromancers_of_the_wastes
+		}
+		available = {
+			BDT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		bypass = {
+			BDT = {
+				custom_trigger_tooltip = {
+					tooltip = bdt_treaty_of_bend_tt
+					has_non_aggression_pact_with = ROOT
+				}
+			}
+		}
+		x = -1
+		y = 1
+		relative_position_id = mdt_necromancers_of_the_wastes
+		completion_reward = {
+			custom_effect_tooltip = mdt_gecko_warriors
+			set_technology = { oregon_geckosupport = 1 }
+		}
+	}
+
+	focus = {
+		id = mdt_acolytes_of_the_gorgon_queen
+		icon = GFX_goal_generic_dark_cultist
+		cost = 60
+		prerequisite = {
+			focus = mdt_necromancers_of_the_wastes
+		}
+		x = 1
+		y = 1
+		available = {
+			BDT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		bypass = {
+			BDT = {
+				custom_trigger_tooltip = {
+					tooltip = bdt_treaty_of_bend_tt
+					has_non_aggression_pact_with = ROOT
+				}
+			}
+		}
+		relative_position_id = mdt_necromancers_of_the_wastes
+		completion_reward = {
+			71 = {
+				if = {
+					limit = {
+						is_valid_state_for_3_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = arms_factory
+						level = 3
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = mdt_mesmerize_the_bone_dancers
+		icon = GFX_goal_MDT_enslave_bdt
+		cost = 60
+		dynamic = yes #In this circumstance, is to ensure that the seed the focus uses is always random
+		prerequisite = {
+			focus = mdt_hypnotised_gecko_warriors
+		}
+		prerequisite = {
+			focus = mdt_acolytes_of_the_gorgon_queen
+		}
+		available = {
+			BDT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		bypass = {
+			OR = {
+				BDT = {
+					custom_trigger_tooltip = {
+						tooltip = bdt_treaty_of_bend_tt
+						has_non_aggression_pact_with = ROOT
+					}
+				}
+				is_subject = yes
+			}
+		}
+		x = 0
+		y = 2
+		relative_position_id = mdt_necromancers_of_the_wastes
+		completion_reward = {
+			BDT = {
+				custom_effect_tooltip = mdt_if_they_are_puppeted_annex
+				hidden_effect = {
+					if = {
+						limit = { is_subject_of = MDT }
+						MDT = {
+							annex_country = {
+								target = PREV
+								transfer_troops = yes
+							}
+						}
+					}
+				}
+			}
+			BDT = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			custom_effect_tooltip = oregon_cannibal_new_line
+			BDT = {
+				custom_effect_tooltip = mdt_convert_unit_leaders
+				hidden_effect = {
+					every_unit_leader = {
+						set_temp_variable = { malfunction_chance = random }
+						if = {
+							limit = {
+								check_variable = {
+									malfunction_chance < 0.1
+								}
+							}
+							retire = yes
+						}
+						else = {
+							add_unit_leader_trait = brainwashed_trait
+							if = {
+								limit = {
+									has_trait = exiled_leader
+								}
+								remove_unit_leader_trait = exiled_leader
+							}
+							set_nationality = MDT
+						}
+					}
+				}
+			}
+			custom_effect_tooltip = oregon_cannibal_new_line
+			MDT_rename_states = yes
+		}
+	}
+
+	focus = {
+		id = mdt_united_heartlands
+		icon = GFX_goal_generic_grognak
+		cost = 60
+		prerequisite = {
+			focus = mdt_breaking_the_coast
+		}
+		prerequisite = {
+			focus = mdt_mesmerize_our_new_pets
+		}
+		prerequisite = {
+			focus = mdt_breaking_the_first
+		}
+		prerequisite = {
+			focus = mdt_mesmerize_the_bone_dancers
+		}
+		x = 0
+		y = 5
+		relative_position_id = mdt_mesmerize_the_cave_trolls
+		completion_reward = {
+			custom_effect_tooltip = mdt_united_heartlands_tt
+			set_technology = {
+				infantry_tech_level_settler = 1
+				support_tech_level_settler = 1
+				vehicles_tech_level_settler = 1
+				naval_tech_level_settler = 1
+				habitation_tech_level_settler = 1
+				exploitation_tech_level_settler = 1
+				tools_tech_level_settler = 1
+			}
+			custom_effect_tooltip = spacer_tt
+			add_stability = 0.10
+			add_war_support = 0.10
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = mdt_trappers_of_the_lakes
+		icon = GFX_goal_pal_pr_shoshone
+		cost = 60
+		prerequisite = {
+			focus = mdt_united_heartlands
+		}
+		will_lead_to_war_with = KLA
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			KLA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		x = -2
+		y = 1
+		relative_position_id = mdt_united_heartlands
+		completion_reward = {
+			KLA = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = mdt_bless_the_lakelands
+		icon = GFX_goal_TTM_Water
+		cost = 60
+		prerequisite = {
+			focus = mdt_trappers_of_the_lakes
+		}
+		available = {
+			KLA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		x = -1
+		y = 1
+		relative_position_id = mdt_trappers_of_the_lakes
+		completion_reward = {
+			251 = {
+				add_extra_state_shared_building_slots = 2
+				add_resource = {
+					type = water
+					amount = 6
+				}
+			}
+			454 = {
+				add_extra_state_shared_building_slots = 2
+				add_resource = {
+					type = water
+					amount = 6
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = mdt_hunters_of_the_gorgon_queen
+		icon = GFX_goal_tribal_generic
+		cost = 60
+		prerequisite = {
+			focus = mdt_trappers_of_the_lakes
+		}
+		available = {
+			KLA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		x = 1
+		y = 1
+		relative_position_id = mdt_trappers_of_the_lakes
+		completion_reward = {
+			454 = {
+				if = {
+					limit = {
+						is_valid_state_for_3_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = arms_factory
+						level = 3
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = mdt_coerce_klamath
+		icon = GFX_goal_MDT_enslave_kla
+		cost = 60
+		dynamic = yes #In this circumstance, is to ensure that the seed the focus uses is always random
+		prerequisite = { focus = mdt_bless_the_lakelands }
+		prerequisite = { focus = mdt_hunters_of_the_gorgon_queen }
+		available = {
+			KLA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		bypass = {
+			is_subject = yes
+		}
+		x = 0
+		y = 2
+		relative_position_id = mdt_trappers_of_the_lakes
+		completion_reward = {
+			KLA = {
+				custom_effect_tooltip = mdt_if_they_are_puppeted_annex
+				hidden_effect = {
+					if = {
+						limit = { is_subject_of = MDT }
+						MDT = {
+							annex_country = {
+								target = PREV
+								transfer_troops = yes
+							}
+						}
+					}
+				}
+			}
+			KLA = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			custom_effect_tooltip = oregon_cannibal_new_line
+			KLA = {
+				custom_effect_tooltip = mdt_convert_unit_leaders
+				hidden_effect = {
+					every_unit_leader = {
+						set_temp_variable = { malfunction_chance = random }
+						if = {
+							limit = {
+								check_variable = {
+									malfunction_chance < 0.1
+								}
+							}
+							retire = yes
+						}
+						else = {
+							if = {
+								limit = {
+									is_character = KLA_slim_picket
+								}
+								remove_country_leader_role = {
+									character = KLA_slim_picket
+									ideology = survivalism
+								}
+							}
+							add_unit_leader_trait = brainwashed_trait
+							if = {
+								limit = {
+									has_trait = exiled_leader
+								}
+								remove_unit_leader_trait = exiled_leader
+							}
+							set_nationality = MDT
+						}
+					}
+				}
+			}
+			MDT_rename_states = yes
+		}
+	}
+
+	focus = {
+		id = mdt_dwellers_of_the_dunes
+		icon = GFX_goal_generic_train
+		cost = 60
+		prerequisite = {
+			focus = mdt_united_heartlands
+		}
+		will_lead_to_war_with = CHE
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			CHE = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		x = 2
+		y = 1
+		relative_position_id = mdt_united_heartlands
+		completion_reward = {
+			CHE = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = mdt_traders_of_the_gorgon_queen
+		icon = GFX_goal_generic_brahmin_trade
+		cost = 60
+		prerequisite = {
+			focus = mdt_dwellers_of_the_dunes
+		}
+		mutually_exclusive = { focus = mdt_border_guards_of_the_gorgon_queen }
+		x = -1
+		y = 1
+		available = {
+			CHE = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = mdt_dwellers_of_the_dunes
+		completion_reward = {
+			580 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			set_temp_variable = { caps_to_add = 100 }
+			add_caps = yes
+		}
+	}
+
+	focus = {
+		id = mdt_border_guards_of_the_gorgon_queen
+		icon = GFX_goal_BDT_shoeshone_legacy
+		cost = 60
+		prerequisite = {
+			focus = mdt_dwellers_of_the_dunes
+		}
+		mutually_exclusive = { focus = mdt_traders_of_the_gorgon_queen }
+		x = 1
+		y = 1
+		available = {
+			SHO = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = mdt_dwellers_of_the_dunes
+		completion_reward = {
+			add_offsite_building = {
+				type = arms_factory
+				level = 2
+			}
+			release_autonomy = {
+				target = SHO
+				autonomy_state = autonomy_gorgon_county
+				freedom_level = 0.25
+			}
+			SHO = {
+				if = {
+					limit = {
+						is_valid_state_for_3_arms_factories = yes
+					}
+					capital_scope = {
+						add_extra_state_shared_building_slots = 3
+						add_building_construction = {
+							type = arms_factory
+							level = 3
+							instant_build = yes
+						}
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = mdt_compel_chemult
+		icon = GFX_goal_MDT_enslave_che
+		cost = 60
+		dynamic = yes #In this circumstance, is to ensure that the seed the focus uses is always random
+		prerequisite = {
+			focus = mdt_traders_of_the_gorgon_queen
+			focus = mdt_border_guards_of_the_gorgon_queen
+		}
+		x = 0
+		y = 2
+		available = {
+			CHE = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = mdt_dwellers_of_the_dunes
+		completion_reward = {
+			CHE = {
+				custom_effect_tooltip = mdt_if_they_are_puppeted_annex
+				hidden_effect = {
+					if = {
+						limit = { is_subject_of = MDT }
+						MDT = {
+							annex_country = {
+								target = PREV
+								transfer_troops = yes
+							}
+						}
+					}
+				}
+			}
+			CHE = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			custom_effect_tooltip = oregon_cannibal_new_line
+			CHE = {
+				custom_effect_tooltip = mdt_convert_unit_leaders
+				hidden_effect = {
+					every_unit_leader = {
+						set_temp_variable = { malfunction_chance = random }
+						if = {
+							limit = {
+								check_variable = {
+									malfunction_chance < 0.1
+								}
+							}
+							retire = yes
+						}
+						else = {
+							if = {
+								limit = {
+									is_character = CHE_acri
+								}
+								remove_country_leader_role = {
+									character = CHE_acri
+									ideology = gang
+								}
+							}
+							add_unit_leader_trait = brainwashed_trait
+							if = {
+								limit = {
+									has_trait = exiled_leader
+								}
+								remove_unit_leader_trait = exiled_leader
+							}
+							set_nationality = MDT
+						}
+					}
+				}
+			}
+			MDT_rename_states = yes
+		}
+	}
+
+	focus = {
+		id = mdt_settlers_of_the_hills
+		icon = GFX_goal_BOS_seize_arroyo
+		cost = 60
+		prerequisite = {
+			focus = mdt_trappers_of_the_lakes
+		}
+		x = -5
+		y = 2
+		relative_position_id = mdt_united_heartlands
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		will_lead_to_war_with = ARR
+		bypass = {
+			ARR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			ARR = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = mdt_temple_of_amazons
+		icon = GFX_goal_NCN_generic_SLC_Temple
+		cost = 60
+		prerequisite = {
+			focus = mdt_settlers_of_the_hills
+		}
+		x = -1
+		y = 1
+		available = {
+			ARR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = mdt_settlers_of_the_hills
+		completion_reward = {
+			add_manpower = 1500
+		}
+	}
+
+	focus = {
+		id = mdt_legendkeepers_of_the_gorgon_queen
+		icon = GFX_goal_NCN_Northern_Missionaries
+		cost = 60
+		prerequisite = {
+			focus = mdt_settlers_of_the_hills
+		}
+		x = 1
+		y = 1
+		available = {
+			ARR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = mdt_settlers_of_the_hills
+		completion_reward = {
+			337 = {
+				if = {
+					limit = {
+						is_valid_state_for_3_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = industrial_complex
+						level = 3
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = mdt_mesmerize_arroyo
+		icon = GFX_goal_MDT_enslave_arr
+		cost = 60
+		prerequisite = { focus = mdt_temple_of_amazons }
+		prerequisite = { focus = mdt_legendkeepers_of_the_gorgon_queen }
+		available = {
+			ARR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		bypass = {
+			is_subject = yes
+		}
+		x = 0
+		y = 2
+		relative_position_id = mdt_settlers_of_the_hills
+		completion_reward = {
+			hidden_effect = {
+				ARR = {
+					ARR_nagor = {
+						remove_country_leader_role = {
+							ideology = unlimited_democracy
+						}
+					}
+				}
+				every_possible_country = {
+					limit = {
+						has_character = ARR_nagor
+					}
+					random_character = {
+						limit = {
+							is_character = ARR_nagor
+						}
+						set_nationality = MDT
+					}
+				}
+			}
+			ARR = {
+				custom_effect_tooltip = mdt_if_they_are_puppeted_annex
+				hidden_effect = {
+					if = {
+						limit = { is_subject_of = MDT }
+						MDT = {
+							annex_country = {
+								target = PREV
+								transfer_troops = yes
+							}
+						}
+					}
+				}
+			}
+			ARR = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			custom_effect_tooltip = oregon_cannibal_new_line
+			ARR = {
+				custom_effect_tooltip = mdt_convert_unit_leaders
+				hidden_effect = {
+					every_unit_leader = {
+						set_temp_variable = { malfunction_chance = random }
+						if = {
+							limit = {
+								check_variable = {
+									malfunction_chance < 0.1
+								}
+							}
+							retire = yes
+						}
+						else = {
+							add_unit_leader_trait = brainwashed_trait
+							if = {
+								limit = {
+									has_trait = exiled_leader
+								}
+								remove_unit_leader_trait = exiled_leader
+							}
+							set_nationality = MDT
+						}
+					}
+				}
+			}
+			MDT_rename_states = yes
+		}
+	}
+
+	focus = {
+		id = mdt_rangers_of_the_woods
+		icon = GFX_goal_generic_pioneer_scouts
+		cost = 60
+		prerequisite = {
+			focus = mdt_dwellers_of_the_dunes
+		}
+		x = 5
+		y = 2
+		relative_position_id = mdt_united_heartlands
+		will_lead_to_war_with = TIM
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			TIM = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			TIM = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = mdt_druids_of_the_deep_vert
+		icon = GFX_goal_HEA_focus_speaking_with_catholics
+		cost = 60
+		prerequisite = {
+			focus = mdt_rangers_of_the_woods
+		}
+		available = {
+			TIM = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		x = -1
+		y = 1
+		relative_position_id = mdt_rangers_of_the_woods
+		completion_reward = {
+			custom_effect_tooltip = mdt_druids_of_the_deep_vert_tt
+			set_technology = { special_forces_tech_level_settler = 1 }
+		}
+	}
+
+	focus = {
+		id = mdt_foresters_of_the_gorgon_queen
+		icon = GFX_goal_generic_axe_2
+		cost = 60
+		prerequisite = {
+			focus = mdt_rangers_of_the_woods
+		}
+		x = 1
+		y = 1
+		available = {
+			TIM = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = mdt_rangers_of_the_woods
+		completion_reward = {
+			51 = {
+				if = {
+					limit = {
+						is_valid_state_for_3_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = industrial_complex
+						level = 3
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = mdt_mesmerize_the_timberline
+		icon = GFX_goal_MDT_enslave_tim
+		cost = 60
+		dynamic = yes #In this circumstance, is to ensure that the seed the focus uses is always random
+		prerequisite = {
+			focus = mdt_druids_of_the_deep_vert
+		}
+		prerequisite = {
+			focus = mdt_foresters_of_the_gorgon_queen
+		}
+		available = {
+			TIM = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		bypass = {
+			is_subject = yes
+		}
+		x = 0
+		y = 2
+		relative_position_id = mdt_rangers_of_the_woods
+		completion_reward = {
+			TIM = {
+				custom_effect_tooltip = mdt_if_they_are_puppeted_annex
+				hidden_effect = {
+					if = {
+						limit = { is_subject_of = MDT }
+						MDT = {
+							annex_country = {
+								target = PREV
+								transfer_troops = yes
+							}
+						}
+					}
+				}
+			}
+			TIM = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			custom_effect_tooltip = oregon_cannibal_new_line
+			TIM = {
+				custom_effect_tooltip = mdt_convert_unit_leaders
+				hidden_effect = {
+					every_unit_leader = {
+						set_temp_variable = { malfunction_chance = random }
+						if = {
+							limit = {
+								check_variable = {
+									malfunction_chance < 0.1
+								}
+							}
+							retire = yes
+						}
+						else = {
+							add_unit_leader_trait = brainwashed_trait
+							if = {
+								limit = {
+									has_trait = exiled_leader
+								}
+								remove_unit_leader_trait = exiled_leader
+							}
+							set_nationality = MDT
+						}
+					}
+				}
+			}
+			MDT_rename_states = yes
+		}
+	}
+
+	focus = {
+		id = mdt_crowning_of_the_gorgon_queen
+		icon = GFX_goal_generic_grognak
+		cost = 60
+		prerequisite = {
+			focus = mdt_mesmerize_arroyo
+		}
+		prerequisite = {
+			focus = mdt_coerce_klamath
+		}
+		prerequisite = {
+			focus = mdt_compel_chemult
+		}
+		prerequisite = {
+			focus = mdt_mesmerize_the_timberline
+		}
+		x = 0
+		y = 5
+		relative_position_id = mdt_united_heartlands
+		completion_reward = {
+			country_event = nf_mdt.10
+		}
+	}
+}

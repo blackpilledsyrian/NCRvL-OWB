@@ -1,0 +1,3084 @@
+####################################################
+#         Troll Warren Focus Tree                  #
+#      Original lore by Loony & Zapdude            #
+# 1.0                                              #
+# Coded by Justin Gourlay                          #
+# 2.1                                              #
+# Coded by Zusk                                    #
+####################################################
+
+focus_tree = {
+	id = warren_nf
+	country = {
+		factor = 0
+		modifier = {
+			add = 0
+			tag = TRL
+		}
+	}
+	default = no
+
+	focus = {
+		id = trl_firstholotape
+		icon = GFX_goal_generic_data_focus
+		cost = 7
+		x = 19
+		y = 0
+		completion_reward = {
+			custom_effect_tooltip = trl_fake_event
+			hidden_effect = {
+				if = {
+					limit = {
+						NOT = {
+							has_global_flag = anbennar_halloween_enabled_global_flag
+						}
+					}
+					country_event =  nf_warren.1
+				}
+				if = {
+					limit = {
+						has_global_flag = anbennar_halloween_enabled_global_flag
+					}
+					country_event = nf_var.1
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = trl_secholotape
+		icon = GFX_goal_generic_data_focus
+		cost = 7
+		prerequisite = {
+			focus = trl_firstholotape
+		}
+		x = 19
+		y = 1
+		completion_reward = {
+			country_event = nf_warren.2
+		}
+	}
+
+	focus = {
+		id = trl_thirdholotape
+		icon = GFX_goal_generic_data_focus
+		cost = 7
+		prerequisite = {
+			focus = trl_secholotape
+		}
+		x = 19
+		y = 2
+		completion_reward = {
+			country_event = nf_warren.3
+		}
+	}
+
+	focus = {
+		id = trl_fourthholotape
+		icon = GFX_goal_generic_data_focus
+		cost = 7
+		prerequisite = {
+			focus = trl_thirdholotape
+		}
+		x = 19
+		y = 3
+		completion_reward = {
+			country_event = nf_warren.4
+		}
+	}
+
+	focus = {
+		id = trl_slavesunworthy
+		icon = GFX_KHA_focus_slave_1
+		cost = 30
+		prerequisite = {
+			focus = trl_fourthholotape
+		}
+		mutually_exclusive = {
+			focus = trl_mutantlabor
+		}
+		x = 5
+		y = 4
+		available = {
+			#NOT = { has_idea = slavery_outlawed }
+			235 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = unworthyslaves
+				bonus = 0.3
+				uses = 2
+				category = industry
+			}
+			235 = {
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = trl_forceddigging
+		icon = GFX_goal_generic_construction2
+		cost = 30
+		prerequisite = {
+			focus = trl_slavesunworthy
+		}
+		x = 2
+		y = 5
+		available = {
+			#NOT = { has_idea = slavery_outlawed }
+			506 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			add_stability = 0.05
+			add_tech_bonus = {
+				name = trl_forceddigging
+				bonus = 0.25
+				uses = 1
+				category = extraction_category
+			}
+			506 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = trl_slaveworkshop
+		icon = GFX_goal_CES_workshop
+		cost = 45
+		prerequisite = {
+			focus = trl_forceddigging
+		}
+		x = 0
+		y = 6
+		available = {
+			113 = {
+				is_owned_and_controlled_by = ROOT
+			}
+			268 = {
+				is_owned_and_controlled_by = ROOT
+			}
+			#NOT = { has_idea = slavery_outlawed }
+		}
+		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 2 }
+			268 = {
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			113 = {
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = trl_developingslavesmines
+		icon = GFX_goal_generic_metal_focus
+		cost = 30
+		prerequisite = {
+			focus = trl_slavesunworthy
+		}
+		x = 4
+		y = 5
+		available = {
+			235 = {
+				is_owned_and_controlled_by = ROOT
+			}
+			#NOT = { has_idea = slavery_outlawed }
+		}
+		completion_reward = {
+			event_target:commander_beatrice = {
+				add_logistics = 1
+			}
+			event_target:commander_bonesnarl = {
+				add_logistics = 1
+			}
+			event_target:commander_pittman = {
+				add_logistics = 1
+			}
+			add_resource = {
+				type = metal
+				amount = 5
+				state = 235
+			}
+		}
+	}
+
+	focus = {
+		id = trl_mutantlabor
+		icon = GFX_goal_NEW_Super_Mutant_Technician
+		cost = 30
+		prerequisite = {
+			focus = trl_fourthholotape
+		}
+		mutually_exclusive = {
+			focus = trl_slavesunworthy
+		}
+		x = 9
+		y = 4
+		available = {
+			235 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = trl_mutantlabor
+				bonus = 0.5
+				uses = 1
+				category = cat_land_doctrine
+			}
+			235 = {
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = trl_preparingthewarren
+		icon = GFX_goal_generic_cities_focus
+		cost = 30
+		prerequisite = {
+			focus = trl_slavesunworthy
+			focus = trl_mutantlabor
+		}
+		x = 7
+		y = 6
+		available = {
+			235 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			235 = {
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = trl_defendingthewarren
+		icon = GFX_goal_generic_military_sphere
+		cost = 30
+		prerequisite = {
+			focus = trl_mutantlabor
+		}
+		x = 10
+		y = 5
+		available = {
+			235 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			event_target:commander_beatrice = {
+				add_defense = 1
+			}
+			event_target:commander_bonesnarl = {
+				add_defense = 1
+			}
+			event_target:commander_pittman = {
+				add_defense = 1
+			}
+			235 = {
+				add_building_construction = {
+					type = bunker2
+					level = 1
+					instant_build = yes
+					province = 2158
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 2158
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = trl_readyforwar
+		icon = GFX_goal_tribal_generic
+		cost = 30
+		prerequisite = {
+			focus = trl_mutantlabor
+		}
+		x = 12
+		y = 5
+		available = {
+			506 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			add_war_support = 0.05
+			army_experience = 5
+			506 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = trl_rewardsofvictory
+		icon = GFX_focus_mex_privatisation
+		cost = 45
+		prerequisite = {
+			focus = trl_readyforwar
+		}
+		x = 14
+		y = 6
+		available = {
+			113 = {
+				is_owned_and_controlled_by = ROOT
+			}
+			268 = {
+				is_owned_and_controlled_by = ROOT
+			}
+			235 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			set_temp_variable = { caps_to_add = 200 }
+			add_caps = yes
+			268 = {
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			113 = {
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = trl_seek_out_the_wizard
+		icon = GFX_goal_generic_wizard_hat
+		cost = 30
+		prerequisite = {
+			focus = trl_fourthholotape
+		}
+		x = 19
+		y = 4
+		ai_will_do = {
+			factor = 30
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		completion_reward = {
+			add_political_power = 150
+			custom_effect_tooltip = search_wizard_tt
+		}
+	}
+
+	focus = {
+		id = trl_the_first_above_all
+		icon = GFX_goal_the_first
+		cost = 30
+		prerequisite = {
+			focus = trl_seek_out_the_wizard
+		}
+		mutually_exclusive = {
+			focus = trl_pittmancunning
+			focus = trl_bonesnarlloyalty
+			focus = trl_beatricesmight
+		}
+		available = {
+			OR = {
+				fulfilled_the_wizards_task = yes
+				has_idea = gamerule_unifier_idea
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_country_leader_trait = cult_of_personality
+			event_target:commander_pittman = { add_logistics = 1 }
+			event_target:commander_bonesnarl = { add_attack = 1 }
+			event_target:commander_beatrice = { add_planning = 1 }
+		}
+		x = 16
+		y = 5
+
+	}
+	focus = {
+		id = trl_pittmancunning
+		icon = GFX_goal_pittman
+		cost = 30
+		prerequisite = {
+			focus = trl_seek_out_the_wizard
+		}
+		mutually_exclusive = {
+			focus = trl_beatricesmight
+			focus = trl_bonesnarlloyalty
+			focus = trl_the_first_above_all
+		}
+		available = {
+			fulfilled_the_wizards_task = yes
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		x = 18
+		y = 5
+		completion_reward = {
+			event_target:commander_pittman = { add_unit_leader_trait = warchief_trait promote_leader = yes add_logistics = 3 }
+		}
+	}
+
+	focus = {
+		id = trl_bonesnarlloyalty
+		icon = GFX_goal_bonesnarl
+		cost = 30
+		prerequisite = {
+			focus = trl_seek_out_the_wizard
+		}
+		mutually_exclusive = {
+			focus = trl_pittmancunning
+			focus = trl_beatricesmight
+			focus = trl_the_first_above_all
+		}
+		available = {
+			fulfilled_the_wizards_task = yes
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		x = 20
+		y = 5
+		completion_reward = {
+			event_target:commander_bonesnarl = { add_unit_leader_trait = warchief_trait promote_leader = yes add_attack = 3 }
+		}
+	}
+
+	focus = {
+		id = trl_beatricesmight
+		icon = GFX_goal_beatrice
+		cost = 30
+		prerequisite = {
+			focus = trl_seek_out_the_wizard
+		}
+		mutually_exclusive = {
+			focus = trl_pittmancunning
+			focus = trl_bonesnarlloyalty
+			focus = trl_the_first_above_all
+		}
+		available = {
+			fulfilled_the_wizards_task = yes
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		x = 22
+		y = 5
+		completion_reward = {
+			event_target:commander_beatrice = { add_unit_leader_trait = warchief_trait promote_leader = yes add_planning = 3 }
+		}
+	}
+
+	focus = {
+		id = trl_warrenstirs
+		icon = GFX_goal_mutant_supremacy
+		cost = 30
+		prerequisite = {
+			focus = trl_the_first_above_all
+			focus = trl_pittmancunning
+			focus = trl_bonesnarlloyalty
+			focus = trl_beatricesmight
+		}
+		x = 19
+		y = 6
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_political_power = 150
+			add_timed_idea = {
+				idea = trl_unifying_the_warbands
+				days = 365
+			}
+		}
+	}
+
+	focus = {
+		id = trl_attackmarrow
+		icon = GFX_goal_mutant_war_focus
+		cost = 30
+		prerequisite = {
+			focus = trl_warrenstirs
+		}
+		x = 20
+		y = 7
+		ai_will_do = {
+			factor = 0.5
+			modifier = {
+				factor = 15
+				date > 2276.6.1
+			}
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			MDT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+
+		will_lead_to_war_with = MDT
+		completion_reward = {
+			MDT = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+
+	}
+
+	focus = {
+		id = trl_drinking_marrow
+		icon = GFX_goal_mutant_self_management
+		cost = 30
+		prerequisite = {
+			focus = trl_attackmarrow
+		}
+		x = 20
+		y = 8
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			MDT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			add_manpower = 500
+		}
+	}
+
+	focus = {
+		id = trl_broken_tribes
+		icon = GFX_goal_generic_mesmetron
+		cost = 30
+		prerequisite = {
+			focus = trl_drinking_marrow
+		}
+		x = 23
+		y = 9
+		available = {
+			MDT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			231 = {
+				if = {
+					limit = {
+						is_valid_state_for_3_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = industrial_complex
+						level = 3
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = trl_memories_of_ages
+		icon = GFX_goal_generic_data_focus
+		cost = 30
+		prerequisite = {
+			focus = trl_fourthholotape
+		}
+		x = 28
+		y = 4
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = trl_weaponspast
+		icon = GFX_goal_the_last_argument_of_presidents
+		cost = 30
+		prerequisite = {
+			focus = trl_memories_of_ages
+		}
+		x = 27
+		y = 5
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = cat_land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = trl_mutantcanoe
+		icon = GFX_goal_generic_navy_anti_submarine
+		cost = 30
+		prerequisite = {
+			focus = trl_weaponspast
+		}
+		x = 27
+		y = 6
+		available = {
+			235 = { is_owned_and_controlled_by = ROOT }
+		}
+		completion_reward = {
+			235 = {
+				add_resource = {
+					type = water
+					amount = 12
+				}
+			}
+			navy_experience = 10
+		}
+	}
+
+	focus = {
+		id = trl_tribaldakka
+		icon = GFX_goal_generic_common_firearms_focus
+		cost = 30
+		prerequisite = {
+			focus = trl_weaponspast
+		}
+		x = 25
+		y = 6
+		completion_reward = {
+			add_war_support = 0.05
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 750
+				producer = TRL
+			}
+		}
+	}
+
+	focus = {
+		id = trl_moredakka
+		icon = GFX_goal_NCR_Weapon_Standardization
+		cost = 30
+		prerequisite = {
+			focus = trl_tribaldakka
+		}
+		mutually_exclusive = {
+			focus = trl_armorrepurposing
+		}
+		x = 25
+		y = 7
+		completion_reward = {
+			add_tech_bonus = {
+				name = weapons_past
+				bonus = 0.75
+				uses = 1
+				category = ballistic_weaponry_tech_category
+			}
+			add_resource = {
+				type = metal
+				amount = 6
+				state = 235
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 250
+				producer = TRL
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 250
+				producer = TRL
+			}
+			army_experience = 10
+			set_country_flag = infantry_ballistic_ai
+		}
+	}
+
+	focus = {
+		id = trl_betterdakka
+		icon = GFX_goal_generic_advanced_firearms_focus
+		cost = 45
+		prerequisite = {
+			focus = trl_moredakka
+		}
+		x = 25
+		y = 8
+		available = {
+			has_tech = warrior_equipment
+			NOT = {
+				OR = {
+					has_tech = melee_weaponry_tech_3
+					has_tech = energy_weaponry_tech_1
+				}
+			}
+		}
+		bypass = {
+			has_tech = ballistic_weaponry_tech_2
+		}
+		completion_reward = {
+			set_technology = {
+				ballistic_weaponry_tech_2 = 1
+			}
+			army_experience = 20
+		}
+	}
+
+	focus = {
+		id = trl_guardianwild
+		icon = GFX_goal_generic_defence
+		cost = 30
+		prerequisite = {
+			focus = trl_memories_of_ages
+		}
+		mutually_exclusive = {
+			focus = trl_warriorswild
+		}
+		x = 29
+		y = 5
+		completion_reward = {
+			event_target:commander_beatrice = {
+				add_defense = 1
+				add_planning = 1
+			}
+			event_target:commander_bonesnarl = {
+				add_defense = 1
+				add_planning = 1
+			}
+			event_target:commander_pittman = {
+				add_defense = 1
+				add_planning = 1
+			}
+			army_experience = 10
+		}
+	}
+
+	focus = {
+		id = trl_warriorswild
+		icon = GFX_goal_generic_major_war
+		cost = 30
+		prerequisite = {
+			focus = trl_memories_of_ages
+		}
+		mutually_exclusive = {
+			focus = trl_guardianwild
+		}
+		x = 31
+		y = 5
+		completion_reward = {
+			event_target:commander_beatrice = {
+				add_attack = 1
+				add_logistics = 1
+			}
+			event_target:commander_bonesnarl = {
+				add_attack = 1
+				add_logistics = 1
+			}
+			event_target:commander_pittman = {
+				add_attack = 1
+				add_logistics = 1
+			}
+			army_experience = 10
+		}
+
+	}
+
+	focus = {
+		id = trl_baneofman
+		icon = GFX_goal_mutant_rebellion
+		cost = 30
+		prerequisite = {
+			focus = trl_guardianwild
+			focus = trl_warriorswild
+		}
+		x = 30
+		y = 6
+		completion_reward = {
+			add_ideas = baneofman_1
+		}
+	}
+
+	focus = {
+		id = trl_realmsofgoliath
+		icon = GFX_goal_sling_shot
+		cost = 45
+		prerequisite = {
+			focus = trl_baneofman
+		}
+		x = 30
+		y = 7
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = baneofman_1
+				add_idea = baneofman_2
+			}
+			army_experience = 15
+		}
+	}
+
+	focus = {
+		id = trl_callofgiants
+		icon = GFX_goal_mutant_supremacy
+		cost = 45
+		prerequisite = {
+			focus = trl_realmsofgoliath
+		}
+		mutually_exclusive = {
+			focus = trl_callofhorde
+		}
+		x = 29
+		y = 8
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = behemoth_equipment
+				amount = 250
+				producer = TRL
+			}
+			army_experience = 20
+		}
+	}
+
+	focus = {
+		id = trl_trollsofthewarren
+		icon = GFX_goal_behemoth
+		cost = 45
+		prerequisite = {
+			focus = trl_callofgiants
+		}
+		x = 28
+		y = 9
+		completion_reward = {
+			custom_effect_tooltip = new_advisor_tt
+			show_ideas_tooltip = TRL_monster_in_the_woods_minister
+			add_command_power = 50
+		}
+	}
+
+	focus = {
+		id = trl_callofhorde
+		icon = GFX_goal_fev_pool
+		cost = 45
+		prerequisite = {
+			focus = trl_realmsofgoliath
+		}
+		mutually_exclusive = {
+			focus = trl_callofgiants
+		}
+		x = 31
+		y = 8
+		completion_reward = {
+			add_manpower = 1000
+			army_experience = 20
+		}
+	}
+
+	focus = {
+		id = trl_callofthefirst
+		icon = GFX_goal_the_first_headshot
+		cost = 60
+		prerequisite = {
+			focus = trl_callofgiants
+			focus = trl_callofhorde
+		}
+		x = 30
+		y = 9
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = baneofman_2
+				add_idea = baneofman_3
+			}
+			army_experience = 25
+		}
+	}
+
+	focus = {
+		id = trl_armorrepurposing
+		icon = GFX_goal_generic_military_sphere
+		cost = 30
+		prerequisite = {
+			focus = trl_tribaldakka
+		}
+		mutually_exclusive = {
+			focus = trl_moredakka
+		}
+		x = 23
+		y = 7
+		available = {
+
+		}
+		completion_reward = {
+			set_country_flag = infantry_melee_ai
+			add_tech_bonus = {
+				name = weapons_past
+				bonus = 0.75
+				uses = 1
+				category = melee_weaponry_tech_category
+			}
+			add_resource = {
+				type = metal
+				amount = 3
+				state = 235
+			}
+			add_resource = {
+				type = water
+				amount = 3
+				state = 235
+			}
+			add_equipment_to_stockpile = {
+				type = melee_equipment_1
+				amount = 250
+				producer = TRL
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 250
+				producer = TRL
+			}
+			army_experience = 10
+		}
+	}
+
+	focus = {
+		id = trl_sonsofman
+		icon = GFX_goal_fev_cannister
+		cost = 45
+		prerequisite = {
+			focus = trl_callofhorde
+		}
+		x = 32
+		y = 9
+		completion_reward = {
+			custom_effect_tooltip = new_advisor_tt
+			show_ideas_tooltip = TRL_peon_tusk_hell_minister
+			add_command_power = 50
+		}
+	}
+
+	focus = {
+		id = trl_cannibalmutants
+		icon = GFX_goal_VEG_The_Human_Banquet
+		cost = 45
+		prerequisite = {
+			focus = trl_rewardsofvictory
+		}
+		x = 12
+		y = 7
+		available = {
+			MDT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			RBT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			set_temp_variable = { caps_to_add = 200 }
+			add_caps = yes
+			if = {
+				limit = {
+					NOT = {
+						MDT = {
+							all_core_land_owned_by_prev_sphere = yes
+						}
+						RBT = {
+							all_core_land_owned_by_prev_sphere = yes
+						}
+					}
+				}
+				custom_effect_tooltip = more_states_tt
+			}
+			every_owned_state = {
+				limit = {
+					is_core_of = RBT
+					OWNER = {
+						tag = TRL
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			every_owned_state = {
+				limit = {
+					is_core_of = MDT
+					OWNER = {
+						tag = TRL
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+
+	focus = {
+		id = trl_ritualscarring
+		icon = GFX_goal_power_fist
+		cost = 45
+		prerequisite = {
+			focus = trl_armorrepurposing
+		}
+		x = 23
+		y = 8
+		available = {
+			has_tech = melee_weaponry_tech_3
+			NOT = {
+				OR = {
+					has_tech = ballistic_weaponry_tech_2
+					has_tech = energy_weaponry_tech_1
+				}
+			}
+		}
+		bypass = {
+			has_tech = ballistic_weaponry_tech_2
+		}
+		completion_reward = {
+			set_technology = { melee_weaponry_tech_4 = 1 }
+			army_experience = 20
+		}
+	}
+
+	focus = {
+		id = trl_eatersman
+		icon = GFX_goal_BRK_night_of_horros
+		cost = 60
+		prerequisite = {
+			focus = trl_cannibalmutants
+		}
+		x = 11
+		y = 8
+		available = {
+			BDT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			DIS = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			CHE = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			MLT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				OR = { NOT = { has_completed_focus = trl_bone_picks } NOT = { has_completed_focus = trl_oldguns } }
+			}
+		}
+		completion_reward = {
+			set_temp_variable = { caps_to_add = 200 }
+			add_caps = yes
+			if = {
+				limit = {
+					NOT = {
+						BDT = {
+							all_core_land_owned_by_prev_sphere = yes
+						}
+						DIS = {
+							all_core_land_owned_by_prev_sphere = yes
+						}
+						CHE = {
+							all_core_land_owned_by_prev_sphere = yes
+						}
+						MLT = {
+							all_core_land_owned_by_prev_sphere = yes
+						}
+					}
+				}
+				custom_effect_tooltip = more_states_tt
+			}
+			every_owned_state = {
+				limit = {
+					is_core_of = BDT
+					OWNER = {
+						tag = TRL
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			every_owned_state = {
+				limit = {
+					is_core_of = CHE
+					OWNER = {
+						tag = TRL
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			every_owned_state = {
+				limit = {
+					is_core_of = MLT
+					OWNER = {
+						tag = TRL
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			every_owned_state = {
+				limit = {
+					is_core_of = DIS
+					OWNER = {
+						tag = TRL
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+
+	focus = {
+		id = trl_causeoftrouble
+		icon = GFX_goal_WBH_within_the_blizzard
+		cost = 30
+		prerequisite = {
+			focus = trl_firsts_ambition
+		}
+		mutually_exclusive = {
+			focus = trl_southernpush
+		}
+		available = {
+			country_exists = WBH
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.1
+				NOT = { country_exists = WBH }
+			}
+		}
+		x = 21
+		y = 16
+		completion_reward = {
+			add_political_power = 150
+		}
+	}
+
+	focus = {
+		id = trl_mutantshocktactics
+		icon = GFX_KHA_focus_stockpile
+		cost = 30
+		prerequisite = {
+			focus = trl_causeoftrouble
+		}
+		x = 20
+		y = 17
+		completion_reward = {
+			custom_effect_tooltip = new_advisor_tt
+			show_ideas_tooltip = TRL_icejaw_command
+		}
+	}
+
+	focus = {
+		id = trl_mounthawk
+		icon = GFX_KHA_focus_border_clashes
+		cost = 30
+		prerequisite = {
+			focus = trl_causeoftrouble
+		}
+		x = 22
+		y = 17
+		completion_reward = {
+			set_temp_variable = { caps_to_add = 200 }
+			add_caps = yes
+			WBH = {
+				add_stability = -0.1
+				every_owned_state = {
+					limit = {
+						is_core_of = TCA
+					}
+					damage_building = {
+						type = infrastructure
+						damage = 3
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = trl_expandingslavelabour
+		icon = GFX_goal_BRK_trophy_wife
+		cost = 45
+		prerequisite = {
+			focus = trl_slaveworkshop
+		}
+		x = 2
+		y = 7
+		available = {
+			#NOT = { has_idea = slavery_outlawed }
+			MDT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			RBT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			set_temp_variable = { caps_to_add = 200 }
+			add_caps = yes
+			if = {
+				limit = {
+					NOT = {
+						MDT = {
+							all_core_land_owned_by_prev_sphere = yes
+						}
+						RBT = {
+							all_core_land_owned_by_prev_sphere = yes
+						}
+					}
+				}
+				custom_effect_tooltip = more_states_tt
+			}
+			every_owned_state = {
+				limit = {
+					is_core_of = RBT
+					OWNER = {
+						tag = TRL
+					}
+					infrastructure < 10
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			every_owned_state = {
+				limit = {
+					is_core_of = MDT
+					OWNER = {
+						tag = TRL
+					}
+					infrastructure < 10
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = trl_slavemutanthouse
+		icon = GFX_goal_generic_slums_focus
+		cost = 30
+		prerequisite = {
+			focus = trl_developingslavesmines
+		}
+		x = 4
+		y = 6
+		available = {
+			437 = {
+				is_owned_and_controlled_by = ROOT
+			}
+			#NOT = { has_idea = slavery_outlawed }
+		}
+		completion_reward = {
+			add_manpower = 250
+			437 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = trl_unwillinggatherers
+		icon = GFX_KHA_focus_natural_opioids
+		cost = 45
+		prerequisite = {
+			focus = trl_preparingthewarren
+		}
+		x = 5
+		y = 7
+		available = {
+			capital_scope = {
+				is_owned_and_controlled_by = ROOT
+			}
+			capital_scope = {
+				infrastructure > 0
+			}
+		}
+		ai_will_do = {
+			factor = 0.15 #Do these focuses later
+			modifier = {
+				factor = 1.3
+				has_completed_focus = trl_masters_of_men
+			}
+			modifier = {
+				factor = 5
+				capital_scope = {
+					infrastructure > 6
+				}
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = unwilling_gatherers_tt
+			hidden_effect = {
+				capital_scope = {
+					set_temp_variable = { local_inf_level_temp = THIS.infrastructure_level }
+					for_loop_effect = {
+						start = 0
+						end = local_inf_level_temp
+						add_resource = {
+							type = water
+							amount = 1
+						}
+						add_resource = {
+							type = metal
+							amount = 2
+						}
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = trl_militarizedlabour
+		icon = GFX_goal_ATE_omen_of_destruction
+		cost = 30
+		prerequisite = {
+			focus = trl_readyforwar
+		}
+		x = 12
+		y = 6
+		available = {
+			587 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			army_experience = 10
+			587 = {
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = trl_stockpiledweapons
+		icon = GFX_goal_generic_regular_firearms_focus
+		cost = 30
+		prerequisite = {
+			focus = trl_defendingthewarren
+		}
+		x = 10
+		y = 6
+		available = {
+			437 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 500
+				producer = TRL
+			}
+			437 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = trl_gloriouscity
+		icon = GFX_goal_NEW_rebuild_cult
+		cost = 60
+		prerequisite = {
+			focus = trl_oregonline
+		}
+		prerequisite = {
+			focus = trl_nightkinmigration
+		}
+		prerequisite = {
+			focus = trl_unwillinggatherers
+		}
+		x = 7
+		y = 8
+		available = {
+			235 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			235 = {
+				add_extra_state_shared_building_slots = 10
+			}
+		}
+	}
+
+	focus = {
+		id = trl_oregonline
+		icon = GFX_goal_generic_infrastructure2
+		cost = 45
+		prerequisite = {
+			focus = trl_preparingthewarren
+		}
+		x = 7
+		y = 7
+		available = {
+			#NOT = { has_idea = slavery_outlawed }
+		}
+		ai_will_do = {
+			factor = 0.2 #Do these focuses later
+			modifier = {
+				factor = 1.2
+				has_completed_focus = trl_masters_of_men
+			}
+			modifier = {
+				factor = 3
+				date > 2282.01.01
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = oregon_line_tt
+			hidden_effect = {
+				every_owned_state = {
+					limit = {
+						OR = {
+							region = 11
+							region = 59
+							region = 58
+						}
+					}
+					set_temp_variable = { caps_to_add = THIS.infrastructure_level }
+					#3 slaves per infrastructure
+					multiply_temp_variable  = { caps_to_add = 0.75 }
+					TRL = {
+						#set_temp_variable = { caps_to_add = 75 }
+						add_caps = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = trl_riverexpedition
+		icon = GFX_goal_generic_occupy_states_coastal
+		cost = 30
+		prerequisite = {
+			focus = trl_mutantcanoe
+		}
+		x = 27
+		y = 7
+		completion_reward = {
+			add_naval_commander_role = {
+				character = TRL_wave_breaker
+				skill = 3
+				attack_skill = 2
+				defense_skill = 2
+				maneuvering_skill = 1
+				coordination_skill = 3
+				legacy_id = -1
+			}
+			navy_experience = 15
+		}
+	}
+
+	focus = {
+		id = trl_raidingculture
+		icon = GFX_goal_BOS_steel_cage
+		cost = 45
+		prerequisite = {
+			focus = trl_riverexpedition
+		}
+		x = 27
+		y = 8
+		completion_reward = {
+			custom_effect_tooltip = new_advisor_tt
+			show_ideas_tooltip = TRL_captain_crabeater_navy_chief
+			navy_experience = 20
+		}
+	}
+
+	focus = {
+		id = trl_nightkinmigration
+		icon = GFX_goal_mutant_nightkin
+		cost = 45
+		prerequisite = {
+			focus = trl_preparingthewarren
+		}
+		x = 9
+		y = 7
+		ai_will_do = {
+			factor = 0.3 #Do these focuses later
+			modifier = {
+				factor = 3
+				date > 2282.01.01
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = nightkin_migration_tt
+			hidden_effect = {
+				set_temp_variable = { nightkin_migration_manpower = 0 }
+				every_owned_state = {
+					limit = {
+						OR = {
+							region = 11
+							region = 59
+							region = 58
+						}
+						is_core_of = TRL
+					}
+					add_to_temp_variable = { nightkin_migration_manpower = 30 }
+				}
+				TRL = { add_manpower = nightkin_migration_manpower }
+			}
+		}
+	}
+
+	focus = {
+		id = trl_southernpush
+		icon = GFX_goal_BOS_seize_arroyo
+		cost = 30
+		prerequisite = {
+			focus = trl_firsts_ambition
+		}
+		mutually_exclusive = {
+			focus = trl_causeoftrouble
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 1.2
+				NEW = {
+					is_thradd_leader = yes
+					is_in_faction_with = TRL
+				}
+			}
+			modifier = {
+				factor = 10
+				NOT = { country_exists = WBH }
+			}
+		}
+		x = 17
+		y = 16
+		completion_reward = {
+			add_political_power = 150
+		}
+	}
+
+	focus = {
+		id = trl_vengeancemaster
+		icon = GFX_goal_mutant_war_focus
+		cost = 30
+		prerequisite = {
+			focus = trl_southernpush
+		}
+		x = 16
+		y = 17
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			ARR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = ARR
+		completion_reward = {
+			ARR = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = trl_redriver
+		icon = GFX_goal_mutant_war_focus
+		cost = 30
+		prerequisite = {
+			focus = trl_southernpush
+		}
+		bypass = {
+			OR = {
+				NEW = {
+					is_thradd_leader = yes
+					is_in_faction_with = TRL
+				}
+				KLA = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+		}
+		x = 18
+		y = 17
+		will_lead_to_war_with = KLA
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		completion_reward = {
+			KLA = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = trl_mariposareborn
+		icon = GFX_goal_NEW_for_the_master
+		cost = 30
+		prerequisite = {
+			focus = trl_war_for_supremacy
+			focus = trl_the_final_threat
+		}
+		x = 19
+		y = 20
+		available = {
+			custom_trigger_tooltip  = {
+				tooltip = new_mariposa_reformed
+				has_cosmetic_tag = NEW_mariposa
+			}
+		}
+		completion_reward = {
+			country_event = nf_warren.6
+		}
+	}
+
+	focus = {
+		id = trl_attackbreakers
+		icon = GFX_goal_mutant_war_focus
+		cost = 30
+		prerequisite = {
+			focus = trl_warrenstirs
+		}
+		x = 18
+		y = 7
+		ai_will_do = {
+			factor = 0.5
+			modifier = {
+				factor = 15
+				date > 2275.7.1
+			}
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			RBT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+
+		will_lead_to_war_with = RBT
+
+		completion_reward = {
+			RBT = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = trl_breakingribs
+		icon = GFX_goal_mutant_self_management
+		cost = 30
+		prerequisite = {
+			focus = trl_attackbreakers
+		}
+		x = 18
+		y = 8
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			RBT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			RBT = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			add_manpower = 500
+		}
+	}
+
+	focus = {
+		id = trl_williamette
+		icon = GFX_goal_usa_construction_usa
+		cost = 30
+		prerequisite = {
+			focus = trl_breakingribs
+		}
+		x = 15
+		y = 9
+		available = {
+			RBT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			493 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 4
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 8574
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = trl_fromtheruins
+		icon = GFX_goal_RRG_usa_industry
+		cost = 30
+		prerequisite = {
+			focus = trl_williamette
+		}
+		x = 14
+		y = 10
+		available = {
+			RBT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = Warren_ruins
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+			custom_effect_tooltip = first_bonus_tt
+			effect_tooltip = {
+				add_stability = 0.05
+				country_event = { id = nf_warren.7 }
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_completed_focus = trl_the_first_above_all
+					}
+					add_stability = 0.05
+					country_event = { id = nf_warren.7 }
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = trl_pinnaclepoint
+		icon = GFX_goal_generic_grognak
+		cost = 30
+		prerequisite = {
+			focus = trl_broken_tribes
+		}
+		x = 24
+		y = 10
+		available = {
+			RBT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = Warren_ruins
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+			custom_effect_tooltip = beatrice_bonus_tt
+			effect_tooltip = {
+				event_target:commander_beatrice = {
+					add_planning = 1
+				}
+				country_event = { id = nf_warren.8 }
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_completed_focus = trl_beatricesmight
+					}
+					event_target:commander_beatrice = {
+						add_planning = 1
+					}
+					country_event = { id = nf_warren.8 }
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = trl_warhornseast
+		icon = GFX_goal_mutant_supremacy
+		cost = 45
+		prerequisite = {
+			focus = trl_expanding_the_warren
+		}
+		bypass = {
+			BDT = {
+				custom_trigger_tooltip = {
+					tooltip = bdt_treaty_of_bend_tt
+					has_non_aggression_pact_with = ROOT
+				}
+			}
+		}
+		x = 16
+		y = 10
+		ai_will_do = {
+			factor = 0.5
+			modifier = {
+				factor = 15
+				date > 2277.1.1
+			}
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = trl_pickingbones
+		icon = GFX_goal_mutant_self_management
+		cost = 60
+		prerequisite = {
+			focus = trl_bonepickers
+		}
+		x = 21
+		y = 12
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			DIS = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			DIS = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			add_manpower = 500
+		}
+	}
+
+	focus = {
+		id = trl_takinghomes
+		icon = GFX_goal_mutant_self_management
+		cost = 60
+		prerequisite = {
+			focus = trl_chemultstation
+		}
+		x = 17
+		y = 12
+		ai_will_do = {
+			factor = 20
+		}
+		bypass = {
+			BDT = {
+				custom_trigger_tooltip = {
+					tooltip = bdt_treaty_of_bend_tt
+					has_non_aggression_pact_with = ROOT
+				}
+			}
+		}
+		available = {
+			CHE = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			CHE = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			add_manpower = 500
+		}
+	}
+
+	focus = {
+		id = trl_oldroad
+		icon = GFX_goal_CES_via_militaris
+		cost = 30
+		prerequisite = {
+			focus = trl_pickingbones
+		}
+		x = 20
+		y = 13
+		available = {
+			DIS = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			600 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			150 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			86 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = trl_armory
+		icon = GFX_goal_generic_common_firearms_focus
+		cost = 30
+		prerequisite = {
+			focus = trl_takinghomes
+		}
+		x = 18
+		y = 13
+		available = {
+			CHE = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 250
+				producer = TRL
+			}
+			580 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = trl_greattribes
+		icon = GFX_goal_mutant_war_focus
+		cost = 60
+		prerequisite = {
+			focus = trl_warhornsgreat
+		}
+		x = 23
+		y = 11
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			MLT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = DIS
+		will_lead_to_war_with = MLT
+		completion_reward = {
+			MLT = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = trl_oldguns
+		icon = GFX_goal_NCR_Blast_from_the_Past
+		cost = 30
+		prerequisite = {
+			focus = trl_armory
+		}
+		x = 18
+		y = 14
+		available = {
+			CHE = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			capital_scope = {
+				is_owned_and_controlled_by = ROOT
+			}
+			any_owned_state = {
+				is_core_of = CHE
+				infrastructure  > 4
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = old_guns_tt
+			hidden_effect = {
+				every_owned_state = {
+					limit = {
+						is_capital = yes
+					}
+					add_building_construction = {
+						type = anti_air_building
+						level = 1
+						instant_build = yes
+					}
+				}
+				every_owned_state = {
+					limit = {
+						infrastructure  > 4
+						is_core_of = CHE
+					}
+					580 = {
+						add_building_construction = {
+							type = anti_air_building
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = trl_bone_picks
+		icon = GFX_goal_CES_blacksmith
+		cost = 30
+		prerequisite = {
+			focus = trl_oldroad
+		}
+		available = {
+			DIS = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			any_owned_state = {
+				is_core_of = DIS
+				infrastructure  > 4
+			}
+		}
+		x = 20
+		y = 14
+		completion_reward = {
+			custom_effect_tooltip = bone_picks_tt
+			hidden_effect = {
+				every_owned_state = {
+					limit = {
+						infrastructure > 4
+						is_core_of = DIS
+					}
+					TRL = {
+						add_equipment_to_stockpile = {
+							type = infantry_equipment
+							amount = 250
+							producer = TRL
+						}
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = trl_overrun
+		icon = GFX_goal_mutant_self_management
+		cost = 60
+		prerequisite = {
+			focus = trl_greattribes
+		}
+		x = 23
+		y = 12
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			MLT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			MLT = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			add_manpower = 500
+		}
+	}
+
+	focus = {
+		id = trl_dancingbones
+		icon = GFX_goal_mutant_self_management
+		cost = 60
+		prerequisite = {
+			focus = trl_bonedancers
+		}
+		x = 15
+		y = 12
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			BDT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		bypass = {
+			BDT = {
+				custom_trigger_tooltip = {
+					tooltip = bdt_treaty_of_bend_tt
+					has_non_aggression_pact_with = ROOT
+				}
+			}
+		}
+		completion_reward = {
+			BDT = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			add_manpower = 500
+		}
+	}
+
+	focus = {
+		id = trl_bountifulcoast
+		icon = GFX_goal_BRK_masters_of_the_waves
+		cost = 45
+		prerequisite = {
+			focus = trl_overrun
+		}
+		x = 24
+		y = 13
+		available = {
+			MLT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			358 = {
+				add_resource = {
+					type = water
+					amount = 6
+				}
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = trl_worthyfoe
+		icon = GFX_goal_generic_dark_cultist
+		cost = 45
+		prerequisite = {
+			focus = trl_dancingbones
+		}
+		x = 14
+		y = 13
+		available = {
+			BDT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = trl_shatterhand_tt
+			add_war_support = 0.05
+			hidden_effect = {
+				BDT = {
+					set_portraits = {
+						character = BDT_great_chief_shatterhand
+						army = { large = GFX_Portrait_Supermutant_Generic_2 }
+					}
+					BDT_great_chief_shatterhand = {
+						# set_leader_portrait = "GFX_Portrait_Supermutant_Generic_2"
+						set_character_name = BDT_great_chief_shatterhand_TRL_name
+						set_nationality = TRL
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = trl_mirelurkconverts
+		icon = GFX_goal_generic_creature_mirelurk
+		cost = 45
+		prerequisite = {
+			focus = trl_bountifulcoast
+		}
+		x = 24
+		y = 14
+		available = {
+			MLT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			add_manpower = 500
+			add_doctrine_cost_reduction = {
+				name = mirelurkconverts
+				cost_reduction = 0.5
+				uses = 1
+				category = caf_land_doctrine_xp
+			}
+			custom_effect_tooltip = pittman_bonus_tt
+			effect_tooltip = {
+				event_target:commander_pittman = {
+					add_logistics = 1
+				}
+				country_event = { id = nf_warren.10 }
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_completed_focus = trl_pittmancunning
+					}
+					event_target:commander_pittman = {
+						add_logistics = 1
+					}
+					country_event = { id = nf_warren.10 }
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = trl_greatherd
+		icon = GFX_goal_BRK_solidify_authority
+		cost = 45
+		prerequisite = {
+			focus = trl_worthyfoe
+		}
+		x = 14
+		y = 14
+		available = {
+			BDT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			add_manpower = 1000
+			custom_effect_tooltip = bonesnarl_bonus_tt
+			effect_tooltip = {
+				event_target:commander_bonesnarl = {
+					add_attack = 1
+				}
+				country_event = { id = nf_warren.9 }
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_completed_focus = trl_bonesnarlloyalty
+					}
+					event_target:commander_bonesnarl = {
+						add_attack = 1
+					}
+					country_event = { id = nf_warren.9 }
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = trl_forcedroads
+		icon = GFX_goal_NCR_Long15
+		cost = 30
+		prerequisite = {
+			focus = trl_forceddigging
+		}
+		x = 2
+		y = 6
+		available = {
+			#NOT = { has_idea = slavery_outlawed }
+				587 = {
+					is_owned_and_controlled_by = ROOT
+				}
+				235 = {
+					is_owned_and_controlled_by = ROOT
+				}
+		}
+		completion_reward = {
+			235 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			587 = {
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = trl_bonedancers
+		icon = GFX_goal_mutant_war_focus
+		cost = 60
+		prerequisite = {
+			focus = trl_warhornseast
+		}
+		x = 15
+		y = 11
+		will_lead_to_war_with = BDT
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			OR = {
+				BDT = {
+					custom_trigger_tooltip = {
+						tooltip = bdt_treaty_of_bend_tt
+						has_non_aggression_pact_with = ROOT
+					}
+				}
+				BDT = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+		}
+		completion_reward = {
+			BDT = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = trl_warhornsgreat
+		icon = GFX_goal_mutant_supremacy
+		cost = 45
+		prerequisite = {
+			focus = trl_expanding_the_warren
+		}
+		ai_will_do = {
+			factor = 0.5
+			modifier = {
+				factor = 15
+				date > 2278.6.1
+			}
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+		x = 22
+		y = 10
+	}
+
+	focus = {
+		id = trl_chemultstation
+		icon = GFX_goal_mutant_war_focus
+		cost = 60
+		prerequisite = {
+			focus = trl_warhornseast
+		}
+		x = 17
+		y = 11
+		will_lead_to_war_with = CHE
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 20
+				has_completed_focus = trl_dancingbones
+			}
+		}
+		bypass = {
+			OR = {
+				BDT = {
+					custom_trigger_tooltip = {
+						tooltip = bdt_treaty_of_bend_tt
+						has_non_aggression_pact_with = ROOT
+					}
+				}
+				CHE = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+		}
+		completion_reward = {
+			CHE = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = trl_timberline
+		icon = GFX_goal_mutant_war_focus
+		cost = 30
+		prerequisite = {
+			focus = trl_redriver
+			focus = trl_mutantshocktactics
+		}
+		x = 19
+		y = 18
+		will_lead_to_war_with = TIM
+		available = {
+			OR = {
+				WBH = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+				NCR = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			TIM = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			TIM = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = trl_bonepickers
+		icon = GFX_goal_mutant_war_focus
+		cost = 60
+		prerequisite = {
+			focus = trl_warhornsgreat
+		}
+		x = 21
+		y = 11
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			DIS = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = DIS
+		will_lead_to_war_with = MLT
+		completion_reward = {
+			DIS = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = trl_firsts_ambition
+		icon = GFX_goal_NEW_stirring_giants
+		cost = 30
+		prerequisite = {
+			focus = trl_takinghomes
+		}
+		prerequisite = {
+			focus = trl_overrun
+		}
+		prerequisite = {
+			focus = trl_dancingbones
+		}
+		prerequisite = {
+			focus = trl_pickingbones
+		}
+		available = {
+			NOT = {
+				is_in_faction_with = TCA
+				is_subject = yes
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 15
+				date > 2278.1.1
+			}
+		}
+		x = 19
+		y = 15
+		completion_reward = {
+			add_manpower = 3000
+			add_stability = 0.05
+			add_war_support = 0.05
+			add_political_power = 50
+			army_experience = 5
+			navy_experience = 5
+		}
+	}
+
+	focus = {
+		id = trl_war_for_supremacy
+		icon = GFX_goal_WBH_death_or_glory
+		cost = 30
+		prerequisite = {
+			focus = trl_prepare_for_war
+		}
+		x = 20
+		y = 19
+		will_lead_to_war_with = TCA
+		will_lead_to_war_with = WBH
+		will_lead_to_war_with = PMR
+		will_lead_to_war_with = TOC
+		ai_will_do = {
+			factor = 25
+		}
+		available = {
+			NOT = { has_idea = trl_preparing_for_war }
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			WBH = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			TCA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			PMR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			TOC = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			TCA = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+			WBH = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+			PMR = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+			TOC = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = trl_expanding_the_warren
+		icon = GFX_goal_generic_secret_weapon
+		cost = 45
+		prerequisite = {
+			focus = trl_breakingribs
+		}
+		prerequisite = {
+			focus = trl_drinking_marrow
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			remove_ideas = trl_warband_without_a_home
+			add_stability = 0.1
+			add_war_support = 0.1
+			hidden_effect = {
+				if = {
+					limit = {
+						country_exists = BDT
+					}
+					BDT = { country_event = nf_bonedancers.4 }
+				}
+			}
+			MDT = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+		}
+		x = 19
+		y = 9
+	}
+
+	focus = {
+		id = trl_prepare_for_war
+		icon = GFX_goal_WBH_immortal
+		cost = 30
+		prerequisite = {
+			focus = trl_mutantshocktactics
+		}
+		prerequisite = {
+			focus = trl_mounthawk
+		}
+		x = 21
+		y = 18
+		completion_reward = {
+		add_stability = 0.1
+		add_war_support = 0.1
+			add_timed_idea = {
+				idea = trl_preparing_for_war
+				days = 180
+			}
+		}
+	}
+
+	focus = {
+		id = trl_destroy_the_temple
+		icon = GFX_goal_mutant_self_management
+		cost = 30
+		prerequisite = {
+			focus = trl_vengeancemaster
+		}
+		prerequisite = {
+			focus = trl_redriver
+		}
+		available = {
+			ARR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			KLA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		x = 17
+		y = 18
+		completion_reward = {
+			add_stability = 0.05
+			add_war_support = 0.05
+			if = {
+				limit = {
+					ARR = {
+						all_core_land_owned_by_prev_sphere = yes
+					}
+				}
+				set_province_name = {
+					id = 7152
+					name = VICTORY_POINTS_7152_TRL
+				}
+				hidden_effect = {
+					96 = { set_state_name = STATE_96_TRL }
+				}
+				ARR = {
+					ROOT = {
+						core_owned_states_of_prev = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					KLA = {
+						all_core_land_owned_by_prev_sphere = yes
+					}
+				}
+				KLA = {
+					ROOT = {
+						core_owned_states_of_prev = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						KLA = {
+							all_core_land_owned_by_prev_sphere = yes
+						}
+						ARR = {
+							all_core_land_owned_by_prev_sphere = yes
+						}
+					}
+				}
+				custom_effect_tooltip = more_states_tt
+			}
+		}
+	}
+
+	focus = {
+		id = trl_the_final_threat
+		icon = GFX_goal_generic_focus_magazine_gunsandbullets_plasma
+		cost = 30
+		prerequisite = {
+			focus = trl_destroy_the_temple
+		}
+		x = 18
+		y = 19
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		will_lead_to_war_with = TCA
+		will_lead_to_war_with = WBH
+		will_lead_to_war_with = PMR
+		will_lead_to_war_with = TOC
+		bypass = {
+			TCA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			WBH = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			PMR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			TOC = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			TCA = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+			WBH = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+			PMR = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+			TOC = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = trl_masters_of_men
+		icon = GFX_goal_MAX_immigration_commission
+		cost = 60
+		prerequisite = {
+			focus = trl_expandingslavelabour
+		}
+		x = 3
+		y = 8
+		available = {
+			#NOT = { has_idea = slavery_outlawed }
+			BDT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			DIS = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			CHE = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			MLT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			set_temp_variable = { caps_to_add = 200 }
+			add_caps = yes
+			if = {
+				limit = {
+					NOT = {
+						BDT = {
+							all_core_land_owned_by_prev_sphere = yes
+						}
+						DIS = {
+							all_core_land_owned_by_prev_sphere = yes
+						}
+						CHE = {
+							all_core_land_owned_by_prev_sphere = yes
+						}
+						MLT = {
+							all_core_land_owned_by_prev_sphere = yes
+						}
+					}
+				}
+				custom_effect_tooltip = more_states_tt
+			}
+			every_owned_state = {
+				limit = {
+					is_core_of = BDT
+					OWNER = {
+						tag = TRL
+					}
+					infrastructure < 10
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			every_owned_state = {
+				limit = {
+					is_core_of = CHE
+					OWNER = {
+						tag = TRL
+					}
+					infrastructure < 10
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			every_owned_state = {
+				limit = {
+					is_core_of = MLT
+					OWNER = {
+						tag = TRL
+					}
+					infrastructure < 10
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			every_owned_state = {
+				limit = {
+					is_core_of = DIS
+					OWNER = {
+						tag = TRL
+					}
+					infrastructure < 10
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+}

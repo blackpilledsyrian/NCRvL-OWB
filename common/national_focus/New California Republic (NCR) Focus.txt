@@ -119,7 +119,7 @@ focus_tree = {
 	focus = {
 		id = ncr_deploy_troopers_to_hub
 		icon = GFX_goal_NCR_Sentry
-		cost = 30
+		cost = 15
 		search_filters = { FOCUS_FILTER_NCR_TROOPERS FOCUS_FILTER_STABILITY }
 		prerequisite = { focus = ncr_early_sotu }
 		prerequisite = { focus = ncr_democracy_and_despotism }
@@ -143,7 +143,7 @@ focus_tree = {
 	focus = {
 		id = ncr_public_library
 		icon = GFX_goal_generic_books
-		cost = 30
+		cost = 15
 		available = {
 
 		}
@@ -164,7 +164,7 @@ focus_tree = {
 	focus = {
 		id = ncr_raid_gang_hqs
 		icon = GFX_goal_NCR_Raider
-		cost = 30
+		cost = 15
 		search_filters = { FOCUS_FILTER_IDEAS }
 		prerequisite = { focus = ncr_deploy_troopers_to_hub }
 		x = -2
@@ -186,7 +186,7 @@ focus_tree = {
 	focus = {
 		id = ncr_water_merchant_contracts
 		icon = GFX_goal_water_generic
-		cost = 30
+		cost = 15
 		search_filters = { FOCUS_FILTER_IDEAS }
 		prerequisite = { focus = ncr_deploy_troopers_to_hub }
 		x = 0
@@ -209,7 +209,7 @@ focus_tree = {
 	focus = {
 		id = ncr_urban_warfare_lessons
 		icon = GFX_goal_generic_industrial_truck
-		cost = 30
+		cost = 15
 		prerequisite = { focus = ncr_raid_gang_hqs }
 		x = -2
 		y = 1
@@ -245,7 +245,7 @@ focus_tree = {
 	focus = {
 		id = ncr_hub_redevelopment_act
 		icon = GFX_goal_generic_workshop
-		cost = 30
+		cost = 15
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		prerequisite = { focus = ncr_urban_warfare_lessons }
 		x = -2
@@ -279,7 +279,7 @@ focus_tree = {
 	focus = {
 		id = ncr_permanent_hub_advisors
 		icon = GFX_goal_generic_wasteland_girl
-		cost = 30
+		cost = 15
 		prerequisite = { focus = ncr_urban_warfare_lessons }
 		x = 0
 		y = 1
@@ -295,7 +295,7 @@ focus_tree = {
 	focus = {
 		id = ncr_cultivate_national_guard
 		icon = GFX_goal_NCR_Militia
-		cost = 30
+		cost = 15
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
 		prerequisite = { focus = ncr_raid_gang_hqs }
 		x = 0
@@ -320,7 +320,7 @@ focus_tree = {
 	focus = {
 		id = ncr_mitches_manufactories
 		icon = GFX_goal_generic_tinker_workbench
-		cost = 30
+		cost = 15
 		search_filters = { FOCUS_FILTER_IDEAS FOCUS_FILTER_NCR_TROOPERS }
 		prerequisite = { focus = ncr_cultivate_national_guard }
 		x = 0

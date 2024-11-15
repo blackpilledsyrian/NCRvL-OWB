@@ -1,0 +1,2430 @@
+##################################################################################################
+#I feel god in this Chili's tonight and if this doesn't get done before Texas comes out I'll weep#
+##################################################################################################
+focus_tree = {
+	id = taa_nf
+	country = {
+		factor = 0
+		modifier = {
+			add = 0
+			tag = TAA
+		}
+	}
+	default = no
+ #History focuses
+	focus = {
+		id = TAA_focus_freedom_isnt_free
+		icon = GFX_goal_TAA_generic
+		cost = 7
+		x = 10
+		y = 0
+		completion_reward = {
+			country_event = {
+				id = nf_taa.1
+			}
+		}
+	}
+	focus = {
+		id = TAA_focus_the_contractual_society
+		icon = GFX_goal_TAA_bills
+		cost = 7
+		prerequisite = {
+			focus = TAA_focus_freedom_isnt_free
+		}
+		x = 10
+		y = 1
+		completion_reward = {
+			country_event = {
+				id = nf_taa.2
+			}
+		}
+	}
+	focus = {
+		id = TAA_focus_decentralized_shortcomings
+		icon = GFX_goal_TAA_burning_wreckage
+		cost = 7
+		prerequisite = {
+			focus = TAA_focus_the_contractual_society
+		}
+		x = 10
+		y = 2
+		completion_reward = {
+			country_event = {
+				id = nf_taa.3
+			}
+		}
+	}
+	focus = {
+		id = TAA_man_myth_legend
+		icon = GFX_goal_TAA_Saint_Tod
+		cost = 7
+		prerequisite = {
+			focus = TAA_focus_decentralized_shortcomings
+		}
+		x = 10
+		y = 3
+		completion_reward = {
+			country_event = {
+				id = nf_taa.4
+			}
+		}
+	}
+	#####################
+	#Failing Health care#
+	#####################
+	focus = {
+		id = TAA_poor_healthcare
+		icon = GFX_goal_generic_medical
+		cost = 30
+		available = {
+			has_war = no
+		}
+		allow_branch = {
+			has_country_flag = TAA_poor_healthcare
+		}
+		x = 15
+		y = 0
+		completion_reward = {
+			country_event = {
+				id = nf_taa.5
+			}
+		}
+	}
+	focus = {
+		id = TAA_poor_healthcare_2
+		icon = GFX_goal_bobble_head_medicine
+		cost = 30
+		prerequisite = {
+			focus = TAA_poor_healthcare
+		}
+		available = {
+			has_war = no
+			has_completed_focus = TAA_man_myth_legend
+		}
+		x = 15
+		y = 1
+		completion_reward = {
+			country_event = {
+				id = nf_taa.6
+			}
+		}
+	}
+	focus = {
+		id = TAA_poor_healthcare_3
+		icon = GFX_goal_generic_books
+		cost = 30
+		prerequisite = {
+			focus = TAA_poor_healthcare_2
+		}
+		available = {
+			has_war = no
+		}
+		x = 17
+		y = 2
+		completion_reward = {
+			country_event = {
+				id = nf_taa.7
+			}
+		}
+	}
+	focus = {
+		id = TAA_poor_healthcare_4
+		icon = GFX_goal_HEA_focus_declaration_of_sanctuary
+		cost = 30
+		prerequisite = {
+			focus = TAA_poor_healthcare_2
+		}
+		available = {
+			has_war = no
+		}
+		x = 13
+		y = 2
+		completion_reward = {
+			country_event = {
+				id = nf_taa.50
+			}
+		}
+	}
+	focus = {
+		id = TAA_poor_healthcare_6
+		icon = GFX_goal_generic_protectron_conceptart_medic
+		cost = 30
+		prerequisite = {
+			focus = TAA_poor_healthcare_4
+		}
+		prerequisite = {
+			focus = TAA_poor_healthcare_3
+		}
+		prerequisite = {
+			focus = TAA_poor_healthcare_5
+		}
+		available = {
+			has_war = no
+		}
+		x = 15
+		y = 3
+		completion_reward = {
+			country_event = {
+				id = nf_taa.9
+			}
+		}
+	}
+	focus = {
+		id = TAA_poor_healthcare_5
+		icon = GFX_goal_TIM_patch_medicine
+		cost = 30
+		prerequisite = {
+			focus = TAA_poor_healthcare_2
+		}
+		available = {
+			has_war = no
+		}
+		x = 15
+		y = 2
+		completion_reward = {
+			country_event = {
+				id = nf_taa.10
+			}
+		}
+	}
+	########################
+	#Failing Infrastructure#
+	########################
+	focus = {
+		id = TAA_poor_infrastructure
+		icon = GFX_goal_generic_building_focus
+		cost = 30
+		available = {
+			has_war = no
+		}
+		allow_branch = {
+			has_country_flag = TAA_poor_infrastructure
+		}
+		x = 15
+		y = 0
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = TAA_poor_infrastructure_2
+		icon = GFX_goal_generic_infrastructure2
+		cost = 30
+		prerequisite = {
+			focus = TAA_poor_infrastructure
+		}
+		available = {
+			has_war = no
+			has_completed_focus = TAA_man_myth_legend
+		}
+		x = 15
+		y = 1
+		completion_reward = {
+			country_event = {
+				id = nf_taa.12
+			}
+		}
+	}
+	focus = {
+		id = TAA_poor_infrastructure_3
+		icon = GFX_goal_generic_books
+		cost = 30
+		prerequisite = {
+			focus = TAA_poor_infrastructure_2
+		}
+		available = {
+			has_war = no
+		}
+		x = 17
+		y = 2
+		completion_reward = {
+			country_event = {
+				id = nf_taa.7
+			}
+		}
+	}
+	focus = {
+		id = TAA_poor_infrastructure_4
+		icon = GFX_goal_HEA_focus_declaration_of_sanctuary
+		cost = 30
+		prerequisite = {
+			focus = TAA_poor_infrastructure_2
+		}
+		available = {
+			has_war = no
+		}
+		x = 13
+		y = 2
+		completion_reward = {
+			country_event = {
+				id = nf_taa.50
+			}
+		}
+	}
+	focus = {
+		id = TAA_poor_infrastructure_6
+		icon = GFX_goal_generic_megaloader
+		cost = 30
+		prerequisite = {
+			focus = TAA_poor_infrastructure_4
+		}
+		prerequisite = {
+			focus = TAA_poor_infrastructure_3
+		}
+		prerequisite = {
+			focus = TAA_poor_infrastructure_5
+		}
+		available = {
+			has_war = no
+		}
+		x = 15
+		y = 3
+		completion_reward = {
+			country_event = {
+				id = nf_taa.15
+			}
+		}
+	}
+	focus = {
+		id = TAA_poor_infrastructure_5
+		icon = GFX_goal_generic_sunset_sasparilla
+		cost = 30
+		prerequisite = {
+			focus = TAA_poor_infrastructure_2
+		}
+		available = {
+			has_war = no
+		}
+		x = 15
+		y = 2
+		completion_reward = {
+			country_event = {
+				id = nf_taa.16
+			}
+		}
+	}
+	###################
+	#Failing Education#
+	###################
+		focus = {
+		id = TAA_poor_education
+		icon = GFX_goal_generic_grognak
+		cost = 30
+		available = {
+			has_war = no
+		}
+		allow_branch = {
+			has_country_flag = TAA_poor_education
+		}
+		x = 15
+		y = 0
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = TAA_poor_education_2
+		icon = GFX_goal_generic_sledgehammers
+		cost = 30
+		prerequisite = {
+			focus = TAA_poor_education
+		}
+		available = {
+			has_war = no
+			has_completed_focus = TAA_man_myth_legend
+		}
+		x = 15
+		y = 1
+		completion_reward = {
+			country_event = {
+				id = nf_taa.18
+			}
+		}
+	}
+	focus = {
+		id = TAA_poor_education_3
+		icon = GFX_goal_generic_books
+		cost = 30
+		prerequisite = {
+			focus = TAA_poor_education_2
+		}
+		available = {
+			has_war = no
+		}
+		x = 17
+		y = 2
+		completion_reward = {
+			country_event = {
+				id = nf_taa.7
+			}
+		}
+	}
+	focus = {
+		id = TAA_poor_education_4
+		icon = GFX_goal_HEA_focus_declaration_of_sanctuary
+		cost = 30
+		prerequisite = {
+			focus = TAA_poor_education_2
+		}
+		available = {
+			has_war = no
+		}
+		x = 13
+		y = 2
+		completion_reward = {
+			country_event = {
+				id = nf_taa.50
+			}
+		}
+	}
+	focus = {
+		id = TAA_poor_education_6
+		icon = GFX_goal_religion_flag
+		cost = 30
+		prerequisite = {
+			focus = TAA_poor_education_4
+		}
+		prerequisite = {
+			focus = TAA_poor_education_3
+		}
+		prerequisite = {
+			focus = TAA_poor_education_5
+		}
+		available = {
+			has_war = no
+		}
+		x = 15
+		y = 3
+		completion_reward = {
+			country_event = {
+				id = nf_taa.13
+			}
+		}
+	}
+	focus = {
+		id = TAA_poor_education_5
+		icon = GFX_goal_generic_psyker
+		cost = 30
+		prerequisite = {
+			focus = TAA_poor_education_2
+		}
+		available = {
+			has_war = no
+		}
+		x = 15
+		y = 2
+		completion_reward = {
+			country_event = {
+				id = nf_taa.22
+			}
+		}
+	}
+	####################
+	#DON'T TROT ON TODD#
+	####################
+	focus = {
+		id = TAA_hasty_fortifications
+		icon = GFX_goal_generic_helm_army
+		cost = 30
+		available = {
+			has_defensive_war_with = RRG
+		}
+		x = 21
+		y = 0
+		completion_reward = {
+			797 = {
+				add_building_construction = {
+					type = coastal_bunker
+					level = 1
+					instant_build = yes
+					province = 9718
+				}
+			}
+			796 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 9707
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 9715
+				}
+			}
+			793 = {
+				add_building_construction = {
+					type = coastal_bunker
+					level = 1
+					instant_build = yes
+					province =	9696
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					level = 1
+					instant_build = yes
+					province = 8598
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					level = 1
+					instant_build = yes
+					province = 9696
+				}
+			}
+			792 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 9655
+				}
+			}
+		}
+	}
+	focus = {
+		id = TAA_arm_the_militias
+		icon = GFX_goal_generic_rifle_3
+		cost = 30
+		prerequisite = {
+			focus = TAA_hasty_fortifications
+		}
+		available = {
+			has_defensive_war_with = RRG
+		}
+		x = 21
+		y = 1
+		completion_reward = {
+			hidden_effect = {
+				load_oob = TAA_rebels
+			}
+			custom_effect_tooltip = taa_spawn_militia
+		}
+	}
+	focus = {
+		id = TAA_petition_texas
+		icon = GFX_goal_TAA_tex_deal
+		cost = 30
+		prerequisite = {
+			focus = TAA_hasty_fortifications
+		}
+		available = {
+			has_defensive_war_with = RRG
+		}
+		x = 22
+		y = 2
+		completion_reward = {
+			TBH = { country_event = nf_taa.72 }
+			UOA = { country_event = nf_taa.72 }
+			EDN = { country_event = nf_taa.72 }
+			LNS = { country_event = nf_taa.72 }
+			HRO = { country_event = nf_taa.72 }
+		}
+	}
+	focus = {
+		id = TAA_the_production_of_security
+		icon = GFX_goal_RRG_taa_industry
+		cost = 30
+		prerequisite = {
+			focus = TAA_hasty_fortifications
+		}
+		available = {
+			has_defensive_war_with = RRG
+		}
+		x = 20
+		y = 2
+		completion_reward = {
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 500 producer = TAA }
+		}
+	}
+	focus = {
+		id = TAA_favourable_terms
+		icon = GFX_goal_RRG_handshake
+		cost = 30
+		prerequisite = {
+			focus = TAA_the_state_relies_on_initiating_force
+		}
+		prerequisite = {
+			focus = TAA_firebomb_gloria
+		}
+		prerequisite = {
+			focus = TAA_arm_the_militias
+		}
+		available = {
+			has_defensive_war_with = RRG
+			controls_state = 797
+			controls_state = 796
+			controls_state = 793
+			controls_state = 794
+			controls_state = 792
+		}
+		x = 21
+		y = 4
+		completion_reward = {
+			white_peace = RRG
+			add_stability = .05
+		}
+	}
+	focus = {
+		id = TAA_the_state_relies_on_initiating_force
+		icon = GFX_goal_EHT_apc
+		cost = 30
+		prerequisite = {
+			focus = TAA_the_production_of_security
+		}
+		available = {
+			has_defensive_war_with = RRG
+		}
+		x = 20
+		y = 3
+		completion_reward = {
+			add_stability = 0.1
+			add_war_support = 0.1
+		}
+	}
+	focus = {
+		id = TAA_firebomb_gloria
+		icon = GFX_goal_TAA_molotov
+		cost = 30
+		prerequisite = {
+			focus = TAA_petition_texas
+		}
+		available = {
+			has_defensive_war_with = RRG
+		}
+		x = 22
+		y = 3
+		completion_reward = {
+			746 = {
+				damage_building = {
+					type = infrastructure
+					damage = 2
+				}
+				damage_building = {
+					type = industrial_complex
+					damage = 2
+				}
+
+			}
+			#RRG = { country_event = wtf_they_firebombed_us }
+		}
+	}
+	focus = {
+		id = TAA_raze_gloria
+		icon = GFX_goal_TAA_gloria_flames
+		cost = 30
+		prerequisite = {
+			focus = TAA_hasty_fortifications
+		}
+		available = {
+			has_defensive_war_with = RRG
+			746 = {
+				is_controlled_by = ROOT
+				infrastructure > 1
+				industrial_complex > 1
+				arms_factory > 0
+			}
+		}
+		x = 19
+		y = 1
+		completion_reward = {
+			746 = {
+				remove_building = {
+					type = infrastructure
+					level = 2
+				}
+				remove_building = {
+					type = industrial_complex
+					level = 2
+				}
+				remove_building = {
+					type = arms_factory
+					level = 1
+				}
+			}
+			796 = {
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			white_peace = RRG
+			add_war_support = .05
+			hidden_effect = {
+				unlock_national_focus =	TAA_firebomb_gloria
+				unlock_national_focus =	TAA_arm_the_militias
+				unlock_national_focus =	TAA_petition_texas
+				unlock_national_focus =	TAA_favourable_terms
+				unlock_national_focus =	TAA_the_production_of_security
+				unlock_national_focus =	TAA_the_state_relies_on_initiating_force
+			}
+		}
+	}
+	###################
+	#Outside Diplomacy#
+	###################
+	focus = {
+		id = TAA_sweet_little_lies
+		icon = GFX_goal_CAF_treaty
+		cost = 45
+		prerequisite = {
+			focus = TAA_man_myth_legend
+		}
+		available = {
+			OR = {
+				AND = {
+					has_completed_focus = TAA_favourable_terms
+					is_ai = no
+				}
+				AND = {
+					is_ai = no
+					has_completed_focus = TAA_raze_gloria
+				}
+				AND = {
+					is_ai = no
+					NOT = {
+						country_exists = RRG
+					}
+				}
+				AND = {
+					is_ai = yes
+					date > 2280.01.01
+				}
+			}
+		}
+		x = 5
+		y = 4
+		completion_reward = {
+			add_ideas = taa_idea_sweet_little_lies
+		}
+	}
+	focus = {
+		id = TAA_guns_for_farmers
+		icon = GFX_goal_TAA_wheaty
+		cost = 45
+		prerequisite = {
+			focus = TAA_sweet_little_lies
+		}
+		bypass = {
+			NOT = { country_exists = PEC }
+		}
+		x = 8
+		y = 5
+		completion_reward = {
+			send_equipment = {
+				equipment = infantry_equipment
+				amount = 500
+				target = PEC
+			}
+			set_temp_variable = { caps_to_add = 100 }
+			add_caps = yes
+		}
+	}
+	focus = {
+		id = TAA_guns_for_hunters
+		icon = GFX_goal_generic_laser_ins_rifle_1
+		cost = 45
+		prerequisite = {
+			focus = TAA_sweet_little_lies
+		}
+		bypass = {
+			NOT = { country_exists = PER }
+		}
+		x = 2
+		y = 5
+		completion_reward = {
+			send_equipment = {
+				equipment = infantry_equipment
+				amount = 500
+				target = PER
+			}
+			set_temp_variable = { caps_to_add = 100 }
+			add_caps = yes
+		}
+	}
+	focus = {
+		id = TAA_handle_the_mongers
+		icon = GFX_goal_generic_slave_mutant
+		cost = 45
+		prerequisite = {
+			focus = TAA_sweet_little_lies
+		}
+		available = {
+			NOT = { is_subject_of = RRG }
+		}
+		bypass = {
+			IMO = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		x = 4
+		y = 5
+		completion_reward = {
+			IMO = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = TAA_refurbish_the_forge
+		icon = GFX_goal_generic_scrap_metal
+		cost = 45
+		prerequisite = {
+			focus = TAA_handle_the_mongers
+		}
+		prerequisite = {
+			focus = TAA_guns_for_hunters
+		}
+		available = {
+			owns_state = 907
+		}
+		x = 3
+		y = 6
+		completion_reward = {
+			907 = {
+				add_resource = {
+					type = metal
+					amount = 14
+				}
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+				add_core_of = TAA
+			}
+		}
+	}
+	focus = {
+		id = TAA_join_the_TEU
+		icon = GFX_goal_TAA_tex_deal
+		cost = 45
+		prerequisite = {
+			focus = TAA_refurbish_the_forge
+		}
+		bypass = {
+			is_subject = yes
+		}
+		x = 3
+		y = 7
+		completion_reward = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				ask_to_join_texan_economic_union = yes
+			}
+			else = {
+				TBH = { country_event = nf_tbh.323 }
+			}
+		}
+	}
+	focus = {
+		id = TAA_shore_up_shale
+		icon = GFX_goal_mutant_war_focus
+		cost = 45
+		prerequisite = {
+			focus = TAA_sweet_little_lies
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					is_subject_of = RRG
+					IMO = {
+						has_war = no
+						owns_state = 915
+						owns_state = 907
+						owns_state = 932
+					}
+					SHA = {
+						has_war = no
+						owns_state = 915
+						owns_state = 907
+						owns_state = 932
+					}
+					UOA = {
+						has_war = no
+						owns_state = 915
+						owns_state = 907
+						owns_state = 932
+					}
+					AND = {
+						NOT = { country_exists = IMO }
+						NOT = { country_exists = SHA }
+						NOT = { country_exists = UOA }
+					}
+				}
+			}
+		}
+		available = {
+			is_subject = no
+		}
+		bypass = {
+			SHA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		x = 6
+		y = 5
+		completion_reward = {
+			SHA = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = TAA_machetes_to_eden
+		icon = GFX_goal_generic_machete
+		cost = 45
+		prerequisite = {
+			focus = TAA_shore_up_shale
+		}
+		prerequisite = {
+			focus = TAA_guns_for_farmers
+		}
+		bypass = {
+			NOT = { country_exists = EDN }
+		}
+		x = 7
+		y = 6
+		completion_reward = {
+			send_equipment = {
+				equipment = infantry_equipment
+				amount = 500
+				target = EDN
+			}
+			set_temp_variable = { caps_to_add = 100 }
+			add_caps = yes
+		}
+	}
+	focus = {
+		id = TAA_principle_of_non_aggression
+		icon = GFX_goal_RRG_handshake
+		cost = 45
+		prerequisite = {
+			focus = TAA_machetes_to_eden
+		}
+		bypass = {
+			NOT = { country_exists = RRG }
+		}
+		x = 7
+		y = 7
+		completion_reward = {
+			diplomatic_relation = {
+				country = RRG
+				relation = non_aggression_pact
+				active = yes
+			}
+		}
+	}
+	focus = {
+		id = TAA_recreational_nukes
+		icon = GFX_goal_TAA_nuclear
+		cost = 45
+		available = { owns_state = 761 }
+		x = 5
+		y = 6
+		completion_reward = {
+			add_nuclear_bombs = 2
+		}
+	}
+	focus = {
+		id = TAA_yellow_rose_blooms
+		icon = GFX_goal_TAA_rose_yellow
+		cost = 45
+		prerequisite = {
+			focus = TAA_principle_of_non_aggression
+		}
+		prerequisite = {
+			focus = TAA_join_the_TEU
+		}
+
+		x = 5
+		y = 8
+		completion_reward = {
+			hidden_effect = {
+				swap_ideas = {
+					add_idea = taa_idea_blooming_rose
+					remove_idea = taa_idea_sweet_little_lies
+				}
+			}
+			custom_effect_tooltip = oro_best_brightest
+		}
+	}
+	#################################################
+	#The army, or militia, whatever the fuck it'd be#
+	#################################################
+	focus = {
+		id = TAA_the_paramilitiatary
+		icon = GFX_goal_TAA_molotov
+		cost = 45
+		prerequisite = {
+			focus = TAA_man_myth_legend
+		}
+
+		x = 10
+		y = 7
+		completion_reward = {
+			army_experience = 10
+			hidden_effect = {
+				load_oob = TAA_paramilitiatary
+			}
+			custom_effect_tooltip = taa_spawn_militia
+		}
+	}
+	focus = {
+		id = TAA_bigger_in_texas
+		icon = GFX_goal_TAA_broadsider
+		cost = 45
+		prerequisite = {
+			focus = TAA_the_paramilitiatary
+		}
+
+		x = 10
+		y = 8
+		completion_reward = {
+			add_ideas = { taa_idea_bigger_in_texas }
+		}
+	}
+	focus = {
+		id = TAA_shall_not_be_infringed
+		icon = GFX_goal_generic_pistol_44_snub
+		cost = 45
+		prerequisite = {
+			focus = TAA_bigger_in_texas
+		}
+
+		x = 10
+		y = 9
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = ballistic_equipment_3
+				amount = 750
+				producer = USA
+			}
+		}
+	}
+	focus = {
+		id = TAA_private_power_armor
+		icon = GFX_goal_TAA_power_45
+		cost = 45
+		prerequisite = {
+			focus = TAA_shall_not_be_infringed
+		}
+
+		x = 10
+		y = 10
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = {
+						has_tech = stripped_pa_tech
+					}
+				}
+				set_technology = { stripped_pa_tech = 1 }
+			}
+			add_equipment_to_stockpile = {
+				type = power_armor_equipment_3
+				amount = 200
+				producer = USA
+			}
+		}
+	}
+	focus = {
+		id = TAA_innovative_equipment
+		icon = GFX_goal_TAA_mini_nuke
+		cost = 45
+		prerequisite = {
+			focus = TAA_the_paramilitiatary
+		}
+		x = 12
+		y = 8
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = infantry_tech_category
+			}
+		}
+	}
+	focus = {
+		id = TAA_see_that_mountain
+		icon = GFX_goal_TAA_see_that_mountain
+		cost = 45
+		prerequisite = {
+			focus = TAA_innovative_equipment
+		}
+
+		x = 12
+		y = 9
+		completion_reward = {
+			add_ideas = { taa_idea_see_that_mountain }
+			army_experience = 10
+		}
+	}
+	focus = {
+		id = TAA_stand_your_ground
+		icon = GFX_goal_generic_regular_firearms_focus
+		cost = 45
+		prerequisite = {
+			focus = TAA_innovative_equipment
+		}
+		x = 14
+		y = 9
+		completion_reward = {
+			add_ideas = { taa_idea_stand_your_ground }
+		}
+	}
+	focus = {
+		id = TAA_castle_doctrine
+		icon = GFX_goal_TAA_fortress
+		cost = 45
+		prerequisite = {
+			focus = TAA_see_that_mountain
+		}
+		prerequisite = {
+			focus = TAA_stand_your_ground
+		}
+
+		x = 13
+		y = 10
+		completion_reward = {
+			add_tech_bonus = {
+				name = weapons_past
+				bonus = 1
+				uses = 1
+				category = cat_land_doctrine
+			}
+		}
+	}
+	focus = {
+		id = TAA_rosado_school
+		icon = GFX_goal_generic_microscope
+		cost = 45
+		relative_position_id = TAA_castle_doctrine
+		prerequisite = {
+			focus = TAA_castle_doctrine
+		}
+		available = {
+			RRG = {
+				is_rosado_leader = yes
+			}
+			is_subject_of = RRG
+		}
+		x = -1
+		y = 1
+		completion_reward = {
+			add_research_slot = 1
+
+		}
+	}
+	focus = {
+		id = TAA_human_can_openers
+		icon = GFX_goal_generic_grenade_launcher
+		cost = 45
+		prerequisite = {
+			focus = TAA_the_paramilitiatary
+		}
+
+		x = 8
+		y = 8
+		completion_reward = {
+			add_tech_bonus = {
+				name = weapons_past
+				bonus = 0.25
+				uses = 2
+				category = support_anti_tank_tech_category
+			}
+			add_equipment_to_stockpile = { type = anti_tank_equipment_1 amount = 150 producer = USA }
+		}
+	}
+	focus = {
+		id = TAA_as_long_as_its_black
+		icon = GFX_goal_generic_nice_car
+		cost = 45
+		prerequisite = {
+			focus = TAA_human_can_openers
+		}
+
+		x = 8
+		y = 9
+		completion_reward = {
+				add_tech_bonus = {
+				name = weapons_past
+				bonus = 0.25
+				uses = 2
+				category = vehicle_tech_category
+			}
+			add_equipment_to_stockpile = { type = light_motorized_equipment_2 amount = 50 producer = USA }
+		}
+	}
+	focus = {
+		id = TAA_bombs_away
+		icon = GFX_goal_generic_vehicle_plane
+		cost = 45
+		prerequisite = {
+			focus = TAA_human_can_openers
+		}
+
+		x = 6
+		y = 9
+		completion_reward = {
+			796 = {
+				add_building_construction = {
+					type = anti_air_building
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}
+			}
+			793 = {
+				add_building_construction = {
+					type = anti_air_building
+					level = 2
+					instant_build = yes
+				}
+			}
+			795 = {
+				add_building_construction = {
+					type = anti_air_building
+					level = 2
+					instant_build = yes
+				}
+			}
+			792 = {
+				add_building_construction = {
+					type = anti_air_building
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_equipment_to_stockpile = { type = fighter_equipment_2 amount = 20 producer = USA }
+		}
+	}
+	focus = {
+		id = TAA_sign_on_bonuses
+		icon = GFX_goal_TAA_bills
+		cost = 45
+		prerequisite = {
+			focus = TAA_as_long_as_its_black
+		}
+		prerequisite = {
+			focus = TAA_bombs_away
+		}
+		x = 7
+		y = 10
+		completion_reward = {
+			add_manpower = 2000
+			set_temp_variable = { caps_to_add = -150 }
+			add_caps = yes
+		}
+	}
+	focus = {
+		id = TAA_rosados_gun
+		icon = GFX_goal_generic_esp_plasma
+		cost = 45
+		relative_position_id = TAA_sign_on_bonuses
+		prerequisite = {
+			focus = TAA_sign_on_bonuses
+		}
+		available = {
+			RRG = {
+				is_rosado_leader = yes
+			}
+			is_subject_of = RRG
+		}
+		x = 1
+		y = 1
+		completion_reward = {
+			set_technology = { support_tech_level_scientific =  1 }
+		}
+	}
+	focus = {
+		id = TAA_thorns_of_the_yellow_rose
+		icon = GFX_goal_TAA_rose_thorn
+		cost = 45
+		prerequisite = {
+			focus = TAA_castle_doctrine
+		}
+		prerequisite = {
+			focus = TAA_private_power_armor
+		}
+		prerequisite = {
+			focus = TAA_sign_on_bonuses
+		}
+		available = {
+			has_army_experience > 4.99
+		}
+		x = 10
+		y = 11
+		completion_reward = {
+			hidden_effect = {
+				add_ideas = {
+				taa_idea_thorns_of_the_rose
+				}
+				remove_ideas = {
+				taa_idea_see_that_mountain
+				taa_idea_stand_your_ground
+				taa_idea_bigger_in_texas
+				}
+			}
+			custom_effect_tooltip = oro_best_brightest
+			army_experience = 20
+		}
+	}
+	############################################################
+	#the economy i guess fuck I've been at this nonstop all day#
+	############################################################
+	focus = {
+		id = TAA_own_the_means_of_production
+		icon = GFX_goal_cap_and_cash
+		cost = 45
+		prerequisite = {
+			focus = TAA_man_myth_legend
+		}
+		x = 15
+		y = 4
+		completion_reward = {
+			add_ideas = { taa_idea_own_the_means_of_production }
+		}
+	}
+	focus = {
+		id = TAA_rio_railroad
+		icon = GFX_goal_TAA_railroad
+		cost = 45
+		prerequisite = {
+			focus = TAA_own_the_means_of_production
+		}
+		x = 16
+		y = 5
+		completion_reward = {
+			796 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			793 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			792 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = TAA_construction_loans
+		icon = GFX_goal_TAA_gold
+		cost = 45
+		prerequisite = {
+			focus = TAA_own_the_means_of_production
+		}
+		x = 18
+		y = 5
+		completion_reward = {
+			add_ideas = { taa_idea_construction_loans }
+		}
+	}
+	focus = {
+		id = TAA_self_replicating_private_property
+		icon = GFX_goal_NEW_Caps_for_Loyalty
+		cost = 45
+		prerequisite = {
+			focus = TAA_construction_loans
+		}
+		prerequisite = {
+			focus = TAA_rio_railroad
+		}
+		x = 17
+		y = 6
+		completion_reward = {
+			796 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = TAA_industrial_water_deradiation
+		icon = GFX_goal_TAA_water
+		cost = 45
+		prerequisite = {
+			focus = TAA_self_replicating_private_property
+		}
+		x = 17
+		y = 7
+		completion_reward = {
+			796 = {
+				add_resource = {
+					type = water
+					amount = 7
+				}
+			}
+			793 = {
+				add_resource = {
+					type = water
+					amount = 7
+				}
+			}
+		}
+	}
+	focus = {
+		id = TAA_convey_your_success
+		icon = GFX_goal_TAA_downward_trend
+		cost = 45
+		prerequisite = {
+			focus = TAA_own_the_means_of_production
+		}
+		x = 14
+		y = 5
+		completion_reward = {
+				add_ideas =	{ taa_idea_convey_your_success }
+		}
+	}
+	focus = {
+		id = TAA_build_new_arms_factories
+		icon = GFX_goal_generic_workshop
+		cost = 45
+		prerequisite = {
+			focus = TAA_own_the_means_of_production
+		}
+		x = 12
+		y = 5
+		completion_reward = {
+			793 = {
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = TAA_the_science_of_industry
+		icon = GFX_goal_TAA_money_tech
+		cost = 45
+		prerequisite = {
+			focus = TAA_build_new_arms_factories
+		}
+		prerequisite = {
+			focus = TAA_convey_your_success
+		}
+		x = 13
+		y = 6
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	focus = {
+		id = TAA_fund_extraction_firms
+		icon = GFX_goal_generic_water
+		cost = 45
+		prerequisite = {
+			focus = TAA_the_science_of_industry
+		}
+		x = 13
+		y = 7
+		completion_reward = {
+			add_ideas = {
+				taa_idea_fund_extraction_firms
+			}
+		}
+	}
+	focus = {
+		id = TAA_yellow_rose_roots
+		icon = GFX_goal_TAA_rose_roots
+		cost = 45
+		prerequisite = {
+			focus = TAA_fund_extraction_firms
+		}
+		prerequisite = {
+			focus = TAA_industrial_water_deradiation
+		}
+		x = 15
+		y = 8
+		completion_reward = {
+			hidden_effect = {
+				add_ideas = taa_idea_yellow_rose_roots
+				remove_ideas = {
+					taa_idea_fund_extraction_firms
+					taa_idea_construction_loans
+					taa_idea_convey_your_success
+					taa_idea_own_the_means_of_production
+				}
+			}
+			custom_effect_tooltip = oro_best_brightest
+		}
+	}
+	focus = {
+		id = TAA_our_potential_realized
+		icon = GFX_goal_TAA_rose_roots
+		cost = 60
+		prerequisite = {
+			focus = TAA_thorns_of_the_yellow_rose
+		}
+		prerequisite = {
+			focus = TAA_todd_eats_a_cheeseburger
+			focus = TAA_miller_eats_salad
+		}
+		available = {
+			has_completed_focus = TAA_yellow_rose_blooms
+			has_completed_focus = TAA_yellow_rose_roots
+		}
+		x = 10
+		y = 13
+		completion_reward = {
+			hidden_effect = {
+				add_ideas = taa_idea_yellow_rose_of_texas
+				remove_ideas = {
+					taa_idea_yellow_rose_roots
+					taa_idea_thorns_of_the_rose
+					taa_idea_blooming_rose
+				}
+			}
+			custom_effect_tooltip = oro_best_brightest
+			remove_ideas = { TAA_demoralization_campaign }
+		}
+	}
+	focus = {
+		id = TAA_prepare_the_armouries
+		icon = GFX_goal_generic_advanced_firearms_focus
+		cost = 60
+		prerequisite = {
+			focus = TAA_our_potential_realized
+		}
+		x = 11
+		y = 14
+		completion_reward = {
+			796 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			793 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			set_temp_variable = { caps_to_add = -50 }
+			add_caps = yes
+		}
+	}
+	focus = {
+		id = TAA_rally_the_militia
+		icon = GFX_goal_generic_focus_spears
+		cost = 60
+		prerequisite = {
+			focus = TAA_our_potential_realized
+		}
+		bypass = {
+			NOT = { country_exists = RRG }
+		}
+		x = 9
+		y = 14
+		completion_reward = {
+			add_ideas = taa_idea_rio_revenge
+		}
+	}
+	focus = {
+		id = TAA_vehicles_woo
+		icon = GFX_goal_original_highwayman
+		cost = 60
+		prerequisite = {
+			focus = TAA_rally_the_militia
+		}
+		relative_position_id = TAA_rally_the_militia
+		available = {
+			IMO  = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		x = 3
+		y = 1
+		completion_reward = {
+			add_ideas = taa_idea_made_in_the_taa
+		}
+	}
+	focus = {
+		id = TAA_rally_the_militia_2
+		icon = GFX_goal_RRG_arm_bad
+		cost = 60
+		available = {
+			ARM = {
+				owns_state = 748
+			}
+		}
+		prerequisite = {
+			focus = TAA_rally_the_militia
+		}
+		bypass = {
+			NOT = { country_exists = ARM }
+		}
+		x = 8
+		y = 15
+		completion_reward = {
+			add_ideas = taa_idea_sant_revenge
+		}
+	}
+	focus = {
+		id = TAA_fight_for_freedom
+		icon = GFX_goal_TAA_molotov
+		cost = 60
+		prerequisite = {
+			focus = TAA_prepare_the_armouries
+		}
+		prerequisite = {
+			focus = TAA_rally_the_militia
+		}
+		bypass = {
+			RRG  = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		x = 10
+		y = 15
+		completion_reward = {
+			declare_war_on = {
+				target = RRG
+				type = annex_everything
+			}
+			RRG = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	#### Rebuilding
+	focus = {
+		id = TAA_secure_the_capital
+		icon = GFX_goal_sun_flag
+		cost = 77.5
+		prerequisite = {
+			focus = TAA_fight_for_freedom
+		}
+		available = {
+			owns_state = 746
+		}
+		x = 10
+		y = 16
+		completion_reward = {
+			746 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+				add_core_of = TAA
+			}
+		}
+	}
+	#### The Northwest
+	focus = {
+		id = TAA_irrigate_the_farms
+		icon = GFX_goal_ENC_geck
+		cost = 45
+		prerequisite = {
+			focus = TAA_secure_the_capital
+		}
+		available = {
+			owns_state = 745
+			owns_state = 749
+			owns_state = 744
+		}
+		x = 9
+		y = 17
+		completion_reward = {
+			add_ideas = taa_idea_irrigated_farms
+		}
+	}
+	focus = {
+		id = TAA_erect_new_farms
+		icon = GFX_goal_generic_canyon_focus
+		cost = 45
+		prerequisite = {
+			focus = TAA_irrigate_the_farms
+		}
+		available = {
+			owns_state = 745
+			owns_state = 749
+			owns_state = 744
+		}
+		x = 9
+		y = 18
+		completion_reward = {
+			745 = {
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			744 = {
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			749 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = TAA_extend_the_railroad_east
+		icon = GFX_goal_TIM_patch_railroading
+		cost = 45
+		prerequisite = {
+			focus = TAA_secure_the_capital
+		}
+		available = {
+			owns_state = 745
+			owns_state = 749
+			owns_state = 744
+		}
+		x = 7
+		y = 17
+		completion_reward = {
+			745 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+			}
+			744 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			749 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = TAA_dig_new_wells
+		icon = GFX_goal_TAA_water
+		cost = 45
+		prerequisite = {
+			focus = TAA_extend_the_railroad_east
+		}
+		available = {
+			owns_state = 745
+			owns_state = 749
+			owns_state = 744
+		}
+		x = 7
+		y = 18
+		completion_reward = {
+			add_resource = {
+				type = water
+				amount = 10
+				state = 745
+			}
+			add_resource = {
+				type = water
+				amount = 4
+				state = 744
+			}
+			add_resource = {
+				type = water
+				amount = 9
+				state = 749
+			}
+
+		}
+	}
+	focus = {
+		id = TAA_settle_new_farmers
+		icon = GFX_goal_bobble_head_endurance
+		cost = 45
+		prerequisite = {
+			focus = TAA_erect_new_farms
+		}
+		prerequisite = {
+			focus = TAA_dig_new_wells
+		}
+		available = {
+			owns_state = 745
+			owns_state = 749
+			owns_state = 744
+		}
+		x = 9
+		y = 19
+		completion_reward = {
+			745 = {
+				add_core_of = TAA
+				set_temp_variable = {
+					pop_add = 7000
+				}
+				add_state_population = yes
+			}
+			744 = {
+				add_core_of = TAA
+				set_temp_variable = {
+					pop_add = 3500
+				}
+				add_state_population = yes
+			}
+			749 = {
+				add_core_of = TAA
+				set_temp_variable = {
+					pop_add = 7000
+				}
+				add_state_population = yes
+			}
+
+		}
+	}
+	#### The Southwest
+	focus = {
+		id = TAA_extend_the_railroad_south
+		icon = GFX_goal_TIM_patch_railroading
+		cost = 45
+		prerequisite = {
+			focus = TAA_secure_the_capital
+		}
+		available = {
+			owns_state = 751
+			owns_state = 791
+			owns_state = 742
+		}
+		x = 13
+		y = 17
+		completion_reward = {
+			751 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+			}
+			742 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			791 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = TAA_import_digging_equipment
+		icon = GFX_goal_generic_generator
+		cost = 45
+		prerequisite = {
+			focus = TAA_secure_the_capital
+		}
+		available = {
+			owns_state = 751
+			owns_state = 791
+			owns_state = 742
+		}
+		x = 11
+		y = 17
+		completion_reward = {
+			add_ideas = taa_idea_digging_equipment
+		}
+	}
+	focus = {
+		id = TAA_local_arms_manufacturing
+		icon = GFX_goal_generic_common_firearms_focus
+		cost = 45
+		prerequisite = {
+			focus = TAA_import_digging_equipment
+		}
+		available = {
+			owns_state = 751
+			owns_state = 791
+			owns_state = 742
+		}
+		x = 11
+		y = 18
+		completion_reward = {
+			751 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			742 = {
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			791 = {
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = TAA_increase_mining_quotas
+		icon = GFX_goal_generic_electronics_focus
+		cost = 45
+		prerequisite = {
+			focus = TAA_extend_the_railroad_south
+		}
+		available = {
+			owns_state = 751
+			owns_state = 791
+			owns_state = 742
+		}
+		x = 13
+		y = 18
+		completion_reward = {
+		add_stability = -.10
+			add_resource = {
+				type = metal
+				amount = 15
+				state = 742
+			}
+			add_resource = {
+				type = metal
+				amount = 6
+				state = 751
+			}
+			add_resource = {
+				type = metal
+				amount = 12
+				state = 791
+			}
+		}
+	}
+	focus = {
+		id = TAA_found_mining_colonies
+		icon = GFX_goal_generic_supplies_focus
+		cost = 45
+		prerequisite = {
+			focus = TAA_increase_mining_quotas
+		}
+		prerequisite = {
+			focus = TAA_local_arms_manufacturing
+		}
+		available = {
+			owns_state = 751
+			owns_state = 791
+			owns_state = 742
+		}
+		x = 11
+		y = 19
+		completion_reward = {
+			742 = {
+				add_resource = {
+					type = composites
+					amount = 6
+				}
+				add_core_of = TAA
+				set_temp_variable = {
+					pop_add = 7000
+				}
+				add_state_population = yes
+			}
+			751 = {
+				add_resource = {
+					type = circuitry
+					amount = 6
+				}
+				add_core_of = TAA
+				set_temp_variable = {
+					pop_add = 2000
+				}
+				add_state_population = yes
+			}
+			791 = {
+				add_resource = {
+					type = circuitry
+					amount = 6
+				}
+				add_core_of = TAA
+				set_temp_variable = {
+					pop_add = 13000
+				}
+				add_state_population = yes
+			}
+		}
+	}
+	###Air force
+	focus = {
+		id = TAA_free_as_a_bluejay
+		icon = GFX_goal_generic_fighter
+		cost = 45
+		prerequisite = {
+			focus = TAA_secure_the_capital
+		}
+		x = 12
+		y = 20
+		completion_reward = {
+			add_ideas = taa_idea_blue_jay
+		}
+	}
+	focus = {
+		id = TAA_establish_air_bases
+		icon = GFX_goal_uoa_blueprint
+		cost = 45
+		prerequisite = {
+			focus = TAA_free_as_a_bluejay
+		}
+		x = 12
+		y = 21
+		completion_reward = {
+			746 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			744 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			742 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			748 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+	focus = {
+		id = TAA_research_new_craft
+		icon = GFX_goal_usa_science_reform
+		cost = 45
+		prerequisite = {
+			focus = TAA_protect_the_skies
+		}
+		prerequisite = {
+			focus = TAA_establish_air_bases
+		}
+		x = 12
+		y = 22
+		completion_reward = {
+			add_tech_bonus = {
+				name = air_bonus
+				bonus = 0.5
+				uses = 3
+				category = air_tech_category
+			}
+			air_experience = 20
+		}
+	}
+		focus = {
+		id = TAA_protect_the_skies
+		icon = GFX_goal_generic_patty_cheesecake
+		cost = 45
+		prerequisite = {
+			focus = TAA_free_as_a_bluejay
+		}
+			x = 14
+		y = 21
+		completion_reward = {
+			every_owned_state = {
+				add_building_construction = {
+					type = anti_air_building
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+	focus = {
+		id = TAA_big_and_bright
+		icon = GFX_goal_TAA_big_boi
+		cost = 7
+		prerequisite = {
+			focus = TAA_secure_the_capital
+		}
+		available = {
+		has_completed_focus = TAA_research_new_craft
+		has_completed_focus = TAA_found_mining_colonies
+		has_completed_focus = TAA_settle_new_farmers
+		has_completed_focus = TAA_fund_fishing_villages
+		}
+		x = 10
+		y = 21
+		completion_reward = {
+			add_political_power = 150
+			add_stability = .15
+			set_temp_variable = { caps_to_add = 250 }
+			add_caps = yes
+			set_cosmetic_tag = STL
+		}
+	}
+	###Southeast
+	focus = {
+		id = TAA_initiate_shipbuilding
+		icon = GFX_goal_generic_wooden_ship
+		cost = 45
+		prerequisite = {
+			focus = TAA_secure_the_capital
+		}
+		available = {
+			owns_state = 747
+			owns_state = 743
+			owns_state = 748
+		}
+		x = 8
+		y = 20
+		completion_reward = {
+			add_ideas = taa_idea_rule_the_waves
+		}
+	}
+	focus = {
+		id = TAA_construct_new_wharfs
+		icon = GFX_goal_generic_harbours_focus
+		cost = 45
+		prerequisite = {
+			focus = TAA_initiate_shipbuilding
+		}
+		available = {
+			owns_state = 747
+			owns_state = 743
+			owns_state = 748
+		}
+		x = 8
+		y = 21
+		completion_reward = {
+			747 = {
+				if = {
+					limit = {
+						is_valid_state_for_3_dockyards = yes
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					}
+				}
+			}
+			748 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_dockyards = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = TAA_install_watermills
+		icon = GFX_goal_TTM_Windmill
+		cost = 45
+		prerequisite = {
+			focus = TAA_initiate_shipbuilding
+		}
+		available = {
+			owns_state = 747
+			owns_state = 743
+			owns_state = 748
+		}
+		x = 6
+		y = 21
+		completion_reward = {
+			747 = {
+				if = {
+					limit = {
+						is_valid_state_for_3_power_stations = yes
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = electricity_generator
+						level = 3
+						instant_build = yes
+					}
+				}
+			}
+			748 = {
+				if = {
+					limit = {
+						is_valid_state_for_3_power_stations = yes
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = electricity_generator
+						level = 3
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = TAA_fund_fishing_villages
+		icon = GFX_goal_generic_creature_mirelurk
+		cost = 45
+		prerequisite = {
+			focus = TAA_install_watermills
+		}
+		prerequisite = {
+			focus = TAA_construct_new_wharfs
+		}
+		available = {
+			owns_state = 747
+			owns_state = 743
+			owns_state = 748
+		}
+		x = 8
+		y = 22
+		completion_reward = {
+			747 = {
+				set_temp_variable = {
+					pop_add = 15000
+				}
+				add_state_population = yes
+				add_building_construction = {
+					type = naval_base
+					level = 4
+					instant_build = yes
+					province = 9618
+				}
+				add_core_of = TAA
+				add_extra_state_shared_building_slots = 3
+			}
+			743 = {
+				set_temp_variable = {
+					pop_add = 1000
+				}
+				add_state_population = yes
+				add_core_of = TAA
+			}
+			748 = {
+				set_temp_variable = {
+					pop_add = 1500
+				}
+				add_state_population = yes
+				add_building_construction = {
+					type = naval_base
+					level = 3
+					instant_build = yes
+					province = 9609
+				}
+				add_core_of = TAA
+				add_extra_state_shared_building_slots = 3
+			}
+		}
+	}
+	focus = {
+		id = TAA_todd_eats_a_cheeseburger
+		icon = GFX_goal_TAA_burger_time
+		cost = 7
+		prerequisite = {
+			focus = TAA_thorns_of_the_yellow_rose
+		}
+		available = {
+			if = {
+				limit = {
+					is_subject_of = RRG
+				}
+				NOT = {
+					RRG = {
+						has_country_leader = {
+							character = RRG_valentina_rosado
+						}
+					}
+				}
+			}
+		}
+		mutually_exclusive = {
+			focus = TAA_miller_eats_salad
+		}
+		x = 11
+		y = 12
+		completion_reward = {
+		country_event = nf_taa.636865657365627572676572
+		}
+	}
+	focus = {
+		id = TAA_miller_eats_salad
+		icon = GFX_goal_food_various_vegetables
+		cost = 7
+		prerequisite = {
+			focus = TAA_thorns_of_the_yellow_rose
+		}
+		available = {
+			RRG = {
+				is_rosado_leader = yes
+			}
+			is_subject_of = RRG
+		}
+		mutually_exclusive = { focus = TAA_todd_eats_a_cheeseburger }
+		x = 9
+		y = 12
+		completion_reward = {
+			news_event = nf_taa.14
+		}
+	}
+
+
+}
+# vim: set ft=pdx tw=79 :

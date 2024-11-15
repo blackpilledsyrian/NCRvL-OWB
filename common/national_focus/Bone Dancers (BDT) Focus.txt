@@ -1,0 +1,2672 @@
+####################################################
+#         Bone Dancer Focus Tree
+#           Written by Zusk
+#
+####################################################
+
+focus_tree = {
+	id = bdt_nf
+	country = {
+		factor = 0
+		modifier = {
+			add = 0
+			tag = BDT
+		}
+	}
+	default = no
+
+	shared_focus = oregon_cannibal_the_oregon_trails
+	shared_focus = oregon_cannibal_question_of_cannibalism
+
+	focus = {
+		id = bdt_future_tec_geck_research_facility
+		icon = GFX_goal_BDT_geck_corrupted
+		cost = 7
+		x = 15
+		y = 0
+		completion_reward = {
+			country_event = nf_bonedancers.1
+		}
+	}
+
+	focus = {
+		id = bdt_a_tattered_mantle
+		icon = GFX_goal_BDT_odious_king
+		cost = 7
+		prerequisite = {
+			focus = bdt_future_tec_geck_research_facility
+		}
+		x = 0
+		y = 1
+		relative_position_id = bdt_future_tec_geck_research_facility
+		completion_reward = {
+			country_event = nf_bonedancers.2
+		}
+	}
+
+	focus = {
+		id = bdt_the_crimson_forest
+		icon = GFX_goal_BDT_bloody_skull
+		cost = 7
+		prerequisite = {
+			focus = bdt_a_tattered_mantle
+		}
+		x = 0
+		y = 1
+		relative_position_id = bdt_a_tattered_mantle
+		completion_reward = {
+			country_event = nf_bonedancers.3
+			hidden_effect = { set_country_flag = generic_unlock_focus }
+		}
+	}
+
+	focus = {
+		id = bdt_power_overwhelming
+		icon = GFX_goal_psyker_fire_walk_with_me
+		cost = 30
+		available = {
+			shared_focus_tree_unlocked = yes
+			country_exists = MLP
+		}
+		x = 0
+		y = 1
+		allow_branch = {
+			has_global_flag = MLP_harmony_and_unity_enabled_global_flag
+		}
+		relative_position_id = bdt_the_crimson_forest
+		completion_reward = {
+			country_event = nf_bonedancers.29
+		}
+	}
+
+	focus = {
+		id = bdt_fire_che
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		prerequisite = {
+			focus = bdt_power_overwhelming
+		}
+		relative_position_id = bdt_power_overwhelming
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		x = -1
+		y = 1
+		bypass = {
+			CHE = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = CHE
+		completion_reward = {
+			hidden_effect = { load_oob = BDT_Woodsmen_Small }
+			CHE = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_fire_sho
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		prerequisite = {
+			focus = bdt_power_overwhelming
+		}
+		relative_position_id = bdt_power_overwhelming
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		x = 1
+		y = 1
+		bypass = {
+			SHO = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = SHO
+		completion_reward = {
+			hidden_effect = { load_oob = BDT_Woodsmen_Small }
+			SHO = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_fire_hgh
+		icon = GFX_goal_hgh_flag
+		cost = 30
+		prerequisite = {
+			focus = bdt_fire_che
+		}
+		prerequisite = {
+			focus = bdt_fire_sho
+		}
+		relative_position_id = bdt_fire_sho
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		x = -1
+		y = 1
+		bypass = {
+			HGH = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = HGH
+		completion_reward = {
+			hidden_effect = { load_oob = BDT_Woodsmen_Small }
+			HGH = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_fire_mdt
+		icon = GFX_goal_BRK_trophy_wife
+		cost = 30
+		prerequisite = {
+			focus = bdt_fire_hgh
+		}
+		relative_position_id = bdt_fire_hgh
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		x = -2
+		y = 1
+		bypass = {
+			MDT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = MDT
+		completion_reward = {
+			hidden_effect = { load_oob = BDT_Woodsmen_Small }
+			MDT = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_fire_hea
+		icon = GFX_goal_BDT_attack_hea
+		cost = 30
+		prerequisite = {
+			focus = bdt_fire_hgh
+		}
+		relative_position_id = bdt_fire_hgh
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		x = 0
+		y = 1
+		bypass = {
+			HEA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = HEA
+		completion_reward = {
+			hidden_effect = { load_oob = BDT_Woodsmen_Small }
+			HEA = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_fire_tim
+		icon = GFX_goal_BDT_war_with_tim
+		cost = 30
+		prerequisite = {
+			focus = bdt_fire_hgh
+		}
+		relative_position_id = bdt_fire_hgh
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		x = 2
+		y = 1
+		bypass = {
+			TIM = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = TIM
+		completion_reward = {
+			hidden_effect = { load_oob = BDT_Woodsmen_Small }
+			TIM = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_fire_cold_north
+		icon = GFX_goal_WBH_great_alaskan_expedition
+		cost = 30
+		prerequisite = {
+			focus = bdt_fire_tim
+		}
+		prerequisite = {
+			focus = bdt_fire_hea
+		}
+		prerequisite = {
+			focus = bdt_fire_mdt
+		}
+		relative_position_id = bdt_fire_tim
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		x = -2
+		y = 1
+		bypass = {
+			TCA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			WBH = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			YAK = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			TOC = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = TCA
+		will_lead_to_war_with = WBH
+		will_lead_to_war_with = YAK
+		will_lead_to_war_with = TOC
+		completion_reward = {
+			hidden_effect = { load_oob = BDT_Woodsmen_Small }
+			TCA = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			WBH = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			TOC = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			YAK = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_fire_west
+		icon = GFX_goal_behemoth
+		cost = 30
+		prerequisite = {
+			focus = bdt_fire_cold_north
+		}
+		relative_position_id = bdt_fire_cold_north
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		x = 0
+		y = 1
+		bypass = {
+			TRL = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			MLT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			DIS = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			RBT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			CCW = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			OLY = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			PMR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = TRL
+		will_lead_to_war_with = MLT
+		will_lead_to_war_with = DIS
+		will_lead_to_war_with = RBT
+		will_lead_to_war_with = CCW
+		will_lead_to_war_with = OLY
+		will_lead_to_war_with = PMR
+		completion_reward = {
+			hidden_effect = { load_oob = BDT_Woodsmen_Small }
+			TRL = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			MLT = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			DIS = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			RBT = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			CCW = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			OLY = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			PMR = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_fire_south
+		icon = GFX_goal_NEW_generic_reno
+		cost = 30
+		relative_position_id = bdt_fire_west
+		prerequisite = {
+			focus = bdt_fire_west
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			CYC = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			SLA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			PAL = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			VLT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			YKZ = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			NEW = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			KLA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			ARR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = CYC
+		will_lead_to_war_with = SLA
+		will_lead_to_war_with = PAL
+		will_lead_to_war_with = VLT
+		will_lead_to_war_with = YKZ
+		will_lead_to_war_with = NEW
+		will_lead_to_war_with = KLA
+		will_lead_to_war_with = ARR
+		x = -2
+		y = 1
+		completion_reward = {
+			hidden_effect = { load_oob = BDT_Woodsmen_Small }
+			CYC = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			SLA = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			PAL = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			VLT = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			YKZ = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			NEW = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			KLA = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			ARR = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_fire_mlp
+		icon = GFX_goal_psyker_the_pale_horse
+		cost = 30
+		x = 0
+		y = 2
+		relative_position_id = bdt_fire_west
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+			MLP = {
+				is_neighbor_of = BDT
+			}
+		}
+		allow_branch = {
+			has_global_flag = MLP_harmony_and_unity_enabled_global_flag
+		}
+		will_lead_to_war_with = MLP
+		bypass = {
+			MLP = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			hidden_effect = { load_oob = BDT_Woodsmen_Small }
+			MLP = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_fire_spread_the_melody
+		icon = GFX_goal_BDT_odious_king
+		cost = 30
+		x = 0
+		y = 1
+		available = {
+			owns_state = 285
+		}
+		prerequisite = {
+			focus = bdt_fire_west
+		}
+		relative_position_id = bdt_fire_west
+		completion_reward = {
+			hidden_effect = { load_oob = BDT_Woodsmen_Small }
+			every_state = {
+				add_claim_by = BDT
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_holding_down_the_fort
+		icon = GFX_goal_generic_secret_weapon
+		cost = 30
+		available = {
+			shared_focus_tree_unlocked = yes
+		}
+		x = 0
+		y = 1
+		allow_branch = {
+			NOT = { has_global_flag = MLP_harmony_and_unity_enabled_global_flag }
+		}
+		relative_position_id = bdt_the_crimson_forest
+		completion_reward = {
+			add_political_power = 150
+		}
+	}
+
+	focus = {
+		id = bdt_he_who_showed_the_way
+		icon = GFX_goal_BDT_odious_king
+		cost = 30
+		prerequisite = {
+			focus = bdt_holding_down_the_fort
+		}
+		x = -2
+		y = 1
+		relative_position_id = bdt_holding_down_the_fort
+		completion_reward = {
+			add_stability = -0.15
+			every_owned_state = {
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_new_rounds_of_initiation
+		icon = GFX_goal_generic_dark_cultist_2
+		cost = 30
+		prerequisite = {
+			focus = bdt_he_who_showed_the_way
+		}
+		x = -1
+		y = 1
+		relative_position_id = bdt_he_who_showed_the_way
+		completion_reward = {
+			capital_scope = {
+				set_temp_variable = {
+					pop_add = 3000
+				}
+				add_state_population = yes
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_scarlet_trials
+		icon = GFX_goal_generic_dark_cultist
+		cost = 30
+		prerequisite = {
+			focus = bdt_he_who_showed_the_way
+		}
+		x = 1
+		y = 1
+		relative_position_id = bdt_he_who_showed_the_way
+		completion_reward = {
+			capital_scope = {
+				add_extra_state_shared_building_slots = 4
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_a_dark_gift
+		icon = GFX_goal_BDT_geck_corrupted
+		cost = 30
+		prerequisite = {
+			focus = bdt_new_rounds_of_initiation
+		}
+		prerequisite = {
+			focus = bdt_scarlet_trials
+		}
+		x = 0
+		y = 2
+		relative_position_id = bdt_he_who_showed_the_way
+		completion_reward = {
+			add_to_variable = { geck_count = 1 }
+			add_to_variable = { malfunctioning_geck_count = 1 }
+			custom_effect_tooltip = corrupted_geck_tt
+		}
+	}
+
+	focus = {
+		id = bdt_the_pillars_of_rome
+		icon = GFX_goal_generic_mountain_fortress
+		cost = 30
+		prerequisite = {
+			focus = bdt_a_dark_gift
+		}
+		x = -1
+		y = 1
+		relative_position_id = bdt_a_dark_gift
+		completion_reward = {
+			add_popularity = {
+				ideology = elites
+				popularity = 0.1
+			}
+			343 = {
+				add_extra_state_shared_building_slots = 2
+				add_resource = {
+					type = water
+					amount = 6
+				}
+				add_resource = {
+					type = metal
+					amount = 2
+				}
+			}
+			71 = {
+				hidden_effect = {
+					set_temp_variable = { new_node_target = THIS.id }
+					set_temp_variable = { new_node_economic_development = 0.5 }
+					add_to_temp_array = { new_node_trade_array = 291 }
+					add_to_temp_array = { new_node_trade_array = 179 }
+					add_to_temp_array = { new_node_trade_array = 23 }
+					add_to_temp_array = { new_node_trade_array = 337 }
+					add_to_temp_array = { new_node_trade_array = 84 }
+					set_temp_variable = { set_main_node_flag = 1 }
+					set_temp_variable = { new_node_map_x = 1898 }
+					set_temp_variable = { new_node_map_y = 736 }
+				}
+				create_map_node = yes
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_pilgrims_of_the_steam
+		icon = GFX_goal_HEA_focus_pilgrims
+		cost = 30
+		prerequisite = {
+			focus = bdt_holding_down_the_fort
+		}
+		x = 2
+		y = 1
+		relative_position_id = bdt_holding_down_the_fort
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					is_coastal = yes
+				}
+				set_temp_variable = {
+					pop_add = 1000
+				}
+				add_state_population_no_state_name = yes
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_partial_steamwork_integration
+		icon = GFX_goal_HEA_focus_developing_the_gate
+		cost = 30
+		prerequisite = {
+			focus = bdt_pilgrims_of_the_steam
+		}
+		x = -1
+		y = 1
+		relative_position_id = bdt_pilgrims_of_the_steam
+		completion_reward = {
+			add_offsite_building = {
+				type = arms_factory
+				level = 1
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = 1
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_the_words_of_the_wise
+		icon = GFX_goal_HEA_focus_evolution_of_the_guard
+		cost = 30
+		prerequisite = {
+			focus = bdt_pilgrims_of_the_steam
+		}
+		x = 1
+		y = 1
+		relative_position_id = bdt_pilgrims_of_the_steam
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+
+	focus = {
+		id = bdt_clerical_militia
+		icon = GFX_goal_HEA_focus_mandatory_service
+		cost = 30
+		prerequisite = {
+			focus = bdt_partial_steamwork_integration
+		}
+		prerequisite = {
+			focus = bdt_the_words_of_the_wise
+		}
+		x = 0
+		y = 2
+		relative_position_id = bdt_pilgrims_of_the_steam
+		completion_reward = {
+			add_manpower = 1000
+		}
+	}
+
+	focus = {
+		id = bdt_trained_geckos
+		icon = GFX_goal_generic_creature_gecko
+		cost = 30
+		prerequisite = {
+			focus = bdt_clerical_militia
+		}
+		x = 1
+		y = 1
+		relative_position_id = bdt_clerical_militia
+		completion_reward = {
+			set_technology = { oregon_geckosupport = 1 }
+		}
+	}
+
+	focus = {
+		id = bdt_a_new_outlook
+		icon = GFX_KHA_focus_planning_red
+		cost = 30
+		prerequisite = {
+			focus = bdt_a_dark_gift
+		}
+		prerequisite = {
+			focus = bdt_clerical_militia
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		x = 2
+		y = 2
+		relative_position_id = bdt_a_dark_gift
+		completion_reward = {
+			add_political_power = 150
+		}
+	}
+
+	focus = {
+		id = bdt_old_rivals
+		icon = GFX_goal_generic_territory_or_war
+		cost = 30
+		prerequisite = {
+			focus = bdt_a_new_outlook
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 15
+				date > 2278.1.1
+			}
+		}
+		x = 0
+		y = 1
+		relative_position_id = bdt_a_new_outlook
+		completion_reward = {
+			add_war_support = 0.10
+			add_command_power = 50
+		}
+	}
+
+	focus = {
+		id = bdt_che_war
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		prerequisite = {
+			focus = bdt_old_rivals
+		}
+		available = {
+			any_neighbor_country = {
+				any_owned_state = {
+					is_core_of = CHE
+				}
+			}
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 15
+				date > 2278.1.1
+			}
+		}
+		bypass = {
+			CHE = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		x = 2
+		y = 1
+		will_lead_to_war_with = CHE
+		relative_position_id = bdt_old_rivals
+		completion_reward = {
+			CHE = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_the_great_artillery
+		icon = GFX_goal_NCR_Blast_from_the_Past
+		cost = 30
+		prerequisite = {
+			focus = bdt_che_war
+		}
+		available = {
+			CHE = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		x = -1
+		y = 1
+		relative_position_id = bdt_che_war
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				ahead_reduction = 2
+				uses = 2
+				category = support_fireteam_ballistic_tech_category
+			}
+			add_state_core = 536
+			add_state_core = 480
+		}
+	}
+
+	focus = {
+		id = bdt_chemult_armory
+		icon = GFX_goal_generic_common_firearms_focus
+		cost = 30
+		prerequisite = {
+			focus = bdt_che_war
+		}
+		available = {
+			CHE = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		x = 1
+		y = 1
+		relative_position_id = bdt_che_war
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1000
+				producer = CHE
+			}
+			add_state_core = 580
+			add_state_core = 426
+		}
+	}
+
+	focus = {
+		id = bdt_sho_war
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		prerequisite = {
+			focus = bdt_old_rivals
+		}
+		available = {
+			any_neighbor_country = {
+				any_owned_state = {
+					is_core_of = SHO
+				}
+			}
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 5
+				has_completed_focus = bdt_chemult_armory
+			}
+		}
+		x = -2
+		y = 1
+		will_lead_to_war_with = SHO
+		relative_position_id = bdt_old_rivals
+		bypass = {
+			SHO = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			SHO = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_shoeshone_legacy
+		icon = GFX_goal_BDT_shoeshone_legacy
+		cost = 30
+		prerequisite = {
+			focus = bdt_sho_war
+		}
+		available = {
+			SHO = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		x = -1
+		y = 1
+		relative_position_id = bdt_sho_war
+		completion_reward = {
+			304 = {
+				add_resource = {
+					type = water
+					amount = 12
+				}
+			}
+			add_state_core = 8
+			add_state_core = 304
+		}
+	}
+
+	focus = {
+		id = bdt_mountain_home_air_force_base
+		icon = GFX_goal_generic_vehicle_plane
+		cost = 30
+		prerequisite = {
+			focus = bdt_sho_war
+		}
+		available = {
+			SHO = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		x = 1
+		y = 1
+		relative_position_id = bdt_sho_war
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				ahead_reduction = 2
+				uses = 2
+				category = fighter_tech_category
+			}
+			add_state_core = 447
+		}
+	}
+
+	focus = {
+		id = bdt_road_warriors_of_the_eighty_four
+		icon = GFX_goal_generic_secret_weapon
+		cost = 30
+		prerequisite = {
+			focus = bdt_shoeshone_legacy
+		}
+		prerequisite = {
+			focus = bdt_mountain_home_air_force_base
+		}
+		prerequisite = {
+			focus = bdt_the_great_artillery
+		}
+		prerequisite = {
+			focus = bdt_chemult_armory
+		}
+		available = {
+			OR = {
+				owns_state = 231
+				custom_trigger_tooltip = {
+					tooltip = "Has not signed the Treaty of Bend"
+					NOT = { has_country_flag = treaty_of_bend }
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 1
+				OR = {
+					BDT_has_ai_behavior_road_warriors = yes
+					owns_state = 231
+				}
+			}
+		}
+		mutually_exclusive = {
+			focus = bdt_hail_to_the_king
+		}
+		mutually_exclusive = {
+			focus = bdt_listen_to_the_pilgrims
+		}
+		x = 0
+		y = 3
+		relative_position_id = bdt_old_rivals
+		completion_reward = {
+			if = {
+				limit = {
+					has_government = elites
+				}
+				add_popularity = {
+					ideology = elites
+					popularity = 0.25
+				}
+			}
+			else = {
+				add_popularity = {
+					ideology = ruler
+					popularity = 0.25
+				}
+			}
+			add_political_power = 150
+			add_stability = 0.05
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = bdt_eas_war
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		prerequisite = {
+			focus = bdt_road_warriors_of_the_eighty_four
+		}
+		available = {
+			any_neighbor_country = {
+				any_owned_state = {
+					is_core_of = EAS
+				}
+			}
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			EAS = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 5
+				CYC = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+			modifier = {
+				add = -20
+				612 = {
+					owner = {
+						NOT = { original_tag = CYC }
+						NOT = { original_tag = BDT }
+					}
+				}
+			}
+		}
+		x = -3
+		y = 1
+		will_lead_to_war_with = EAS
+		relative_position_id = bdt_road_warriors_of_the_eighty_four
+		completion_reward = {
+			EAS = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_cyc_war
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		prerequisite = {
+			focus = bdt_road_warriors_of_the_eighty_four
+		}
+		available = {
+			any_neighbor_country = {
+				any_owned_state = {
+					is_core_of = CYC
+				}
+			}
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			CYC = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		x = -1
+		y = 1
+		will_lead_to_war_with = CYC
+		relative_position_id = bdt_road_warriors_of_the_eighty_four
+		completion_reward = {
+			CYC = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_southern_integration
+		icon = GFX_focus_generic_self_management
+		cost = 30
+		prerequisite = {
+			focus = bdt_eas_war
+		}
+		prerequisite = {
+			focus = bdt_cyc_war
+		}
+		available = {
+			EAS = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			CYC = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		x = -2
+		y = 2
+		relative_position_id = bdt_road_warriors_of_the_eighty_four
+		completion_reward = {
+			EAS = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			CYC = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_trl_war
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		prerequisite = {
+			focus = bdt_road_warriors_of_the_eighty_four
+		}
+		available = {
+			any_neighbor_country = {
+				any_owned_state = {
+					is_core_of = TRL
+				}
+			}
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			TRL = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		x = 1
+		y = 1
+		will_lead_to_war_with = TRL
+		relative_position_id = bdt_road_warriors_of_the_eighty_four
+		completion_reward = {
+			TRL = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_mdt_war
+		icon = GFX_goal_generic_war_focus
+		cost = 30
+		prerequisite = {
+			focus = bdt_road_warriors_of_the_eighty_four
+		}
+		available = {
+			any_neighbor_country = {
+				any_owned_state = {
+					is_core_of = MDT
+				}
+			}
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			MDT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		x = 3
+		y = 1
+		will_lead_to_war_with = MDT
+		relative_position_id = bdt_road_warriors_of_the_eighty_four
+		completion_reward = {
+			MDT = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_western_integration
+		icon = GFX_focus_generic_self_management
+		cost = 30
+		prerequisite = {
+			focus = bdt_trl_war
+		}
+		prerequisite = {
+			focus = bdt_mdt_war
+		}
+		available = {
+			TRL = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			MDT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		x = 2
+		y = 2
+		relative_position_id = bdt_road_warriors_of_the_eighty_four
+		completion_reward = {
+			TRL = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			MDT = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_the_skeleton_king
+		icon = GFX_goal_BDT_skeleton_king
+		cost = 30
+		prerequisite = {
+			focus = bdt_southern_integration
+			focus = bdt_western_integration
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		x = 0
+		y = 3
+		relative_position_id = bdt_road_warriors_of_the_eighty_four
+		completion_reward = {
+			add_country_leader_trait = skeleton_king
+			set_variable = { coring_cost_country_factor = -0.25 }
+			custom_effect_tooltip = bdt_25_percent_core_cost_reduction_tt
+		}
+	}
+
+	focus = {
+		id = bdt_realm_of_bone
+		icon = GFX_goal_BRK_night_of_horros
+		cost = 30
+		prerequisite = {
+			focus = bdt_the_skeleton_king
+		}
+		mutually_exclusive = {
+			focus = bdt_pact_of_darkness
+		}
+		x = -1
+		y = 1
+		relative_position_id = bdt_the_skeleton_king
+		completion_reward = {
+			add_ideas = bdt_realm_of_bone
+		}
+	}
+
+	focus = {
+		id = bdt_pact_of_darkness
+		icon = GFX_goal_WBH_death_or_glory
+		cost = 30
+		prerequisite = {
+			focus = bdt_the_skeleton_king
+		}
+		mutually_exclusive = {
+			focus = bdt_realm_of_bone
+		}
+		available = {
+			is_subject = no
+			country_exists = WBH
+			#Hide this if you are going down the secret path
+			if = {
+				limit = {
+					has_government = elites
+				}
+				NOT = { has_government = elites }
+			}
+		}
+		x = 1
+		y = 1
+		relative_position_id = bdt_the_skeleton_king
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				ahead_reduction = 4
+				uses = 3
+				category = power_armor_tech_category
+			}
+			if = {
+				limit = {
+					is_not_northern_league_member = yes
+					any_country = {
+						is_northern_league_member = yes
+					}
+				}
+				random_country = {
+					limit = {
+						is_northern_league_leader = yes
+					}
+					country_event = nf_bonedancers.8
+				}
+			}
+			else = {
+				create_or_join_northern_league = yes
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_hail_to_the_king
+		icon = GFX_goal_BDT_bloody_skull
+		cost = 30
+		prerequisite = {
+			focus = bdt_a_new_outlook
+		}
+		mutually_exclusive = {
+			focus = bdt_road_warriors_of_the_eighty_four
+		}
+		mutually_exclusive = {
+			focus = bdt_listen_to_the_pilgrims
+		}
+		available = {
+			#Hide this if you are going down the secret path
+			if = {
+				limit = {
+					has_government = elites
+				}
+				NOT = { has_government = elites }
+			}
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 1
+				BDT_has_ai_behavior_odious_king = yes
+			}
+		}
+		x = -4
+		y = 4
+		relative_position_id = bdt_a_new_outlook
+		completion_reward = {
+			set_politics = {
+				ruling_party = intellectuals
+			}
+			add_political_power = 150
+			add_war_support = 0.1
+			country_event = nf_bonedancers.10
+			hidden_effect = {
+				remove_ideas = bdt_odious_king
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_deal_with_the_pilgrims
+		icon = GFX_goal_HEA_focus_addres_militarism
+		cost = 30
+		prerequisite = {
+			focus = bdt_hail_to_the_king
+		}
+		x = -1
+		y = 1
+		relative_position_id = bdt_hail_to_the_king
+		completion_reward = {
+			remove_ideas = bdt_seraph_pilgrims
+			add_popularity = {
+				ideology = people
+				popularity = -0.25
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_infiltrating_the_steamworks
+		icon = GFX_goal_HEA_focus_developing_the_gate
+		cost = 30
+		prerequisite = {
+			focus = bdt_deal_with_the_pilgrims
+		}
+		x = 0
+		y = 1
+		relative_position_id = bdt_deal_with_the_pilgrims
+		completion_reward = {
+			add_offsite_building = {
+				type = arms_factory
+				level = 2
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = 2
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_another_sanctified_geck
+		icon = GFX_goal_BDT_geck_corrupted
+		cost = 30
+		prerequisite = {
+			focus = bdt_infiltrating_the_steamworks
+			focus = bdt_southern_integration
+		}
+		x = 1
+		y = 1
+		relative_position_id = bdt_infiltrating_the_steamworks
+		completion_reward = {
+			add_to_variable = { geck_count = 1 }
+			add_to_variable = { malfunctioning_geck_count = 1 }
+			custom_effect_tooltip = corrupted_geck_tt
+		}
+	}
+
+	focus = {
+		id = bdt_lessons_from_the_cathedral
+		icon = GFX_goal_NEW_rebuild_cult
+		cost = 30
+		prerequisite = {
+			focus = bdt_hail_to_the_king
+		}
+		x = -5
+		y = 1
+		relative_position_id = bdt_hail_to_the_king
+		completion_reward = {
+			add_ideas = bdt_psyonic_mastery_1
+		}
+	}
+
+	focus = {
+		id = bdt_preservation_through_pain
+		icon = GFX_goal_unity_lasher
+		cost = 30
+		prerequisite = {
+			focus = bdt_lessons_from_the_cathedral
+		}
+		x = 0
+		y = 1
+		relative_position_id = bdt_lessons_from_the_cathedral
+		completion_reward = {
+			custom_effect_tooltip = bdt_lessons_of_the_cathedral_tt
+			if = {
+				limit = {
+					OR = {
+						has_idea = bdt_lessons_of_unity_2
+						has_idea = bdt_lessons_of_unity_3
+					}
+				}
+				swap_ideas = {
+					remove_idea = bdt_lessons_of_unity_2
+					add_idea = bdt_lessons_of_unity_3
+				}
+			}
+			else_if = {
+				limit = { has_idea = bdt_lessons_of_unity_1 }
+				swap_ideas = {
+					remove_idea = bdt_lessons_of_unity_1
+					add_idea = bdt_lessons_of_unity_2
+				}
+			}
+			else = {
+				add_ideas = bdt_lessons_of_unity_1
+			}
+			add_popularity = {
+				ideology = intellectuals
+				popularity = 0.15
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_the_paradox_of_peace
+		icon = GFX_goal_unity_viola
+		cost = 30
+		prerequisite = {
+			focus = bdt_lessons_from_the_cathedral
+		}
+		x = -2
+		y = 1
+		relative_position_id = bdt_lessons_from_the_cathedral
+		completion_reward = {
+			custom_effect_tooltip = bdt_lessons_of_the_cathedral_tt
+			if = {
+				limit = {
+					OR = {
+						has_idea = bdt_lessons_of_unity_2
+						has_idea = bdt_lessons_of_unity_3
+					}
+				}
+				swap_ideas = {
+					remove_idea = bdt_lessons_of_unity_2
+					add_idea = bdt_lessons_of_unity_3
+				}
+			}
+			else_if = {
+				limit = { has_idea = bdt_lessons_of_unity_1 }
+				swap_ideas = {
+					remove_idea = bdt_lessons_of_unity_1
+					add_idea = bdt_lessons_of_unity_2
+				}
+			}
+			else = {
+				add_ideas = bdt_lessons_of_unity_1
+			}
+			add_popularity = {
+				ideology = intellectuals
+				popularity = 0.15
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_the_holy_flame
+		icon = GFX_goal_unity_morpheus
+		cost = 30
+		prerequisite = {
+			focus = bdt_lessons_from_the_cathedral
+		}
+		x = 2
+		y = 1
+		relative_position_id = bdt_lessons_from_the_cathedral
+		completion_reward = {
+			custom_effect_tooltip = bdt_lessons_of_the_cathedral_tt
+			if = {
+				limit = {
+					OR = {
+						has_idea = bdt_lessons_of_unity_2
+						has_idea = bdt_lessons_of_unity_3
+					}
+				}
+				swap_ideas = {
+					remove_idea = bdt_lessons_of_unity_2
+					add_idea = bdt_lessons_of_unity_3
+				}
+			}
+			else_if = {
+				limit = { has_idea = bdt_lessons_of_unity_1 }
+				swap_ideas = {
+					remove_idea = bdt_lessons_of_unity_1
+					add_idea = bdt_lessons_of_unity_2
+				}
+			}
+			else = {
+				add_ideas = bdt_lessons_of_unity_1
+			}
+			add_popularity = {
+				ideology = intellectuals
+				popularity = 0.15
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_dreams_of_unity
+		icon = GFX_goal_NEW_for_the_master
+		cost = 30
+		prerequisite = {
+			focus = bdt_the_paradox_of_peace
+		}
+		prerequisite = {
+			focus = bdt_preservation_through_pain
+		}
+		prerequisite = {
+			focus = bdt_the_holy_flame
+		}
+		x = 0
+		y = 2
+		relative_position_id = bdt_lessons_from_the_cathedral
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = bdt_psyonic_mastery_1
+				add_idea = bdt_psyonic_mastery_2
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_strength_of_the_mind
+		icon = GFX_goal_generic_psyker
+		cost = 30
+		prerequisite = {
+			focus = bdt_dreams_of_unity
+		}
+		x = -2
+		y = 1
+		relative_position_id = bdt_dreams_of_unity
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = bdt_psyonic_mastery_2
+				add_idea = bdt_psyonic_mastery_3
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_mental_stimulants
+		icon = GFX_goal_psyker_mentats
+		cost = 30
+		prerequisite = {
+			focus = bdt_strength_of_the_mind
+		}
+		x = -1
+		y = 1
+		relative_position_id = bdt_strength_of_the_mind
+		completion_reward = {
+			set_technology = { oregon_psyker_mental_stimulants = 1 }
+		}
+	}
+
+	focus = {
+		id = bdt_nullification_training
+		icon = GFX_goal_psyker_nullifier
+		cost = 30
+		prerequisite = {
+			focus = bdt_strength_of_the_mind
+		}
+		x = 1
+		y = 1
+		relative_position_id = bdt_strength_of_the_mind
+		completion_reward = {
+			set_technology = { oregon_psyker_nullification_training = 1 }
+		}
+	}
+
+	focus = {
+		id = bdt_unnatural_selection
+		icon = GFX_goal_psyker_injection
+		cost = 30
+		prerequisite = {
+			focus = bdt_mental_stimulants
+		}
+		prerequisite = {
+			focus = bdt_nullification_training
+		}
+		x = 0
+		y = 2
+		relative_position_id = bdt_strength_of_the_mind
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = bdt_psyonic_mastery_3
+				add_idea = bdt_psyonic_mastery_4
+			}
+
+		}
+	}
+
+	focus = {
+		id = bdt_extending_our_grasp
+		icon = GFX_goal_BDT_war_with_tim
+		cost = 30
+		prerequisite = {
+			focus = bdt_dreams_of_unity
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		x = 2
+		y = 1
+		will_lead_to_war_with = TIM
+		relative_position_id = bdt_dreams_of_unity
+		bypass = {
+			TIM = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			TIM = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_division_infinite
+		icon = GFX_goal_psyker_atom
+		cost = 30
+		prerequisite = {
+			focus = bdt_extending_our_grasp
+		}
+		prerequisite = {
+			focus = bdt_ancient_traditions
+		}
+		mutually_exclusive = {
+			focus = bdt_realities_infinite
+		}
+		available = {
+			TIM = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		x = -1
+		y = 1
+		relative_position_id = bdt_extending_our_grasp
+		completion_reward = {
+			army_experience = 20
+			every_unit_leader = {
+				add_planning = 2
+			}
+			277 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+				if = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_realities_infinite
+		icon = GFX_goal_psyker_universe
+		cost = 30
+		prerequisite = {
+			focus = bdt_extending_our_grasp
+		}
+		prerequisite = {
+			focus = bdt_schools_of_higher_thought
+		}
+		mutually_exclusive = {
+			focus = bdt_division_infinite
+		}
+		available = {
+			TIM = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		x = 1
+		y = 1
+		relative_position_id = bdt_extending_our_grasp
+		completion_reward = {
+			army_experience = 20
+			every_unit_leader = {
+				add_logistics = 2
+			}
+			277 = {
+				add_extra_state_shared_building_slots = 6
+				set_temp_variable = {
+					pop_add = 1000
+				}
+				add_state_population = yes
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_ancient_traditions
+		icon = GFX_goal_psyker_voodoo_doll
+		cost = 30
+		prerequisite = {
+			focus = bdt_dreams_of_unity
+		}
+		x = 0
+		y = 1
+		relative_position_id = bdt_dreams_of_unity
+		completion_reward = {
+			set_technology = { oregon_psyker_ancient_traditions = 1 }
+		}
+	}
+
+	focus = {
+		id = bdt_schools_of_higher_thought
+		icon = GFX_goal_psyker_tarot
+		cost = 30
+		prerequisite = {
+			focus = bdt_dreams_of_unity
+		}
+		x = 4
+		y = 1
+		relative_position_id = bdt_dreams_of_unity
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.3
+				ahead_reduction = 3
+				uses = 3
+				category = spec_force_equipment_tech_category
+			}
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.3
+				uses = 3
+				category = caf_land_doctrine_xp
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_union_through_blood
+		icon = GFX_goal_psyker_self_management
+		cost = 30
+		prerequisite = {
+			focus = bdt_division_infinite
+			focus = bdt_realities_infinite
+		}
+		available = {
+			TIM = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		x = -1
+		y = 1
+		relative_position_id = bdt_realities_infinite
+		completion_reward = {
+			TIM = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_crossing_through_the_steam
+		icon = GFX_goal_BDT_attack_hea
+		cost = 30
+		prerequisite = {
+			focus = bdt_unnatural_selection
+		}
+		prerequisite = {
+			focus = bdt_union_through_blood
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 1
+				has_completed_focus = bdt_deal_with_the_pilgrims
+			}
+		}
+		x = 2
+		y = 1
+		will_lead_to_war_with = HEA
+		will_lead_to_war_with = HGH
+		relative_position_id = bdt_unnatural_selection
+		completion_reward = {
+			if = {
+				limit = {
+					140 = {
+						owner = {
+							NOT = {
+								original_tag = HEA
+							}
+							NOT = {
+								original_tag = ROOT
+							}
+						}
+					}
+				}
+				custom_effect_tooltip = bdt_hgh_war_tt
+				140 = {
+					owner = {
+						ROOT = {
+							grant_wargoals_on_core_states_of_prev = yes
+						}
+					}
+				}
+				add_state_claim = 278
+			}
+			else = {
+				HEA = {
+					ROOT = {
+						grant_wargoals_on_core_states_of_prev = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_corrupting_the_steam
+		icon = GFX_goal_psyker_power
+		cost = 30
+		prerequisite = {
+			focus = bdt_crossing_through_the_steam
+		}
+		available = {
+			HEA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		x = -1
+		y = 1
+		relative_position_id = bdt_crossing_through_the_steam
+		completion_reward = {
+			country_event = nf_bonedancers.25
+		}
+	}
+
+	focus = {
+		id = bdt_secrets_of_the_gate
+		icon = GFX_goal_psyker_knowledge
+		cost = 30
+		prerequisite = {
+			focus = bdt_crossing_through_the_steam
+		}
+		available = {
+			HEA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		x = 1
+		y = 1
+		relative_position_id = bdt_crossing_through_the_steam
+		completion_reward = {
+			custom_effect_tooltip = secrets_of_the_gate_tt
+		}
+	}
+
+	focus = {
+		id = bdt_fire_walk_with_me
+		icon = GFX_goal_psyker_fire_walk_with_me
+		cost = 30
+		prerequisite = {
+			focus = bdt_corrupting_the_steam
+		}
+		prerequisite = {
+			focus = bdt_secrets_of_the_gate
+		}
+		x = 0
+		y = 2
+		relative_position_id = bdt_crossing_through_the_steam
+		completion_reward = {
+			custom_effect_tooltip = bdt_fire_walk_with_me_tt
+			hidden_effect = {
+				add_state_claim = 332
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_listen_to_the_pilgrims
+		icon = GFX_goal_BDT_holy_skull
+		cost = 30
+		prerequisite = {
+			focus = bdt_a_new_outlook
+		}
+		mutually_exclusive = {
+			focus = bdt_road_warriors_of_the_eighty_four
+		}
+		mutually_exclusive = {
+			focus = bdt_hail_to_the_king
+		}
+		available = {
+			#Hide this if you are going down the secret path
+			if = {
+				limit = {
+					has_government = elites
+				}
+				NOT = { has_government = elites }
+			}
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 1
+				BDT_has_ai_behavior_seraph_lords = yes
+			}
+		}
+		x = 4
+		y = 4
+		relative_position_id = bdt_a_new_outlook
+		completion_reward = {
+			set_politics = {
+				ruling_party = people
+			}
+			add_political_power = 150
+			add_stability = 0.1
+			custom_effect_tooltip = disables_the_ransack_coring_mechanic
+			set_country_flag = do_not_ransack_states
+			country_event = nf_bonedancers.11
+		}
+	}
+
+	focus = {
+		id = bdt_cleansing_the_crimson_forest
+		icon = GFX_goal_NCN_The_Promise_of_Paradise_Eternal
+		cost = 30
+		prerequisite = {
+			focus = bdt_listen_to_the_pilgrims
+		}
+		x = 2
+		y = 1
+		relative_position_id = bdt_listen_to_the_pilgrims
+		completion_reward = {
+			add_popularity = {
+				ideology = intellectuals
+				popularity = -0.1
+			}
+			add_popularity = {
+				ideology = people
+				popularity = 0.1
+			}
+			add_political_power = 150
+		}
+	}
+
+	focus = {
+		id = bdt_steam_blasting_the_forest
+		icon = GFX_goal_HEA_focus_arming_the_clergy
+		cost = 30
+		prerequisite = {
+			focus = bdt_cleansing_the_crimson_forest
+		}
+		x = -1
+		y = 1
+		relative_position_id = bdt_cleansing_the_crimson_forest
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = infantry_weapons_tech_category
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_reforming_the_wicked
+		icon = GFX_goal_HEA_focus_mercy_for_the_wicked
+		cost = 30
+		prerequisite = {
+			focus = bdt_cleansing_the_crimson_forest
+		}
+		x = 1
+		y = 1
+		relative_position_id = bdt_cleansing_the_crimson_forest
+		completion_reward = {
+			add_stability = 0.1
+			country_event = nf_bonedancers.13
+		}
+	}
+
+	focus = {
+		id = bdt_striking_at_the_source
+		icon = GFX_goal_BDT_odious_king_hostile
+		cost = 30
+		prerequisite = {
+			focus = bdt_steam_blasting_the_forest
+		}
+		prerequisite = {
+			focus = bdt_reforming_the_wicked
+		}
+		x = 0
+		y = 2
+		relative_position_id = bdt_cleansing_the_crimson_forest
+		completion_reward = {
+			remove_ideas = bdt_odious_king
+			add_political_power = 150
+		}
+	}
+
+	focus = {
+		id = bdt_steam_machines
+		icon = GFX_goal_HEA_focus_steampowered_dreadnaughts
+		cost = 30
+		prerequisite = {
+			focus = bdt_steam_blasting_the_forest
+			focus = bdt_western_integration
+		}
+		x = 2
+		y = 1
+		relative_position_id = bdt_western_integration
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				ahead_reduction = 2
+				uses = 2
+				category = tank_tech_category
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_council_of_pilgrims
+		icon = GFX_goal_HEA_focus_embassy_of_christ
+		cost = 30
+		prerequisite = {
+			focus = bdt_listen_to_the_pilgrims
+		}
+		x = 6
+		y = 1
+		relative_position_id = bdt_listen_to_the_pilgrims
+		completion_reward = {
+			add_ideas = bdt_the_seraph_lords_1
+		}
+	}
+
+	focus = {
+		id = bdt_armored_crusaders
+		icon = GFX_goal_HEA_focus_steam_power_armor
+		cost = 30
+		prerequisite = {
+			focus = bdt_council_of_pilgrims
+		}
+		x = -1
+		y = 1
+		relative_position_id = bdt_council_of_pilgrims
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				ahead_reduction = 2
+				uses = 2
+				category = power_armor_tech_category
+			}
+			country_event = nf_bonedancers.12
+		}
+	}
+
+	focus = {
+		id = bdt_the_god_of_steam
+		icon = GFX_goal_HEA_focus_race_to_heaven
+		cost = 30
+		prerequisite = {
+			focus = bdt_council_of_pilgrims
+		}
+		x = 1
+		y = 1
+		relative_position_id = bdt_council_of_pilgrims
+		completion_reward = {
+			remove_opinion_modifier = {
+				target = HEA
+				modifier = world_view_hea
+			}
+			HEA = {
+				remove_opinion_modifier = {
+					target = ROOT
+					modifier = hea_view_world
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_further_steamwork_integration
+		icon = GFX_goal_HEA_focus_developing_the_gate
+		cost = 30
+		prerequisite = {
+			focus = bdt_armored_crusaders
+		}
+		prerequisite = {
+			focus = bdt_the_god_of_steam
+		}
+		x = 0
+		y = 2
+		relative_position_id = bdt_council_of_pilgrims
+		completion_reward = {
+			add_offsite_building = {
+				type = arms_factory
+				level = 3
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = 3
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_coming_of_the_seraphs
+		icon = GFX_goal_HEA_focus_wings_of_the_angels
+		cost = 30
+		prerequisite = {
+			focus = bdt_striking_at_the_source
+		}
+		prerequisite = {
+			focus = bdt_further_steamwork_integration
+		}
+		x = 2
+		y = 1
+		relative_position_id = bdt_striking_at_the_source
+		completion_reward = {
+			swap_ideas = {
+				add_idea = bdt_the_seraph_lords_2
+				remove_idea = bdt_the_seraph_lords_1
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_the_first_purified_geck
+		icon = GFX_goal_ENC_geck
+		cost = 30
+		prerequisite = {
+			focus = bdt_coming_of_the_seraphs
+		}
+		x = -2
+		y = 1
+		relative_position_id = bdt_coming_of_the_seraphs
+		completion_reward = {
+			add_to_variable = { geck_count = 1 }
+			custom_effect_tooltip = generic_geck_tt
+		}
+	}
+
+	focus = {
+		id = bdt_seraph_crusuaders
+		icon = GFX_goal_HEA_focus_military_ordos
+		cost = 30
+		prerequisite = {
+			focus = bdt_coming_of_the_seraphs
+		}
+		x = 2
+		y = 1
+		relative_position_id = bdt_coming_of_the_seraphs
+		completion_reward = {
+			add_manpower = 1500
+		}
+	}
+
+	focus = {
+		id = bdt_question_of_syncretism
+		icon = GFX_goal_HEA_focus_learning_to_forgive
+		cost = 30
+		prerequisite = {
+			focus = bdt_coming_of_the_seraphs
+		}
+		x = 0
+		y = 1
+		relative_position_id = bdt_coming_of_the_seraphs
+		completion_reward = {
+			HEA = {
+				country_event = nf_bonedancers.14
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_communion_achieved
+		icon = GFX_goal_HEA_focus_armed_pilgrims
+		cost = 30
+		prerequisite = {
+			focus = bdt_question_of_syncretism
+		}
+		mutually_exclusive = {
+			focus = bdt_excommunication
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = "Heaven's Gate has accepted us"
+				has_country_flag = hea_accepted
+			}
+			is_subject = no
+		}
+		x = -2
+		y = 1
+		relative_position_id = bdt_question_of_syncretism
+		completion_reward = {
+			swap_ideas = {
+				add_idea = bdt_the_seraph_lords_3
+				remove_idea = bdt_the_seraph_lords_2
+			}
+			create_or_join_children_of_the_gate = yes
+		}
+	}
+
+	focus = {
+		id = bdt_advisors_from_the_gate
+		icon = GFX_goal_HEA_focus_cleric_generals
+		cost = 30
+		prerequisite = {
+			focus = bdt_communion_achieved
+		}
+		x = -1
+		y = 1
+		relative_position_id = bdt_communion_achieved
+		completion_reward = {
+			army_experience = 20
+
+		}
+	}
+
+	focus = {
+		id = bdt_complete_steamwork_integration
+		icon = GFX_goal_HEA_focus_developing_the_gate
+		cost = 30
+		prerequisite = {
+			focus = bdt_communion_achieved
+		}
+		x = 1
+		y = 1
+		relative_position_id = bdt_communion_achieved
+		completion_reward = {
+			add_offsite_building = {
+				type = arms_factory
+				level = 4
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = 4
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_steam_core_ingenuity
+		icon = GFX_goal_usa_electricity
+		cost = 30
+		prerequisite = {
+			focus = bdt_advisors_from_the_gate
+		}
+		prerequisite = {
+			focus = bdt_complete_steamwork_integration
+		}
+		x = 0
+		y = 2
+		relative_position_id = bdt_communion_achieved
+		completion_reward = {
+			capital_scope = {
+				add_resource = {
+					type = energy
+					amount = 12
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_excommunication
+		icon = GFX_goal_HEA_focus_declaration_of_crusade
+		cost = 30
+		prerequisite = {
+			focus = bdt_question_of_syncretism
+		}
+		mutually_exclusive = {
+			focus = bdt_communion_achieved
+		}
+		available = {
+			NOT = { has_completed_focus = bdt_communion_achieved }
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = "Heaven's Gate has rejected us"
+					has_country_flag = hea_refused
+				}
+				HEA = {
+					exists = no
+				}
+				HEA = {
+					is_subject = yes
+				}
+			}
+		}
+		x = 2
+		y = 1
+		relative_position_id = bdt_question_of_syncretism
+		completion_reward = {
+			add_opinion_modifier = {
+				target = HEA
+				modifier = heretics
+			}
+			HEA = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = heretics
+				}
+			}
+			add_stability = -0.1
+			add_manpower = 2500
+			swap_ideas = {
+				add_idea = bdt_the_seraph_lords_3
+				remove_idea = bdt_the_seraph_lords_2
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_schism_in_the_steam
+		icon = GFX_goal_HEA_focus_crusader_armies
+		cost = 30
+		prerequisite = {
+			focus = bdt_excommunication
+		}
+		x = -1
+		y = 1
+		relative_position_id = bdt_excommunication
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = bdt_seraph_pilgrims
+				add_idea = bdt_seraph_heretics
+			}
+			army_experience = 10
+			every_unit_leader = {
+				add_attack = 2
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_land_for_the_crusade
+		icon = GFX_goal_oregon_deal_with_timberline
+		cost = 30
+		prerequisite = {
+			focus = bdt_excommunication
+		}
+		bypass = {
+			owns_state = 53
+		}
+		x = 1
+		y = 1
+		relative_position_id = bdt_excommunication
+		completion_reward = {
+			53 = {
+				owner = {
+					country_event = nf_bonedancers.17
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_the_war_for_steam
+		icon = GFX_goal_HEA_focus_embracing_violence
+		cost = 30
+		prerequisite = {
+			focus = bdt_schism_in_the_steam
+		}
+		prerequisite = {
+			focus = bdt_land_for_the_crusade
+		}
+		available = {
+			if = {
+				limit = {
+					53 = {
+						owner = {
+							NOT = { original_tag = HEA }
+						}
+					}
+				}
+				owns_state = 53
+			}
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		x = 0
+		y = 2
+		will_lead_to_war_with = HEA
+		will_lead_to_war_with = HGH
+		relative_position_id = bdt_excommunication
+		completion_reward = {
+			if = {
+				limit = {
+					140 = {
+						owner = {
+							NOT = {
+								original_tag = HEA
+							}
+							NOT = {
+								original_tag = ROOT
+							}
+						}
+					}
+				}
+				custom_effect_tooltip = bdt_hgh_war_tt
+				140 = {
+					owner = {
+						ROOT = {
+							grant_wargoals_on_core_states_of_prev = yes
+						}
+					}
+				}
+				add_state_claim = 278
+			}
+			else = {
+				HEA = {
+					ROOT = {
+						grant_wargoals_on_core_states_of_prev = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_brothers_in_arms
+		icon = GFX_goal_HEA_focus_addres_militarism
+		cost = 30
+		prerequisite = {
+			focus = bdt_steam_core_ingenuity
+		}
+		x = -3
+		y = 1
+		relative_position_id = bdt_the_war_for_steam
+		completion_reward = {
+			every_country = {
+				limit = {
+					OR = {
+						original_tag = HEA
+						original_tag = BDT
+					}
+				}
+				every_unit_leader = {
+					add_attack = 1
+					add_defense = 1
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = bdt_consolidate_heaven
+		icon = GFX_goal_HEA_focus_political_action
+		cost = 30
+		prerequisite = {
+			focus = bdt_the_war_for_steam
+		}
+		available = {
+			HEA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		x = -1
+		y = 1
+		relative_position_id = bdt_the_war_for_steam
+		completion_reward = {
+			HEA = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			set_capital = { state = 116 }
+		}
+	}
+
+	focus = {
+		id = bdt_blessing_of_steam
+		icon = GFX_goal_HEA_focus_rebirth_of_the_gate
+		cost = 60
+		prerequisite = {
+			focus = bdt_brothers_in_arms
+			focus = bdt_consolidate_heaven
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		x = -2
+		y = 2
+		relative_position_id = bdt_the_war_for_steam
+		completion_reward = {
+			set_technology = {
+				infantry_tech_level_scientific = 1
+				special_forces_tech_level_scientific = 1
+				power_armour_tech_level_scientific = 1
+				# vehicles_tech_level_settler = 1
+				air_tech_level_scientific = 1
+				exploitation_tech_level_scientific = 1
+				habitation_tech_level_scientific = 1
+				tools_tech_level_scientific = 1
+				electronics_tech_level_scientific = 1
+				naval_tech_level_settler = 1
+			}
+			add_ideas = hea_steam_powered_weapons
+		}
+	}
+
+}

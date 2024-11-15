@@ -1,0 +1,3225 @@
+############################################################################
+# _____ _   _ _____   ____   _  _____ ____   ___  _     __  __ _____ _   _ #
+#|_   _| | | | ____| |  _ \ / \|_   _|  _ \ / _ \| |   |  \/  | ____| \ | |#
+#  | | | |_| |  _|   | |_) / _ \ | | | |_) | | | | |   | |\/| |  _| |  \| |#
+#  | | |  _  | |___  |  __/ ___ \| | |  _ <| |_| | |___| |  | | |___| |\  |#
+#  |_| |_| |_|_____| |_| /_/   \_\_| |_| \_\\___/|_____|_|  |_|_____|_| \_|#
+############################################################################
+#*****************************************************************#######%*++++*************************************************************************
+#***************************************************************########%#-.:++++***********************************************************************
+#**************************************************************##########*-.:+**++******+++*************************************************************
+#*********************************************************+++*#%%######***+=++***++++++++++++***********************************************************
+#*********************************************************+++*#%%%%###********+==++++++*++++++**********************************************************
+#*************************************************************%%%%%#####*++****+=*+++++**++++++*********************************************************
+#*******************************************************+++++*%%%%%%%#%##***#%%%#########******+********************************************************
+#******************************************************++++**#%%%%%%%@@@@@@@@@@@@@@@@@@%%%%%%%#*#*******************************************************
+#********************************************************#%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%%%%%%%%%%%%#*************************************************
+#****************************************************#%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%%%%%%%%%%%###**+++****++**************************************
+#*************************************************#%@%%%@@@@@@@@@@@@@@@@@@@@@@@%%%%%@@@@@@%%%#########***++++++++++*************************************
+#***********************************************%%%%%%%@@@@@@@@@@@@@@@@@@@@@@@%%%%%@@@@%@@%%########**+++++++++++++*************************************
+#**********************************************%%%%%%@@@@@@@@%%%####%%@@@@@@@@@@@@%%%%%%%%%%###***+++++++++++++++++++++*********************************
+#**********************************************#%%%%%@@@@%%%%#*+*####%%%%%%@@@@@%@@%%%###%%%%#**+++++++++++++++++++++++++++*+***************************
+#************************************************%%%%%%%%%%%##*+****#%%%%%@%@@@%%%%%##**###%%#*+++++++++++++++++++++++++++++++******+*******************
+#****************************************************#%%%%%%##*++***#%%%%%%@@@@%%%%%##**###%%#*+++++++++++++++++++++++++++++++++++++********************
+#********************************************************#%%#++++***#%%%%%%%%%%%%%###****##%%#*++++++++++++++++++++++++++++++++++++++*+++***************
+#*********************************************************%%*+**##*##%#%%%%%%%%%%%####***+#%%#*+++++++++++++++++++++++++++++++++++++++++++++++++********
+#**********************************************************#***+*#@@@@@@#%%%%%%@@@@@@@@#***%*+**++++++++++++++++++++++++++++++++++++++++++++++++********
+#++******+++++*****************+**++**********************#%**###%@@@@@@@#%%%%@@@@@@@@@@@##%%%*+++++++++++++++++++++++++++++++++++++++++++++++++***+****
+#+**+++++++++*++++****+****+*++++++*****+++*******+++++***#*+#%%%%@@@@@@@*%%##@@@@@@@@@@@#+##%*++++++++++++++++++++++++++++++++++++++++++++++++++++**++*
+#++++++++++*+++++++++++++*+++++*+++*****+++*******+++***+*##*#%@@@@@@@@@*+##**#@@@@@@@@@@**###*+++++++++++++++++++++++++++++++++++++++++++++++++++++++**
+#+++++++++++++**++++++++++++++++++++++****+***++++**+*++*****+%@@@@@@@#+++%%**#%@@@@@@@@#**#**++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#++++++++++++***++++++++++++++++++++++++**+++++++++++++++*+*****#%%%###+++%%*+*%%%#%%%#***#*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++**########%%%*+*%#**#%%%%%%%####%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++##%###**%%%***%#***%%%###%%%###+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++###%%%**####%####%##%%##%%%###%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++###%%%##%%%%%%%%%%%%%%##%@%%##%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*#%%%@%%%%%%%%%%%%%%%%%#%%%%#%*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*#%%%%%%###%%@@%###%%%%%%%%%*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*#%%%#%#%#%%@%%%#%%%%%%@%#***+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++****%%%%%%%@@@@@%%%%%%%@%***+*#*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++***++*%%#%%%@@@@@%%%%%#%%#***+**#****+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++*****#***+++*%%#%%%@@@@%%##%%%#****+***#######***+++++++++++++++++++++++++++++++++++++++++++++++++
+#+++++++++++++++++++++++++++++++++++++++++++++++++**########**+++**#%%%%@@@@@%%%%%%%#****+***#%%%#########**++++++++++++++++++++++++++++++++++++++++++++
+#++++++++++++++++++++++++++++++++++++++++++++++**############*++*+**#%%%%%@@@%%%%%%##****+***#%%%%%%%%%%#####**+++++++++++++++++++++++++++++++++++++++++
+#++++++++++++++++++++++++++++++++++++++++++++*######%%%%%%%%#*+**+***##%###%%%%%%%%#**##****##%@@@@%%%%%%%%%####*+++++++++++++++++++++++++++++++++++++++
+#++++++++++++++++++++++++++++++++++++++++++**#####%%%%%%%%@%#*+*++****#%%%%%%%%%%%######****##%@@@@@@%%%%%%%%%####*+++++++++++++++++++++++++++++++++++++
+#++++++++++++++++++++++++++++++++++++++++****##%%%%%%@@@@@@%#***+**#**##%%%%%%%%%%###%###**##%%%@@@@@@@%%%%%%%%####**+++++++++++++++++++++++++++++++++++
+#++++++++++++++++++++++++++++++++++++++*****#%%%%%%@@@@@@%%%##****##**##%%%%%%%%%###%%%%%%%#%%%%%%%%%%%%%%%%%%%%%%#####**+++++++++++++++++++++++++++++++
+#+++++++++++++++++++++++++++++++++++*######%%%%%%%%%%%%%%%%%%%%##%%###**%@@@@%#%%%%%%@%%%%%%%%%%%%%%####%%@@@@@%%%%%%#%%%####**+++++++++++++++++++++++++
+#+++++++++++++++++++++++++++++*##########%%%%%%@@%%%#*###%%%%%%%%@@%%%%#%@@@@##%%%%%%%%%%%%%%%%%%%#####%%@@@@@@%%%%%%%%%###%%%###*++++++++++++++++++++++
+#+++++++++++++++++++++++++**##########%%%%%%%%%@@@@%#######%%%%%%%%%%%%%%%@@%%%%##%%%%%@%%%%%%%%%%%%%%%%%@@@@%%%%%%%%%%%%#####%####**+++++++++++++++++++
+#+++++++++++++++++++++++**###########%%%%%%%%%%%@@@%###%%%%%%%%%%%@@%%%@@@@%%%%###%%%@@@@%%%%%%%%%%%%%%%%%@@@%%%%%%%%%%%%%#####%%###***+++++++++++++++++
+#+++++++++++++++++++++*****###***###%%%%%%%%%%%%@%%##%%%%%%%%%%%%%%%%%%%@@@@%%###%%%%%%%%@%%%%@%%%%%%%%%%%%@@%%%%%%%%%%%%%%%########****++++++++++++++++
+#+++++++++++++++++++***********####%%%%%%%%%%@@@%%#%%%%%%%%%%%%%%%%%%%%%@@@@@%##%%%%%%%%%%%%%%@%%%%%%%%%%%%%@@%%%%%%%%%%%%%%%%#######*****++++++++++++++
+#++++++++++++++++++**+*##*****##%#*#%%%%%%@@@@%%%%%%%%%%%%%%%###%%%%%%%%%@@@@###%%%%%%%%%%%%%%@@%%%%%%%%%%%%%%@%%%%%%%%%%%#%%%%##*####*****+++++++++++++
+#+++++++++++++++++**+****+*######*#%%%%%%@@@%%%%%%%%%%%%%%%%####%%%%%%@@@@@@@###%@@@%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%##*####*****+++++++++++++
+#+++++++++++++++++*++******####**##%%%@@@@@%%%%%%%%%%%%%%%%%%##%%%%#=+%@@@@@@%#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%###%%%#***##******++++++++++++
+#++++++++++++++++*+++*****#*#%#*##%%%%%%@%%##%%%%%%%%%%%%%%%%%%%%#*+=-+%@@@@@%##%%%@@@%%%%%%%%%%%%%%%###%%%%%%%%%%%%%%%%#####%%%##***#******++++++++++++
+#+++++++++++++++++++++****#*##**#%#%%%%%%#%%%%%%%%%%%%%%%%%%%%%%#*=-=#@@%@@@@@%#%%%%%%%%%%%@%%%%%%%%%%%####%%%%%%%%%%@%%%#####%###****#*++**++++++++++++
+#++++++++++++++++++=+*****#*#**##%%@%%%##%%%%%%%%####%%%%%@@@%%#=-+#%+=#%@@@@@%%%%%%%%%@%%%@%%%%%%%%%%%%######%%%%%%%%@%%##########***#+++**++++++++++++
+#++++++++++++++++++++*#*+*##***#%%%%%##%%%%%%%######%%%%%%%%%%+=+#%%#**#%@@@@@%%%%%%%%%%@@@@@%%%%%%%%%%%%%#######%%%%%%%%%#####%####****+***++++++++++++
+#+++++++++++++++++++++******####%%%%###############%%%%%%%%*==+###**#%%@@@@@@@%###%%%%%%%%%%@%%%%%%%%%%%###########%%%%%%%##%##%#####*+*++**++++++++++++
+#+++++++++++++++*+++++**+**##**###%%#%%#############%%%%#+-=*###**##%%@@@@@@@%####%%%%%%%%%%%%%%%%%%%%%%%##*########%%%%%%#####%%####*******++++++++++++
+#++++++++++++++++++++***++##***###%%%%%##****#######%#+-=+*##**#%%%%%%@@@%@@@%####%%%%%%%%%%%%%%%%%%%%%%######*#####%%%%%%%####%%%##********++++++++++++
+#++++++++++++++++*++++**++##**###%%%%%%#*******#####+-+*###**#%%%%%%%@@@@@%@@%%##%%%%%%%%%%%%%%%%%%%%%%######*****##%@@@%%%##%#%%%%#****#***++++++++++++
+#+++++++++++++++++++++*#**##**###%%%@@%#**********==+####*##%%%@%%%%%@@@@@%%@%###%%%%%%%%%%%%%%%%%%%%%#######*****##%@@@@%%%##%%%%%###*******+++++++++++
+#+++++++++++++++++++++*##*#%#***%%%@@@%#*******===*#%######%%@@%@@@@@@@@%%%@@@%###%%%%%%%%%%%%%%%%%%%%####*******###@@@@@@@%%##%%%####*++++**+++++++++++
+#++++++++++++++++++++***###%#**#%@%@@@@###*+=+=*#%%%%%%#*#%%%%%%@@@@@@@@@%%@@@%####%%%@%@@%%%%%%%%%%%%####*****####%@@@@@@%%@@##%%##***++++****+++++++++
+#++++++++++++++++++++******#**%@%%%@@@@%*+=+#%@@%%%##%#**#%%%%%%@@%@@@@@@@@@@@%%###%%%%%@%%%%%%%%%%%%%%%%#*****###%@@@@@@@%%@@@%#%#*****+++****+++++++++
+#++++++++++++++++++++**++#***%@%%%@@@%#++#%%%%%@%%###**###%%%%%%%@@@@@@@@@@@@@@%%#%%%%%%%%%%%%%%%#%%%@@%%#***####%@@@@@@@@%%@@@%%#**************++++++++
+#++++++++++++++++++++**++***#@%%%@@%+===+%@@%%%%%###%#####%%%%%%%%%@@@@@@%@@@@@%%%%%%%%%%%%%%%%%%%#############%@@@@@@@@@@@%@@@@%***++****##****++++++++
+#+++++++++++++++******+++++#%%%%@%+--=*#**%@%%@@%%########%%%%%%%%%%%%%%%%@@@@@@%%%%%%%%%%%%%%%%%%%###########%@@@@@@@@@@@@@@@%%%#***++*####*****+++++++
+#+++++++++++++++++**#*+++++#%#%%%#==*%#**#%@@%%############%%%%%%%%%@@@@@@@@@@@@@@@@@@@@%%%@%%%%%%%%%%%%%%%%%@@@@@@@@@@@@@@@%%%%%%***+**###**++**+++++++
+#******************###****#%######**#**###%%%%%######%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%##%%%%%%%%%%%%%%%%%%%%%%%%%#****#####************
+#%%%%%%%%%%%%%%%%%%%%%%%%%%%%#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#%%%%%%%%%%%%%%#%%%%%#%%%%%%%%%%%%%%#%%#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+#"I really like the blue hats"
+#Original Focus Design by Samwiz1 and Slappy
+#Original Localization by Samwiz1
+#MK2 Localization Revisions by Baldu (MY KING MY GOAT MY SAVIOR)
+#Original Focus Scripting by Slappy
+#MK2/Minitree Update by Slappy and Baldu (THATS WHY HE'S THE GOAT)
+#Thanks for checkin' out the tree, hope you have some fun -Slappy
+focus_tree = {
+	id = tpn_nf
+	country = {
+		factor = 0
+		modifier = {
+			add = 0
+			tag = TPM
+		}
+	}
+	default = no
+
+	focus = {
+		id = tpm_minutes_of_madness
+		icon = GFX_goal_max_watching_south
+		cost = 7
+		x = 20
+		y = 1
+		completion_reward = {
+			country_event = nf_tpm.1
+		}
+	}
+	focus = {
+		id = tpm_town_life
+		icon = GFX_goal_max_restoring_roads
+		cost = 7
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = tpm_minutes_of_madness
+		}
+		relative_position_id = tpm_minutes_of_madness
+		completion_reward = {
+			country_event = nf_tpm.2
+		}
+	}
+	focus = {
+		id = tpm_the_bluff
+		icon = GFX_goal_max_denver_consumer_industry
+		cost = 7
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = tpm_town_life
+		}
+		relative_position_id = tpm_town_life
+		completion_reward = {
+			country_event = nf_tpm.3
+		}
+	}
+	focus = {
+		id = tpm_gold_and_blue
+		icon = GFX_goal_max_we_still_have_a_mission
+		cost = 7
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = tpm_the_bluff
+		}
+		relative_position_id = tpm_the_bluff
+		completion_reward = {
+			country_event = nf_tpm.4
+			hidden_effect = {
+				add_ideas = tpm_sullivan
+			}
+		}
+	}
+###mini side trees
+	focus = {
+		id = tpm_trade_orleans
+		icon = GFX_goal_generic_gentlemen_sniper
+		cost = 30
+		x = -7
+		y = 1
+		available = {
+			if = {
+				limit = {
+					NOT = {
+						is_ai = yes
+					}
+				}
+				set_temp_variable = {
+					caps_diff = -25
+				}
+				caps_cost_trigger = yes
+			}
+		}
+		prerequisite = {
+			focus = tpm_gold_and_blue
+		}
+		relative_position_id = tpm_gold_and_blue
+		completion_reward = {
+		set_temp_variable = { caps_to_add = -25 }
+		add_caps = yes
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_1
+			amount = 500
+			producer = USA
+			}
+		}
+	}
+	focus = {
+		id = tpm_pirate_report
+		icon = GFX_goal_BRK_black_flag_fleets
+		cost = 30
+		x = 0
+		y = 1
+		available = {
+			if = {
+				limit = {
+					NOT = {
+						is_ai = yes
+					}
+				}
+				set_temp_variable = {
+					caps_diff = -25
+				}
+				caps_cost_trigger = yes
+			}
+		}
+		prerequisite = {
+			focus = tpm_trade_orleans
+		}
+		relative_position_id = tpm_trade_orleans
+		completion_reward = {
+		set_temp_variable = { caps_to_add = -25 }
+		add_caps = yes
+		add_ideas =	tpm_gulf_pirates
+		set_technology = {
+			naval_tech_level_settler  = 1
+			}
+		}
+	}
+	focus = {
+		id = tpm_trade_memphis
+		icon = GFX_goal_ORO_Pyramid
+		cost = 30
+		x = 7
+		y = 1
+		available = {
+			if = {
+				limit = {
+					NOT = {
+						is_ai = yes
+					}
+				}
+				set_temp_variable = {
+					caps_diff = -25
+				}
+				caps_cost_trigger = yes
+			}
+		}
+		prerequisite = {
+			focus = tpm_gold_and_blue
+		}
+		relative_position_id = tpm_gold_and_blue
+		completion_reward = {
+		set_temp_variable = { caps_to_add = -25 }
+		add_caps = yes
+		add_manpower = 500
+		875 = {
+				add_resource = {
+					type = circuitry
+					amount = 4
+				}
+		}
+	}
+}
+	focus = {
+		id = tpm_skybound_designs
+		icon = GFX_goal_generic_generator_wind
+		cost = 30
+		x = 0
+		y = 1
+		available = {
+			if = {
+				limit = {
+					NOT = {
+						is_ai = yes
+					}
+				}
+				set_temp_variable = {
+					caps_diff = -25
+				}
+				caps_cost_trigger = yes
+			}
+		}
+		prerequisite = {
+			focus = tpm_trade_memphis
+		}
+		relative_position_id = tpm_trade_memphis
+		completion_reward = {
+		set_temp_variable = { caps_to_add = -25 }
+		add_caps = yes
+			add_tech_bonus = {
+				bonus = 0.50
+				uses = 3
+				category = air_tech_category
+			}
+			set_technology = {
+				air_tech_level_settler = 1
+			}
+		}
+	}
+###middle act1
+	focus = {
+		id = tpm_reinforce_legends
+		icon = GFX_goal_TTM_Golden_Fruit
+		cost = 15
+		x = -3
+		y = 1
+		prerequisite = {
+			focus = tpm_gold_and_blue
+		}
+		available = {
+			TPM_left_branch_check = yes
+		}
+		relative_position_id = tpm_gold_and_blue
+		completion_reward = {
+			custom_effect_tooltip = tpm_lock_branch
+			country_event = nf_tpm_act1.1
+			custom_effect_tooltip = tpm_reinforce_hint
+			set_country_flag = tpm_lock_left_branch
+		}
+		ai_will_do = { #rush preempting dallas
+			base = 10
+		}
+	}
+	focus = {
+		id = tpm_cunningham_adventure
+		icon = GFX_goal_cmc_going_to_the_river
+		cost = 15
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = tpm_reinforce_legends
+		}
+		relative_position_id = tpm_reinforce_legends
+		completion_reward = {
+			country_event = nf_tpm_act1.2
+			custom_effect_tooltip = tpm_cunningham_hint
+		}
+		ai_will_do = { #rush preempting dallas
+			base = 10
+		}
+	}
+	focus = {
+		id = tpm_george_adventure
+		icon = GFX_KHA_focus_planning_red
+		cost = 15
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = tpm_reinforce_legends
+		}
+		relative_position_id = tpm_reinforce_legends
+		completion_reward = {
+			country_event = nf_tpm_act1.3
+			custom_effect_tooltip = tpm_george_hint
+		}
+		ai_will_do = { #rush preempting dallas
+			base = 10
+		}
+	}
+	focus = {
+		id = tpm_chiefs_contribution
+		icon = GFX_goal_enc_ncr_dollar
+		cost = 15
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = tpm_cunningham_adventure
+		}
+		prerequisite = {
+			focus = tpm_george_adventure
+		}
+		relative_position_id = tpm_cunningham_adventure
+		completion_reward = {
+			country_event = nf_tpm_act1.4
+			custom_effect_tooltip = tpm_callahan_hint
+			clr_country_flag = tpm_lock_left_branch
+		}
+		ai_will_do = { #rush preempting dallas
+			base = 10
+		}
+	}
+	focus = {
+		id = tpm_best_policy
+		icon = GFX_goal_enc_FBI
+		cost = 15
+		x = 3
+		y = 1
+		prerequisite = {
+			focus = tpm_gold_and_blue
+		}
+		available = {
+			TPM_right_branch_check = yes
+		}
+		relative_position_id = tpm_gold_and_blue
+		completion_reward = {
+			custom_effect_tooltip = tpm_lock_branch
+			country_event = nf_tpm_act1.5
+			custom_effect_tooltip = tpm_policy_hint
+			set_country_flag = tpm_lock_right_branch
+		}
+		ai_will_do = { #rush preempting dallas
+			base = 10
+		}
+	}
+	focus = {
+		id = tpm_open_streets
+		icon = GFX_goal_generic_whisky
+		cost = 15
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = tpm_best_policy
+		}
+		relative_position_id = tpm_best_policy
+		completion_reward = {
+			country_event = nf_tpm_act1.6
+			custom_effect_tooltip = tpm_streets_hint
+		}
+		ai_will_do = { #rush preempting dallas
+			base = 10
+		}
+	}
+	focus = {
+		id = tpm_never_meet_heroes
+		icon = GFX_goal_TTM_Dynamite
+		cost = 15
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = tpm_best_policy
+		}
+		relative_position_id = tpm_best_policy
+		completion_reward = {
+			country_event = nf_tpm_act1.7
+			custom_effect_tooltip = tpm_heroes_hint
+		}
+		ai_will_do = { #rush preempting dallas
+			base = 10
+		}
+	}
+	focus = {
+		id = tpm_to_the_bottom
+		icon = GFX_goal_cartel_population_law
+		cost = 15
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = tpm_open_streets
+		}
+		prerequisite = {
+			focus = tpm_never_meet_heroes
+		}
+		relative_position_id = tpm_open_streets
+		completion_reward = {
+			country_event = nf_tpm_act1.8
+			custom_effect_tooltip = tpm_bottom_hint
+			clr_country_flag = tpm_lock_right_branch
+		}
+		ai_will_do = { #rush preempting dallas
+			base = 10
+		}
+	}
+###callahan's revenge
+	focus = {
+		id = tpm_callahan_revenge
+		icon = GFX_goal_pal_pr_cyclops
+		cost = 30
+		x = 3
+		y = 1
+		prerequisite = {
+			focus = tpm_to_the_bottom
+		}
+		prerequisite = {
+			focus = tpm_chiefs_contribution
+		}
+		relative_position_id = tpm_chiefs_contribution
+		completion_reward = {
+			country_event = nf_tpm_act1.9
+		}
+		ai_will_do = { #rush preempting dallas
+		base = 10
+	}
+}
+###act2
+	focus = {
+		id = tpm_maw_wargoal
+		icon = GFX_goal_pal_cannibal_followup_raider
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = tpm_callahan_revenge
+		}
+		available = {
+			ROOT = {
+				has_war = no
+			}
+		}
+		bypass = {
+			OR = {
+				GAM = {
+				all_core_land_owned_by_prev_sphere = yes
+				}
+				TBH = {
+				GAM = {
+				all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+			}
+		}
+		relative_position_id = tpm_callahan_revenge
+		completion_reward = {
+			GAM = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+		ai_will_do = { #rush preempting dallas
+			base = 10
+		}
+	}
+	focus = {
+		id = tpm_maw_aftermath
+		icon = GFX_goal_TPM_bob
+		cost = 30
+		x = 0
+		y = 1
+		available = {
+			GAM = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		prerequisite = {
+			focus = tpm_maw_wargoal
+		}
+		relative_position_id = tpm_maw_wargoal
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = tpm_rocky_training_montage
+				}
+				swap_ideas = {
+					remove_idea = tpm_rocky_training_montage
+					add_idea = tpm_rocky_training_montage2
+				}
+			}
+			else = {
+			add_ideas = tpm_rocky_training_montage
+				}
+				TPM_patrol_chief_callahan = {
+					gain_xp = 450
+				}
+			}
+			ai_will_do = { #rush preempting dallas
+			base = 10
+		}
+		}
+	focus = {
+		id = tpm_maw_side
+		icon = GFX_goal_generic_gasmask_boy
+		cost = 30
+		x = -2
+		y = 1
+		available = {
+			GAM = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		prerequisite = {
+			focus = tpm_maw_wargoal
+		}
+		relative_position_id = tpm_maw_wargoal
+		completion_reward = {
+		country_event = nf_tpm_misc_events.1
+		}
+	}
+	focus = {
+		id = tpm_maw_core
+		icon = GFX_goal_TTM_Breaker_Of_Chains
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = tpm_maw_side
+		}
+		bypass = {
+			OR = {
+			874 = {
+				is_core_of = TPM
+			}
+			TBH = {
+				GAM = {
+				all_core_land_owned_by_prev_sphere = yes
+					}
+				}
+			}
+		}
+		relative_position_id = tpm_maw_side
+		completion_reward = {
+		add_state_core = 874
+		}
+	}
+	focus = {
+		id = tpm_bayou_wargoal
+		icon = GFX_goal_CES_slaves
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = tpm_callahan_revenge
+		}
+		relative_position_id = tpm_callahan_revenge
+		available = {
+			ROOT = {
+				has_war = no
+			}
+		}
+		bypass = {
+			BAM = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			BAM = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+		ai_will_do = { #rush preempting dallas
+			base = 10
+		}
+	}
+	focus = {
+		id = tpm_bayou_aftermath
+		icon = GFX_goal_TPM_larry
+		cost = 30
+		x = 0
+		y = 1
+		available = {
+			BAM = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		prerequisite = {
+			focus = tpm_bayou_wargoal
+		}
+		relative_position_id = tpm_bayou_wargoal
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea =  tpm_rocky_training_montage
+				}
+				swap_ideas = {
+					remove_idea =  tpm_rocky_training_montage
+					add_idea =  tpm_rocky_training_montage2
+				}
+			}
+			else = {
+			add_ideas =  tpm_rocky_training_montage
+				}
+				TPM_patrol_chief_callahan = {
+					gain_xp = 450
+				}
+			}
+			ai_will_do = { #rush preempting dallas
+			base = 10
+		}
+		}
+	focus = {
+		id = tpm_bayou_side
+		icon = GFX_goal_ARM_reynosa_dockyard_renovations
+		cost = 30
+		x = 2
+		y = 1
+		available = {
+			BAM = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		prerequisite = {
+			focus = tpm_bayou_wargoal
+		}
+		relative_position_id = tpm_bayou_wargoal
+		completion_reward = {
+		country_event = nf_tpm_misc_events.2
+		}
+	}
+	focus = {
+		id = tpm_bayou_core
+		icon = GFX_goal_generic_wooden_ship
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = tpm_bayou_side
+		}
+		bypass = {
+			OR = {
+				870 = {
+					is_core_of = TPM
+				}
+				TBH = {
+					BAM = {
+						all_core_land_owned_by_prev_sphere = yes
+					}
+				}
+			}
+		}
+		relative_position_id = tpm_bayou_side
+		completion_reward = {
+		add_state_core = 870
+		}
+	}
+	focus = {
+		id = tpm_tough_crowd
+		icon = GFX_goal_TPM_callahan
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = tpm_maw_aftermath
+		}
+		prerequisite = {
+			focus = tpm_bayou_aftermath
+		}
+		bypass = {
+			OR = {
+				AND = {
+					TBH = {
+						exists = no
+					}
+					LNS = {
+						exists = no
+					}
+				}
+				TBH = {
+					has_completed_focus = tbh_nf_approach_the_patrolmen
+				}
+			}
+		}
+		relative_position_id = tpm_maw_aftermath
+		completion_reward = {
+			country_event = nf_tough_crowd.1
+			custom_effect_tooltip = TPM_decisions_tt
+		}
+		ai_will_do = { #PLEASE GOD RUSH PREEMPTING DALLAS
+			base = 99
+		}
+	}
+	focus = {
+		id = tpm_elders_treachery
+		icon = GFX_goal_MOJ_technology_raids
+		cost = 30
+		x = -2
+		y = 1
+		available = {
+			has_country_flag = tpm_WAR_WAR_WAR
+			custom_trigger_tooltip = {
+				tooltip = TPM_auto_declare_tt
+			}
+		}
+		bypass = {
+			OR = {
+				ROOT = {
+					owns_state = 892
+				}
+				AND = {
+					TBH = {
+						exists = no
+					}
+					LNS = {
+						exists = no
+					}
+				}
+				AND = {
+					TBH = {
+						exists = no
+					}
+					LNS = {
+						has_completed_focus = lns_victory_for_the_greater_good
+					}
+				}
+				TBH = {
+					is_subject = yes
+				}
+			}
+		}
+		prerequisite = {
+			focus = tpm_tough_crowd
+		}
+		relative_position_id = tpm_tough_crowd
+		completion_reward = {
+			country_event = nf_tpm_act2.1
+		}
+		ai_will_do = { #ai gets these autocompleted, it needs the help
+			base = 0
+		}
+	}
+	focus = {
+		id = tpm_i_love_this_focus_name
+		icon = GFX_goal_generic_BOS_focus_t51b_production
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = tpm_elders_treachery
+		}
+		bypass = {
+			OR = {
+				ROOT = {
+					owns_state = 892
+				}
+				AND = {
+					TBH = {
+						exists = no
+					}
+					LNS = {
+						exists = no
+					}
+				}
+				AND = {
+					TBH = {
+						exists = no
+					}
+					LNS = {
+						has_completed_focus = lns_victory_for_the_greater_good
+					}
+				}
+				TBH = {
+					is_subject = yes
+				}
+			}
+		}
+		relative_position_id = tpm_elders_treachery
+		completion_reward = {
+			add_political_power = -75
+			874 = {
+				add_building_construction = {
+					type = coastal_bunker
+					level = 4
+					instant_build = yes
+					province = { #ok so its been half an hour and I cant get it to just be on the crossing, so its on every costal province. Rest of 'em will still be specific tho
+					id = 11873 #ok scractch that it took me five seconds to figure it out once I looked at caesar's "river wars" focus lmao
+					limit_to_coastal = yes
+					}
+				}
+			}
+			873 = { #can we please unironically strangle the dude who did caesars tree for using spaces the entire time
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = {
+						id = 11935
+						id = 11939
+						id = 11945
+						id = 11931
+					}
+				}
+			}
+			870 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = {
+						id = 11771
+						id = 11756
+					}
+				}
+			}
+			875 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = {
+						id = 11810
+					}
+				}
+			}
+			876 = {
+				add_building_construction = {
+				type = bunker
+				level = 3
+				instant_build = yes
+					province = {
+						id = 11792
+					}
+				}
+			}
+			874 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = {
+						id = 11889
+					}
+				}
+			}
+		}
+		ai_will_do = { #ai gets these autocompleted, it needs the help
+			base = 0
+		}
+	}
+	focus = {
+		id = tpm_obvious_tactic
+		icon = GFX_goal_NCR_Ranger_Can_Openers
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = tpm_elders_treachery
+		}
+		bypass = {
+			OR = {
+				ROOT = {
+					owns_state = 892
+				}
+				AND = {
+					TBH = {
+						exists = no
+					}
+					LNS = {
+						exists = no
+					}
+				}
+				AND = {
+					TBH = {
+						exists = no
+					}
+					LNS = {
+						has_completed_focus = lns_victory_for_the_greater_good
+					}
+				}
+				TBH = {
+					is_subject = yes
+				}
+			}
+		}
+		relative_position_id = tpm_elders_treachery
+		completion_reward = {
+		set_temp_variable = { caps_to_add = -75 }
+		add_caps = yes
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment_1
+				amount = 250
+				producer = USA
+			}
+		}
+		ai_will_do = { #ai gets these autocompleted, it needs the help
+			base = 0
+		}
+	}
+	focus = {
+		id = tpm_ALL_YOU_HAD_TO_DO
+		icon = GFX_goal_max_never_lose_again
+		cost = 15
+		x = 1
+		y = 1
+		available = {
+			TPM_TBH_war_check = yes
+			controls_state = 875
+		}
+		bypass = {
+			OR = {
+				ROOT = {
+					owns_state = 892
+				}
+				AND = {
+					TBH = {
+						exists = no
+					}
+					LNS = {
+						exists = no
+					}
+				}
+				AND = {
+					TBH = {
+						exists = no
+					}
+					LNS = {
+						has_completed_focus = lns_victory_for_the_greater_good
+					}
+				}
+				TBH = {
+					is_subject = yes
+				}
+			}
+		}
+		prerequisite = {
+			focus = tpm_i_love_this_focus_name
+		}
+		prerequisite = {
+			focus = tpm_obvious_tactic
+		}
+		relative_position_id = tpm_i_love_this_focus_name
+		completion_reward = {
+			country_event = nf_tpm_act2.2
+			custom_effect_tooltip = tpm_post_launch_tooltip_tt
+		}
+		ai_will_do = {
+			base = 999
+		}
+	}
+	focus = {
+		id = tpm_the_dallas_meetup #hi shroud
+		icon =  GFX_goal_RRG_Dante_Texas #GFX_goal_RES_Main_Left_Train
+		cost = 15
+		x = 2
+		y = 1
+		available = {
+			TPM_dallas_trigger = yes
+		}
+		bypass = {
+			OR = {
+				AND = {
+					TBH = {
+						exists = no
+					}
+					LNS = {
+						exists = no
+					}
+				}
+				ROOT = {
+					is_subject = yes
+				}
+			}
+		}
+		prerequisite = {
+			focus = tpm_tough_crowd
+		}
+		relative_position_id = tpm_tough_crowd
+		completion_reward = {
+			country_event = nf_tpm_act2.3
+		}
+		ai_will_do = {
+			base = 999 #GET THIS FUCKING THING DONE RIGHT NOW WE ARE IN DEEP SHIT
+		}
+	}
+	focus = {
+		id = tpm_proving_worth
+		icon = GFX_goal_NCR_Buyout
+		cost = 30
+		x = -1
+		y = 1
+		available = {
+			OR = {
+				has_country_flag = TPM_brotherhood_hood_accept
+				TBH = {
+					is_in_faction_with = TPM
+				}
+			}
+		}
+		prerequisite = {
+			focus = tpm_the_dallas_meetup
+		}
+		relative_position_id = tpm_the_dallas_meetup
+		completion_reward = {
+			army_experience = 50
+			TBH = {
+			army_experience = 50
+				}
+			}
+		}
+	focus = {
+		id = tpm_armored_scouts
+		icon = GFX_goal_generic_power_armour_t51
+		cost = 30
+		x = 1
+		y = 1
+		available = {
+			OR = {
+				has_country_flag = TPM_brotherhood_hood_accept
+				TBH = {
+					is_in_faction_with = TPM
+				}
+			}
+		}
+		prerequisite = {
+			focus = tpm_the_dallas_meetup
+		}
+		relative_position_id = tpm_the_dallas_meetup
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 3
+				category = spec_force_tech_category
+				category = power_armor_tech_category
+			}
+			set_technology = {
+				power_armour_tech_level_settler = 1
+			}
+		}
+	}
+	focus = {
+		id = tpm_howdy_pardner
+		icon = GFX_goal_max_scribe_industry
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = tpm_proving_worth
+		}
+		prerequisite = {
+			focus = tpm_armored_scouts
+		}
+		relative_position_id = tpm_proving_worth
+		completion_reward = {
+			country_event = nf_tpm_act2.4
+		}
+	}
+###act3
+	focus = {
+		id = tpm_saints_and_sinners
+		icon = GFX_goal_MOT_Sombrero_Gun
+		cost = 30
+		x = 2
+		y = 1
+		prerequisite = {
+			focus = tpm_ALL_YOU_HAD_TO_DO
+			focus = tpm_howdy_pardner
+		}
+		available = {
+			has_completed_focus = tpm_tough_crowd
+			ROOT = {
+				has_war = no
+			}
+			OR = {
+				ROOT = {
+					TBH = {
+						all_core_land_owned_by_prev_sphere = yes
+					}
+				}
+				AND = {
+					TBH = {
+						exists = no
+					}
+					LNS = {
+						exists = no
+					}
+				}
+				AND = {
+					TBH = {
+						exists = no
+					}
+					LNS = {
+						has_completed_focus = lns_victory_for_the_greater_good
+					}
+				}
+				TBH = {
+					is_puppet = yes
+				}
+			}
+		}
+		relative_position_id = tpm_ALL_YOU_HAD_TO_DO
+		completion_reward = {
+			TPM_patrol_chief_callahan = {
+				promote_leader = yes
+				add_max_trait = 1
+				add_attack = 2
+				add_defense = 2
+				add_planning = 2
+				add_logistics = 2
+			}
+			hidden_effect = {
+				remove_ideas = tpm_sullivan
+			}
+			if = {
+				limit = {
+					TBH = {
+						is_in_faction_with = TPM
+					}
+				}
+					country_event = nf_tpm_act3.1
+			}
+			else = {
+			country_event = nf_tbh_tpm_events.9
+		}
+	}
+}
+###left
+	focus = {
+		id = tpm_blackhat #i dont think anyone got the joke (it would've been taken hoirribly wrong so i removed it)
+		icon = GFX_goal_VEG_The_Omertas
+		cost = 30
+		x = -10
+		y = 1
+		available = {
+		OR = {
+		ruler > 0.4
+		TBH = {
+		is_subject_of = TPM
+			}
+		owns_state = 892
+		}
+	}
+		prerequisite = {
+			focus = tpm_saints_and_sinners
+		}
+		relative_position_id = tpm_saints_and_sinners
+		mutually_exclusive = {
+			focus = tpm_this_is_a_reservation_focus_name_lmao
+		}
+		completion_reward = {
+			country_event = nf_tpm_act3.2
+			hidden_effect = {
+				set_portraits = {
+					character = TPM_patrol_chief_callahan
+					army = { large ="GFX_leader_TPM_callahan_black_new"  }
+					civilian = { large ="GFX_leader_TPM_callahan_black_new" }
+				}
+			}
+		}
+	}
+	focus = {
+		id = tpm_determined_defenders
+		icon = GFX_icon_apc_desert
+		cost = 30
+		x = -3
+		y = 1
+		available = {
+			has_idea = tpm_deputy_alliance
+			TBH = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		prerequisite = {
+			focus = tpm_blackhat
+		}
+		bypass = {
+				has_idea = tpm_louisiana_loyalty
+				}
+		relative_position_id = tpm_blackhat
+		completion_reward = {
+		add_manpower = -139
+		894 = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+			type = industrial_complex
+			level = 1
+			instant_build = yes
+			}
+			add_building_construction = {
+			type = bunker
+			level = 3
+			instant_build = yes
+			}
+			add_building_construction = {
+			type = infrastructure
+			level = 2
+			instant_build = yes
+			}
+		}
+	}
+}
+	focus = {
+		id = tpm_steelhand_siege
+		icon = GFX_goal_power_fist
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = tpm_blackhat
+		}
+		relative_position_id = tpm_blackhat
+		completion_reward = {
+			876 = {
+				add_extra_state_shared_building_slots = 4
+						add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			add_manpower = -23
+			add_stability = -.05
+		}
+	}
+	focus = {
+		id = tpm_gunslingers_galore
+		icon = GFX_goal_pal_back_to_raiding
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = tpm_blackhat
+		}
+		relative_position_id = tpm_blackhat
+		completion_reward = {
+			875 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+						}
+					}
+			add_manpower = -47
+			add_stability = -.05
+				}
+			}
+	focus = {
+		id = tpm_texan_attitude
+		icon = GFX_goal_MOJ_gun_runner_caravan_raids
+		cost = 30
+		x = 3
+		y = 1
+		available = {
+			has_idea = tpm_deputy_alliance
+			TBH = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		prerequisite = {
+			focus = tpm_blackhat
+		}
+		bypass = {
+				has_idea = tpm_louisiana_loyalty
+				}
+		relative_position_id = tpm_blackhat
+		completion_reward = {
+		add_manpower = -72
+		914 = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+			type = industrial_complex
+			level = 1
+			instant_build = yes
+			}
+			add_building_construction = {
+			type = bunker
+			level = 3
+			instant_build = yes
+			}
+			add_building_construction = {
+			type = infrastructure
+			level = 2
+			instant_build = yes
+			}
+		}
+	}
+}
+	focus = {
+		id = tpm_dismay_in_dallas
+		icon = GFX_goal_generic_scyscrapers_prewar
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = tpm_determined_defenders
+		}
+		available = {
+			owns_state = 892
+		}
+		relative_position_id = tpm_determined_defenders
+		completion_reward = {
+			add_political_power = -50
+			892 = {
+				add_resistance = -20
+				add_compliance = 50
+			}
+		}
+	}
+	focus = {
+		id = tpm_cho_bang_stinks
+		icon = GFX_goal_LNS_Victory_Lone
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus =  tpm_texan_attitude
+		}
+		available = {
+			owns_state = 921
+		}
+		relative_position_id =  tpm_texan_attitude
+		completion_reward = {
+		set_temp_variable = { caps_to_add = -50 }
+		add_caps = yes
+			921 = {
+				add_resistance = -20
+				add_compliance = 50
+			}
+		}
+	}
+	focus = {
+		id = tpm_rusks_request
+		icon = GFX_goal_TBH_rusk
+		cost = 30
+		x = 3
+		y = 1
+		prerequisite = {
+			focus =  tpm_determined_defenders
+		}
+		prerequisite = {
+			focus =  tpm_steelhand_siege
+		}
+		prerequisite = {
+			focus =  tpm_gunslingers_galore
+		}
+		prerequisite = {
+			focus =  tpm_texan_attitude
+		}
+		relative_position_id =  tpm_determined_defenders
+		completion_reward = {
+			country_event = nf_tpm_act3.3
+		}
+	}
+	focus = {
+		id = tpm_open_for_business
+		icon = GFX_goal_food_prewar_food
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus =  tpm_rusks_request
+		}
+		relative_position_id =  tpm_rusks_request
+		completion_reward = {
+		set_temp_variable = { caps_to_add = 50 }
+		add_caps = yes
+			870 = {
+				set_temp_variable = {
+					development_to_add = 2
+				}
+				add_development_to_node = yes
+				add_resource = {
+					type = water
+					amount = 20
+				}
+			}
+		}
+	}
+	focus = {
+		id = tpm_iron_exodus
+		icon = GFX_goal_MOJ_aggressive_policy
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus =  tpm_rusks_request
+		}
+		relative_position_id =  tpm_rusks_request
+		completion_reward = {
+				every_owned_state = {
+					limit = {
+						is_core_of = TBH
+					}
+				effect_tooltip = {
+					set_temp_variable = { pop_add = -2000 } #I LIED
+				}
+				add_state_population_no_state_name = yes
+				damage_building = {
+					type = infrastructure
+					damage = 2
+							}
+						}
+				add_stability = 0.1
+				}
+			}
+	focus = {
+		id = tpm_texan_roulette
+		icon = GFX_goal_mtc_otherguy
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus =  tpm_open_for_business
+		}
+		prerequisite = {
+			focus =  tpm_iron_exodus
+		}
+		available = {
+			ROOT = {
+				has_war = no
+			}
+			TBH = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id =  tpm_open_for_business
+		completion_reward = {
+		hidden_effect = {
+			add_ideas = tpm_sullivan_dog
+		}
+		if = {
+		LIMIT = {
+		OR ={
+		TPM = {
+			owns_state = 892
+		}
+		TBH = {
+		is_subject_of = TPM
+			}
+		}
+	}
+	country_event = nf_tpm_act3.4
+	}
+	else = {
+			country_event = nf_tpm_misc_events.10
+		}
+	}
+}
+###middle
+	focus = {
+		id = tpm_desperados_wargoal
+		icon = GFX_goal_TBH_desperados_no_more
+		cost = 30
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = tpm_saints_and_sinners
+		}
+		available = {
+			ROOT = {
+				has_war = no
+			}
+			GAM = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		bypass = {
+			DSP = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = tpm_saints_and_sinners
+		completion_reward = {
+			DSP = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = tpm_the_goodies
+		icon = GFX_goal_CES_Industry_TS_Car_Road
+		cost = 30
+		x = 0
+		y = 1
+		available = {
+			DSP = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		prerequisite = {
+			focus = tpm_desperados_wargoal
+		}
+		relative_position_id = tpm_desperados_wargoal
+		completion_reward = { #im prolly gonna fuck this up somehow, im so damn tired right now despite the fact i just woke up two hours ago
+		if = {
+			limit = {
+			is_texan_economic_union_member = yes
+			}
+			if = {
+				limit = {
+					TBH = {
+							OR = {
+							owns_state = 871
+							owns_state = 872
+							}
+						}
+					}
+			set_temp_variable = { caps_to_add = -100 }
+			add_caps = yes
+			if = {
+				limit = {
+					NOT = {
+					owns_state = 871
+					}
+				}
+				871 = {
+					transfer_state_to = TPM
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+						owns_state = 872
+						}
+					}
+					872 = {
+						transfer_state_to = TPM
+						}
+					}
+			}
+		}
+		else = {
+		add_state_core = 871
+			871 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+				}
+				add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+						}
+					}
+				}
+			}
+		}
+	focus = {
+		id = tpm_ghoulish_mechanics
+		icon = GFX_goal_enc_accept_ghouls
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = tpm_the_goodies
+		}
+		relative_position_id = tpm_the_goodies
+		completion_reward = {
+		add_political_power = -100
+		add_stability = -0.1
+		add_ideas = tpm_ghoul_mechanics
+			set_technology = {
+			vehicles_tech_level_scientific = 1
+			}
+			hidden_effect = {
+				country_event = {
+				id = nf_tpm_misc_events.8
+				days = 69
+			}
+		}
+	}
+}
+###right
+	focus = {
+		id = tpm_this_is_a_reservation_focus_name_lmao
+		icon = GFX_goal_land_flag
+		cost = 30
+		x = 10
+		y = 1
+		available = {
+		OR = {
+		people > 0.4
+			TBH = {
+			is_in_faction_with = TPM
+			}
+			LNS = {
+			is_in_faction_with = TPM
+				}
+			}
+		}
+		prerequisite = {
+			focus = tpm_saints_and_sinners
+		}
+		relative_position_id = tpm_saints_and_sinners
+		mutually_exclusive = {
+			focus = tpm_blackhat
+		}
+		completion_reward = {
+			country_event = nf_tpm_act3.5
+		}
+	}
+	focus = {
+		id = tpm_big_iron
+		icon = GFX_goal_BRK_gravens_ship
+		cost = 30
+		x = -4
+		y = 1
+		prerequisite = {
+			focus = tpm_this_is_a_reservation_focus_name_lmao
+		}
+		available = {
+			BAM = {
+				all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+		bypass = {
+			NOT = {
+				owns_state = 870
+				any_allied_country = {
+					owns_state = 870
+				}
+			}
+		}
+		relative_position_id = tpm_this_is_a_reservation_focus_name_lmao
+		completion_reward = {
+			country_event = nf_tpm_act3.6
+		}
+	}
+	focus = {
+		id = tpm_keats_clams
+		icon = GFX_goal_uoa_book
+		cost = 30
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = tpm_this_is_a_reservation_focus_name_lmao
+		}
+		bypass = {
+			UOA = {
+				OR = {
+				exists = no
+				is_subject = yes
+				}
+			}
+		}
+		relative_position_id = tpm_this_is_a_reservation_focus_name_lmao
+		completion_reward = {
+		add_political_power = -50
+			add_popularity = {
+				ideology = people
+				popularity = 0.1
+				}
+				every_owned_state = {
+				set_temp_variable = { pop_add = 250 }
+				add_state_population_no_state_name = yes
+			}
+			875 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+				}
+		}
+	}
+}
+	focus = {
+		id = tpm_bangs_investments
+		icon = GFX_goal_cap_and_cash
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = tpm_this_is_a_reservation_focus_name_lmao
+		}
+		bypass = {
+			LNS = {
+				OR = {
+				exists = no
+				is_subject = yes
+				}
+			}
+		}
+		relative_position_id = tpm_this_is_a_reservation_focus_name_lmao
+		completion_reward = {
+		set_temp_variable = { caps_to_add = 100 }
+		add_caps = yes
+		LNS = {
+		set_temp_variable = { caps_to_add = 50 }
+		add_caps = yes
+		}
+			870 = {
+				set_temp_variable = {
+					development_to_add = 2
+				}
+				add_development_to_node = yes
+		}
+	}
+}
+	focus = {
+		id = tpm_brotherhood_no_more
+		icon = GFX_goal_generic_f76_player3
+		cost = 30
+		x = 2
+		y = 1
+		prerequisite = {
+			focus = tpm_this_is_a_reservation_focus_name_lmao
+		}
+		bypass = {
+			TBH = {
+				OR = {
+				exists = no
+				is_subject = yes
+				}
+			}
+		}
+		relative_position_id = tpm_this_is_a_reservation_focus_name_lmao
+		completion_reward = {
+		add_manpower = 250
+			add_equipment_to_stockpile = {
+				type = energy_equipment_1
+				amount = 300
+				producer = BOS
+			}
+			add_popularity = {
+				ideology = people
+				popularity = 0.10
+				}
+			}
+		}
+	focus = {
+		id = tpm_made_me_pay_taxes #:(
+		icon = GFX_goal_LNS_texan_dollar
+		cost = 30
+		x = 4
+		y = 1
+		prerequisite = {
+			focus = tpm_this_is_a_reservation_focus_name_lmao
+		}
+		relative_position_id = tpm_this_is_a_reservation_focus_name_lmao
+		completion_reward = { #sidenote, if someone has wild wasteland on, we should make it so it takes 600 caps from them :)
+			country_event = nf_tpm_act3.7
+		}
+	}
+	focus = {
+		id = tpm_privateering
+		icon = GFX_goal_ITZ_ruling_the_waves
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = tpm_big_iron
+		}
+		prerequisite = {
+			focus = tpm_keats_clams
+		}
+		relative_position_id = tpm_big_iron
+		completion_reward = {
+		set_temp_variable = { caps_to_add = -50 }
+		add_caps = yes
+		custom_effect_tooltip = tpm_new_fleet
+		custom_effect_tooltip = tpm_new_fleet_flavor
+		hidden_effect = {
+		load_oob = TPM_privateering
+			}
+		}
+	}
+	focus = {
+		id = tpm_codex_of_legends
+		icon = GFX_goal_HEA_focus_precursers
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = tpm_keats_clams
+		}
+		prerequisite = {
+			focus = tpm_bangs_investments
+		}
+		prerequisite = {
+			focus = tpm_brotherhood_no_more
+		}
+		relative_position_id = tpm_bangs_investments
+		completion_reward = {
+			country_event = nf_tpm_act3.8
+		}
+	}
+	focus = {
+		id = tpm_dummy
+		icon = GFX_goal_SOK_schematics
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = tpm_brotherhood_no_more
+		}
+		prerequisite = {
+			focus = tpm_made_me_pay_taxes
+		}
+		relative_position_id = tpm_brotherhood_no_more
+		completion_reward = {
+		set_technology = { texas_brotherhood_pa_tech = 1 }
+		set_technology = { skater_tech = 1 }
+			add_tech_bonus = {
+				bonus = 0.50
+				uses = 1
+				category = infantry_tech_category
+			}
+		}
+	}
+	focus = {
+		id = tpm_UNITY_IN_TEXAS #get it :))))
+		icon = GFX_goal_uoa_texas
+		cost = 30
+		x = 0
+		y = 1
+		available = {
+		OR = {
+		TBH = {
+			has_country_flag = formed_texas
+			}
+		LNS = {
+			has_country_flag = formed_texas
+				}
+			}
+		}
+		prerequisite = {
+			focus = tpm_privateering
+		}
+		prerequisite = {
+			focus = tpm_codex_of_legends
+		}
+		prerequisite = {
+			focus = tpm_dummy
+		}
+		relative_position_id = tpm_codex_of_legends
+		completion_reward = {
+			country_event = nf_tpm_act3.9
+		}
+	}
+	focus = {
+		id = tpm_research_efforts
+		icon = GFX_goal_usa_science_reform
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = tpm_UNITY_IN_TEXAS
+		}
+		relative_position_id = tpm_UNITY_IN_TEXAS
+		completion_reward = {
+		add_research_slot = 1
+		add_to_tech_sharing_group = texan_economic_union_sharing
+		}
+	}
+	focus = {
+		id = tpm_choke_mobsters
+		icon = GFX_goal_VEG_Private_Armies
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = tpm_UNITY_IN_TEXAS
+		}
+		available = {
+			has_manpower > 350
+		}
+		relative_position_id = tpm_UNITY_IN_TEXAS
+		completion_reward = {
+		add_equipment_to_stockpile = {
+		type = infantry_equipment
+		amount = -350
+		producer = TPM
+			}
+		add_manpower = -350
+		add_war_support = .1
+		custom_effect_tooltip =  tpm_mobsters_remove_corruption_tt
+		hidden_effect = {
+		remove_ideas = tpm_mild_corruption
+		remove_ideas = tpm_bad_corruption
+		remove_ideas = tpm_all_corrupted
+		}
+	}
+}
+	focus = {
+		id = tpm_ilove_democracy
+		icon = GFX_goal_mtc_palace
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = tpm_research_efforts
+		}
+		prerequisite = {
+			focus = tpm_choke_mobsters
+		}
+		relative_position_id = tpm_research_efforts
+		completion_reward = {
+			country_event = nf_tpm_act3.10
+			hidden_effect = {
+				add_ideas = tpm_sullivan_cat
+				set_portraits = {
+					character = TPM_patrol_chief_callahan
+					army = { large ="GFX_Portrait_TPM_callahan"  }
+					civilian = { large ="GFX_Portrait_TPM_callahan" }
+				}
+			}
+		}
+	}
+###other focuses before the reworked generics
+
+###it is what it is
+	focus = {
+		id = tpm_patrolling_is_service
+		icon = GFX_goal_NCR_Rangers_Lead_the_War
+		cost = 30
+		x = -3
+		y = 2
+		available = {
+		OR = {
+		TBH = {
+		is_in_faction_with = TPM
+		}
+		TBH = {
+		all_core_land_owned_by_prev_sphere = yes
+			}
+		has_dynamic_modifier = { modifier = texan_economic_union }
+		}
+	}
+	prerequisite = {
+		focus = tpm_saints_and_sinners
+		}
+		relative_position_id = tpm_saints_and_sinners
+		completion_reward = {
+		add_manpower = 150
+		add_equipment_to_stockpile = {
+		type = ballistic_equipment_1
+		amount = 150
+		producer = TBH
+			}
+		TBH = {
+			add_opinion_modifier = {
+				target = TPM
+				modifier = tpm_fellow_deputies
+			}
+		}
+	}
+}
+	focus = {
+		id = tpm_investment_opportunities
+		icon = GFX_goal_bottlecap
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = tpm_patrolling_is_service
+		}
+		relative_position_id = tpm_patrolling_is_service
+		completion_reward = {
+		set_temp_variable = { caps_to_add = 100 }
+		add_caps = yes
+		}
+	}
+	focus = {
+		id = tpm_good_soldiers
+		icon = GFX_goal_generic_BOS_focus_combined_operations
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = tpm_patrolling_is_service
+		}
+		relative_position_id = tpm_patrolling_is_service
+		completion_reward = {
+		add_political_power = 100
+		}
+	}
+	focus = {
+		id = tpm_nobody_needs_to_know
+		icon = GFX_goal_goal_card_tricks
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = tpm_investment_opportunities
+		}
+		prerequisite = {
+			focus = tpm_good_soldiers
+		}
+		relative_position_id = tpm_investment_opportunities
+		completion_reward = {
+		country_event = nf_tpm_misc_events.3
+		}
+	}
+	focus = {
+		id = tpm_what_it_is
+		icon = GFX_goal_CES_workshop
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = tpm_nobody_needs_to_know
+		}
+		available = {
+		is_puppet = yes
+		}
+		relative_position_id = tpm_nobody_needs_to_know
+		completion_reward = {
+		country_event = nf_tpm_misc_events.4
+		}
+	}
+###uit nod tree thing
+	focus = {
+		id = tpm_keats_buddy_pal_chum
+		icon = GFX_goal_behemoth
+		cost = 30
+		x = 3
+		y = 2
+		prerequisite = {
+			focus = tpm_saints_and_sinners
+			}
+		available = {
+			OR = {
+			is_ally_with = UOA
+			TPM = {
+			owns_state  = 915
+			}
+		}
+	}
+	relative_position_id = tpm_saints_and_sinners
+		completion_reward = {
+		country_event = nf_tpm_misc_events.5
+		}
+	}
+		focus = {
+		id = tpm_river_patrols
+		icon = GFX_goal_BOS_steel_cage
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = tpm_keats_buddy_pal_chum
+		}
+		relative_position_id = tpm_keats_buddy_pal_chum
+		completion_reward = {
+			875 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+				}
+			}
+		}
+	}
+		focus = {
+		id = tpm_heavier_industry
+		icon =  GFX_goal_uoa_blueprint
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = tpm_keats_buddy_pal_chum
+		}
+		relative_position_id = tpm_keats_buddy_pal_chum
+		completion_reward = {
+			875 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+						}
+						add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+		focus = {
+		id = tpm_railroad
+		icon = GFX_icon_steel
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = tpm_river_patrols
+		}
+		prerequisite = {
+			focus = tpm_heavier_industry
+		}
+		available = {
+			BAM = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			GAM = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			CAR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			TBH = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			UOA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = tpm_river_patrols
+		completion_reward = {
+		country_event = nf_tpm_misc_events.6
+		}
+	}
+	focus = {
+		id = tpm_a_day_off
+		icon = GFX_goal_uoa_election_poster
+		cost = 30
+		x = 0
+		y = 1
+		available = {
+			OR = {
+				owns_state = 915
+				any_allied_country = {
+					owns_state = 915
+				}
+			}
+		}
+		prerequisite = {
+			focus = tpm_railroad
+		}
+		relative_position_id = tpm_railroad
+		completion_reward = {
+		custom_effect_tooltip =  tpm_mmmmmmmmmburger_tt
+		country_event = nf_tpm_misc_events.7
+		}
+	}
+###NEW LEFT FOCUS BRANCH
+focus = {
+	id = tpm_left_generic_opening
+	icon = GFX_goal_generic_focus_magazine_gunsandbullets_gun_laws
+	cost = 30
+	x = -10
+	y = 1
+	prerequisite = {
+		focus = tpm_gold_and_blue
+	}
+	relative_position_id = tpm_gold_and_blue
+	completion_reward = {
+		add_command_power = 25
+	}
+	ai_will_do = {
+		base = 1
+		modifier = {
+			add = -100
+			if = {
+				limit = {
+					OR = {
+						NOT = {
+							has_completed_focus = tpm_the_dallas_meetup
+						}
+						NOT = {
+							has_completed_focus = tpm_elders_treachery
+						}
+					}
+				}
+			}
+		}
+	}
+}
+focus = {
+	id = tpm_left_diversifying_patrol
+	icon = GFX_goal_NEW_New_Reno_Police_Department
+	cost = 30
+	x = 0
+	y = 1
+	prerequisite = {
+		focus = tpm_left_generic_opening
+	}
+	relative_position_id = tpm_left_generic_opening
+	completion_reward = {
+		add_ideas = tpm_diversification_of_the_army
+	}
+}
+focus = {
+	id = tpm_left_offshoot
+	icon = GFX_goal_SHI_BOS_Phone
+	cost = 30
+	x = -2
+	y = 1
+	prerequisite = {
+		focus = tpm_left_generic_opening
+	}
+	relative_position_id = tpm_left_generic_opening
+	completion_reward = {
+		add_timed_idea = {
+			idea = tpm_making_sure_the_phones_work
+			days = 365
+		}
+	}
+}
+##old is gold
+focus = {
+	id = tpm_left_old_is_gold1
+	icon = GFX_goal_uoa_spy
+	cost = 45
+	x = -3
+	y = 1
+	prerequisite = {
+		focus = tpm_left_diversifying_patrol
+	}
+	relative_position_id = tpm_left_diversifying_patrol
+	completion_reward = {
+		army_experience = 25
+	}
+}
+focus = {
+	id = tpm_left_old_is_gold2
+	icon = GFX_goal_uoa_blueprint
+	cost = 45
+	x = -2
+	y = 1
+	prerequisite = {
+		focus = tpm_left_old_is_gold1
+	}
+	relative_position_id = tpm_left_old_is_gold1
+	completion_reward = {
+		custom_effect_tooltip = tpm_danny_company
+		set_temp_variable = { caps_to_add = -35 }
+		add_caps = yes
+		custom_effect_tooltip = tpm_danny_company_unlocked
+		add_equipment_to_stockpile = {
+			type = explosive_demolitions_equipment_3
+			amount = 60
+			producer = USA
+		}
+		custom_effect_tooltip = tpm_bloody_mess
+		hidden_effect = {
+		TPM_patrol_chief_callahan = {
+			add_trait = {
+				trait = bloody_mess_trait
+			}
+		}
+		TPM_franklin = {
+			add_trait = {
+				trait = bloody_mess_trait
+				}
+			}
+		TPM_lead_george = {
+			add_trait = {
+				trait = bloody_mess_trait
+				}
+			}
+		TPM_shank = {
+			add_trait = {
+				trait = bloody_mess_trait
+				}
+			}
+		}
+	}
+}
+focus = {
+	id = tpm_left_old_is_gold3
+	icon = GFX_goal_uoa_medal
+	cost = 45
+	x = 0
+	y = 1
+	prerequisite = {
+		focus = tpm_left_old_is_gold1
+	}
+	relative_position_id = tpm_left_old_is_gold1
+	completion_reward = {
+		add_tech_bonus = {
+			uses = 3
+			bonus = 0.4
+			category = communication_category
+		}
+	}
+}
+focus = {
+	id = tpm_left_old_is_gold4
+	icon = GFX_goal_generic_cowboys
+	cost = 45
+	x = 1
+	y = 1
+	prerequisite = {
+		focus = tpm_left_old_is_gold2
+	}
+	prerequisite = {
+		focus = tpm_left_old_is_gold3
+	}
+	relative_position_id = tpm_left_old_is_gold2
+	completion_reward = {
+		army_experience = 50
+		TPM_shank = {
+			promote_leader = yes
+		}
+		TPM_lead_george = {
+			promote_leader = yes
+		}
+		swap_ideas = {
+			remove_idea = tpm_no_generals_for_you_ed_boy
+			add_idea = tpm_no_generals_for_you_ed_boy_alt
+		}
+	}
+}
+##robor
+focus = {
+	id = tpm_left_robor1
+	icon = GFX_goal_ARM_gai_plant_reactivation
+	cost = 45
+	x = -1
+	y = 1
+	prerequisite = {
+		focus = tpm_left_diversifying_patrol
+	}
+	relative_position_id = tpm_left_diversifying_patrol
+	completion_reward = {
+		set_technology = {
+			robotics_tech_level_settler = 1
+			robot_command_equipment_tech_1 = 1
+		}
+	}
+}
+focus = {
+	id = tpm_left_robor2
+	icon = GFX_goal_TTM_Robot_Refugees
+	cost = 45
+	x = 0
+	y = 1
+	prerequisite = {
+		focus = tpm_left_robor1
+	}
+	relative_position_id = tpm_left_robor1
+	completion_reward = {
+		if = {
+			limit = {
+				NOT = {
+					TPM_lead_francis = {
+						has_trait = vigilant_recycler_trait
+					}
+				}
+			}
+			TPM_lead_francis = {
+			add_trait = {
+				trait = vigilant_recycler_trait
+				}
+			}
+		}
+		add_tech_bonus = {
+			uses = 2
+			bonus = 0.40
+			category = cnc_robot_tech_category
+		}
+		add_ideas = tpm_do_we_really_need_these_cnc_bots
+	}
+}
+focus = {
+	id = tpm_left_robor3
+	icon = GFX_goal_ARM_ciudad_valles_land_acquisition
+	cost = 45
+	x = 0
+	y = 1
+	prerequisite = {
+		focus = tpm_left_robor2
+	}
+	relative_position_id = tpm_left_robor2
+	completion_reward = {
+		set_technology = {
+			robco_security_protectrons_tech = 1
+		}
+		custom_effect_tooltip = tpm_cnc_buff
+		TPM_lead_francis = {
+			promote_leader = yes
+		}
+		swap_ideas = {
+			remove_idea = tpm_do_we_really_need_these_cnc_bots
+			add_idea = tpm_do_we_really_need_these_cnc_bots_alt
+		}
+	}
+}
+##clankers
+focus = {
+	id = tpm_left_funding_clankers1
+	icon = GFX_goal_NCR_Army_of_Mobility
+	cost = 45
+	x = 2
+	y = 1
+	prerequisite = {
+		focus = tpm_left_diversifying_patrol
+	}
+	relative_position_id = tpm_left_diversifying_patrol
+	completion_reward = {
+		set_temp_variable = { caps_to_add = -45 }
+		add_caps = yes
+		set_temp_variable = {
+			org_selector = 2
+			}
+		set_temp_variable = {
+			org_influence_amount= 15
+			}
+		organization_add_influence = yes
+		add_equipment_to_stockpile = {
+			type = light_motorized_equipment_1
+			amount = 120
+			producer = USA
+		}
+	}
+}
+focus = {
+	id = tpm_left_funding_clankers_offshoot
+	icon = GFX_goal_generic_land_doctrines_focus
+	cost = 45
+	x = -1
+	y = 1
+	prerequisite = {
+		focus = tpm_left_funding_clankers1
+	}
+	relative_position_id = tpm_left_funding_clankers1
+	completion_reward = {
+		if = {
+			limit = {
+				NOT = {
+					TPM_lead_coolant = {
+						has_trait = lead_foot_trait
+					}
+				}
+			}
+		TPM_lead_coolant = {
+			add_trait = {
+				trait = lead_foot_trait
+				}
+			}
+		}
+		build_random_mil_factory = yes
+	}
+}
+focus = {
+	id = tpm_left_funding_clankers2
+	icon = GFX_goal_EHT_apc
+	cost = 45
+	x = 0
+	y = 2
+	prerequisite = {
+		focus = tpm_left_funding_clankers1
+	}
+	relative_position_id = tpm_left_funding_clankers1
+	completion_reward = {
+		build_2_random_mil_factory = yes
+	}
+}
+focus = {
+	id = tpm_left_funding_clankers3
+	icon = GFX_goal_original_highwayman
+	cost = 45
+	x = 2
+	y = 1
+	prerequisite = {
+		focus = tpm_left_funding_clankers1
+	}
+	relative_position_id = tpm_left_funding_clankers1
+	completion_reward = {
+		add_tech_bonus = {
+			uses = 2
+			bonus = 0.6
+			category = vehicle_tech_category
+		}
+	}
+}
+focus = {
+	id = tpm_left_funding_clankers4
+	icon = GFX_goal_generic_nice_car
+	cost = 45
+	x = 0
+	y = 1
+	prerequisite = {
+		focus = tpm_left_funding_clankers3
+	}
+	bypass = {
+		has_tech = mrap_effort_vehicle_tech
+	}
+	relative_position_id = tpm_left_funding_clankers3
+	completion_reward = {
+		custom_effect_tooltip = tpm_unlock_motorization
+		if = {
+			limit = { has_tech = Compartmentalization_vehicle_tech }
+				set_technology = { mrap_effort_vehicle_tech = 1 }
+			}
+			else_if = {
+			limit = { has_tech = boarding_ramps_vehicle_tech }
+				set_technology = {  Compartmentalization_vehicle_tech = 1 }
+				}
+			else_if = {
+			limit = { has_tech = wet_stowage_vehicle_tech }
+				set_technology = {  boarding_ramps_vehicle_tech = 1 }
+				}
+			else_if = {
+			limit = { has_tech = safety_hatches_vehicle_tech }
+				set_technology = {  wet_stowage_vehicle_tech = 1 }
+				}
+			else = {
+				set_technology = { safety_hatches_vehicle_tech = 1 }
+			}
+	}
+}
+focus = {
+	id = tpm_left_the_best_little_garage
+	icon = GFX_goal_CES_Industry_TS_Car_Road
+	cost = 45
+	x = 1
+	y = 1
+	prerequisite = {
+		focus = tpm_left_funding_clankers2
+	}
+	prerequisite = {
+		focus = tpm_left_funding_clankers4
+	}
+	available = {
+		has_tech = vehicles_tech_level_scientific
+	}
+	relative_position_id = tpm_left_funding_clankers2
+	completion_reward = {
+		add_tech_bonus = {
+			uses = 1
+			bonus = 2
+			ahead_reduction = 2
+			category = vehicle_tech_category
+		}
+		TPM_lead_coolant = {
+			promote_leader = yes
+		}
+	}
+}
+###NEW RIGHT FOCUS BRANCH
+focus = {
+	id = tpm_right_generic_opening
+	icon = GFX_goal_generic_books
+	cost = 30
+	x = 10
+	y = 1
+	prerequisite = {
+		focus = tpm_gold_and_blue
+	}
+	relative_position_id = tpm_gold_and_blue
+	completion_reward = {
+		add_political_power = 75
+	}
+	ai_will_do = {
+		base = 1
+		modifier = {
+			add = -100
+			if = {
+				limit = {
+					OR = {
+					NOT = {
+					has_completed_focus = tpm_the_dallas_meetup
+						}
+					NOT = {
+					has_completed_focus = tpm_elders_treachery
+						}
+					}
+				}
+			}
+		}
+	}
+}
+focus = {
+	id = tpm_right_oepning_up_lafayette
+	icon = GFX_goal_NCR_Baronofbarons
+	cost = 30
+	x = -1
+	y = 1
+	prerequisite = {
+		focus = tpm_right_generic_opening
+	}
+	relative_position_id = tpm_right_generic_opening
+	completion_reward = {
+		custom_effect_tooltip = tpm_bump_trade_law
+		if = {
+			limit = {
+				has_idea = limited_exports
+			}
+			add_ideas = export_focus
+		}
+		else_if = {
+			limit = {
+				has_idea = export_focus
+			}
+			add_ideas = free_trade
+		}
+		else = {
+			add_political_power = 150
+		}
+	set_temp_variable = {
+			org_selector = 1
+			}
+	set_temp_variable = {
+		org_influence_amount= 15
+		}
+	organization_add_influence = yes
+	set_temp_variable = {
+			org_selector = 4
+			}
+	set_temp_variable = {
+		org_influence_amount= 15
+		}
+	organization_add_influence = yes
+	}
+}
+focus = {
+	id = tpm_right_taking_refuge
+	icon = GFX_goal_generic_scrap_city_housing
+	cost = 30
+	x = -1
+	y = 1
+	prerequisite = {
+		focus = tpm_right_oepning_up_lafayette
+	}
+	relative_position_id = tpm_right_oepning_up_lafayette
+	completion_reward = {
+		875 = {
+			add_extra_state_shared_building_slots = 3
+			add_state_modifier = {
+				modifier = {
+						local_manpower = 0.15
+				}
+			}
+		}
+	}
+}
+focus = {
+	id = tpm_right_refuge_SUF
+	icon = GFX_goal_generic_new_sheriff_in_town
+	cost = 25
+	x = -4
+	y = 2
+	prerequisite = {
+		focus = tpm_right_taking_refuge
+	}
+	available = {
+		SUF_refuge_available = yes
+	}
+	relative_position_id = tpm_right_taking_refuge
+	completion_reward = {
+		875 = {
+			set_temp_variable = { pop_add = 1250 }
+			add_state_population_no_state_name = yes
+			}
+		add_offsite_building = {
+			type = industrial_complex
+			level = 1
+		}
+		add_offsite_building = {
+			type = arms_factory
+			level = 1
+		}
+		add_ideas = tpm_great_minds_think_alike
+	}
+}
+focus = {
+	id = tpm_right_refuge_LOS-CBN
+	icon = GFX_goal_generic_the_dipping
+	cost = 25
+	x = -3
+	y = 1
+	prerequisite = {
+		focus = tpm_right_taking_refuge
+	}
+	available = {
+		LOS-CBN_refuge_available = yes
+	}
+	relative_position_id = tpm_right_taking_refuge
+	completion_reward = {
+		875 = {
+			set_temp_variable = { pop_add = 1250 }
+			add_state_population_no_state_name = yes
+			}
+		add_offsite_building = {
+			type = industrial_complex
+			level = 1
+		}
+		add_offsite_building = {
+			type = arms_factory
+			level = 1
+		}
+		add_ideas = tpm_secrets_of_the_lost
+	}
+}
+focus = {
+	id = tpm_right_refuge_PEC
+	icon = GFX_goal_generic_PEC_shield
+	cost = 25
+	x = -2
+	y = 2
+	prerequisite = {
+		focus = tpm_right_taking_refuge
+	}
+	available = {
+		PEC_refuge_available = yes
+	}
+	relative_position_id = tpm_right_taking_refuge
+	completion_reward = {
+		875 = {
+			set_temp_variable = { pop_add = 1250 }
+			add_state_population_no_state_name = yes
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = 1
+			}
+			add_offsite_building = {
+				type = arms_factory
+				level = 1
+			}
+			add_ideas = tpm_friends_from_brahmin_county
+	}
+}
+focus = {
+	id = tpm_right_refuge_BOS
+	icon = GFX_goal_MOJ_paladin_thought
+	cost = 30
+	x = -1
+	y = 1
+	prerequisite = {
+		focus = tpm_right_taking_refuge
+	}
+	relative_position_id = tpm_right_taking_refuge
+	completion_reward = {
+		add_manpower = 300
+		add_tech_bonus = {
+			uses = 1
+			bonus = 0.75
+			ahead_reduction = 1
+			category = energy_weaponry_tech_category
+			category = power_armor_tech_category
+		}
+	}
+}
+focus = {
+	id = tpm_right_refuge_MOB
+	icon = GFX_goal_MOJ_scribal_thought
+	cost = 30
+	x = 1
+	y = 1
+	prerequisite = {
+		focus = tpm_right_taking_refuge
+	}
+	relative_position_id = tpm_right_taking_refuge
+	completion_reward = {
+		add_manpower = 300
+		add_tech_bonus = {
+			uses = 1
+			bonus = 0.75
+			ahead_reduction = 1
+			category = infantry_weapons_tech_category
+			category = support_tech_category
+		}
+	}
+}
+focus = {
+	id = tpm_right_refuge_TUB
+	icon = GFX_goal_TBH_entertainment
+	cost = 25
+	x = 2
+	y = 2
+	prerequisite = {
+		focus = tpm_right_taking_refuge
+	}
+	available = {
+		TUB_refuge_available = yes
+	}
+	relative_position_id = tpm_right_taking_refuge
+	completion_reward = {
+		875 = {
+			set_temp_variable = { pop_add = 1250 }
+			add_state_population_no_state_name = yes
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = 1
+			}
+			add_offsite_building = {
+				type = arms_factory
+				level = 1
+			}
+			add_ideas = tpm_tubeheads_shipments
+	}
+}
+focus = {
+	id = tpm_right_refuge_CAR
+	icon = GFX_goal_TBH_question_of_carthage
+	cost = 25
+	x = 4
+	y = 2
+	prerequisite = {
+		focus = tpm_right_taking_refuge
+	}
+	available = {
+		CAR_refuge_available = yes
+	}
+	relative_position_id = tpm_right_taking_refuge
+	completion_reward = {
+		875 = {
+		set_temp_variable = { pop_add = 1250 }
+		add_state_population_no_state_name = yes
+		}
+		add_offsite_building = {
+			type = industrial_complex
+			level = 1
+		}
+		add_offsite_building = {
+			type = arms_factory
+			level = 1
+		}
+		add_ideas = tpm_let_them_cook
+	}
+}
+focus = {
+	id = tpm_right_refuge_ASS
+	icon = GFX_goal_TBH_assasinate_assasains
+	cost = 25
+	x = 3
+	y = 1
+	prerequisite = {
+		focus = tpm_right_taking_refuge
+	}
+	available = {
+		ASS_refuge_available = yes
+	}
+	relative_position_id = tpm_right_taking_refuge
+	completion_reward = {
+		875 = {
+			set_temp_variable = { pop_add = 1250 }
+			add_state_population_no_state_name = yes
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = 1
+			}
+			add_offsite_building = {
+				type = arms_factory
+				level = 1
+			}
+			add_ideas = tpm_rolling_around_at_the_speed_of_sound
+	}
+}
+focus = {
+	id = tpm_right_actual_industry
+	icon = GFX_goal_generic_tinker_workbench
+	cost = 30
+	x = 1
+	y = 1
+	prerequisite = {
+		focus = tpm_right_generic_opening
+	}
+	relative_position_id = tpm_right_generic_opening
+	completion_reward = {
+		build_2_random_civ_factory = yes
+	}
+}
+focus = {
+	id = tpm_right_research_slot
+	icon = GFX_goal_mtc_schoolroom
+	cost = 45
+	x = 0
+	y = 1
+	prerequisite = {
+		focus = tpm_right_actual_industry
+	}
+	relative_position_id = tpm_right_actual_industry
+	completion_reward = {
+		add_research_slot = 1
+	}
+}
+focus = {
+	id = tpm_right_hitting_fusion_cores_really_hard
+	icon = GFX_goal_generic_fusion_core
+	cost = 45
+	x = 2
+	y = 1
+	prerequisite = {
+		focus = tpm_right_actual_industry
+	}
+	relative_position_id = tpm_right_actual_industry
+	completion_reward = {
+		add_ideas = tpm_overabundance_of_fusion_cores
+		add_resource = {
+			type = energy
+			amount = 4
+			state = 875
+		}
+	}
+}
+focus = {
+	id = tpm_right_we_dont_need_all_these_things
+	icon = GFX_goal_square_vault_generator
+	cost = 45
+	x = 0
+	y = 1
+	prerequisite = {
+		focus = tpm_right_hitting_fusion_cores_really_hard
+	}
+	relative_position_id = tpm_right_hitting_fusion_cores_really_hard
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = tpm_overabundance_of_fusion_cores
+			add_idea = tpm_overabundance_of_fusion_cores_alt
+		}
+		875 = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+			}
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+			}
+			add_extra_state_shared_building_slots = 3
+			add_state_modifier = {
+				modifier = {
+					production_speed_buildings_factor = 0.15
+				}
+			}
+		}
+	}
+}
+focus = {
+	id = tpm_right_bending_the_bluff
+	icon = GFX_goal_food_razor_grain
+	cost = 45
+	x = 4
+	y = 1
+	prerequisite = {
+		focus = tpm_right_actual_industry
+	}
+	relative_position_id = tpm_right_actual_industry
+	completion_reward = {
+		875 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+			}
+		}
+		876 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+			}
+		}
+	}
+}
+focus = {
+	id = tpm_right_unusually_popular_tatos
+	icon = GFX_goal_food_various_vegetables
+	cost = 45
+	x = 0
+	y = 1
+	prerequisite = {
+		focus = tpm_right_bending_the_bluff
+	}
+	relative_position_id = tpm_right_bending_the_bluff
+	completion_reward = {
+		add_ideas = tato_farming
+	}
+}
+focus = {
+	id = tpm_right_we_are_set
+	icon = GFX_goal_generic_scyscrapers_prewar
+	cost = 45
+	x = 0
+	y = 1
+	prerequisite = {
+		focus = tpm_right_we_dont_need_all_these_things
+	}
+	prerequisite = {
+		focus = tpm_right_unusually_popular_tatos
+	}
+	relative_position_id = tpm_right_unusually_popular_tatos
+	completion_reward = {
+		875 = {
+		set_state_category = large_city
+		add_resource = {
+			type = metal
+			amount = 3
+		}
+		add_resource = {
+			type = water
+			amount = 3
+		}
+		add_resource = {
+			type = circuitry
+			amount = 3
+		}
+		add_resource = {
+			type = composites
+			amount = 3
+		}
+		add_resource = {
+			type = advanced
+			amount = 3
+		}
+		}
+	}
+}
+focus = {
+	id = tpm_right_industrya
+	icon = GFX_goal_mtc_computer
+	cost = 60
+	x = -2
+	y = 1
+	prerequisite = {
+		focus = tpm_right_we_are_set
+	}
+	relative_position_id = tpm_right_we_are_set
+	completion_reward = {
+		set_technology = {
+			habitation_tech_level_scientific = 1
+		}
+	}
+}
+focus = {
+	id = tpm_right_industryb
+	icon = GFX_goal_mtc_pasture
+	cost = 60
+	x = 0
+	y = 1
+	prerequisite = {
+		focus = tpm_right_we_are_set
+	}
+	relative_position_id = tpm_right_we_are_set
+	completion_reward = {
+		set_technology = {
+			exploitation_tech_level_scientific = 1
+		}
+	}
+}
+focus = {
+	id = tpm_right_industryc
+	icon = GFX_goal_mtc_code_talker
+	cost = 60
+	x = 2
+	y = 1
+	prerequisite = {
+		focus = tpm_right_we_are_set
+	}
+	relative_position_id = tpm_right_we_are_set
+	completion_reward = {
+		custom_effect_tooltip = tpm_big_money_focus
+		if = {
+			limit = {
+				is_texan_economic_union_member = yes
+			}
+			875 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+				}
+			}
+			892 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+				}
+				}
+			921 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+				}
+				}
+			if = {
+				limit = {
+					OR = {
+					UOA = {
+						AND = {
+						is_texan_economic_union_member = yes
+						exists = yes
+							}
+						}
+					any_allied_country = {
+					owns_state = 915
+						}
+					}
+				}
+				915 = {
+					add_extra_state_shared_building_slots = 4
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						}
+					}
+				}
+			}
+		else = {
+			875 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+				}
+			}
+			if = {
+				limit = {
+				owns_state = 870
+				}
+				870 = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+				owns_state = 874
+				}
+				874 = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+				owns_state = 871
+				}
+				871 = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+					}
+				}
+			}
+		}
+		}
+	}
+}

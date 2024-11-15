@@ -1,0 +1,735 @@
+#######################################################
+#                S'Lanter Focus Tree                  #
+#                   Idea by shoggi                    #
+#           Tree by jackyboygood and shoggi           #
+#  I didn't write this furry stuff, I just work here  #
+#######################################################
+
+focus_tree = {
+	id = slanter_nf
+	country = {
+		factor = 0
+		modifier = {
+			add = 0
+			tag = SLN
+		}
+	}
+	default = no
+	focus = {
+		id = sln_an_escape
+		icon = GFX_goal_sln_departure
+		cost = 7
+		x = 19
+		y = 0
+		completion_reward = {
+			country_event = { id = nf_slanter.1 }
+		}
+	}
+	focus = {
+		id = sln_an_encounter
+		icon = GFX_goal_sln_vipers
+		cost = 7
+		prerequisite = {
+			focus = sln_an_escape
+		}
+		x = 0
+		y = 1
+		relative_position_id = sln_an_escape
+		completion_reward = {
+			country_event = { id = nf_slanter.2 }
+		}
+	}
+	focus = {
+		id = sln_a_draught
+		icon = GFX_goal_sln_draught
+		cost = 7
+		prerequisite = {
+			focus = sln_an_encounter
+		}
+		x = 0
+		y = 1
+		relative_position_id = sln_an_encounter
+		completion_reward = {
+			country_event = { id = nf_slanter.3 }
+		}
+	}
+	focus = {
+		id = sln_a_question
+		icon = GFX_goal_sln_fev
+		cost = 7
+		prerequisite = {
+			focus = sln_a_draught
+		}
+		x = 0
+		y = 1
+		relative_position_id = sln_a_draught
+		completion_reward = {
+			country_event = { id = nf_slanter.4 }
+		}
+	}
+	focus = {
+		id = sln_a_death
+		icon = GFX_goal_sln_sick
+		cost = 7
+		prerequisite = {
+			focus = sln_a_question
+		}
+		x = 0
+		y = 1
+		relative_position_id = sln_a_question
+		completion_reward = {
+			country_event = { id = nf_slanter.5 }
+		}
+	}
+
+	# dying tree
+	focus = {
+		id = sln_dying_1
+		icon = GFX_goal_sln_builder
+		cost = 60
+		prerequisite = {
+			focus = sln_a_death
+		}
+		available = {
+			NOT = {
+				has_country_flag = SLN_rel_journey_done
+			}
+		}
+		x = 0
+		y = 1
+		relative_position_id = sln_a_death
+		completion_reward = {
+			add_ideas = sln_construction
+		}
+	}
+	focus = {
+		id = sln_dying_2
+		icon = GFX_goal_sln_hammer
+		cost = 60
+		prerequisite = {
+			focus = sln_dying_1
+		}
+		available = {
+			NOT = {
+				has_country_flag = SLN_rel_journey_done
+			}
+		}
+		x = -1
+		y = 1
+		relative_position_id = sln_dying_1
+		completion_reward = {
+			add_ideas = sln_tools
+		}
+	}
+	focus = {
+		id = sln_dying_3
+		icon = GFX_goal_sln_hope
+		cost = 60
+		prerequisite = {
+			focus = sln_dying_2
+		}
+		available = {
+			NOT = {
+				has_country_flag = SLN_rel_journey_done
+			}
+		}
+		x = 0
+		y = 1
+		relative_position_id = sln_dying_2
+		completion_reward = {
+			add_stability = 0.10
+			add_equipment_to_stockpile = {
+				type = support_equipment_1
+				amount = 500
+			}
+		}
+	}
+	focus = {
+		id = sln_dying_4
+		icon = GFX_goal_sln_peace
+		cost = 60
+		prerequisite = {
+			focus = sln_dying_1
+		}
+		available = {
+			NOT = {
+				has_country_flag = SLN_rel_journey_done
+			}
+		}
+		x = 1
+		y = 1
+		relative_position_id = sln_dying_1
+		completion_reward = {
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = sln_dying_5
+		icon = GFX_goal_sln_stonks
+		cost = 60
+		prerequisite = {
+			focus = sln_dying_4
+		}
+		available = {
+			NOT = {
+				has_country_flag = SLN_rel_journey_done
+			}
+		}
+		x = 0
+		y = 1
+		relative_position_id = sln_dying_4
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 2
+				category = industry
+			}
+		}
+	}
+
+	# topdweller tree
+	focus = {
+		id = sln_topdweller_1
+		icon = GFX_goal_sln_trade
+		cost = 60
+		prerequisite = {
+			focus = sln_a_death
+		}
+		available = {
+			NOT = {
+				has_country_flag = SLN_rel_journey_done
+			}
+		}
+		x = -3
+		y = 1
+		relative_position_id = sln_a_death
+		completion_reward = {
+			set_temp_variable = { caps_to_add = 200 }
+			add_caps = yes
+
+			increase_topdweller_power = yes
+			custom_effect_tooltip = sln_history_choice_top
+		}
+	}
+	focus = {
+		id = sln_topdweller_2
+		icon = GFX_goal_sln_nurture_industry
+		cost = 60
+		prerequisite = {
+			focus = sln_topdweller_1
+		}
+		available = {
+			NOT = {
+				has_country_flag = SLN_rel_journey_done
+			}
+		}
+		x = 0
+		y = 1
+		relative_position_id = sln_topdweller_1
+		completion_reward = {
+			add_offsite_building = {
+                type = industrial_complex
+                level = 3
+            }
+			increase_topdweller_power = yes
+			custom_effect_tooltip = sln_history_choice_top
+		}
+	}
+	focus = {
+		id = sln_topdweller_3
+		icon = GFX_goal_sln_price_fixing
+		cost = 60
+		prerequisite = {
+			focus = sln_topdweller_2
+		}
+		available = {
+			NOT = {
+				has_country_flag = SLN_rel_journey_done
+			}
+		}
+		x = 0
+		y = 1
+		relative_position_id = sln_topdweller_2
+		completion_reward = {
+			add_ideas = sln_price_fix
+
+			increase_topdweller_power = yes
+			custom_effect_tooltip = sln_history_choice_top
+		}
+	}
+
+	# dendweller tree
+	focus = {
+		id = sln_dendweller_1
+		icon = GFX_goal_sln_no_humans
+		cost = 60
+		prerequisite = {
+			focus = sln_a_death
+		}
+		available = {
+			NOT = {
+				has_country_flag = SLN_rel_journey_done
+			}
+		}
+		x = 3
+		y = 1
+		relative_position_id = sln_a_death
+		completion_reward = {
+			add_ideas = sln_outposts
+
+			increase_dendweller_power = yes
+			custom_effect_tooltip = sln_history_choice_den
+		}
+	}
+	focus = {
+		id = sln_dendweller_2
+		icon = GFX_goal_sln_war_spear
+		cost = 60
+		prerequisite = {
+			focus = sln_dendweller_1
+		}
+		available = {
+			NOT = {
+				has_country_flag = SLN_rel_journey_done
+			}
+		}
+		x = 0
+		y = 1
+		relative_position_id = sln_dendweller_1
+		completion_reward = {
+			add_ideas = sln_core_def
+
+			increase_dendweller_power = yes
+			custom_effect_tooltip = sln_history_choice_den
+		}
+	}
+	focus = {
+		id = sln_dendweller_3
+		icon = GFX_goal_sln_bunker
+		cost = 60
+		prerequisite = {
+			focus = sln_dendweller_2
+		}
+		available = {
+			NOT = {
+				has_country_flag = SLN_rel_journey_done
+			}
+		}
+		x = 0
+		y = 1
+		relative_position_id = sln_dendweller_2
+		completion_reward = {
+			add_war_support = 0.10
+			598 = {
+				add_building_construction = {
+                    type = bunker
+                    level = 1
+                    instant_build = yes
+                    province = 2715
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 1
+                    instant_build = yes
+                    province = 2730
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 1
+                    instant_build = yes
+                    province = 2709
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 1
+                    instant_build = yes
+                    province = 8379
+                }
+				add_building_construction = {
+                    type = bunker
+                    level = 1
+                    instant_build = yes
+                    province = 3321
+                }
+			}
+			increase_dendweller_power = yes
+			custom_effect_tooltip = sln_history_choice_den
+		}
+	}
+
+	# start 2nd half, top dwellers
+	focus = {
+		id = sln_the_top_dwellers_will_lead
+		icon = GFX_goal_sln_aeyr
+		cost = 7
+		available = {
+			always = no
+		}
+		x = -6
+		y = 5
+		relative_position_id = sln_a_death
+		completion_reward = {
+			remove_ideas = rel_ossin_dying
+			kill_country_leader = yes
+			set_politics = {
+				ruling_party = people
+				elections_allowed = no
+			}
+		}
+	}
+	focus = {
+		id = sln_top_final_1
+		icon = GFX_goal_sln_mud_hut
+		cost = 60
+		prerequisite = {
+			focus = sln_the_top_dwellers_will_lead
+		}
+		x = -1
+		y = 1
+		relative_position_id = sln_the_top_dwellers_will_lead
+		completion_reward = {
+			598 = {
+				set_building_level = {
+					type = infrastructure
+					level = 10
+					instant_build = yes
+				}
+			}
+			add_offsite_building = {
+                type = industrial_complex
+                level = 2
+            }
+		}
+	}
+	focus = {
+		id = sln_top_final_2
+		icon = GFX_goal_sln_poker_caps
+		cost = 60
+		prerequisite = {
+			focus = sln_the_top_dwellers_will_lead
+		}
+		x = 1
+		y = 1
+		relative_position_id = sln_the_top_dwellers_will_lead
+		completion_reward = {
+			set_temp_variable = { caps_to_add = 250 }
+			add_caps = yes
+		}
+	}
+	focus = {
+		id = sln_top_final_last
+		icon = GFX_goal_sln_humans_good
+		cost = 60
+		prerequisite = {
+			focus = sln_top_final_1
+		}
+		prerequisite = {
+			focus = sln_top_final_2
+		}
+		x = 0
+		y = 2
+		relative_position_id = sln_the_top_dwellers_will_lead
+		completion_reward = {
+			add_ideas = sln_open_to_humans
+		}
+	}
+
+	# start 2nd half, den dwellers
+	focus = {
+		id = sln_the_den_dwellers_will_lead
+		icon = GFX_goal_sln_evil_racree
+		cost = 7
+		available = {
+			always = no
+		}
+		x = 6
+		y = 5
+		relative_position_id = sln_a_death
+		completion_reward = {
+			remove_ideas = rel_ossin_dying
+			kill_country_leader = yes
+			set_politics = {
+				ruling_party = elites
+				elections_allowed = no
+			}
+		}
+	}
+	focus = {
+		id = sln_den_final_1
+		icon = GFX_goal_sln_wrench
+		cost = 60
+		prerequisite = {
+			focus = sln_the_den_dwellers_will_lead
+		}
+		x = -1
+		y = 1
+		relative_position_id = sln_the_den_dwellers_will_lead
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.75
+				uses = 2
+				category = support_tech_category
+			}
+		}
+	}
+	focus = {
+		id = sln_den_final_2
+		icon = GFX_goal_sln_pickaxe
+		cost = 60
+		prerequisite = {
+			focus = sln_the_den_dwellers_will_lead
+		}
+		x = 1
+		y = 1
+		relative_position_id = sln_the_den_dwellers_will_lead
+		completion_reward = {
+			add_political_power = 25
+			add_offsite_building = {
+                type = arms_factory
+                level = 3
+            }
+		}
+	}
+	focus = {
+		id = sln_den_final_last
+		icon = GFX_goal_sln_humans_evil
+		cost = 60
+		prerequisite = {
+			focus = sln_den_final_1
+		}
+		prerequisite = {
+			focus = sln_den_final_2
+		}
+		x = 0
+		y = 2
+		relative_position_id = sln_the_den_dwellers_will_lead
+		available = {
+            OR = {
+				is_neighbor_of = JAC
+                NOT = {
+                    JAC = { exists = yes }
+                }
+            }
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			JAC = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = JAC
+		completion_reward = {
+			add_manpower = 500
+			add_command_power = 50
+			JAC = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+
+
+	focus = {
+		id = sln_rel_returns
+		icon = GFX_goal_sln_rel_ossin_return
+		cost = 60
+		available = {
+			always = no
+		}
+		x = 0
+		y = 5
+		relative_position_id = sln_a_death
+		completion_reward = {
+			hidden_effect = {
+				remove_ideas = {
+					topdweller1
+					topdweller2
+					topdweller3
+					topdweller4
+					topdweller5
+					topdweller6
+					topdweller7
+					topdweller8
+					dendweller1
+					dendweller2
+					dendweller3
+					dendweller4
+					dendweller5
+					dendweller6
+					dendweller7
+					dendweller8
+					rel_ossin_dying
+				}
+			}
+			add_ideas = rel_ossin_returns
+		}
+	}
+
+	focus = {
+		id = sln_rel_final_1
+		icon = GFX_goal_sln_research
+		cost = 60
+		prerequisite = {
+			focus = sln_rel_returns
+		}
+		x = -3
+		y = 1
+		relative_position_id = sln_rel_returns
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = sln_rel_final_2
+		icon = GFX_goal_sln_baby_boom
+		cost = 60
+		prerequisite = {
+			focus = sln_rel_returns
+		}
+		x = -1
+		y = 1
+		relative_position_id = sln_rel_returns
+		completion_reward = {
+			add_ideas = sln_forest_children
+		}
+	}
+	focus = {
+		id = sln_rel_final_3
+		icon = GFX_goal_sln_blueprint
+		cost = 60
+		prerequisite = {
+			focus = sln_rel_returns
+		}
+		x = 1
+		y = 1
+		relative_position_id = sln_rel_returns
+		completion_reward = {
+			add_offsite_building = {
+                type = industrial_complex
+                level = 2
+            }
+			add_offsite_building = {
+                type = arms_factory
+                level = 2
+            }
+			add_stability = 0.02
+			add_war_support = 0.02
+		}
+	}
+	focus = {
+		id = sln_rel_final_4
+		icon = GFX_goal_sln_shield
+		cost = 60
+		prerequisite = {
+			focus = sln_rel_returns
+		}
+		x = 3
+		y = 1
+		relative_position_id = sln_rel_returns
+		completion_reward = {
+			hidden_effect = {
+				load_oob = SLN_lategame
+			}
+			custom_effect_tooltip = sln_lategame_oob_tt
+		}
+	}
+	focus = {
+		id = sln_rel_final_last
+		icon = GFX_goal_sln_children_of_the_gate
+		cost = 60
+		prerequisite = {
+			focus = sln_rel_final_1
+		}
+		prerequisite = {
+			focus = sln_rel_final_2
+		}
+		prerequisite = {
+			focus = sln_rel_final_3
+		}
+		prerequisite = {
+			focus = sln_rel_final_4
+		}
+		x = 0
+		y = 2
+		relative_position_id = sln_rel_returns
+		completion_reward = {
+			set_cosmetic_tag = SLN_children
+			add_ideas = sln_children_glow
+		}
+	}
+
+	focus = {
+		id = sln_reno_alliance_branch
+		icon = GFX_goal_new_sln_friendship
+		cost = 60
+		prerequisite = {
+			focus = sln_top_final_last
+			focus = sln_den_final_last
+			focus = sln_rel_final_last
+		}
+		available = {
+			OR = {
+				is_in_faction_with = NEW
+				is_subject_of = NEW
+				NEW = {
+					is_subject_of = SLN
+				}
+			}
+		}
+		mutually_exclusive = {
+			focus = sln_vlt_alliance_branch
+		}
+		x = 2
+		y = 4
+		relative_position_id = sln_rel_returns
+		completion_reward = {
+			set_technology = {
+				support_tech_level_scientific = 1
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1000
+				producer = NEW
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 500
+				producer = NEW
+			}
+		}
+	}
+	focus = {
+		id = sln_vlt_alliance_branch
+		icon = GFX_goal_vlt_sln_friendship
+		cost = 60
+		prerequisite = {
+			focus = sln_top_final_last
+			focus = sln_den_final_last
+			focus = sln_rel_final_last
+		}
+		available = {
+			OR = {
+				is_in_faction_with = VLT
+				is_subject_of = VLT
+				VLT = {
+					is_subject_of = SLN
+				}
+			}
+		}
+		mutually_exclusive = {
+			focus = sln_reno_alliance_branch
+		}
+		x = -2
+		y = 4
+		relative_position_id = sln_rel_returns
+		completion_reward = {
+			set_technology = {
+				robotics_tech_level_settler = 1
+			}
+			add_ideas = vault_automated_security
+		}
+	}
+}
