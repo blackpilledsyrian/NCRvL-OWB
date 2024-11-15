@@ -69,7 +69,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_defense
 	icon = GFX_goal_generic_military_sphere
-	cost = 60
+	cost = 50
 	available = {
 		has_country_flag = unlocked_all_available_generic_focus_branches
 	}
@@ -90,7 +90,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_cult
 	icon = GFX_goal_generic_spartan_legacy
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_defense
 	}
@@ -114,7 +114,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_pathfinders
 	icon = GFX_goal_generic_tomahawk_2
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_cult
 	}
@@ -137,7 +137,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_youth
 	icon = GFX_goal_generic_teddy
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_pathfinders
 	}
@@ -159,7 +159,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_tradition
 	icon = GFX_goal_generic_spear
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_defense
 	}
@@ -182,7 +182,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_martialarts
 	icon = GFX_goal_tribal_generic
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_tradition
 	}
@@ -205,7 +205,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_champions
 	icon = GFX_KHA_focus_support_orange
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_martialarts
 	}
@@ -227,7 +227,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_healing
 	icon = GFX_goal_TTM_Golden_Fruit
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_champions
 	}
@@ -249,7 +249,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_secrets
 	icon = GFX_goal_CHC_an_army_of_healers
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_healing
 	}
@@ -271,7 +271,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_muster
 	icon = GFX_goal_PLS_Drums_of_War
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_champions
 	}
@@ -304,7 +304,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_nomads
 	icon = GFX_goal_TIM_patch_horsemanship
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_muster
 	}
@@ -327,7 +327,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_houndmasters
 	icon = GFX_goal_CES_burned_dog
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_nomads
 	}
@@ -349,7 +349,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_dogs
 	icon = GFX_goal_TIM_patch_dog_care
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_houndmasters
 	}
@@ -375,7 +375,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_skirmish
 	icon = GFX_goal_TTM_Border
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_nomads
 	}
@@ -397,7 +397,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_bodyguards
 	icon = GFX_goal_ITZ_an_elite_force
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_skirmish
 	}
@@ -473,7 +473,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_noct
 	icon = GFX_goal_pal_take_back_the_night
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_nomads
 	}
@@ -499,7 +499,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_tribe
 	icon = GFX_KHA_focus_tribal_spirit
-	cost = 60
+	cost = 50
 	available = {
 		has_country_flag = unlocked_all_available_generic_focus_branches
 	}
@@ -521,7 +521,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_war
 	icon = GFX_KHA_focus_blood_god
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_tribe
 	}
@@ -546,7 +546,7 @@ shared_focus = {
 			log = "[GetDateText]: [Root.GetName] gentribal_war entered"
 		}
 		add_ideas = war_chief1
-		add_political_power = 60
+		add_political_power = 50
 		if = {
 			limit = { has_global_flag = debug_logs }
 			log = "[GetDateText]: [Root.GetName] gentribal_war exited"
@@ -556,7 +556,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_rise
 	icon = GFX_KHA_focus_propose_plan
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_war
 	}
@@ -578,7 +578,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_realm
 	icon = GFX_KHA_focus_rum
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_rise
 	}
@@ -604,7 +604,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_shaman
 	icon = GFX_goal_tribal_dog_symbl
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_tribe
 	}
@@ -629,7 +629,7 @@ shared_focus = {
 			log = "[GetDateText]: [Root.GetName] gentribal_shaman entered"
 		}
 		add_ideas = high_shaman
-		add_political_power = 60
+		add_political_power = 50
 		if = {
 			limit = { has_global_flag = debug_logs }
 			log = "[GetDateText]: [Root.GetName] gentribal_shaman exited"
@@ -639,7 +639,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_holywar
 	icon = GFX_goal_HEA_focus_tribals
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_shaman
 	}
@@ -668,7 +668,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_holyorg
 	icon = GFX_goal_NCN_Hands_Of_God
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_holywar
 	}
@@ -692,7 +692,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_elder
 	icon = GFX_goal_CES_Amnesty_Old
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_tribe
 	}
@@ -717,7 +717,7 @@ shared_focus = {
 			log = "[GetDateText]: [Root.GetName] gentribal_elder entered"
 		}
 		add_ideas = elder1
-		add_political_power = 60
+		add_political_power = 50
 		if = {
 			limit = { has_global_flag = debug_logs }
 			log = "[GetDateText]: [Root.GetName] gentribal_elder exited"
@@ -727,7 +727,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_council
 	icon = GFX_goal_CES_Lucius_Council
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_elder
 	}
@@ -752,7 +752,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_migrate
 	icon = GFX_KHA_focus_trade_ncr
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_council
 	}
@@ -778,7 +778,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_highchief
 	icon = GFX_goal_pal_pr_shoshone
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_tribe
 	}
@@ -803,7 +803,7 @@ shared_focus = {
 			log = "[GetDateText]: [Root.GetName] gentribal_highchief entered"
 		}
 		add_ideas = highchief1
-		add_political_power = 60
+		add_political_power = 50
 		if = {
 			limit = { has_global_flag = debug_logs }
 			log = "[GetDateText]: [Root.GetName] gentribal_highchief exited"
@@ -813,7 +813,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_chief
 	icon = GFX_goal_pal_the_league
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_highchief
 	}
@@ -838,7 +838,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_duty
 	icon = GFX_goal_pal_pr_riper
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_chief
 	}
@@ -867,7 +867,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_village
 	icon = GFX_goal_generic_teepee
-	cost = 60
+	cost = 50
 	available = {
 		has_country_flag = unlocked_all_available_generic_focus_branches
 	}
@@ -917,7 +917,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_elders
 	icon = GFX_goal_generic_in_control
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_village
 	}
@@ -939,7 +939,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_unity
 	icon = GFX_goal_TTM_Defending_Our_Ideals
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_elders
 	}
@@ -962,7 +962,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_city
 	icon = GFX_goal_TTM_Temple
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_unity
 	}
@@ -996,7 +996,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_factions
 	icon = GFX_goal_TTM_Fruit
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_city
 	}
@@ -1020,7 +1020,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_deathpowder
 	icon = GFX_goal_TTM_Fire_2
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_factions
 	}
@@ -1074,7 +1074,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_fragprod
 	icon = GFX_goal_assembly_li
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_deathpowder
 	}
@@ -1096,7 +1096,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_trade
 	icon = GFX_goal_brahmin_deals
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_factions
 	}
@@ -1121,7 +1121,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_outsiders
 	icon = GFX_goal_generic_focus_magazine_backwood_get_off_my_lawn
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_trade
 	}
@@ -1144,7 +1144,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_agreement
 	icon = GFX_goal_TTM_Nursery
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_city
 	}
@@ -1168,7 +1168,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_tradepost
 	icon = GFX_goal_generic_brahmin_trade
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_agreement
 	}
@@ -1213,7 +1213,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_volunteers
 	icon = GFX_goal_TTM_Tribal_Vault_Girl
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_tradepost
 	}
@@ -1236,7 +1236,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_mercs
 	icon = GFX_goal_TTM_Wild
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_volunteers
 	}
@@ -1266,7 +1266,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_slipperyenemies
 	icon = GFX_goal_TTM_thicc_Vault_Girl
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_mercs
 	}
@@ -1290,7 +1290,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_immortals
 	icon = GFX_goal_TTM_Breaker_Of_Chains
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_mercs
 	}
@@ -1313,7 +1313,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_lands
 	icon = GFX_goal_generic_nature_tree
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_village
 	}
@@ -1335,7 +1335,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_gifts
 	icon = GFX_goal_lurker_offer_muttfruit
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_lands
 	}
@@ -1358,7 +1358,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_spirits
 	icon = GFX_goal_TTM_3
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_gifts
 	}
@@ -1381,7 +1381,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_warpaint
 	icon = GFX_goal_TTM_Paintbrush
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_spirits
 	}
@@ -1404,7 +1404,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_numbers
 	icon = GFX_goal_generic_bloody_sacrifice
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_warpaint
 	}
@@ -1428,7 +1428,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_wasteland
 	icon = GFX_goal_arr_sulik_ways
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_numbers
 	}
@@ -1450,7 +1450,7 @@ shared_focus = {
 shared_focus = {
 	id = gentribal_wardrums
 	icon = GFX_goal_arr_tribal_weapons
-	cost = 60
+	cost = 50
 	prerequisite = {
 		focus = gentribal_wasteland
 	}

@@ -1,0 +1,1918 @@
+
+### Historic
+
+shared_focus = {
+	id = settler_forfathers
+	icon = GFX_goal_generic_building_focus
+	cost = 7
+	x = 12
+	y = 1
+
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_forfathers entered"
+		}
+		country_event = { id = nf_settler.1 }
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_forfathers exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_defend
+	icon = GFX_goal_generic_building_focus
+	cost = 7
+	prerequisite = {
+		focus = settler_forfathers
+	}
+	x = 0
+	y = 1
+	relative_position_id = settler_forfathers
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_defend entered"
+		}
+		country_event = { id = nf_settler.2 }
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_defend exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_become
+	icon = GFX_goal_generic_building_focus
+	cost = 7
+	prerequisite = {
+		focus = settler_defend
+	}
+	x = 0
+	y = 1
+	relative_position_id = settler_defend
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_become entered"
+		}
+		country_event = { id = nf_settler.3 }
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_become exited"
+		}
+		unlock_all_available_generic_branches = yes
+	}
+}
+
+### Funding the Schools
+shared_focus = {
+	id = settler_schools
+	icon = GFX_goal_generic_books
+	cost = 50
+	available = {
+		has_country_flag = unlocked_all_available_generic_focus_branches
+	}
+	x = 2
+	y = 4
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_schools entered"
+		}
+		add_ideas =	new_schools
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_schools exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_laboratory
+	icon = GFX_goal_generic_terminal_2
+	cost = 50
+	prerequisite = {
+		focus = settler_schools
+	}
+	x = 0
+	y = 1
+	relative_position_id = settler_schools
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_laboratory entered"
+		}
+		add_research_slot = 1
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_laboratory exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_medical
+	icon = GFX_goal_generic_medical_scalpal
+	cost = 50
+	prerequisite = {
+		focus = settler_laboratory
+	}
+	x = -2
+	y = 1
+	relative_position_id = settler_laboratory
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_medical entered"
+		}
+		add_tech_bonus = {
+			name = medical_bonus
+			bonus = 0.75
+			uses = 1
+			category = support_medical_tech_category
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_medical exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_chemistry
+	icon = GFX_goal_generic_microscope
+	cost = 50
+	prerequisite = {
+		focus = settler_medical
+	}
+	x = 0
+	y = 1
+	relative_position_id = settler_medical
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_chemistry entered"
+		}
+		add_ideas = chem_lab
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_chemistry exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_science
+	icon = GFX_goal_pal_electronic_plans
+	cost = 50
+	prerequisite = {
+		focus = settler_laboratory
+	}
+	x = 0
+	y = 1
+	relative_position_id = settler_laboratory
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_science entered"
+		}
+		add_tech_bonus = {
+			name = robot_bonus
+			bonus = 0.5
+			uses = 1
+			category = robotics_tech_category
+		}
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 1
+			category = electronics
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_science exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_focus_robco
+	icon = GFX_goal_generic_robots_focus
+	cost = 50
+	prerequisite = {
+		focus = settler_science
+	}
+	x = 0
+	y = 1
+	relative_position_id = settler_science
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_focus_robco entered"
+		}
+		swap_ideas = {
+			add_idea = settler_robco
+			remove_idea = new_schools
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_focus_robco exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_firefighter
+	icon = GFX_goal_TIM_patch_fire_saftey
+	cost = 50
+	prerequisite = {
+		focus = settler_focus_robco
+	}
+	x = -1
+	y = 1
+	relative_position_id = settler_focus_robco
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_firefighter entered"
+		}
+		add_ideas = firefighter_protection
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_firefighter exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_police
+	icon = GFX_goal_enc_military_police
+	cost = 50
+	prerequisite = {
+		focus = settler_firefighter
+	}
+	x = 0
+	y = 1
+	relative_position_id = settler_firefighter
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_police entered"
+		}
+		swap_ideas = {
+			add_idea = police_protection
+			remove_idea = firefighter_protection
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_police exited"
+		}
+	}
+}
+shared_focus = {
+	id = settlers_protection
+	icon = GFX_goal_generic_protectron_conceptart_medic
+	cost = 50
+	prerequisite = {
+		focus = settler_focus_robco
+	}
+	x = 1
+	y = 1
+	relative_position_id = settler_focus_robco
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settlers_protection entered"
+		}
+		add_tech_bonus = {
+			name = medical_bonus
+			bonus = 0.5
+			uses = 1
+			category = support_medical_tech_category
+		}
+		add_tech_bonus = {
+			name = robot_bonus
+			bonus = 0.5
+			uses = 1
+			category = robotics_tech_category
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settlers_protection exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_construction
+	icon = GFX_goal_generic_protectron_conceptart_construction
+	cost = 50
+	prerequisite = {
+		focus = settlers_protection
+	}
+	x = 0
+	y = 1
+	relative_position_id = settlers_protection
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_construction entered"
+		}
+		add_ideas = construction_protection
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_construction exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_garage
+	icon = GFX_goal_generic_engine
+	cost = 50
+	prerequisite = {
+		focus = settler_laboratory
+	}
+	x = 4
+	y = 1
+	relative_position_id = settler_laboratory
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_garage entered"
+		}
+		random_owned_controlled_state = {
+			limit = {
+				is_valid_state_for_2_arms_factories = yes
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+			add_resource = {
+				type = circuitry
+				amount = 3
+			}
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_garage exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_vehicles
+	icon = GFX_goal_generic_bus
+	cost = 50
+	prerequisite = {
+		focus = settler_garage
+	}
+	x = 0
+	y = 1
+	relative_position_id = settler_garage
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_vehicles entered"
+		}
+		add_tech_bonus = {
+			name = transport_bonus
+			bonus = 0.75
+			uses = 1
+			category = vehicle_tech_category
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_vehicles exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_teams
+	icon = GFX_goal_generic_truck_1
+	cost = 50
+	prerequisite = {
+		focus = settler_vehicles
+	}
+	x = -1
+	y = 1
+	relative_position_id = settler_vehicles
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_teams entered"
+		}
+		set_temp_variable = { caps_to_add = 100 }
+		add_caps = yes
+		random_owned_controlled_state = {
+			add_resource = {
+				type = composites
+				amount = 6
+			}
+			add_resource = {
+				type = circuitry
+				amount = 3
+			}
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_teams exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_war
+	icon = GFX_goal_generic_jeep
+	cost = 50
+	prerequisite = {
+		focus = settler_vehicles
+	}
+	x = 1
+	y = 1
+	relative_position_id = settler_vehicles
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_war entered"
+		}
+		add_tech_bonus = {
+			name = apc_bonus
+			bonus = 0.25
+			uses = 1
+			ahead_reduction = 1
+			category = motorized_equipment_category
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_war exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_thinktank
+	icon = GFX_goal_generic_tank_2
+	cost = 50
+	prerequisite = {
+		focus = settler_teams
+	}
+	prerequisite = {
+		focus = settler_war
+	}
+	x = 1
+	y = 1
+	relative_position_id = settler_teams
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_thinktank entered"
+		}
+		add_tech_bonus = {
+			name = thinktank_bonus
+			bonus = 0.75
+			uses = 1
+			category = tank_tech_category
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_thinktank exited"
+		}
+	}
+}
+
+### Erecting a Palisade
+shared_focus = {
+	id = settler_palisade
+	icon = GFX_goal_generic_western
+	cost = 50
+	available = {
+		has_country_flag = unlocked_all_available_generic_focus_branches
+	}
+	x = 12
+	y = 4
+
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_palisade entered"
+		}
+		add_ideas = erect_palisade
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_palisade exited"
+		}
+	}
+}
+shared_focus = {
+	id = settlers_wall
+	icon = GFX_goal_generic_bunker_1
+	cost = 50
+	prerequisite = {
+		focus = settler_palisade
+	}
+	x = -3
+	y = 1
+	relative_position_id = settler_palisade
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settlers_wall entered"
+		}
+		swap_ideas = {
+			add_idea = wall_construction
+			remove_idea = erect_palisade
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settlers_wall exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_defenses
+	icon = GFX_goal_generic_bunkers_focus
+	cost = 50
+	prerequisite = {
+		focus = settlers_wall
+	}
+	x = 0
+	y = 1
+	relative_position_id = settlers_wall
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_defenses entered"
+		}
+		capital_scope = {
+			if = {
+				limit = {
+					is_valid_state_for_2_arms_factories = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_building_construction = {
+				type = bunker
+				level = 2
+				instant_build = yes
+				province = {
+					all_provinces = yes
+					limit_to_victory_point = yes
+				}
+			}
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_defenses exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_caravan
+	icon = GFX_goal_lever_action_cowboy
+	cost = 50
+	prerequisite = {
+		focus = settler_palisade
+	}
+	x = -1
+	y = 1
+	relative_position_id = settler_palisade
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_caravan entered"
+		}
+		set_technology = { settler_caravanmilitia = 1 }
+		add_manpower = 250
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_caravan exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_gunsmiths
+	icon = GFX_goal_generic_common_firearms_focus
+	cost = 50
+	prerequisite = {
+		focus = settler_caravan
+	}
+	x = 0
+	y = 1
+	relative_position_id = settler_caravan
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_gunsmiths entered"
+		}
+		random_owned_controlled_state = {
+			limit = {
+				is_valid_state_for_arms_factory = yes
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+		add_tech_bonus = {
+			name = gunsmith_bonus
+			bonus = 0.5
+			uses = 1
+			category = ballistic_weaponry_tech_category
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_gunsmiths exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_subsidize
+	icon = GFX_goal_generic_regular_firearms_focus
+	cost = 50
+	prerequisite = {
+		focus = settler_gunsmiths
+	}
+	x = 0
+	y = 1
+	relative_position_id = settler_gunsmiths
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_subsidize entered"
+		}
+		add_ideas = settler_subsidized_weapon_manufacturers
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_subsidize exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_armory
+	icon = GFX_goal_generic_ammo_boxes_focus
+	cost = 50
+	prerequisite = {
+		focus = settler_subsidize
+	}
+	x = 0
+	y = 1
+	relative_position_id = settler_subsidize
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_armory entered"
+		}
+		random_owned_controlled_state = {
+			limit = {
+				is_valid_state_for_arms_factory = yes
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+		swap_ideas = {
+			add_idea = established_armory
+			remove_idea = settler_subsidized_weapon_manufacturers
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_armory exited"
+		}
+	}
+}
+shared_focus = {
+	id = settlers_commanders
+	icon = GFX_goal_generic_free_states_soldier
+	cost = 50
+	prerequisite = {
+		focus = settler_palisade
+	}
+	x = 3
+	y = 1
+	relative_position_id = settler_palisade
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settlers_commanders entered"
+		}
+		add_ideas = settler_militia_commanders
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settlers_commanders exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_drills
+	icon = GFX_goal_generic_pipe_weapons_focus
+	cost = 50
+	prerequisite = {
+		focus = settlers_commanders
+	}
+	x = -1
+	y = 1
+	relative_position_id = settlers_commanders
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_drills entered"
+		}
+		add_ideas =	militia_drilling
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_drills exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_organization
+	icon = GFX_goal_generic_mexican_infantry
+	cost = 50
+	prerequisite = {
+		focus = settlers_commanders
+	}
+	x = 1
+	y = 1
+	relative_position_id = settlers_commanders
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_organization entered"
+		}
+		add_ideas =	settler_militia_organization
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_organization exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_posters
+	icon = GFX_goal_generic_patty_cheesecake
+	cost = 50
+	prerequisite = {
+		focus = settler_organization
+	}
+	prerequisite = {
+		focus = settler_drills
+	}
+	x = -1
+	y = 1
+	relative_position_id = settler_organization
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_posters entered"
+		}
+		add_ideas =	militia_posters
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_posters exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_encourage
+	icon = GFX_goal_generic_leather_armor_woman
+	cost = 50
+	prerequisite = {
+		focus = settler_posters
+	}
+	x = -1
+	y = 1
+	relative_position_id = settler_posters
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_encourage entered"
+		}
+		swap_ideas = {
+			add_idea = encourage_women
+			remove_idea = militia_posters
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_encourage exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_standard
+	icon = GFX_goal_generic_focus_magazine_gunsandbullets_take_aim
+	cost = 50
+	prerequisite = {
+		focus = settler_posters
+	}
+	x = 1
+	y = 1
+	relative_position_id = settler_posters
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_standard entered"
+		}
+		add_ideas =	settler_standardized_military
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_standard exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_oldworld
+	icon = GFX_goal_generic_focus_magazine_gunsandbullets_lasers
+	cost = 50
+	prerequisite = {
+		focus = settler_standard
+	}
+	x = 0
+	y = 1
+	relative_position_id = settler_standard
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_oldworld entered"
+		}
+		add_ideas =	settler_old_tactics
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_oldworld exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_fallback
+	icon = GFX_goal_generic_hard_boiled_detectives
+	cost = 50
+	prerequisite = {
+		focus = settler_standard
+	}
+	x = -2
+	y = 1
+	relative_position_id = settler_standard
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_fallback entered"
+		}
+		swap_ideas = {
+			add_idea = settler_fallback_tactics
+			remove_idea = settler_standardized_military
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_fallback exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_pointdefense
+	icon = GFX_goal_generic_walls_focus
+	cost = 50
+	prerequisite = {
+		focus = settler_oldworld
+	}
+	x = -2
+	y = 1
+	relative_position_id = settler_oldworld
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_pointdefense entered"
+		}
+		add_ideas = settler_point_defence
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_pointdefense exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_awareness
+	icon = GFX_goal_generic_communcation_focus
+	cost = 50
+	prerequisite = {
+		focus = settler_oldworld
+	}
+	x = 0
+	y = 1
+	relative_position_id = settler_oldworld
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_awareness entered"
+		}
+		swap_ideas = {
+			add_idea = settler_tactical_awareness
+			remove_idea = settler_old_tactics
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_awareness exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_marching
+	icon = GFX_goal_generic_recruitment_focus
+	cost = 50
+	prerequisite = {
+		focus = settler_oldworld
+	}
+	x = 2
+	y = 1
+	relative_position_id = settler_oldworld
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_marching entered"
+		}
+		add_ideas =	marching_drills
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_marching exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_distance
+	icon = GFX_goal_generic_focus_magazine_robcofun_wastelad
+	cost = 50
+	prerequisite = {
+		focus = settler_marching
+	}
+	x = 0
+	y = 1
+	relative_position_id = settler_marching
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_distance entered"
+		}
+		swap_ideas = {
+			add_idea = settler_long_distance_movements
+			remove_idea = marching_drills
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_distance exited"
+		}
+	}
+}
+### Center of the Community
+shared_focus = {
+	id = settler_community
+	icon = GFX_goal_generic_slums_focus
+	cost = 50
+	available = {
+		has_country_flag = unlocked_all_available_generic_focus_branches
+	}
+	x = 20
+	y = 4
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_community entered"
+		}
+		random_owned_controlled_state = {
+			limit = {
+				is_valid_state_for_2_civilian_factories = yes
+			}
+			add_extra_state_shared_building_slots = 4
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+			set_temp_variable = {
+				pop_add = 500
+			}
+			add_state_population_no_state_name = yes
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_community exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_arrive
+	icon = GFX_goal_pal_the_league
+	cost = 50
+	prerequisite = {
+		focus = settler_community
+	}
+	x = -1
+	y = 1
+	relative_position_id = settler_community
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_arrive entered"
+		}
+		add_timed_idea = { idea = settler_wasteland_settlers days = 365 }
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_arrive exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_tato
+	icon = GFX_goal_TIM_patch_plant_science
+	cost = 50
+	prerequisite = {
+		focus = settler_arrive
+	}
+	x = 0
+	y = 1
+	relative_position_id = settler_arrive
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_tato entered"
+		}
+		add_ideas = tato_farming
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_tato exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_brahmin
+	icon = GFX_goal_generic_creature_brahmin
+	cost = 50
+	prerequisite = {
+		focus = settler_tato
+	}
+	x = 0
+	y = 1
+	relative_position_id = settler_tato
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_brahmin entered"
+		}
+		random_owned_controlled_state = {
+			set_temp_variable = {
+				pop_add = 1000
+			}
+			add_state_population_no_state_name = yes
+		}
+		swap_ideas = {
+			add_idea = brahmin_herding
+			remove_idea = tato_farming
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_brahmin exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_traderoutes
+	icon = GFX_goal_generic_brahmin_trade
+	cost = 50
+	prerequisite = {
+		focus = settler_community
+	}
+	x = 3
+	y = 1
+	relative_position_id = settler_community
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_traderoutes entered"
+		}
+		set_temp_variable = { caps_to_add = 150 }
+		add_caps = yes
+		if = {
+			limit = {
+				check_variable = {
+					num_owned_controlled_states > 1
+				}
+			}
+			random_owned_controlled_state = {	# This looks better in the tooltip than capital_scope
+				limit = {
+					is_capital = yes
+					infrastructure < 9
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_capital = no
+					infrastructure < 9
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		else = {
+			random_owned_controlled_state = {
+				limit = {
+					is_capital = no
+					infrastructure < 9
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_traderoutes exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_future
+	icon = GFX_goal_generic_barn
+	cost = 50
+	prerequisite = {
+		focus = settler_traderoutes
+	}
+	x = -1
+	y = 1
+	relative_position_id = settler_traderoutes
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_future entered"
+		}
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 2
+			category = industry
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_future exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_pride
+	icon = GFX_goal_generic_wasteland_girl
+	cost = 50
+	prerequisite = {
+		focus = settler_future
+	}
+	x = 0
+	y = 1
+	relative_position_id = settler_future
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_pride entered"
+		}
+		add_ideas =	local_pride
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_pride exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_town
+	icon = GFX_goal_generic_welcome_home
+	cost = 50
+	prerequisite = {
+		focus = settler_pride
+	}
+	x = 0
+	y = 1
+	relative_position_id = settler_pride
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_town entered"
+		}
+		random_owned_controlled_state = {
+			limit = {
+				is_valid_state_for_3_civilian_factories = yes
+			}
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_town exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_city
+	icon = GFX_goal_generic_megaloader
+	cost = 50
+	prerequisite = {
+		focus = settler_town
+	}
+	x = 0
+	y = 1
+	relative_position_id = settler_town
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_city entered"
+		}
+		if = {
+			limit = {
+				check_variable = { num_owned_controlled_states > 1 }
+			}
+			random_owned_controlled_state = {
+				limit = {
+					NOT = { is_capital = yes }
+				}
+				add_extra_state_shared_building_slots = 3
+				add_state_modifier = {
+					modifier = {
+						state_production_speed_industrial_complex_factor = 0.05
+					}
+				}
+			}
+		}
+		else = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 3
+				add_state_modifier = {
+					modifier = {
+						state_production_speed_industrial_complex_factor = 0.05
+					}
+				}
+			}
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_city exited"
+		}
+	}
+}
+shared_focus = {
+	id = settlers_markets
+	icon = GFX_goal_generic_trade_economy
+	cost = 50
+	prerequisite = {
+		focus = settler_city
+	}
+	x = -1
+	y = 1
+	relative_position_id = settler_city
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settlers_markets entered"
+		}
+		random_owned_controlled_state = {
+			limit = {
+				is_valid_state_for_civilian_factory = yes
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = air_base
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = radar_station
+				level = 1
+				instant_build = yes
+			}
+		}
+		set_temp_variable = { caps_to_add = 125 }
+		add_caps = yes
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settlers_markets exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_labor
+	icon = GFX_goal_commie_harvest_2
+	cost = 50
+	prerequisite = {
+		focus = settler_city
+	}
+	x = 1
+	y = 1
+	relative_position_id = settler_city
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_labor entered"
+		}
+		random_owned_controlled_state = {
+			limit = {
+				is_valid_state_for_civilian_factory = yes
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		swap_ideas = {
+			add_idea = labor_treaties
+			remove_idea = local_pride
+		}
+		set_temp_variable = { caps_to_add = 125 }
+		add_caps = yes
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_labor exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_robed
+	icon = GFX_goal_focus_spy
+	cost = 50
+	prerequisite = {
+		focus = settler_labor
+	}
+	prerequisite = {
+		focus = settlers_markets
+	}
+	allow_branch = {
+		NOT = {
+			original_tag = SRG #WE WERE THE BROTHERHOOD
+		}
+	}
+	x = 1
+	y = 1
+	relative_position_id = settlers_markets
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_robed entered"
+		}
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 2
+			category = electronics
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_robed exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_paladin
+	icon = GFX_goal_MOJ_paladin_thought
+	cost = 50
+	prerequisite = {
+		focus = settler_robed
+	}
+	available = {
+		has_tech = stripped_pa_tech
+	}
+	x = 1
+	y = 1
+	relative_position_id = settler_robed
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_paladin entered"
+		}
+		add_tech_bonus = {
+			uses = 1
+			bonus = 0.5
+			ahead_reduction = 0.5
+			category = power_armor_tech_category
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_paladin exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_scribe
+	icon = GFX_goal_bos_scribes
+	cost = 50
+	prerequisite = {
+		focus = settler_robed
+	}
+	available = {
+		has_tech = overcharged_ammunition
+	}
+	x = -1
+	y = 1
+	relative_position_id = settler_robed
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_scribe entered"
+		}
+		add_tech_bonus = {
+			uses = 1
+			bonus = 0.5
+			ahead_reduction = 0.5
+			category = energy_weaponry_tech_category
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_scribe exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_enforce
+	icon = GFX_goal_generic_open_trade
+	cost = 50
+	prerequisite = {
+		focus = settler_traderoutes
+	}
+	x = 1
+	y = 1
+	relative_position_id = settler_traderoutes
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_enforce entered"
+		}
+		add_ideas = enforced_trade_laws
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_enforce exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_roadways
+	icon = GFX_goal_generic_road_construction
+	cost = 50
+	prerequisite = {
+		focus = settler_enforce
+	}
+	x = 0
+	y = 1
+	relative_position_id = settler_enforce
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_roadways entered"
+		}
+		random_owned_controlled_state = {
+			limit = {
+				infrastructure < 8
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = infrastructure
+				level = 3
+				instant_build = yes
+			}
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_roadways exited"
+		}
+	}
+}
+### Political Reorganization
+shared_focus = {
+	id = settler_reorganization
+	icon = GFX_goal_usa_integrate_politicians
+	cost = 50
+	available = {
+		has_country_flag = unlocked_all_available_generic_focus_branches
+	}
+	x = 30
+	y = 4
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_reorganization entered"
+		}
+		add_political_power = 100
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_reorganization exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_elites
+	icon = GFX_goal_propaganda_capitalist_3
+	cost = 50
+	prerequisite = {
+		focus = settler_reorganization
+	}
+	mutually_exclusive = {
+		focus = settler_intellectuals
+		focus = settler_support
+		focus = settler_empower
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = { has_government = elites }
+		}
+	}
+	x = -3
+	y = 1
+	relative_position_id = settler_reorganization
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_elites entered"
+		}
+		add_ideas = settler_elites_support
+		add_political_power = 50
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_elites exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_oligarch
+	icon = GFX_goal_propaganda_capitalist_1
+	cost = 50
+	prerequisite = {
+		focus = settler_elites
+	}
+	x = 0
+	y = 1
+	relative_position_id = settler_elites
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_oligarch entered"
+		}
+		swap_ideas = {
+			add_idea = oligarchical_power
+			remove_idea = settler_elites_support
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_oligarch exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_focus_monopoly
+	icon = GFX_goal_cap_and_cash
+	cost = 50
+	prerequisite = {
+		focus = settler_oligarch
+	}
+	x = 0
+	y = 1
+	relative_position_id = settler_oligarch
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_focus_monopoly entered"
+		}
+		swap_ideas = {
+			add_idea = settler_monopoly
+			remove_idea = oligarchical_power
+		}
+		set_politics = { ruling_party = elites elections_allowed = no }
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_focus_monopoly exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_intellectuals
+	icon = GFX_goal_bobble_head_science
+	cost = 50
+	prerequisite = {
+		focus = settler_reorganization
+	}
+	mutually_exclusive = {
+		focus = settler_support
+		focus = settler_elites
+		focus = settler_empower
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = { has_government = intellectuals }
+		}
+	}
+	x = -1
+	y = 1
+	relative_position_id = settler_reorganization
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_intellectuals entered"
+		}
+		add_ideas = settler_intellectuals_support
+		add_political_power = 50
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_intellectuals exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_minds
+	icon = GFX_goal_usa_science_reform
+	cost = 50
+	prerequisite = {
+		focus = settler_intellectuals
+	}
+	x = 0
+	y = 1
+	relative_position_id = settler_intellectuals
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_minds entered"
+		}
+		add_ideas = settler_council_of_minds
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_minds exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_aerodynamics
+	icon = GFX_goal_generic_air_fighter2
+	cost = 50
+	prerequisite = {
+		focus = settler_minds
+	}
+	x = 0
+	y = 1
+	relative_position_id = settler_minds
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_aerodynamics entered"
+		}
+		add_tech_bonus = {
+			name = air_bonus
+			bonus = 0.5
+			uses = 2
+			category = light_air_tech_category
+		}
+		random_owned_controlled_state = {
+			limit = {
+				free_building_slots = {
+					building = air_base
+					size > 0
+				}
+				OR = {
+					is_in_home_area = yes
+					NOT = {
+						owner = {
+							any_owned_state = {
+								free_building_slots = {
+									building = air_base
+									size > 0
+								}
+								is_in_home_area = yes
+							}
+						}
+					}
+				}
+			}
+			add_building_construction = {
+				type = air_base
+				level = 2
+				instant_build = yes
+			}
+		}
+		set_politics = { ruling_party = intellectuals elections_allowed = no }
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_aerodynamics exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_support
+	icon = GFX_goal_TIM_patch_personal_fitness
+	cost = 50
+	prerequisite = {
+		focus = settler_reorganization
+	}
+	mutually_exclusive = {
+		focus = settler_intellectuals
+		focus = settler_elites
+		focus = settler_empower
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = { has_government = people }
+		}
+	}
+	x = 1
+	y = 1
+	relative_position_id = settler_reorganization
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_support entered"
+		}
+		add_ideas = settler_people_support
+		add_political_power = 50
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_support exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_council
+	icon = GFX_goal_generic_contraptions_girl
+	cost = 50
+	prerequisite = {
+		focus = settler_support
+	}
+	x = 0
+	y = 1
+	relative_position_id = settler_support
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_council entered"
+		}
+		add_stability = 0.05
+		add_war_support = 0.05
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_council exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_loyalty
+	icon = GFX_goal_NEW_Caps_for_Loyalty
+	cost = 50
+	prerequisite = {
+		focus = settler_council
+	}
+	x = 0
+	y = 1
+	relative_position_id = settler_council
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_loyalty entered"
+		}
+		swap_ideas = {
+			add_idea = loyalty_idea
+			remove_idea = settler_people_support
+		}
+		set_politics = { ruling_party = people elections_allowed = no }
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_loyalty exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_empower
+	icon = GFX_goal_pal_vault_city
+	cost = 50
+	prerequisite = {
+		focus = settler_reorganization
+	}
+	mutually_exclusive = {
+		focus = settler_support
+		focus = settler_intellectuals
+		focus = settler_elites
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = { has_government = ruler }
+		}
+	}
+	x = 3
+	y = 1
+	relative_position_id = settler_reorganization
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_empower entered"
+		}
+		add_ideas = settler_ruler_support
+		add_political_power = 50
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_empower exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_rivals
+	icon = GFX_goal_pal_death_and_taxes
+	cost = 50
+	prerequisite = {
+		focus = settler_empower
+	}
+	x = 0
+	y = 1
+	relative_position_id = settler_empower
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_rivals entered"
+		}
+		add_ideas = eliminating_rivals
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_rivals exited"
+		}
+	}
+}
+shared_focus = {
+	id = settler_bodyguards
+	icon = GFX_goal_pal_vc_turn_around
+	cost = 50
+	prerequisite = {
+		focus = settler_rivals
+	}
+	x = 0
+	y = 1
+	relative_position_id = settler_rivals
+	completion_reward = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_bodyguards entered"
+		}
+		swap_ideas = {
+			add_idea = settlerbodyguards
+			remove_idea = eliminating_rivals
+		}
+		if = {
+			limit = {
+				original_tag = JCT
+				has_government = people
+				NOT = { has_country_flag = marcus_left }
+			}
+			country_event = { id = nf_jacobstown.1 }
+		}
+		else = {
+			set_politics = { ruling_party = ruler elections_allowed = no }
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] settler_bodyguards exited"
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
