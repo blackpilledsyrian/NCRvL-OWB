@@ -216,7 +216,49 @@ leader_traits = {
 	ncr_air_buff = {
 		random = no
 		equipment_bonus = {
-			air_equipment_tech_category = {
+			car_fighter_equipment = {
+				instant = yes
+				build_cost_ic = -0.05
+				air_agility = 0.05
+				air_defence = 0.05
+			}
+			hev_fighter_equipment = {
+				instant = yes
+				build_cost_ic = -0.05
+				air_agility = 0.05
+				air_defence = 0.05
+			}
+			long_fighter_equipment = {
+				instant = yes
+				build_cost_ic = -0.05
+				air_agility = 0.05
+				air_defence = 0.05
+			}
+			hev_cas_equipment = {
+				instant = yes
+				build_cost_ic = -0.05
+				air_agility = 0.05
+				air_defence = 0.05
+			}
+			car_cas_equipment = {
+				instant = yes
+				build_cost_ic = -0.05
+				air_agility = 0.05
+				air_defence = 0.05
+			}
+			air_blimp_equipment = {
+				instant = yes
+				build_cost_ic = -0.05
+				air_agility = 0.05
+				air_defence = 0.05
+			}
+			long_cas_equipment = {
+				instant = yes
+				build_cost_ic = -0.05
+				air_agility = 0.05
+				air_defence = 0.05
+			}
+			hev_strategic_bomber_equipment = {
 				instant = yes
 				build_cost_ic = -0.05
 				air_agility = 0.05
@@ -1299,7 +1341,7 @@ leader_traits = {
 	mormon_navy_buff = {
 		random = no
 		equipment_bonus = {
-			naval_equipment = {
+			ship_hull_medium = {
 				instant = yes
 				build_cost_ic = -0.1
 			}
@@ -1311,7 +1353,7 @@ leader_traits = {
 	mormon_air_buff = {
 		random = no
 		equipment_bonus = {
-			air_equipment_tech_category = {
+			fighter_equipment = {
 				instant = yes
 				build_cost_ic = -0.1
 			}
@@ -1791,7 +1833,7 @@ leader_traits = {
 		random = no
 		max_planning = 0.05
 		equipment_bonus = {
-			motorized_equipment_category = {
+			motorized_equipment = {
 				build_cost_ic = -0.05
 				instant = yes
 			}
@@ -2007,7 +2049,7 @@ leader_traits = {
 		motorized_defence_factor = 0.08
 		organization_floor_modifier_2 = 10
 		equipment_bonus = {
-			motorized_equipment_category = {
+			motorized_equipment = {
 				build_cost_ic = -0.05
 				instant = yes
 			}
@@ -2056,7 +2098,7 @@ leader_traits = {
 		motorized_attack_factor = 0.05
 		motorized_defence_factor = 0.10
 		equipment_bonus = {
-			motorized_equipment_category = {
+			motorized_equipment = {
 				build_cost_ic = -0.05
 				instant = yes
 			}
@@ -3713,10 +3755,19 @@ leader_traits = {
     #Three Rivers
 	wpg_mad_baron = {
 		random = no
+		air_ace_bonuses_factor = 0.15
 		equipment_bonus = {
-			air_equipment_tech_category = {
+			fighter_equipment = {
 				instant = yes
-				build_cost_ic = -0.15
+				build_cost_ic = -0.05
+			}
+			CAS_equipment = {
+				instant = yes
+				build_cost_ic = -0.05
+			}
+			blimp_equipment = {
+				instant = yes
+				build_cost_ic = -0.05
 			}
 		}
 		ai_will_do = {

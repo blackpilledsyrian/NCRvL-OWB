@@ -557,27 +557,12 @@ country_event = {
 
 	option = {
 		name = nf_two.302.a
-		if = {
-			limit = {
-				can_use_autonomy_system = yes
-			}
 			ROOT = {
 				set_autonomy = {
 					target = TWO
 					autonomy_state = autonomy_client_tribe
 				}
 			}
-		}
-		if = {
-			limit = {
-				can_use_autonomy_system = no
-			}
-			ROOT = {
-				TWO = {
-					become_puppet = yes
-				}
-			}
-		}
 
 		if = {
 			limit = {

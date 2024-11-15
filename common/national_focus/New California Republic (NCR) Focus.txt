@@ -6401,6 +6401,8 @@ focus = {
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		prerequisite = {
 			focus = ncr_cal_peace_in_our_times
+		}
+		available = {
 			DES = {
 				owns_state = 947
 				owns_state = 371
@@ -6581,7 +6583,7 @@ focus = {
 				limit = {
 					is_in_faction_with = NCR
 				}
-				add_idea = shining_future
+				add_ideas = shining_future
 			}
 		}
 	}
@@ -10194,7 +10196,7 @@ focus = {
 						level = 5
 					}
 				}
-				any_owned_state = {
+				random_core_state = {
 					add_resource = {
                     type = circuitry
                     amount = 20

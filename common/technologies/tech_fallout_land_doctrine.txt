@@ -2415,7 +2415,7 @@ technologies = {
 				radio_equipment = 5
 			}
 		}
-		mobile_recon_company = {
+		motorized_recon_company = {
 			need = {
 				radio_equipment = 5
 			}

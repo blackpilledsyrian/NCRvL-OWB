@@ -129,31 +129,17 @@ recruit_character = NAV_hokee
 recruit_character = NAV_sialea_lea
 recruit_character = NAV_free_man
 
-if = {
-	limit = {
-		can_use_autonomy_system = yes
-	}
-	CES = {
-		set_autonomy = {
-			target = NAV
-			autonomy_state = autonomy_client_tribe
-		}
-		set_autonomy = {
-			target = NAV
-			autonomy_state = autonomy_client_tribe
-		}
-	}
-}
 
-if = {
-	limit = {
-		can_use_autonomy_system = no
-	}
 	CES = {
-		NAV = {
-			become_puppet = yes
+		set_autonomy = {
+			target = NAV
+			autonomy_state = autonomy_client_tribe
+		}
+		set_autonomy = {
+			target = NAV
+			autonomy_state = autonomy_client_tribe
 		}
 	}
-}
+
 
 add_to_tech_sharing_group = legion_research_pact
