@@ -10,9 +10,342 @@ ideas = {
                 special_forces_cap = 0.05
                 special_forces_min = 40
                 breakthrough_factor = 0.1
-                research_speed_factor = -0.15
+                research_speed_factor = -0.17
                 justify_war_goal_time = -0.5
                 custom_modifier_tooltip = cwb_luddite_crusade_tt
+            }
+			removal_cost = -1
+        }
+        cwb_luddite_gaming = {
+            picture = cwb_luddite_crusade
+            allowed = {
+                original_tag = CWB
+            }
+            modifier = {
+                license_production_speed = -0.05
+				equipment_capture = -0.1
+            }
+			removal_cost = -1
+        }
+        cwb_luddite_gaming_hard_A = {
+            picture = cwb_luddite_crusade
+            allowed = {
+                original_tag = CWB
+            }
+            modifier = {
+                license_tech_difference_speed = -0.05
+                license_production_speed = -0.05
+				equipment_capture = -0.05
+            }
+			equipment_bonus = {
+				demolitions_equipment = {
+					reliability = 0.10
+					hard_attack = 0.25
+					breakthrough = 0.25
+					instant = yes
+				}
+			}
+			removal_cost = -1
+        }
+        cwb_luddite_gaming_hard_B = {
+            picture = cwb_luddite_crusade
+            allowed = {
+                original_tag = CWB
+            }
+            modifier = {
+                license_tech_difference_speed = -0.05
+                license_production_speed = -0.05
+				equipment_capture = -0.05
+            }
+			targeted_modifier = {
+				tag = VEG
+				attack_bonus_against = 0.1
+			} 
+			targeted_modifier = {
+				tag = VLT
+				attack_bonus_against = 0.1
+			} 
+			targeted_modifier = {
+				tag = EUR
+				attack_bonus_against = 0.1
+			}
+			targeted_modifier = {
+				tag = SHI
+				attack_bonus_against = 0.1
+			}
+			equipment_bonus = {
+				demolitions_equipment = {
+					reliability = 0.10
+					hard_attack = 0.25
+					breakthrough = 0.25
+					instant = yes
+				}
+			}
+			removal_cost = -1
+        }
+        cwb_luddite_gaming_light_A = {
+            picture = cwb_luddite_crusade
+            allowed = {
+                original_tag = CWB
+            }
+            modifier = {
+                license_production_speed = -0.025
+				equipment_capture = 0
+				research_speed_factor = 0.03
+            }
+			removal_cost = -1
+        }
+        cwb_luddite_gaming_light_B = {
+            picture = cwb_luddite_crusade
+            allowed = {
+                original_tag = CWB
+            }
+            modifier = {
+				research_speed_factor = 0.06
+				equipment_capture = 0.1
+            }
+			removal_cost = -1
+        }
+        cwb_luddite_gaming_soft_A = {
+            picture = cwb_luddite_crusade
+            allowed = {
+                original_tag = CWB
+            }
+            modifier = {
+                license_tech_difference_speed = -0.05
+                license_production_speed = -0.05
+				equipment_capture = -0.05
+            }
+			equipment_bonus = {
+				infantry_equipment = {
+					reliability = 0.05
+					soft_attack = 0.15
+					hard_attack = 0.15
+					defense = 0.15
+					instant = yes
+				}
+			}
+			removal_cost = -1
+        }
+        cwb_luddite_gaming_soft_B = {
+            picture = cwb_luddite_crusade
+            allowed = {
+                original_tag = CWB
+            }
+            modifier = {
+                license_tech_difference_speed = -0.05
+                license_production_speed = -0.05
+				equipment_capture = -0.05
+            }
+			equipment_bonus = {
+				infantry_equipment = {
+					reliability = 0.05
+					soft_attack = 0.25
+					hard_attack = 0.25
+					defense = 0.25
+					instant = yes
+				}
+				demolitions_equipment = {
+					build_cost_ic = -0.10
+					instant = yes
+				}
+			}
+			removal_cost = -1
+        }
+        cwb_luddite_gaming_alpha = {
+            picture = cwb_luddite_crusade
+            allowed = {
+                original_tag = CWB
+            }
+            modifier = {
+                license_tech_difference_speed = -0.5
+                license_production_speed = -0.25
+				equipment_capture = -0.1
+            }
+			targeted_modifier = {
+				tag = SHI
+				attack_bonus_against = 0.1
+			} 
+			targeted_modifier = {
+				tag = VLT
+				attack_bonus_against = 0.1
+			} 
+			targeted_modifier = {
+				tag = EUR
+				attack_bonus_against = 0.1
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					reliability = 0.05
+					hard_attack = 0.25
+					breakthrough = 0.25
+					instant = yes
+				}
+				demolitions_equipment = {
+					reliability = 0.10
+					hard_attack = 0.25
+					breakthrough = 0.25
+					instant = yes
+				}
+			}
+			removal_cost = -1
+        }
+        cwb_militia_gaming_A = {
+            picture = generic_raids
+            allowed = {
+                original_tag = CWB
+            }
+            modifier = {
+				conscription = 0.02
+                modifier_army_sub_unit_militia_attack_factor = 0.1
+                modifier_army_sub_unit_militia_defence_factor = 0.1
+                modifier_army_sub_unit_infantry_attack_factor = 0.05
+                modifier_army_sub_unit_infantry_defence_factor = 0.05
+            }
+			removal_cost = -1
+        }
+        cwb_militia_gaming_B = {
+            picture = generic_raids
+            allowed = {
+                original_tag = CWB
+            }
+            modifier = {
+				conscription = 0.02
+                modifier_army_sub_unit_militia_attack_factor = 0.15
+                modifier_army_sub_unit_militia_defence_factor = 0.15
+				modifier_army_sub_unit_militia_speed_factor = 0.1
+                modifier_army_sub_unit_infantry_attack_factor = 0.1
+                modifier_army_sub_unit_infantry_defence_factor = 0.1
+				modifier_army_sub_unit_infantry_speed_factor = 0.1
+            }
+			removal_cost = -1
+        }
+        cwb_militia_gaming_C = {
+            picture = generic_raids
+            allowed = {
+                original_tag = CWB
+            }
+            modifier = {
+				conscription = 0.02
+                modifier_army_sub_unit_militia_attack_factor = 0.15
+                modifier_army_sub_unit_militia_defence_factor = 0.15
+				modifier_army_sub_unit_militia_speed_factor = 0.1
+                modifier_army_sub_unit_infantry_attack_factor = 0.1
+                modifier_army_sub_unit_infantry_defence_factor = 0.1
+				modifier_army_sub_unit_infantry_speed_factor = 0.1
+				army_strength_factor = 0.15
+				max_dig_in = 5
+				army_strength_factor = 0.25
+            }
+			removal_cost = -1
+        }
+        cwb_medium_stats = {
+            picture = generic_nuclear_aftermath
+            allowed = {
+                original_tag = CWB
+            }
+            modifier = {
+				army_org = 5
+				cas_damage_reduction = 0.15
+            }
+			removal_cost = -1
+        }
+        cwb_decent_stats = {
+            picture = generic_nuclear_aftermath
+            allowed = {
+                original_tag = CWB
+            }
+            modifier = {
+				army_org = 5
+				cas_damage_reduction = 0.15
+				experience_loss_factor = -0.1
+				experience_gain_army_unit_factor = 0.1
+            }
+			removal_cost = -1
+        }
+        cwb_enforcer_1 = {
+            picture = COM_army_nation
+            allowed = {
+                original_tag = CWB
+            }
+            modifier = {
+				modifier_army_sub_unit_heavy_infantry_attack_factor = 0.05
+				modifier_army_sub_unit_heavy_infantry_defence_factor = 0.05
+            }
+			removal_cost = -1
+        }
+        cwb_enforcer_2 = {
+            picture = COM_army_nation
+            allowed = {
+                original_tag = CWB
+            }
+            modifier = {
+				modifier_army_sub_unit_heavy_infantry_attack_factor = 0.05
+				modifier_army_sub_unit_heavy_infantry_defence_factor = 0.05
+            }
+			equipment_bonus = {
+				heavy_infantry_equipment = {
+					hardness = 0.25
+					hard_attack = 0.35
+					instant = yes
+				}
+			}
+			removal_cost = -1
+        }
+        cwb_enforcer_3 = {
+            picture = COM_army_nation
+            allowed = {
+                original_tag = CWB
+            }
+            modifier = {
+				modifier_army_sub_unit_heavy_infantry_attack_factor = 0.05
+				modifier_army_sub_unit_heavy_infantry_defence_factor = 0.05
+            }
+			equipment_bonus = {
+				heavy_infantry_equipment = {
+					hardness = 0.25
+					build_cost_ic = 0.05
+					hard_attack = 0.35
+					breakthrough = 0.25
+					instant = yes
+				}
+			}
+			removal_cost = -1
+        }
+        cwb_spec_ops_1 = { 
+            picture = urban_spec_ops
+            allowed = {
+                original_tag = CWB
+            }
+            modifier = {
+				modifier_army_sub_unit_spec_ops_attack_factor = 0.05
+				modifier_army_sub_unit_spec_ops_defence_factor = 0.05
+            }
+			removal_cost = -1
+        }
+        cwb_spec_ops_2 = {
+            picture = urban_spec_ops
+            allowed = {
+                original_tag = CWB
+            }
+            modifier = {
+				modifier_army_sub_unit_spec_ops_attack_factor = 0.1
+				modifier_army_sub_unit_spec_ops_defence_factor = 0.05
+				modifier_army_sub_unit_spec_ops_cavalry_max_org_factor = 0.05
+            }
+			removal_cost = -1
+        }
+        cwb_spec_ops_3 = {
+            picture = urban_spec_ops
+            allowed = {
+                original_tag = CWB
+            }
+            modifier = {
+				modifier_army_sub_unit_spec_ops_attack_factor = 0.1
+				modifier_army_sub_unit_spec_ops_defence_factor = 0.1
+				modifier_army_sub_unit_spec_ops_max_org_factor = 0.1
+				modifier_army_sub_unit_spec_ops_cavalry_speed_factor = 0.05
+				modifier_army_sub_unit_spec_ops_cavalry_max_org_factor = 0.05
             }
 			removal_cost = -1
         }
