@@ -1980,6 +1980,9 @@ news_event = { # Chaos in Shady Sands NCRVL
 	option = {
 		trigger = {
 			tag = NCR
+			NCR = {
+				has_completed_focus = ncr_kimball_vindication
+			}
 		}
 		name = ncr_ncrvl.1.a
 		#set_country_flag = ncr_crisis
@@ -1989,7 +1992,11 @@ news_event = { # Chaos in Shady Sands NCRVL
 	option = {
 		trigger = {
 			tag = NCR
+			NCR = {
+				has_completed_focus = ncr_new_hand_on_the_tiller
+			}
 		}
+		
 		name = ncr_ncrvl.1.b
 		complete_national_focus = ncr_california_in_crisis
 		complete_national_focus  = ncr_mossman_conspiracy

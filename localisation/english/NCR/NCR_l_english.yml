@@ -858,7 +858,7 @@
   ncr_moore_oregon_campaign:0 "Bring the Light of Civilization"
   ncr_moore_oregon_campaign_desc:0 "With Caesar dealt with, I turn my vision from the east to the north. I can't fathom why Tandi was so enamored with the Pre-War state of Are-Gon. Tribals pretending to be civilized, drug dens, prison breaks? It's a wonder that Kimball didn't just burn the place to the ground while running. But I'm not him, I'm going to civilize the Frontier, whether they like it or not."
   ncr_moore_northern_frontier:0 "The Frontier"
-  ncr_moore_northern_frontier_desc:0 "I must admit, Are-Gon was much more of a trial to me than I had expected. Not as much as Caesar, but I did not expect the variety of things my men reported seeing. If it wasn't a hellhole of savagery, I may have taken a vacation there. Still, I've drawn up the papers for the official TCR Northern Frontier, and I have just the man in mind to govern it."
+  ncr_moore_northern_frontier_desc:0 "I must admit, Are-Gon was much more of a trial to me than I had expected. Not as much as Caesar, but I did not expect the variety of things my men reported seeing. If it wasn't a hellhole of savagery, I may have taken a vacation there. Still, I've drawn up the papers for the official Shi occupied Northern Frontier, and I have just the man in mind to govern it. Those vast savage expanses will let us field test some new equipment."
   ncr_moore_execute_bos_leaders:0 "Trials For The Terrorists"
   ncr_moore_execute_bos_leaders_desc:0 "My patience runs ever thinner, having to put up with the continued existence of the Brotherhood. But I am a fair leader. I will grant them a last respite before their foul and decrepit ways are extinguished forever."
   ncr_moore_bos_crusade:0 "No Half Measures"
@@ -1670,3 +1670,8 @@
   ncr_ncrvl.1.b:0 "Calhoun will save us !"
 
   shining_future:0 "A Shining Future"
+
+  ncr_arr_pa_buff:0 "New Power Armor Reinforced Frame"
+  ncr_new_no_clue_buff:0 "Experimental Tank Shell and Armor"
+  ncr_vlt_meme_is_keeping_me_in_is_basement:0 "Robot New Targeting Software"
+  mot_specop_moore:0 "Improved Scout Armor"
