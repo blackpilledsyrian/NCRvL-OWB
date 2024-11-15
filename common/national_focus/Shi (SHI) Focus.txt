@@ -384,9 +384,11 @@ focus_tree = {
 		relative_position_id = shi_fund_engineering
 		prerequisite = {
 			focus = shi_ncr_golden_circle_trade
+		}
+		prerequisite = {
 			focus = shi_fund_engineering
 		}
-		cost = 45
+		cost = 15
 		completion_reward = {
 			add_tech_bonus = {
 				name = doctrine_bonus
@@ -410,9 +412,11 @@ focus_tree = {
 		relative_position_id = shi_legalist_debate
 		prerequisite = {
 			focus = shi_legalist_debate
+		}
+		prerequisite = {
 			focus = shi_brotherhood_armor_advice
 		}
-		cost = 45
+		cost = 15
 		completion_reward = {
 			country_event = nf_shi.16
 		}
