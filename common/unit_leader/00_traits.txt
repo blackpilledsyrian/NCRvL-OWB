@@ -451,7 +451,6 @@ leader_traits = {
 			experience_gain_factor = 0.3
 			terrain_trait_xp_gain_factor = 0.3
 			experience_loss_factor = -0.1
-			experience_gain_army_unit = 0.1
 			experience_gain_army_unit_factor = 0.1
 		}
 
@@ -492,10 +491,12 @@ leader_traits = {
 		# }
 
 		modifier = {
-			modifier_army_sub_unit_fireteam_support_attack_factor = 0.1
-			modifier_army_sub_unit_fireteam_support_defence_factor = 0.1
+			modifier_army_sub_unit_fireteam_support_attack_factor = 0.20
+			modifier_army_sub_unit_fireteam_support_defence_factor = 0.20
 			modifier_army_sub_unit_fireteam_infantry_attack_factor = 0.1
 			modifier_army_sub_unit_fireteam_infantry_defence_factor = 0.1
+			modifier_army_sub_unit_power_armour_fireteam_infantry_attack_factor = 0.1
+			modifier_army_sub_unit_power_armour_fireteam_infantry_defence_factor = 0.1
 			modifier_army_sub_unit_motorized_fireteam_attack_factor = 0.1
 			modifier_army_sub_unit_motorized_fireteam_defence_factor = 0.1
 		}
@@ -516,8 +517,10 @@ leader_traits = {
 		# }
 
 		modifier = {
-			modifier_army_sub_unit_category_front_line_robots_attack_factor = 0.1
-			modifier_army_sub_unit_category_front_line_robots_defence_factor = 0.1
+			modifier_army_sub_unit_category_front_line_robots_attack_factor = 0.15
+			modifier_army_sub_unit_category_front_line_robots_defence_factor = 0.15
+			modifier_army_sub_unit_category_cnc_robots_attack_factor = 0.2
+			modifier_army_sub_unit_category_cnc_robots_defence_factor 0.2
 		}
 
 		ai_will_do = {
@@ -543,8 +546,10 @@ leader_traits = {
 
 		modifier = {
 			modifier_army_sub_unit_heavy_infantry_attack_factor = 0.1
+			modifier_army_sub_unit_heavy_infantry_defence_factor = 0.1
 			modifier_army_sub_unit_heavy_infantry_speed_factor = 0.1
 			modifier_army_sub_unit_motorized_heavy_infantry_attack_factor = 0.1
+			modifier_army_sub_unit_motorized_heavy_infantry_defence_factor = 0.1
 			modifier_army_sub_unit_motorized_heavy_infantry_speed_factor = 0.1
 		}
 
@@ -619,10 +624,12 @@ leader_traits = {
 		# }
 
 		modifier = {
-			modifier_army_sub_unit_militia_attack_factor = 0.1
-			modifier_army_sub_unit_militia_defence_factor = 0.1
-			modifier_army_sub_unit_police_infantry_attack_factor = 0.1
-			modifier_army_sub_unit_police_infantry_defence_factor = 0.1
+			modifier_army_sub_unit_militia_attack_factor = 0.25
+			modifier_army_sub_unit_militia_defence_factor = 0.25
+			modifier_army_sub_unit_category_militia_speed_factor = 0.25
+			modifier_army_sub_unit_police_infantry_attack_factor = 0.2
+			modifier_army_sub_unit_police_infantry_defence_factor = 0.2
+			modifier_army_sub_unit_police_infantry_speed_factor = 0.2
 		}
 
 		ai_will_do = {
@@ -648,10 +655,10 @@ leader_traits = {
 
 		modifier = {
 			org_loss_when_moving = -0.15
-			modifier_army_sub_unit_motorized_attack_factor = 0.05
-			modifier_army_sub_unit_motorized_defence_factor = 0.05
-			modifier_army_sub_unit_chariot_attack_factor = 0.05
-			modifier_army_sub_unit_chariot_defence_factor = 0.05
+			modifier_army_sub_unit_motorized_attack_factor = 0.1
+			modifier_army_sub_unit_motorized_defence_factor = 0.1
+			modifier_army_sub_unit_chariot_attack_factor = 0.1
+			modifier_army_sub_unit_chariot_defence_factor = 0.1
 		}
 
 		ai_will_do = {
@@ -679,9 +686,8 @@ leader_traits = {
 		# }
 
 		modifier = {
-			land_reinforce_rate = 0.02
-			modifier_army_sub_unit_super_mutant_nightkin_infantry_attack_factor = 0.05
-			modifier_army_sub_unit_super_mutant_nightkin_infantry_defence_factor = 0.05
+			land_reinforce_rate = 0.05
+			land_night_attack = 0.1
 		}
 
 		ai_will_do = {
@@ -728,8 +734,8 @@ leader_traits = {
 		# }
 
 		modifier = {
-			equipment_capture = 0.05
-			supply_consumption_factor = -0.1
+			equipment_capture = 0.25
+			supply_consumption_factor = -0.25
 		}
 
 		ai_will_do = {
@@ -748,10 +754,12 @@ leader_traits = {
 		# }
 
 		modifier = {
-			modifier_army_sub_unit_infantry_attack_factor = 0.1
-			modifier_army_sub_unit_infantry_defence_factor = 0.1
-			modifier_army_sub_unit_ghoul_infantry_attack_factor = 0.1
-			modifier_army_sub_unit_ghoul_infantry_defence_factor = 0.1
+			modifier_army_sub_unit_infantry_attack_factor = 0.15
+			modifier_army_sub_unit_infantry_defence_factor = 0.15
+			modifier_army_sub_unit_infantry_speed_factor = 0.15
+			modifier_army_sub_unit_ghoul_infantry_attack_factor = 0.15
+			modifier_army_sub_unit_ghoul_infantry_defence_factor = 0.15
+			modifier_army_sub_unit_ghoul_infantry_speed_factor = 0.15
 		}
 
 		ai_will_do = {
@@ -789,10 +797,12 @@ leader_traits = {
 		# }
 
 		modifier = {
-			modifier_army_sub_unit_demolitions_support_attack_factor = 0.1
-			modifier_army_sub_unit_demolitions_support_defence_factor = 0.1
+			modifier_army_sub_unit_demolitions_support_attack_factor = 0.2
+			modifier_army_sub_unit_demolitions_support_defence_factor = 0.2
 			modifier_army_sub_unit_demolitions_infantry_attack_factor = 0.1
 			modifier_army_sub_unit_demolitions_infantry_defence_factor = 0.1
+			modifier_army_sub_unit_power_armour_demolitions_infantry_attack_factor = 0.1
+			modifier_army_sub_unit_power_armour_demolitions_infantry_defence_factor = 0.1
 			modifier_army_sub_unit_motorized_demoteam_attack_factor = 0.1
 			modifier_army_sub_unit_motorized_demoteam_defence_factor = 0.1
 		}
@@ -864,7 +874,7 @@ leader_traits = {
 		# }
 
 		field_marshal_modifier = {
-			army_defence_factor = 0.075
+			army_defence_factor = 0.1
 		}
 
 		ai_will_do = {
@@ -1045,7 +1055,7 @@ leader_traits = {
 		# }
 
 		field_marshal_modifier = {
-			max_planning = 0.075
+			max_planning = 0.1
 		}
 
 		ai_will_do = {
@@ -1072,7 +1082,7 @@ leader_traits = {
 		}
 
 		modifier = {
-			max_commander_army_size = 6
+			max_commander_army_size = 10
 		}
 
 		ai_will_do = {
@@ -1089,7 +1099,7 @@ leader_traits = {
 		# }
 
 		field_marshal_modifier = {
-			land_reinforce_rate = 0.025
+			land_reinforce_rate = 0.05
 		}
 
 		ai_will_do = {
@@ -1110,7 +1120,7 @@ leader_traits = {
 		}
 
 		modifier = {
-			max_commander_army_size = 6
+			max_commander_army_size = 10
 		}
 
 		ai_will_do = {
@@ -1154,7 +1164,7 @@ leader_traits = {
 		# }
 
 		field_marshal_modifier = {
-			equipment_capture = 0.05
+			equipment_capture = 0.15
 		}
 
 		ai_will_do = {
@@ -1188,10 +1198,10 @@ leader_traits = {
 		# }
 
 		field_marshal_modifier = {
-			modifier_army_sub_unit_infantry_attack_factor = 0.05
-			modifier_army_sub_unit_infantry_defence_factor = 0.05
-			modifier_army_sub_unit_ghoul_infantry_attack_factor = 0.05
-			modifier_army_sub_unit_ghoul_infantry_defence_factor = 0.05
+			modifier_army_sub_unit_infantry_attack_factor = 0.1
+			modifier_army_sub_unit_infantry_defence_factor = 0.1
+			modifier_army_sub_unit_ghoul_infantry_attack_factor = 0.1
+			modifier_army_sub_unit_ghoul_infantry_defence_factor = 0.1
 		}
 
 		ai_will_do = {
@@ -1228,8 +1238,8 @@ leader_traits = {
 		# }
 
 		field_marshal_modifier = {
-			modifier_army_sub_unit_tank_attack_factor = 0.15
-			modifier_army_sub_unit_tank_defence_factor = 0.15
+			modifier_army_sub_unit_tank_attack_factor = 0.10
+			modifier_army_sub_unit_tank_defence_factor = 0.10
 			modifier_army_sub_unit_behemoth_attack_factor = 0.1
 			modifier_army_sub_unit_behemoth_defence_factor = 0.1
 		}
@@ -1258,8 +1268,8 @@ leader_traits = {
 		# }
 
 		field_marshal_modifier = {
-			army_core_attack_factor = 0.05
-			army_core_defence_factor = 0.05
+			army_core_attack_factor = 0.1
+			army_core_defence_factor = 0.1
 		}
 
 		ai_will_do = {
@@ -1370,11 +1380,11 @@ leader_traits = {
 		gain_xp = {
 			is_fighting_in_terrain = desert
 		}
-		cost = 700
+		cost = 250
 		modifier = {
 			desert = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 
@@ -1413,11 +1423,11 @@ leader_traits = {
 		gain_xp = {
 			is_fighting_in_terrain = marsh
 		}
-		cost = 700
+		cost = 250
 		modifier = {
 			marsh = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 
@@ -1436,8 +1446,8 @@ leader_traits = {
 
 		modifier = {
 			marsh = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 
@@ -1455,11 +1465,11 @@ leader_traits = {
 		gain_xp = {
 			is_fighting_in_terrain = hills
 		}
-		cost = 700
+		cost = 250
 		modifier = {
 			hills = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 
@@ -1478,8 +1488,8 @@ leader_traits = {
 
 		modifier = {
 			hills = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 
@@ -1497,11 +1507,11 @@ leader_traits = {
 		gain_xp = {
 			is_fighting_in_terrain = mountain
 		}
-		cost = 700
+		cost = 250
 		modifier = {
 			mountain = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 
@@ -1520,8 +1530,8 @@ leader_traits = {
 
 		modifier = {
 			mountain = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 
@@ -1539,11 +1549,11 @@ leader_traits = {
 		gain_xp = {
 			is_fighting_in_terrain = urban
 		}
-		cost = 500
+		cost = 250
 		modifier = {
 			urban = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 
@@ -1562,8 +1572,8 @@ leader_traits = {
 
 		modifier = {
 			urban = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 
@@ -1581,11 +1591,11 @@ leader_traits = {
 		gain_xp = {
 			is_fighting_in_terrain = forest
 		}
-		cost = 700
+		cost = 250
 		modifier = {
 			forest = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 
@@ -1604,8 +1614,8 @@ leader_traits = {
 
 		modifier = {
 			forest = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 
@@ -1623,11 +1633,11 @@ leader_traits = {
 		gain_xp = {
 			is_fighting_in_terrain = jungle
 		}
-		cost = 700
+		cost = 250
 		modifier = {
 			jungle = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 		ai_will_do = {
@@ -1645,8 +1655,8 @@ leader_traits = {
 
 		modifier = {
 			jungle = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 
@@ -1664,7 +1674,7 @@ leader_traits = {
 		gain_xp = {
 			temperature < -10
 		}
-		cost = 500
+		cost = 250
 
 		modifier = {
 			winter_attrition_factor = -0.5
@@ -1702,11 +1712,11 @@ leader_traits = {
 		gain_xp = {
 			is_fighting_in_terrain = radiation
 		}
-		cost = 700
+		cost = 250
 		modifier = {
 			radiation = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 
@@ -1725,8 +1735,8 @@ leader_traits = {
 
 		modifier = {
 			radiation = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 
@@ -1744,10 +1754,10 @@ leader_traits = {
 		gain_xp = {
 			has_combat_modifier = fort_attack
 		}
-		cost = 500
+		cost = 250
 		modifier = {
 			fort = {
-				attack = 0.15
+				attack = 0.25
 			}
 		}
 		enable_ability = siege_artillery
@@ -1761,8 +1771,8 @@ leader_traits = {
 	skirmisher = {
 		type = corps_commander
 		modifier = {
-			fortification_collateral_chance = 0.05
-			fortification_damage = 0.05
+			fortification_collateral_chance = 0.15
+			fortification_damage = 0.15
 		}
 		ai_will_do = {
 			factor = 1
@@ -1797,7 +1807,7 @@ leader_traits = {
 		type = corps_commander
 
 		modifier = {
-			air_superiority_bonus_in_combat = 0.1
+			air_superiority_bonus_in_combat = 0.25
 		}
 		ai_will_do = {
 			factor = 1
