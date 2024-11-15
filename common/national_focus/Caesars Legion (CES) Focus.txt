@@ -5609,7 +5609,7 @@ focus_tree = {
         cost = 15
         x = 5
         y = 0
-        relative_position_id = ces_oklahoma
+        relative_position_id = ces_outsiders_gente
         prerequisite = {
             focus = ces_caesar_son_of_mars
         }
@@ -9403,7 +9403,7 @@ focus_tree = {
         #search_filters = { FOCUS_FILTER_GLORY_EAST }
         cost = 30
         x = 0
-        y = 9
+        y = -4
         relative_position_id = ces_drusus_leads
         available = {
             has_completed_focus = ces_caesar_son_of_mars
