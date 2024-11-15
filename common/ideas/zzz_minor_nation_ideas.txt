@@ -792,7 +792,7 @@ ideas = {
                 local_resources_factor = 0.08
             }
             equipment_bonus = {
-                support_robot = {
+                support_robot_equipment = {
                     build_cost_ic = -0.05
                     instant = yes
                 }
@@ -1803,30 +1803,7 @@ ideas = {
         ######
         # ROS
         ######
-        ros_bless_the_rains_down = {
-            picture = HEA_idea_boilers_of_justice
-            removal_cost = -1
-            allowed_civil_war = {
-                always = yes
-            }
-            modifier = {
-                country_resource_water = 10
-                caps_flat_income_modifier = 3
-            }
-        }
-        ros_ecologist_legacy = {
-            picture = TIM_patch_enviromental_science
-            removal_cost = -1
-            allowed_civil_war = {
-                always = yes
-            }
-            modifier = {
-                supply_consumption_factor = -0.1
-                research_speed_factor = 0.05
-                production_factory_max_efficiency_factor = -0.1
-            }
-        }
-        ros_secrets_of_the_steam = {
+        ros_secrets_of_the_steamD = {
             picture = HEA_idea_blessing_of_steam
             removal_cost = -1
             allowed_civil_war = {
@@ -2791,24 +2768,6 @@ ideas = {
                 production_factory_efficiency_gain_factor = -0.2
             }
         }
-        ROS_illusion_of_danger = {
-            picture = chinese_manpower_law_4
-            removal_cost = -1
-            allowed = {
-                always = no
-            }
-            allowed_civil_war = {
-                always = yes
-            }
-            modifier = {
-                war_support_factor = 0.15
-                army_core_defence_factor = 0.10
-                army_core_attack_factor = 0.10
-                max_dig_in_factor = 0.15
-                enemy_justify_war_goal_time = 0.25
-                exodus_national_appeal = -0.25
-            }
-        }
         MET_cybernatics_son = {
             picture = propaganda_cyborg
             removal_cost = -1
@@ -2869,22 +2828,6 @@ ideas = {
                 enemy_justify_war_goal_time = 0.15
                 political_power_factor = 0.05
                 stability_factor = 0.05
-            }
-        }
-        UNB_seeking_the_sky = {
-            picture = generic_spudnik
-            removal_cost = -1
-            allowed = {
-                always = no
-            }
-            allowed_civil_war = {
-                always = yes
-            }
-            research_bonus = {
-                air_tech_category = 0.15
-            }
-            modifier = {
-                army_core_attack_factor = -0.10
             }
         }
         BAT_mercenary_force = {
@@ -2949,21 +2892,6 @@ ideas = {
                 local_resources_factor = 0.03
             }
         }
-        ARB_manitoban_funding = {
-            picture = propaganda_flannel
-            removal_cost = -1
-            allowed = {
-                always = no
-            }
-            allowed_civil_war = {
-                always = yes
-            }
-            modifier = {
-                caps_expense_modifier = -0.15
-                army_morale_factor = 0.05
-                army_leader_cost_factor = 0.10
-            }
-        }
         GIM_forging_masters = {
             picture = rejection_of_automation
             removal_cost = -1
@@ -2978,20 +2906,6 @@ ideas = {
                 production_factory_max_efficiency_factor = 0.1
                 production_speed_buildings_factor = -0.15
                 fuel_gain_factor = -0.3
-            }
-        }
-        NEU_neutral_response = {
-            picture = economy_true_man_flynn
-            removal_cost = -1
-            allowed = {
-                always = no
-            }
-            allowed_civil_war = {
-                always = yes
-            }
-            modifier = {
-                political_power_factor = 0.15
-                exodus_national_appeal = 0.50
             }
         }
         RMM_independance = {
@@ -3351,24 +3265,6 @@ ideas = {
                 }
             }
         }
-        bis_german_heritage = {
-            picture = generic_suppressed_pistol
-            allowed = {
-                always = no
-            }
-            allowed_civil_war = {
-                always = yes
-            }
-            research_bonus = {
-                infantry_tech_category = 0.05
-            }
-            equipment_bonus = {
-                infantry_equipment = {
-                    build_cost_ic = -0.04
-                    instant = yes
-                }
-            }
-        }
 
         jackson_family_ties = {
             picture = generic_raider_1
@@ -3399,23 +3295,6 @@ ideas = {
                 monthly_population = 0.12
             }
         }
-        metal_salvaged_corpses = {
-            picture = generic_scrap_kit
-            removal_cost = -1
-            allowed = {
-                always = no
-                }
-            allowed_civil_war = {
-                always = yes
-            }
-            modifier = {
-                country_resource_energy = 10
-                country_resource_composites = 6
-                country_resource_circuitry = 8
-                country_resource_advanced = 6
-                caps_income_modifier = -0.25
-            }
-        }
         crop_rotation = {
             picture = generic_corn
             removal_cost = -1
@@ -3434,22 +3313,6 @@ ideas = {
             }
         }
 
-        strath_china_ideology = {
-            picture = generic_chinese_pin
-            allowed = {
-                always = no
-            }
-            allowed_civil_war = {
-                always = yes
-            }
-            modifier = {
-                conscription_factor = 0.05
-                army_org_factor = -0.08
-                war_support_factor = 0.09
-                stability_factor = -0.09
-                army_core_defence_factor = 0.05
-            }
-        }
 
         vermillion_china_ideology = {
             picture = generic_chinese_rifle
@@ -3464,95 +3327,6 @@ ideas = {
                 war_stability_factor = 0.2
             }
         }
-        stc_five_year_plan = {
-            picture = generic_atom
-            allowed = {
-                always = no
-            }
-            allowed_civil_war = {
-                always = yes
-            }
-            modifier = {
-                production_factory_efficiency_gain_factor = -0.15
-                production_factory_max_efficiency_factor = 0.05
-                consumer_goods_expected_value = 0.05
-                production_speed_industrial_complex_factor = 0.15
-            }
-        }
-        stc_mass_mobilization_idea = {
-            picture = generic_atom
-            allowed = {
-                always = no
-            }
-            allowed_civil_war = {
-                always = yes
-            }
-            modifier = {
-                training_time_factor = -0.10
-                conscription_factor = 0.05
-                stability_factor = -0.03
-            }
-        }
-        stc_mass_mobilization_1 = {
-            picture = generic_atom
-            allowed = {
-                always = no
-            }
-            allowed_civil_war = {
-                always = yes
-            }
-            modifier = {
-                training_time_factor = -0.15
-                conscription_factor = 0.05
-                stability_factor = -0.03
-                experience_gain_army_factor = 0.20
-            }
-        }
-        stc_desperate = {
-            picture = generic_atom
-            allowed = {
-                always = no
-            }
-            allowed_civil_war = {
-                always = yes
-            }
-            modifier = {
-                training_time_factor = -0.10
-                minimum_training_level = -0.15
-                stability_factor = -0.03
-                mobilization_speed = 0.30
-            }
-        }
-        stc_cult_personality = {
-            picture = generic_red_star
-            allowed = {
-                always = no
-            }
-            allowed_civil_war = {
-                always = yes
-            }
-            modifier = {
-                war_support_factor = 0.1
-                command_power_gain = 0.2
-            }
-        }
-        four_year_plan = {
-            picture = generic_atom
-            allowed = {
-                always = no
-            }
-            allowed_civil_war = {
-                always = yes
-            }
-            modifier = {
-                production_factory_efficiency_gain_factor = -0.05
-                production_factory_max_efficiency_factor = 0.05
-                consumer_goods_expected_value = 0.02
-                production_speed_industrial_complex_factor = 0.05
-                production_speed_arms_factory_factor = 0.15
-            }
-
-        }
         bgr_robobrain_factory = {
             picture = generic_protectron_silver
             removal_cost = -1
@@ -3566,7 +3340,7 @@ ideas = {
                 custom_modifier_tooltip = bgr_robobrain_factory_tt
             }
             equipment_bonus = {
-                support_robot = {
+                support_robot_equipment = {
                     build_cost_ic = -0.05
                     instant = yes
                 }

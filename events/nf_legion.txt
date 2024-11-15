@@ -154,24 +154,13 @@ country_event = {
 				}
 			}
 		}
-		if = {
-			limit = {
-				can_use_autonomy_system = yes
-			}
 			CES = {
 				set_autonomy = {
 					target = WHT
 					autonomy_state = autonomy_client_tribe
 				}
 			}
-		}
-		else = {
-			CES = {
-				WHT = {
-					become_puppet = yes
-				}
-			}
-		}
+
 		WHT = {
 			add_country_leader_role = {
 				character = WHT_salt_upon_wounds
@@ -5215,24 +5204,12 @@ country_event = {
 				}
 			}
 		}
-		if = {
-			limit = {
-				can_use_autonomy_system = yes
-			}
 			CES = {
 				set_autonomy = {
 					target = EHT
 					autonomy_state = autonomy_client_tribe
 				}
 			}
-		}
-		else = {
-			CES = {
-				EHT = {
-					become_puppet = yes
-				}
-			}
-		}
 		WHT = {
 			add_country_leader_role = {
 				character = WHT_salt_upon_wounds

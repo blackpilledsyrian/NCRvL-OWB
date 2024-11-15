@@ -2450,27 +2450,12 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = {
-			if = {
-				limit = {
-					can_use_autonomy_system = yes
-				}
 				VLP = {
 					set_autonomy = {
 						target = TWO
 						autonomy_state = autonomy_client_tribe
 					}
 				}
-			}
-			if = {
-				limit = {
-					can_use_autonomy_system = no
-				}
-				VLP = {
-					TWO = {
-						become_puppet = yes
-					}
-				}
-			}
 		}
 	}
 

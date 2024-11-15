@@ -632,58 +632,58 @@ ideas = {
 
     ### TODO WHT unique comapny. move to seperate file later
 
-	happy_trails_caravan_company = {
-		picture = happy_trails
-		allowed = {
-			OR = {
-				original_tag = WHT
-				original_tag = NCN
-				original_tag = EHT
-			}
-		}
-		# Redundant due to above allowed block @Tran
-		# visible = {
-		# 	original_tag = WHT
-		# }
-		available = {
-			if = {
-				limit = {
-					original_tag = WHT
-				}
-				has_completed_focus = WHT_happy_trails_caravan
-			}
-			else_if = {
-				limit = {
-					original_tag = NCN
-				}
-				has_completed_focus = NCN_bargain_with_utah_traders
-			}
-			else_if = {
-				limit = {
-					original_tag = EHT
-				}
-				OR = {
-					AND = {
-						has_completed_focus = EHT_empire_salt
-						is_in_faction_with = WHT
-						WHT = { has_completed_focus = WHT_happy_trails_caravan }
-					}
-					AND = {
-						has_completed_focus = EHT_join_mormon_alliance
-						is_in_faction_with = NCN
-						NCN = { has_completed_focus = NCN_bargain_with_utah_traders }
-					}
-				}
-			}
-		}
-		modifier = {
-			caps_flat_income_modifier = 5
-		}
-		traits = { caravan_company }
-		ai_will_do = {
-			factor = 10
-		}
-	}
+	# happy_trails_caravan_company = {
+	# 	picture = happy_trails
+	# 	allowed = {
+	# 		OR = {
+	# 			original_tag = WHT
+	# 			original_tag = NCN
+	# 			original_tag = EHT
+	# 		}
+	# 	}
+	# 	# Redundant due to above allowed block @Tran
+	# 	# visible = {
+	# 	# 	original_tag = WHT
+	# 	# }
+	# 	available = {
+	# 		if = {
+	# 			limit = {
+	# 				original_tag = WHT
+	# 			}
+	# 			has_completed_focus = WHT_happy_trails_caravan
+	# 		}
+	# 		else_if = {
+	# 			limit = {
+	# 				original_tag = NCN
+	# 			}
+	# 			has_completed_focus = NCN_bargain_with_utah_traders
+	# 		}
+	# 		else_if = {
+	# 			limit = {
+	# 				original_tag = EHT
+	# 			}
+	# 			OR = {
+	# 				AND = {
+	# 					has_completed_focus = EHT_empire_salt
+	# 					is_in_faction_with = WHT
+	# 					WHT = { has_completed_focus = WHT_happy_trails_caravan }
+	# 				}
+	# 				AND = {
+	# 					has_completed_focus = EHT_join_mormon_alliance
+	# 					is_in_faction_with = NCN
+	# 					NCN = { has_completed_focus = NCN_bargain_with_utah_traders }
+	# 				}
+	# 			}
+	# 		}
+	# 	}
+	# 	modifier = {
+	# 		caps_flat_income_modifier = 5
+	# 	}
+	# 	traits = { caravan_company }
+	# 	ai_will_do = {
+	# 		factor = 10
+	# 	}
+	# }
 	happy_harry = {
 		picture = company_happy_harry
 		allowed = {
@@ -694,42 +694,42 @@ ideas = {
 		}
 		traits = { weapon_manufacturer }
 	}
-	servant_allocation_center = {
-		picture = company_servant_allocation_center
-		allowed = {
-			original_tag = VLT
-		}
-		available = {
-			NOT = {
-				has_completed_focus = vlt_new_servant_allocation_center
-			}
-		}
-		visible = {
-			NOT = {
-				has_completed_focus = vlt_new_servant_allocation_center
-			}
-		}
-		research_bonus = {
-			habitation_category = 0.15
-		}
-		traits = { infrastructure_construction_company }
-	}
-	work_allocation_center = {
-		picture = company_work_allocation_center
-		allowed = {
-			original_tag = VLT
-		}
-		available = {
-			has_completed_focus = vlt_new_servant_allocation_center
-		}
-		visible = {
-			has_completed_focus = vlt_new_servant_allocation_center
-		}
-		research_bonus = {
-			habitation_category = 0.15
-		}
-		traits = { vlt_infrastructure_construction_company }
-	}
+	# servant_allocation_center = {
+	# 	picture = company_servant_allocation_center
+	# 	allowed = {
+	# 		original_tag = VLT
+	# 	}
+	# 	available = {
+	# 		NOT = {
+	# 			has_completed_focus = vlt_new_servant_allocation_center
+	# 		}
+	# 	}
+	# 	visible = {
+	# 		NOT = {
+	# 			has_completed_focus = vlt_new_servant_allocation_center
+	# 		}
+	# 	}
+	# 	research_bonus = {
+	# 		habitation_category = 0.15
+	# 	}
+	# 	traits = { infrastructure_construction_company }
+	# }
+	# work_allocation_center = {
+	# 	picture = company_work_allocation_center
+	# 	allowed = {
+	# 		original_tag = VLT
+	# 	}
+	# 	available = {
+	# 		has_completed_focus = vlt_new_servant_allocation_center
+	# 	}
+	# 	visible = {
+	# 		has_completed_focus = vlt_new_servant_allocation_center
+	# 	}
+	# 	research_bonus = {
+	# 		habitation_category = 0.15
+	# 	}
+	# 	traits = { vlt_infrastructure_construction_company }
+	# }
 	parlor_room = {
 		picture = company_parlor_room
 		allowed = {
@@ -929,43 +929,43 @@ ideas = {
 			caps_income_modifier = 0.15
 		}
 	}
-	ces_slaves = {
-		picture = KHA_ourown_slave_trade
-		available = {
-			if = {
-				limit = { tag = LAC }
-				has_completed_focus = lac_slave_markets_taos
-				OR = {
-					has_completed_focus = lac_triumphant_campaign
-					AND = {
-						has_completed_focus = lac_good_boy_puppet
-						CES = {
-							has_completed_focus = ces_legionary_corps
-						}
-					}
-				}
-			}
-			else = {
-				has_completed_focus = ces_legionary_corps
-			}
-		}
-		allowed = {
-			OR = {
-				tag = CES
-				tag = LAC
-			}
-		}
-		cost = 150
-		removal_cost = 10
-		on_add = {
-			set_temp_variable = { removal_cost = 10 }
-			custom_effect_tooltip = remove_cost_tooltip
-		}
-		modifier = {
-			civilian_intel_factor = 0.1
-		}
-		traits = { slavery_offices }
-	}
+	# ces_slaves = {
+	# 	picture = KHA_ourown_slave_trade
+	# 	available = {
+	# 		if = {
+	# 			limit = { tag = LAC }
+	# 			has_completed_focus = lac_slave_markets_taos
+	# 			OR = {
+	# 				has_completed_focus = lac_triumphant_campaign
+	# 				AND = {
+	# 					has_completed_focus = lac_good_boy_puppet
+	# 					CES = {
+	# 						has_completed_focus = ces_legionary_corps
+	# 					}
+	# 				}
+	# 			}
+	# 		}
+	# 		else = {
+	# 			has_completed_focus = ces_legionary_corps
+	# 		}
+	# 	}
+	# 	allowed = {
+	# 		OR = {
+	# 			tag = CES
+	# 			tag = LAC
+	# 		}
+	# 	}
+	# 	cost = 150
+	# 	removal_cost = 10
+	# 	on_add = {
+	# 		set_temp_variable = { removal_cost = 10 }
+	# 		custom_effect_tooltip = remove_cost_tooltip
+	# 	}
+	# 	modifier = {
+	# 		civilian_intel_factor = 0.1
+	# 	}
+	# 	traits = { slavery_offices }
+	# }
 	lady_lasers = {
 		picture = lady_lasers_manufacturer
 		allowed = {
@@ -1268,27 +1268,27 @@ ideas = {
 		}
 		traits = { entertainment_company }
 	}
-	new_reno_arms_company = {
-		picture = company_new_reno_arms
-		allowed = {
-			OR = {
-				original_tag = NEW
-				original_tag = EHT
-			}
-		}
-		available = {
-			if = {
-				limit = {
-					original_tag = EHT
-				}
-				has_completed_focus = EHT_new_reno
-			}
-		}
-		research_bonus = {
-			ballistic_weaponry_tech_category = 0.15
-		}
-		traits = { weapon_manufacturer_reno }
-	}
+	# new_reno_arms_company = {
+	# 	picture = company_new_reno_arms
+	# 	allowed = {
+	# 		OR = {
+	# 			original_tag = NEW
+	# 			original_tag = EHT
+	# 		}
+	# 	}
+	# 	available = {
+	# 		if = {
+	# 			limit = {
+	# 				original_tag = EHT
+	# 			}
+	# 			has_completed_focus = EHT_new_reno
+	# 		}
+	# 	}
+	# 	research_bonus = {
+	# 		ballistic_weaponry_tech_category = 0.15
+	# 	}
+	# 	traits = { weapon_manufacturer_reno }
+	# }
 	renescos_pharmacy_company = {
 		picture = company_renoscos
 		allowed = {
@@ -1516,44 +1516,44 @@ ideas = {
 			}
 			traits = { car_manufacturer }
 		}
-		ratch_cars_company = {
-			picture = wheelmothers_garage
-			allowed = {
-				OR = {
-					original_tag = NCR
-					original_tag = NEW
-					original_tag = EHT
-				}
-			}
-			available = {
-				if = {
-					limit = {
-						original_tag = NCR
-					}
-					has_completed_Focus = ncr_spear_chop_shop
-					NOT = {
-						has_war_with = NEW
-					}
-				}
-				else_if = {
-					limit = {
-						original_tag = EHT
-					}
-					has_completed_focus = EHT_core_reno
-				}
-			}
-			# equipment_bonus = {
-			# 	motorized_equipment = {
-			# 		reliability = 0.05
-			# 		armor_value = 0.05
-			# 		instant = yes
-			# 	}
-			# }
-			research_bonus = {
-				car_tech_category = 0.15
-			}
-			traits = { car_manufacturer_ncr }
-		}
+		# ratch_cars_company = {
+		# 	picture = wheelmothers_garage
+		# 	allowed = {
+		# 		OR = {
+		# 			original_tag = NCR
+		# 			original_tag = NEW
+		# 			original_tag = EHT
+		# 		}
+		# 	}
+		# 	available = {
+		# 		if = {
+		# 			limit = {
+		# 				original_tag = NCR
+		# 			}
+		# 			has_completed_Focus = ncr_spear_chop_shop
+		# 			NOT = {
+		# 				has_war_with = NEW
+		# 			}
+		# 		}
+		# 		else_if = {
+		# 			limit = {
+		# 				original_tag = EHT
+		# 			}
+		# 			has_completed_focus = EHT_core_reno
+		# 		}
+		# 	}
+		# 	# equipment_bonus = {
+		# 	# 	motorized_equipment = {
+		# 	# 		reliability = 0.05
+		# 	# 		armor_value = 0.05
+		# 	# 		instant = yes
+		# 	# 	}
+		# 	# }
+		# 	research_bonus = {
+		# 		car_tech_category = 0.15
+		# 	}
+		# 	traits = { car_manufacturer_ncr }
+		# }
 	}
 
 ###############################
