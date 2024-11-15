@@ -88,27 +88,10 @@ add_ideas = {
 	cwb_luddite_crusade
 	tribal_nation
 	okc_savages
+	cwb_luddite_gaming
 }
 
 add_manpower = 1000
 
-902 = { add_claim_by = CWB }
-886 = { add_claim_by = CWB }
-888 = { add_claim_by = CWB }
-938 = { add_claim_by = CWB }
-891 = { add_claim_by = CWB }
-889 = { add_claim_by = CWB }
-890 = { add_claim_by = CWB }
-615 = { add_claim_by = CWB }
-891 = { add_claim_by = CWB }
-616 = { add_claim_by = CWB }
-868 = { add_claim_by = CWB }
-867 = { add_claim_by = CWB }
-883 = { add_claim_by = CWB }
-617 = { add_claim_by = CWB }
-618 = { add_claim_by = CWB }
-103 = { add_claim_by = CWB }
-869 = { add_claim_by = CWB }
-877 = { add_claim_by = CWB }
 
 recruit_character = CWB_helki_the_ripper
