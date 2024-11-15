@@ -6,19 +6,6 @@ characters = {
 				large = GFX_Portrait_PAR_leader
 			}
 		}
-		corps_commander = {
-			traits = {
-				strong_trait
-				charismatic_trait
-				desert_fox
-			}
-			skill = 4
-			attack_skill = 4
-			defense_skill = 3
-			planning_skill = 3
-			logistics_skill = 5
-			legacy_id = -1
-		}
 		country_leader = {
 			desc = PAR_DYED_BLOOD_DESC
 			ideology = chieftain
@@ -62,6 +49,54 @@ characters = {
 			}
 			expire = "2284.1.1.12"
 			id = -1
+		}
+	}
+	PAR_the_wok = {
+		name = "The Wok"
+		portraits = {
+			civilian = {
+				large = GFX_portrait_the_wok
+			}
+			army = {
+				large = GFX_portrait_the_wok
+			}
+		}
+		corps_commander = {
+			traits = {
+				strong_trait
+				enduring_trait
+				hot_blooded_trait
+			}
+			skill = 2
+			attack_skill = 4
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 3
+			legacy_id = -1
+		}
+	}
+	PAR_the_rock = {
+		name = "The Rock"
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_PAR_leader_animated
+			}
+			army = {
+				large = GFX_Portrait_PAR_leader_animated
+			}
+		}
+		field_marshal = {
+			traits = {
+				strong_trait
+				charismatic_trait
+				desert_fox
+			}
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 5
+			legacy_id = -1
 		}
 	}
 }

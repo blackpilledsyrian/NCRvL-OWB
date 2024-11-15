@@ -1,0 +1,1323 @@
+####################################################
+#				Cypher Warband Focus Tree		   #
+####################################################
+focus_tree = {
+	id = nf_wht
+	country = {
+		factor = 0
+		modifier = {
+			add = 13
+			tag = CWB
+		}
+	}
+	default = no
+	focus = {
+		id = CWB_shared_our_origin
+		icon = GFX_goal_NCN_By_The_Sword_And_The_Cross
+		cost = 7
+		x = 10
+		y = 0
+		completion_reward = {
+			country_event = {
+				id = nf_tribal.1
+			}
+		}
+	}
+	focus = {
+		id = CWB_shared_our_fate
+		icon = GFX_goal_BDT_holy_skull
+		cost = 7
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = CWB_shared_our_origin
+		}
+		relative_position_id = CWB_shared_our_origin
+		completion_reward = {
+			country_event = {
+				id = nf_tribal.2
+			}
+		}
+	}
+	focus = {
+		id = CWB_shared_our_future
+		icon = GFX_goal_tribal_generic
+		cost = 7
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = CWB_shared_our_fate
+		}
+		relative_position_id = CWB_shared_our_fate
+		completion_reward = {
+			country_event = {
+				id = nf_tribal.3
+			}
+		}
+	}
+	#Goober
+	focus = {
+		id = CWB_goober_1
+		icon = GFX_goal_usa_the_last_argument_of_presidents
+		cost = 60
+		x = -10
+		y = 1
+		prerequisite = {
+			focus = CWB_shared_our_future
+		}
+		available = {
+			is_ai = no
+		}
+		relative_position_id = CWB_shared_our_future
+		completion_reward = {
+			902 = { add_claim_by = ROOT }
+			886 = { add_claim_by = ROOT }
+			888 = { add_claim_by = ROOT }
+			938 = { add_claim_by = ROOT }
+			891 = { add_claim_by = ROOT }
+			889 = { add_claim_by = ROOT }
+			890 = { add_claim_by = ROOT }
+			615 = { add_claim_by = ROOT }
+			891 = { add_claim_by = ROOT }
+			616 = { add_claim_by = ROOT }
+			868 = { add_claim_by = ROOT }
+			867 = { add_claim_by = ROOT }
+			883 = { add_claim_by = ROOT }
+			617 = { add_claim_by = ROOT }
+			618 = { add_claim_by = ROOT }
+			103 = { add_claim_by = ROOT }
+			869 = { add_claim_by = ROOT }
+			877 = { add_claim_by = ROOT }
+		}
+	}
+	focus = {
+		id = CWB_goober_2
+		icon = GFX_goal_generic_ideological_fury_focus
+		cost = 15
+		x = -4
+		y = 1
+		prerequisite = {
+			focus = CWB_goober_1
+		}
+		available = {
+            PAR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = CWB_goober_1
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_core_of = PAR
+				}
+				add_manpower = 250 
+				add_state_modifier = {
+					modifier = { compliance_gain = 0.02 }
+				}
+			}
+		}
+	}
+	focus = {
+		id = CWB_goober_3
+		icon = GFX_goal_generic_ideological_fury_focus
+		cost = 15
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = CWB_goober_1
+		}
+		available = {
+            SCA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = CWB_goober_1
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_core_of = SCA
+				}
+				add_manpower = 250 
+				add_state_modifier = {
+					modifier = { compliance_gain = 0.02 }
+				}
+			}
+		}
+	}
+	focus = {
+		id = CWB_goober_4
+		icon = GFX_goal_generic_ideological_fury_focus
+		cost = 15
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = CWB_goober_1
+		}
+		available = {
+            TLL = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = CWB_goober_1
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_core_of = TLL
+				}
+				add_manpower = 250 
+				add_state_modifier = {
+					modifier = { compliance_gain = 0.02 }
+				}
+			}
+		}
+	}
+	focus = {
+		id = CWB_goober_5
+		icon = GFX_goal_generic_ideological_fury_focus
+		cost = 15
+		x = 2
+		y = 1
+		prerequisite = {
+			focus = CWB_goober_1
+		}
+		available = {
+            CHC = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+            TLP = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = CWB_goober_1
+		completion_reward = {
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = CHC
+						is_core_of = TLP
+					}
+				}
+				add_manpower = 250 
+				add_state_modifier = {
+					modifier = { compliance_gain = 0.02 }
+				}
+			}
+		}
+	}
+	focus = {
+		id = CWB_goober_6
+		icon = GFX_goal_generic_ideological_fury_focus
+		cost = 15
+		x = 4
+		y = 1
+		prerequisite = {
+			focus = CWB_goober_1
+		}
+		available = {
+            CMC = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+            CHO = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+            CHR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = CWB_goober_1
+		completion_reward = {
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = CMC
+						is_core_of = CHO
+						is_core_of = CHR
+					}
+				}
+				add_manpower = 250 
+				add_state_modifier = {
+					modifier = { compliance_gain = 0.02 }
+				}
+			}
+		}
+	}
+    #focus = {
+    #    id = ces_painted_rock
+    #    icon = GFX_goal_generic_ideological_fury_focus
+    #    cost = 15
+    #    x = 1
+    #    y = 1
+    #    relative_position_id = ces_oklahoma
+    #    prerequisite = {
+    #        focus = ces_oklahoma
+    #    }
+    #    mutually_exclusive = {
+    #        focus = ces_cypher_warband
+    #    }
+    #    available = {
+    #        PAR = { owns_state = 868 }
+    #    }
+    #    completion_reward = {
+    #        PAR = {
+    #            d_join_caesars_legion = yes
+    #            hidden_effect = {
+    #                set_technology = {
+    #                    infantry_tech_level_settler = 1
+    #                    support_tech_level_settler = 1
+    #                    vehicles_tech_level_scientific = 1
+    #                    legion_centurions_tech = 1
+    #                    legion_vexillarius_tech = 1
+    #                    legion_training_tech = 1
+    #                    fireteam_weaponry_tech = 1
+    #                    chariot_vehicle_tech = 1
+    #                    ces_at_tech = 1
+    #                    ces_two_tech = 1
+    #                    all_terrain_vehicles_tech = 1
+    #                    armored_chariots_tech = 1
+    #                }
+    #                add_ideas = {
+    #                    cultofmars
+    #                    national_spirit_rejection_of_automation
+    #                    legion_training
+    #                    two_masters_of_the_motor_2
+    #                }
+    #            }
+    #        }
+    #        custom_effect_tooltip = cespaintedrocktt
+    #    }
+    #}
+    focus = {
+        id = CWB_goober_7
+        icon = GFX_goal_PLS_Embrace_Raider_Ways
+        cost = 15
+        x = 0
+        y = 2
+        relative_position_id = CWB_goober_1
+        prerequisite = {
+            focus = CWB_goober_2
+        }
+        prerequisite = {
+            focus = CWB_goober_3
+        }
+        prerequisite = {
+            focus = CWB_goober_4
+        }
+        prerequisite = {
+            focus = CWB_goober_5
+        }
+        prerequisite = {
+            focus = CWB_goober_6
+        }
+        mutually_exclusive = {
+            focus = ces_painted_rock
+        }
+        available = {
+            CWB = { owns_state = 868 }
+        }
+        completion_reward = {
+            CWB = {
+                d_join_caesars_legion = yes
+                #hidden_effect = {
+                    set_technology = {
+                        infantry_tech_level_settler = 1
+                        #tools_tech_level_settler = 1
+						support_tech_level_settler = 1
+                        special_forces_tech_level_scientific = 1
+                        legion_centurions_tech = 1
+                        legion_vexillarius_tech = 1
+                        legion_training_tech = 1
+                        ces_navajo_scouts_tech = 1
+                        ces_navajo_skin_walkers_tech = 1
+                    }
+                    add_ideas = {
+                        legion_training
+						nav_pathfinders
+						cultofmars
+                        national_spirit_rejection_of_automation
+                    }
+                #}
+            }
+            #custom_effect_tooltip = cescypherwarbandtt
+        }
+    }
+	#Industry
+	focus = {
+		id = CWB_industry_1
+		icon = GFX_goal_montana_arms_factory
+		cost = 60
+		x = 10
+		y = 1
+		prerequisite = {
+			focus = CWB_shared_our_future
+		}
+		relative_position_id = CWB_shared_our_future
+		completion_reward = {
+			108 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = CWB_industry_2
+		icon = GFX_goal_usa_construct_mil_factory
+		cost = 60
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = CWB_industry_1
+		}
+		relative_position_id = CWB_industry_1
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = tribal_tech_category
+			}
+		}
+	}
+	focus = {
+		id = CWB_industry_3
+		icon = GFX_goal_wyoming_arms_fact_1
+		cost = 60
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = CWB_industry_1
+		}
+		relative_position_id = CWB_industry_1
+		completion_reward = {
+			676 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = CWB_industry_4
+		icon = GFX_goal_wyoming_arms_fact_2
+		cost = 60
+		x = 2
+		y = 1
+		prerequisite = {
+			focus = CWB_industry_1
+		}
+		relative_position_id = CWB_industry_1
+		completion_reward = {
+			937 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_manpower = 2500
+				set_state_category = large_city
+			}
+		}
+	}
+	focus = {
+		id = CWB_industry_5
+		icon = GFX_goal_generic_slave_collars
+		cost = 60
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = CWB_industry_2
+		}
+		relative_position_id = CWB_industry_2
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.4
+				uses = 1
+				category = industry
+			}
+		}
+	}
+	focus = {
+		id = CWB_industry_6
+		icon = GFX_goal_BRK_slave_rights
+		cost = 60
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = CWB_industry_2
+		}
+		prerequisite = {
+			focus = CWB_industry_3
+		}
+		relative_position_id = CWB_industry_2
+		completion_reward = {
+			add_political_power = 125
+		}
+	}
+	focus = {
+		id = CWB_industry_7
+		icon = GFX_icon_two_road4
+		cost = 60
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = CWB_industry_3
+		}
+		prerequisite = {
+			focus = CWB_industry_4
+		}
+		relative_position_id = CWB_industry_3
+		completion_reward = {
+			custom_effect_tooltip = cwb_all_owned_states_infra
+			hidden_effect = {
+				every_owned_state = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = CWB_industry_8
+		icon = GFX_KHA_focus_slave_1
+		cost = 60
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = CWB_industry_4
+		}
+		relative_position_id = CWB_industry_4
+		completion_reward = {
+			custom_effect_tooltip = cwb_all_owned_states_building
+			hidden_effect = {
+				every_owned_state = {
+					add_extra_state_shared_building_slots = 1
+				}
+			}
+		}
+	}
+	focus = {
+		id = CWB_industry_9
+		icon = GFX_goal_CES_blacksmith
+		cost = 60
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = CWB_industry_2
+		}
+		available = {
+			OR = {
+				CES = {
+					owns_state = 546
+				}
+				LAC = {
+					owns_state = 546
+				}
+			}
+			is_ai = no
+		}
+		relative_position_id = CWB_industry_2
+		completion_reward = {
+			546 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = CWB_industry_10
+		icon = GFX_goal_dln_kingdom
+		cost = 60
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = CWB_industry_3
+		}
+        available = {
+            CWB = { owns_state = 868 }
+        }
+		relative_position_id = CWB_industry_3
+		completion_reward = {
+			set_capital = {
+				state = 868
+			}
+			add_state_core = 868
+			add_resource = {
+				type = metal
+				amount = 10
+				state = 868
+			}
+			add_resource = {
+				type = water
+				amount = 10
+				state = 868
+			}
+			add_resource = {
+				type = energy
+				amount = 5
+				state = 868
+			}
+			868 = {
+				set_state_name = "Worlds' End"
+			}
+		}
+	}
+	focus = {
+		id = CWB_industry_11
+		icon = GFX_goal_CES_aureus
+		cost = 60
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = CWB_industry_4
+		}
+		available = {
+			OR = {
+				CES = {
+					owns_state = 546
+				}
+				LAC = {
+					owns_state = 546
+				}
+			}
+			is_ai = no
+		}
+		relative_position_id = CWB_industry_4
+		completion_reward = {
+			add_resource = {
+				type = metal
+				amount = 15
+				state = 546
+			}
+			add_resource = {
+				type = water
+				amount = 15
+				state = 546
+			}
+			add_resource = {
+				type = composites
+				amount = 15
+				state = 546
+			}
+			add_resource = {
+				type = energy
+				amount = 15
+				state = 546
+			}
+			add_resource = {
+				type = advanced
+				amount = 15
+				state = 546
+			}
+		}
+	}
+	#Initial
+	focus = {
+		id = CWB_initial_1
+		icon = GFX_goal_cartel_raid
+		cost = 60
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = CWB_shared_our_future
+		}
+		mutually_exclusive = {
+			focus = CWB_initial_2
+		}
+		relative_position_id = CWB_shared_our_future
+		completion_reward = {
+			add_war_support = 0.05
+			army_experience = 25
+		}
+	}
+	focus = {
+		id = CWB_initial_2
+		icon = GFX_KHA_focus_tribal_spirit
+		cost = 60
+		x = 2
+		y = 1
+		mutually_exclusive = {
+			focus = CWB_initial_1
+		}
+		prerequisite = {
+			focus = CWB_shared_our_future
+		}
+		relative_position_id = CWB_shared_our_future
+		completion_reward = {
+			add_political_power = 85
+		}
+	}
+	focus = {
+		id = CWB_initial_3
+		icon = GFX_goal_fallout_tool
+		cost = 60
+		x = -1
+		y = 1
+		mutually_exclusive = {
+			focus = CWB_initial_4
+		}
+		prerequisite = {
+			focus = CWB_initial_1
+		}
+		relative_position_id = CWB_initial_1
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = cwb_luddite_gaming
+				add_idea = cwb_luddite_gaming_soft_A
+			}
+		}
+	}
+	focus = {
+		id = CWB_initial_4
+		icon = GFX_goal_PLS_Morale_Raids
+		cost = 60
+		x = 2
+		y = 1
+		mutually_exclusive = {
+			focus = CWB_initial_3
+		}
+		mutually_exclusive = {
+			focus = CWB_initial_5
+		}
+		prerequisite = {
+			focus = CWB_initial_1
+			focus = CWB_initial_2
+		}
+		relative_position_id = CWB_initial_1
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = cwb_luddite_gaming
+				add_idea = cwb_luddite_gaming_hard_A
+			}
+		}
+	}
+	focus = {
+		id = CWB_initial_5
+		icon = GFX_goal_generic_advanced_firearms_focus
+		cost = 60
+		x = 5
+		y = 1
+		mutually_exclusive = {
+			focus = CWB_initial_4
+		}
+		prerequisite = {
+			focus = CWB_initial_2
+		}
+		relative_position_id = CWB_initial_1
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = cwb_luddite_gaming
+				add_idea = cwb_luddite_gaming_light_A
+			}
+		}
+	}
+	focus = {
+		id = CWB_initial_6
+		icon = GFX_goal_generic_ammo_boxes_focus
+		cost = 60
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = CWB_initial_3
+		}
+		relative_position_id = CWB_initial_3
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = cwb_luddite_gaming_soft_A
+				add_idea = cwb_luddite_gaming_soft_B
+			}
+		}
+	}
+	focus = {
+		id = CWB_initial_7
+		icon = GFX_goal_1_fire
+		cost = 60
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = CWB_initial_4
+		}
+		relative_position_id = CWB_initial_4
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = cwb_luddite_gaming_hard_A
+				add_idea = cwb_luddite_gaming_hard_B
+			}
+		}
+	}
+	focus = {
+		id = CWB_initial_8
+		icon = GFX_goal_NCN_Mormon_Book
+		cost = 60
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = CWB_initial_5
+		}
+		relative_position_id = CWB_initial_5
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = cwb_luddite_gaming_light_A
+				add_idea = cwb_luddite_gaming_light_B
+			}
+		}
+	}
+	focus = {
+		id = CWB_initial_9
+		icon = GFX_KHA_focus_planning_red
+		cost = 60
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = CWB_initial_6
+			focus = CWB_initial_7
+		}
+		mutually_exclusive = {
+			focus = CWB_initial_11
+		}
+		relative_position_id = CWB_initial_7
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = cat_land_doctrine
+			}
+		}
+	}
+	focus = {
+		id = CWB_initial_10
+		icon = GFX_goal_cartel_control_population
+		cost = 60
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = CWB_initial_6
+			focus = CWB_initial_7
+			focus = CWB_initial_8
+		}
+		relative_position_id = CWB_initial_7
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+	focus = {
+		id = CWB_initial_11
+		icon = GFX_goal_MOJ_gun_runner_caravan_raids
+		cost = 60
+		x = 2
+		y = 1
+		mutually_exclusive = {
+			focus = CWB_initial_9
+		}
+		prerequisite = {
+			focus = CWB_initial_7
+			focus = CWB_initial_8
+		}
+		relative_position_id = CWB_initial_7
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = melee_equipment_3
+				amount = 500
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = melee_equipment_2
+				amount = 500
+				producer = USA
+			}
+		}
+	}
+	focus = {
+		id = CWB_initial_12
+		icon = GFX_goal_NCR_Gun_Runner_Licensing
+		cost = 60
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = CWB_initial_10
+		}
+		relative_position_id = CWB_initial_10
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.35
+				uses = 2
+				category = melee_weaponry_tech_category
+			}
+		}
+	}
+	focus = {
+		id = CWB_initial_13
+		icon = GFX_icon_apc_desert
+		cost = 60
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = CWB_initial_10
+		}
+		relative_position_id = CWB_initial_10
+		completion_reward = {
+			capital_scope = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = CWB_initial_14
+		icon = GFX_KHA_focus_research_focus
+		cost = 60
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = CWB_initial_12
+		}
+		prerequisite = {
+			focus = CWB_initial_13
+		}
+		relative_position_id = CWB_initial_12
+		completion_reward = {
+            add_research_slot = 1
+		}
+	}
+	#Eco
+	focus = {
+		id = CWB_eco_1
+		icon = GFX_goal_generic_teddy
+		cost = 60
+		x = -3
+		y = 1
+		prerequisite = {
+			focus = CWB_initial_12
+		}
+		relative_position_id = CWB_initial_12
+		completion_reward = {
+			custom_effect_tooltip = gentribal_noct_tt
+			hidden_effect = { set_technology = { noctwarriors = 1 } }
+		}
+	}
+	focus = {
+		id = CWB_eco_2
+		icon = GFX_goal_CHC_fight_for_the_self
+		cost = 60
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = CWB_eco_1
+		}
+		relative_position_id = CWB_eco_1
+		completion_reward = {
+			custom_effect_tooltip = gentribal_martialarts_tt
+			hidden_effect = { set_technology = { clanfightingstyles = 1 } }
+		}
+	}
+	focus = {
+		id = CWB_eco_3
+		icon = GFX_goal_generic_nature_tree
+		cost = 60
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = CWB_eco_1
+		}
+		relative_position_id = CWB_eco_1
+		completion_reward = {
+			add_ideas = cwb_medium_stats 
+		}
+	}
+	focus = {
+		id = CWB_eco_4
+		icon = GFX_goal_FFI_Last_Fight
+		cost = 60
+		x = 0
+		y = 1
+		mutually_exclusive = {
+			focus = CWB_tech_3
+			focus = CWB_tech_4
+		}
+		prerequisite = {
+			focus = CWB_eco_2
+		}
+		relative_position_id = CWB_eco_2
+		completion_reward = {
+			add_tech_bonus = {
+				ahead_reduction = 0.5
+				bonus = 0.25
+				uses = 1
+				category = spec_force_equipment_tech_category
+			}
+		}
+	}
+	focus = {
+		id = CWB_eco_5
+		icon = GFX_goal_generic_the_cutest_fur_trade
+		cost = 60
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = CWB_eco_3
+		}
+		relative_position_id = CWB_eco_3
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = cwb_medium_stats
+				add_idea = cwb_decent_stats
+			}
+		}
+	}
+	focus = {
+		id = CWB_eco_6
+		icon = GFX_goal_enc_special_forces
+		cost = 60
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = CWB_eco_5
+		}
+		prerequisite = {
+			focus = CWB_eco_4
+		}
+		relative_position_id = CWB_eco_5
+		completion_reward = {
+			add_ideas = cwb_spec_ops_1
+			set_technology = {
+				spec_ops_horses_tech = 1
+			}
+		}
+	}
+	focus = {
+		id = CWB_eco_7
+		icon = GFX_goal_JCK_victory_soldiers_flag
+		cost = 60
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = CWB_eco_6
+		}
+		relative_position_id = CWB_eco_6
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = spec_ops_equipment_3
+				amount = 1000
+				producer = USA
+			}
+			add_manpower = 1500
+		}
+	}
+	focus = {
+		id = CWB_eco_8
+		icon = GFX_goal_MET_billings_medical_marvels
+		cost = 60
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = CWB_eco_7
+		}
+		relative_position_id = CWB_eco_7
+		completion_reward = {
+			custom_effect_tooltip = gentribal_immortals_tt
+			hidden_effect = { set_technology = { tribalimmortals = 1 } }
+		}
+	}
+	focus = {
+		id = CWB_eco_9
+		icon = GFX_goal_uar_soldier_and_rifle
+		cost = 60
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = CWB_eco_6
+		}
+		relative_position_id = CWB_eco_6
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = cwb_spec_ops_1
+				add_idea = cwb_spec_ops_2
+			}
+		}
+	}
+	focus = {
+		id = CWB_eco_10
+		icon = GFX_goal_BRK_solidify_authority
+		cost = 60
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = CWB_eco_9
+		}
+		relative_position_id = CWB_eco_9
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = cwb_spec_ops_2
+				add_idea = cwb_spec_ops_3
+			}
+		}
+	}
+	#Tech&Politits
+	focus = {
+		id = CWB_tech_1
+		icon = GFX_goal_TTM_Paintbrush
+		cost = 60
+		x = 3
+		y = 1
+		prerequisite = {
+			focus = CWB_initial_13
+		}
+		relative_position_id = CWB_initial_13
+		completion_reward = {
+			custom_effect_tooltip = gentribal_warpaint_tt
+			hidden_effect = { set_technology = { tribalwarpaint = 1 } }
+		}
+	}
+	focus = {
+		id = CWB_tech_2
+		icon = GFX_goal_BOS_outsider_recruitment
+		cost = 60
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = CWB_tech_1
+		}
+		relative_position_id = CWB_tech_1
+		completion_reward = {
+			custom_effect_tooltip = gentribal_outsiders_tt
+			hidden_effect = { set_technology = { outsiderways = 1 } }
+		}
+	}
+	focus = {
+		id = CWB_tech_3
+		icon = GFX_goal_SOK_combat_armor
+		cost = 60
+		x = 0
+		y = 1
+		mutually_exclusive = {
+			focus = CWB_tech_4
+			focus = CWB_eco_4
+		}
+		prerequisite = {
+			focus = CWB_tech_2
+		}
+		relative_position_id = CWB_tech_2
+		completion_reward = {
+			army_experience = 15
+            add_tech_bonus = {
+                bonus = 0.5
+                uses = 2
+                category = enforcer_tech_category
+            }
+		}
+	}
+	focus = {
+		id = CWB_tech_4
+		icon = GFX_goal_usa_armed_militias
+		cost = 60
+		x = -3
+		y = 1
+		mutually_exclusive = {
+			focus = CWB_tech_3
+			focus = CWB_eco_4
+		}
+		prerequisite = {
+			focus = CWB_tech_2
+			focus = CWB_eco_2
+		}
+		relative_position_id = CWB_tech_2
+		completion_reward = {
+			add_ideas = cwb_militia_gaming_A
+		}
+	}
+	focus = {
+		id = CWB_tech_5
+		icon = GFX_goal_tribal_dog_symbl
+		cost = 60
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = CWB_tech_1
+		}
+		relative_position_id = CWB_tech_1
+		completion_reward = {
+			add_ideas = tribalhoundmasters
+		}
+	}
+	focus = {
+		id = CWB_tech_6
+		icon = GFX_goal_CES_burned_dog
+		cost = 60
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = CWB_tech_5
+		}
+		relative_position_id = CWB_tech_5
+		completion_reward = {
+			set_technology = {
+				warden_doggos_tech = 1
+			}
+		}
+	}
+	focus = {
+		id = CWB_tech_7
+		icon = GFX_enclave_advanced_combat_armor
+		cost = 60
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = CWB_tech_6
+		}
+		prerequisite = {
+			focus = CWB_tech_3
+		}
+		relative_position_id = CWB_tech_6
+		completion_reward = {
+			add_ideas = cwb_enforcer_1
+		}
+	}
+	focus = {
+		id = CWB_tech_8
+		icon = GFX_goal_TTM_Fire_2
+		cost = 60
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = CWB_tech_4
+		}
+		relative_position_id = CWB_tech_4
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = cwb_militia_gaming_A
+				add_idea = cwb_militia_gaming_B
+			}
+		}
+	}
+	focus = {
+		id = CWB_tech_9
+		icon = GFX_goal_RES_Main_Right_Metal_Armor
+		cost = 60
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = CWB_tech_7
+		}
+		relative_position_id = CWB_tech_7
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = cwb_enforcer_1
+				add_idea = cwb_enforcer_2
+			}
+		}
+	}
+	focus = {
+		id = CWB_tech_10
+		icon = GFX_goal_generic_helm_riot_2
+		cost = 60
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = CWB_tech_7
+		}
+		relative_position_id = CWB_tech_7
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = heavy_infantry_equipment_2
+				amount = 450
+				producer = USA
+			}
+			capital_scope = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = CWB_tech_11
+		icon = GFX_goal_wht_burn_salt_lake_city
+		cost = 60
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = CWB_tech_10
+		}
+		relative_position_id = CWB_tech_10
+		completion_reward = {
+			add_war_support = 0.15
+			add_stability = 0.085
+			every_owned_state = {
+				limit = {
+					NOT = {
+						is_core_of = ROOT
+					}
+				}
+				add_compliance = 10
+			}
+			custom_effect_tooltip = par_10_compliance_tt		
+		}
+	}
+	focus = {
+		id = CWB_tech_12
+		icon = GFX_goal_JCK_spec_ops_armor
+		cost = 60
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = CWB_tech_9
+		}
+		relative_position_id = CWB_tech_9
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = cwb_enforcer_2
+				add_idea = cwb_enforcer_3
+			}
+		}
+	}
+	focus = {
+		id = CWB_tech_13
+		icon = GFX_goal_generic_western
+		cost = 60
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = CWB_tech_8
+		}
+		relative_position_id = CWB_tech_8
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = cwb_militia_gaming_B
+				add_idea = cwb_militia_gaming_C
+			}
+			#custom_effect_tooltip = gentribal_numbers_tt
+			#hidden_effect = { set_technology = { tribalnumbers = 1 } }
+			set_technology = { tribalnumbers = 1 }
+		}
+	}
+}
+# vim: set ft=pdx ts=2 sw=2 tw=79 :

@@ -79,7 +79,7 @@ if = {
 	}
 }
 
-set_stability = 0.4
+set_stability = 0.3
 set_war_support = 0.5
 set_convoys = 25
 set_research_slots = 4
@@ -110,30 +110,10 @@ add_ideas = {
 	undesirables_law_raider
 }
 
-902 = { add_claim_by = PAR }
-887 = { add_claim_by = PAR }
-886 = { add_claim_by = PAR }
-888 = { add_claim_by = PAR }
-108 = { add_claim_by = PAR }
-891 = { add_claim_by = PAR }
-889 = { add_claim_by = PAR }
-890 = { add_claim_by = PAR }
-615 = { add_claim_by = PAR }
-937 = { add_claim_by = PAR }
-616 = { add_claim_by = PAR }
-868 = { add_claim_by = PAR }
-867 = { add_claim_by = PAR }
-883 = { add_claim_by = PAR }
-617 = { add_claim_by = PAR }
-618 = { add_claim_by = PAR }
-103 = { add_claim_by = PAR }
-869 = { add_claim_by = PAR }
-877 = { add_claim_by = PAR }
-676 = { add_claim_by = PAR }
-899 = { add_claim_by = PAR }
-898 = { add_claim_by = PAR }
 
 recruit_character = PAR_dyed_blood
+recruit_character = PAR_the_rock
+recruit_character = PAR_the_wok
 
 random_character = {
 	limit = {
