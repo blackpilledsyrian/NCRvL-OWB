@@ -5505,6 +5505,9 @@ focus = {
 		relative_position_id = ncr_california_first_and_foremost
 		completion_reward = {
 			country_event = ncr_order.16
+			MOT = {
+				add_ideas = ncr_vlt_meme_is_keeping_me_in_is_basement
+			}
 		}
 	}
 	focus = {
@@ -5625,26 +5628,17 @@ focus = {
 		prerequisite = { focus = ncr_moore_oregon_campaign }
 		x = 0
 		y = 1
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = ncr_oregon_owning_tt
-				owns_state = 337
-				owns_state = 235
-				owns_state = 580
-				owns_state = 71
-				owns_state = 454
-				owns_state = 231
-				owns_state = 358
-				owns_state = 493
-				owns_state = 37
-				owns_state = 274
-				owns_state = 51
-			}
-			
-		}
 		relative_position_id = ncr_moore_oregon_campaign
 		completion_reward = {
-			country_event = ncr_order.15
+			ARR = {
+				add_ideas = ncr_arr_pa_buff
+			}
+			NEW = {
+				add_ideas = ncr_new_no_clue_buff
+			}
+			VLT = {
+				add_ideas = ncr_vlt_meme_is_keeping_me_in_is_basement
+			}
 		}
 	}
 	focus = {
