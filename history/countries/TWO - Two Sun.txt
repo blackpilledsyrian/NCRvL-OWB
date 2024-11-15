@@ -162,10 +162,6 @@ add_ideas = {
 	partial_economic_mobilisation
 }
 
-if = {
-	limit = {
-		can_use_autonomy_system = yes
-	}
 	CES = {
 		set_autonomy = {
 			target = TWO
@@ -176,17 +172,5 @@ if = {
 			autonomy_state = autonomy_client_tribe
 		}
 	}
-}
-
-if = {
-	limit = {
-		can_use_autonomy_system = no
-	}
-	CES = {
-		TWO = {
-			become_puppet = yes
-		}
-	}
-}
 
 add_to_tech_sharing_group = legion_research_pact

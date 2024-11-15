@@ -284,10 +284,7 @@ give_guarantee = SHI
 #}
 
 NAT = {
-	if = {
-		limit = {
-			can_use_autonomy_system = yes
-		}
+
 		NCR = {
 			NAT = {
 				become_puppet = yes
@@ -297,12 +294,6 @@ NAT = {
 				autonomy_state = autonomy_incorporated_territory
 			}
 		}
-	}
-	else = {
-		NCR = {
-			puppet = NAT
-		}
-	}
 }
 
 create_or_join_new_california = yes

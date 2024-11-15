@@ -904,6 +904,7 @@
   ncr_idea_civilian_powerhouse_desc:0 "In response to hard times on the people of the Republic, President Allgood promised economic recovery focusing on local communities and civilian industries. The legacy of his economic plan remains strong, and our civilian domain has expanded greatly thanks to it."
   ncr_idea_war_ready_economy:0 "War-Ready Economy"
   ncr_idea_war_ready_economy_desc:0 "The only way out of the war-ravenged economic issues the Republic found itself in during the late 70s was through, according to President Kimball at least. By shoring up flagging military complexes, and building a vast network of new ones, we've managed to begin to power our way through the crisis."
+  ncr_idea_war_ready_economy_2:0 "Duplicate idea from War_ready economy"  
   ncr_corruption_curbed:0 "Curbed Corruption"
   ncr_corruption_curbed_desc:0 "Aggressive attempts by Allgood during his campaign to oust President Kimball have shone a public spotlight on the worst excesses of corruption in the NCR Senate. The issue is far from resolved, but at least Senators now have to go out of their way to avoid detection."
   ncr_rapidsettlement_idea:0 "Rapid Settlement"

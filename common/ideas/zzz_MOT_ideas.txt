@@ -357,11 +357,11 @@ ideas = {
 					build_cost_ic = -0.2
 					instant = yes
 				}
-				category_medical_support = {
-					casualty_trickleback = 0.15
-					experience_loss_factor = -0.15
-					instant = yes
-				}
+			}
+			medical_chem_company = {
+				casualty_trickleback = 0.15
+				experience_loss_factor = -0.15
+				instant = yes
 			}
 		}
 		mot_han_the_good_fight = {

@@ -1532,7 +1532,7 @@ ideas = {
 
 			modifier = {
 				army_core_attack_factor = 0.05
-				army_core_attack_factor = 0.10
+				army_core_defense_factor = 0.10
 			}
 		}
 
