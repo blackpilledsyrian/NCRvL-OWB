@@ -411,7 +411,7 @@ country_event = { # Gang Violence in the Hub
 		}
 		custom_effect_tooltip = ncr_early.12.a_tt
 		add_war_support = -0.05
-		add_to_variable = { ncr_consumer_goods = 0.02 }
+		add_to_variable = { ncr_consumer_goods = 0.01 }
 		force_update_dynamic_modifier = yes
 		1 = {
 			remove_building = {
