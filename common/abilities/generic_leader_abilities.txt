@@ -703,6 +703,7 @@ ability = {
 				}
 			}
 			NOT = { has_trait = exhausted_order_trait}
+			is_leading_army_group = no
 		}
 
 		cost = 0.10
@@ -710,7 +711,7 @@ ability = {
 		one_time_effect = {
 			add_timed_unit_leader_trait = {
 				trait = exhausted_order_trait
-				days = 20
+				days = 30
 			}
 			add_temporary_buff_to_units = {
 				combat_offense = 0.5
@@ -757,6 +758,7 @@ ability = {
 				}
 			}
 			NOT = { has_trait = exhausted_order_trait}
+			is_leading_army_group = no
 		}
 
 		cost = 0.10
@@ -764,7 +766,7 @@ ability = {
 		one_time_effect = {
 			add_timed_unit_leader_trait = {
 				trait = exhausted_order_trait
-				days = 28
+				days = 30
 			}
 			add_temporary_buff_to_units = {
 				combat_offense = 0.20
