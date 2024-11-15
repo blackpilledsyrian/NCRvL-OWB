@@ -1,0 +1,47 @@
+﻿division_template = {
+	name = "Rock's Finest"
+	regiments = {
+		motorized_heavy_infantry = { x = 0 y = 0 }
+		motorized_heavy_infantry = { x = 0 y = 1 }
+		motorized_heavy_infantry = { x = 0 y = 2 }
+		motorized_heavy_infantry = { x = 0 y = 3 }
+		motorized_heavy_infantry = { x = 1 y = 0 }
+		motorized_heavy_infantry = { x = 1 y = 1 }
+		motorized_heavy_infantry = { x = 1 y = 2 }
+		motorized_heavy_infantry = { x = 1 y = 3 }
+		motorized_heavy_infantry = { x = 2 y = 0 }
+		motorized_heavy_infantry = { x = 2 y = 1 }
+		motorized_heavy_infantry = { x = 2 y = 2 }
+		motorized_heavy_infantry = { x = 2 y = 3 }
+		motorized_heavy_infantry = { x = 3 y = 0 }
+		motorized_heavy_infantry = { x = 3 y = 1 }
+		motorized_heavy_infantry = { x = 3 y = 2 }
+		motorized_heavy_infantry = { x = 3 y = 3 }
+		motorized_heavy_infantry = { x = 4 y = 0 }
+		motorized_heavy_infantry = { x = 4 y = 1 }
+		motorized_heavy_infantry = { x = 4 y = 2 }
+		motorized_heavy_infantry = { x = 4 y = 3 }
+	}
+	support = {
+		anti_tank_company = { x = 0 y = 0 }
+		demolitions_support = { x = 1 y = 0 }
+		fireteam_support = { x = 2 y = 0 }
+	}
+}
+units = {
+	division = {
+		name = "Wok's Finest"
+		location = 2987
+		division_template = "Rock's Finest"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+		force_equipment_variants = {
+            ballistic_equipment_3 = { owner = "USA" }
+            heavy_infantry_equipment_2 = { owner = "USA" }
+            explosive_demolitions_equipment_3 = { owner = "USA" }
+            ballistic_fireteam_equipment_3 = { owner = "USA" }
+            anti_tank_equipment_3 = { owner = "USA" }
+            heavy_motorized_equipment_4 = { owner = "USA" }
+        }
+	}
+}
