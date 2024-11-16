@@ -2,7 +2,7 @@
 #				Painted Rock Focus Tree			   #
 ####################################################
 focus_tree = {
-	id = nf_wht
+	id = nf_par
 	country = {
 		factor = 0
 		modifier = {

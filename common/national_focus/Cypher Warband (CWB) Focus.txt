@@ -2,7 +2,7 @@
 #				Cypher Warband Focus Tree		   #
 ####################################################
 focus_tree = {
-	id = nf_wht
+	id = nf_cwb
 	country = {
 		factor = 0
 		modifier = {
