@@ -58,7 +58,7 @@ focus_tree = {
 	#Goober
 	focus = {
 		id = PAR_goober_1
-		icon = GFX_goal_usa_the_last_argument_of_presidents
+		icon = GFX_goal_CES_oklahoma
 		cost = 60
 		x = -10
 		y = 1
@@ -290,7 +290,7 @@ focus_tree = {
     #}
     focus = {
         id = PAR_goober_7
-        icon = GFX_goal_PLS_Embrace_Raider_Ways
+        icon = GFX_goal_CES_painted_rock
         cost = 15
         x = 0
         y = 2

@@ -1662,7 +1662,7 @@ focus_tree = {
 		icon = GFX_goal_generic_focus_magazine_gunsandbullets_gun_laws
 		search_filters = {FOCUS_FILTER_ANNEXATION}
 		cost = 30
-		x = 5
+		x = 0
 		y = 1
 		relative_position_id = ncr_kimball_vindication
 		prerequisite = {
@@ -1819,7 +1819,7 @@ focus_tree = {
 		available = {
 
 		}
-		x = -3
+		x = -2
 		y = 1
 		relative_position_id = ncr_kimball_vindication
 		prerequisite = {
@@ -1895,7 +1895,7 @@ focus_tree = {
 		id = ncr_pressure_arroyo
 		icon = GFX_goal_BOS_seize_arroyo
 		cost = 30
-		x = 0
+		x = 1
 		y = 1
 		relative_position_id = ncr_spear_chop_shop
 		available = {
@@ -1940,7 +1940,7 @@ focus_tree = {
 		id = ncr_secrets_of_navarro
 		icon = GFX_goal_enc_verti
 		cost = 30
-		x = -3
+		x = -2
 		y = 1
 		relative_position_id = ncr_spear_chop_shop
 		available = {
@@ -1984,7 +1984,7 @@ focus_tree = {
 		id = ncr_rapid_expansion
 		icon = GFX_goal_NCR_Rapids_Conquest
 		cost = 30
-		x = -1
+		x = 2
 		y = 1
 		search_filters = {FOCUS_FILTER_ANNEXATION}
 		relative_position_id = ncr_kimball_vindication
@@ -2014,49 +2014,6 @@ focus_tree = {
 	}
 	##Shi relations
 	focus = {
-		id = ncr_shi_business
-		icon = GFX_goal_NCR_Shi_Dragon
-		cost = 30
-		available = {
-
-		}
-		x = 2
-		y = 1
-		relative_position_id = ncr_kimball_vindication
-		prerequisite = {
-			focus = ncr_kimball_vindication
-			focus = ncr_new_hand_on_the_tiller
-		}
-		completion_reward = {
-			news_event = ncr_expansion.26
-		}
-	}
-	focus = {
-		id = ncr_shi_ally
-		icon = GFX_goal_NCR_Shi_Handshake
-		cost = 30
-		available = {
-
-		}
-		bypass = {
-			SHI = {
-				all_core_land_owned_by_prev_sphere = yes
-			}
-		}
-		prerequisite = {
-			focus = ncr_shi_business
-		}
-		x = 0
-		y = 1
-		relative_position_id = ncr_shi_business
-		completion_reward = {
-			SHI = {
-				invite_to_new_california = yes
-			}
-		}
-	}
-
-	focus = {
 		id = ncr_rapidsettlement
 		icon = GFX_goal_NCR_Rapids_Vacation
 		cost = 30
@@ -2064,7 +2021,7 @@ focus_tree = {
 			focus = ncr_rapid_expansion
 		}
 		x = 0
-		y =1
+		y = 1
 		relative_position_id = ncr_rapid_expansion
 		available = {
 			RAP = { NCR = { sphere_controls_all_core_land_of_prev = yes } }
@@ -2306,7 +2263,7 @@ focus = {
 
 	}
 	prerequisite = { focus = ncr_kimball_vindication }
-	x = -12
+	x = -10
 	y = 1
 	relative_position_id = ncr_new_hand_on_the_tiller
 	completion_reward = {
@@ -2610,7 +2567,7 @@ focus = {
 
 	}
 	prerequisite = { focus = ncr_kimball_vindication }
-	x = -5
+	x = -4
 	y = 1
 	relative_position_id = ncr_kimball_vindication
 	completion_reward = {
@@ -3479,7 +3436,7 @@ focus = {
 
 		}
 		prerequisite = { focus = ncr_new_hand_on_the_tiller }
-		x = 7
+		x = 4
 		y = 1
 		relative_position_id = ncr_new_hand_on_the_tiller
 		completion_reward = {
@@ -3496,7 +3453,7 @@ focus = {
 
 		}
 		prerequisite = { focus = ncr_new_hand_on_the_tiller }
-		x = 5
+		x = 2
 		y = 1
 		relative_position_id = ncr_new_hand_on_the_tiller
 		completion_reward = {
@@ -3565,7 +3522,7 @@ focus = {
 		available = {
 
 		}
-		x = 10
+		x = 6
 		y = 1
 		prerequisite = { focus = ncr_new_hand_on_the_tiller  }
 		relative_position_id = ncr_new_hand_on_the_tiller
@@ -3890,13 +3847,14 @@ focus = {
 		cost = 30
 		prerequisite = {
 			focus = ncr_new_hand_on_the_tiller
+			focus = ncr_kimball_vindication
 		}
 		available = {
 			253 = { is_owned_and_controlled_by = ROOT }
 
 		}
 		relative_position_id = ncr_new_hand_on_the_tiller
-		x = 3
+		x = 0
 		y = 1
 		completion_reward = {
 			custom_effect_tooltip = load_gammacore
@@ -4927,16 +4885,13 @@ focus = {
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
 		cancelable = no
 		prerequisite = { focus = ncr_bear_roars }
-		x = -7
+		x = 0
 		y = 1
 		available = {
 			has_country_leader = {
 				character = NCR_grant_c_hayes
 				ruling_only = yes
 			}
-		}
-		allow_branch = {
-			has_country_flag = ncr_hayes_expansion
 		}
 		relative_position_id = ncr_bear_roars
 		completion_reward = {
@@ -4968,7 +4923,7 @@ focus = {
 		prerequisite = {
 			focus = ncr_old_world_comes_knocking
 		}
-		x = -7
+		x = -4
 		y = 1
 		relative_position_id = ncr_old_world_comes_knocking
 		completion_reward = {
@@ -5060,7 +5015,7 @@ focus = {
 		prerequisite = {
 			focus = ncr_old_world_comes_knocking
 		}
-		x = -5
+		x = -2
 		y = 1
 		relative_position_id = ncr_old_world_comes_knocking
 		completion_reward = {
@@ -5168,7 +5123,7 @@ focus = {
 		prerequisite = {
 			focus = ncr_old_world_comes_knocking
 		}
-		x = -3
+		x = 0
 		y = 1
 		relative_position_id = ncr_old_world_comes_knocking
 		completion_reward = {
@@ -5283,7 +5238,7 @@ focus = {
 		prerequisite = {
 			focus = ncr_old_world_comes_knocking
 		}
-		x = -1
+		x = 2
 		y = 1
 		relative_position_id = ncr_old_world_comes_knocking
 		completion_reward = {
@@ -5346,7 +5301,7 @@ focus = {
 				all_core_land_owned_by_prev_sphere = yes
 			}
 		}
-		x = 1
+		x = 4
 		y = 1
 		will_lead_to_war_with = SKY
 		relative_position_id = ncr_old_world_comes_knocking
@@ -8738,7 +8693,7 @@ focus = {
 		icon = GFX_goal_enc_electoral_victory
 		cost = 1.5
 		x = 27
-		y = 23
+		y = 25
 		search_filters = { FOCUS_FILTER_NCR_ELECTION }
 		available = {
 			custom_trigger_tooltip = {
