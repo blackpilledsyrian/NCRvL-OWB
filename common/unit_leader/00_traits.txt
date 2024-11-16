@@ -223,7 +223,7 @@ leader_traits = {
 			modifier_army_sub_unit_anti_tank_infantry_attack_factor = 0.1
 			modifier_army_sub_unit_anti_tank_infantry_defence_factor = 0.1
 			modifier_army_sub_unit_power_armour_anti_tank_infantry_attack_factor = 0.1
-			modifier_army_sub_unit__power_armour_anti_tank_infantry_defence_factor = 0.1
+			modifier_army_sub_unit_power_armour_anti_tank_infantry_defence_factor = 0.1
 			modifier_army_sub_unit_motorized_anti_tank_attack_factor = 0.1
 			modifier_army_sub_unit_motorized_anti_tank_defence_factor = 0.1
 		}
@@ -1404,8 +1404,8 @@ leader_traits = {
 
 		modifier = {
 			desert = {
-				attack = 0.1
-				defence = 0.1
+				attack = 0.05
+				defence = 0.05
 			}
 		}
 
