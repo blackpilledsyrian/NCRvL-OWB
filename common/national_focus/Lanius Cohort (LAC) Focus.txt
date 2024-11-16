@@ -1845,7 +1845,7 @@ focus_tree = {
 	focus = {
 		id = lac_good_boy_puppet
 		icon = GFX_goal_lac_old_helm
-		cost = 120
+		cost = 60
 		prerequisite = {
 			focus = lac_brought_to_heel
 		}
@@ -1890,7 +1890,7 @@ focus_tree = {
 	focus = {
 		id = lac_the_march_west
 		icon = GFX_goal_NCR_Damassault
-		cost = 120
+		cost = 60
 		prerequisite = {
 			focus = lac_brought_to_heel
 		}
