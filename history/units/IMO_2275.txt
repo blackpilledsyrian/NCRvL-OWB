@@ -1,0 +1,125 @@
+﻿division_template = {
+	name = "Slagboyz"
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Attis Army Remnants"
+	regiments = {
+		super_mutant_infantry = { x = 0 y = 0 }
+		super_mutant_infantry = { x = 0 y = 1 }
+		super_mutant_infantry = { x = 0 y = 2 }
+		super_mutant_infantry = { x = 2 y = 0 }
+		super_mutant_infantry = { x = 1 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Battlewagons"
+	template_counter= 45
+	regiments = {
+		tank = { x = 0 y = 0 }
+		tank = { x = 0 y = 1 }
+		tank = { x = 1 y = 0 }
+		tank = { x = 1 y = 1 }
+		tank = { x = 1 y = 2 }
+		motorized = { x = 2 y = 0 }
+		motorized = { x = 2 y = 1 }
+		motorized = { x = 2 y = 2 }
+		motorized = { x = 2 y = 3 }
+		motorized = { x = 3 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Wartruckz"
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 2 y = 0 }
+		motorized = { x = 2 y = 1 }
+	}
+}
+
+units = {
+	division = {
+		name = "Mekboyz"
+		location = 11411
+		division_template = "Battlewagons"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Sluggaz"
+		location = 11362
+		division_template = "Battlewagons"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Stikkaz"
+		location = 11347
+		division_template = "Battlewagons"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "'Ardboyz"
+		location = 11340
+		division_template = "Battlewagons"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "'Tuffboyz"
+		location = 11340
+		division_template = "Battlewagons"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "'Fastboyz"
+		location = 11340
+		division_template = "Battlewagons"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+}
+
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = tank_equipment_1
+			creator = "IMO"
+		}
+		requested_factories = 3
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = heavy_motorized_equipment_1
+			creator = "IMO"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_1
+			creator = "IMO"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+}

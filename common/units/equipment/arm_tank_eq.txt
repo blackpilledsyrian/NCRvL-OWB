@@ -25,15 +25,15 @@ equipments = {
 		reliability = 0.8
 
 		#Defensive Abilities
-		defense = 10
-		breakthrough = 35
+		defense = 7
+		breakthrough = 25
 		hardness = 0.8
 		armor_value = 50
 		fuel_consumption = 0.6
 
 		#Offensive Abilities
-		soft_attack = 25
-		hard_attack = 25
+		soft_attack = 20
+		hard_attack = 20
 		ap_attack = 30
 		air_attack = 0
 
@@ -52,7 +52,7 @@ equipments = {
 		visual_level = 0
 		is_convertable = yes
 
-		build_cost_ic = 65
+		build_cost_ic = 45
 		resources = {
 			metal = 2
 			water = 2
@@ -74,18 +74,18 @@ equipments = {
 		maximum_speed = 8
 
 		#Defensive Abilities
-		defense = 12
-		breakthrough = 45
+		defense = 9
+		breakthrough = 35
 		hardness = 0.85
 		armor_value = 60
 		fuel_consumption = 0.8
 
 		#Offensive Abilities
-		soft_attack = 35
-		hard_attack = 35
+		soft_attack = 30
+		hard_attack = 30
 		ap_attack = 40
 
-		build_cost_ic = 75
+		build_cost_ic = 50
 		resources = {
 			metal = 3
 			water = 2
@@ -107,18 +107,18 @@ equipments = {
 		maximum_speed = 9
 
 		#Defensive Abilities
-		defense = 14
-		breakthrough = 50
+		defense = 11
+		breakthrough = 40
 		hardness = 0.9
 		armor_value = 65
 		fuel_consumption = 1
 
 		#Offensive Abilities
-		soft_attack = 45
-		hard_attack = 45
+		soft_attack = 35
+		hard_attack = 35
 		ap_attack = 50
 
-		build_cost_ic = 85
+		build_cost_ic = 55
 		resources = {
 			composites = 2
 			water = 3
@@ -140,18 +140,18 @@ equipments = {
 		maximum_speed = 10
 
 		#Defensive Abilities
-		defense = 16
-		breakthrough = 60
+		defense = 13
+		breakthrough = 50
 		hardness = 0.95
 		armor_value = 75
 		fuel_consumption = 1.2
 
 		#Offensive Abilities
-		soft_attack = 60
-		hard_attack = 60
+		soft_attack = 45
+		hard_attack = 45
 		ap_attack = 60
 
-		build_cost_ic = 100
+		build_cost_ic = 65
 		resources = {
 			composites = 3
 			water = 3

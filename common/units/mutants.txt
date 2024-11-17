@@ -142,10 +142,10 @@ sub_units = {
 		max_organisation = 75
 		default_morale = 0.4
 		manpower = 25 # 1000
-		soft_attack = 0.15
-		hard_attack = 0.15
-		defense = 0.15
-		breakthrough = 0.15
+		soft_attack = 0.05
+		hard_attack = 0.05
+		defense = 0.05
+		breakthrough = 0.05
 
 		training_time = 150
 		suppression = 1
@@ -172,14 +172,14 @@ sub_units = {
 			movement = 0.05
 		}
 		hills = {
-			attack = 0.15
-			defence = 0.15
-			movement = 0.15
+			attack = 0.1
+			defence = 0.1
+			movement = 0.1
 		}
 		mountain = {
-			attack = 0.15
-			defence = 0.15
-			movement = 0.15
+			attack = 0.1
+			defence = 0.1
+			movement = 0.1
 		}
 		desert = {
 			attack = 0.05

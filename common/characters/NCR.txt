@@ -1093,14 +1093,14 @@ characters = {
 				}
 			}
 			available = {
-				has_country_flag = ncr_veronica_came
+				has_completed_focus = ncr_brotherhood_diplomacy
 			}
 			traits = {
 				promising_follower
 			}
 			research_bonus = {
 				electronics = 0.1
-				cat_grand_army = 0.08
+				cat_grand_army = 0.15
 			}
 			cost = 100
 			ai_will_do = {

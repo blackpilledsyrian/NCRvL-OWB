@@ -2414,9 +2414,22 @@ focus_tree = {
 					}
 				}
 				add_core_of = ARR
+				set_state_flag = do_not_exodus
 			}
 			annex_country = {
 				target = UMB
+				transfer_troops = yes
+			}
+			annex_country = {
+				target = PAC
+				transfer_troops = yes
+			}
+			annex_country = {
+				target = MXS
+				transfer_troops = yes
+			}
+			annex_country = {
+				target = FOU
 				transfer_troops = yes
 			}
 			add_opinion_modifier = {
