@@ -1519,7 +1519,6 @@ focus_tree = {
 		cost = 30
 		search_filters = { FOCUS_FILTER_IDEAS FOCUS_FILTER_STABILITY }
 		available = {
-
 			has_country_flag = ncr_vote_no_confidence
 		}
 		prerequisite = { focus = ncr_support_allgood }
@@ -1569,6 +1568,9 @@ focus_tree = {
 			350 = {
 				add_extra_state_shared_building_slots = 5
 			}
+			custom_effect_tooltip = ncr_bonyard_production_tt
+			add_to_variable = { ncr_arms_factory_efficiency = 0.05 }
+			force_update_dynamic_modifier = yes
 			custom_effect_tooltip = ncr_boneyard_success_story_tt
 			set_temp_variable = { vonc_change = 20 }
 			increase_allgood_score = yes
@@ -1943,11 +1945,6 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = ncr_spear_chop_shop
-		available = {
-			NAT = { NCR = { sphere_controls_all_core_land_of_prev = yes } }
-
-		}
-
 		prerequisite = {
 			focus = ncr_frontier_tamed
 		}
@@ -2330,18 +2327,7 @@ focus = {
 	}
 	x = 2
 	y = 1
-	bypass = {
-		NAT = {
-			NOT = {
-				NCR = { sphere_controls_all_core_land_of_prev = yes }
-			}
-		}
-	}
 	relative_position_id = ncr_forceful_empire
-	available = {
-		NAT = { NCR = { sphere_controls_all_core_land_of_prev = yes } }
-
-	}
 	completion_reward = {
 		custom_effect_tooltip = ncr_exploit_navarro_tt
 		441 = {
@@ -2380,17 +2366,6 @@ focus = {
 	x = 0
 	y = 1
 	relative_position_id = ncr_exploit_navarro
-	available = {
-		NAT = { NCR = { sphere_controls_all_core_land_of_prev = yes } }
-
-	}
-	bypass = {
-		NAT = {
-			NOT = {
-				NCR = { sphere_controls_all_core_land_of_prev = yes }
-			}
-		}
-	}
 	completion_reward = {
 		441 = {
 			add_extra_state_shared_building_slots = 2
@@ -3601,6 +3576,10 @@ focus = {
 		y = 1
 		relative_position_id = ncr_rural_revitalisation_act
 		completion_reward = {
+			add_to_variable = { ncr_industrial_factories = 0.1 }
+			add_to_variable = { ncr_arms_factory_efficiency = 0.05 }
+			force_update_dynamic_modifier = yes
+			custom_effect_tooltip = ncr_corruption_campaigns_tt
 			retire_character = NCR_alice_mclafferty
 			custom_effect_tooltip = ncr_campaigns_against_corruption_tt
 			unlock_decision_category_tooltip = NCR_anti_corruption_campaigns
@@ -3828,14 +3807,6 @@ focus = {
 		cost = 15
 		prerequisite = { focus = ncr_inject_liquidity }
 		prerequisite = { focus = ncr_brotherhood_diplomacy }
-		available = {
-			NAT = {
-				NCR = {
-					sphere_controls_all_core_land_of_prev = yes
-				}
-			}
-
-		}
 		x = -3
 		y = 1
 		relative_position_id = ncr_inject_liquidity
@@ -4867,6 +4838,9 @@ focus = {
 		}
 		completion_reward = {
 			add_research_slot = 1
+			set_technology = {
+				exploitation_tech_level_scientific = 1
+			}
 			add_ideas = ncr_idea_california_resurgent
 			set_temp_variable = { temp_nf_reduction = 0.25 }
 			63 = {
@@ -9115,7 +9089,7 @@ focus = {
 	focus = {
 		id = ncr_mossman_conspiracy
 		icon = GFX_goal_NCR_Calhoun
-		cost = 30
+		cost = 15
 		cancelable = no
 		prerequisite = { focus = ncr_california_in_crisis }
 		mutually_exclusive = { focus = ncr_put_down_revanchists }
@@ -9150,7 +9124,7 @@ focus = {
 	focus = {
 		id = ncr_the_great_march
 		icon = GFX_goal_NCR_Calhoun_Angry_People
-		cost = 30
+		cost = 15
 		cancelable = no
 		prerequisite = { focus = ncr_mossman_conspiracy }
 		x = 4
@@ -9171,7 +9145,7 @@ focus = {
 	focus = {
 		id = ncr_good_man_goes_war
 		icon = GFX_goal_NCR_Calhoun_Militia_Man
-		cost = 30
+		cost = 15
 		prerequisite = {
 			focus = ncr_the_great_march
 		}
@@ -9188,7 +9162,7 @@ focus = {
 	focus = {
 		id = ncr_sic_semper_tyrannis
 		icon = GFX_goal_NCR_Calhoun_Moore
-		cost = 30
+		cost = 15
 		prerequisite = {
 			focus = ncr_good_man_goes_war
 		}
@@ -9205,7 +9179,7 @@ focus = {
 	focus = {
 		id = ncr_samson_option
 		icon = GFX_goal_NCR_Calhoun_Samson
-		cost = 30
+		cost = 15
 		prerequisite = {
 			focus = ncr_good_man_goes_war
 		}
@@ -9221,7 +9195,7 @@ focus = {
 	focus = {
 		id = ncr_follower_industry
 		icon = GFX_goal_NCR_Calhoun_Followers_Blueprints
-		cost = 30
+		cost = 15
 		prerequisite = {
 			focus = ncr_samson_option
 		}
@@ -9246,7 +9220,7 @@ focus = {
 	focus = {
 		id = ncr_end_the_exploitation
 		icon = GFX_goal_NCR_Calhoun_Water_Tower
-		cost = 30
+		cost = 15
 		prerequisite = {
 			focus = ncr_samson_option
 		}
@@ -9302,7 +9276,7 @@ focus = {
 	focus = {
 		id = ncr_we_are_the_republic
 		icon = GFX_goal_NCR_Calhoun_People
-		cost = 30
+		cost = 15
 		prerequisite = {
 			focus = ncr_end_the_exploitation
 		}
@@ -9319,7 +9293,7 @@ focus = {
 	focus = {
 		id = ncr_stimpak_on_hand
 		icon = GFX_goal_NCR_Calhoun_Stimpak
-		cost = 30
+		cost = 15
 		prerequisite = {
 			focus = ncr_good_man_goes_war
 		}
@@ -9338,7 +9312,7 @@ focus = {
 	focus = {
 		id = ncr_and_rifle_on_other
 		icon = GFX_goal_NCR_Calhoun_Gun
-		cost = 30
+		cost = 15
 		prerequisite = {
 			focus = ncr_good_man_goes_war
 		}
@@ -9357,7 +9331,7 @@ focus = {
 	focus = {
 		id = ncr_learning_from_the_past
 		icon = GFX_goal_NCR_Calhoun_Caesar
-		cost = 30
+		cost = 15
 		prerequisite = {
 			focus = ncr_and_rifle_on_other
 		}
@@ -9375,7 +9349,7 @@ focus = {
 	focus = {
 		id = ncr_forcing_the_truth
 		icon = GFX_goal_NCR_Calhoun_Speaker_VB
-		cost = 30
+		cost = 15
 		prerequisite = {
 			focus = ncr_sic_semper_tyrannis
 		}
@@ -9389,7 +9363,7 @@ focus = {
 	focus = {
 		id = ncr_justice_for_the_corrupt
 		icon = GFX_goal_NCR_Calhoun_Justice
-		cost = 30
+		cost = 15
 		prerequisite = {
 			focus = ncr_sic_semper_tyrannis
 		}
@@ -9403,7 +9377,7 @@ focus = {
 	focus = {
 		id = ncr_and_the_californian_way
 		icon = GFX_goal_NCR_Calhoun_Common_Man
-		cost = 30
+		cost = 15
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_STABILITY }
 		prerequisite = {
 			focus = ncr_justice_for_the_corrupt
@@ -9454,7 +9428,7 @@ focus = {
 	focus = {
 		id = ncr_calhoun_comes_marching_home
 		icon = GFX_goal_NCR_Calhoun_Workers
-		cost = 30
+		cost = 15
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
 		prerequisite = {
 			focus = ncr_learning_from_the_past
@@ -9480,7 +9454,7 @@ focus = {
 	focus = {
 		id = ncr_from_many_one
 		icon = GFX_goal_NCR_Calhoun_Logo
-		cost = 30
+		cost = 15
 		search_filters = { FOCUS_FILTER_STABILITY }
 		available = {
 			owns_state = 253
@@ -9501,9 +9475,15 @@ focus = {
 		completion_reward = {
 			#country_event = ncr_dharma.5
 			add_stability = 0.15
-
 			custom_effect_tooltip = ncr_from_many_one_tt
+			custom_effect_tooltip = ncr_lawkeepers_tt
 			hidden_effect = {
+				set_technology = {
+					police_infantry_tech = 1
+					tbh_lawkeepers_tech_1 = 1
+					tbh_lawkeepers_tech_2 = 1
+					tbh_lawkeepers_tech_3 = 1
+				}
 				remove_ideas = ncr_we_are_the_republic
 				remove_ideas = ncr_truth
 				remove_ideas = ncr_justice
@@ -9520,7 +9500,7 @@ focus = {
 	focus = {
 		id = ncr_put_down_revanchists
 		icon = GFX_goal_NCR_Moore_Shoot_Moss
-		cost = 30
+		cost = 15
 		cancelable = no
 		prerequisite = { focus = ncr_california_in_crisis }
 		mutually_exclusive = { focus = ncr_mossman_conspiracy }
@@ -9542,7 +9522,8 @@ focus = {
 			x = 3
 			y = 0
 			trigger = {
-				has_country_flag = Moore			}
+				has_country_flag = Moore
+			}
 		}
 		completion_reward = {
 			country_event = ncr_order.1
@@ -9559,7 +9540,7 @@ focus = {
 	focus = {
 		id = ncr_dissolve_committee
 		icon = GFX_goal_NCR_Moore_Ranger
-		cost = 30
+		cost = 15
 		cancelable = no
 		prerequisite = { focus = ncr_put_down_revanchists }
 		offset = {
@@ -9585,7 +9566,7 @@ focus = {
 	focus = {
 		id = ncr_secure_the_ncr
 		icon = GFX_goal_NCR_Moore_Trooper
-		cost = 30
+		cost = 15
 		prerequisite = {
 			focus = ncr_dissolve_committee
 		}
@@ -9600,7 +9581,7 @@ focus = {
 	focus = {
 		id = ncr_take_gun_runner_facilities
 		icon = GFX_goal_NCR_Moore_Workshop
-		cost = 30
+		cost = 15
 		prerequisite = {
 			focus = ncr_secure_the_ncr
 		}
@@ -9623,7 +9604,7 @@ focus = {
 	focus = {
 		id = ncr_deal_with_barons
 		icon = GFX_goal_NCR_Moore_Flynn
-		cost = 30
+		cost = 15
 		x = -4
 		y = 1
 		prerequisite = {
@@ -9657,7 +9638,7 @@ focus = {
 	focus = {
 		id = ncr_eliminate_barons
 		icon = GFX_goal_NCR_Moore_Kick_Barons
-		cost = 30
+		cost = 15
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
 		prerequisite = {
 			focus = ncr_deal_with_barons
@@ -9680,7 +9661,7 @@ focus = {
 	focus = {
 		id = ncr_ally_with_barons
 		icon = GFX_goal_NCR_Moore_Ally_Barons
-		cost = 30
+		cost = 15
 		prerequisite = {
 			focus = ncr_deal_with_barons
 		}
@@ -9728,7 +9709,7 @@ focus = {
 	focus = {
 		id = ncr_gun_runner_engineers
 		icon = GFX_goal_NCR_Moore_Weapons_Build
-		cost = 30
+		cost = 15
 		prerequisite = {
 			focus = ncr_ally_with_barons
 			focus = ncr_eliminate_barons
@@ -9749,7 +9730,7 @@ focus = {
 	focus = {
 		id = ncr_study_gun_runner_schematics
 		icon = GFX_goal_NCR_Moore_Schemes
-		cost = 30
+		cost = 15
 		prerequisite = {
 			focus = ncr_ally_with_barons
 			focus = ncr_eliminate_barons
@@ -9775,7 +9756,7 @@ focus = {
 	focus = {
 		id = ncr_new_procurement_system
 		icon = GFX_goal_NCR_Moore_Guns
-		cost = 30
+		cost = 15
 		prerequisite = {
 			focus = ncr_gun_runner_engineers
 			focus = ncr_study_gun_runner_schematics
@@ -9807,7 +9788,7 @@ focus = {
 	focus = {
 		id = ncr_junker_resistance
 		icon = GFX_goal_NCR_Moore_Junker
-		cost = 30
+		cost = 15
 		prerequisite = {
 			focus = ncr_secure_the_ncr
 		}
@@ -9826,7 +9807,7 @@ focus = {
 	focus = {
 		id = ncr_junkertank
 		icon = GFX_goal_NCR_Moore_Tank
-		cost = 30
+		cost = 15
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
 		prerequisite = {
 			focus = ncr_junker_resistance
@@ -9858,7 +9839,7 @@ focus = {
 	focus = {
 		id = ncr_junkertroop
 		icon = GFX_goal_NCR_Moore_Troops
-		cost = 30
+		cost = 15
 		prerequisite = {
 			focus = ncr_junker_resistance
 		}
@@ -9904,7 +9885,7 @@ focus = {
 	focus = {
 		id = ncr_moore_brave_sons
 		icon = GFX_goal_NCR_Moore_Trooper_2
-		cost = 30
+		cost = 15
 		prerequisite = {
 			focus = ncr_secure_the_ncr
 		}
@@ -9943,7 +9924,7 @@ focus = {
 	focus = {
 		id = ncr_moore_trainings
 		icon = GFX_goal_NCR_Moore_Training
-		cost = 30
+		cost = 15
 		available = {
 			if = {
 				limit = { NOT = { is_ai = yes } }
@@ -9967,7 +9948,7 @@ focus = {
 	focus = {
 		id = ncr_moore_loyalty_and_patriotism
 		icon = GFX_goal_NCR_Moore_2Bears
-		cost = 30
+		cost = 15
 		available = {
 			if = {
 				limit = { NOT = { is_ai = yes } }
@@ -9988,7 +9969,7 @@ focus = {
 	focus = {
 		id = ncr_hire_granite_company
 		icon = GFX_goal_NCR_Moore_Granite
-		cost = 30
+		cost = 15
 		prerequisite = {
 			focus = ncr_moore_loyalty_and_patriotism
 		}
@@ -10077,7 +10058,7 @@ focus = {
 	focus = {
 		id = ncr_ranger_focus
 		icon = GFX_goal_NCR_Moore_Ranger_2
-		cost = 30
+		cost = 15
 		prerequisite = {
 			focus = ncr_moore_loyalty_and_patriotism
 		}
@@ -10103,7 +10084,7 @@ focus = {
 	focus = {
 		id = ncr_loyal_officer_promotions
 		icon = GFX_goal_NCR_Moore_Medals
-		cost = 30
+		cost = 15
 		prerequisite = {
 			focus = ncr_hire_granite_company
 			focus = ncr_ranger_focus
@@ -10118,7 +10099,7 @@ focus = {
 	focus = {
 		id = ncr_knock_on_redding_door
 		icon = GFX_goal_NCR_Moore_Brahmin
-		cost = 30
+		cost = 15
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		available = {
 			owns_state = 350
@@ -10182,7 +10163,7 @@ focus = {
 	focus = {
 		id = ncr_moore_victorious
 		icon = GFX_goal_NCR_Moore_with_Flag
-		cost = 30
+		cost = 15
 		prerequisite = {
 			focus = ncr_knock_on_redding_door
 		}
@@ -10201,7 +10182,7 @@ focus = {
 	focus = {
 		id = ncr_moore_black_cobra
 		icon = GFX_goal_NCR_Moore_Coobra
-		cost = 30
+		cost = 15
 		prerequisite = {
 			focus = ncr_moore_victorious
 		}
@@ -10215,7 +10196,7 @@ focus = {
 	focus = {
 		id = ncr_moore_blame_bos
 		icon = GFX_goal_NCR_Moore_Point_Finger
-		cost = 30
+		cost = 15
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
 		prerequisite = {
 			focus = ncr_moore_black_cobra
@@ -10230,7 +10211,7 @@ focus = {
 	focus = {
 		id = ncr_moore_the_last_thing
 		icon = GFX_goal_NCR_Moore_Sniper
-		cost = 30
+		cost = 15
 		prerequisite = {
 			focus = ncr_moore_black_cobra
 		}
@@ -10319,7 +10300,7 @@ focus = {
 	focus = {
 		id = ncr_enemies_of_the_state
 		icon = GFX_goal_NCR_Moore_Burn_Followers
-		cost = 30
+		cost = 15
 		available = {
 			owns_state = 350
 		}
@@ -10392,7 +10373,7 @@ focus = {
 	focus = {
 		id = ncr_compliance_laws
 		icon = GFX_goal_NCR_Moore_Police
-		cost = 30
+		cost = 15
 		x = 0
 		y = 2
 		prerequisite = {
@@ -10400,13 +10381,16 @@ focus = {
 		}
 		relative_position_id = ncr_enemies_of_the_state
 		completion_reward = {
+			set_technology = {
+				warden_doggos_tech = 1
+			}
 			add_ideas = ncr_compliance_laws_idea
 		}
 	}
 	focus = {
 		id = ncr_moore_eastern_enemy
 		icon = GFX_goal_NCR_Moore_Shoot_Legion
-		cost = 30
+		cost = 15
 		available = {
 		}
 		bypass = {
@@ -10435,7 +10419,7 @@ focus = {
 	focus = {
 		id = ncr_a_cruel_irony
 		icon = GFX_goal_NCR_Moore_Legion_Slave
-		cost = 30
+		cost = 15
 		available = {
 		}
 		prerequisite = {
@@ -10453,7 +10437,7 @@ focus = {
 	focus = {
 		id = ncr_moore_california_mother
 		icon = GFX_goal_NCR_Moore_with_Flag_2
-		cost = 30
+		cost = 15
 		available = {
 			owns_state = 157
 		}

@@ -1,0 +1,1261 @@
+eur_scavenging_category = {
+	eur_emergency_workshops = {
+		icon = GFX_decision_hammer
+		visible = {
+			has_country_flag = eur_arroyo_war
+		}
+		custom_cost_trigger = {
+			has_army_experience > 19
+		}
+		custom_cost_text = army_xp_more_than_20
+
+		fire_only_once = yes
+		complete_effect = {
+			army_experience = -20
+			39 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+		ai_will_do = { factor = 100 }
+	}
+	eur_recall_retirees = {
+		icon = GFX_decision_army_helmet
+		visible = {
+			has_country_flag = eur_arroyo_war
+		}
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 40 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		fire_only_once = yes
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -40 }
+			add_caps = yes
+			39 = {
+				create_unit = {
+					division = "name = \"Portmasters\" division_template = \"Portmasters\" start_experience_factor = 0.8 start_equipment_factor = 0.5"
+					owner = EUR
+				}
+			}
+		}
+		ai_will_do = { factor = 100 }
+	}
+	eur_scavenge_infantry_equipment = {
+		icon = GFX_decision_pipegun_2
+		visible = {
+			NOT = { has_completed_focus = eur_guns_quickly }
+		}
+		available = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				OR = {
+					has_equipment = {
+						infantry_equipment < 76
+					}
+					has_equipment = {
+						spec_ops_equipment < 31
+					}
+				}
+			}
+		}
+		days_remove = 30
+		#modifier = {
+		#	production_speed_buildings_factor = 0.05
+		#}
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 10 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -10 }
+			add_caps = yes
+		}
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 75
+			}
+			if = {
+				limit = {
+					has_completed_focus = eur_guns_in_bulk
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 30
+				}
+			}
+			add_equipment_to_stockpile = {
+				type = spec_ops_equipment
+				amount = 30
+			}
+		}
+		ai_will_do = { factor = 100 }
+	}
+
+
+	eur_scavenge_infantry_equipment2 = {
+		icon = GFX_decision_pipegun_2
+		visible = {
+			has_completed_focus = eur_guns_quickly
+		}
+		available = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				OR = {
+					has_equipment = {
+						infantry_equipment < 76
+					}
+					has_equipment = {
+						spec_ops_equipment < 31
+					}
+				}
+			}
+		}
+		days_remove = 15
+		#modifier = {
+		#	production_speed_buildings_factor = 0.05
+		#}
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 10 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -10 }
+			add_caps = yes
+		}
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 75
+			}
+			add_equipment_to_stockpile = {
+				type = spec_ops_equipment
+				amount = 30
+			}
+		}
+		ai_will_do = { factor = 100 }
+	}
+	eur_scavenge_support_equipment = {
+		icon = GFX_decision_medX
+		visible = {
+			NOT = { has_completed_focus = eur_rapid_repair }
+		}
+		available = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				OR = {
+					has_equipment = {
+						support_equipment < 41
+					}
+					has_equipment = {
+						spec_ops_equipment < 16
+					}
+				}
+			}
+		}
+		days_remove = 30
+		#modifier = {
+		#	production_speed_buildings_factor = 0.05
+		#}
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 20 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -20 }
+			add_caps = yes
+		}
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 40
+			}
+			add_equipment_to_stockpile = {
+				type = spec_ops_equipment
+				amount = 15
+			}
+			country_event = {
+				id = nf_eureka.5
+			}
+		}
+		ai_will_do = { factor = 100 }
+	}
+	eur_scavenge_support_equipment2 = {
+		icon = GFX_decision_medX
+		visible = {
+			has_completed_focus = eur_rapid_repair
+		}
+		available = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				OR = {
+					has_equipment = {
+						support_equipment < 41
+					}
+					has_equipment = {
+						spec_ops_equipment < 16
+					}
+				}
+			}
+		}
+		days_remove = 15
+		#modifier = {
+		#	production_speed_buildings_factor = 0.05
+		#}
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 20 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -20 }
+			add_caps = yes
+		}
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 40
+			}
+			add_equipment_to_stockpile = {
+				type = spec_ops_equipment
+				amount = 15
+			}
+			country_event = {
+				id = nf_eureka.5
+			}
+		}
+		ai_will_do = { factor = 100 }
+	}
+	eur_scavenge_motorbikes = {
+		icon = GFX_decision_jeep
+		visible = {
+			NOT = { has_completed_focus = eur_bypassed_wires }
+		}
+		available = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				OR = {
+					has_equipment = {
+						motorized_equipment < 41
+					}
+					has_equipment = {
+						spec_ops_equipment < 16
+					}
+				}
+			}
+		}
+		days_remove = 30
+		#modifier = {
+		#	production_speed_buildings_factor = 0.05
+		#}
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 20 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -20 }
+			add_caps = yes
+		}
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = motorized_equipment
+				amount = 40
+			}
+			if = {
+				limit = {
+					has_completed_focus = eur_spare_tires
+				}
+				add_equipment_to_stockpile = {
+					type = motorized_equipment
+					amount = 20
+				}
+			}
+			add_equipment_to_stockpile = {
+				type = spec_ops_equipment
+				amount = 15
+			}
+		}
+		ai_will_do = { factor = 100 }
+	}
+	eur_scavenge_motorbikes2 = {
+		icon = GFX_decision_jeep
+		visible = {
+			has_completed_focus = eur_bypassed_wires
+		}
+		available = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				OR = {
+					has_equipment = {
+						motorized_equipment < 41
+					}
+					has_equipment = {
+						spec_ops_equipment < 16
+					}
+				}
+			}
+		}
+		days_remove = 15
+		#modifier = {
+		#	production_speed_buildings_factor = 0.05
+		#}
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 20 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -20 }
+			add_caps = yes
+		}
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = motorized_equipment
+				amount = 40
+			}
+			add_equipment_to_stockpile = {
+				type = spec_ops_equipment
+				amount = 15
+			}
+		}
+		ai_will_do = { factor = 100 }
+	}
+	eur_scavenge_power_armor = {
+		icon = GFX_decision_t51
+		visible = {
+			has_completed_focus = eur_decrepit_power_armor
+		}
+		available = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				OR = {
+					has_equipment = {
+						power_armor_equipment < 31
+					}
+					has_equipment = {
+						spec_ops_equipment < 16
+					}
+				}
+			}
+		}
+		days_remove = 30
+		#modifier = {
+		#	production_speed_buildings_factor = 0.05
+		#}
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 20 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -20 }
+			add_caps = yes
+		}
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = power_armor_equipment
+				amount = 30
+			}
+			if = {
+				limit = {
+					has_completed_focus = eur_makeshift_power_armor
+				}
+				add_equipment_to_stockpile = {
+					type = power_armor_equipment
+					amount = 20
+				}
+			}
+			add_equipment_to_stockpile = {
+				type = spec_ops_equipment
+				amount = 15
+			}
+		}
+		ai_will_do = { factor = 100 }
+	}
+	eur_scavenge_planes = {
+		icon = GFX_decision_vertibird
+		visible = {
+			has_completed_focus = eur_scavenge_airplanes
+		}
+		available = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				OR = {
+					has_equipment = {
+						fighter_equipment < 21
+					}
+					has_equipment = {
+						spec_ops_equipment < 16
+					}
+				}
+			}
+		}
+		days_remove = 30
+		#modifier = {
+		#	production_speed_buildings_factor = 0.05
+		#}
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 40 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -40 }
+			add_caps = yes
+		}
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = fighter_equipment
+				amount = 15
+			}
+			if = {
+				limit = {
+					has_completed_focus = eur_reuse_vertibird_engines
+				}
+				add_equipment_to_stockpile = {
+					type = fighter_equipment
+					amount = 15
+				}
+			}
+			add_equipment_to_stockpile = {
+				type = spec_ops_equipment
+				amount = 15
+			}
+		}
+		ai_will_do = { factor = 25 }
+	}
+	eur_massive_scavenging_effort = {
+		icon = GFX_decision_box_open
+		available = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				OR = {
+					has_equipment = {
+						infantry_equipment < 71
+					}
+					has_equipment = {
+						spec_ops_equipment < 71
+					}
+					has_equipment = {
+						support_equipment < 41
+					}
+					has_equipment = {
+						motorized_equipment < 41
+					}
+				}
+			}
+		}
+		days_remove = 30
+		#modifier = {
+		#	production_speed_buildings_factor = 0.05
+		#}
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 50 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -50 }
+			add_caps = yes
+		}
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 70
+			}
+			add_equipment_to_stockpile = {
+				type = spec_ops_equipment
+				amount = 70
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 40
+			}
+			add_equipment_to_stockpile = {
+				type = motorized_equipment
+				amount = 40
+			}
+		}
+		ai_will_do = { factor = 100 }
+	}
+	eur_raise_irregulars = {
+		icon = GFX_decision_pitchfork
+		days_remove = 30
+		available = {
+			has_template = "Portmasters"
+		}
+		#modifier = {
+		#	production_speed_buildings_factor = 0.05
+		#}
+		custom_cost_trigger = {
+			has_army_experience > 19
+		}
+		custom_cost_text = army_xp_more_than_20
+		complete_effect = {
+			army_experience = -20
+		}
+		remove_effect = {
+			hidden_effect = {
+				capital_scope = {
+					create_unit = {
+						division = "name = \"Portmasters\" division_template = \"Portmasters\" start_experience_factor = 0.8 start_equipment_factor = 0.5"
+						owner = EUR
+					}
+				}
+			}
+			custom_effect_tooltip = eureka_raise_irregulars_tt
+		}
+		ai_will_do = { factor = 100 }
+	}
+	eur_raise_fishermen = {
+		icon = GFX_decision_generic_military
+		available = {
+			has_template = "True Fishermen"
+		}
+		days_remove = 30
+		#modifier = {
+		#	production_speed_buildings_factor = 0.05
+		#}
+		custom_cost_trigger = {
+			has_army_experience > 39
+		}
+		custom_cost_text = army_xp_more_than_40
+		complete_effect = {
+			army_experience = -40
+		}
+		remove_effect = {
+			hidden_effect = {
+				capital_scope = {
+					create_unit = {
+						division = "name = \"True Fishermen\" division_template = \"True Fishermen\" start_experience_factor = 0.8 start_equipment_factor = 0.5"
+						owner = EUR
+					}
+				}
+			}
+			custom_effect_tooltip = eureka_raise_fishermen_tt
+		}
+		ai_will_do = { factor = 100 }
+	}
+	eur_raise_metalbreakers = {
+		icon = GFX_decision_generic_military
+		available = {
+			has_template = "Metalbreakers"
+		}
+		days_remove = 30
+		#modifier = {
+		#	production_speed_buildings_factor = 0.05
+		#}
+		custom_cost_trigger = {
+			has_army_experience > 39
+		}
+		custom_cost_text = army_xp_more_than_40
+		complete_effect = {
+			army_experience = -40
+		}
+		remove_effect = {
+			hidden_effect = {
+				capital_scope = {
+					create_unit = {
+						division = "name = \"Metalbreakers\" division_template = \"Metalbreakers\" start_experience_factor = 0.8 start_equipment_factor = 0.5"
+						owner = EUR
+					}
+				}
+			}
+			custom_effect_tooltip = eureka_raise_metalbreakers_tt
+		}
+		ai_will_do = { factor = 100 }
+	}
+	eur_raise_motorized = {
+		icon = GFX_decision_atomic_V8
+		available = {
+			has_template = "Eureka Motorgangers"
+		}
+		days_remove = 30
+		#modifier = {
+		#	production_speed_buildings_factor = 0.05
+		#}
+		custom_cost_trigger = {
+			has_army_experience > 39
+		}
+		custom_cost_text = army_xp_more_than_40
+		complete_effect = {
+			army_experience = -40
+		}
+		remove_effect = {
+			hidden_effect = {
+				capital_scope = {
+					create_unit = {
+						division = "name = \"Eureka Motorgangers\" division_template = \"Eureka Motorgangers\" start_experience_factor = 0.8 start_equipment_factor = 0.5"
+						owner = EUR
+					}
+				}
+			}
+			custom_effect_tooltip = eureka_raise_motorized_tt
+		}
+		ai_will_do = { factor = 100 }
+	}
+	eur_raise_power_armor = {
+		icon = GFX_decision_t51_vb_helm
+		available = {
+			has_template = "31st Mechanized"
+			has_completed_focus = eur_power_armor_training
+		}
+		days_remove = 30
+		#modifier = {
+		#	production_speed_buildings_factor = 0.05
+		#}
+		custom_cost_trigger = {
+			has_army_experience > 39
+		}
+		custom_cost_text = army_xp_more_than_40
+		complete_effect = {
+			army_experience = -40
+		}
+		remove_effect = {
+			hidden_effect = {
+				capital_scope = {
+					create_unit = {
+						division = "name = \"Shelled Warriors" division_template = \"31st Mechanized\" start_experience_factor = 0.8 start_equipment_factor = 1"
+						owner = EUR
+					}
+				}
+			}
+			custom_effect_tooltip = eureka_raise_shelled_warriors_tt
+		}
+		ai_will_do = { factor = 100 }
+	}
+	eur_raise_portmasters = {
+		icon = GFX_decision_marine_helmet
+		available = {
+			has_template = "Regulators"
+		}
+		days_remove = 30
+		#modifier = {
+		#	production_speed_buildings_factor = 0.05
+		#}
+		custom_cost_trigger = {
+			has_army_experience > 79
+		}
+		custom_cost_text = army_xp_more_than_80
+		complete_effect = {
+			army_experience = -80
+		}
+		remove_effect = {
+			hidden_effect = {
+				capital_scope = {
+					create_unit = {
+						division = "name = \"Regulators\" division_template = \"Regulators\" start_experience_factor = 0.8 start_equipment_factor = 0.5"
+						owner = EUR
+					}
+				}
+			}
+			custom_effect_tooltip = eureka_raise_portmasters_tt
+		}
+		ai_will_do = { factor = 100 }
+	}
+	eur_prioritize_army_training = {
+		icon = GFX_decision_swag_bag
+		visible = {
+			has_completed_focus = eur_prioritize_army_training
+		}
+		days_remove = 20
+		#modifier = {
+		#	production_speed_buildings_factor = 0.05
+		#}
+		custom_cost_trigger = {
+			has_navy_experience > 19
+		}
+		custom_cost_text = navy_xp_more_than_20
+		complete_effect = {
+			navy_experience = -20
+		}
+		remove_effect = {
+			army_experience = 10
+		}
+		ai_will_do = { factor = 100 }
+	}
+	eur_sell_convoys = {
+		icon = GFX_decision_ringpulls
+		visible = {
+			has_completed_focus = eur_ship_exporting_scheme
+		}
+		available = {
+			has_navy_size = {
+				size > 9
+				type = convoy
+			}
+		}
+		days_remove = 20
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = convoy_1
+				amount = -10
+			}
+		}
+		remove_effect = {
+			set_temp_variable = {
+				caps_to_add = 10
+			}
+			add_caps = yes
+		}
+		ai_will_do = { factor = 100 }
+	}
+}
+EUR_political_infighting = {
+	EUR_setting_examples = { # crackdown
+		icon = GFX_decision_plasma
+		cost = 50
+		priority = 100
+		available = {
+			AND = {
+				has_country_flag = eur_crackdown_justified
+				has_stability > 0.10
+			}
+		}
+		complete_effect = {
+			clr_country_flag = eur_crackdown_justified
+			add_manpower = -30
+			add_stability = -0.05
+			add_popularity = { ideology = elites popularity = -0.05 }
+			add_popularity = { ideology = intellectuals popularity = 0.05 }
+			add_manpower = -1
+		}
+		days_re_enable = 30
+	}
+	EUR_small_speech= {
+		icon = GFX_decision_enc_propaganda
+		cost = 50
+		priority = 50
+		complete_effect = {
+			add_popularity = { ideology = elites popularity = 0.03 }
+		}
+		days_re_enable = 60
+	}
+	EUR_trip_to_vegas= {
+		icon = GFX_decision_single_bottlecap
+		priority = 25
+		cost = 25
+		allowed = { tag = EUR }
+		visible = {
+			elites > 0.2
+		}
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 20 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		complete_effect = {
+			add_popularity = { ideology = intellectuals popularity = 0.11 }
+		}
+		modifier = {
+			intellectuals_drift = -0.1
+		}
+
+		days_remove = 90
+	}
+	EUR_military_exercise = {
+		icon = GFX_decision_enclave_button
+		priority = 0
+		custom_cost_text = command_power_75
+		custom_cost_trigger = {
+			command_power > 74.9
+		}
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -75
+			}
+		}
+		remove_effect = {
+			add_popularity = { ideology = intellectuals popularity = 0.10 }
+			add_manpower = -10
+		}
+		days_re_enable = 100
+	}
+	EUR_texas_holdem= {
+		icon = GFX_decision_cards_3
+		priority = 25
+		cost = 25
+		allowed = { tag = EUR }
+		visible = {
+			elites > 0.2
+		}
+		cost = 30
+
+		complete_effect = {
+			add_popularity = { ideology = intellectuals popularity = 0.10 }
+		}
+		fire_only_once = yes
+	}
+	EUR_cleanse_neuradynes = {
+		icon = GFX_decision_terminal
+		priority = 25
+		cost = 25
+		allowed = { tag = EUR }
+		cost = 30
+
+		complete_effect = {
+			add_popularity = { ideology = people popularity = 0.10 }
+		}
+		fire_only_once = no
+	}
+	EUR_ncr_shipments = {
+		icon = GFX_decision_flamethrower
+
+		allowed = { tag = EUR }
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 20 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		complete_effect = {
+			add_popularity = { ideology = ruler popularity = 0.10 }
+			set_temp_variable = { caps_to_add = -20 }
+			add_caps = yes
+		}
+		fire_only_once = no
+	}
+}
+eur_NCR_hiding = {
+	EUR_hide_activity = {
+		icon = GFX_decision_enc_bear_head #infiltration
+		is_good = no
+		priority = 10
+		activation  = {
+			is_neighbor_of = NCR
+			has_country_flag = ncr_suspicious	# when ncr is suspicious
+			check_variable = { EUR_suspicion > 4 }
+		}
+		available = {
+			is_neighbor_of = NCR
+		}
+		is_good = no
+		selectable_mission = yes
+		fire_only_once = no
+		cancel_trigger = {
+			OR = {
+				NOT = {
+					has_country_flag = ncr_suspicious
+				}
+				NCR = {
+					OR = {
+						exists = no
+						has_civil_war = yes
+						has_war_with = ROOT #Enclave
+					}
+				}
+				check_variable = { EUR_suspicion < 5 }
+			}
+		}
+		remove_effect = {
+			#what happens after the safe time is over?
+		}
+		complete_effect = {
+			country_event = { id = nf_eureka.30 }
+		}
+		days_remove = 70
+		days_mission_timeout = 30
+		timeout_effect = {
+			country_event = { id = nf_eureka.30 }
+		}
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+	eur_deal_with_van_graffs = {
+		icon = GFX_decision_plasma
+		visible = {
+			#has_country_flag = scavenging_enabled
+			original_tag = EUR
+			has_completed_focus = eur_plasma_grenades
+		}
+		available = {
+		}
+		days_remove = 15
+		#modifier = {
+		#	production_speed_buildings_factor = 0.05
+		#}
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 50 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -50 }
+			add_caps = yes
+			add_to_variable = { EUR_suspicion = 1 }
+			custom_effect_tooltip = NCR_suspicious_armor
+		}
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = energy_equipment_3 #security_robot_securitron_equipment_1 Securitrons are security bots now, will need to redisign this laater.
+				amount = 100
+				producer = USA
+			}
+		}
+		ai_will_do = { factor = 10 }
+	}
+
+	EUR_bribe_NCR_officials = {
+		icon = GFX_decision_cap
+		cost = 0
+		allowed = {
+			original_tag = EUR
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		custom_cost_trigger = {
+			set_temp_variable = {
+				temp_cap_cost = EUR.bribe_cost
+			}
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+			custom_caps_cost_trigger = yes
+		}
+		available = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				check_variable = {
+					EUR_suspicion > 2
+				}
+			}
+		}
+		complete_effect = {
+			subtract_from_variable = { EUR_suspicion = 2 }
+			set_temp_variable = { caps_to_add = bribe_cost }
+			multiply_temp_variable = { caps_to_add = -1 }
+			add_caps = yes
+			add_to_variable = {
+				bribe_cost = bribe_increase
+			}
+			custom_effect_tooltip = EUR_bribe_NCR_officials_tt
+		}
+		days_re_enable = 60
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				add = 100
+				check_variable = {
+					EUR_suspicion > 3
+				}
+			}
+		}
+	}
+	EUR_go_legit = {
+		icon = GFX_decision_cap
+		cost = 0
+		allowed = {
+			original_tag = EUR
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		custom_cost_trigger = {
+			set_temp_variable = {
+				temp_cap_cost = EUR.bribe_cost
+			}
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+			custom_caps_cost_trigger = yes
+		}
+		visible = {
+			has_country_flag = NCR_indifferent
+		}
+		available = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				check_variable = {
+					EUR_suspicion > 4
+				}
+			}
+		}
+		complete_effect = {
+			NCR = {
+				country_event = {
+					id = nf_eureka.48
+				}
+				custom_effect_tooltip = EUR_go_legit_tt
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	EUR_go_legit_2 = {
+		icon = GFX_decision_cap
+		cost = 0
+		allowed = {
+			original_tag = EUR
+		}
+		visible = {
+			has_country_flag = NCR_indifferent
+		}
+		available = {
+			NCR = {
+				has_country_leader = {
+					character = NCR_aaron_kimball
+				}
+			}
+			EUR = {
+				OR = {
+					is_subject_of = NCR
+					is_new_california_member = yes
+				}
+			}
+		}
+		complete_effect = {
+			NCR = {
+				country_event = {
+					id = nf_eureka.48
+				}
+				custom_effect_tooltip = EUR_go_legit_tt
+			}
+		}
+		ai_will_do = { factor = 10 }
+	}
+
+	EUR_offer_resarch = {
+		icon = GFX_decision_box_open
+		cost = 20
+		allowed = {
+			original_tag = EUR
+		}
+		complete_effect = {
+			subtract_from_variable = { EUR_suspicion = 1 }
+			set_temp_variable = { caps_to_add = bribe_cost }
+			custom_effect_tooltip = EUR_bribe_NCR_officials_tt
+			NCR = {
+				add_timed_idea = {
+					idea = EUR_salvage
+					days = 50
+				}
+			}
+		}
+		days_remove = 90
+		modifier = {
+			research_speed_factor = -0.08
+		}
+		days_re_enable = 50
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				add = 40
+				check_variable = {
+					EUR_suspicion > 3
+				}
+			}
+		}
+	}
+	EUR_offer_equipment = {
+		icon = GFX_decision_flamethrower
+		cost = 0
+		allowed = {
+			original_tag = EUR
+		}
+		custom_cost_trigger = {
+			has_equipment = {
+				infantry_equipment > 199
+			}
+		}
+
+		custom_cost_text = 200_inf
+		complete_effect = {
+			hidden_effect = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = -200
+				}
+			}
+			NCR = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 200
+					producer = EUR
+				}
+			}
+			subtract_from_variable = { EUR_suspicion = 1 }
+			custom_effect_tooltip = EUR_offer_equipment_tt
+		}
+		days_re_enable = 120
+		ai_will_do = {
+			factor = 20
+			modifier = {
+				add = 200
+				check_variable = {
+					EUR_suspicion > 3
+				}
+			}
+		}
+	}
+	eur_scavenge_power_armor_enclave = {
+		icon = GFX_decision_t51
+		available = {
+			#has_country_flag = scavenging_enabled
+			original_tag = EUR
+			has_completed_focus = eur_power_armor_specialization
+		}
+		days_remove = 30
+		#modifier = {
+		#	production_speed_buildings_factor = 0.05
+		#}
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 20 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -20 }
+			add_caps = yes
+			random_list = {
+				66 = {
+
+				}
+				34 = {
+					add_to_variable = { EUR_suspicion = 1 }
+					custom_effect_tooltip = NCR_suspicious_armor
+				}
+
+			}
+		}
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = power_armor_equipment_3_light #security_robot_securitron_equipment_1 Securitrons are security bots now, will need to redisign this laater.
+				amount = 50
+				producer = USA
+			}
+			if = {
+				limit = {
+					has_completed_focus = eur_makeshift_power_armor
+				}
+				add_equipment_to_stockpile = {
+					type = power_armor_equipment_4 #security_robot_securitron_equipment_1 Securitrons are security bots now, will need to redisign this laater.
+					amount = 50
+					producer = USA
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 25
+			modifier = {
+				add = 75
+				check_variable = {
+					EUR_suspicion < 2
+				}
+			}
+		}
+	}
+	# SOLUTIONS
+	#NCR_crisis_resources = {
+	#	icon = decision_enc_resources
+	#	fire_only_once = yes
+	#	visible = {
+	#		NCR = {
+	#			has_active_mission = NCR_crisis
+	#		}
+	#	}
+	#	remove_effect = {
+	#		clr_country_flag = NCR_crisis_flag
+	#	}
+	#	days_remove = 90
+	#	modifier = {
+	#		local_resources_factor = -0.50
+	#	}
+	#	cancel_trigger  = {
+	#		has_war_with = NCR
+	#	}
+	#}
+	#NCR_crisis_laylow = {
+	#	icon = generic_prepare_civil_war
+	#	fire_only_once = yes
+	#	visible = {
+	#		has_active_mission = NCR_crisis
+	#	}
+	#	remove_effect = {
+	#		clr_country_flag = NCR_crisis_flag
+	#	}
+	#	days_remove = 90
+	#	modifier = {
+	#		army_attack_factor = -0.50
+	#	}
+	#	cancel_trigger  = {
+	#		has_war_with = NCR
+	#	}
+	#}
+	#NCR_crisis_construction = {
+	#	icon = generic_construction
+	#	fire_only_once = yes
+	#	visible = {
+	#		has_active_mission = NCR_crisis
+	#	}
+	#	remove_effect = {
+	#		clr_country_flag = NCR_crisis_flag
+	#	}
+	#	days_remove = 90
+	#	modifier = {
+	#		production_speed_buildings_factor = -0.75
+	#	}
+	#	cancel_trigger  = {
+	#		has_war_with = NCR
+	#	}
+	#}
+}
+

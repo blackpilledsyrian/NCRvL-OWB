@@ -46,6 +46,9 @@ set_technology = {
 	robot_fission_batteries_tech = 1
 	robot_protectron_equipment_tech_1 = 1
 	robot_command_equipment_tech_1 = 1
+	robot_armour_hardening_tech = 1
+	robot_lifter_equipment_tech = 1
+	robot_miniature_thruster_tech = 1
 	basic_industry_tech = 1
 	tool_engineering = 1
 	maketool_engineering_1 = 1
@@ -70,6 +73,11 @@ set_technology = {
 	med_company_tech_4 = 1
 	automated_warfare = 1
 	implant_tech_access_tech = 1
+	fireteam_weaponry_tech = 1
+	energy_fireteam_weaponry_tech_2 = 1
+	energy_fireteam_focus_lens_tech = 1
+	energy_weaponry_tech_1 = 1
+	energy_weapon_emitter_tech = 1
 }
 
 set_stability = 0.5

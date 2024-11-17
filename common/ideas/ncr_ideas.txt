@@ -165,9 +165,9 @@ ideas = {
 			modifier = {
 				stability_factor = 0.05
 				war_support_factor = -0.05
-				production_speed_industrial_complex_factor = 0.1
+				production_speed_industrial_complex_factor = 0.3
 				production_speed_arms_factory_factor = -0.05
-				production_speed_buildings_factor = 0.05
+				production_speed_buildings_factor = 0.1
 			}
 		}
 		ncr_idea_war_ready_economy_2 = {
