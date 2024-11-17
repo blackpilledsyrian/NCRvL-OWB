@@ -321,7 +321,7 @@ NDefines.NMilitary.BASE_FORT_PENALTY = -0.08				-- fort penalty
 NDefines.NMilitary.BASE_COMBAT_WIDTH = 120					-- base combat width
 NDefines.NMilitary.ADDITIONAL_COMBAT_WIDTH = 40				-- more opened up by support attack
 
-NDefines.NTechnology.BASE_YEAR_AHEAD_PENALTY_FACTOR = 1.15	-- Vanilla is 2. Base year ahead penalty
+NDefines.NTechnology.BASE_YEAR_AHEAD_PENALTY_FACTOR = 2	-- Vanilla is 2. Base year ahead penalty
 NDefines.NTechnology.BASE_TECH_COST = 60					-- Base cost for a tech. multiplied with tech cost and ahead of time penalties
 
 NDefines.NMilitary.ARMY_INITIATIVE_REINFORCE_FACTOR = 0.2  -- Vanilla is 0.25. Scales initiative for reinforce chance

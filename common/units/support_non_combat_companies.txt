@@ -242,20 +242,20 @@ sub_units = {
 		}
 
 		marsh = {
-			attack = 0.1
-			defence = 0.1
+			attack = 0.05
+			defence = 0.05
 		}
 		jungle = {
-			attack = 0.1
-			defence = 0.1
+			attack = 0.05
+			defence = 0.05
 		}
 		river = {
-			attack = 0.1
-			defence = 0.1
+			attack = 0.05
+			defence = 0.05
 		}
 		amphibious = {
-			attack = 0.1
-			defence = 0.1
+			attack = 0.05
+			defence = 0.05
 		}
 
 		same_support_type = logistics_company # blocks adding other logistics types to template
@@ -321,20 +321,20 @@ sub_units = {
 		}
 
 		marsh = {
-			attack = 0.1
-			defence = 0.1
+			attack = 0.05
+			defence = 0.05
 		}
 		jungle = {
-			attack = 0.1
-			defence = 0.1
+			attack = 0.05
+			defence = 0.05
 		}
 		river = {
-			attack = 0.1
-			defence = 0.1
+			attack = 0.05
+			defence = 0.05
 		}
 		amphibious = {
-			attack = 0.1
-			defence = 0.1
+			attack = 0.05
+			defence = 0.05
 		}
 
 		same_support_type = logistics_company # blocks adding other logistics types to template
@@ -394,12 +394,12 @@ sub_units = {
 		}
 
 		urban = {
-			attack = 0.1
-			defence = 0.1
+			attack = 0.05
+			defence = 0.05
 		}
 		fort = {
-			attack = 0.1
-			defence = 0.1
+			attack = 0.05
+			defence = 0.05
 		}
 
 		same_support_type = maintenance_company # blocks adding other maintenance types to template
@@ -462,14 +462,14 @@ sub_units = {
 		}
 
 		urban = {
-			attack = 0.1
-			defence = 0.1
-			movement = 0.1
+			attack = 0.05
+			defence = 0.05
+			movement = 0.05
 		}
 		fort = {
-			attack = 0.1
-			defence = 0.1
-			movement = 0.1
+			attack = 0.05
+			defence = 0.05
+			movement = 0.05
 		}
 		same_support_type = maintenance_company # blocks adding other maintenance types to template
 	}
@@ -524,13 +524,13 @@ sub_units = {
 		}
 
 		radiation = {
-			attack = 0.1
-			defence = 0.1
+			attack = 0.05
+			defence = 0.05
 		}
 
 		desert = {
-			attack = 0.1
-			defence = 0.1
+			attack = 0.05
+			defence = 0.05
 		}
 
 		need = {
@@ -592,13 +592,13 @@ sub_units = {
 		}
 
 		radiation = {
-			attack = 0.1
-			defence = 0.1
+			attack = 0.05
+			defence = 0.05
 		}
 
 		desert = {
-			attack = 0.1
-			defence = 0.1
+			attack = 0.05
+			defence = 0.05
 		}
 
 		need = {

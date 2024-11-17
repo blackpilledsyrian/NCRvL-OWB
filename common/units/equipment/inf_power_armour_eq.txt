@@ -69,8 +69,6 @@ equipments = {
 		defense = 2
 		hardness = 0.50
 		armor_value = 30
-		soft_attack = 2
-		hard_attack = 1
 
 		fuel_consumption = 0
 
@@ -101,8 +99,8 @@ equipments = {
 		hardness = 0.55
 		armor_value = 35
 		maximum_speed = 4.5
-		soft_attack = 4
-		hard_attack = 2
+		soft_attack = 2
+		hard_attack = 1
 
 		fuel_consumption = 0.3
 
@@ -128,8 +126,8 @@ equipments = {
 		defense = 6
 		hardness = 0.65
 		armor_value = 40
-		soft_attack = 6
-		hard_attack = 3
+		soft_attack = 4
+		hard_attack = 2
 
 		maximum_speed = 4.5
 
@@ -158,8 +156,8 @@ equipments = {
 		defense = 5.5
 		hardness = 0.60
 		armor_value = 35
-		soft_attack = 7
-		hard_attack = 4
+		soft_attack = 5
+		hard_attack = 3
 
 		maximum_speed = 5.5
 
@@ -187,8 +185,8 @@ equipments = {
 		defense = 8
 		hardness = 0.75
 		armor_value = 45
-		soft_attack = 8
-		hard_attack = 4
+		soft_attack = 6
+		hard_attack = 3
 
 		maximum_speed = 5
 
@@ -218,8 +216,8 @@ equipments = {
 		defense = 7.5
 		hardness = 0.70
 		armor_value = 40
-		soft_attack = 9
-		hard_attack = 5
+		soft_attack = 7
+		hard_attack = 4
 
 		maximum_speed = 6
 
@@ -249,8 +247,8 @@ equipments = {
 		defense = 10
 		hardness = 0.85
 		armor_value = 50
-		soft_attack = 10
-		hard_attack = 5
+		soft_attack = 8
+		hard_attack = 4
 
 		maximum_speed = 5
 
@@ -286,8 +284,8 @@ equipments = {
 		hardness = 0.50
 		armor_value = 25
 		maximum_speed = 5
-		soft_attack = 4
-		hard_attack = 2
+		soft_attack = 2
+		hard_attack = 1
 
 		fuel_consumption = 0.2
 
@@ -315,8 +313,8 @@ equipments = {
 		defense = 5
 		hardness = 0.65
 		armor_value = 30
-		soft_attack = 7
-		hard_attack = 3.5
+		soft_attack = 5
+		hard_attack = 2.5
 
 		maximum_speed = 5
 
@@ -345,8 +343,8 @@ equipments = {
 		defense = 13
 		hardness = 0.85
 		armor_value = 55
-		soft_attack = 10
-		hard_attack = 5
+		soft_attack = 8
+		hard_attack = 4
 
 		maximum_speed = 5.5
 
@@ -373,8 +371,8 @@ equipments = {
 		defense = 15
 		hardness = 0.9
 		armor_value = 60
-		soft_attack = 12
-		hard_attack = 6
+		soft_attack = 10
+		hard_attack = 5
 		reliability = 0.9
 
 		maximum_speed = 5.5

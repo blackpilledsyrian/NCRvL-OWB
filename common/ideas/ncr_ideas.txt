@@ -90,7 +90,28 @@ ideas = {
 				electronics = 0.1
 			}
 		}
+		ncr_tera = {
 
+			picture = generic_medicine
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				monthly_population = 0.15
+				consumer_goods_factor = -0.05
+				stability_weekly = 0.001
+				add_war_support -0.05
+				research_speed_factor = 0.05
+			}
+		}
 		blastfromthepast = {
 
 			picture = generic_catastrophe

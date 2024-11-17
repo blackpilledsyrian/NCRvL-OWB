@@ -734,4 +734,4 @@ country_event = {
 		name = wht_gifts.1.b 
 		add_stability = 0.05
 	}
-		
+}

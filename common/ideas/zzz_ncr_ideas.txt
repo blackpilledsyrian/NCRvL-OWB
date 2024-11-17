@@ -1409,7 +1409,6 @@ ideas = {
 			modifier = {
 				monthly_population = 0.15
 				defensive_war_stability_factor = 0.05
-				consumer_goods_expected_value = 0.01
 			}
 			research_bonus = {
 				support_medical_tech_category = 0.15
@@ -1432,7 +1431,6 @@ ideas = {
 			modifier = {
 				monthly_population = 0.15
 				defensive_war_stability_factor = 0.05
-				consumer_goods_expected_value = 0.01
 				caps_income_modifier = 0.05
 				country_resource_circuitry = 5
 				production_lack_of_resource_penalty_factor = -0.15

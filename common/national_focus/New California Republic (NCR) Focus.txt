@@ -3447,7 +3447,7 @@ focus = {
 	focus = {
 		id = ncr_expose_van_graffs
 		icon = GFX_goal_generic_plasma_rifle_4
-		cost = 30
+		cost = 15
 		search_filters = { FOCUS_FILTER_NCR_ELECTION }
 		available = {
 
@@ -3467,7 +3467,7 @@ focus = {
 	focus = {
 		id = ncr_the_northern_shield
 		icon = GFX_goal_generic_vault_stash
-		cost = 30
+		cost = 15
 		search_filters = { FOCUS_FILTER_NCR_ELECTION }
 		prerequisite = { focus = ncr_expose_van_graffs }
 		relative_position_id = ncr_expose_van_graffs
@@ -3501,7 +3501,7 @@ focus = {
 	focus = {
 		id = ncr_brotherhood_diplomacy
 		icon = GFX_goal_BOS_ncr_diplomacy
-		cost = 30
+		cost = 15
 		search_filters = { FOCUS_FILTER_NCR_ELECTION FOCUS_FILTER_STABILITY }
 		available = {
 
@@ -3511,6 +3511,8 @@ focus = {
 		y = 1
 		relative_position_id = ncr_the_northern_shield
 		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.05
 		}
 	}
 	#############################
@@ -3589,7 +3591,7 @@ focus = {
 	focus = {
 		id = ncr_campaigns_against_corruption
 		icon = GFX_goal_enc_FBI
-		cost = 30
+		cost = 15
 		cancelable = no
 		available = {
 
@@ -3779,7 +3781,7 @@ focus = {
 	focus = {
 		id = ncr_inject_liquidity
 		icon = GFX_goal_NCR_Shady_Sands
-		cost = 30
+		cost = 15
 		available = {
 
 		}
@@ -3800,7 +3802,7 @@ focus = {
 	focus = {
 		id = ncr_open_door
 		icon = GFX_goal_generic_vault_door_2
-		cost = 30
+		cost = 15
 		prerequisite = { focus = ncr_inject_liquidity }
 		prerequisite = { focus = ncr_brotherhood_diplomacy }
 		available = {
@@ -3823,7 +3825,7 @@ focus = {
 	focus = {
 		id = ncr_epa
 		icon = GFX_goal_NCR_medical_equipment
-		cost = 30
+		cost = 15
 		prerequisite = { focus = ncr_inject_liquidity }
 		prerequisite = { focus = ncr_brotherhood_diplomacy }
 		available = {
@@ -4421,7 +4423,7 @@ focus = {
 	focus = {
 	id = boneyard_guns_start
 		icon = GFX_goal_NCR_Gun_Runner_Licensing
-		cost = 30
+		cost = 15
 		x = -1
 		y = 1
 		relative_position_id = ncr_allgood_address
@@ -4433,7 +4435,7 @@ focus = {
 	focus = {
 		id = boneyard_gun_runners
 		icon = GFX_goal_NCR_Gun_Runner_Licensing
-		cost = 30
+		cost = 15
 		x = 2
 		y = 1
 		mutually_exclusive = {
@@ -4478,7 +4480,7 @@ focus = {
 	focus = {
 		id = boneyard_gun_runners2
 		icon = GFX_goal_chem_super_stim
-		cost = 30
+		cost = 15
 		x = -2
 		y = 1
 		relative_position_id = boneyard_guns_start
@@ -4496,7 +4498,7 @@ focus = {
 	focus = {
 		id = boneyard_gun_runners3
 		icon = GFX_goal_generic_focus_magazine_gunsandbullets_gun_laws
-		cost = 30
+		cost = 15
 		x = 0
 		y = 1
 		relative_position_id = boneyard_guns_start
@@ -4517,7 +4519,7 @@ focus = {
 	focus = {
 		id = boneyard_guns_to_blades
 		icon = GFX_goal_NCR_Militia
-		cost = 30
+		cost = 15
 		x = 0
 		y = 1
 		relative_position_id = boneyard_gun_runners3
@@ -4538,7 +4540,7 @@ focus = {
 	focus = {
 		id = ncr_wealth_tax
 		icon = GFX_goal_ancient_wealth
-		cost = 30
+		cost = 15
 		x = 0
 		y = 1
 		relative_position_id = boneyard_guns_to_blades
@@ -4569,7 +4571,7 @@ focus = {
 	focus = {
 		id = ncr_capitalism_with_tandi_characteristics
 		icon = GFX_goal_enc_ncr_dollar
-		cost = 30
+		cost = 15
 		x = 1
 		y = 1
 		prerequisite = {
@@ -4688,7 +4690,7 @@ focus = {
 	focus = {
 		id = ncr_always_fight_for_freedom
 		icon = GFX_goal_SOK_ranger
-		cost = 30
+		cost = 15
 		x = -1
 		y = 1
 		prerequisite = {
@@ -4714,7 +4716,7 @@ focus = {
 	focus = {
 		id = ncr_rangers_never_die
 		icon = GFX_goal_NCR_Golden_Ranger
-		cost = 30
+		cost = 15
 		x = -1
 		y = 1
 		available = {
@@ -4754,7 +4756,7 @@ focus = {
 	focus = {
 		id = ncr_worker_factories
 		icon = GFX_goal_fallout_tool
-		cost = 30
+		cost = 15
 		x = 2
 		y = 1
 		prerequisite = {
@@ -4791,7 +4793,7 @@ focus = {
 	focus = {
 			id = ncr_public_works_administration
 			icon = GFX_goal_TTM_Water
-			cost = 30
+			cost = 15
 			x = -2
 			y = 1
 			relative_position_id = boneyard_guns_to_blades
@@ -5512,7 +5514,7 @@ focus = {
 	                }
 	                annex_country = {
 	                    target = TIM
-	                    transfer_troops = yes
+	                    transfer_troops = no
 	                }
 					annex_country = {
 	                    target = TRL
@@ -5520,7 +5522,7 @@ focus = {
 	                }
 	                annex_country = {
 	                    target = MDT
-	                    transfer_troops = yes
+	                    transfer_troops = no
 	                }
 	                every_state = {
 	                    limit = {
@@ -5537,6 +5539,7 @@ focus = {
 	                        }
 	                    }
 	                    add_core_of = SHI
+	                    set_state_flag = do_not_exodus
 	                }
 	            }
 	        }
@@ -6743,6 +6746,19 @@ focus = {
         	custom_effect_tooltip = NCR_tax_oregon_tt
 	        hidden_effect = {
 	            ARR = {
+	            	every_state = {
+	                    limit = {
+	                        or = {
+	                            is_core_of = DIS
+	                            is_core_of = MLT
+	                            is_core_of = CCW
+	                            is_core_of = RBT
+	                            is_core_of = PMR
+	                        }
+	                    }
+	                    add_core_of = ARR
+	                    set_state_flag = do_not_exodus
+	                }
 	                annex_country = {
 	                    target = DIS
 	                    transfer_troops = no
@@ -6763,58 +6779,45 @@ focus = {
 	                    target = PMR
 	                    transfer_troops = no
 	                }
-	                every_state = {
-	                    limit = {
-	                        or = {
-	                            is_core_of = DIS
-	                            is_core_of = MLT
-	                            is_core_of = CCW
-	                            is_core_of = RBT
-	                            is_core_of = PMR
-
-	                        }
-	                    }
-	                    add_core_of = ARR
-	                }
 	            }
 	            VLT = {
+	            	every_state = {
+	                    limit = {
+	                        or = {
+	                            is_core_of = BDT
+	                            is_core_of = TIM
+	                        }
+	                    }
+	                    add_core_of = VLT
+	                    set_state_flag = do_not_exodus
+	                }
 	                annex_country = {
 	                    target = BDT
 	                    transfer_troops = no
 	                }
 	                annex_country = {
 	                    target = TIM
-	                    transfer_troops = yes
-	                }
-	                every_state = {
-	                    limit = {
-	                        or = {
-	                            is_core_of = BDT
-	                            is_core_of = TIM
-
-	                        }
-	                    }
-	                    add_core_of = VLT
+	                    transfer_troops = no
 	                }
 	            }
 	            NEW = {
+	            	every_state = {
+	                    limit = {
+	                        or = {
+	                            is_core_of = TRL
+	                            is_core_of = MDT
+	                        }
+	                    }
+	                    add_core_of = NEW
+	                    set_state_flag = do_not_exodus
+	                }
 	                annex_country = {
 	                    target = TRL
 	                    transfer_troops = no
 	                }
 	                annex_country = {
 	                    target = MDT
-	                    transfer_troops = yes
-	                }
-	                every_state = {
-	                    limit = {
-	                        or = {
-	                            is_core_of = TRL
-	                            is_core_of = MDT
-
-	                        }
-	                    }
-	                    add_core_of = NEW
+	                    transfer_troops = no
 	                }
 	            }
 	        }
@@ -8298,7 +8301,7 @@ focus = {
 	}
 	focus = {
 		id = ncr_drummonds_dimwits
-		icon = GFX_goal_NCR_Mechanized_Core
+		icon = GFX_goal_NCR_motorized_drummond
 		cost = 30
 		prerequisite = {
 			focus = ncr_bearsroar
@@ -8333,7 +8336,7 @@ focus = {
 	}
 	focus = {
 		id = ncr_mechcore
-		icon = GFX_goal_NCR_Mechanized_Core
+		icon = GFX_goal_NCR_motorized_humvee
 		cost = 30
 		prerequisite = {
 			focus = ncr_drummonds_dimwits
@@ -8359,7 +8362,7 @@ focus = {
 	}
 	focus = {
 		id = ncr_shock
-		icon = GFX_goal_NCR_Mechanized_Core
+		icon = GFX_goal_NCR_motorized_fast
 		cost = 30
 		prerequisite = {
 			focus = ncr_mechcore
@@ -8379,7 +8382,7 @@ focus = {
 	}
 	focus = {
 		id = ncr_rapid
-		icon = GFX_goal_NCR_Mechanized_Core
+		icon = GFX_goal_NCR_motorized_drugs
 		cost = 30
 		prerequisite = {
 			focus = ncr_shock
@@ -8402,7 +8405,7 @@ focus = {
 	}
 	focus = {
 		id = ncr_real_combined_arms
-		icon = GFX_goal_NCR_Mechanized_Core
+		icon = GFX_goal_NCR_motorized_tank
 		cost = 30
 		prerequisite = {
 			focus = ncr_rapid
@@ -9162,6 +9165,7 @@ focus = {
 		relative_position_id = ncr_mossman_conspiracy
 		completion_reward = {
 			add_timed_idea = { idea = ncr_greatmarch days = 150 }
+			add_ideas = ncr_emergency_measures
 		}
 	}
 	focus = {
@@ -9210,8 +9214,8 @@ focus = {
 		relative_position_id = ncr_good_man_goes_war
 		completion_reward = {
 			add_stability = -0.15
-			add_offsite_building = { type = industrial_complex level = 5 }
-			add_offsite_building = { type = arms_factory level = 5 }
+			add_offsite_building = { type = industrial_complex level = 15 }
+			add_offsite_building = { type = arms_factory level = 15 }
 		}
 	}
 	focus = {
@@ -9273,6 +9277,24 @@ focus = {
 					type = water
 					amount = 12
 				}
+			}
+			if = {
+				limit = {
+					has_idea = ncr_corruption_curbed
+				}
+				remove_ideas = ncr_corruption_curbed
+			}
+			else_if = {
+				limit = {
+					has_idea = ncr_corruption_overlooked
+				}
+				remove_ideas = ncr_corruption_overlooked
+			}
+			else_if = {
+				limit = {
+					has_idea = ncr_corruption_tolerated
+				}
+				remove_ideas = ncr_corruption_tolerated
 			}
 			add_political_power = 200
 		}
@@ -9479,6 +9501,7 @@ focus = {
 		completion_reward = {
 			#country_event = ncr_dharma.5
 			add_stability = 0.15
+
 			custom_effect_tooltip = ncr_from_many_one_tt
 			hidden_effect = {
 				remove_ideas = ncr_we_are_the_republic

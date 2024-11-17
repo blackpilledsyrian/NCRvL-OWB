@@ -1372,7 +1372,7 @@ technologies = {
 			breakthrough = 0.05
 		}
 		category_anti_tank = {
-			soft_attack = 1
+			soft_attack = 0.5
 		}
 
 		path = {
