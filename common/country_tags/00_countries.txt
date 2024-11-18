@@ -337,3 +337,11 @@ VSH = "countries/VSH - Safehaven.txt"
 BYE = "countries/BYE - Byemoor Bandits.txt"
 KIN = "countries/KIN - Kingsley Republic.txt"
 MIN = "countries/MIN - Hades' Horde.txt"
+
+#### WIP civil war minigame
+WYR = "countries/WYR - Wyoming Ranchers.txt"
+MRR = "countries/MRR - Marshall Republic.txt"
+JCK = "countries/JCK - Jacksons.txt"
+KHA = "countries/KHA - Great Khans.txt"
+RMT = "countries/RMT - Rushmore Tribals.txt"
+BTH = "countries/BTH - Big Thinkers.txt"

@@ -1,0 +1,122 @@
+﻿capital = 1048
+oob = "JCK_2275"
+set_technology = {
+	basic_supply_transport_tech = 1
+	infantry_tech_level_tribal = 1
+	infantry_tech_level_settler = 1
+	#infantry_tech_level_scientific = 1
+	support_tech_level_tribal = 1
+	support_tech_level_settler = 1
+	#support_tech_level_scientific = 1
+	special_forces_tech_level_tribal = 1
+	special_forces_tech_level_settler = 1
+	#special_forces_tech_level_scientific = 1
+	#power_armour_tech_level_settler = 1
+	#power_armour_tech_level_scientific = 1
+	vehicles_tech_level_tribal = 1
+	#vehicles_tech_level_settler = 1
+	#vehicles_tech_level_scientific = 1
+	#robotics_tech_level_tribal = 1
+	#robotics_tech_level_settler = 1
+	#robotics_tech_level_scientific = 1
+	air_tech_level_tribal = 1
+	#air_tech_level_settler = 1
+	#air_tech_level_scientific = 1
+	naval_tech_level_tribal = 1
+	#naval_tech_level_settler = 1
+	#naval_tech_level_scientific = 1
+	tools_tech_level_tribal = 1
+	tools_tech_level_settler = 1
+	#tools_tech_level_scientific = 1
+	habitation_tech_level_tribal = 1
+	habitation_tech_level_settler = 1
+	#habitation_tech_level_scientific = 1
+	exploitation_tech_level_tribal = 1
+	exploitation_tech_level_settler = 1
+	#exploitation_tech_level_scientific = 1
+	electronics_tech_level_tribal = 1
+	electronics_tech_level_settler = 1
+	#electronics_tech_level_scientific = 1
+	#tribal_tech_visibility_tech = 1
+	#tribal_tech_access_tech = 1
+	tool_engineering = 1
+	standard_weaponry_tech = 1
+	melee_weaponry_tech_1 = 1
+	pre_construction_industry_tech = 1
+	pre_agriculture_industry_tech = 1
+	pre_recycling_industry_tech = 1
+	basic_industry_tech = 1
+	support_weaponry = 1
+	anti_tank_equipment_tech_1 = 1
+	spec_ops_equipment_tech_1 = 1
+}
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		nautics_tech_1 = 1
+		light_navy_hull_tech_1 = 1
+		naval_invasion_tech_1 = 1
+	}
+}
+
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "Man the Guns"
+		}
+	}
+	set_technology = {
+		nautics_tech_non_mtg_1 = 1
+		light_navy_hull_tech_non_mtg_1 = 1
+		naval_invasion_tech_non_mtg_1 = 1
+	}
+}
+
+set_stability = 0.33
+set_war_support = 0.46
+set_research_slots = 3
+set_country_flag = is_raider_nation
+set_country_flag = is_montana_nation
+set_country_flag = is_wyoming_nation
+set_country_flag = is_midland_unifier_target
+set_country_flag = elite_doctrine_ai
+# add_opinion_modifier = {
+# 	target = MCA
+# 	modifier = jck_enemies_of_macarthur
+# }
+
+# reverse_add_opinion_modifier = {
+# 	target = MCA
+# 	modifier = jck_old_memories_die_hard
+# }
+
+set_politics = {
+	ruling_party = ruler
+	elections_allowed = no
+}
+
+set_popularities = {
+	people = 0
+	elites = 0
+	intellectuals = 0
+	ruler = 100
+}
+
+set_party_name = {
+	ideology = ruler
+	long_name = JCK_ruler_party_long
+	name = JCK_ruler_party_short
+}
+
+# recruit_character = JCK_neil_jackson
+# recruit_character = JCK_wyej_jackson
+# recruit_character = JCK_erastus_jackson
+# recruit_character = JCK_libby_jackson
+# recruit_character = JCK_marie_jackson
+# add_ideas = {
+# 	undesirables_law_raider
+# 	jackson_family_ties
+# }

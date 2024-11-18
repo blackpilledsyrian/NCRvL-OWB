@@ -1,0 +1,206 @@
+﻿capital = 1029
+oob = "KHA_2275"
+set_technology = {
+	basic_supply_transport_tech = 1
+	infantry_tech_level_tribal = 1
+	#infantry_tech_level_settler = 1
+	#infantry_tech_level_scientific = 1
+	support_tech_level_tribal = 1
+	#support_tech_level_settler = 1
+	#support_tech_level_scientific = 1
+	special_forces_tech_level_tribal = 1
+	#special_forces_tech_level_settler = 1
+	#special_forces_tech_level_scientific = 1
+	#power_armour_tech_level_settler = 1
+	#power_armour_tech_level_scientific = 1
+	vehicles_tech_level_tribal = 1
+	#vehicles_tech_level_settler = 1
+	#vehicles_tech_level_scientific = 1
+	robotics_tech_level_tribal = 1
+	#robotics_tech_level_settler = 1
+	#robotics_tech_level_scientific = 1
+	air_tech_level_tribal = 1
+	#air_tech_level_settler = 1
+	#air_tech_level_scientific = 1
+	naval_tech_level_tribal = 1
+	#naval_tech_level_settler = 1
+	#naval_tech_level_scientific = 1
+	tools_tech_level_tribal = 1
+	#tools_tech_level_settler = 1
+	#tools_tech_level_scientific = 1
+	habitation_tech_level_tribal = 1
+	#habitation_tech_level_settler = 1
+	#habitation_tech_level_scientific = 1
+	exploitation_tech_level_tribal = 1
+	#exploitation_tech_level_settler = 1
+	#exploitation_tech_level_scientific = 1
+	electronics_tech_level_tribal = 1
+	#electronics_tech_level_settler = 1
+	#electronics_tech_level_scientific = 1
+	tribal_tech_visibility_tech = 1
+	# tribal_tech_access_tech = 1	# For Esen only now
+	# baseline techs
+	tribal_civilization = 1
+	#industry
+	#infantry
+	standard_weaponry_tech = 1
+	melee_weaponry_tech_1 = 1
+	#support
+	support_weaponry = 1
+	anti_tank_equipment_tech_1 = 1
+	med_company_tech_1 = 1
+	#vehicle
+	bike_tech_1 = 1
+	motorisation_vehicle_tech = 1
+	# light_motorized_equipment_vehicle_tech_1 = 1
+	# raider_reckless_aggression = 1
+}
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		nautics_tech_1 = 1
+		naval_invasion_tech_1 = 1
+	}
+}
+
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "Man the Guns"
+		}
+	}
+	set_technology = {
+		nautics_tech_non_mtg_1 = 1
+		naval_invasion_tech_non_mtg_1 = 1
+	}
+}
+
+set_research_slots = 3
+set_stability = 0.2
+set_war_support = 0.35
+set_country_flag = is_wyoming_nation
+set_country_flag = is_tribal_nation
+set_country_flag = is_midland_unifier_target
+set_country_flag = cavalry_nation_ai
+set_country_flag = resisted_followers_red_con
+# set_country_flag = dont_give_tribal_generic_chiefs
+# set_country_flag = dont_give_tribal_generic_high_command
+# set_country_flag = dont_give_tribal_generic_theorists
+# set_country_flag = dont_give_tribal_generic_political_advisors
+#Doctrine flag is sometimes changed when the gamerules/default path weights are applied so they can depend on The Khans's path. Before editing these, check the game rule on actions file
+set_country_flag = tribal_doctrine_ai
+set_country_flag = wasteland_doctrine_ai
+set_politics = {
+	ruling_party = ruler
+	elections_allowed = no
+}
+
+set_popularities = {
+	people = 10
+	elites = 25
+	intellectuals = 55
+	ruler = 10
+}
+
+set_variable = {
+	dont_return_stolen_territory@NCR = 1
+}
+
+set_variable = {
+	dont_return_stolen_territory@VEG = 1
+}
+
+# add_ideas = {
+# 	slavers_idea_1
+# 	veteran_pathfinders
+# 	KHA_rowdy_khans
+# 	KHA_ranger_lead_the_way
+# }
+
+# add_timed_idea = {
+# 	idea = KHA_more_arrivals
+# 	days = 250
+# }
+
+# set_country_flag = slavery_allowed
+# add_opinion_modifier = {
+# 	target = WYR
+# 	modifier = wyr_the_baron
+# }
+
+# reverse_add_opinion_modifier = {
+# 	target = WYR
+# 	modifier = wyr_dirty_peasants
+# }
+
+# news_event = {
+# 	id = nf_new_khans.20
+# 	days = 1065
+# }
+
+# country_event = {
+# 	id = nf_new_khans.7
+# 	days = 45
+# }
+
+# country_event = {
+# 	id = nf_new_khans.24
+# 	days = 75
+# }
+
+recruit_character = KHA_follower_amgalan
+recruit_character = KHA_esen
+recruit_character = KHA_regis
+recruit_character = KHA_atraris
+recruit_character = KHA_mogul
+recruit_character = KHA_zeke_henries
+recruit_character = KHA_knight_avery
+recruit_character = KHA_ambercoza
+recruit_character = KHA_jaye
+recruit_character = KHA_justine
+recruit_character = KHA_doomfire
+recruit_character = KHA_neil_jackson
+recruit_character = KHA_both_crow
+recruit_character = KHA_wayles_thomas
+#recruit_character = KHA_jessup
+#recruit_character = KHA_chance
+#recruit_character = KHA_mcmurphy
+recruit_character = KHA_the_armorer
+#recruit_character = KHA_oscar_velasco
+recruit_character = KHA_melissa_lewis
+recruit_character = KHA_samool
+recruit_character = KHA_jack
+recruit_character = KHA_diane
+#recruit_character = KHA_jerry_the_punk
+recruit_character = KHA_emma_winslow
+recruit_character = KHA_falaya
+recruit_character = KHA_ungern_sternberg
+#recruit_character = KHA_noonien
+recruit_character = KHA_jessie_monroe
+recruit_character = KHA_barons_daughter
+set_party_name = {
+	ideology = elites
+	long_name = KHA_elites_party_long
+	name = KHA_elites_party_short
+}
+
+set_party_name = {
+	ideology = intellectuals
+	long_name = KHA_intellectuals_party_long
+	name = KHA_intellectuals_party_short
+}
+
+set_party_name = {
+	ideology = ruler
+	long_name = KHA_ruler_party_long
+	name = KHA_ruler_party_short
+}
+
+set_party_name = {
+	ideology = people
+	long_name = KHA_people_party_long
+	name = KHA_people_party_short
+}
