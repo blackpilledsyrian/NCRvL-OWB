@@ -30,6 +30,7 @@ technologies = {
 	@Row_oreg = 21
 	@Row_tex = 23
 	@Row_mex = 25
+	@Row_khans = 29
 	@Row_other = 27
 
 
