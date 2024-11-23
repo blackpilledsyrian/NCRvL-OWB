@@ -719,8 +719,8 @@ country_event = {
 
 country_event = {
 	id = nf_whitelegs.33
-	title = wht_gifts.33.t
-	desc = wht_gifts.33.d
+	title = nf_whitelegs.33.t
+	desc = nf_whitelegs.33.d
 	picture = GFX_event_zion
 	is_triggered_only = yes
 	fire_only_once = yes
