@@ -1,0 +1,122 @@
+﻿capital = 1040
+oob = "WYR_2275"
+
+set_technology = {
+	infantry_tech_level_tribal = 1
+	infantry_tech_level_settler = 1
+	#infantry_tech_level_scientific = 1
+	support_tech_level_tribal = 1
+	support_tech_level_settler = 1
+	#support_tech_level_scientific = 1
+	special_forces_tech_level_tribal = 1
+	special_forces_tech_level_settler = 1
+	#special_forces_tech_level_scientific = 1
+	#power_armour_tech_level_settler = 1
+	#power_armour_tech_level_scientific = 1
+	vehicles_tech_level_tribal = 1
+	vehicles_tech_level_settler = 1
+	#vehicles_tech_level_scientific = 1
+	robotics_tech_level_tribal = 1
+	#robotics_tech_level_settler = 1
+	#robotics_tech_level_scientific = 1
+	air_tech_level_tribal = 1
+	air_tech_level_settler = 1
+	#air_tech_level_scientific = 1
+	naval_tech_level_tribal = 1
+	naval_tech_level_settler = 1
+	#naval_tech_level_scientific = 1
+	tools_tech_level_tribal = 1
+	tools_tech_level_settler = 1
+	#tools_tech_level_scientific = 1
+	habitation_tech_level_tribal = 1
+	habitation_tech_level_settler = 1
+	#habitation_tech_level_scientific = 1
+	exploitation_tech_level_tribal = 1
+	exploitation_tech_level_settler = 1
+	#exploitation_tech_level_scientific = 1
+	electronics_tech_level_tribal = 1
+	electronics_tech_level_settler = 1
+	#electronics_tech_level_scientific = 1
+	tribal_civilization = 1
+	settled_civilization = 1
+	tool_engineering = 1
+	standard_weaponry_tech = 1
+	melee_weaponry_tech_1 = 1
+	spec_ops_equipment_tech_1 = 1
+	support_weaponry = 1
+	demolitions_weaponry_tech = 1
+	fireteam_weaponry_tech = 1
+	bike_tech_1 = 1
+	basic_supply_transport_tech = 1
+}
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		nautics_tech_1 = 1
+		light_navy_hull_tech_1 = 1
+		#waterproof_sealing_tech = 1
+	}
+}
+if = {
+	limit = {
+		NOT = { has_dlc = "Man the Guns" }
+	}
+	set_technology = {
+		nautics_tech_non_mtg_1 = 1
+		light_navy_hull_tech_non_mtg_1 = 1
+		waterproof_sealing_tech_non_mtg = 1
+	}
+}
+
+set_stability = 0.4
+set_war_support = 0.25
+set_research_slots = 3
+set_convoys = 25
+set_country_flag = is_settler_nation
+set_country_flag = is_wyoming_nation
+set_country_flag = grand_doctrine_ai
+set_country_flag = grand_infantry_doctrine_ai
+set_country_flag = is_midland_unifier_target
+set_politics = {
+	ruling_party = elites
+	elections_allowed = no
+}
+
+# recruit_character = WYR_brahmin_baron
+# recruit_character = WYR_barons_daughter
+# recruit_character = WYR_clarence_hartford
+# recruit_character = WYR_sheila_hartford
+# recruit_character = WYR_cornelius_weber
+# recruit_character = WYR_marietta_saunders
+# recruit_character = WYR_father_axton
+# recruit_character = WYR_savannah_childs
+# recruit_character = WYR_general_scott
+# recruit_character = WYR_james_hartford
+# recruit_character = WYR_iris_saunders
+# recruit_character = WYR_harold_grady
+# recruit_character = WYR_muriel
+
+set_popularities = {
+	people = 20
+	elites = 80
+	intellectuals = 0
+	ruler = 0
+}
+
+# add_ideas = {
+# 	wyr_economical
+# 	wyr_elite_mercenaries
+# }
+
+# add_timed_idea = {
+#     idea = wyr_marshall_defense
+#     days = 730
+# }
+
+# country_event = {
+# 	id = nf_new_khans.33
+# 	days = 1100
+# }

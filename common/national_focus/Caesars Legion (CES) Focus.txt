@@ -8425,6 +8425,7 @@ focus_tree = {
         search_filters = { FOCUS_FILTER_GLORY_EAST }
         cost = 30
         x = 24
+
         y = 0
         available = {
             has_country_leader = {
