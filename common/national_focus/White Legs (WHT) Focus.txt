@@ -8,7 +8,7 @@ focus_tree = {
 	country = {
 		factor = 0
 		modifier = {
-			add = 100000
+			add = 13
 			tag = WHT
 		}
 	}
@@ -334,9 +334,9 @@ focus_tree = {
 				log = "[GetDateText]: [Root.GetName] wht_slave_raiding entered"
 			}
 			add_political_power = 80
-				CES = {country_event = wht_gifts.1}
-				RES = {country_event = wht_gifts.1}
-				NAV = {country_event = wht_gifts.1}
+				CES = {country_event = nf_whitelegs.33}
+				RES = {country_event = nf_whitelegs.33}
+				NAV = {country_event = nf_whitelegs.33}
 			if = {
 				limit = { NCN = { exists = yes } }
 				NCN = {

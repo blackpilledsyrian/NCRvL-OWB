@@ -136,7 +136,7 @@ characters = {
 				perceptive_trait
 				agile_trait
 				commando_trait
-				sniper_trait
+				survivalist_trait
 				ranger_trait
 			}
 			skill = 5
@@ -303,7 +303,7 @@ characters = {
 				DES_tactical_historian
 			}
 			research_bonus = {
-				cat_land_doctrine = 0.05
+				cat_land_doctrine = 0.1
 			}
 			cost = 150
 			ai_will_do = {

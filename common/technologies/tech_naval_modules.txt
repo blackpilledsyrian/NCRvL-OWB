@@ -83,6 +83,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_command_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -137,6 +138,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -191,6 +193,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -247,6 +250,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_command_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -299,6 +303,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -339,6 +344,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -380,6 +386,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -421,6 +428,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -471,6 +479,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -512,6 +521,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -562,6 +572,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -603,6 +614,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -639,6 +651,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -684,6 +697,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -733,6 +747,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -787,6 +802,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -830,6 +846,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -872,6 +889,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -913,6 +931,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -967,6 +986,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -1021,6 +1041,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -1062,6 +1083,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -1116,6 +1138,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -1152,6 +1175,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -1194,6 +1218,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -1235,6 +1260,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -1293,6 +1319,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -1351,6 +1378,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -1392,6 +1420,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -1450,6 +1479,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -1486,6 +1516,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -1528,6 +1559,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -1569,6 +1601,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -1623,6 +1656,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -1677,6 +1711,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -1718,6 +1753,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -1772,6 +1808,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -1808,6 +1845,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -1850,6 +1888,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -1891,6 +1930,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -1945,6 +1985,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -1999,6 +2040,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -2040,6 +2082,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -2094,6 +2137,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -2130,6 +2174,7 @@ technologies = {
 		categories = {
 			naval_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -2174,6 +2219,7 @@ technologies = {
 			naval_hull_tech_category
 			civilized_tech_category
 			naval_weapon_module_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -2213,6 +2259,7 @@ technologies = {
 
 		categories = {
 			naval_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -2321,6 +2368,7 @@ technologies = {
 			naval_tech_category
 			naval_armour_module_tech_category
 			tribal_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -2355,6 +2403,7 @@ technologies = {
 			naval_tech_category
 			naval_armour_module_tech_category
 			tribal_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -2393,6 +2442,7 @@ technologies = {
 			naval_tech_category
 			naval_armour_module_tech_category
 			civilized_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -2431,6 +2481,7 @@ technologies = {
 			naval_tech_category
 			naval_armour_module_tech_category
 			civilized_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -2464,6 +2515,7 @@ technologies = {
 			naval_tech_category
 			naval_armour_module_tech_category
 			scientific_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -2502,6 +2554,7 @@ technologies = {
 
 		categories = {
 			naval_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -2551,6 +2604,7 @@ technologies = {
 
 		categories = {
 			naval_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -2591,6 +2645,7 @@ technologies = {
 
 		categories = {
 			naval_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -2631,6 +2686,7 @@ technologies = {
 
 		categories = {
 			naval_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -2666,6 +2722,7 @@ technologies = {
 
 		categories = {
 			naval_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -2707,6 +2764,7 @@ technologies = {
 
 		categories = {
 			naval_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -2752,6 +2810,7 @@ technologies = {
 
 		categories = {
 			naval_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -2792,6 +2851,7 @@ technologies = {
 
 		categories = {
 			naval_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -2832,6 +2892,7 @@ technologies = {
 
 		categories = {
 			naval_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -2867,6 +2928,7 @@ technologies = {
 
 		categories = {
 			naval_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -2908,6 +2970,7 @@ technologies = {
 
 		categories = {
 			naval_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -2953,6 +3016,7 @@ technologies = {
 
 		categories = {
 			naval_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -2991,6 +3055,7 @@ technologies = {
 
 		categories = {
 			naval_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -3029,6 +3094,7 @@ technologies = {
 
 		categories = {
 			naval_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -3069,6 +3135,7 @@ technologies = {
 
 		categories = {
 			naval_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -3115,6 +3182,7 @@ technologies = {
 
 		categories = {
 			naval_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -3150,6 +3218,7 @@ technologies = {
 
 		categories = {
 			naval_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -3347,6 +3416,7 @@ technologies = {
 
 		categories = {
 			naval_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -3385,6 +3455,7 @@ technologies = {
 
 		categories = {
 			naval_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -3423,6 +3494,7 @@ technologies = {
 
 		categories = {
 			naval_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -3461,6 +3533,7 @@ technologies = {
 
 		categories = {
 			naval_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {
@@ -3499,6 +3572,7 @@ technologies = {
 
 		categories = {
 			naval_tech_category
+			naval_module_tech_category
 		}
 
 		ai_will_do = {

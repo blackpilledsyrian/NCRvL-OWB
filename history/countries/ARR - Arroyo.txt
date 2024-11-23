@@ -39,13 +39,13 @@ set_technology = {
 	electronics_tech_level_tribal = 1
 	electronics_tech_level_settler = 1
 	#electronics_tech_level_scientific = 1
-
 	standard_weaponry_tech = 1
 	ballistic_weaponry_tech_1 = 1
 	melee_weaponry_tech_1 = 1
 	spec_ops_equipment_tech_1 = 1
 	support_weaponry = 1
 	anti_tank_equipment_tech_1 = 1
+	anti_tank_tech_1 = 1
 	robot_automation_tech = 1
 	robot_makeshift_automatons_tech = 1
 	robot_fission_batteries_tech = 1

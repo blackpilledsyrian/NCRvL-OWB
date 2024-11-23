@@ -67,7 +67,7 @@ characters = {
 			id = -1
 			traits = {
 				charismatic_leader
-				follower_of_the_apocalypse
+				captain_of_industry
 			}
 		}
 	}

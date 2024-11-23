@@ -602,7 +602,6 @@ MP_mod_decisions = {
 		visible = {
 			or = {
 				original_tag = NCR
-				original_tag = VEG
 			}
 		}
 		available = {
@@ -615,16 +614,18 @@ MP_mod_decisions = {
 		}
 		fire_only_once = yes
 		complete_effect = {
+			every_state = {
+					limit = {
+						OR = {
+							is_owned_by = MOT
+						}
+					}
+					add_core_of = NCR
+					set_state_flag = do_not_exodus
+				}
 			annex_country = {
 				target = MOT
 				transfer_troops = yes
-			}
-			every_state = {
-				limit = {
-					is_owned_by = MOT
-				}
-				add_compliance = 80
-				add_resistance_target = -20
 			}
 		}
 	}
