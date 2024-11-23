@@ -40,25 +40,49 @@ ideas = {
                 always = no
             }
             modifier = {
-                air_doctrine_cost_factor = 0.15
-                experience_gain_air_factor = -0.15
+                air_doctrine_cost_factor = 0.2
+                experience_gain_air_factor = -0.2
             }
             equipment_bonus = {
                 fighter_equipment = {
-                    build_cost_ic = 0.33
                     instant = yes
+                    build_cost_ic = 0.66
+                }
+                hev_fighter_equipment = {
+                    instant = yes
+                    build_cost_ic = 0.33
+                }
+                car_fighter_equipment = {
+                    instant = yes
+                    build_cost_ic = 0.33
+                }
+                long_fighter_equipment = {
+                    instant = yes
+                    build_cost_ic = 0.33
                 }
                 cas_equipment = {
-                    build_cost_ic = 0.33
                     instant = yes
+                    build_cost_ic = 0.66
+                }
+                hev_cas_equipment = {
+                    instant = yes
+                    build_cost_ic = 0.33
+                }
+                car_cas_equipment = {
+                    instant = yes
+                    build_cost_ic = 0.33
+                }
+                long_cas_equipment = {
+                    instant = yes
+                    build_cost_ic = 0.33
+                }
+                allowed_civil_war = {
+                    always = yes
                 }
             }
-            allowed_civil_war = {
-                always = yes
-            }
             research_bonus = {
-                air_tech_category = -0.25
-                cat_automated_warfare = -0.25
+                air_tech_category = -0.3
+                cat_automated_warfare = -0.3
             }
             removal_cost = -1
         }
