@@ -120,7 +120,7 @@ units = {
 instant_effect = {
 	add_equipment_production = {
 		equipment = {
-			type = ballistic_equipment_1
+			type = melee_equipment_2
 			creator = "CWB"
 		}
 		requested_factories = 2
