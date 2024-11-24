@@ -6251,12 +6251,6 @@ focus = {
 		id = ncr_cal_steel_rangers
 		icon = GFX_goal_NCR_Calhoun_Expansion_Hands
 		cost = 30
-		available = {
-			BOS = {
-				has_government = people
-				people > 0.8
-			}
-		}
 		prerequisite = {
 			focus = ncr_cal_lost_hills_reformers
 		}
