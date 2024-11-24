@@ -3,6 +3,14 @@
 
 ideas = {
 	country = {
+		res_nellie_id_cooldown = {
+			picture = generic_nuclear_aftermath
+			removal_cost = -1
+			modifier = {
+				fuel_gain_factor = -0.25
+				industrial_capacity_factory = -0.1
+			}
+		}
 		res_sub_level_2_idea = {
 			picture = generic_production_bonus
 			removal_cost = -1

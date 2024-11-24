@@ -15,6 +15,21 @@ ideas = {
 		}
 	}
 	country = {
+		ces_dam_win_idea = {
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = pre-war_industry
+			modifier = {
+				political_power_factor = 0.05
+				production_factory_max_efficiency_factor = 0.05
+				industrial_capacity_factory = 0.05
+			}
+		}
 		ces_victory_in_the_east = {
 			removal_cost = -1
 			allowed = {
