@@ -1540,6 +1540,18 @@ focus_tree = {
 		}
 		completion_reward = {
 			custom_effect_tooltip = mot_victory_at_the_dam_tt
+			#hidden_effect = {
+				every_state = {
+					limit = {
+						is_owned_by = ROOT
+						NOT = { state = 252 }
+						NOT = { impassable = yes }
+					}
+					add_dynamic_modifier = {
+						modifier = mojave_state_modifier
+					}
+				}
+			#}
 		}
 	}
 
@@ -1942,7 +1954,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = mot_first_supply_shipment
 		completion_reward = {
-			add_stability = -0.1
+			add_stability = 0.05
 			custom_effect_tooltip = mot_review_bittersprings_tt
 			country_event = { id = nf_mot.28 }
 		}
@@ -2263,6 +2275,7 @@ focus_tree = {
 				tooltip = mot_gov_op_small_down
 			}
 			hidden_effect = {
+				retire_country_leader = yes
 				add_country_leader_role = {
 					character = MOT_josh_hanlon
 					promote_leader = yes
@@ -2277,7 +2290,6 @@ focus_tree = {
 						id = -1
 					}
 				}
-				retire_country_leader = yes
 				set_character_name = {
 					character = MOT_josh_hanlon
 					name = MOT_JOSH_HANLON_LEADER_NAME
@@ -2552,7 +2564,7 @@ focus_tree = {
 			focus = mot_promote_chief_hanlon
 		}
 		prerequisite = {
-			focus = mot_first_supply_shipment
+			focus = mot_review_bittersprings
 		}
 		x = -3
 		y = 1
