@@ -923,11 +923,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_ideas = two_four_stroke_miracle
-			add_tech_bonus = {
-				bonus = 0.3
-				uses = 1
-				category = vehicle_tech_category
-			}
 		}
 	}
 
@@ -943,9 +938,9 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_tech_bonus = {
-				bonus = 1.5
+				bonus = 1
 				ahead_reduction = 1.0
-				category = motorized_equipment_category
+				category = car_tech_category
 			}
 		}
 	}
@@ -962,9 +957,9 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_tech_bonus = {
-				bonus = 0.25
-				ahead_reduction = 1.5
-				category = motorized_equipment_category
+				bonus = 1
+				ahead_reduction = 1
+				category = car_tech_category
 			}
 		}
 	}
@@ -1009,8 +1004,8 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				bonus = 1.0
-				ahead_reduction = 4.0
-				category = motorized_equipment_category
+				ahead_reduction = 1.0
+				category = car_tech_category
 			}
 		}
 	}
@@ -1114,9 +1109,9 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_tech_bonus = {
-				bonus = 0.5
-				ahead_reduction = 2
-				category = motorized_equipment_category
+				bonus = 1
+				ahead_reduction = 1
+				category = truck_tech_category
 			}
 		}
 	}
@@ -1174,8 +1169,8 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				bonus = 1.0
-				ahead_reduction = 3
-				technology = heavy_motorized_equipment_vehicle_tech_2
+				ahead_reduction = 1
+				category = truck_tech_category
 			}
 		}
 	}
@@ -1314,7 +1309,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_tech_bonus = {
-				uses = 2
 				bonus = 1.0
 				ahead_reduction = 1.0
 				category = car_tech_category
@@ -1494,7 +1488,7 @@ focus_tree = {
 			add_tech_bonus = {
 				bonus = 1.0
 				ahead_reduction = 1.0
-				category = vehicle_tech_category
+				category = truck_tech_category
 			}
 		}
 	}
