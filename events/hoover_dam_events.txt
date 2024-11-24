@@ -333,23 +333,17 @@ news_event = { # News Event: Legion Overall Vic
 
 	major = yes
 	is_triggered_only = yes
-
+	
 	option = {
 		trigger = {
 			is_new_california_member = yes
 		}
-		name = bhd.17.a
+		name = bhd.18.a
 		if = {
 			limit = {
-				NOT = {
-					NCR = {
-						has_completed_focus = ncr_lost_not_forgotten
-					}
-				}
+				TAG =  MOT
 			}
-			NCR = {
-				complete_national_focus = ncr_lost_not_forgotten
-			}
+			MOT = { complete_national_focus = mot_victory_at_the_dam }
 		}
 	}
 
@@ -361,9 +355,14 @@ news_event = { # News Event: Legion Overall Vic
 			limit = {
 				original_tag = CES
 			}
-			complete_national_focus = ces_this_was_a_triumph
+			complete_national_focus = ces_ncr_won_dam
+			add_timed_idea = {
+				idea = ces_dam_win_idea
+				days = 730
+			}
+			army_experience = 50 
 		}
-		name = bhd.17.b
+		name = bhd.18.b
 	}
 
 	option = {
@@ -371,7 +370,7 @@ news_event = { # News Event: Legion Overall Vic
 			NOT = { is_new_california_member = yes }
 			NOT = { is_caesars_legion_member = yes }
 		}
-		name = bhd.17.c
+		name = bhd.18.c
 	}
 }
 
