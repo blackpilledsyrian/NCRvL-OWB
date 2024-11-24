@@ -1,0 +1,8 @@
+mojave_state_modifier = {
+	enable = { always = yes }
+	icon = GFX_modifiers_FIN_motti_tactics_modifier
+	local_supplies_for_controller = 0.1
+	army_speed_factor_for_controller = 0.05
+	army_speed_factor = -0.2
+	enemy_army_speed_factor = -0.05
+}
