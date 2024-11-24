@@ -3,7 +3,6 @@ sub_units = {
 	behemoth = {
 		sprite = behemoth
 		map_icon_category = armored
-		special_forces = yes
 		priority = 2503
 		ai_priority = 2503
 		active = yes
@@ -19,7 +18,6 @@ sub_units = {
 			category_army
 			category_front_line
 			category_behemoth
-			category_special_forces
 		}
 
 		urban = {
@@ -52,7 +50,7 @@ sub_units = {
 		manpower = 25 # 500
 		max_organisation = 40
 		default_morale = 0.3
-		max_strength = 175
+		max_strength = 100
 		suppression = 1
 		weight = 2.2
 
