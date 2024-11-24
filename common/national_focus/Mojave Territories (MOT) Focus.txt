@@ -1543,7 +1543,10 @@ focus_tree = {
 			#hidden_effect = {
 				every_state = {
 					limit = {
-						is_owned_by = ROOT
+						OR = {
+							is_owned_by = MOT
+							is_owned_by = VEG
+						}
 						NOT = { state = 252 }
 						NOT = { impassable = yes }
 					}
