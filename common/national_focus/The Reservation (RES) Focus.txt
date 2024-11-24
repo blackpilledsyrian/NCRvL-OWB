@@ -706,9 +706,11 @@ focus_tree = {
 			focus = res_elite
 		}
 		completion_reward = {
-			set_technology = { artillery_ammo_unlock_tech = 1 }
-			custom_effect_tooltip = res_added_nuke_tt
-			country_event = nf_events_green_res.1
+			set_country_flag = res_nellie_id
+			custom_effect_tooltip = res_nuke_ability_tt
+			#set_technology = { artillery_ammo_unlock_tech = 1 }
+			#custom_effect_tooltip = res_added_nuke_tt
+			#country_event = nf_events_green_res.1
 		}
 	}
 	focus = {
@@ -1251,31 +1253,28 @@ focus_tree = {
             RES_add_workshops = yes
         }
     }
-    focus = {
-        id = resg_ultimate_deterent
-        icon = GFX_goal_RES_Red_Button
-        cost = 30
-        x = 0
-        y = 1
-        available = {
-        	always = no
-        }
-        prerequisite = {
-            focus = resg_expand_production
-        }
-        relative_position_id = resg_expand_production
-        completion_reward = {
-            custom_effect_tooltip = res_armed_nuke_green_tt
-            hidden_effect = {
-                # Setup nellie target states
-                add_to_array = { res_nellie_targets_array = 4.id }	# Ocotillo/Tanditown
-                add_to_array = { res_nellie_targets_array = 252.id }	# Hoover Dam
-                add_to_array = { res_nellie_targets_array = 211.id }	# New Vegas
-                add_to_array = { res_nellie_targets_array = 99.id }	# Tumblehome/Pharmville and Blythe
-            }
-        }
-    }
-
+    #focus = {
+    #    id = resg_ultimate_deterent
+    #    icon = GFX_goal_RES_Red_Button
+    #    cost = 30
+    #    x = 0
+    #    y = 1
+    #    prerequisite = {
+    #        focus = resg_expand_production
+    #    }
+    #    relative_position_id = resg_expand_production
+    #    completion_reward = {
+    #        custom_effect_tooltip = res_armed_nuke_green_tt
+    #        hidden_effect = {
+    #            # Setup nellie target states
+    #            add_to_array = { res_nellie_targets_array = 4.id }	# Ocotillo/Tanditown
+    #            add_to_array = { res_nellie_targets_array = 252.id }	# Hoover Dam
+    #            add_to_array = { res_nellie_targets_array = 211.id }	# New Vegas
+    #            add_to_array = { res_nellie_targets_array = 99.id }	# Tumblehome/Pharmville and Blythe
+    #        }
+    #    }
+    #}
+	#
     # army with a state spirit
     focus = {
         id = resg_army_with_spirit

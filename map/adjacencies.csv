@@ -66,21 +66,6 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 6314;3529;impassable;-1;-1;-1;-1;-1;;Ruby Valley to Pale Folk
 6313;3529;impassable;-1;-1;-1;-1;-1;;Ruby Valley to Pale Folk
 ;;;;;;;;;
-972;3210;impassable;-1;-1;-1;-1;-1;;Inner Mojave Ring
-972;3207;impassable;-1;-1;-1;-1;-1;;Inner Mojave Ring
-972;3204;impassable;-1;-1;-1;-1;-1;;Inner Mojave Ring
-6996;3204;impassable;-1;-1;-1;-1;-1;;Inner Mojave Ring
-6996;3206;impassable;-1;-1;-1;-1;-1;;Inner Mojave Ring
-6996;5760;impassable;-1;-1;-1;-1;-1;;Inner Mojave Ring
-6996;3226;impassable;-1;-1;-1;-1;-1;;Inner Mojave Ring
-3202;3226;impassable;-1;-1;-1;-1;-1;;Inner Mojave Ring
-6990;3226;impassable;-1;-1;-1;-1;-1;;Inner Mojave Ring
-6990;3228;impassable;-1;-1;-1;-1;-1;;Inner Mojave Ring
-3235;9067;impassable;-1;-1;-1;-1;-1;;Inner Mojave Ring
-3235;9068;impassable;-1;-1;-1;-1;-1;;Inner Mojave Ring
-3235;9072;impassable;-1;-1;-1;-1;-1;;Inner Mojave Ring
-3235;5766;impassable;-1;-1;-1;-1;-1;;Inner Mojave Ring
-;;;;;;;;;
 7305;12532;impassable;-1;-1;-1;-1;-1;;Northwest Plaguelands Wall
 7305;12546;impassable;-1;-1;-1;-1;-1;;Northwest Plaguelands Wall
 7305;3821;impassable;-1;-1;-1;-1;-1;;Northwest Plaguelands Wall
