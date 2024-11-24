@@ -2091,8 +2091,8 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			set_temp_variable = { mot_supply_change = -60 }
-			change_mot_supply = yes
+			#set_temp_variable = { mot_supply_change = -60 }
+			#change_mot_supply = yes
 			67 = {
 				add_building_construction = {
 					type = bunker
@@ -2127,8 +2127,8 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			set_temp_variable = { mot_supply_change = -40 }
-			change_mot_supply = yes
+			#set_temp_variable = { mot_supply_change = -40 }
+			#change_mot_supply = yes
 			137 = {
 				add_building_construction = {
 					type = bunker
@@ -2476,8 +2476,12 @@ focus_tree = {
 			owns_state = 211
 		}
 		completion_reward = {
-			VEG = { country_event = nf_mot.20 }
-			custom_effect_tooltip = mot_the_hardpoint_gambit_tt
+			#VEG = { country_event = nf_mot.20 }
+			#custom_effect_tooltip = mot_the_hardpoint_gambit_tt
+			add_offsite_building = {
+				type = arms_factory
+				level = 4
+			}
 		}
 	}
 
@@ -2498,7 +2502,7 @@ focus_tree = {
 			focus = mot_the_hardpoint_gambit
 		}
 		available = {
-			set_temp_variable = { mot_supply_check = 60 }
+			set_temp_variable = { mot_supply_check = 50 }
 			custom_trigger_tooltip = {
 				tooltip = mot_supply_check_tt
 				check_variable = { var = mot_supply value = mot_supply_check compare = greater_than_or_equals }
@@ -2513,10 +2517,13 @@ focus_tree = {
 			set_temp_variable = { mot_supply_change = -60 }
 			change_mot_supply = yes
 			252 = {
+				add_dynamic_modifier = {
+					modifier = hoover_state_modifier
+				}
 				add_building_construction = {
-					type = bunker
-					level = 2
-					province = 6603
+					type = anti_air_building
+					level = 3
+					instant_build = yes
 				}
 			}
 		}
