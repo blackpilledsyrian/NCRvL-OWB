@@ -202,47 +202,9 @@ fbhd_bw_boulder = { # Script to start the initial border war for Boulder City
 
 fbhd_legion_overall_vic = {
 	clr_global_flag = first_battle_ongoing
-	set_global_flag = fbhd_legion_overall_vic
-	every_state = {
-		limit = {
-			OR = {
-				state = 252
-				state = 613
-				state = 380
-				state = 573
-				state = 46
-				state = 417
-				state = 137
-				state = 67
-				state = 106
-				state = 620
-			}
-			is_owned_and_controlled_by = MOT
-		}
-		CES = { transfer_state = PREV }
-	}
+	set_global_flag = fbhd_boulder_city_miracle_flag
 	MOT = {
-		every_unit_leader = {
-			set_nationality = NCR
-		}
-		every_navy_leader = {
-			set_nationality = NCR
-		}
-		every_owned_state = {
-			set_state_flag = do_not_decimate
-		}
-	}
-	NCR = {
-		change_tag_from = MOT
-	}
-	NCR = {
-		annex_country = {
-			target = MOT
-			transfer_troops = yes
-		}
-		every_owned_state = {
-			clr_state_flag = do_not_decimate
-		}
+		transfer_state = 252 # Hoover Dam
 	}
 	news_event = bhd.17
 }
