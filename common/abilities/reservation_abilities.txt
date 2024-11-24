@@ -1,0 +1,52 @@
+ability = {
+	use_deathray = {
+		name = ABILITY_USE_NELLIE
+		desc = ABILITY_USE_NELLIE_DESC
+
+		sound_effect = use_fatman_sound
+
+		type = army_leader
+		cost = 0.10
+		allowed = {
+			NOT = { has_trait = exhausted_order_trait}
+			is_leading_army_group = no
+			OWNER = {
+				has_country_flag = res_nellie_id
+				NOT = { has_idea = res_nellie_id_cooldown }
+			}
+		}
+		duration = 200
+
+		one_time_effect = {
+			add_timed_unit_leader_trait = {
+				trait = exhausted_order_trait
+				days = 20
+			}
+			add_temporary_buff_to_units = {
+				combat_offense = 0.15
+				combat_breakthrough = 0.15
+				org_damage_multiplier = -0.20
+				days = 7
+				tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
+			}
+			OWNER = {
+				add_timed_idea = {
+					idea = res_nellie_id_cooldown
+					days = 60
+				}
+			}
+		}
+		ai_will_do = {
+			factor = -1
+			modifier = {
+				check_variable = { num_units_defensive_combats > 6 }
+
+				set_temp_variable = { temp = avg_defensive_combat_status }
+				check_variable = { temp < 0.40 }
+				check_variable = { ai_random > temp }
+
+				add = 2
+			}
+		}
+	}
+}
