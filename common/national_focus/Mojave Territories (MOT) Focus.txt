@@ -1606,46 +1606,46 @@ focus_tree = {
 		}
 	}
 
-	focus = {
-		id = mot_an_offer
-		icon = GFX_goal_VEG_Ring-a-Ding-Ding
-		cost = 30
-		prerequisite = {
-			focus = mot_appoint_ambassador_crocker
-		}
-		available = {
-			VEG = {
-				NOT = { is_new_california_member = yes }
-			}
-			NOT = {
-				has_country_flag = mot_crisis_in_california
-			}
-		}
-		x = -1
-		y = 1
-		bypass = {
-			VEG = { is_in_faction_with = NCR }
-		}
-		relative_position_id = mot_appoint_ambassador_crocker
-		mutually_exclusive = {
-			focus = mot_we_can_refuse
-		}
-		completion_reward = {
-			custom_effect_tooltip = mot_an_offer_tt
-			if = {
-				limit = {
-					VEG = {
-						has_country_leader = {
-							character = VEG_benny
-						}
-					}
-				}
-				VEG = {
-					invite_to_root_faction = yes
-				}
-			}
-		}
-	}
+	#focus = {
+	#	id = mot_an_offer
+	#	icon = GFX_goal_VEG_Ring-a-Ding-Ding
+	#	cost = 30
+	#	prerequisite = {
+	#		focus = mot_appoint_ambassador_crocker
+	#	}
+	#	available = {
+	#		VEG = {
+	#			NOT = { is_new_california_member = yes }
+	#		}
+	#		NOT = {
+	#			has_country_flag = mot_crisis_in_california
+	#		}
+	#	}
+	#	x = -1
+	#	y = 1
+	#	bypass = {
+	#		VEG = { is_in_faction_with = NCR }
+	#	}
+	#	relative_position_id = mot_appoint_ambassador_crocker
+	#	mutually_exclusive = {
+	#		focus = mot_we_can_refuse
+	#	}
+	#	completion_reward = {
+	#		custom_effect_tooltip = mot_an_offer_tt
+	#		if = {
+	#			limit = {
+	#				VEG = {
+	#					has_country_leader = {
+	#						character = VEG_benny
+	#					}
+	#				}
+	#			}
+	#			VEG = {
+	#				invite_to_root_faction = yes
+	#			}
+	#		}
+	#	}
+	#}
 
 	focus = {
 		id = mot_we_can_refuse
@@ -1659,12 +1659,12 @@ focus_tree = {
 		prerequisite = {
 			focus = mot_appoint_ambassador_crocker
 		}
-		x = 1
+		x = 0
 		y = 1
 		relative_position_id = mot_appoint_ambassador_crocker
-		mutually_exclusive = {
-			focus = mot_an_offer
-		}
+		#mutually_exclusive = {
+		#	focus = mot_an_offer
+		#}
 		completion_reward = {
 			set_temp_variable = {
 				caps_to_add = 150
@@ -1686,9 +1686,9 @@ focus_tree = {
 			focus = mot_an_offer
 			focus = mot_we_can_refuse
 		}
-		x = 1
+		x = 0
 		y = 1
-		relative_position_id = mot_an_offer
+		relative_position_id = mot_we_can_refuse
 		completion_reward = {
 			add_tech_bonus = {
 				category = infantry_tech_category
@@ -1710,10 +1710,11 @@ focus_tree = {
 		prerequisite = {
 			focus = mot_mp_deployments
 		}
-		x = 2
+		x = 4
 		y = 1
 		relative_position_id = mot_mp_deployments
 		completion_reward = {
+			add_political_power = 50
 			if = {
 				limit = {
 					VEG = {
@@ -1732,7 +1733,7 @@ focus_tree = {
 			custom_effect_tooltip = mot_benny_prick_tt
 		}
 	}
-
+	
 	focus = {
 		id = mot_restoring_hoover
 		icon = GFX_goal_generic_wrench
