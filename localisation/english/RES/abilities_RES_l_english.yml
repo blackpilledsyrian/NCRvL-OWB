@@ -1,0 +1,7 @@
+﻿l_english:
+  res_nuke_ability_tt:0 "§PNuclear Nelly§! will become available as a §GCommand Ability§!.\nAfter being used it needs to recharge for §R60 Days§!"
+  res_nellie_id_cooldown:0 "Nellie Reloading"
+  res_nellie_id_cooldown_desc:0 "The sub-level workers are busy reloading the Nuclear Nelly. This will take up a lot of our resources for a while."
+  ABILITY_USE_NELLIE:0 "Nuclear Nelly"
+  ABILITY_USE_NELLIE_DESC:0 "A pre-war Railway cannon capable of mounting nuclear warheads. The lethality of such a weapon is unmatched in the post-war world. It can only be used sporadically but packs a punch like none other."
+  ces_dam_win_idea:0 "Legion Victory at Dam"
