@@ -5,3 +5,4 @@
   ABILITY_USE_NELLIE:0 "Nuclear Nelly"
   ABILITY_USE_NELLIE_DESC:0 "A pre-war Railway cannon capable of mounting nuclear warheads. The lethality of such a weapon is unmatched in the post-war world. It can only be used sporadically but packs a punch like none other."
   ces_dam_win_idea:0 "Legion Victory at Dam"
+  mojave_state_modifier:0 "Mojave State"
