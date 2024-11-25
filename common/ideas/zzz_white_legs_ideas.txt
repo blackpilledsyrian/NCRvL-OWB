@@ -24,7 +24,6 @@ ideas = {
 			}
 			modifier = {
 				breakthrough_factor = 0.05
-				equipment_capture_factor = 0.5
 				boost_resistance_factor = 0.25
 				required_garrison_factor = -0.25
 				resistance_damage_to_garrison = -0.2
