@@ -1,0 +1,8426 @@
+	guiTypes = {
+	positionType = {
+		name = "special_project_tech_icon_offset"
+		position = { x = -10 y = -10 }
+	}
+
+	containerWindowType = {
+		name = "countrytechtreeview"
+		position = { x=-3 y=78 }
+		size = { width = 100%% height = 100%% }
+		fade_time = 400
+		fade_type = linear
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_plain_bg2"
+		}
+
+		#------------------------------------------
+		# Infantry Folder
+		#------------------------------------------
+		containerWindowType = {
+			name = "fallout_infantry_folder"
+			position = { x=0 y=47 }
+			size = { width = 100%% height = 100%% }
+			margin = { top = 13 left = 13 bottom = 24 right = 25 }
+			drag_scroll = { left middle }
+			verticalScrollbar = "right_vertical_slider"
+			horizontalScrollbar = "bottom_horizontal_slider"
+
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_window_2b_border"
+			}
+
+			containerWindowType = {
+				name = "techtree_stripes"
+				position = { x= 0 y= 0 }
+				size = {
+					width = 3804 height = 1240
+					min = { width = 100%% height = 100%% }
+				}
+				clipping = no
+
+				iconType = {
+					name ="infantry_techtree_bg"
+					spriteType = "GFX_infantry_tech_bg"
+					position = { x=0 y=0 }
+					alwaystransparent = yes
+				}
+
+				# Row Headers
+				instantTextBoxType = {
+					name = "header_infantry_training"
+					position = { x = 50 y = 130 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_INFANTRY_TRAINING"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "heavy_infantry_equipment_header"
+					position = { x = 50 y = 270 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_HEAVY_INFANTRY_EQUIPMENT"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "energy_equipment_header"
+					position = { x = 50 y = 410 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_ENERGY_EQUIPMENT"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "ballistic_equipment_header"
+					position = { x = 50 y = 550 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_BALLISTIC_EQUIPMENT"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_melee_equipment"
+					position = { x = 50 y = 690 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_MELEE_WEAPONS"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "special_forces_armour_header"
+					position = { x = 50 y = 830 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_SPECIAL_FORCES_ARMOUR"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "special_forces_header_equipment"
+					position = { x = 50 y = 970 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_SPECIAL_FORCES_EQUIPMENT"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "power_armour_header"
+					position = { x = 50 y = 1110 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_POWER_ARMOUR"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				# Column Headers
+				instantTextBoxType = {
+					name = "tribal_column_header"
+					position = { x = 490 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "TRIBAL_HEADER"
+					maxWidth = 200
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "civilized_column_header"
+					position = { x = 1325 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "CIVILIZED_HEADER"
+					maxWidth = 200
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "advanced_column_header"
+					position = { x = 2160 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "ADVANCED_HEADER"
+					maxWidth = 210
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "unique_column_header"
+					position = { x = 3274 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "SPECIAL_HEADER"
+					maxWidth = 200
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+			}
+
+			# Containers
+			# Each 'column' is 275
+			containerWindowType = {
+				name = "tribal_tiled_research_bg"
+				position = { x = 460 y=0 }
+				size = { width = 835 height = 1240 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_yellow_tiled_research_bg"
+				}
+			}
+
+			containerWindowType = {
+				name = "civilized_tiled_research_bg"
+				position = { x = 1295 y=0 }
+				size = { width = 835 height = 1240 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_green_tiled_research_bg"
+				}
+			}
+
+			containerWindowType = {
+				name = "advanced_tiled_research_bg"
+				position = { x = 2130 y=0 }
+				size = { width = 1114 height = 1240 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_blue_tiled_research_bg"
+				}
+			}
+
+			containerWindowType = {
+				name = "unique_tiled_research_bg"
+				position = { x = 3244 y=0 }
+				size = { width = 850 height = 1240 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_purple_tiled_research_bg"
+				}
+			}
+
+			# Trees
+			gridboxtype = {
+				name = "unit_training_tech_1_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "standard_weaponry_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "melee_weaponry_tech_1_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "spec_ops_equipment_tech_1_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "heavy_infantry_tech_1_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "gauss_weaponry_1_tree"
+				position = { x = 0 y = 150  }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "military_heritage_tech_1_tree"
+				position = { x = 0 y = 150  }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "plasma_weaponry_1_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "spec_ops_enclave_1_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "power_armour_enclave_1_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "texas_brotherhood_pa_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "midwest_pa_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "skater_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "mirelurk_infantry_unlock_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "super_mutant_behemoth_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "radroach_infantry_unlock_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "molerat_infantry_unlock_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "spec_ops_horses_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+			
+			gridboxtype = {
+				name = "juggle_infantry_tree"
+				position = { x=10 y=10 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+		}
+
+		#------------------------------------------
+		# Support Folder
+		#------------------------------------------
+		containerWindowType = {
+			name = "fallout_support_folder"
+			position = { x=0 y=47 }
+			size = { width = 100%% height = 100%% }
+			margin = { top = 13 left = 13 bottom = 24 right = 25 }
+			drag_scroll = { left middle }
+			verticalScrollbar = "right_vertical_slider"
+			horizontalScrollbar = "bottom_horizontal_slider"
+
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_window_2b_border"
+			}
+
+			containerWindowType = {
+				name = "techtree_stripes"
+				position = { x= 0 y= 0 }
+				size = {
+					width = 2915 height = 1900
+					min = { width = 100%% height = 100%% }
+				}
+				clipping = no
+
+				iconType = {
+					name ="support_techtree_bg"
+					spriteType = "GFX_support_tech_bg"
+					position = { x=0 y=0 }
+					alwaystransparent = yes
+				}
+
+				# Row Headers
+
+				instantTextBoxType = {
+					name = "header_support_equipment"
+					position = { x = 50 y = 130 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_SUPPORT"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_fireteam"
+					position = { x = 50 y = 340 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_SUPPORT_FIRETEAM"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_antitank"
+					position = { x = 50 y = 620 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_SUPPORT_ANTITANK"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_demolitions"
+					position = { x = 50 y = 900 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_SUPPORT_DEMOLITIONS"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_dogs"
+					position = { x = 50 y = 1250 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_SUPPORT_DOGS"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_chem"
+					position = { x = 50 y = 1390 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_SUPPORT_CHEMS"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_recon"
+					position = { x = 50 y = 1530 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_SUPPORT_RECON"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_logistics"
+					position = { x = 50 y = 1670 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_SUPPORT_LOGISTICS"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_maintenance"
+					position = { x = 50 y = 1810 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_SUPPORT_MAINTENANCE"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				# Column Headers
+				instantTextBoxType = {
+					name = "tribal_column_header"
+					position = { x = 490 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "TRIBAL_HEADER"
+					maxWidth = 200
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "civilized_column_header"
+					position = { x = 1365 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "CIVILIZED_HEADER"
+					maxWidth = 200
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "advanced_column_header"
+					position = { x = 2130 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "ADVANCED_HEADER"
+					maxWidth = 210
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "unique_column_header"
+					position = { x = 2665 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "SPECIAL_HEADER"
+					maxWidth = 200
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+			}
+
+			# Containers
+			# Each 'column' is 275
+			containerWindowType = {
+				name = "tribal_tiled_research_bg"
+				position = { x = 460 y=0 }
+				size = { width = 875 height = 1900 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_yellow_tiled_research_bg"
+				}
+			}
+
+			containerWindowType = {
+				name = "civilized_tiled_research_bg"
+				position = { x = 1335 y=0 }
+				size = { width = 765 height = 1900 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_green_tiled_research_bg"
+				}
+			}
+
+			containerWindowType = {
+				name = "advanced_tiled_research_bg"
+				position = { x = 2100 y=0 }
+				size = { width = 535 height = 1900 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_blue_tiled_research_bg"
+				}
+			}
+
+			containerWindowType = {
+				name = "unique_tiled_research_bg"
+				position = { x = 2635 y=0 }
+				size = { width = 300 height = 1900 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_purple_tiled_research_bg"
+				}
+			}
+
+			# Trees
+			gridboxtype = {
+				name = "support_weaponry_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "demolitions_elite_weaponry_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "fireteam_elite_weaponry_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+			gridboxtype = {
+				name = "juggle_special_tree"
+				position = { x=10 y=20 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+		}
+
+		#------------------------------------------
+		# Vehicle Folder
+		#------------------------------------------
+		containerWindowType = {
+			name = "fallout_vehicle_folder"
+			position = { x=0 y=47 }
+			size = { width = 100%% height = 100%% }
+			margin = { top = 13 left = 13 bottom = 24 right = 25 }
+			drag_scroll = { left middle }
+			verticalScrollbar = "right_vertical_slider"
+			horizontalScrollbar = "bottom_horizontal_slider"
+
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_window_2b_border"
+			}
+
+			containerWindowType = {
+				name = "techtree_stripes"
+				position = { x= 0 y= 0 }
+				size = {
+					width = 2695 height = 1000
+					min = { width = 100%% height = 100%% }
+				}
+				clipping = no
+
+				iconType = {
+					name ="vehicle_techtree_bg"
+					spriteType = "GFX_vehicles_tech_bg"
+					position = { x=0 y=0 }
+					alwaystransparent = yes
+				}
+
+				# Row Headers
+				instantTextBoxType = {
+					name = "motorisation_header"
+					position = { x = 50 y = 130 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_MOTORIZATION"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "motorisation_upgrade_header"
+					position = { x = 50 y = 260 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_UPGRADES"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "mechanisation_header"
+					position = { x = 50 y = 415 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_MECHANISATION"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "mechanisation_upgrade_header"
+					position = { x = 50 y = 550 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_UPGRADES"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "tanks_header"
+					position = { x = 50 y = 685 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_TANKS"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				# Column Headers
+				instantTextBoxType = {
+					name = "tribal_column_header"
+					position = { x = 490 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "TRIBAL_HEADER"
+					maxWidth = 200
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "civilized_column_header"
+					position = { x = 765 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "CIVILIZED_HEADER"
+					maxWidth = 200
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "advanced_column_header"
+					position = { x = 1745 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "ADVANCED_HEADER"
+					maxWidth = 210
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "unique_column_header"
+					position = { x = 2425 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "SPECIAL_HEADER"
+					maxWidth = 200
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+			}
+
+			# Containers
+			# Each 'column' is 275
+			containerWindowType = {
+				name = "tribal_tiled_research_bg"
+				position = { x = 460 y=0 }
+				size = { width = 275 height = 950 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_yellow_tiled_research_bg"
+				}
+			}
+
+			containerWindowType = {
+				name = "civilized_tiled_research_bg"
+				position = { x = 735 y=0 }
+				size = { width = 980 height = 950 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_green_tiled_research_bg"
+				}
+			}
+
+			containerWindowType = {
+				name = "advanced_tiled_research_bg"
+				position = { x = 1715 y=0 }
+				size = { width = 680 height = 950 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_blue_tiled_research_bg"
+				}
+			}
+
+			containerWindowType = {
+				name = "unique_tiled_research_bg"
+				position = { x = 2395 y=0 }
+				size = { width = 300 height = 950 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_purple_tiled_research_bg"
+				}
+			}
+
+			# Trees
+			gridboxtype = {
+				name = "bike_tech_1_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "basic_supply_transport_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "tire_vehicle_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "engine_vehicle_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "plating_vehicle_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "chariot_vehicle_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+			gridboxtype = {
+				name = "juggle_motorized_tree"
+				position = { x=10 y=15 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+		}
+
+		#------------------------------------------
+		# Robotics Folder
+		#------------------------------------------
+		containerWindowType = {
+			name = "fallout_robotics_folder"
+			position = { x=0 y=47 }
+			size = { width = 100%% height = 100%% }
+			margin = { top = 13 left = 13 bottom = 24 right = 25 }
+			drag_scroll = { left middle }
+			verticalScrollbar = "right_vertical_slider"
+			horizontalScrollbar = "bottom_horizontal_slider"
+
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_window_2b_border"
+			}
+
+			containerWindowType = {
+				name = "techtree_stripes"
+				position = { x= 0 y= 0 }
+				size = {
+					width = 2695 height = 918
+					min = { width = 100%% height = 100%% }
+				}
+				clipping = no
+
+				iconType = {
+					name ="robot_techtree_bg"
+					spriteType = "GFX_robotics_tech_bg"
+					position = { x=0 y=0 }
+					alwaystransparent = yes
+				}
+
+				# Row Headers
+
+				instantTextBoxType = {
+					name = "header_bipedal_robot"
+					position = { x = 50 y = 130 }   # 150
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_BIPEDAL_ROBOT"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_eyebot_robot"
+					position = { x = 50 y = 270 }   # 300
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_EYEBOT_ROBOT"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_thruster_robot"
+					position = { x = 50 y = 410 }   # 450
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_THRUSTER_ROBOT"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_combat_robot"
+					position = { x = 50 y = 555 }   # 600
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_COMBAT_ROBOT"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_cnc_robot"
+					position = { x = 50 y = 690 }   # 750
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_CNC_ROBOT"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				# Column Headers
+				instantTextBoxType = {
+					name = "tribal_column_header"
+					position = { x = 490 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "TRIBAL_HEADER"
+					maxWidth = 200
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "civilized_column_header"
+					position = { x = 765 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "CIVILIZED_HEADER"
+					maxWidth = 200
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "advanced_column_header"
+					position = { x = 1745 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "ADVANCED_HEADER"
+					maxWidth = 210
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "unique_column_header"
+					position = { x = 2425 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "SPECIAL_HEADER"
+					maxWidth = 200
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+			}
+
+			# Containers
+			# Each 'column' is 275
+			containerWindowType = {
+				name = "tribal_tiled_research_bg"
+				position = { x = 460 y=0 }
+				size = { width = 275 height = 950 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_yellow_tiled_research_bg"
+				}
+			}
+
+			containerWindowType = {
+				name = "civilized_tiled_research_bg"
+				position = { x = 735 y=0 }
+				size = { width = 980 height = 950 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_green_tiled_research_bg"
+				}
+			}
+
+			containerWindowType = {
+				name = "advanced_tiled_research_bg"
+				position = { x = 1715 y=0 }
+				size = { width = 680 height = 950 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_blue_tiled_research_bg"
+				}
+			}
+
+			containerWindowType = {
+				name = "unique_tiled_research_bg"
+				position = { x = 2395 y=0 }
+				size = { width = 510 height = 950 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_purple_tiled_research_bg"
+				}
+			}
+
+			# Trees
+			gridboxtype = {
+				name = "robot_makeshift_automatons_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "robot_scurry_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "robot_humanoid_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "robot_pacification_bot_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "robot_securitron_tech_1_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "robot_synth_tech_1_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+				gridboxtype = {
+				name = "juggle_robotics_tree"
+				position = { x = 100 y = 160 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+		}
+
+		#------------------------------------------
+		# Air Folder
+		#------------------------------------------
+		containerWindowType = {
+			name = "fallout_air_folder"
+			position = { x=0 y=47 }
+			size = { width = 100%% height = 100%% }
+			margin = { top = 13 left = 13 bottom = 24 right = 25 }
+			drag_scroll = { left middle }
+			verticalScrollbar = "right_vertical_slider"
+			horizontalScrollbar = "bottom_horizontal_slider"
+
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_window_2b_border"
+			}
+
+			containerWindowType = {
+				name = "techtree_stripes"
+				position = { x= 0 y= 0 }
+				size = {
+					width = 2400 height = 1050
+					min = { width = 100%% height = 100%% }
+				}
+				clipping = no
+
+				iconType = {
+					name ="air_techtree_bg"
+					spriteType = "GFX_air_techtree_bg"
+					position = { x=0 y=0 }
+					alwaystransparent = yes
+				}
+
+				# Row Headers
+				instantTextBoxType = {
+					name = "requirements_header"
+					position = { x = 50 y = 130 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_REQUISITES"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_fighters"
+					position = { x = 50 y = 270 }   # 450
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_FIGHTER"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_air_support"
+					position = { x = 50 y = 480 }   # 300
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_AIR_SUPPORT"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_bombers"
+					position = { x = 50 y = 760 }   # 750
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_BOMBER"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_transports"
+					position = { x = 50 y = 970 }   # 600
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_TRANSPORT"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_airships"
+					position = { x = 50 y = 1180 }   # 900
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_AIRSHIPS"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "tribal_column_header"
+					position = { x = 490 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "TRIBAL_HEADER"
+					maxWidth = 200
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "civilized_column_header"
+					position = { x = 1050 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "CIVILIZED_HEADER"
+					maxWidth = 200
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "advanced_column_header"
+					position = { x = 1870 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "ADVANCED_HEADER"
+					maxWidth = 210
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "special_column_header"
+					position = { x = 2730 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "SPECIAL_HEADER"
+					maxWidth = 200
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+			}
+
+			# Containers
+			# Each 'column' is 275
+			containerWindowType = {
+				name = "tribal_tiled_research_bg"
+				position = { x = 460 y=0 }
+				size = { width = 560 height = 1350 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_yellow_tiled_research_bg"
+				}
+			}
+
+			containerWindowType = {
+				name = "civilized_tiled_research_bg"
+				position = { x = 1020 y=0 }
+				size = { width = 820 height = 1350 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_green_tiled_research_bg"
+				}
+			}
+
+			containerWindowType = {
+				name = "advanced_tiled_research_bg"
+				position = { x = 1840 y=0 }
+				size = { width = 860 height = 1350 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_blue_tiled_research_bg"
+				}
+			}
+
+			containerWindowType = {
+				name = "unique_tiled_research_bg"
+				position = { x = 2700 y=0 }
+				size = { width = 280 height = 1350 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_purple_tiled_research_bg"
+				}
+			}
+
+			# Trees
+
+			gridboxtype = {
+				name = "glider_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "high_fighter_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "vertibird_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+			gridboxtype = {
+				name = "juggle_air_tree"
+				position = { x = 1000 y = 32 }
+				size = { width = 70 height = 70 }
+				slotsize = { width = 70 height = 70 }
+				format = "UP"
+			}
+		}
+
+		#------------------------------------------
+		# Naval
+		#------------------------------------------
+		containerWindowType = {
+			name = "fallout_naval_folder"
+			position = { x=0 y=47 }
+			size = { width = 100%% height = 100%% }
+			margin = { top = 13 left = 13 bottom = 24 right = 25 }
+			drag_scroll = { left middle }
+			verticalScrollbar = "right_vertical_slider"
+			horizontalScrollbar = "bottom_horizontal_slider"
+
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_window_2b_border"
+			}
+
+			containerWindowType = {
+				name = "techtree_stripes"
+				position = { x= 0 y= 0 }
+				size = {
+					width = 2980 height = 1210
+					#width = 1400 height = 1275
+					min = { width = 100%% height = 100%% }
+				}
+				clipping = no
+
+				iconType = {
+					name ="naval_techtree_bg"
+					spriteType = "GFX_naval_techtree_bg"
+					position = { x=0 y=0 }
+					alwaystransparent = yes
+				}
+
+				# Row Headers
+				instantTextBoxType = {
+					name = "header_row_1"
+					position = { x = 50 y = 130 }   # 150
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_PROPULSION"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_row_2"
+					position = { x = 50 y = 270 }   # 300
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_SHIP_LIGHT_HULL"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_row_4"
+					position = { x = 50 y = 410 }   # 450
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_SHIP_MEDIUM_HULL"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_row_6"
+					position = { x = 50 y = 555 }   # 600
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_SHIP_HEAVY_HULL"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_row_7"
+					position = { x = 50 y = 690 }   # 750
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_SHIP_SUPER_HEAVY_HULL"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_row_9"
+					position = { x = 50 y = 830 }   # 900
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_NAVAL_INVASION"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				# Column Headers
+				instantTextBoxType = {
+					name = "tribal_column_header"
+					position = { x = 460 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "TRIBAL_HEADER"
+					maxWidth = 200
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "civilized_column_header"
+					position = { x = 1110 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "CIVILIZED_HEADER"
+					maxWidth = 200
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "advanced_column_header"
+					position = { x = 1740 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "ADVANCED_HEADER"
+					maxWidth = 210
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "unique_column_header"
+					position = { x = 2260 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "SPECIAL_HEADER"
+					maxWidth = 200
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+			}
+
+			# Containers
+			# Each 'column' is 275
+			containerWindowType = {
+				name = "tribal_tiled_research_bg"
+				position = { x = 430 y=0 }
+				size = { width = 650 height = 950 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_orange_tiled_research_bg"
+				}
+			}
+
+			containerWindowType = {
+				name = "civilized_tiled_research_bg"
+				position = { x = 1080 y=0 }
+				size = { width = 630 height = 950 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_green_tiled_research_bg"
+				}
+			}
+
+			containerWindowType = {
+				name = "advanced_tiled_research_bg"
+				position = { x = 1710 y=0 }
+				size = { width = 520 height = 950 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_blue_tiled_research_bg"
+				}
+			}
+
+			containerWindowType = {
+				name = "unique_tiled_research_bg"
+				position = { x = 2230 y=0 }
+				size = { width = 500 height = 950 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_purple_tiled_research_bg"
+				}
+			}
+
+			# Trees
+			gridboxtype = {
+				name = "nautics_tech_1_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "brk_black_flag_ships_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "brk_palace_ships_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+				gridboxtype = {
+				name = "juggle_navy_ships_tree"
+				position = { x = 70 y = 70 }
+				size = { width = 100 height = 100 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+		}
+
+		#------------------------------------------
+		# Naval module folder
+		#------------------------------------------
+		containerWindowType = {
+			name = "fallout_naval_modules_folder"
+			position = { x=0 y=47 }
+			size = { width = 100%% height = 100%% }
+			margin = { top = 13 left = 13 bottom = 24 right = 25 }
+			drag_scroll = { left middle }
+			verticalScrollbar = "right_vertical_slider"
+			horizontalScrollbar = "bottom_horizontal_slider"
+
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_window_2b_border"
+			}
+
+			containerWindowType = {
+				name = "techtree_stripes"
+				position = { x= 0 y= 0 }
+				size = {
+					width = 2500 height = 1520
+					#width = 1400 height = 1275
+					min = { width = 100%% height = 100%% }
+				}
+				clipping = no
+
+				iconType = {
+					name ="naval_techtree_bg"
+					spriteType = "GFX_naval_techtree_bg"
+					position = { x=0 y=0 }
+					alwaystransparent = yes
+				}
+
+				# Row Headers
+
+				instantTextBoxType = {
+					name = "header_subsurface"
+					position = { x = 50 y = 130 }   # 300
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_SUBSURFACE"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_light_weapon"
+					position = { x = 50 y = 270 }   # 450
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_LIGHT_WEAPON"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_medium_weapon"
+					position = { x = 50 y = 410 }   # 600
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_MEDIUM_WEAPON"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_heavy_weapon"
+					position = { x = 50 y = 550 }   # 750
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_HEAVY_WEAPON"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_super_heavy_weapon"
+					position = { x = 50 y = 690 }   # 900
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_SUPER_HEAVY_WEAPON"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_armour_modules"
+					position = { x = 50 y = 970 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_ARMOUR_MODULES"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_detection_modules"
+					position = { x = 50 y = 1110 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_DETECTION"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_storage_modules"
+					position = { x = 50 y = 1250 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_STORAGE_MODULES"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				# Column Headers
+				instantTextBoxType = {
+					name = "tribal_column_header"
+					position = { x = 460 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "TRIBAL_HEADER"
+					maxWidth = 200
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "civilized_column_header"
+					position = { x = 1080 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "CIVILIZED_HEADER"
+					maxWidth = 200
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "advanced_column_header"
+					position = { x = 1700 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "ADVANCED_HEADER"
+					maxWidth = 210
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				#instantTextBoxType = {
+				#	name = "unique_column_header"
+				#	position = { x = 1670 y = 20 }
+				#	font = "pipboy_32"
+				#	borderSize = { x = 0 y = 0 }
+				#	text = "SPECIAL_HEADER"
+				#	maxWidth = 200
+				#	maxHeight = 32
+				#	format = left
+				#	Orientation = "UPPER_LEFT"
+				#}
+			}
+
+			# Containers
+			# Each 'column' is 275
+			containerWindowType = {
+				name = "tribal_tiled_research_bg"
+				position = { x = 430 y=0 }
+				size = { width = 620 height = 1500 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_orange_tiled_research_bg"
+				}
+			}
+
+			containerWindowType = {
+				name = "civilized_tiled_research_bg"
+				position = { x = 1050 y=0 }
+				size = { width = 620 height = 1500 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_green_tiled_research_bg"
+				}
+			}
+
+			containerWindowType = {
+				name = "advanced_tiled_research_bg"
+				position = { x = 1670 y=0 }
+				size = { width = 600 height = 1500 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_blue_tiled_research_bg"
+				}
+			}
+
+			# containerWindowType = {
+			# 	name = "unique_tiled_research_bg"
+			# 	position = { x = 2700 y=0 }
+			# 	size = { width = 571 height = 1800 }
+			# 	clipping = no
+
+			# 	background = {
+			# 		name = "Background"
+			# 		quadTextureSprite ="GFX_purple_tiled_research_bg"
+			# 	}
+			# }
+
+			# Trees
+			gridboxtype = {
+				name = "naval_module_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+			gridboxtype = {
+				name = "juggle_navy_guns_tree"
+				position = { x = 70 y = 70 }
+				size = { width = 100 height = 100 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+		}
+
+		#------------------------------------------
+		# Naval non mtg
+		#------------------------------------------
+		containerWindowType = {
+			name = "fallout_naval_non_mtg_folder"
+			position = { x=0 y=47 }
+			size = { width = 100%% height = 100%% }
+			margin = { top = 13 left = 13 bottom = 24 right = 25 }
+			drag_scroll = { left middle }
+			verticalScrollbar = "right_vertical_slider"
+			horizontalScrollbar = "bottom_horizontal_slider"
+
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_window_2b_border"
+			}
+
+			containerWindowType = {
+				name = "techtree_stripes"
+				position = { x= 0 y= 0 }
+				size = {
+					width = 2500 height = 1220
+					#width = 1400 height = 1275
+					min = { width = 100%% height = 100%% }
+				}
+				clipping = no
+
+				iconType = {
+					name ="naval_techtree_bg"
+					spriteType = "GFX_naval_techtree_bg"
+					position = { x=0 y=0 }
+					alwaystransparent = yes
+				}
+
+				# Row Headers
+				instantTextBoxType = {
+					name = "header_row_1"
+					position = { x = 50 y = 130 }   # 150
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_PROPULSION"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_row_2"
+					position = { x = 50 y = 270 }   # 300
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_SHIP_LIGHT_HULL"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_row_3"
+					position = { x = 50 y = 410 }   # 450
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_UPGRADES"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_row_4"
+					position = { x = 50 y = 555 }   # 600
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_SHIP_MEDIUM_HULL"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_row_5"
+					position = { x = 50 y = 690 }   # 750
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_UPGRADES"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_row_6"
+					position = { x = 50 y = 830 }   # 900
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_SHIP_HEAVY_HULL"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_row_7"
+					position = { x = 50 y = 970 }  # 1200
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_SHIP_SUPER_HEAVY_HULL"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_row_9"
+					position = { x = 50 y = 1110 }  # 1200
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_NAVAL_INVASION"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				# Column Headers
+				instantTextBoxType = {
+					name = "tribal_column_header"
+					position = { x = 460 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "TRIBAL_HEADER"
+					maxWidth = 200
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "civilized_column_header"
+					position = { x = 1160 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "CIVILIZED_HEADER"
+					maxWidth = 200
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "advanced_column_header"
+					position = { x = 2000 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "ADVANCED_HEADER"
+					maxWidth = 210
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "unique_column_header"
+					position = { x = 2500 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "SPECIAL_HEADER"
+					maxWidth = 200
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+			}
+
+			# Containers
+			# Each 'column' is 275
+			containerWindowType = {
+				name = "tribal_tiled_research_bg"
+				position = { x = 430 y=0 }
+				size = { width = 700 height = 1210 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_orange_tiled_research_bg"
+				}
+			}
+
+			containerWindowType = {
+				name = "civilized_tiled_research_bg"
+				position = { x = 1130 y=0 }
+				size = { width = 840 height = 1210 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_green_tiled_research_bg"
+				}
+			}
+
+			containerWindowType = {
+				name = "advanced_tiled_research_bg"
+				position = { x = 1970 y=0 }
+				size = { width = 500 height = 1210 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_blue_tiled_research_bg"
+				}
+			}
+
+			containerWindowType = {
+				name = "unique_tiled_research_bg"
+				position = { x = 2470 y=0 }
+				size = { width = 571 height = 1210 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_purple_tiled_research_bg"
+				}
+			}
+
+			# Trees
+			gridboxtype = {
+				name = "nautics_tech_non_mtg_1_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+		}
+
+		#------------------------------------------
+		# Industry Folder
+		#------------------------------------------
+		containerWindowType = {
+			name = "fallout_industry_folder"
+			position = { x=0 y=47 }
+			size = { width = 100%% height = 100%% }
+			margin = { top = 13 left = 13 bottom = 24 right = 25 }
+			drag_scroll = { left middle }
+			verticalScrollbar = "right_vertical_slider"
+			horizontalScrollbar = "bottom_horizontal_slider"
+
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_window_2b_border"
+			}
+
+			containerWindowType = {
+				name = "techtree_stripes"
+				position = { x= 0 y= 0 }
+				size = {
+					width = 2110 height = 1940
+					min = { width = 100%% height = 100%% }
+				}
+				clipping = no
+
+				iconType = {
+					name ="industry_techtree_bg"
+					spriteType = "GFX_industry_techtree_bg"
+					position = { x=0 y=0 }
+					alwaystransparent = yes
+				}
+
+				# Row Headers
+
+				instantTextBoxType = {
+					name = "header_tools_scavenging"
+					position = { x = 50 y = 130 }   # 150
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_TOOLS_SCAVENGING"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_tools_production"
+					position = { x = 50 y = 270 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_TOOLS_PRODUCTION"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_generalized_production"
+					position = { x = 50 y = 410 }   # 600
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_GENERALIZED_PRODUCTION"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_specialized_production"
+					position = { x = 50 y = 550 }   # 750
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_SPECIALIZED_PRODUCTION"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_extraction"
+					position = { x = 50 y = 690 }   # 900
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_EXTRACTION"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_construction"
+					position = { x = 50 y = 830 }   # 750
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_CONSTRUCTION"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_habitation"
+					position = { x = 50 y = 970 }   # 900
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_HABITATION"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_agriculture"
+					position = { x = 50 y = 1110 }   # 900
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_AGRICULTURE"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_recycling"
+					position = { x = 50 y = 1250 }   # 900
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_RECYCLING"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_scrap_metal"
+					position = { x = 50 y = 1390 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_SCRAP_METAL"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_water"
+					position = { x = 50 y = 1530 }  # 1200
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_WATER"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_energy"
+					position = { x = 50 y = 1670 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_ENERGY"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_circuitry"
+					position = { x = 50 y = 1810 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_CIRCUITRY"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				# Column Headers
+				instantTextBoxType = {
+					name = "tribal_column_header"
+					position = { x = 490 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "TRIBAL_HEADER"
+					maxWidth = 200
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "civilized_column_header"
+					position = { x = 1180 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "CIVILIZED_HEADER"
+					maxWidth = 200
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "advanced_column_header"
+					position = { x = 1730 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "ADVANCED_HEADER"
+					maxWidth = 210
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "unique_column_header"
+					position = { x = 2330 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "SPECIAL_HEADER"
+					maxWidth = 200
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+			}
+
+			# Containers
+			# Each 'column' is 275
+			containerWindowType = {
+				name = "tribal_tiled_research_bg"
+				position = { x = 460 y=0 }
+				size = { width = 690 height = 1940 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_orange_tiled_research_bg"
+				}
+			}
+
+			containerWindowType = {
+				name = "civilized_tiled_research_bg"
+				position = { x = 1150 y=0 }
+				size = { width = 550 height = 1940 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_green_tiled_research_bg"
+				}
+			}
+
+			containerWindowType = {
+				name = "advanced_tiled_research_bg"
+				position = { x = 1700 y=0 }
+				size = { width = 600 height = 1940 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_blue_tiled_research_bg"
+				}
+			}
+
+			containerWindowType = {
+				name = "unique_tiled_research_bg"
+				position = { x = 2300 y=0 }
+				size = { width = 400 height = 1940 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_purple_tiled_research_bg"
+				}
+			}
+
+			# Trees
+
+			gridboxtype = {
+				name = "tool_engineering_tree"
+				position = { x= 0 y=150 }
+				slotsize = { width=70 height= 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "basic_industry_tech_tree"
+				position = { x= 0 y=150 }
+				slotsize = { width=70 height= 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "pre_construction_industry_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "pre_agriculture_industry_tech_tree"
+				position = { x= 0 y=150 }
+				slotsize = { width=70 height= 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "pre_recycling_industry_tech_tree"
+				position = { x= 0 y=150 }
+				slotsize = { width=70 height= 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "resource_generator_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "vault_industry_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "underground_industry_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+			gridboxtype = {
+				name = "juggle_industry_tree"
+				position = { x = 100 y = 100 }
+				size = { width = 100 height=100 }
+				slotsize = { width = 70 height = 70 }
+				format = "UP"
+			}
+		}
+
+		#------------------------------------------
+		# Engineering Folder
+		#------------------------------------------
+		containerWindowType = {
+			name = "fallout_engineering_folder"
+			position = { x=0 y=47 }
+			size = { width = 100%% height = 100%% }
+			margin = { top = 13 left = 13 bottom = 24 right = 25 }
+			drag_scroll = { left middle }
+			verticalScrollbar = "right_vertical_slider"
+			horizontalScrollbar = "bottom_horizontal_slider"
+
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_window_2b_border"
+			}
+
+			containerWindowType = {
+				name = "techtree_stripes"
+				position = { x= 0 y= 0 }
+				size = {
+					width = 2110 height = 900
+					#width = 1400 height = 1275
+					min = { width = 100%% height = 100%% }
+				}
+				clipping = no
+
+				iconType = {
+					name ="engineering_techtree_bg"
+					spriteType = "GFX_engineering_techtree_bg"
+					position = { x=0 y=0 }
+					alwaystransparent = yes
+				}
+
+				# Row Headers
+				instantTextBoxType = {
+					name = "header_encryption"
+					position = { x = 50 y = 130 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_ENCRYPTION"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_communication"
+					position = { x = 50 y = 270 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_COMMUNICATION"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_decryption"
+					position = { x = 50 y = 410 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_DECRYPTION"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_electronics"
+					position = { x = 50 y = 555 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_ELECTRONICS"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_radar"
+					position = { x = 50 y = 690 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_RADAR"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				# Column Headers
+				instantTextBoxType = {
+					name = "tribal_column_header"
+					position = { x = 490 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "TRIBAL_HEADER"
+					maxWidth = 200
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "civilized_column_header"
+					position = { x = 1040 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "CIVILIZED_HEADER"
+					maxWidth = 200
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "advanced_column_header"
+					position = { x = 1590 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "ADVANCED_HEADER"
+					maxWidth = 210
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+			}
+
+			# Containers
+			# Each 'column' is 275
+			containerWindowType = {
+				name = "tribal_tiled_research_bg"
+				position = { x = 460 y=0 }
+				size = { width = 550 height = 900 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_orange_tiled_research_bg"
+				}
+			}
+
+			containerWindowType = {
+				name = "civilized_tiled_research_bg"
+				position = { x = 1010 y=0 }
+				size = { width = 550 height = 900 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_green_tiled_research_bg"
+				}
+			}
+
+			containerWindowType = {
+				name = "advanced_tiled_research_bg"
+				position = { x = 1560 y=0 }
+				size = { width = 550 height = 900 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_blue_tiled_research_bg"
+				}
+			}
+
+			# Trees
+			gridboxtype = {
+				name = "communication_engineering_tree"
+				position = { x= 0 y=150 }
+				slotsize = { width=70 height= 70 }
+				format = "LEFT"
+			}
+			gridboxtype = {
+				name = "electronic_engineering_tree"
+				position = { x= 0 y=150 }
+				slotsize = { width=70 height= 70 }
+				format = "LEFT"
+			}
+				gridboxtype = {
+				name = "juggle_electronics_tree"
+				position = { x = 100 y = 100 }
+				size = { width = 100 height=100 }
+				slotsize = { width = 70 height = 70 }
+				format = "UP"
+			}			
+		}
+
+		#------------------------------------------
+		# Land Doctrine Folder
+		#------------------------------------------
+		containerWindowType = {
+			name = "fallout_land_doctrine_folder"
+			position = { x=0 y=47 }
+			size = { width = 100%% height = 100%% }
+			margin = { top = 13 left = 13 bottom = 24 right = 25 }
+			drag_scroll = { left middle }
+			verticalScrollbar = "right_vertical_slider"
+			horizontalScrollbar = "bottom_horizontal_slider"
+
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_window_2b_border"
+			}
+
+			containerWindowType = {
+				name = "size_filler"
+				position = { x=0 y=0 }
+				size = { width = 1926 height = 100 }
+			}
+
+			iconType = {
+				name ="automated_warfare_bg"
+				spriteType = "GFX_automated_warfare_bg"
+				position = { x=13 y=14 }
+			}
+
+			iconType = {
+				name ="elite_army_bg"
+				spriteType = "GFX_elite_army_bg"
+				position = { x=493 y=14 }
+			}
+
+			iconType = {
+				name ="grand_army_bg"
+				spriteType = "GFX_grand_army_bg"
+				position = { x=973 y=14 }
+			}
+
+			iconType = {
+				name ="terror_tactics_bg"
+				spriteType = "GFX_terror_tactics_bg"
+				position = { x=1453 y=14 }
+			}
+
+			iconType = {
+				name ="outsider_doctrine_bg"
+				spriteType = "GFX_outsider_doctrine_bg"
+				position = { x=1933 y=14 }
+			}
+
+			instantTextBoxType = {
+				name = "automated_warfare_title"
+				position = { x = 43 y = 26 }
+
+				font = "monofont_24"
+				borderSize = { x = 0 y = 4 }
+				text = "AUTOMATED_WARFARE_DOCTRINE_LABEL"
+				maxWidth = 400
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+
+			instantTextBoxType = {
+				name = "elite_army_title"
+				position = { x = 523 y = 26 }
+
+				font = "monofont_24"
+				borderSize = { x = 0 y = 4 }
+				text = "ELITE_ARMY_DOCTRINE_LABEL"
+				maxWidth = 400
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+
+			instantTextBoxType = {
+				name = "grand_army_title"
+				position = { x = 1003 y = 26 }
+
+				font = "monofont_24"
+				borderSize = { x = 0 y = 4 }
+				text = "GRAND_ARMY_DOCTRINE_LABEL"
+				maxWidth = 400
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+
+			instantTextBoxType = {
+				name = "terror_tactics_title"
+				position = { x = 1483 y = 26 }
+
+				font = "monofont_24"
+				borderSize = { x = 0 y = 4 }
+				text = "TERROR_TACTICS_DOCTRINE_LABEL"
+				maxWidth = 400
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+
+			instantTextBoxType = {
+				name = "outsider_doctrine_header"
+				position = { x = 1971 y = 35 }
+				font = "monofont_24"
+				borderSize = { x = 0 y = 4 }
+				text = "HEADER_OUTSIDER_DOCTRINE"
+				maxWidth = 400
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+
+			instantTextBoxType = {
+				name = "outsider_doctrine_desc"
+				position = { x = 1971 y = 81 }
+				font = "monofont_16"
+				borderSize = { x = 0 y = 4 }
+				text = "OUTSIDER_DOCTRINE_DESC"
+				maxWidth = 400
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+
+			instantTextBoxType = {
+				name = "automated_warfare_desc"
+				position = { x = 43 y = 81 }
+
+				font = "monofont_16"
+				borderSize = { x = 0 y = 4 }
+				text = "AUTOMATED_WARFARE_DOCTRINE_DESC"
+				maxWidth = 400
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+
+			instantTextBoxType = {
+				name = "elite_army_desc"
+				position = { x = 523 y = 81 }
+
+				font = "monofont_16"
+				borderSize = { x = 0 y = 4 }
+				text = "ELITE_ARMY_DOCTRINE_DESC"
+				maxWidth = 400
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+
+			instantTextBoxType = {
+				name = "grand_army_desc"
+				position = { x = 1003 y = 81 }
+
+				font = "monofont_16"
+				borderSize = { x = 0 y = 4 }
+				text = "GRAND_ARMY_DOCTRINE_DESC"
+				maxWidth = 400
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+
+			instantTextBoxType = {
+				name = "terror_tactics_desc"
+				position = { x = 1483 y = 81 }
+
+				font = "monofont_16"
+				borderSize = { x = 0 y = 4 }
+				text = "TERROR_TACTICS_DOCTRINE_DESC"
+				maxWidth = 400
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+
+			instantTextBoxType = {
+				name = "mob_warfare_subtitle1"
+				position = { x = 33 y = 496 }
+
+				font = "monofont_16"
+				borderSize = { x = 0 y = 4 }
+				text = "AUTOMATED_WARFARE_LABEL"
+				maxWidth = 150
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+				pdx_tooltip = "AUTOMATED_WARFARE_LABEL_TT"
+			}
+
+			instantTextBoxType = {
+				name = "mob_warfare_subtitle2"
+				position = { x = 278 y = 496 }
+
+				font = "monofont_16"
+				borderSize = { x = 0 y = 4 }
+				text = "AUTOMATED_WARFARE_LABEL_1"
+				maxWidth = 200
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+				pdx_tooltip = "AUTOMATED_WARFARE_LABEL_1_TT"
+			}
+
+			instantTextBoxType = {
+				name = "mob_warfare_subtitle3"
+				position = { x = 33 y = 960 }
+
+				font = "monofont_16"
+				borderSize = { x = 0 y = 4 }
+				text = "AUTOMATED_WARFARE_LABEL_2"
+				maxWidth = 150
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+				pdx_tooltip = "AUTOMATED_WARFARE_LABEL_2_TT"
+			}
+
+			instantTextBoxType = {
+				name = "mob_warfare_subtitle4"
+				position = { x = 283 y = 960 }
+
+				font = "monofont_16"
+				borderSize = { x = 0 y = 4 }
+				text = "AUTOMATED_WARFARE_LABEL_3"
+				maxWidth = 180
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+				pdx_tooltip = "AUTOMATED_WARFARE_LABEL_3_TT"
+			}
+
+			instantTextBoxType = {
+				name = "elite_army_subtitle1"
+				position = { x = 523 y = 476 }
+
+				font = "monofont_16"
+				borderSize = { x = 0 y = 4 }
+				text = "ELITE_ARMY_LABEL"
+				maxWidth = 150
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+				pdx_tooltip = "ELITE_ARMY_LABEL_TT"
+			}
+
+			instantTextBoxType = {
+				name = "elite_army_subtitle2"
+				position = { x = 763 y = 476 }
+
+				font = "monofont_16"
+				borderSize = { x = 0 y = 4 }
+				text = "ELITE_ARMY_LABEL_1"
+				maxWidth = 170
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+				pdx_tooltip = "ELITE_ARMY_LABEL_1_TT"
+			}
+
+			instantTextBoxType = {
+				name = "elite_army_subtitle3"
+				position = { x = 523 y = 836 }
+
+				font = "monofont_16"
+				borderSize = { x = 0 y = 4 }
+				text = "ELITE_ARMY_LABEL_2"
+				maxWidth = 150
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+				pdx_tooltip = "ELITE_ARMY_LABEL_2_TT"
+			}
+
+			instantTextBoxType = {
+				name = "elite_army_subtitle4"
+				position = { x = 763 y = 836 }
+
+				font = "monofont_16"
+				borderSize = { x = 0 y = 4 }
+				text = "ELITE_ARMY_LABEL_3"
+				maxWidth = 170
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+				pdx_tooltip = "ELITE_ARMY_LABEL_3_TT"
+			}
+
+			instantTextBoxType = {
+				name = "grand_army_subtitle1"
+				position = { x = 993 y = 616 }
+
+				font = "monofont_16"
+				borderSize = { x = 0 y = 4 }
+				text = "GRAND_ARMY_LABEL"
+				maxWidth = 170
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+				pdx_tooltip = "GRAND_ARMY_LABEL_TT"
+			}
+
+			instantTextBoxType = {
+				name = "grand_army_subtitle2"
+				position = { x = 1233 y = 616 }
+
+				font = "monofont_16"
+				borderSize = { x = 0 y = 4 }
+				text = "GRAND_ARMY_LABEL_1"
+				maxWidth = 200
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+				pdx_tooltip = "GRAND_ARMY_LABEL_1_TT"
+			}
+
+			instantTextBoxType = {
+				name = "terror_tactics_subtitle1"
+				position = { x = 1483 y = 476 }
+
+				font = "monofont_16"
+				borderSize = { x = 0 y = 4 }
+				text = "TERROR_TACTICS_LABEL"
+				maxWidth = 150
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+				pdx_tooltip = "TERROR_TACTICS_LABEL_TT"
+			}
+
+			instantTextBoxType = {
+				name = "terror_tactics_subtitle2"
+				position = { x = 1739 y = 476 }
+
+				font = "monofont_16"
+				borderSize = { x = 0 y = 4 }
+				text = "TERROR_TACTICS_LABEL_1"
+				maxWidth = 150
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+				pdx_tooltip = "TERROR_TACTICS_LABEL_1_TT"
+			}
+
+			gridboxtype = {
+				name = "automated_warfare_tree"
+				position = { x=3 y=153 }
+				size = { width = 478 height = 1430 }
+				slotsize = { width=60 height= 60 }
+				format = "UP"
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_blue_tiled_research_bg"
+					position = { x=0 y=-150 }
+				}
+			}
+
+			gridboxtype = {
+				name = "elite_army_tree"
+				position = { x=483 y=153 }
+				size = { width = 480 height = 1430 }
+				slotsize = { width=60 height= 60 }
+				format = "UP"
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_red_tiled_research_bg"
+					position = { x=0 y=-150 }
+				}
+			}
+
+			gridboxtype = {
+				name = "grand_army_tree"
+				position = { x=963 y=153 }
+				size = { width = 480 height = 1430 }
+				slotsize = { width=60 height= 60 }
+				format = "UP"
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_green_tiled_research_bg"
+					position = { x=0 y=-150 }
+				}
+			}
+
+			gridboxtype = {
+				name = "terror_tactics_tree"
+				position = { x=1443 y=153 }
+				size = { width = 480 height = 1430 }
+				slotsize = { width=60 height= 60 }
+				format = "UP"
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_purple_tiled_research_bg"
+					position = { x=0 y=-150 }
+				}
+			}
+
+			gridboxtype = {
+				name = "outsider_warfare_doctrine_tree"
+				position = { x=1923 y=153 }
+				size = { width = 480 height = 1430 }
+				slotsize = { width=60 height= 60 }
+				format = "UP"
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_orange_tiled_research_bg"
+					position = { x=0 y=-150 }
+				}
+			}
+		}
+
+		#------------------------------------------
+		# Focus Tree Techs Folder (reward)
+		#------------------------------------------
+		containerWindowType = {
+			name = "fallout_focus_tree_folder"
+			position = { x=0 y=47 }
+			size = { width = 100%% height = 100%% }
+			margin = { top = 13 left = 13 bottom = 24 right = 25 }
+			drag_scroll = { left middle }
+			verticalScrollbar = "right_vertical_slider"
+			horizontalScrollbar = "bottom_horizontal_slider"
+
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_window_2b_border"
+			}
+
+			containerWindowType = {
+				name = "techtree_stripes"
+				position = { x= 0 y= 0 }
+				size = {
+					width = 1850 height = 2050
+					min = { width = 100%% height = 100%% }
+				}
+				clipping = no
+
+				iconType = {
+					name ="reward_techtree_bg"
+					spriteType = "GFX_infantry_tech_bg"
+					position = { x=0 y=0 }
+					alwaystransparent = yes
+				}
+
+				# Row Headers
+				instantTextBoxType = {
+					name = "header_focus_unit"
+					position = { x = 50 y = 130 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_UNIT"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_doctrine_techs"
+					position = { x = 50 y = 270 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_DOCTRINE_TECHS"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_unlock"
+					position = { x = 50 y = 560 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_UNLOCK"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_unlock2"
+					position = { x = 50 y = 840 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_UNLOCK2"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_tribal_buffs"
+					position = { x = 280 y = 980 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_TRIBAL_BUFFS"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_cali_buffs"
+					position = { x = 280 y = 1260 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_CALI_BUFFS"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_arizona_buffs"
+					position = { x = 280 y = 1400 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_ARIZONA_BUFFS"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_oregon_buffs"
+					position = { x = 280 y = 1680 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_OREGON_BUFFS"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_texas_buffs"
+					position = { x = 280 y = 1820 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_TEXAS_BUFFS"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_mexico_buffs"
+					position = { x = 280 y = 1960 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_MEXICO_BUFFS"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_khans_buffs"
+					position = { x = 280 y = 2100 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_KHANS_BUFFS"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_other_buffs"
+					position = { x = 280 y = 2240 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_OTHER_BUFFS"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+			}
+
+			# Containers
+			# Each 'column' is 275
+			# containerWindowType = {
+			# 	name = "tribal_tiled_research_bg"
+			# 	position = { x = 460 y=0 }
+			# 	size = { width = 835 height = 1100 }
+			# 	clipping = no
+
+			# 	background = {
+			# 		name = "Background"
+			# 		quadTextureSprite ="GFX_yellow_tiled_research_bg"
+			# 	}
+			# }
+
+			# containerWindowType = {
+			# 	name = "civilized_tiled_research_bg"
+			# 	position = { x = 1295 y=0 }
+			# 	size = { width = 835 height = 1100 }
+			# 	clipping = no
+
+			# 	background = {
+			# 		name = "Background"
+			# 		quadTextureSprite ="GFX_green_tiled_research_bg"
+			# 	}
+			# }
+
+			# containerWindowType = {
+			# 	name = "advanced_tiled_research_bg"
+			# 	position = { x = 2130 y=0 }
+			# 	size = { width = 1114 height = 1100 }
+			# 	clipping = no
+
+			# 	background = {
+			# 		name = "Background"
+			# 		quadTextureSprite ="GFX_blue_tiled_research_bg"
+			# 	}
+			# }
+
+			# containerWindowType = {
+			# 	name = "unique_tiled_research_bg"
+			# 	position = { x = 3244 y=0 }
+			# 	size = { width = 571 height = 1100 }
+			# 	clipping = no
+
+			# 	background = {
+			# 		name = "Background"
+			# 		quadTextureSprite ="GFX_purple_tiled_research_bg"
+			# 	}
+			# }
+
+			# Trees
+			gridboxtype = {
+				name = "pathfinders_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "clanfightingstyles_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "warriorcult_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "nomadsoul_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "mansbestfriend_tree"
+				position = { x = 0 y = 150  }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "noctwarriors_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "legion_training_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "tribalholyorg_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "outsiderways_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "sacredgifts_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "tribalwarpaint_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "tribalnumbers_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "tribalimmortals_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "tribalmountaingods_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "tribalsungods_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "mutant_supremacy_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "jungle_spirits_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "jungle_tribal_integration_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "itz_rough_terrian_training_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "super_mutant_civilization_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "ghoul_civilization_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "police_infantry_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "sentinel_unit_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "legion_centurions_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "legion_warriors_of_mars_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "legion_vexillarius_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "oldworldarmour_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "ncr_reorgranger_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "ncr_rangercore_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "ncr_jim_drills_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "ncr_rangerlead_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "ncr_rangercanopeners_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "ncr_seth_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "ncr_privatepolice_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "ncr_railway_construction_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "ncr_shocktroopers_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "settler_caravanmilitia_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "raider_reckless_aggression_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "exoskin_armoured_special_forces_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "khan_field_medics_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "khan_antivenom_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "khan_radaway_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "khan_fixer_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "khan_cateye_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "khan_mentats_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "khan_daddy_o_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "khan_buffout_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "dog_infantry_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "reno_mastersnewarmy_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "oregon_geckosupport_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "oregon_mesmetronfieldequipment_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "oregon_psyker_mental_stimulants_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "oregon_psyker_nullification_training_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "oregon_psyker_ancient_traditions_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "tbh_lawkeepers_tech_1_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "ttm_healthy_warriors_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "ttm_call_of_the_wild_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "ttm_jurassic_strength_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "drug_technology_coffee_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "super_mutant_aux_infantry_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "super_mutant_nightkin_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "ghoul_paratrooper_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "gauss_unlock_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "military_heritage_unlock_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "plasma_unlock_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "enclave_pa_unlock_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "midwest_pa_unlock_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "high_fighter_unlock_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "vertibird_unlock_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "general_atomics_unlock_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "stent_security_solutions_unlock_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "wattz_company_unlock_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "handhtools_unlock_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "poseidon_unlock_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "lockreed_unlock_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "arcjetsystems_unlock_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "westtek_unlock_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "plant_support_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "robco_unlock_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "mininuke_unlock_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "gehenna_molech_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "artillery_ammo_unlock_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "CES_mercenary_training_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "armored_chariots_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "legion_frumentarii_officers_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "legion_frumentarii_commandoes_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "phoenix_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "ces_at_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "ces_aurelius_mercenaries_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "ces_navajo_scouts_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "ces_navajo_skin_walkers_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "ces_two_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "CES_horns_moroni_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "forward_fire_base_unlock_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "grunt_level_radio_unlock_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "scribes_unlock_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "knights_unlock_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "faerie_unlock_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+			gridboxtype = {
+				name = "warden_doggos_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "all_terrain_vehicles_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "interwoven_support_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "mountaineer_training_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "skilled_medics_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "robco_security_protectrons_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "special_vintage_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+		}
+
+		#------------------------------------------
+		# Beast Tree Techs Folder
+		#------------------------------------------
+		containerWindowType = {
+			name = "fallout_tech_beast_folder"
+			position = { x=0 y=47 }
+			size = { width = 100%% height = 100%% }
+			margin = { top = 13 left = 13 bottom = 24 right = 25 }
+			drag_scroll = { left middle }
+			verticalScrollbar = "right_vertical_slider"
+			horizontalScrollbar = "bottom_horizontal_slider"
+
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_window_2b_border"
+			}
+
+			containerWindowType = {
+				name = "techtree_stripes"
+				position = { x= 0 y= 0 }
+				size = {
+					width = 1800 height = 2600
+					min = { width = 100%% height = 100%% }
+				}
+				clipping = no
+
+				iconType = {
+					name ="beast_techtree_bg"
+					spriteType = "GFX_beast_tech_bg"
+					position = { x=0 y=0 }
+					alwaystransparent = yes
+				}
+
+				# Row Headers
+				instantTextBoxType = {
+					name = "header_tech_levels"
+					position = { x = 50 y = 130 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_TECH_LEVEL"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+			}
+
+			# Containers
+			# Each 'column' is 275
+			containerWindowType = {
+				name = "tribal_tiled_research_bg"
+				position = { x = 460 y=0 }
+				size = { width = 835 height = 1100 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_yellow_tiled_research_bg"
+				}
+			}
+
+			containerWindowType = {
+				name = "civilized_tiled_research_bg"
+				position = { x = 1295 y=0 }
+				size = { width = 835 height = 1100 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_green_tiled_research_bg"
+				}
+			}
+
+			containerWindowType = {
+				name = "advanced_tiled_research_bg"
+				position = { x = 2130 y=0 }
+				size = { width = 1114 height = 1100 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_blue_tiled_research_bg"
+				}
+			}
+
+			containerWindowType = {
+				name = "unique_tiled_research_bg"
+				position = { x = 3244 y=0 }
+				size = { width = 571 height = 1100 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_purple_tiled_research_bg"
+				}
+			}
+
+			# Trees
+			gridboxtype = {
+				name = "horse_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+		}
+
+		#------------------------------------------
+		# Horse Tree Techs Folder
+		#------------------------------------------
+		containerWindowType = {
+			name = "fallout_horse_tech_folder"
+			position = { x=0 y=47 }
+			size = { width = 100%% height = 100%% }
+			margin = { top = 13 left = 13 bottom = 24 right = 25 }
+			drag_scroll = { left middle }
+			verticalScrollbar = "right_vertical_slider"
+			horizontalScrollbar = "bottom_horizontal_slider"
+
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_window_2b_border"
+			}
+
+			containerWindowType = {
+				name = "techtree_stripes"
+				position = { x= 0 y= 0 }
+				size = {
+					width = 1800 height = 2600
+					min = { width = 100%% height = 100%% }
+				}
+				clipping = no
+
+				iconType = {
+					name ="horse_techtree_bg"
+					spriteType = "GFX_horse_tech_bg"
+					position = { x=0 y=0 }
+					alwaystransparent = yes
+				}
+
+				# Row Headers
+				instantTextBoxType = {
+					name = "header_tech_levels"
+					position = { x = 50 y = 130 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_TECH_LEVEL"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+			}
+
+			# Containers
+			# Each 'column' is 275
+			# containerWindowType = {
+			# 	name = "tribal_tiled_research_bg"
+			# 	position = { x = 460 y=0 }
+			# 	size = { width = 835 height = 1100 }
+			# 	clipping = no
+
+			# 	background = {
+			# 		name = "Background"
+			# 		quadTextureSprite ="GFX_yellow_tiled_research_bg"
+			# 	}
+			# }
+
+			# containerWindowType = {
+			# 	name = "civilized_tiled_research_bg"
+			# 	position = { x = 1295 y=0 }
+			# 	size = { width = 835 height = 1100 }
+			# 	clipping = no
+
+			# 	background = {
+			# 		name = "Background"
+			# 		quadTextureSprite ="GFX_green_tiled_research_bg"
+			# 	}
+			# }
+
+			# containerWindowType = {
+			# 	name = "advanced_tiled_research_bg"
+			# 	position = { x = 2130 y=0 }
+			# 	size = { width = 1114 height = 1100 }
+			# 	clipping = no
+
+			# 	background = {
+			# 		name = "Background"
+			# 		quadTextureSprite ="GFX_blue_tiled_research_bg"
+			# 	}
+			# }
+
+			# containerWindowType = {
+			# 	name = "unique_tiled_research_bg"
+			# 	position = { x = 3244 y=0 }
+			# 	size = { width = 571 height = 1100 }
+			# 	clipping = no
+
+			# 	background = {
+			# 		name = "Background"
+			# 		quadTextureSprite ="GFX_purple_tiled_research_bg"
+			# 	}
+			# }
+
+			# Trees
+			gridboxtype = {
+				name = "horse_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+		}
+
+		#------------------------------------------
+		# Tech Level Folder (Untanglement)
+		#------------------------------------------
+		containerWindowType = {
+			name = "fallout_tech_level_folder"
+			position = { x=0 y=47 }
+			size = { width = 100%% height = 100%% }
+			margin = { top = 13 left = 13 bottom = 24 right = 25 }
+			drag_scroll = { left middle }
+			verticalScrollbar = "right_vertical_slider"
+			horizontalScrollbar = "bottom_horizontal_slider"
+
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_window_2b_border"
+			}
+
+			containerWindowType = {
+				name = "techtree_stripes"
+				position = { x= 0 y= 0 }
+				size = {
+					width = 1800 height = 1000
+					min = { width = 100%% height = 100%% }
+				}
+				clipping = no
+
+				iconType = {
+					name ="tech_level_techtree_bg"
+					spriteType = "GFX_infantry_tech_bg"
+					position = { x=0 y=0 }
+					alwaystransparent = yes
+				}
+
+				# Row Headers
+				instantTextBoxType = {
+					name = "header_infantry_level"
+					position = { x = 25 y = 130 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_INFANTRY_LEVEL"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_support_level"
+					position = { x = 25 y = 270 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_SUPPORT_LEVEL"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_power_armour_level"
+					position = { x = 25 y = 550 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_POWER_ARMOUR_LEVEL"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_special_forces_level"
+					position = { x = 25 y = 410 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_SPECIAL_FORCES"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_vehicles_level"
+					position = { x = 25 y = 690 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_VEHICLES_LEVEL"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_robotics_level"
+					position = { x = 25 y = 830 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_ROBOTICS_LEVEL"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_air_level"
+					position = { x = 950 y = 130 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_AIR_LEVEL"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_naval_level"
+					position = { x = 950 y = 270 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_NAVAL_LEVEL"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_tools_level"
+					position = { x = 950 y = 410 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_TOOLS_LEVEL"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_electronics_level"
+					position = { x = 950 y = 550 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_ELECTRONICS_LEVEL"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+
+				instantTextBoxType = {
+					name = "header_habitation_level"
+					position = { x = 950 y = 690 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_HABITATION_LEVEL"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_exploitaiton_level"
+					position = { x = 950 y = 830 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_EXPLOITATION_LEVEL"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+			}
+
+			# Containers
+			# Each 'column' is 275
+			containerWindowType = {
+				name = "tribal_tiled_research_bg"
+				position = { x = 250 y= 50 }
+				size = { width = 190 height = 900 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_orange_tiled_research_bg"
+				}
+			}
+
+			containerWindowType = {
+				name = "civilized_tiled_research_bg"
+				position = { x = 440 y= 50 }
+				size = { width = 190 height = 900 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_green_tiled_research_bg"
+				}
+			}
+
+			containerWindowType = {
+				name = "advanced_tiled_research_bg"
+				position = { x = 630 y= 50 }
+				size = { width = 190 height = 900 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_blue_tiled_research_bg"
+				}
+			}
+
+			containerWindowType = {
+				name = "tribal_tiled_research_2_bg"
+				position = { x = 1230 y= 50 }
+				size = { width = 190 height = 900 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_orange_tiled_research_bg"
+				}
+			}
+
+			containerWindowType = {
+				name = "civilized_tiled_research_2_bg"
+				position = { x = 1420 y= 50 }
+				size = { width = 190 height = 900 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_green_tiled_research_bg"
+				}
+			}
+
+			containerWindowType = {
+				name = "advanced_tiled_research_2_bg"
+				position = { x = 1610 y= 50 }
+				size = { width = 190 height = 900 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_blue_tiled_research_bg"
+				}
+			}
+
+			# Trees
+			gridboxtype = {
+				name = "infantry_tech_level_tribal_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "support_tech_level_tribal_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "vehicles_tech_level_tribal_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "robotics_tech_level_tribal_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "air_tech_level_tribal_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "naval_tech_level_tribal_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "tools_tech_level_tribal_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "habitation_tech_level_tribal_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "special_forces_tech_level_tribal_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "exploitation_tech_level_tribal_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "electronics_tech_level_tribal_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+		}
+
+		#------------------------------------------
+		# tribal tech folder
+		#------------------------------------------
+		containerWindowType = {
+			name = "fallout_tech_tribal_folder"
+			position = { x=0 y=47 }
+			size = { width = 100%% height = 100%% }
+			margin = { top = 13 left = 13 bottom = 24 right = 25 }
+			drag_scroll = { left middle }
+			verticalScrollbar = "right_vertical_slider"
+			horizontalScrollbar = "bottom_horizontal_slider"
+
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_window_2b_border"
+			}
+
+			containerWindowType = {
+				name = "techtree_stripes"
+				position = { x= 0 y= 0 }
+				size = {
+					width = 1800 height = 1000
+					min = { width = 100%% height = 100%% }
+				}
+				clipping = no
+
+				iconType = {
+					name ="tribal_techtree_bg"
+					spriteType = "GFX_tribal_tech_bg"
+					position = { x=0 y=0 }
+					alwaystransparent = yes
+				}
+
+				# Row Headers
+				instantTextBoxType = {
+					name = "header_tribal_stuff_1_tree"
+					position = { x = 150 y = 200 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "TRIBAL_CULTURE_HEADER"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "header_infantry_tree"
+					position = { x = 150 y = 410 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_INFANTRY_TRAINING"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "header_tribal_tech_tree"
+					position = { x = 150 y = 550 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "TRIBAL_HEADER"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "header_enforcers_tree"
+					position = { x = 150 y = 690 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_HEAVY_INFANTRY_EQUIPMENT"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "header_tribal_stuff_tree"
+					position = { x = 150 y = 900 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "TRIBAL_CULTURE_HEADER"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+			}
+
+			# Containers
+			# Each 'column' is 275
+			containerWindowType = {
+				name = "tribal_tiled_research_bg"
+				position = { x = 460 y=0 }
+				size = { width = 1550 height = 1180 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_yellow_tiled_research_bg"
+				}
+			}
+
+			# Trees
+			gridboxtype = {
+				name = "tribal_starter_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+			
+			gridboxtype = {
+				name = "juggle_tribal_tree"
+				position = { x=10 y=10 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+		}
+
+		#------------------------------------------
+		# implants tech folder
+		#------------------------------------------
+		containerWindowType = {
+			name = "fallout_tech_implant_folder"
+			position = { x=0 y=47 }
+			size = { width = 100%% height = 100%% }
+			margin = { top = 13 left = 13 bottom = 24 right = 25 }
+			drag_scroll = { left middle }
+			verticalScrollbar = "right_vertical_slider"
+			horizontalScrollbar = "bottom_horizontal_slider"
+
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_window_2b_border"
+			}
+
+			containerWindowType = {
+				name = "techtree_stripes"
+				position = { x= 0 y= 0 }
+				size = {
+					width = 1800 height = 1000
+					min = { width = 100%% height = 100%% }
+				}
+				clipping = no
+
+				iconType = {
+					name ="implant_techtree_bg"
+					spriteType = "GFX_implants_techtree_bg"
+					position = { x = 410 y = 60 }
+					alwaystransparent = yes
+				}
+
+				# Row Headers
+				instantTextBoxType = {
+					name = "header_implant_deployment"
+					position = { x = 25 y = 130 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_IMPLANT_DEPLOYMENT"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_implant"
+					position = { x = 25 y = 270 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_IMPLANT"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_implant_dangerous"
+					position = { x = 25 y = 1900 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_IMPLANT_DANGEROUS"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+			}
+
+			# Containers
+			# Each 'column' is 275
+
+			containerWindowType = {
+				name = "advanced_tiled_research_bg"
+				position = { x = 400 y= 50 }
+				size = { width = 1230 height = 1750 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_blue_tiled_research_bg"
+				}
+			}
+
+			containerWindowType = {
+				name = "madness_tiled_research_bg"
+				position = { x = 708 y= 1850 }
+				size = { width = 615 height = 350 }
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_red_tiled_research_bg"
+				}
+			}
+
+			# Trees
+			gridboxtype = {
+				name = "implant_vehicles_supply_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "implant_militia_supply_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "implant_infantry_supply_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "implant_spec_ops_supply_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "implant_power_armour_supply_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "implant_rejection_therapy_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+			
+			gridboxtype = {
+				name = "juggle_implant_tree"
+				position = { x=10 y=10 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+		}
+
+		#------------------------------------------
+		# Tabs/buttons
+		#------------------------------------------
+		containerWindowType = {
+			name = "folder_tabs"
+			position = { x=0 y=7 }
+			size = { width = -50 height = 65 }
+			horizontalScrollbar = "bottom_horizontal_slider"
+
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_window_transparent"
+			}
+
+			# 89 gap between
+			# 40 empty gap
+			buttonType = {
+				name = "fallout_infantry_folder_tab"
+				position = { x = 5 y = 0 }
+				quadTextureSprite = "GFX_fallout_infantry_folder_tab"
+				frame = 1
+				clicksound = click_default
+			}
+
+			iconType = {
+				name = "highlight_fallout_infantry_folder"
+				spriteType = "GFX_tutorial_research_folder_icon_glow"
+				position = { x = 15 y = 0 }
+				hide = yes
+				alwaystransparent = yes
+			}
+
+			buttonType = {
+				name = "fallout_support_folder_tab"
+				position = { x = 90 y = 0 }
+				quadTextureSprite = "GFX_fallout_support_folder_tab"
+				frame = 1
+				clicksound = click_default
+			}
+
+			buttonType = {
+				name = "fallout_vehicle_folder_tab"
+				position = { x = 175 y = 0 }
+				quadTextureSprite = "GFX_fallout_armour_folder_tab"
+				frame = 1
+				clicksound = click_default
+			}
+
+			buttonType = {
+				name = "fallout_robotics_folder_tab"
+				position = { x = 260 y = 0 }
+				quadTextureSprite = "GFX_fallout_robotics_folder_tab"
+				frame = 1
+				clicksound = click_default
+			}
+
+			buttonType = {
+				name = "fallout_land_doctrine_folder_tab"
+				position = { x = 345 y = 0 }
+				quadTextureSprite = "GFX_fallout_land_doctrine_folder_tab"
+				frame = 1
+				clicksound = click_default
+			}
+
+			#buttonType = {
+			#	name = "fallout_air_doctrine_folder_tab"
+			#	position = { x = 505 y = 0 }
+			#	quadTextureSprite = "GFX_fallout_techtree_tab_spec_doctrine"
+			#	frame = 1
+			#	clicksound = click_default
+			#}
+
+			buttonType = {
+				name = "fallout_air_folder_tab"
+				position = { x = 450 y = 0 }
+				quadTextureSprite = "GFX_fallout_air_techs_folder_tab"
+				frame = 1
+				clicksound = click_default
+			}
+
+			iconType = {
+				name = "highlight_fallout_air_folder"
+				spriteType = "GFX_tutorial_research_folder_icon_glow"
+				position = { x=636 y=-5 }
+				hide = yes
+				alwaystransparent = yes
+			}
+
+			###
+
+			buttonType = {
+				name = "fallout_naval_folder_tab"
+				position = { x = 555 y = 0 }
+				quadTextureSprite = "GFX_fallout_naval_folder_tab"
+				frame = 1
+				clicksound = click_default
+			}
+
+			buttonType = {
+				name = "fallout_naval_modules_folder_tab"
+				position = { x = 640 y = 0 }
+				quadTextureSprite = "GFX_fallout_naval_modules_folder_tab"
+				frame = 1
+				clicksound = click_default
+			}
+
+			buttonType = {
+				name = "fallout_naval_non_mtg_folder_tab"
+				position = { x = 597 y = 0 }
+				quadTextureSprite = "GFX_fallout_naval_folder_tab"
+				frame = 1
+				clicksound = click_default
+			}
+			###
+
+			buttonType = {
+				name = "fallout_industry_folder_tab"
+				position = { x = 745 y = 0 }
+				quadTextureSprite = "GFX_fallout_industry_folder_tab"
+				frame = 1
+				clicksound = click_default
+			}
+
+			buttonType = {
+				name = "fallout_engineering_folder_tab"
+				position = { x = 830 y = 0 }
+				quadTextureSprite = "GFX_fallout_techtree_engineering_tab"
+				frame = 1
+				clicksound = click_default
+			}
+
+			buttonType = {
+				name = "fallout_focus_tree_folder_tab"
+				position = { x = 935 y = 0 }
+				quadTextureSprite = "GFX_fallout_focus_tree_folder_tab"
+				frame = 1
+				clicksound = click_default
+			}
+
+			buttonType = {
+				name = "fallout_tech_level_folder_tab"
+				position = { x = 1020 y = 0 }
+				quadTextureSprite = "GFX_fallout_tech_level_folder_tab"
+				frame = 1
+				clicksound = click_default
+			}
+
+			buttonType = {
+				name = "fallout_horse_tech_folder_tab"
+				position = { x = 1120 y = 0 }
+				quadTextureSprite = "GFX_horse_tree_folder_tab"
+				frame = 1
+				clicksound = click_horse
+			}
+
+			buttonType = {
+				name = "fallout_tech_tribal_folder_tab"
+				position = { x = 1120 y = 0 }
+				quadTextureSprite = "GFX_fallout_tech_tribal_folder_tab"
+				frame = 1
+				clicksound = click_default
+			}
+
+			buttonType = {
+				name = "fallout_tech_beast_folder_tab"
+				position = { x = 1180 y = 0 }
+				quadTextureSprite = "GFX_fallout_tech_beast_folder_tab"
+				frame = 1
+				clicksound = click_default
+			}
+
+			buttonType = {
+				name = "fallout_tech_implant_folder_tab"
+				position = { x = 1240 y = 0 }
+				quadTextureSprite = "GFX_fallout_tech_implant_folder_tab"
+				frame = 1
+				clicksound = click_default
+			}
+		}
+
+		buttonType = {
+			name = "close_button"
+			position = { x = -50 y = 11 }
+			quadTextureSprite ="GFX_closebutton"
+			buttonFont = "Main_14_black"
+			shortcut = "ESCAPE"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			pdx_tooltip = "CLOSE"
+		}
+	}
+
+	#------------------------------------------------------------------------------------
+	# Items
+	#------------------------------------------------------------------------------------
+	#------------------------------------------
+	# Infantry
+	#------------------------------------------
+	containerWindowType = {
+		name = "techtree_fallout_infantry_folder_small_item"
+		position = { x=0 y=0 }
+		size = { width = 72 height = 72 }
+		clipping = no
+
+		background = {
+			name = "bg"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=36 y=36 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "bonus_icon"
+			position = { x=3 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 17 y = -22 }
+
+			font = "hoi_16mbs"
+			borderSize = { x = 4 y = 4 }
+			text = "lol boat"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+		}
+
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
+	}
+
+	containerWindowType = {
+		name = "techtree_fallout_infantry_folder_item"
+		position = { x=-56 y=-7 }
+		size = { width = 183 height = 84 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=91 y=50 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes
+			alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "Name"
+			position = { x = 3 y = -3 }
+
+			font = "hoi_20bs"
+			borderSize = { x = 4 y = 4 }
+			text = "Happy-Go-Lucky-Tank"
+			maxWidth = 160
+			maxHeight = 20
+			fixedsize = yes
+			format = left
+		}
+
+		iconType = {
+			name = "bonus_icon"
+			position = { x=115 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 129 y = -22 }
+
+			font = "hoi_16mbs"
+			borderSize = { x = 4 y = 4 }
+			text = "lol boat"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+		}
+
+		containerWindowType = {
+			name = "sub_technology_slot_0"
+			position = { x=30 y=80 }
+			size = { width = 26 height = 26 }
+			clipping = no
+
+			background = {
+				name = "Background"
+				spriteType ="GFX_subtechnology_unavailable_item_bg"
+			}
+
+			iconType = {
+				name = "picture"
+				position = { x=2 y=2 }
+				spriteType = "GFX_subtech_icon"
+				alwaystransparent = yes
+			}
+		}
+
+		containerWindowType = {
+			name = "sub_technology_slot_1"
+			position = { x=73 y=80 }
+			size = { width = 26 height = 26 }
+			clipping = no
+
+			background = {
+				name = "Background"
+				spriteType ="GFX_subtechnology_unavailable_item_bg"
+			}
+
+			iconType = {
+				name = "picture"
+				position = { x=4 y=2 }
+				spriteType = "GFX_subtech_icon"
+				alwaystransparent = yes
+			}
+		}
+
+		containerWindowType = {
+			name = "sub_technology_slot_2"
+			position = { x=115 y=80 }
+			size = { width = 26 height = 26 }
+			clipping = no
+
+			background = {
+				name = "Background"
+				spriteType ="GFX_subtechnology_unavailable_item_bg"
+			}
+
+			iconType = {
+				name = "picture"
+				position = { x=4 y=2 }
+				spriteType = "GFX_subtech_icon"
+				alwaystransparent = yes
+			}
+		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
+	}
+
+	#------------------------------------------
+	# Support
+	#------------------------------------------
+	containerWindowType = {
+		name = "techtree_fallout_support_folder_small_item"
+		position = { x=0 y=0 }
+		size = { width = 72 height = 72 }
+		clipping = no
+
+		background = {
+			name = "bg"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=36 y=36 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "bonus_icon"
+			position = { x=3 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 17 y = -22 }
+
+			font = "hoi_16mbs"
+			borderSize = { x = 4 y = 4 }
+			text = "lol boat"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
+	}
+
+	containerWindowType = {
+		name = "techtree_fallout_support_folder_item"
+		position = { x=-56 y=-7 }
+		size = { width = 183 height = 84 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=91 y=50 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes
+			alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "Name"
+			position = { x = 3 y = -3 }
+
+			font = "hoi_20bs"
+			borderSize = { x = 4 y = 4 }
+			text = "Happy-Go-Lucky-Tank"
+			maxWidth = 160
+			maxHeight = 20
+			fixedsize = yes
+			format = left
+		}
+
+		iconType = {
+			name = "bonus_icon"
+			position = { x=115 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 129 y = -22 }
+
+			font = "hoi_16mbs"
+			borderSize = { x = 4 y = 4 }
+			text = "lol boat"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+		}
+
+		containerWindowType = {
+			name = "sub_technology_slot_0"
+			position = { x=141 y=1 }
+			size = { width = 35 height = 26 }
+			clipping = no
+
+			background = {
+				name = "Background"
+				spriteType ="GFX_subtechnology_unavailable_item_bg"
+			}
+
+			iconType = {
+				name = "picture"
+				position = { x=2 y=2 }
+				spriteType = "GFX_subtech_rocket"
+				alwaystransparent = yes
+			}
+		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
+
+	}
+
+	#------------------------------------------
+	# Vehicle
+	#------------------------------------------
+	containerWindowType = {
+		name = "techtree_fallout_vehicle_folder_small_item"
+		position = { x=0 y=0 }
+		size = { width = 72 height = 72 }
+		clipping = no
+
+		background = {
+			name = "bg"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=36 y=36 }
+			spriteType = "GFX_technology_medium"
+			alwaystransparent = yes
+			centerposition = yes
+		}
+
+		iconType = {
+			name = "bonus_icon"
+			position = { x=3 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 17 y = -22 }
+
+			font = "hoi_16mbs"
+			borderSize = { x = 4 y = 4 }
+			text = "lol boat"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
+	}
+
+	containerWindowType = {
+		name = "techtree_fallout_vehicle_folder_item"
+		position = { x=-56 y=-7 }
+		size = { width = 183 height = 84 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=91 y=50 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes
+			alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "Name"
+			position = { x = 3 y = -3 }
+
+			font = "hoi_20bs"
+			borderSize = { x = 4 y = 4 }
+			text = "Happy-Go-Lucky-Tank"
+			maxWidth = 160
+			maxHeight = 20
+			fixedsize = yes
+			format = left
+		}
+
+		iconType = {
+			name = "bonus_icon"
+			position = { x=115 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 129 y = -22 }
+
+			font = "hoi_16mbs"
+			borderSize = { x = 4 y = 4 }
+			text = "lol boat"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+		}
+
+		containerWindowType = {
+			name = "sub_technology_slot_0"
+			position = { x=141 y=1 }
+			size = { width = 35 height = 26 }
+			clipping = no
+
+			background = {
+				name = "Background"
+				spriteType ="GFX_subtechnology_unavailable_item_bg"
+			}
+
+			iconType = {
+				name = "picture"
+				position = { x=2 y=2 }
+				spriteType = "GFX_subtech_rocket"
+				alwaystransparent = yes
+			}
+		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
+
+	}
+
+	#------------------------------------------
+	# Robotics
+	#------------------------------------------
+	containerWindowType = {
+		name = "techtree_fallout_robotics_folder_small_item"
+		position = { x=0 y=0 }
+		size = { width = 72 height = 72 }
+		clipping = no
+
+		background = {
+			name = "bg"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=36 y=36 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "bonus_icon"
+			position = { x=3 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 17 y = -22 }
+
+			font = "hoi_16mbs"
+			borderSize = { x = 4 y = 4 }
+			text = "lol boat"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
+	}
+
+	containerWindowType = {
+		name = "techtree_fallout_robotics_folder_item"
+		position = { x=-56 y=-7 }
+		size = { width = 183 height = 84 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=91 y=50 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes
+			alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "Name"
+			position = { x = 3 y = -3 }
+
+			font = "hoi_20bs"
+			borderSize = { x = 4 y = 4 }
+			text = "Happy-Go-Lucky-Tank"
+			maxWidth = 160
+			maxHeight = 20
+			fixedsize = yes
+			format = left
+		}
+
+		iconType = {
+			name = "bonus_icon"
+			position = { x=115 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 129 y = -22 }
+
+			font = "hoi_16mbs"
+			borderSize = { x = 4 y = 4 }
+			text = "lol boat"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+		}
+
+		containerWindowType = {
+			name = "sub_technology_slot_0"
+			position = { x=30 y=80 }
+			size = { width = 26 height = 26 }
+			clipping = no
+
+			background = {
+				name = "Background"
+				spriteType ="GFX_subtechnology_unavailable_item_bg"
+			}
+
+			iconType = {
+				name = "picture"
+				position = { x=2 y=2 }
+				spriteType = "GFX_subtech_icon"
+				alwaystransparent = yes
+			}
+		}
+
+		containerWindowType = {
+			name = "sub_technology_slot_1"
+			position = { x=73 y=80 }
+			size = { width = 26 height = 26 }
+			clipping = no
+
+			background = {
+				name = "Background"
+				spriteType ="GFX_subtechnology_unavailable_item_bg"
+			}
+
+			iconType = {
+				name = "picture"
+				position = { x=4 y=2 }
+				spriteType = "GFX_subtech_icon"
+				alwaystransparent = yes
+			}
+		}
+
+		containerWindowType = {
+			name = "sub_technology_slot_2"
+			position = { x=115 y=80 }
+			size = { width = 26 height = 26 }
+			clipping = no
+
+			background = {
+				name = "Background"
+				spriteType ="GFX_subtechnology_unavailable_item_bg"
+			}
+
+			iconType = {
+				name = "picture"
+				position = { x=4 y=2 }
+				spriteType = "GFX_subtech_icon"
+				alwaystransparent = yes
+			}
+		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
+	}
+
+	#------------------------------------------
+	# Air
+	#------------------------------------------
+	containerWindowType = {
+		name = "techtree_fallout_air_folder_small_item"
+		position = { x=0 y=0 }
+		size = { width = 72 height = 72 }
+		clipping = no
+
+		background = {
+			name = "bg"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=36 y=36 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "bonus_icon"
+			position = { x=3 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 17 y = -22 }
+
+			font = "hoi_16mbs"
+			borderSize = { x = 4 y = 4 }
+			text = "lol boat"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
+	}
+
+	containerWindowType = {
+		name = "techtree_fallout_air_folder_item"
+		position = { x=-56 y=-7 }
+		size = { width = 183 height = 84 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=91 y=50 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes
+			alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "Name"
+			position = { x = 3 y = -3 }
+
+			font = "hoi_20bs"
+			borderSize = { x = 4 y = 4 }
+			text = "Happy-Go-Lucky-Tank"
+			maxWidth = 160
+			maxHeight = 20
+			fixedsize = yes
+			format = left
+		}
+
+		iconType = {
+			name = "bonus_icon"
+			position = { x=115 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 129 y = -22 }
+
+			font = "hoi_16mbs"
+			borderSize = { x = 4 y = 4 }
+			text = "lol boat"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+		}
+
+		containerWindowType = {
+			name = "sub_technology_slot_0"
+			position = { x=30 y=80 }
+			size = { width = 26 height = 26 }
+			clipping = no
+
+			background = {
+				name = "Background"
+				spriteType ="GFX_subtechnology_unavailable_item_bg"
+			}
+
+			iconType = {
+				name = "picture"
+				position = { x=2 y=2 }
+				spriteType = "GFX_subtech_icon"
+				alwaystransparent = yes
+			}
+		}
+
+		containerWindowType = {
+			name = "sub_technology_slot_1"
+			position = { x=73 y=80 }
+			size = { width = 26 height = 26 }
+			clipping = no
+
+			background = {
+				name = "Background"
+				spriteType ="GFX_subtechnology_unavailable_item_bg"
+			}
+
+			iconType = {
+				name = "picture"
+				position = { x=4 y=2 }
+				spriteType = "GFX_subtech_icon"
+				alwaystransparent = yes
+			}
+		}
+
+		containerWindowType = {
+			name = "sub_technology_slot_2"
+			position = { x=115 y=80 }
+			size = { width = 26 height = 26 }
+			clipping = no
+
+			background = {
+				name = "Background"
+				spriteType ="GFX_subtechnology_unavailable_item_bg"
+			}
+
+			iconType = {
+				name = "picture"
+				position = { x=4 y=2 }
+				spriteType = "GFX_subtech_icon"
+				alwaystransparent = yes
+			}
+		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
+	}
+
+	#------------------------------------------
+	# Naval
+	#------------------------------------------
+	containerWindowType = {
+		name = "techtree_fallout_naval_folder_small_item"
+		position = { x=0 y=0 }
+		size = { width = 72 height = 72 }
+		clipping = no
+
+		background = {
+			name = "bg"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=36 y=36 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "bonus_icon"
+			position = { x=3 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 17 y = -22 }
+
+			font = "hoi_16mbs"
+			borderSize = { x = 4 y = 4 }
+			text = "lol boat"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
+	}
+
+	containerWindowType = {
+		name = "techtree_fallout_naval_folder_item"
+		position = { x=-56 y=-7 }
+		size = { width = 183 height = 84 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=91 y=50 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes
+			alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "Name"
+			position = { x = 3 y = -3 }
+
+			font = "hoi_20bs"
+			borderSize = { x = 4 y = 4 }
+			text = "Happy-Go-Lucky-Tank"
+			maxWidth = 160
+			maxHeight = 20
+			fixedsize = yes
+			format = left
+		}
+
+		iconType = {
+			name = "bonus_icon"
+			position = { x=115 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 129 y = -22 }
+
+			font = "hoi_16mbs"
+			borderSize = { x = 4 y = 4 }
+			text = "lol boat"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+		}
+
+		containerWindowType = {
+			name = "sub_technology_slot_0"
+			position = { x=141 y=1 }
+			size = { width = 35 height = 26 }
+			clipping = no
+
+			background = {
+				name = "Background"
+				spriteType ="GFX_subtechnology_unavailable_item_bg"
+			}
+
+			iconType = {
+				name = "picture"
+				position = { x=2 y=2 }
+				spriteType = "GFX_subtech_rocket"
+				alwaystransparent = yes
+			}
+		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
+	}
+
+	#------------------------------------------
+	# Naval Modules
+	#------------------------------------------
+	containerWindowType = {
+		name = "techtree_fallout_naval_modules_folder_small_item"
+		position = { x=0 y=0 }
+		size = { width = 72 height = 72 }
+		clipping = no
+
+		background = {
+			name = "bg"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=36 y=36 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "bonus_icon"
+			position = { x=3 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 17 y = -22 }
+
+			font = "hoi_16mbs"
+			borderSize = { x = 4 y = 4 }
+			text = "lol boat"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
+	}
+
+	containerWindowType = {
+		name = "techtree_fallout_naval_modules_folder_item"
+		position = { x=-56 y=-7 }
+		size = { width = 183 height = 84 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=91 y=50 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes
+			alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "Name"
+			position = { x = 3 y = -3 }
+
+			font = "hoi_20bs"
+			borderSize = { x = 4 y = 4 }
+			text = "Happy-Go-Lucky-Tank"
+			maxWidth = 160
+			maxHeight = 20
+			fixedsize = yes
+			format = left
+		}
+
+		iconType = {
+			name = "bonus_icon"
+			position = { x=115 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 129 y = -22 }
+
+			font = "hoi_16mbs"
+			borderSize = { x = 4 y = 4 }
+			text = "lol boat"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+		}
+
+		containerWindowType = {
+			name = "sub_technology_slot_0"
+			position = { x=141 y=1 }
+			size = { width = 35 height = 26 }
+			clipping = no
+
+			background = {
+				name = "Background"
+				spriteType ="GFX_subtechnology_unavailable_item_bg"
+			}
+
+			iconType = {
+				name = "picture"
+				position = { x=2 y=2 }
+				spriteType = "GFX_subtech_rocket"
+				alwaystransparent = yes
+			}
+		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
+
+	}
+
+	#------------------------------------------
+	# Naval non mtg
+	#------------------------------------------
+	containerWindowType = {
+		name = "techtree_fallout_naval_non_mtg_folder_small_item"
+		position = { x=0 y=0 }
+		size = { width = 72 height = 72 }
+		clipping = no
+
+		background = {
+			name = "bg"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=36 y=36 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "bonus_icon"
+			position = { x=3 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 17 y = -22 }
+
+			font = "hoi_16mbs"
+			borderSize = { x = 4 y = 4 }
+			text = "lol boat"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
+	}
+
+	containerWindowType = {
+		name = "techtree_fallout_naval_non_mtg_folder_item"
+		position = { x=-56 y=-7 }
+		size = { width = 183 height = 84 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=91 y=50 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes
+			alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "Name"
+			position = { x = 3 y = -3 }
+
+			font = "hoi_20bs"
+			borderSize = { x = 4 y = 4 }
+			text = "Happy-Go-Lucky-Tank"
+			maxWidth = 160
+			maxHeight = 20
+			fixedsize = yes
+			format = left
+		}
+
+		iconType = {
+			name = "bonus_icon"
+			position = { x=115 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 129 y = -22 }
+
+			font = "hoi_16mbs"
+			borderSize = { x = 4 y = 4 }
+			text = "lol boat"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+		}
+
+		containerWindowType = {
+			name = "sub_technology_slot_0"
+			position = { x=141 y=1 }
+			size = { width = 35 height = 26 }
+			clipping = no
+
+			background = {
+				name = "Background"
+				spriteType ="GFX_subtechnology_unavailable_item_bg"
+			}
+
+			iconType = {
+				name = "picture"
+				position = { x=2 y=2 }
+				spriteType = "GFX_subtech_rocket"
+				alwaystransparent = yes
+			}
+		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
+	}
+
+	#------------------------------------------
+	# Land Doctrine Items
+	#------------------------------------------
+	containerWindowType = {
+		name = "techtree_fallout_land_doctrine_folder_item"
+		position = { x=0 y=0 }
+		size = { width = 70 height = 70 }
+		clipping = no
+
+		background = {
+			name = "bg"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=35 y=35 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "bonus_icon"
+			position = { x=3 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 17 y = -22 }
+
+			font = "hoi_16mbs"
+			borderSize = { x = 4 y = 4 }
+			text = "lol boat"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
+	}
+
+	#------------------------------------------
+	# Industry Items
+	#------------------------------------------
+	containerWindowType = {
+		name = "techtree_fallout_industry_folder_item"
+		position = { x=0 y=0 }
+		size = { width = 70 height = 70 }
+		clipping = no
+
+		background = {
+			name = "bg"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=35 y=35 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "bonus_icon"
+			position = { x=3 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 17 y = -22 }
+
+			font = "hoi_16mbs"
+			borderSize = { x = 4 y = 4 }
+			text = "lol boat"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
+	}
+
+	#------------------------------------------
+	# Engineering
+	#------------------------------------------
+	containerWindowType = {
+		name = "techtree_fallout_engineering_folder_small_item"
+		position = { x=0 y=0 }
+		size = { width = 72 height = 72 }
+		clipping = no
+
+		background = {
+			name = "bg"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=35 y=35 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "bonus_icon"
+			position = { x=3 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 17 y = -22 }
+
+			font = "hoi_16mbs"
+			borderSize = { x = 4 y = 4 }
+			text = "lol boat"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
+	}
+
+	containerWindowType = {
+		name = "techtree_fallout_engineering_folder_item"
+		position = { x=-56 y=-7 }
+		size = { width = 183 height = 84 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=91 y=50 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes
+			alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "Name"
+			position = { x = 3 y = -3 }
+
+			font = "hoi_20bs"
+			borderSize = { x = 4 y = 4 }
+			text = "Happy-Go-Lucky-Tank"
+			maxWidth = 160
+			maxHeight = 20
+			fixedsize = yes
+			format = left
+		}
+
+		iconType = {
+			name = "bonus_icon"
+			position = { x=115 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 129 y = -22 }
+
+			font = "hoi_16mbs"
+			borderSize = { x = 4 y = 4 }
+			text = "lol boat"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
+	}
+
+	#------------------------------------------
+	# Focus Tree
+	#------------------------------------------
+	containerWindowType = {
+		name = "techtree_fallout_focus_tree_folder_small_item"
+		position = { x=0 y=0 }
+		size = { width = 72 height = 72 }
+		clipping = no
+
+		background = {
+			name = "bg"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=36 y=36 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "bonus_icon"
+			position = { x=3 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 17 y = -22 }
+
+			font = "hoi_16mbs"
+			borderSize = { x = 4 y = 4 }
+			text = "lol boat"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
+	}
+
+	containerWindowType = {
+		name = "techtree_fallout_focus_tree_folder_item"
+		position = { x=-56 y=-7 }
+		size = { width = 183 height = 84 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=91 y=50 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes
+			alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "Name"
+			position = { x = 3 y = -3 }
+
+			font = "hoi_20bs"
+			borderSize = { x = 4 y = 4 }
+			text = "Happy-Go-Lucky-Tank"
+			maxWidth = 160
+			maxHeight = 20
+			fixedsize = yes
+			format = left
+		}
+
+		iconType = {
+			name = "bonus_icon"
+			position = { x=115 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 129 y = -22 }
+
+			font = "hoi_16mbs"
+			borderSize = { x = 4 y = 4 }
+			text = "lol boat"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+		}
+
+		containerWindowType = {
+			name = "sub_technology_slot_0"
+			position = { x=50 y=80 }
+			size = { width = 35 height = 26 }
+			clipping = no
+
+			background = {
+				name = "Background"
+				spriteType ="GFX_subtechnology_unavailable_item_bg"
+			}
+
+			iconType = {
+				name = "picture"
+				position = { x=4 y=2 }
+				spriteType = "GFX_subtech_icon"
+				alwaystransparent = yes
+			}
+		}
+
+		containerWindowType = {
+			name = "sub_technology_slot_1"
+			position = { x=100 y=80 }
+			size = { width = 35 height = 26 }
+			clipping = no
+
+			background = {
+				name = "Background"
+				spriteType ="GFX_subtechnology_unavailable_item_bg"
+			}
+
+			iconType = {
+				name = "picture"
+				position = { x=4 y=2 }
+				spriteType = "GFX_subtech_icon"
+				alwaystransparent = yes
+			}
+		}
+
+		containerWindowType = {
+			name = "sub_technology_slot_2"
+			position = { x=141 y=55 }
+			size = { width = 35 height = 26 }
+			clipping = no
+
+			background = {
+				name = "Background"
+				spriteType ="GFX_subtechnology_unavailable_item_bg"
+			}
+
+			iconType = {
+				name = "picture"
+				position = { x=4 y=2 }
+				spriteType = "GFX_subtech_icon"
+				alwaystransparent = yes
+			}
+		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
+	}
+
+	#------------------------------------------
+	# tech Level
+	#------------------------------------------
+	containerWindowType = {
+		name = "techtree_fallout_tech_level_folder_small_item"
+		position = { x=0 y=0 }
+		size = { width = 72 height = 72 }
+		clipping = no
+
+		background = {
+			name = "bg"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=36 y=36 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "bonus_icon"
+			position = { x=3 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 17 y = -22 }
+
+			font = "hoi_16mbs"
+			borderSize = { x = 4 y = 4 }
+			text = "lol boat"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
+	}
+
+	containerWindowType = {
+		name = "techtree_fallout_tech_level_folder_item"
+		position = { x=-56 y=-7 }
+		size = { width = 183 height = 84 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=91 y=50 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes
+			alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "Name"
+			position = { x = 3 y = -3 }
+
+			font = "hoi_20bs"
+			borderSize = { x = 4 y = 4 }
+			text = "Happy-Go-Lucky-Tank"
+			maxWidth = 160
+			maxHeight = 20
+			fixedsize = yes
+			format = left
+		}
+
+		iconType = {
+			name = "bonus_icon"
+			position = { x=115 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 129 y = -22 }
+
+			font = "hoi_16mbs"
+			borderSize = { x = 4 y = 4 }
+			text = "lol boat"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+		}
+
+		containerWindowType = {
+			name = "sub_technology_slot_0"
+			position = { x=50 y=80 }
+			size = { width = 35 height = 26 }
+			clipping = no
+
+			background = {
+				name = "Background"
+				spriteType ="GFX_subtechnology_unavailable_item_bg"
+			}
+
+			iconType = {
+				name = "picture"
+				position = { x=4 y=2 }
+				spriteType = "GFX_subtech_icon"
+				alwaystransparent = yes
+			}
+		}
+
+		containerWindowType = {
+			name = "sub_technology_slot_1"
+			position = { x=100 y=80 }
+			size = { width = 35 height = 26 }
+			clipping = no
+
+			background = {
+				name = "Background"
+				spriteType ="GFX_subtechnology_unavailable_item_bg"
+			}
+
+			iconType = {
+				name = "picture"
+				position = { x=4 y=2 }
+				spriteType = "GFX_subtech_icon"
+				alwaystransparent = yes
+			}
+		}
+
+		containerWindowType = {
+			name = "sub_technology_slot_2"
+			position = { x=141 y=55 }
+			size = { width = 35 height = 26 }
+			clipping = no
+
+			background = {
+				name = "Background"
+				spriteType ="GFX_subtechnology_unavailable_item_bg"
+			}
+
+			iconType = {
+				name = "picture"
+				position = { x=4 y=2 }
+				spriteType = "GFX_subtech_icon"
+				alwaystransparent = yes
+			}
+		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
+	}
+
+	#------------------------------------------
+	# Tribal Tech
+	#------------------------------------------
+	containerWindowType = {
+		name = "techtree_fallout_tech_tribal_folder_small_item"
+		position = { x=0 y=0 }
+		size = { width = 72 height = 72 }
+		clipping = no
+
+		background = {
+			name = "bg"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=36 y=36 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "bonus_icon"
+			position = { x=3 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 17 y = -22 }
+
+			font = "hoi_16mbs"
+			borderSize = { x = 4 y = 4 }
+			text = "lol boat"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
+	}
+
+	containerWindowType = {
+		name = "techtree_fallout_tech_tribal_folder_item"
+		position = { x=-56 y=-7 }
+		size = { width = 183 height = 84 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=91 y=50 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes
+			alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "Name"
+			position = { x = 3 y = -3 }
+
+			font = "hoi_20bs"
+			borderSize = { x = 4 y = 4 }
+			text = "Happy-Go-Lucky-Tank"
+			maxWidth = 160
+			maxHeight = 20
+			fixedsize = yes
+			format = left
+		}
+
+		iconType = {
+			name = "bonus_icon"
+			position = { x=115 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 129 y = -22 }
+
+			font = "hoi_16mbs"
+			borderSize = { x = 4 y = 4 }
+			text = "lol boat"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+		}
+
+		containerWindowType = {
+			name = "sub_technology_slot_0"
+			position = { x=50 y=80 }
+			size = { width = 35 height = 26 }
+			clipping = no
+
+			background = {
+				name = "Background"
+				spriteType ="GFX_subtechnology_unavailable_item_bg"
+			}
+
+			iconType = {
+				name = "picture"
+				position = { x=4 y=2 }
+				spriteType = "GFX_subtech_icon"
+				alwaystransparent = yes
+			}
+		}
+
+		containerWindowType = {
+			name = "sub_technology_slot_1"
+			position = { x=100 y=80 }
+			size = { width = 35 height = 26 }
+			clipping = no
+
+			background = {
+				name = "Background"
+				spriteType ="GFX_subtechnology_unavailable_item_bg"
+			}
+
+			iconType = {
+				name = "picture"
+				position = { x=4 y=2 }
+				spriteType = "GFX_subtech_icon"
+				alwaystransparent = yes
+			}
+		}
+
+		containerWindowType = {
+			name = "sub_technology_slot_2"
+			position = { x=141 y=55 }
+			size = { width = 35 height = 26 }
+			clipping = no
+
+			background = {
+				name = "Background"
+				spriteType ="GFX_subtechnology_unavailable_item_bg"
+			}
+
+			iconType = {
+				name = "picture"
+				position = { x=4 y=2 }
+				spriteType = "GFX_subtech_icon"
+				alwaystransparent = yes
+			}
+		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
+	}
+
+	#------------------------------------------
+	# Horse Tree
+	#------------------------------------------
+	containerWindowType = {
+		name = "techtree_fallout_tech_beast_folder_small_item"
+		position = { x=0 y=0 }
+		size = { width = 72 height = 72 }
+		clipping = no
+
+		background = {
+			name = "bg"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=36 y=36 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "bonus_icon"
+			position = { x=3 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 17 y = -22 }
+
+			font = "hoi_16mbs"
+			borderSize = { x = 4 y = 4 }
+			text = "lol boat"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
+	}
+
+	containerWindowType = {
+		name = "techtree_fallout_tech_beast_folder_item"
+		position = { x=-56 y=-7 }
+		size = { width = 183 height = 84 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=91 y=50 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes
+			alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "Name"
+			position = { x = 3 y = -3 }
+
+			font = "hoi_20bs"
+			borderSize = { x = 4 y = 4 }
+			text = "Happy-Go-Lucky-Tank"
+			maxWidth = 160
+			maxHeight = 20
+			fixedsize = yes
+			format = left
+		}
+
+		iconType = {
+			name = "bonus_icon"
+			position = { x=115 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 129 y = -22 }
+
+			font = "hoi_16mbs"
+			borderSize = { x = 4 y = 4 }
+			text = "lol boat"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+		}
+
+		containerWindowType = {
+			name = "sub_technology_slot_0"
+			position = { x=50 y=80 }
+			size = { width = 35 height = 26 }
+			clipping = no
+
+			background = {
+				name = "Background"
+				spriteType ="GFX_subtechnology_unavailable_item_bg"
+			}
+
+			iconType = {
+				name = "picture"
+				position = { x=4 y=2 }
+				spriteType = "GFX_subtech_icon"
+				alwaystransparent = yes
+			}
+		}
+
+		containerWindowType = {
+			name = "sub_technology_slot_1"
+			position = { x=100 y=80 }
+			size = { width = 35 height = 26 }
+			clipping = no
+
+			background = {
+				name = "Background"
+				spriteType ="GFX_subtechnology_unavailable_item_bg"
+			}
+
+			iconType = {
+				name = "picture"
+				position = { x=4 y=2 }
+				spriteType = "GFX_subtech_icon"
+				alwaystransparent = yes
+			}
+		}
+
+		containerWindowType = {
+			name = "sub_technology_slot_2"
+			position = { x=141 y=55 }
+			size = { width = 35 height = 26 }
+			clipping = no
+
+			background = {
+				name = "Background"
+				spriteType ="GFX_subtechnology_unavailable_item_bg"
+			}
+
+			iconType = {
+				name = "picture"
+				position = { x=4 y=2 }
+				spriteType = "GFX_subtech_icon"
+				alwaystransparent = yes
+			}
+		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
+	}
+
+	#------------------------------------------
+	# Horse Tree
+	#------------------------------------------
+	containerWindowType = {
+		name = "techtree_fallout_horse_tech_folder_small_item"
+		position = { x=0 y=0 }
+		size = { width = 72 height = 72 }
+		clipping = no
+
+		background = {
+			name = "bg"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=36 y=36 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "bonus_icon"
+			position = { x=3 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 17 y = -22 }
+
+			font = "hoi_16mbs"
+			borderSize = { x = 4 y = 4 }
+			text = "lol boat"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
+	}
+
+	containerWindowType = {
+		name = "techtree_fallout_horse_tech_folder_item"
+		position = { x=-56 y=-7 }
+		size = { width = 183 height = 84 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=91 y=50 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes
+			alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "Name"
+			position = { x = 3 y = -3 }
+
+			font = "hoi_20bs"
+			borderSize = { x = 4 y = 4 }
+			text = "Happy-Go-Lucky-Tank"
+			maxWidth = 160
+			maxHeight = 20
+			fixedsize = yes
+			format = left
+		}
+
+		iconType = {
+			name = "bonus_icon"
+			position = { x=115 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 129 y = -22 }
+
+			font = "hoi_16mbs"
+			borderSize = { x = 4 y = 4 }
+			text = "lol boat"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+		}
+
+		containerWindowType = {
+			name = "sub_technology_slot_0"
+			position = { x=50 y=80 }
+			size = { width = 35 height = 26 }
+			clipping = no
+
+			background = {
+				name = "Background"
+				spriteType ="GFX_subtechnology_unavailable_item_bg"
+			}
+
+			iconType = {
+				name = "picture"
+				position = { x=4 y=2 }
+				spriteType = "GFX_subtech_icon"
+				alwaystransparent = yes
+			}
+		}
+
+		containerWindowType = {
+			name = "sub_technology_slot_1"
+			position = { x=100 y=80 }
+			size = { width = 35 height = 26 }
+			clipping = no
+
+			background = {
+				name = "Background"
+				spriteType ="GFX_subtechnology_unavailable_item_bg"
+			}
+
+			iconType = {
+				name = "picture"
+				position = { x=4 y=2 }
+				spriteType = "GFX_subtech_icon"
+				alwaystransparent = yes
+			}
+		}
+
+		containerWindowType = {
+			name = "sub_technology_slot_2"
+			position = { x=141 y=55 }
+			size = { width = 35 height = 26 }
+			clipping = no
+
+			background = {
+				name = "Background"
+				spriteType ="GFX_subtechnology_unavailable_item_bg"
+			}
+
+			iconType = {
+				name = "picture"
+				position = { x=4 y=2 }
+				spriteType = "GFX_subtech_icon"
+				alwaystransparent = yes
+			}
+		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
+	}
+
+	#------------------------------------------
+	# Implant Tech
+	#------------------------------------------
+	containerWindowType = {
+		name = "techtree_fallout_tech_implant_folder_small_item"
+		position = { x=0 y=0 }
+		size = { width = 70 height = 70 }
+		clipping = no
+
+		background = {
+			name = "bg"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=36 y=36 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "bonus_icon"
+			position = { x=3 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 17 y = -22 }
+
+			font = "hoi_16mbs"
+			borderSize = { x = 4 y = 4 }
+			text = "lol boat"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
+	}
+
+	containerWindowType = {
+		name = "techtree_fallout_tech_implant_folder_item"
+		position = { x=-56 y=-7 }
+		size = { width = 183 height = 84 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=91 y=50 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes
+			alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "Name"
+			position = { x = 3 y = -3 }
+
+			font = "hoi_20bs"
+			borderSize = { x = 4 y = 4 }
+			text = "Happy-Go-Lucky-Tank"
+			maxWidth = 160
+			maxHeight = 20
+			fixedsize = yes
+			format = left
+		}
+
+		iconType = {
+			name = "bonus_icon"
+			position = { x=115 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 129 y = -22 }
+
+			font = "hoi_16mbs"
+			borderSize = { x = 4 y = 4 }
+			text = "lol boat"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+		}
+
+		containerWindowType = {
+			name = "sub_technology_slot_0"
+			position = { x=50 y=80 }
+			size = { width = 35 height = 26 }
+			clipping = no
+
+			background = {
+				name = "Background"
+				spriteType ="GFX_subtechnology_unavailable_item_bg"
+			}
+
+			iconType = {
+				name = "picture"
+				position = { x=4 y=2 }
+				spriteType = "GFX_subtech_icon"
+				alwaystransparent = yes
+			}
+		}
+
+		containerWindowType = {
+			name = "sub_technology_slot_1"
+			position = { x=100 y=80 }
+			size = { width = 35 height = 26 }
+			clipping = no
+
+			background = {
+				name = "Background"
+				spriteType ="GFX_subtechnology_unavailable_item_bg"
+			}
+
+			iconType = {
+				name = "picture"
+				position = { x=4 y=2 }
+				spriteType = "GFX_subtech_icon"
+				alwaystransparent = yes
+			}
+		}
+
+		containerWindowType = {
+			name = "sub_technology_slot_2"
+			position = { x=141 y=55 }
+			size = { width = 35 height = 26 }
+			clipping = no
+
+			background = {
+				name = "Background"
+				spriteType ="GFX_subtechnology_unavailable_item_bg"
+			}
+
+			iconType = {
+				name = "picture"
+				position = { x=4 y=2 }
+				spriteType = "GFX_subtech_icon"
+				alwaystransparent = yes
+			}
+		}
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
+	}
+
+	#------------------------------------------------------------------------------------
+	# Other
+	#------------------------------------------------------------------------------------
+	containerWindowType = {
+		name = "technology_info_window"
+		position = { x=500 y=100 }
+		size = { width = 550 height = 550 }
+		Orientation = UPPER_LEFT
+		moveable = yes
+		#clipping = no
+		fade_time = 500
+		fade_type = linear
+
+		show_sound = pop_up
+
+		background = {
+			name = "Background"
+			#SpriteType ="GFX_technology_info_bg"
+			SpriteType = "GFX_tiled_window_thin_border2"
+		}
+
+		iconType ={
+			name ="tech_info_top_win"
+			spriteType = "GFX_tech_info_top_win"
+			position = { x= 1 y = 1 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+		}
+
+		buttonType = {
+			name = "close"
+			quadTextureSprite = "GFX_closebutton"
+			buttonFont = "vic_18"
+			position = { x=-43 y=10 }
+			shortcut = "ESCAPE"
+			Orientation = "UPPER_RIGHT"
+			pdx_tooltip = "CLOSE"
+			clicksound = click_close
+		}
+
+		iconType ={
+			name ="tech_icon"
+			spriteType = "GFX_tiled_window_transparent"
+			position = { x= 45 y = 47 }
+			Orientation = "UPPER_LEFT"
+		}
+
+		instantTextboxType = {
+			name = "tech_info_title"
+			position = { x = 40 y = 15 }
+
+			font = "hoi_20bs"
+			borderSize = { x = 0 y = 0 }
+			text = ""
+			maxWidth = 450
+			maxHeight = 30
+			format = center
+		}
+
+		instantTextboxType = {
+			name = "tech_info_description"
+			position = { x = 27 y = 111 }
+
+			font = "hoi_16mbs"
+			text = ""
+			maxWidth = 495
+			maxHeight = 100
+			format = left
+			vertical_alignment = center
+		}
+
+		buttonType = {
+			name = "research"
+			quadTextureSprite = "GFX_button_94x31"
+			text = "RESEARCH"
+			buttonFont = "hoi_16mbs"
+			position = { x=410 y=47 }
+			shortcut = "RETURN"
+		}
+
+		buttonType = {
+			name = "research_with_xp"
+			quadTextureSprite = "GFX_button_94x31"
+			text = "RESEARCH_WITH_XP"
+			buttonFont = "hoi_16mbs"
+			position = { x=410 y=77 }
+			shortcut = "RETURN"
+		}
+
+		iconType = {
+			name = "research_progressbar"
+			spriteType = "GFX_techtree_details_progress_bar"
+			position = { x=160 y=61 }
+		}
+
+		iconType = {
+			name = "research_progressbar_frame"
+			spriteType = "GFX_techtree_details_progress_bar_frame"
+			position = { x=158 y=59 }
+		}
+
+		instantTextboxType = {
+			name = "researchtime_label"
+			position = { x = 177 y = 62 }
+			font = "hoi_20b"
+			borderSize = { x = 0 y = 0 }
+			text = ""
+			maxWidth = 190
+			maxHeight = 30
+			format = center
+		}
+
+		containerWindowType = {
+			name = "statsarea"
+			position = { x=20 y=220 }
+			size = { width = -20 height = -20 }
+			verticalScrollbar = "right_vertical_slider"
+			scroll_wheel_factor = 40
+			smooth_scrolling = yes
+			margin = { top = 4 left = 13 right = 5 }
+			clipping = yes
+
+			instantTextboxType = {
+				name = "tech_info_special_description"
+				position = { x = 0 y = 0 }
+
+				font = "hoi4_typewriter16_inverted"
+				borderSize = { x = 0 y = 0 }
+				text = "BABALKBLLALBLAL"
+				maxWidth = 495
+				maxHeight = 70
+				format = left
+				vertical_alignment = center
+			}
+
+			positionType = {
+				name = "tech_info_special_description_bottom_margin"
+				position = { x = 0 y = 14 }
+			}
+
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_paper_bg"
+			}
+
+		}
+		containerWindowType = {
+			name = "research_MIO"
+			position = { x=365 y=55 }
+
+			buttonType = {
+				name = "research_has_MIO"
+				position = { x = 0 y = 0 }
+				size = { x=200 y=40}
+				text = "RESEARCH"
+				quadTextureSprite = "GFX_government_button"
+				buttonFont = "hoi_16mbs"
+				Orientation = "UPPER_RIGHT"
+				shortcut = "RETURN"
+			}
+
+			iconType = {
+				name = "MIO_icon"
+				spriteType = "GFX_design_team_icon"
+				position = { x = 8 y = 5 }
+				alwaystransparent = yes
+				Orientation = "CENTER"
+			}
+		}
+	}
+
+	containerWindowType = {
+		name = "techtree_xor_item"
+		position = { x=5 y=5 }
+		size = { width=60 height= 60 }
+
+		iconType = {
+			name = "First"
+			position = { x=0 y=0 }
+			spriteType = "GFX_techtree_xor_left"
+		}
+
+		iconType = {
+			name = "Second"
+			position = { x=0 y=0 }
+			spriteType = "GFX_techtree_xor_right"
+		}
+	}
+
+	containerWindowType = {
+		name = "techtree_line_item"
+		position = { x=0 y=0 }
+		size = { width=70 height=70 }
+
+		iconType = {
+			name = "Up"
+			position = { x=27 y=0 }
+			spriteType = "GFX_techtree_line_up_states"
+			alwaystransparent = yes
+			frame = 1
+		}
+
+		iconType = {
+			name = "Down"
+			position = { x=27 y=35 }
+			spriteType = "GFX_techtree_line_down_states"
+			alwaystransparent = yes
+			frame = 1
+		}
+
+		iconType = {
+			name = "Left"
+			position = { x=0 y=27 }
+			spriteType = "GFX_techtree_line_left_states"
+			alwaystransparent = yes
+			frame = 1
+		}
+
+		iconType = {
+			name = "Right"
+			position = { x=35 y=27 }
+			spriteType = "GFX_techtree_line_right_states"
+			alwaystransparent = yes
+			frame = 1
+		}
+
+		iconType = {
+			name = "Center"
+			position = { x=27 y=27 }
+			spriteType = "GFX_techline_center_all_states"
+			alwaystransparent = yes
+			frame = 1
+		}
+	}
+
+	containerWindowType = {
+		name = "technology_unit_statlist_item_equipment"
+		position = { x=0 y=0 }
+		clipping = no
+
+		gridboxtype = {
+			name = "research_groups_grid"
+			position = { x = 411 y = 1 }
+			size = { width = 120 height = 60 }
+			slotsize = { width = 60 height = 60 }
+			max_slots_horizontal = 2
+			max_slots_vertical = 1
+			format = "UPPER_LEFT"
+		}
+
+		iconType = {
+			name = "unit_icon"
+			position = { x = 245 y = 35 }
+			spriteType = "GFX_tiled_window_transparent_transparent"
+			centerposition = yes
+			alwaystransparent = no
+
+		}
+
+		instantTextboxType = {
+			name = "production_resources"
+			position = { x= 0 y= 5 }
+			font = "hoi_18mbs"
+			maxWidth = 150
+			maxHeight = 25
+			pdx_tooltip = "PRODUCTION_RESOURCE_DESC"
+			format = left
+		}
+
+		iconType = {
+			name = "equipment_icon"
+			position = { x = 140 y = 27 }
+			#spriteType = "GFX_sub_tech_strip_w_bg"
+			spriteType = "GFX_land_equipment_role_icons"
+			frame = 1
+		}
+
+		iconType = {
+			name = "carrier_fighter_icon"
+			position = { x = 297 y = 6 }
+			spriteType = "GFX_airwing_carrier_icon"
+		}
+
+		gridboxtype = {
+			name = "stats_grid"
+			position = { x = 25 y = 75 }
+			size = { width = 400 height = 400 }
+			slotsize = { width = 224 height = 30 }
+			max_slots_horizontal = 2
+			format = "UPPER_LEFT"
+		}
+
+		gridboxtype = {
+			name = "air_missions_grid"
+			position = { x = 0 y = 40 }
+			size = { width = 200 height = 60 }
+			slotsize = { width = 36 height = 36 }
+			max_slots_horizontal = 5
+			format = "UPPER_LEFT"
+		}
+
+		containerWindowType = {
+			name = "3d_container"
+			position = { x=0 y=0 }
+			clipping = no
+
+			iconType = {
+				name ="3d_view"
+				quadTextureSprite = "GFX_3d_view_placeholder_2"
+				position = { x= 5 y = 10 }
+				##size = { width=300 height=80 }
+			}
+
+			containerWindowType = {
+				name = "border_container"
+				position = { x=0 y=5 }
+				size = { width = 487 height = 350 }
+
+				background = {
+					name ="bg_tech_button"
+					spriteType = "GFX_division_3d_bg"
+					position = { x=0 y=0 }
+					size = { x=100%% y=100%%}
+				}
+			}
+
+			buttonType = {
+				name = "prev_model"
+				position = { x=367 y=12 }
+				quadTextureSprite = "GFX_arrow_up_small"
+				clicksound = click_default
+			}
+
+			buttonType = {
+				name = "next_model"
+				position = { x=367 y=38	 }
+				quadTextureSprite = "GFX_arrow_down_small"
+				clicksound = click_default
+			}
+
+			iconType = {
+				name ="3d_switch"
+				quadTextureSprite = "GFX_2d_3d_switch"
+				position = { x= 422 y = 5 }
+				##size = { width=300 height=80 }
+			}
+		}
+		iconType = {
+			name = "design_team_icon"
+			position = { x = 462 y = 55 }
+			spriteType = "GFX_add_pol_idea_button"
+			centerposition = yes
+		}
+	}
+
+	containerWindowType = {
+		name = "technology_unit_statlist_item_module"
+		position = { x=0 y=0 }
+		clipping = no
+
+		instantTextboxType = {
+			name = "production_resources"
+			position = { x= 0 y= 5 }
+			font = "hoi_18mbs"
+			maxWidth = 150
+			maxHeight = 25
+			pdx_tooltip = "PRODUCTION_RESOURCE_DESC"
+			format = left
+		}
+
+		iconType = {
+			name = "equipment_icon"
+			position = { x = 140 y = 27 }
+			#spriteType = "GFX_sub_tech_strip_w_bg"
+			spriteType = "GFX_land_equipment_role_icons"
+			frame = 1
+		}
+
+		gridboxtype = {
+			name = "stats_grid"
+			position = { x = 25 y = 95 }
+			size = { width = 400 height = 400 }
+			slotsize = { width = 224 height = 30 }
+			max_slots_horizontal = 2
+			format = "UPPER_LEFT"
+		}
+
+		gridboxtype = {
+			name = "air_missions_grid"
+			position = { x = 15 y = 40 }
+			size = { width = 400 height = 70 }
+			slotsize = { width = 45 height = 60 }
+			max_slots_horizontal = 10
+			format = "UPPER_LEFT"
+		}
+	}
+
+	containerWindowType = {
+		name = "technology_unlocks_statlist_item_building"
+		position = { x=0 y=0 }
+		clipping = no
+
+		instantTextboxType = {
+			name = "label"
+			position = { x = 10 y = 5 }
+			font = "hoi4_typewriter22"
+			text = ""
+			maxWidth = 200
+			maxHeight = 20
+			format = center
+		}
+
+		iconType = {
+			name = "icon"
+			position = { x = 220 y = 20 }
+			spriteType = "GFX_tiled_window_transparent_transparent"
+			centerposition = yes
+		}
+
+		gridboxtype = {
+			name = "stats_grid"
+			position = { x = 15 y = 50 }
+			size = { width = 400 height = 200 }
+			slotsize = { width = 200 height = 30 }
+			max_slots_horizontal = 1
+			format = "UPPER_LEFT"
+		}
+
+		gridboxtype = {
+			name = "subunit_stats_grid"
+			position = { x = 25 y = 65 }
+			size = { width = 400 height = 400 }
+			slotsize = { width = 224 height = 30 }
+			max_slots_horizontal = 2
+			format = "UPPER_LEFT"
+		}
+
+		gridboxtype = {
+			name = "terrain_modifiers_grid"
+			position = { x = 35 y = 65 } # Y set in code
+			size = { width = 400 height = 400 }
+			slotsize = { width = 82 height = 70 }
+			max_slots_horizontal = 5
+			format = "UPPER_LEFT"
+		}
+	}
+
+	containerWindowType = {
+		name = "technology_unlocks_statlist_item_tactic"
+		position = { x=0 y=0 }
+		clipping = no
+
+		instantTextboxType = {
+			name = "label"
+			position = { x = 10 y = 5 }
+			font = "hoi4_typewriter22"
+			text = ""
+			maxWidth = 200
+			maxHeight = 20
+			format = center
+		}
+
+		iconType = {
+			name = "icon"
+			position = { x = 220 y = 20 }
+			spriteType = "GFX_tiled_window_transparent_transparent"
+			centerposition = yes
+		}
+
+		gridboxtype = {
+			name = "stats_grid"
+			position = { x = 15 y = 50 }
+			size = { width = 400 height = 200 }
+			slotsize = { width = 200 height = 30 }
+			max_slots_horizontal = 1
+			format = "UPPER_LEFT"
+		}
+
+		gridboxtype = {
+			name = "subunit_stats_grid"
+			position = { x = 35 y = 65 }
+			size = { width = 400 height = 400 }
+			slotsize = { width = 200 height = 30 }
+			max_slots_horizontal = 2
+			format = "UPPER_LEFT"
+		}
+
+		gridboxtype = {
+			name = "terrain_modifiers_grid"
+			position = { x = 35 y = 65 } # Y set in code
+			size = { width = 400 height = 400 }
+			slotsize = { width = 82 height = 70 }
+			max_slots_horizontal = 5
+			format = "UPPER_LEFT"
+		}
+	}
+
+	containerWindowType = {
+		name = "technology_unlocks_statlist_item_subunit"
+		position = { x=0 y=0 }
+		clipping = no
+
+		instantTextboxType = {
+			name = "label"
+			position = { x = 10 y = 5 }
+			font = "hoi4_typewriter22"
+			text = ""
+			maxWidth = 200
+			maxHeight = 20
+			format = center
+		}
+
+		iconType = {
+			name = "icon"
+			position = { x = 220 y = 20 }
+			spriteType = "GFX_tiled_window_transparent_transparent"
+			centerposition = yes
+		}
+
+		instantTextboxType = {
+			name = "subunit_name"
+			position = { x = 125 y = 25 }
+			font = "hoi4_typewriter16_inverted"
+			text = "Where is the name?"
+			maxWidth = 200
+			maxHeight = 20
+			format = center
+		}
+
+		iconType = {
+			name = "subunit_icon"
+			position = { x = 74 y = 12 }
+			spriteType = "GFX_buildings_strip"
+		}
+
+		gridboxtype = {
+			name = "stats_grid"
+			position = { x = 15 y = 50 }
+			size = { width = 400 height = 200 }
+			slotsize = { width = 200 height = 30 }
+			max_slots_horizontal = 1
+			format = "UPPER_LEFT"
+		}
+
+		gridboxtype = {
+			name = "subunit_stats_grid"
+			position = { x = 25 y = 65 }
+			size = { width = 400 height = 400 }
+			slotsize = { width = 224 height = 30 }
+			max_slots_horizontal = 2
+			format = "UPPER_LEFT"
+		}
+
+		gridboxtype = {
+			name = "terrain_modifiers_grid"
+			position = { x = 35 y = 65 } # Y set in code
+			size = { width = 400 height = 400 }
+			slotsize = { width = 82 height = 70 }
+			max_slots_horizontal = 5
+			format = "UPPER_LEFT"
+		}
+	}
+
+	containerWindowType = {
+		name = "technology_unit_statlist_item_upgrade"
+		position = { x=0 y=0 }
+		clipping = no
+
+		instantTextboxType = {
+			name = "label"
+			position = { x = 55 y = 25 }
+			font = "hoi4_typewriter22"
+			text = ""
+			maxWidth = 380
+			maxHeight = 20
+			fixedsize = yes
+			format = left
+		}
+
+		gridboxtype = {
+			name = "subunit_stats_grid"
+			position = { x = 0 y =  15 }
+			size = { width = 400 height = 400 }
+			slotsize = { width = 70 height = 30 }
+			max_slots_horizontal = 7
+			format = "UPPER_LEFT"
+		}
+
+		iconType = {
+			name = "unit_icon"
+			position = { x = 0 y = 15 }
+			spriteType = "GFX_tiled_window_transparent_transparent"
+		}
+
+		gridboxtype = {
+			name = "stats_grid"
+			position = { x = 90 y = 50 }
+			size = { width = 100%% height = 100%% }
+			slotsize = { width = 200 height = 20 }
+			max_slots_horizontal = 1
+			format = "UPPER_LEFT"
+		}
+
+		gridboxtype = {
+			name = "terrain_modifiers_grid"
+			position = { x = 35 y = 65 } # Y set in code
+			size = { width = 400 height = 400 }
+			slotsize = { width = 82 height = 70 }
+			max_slots_horizontal = 5
+			format = "UPPER_LEFT"
+		}
+	}
+
+	containerWindowType = {
+		name = "technology_unit_statlist_item_modifier"
+		position = { x=0 y=0 }
+		clipping = no
+
+		instantTextboxType = {
+			name = "label"
+			position = { x = 120 y = -20 }
+			font = "hoi4_typewriter22"
+			text = ""
+			maxWidth = 200
+			maxHeight = 20
+			format = center
+		}
+
+		iconType = {
+			name = "unit_icon"
+			position = { x = 100 y = 25 }
+			spriteType = "GFX_tiled_window_transparent_transparent"
+		}
+
+		gridboxtype = {
+			name = "stats_grid"
+			position = { x = 90 y = 25 }
+			size = { width = 100%% height = 100%% }
+			slotsize = { width = 200 height = 20 }
+			max_slots_horizontal = 1
+			format = "UPPER_LEFT"
+		}
+	}
+
+	containerWindowType = {
+		name = "technology_unit_stat_item"
+		position = { x=0 y=22 }
+		size = { width=224 height=25 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			spriteType ="GFX_stats_entry_bg"
+		}
+
+		instantTextboxType = {
+			name = "name"
+			position = { x = -5 y = 12 }
+			font = "hoi4_typewriter16_inverted"
+			text = "name"
+			maxWidth = 160
+			maxHeight = 20
+			fixedsize = yes
+			format = left
+		}
+
+		instantTextboxType = {
+			name = "amount"
+			position = { x = 110 y = 12 }
+			font = "hoi4_typewriter16_inverted"
+			text = ""
+			maxWidth = 100
+			maxHeight = 20
+			format = right
+		}
+
+		instantTextboxType = {
+			name = "diff"
+			position = { x = 195 y = 0 }
+			font = "hoi4_typewriter16_inverted"
+			text = ""
+			maxWidth = 100
+			maxHeight = 20
+			format = right
+		}
+	}
+
+	containerWindowType = {
+		name = "technology_unlocks_item"
+		position = { x=10 y=2 }
+		size = { width=402 height=40 }
+		clipping = no
+
+		#background = {
+		#	name = "Background"
+		#	spriteType ="GFX_stats_entry_bg"
+		#}
+
+		instantTextboxType = {
+			name = "name"
+			position = { x = 100 y = 10 }
+			font = "hoi4_typewriter16_inverted"
+			text = "name"
+			maxWidth = 350
+			maxHeight = 20
+			format = left
+		}
+
+		iconType = {
+			name = "icon"
+			position = { x = 50 y = 0 }
+			spriteType = "GFX_buildings_strip"
+		}
+	}
+
+	containerWindowType = {
+		name = "technology_tactics_item"
+		position = { x=10 y=2 }
+		size = { width=201 height=30 }
+		clipping = no
+
+		#background = {
+		#	name = "Background"
+		#	spriteType ="GFX_stats_entry_bg"
+		#}
+
+		instantTextboxType = {
+			name = "name"
+			position = { x = 120 y = 10 }
+			font = "hoi4_typewriter16_inverted"
+			text = "name"
+			maxWidth = 300
+			maxHeight = 20
+			format = left
+		}
+
+		iconType = {
+			name = "icon"
+			position = { x = 20 y = -5 }
+			spriteType = "GFX_tiled_window_transparent_transparent"
+		}
+	}
+
+	containerWindowType = {
+		name = "technology_unit_upgrade_stat_item"
+		position = { x=10 y=2 }
+		size = { width=201 height=25 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			spriteType ="GFX_stats_entry_long_bg"
+			position = { x = -30 y = 0 }
+		}
+
+		instantTextboxType = {
+			name = "name"
+			position = { x = -30 y = 2 }
+			font = "hoi4_typewriter16_inverted"
+			text = "name"
+			maxWidth = 290
+			maxHeight = 20
+			format = left
+		}
+
+		instantTextboxType = {
+			name = "amount"
+			position = { x = 220 y = 2 }
+			font = "hoi4_typewriter16_inverted"
+			text = ""
+			maxWidth = 100
+			maxHeight = 20
+			format = right
+		}
+
+		#instantTextboxType = {
+		#	name = "diff"
+		#	position = { x = 195 y = 0 }
+		#	font = "hoi4_typewriter16_inverted"
+		#	text = ""
+		#	maxWidth = 100
+		#	maxHeight = 20
+		#	format = right
+		#}
+	}
+
+	containerWindowType = {
+		name = "technology_subunit_unlock_stat_item"
+		position = { x=0 y=2 }
+		size = { width=224 height=25 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			spriteType ="GFX_stats_entry_bg"
+		}
+
+		instantTextboxType = {
+			name = "name"
+			position = { x = -5 y = 12 }
+			font = "hoi4_typewriter16_inverted"
+			text = "name"
+			maxWidth = 165
+			maxHeight = 20
+			fixedsize = yes
+			format = left
+		}
+
+		instantTextboxType = {
+			name = "amount"
+			position = { x = 110 y = 12 }
+			font = "hoi4_typewriter16_inverted"
+			text = ""
+			maxWidth = 100
+			maxHeight = 20
+			format = right
+		}
+
+		instantTextboxType = {
+			name = "diff"
+			position = { x = 195 y = 0 }
+			font = "hoi4_typewriter16_inverted"
+			text = ""
+			maxWidth = 100
+			maxHeight = 20
+			format = right
+		}
+	}
+
+	containerWindowType = {
+		name = "technology_subunit_adjuster_entry"
+		size = { width = 70 height = 62 }
+		clipping = no
+
+		iconType = {
+			name ="terrain_mod_bg"
+			spriteType = "GFX_adjuster_unknown_bg"
+			position = { x=18 y=11 }
+		}
+
+		iconType = {
+			name ="terrain_mod_frame"
+			spriteType = "GFX_terrain_mod_frame"
+			position = { x=7 y=5 }
+		}
+
+		iconType = {
+			name ="terrain_mod_attack_strip"
+			spriteType = "GFX_terrain_mod_attack_strip"
+			position = { x=34 y=42 }
+			frame = 1
+		}
+
+		iconType = {
+			name ="terrain_mod_movement_strip"
+			spriteType = "GFX_terrain_mod_movement_strip"
+			position = { x=11 y=42 }
+			frame = 1
+		}
+
+		iconType = {
+			name ="terrain_mod_defense_strip"
+			spriteType = "GFX_terrain_mod_defense_strip"
+			position = { x=56 y=42 }
+			frame = 1
+		}
+	}
+
+	containerWindowType = {
+		name = "technology_tech_stat_item"
+		position = { x=10 y=2 }
+		size = { width=201 height=25 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			spriteType ="GFX_stats_entry_long_bg"
+			position = { x = -30 y = 0 }
+		}
+
+		instantTextboxType = {
+			name = "name"
+			position = { x = -30 y = 2 }
+			font = "hoi4_typewriter16_inverted"
+			text = "name"
+			maxWidth = 290
+			maxHeight = 20
+			format = left
+		}
+
+		instantTextboxType = {
+			name = "amount"
+			position = { x = 220 y = 2 }
+			font = "hoi4_typewriter16_inverted"
+			text = ""
+			maxWidth = 100
+			maxHeight = 20
+			format = right
+		}
+	}
+
+	containerWindowType = {
+		name = "technology_info_category_header"
+		position = { x=110 y=0 }
+		size = { width=201 height=30 }
+		clipping = no
+
+		instantTextboxType = {
+			name = "header"
+			position = { x = 130 y = 18 }
+			font = "hoi4_typewriter22"
+			text = "category:"
+			maxWidth = 201
+			maxHeight = 20
+			format = center
+		}
+	}
+
+	containerWindowType = {
+		name = "subunit_icon_entry"
+		position = { x=0 y=0 }
+		size = { width = 30 height = 30 }
+		iconType = {
+			name = "subunit_icon"
+			position = { x = 0 y = 0 }
+			spriteType = "GFX_tiled_window_transparent_transparent"
+		}
+
+		instantTextBoxType = {
+			name = "subunit_label"
+			position = { x = 0 y = 5 }
+			font = "hoi_33"
+			borderSize = { x = 0 y = 0 }
+			maxWidth = 200
+			maxHeight = 62
+			format = left
+			Orientation = "UPPER_LEFT"
+		}
+	}
+
+	containerWindowType = {
+		name = "padding_window"
+		position = { x=0 y=0 }
+		size = { width=1 height=1 }
+	}
+
+	containerWindowType = {
+		name = "unlock_tech_info_window"
+		position = { x=500 y=100 }
+		size = { width = 550 height = 550 }
+		Orientation = UPPER_LEFT
+		moveable = yes
+		#clipping = no
+		fade_time = 500
+		fade_type = linear
+
+		show_sound = pop_up
+
+		background = {
+			name = "Background"
+			#SpriteType ="GFX_technology_info_bg"
+			SpriteType = "GFX_tiled_window_thin_border2"
+		}
+
+		iconType ={
+			name ="tech_info_top_win"
+			spriteType = "GFX_tech_info_top_win"
+			position = { x= 1 y = 1 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+		}
+
+		buttonType = {
+			name = "close"
+			quadTextureSprite = "GFX_closebutton"
+			buttonFont = "vic_18"
+			position = { x=-43 y=10 }
+			shortcut = "ESCAPE"
+			Orientation = "UPPER_RIGHT"
+			pdx_tooltip = "CLOSE"
+			clicksound = click_close
+		}
+
+		iconType ={
+			name ="tech_icon"
+			spriteType = "GFX_tiled_window_transparent"
+			position = { x= 45 y = 47 }
+			Orientation = "UPPER_LEFT"
+		}
+
+		instantTextboxType = {
+			name = "tech_info_title"
+			position = { x = 40 y = 15 }
+			textureFile = ""
+			font = "hoi_20bs"
+			borderSize = {x = 0 y = 0}
+			text = ""
+			maxWidth = 450
+			maxHeight = 30
+			format = center
+		}
+
+		instantTextboxType = {
+			name = "tech_info_description"
+			position = { x = 27 y = 121 }
+			textureFile = ""
+			font = "hoi_16mbs"
+			borderSize = {x = 0 y = 0}
+			text = ""
+			maxWidth = 495
+			maxHeight = 70
+			format = left
+			vertical_alignment = center
+		}
+
+		buttonType = {
+			name = "unlock_with_xp"
+			quadTextureSprite = "GFX_button_261x34"
+			buttonFont = "hoi_20b"
+			position = { x = 177 y = 62 }
+			shortcut = "RETURN"
+			clicksound = ui_doctrine_unlock
+		}
+
+		instantTextboxType = {
+			name = "researchtime_label"
+			position = { x = 177 y = 62 }
+			font = "hoi_20b"
+			borderSize = { x = 0 y = 0 }
+			text = ""
+			maxWidth = 190
+			maxHeight = 30
+			format = center
+		}
+
+		containerWindowType = {
+			name = "statsarea"
+			position = { x=20 y=220 }
+			size = { width = -20 height = -20 }
+			#horizontalScrollbar = "bottom_horizontal_slider"
+			verticalScrollbar = "right_vertical_slider"
+			margin = { top = 4 left = 13 right = 5 }
+			clipping = yes
+
+			instantTextboxType = {
+				name = "tech_info_special_description"
+				position = { x = 0 y = 0 }
+				textureFile = ""
+				font = "hoi4_typewriter16_inverted"
+				borderSize = {x = 0 y = 0}
+				text = "BABALKBLLALBLAL"
+				maxWidth = 495
+				maxHeight = 70
+				format = left
+				vertical_alignment = center
+				format = center
+			}
+
+			positionType = {
+				name = "tech_info_special_description_bottom_margin"
+				position = { x = 0 y = 14 }
+			}
+
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_paper_bg"
+			}
+
+		}
+	}
+}

@@ -1,0 +1,56 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_juggle_infantry_medium"
+		texturefile = "gfx/interface/technologies/generic_high.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_juggle_special_medium"
+		texturefile = "gfx/interface/technologies/generic_high.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_juggle_motorized_medium"
+		texturefile = "gfx/interface/technologies/generic_high.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_juggle_robotics_medium"
+		texturefile = "gfx/interface/technologies/generic_high.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_juggle_air_medium"
+		texturefile = "gfx/interface/technologies/generic_high.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_juggle_navy_ships_medium"
+		texturefile = "gfx/interface/technologies/generic_high.dds"
+		alwaystransparent = yes
+	}spriteType = {
+		name = "GFX_juggle_navy_guns_medium"
+		texturefile = "gfx/interface/technologies/generic_high.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_juggle_electronics_medium"
+		texturefile = "gfx/interface/technologies/generic_high.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_juggle_industry_medium"
+		texturefile = "gfx/interface/technologies/generic_high.dds"
+		alwaystransparent = yes
+	}
+		spriteType = {
+		name = "GFX_juggle_implant_medium"
+		texturefile = "gfx/interface/technologies/generic_high.dds"
+		alwaystransparent = yes
+	}
+		spriteType = {
+		name = "GFX_juggle_tribal_medium"
+		texturefile = "gfx/interface/technologies/generic_high.dds"
+		alwaystransparent = yes
+	}
+}

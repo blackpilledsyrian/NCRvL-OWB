@@ -1,0 +1,220 @@
+technologies = {
+	juggle_infantry = {
+		research_cost = 0
+        start_year = 2275
+        on_research_complete = {
+            hidden_effect = {
+                set_technology = {
+                    juggle_infantry = 0
+                }
+            }
+        }
+        folder = {
+            name = fallout_infantry_folder
+            position = { x = 6 y = 9 }
+        }
+		categories = {}
+		ai_will_do = {
+			factor = 0
+		}
+    }
+	
+	juggle_motorized = {
+		research_cost = 0
+        start_year = 2275
+        on_research_complete = {
+            hidden_effect = {
+                set_technology = {
+                    juggle_motorized = 0
+                }
+            }
+        }
+        folder = {
+            name = fallout_vehicle_folder
+            position = { x = 2 y = 11 }
+        }
+		categories = {}
+		ai_will_do = {
+			factor = 0
+		}
+    }
+	
+	juggle_special = {
+		research_cost = 0
+        start_year = 2275
+        on_research_complete = {
+            hidden_effect = {
+                set_technology = {
+                    juggle_special = 0
+                }
+            }
+        }
+        folder = {
+            name = fallout_support_folder
+            position = { x = 4 y = 8 }
+        }
+		categories = {}
+		ai_will_do = {
+			factor = 0
+		}
+    }
+	
+	juggle_robotics = {
+		research_cost = 0
+        start_year = 2275
+        on_research_complete = {
+            hidden_effect = {
+                set_technology = {
+                    juggle_robotics = 0
+                }
+            }
+        }
+        folder = {
+            name = fallout_robotics_folder
+            position = { x = 0 y = 10 }
+        }
+		categories = {}
+		ai_will_do = {
+			factor = 0
+		}
+    }
+	
+	
+	juggle_navy_ships = {
+		research_cost = 0
+        start_year = 2275
+        on_research_complete = {
+            hidden_effect = {
+                set_technology = {
+                    juggle_navy_ships = 0
+                }
+            }
+        }
+        folder = {
+            name = fallout_naval_folder
+            position = { x = 4 y = 10 }
+        }
+		categories = {}
+		ai_will_do = {
+			factor = 0
+		}
+    }
+	
+	juggle_navy_guns = {
+		research_cost = 0
+        start_year = 2275
+        on_research_complete = {
+            hidden_effect = {
+                set_technology = {
+                    juggle_navy_guns = 0
+                }
+            }
+        }
+        folder = {
+            name = fallout_naval_modules_folder
+            position = { x = 0 y = 6 }
+        }
+		categories = {}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	juggle_air = {
+		research_cost = 0
+        start_year = 2275
+        on_research_complete = {
+            hidden_effect = {
+                set_technology = {
+                    juggle_air = 0
+                }
+            }
+        }
+        folder = {
+            name = fallout_air_folder
+            position = { x = -2 y = 0 }
+        }
+		categories = {}
+		ai_will_do = {
+			factor = 0
+		}
+    }
+	
+	juggle_electronics = {
+		research_cost = 0
+        start_year = 2275
+        on_research_complete = {
+            hidden_effect = {
+                set_technology = {
+                    juggle_electronics = 0
+                }
+            }
+        }
+        folder = {
+            name = fallout_engineering_folder
+            position = { x = 10 y = 0 }
+        }
+		categories = {}
+		ai_will_do = {
+			factor = 0
+		}
+    }
+	
+	juggle_industry = {
+		research_cost = 0
+        start_year = 2275
+        on_research_complete = {
+            hidden_effect = {
+                set_technology = {
+                    juggle_industry = 0
+                }
+            }
+        }
+        folder = {
+            name = fallout_industry_folder
+            position = { x = 6 y = 3 }
+        }
+		categories = {}
+		ai_will_do = {
+			factor = 0
+		}
+    }
+		juggle_implant = {
+		research_cost = 0
+        start_year = 2275
+        on_research_complete = {
+            hidden_effect = {
+                set_technology = {
+                    juggle_implant = 0
+                }
+            }
+        }
+        folder = {
+            name = fallout_tech_implant_folder
+            position = { x = 8 y = 6 }
+        }
+		categories = {}
+		ai_will_do = {
+			factor = 0
+		}
+    }
+		juggle_tribal = {
+		research_cost = 0
+        start_year = 2275
+        on_research_complete = {
+            hidden_effect = {
+                set_technology = {
+                    juggle_tribal = 0
+                }
+            }
+        }
+        folder = {
+            name = fallout_tech_tribal_folder
+            position = { x = 8 y = 14 }
+        }
+		categories = {}
+		ai_will_do = {
+			factor = 0
+		}
+    }
+}
