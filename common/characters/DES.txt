@@ -136,7 +136,7 @@ characters = {
 				perceptive_trait
 				agile_trait
 				commando_trait
-				survivalist_trait
+				sniper_trait
 				ranger_trait
 			}
 			skill = 5
@@ -221,6 +221,7 @@ characters = {
 				enduring_trait
 				bruiser_trait
 				ranger_trait
+				desert_fox
 			}
 			skill = 4
 			attack_skill = 7
@@ -303,27 +304,27 @@ characters = {
 				DES_tactical_historian
 			}
 			research_bonus = {
-				cat_land_doctrine = 0.1
+				cat_land_doctrine = 0.05
 			}
 			cost = 150
 			ai_will_do = {
 				factor = 10003
 			}
 		}
-		corps_commander = {
-			traits = {
-				intelligent_trait
-				perceptive_trait
-				awareness_trait
-				finesse_trait
-				ranger_trait
-			}
-			skill = 4
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 6
-			logistics_skill = 2
-		}
+		#corps_commander = {
+		#	traits = {
+		#		intelligent_trait
+		#		perceptive_trait
+		#		awareness_trait
+		#		finesse_trait
+		#		ranger_trait
+		#	}
+		#	skill = 4
+		#	attack_skill = 1
+		#	defense_skill = 1
+		#	planning_skill = 6
+		#	logistics_skill = 2
+		#}
 	}
 	DES_angela_deth = {
 		name = DES_angela_deth
@@ -435,8 +436,8 @@ characters = {
 			skill = 4
 			attack_skill = 4
 			defense_skill = 4
-			planning_skill = 1
-			logistics_skill = 1
+			planning_skill = 3
+			logistics_skill = 3
 		}
 	}
 	DES_mark_anderson = {
@@ -462,20 +463,20 @@ characters = {
 				factor = 10
 			}
 		}
-		corps_commander = {
-			traits = {
-				strong_trait
-				lucky_trait
-				skilled_trait
-				inspirational_trait
-				ranger_trait
-			}
-			skill = 3
-			attack_skill = 1
-			defense_skill = 3
-			planning_skill = 3
-			logistics_skill = 1
-		}
+		#corps_commander = {
+		#	traits = {
+		#		strong_trait
+		#		lucky_trait
+		#		skilled_trait
+		#		inspirational_trait
+		#		ranger_trait
+		#	}
+		#	skill = 3
+		#	attack_skill = 1
+		#	defense_skill = 3
+		#	planning_skill = 3
+		#	logistics_skill = 1
+		#}
 	}
 	DES_koal_morales = {
 		name = DES_koal_morales
@@ -503,20 +504,20 @@ characters = {
 				factor = 10
 			}
 		}
-		corps_commander = {
-			traits = {
-				intelligent_trait
-				lucky_trait
-				bloody_mess_trait
-				pyromaniac_trait
-				ranger_trait
-			}
-			skill = 3
-			attack_skill = 2
-			defense_skill = 2
-			planning_skill = 2
-			logistics_skill = 2
-		}
+		#corps_commander = {
+		#	traits = {
+		#		intelligent_trait
+		#		lucky_trait
+		#		bloody_mess_trait
+		#		pyromaniac_trait
+		#		ranger_trait
+		#	}
+		#	skill = 3
+		#	attack_skill = 2
+		#	defense_skill = 2
+		#	planning_skill = 2
+		#	logistics_skill = 2
+		#}
 	}
 	DES_frederica_mercury = {
 		name = DES_frederica_mercury
@@ -569,15 +570,13 @@ characters = {
 				enduring_trait
 				agile_trait
 				aqua_boy_trait
-				swamp_fox
-				swamp_fox_II
 				naval_invader
 				ranger_trait
 			}
 			skill = 3
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 2
 			logistics_skill = 5
 		}
 	}
@@ -607,19 +606,19 @@ characters = {
 				factor = 10
 			}
 		}
-		corps_commander = {
-			traits = {
-				charismatic_trait
-				lucky_trait
-				local_leader_trait
-				ranger_trait
-			}
-			skill = 3
-			attack_skill = 2
-			defense_skill = 2
-			planning_skill = 2
-			logistics_skill = 2
-		}
+		#corps_commander = {
+		#	traits = {
+		#		charismatic_trait
+		#		lucky_trait
+		#		local_leader_trait
+		#		ranger_trait
+		#	}
+		#	skill = 3
+		#	attack_skill = 2
+		#	defense_skill = 2
+		#	planning_skill = 2
+		#	logistics_skill = 2
+		#}
 	}
 	DES_veteran_ranger_holstadt = {
 		name = DES_veteran_ranger_holstadt
@@ -644,19 +643,19 @@ characters = {
 				factor = 10
 			}
 		}
-		corps_commander = {
-			traits = {
-				agile_trait
-				charismatic_trait
-				commando_trait
-				ranger_trait
-			}
-			skill = 3
-			attack_skill = 1
-			defense_skill = 3
-			planning_skill = 3
-			logistics_skill = 1
-		}
+		#corps_commander = {
+		#	traits = {
+		#		agile_trait
+		#		charismatic_trait
+		#		commando_trait
+		#		ranger_trait
+		#	}
+		#	skill = 3
+		#	attack_skill = 1
+		#	defense_skill = 3
+		#	planning_skill = 3
+		#	logistics_skill = 1
+		#}
 	}
 	DES_veteran_ranger_trippy = {
 		name = DES_veteran_ranger_trippy
@@ -689,13 +688,13 @@ characters = {
 				perceptive_trait
 				agile_trait
 				night_person_trait
-				chem_reliant
+				fast_metabolism
 				camouflage_trait
 				ranger_trait
 			}
-			skill = 3
+			skill = 4
 			attack_skill = 3
-			defense_skill = 1
+			defense_skill = 5
 			planning_skill = 1
 			logistics_skill = 3
 		}
@@ -726,15 +725,17 @@ characters = {
 		corps_commander = {
 			traits = {
 				enduring_trait
+				strong_trait
 				lucky_trait
 				gunslinger_trait
+				hill_fighter
 				ranger_trait
 			}
-			skill = 3
+			skill = 2
 			attack_skill = 3
-			defense_skill = 1
+			defense_skill = 3
 			planning_skill = 3
-			logistics_skill = 1
+			logistics_skill = 5
 		}
 	}
 	DES_the_way_of_the_ranger = {

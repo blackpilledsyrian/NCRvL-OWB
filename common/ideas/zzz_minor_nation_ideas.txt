@@ -13,6 +13,9 @@ ideas = {
             }
             modifier = {
                 land_reinforce_rate = 1
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.1
+				bunker_max_level_terrain_limit = -4
             }
         }
         okc_savages = {
@@ -40,46 +43,25 @@ ideas = {
                 always = no
             }
             modifier = {
-                air_doctrine_cost_factor = 0.2
-                experience_gain_air_factor = -0.2
+                air_doctrine_cost_factor = 0.15
+                experience_gain_air_factor = -0.15
             }
             equipment_bonus = {
                 fighter_equipment = {
-                    instant = yes
-                    build_cost_ic = 0.66
-                }
-                hev_fighter_equipment = {
-                    instant = yes
                     build_cost_ic = 0.33
-                }
-                car_fighter_equipment = {
                     instant = yes
-                    build_cost_ic = 0.33
-                }
-                long_fighter_equipment = {
-                    instant = yes
-                    build_cost_ic = 0.33
                 }
                 cas_equipment = {
-                    instant = yes
-                    build_cost_ic = 0.66
-                }
-                hev_cas_equipment = {
-                    instant = yes
                     build_cost_ic = 0.33
-                }
-                car_cas_equipment = {
                     instant = yes
-                    build_cost_ic = 0.33
-                }
-                long_cas_equipment = {
-                    instant = yes
-                    build_cost_ic = 0.33
                 }
             }
+            allowed_civil_war = {
+                always = yes
+            }
             research_bonus = {
-                air_tech_category = -0.3
-                cat_automated_warfare = -0.3
+                air_tech_category = -0.25
+                cat_automated_warfare = -0.25
             }
             removal_cost = -1
         }
@@ -595,6 +577,47 @@ ideas = {
             }
             modifier = {
                 air_doctrine_cost_factor = 0.08
+            }
+        }
+        ######
+        # PAR
+        ######
+        warriors_of_the_rock = {
+            picture = generic_blood
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                monthly_population = -0.5
+                mobilization_speed = 0.3
+                training_time_factor = -0.3
+                war_support_factor = 0.3
+                experience_gain_army_factor = 0.3
+                experience_gain_army = 0.3
+                justify_war_goal_time = -0.3
+            }
+        }
+        ancestral_mesa_paintings = {
+            picture = par_the_mesa
+            removal_cost = -1
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            equipment_bonus = {
+                infantry_equipment = {
+                    build_cost_ic = -0.1
+                    instant = yes
+                }
+            }
+            research_bonus = {
+                tribal_tech_category = 0.05
             }
         }
         ######

@@ -387,7 +387,6 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 7691;7650;sea;5825;-1;-1;-1;-1;;Baudelio Ranchers to Sinaloa
 7662;7650;sea;5825;-1;-1;-1;-1;;Baudelio Ranchers to Sinaloa
 ;;;;;;;;;
-4652;4671;sea;;-1;-1;-1;-1;;Baja Crossing
 4659;4661;sea;;-1;-1;-1;-1;;Baja Crossing
 ;;;;;;;;;
 8928;5792;sea;3057;-1;-1;-1;-1;;Gila Mouth Crossing
@@ -678,15 +677,6 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 14163;13321;sea;5910;-1;-1;-1;-1;;Pakoseyimowin to Easterville
 ;;;;;;;;;
 3106;6408;sea;3069;-1;-1;-1;-1;;VanBuren Grand Canyon Crossing
-;;;;;;;;;
-4651;4671;sea;535;-1;-1;-1;-1;;NCRvLegion Crossing
-4654;4671;sea;535;-1;-1;-1;-1;;NCRvLegion Crossing
-7562;4671;sea;535;-1;-1;-1;-1;;NCRvLegion Crossing
-7561;4671;sea;535;-1;-1;-1;-1;;NCRvLegion Crossing
-2189;4671;sea;535;-1;-1;-1;-1;;NCRvLegion Crossing
-7549;4671;sea;535;-1;-1;-1;-1;;NCRvLegion Crossing
-7547;4671;sea;535;-1;-1;-1;-1;;NCRvLegion Crossing
-4668;7547;sea;535;-1;-1;-1;-1;;NCRvLegion Crossing
 ;;;;;;;;;
 5791;5315;sea;3057;-1;-1;-1;-1;;NCRvLegion Crossing
 3107;5315;sea;3057;-1;-1;-1;-1;;NCRvLegion Crossing
