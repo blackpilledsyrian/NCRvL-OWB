@@ -2,8 +2,15 @@ mojave_state_modifier = {
 	enable = { always = yes }
 	icon = GFX_modifiers_FIN_motti_tactics_modifier
 	local_supplies_for_controller = 0.1
-	army_speed_factor_for_controller = 0.1
-	army_speed_factor = -0.1
-	enemy_army_speed_factor = -0.2
+	army_speed_factor = -0.2
+	enemy_army_speed_factor = -0.3
+	army_core_defence_factor = 0.05
+}
+hoover_state_modifier = {
+	enable = { always = yes }
+	icon = GFX_modifiers_SOV_armored_battery
+	local_supplies_for_controller = 0.15
+	enemy_army_speed_factor = -0.3
+	army_core_attack_factor = 0.05
 	army_core_defence_factor = 0.05
 }
