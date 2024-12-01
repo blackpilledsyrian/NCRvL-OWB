@@ -1607,6 +1607,9 @@ focus_tree = {
 			water_generator > 9
 		}
 		completion_reward = {
+			add_ideas = {
+				rangersoutreach
+			}
 			set_technology = {
 				resource_generator_water_tech_5 = 1
 			}
@@ -1747,6 +1750,9 @@ focus_tree = {
 		x = 6
 		y = 3
 		completion_reward = {
+			add_ideas = {
+				rangerintervention
+			}
 			add_tech_bonus = {
 				name = des_research_3
 				bonus = 0.5
@@ -1954,6 +1960,9 @@ focus_tree = {
 		x = -3
 		y = 2
 		completion_reward = {
+			add_ideas = {
+				rangersrecruiter
+			}
 			capital_scope = {
 				add_extra_state_shared_building_slots = 3
 				set_temp_variable = { pop_add = 10000 }
@@ -1973,6 +1982,9 @@ focus_tree = {
 		x = 3
 		y = 2
 		completion_reward = {
+			add_ideas = {
+				rangersworkbench
+			}
 			army_experience = 10
 			add_tech_bonus = {
 				name = des_vargas_side_2
@@ -2000,6 +2012,9 @@ focus_tree = {
 		x = -2
 		y = 3
 		completion_reward = {
+			add_ideas = {
+				ncrfunding
+			}
 			set_temp_variable = {
 				caps_to_add = 500
 			}
@@ -2025,6 +2040,9 @@ focus_tree = {
 		x = 0
 		y = 3
 		completion_reward = {
+			add_ideas = {
+				ncrhonours
+			}
 			add_political_power = 100
 			add_stability = 0.05
 		}
@@ -2047,6 +2065,9 @@ focus_tree = {
 		x = 2
 		y = 3
 		completion_reward = {
+			add_ideas = {
+				reorganizedrangers
+			}
 			add_stability = 0.1
 		}
 	}
@@ -2113,6 +2134,11 @@ focus_tree = {
 		x = -1
 		y = 1
 		completion_reward = {
+			add_ideas = {
+				nationalguard
+				armyrangers
+				DES_army_corps_of_engineers
+			}
 			every_country = {
 				limit = {
 					OR = {
@@ -2155,6 +2181,9 @@ focus_tree = {
 		x = 1
 		y = 1
 		completion_reward = {
+			add_ideas = {
+				raiderconscripts
+			}
 			every_owned_state = {
 				set_temp_variable = { pop_add = 8000 }
 				add_state_population = yes
@@ -2188,6 +2217,9 @@ focus_tree = {
 		y = 3
 		completion_reward = {
 			custom_effect_tooltip = ranger_tech_tt
+			add_ideas = {
+				rangercores
+			}
 			hidden_effect = {
 				set_technology = {
 					ncr_reorgranger_tech = 1
@@ -2204,6 +2236,7 @@ focus_tree = {
 						is_core_of = PSH
 						is_core_of = GRA
 						is_core_of = SKY
+						is_core_of = RIP
 					}
 				}
 				add_core_of = DES

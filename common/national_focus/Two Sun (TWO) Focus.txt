@@ -1311,7 +1311,7 @@ focus_tree = {
 			add_tech_bonus = {
 				bonus = 1.0
 				ahead_reduction = 1.0
-				category = car_tech_category
+				category = vehicle_tech_category
 			}
 		}
 	}
@@ -1354,6 +1354,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				bonus = 1.0
+				ahead_reduction = 1.0
 				category = tank_tech_category
 			}
 		}

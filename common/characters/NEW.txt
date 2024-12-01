@@ -599,6 +599,39 @@ characters = {
 				factor = 10
 			}
 		}
+		advisor = {
+			slot = air_chief
+			idea_token = NEW_jagged_jimmy_j_economic_advisor
+			desc = NEW_jagged_jimmy_j_desc
+			allowed = {
+				original_tag = NEW
+			}
+			traits = {
+				TWO_air_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = NEW_jagged_jimmy_j_economic_advisor
+			desc = NEW_jagged_jimmy_j_desc
+			allowed = {
+				original_tag = NEW
+			}
+			traits = {
+				air_warfare_theorist
+			}
+			modifier = {
+				air_doctrine_cost_factor = -0.1
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
 	}
 	NEW_liam_eldridge = {
 		name = NEW_liam_eldridge_name

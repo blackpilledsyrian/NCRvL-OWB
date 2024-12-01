@@ -147,6 +147,7 @@ set_popularities = {
 1036 = { add_claim_by = IRN }
 1033 = { add_claim_by = IRN }
 1034 = { add_claim_by = IRN }
+487 = { add_claim_by = IRN }
 
 set_country_flag = slavery_allowed
 set_country_flag = extra_power_armour_flag_ai

@@ -1,0 +1,63 @@
+﻿division_template = {
+	name = "Militia Force"
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Riperult Mutilators"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 2 y = 0 }
+	}
+}
+units = {
+	division = {
+		name = "Jiggs Smugglers"
+		location = 8464
+		division_template = "Riperult Mutilators"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "'Drakul' Mutilators"
+		location = 8464
+		division_template = "Riperult Mutilators"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Meyzer's Mercs"
+		location = 8464
+		division_template = "Riperult Mutilators"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+}
+
+
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_1
+			creator = "RIP"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+
+	if = {
+		limit = { is_ai = yes }
+		load_oob = RIP_ai_2275
+		add_political_power = 25
+	}
+}

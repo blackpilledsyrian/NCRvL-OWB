@@ -119,7 +119,7 @@ focus_tree = {
 			#}
 			add_equipment_to_stockpile = {
 				type = energy_equipment_2
-				amount = 350
+				amount = 1500
 				producer = USA
 			}
 		}
@@ -147,6 +147,11 @@ focus_tree = {
 					type = circuitry
 					amount = 6
 				}
+			}
+			add_equipment_to_stockpile = {
+				type = energy_equipment_3
+				amount = 1000
+				producer = USA
 			}
 		}
 		ai_will_do = {
@@ -478,16 +483,16 @@ focus_tree = {
 			}
 			add_corps_commander_role = {
 				character = NEW_mr_bishop
-				skill = 1
+				skill = 6
 				traits = {
 					lone_wolf_trait
 					charismatic_trait
 					intelligent_trait
 				}
-				attack_skill = 2
-				defense_skill = 2
-				planning_skill = 2
-				logistics_skill = 2
+				attack_skill = 6
+				defense_skill = 6
+				planning_skill = 6
+				logistics_skill = 6
 			}
 		}
 		ai_will_do = {
@@ -1286,7 +1291,7 @@ focus_tree = {
 		completion_reward = {
 			add_equipment_to_stockpile = {
 				type = motorized_equipment
-				amount = 350
+				amount = 1000
 				producer = NEW
 			}
 			184 = {
@@ -1697,14 +1702,14 @@ focus_tree = {
 				}
 				add_equipment_to_stockpile = {
 					type = ballistic_equipment_2
-					amount = 750
+					amount = 1000
 					producer = NEW
 				}
 			}
 			else = {
 				add_equipment_to_stockpile = {
 					type = ballistic_equipment_2
-					amount = 750
+					amount = 1000
 					producer = USA
 				}
 			}
@@ -1932,6 +1937,13 @@ focus_tree = {
 				log = "[GetDateText]: [Root.GetName] new_techslot entered"
 			}
 			add_research_slot = 1
+			add_tech_bonus = {
+				name = robotic_bonus
+				bonus = 1
+				uses = 4
+				ahead_reduction = 1
+				category = robotics_tech_category
+			}
 			set_technology = {
 				robotics_tech_level_scientific = 1
 			}
@@ -3713,9 +3725,16 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_tech_bonus = {
-				bonus = 0.5
-				uses = 1
+				bonus = 1
+				uses = 3
 				category = light_air_tech_category
+			}
+			air_experience = 100
+			add_doctrine_cost_reduction = {
+				name = air_doctrine_bonus
+				cost_reduction = 0.5
+				uses = 3
+				category = cat_air_doctrine
 			}
 			285 = {
 				add_building_construction = {
@@ -3755,14 +3774,17 @@ focus_tree = {
 		prerequisite = {
 			focus = new_airport
 		}
-		available = {
-			has_tech = fighter_tech_1
-			has_tech = cas_bomber_tech_1
-		}
 		completion_reward = {
 			custom_effect_tooltip = new_oldbirds_tt
 			hidden_effect = {
 				load_oob = oldbirds
+			}
+			air_experience = 100
+			add_doctrine_cost_reduction = {
+				name = air_doctrine_bonus
+				cost_reduction = 0.5
+				uses = 3
+				category = cat_air_doctrine
 			}
 		}
 		ai_will_do = {
@@ -3906,9 +3928,19 @@ focus_tree = {
 			}
 			add_tech_bonus = {
 				name = melee_bonus
-				bonus = 0.5
-				uses = 1
+				bonus = 1
+				uses = 3
 				category = melee_weaponry_tech_category
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 3
+				category = support_demolitions_flamer_tech_category
+			}
+			set_technology = {
+				melee_weaponry_tech_2 = 1
+				flamer_demolitions_weaponry_tech_2 = 1
+				flamer_demolitions_sustained_pressure_tech = 1
 			}
 		}
 		ai_will_do = {
@@ -4009,9 +4041,20 @@ focus_tree = {
 			add_ideas = pabloconquistadors
 			add_tech_bonus = {
 				name = ballistic_bonus
-				bonus = 0.5
-				uses = 1
+				bonus = 1
+				uses = 3
 				category = ballistic_weaponry_tech_category
+			}
+			add_tech_bonus = {
+				name = ballistic_bonus
+				bonus = 1
+				uses = 3
+				category = support_fireteam_ballistic_tech_category
+			}
+			set_technology = {
+				warrior_equipment = 1
+				ballistic_fireteam_weaponry_tech_2 = 1
+				ballistic_fireteam_low_caliber_tech = 1
 			}
 			if = {
 				limit = {
@@ -4120,9 +4163,21 @@ focus_tree = {
 			add_ideas = blackvultures
 			add_tech_bonus = {
 				name = ballistic_bonus
-				bonus = 0.5
-				uses = 1
+				bonus = 1
+				uses = 3
 				category = energy_weaponry_tech_category
+			}
+			add_tech_bonus = {
+				name = ballistic_bonus
+				bonus = 1
+				uses = 3
+				category = support_fireteam_energy_tech_category
+			}
+			set_technology = {
+				energy_fireteam_weaponry_tech_2 = 1
+				energy_fireteam_focus_lens_tech = 1
+				energy_weaponry_tech_1 = 1
+				energy_weapon_emitter_tech = 1
 			}
 			if = {
 				limit = {
@@ -4243,8 +4298,8 @@ focus_tree = {
 			add_ideas = junkcitygladiators
 			add_tech_bonus = {
 				name = robotic_bonus
-				bonus = 0.5
-				uses = 1
+				bonus = 1
+				uses = 3
 				category = robotics_tech_category
 			}
 			if = {
@@ -4356,8 +4411,8 @@ focus_tree = {
 			add_ideas = roadpsychos
 			add_tech_bonus = {
 				name = motorized_bonus
-				bonus = 0.5
-				uses = 1
+				bonus = 1
+				uses = 3
 				category = vehicle_tech_category
 			}
 			if = {
@@ -4469,10 +4524,14 @@ focus_tree = {
 			}
 			add_ideas = nanjimiclan
 			add_tech_bonus = {
-				name = melee_weaponry_tech_category
-				bonus = 0.5
+				bonus = 1
+				uses = 2
+				category = enforcer_tech_category
+			}
+			add_tech_bonus = {
+				bonus = 1
 				uses = 1
-				category = vehicle_tech_category
+				category = infantry_tech_category
 			}
 			if = {
 				limit = {
@@ -4616,6 +4675,12 @@ focus_tree = {
 			custom_effect_tooltip = RUTHERFORD_CORPSLEAD_TT
 			custom_effect_tooltip = new_isotopestriketeams_tt
 			add_ideas = thraddimmortals
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 4
+				ahead_reduction = 1.0
+				category = spec_force_equipment_tech_category
+			}
 			set_technology = {
 				special_forces_tech_level_scientific = 1
 				ghoul_paratrooper_tech = 1
@@ -4688,6 +4753,12 @@ focus_tree = {
 				}
 			}
 			add_ideas = roaringbears
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 4
+				ahead_reduction = 1.0
+				category = tank_tech_category
+			}
 			if = {
 				limit = {
 					has_global_flag = debug_logs
@@ -4767,6 +4838,12 @@ focus_tree = {
 				}
 			}
 			add_ideas = hellhammers
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 4
+				ahead_reduction = 1.0
+				category = support_tech_category
+			}
 			set_technology = {
 				support_tech_level_scientific = 1
 			}

@@ -116,71 +116,6 @@ focus_tree = {
 		}
 	}
 
-	###################
-	# Ruby Valley War #
-	###################
-
-	focus = {
-		id = EHT_ruby
-		icon = GFX_goal_generic_ruby_focus
-		cost = 30
-		prerequisite = {
-			focus = EHT_focus_the_oasis
-		}
-		available = {
-			has_army_manpower = { size > 2000 }
-			ai_has_no_other_wars_or_wargoals = yes
-		}
-		bypass = {
-			RUB = {
-				all_core_land_owned_by_prev_sphere = yes
-			}
-		}
-		ai_will_do = {
-			base = 10
-		}
-		x = 0
-		y = 1
-		relative_position_id = EHT_focus_the_oasis
-		will_lead_to_war_with = RUB
-		completion_reward = {
-			if = {
-				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [Root.GetName] EHT_ruby entered"
-			}
-			country_event = nf_80s.31
-			if = {
-				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [Root.GetName] EHT_ruby exited"
-			}
-		}
-	}
-
-	focus = {
-		id = EHT_focus_ruby_promotion
-		icon = GFX_goal_generic_focus_magazine_backwood_get_off_my_lawn
-		cost = 30
-		prerequisite = {
-			focus = EHT_ruby
-		}
-		available = { owns_state = 237 }
-		x = 0
-		y = 1
-		relative_position_id = EHT_ruby
-		completion_reward = {
-			if = {
-				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [Root.GetName] EHT_focus_ruby_promotion entered"
-			}
-			country_event = nf_80s.6
-			237 = { add_core_of = EHT }
-			if = {
-				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [Root.GetName] EHT_focus_ruby_promotion exited"
-			}
-		}
-	}
-
 	#################################
 	# Starter Focuses - Settle Down #
 	#################################
@@ -192,10 +127,8 @@ focus_tree = {
 		prerequisite = {
 			focus = EHT_focus_the_oasis
 		}
-		available = {
-			NOT = {
-				has_completed_focus = EHT_focus_nomadic
-			}
+		mutually_exclusive = {
+			focus = EHT_focus_nomadic
 		}
 		x = -3
 		y = 1
@@ -208,9 +141,14 @@ focus_tree = {
 			add_stability = 0.1
 			add_war_support = -0.1
 			add_tech_bonus = {
-				bonus = 0.25
-				uses = 2
-				category = agriculture_tech
+				bonus = 1
+				uses = 3
+				category = industry_specialisation_category
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 3
+				category = construction_category
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -228,17 +166,17 @@ focus_tree = {
 		}
 		x = -2
 		y = 1
-		relative_position_id =EHT_focus_sedentary
+		relative_position_id = EHT_focus_sedentary
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] EHT_focus_wendover_encampment entered"
 			}
 			478 = {
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 5
 			}
 			40 = {
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 5
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -290,10 +228,10 @@ focus_tree = {
 					limit = {
 						is_valid_state_for_2_civilian_factories = yes
 					}
-					add_extra_state_shared_building_slots = 2
+					add_extra_state_shared_building_slots = 5
 					add_building_construction = {
 						type = industrial_complex
-						level = 2
+						level = 4
 						instant_build = yes
 					}
 				}
@@ -303,10 +241,10 @@ focus_tree = {
 					limit = {
 						is_valid_state_for_2_civilian_factories = yes
 					}
-					add_extra_state_shared_building_slots = 2
+					add_extra_state_shared_building_slots = 5
 					add_building_construction = {
 						type = industrial_complex
-						level = 2
+						level = 4
 						instant_build = yes
 					}
 				}
@@ -319,38 +257,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = EHT_focus_wendover_outriders
-		icon = GFX_goal_generic_truck_1
-		cost = 60
-		prerequisite = {
-			focus = EHT_focus_stable_production
-		}
-		mutually_exclusive = { focus = EHT_focus_wendover_battlements }
-		x = -2
-		y = 1
-		relative_position_id = EHT_focus_stable_production
-		completion_reward = {
-			if = {
-				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [Root.GetName] EHT_focus_wendover_outriders entered"
-			}
-			set_country_flag = EHT_wendover_outriders
-			custom_effect_tooltip = EHT_focus_wendover_outriders_tt
-			if = {
-				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [Root.GetName] EHT_focus_wendover_outriders exited"
-			}
-		}
-	}
-
-	focus = {
 		id = EHT_focus_wendover_battlements
 		icon = GFX_goal_generic_slave_collars
 		cost = 60
 		prerequisite = {
 			focus = EHT_focus_stable_production
 		}
-		mutually_exclusive = { focus = EHT_focus_wendover_outriders }
 		x = 0
 		y = 1
 		relative_position_id = EHT_focus_stable_production
@@ -361,7 +273,12 @@ focus_tree = {
 			}
 			add_resource = {
 				type = metal
-				amount = 16
+				amount = 30
+				state = 40
+			}
+			add_resource = {
+				type = composites
+				amount = 20
 				state = 40
 			}
 			if = {
@@ -391,16 +308,16 @@ focus_tree = {
 					limit = {
 						is_valid_state_for_2_arms_factories = yes
 					}
-					add_extra_state_shared_building_slots = 2
+					add_extra_state_shared_building_slots = 5
 					add_building_construction = {
 						type = arms_factory
-						level = 2
+						level = 4
 						instant_build = yes
 					}
 				}
 				else = {
 					OWNER = {
-						add_offsite_building = { type = arms_factory level = 2 }
+						add_offsite_building = { type = arms_factory level = 4 }
 					}
 				}
 			}
@@ -409,16 +326,16 @@ focus_tree = {
 					limit = {
 						is_valid_state_for_2_arms_factories = yes
 					}
-					add_extra_state_shared_building_slots = 2
+					add_extra_state_shared_building_slots = 5
 					add_building_construction = {
 						type = arms_factory
-						level = 2
+						level = 4
 						instant_build = yes
 					}
 				}
 				else = {
 					OWNER = {
-						add_offsite_building = { type = arms_factory level = 2 }
+						add_offsite_building = { type = arms_factory level = 4 }
 					}
 				}
 			}
@@ -445,11 +362,31 @@ focus_tree = {
 			add_ideas = EHT_gas_station
 			add_resource = {
 				type = energy
+				amount = 30
+				state = 40
+			}
+			add_resource = {
+				type = circuitry
+				amount = 20
+				state = 40
+			}
+			add_resource = {
+				type = advanced
 				amount = 10
 				state = 40
 			}
 			add_resource = {
 				type = energy
+				amount = 15
+				state = 478
+			}
+			add_resource = {
+				type = circuitry
+				amount = 10
+				state = 478
+			}
+			add_resource = {
+				type = advanced
 				amount = 5
 				state = 478
 			}
@@ -465,7 +402,6 @@ focus_tree = {
 		icon = GFX_goal_generic_food_focus
 		cost = 60
 		prerequisite = {
-			focus = EHT_focus_wendover_outriders
 			focus = EHT_focus_wendover_armoury
 		}
 		x = 0
@@ -505,11 +441,11 @@ focus_tree = {
 				remove_idea = EHT_sedentary
 				add_idea = EHT_sedentary2
 			}
-			40 = {
-				add_extra_state_shared_building_slots = 3
+			512 = {
+				add_extra_state_shared_building_slots = 10
 				add_building_construction = {
 					type = industrial_complex
-					level = 3
+					level = 8
 					instant_build = yes
 				}
 			}
@@ -542,10 +478,10 @@ focus_tree = {
 				add_idea = EHT_zoom
 			}
 			512 = {
-				add_extra_state_shared_building_slots = 4
+				add_extra_state_shared_building_slots = 10
 				add_building_construction = {
-					type = industrial_complex
-					level = 3
+					type = arms_factory
+					level = 8
 					instant_build = yes
 				}
 			}
@@ -567,10 +503,8 @@ focus_tree = {
 		prerequisite = {
 			focus = EHT_focus_the_oasis
 		}
-		available = {
-			NOT = {
-				has_completed_focus = EHT_focus_sedentary
-			}
+		mutually_exclusive = {
+			focus = EHT_focus_sedentary
 		}
 		x = 3
 		y = 1
@@ -583,9 +517,14 @@ focus_tree = {
 			add_stability = -0.1
 			add_war_support = 0.1
 			add_tech_bonus = {
-				bonus = 0.25
-				uses = 2
-				category = tool_tech
+				bonus = 1
+				uses = 3
+				category = infantry_tech_category
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 3
+				category = support_tech_category
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -632,8 +571,8 @@ focus_tree = {
 		relative_position_id = EHT_focus_assimilation
 		completion_reward = {
 			add_equipment_to_stockpile = {
-				type = light_motorized_equipment_2
-				amount = 800
+				type = light_motorized_equipment_3
+				amount = 1000
 				producer = USA
 			}
 		}
@@ -654,7 +593,10 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] EHT_focus_camp_craftsmen entered"
 			}
-			add_offsite_building = { type = industrial_complex level = 3 }
+			add_offsite_building = { type = industrial_complex level = 9 }
+			set_technology = {
+				melee_weaponry_tech_2 = 1
+			}
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] EHT_focus_camp_craftsmen exited"
@@ -692,9 +634,6 @@ focus_tree = {
 		prerequisite = {
 			focus = EHT_focus_camp_craftsmen
 		}
-		mutually_exclusive = {
-			focus = EHT_thunderbird_smiths
-		}
 		x = 0
 		y = 1
 		relative_position_id = EHT_focus_camp_craftsmen
@@ -703,43 +642,15 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] EHT_focus_camp_weaponsmiths entered"
 			}
-			add_offsite_building = { type = arms_factory level = 3 }
+			add_offsite_building = { type = arms_factory level = 9 }
 			add_equipment_to_stockpile = {
-				type = ballistic_equipment_1
-				amount = 350
+				type = melee_equipment_3
+				amount = 1000
 				producer = USA
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] EHT_focus_camp_weaponsmiths exited"
-			}
-		}
-	}
-
-	focus = {
-		id = EHT_thunderbird_smiths
-		icon = GFX_goal_pal_business_as_usual
-		cost = 60
-		prerequisite = {
-			focus = EHT_focus_camp_craftsmen
-		}
-		mutually_exclusive = {
-			focus = EHT_focus_camp_weaponsmiths
-		}
-		x = 2
-		y = 1
-		relative_position_id = EHT_focus_camp_craftsmen
-		completion_reward = {
-			if = {
-				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [Root.GetName] EHT_thunderbird_smiths entered"
-			}
-			add_offsite_building = { type = arms_factory level = 2 }
-			custom_effect_tooltip = EHT_thunder_smith_tt
-			set_country_flag = EHT_thunderbird_smiths
-			if = {
-				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [Root.GetName] EHT_thunderbird_smiths exited"
 			}
 		}
 	}
@@ -759,8 +670,8 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = EHT_idea_old_world_arteries
 			add_equipment_to_stockpile = {
-				type = light_motorized_equipment_2
-				amount = 200
+				type = light_motorized_equipment_3
+				amount = 1000
 				producer = USA
 			}
 		}
@@ -772,7 +683,6 @@ focus_tree = {
 		cost = 60
 		prerequisite = {
 			focus = EHT_focus_camp_weaponsmiths
-			focus = EHT_thunderbird_smiths
 		}
 		x = 0
 		y = 1
@@ -785,7 +695,7 @@ focus_tree = {
 			add_ideas = EHT_ghost_warriors
 			add_equipment_to_stockpile = {
 				type = melee_equipment_3
-				amount = 850
+				amount = 1000
 				producer = USA
 			}
 			if = {
@@ -810,6 +720,10 @@ focus_tree = {
 		y = 1
 		relative_position_id = EHT_focus_ghost_warriors
 		completion_reward = {
+			add_offsite_building = {
+				type = arms_factory
+				level = 9
+			}
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] EHT_glory_road entered"
@@ -847,6 +761,10 @@ focus_tree = {
 		y = 1
 		relative_position_id = EHT_focus_ghost_warriors
 		completion_reward = {
+			add_offsite_building = {
+				type = industrial_complex
+				level = 9
+			}
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] EHT_BE_LAME entered"
@@ -887,9 +805,14 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] EHT_focus_breathe_of_elders entered"
 			}
-			army_experience = 25
+			add_political_power = 100
 			add_tech_bonus = {
-				bonus = 0.25
+				bonus = 1
+				uses = 2
+				category = tribal_tech_category
+			}
+			add_tech_bonus = {
+				bonus = 1
 				uses = 2
 				category = cat_land_doctrine
 			}
@@ -916,11 +839,16 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] EHT_wisdom_next_generation entered"
 			}
-			army_experience = 25
+			army_experience = 100
 			add_tech_bonus = {
-				bonus = 0.25
+				bonus = 1
 				uses = 2
 				category = vehicle_tech_category
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = cat_land_doctrine
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -938,8 +866,8 @@ focus_tree = {
 			focus = EHT_wisdom_next_generation
 		}
 		x = -1
-		y = 1
-		relative_position_id = EHT_focus_ruby_promotion
+		y = 3
+		relative_position_id = EHT_focus_the_oasis
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -962,8 +890,8 @@ focus_tree = {
 			focus = EHT_wisdom_next_generation
 		}
 		x = 1
-		y = 1
-		relative_position_id = EHT_focus_ruby_promotion
+		y = 3
+		relative_position_id = EHT_focus_the_oasis
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1002,8 +930,8 @@ focus_tree = {
 			num_of_factories > 30
 		}
 		x = 0
-		y = 2
-		relative_position_id = EHT_focus_ruby_promotion
+		y = 4
+		relative_position_id = EHT_focus_the_oasis
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1045,6 +973,16 @@ focus_tree = {
 			}
 			add_war_support = 0.1
 			add_stability = 0.1
+			add_political_power = 100
+			army_experience = 100
+			add_offsite_building = {
+				type = industrial_complex
+				level = 5
+			}
+			add_offsite_building = {
+				type = arms_factory
+				level = 5
+			}
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] EHT_focus_ready_to_return exited"
@@ -1073,6 +1011,7 @@ focus_tree = {
 				log = "[GetDateText]: [Root.GetName] EHT_our_parking_lot entered"
 			}
 			add_stability = 0.05
+			add_political_power = 100
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] EHT_our_parking_lot exited"
@@ -1096,7 +1035,8 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] EHT_long_road_home entered"
 			}
-			army_experience = 50
+			add_war_support = 0.05
+			army_experience = 100
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] EHT_long_road_home exited"
@@ -1117,12 +1057,12 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] EHT_build_more_roads entered"
 			}
-			every_owned_state = {
+			every_core_state = {
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = infrastructure
 					level = 1
 					instant_build = yes
-
 				}
 			}
 			if = {
@@ -1199,16 +1139,18 @@ focus_tree = {
 				log = "[GetDateText]: [Root.GetName] EHT_retaking_the_road entered"
 			}
 			264 = {
+				add_extra_state_shared_building_slots = 5
 				add_building_construction = {
 					type = infrastructure
-					level = 2
+					level = 5
 					instant_build = yes
 				}
 			}
 			40 = {
+				add_extra_state_shared_building_slots = 5
 				add_building_construction = {
 					type = infrastructure
-					level = 2
+					level = 5
 					instant_build = yes
 
 				}
@@ -1221,8 +1163,8 @@ focus_tree = {
 	}
 
 	focus = {
-		id = EHT_ripe_for_taking
-		icon = GFX_goal_lurker_offer_muttfruit
+		id = EHT_ruby
+		icon = GFX_goal_generic_ruby_focus
 		cost = 30
 		prerequisite = {
 			focus = EHT_build_more_roads
@@ -1231,58 +1173,55 @@ focus_tree = {
 			focus = EHT_retaking_the_road
 		}
 		available = {
-			RUB = {
-				all_core_land_owned_by_prev_sphere = yes
-			}
+			has_army_manpower = { size > 2000 }
 			ai_has_no_other_wars_or_wargoals = yes
 		}
 		bypass = {
-			RIP = {
+			RUB = {
 				all_core_land_owned_by_prev_sphere = yes
 			}
 		}
-		will_lead_to_war_with = RIP
+		ai_will_do = {
+			base = 10
+		}
 		x = -1
 		y = 1
 		relative_position_id = EHT_build_more_roads
+		will_lead_to_war_with = RUB
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [Root.GetName] EHT_ripe_for_taking entered"
+				log = "[GetDateText]: [Root.GetName] EHT_ruby entered"
 			}
-			RIP = {
-				ROOT = {
-					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
-				}
-			}
+			country_event = nf_80s.31
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [Root.GetName] EHT_ripe_for_taking exited"
+				log = "[GetDateText]: [Root.GetName] EHT_ruby exited"
 			}
 		}
 	}
 
 	focus = {
-		id = EHT_focus_riperult_promotion
-		icon = GFX_goal_generic_land_doctrines_focus
+		id = EHT_focus_ruby_promotion
+		icon = GFX_goal_generic_focus_magazine_backwood_get_off_my_lawn
 		cost = 30
 		prerequisite = {
-			focus = EHT_ripe_for_taking
+			focus = EHT_ruby
 		}
-		available = { owns_state = 462 }
+		available = { owns_state = 237 }
 		x = 0
 		y = 1
-		relative_position_id = EHT_ripe_for_taking
+		relative_position_id = EHT_ruby
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [Root.GetName] EHT_focus_riperult_promotion entered"
+				log = "[GetDateText]: [Root.GetName] EHT_focus_ruby_promotion entered"
 			}
-			country_event = nf_80s.36
-			462 = { add_core_of = EHT }
+			country_event = nf_80s.6
+			237 = { add_core_of = EHT }
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [Root.GetName] EHT_focus_riperult_promotion exited"
+				log = "[GetDateText]: [Root.GetName] EHT_focus_ruby_promotion exited"
 			}
 		}
 	}
@@ -1372,12 +1311,12 @@ focus_tree = {
 				log = "[GetDateText]: [Root.GetName] EHT_way_road_warrior entered"
 			}
 			add_tech_bonus = {
-				bonus = 0.25
+				bonus = 1
 				uses = 2
 				category = vehicle_tech_category
 			}
 			add_tech_bonus = {
-				bonus = 0.25
+				bonus = 1
 				uses = 2
 				category = cat_land_doctrine
 			}
@@ -1557,8 +1496,8 @@ focus_tree = {
 		relative_position_id = EHT_lord_long_road
 		x = 0
 		y = 1
-		available = {
-			has_completed_focus = EHT_focus_ruby_promotion
+		prerequisite = {
+			focus = EHT_focus_ruby_promotion
 		}
 		prerequisite = {
 			focus = EHT_grab_luggage
@@ -1601,6 +1540,13 @@ focus_tree = {
 				log = "[GetDateText]: [Root.GetName] EHT_focus_utah_road_war_second entered"
 			}
 			custom_effect_tooltip = EHT_focus_utah_road_war_second_tt
+			set_politics = {
+				ruling_party = ruler
+			}
+			add_popularity = {
+				ideology  = ruler
+				popularity = 1
+			}
 			hidden_effect = {
 				every_state = {
 					limit = {
@@ -1613,11 +1559,11 @@ focus_tree = {
 			}
 			add_offsite_building = {
 				type = industrial_complex
-				level = 3
+				level = 5
 			}
 			add_offsite_building = {
 				type = arms_factory
-				level = 3
+				level = 5
 			}
 			add_stability = 0.1
 			add_political_power = 150
@@ -1645,7 +1591,7 @@ focus_tree = {
 				log = "[GetDateText]: [Root.GetName] EHT_focus_desert_living entered"
 			}
 			add_tech_bonus = {
-				bonus = 0.25
+				bonus = 1
 				uses = 2
 				category = habitation_category
 			}
@@ -1750,7 +1696,7 @@ focus_tree = {
 				log = "[GetDateText]: [Root.GetName] EHT_focus_mineral_deposits entered"
 			}
 			add_tech_bonus = {
-				bonus = 0.25
+				bonus = 1
 				uses = 2
 				category = extraction_category
 			}
@@ -2038,13 +1984,18 @@ focus_tree = {
 				limit = {
 					OR = {
 						is_core_of = RUB
-						is_core_of = RIP
 						is_core_of = HAM
 						is_core_of = EAS
 						is_core_of = MUR
 					}
 				}
 				add_core_of = EHT
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
 			}
 		}
 	}
@@ -2066,8 +2017,13 @@ focus_tree = {
 			}
 			add_ideas = two_masters_of_the_motor_2
 			add_equipment_to_stockpile	= {
-				type = heavy_motorized_equipment_3
-				amount = 500
+				type = light_motorized_equipment_4
+				amount = 1000
+				producer = USA
+			}
+			add_equipment_to_stockpile	= {
+				type = melee_equipment_4
+				amount = 1000
 				producer = USA
 			}
 			if = {

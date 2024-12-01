@@ -581,9 +581,17 @@ ideas = {
 			}
 
 			removal_cost = -1
-
+			modifier = {
+				modifier_army_sub_unit_tank_attack_factor = 0.1
+				modifier_army_sub_unit_tank_defence_factor = 0.1
+			}
 			equipment_bonus = {
 				motorized_equipment = {
+					build_cost_ic = -0.15
+					maximum_speed = 0.1
+					instant = yes
+				}
+				tank_equipment = {
 					build_cost_ic = -0.15
 					maximum_speed = 0.1
 					instant = yes
@@ -607,12 +615,14 @@ ideas = {
 
 			equipment_bonus = {
 				demolitions_equipment = {
-					soft_attack = 0.05
+					soft_attack = 0.15
+					hard_attack = 0.15
 					build_cost_ic = -0.1
 					instant = yes
 				}
 				fireteam_equipment = {
-					soft_attack = 0.05
+					soft_attack = 0.15
+					hard_attack = 0.15
 					build_cost_ic = -0.1
 					instant = yes
 				}
@@ -637,12 +647,12 @@ ideas = {
 
 			removal_cost = -1
 			modifier = {
-				special_forces_cap = 0.05
-				special_forces_min = 40
+				special_forces_cap = 0.1
+				special_forces_min = 80
 			}
 			research_bonus = {
-				cat_land_doctrine = 0.1
-				infantry_tech_category = 0.1
+				cat_land_doctrine = 0.25
+				infantry_tech_category = 0.25
 			}
 		}
 
@@ -732,12 +742,12 @@ ideas = {
 			removal_cost = -1
 
 			research_bonus = {
-				energy_weaponry_tech_category = 0.05
-				support_fireteam_energy_tech_category = 0.05
+				energy_weaponry_tech_category = 0.25
+				support_fireteam_energy_tech_category = 0.25
 			}
 			modifier = {
 				caps_expense_modifier = 0.05
-				organization_floor_modifier_3 = 10
+				organization_floor_modifier_3 = 100
 			}
 		}
 
@@ -778,7 +788,7 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				max_planning = 0.08
+				max_planning = 0.1
 				planning_speed = 0.15
 			}
 		}
@@ -904,12 +914,16 @@ ideas = {
 
 			equipment_bonus = {
 				combat_robot_equipment = {
+					soft_attack = 0.25
+					hard_attack = 0.15
 					build_cost_ic = -0.1
 					reliability = 0.01
 					instant = yes
 				}
 				support_robot_equipment = {
 					build_cost_ic = -0.1
+					soft_attack = 0.25
+					hard_attack = 0.15
 					reliability = 0.01
 					instant = yes
 				}

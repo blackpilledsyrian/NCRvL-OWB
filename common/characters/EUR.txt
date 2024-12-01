@@ -636,7 +636,7 @@ characters={
 				original_tag = EUR
 			}
 			traits = {
-				follower_of_the_apocalypse
+				followers_leader
 			}
 			cost = 100
 			ai_will_do = {

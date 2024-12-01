@@ -970,7 +970,7 @@ ideas = {
 			picture = generic_military_draft
 			modifier = {
 				local_resources_factor = 0.05
-				industrial_capacity_factory = 0.05
+				industrial_capacity_factory = 0.2
 				consumer_goods_expected_value = -0.01
 			}
 		}

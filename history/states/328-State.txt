@@ -1,0 +1,26 @@
+state = {
+	id = 328
+	name = "STATE_328"
+	manpower = 2628
+	state_category = rural
+
+	resources = {
+		water = 1
+		circuitry = 3
+	}
+
+	history = {
+		owner = RIP
+		add_core_of = RIP
+		victory_points = {
+			3334 5
+		}
+		buildings = {
+			infrastructure = 1
+		}
+	}
+
+	provinces = {
+		1061 3334 3520 8468
+	}
+}

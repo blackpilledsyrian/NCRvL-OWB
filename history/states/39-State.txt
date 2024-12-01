@@ -1,0 +1,35 @@
+state = {
+	id = 39
+	name = "STATE_39"
+	manpower = 50000
+	state_category = large_town
+	resources = {
+		metal = 20
+		water = 20
+		energy = 20
+		circuitry = 20
+		composites = 20
+		advanced = 20
+	}
+
+	history = {
+		owner = EUR
+		add_core_of = EUR
+		victory_points = {
+			1191 10
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			industrial_complex = 1
+			dockyard = 1
+			1191 = {
+				naval_base = 3
+			}
+		}
+	}
+
+	provinces = {
+		1191 1215 1754 2065 2605 4904 4920 4921 4922 4923 7055 7056 7057 7058
+	}
+}
