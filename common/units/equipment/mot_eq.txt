@@ -64,7 +64,7 @@ equipments = {
 		hardness = 0.20
 		fuel_consumption = 0.2
 
-		build_cost_ic = 6.0
+		build_cost_ic = 12
 		resources = {
 			metal = 1
 			water = 1
@@ -89,7 +89,7 @@ equipments = {
 		hardness = 0.3
 		fuel_consumption = 0.3
 
-		build_cost_ic = 9
+		build_cost_ic = 16
 		resources = {
 			metal = 1
 			water = 1
@@ -114,7 +114,7 @@ equipments = {
 		hardness = 0.40
 		fuel_consumption = 0.4
 
-		build_cost_ic = 12.5
+		build_cost_ic = 22
 		resources = {
 			metal = 2
 			water = 1
@@ -139,7 +139,7 @@ equipments = {
 		hardness = 0.5
 		fuel_consumption = 0.5
 
-		build_cost_ic = 16.5
+		build_cost_ic = 28
 		resources = {
 			metal = 2
 			water = 1
@@ -164,7 +164,7 @@ equipments = {
 		hardness = 0.35
 		fuel_consumption = 0.3
 
-		build_cost_ic = 8
+		build_cost_ic = 14
 		resources = {
 			metal = 1
 			water = 1
@@ -189,7 +189,7 @@ equipments = {
 		hardness = 0.5
 		fuel_consumption = 0.4
 
-		build_cost_ic = 12
+		build_cost_ic = 20
 		resources = {
 			metal = 2
 			water = 1
@@ -214,7 +214,7 @@ equipments = {
 		hardness = 0.65
 		fuel_consumption = 0.5
 
-		build_cost_ic = 16
+		build_cost_ic = 28
 		resources = {
 			metal = 2
 			water = 2
@@ -239,7 +239,7 @@ equipments = {
 		hardness = 0.8
 		fuel_consumption = 0.6
 
-		build_cost_ic = 20
+		build_cost_ic = 36
 		resources = {
 			metal = 2
 			water = 2

@@ -27,7 +27,7 @@ sub_units = {
 			attack = 0.3
 		}
 		fort = {
-			attack = 0.3
+			attack = 0.4
 		}
 		river = {
 			attack = 0.1

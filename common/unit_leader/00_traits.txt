@@ -74,7 +74,7 @@ leader_traits = {
 		}
 
 		modifier = {
-			offence = 0.025
+			offence = 0.01
 			defence = 0.025
 		}
 
@@ -117,9 +117,8 @@ leader_traits = {
 		# }
 
 		modifier = {
-			modifier_army_sub_unit_category_power_armour_attack_factor = 0.10
-			modifier_army_sub_unit_category_power_armour_speed_factor = 0.10
-			modifier_army_sub_unit_category_power_armour_defence_factor = 0.10
+			modifier_army_sub_unit_category_power_armour_attack_factor = 0.05
+			modifier_army_sub_unit_category_power_armour_defence_factor = 0.1
 		}
 
 		ai_will_do = {
@@ -151,7 +150,7 @@ leader_traits = {
 
 		modifier = {
 			out_of_supply_factor = -0.2
-			modifier_army_sub_unit_super_mutant_infantry_attack_factor = 0.15
+			modifier_army_sub_unit_super_mutant_infantry_attack_factor = 0.075
 			modifier_army_sub_unit_super_mutant_infantry_defence_factor = 0.15
 		}
 
@@ -179,7 +178,7 @@ leader_traits = {
 		}
 
 		modifier = {
-			offence = 0.025
+			offence = 0.01
 			defence = 0.025
 		}
 
@@ -218,13 +217,13 @@ leader_traits = {
 		# }
 
 		modifier = {
-			modifier_army_sub_unit_anti_tank_company_attack_factor = 0.2
+			modifier_army_sub_unit_anti_tank_company_attack_factor = 0.1
 			modifier_army_sub_unit_anti_tank_company_defence_factor = 0.2
-			modifier_army_sub_unit_anti_tank_infantry_attack_factor = 0.1
+			modifier_army_sub_unit_anti_tank_infantry_attack_factor = 0.05
 			modifier_army_sub_unit_anti_tank_infantry_defence_factor = 0.1
-			modifier_army_sub_unit_power_armour_anti_tank_infantry_attack_factor = 0.1
+			modifier_army_sub_unit_power_armour_anti_tank_infantry_attack_factor = 0.05
 			modifier_army_sub_unit_power_armour_anti_tank_infantry_defence_factor = 0.1
-			modifier_army_sub_unit_motorized_anti_tank_attack_factor = 0.1
+			modifier_army_sub_unit_motorized_anti_tank_attack_factor = 0.05
 			modifier_army_sub_unit_motorized_anti_tank_defence_factor = 0.1
 		}
 
@@ -248,8 +247,8 @@ leader_traits = {
 		# }
 
 		modifier = {
-			cas_damage_reduction = 0.33
-			modifier_army_sub_unit_super_mutant_nightkin_infantry_attack_factor = 0.1
+			
+			modifier_army_sub_unit_super_mutant_nightkin_infantry_attack_factor = 0.05
 			modifier_army_sub_unit_super_mutant_nightkin_infantry_defence_factor = 0.1
 		}
 
@@ -298,8 +297,8 @@ leader_traits = {
 		# }
 
 		modifier = {
-			modifier_army_sub_unit_category_light_special_forces_attack_factor = 0.1
-			modifier_army_sub_unit_category_light_special_forces_defence_factor = 0.1
+			modifier_army_sub_unit_category_light_special_forces_attack_factor = 0.05
+			modifier_army_sub_unit_category_light_special_forces_defence_factor = 0.05
 			acclimatization_hot_climate_gain_factor = 0.5
 			acclimatization_cold_climate_gain_factor = 0.5
 			winter_attrition_factor = -0.1
@@ -407,13 +406,13 @@ leader_traits = {
 		# }
 
 		modifier = {
-			modifier_army_sub_unit_dog_company_attack_factor = 0.4
-			modifier_army_sub_unit_dog_company_defence_factor = 0.4
-			modifier_army_sub_unit_dog_infantry_attack_factor = 0.1
-			modifier_army_sub_unit_dog_infantry_defence_factor = 0.1
+			modifier_army_sub_unit_dog_company_attack_factor = 0.2
+			modifier_army_sub_unit_dog_company_defence_factor = 0.2
+			modifier_army_sub_unit_dog_infantry_attack_factor = 0.05
+			modifier_army_sub_unit_dog_infantry_defence_factor = 0.05
 			modifier_army_sub_unit_dog_infantry_speed_factor = 0.05
-			modifier_army_sub_unit_spec_ops_cavalry_attack_factor = 0.1
-			modifier_army_sub_unit_spec_ops_cavalry_defence_factor = 0.1
+			modifier_army_sub_unit_spec_ops_cavalry_attack_factor = 0.05
+			modifier_army_sub_unit_spec_ops_cavalry_defence_factor = 0.05
 			modifier_army_sub_unit_spec_ops_cavalry_speed_factor = 0.05
 		}
 
@@ -491,13 +490,13 @@ leader_traits = {
 		# }
 
 		modifier = {
-			modifier_army_sub_unit_fireteam_support_attack_factor = 0.20
+			modifier_army_sub_unit_fireteam_support_attack_factor = 0.10
 			modifier_army_sub_unit_fireteam_support_defence_factor = 0.20
-			modifier_army_sub_unit_fireteam_infantry_attack_factor = 0.1
+			modifier_army_sub_unit_fireteam_infantry_attack_factor = 0.05
 			modifier_army_sub_unit_fireteam_infantry_defence_factor = 0.1
-			modifier_army_sub_unit_power_armour_fireteam_infantry_attack_factor = 0.1
+			modifier_army_sub_unit_power_armour_fireteam_infantry_attack_factor = 0.05
 			modifier_army_sub_unit_power_armour_fireteam_infantry_defence_factor = 0.1
-			modifier_army_sub_unit_motorized_fireteam_attack_factor = 0.1
+			modifier_army_sub_unit_motorized_fireteam_attack_factor = 0.05
 			modifier_army_sub_unit_motorized_fireteam_defence_factor = 0.1
 		}
 
@@ -517,9 +516,9 @@ leader_traits = {
 		# }
 
 		modifier = {
-			modifier_army_sub_unit_category_front_line_robots_attack_factor = 0.15
-			modifier_army_sub_unit_category_front_line_robots_defence_factor = 0.15
-			modifier_army_sub_unit_category_cnc_robots_attack_factor = 0.2
+			modifier_army_sub_unit_category_front_line_robots_attack_factor = 0.075
+			modifier_army_sub_unit_category_front_line_robots_defence_factor = 0.075
+			modifier_army_sub_unit_category_cnc_robots_attack_factor = 0.1
 			modifier_army_sub_unit_category_cnc_robots_defence_factor 0.2
 		}
 
@@ -545,12 +544,10 @@ leader_traits = {
 		# }
 
 		modifier = {
-			modifier_army_sub_unit_heavy_infantry_attack_factor = 0.1
+			modifier_army_sub_unit_heavy_infantry_attack_factor = 0.05
 			modifier_army_sub_unit_heavy_infantry_defence_factor = 0.1
-			modifier_army_sub_unit_heavy_infantry_speed_factor = 0.1
-			modifier_army_sub_unit_motorized_heavy_infantry_attack_factor = 0.1
+			modifier_army_sub_unit_motorized_heavy_infantry_attack_factor = 0.05
 			modifier_army_sub_unit_motorized_heavy_infantry_defence_factor = 0.1
-			modifier_army_sub_unit_motorized_heavy_infantry_speed_factor = 0.1
 		}
 
 		ai_will_do = {
@@ -627,9 +624,9 @@ leader_traits = {
 			modifier_army_sub_unit_militia_attack_factor = 0.25
 			modifier_army_sub_unit_militia_defence_factor = 0.25
 			modifier_army_sub_unit_category_militia_speed_factor = 0.25
-			modifier_army_sub_unit_police_infantry_attack_factor = 0.2
+			modifier_army_sub_unit_police_infantry_attack_factor = 0.1
 			modifier_army_sub_unit_police_infantry_defence_factor = 0.2
-			modifier_army_sub_unit_police_infantry_speed_factor = 0.2
+			modifier_army_sub_unit_police_infantry_speed_factor = 0.1
 		}
 
 		ai_will_do = {
@@ -655,9 +652,9 @@ leader_traits = {
 
 		modifier = {
 			org_loss_when_moving = -0.15
-			modifier_army_sub_unit_motorized_attack_factor = 0.1
+			modifier_army_sub_unit_motorized_attack_factor = 0.05
 			modifier_army_sub_unit_motorized_defence_factor = 0.1
-			modifier_army_sub_unit_chariot_attack_factor = 0.1
+			modifier_army_sub_unit_chariot_attack_factor = 0.05
 			modifier_army_sub_unit_chariot_defence_factor = 0.1
 		}
 
@@ -754,12 +751,12 @@ leader_traits = {
 		# }
 
 		modifier = {
-			modifier_army_sub_unit_infantry_attack_factor = 0.15
+			modifier_army_sub_unit_infantry_attack_factor = 0.075
 			modifier_army_sub_unit_infantry_defence_factor = 0.15
-			modifier_army_sub_unit_infantry_speed_factor = 0.15
-			modifier_army_sub_unit_ghoul_infantry_attack_factor = 0.15
+			modifier_army_sub_unit_infantry_speed_factor = 0.075
+			modifier_army_sub_unit_ghoul_infantry_attack_factor = 0.075
 			modifier_army_sub_unit_ghoul_infantry_defence_factor = 0.15
-			modifier_army_sub_unit_ghoul_infantry_speed_factor = 0.15
+			modifier_army_sub_unit_ghoul_infantry_speed_factor = 0.075
 		}
 
 		ai_will_do = {
@@ -797,13 +794,13 @@ leader_traits = {
 		# }
 
 		modifier = {
-			modifier_army_sub_unit_demolitions_support_attack_factor = 0.2
+			modifier_army_sub_unit_demolitions_support_attack_factor = 0.1
 			modifier_army_sub_unit_demolitions_support_defence_factor = 0.2
-			modifier_army_sub_unit_demolitions_infantry_attack_factor = 0.1
+			modifier_army_sub_unit_demolitions_infantry_attack_factor = 0.05
 			modifier_army_sub_unit_demolitions_infantry_defence_factor = 0.1
-			modifier_army_sub_unit_power_armour_demolitions_infantry_attack_factor = 0.1
+			modifier_army_sub_unit_power_armour_demolitions_infantry_attack_factor = 0.05
 			modifier_army_sub_unit_power_armour_demolitions_infantry_defence_factor = 0.1
-			modifier_army_sub_unit_motorized_demoteam_attack_factor = 0.1
+			modifier_army_sub_unit_motorized_demoteam_attack_factor = 0.05
 			modifier_army_sub_unit_motorized_demoteam_defence_factor = 0.1
 		}
 
@@ -827,7 +824,7 @@ leader_traits = {
 		# }
 
 		field_marshal_modifier = {
-			breakthrough_factor = 0.1
+			breakthrough_factor = 0.05
 		}
 
 		ai_will_do = {
@@ -920,7 +917,7 @@ leader_traits = {
 		# }
 
 		field_marshal_modifier = {
-			max_planning = 0.1
+			max_planning = 0.05
 		}
 
 		ai_will_do = {
@@ -1055,7 +1052,7 @@ leader_traits = {
 		# }
 
 		field_marshal_modifier = {
-			max_planning = 0.1
+			max_planning = 0.05
 		}
 
 		ai_will_do = {
@@ -1181,7 +1178,7 @@ leader_traits = {
 		# }
 
 		field_marshal_modifier = {
-			army_attack_factor = 0.05
+			army_attack_factor = 0.025
 		}
 
 		ai_will_do = {
@@ -1238,9 +1235,9 @@ leader_traits = {
 		# }
 
 		field_marshal_modifier = {
-			modifier_army_sub_unit_tank_attack_factor = 0.10
+			modifier_army_sub_unit_tank_attack_factor = 0.05
 			modifier_army_sub_unit_tank_defence_factor = 0.10
-			modifier_army_sub_unit_behemoth_attack_factor = 0.1
+			modifier_army_sub_unit_behemoth_attack_factor = 0.05
 			modifier_army_sub_unit_behemoth_defence_factor = 0.1
 		}
 
@@ -1286,7 +1283,7 @@ leader_traits = {
 		# }
 
 		field_marshal_modifier = {
-			terrain_penalty_reduction = 0.15
+			terrain_penalty_reduction = 0.10
 		}
 
 		ai_will_do = {

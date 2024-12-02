@@ -305,9 +305,17 @@ NDefines.NAI.POLITICAL_ADVISOR_SCORE_MULTIPLIER = 1.5  -- Vanilla is 1.25. Score
 
 -- Combat
 
+NDefines.NMilitary.UNIT_EXP_LEVELS = { 0.25,	0.3,	0.35,	0.4,	0.45,	0.5,	0.55,	0.6,	0.65,	0.7,	0.75,	0.8,	0.85,	0.9,	0.95 }		-- Experience needed to progress to the next level
 NDefines.NMilitary.EXPERIENCE_LOSS_FACTOR = 0.8						-- Scale to smaller unit sizes
 NDefines.NMilitary.UNIT_EXPERIENCE_SCALE = 1.0
 NDefines.NMilitary.FIELD_EXPERIENCE_SCALE = 0.06					-- Scale to smaller unit sizes
+NDefines.NMilitary.TRAINING_MAX_LEVEL = 9
+NDefines.NMilitary.DEPLOY_TRAINING_MAX_LEVEL = 6
+NDefines.NMilitary.EXPERIENCE_COMBAT_FACTOR = 0.02
+
+NDefines.NMilitary.TRAINING_EXPERIENCE_SCALE = 30.0
+NDefines.NMilitary.TRAINING_ATTRITION = 0.00
+NDefines.NMilitary.TRAINING_MIN_STRENGTH = 0.50
 
 NDefines.NNavy.AMPHIBIOUS_LANDING_PENALTY = -0.35					-- amphibious landing penalty
 NDefines.NNavy.SHORE_BOMBARDMENT_CAP = 0.3                          -- Vanilla is 0.25
@@ -435,9 +443,9 @@ NDefines.NMilitary.MAX_ARMY_EXPERIENCE = 650			--Max army experience a country c
 NDefines.NMilitary.MAX_NAVY_EXPERIENCE = 650			--Max navy experience a country can store
 NDefines.NMilitary.MAX_AIR_EXPERIENCE = 650				--Max air experience a country can store
 
-NDefines.NMilitary.BASE_DIVISION_BRIGADE_GROUP_COST = 15 	--Base cost to unlock a regiment slot,
-NDefines.NMilitary.BASE_DIVISION_BRIGADE_CHANGE_COST = 5	--Base cost to change a regiment column.
-NDefines.NMilitary.BASE_DIVISION_SUPPORT_SLOT_COST = 10 	--Base cost to unlock a support slot
+NDefines.NMilitary.BASE_DIVISION_BRIGADE_GROUP_COST = 0 	--Base cost to unlock a regiment slot,
+NDefines.NMilitary.BASE_DIVISION_BRIGADE_CHANGE_COST = 0	--Base cost to change a regiment column.
+NDefines.NMilitary.BASE_DIVISION_SUPPORT_SLOT_COST = 0 	--Base cost to unlock a support slot
 
 NDefines.NFocus.FOCUS_POINT_DAYS = 1
 

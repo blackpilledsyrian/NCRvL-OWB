@@ -1,3729 +1,1715 @@
 technologies = {
-	@Col_tactics_start = -1
-	@Col_infantry = 0
-	@Col_special_forces = 2
-	@Col_robot = 4
-	@Col_vehicle = 6
-	@Col_tactics = 8
-	@Col_tactics2 = 10
-	@Col_tactics3 = 12
 
-	@Row_1 = 0
-	@Row_2 = 2
-	@Row_3 = 4
-	@Row_4 = 6
-	@Row_5 = 8
-	@Row_6 = 10
-	@Row_7 = 12
-
-	@Row_tactics_left_2 = 16
-	@Row_tactics_left_1 = 18
-	@Row_tactics_middle = 20
-	@Row_tactics_right_1 = 22
-	@Row_tactics_right_2 = 24
-
-	#pocket_penalty = -0.2 Works (Reduction of encirlcement penalty
-	#army_leader_start_level = 2 Works
-	#army_intel_to_others = -5.0 Works
-	#army_leader_cost_factor = -0.3 Works
-	#unit_leader_as_advisor_cp_cost_factor = -0.25 No idea if this works
-	#army_advisor_cost_factor = -0.25 Works
-
-	infantry_perk_tech_1 = {
-
+	automated_warfare = {
 		xp_research_type = army
-		xp_unlock_cost = 25
-		doctrine = yes
-
-		hidden_modifier = {
-			unit_infantry_design_cost_factor = -0.1
-			unit_heavy_infantry_design_cost_factor = -0.1
-			unit_dog_infantry_design_cost_factor = -0.1
-			unit_fake_intel_unit_design_cost_factor = -0.1
-			unit_gary_unit_design_cost_factor = -0.1
-			unit_ghoul_infantry_design_cost_factor = -0.1
-			unit_police_infantry_design_cost_factor = -0.1
-			unit_militia_design_cost_factor = -0.1
-			experience_gain_infantry_combat_factor = 0.03
-			experience_gain_heavy_infantry_combat_factor = 0.03
-			experience_gain_dog_infantry_combat_factor = 0.03
-			experience_gain_fake_intel_unit_combat_factor = 0.03
-			experience_gain_gary_unit_combat_factor = 0.03
-			experience_gain_ghoul_infantry_combat_factor = 0.03
-			experience_gain_police_infantry_combat_factor = 0.03
-			experience_gain_militia_combat_factor = 0.03
+		xp_unlock_cost = 35
+        XOR = {
+		
+			special_forces_perk_tech_1
+			outsider_warfare_doctrine
+			concentration_of_firepower
 		}
-		custom_modifier_tooltip = infantry_perk_tech_modifier_tt
-
-		category_leg_infantry = {
-			supply_consumption = -0.03
+		
+		category_cnc_robots = {
+			max_organisation = 5
 		}
-
-		folder = {
-			name = land_doctrine_folder
-			position = { x = @Row_1 y = @Col_infantry }
-		}
-
-		path = {
-			leads_to_tech = infantry_perk_tech_2
-			research_cost_coeff = 1
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 2
-			modifier = {
-				factor = 0
-				original_tag = TBH
-				NOT = { has_completed_focus = tbh_nf_the_long_road }
-				NOT = { has_completed_focus = tbh_nf_the_hard_road }
-				NOT = { has_completed_focus = tbh_nf_the_alamo_was_right }
-				NOT = { has_focus_tree = nf_texan_republic }
-			}
-		}
-	}
-
-	infantry_perk_tech_2 = {
-
-		xp_research_type = army
-		xp_unlock_cost = 25
-		doctrine = yes
-
-		hidden_modifier = {
-			unit_infantry_design_cost_factor = -0.1
-			unit_heavy_infantry_design_cost_factor = -0.1
-			unit_dog_infantry_design_cost_factor = -0.1
-			unit_fake_intel_unit_design_cost_factor = -0.1
-			unit_gary_unit_design_cost_factor = -0.1
-			unit_ghoul_infantry_design_cost_factor = -0.1
-			unit_police_infantry_design_cost_factor = -0.1
-			unit_militia_design_cost_factor = -0.1
-			experience_gain_infantry_combat_factor = 0.03
-			experience_gain_heavy_infantry_combat_factor = 0.03
-			experience_gain_dog_infantry_combat_factor = 0.03
-			experience_gain_fake_intel_unit_combat_factor = 0.03
-			experience_gain_gary_unit_combat_factor = 0.03
-			experience_gain_ghoul_infantry_combat_factor = 0.03
-			experience_gain_police_infantry_combat_factor = 0.03
-			experience_gain_militia_combat_factor = 0.03
-		}
-		custom_modifier_tooltip = infantry_perk_tech_modifier_tt
-
-		category_leg_infantry = {
-			supply_consumption = -0.03
-		}
-
-		folder = {
-			name = land_doctrine_folder
-			position = { x = @Row_2 y = @Col_infantry }
-		}
-
-		path = {
-			leads_to_tech = infantry_perk_tech_3
-			research_cost_coeff = 1
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 2
-		}
-	}
-
-	infantry_perk_tech_3 = {
-
-		xp_research_type = army
-		xp_unlock_cost = 50
-		doctrine = yes
-
-		hidden_modifier = {
-			unit_infantry_design_cost_factor = -0.1
-			unit_heavy_infantry_design_cost_factor = -0.1
-			unit_dog_infantry_design_cost_factor = -0.1
-			unit_fake_intel_unit_design_cost_factor = -0.1
-			unit_gary_unit_design_cost_factor = -0.1
-			unit_ghoul_infantry_design_cost_factor = -0.1
-			unit_police_infantry_design_cost_factor = -0.1
-			unit_militia_design_cost_factor = -0.1
-			experience_gain_infantry_combat_factor = 0.03
-			experience_gain_heavy_infantry_combat_factor = 0.03
-			experience_gain_dog_infantry_combat_factor = 0.03
-			experience_gain_fake_intel_unit_combat_factor = 0.03
-			experience_gain_gary_unit_combat_factor = 0.03
-			experience_gain_ghoul_infantry_combat_factor = 0.03
-			experience_gain_police_infantry_combat_factor = 0.03
-			experience_gain_militia_combat_factor = 0.03
-		}
-		custom_modifier_tooltip = infantry_perk_tech_modifier_tt
-
-		category_leg_infantry = {
-			max_organisation = 2
-		}
-
-		folder = {
-			name = land_doctrine_folder
-			position = { x = @Row_3 y = @Col_infantry }
-		}
-
-		path = {
-			leads_to_tech = infantry_perk_tech_4
-			research_cost_coeff = 1
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 2
-		}
-	}
-
-	infantry_perk_tech_4 = {
-
-		xp_research_type = army
-		xp_unlock_cost = 50
-		doctrine = yes
-
-		hidden_modifier = {
-			unit_infantry_design_cost_factor = -0.1
-			unit_heavy_infantry_design_cost_factor = -0.1
-			unit_dog_infantry_design_cost_factor = -0.1
-			unit_fake_intel_unit_design_cost_factor = -0.1
-			unit_gary_unit_design_cost_factor = -0.1
-			unit_ghoul_infantry_design_cost_factor = -0.1
-			unit_police_infantry_design_cost_factor = -0.1
-			unit_militia_design_cost_factor = -0.1
-			experience_gain_infantry_combat_factor = 0.03
-			experience_gain_heavy_infantry_combat_factor = 0.03
-			experience_gain_dog_infantry_combat_factor = 0.03
-			experience_gain_fake_intel_unit_combat_factor = 0.03
-			experience_gain_gary_unit_combat_factor = 0.03
-			experience_gain_ghoul_infantry_combat_factor = 0.03
-			experience_gain_police_infantry_combat_factor = 0.03
-			experience_gain_militia_combat_factor = 0.03
-		}
-		custom_modifier_tooltip = infantry_perk_tech_modifier_tt
-
-		category_leg_infantry = {
-			max_organisation = 2
-		}
-
-		folder = {
-			name = land_doctrine_folder
-			position = { x = @Row_4 y = @Col_infantry }
-		}
-
-		path = {
-			leads_to_tech = infantry_perk_tech_5
-			research_cost_coeff = 1
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 2
-		}
-	}
-
-	infantry_perk_tech_5 = {
-
-		xp_research_type = army
-		xp_unlock_cost = 75
-		doctrine = yes
-
-		hidden_modifier = {
-			unit_infantry_design_cost_factor = -0.1
-			unit_heavy_infantry_design_cost_factor = -0.1
-			unit_dog_infantry_design_cost_factor = -0.1
-			unit_fake_intel_unit_design_cost_factor = -0.1
-			unit_gary_unit_design_cost_factor = -0.1
-			unit_ghoul_infantry_design_cost_factor = -0.1
-			unit_police_infantry_design_cost_factor = -0.1
-			unit_militia_design_cost_factor = -0.1
-			experience_gain_infantry_combat_factor = 0.03
-			experience_gain_heavy_infantry_combat_factor = 0.03
-			experience_gain_dog_infantry_combat_factor = 0.03
-			experience_gain_fake_intel_unit_combat_factor = 0.03
-			experience_gain_gary_unit_combat_factor = 0.03
-			experience_gain_ghoul_infantry_combat_factor = 0.03
-			experience_gain_police_infantry_combat_factor = 0.03
-			experience_gain_militia_combat_factor = 0.03
-		}
-		custom_modifier_tooltip = infantry_perk_tech_modifier_tt
-
-		category_leg_infantry = {
-			default_morale = 0.02
-		}
-
-		folder = {
-			name = land_doctrine_folder
-			position = { x = @Row_5 y = @Col_infantry }
-		}
-
-		path = {
-			leads_to_tech = infantry_perk_tech_6
-			research_cost_coeff = 1
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 2
-		}
-	}
-
-	infantry_perk_tech_6 = {
-
-		xp_research_type = army
-		xp_unlock_cost = 75
-		doctrine = yes
-
-		hidden_modifier = {
-			unit_infantry_design_cost_factor = -0.1
-			unit_heavy_infantry_design_cost_factor = -0.1
-			unit_dog_infantry_design_cost_factor = -0.1
-			unit_fake_intel_unit_design_cost_factor = -0.1
-			unit_gary_unit_design_cost_factor = -0.1
-			unit_ghoul_infantry_design_cost_factor = -0.1
-			unit_police_infantry_design_cost_factor = -0.1
-			unit_militia_design_cost_factor = -0.1
-			experience_gain_infantry_combat_factor = 0.03
-			experience_gain_heavy_infantry_combat_factor = 0.03
-			experience_gain_dog_infantry_combat_factor = 0.03
-			experience_gain_fake_intel_unit_combat_factor = 0.03
-			experience_gain_gary_unit_combat_factor = 0.03
-			experience_gain_ghoul_infantry_combat_factor = 0.03
-			experience_gain_police_infantry_combat_factor = 0.03
-			experience_gain_militia_combat_factor = 0.03
-		}
-		custom_modifier_tooltip = infantry_perk_tech_modifier_tt
-
-		category_leg_infantry = {
-			default_morale = 0.02
-		}
-
-		folder = {
-			name = land_doctrine_folder
-			position = { x = @Row_6 y = @Col_infantry }
-		}
-
-		path = {
-			leads_to_tech = infantry_perk_tech_7
-			research_cost_coeff = 1
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 2
-		}
-	}
-
-	infantry_perk_tech_7 = {
-
-		xp_research_type = army
-		xp_unlock_cost = 75
-		doctrine = yes
-
-		hidden_modifier = {
-			unit_infantry_design_cost_factor = -0.1
-			unit_heavy_infantry_design_cost_factor = -0.1
-			unit_dog_infantry_design_cost_factor = -0.1
-			unit_fake_intel_unit_design_cost_factor = -0.1
-			unit_gary_unit_design_cost_factor = -0.1
-			unit_ghoul_infantry_design_cost_factor = -0.1
-			unit_police_infantry_design_cost_factor = -0.1
-			unit_militia_design_cost_factor = -0.1
-			experience_gain_infantry_combat_factor = 0.03
-			experience_gain_heavy_infantry_combat_factor = 0.03
-			experience_gain_dog_infantry_combat_factor = 0.03
-			experience_gain_fake_intel_unit_combat_factor = 0.03
-			experience_gain_gary_unit_combat_factor = 0.03
-			experience_gain_ghoul_infantry_combat_factor = 0.03
-			experience_gain_police_infantry_combat_factor = 0.03
-			experience_gain_militia_combat_factor = 0.03
-		}
-		custom_modifier_tooltip = infantry_perk_tech_modifier_tt
-
-		category_leg_infantry = {
+		category_front_line_robots = {
+			max_organisation = 5
 			soft_attack = 0.05
 			hard_attack = 0.05
 		}
-
-		#enable_subunits = {
-		#	elite_infantry
-		#}
-
-		folder = {
-			name = land_doctrine_folder
-			position = { x = @Row_7 y = @Col_infantry }
+		
+		army_fuel_consumption_factor = -0.15
+		
+		path = {
+			leads_to_tech = advanced_cnc_focus_doctrine
+			research_cost_coeff = 1
 		}
-
-		categories = {
-			caf_land_doctrine_xp
+		path = {
+			leads_to_tech = advanced_combat_protocols
+			research_cost_coeff = 1
 		}
-
-		ai_will_do = {
-			factor = 2
-		}
-	}
-
-	special_forces_perk_tech_1 = {
-
-		xp_research_type = army
-		xp_unlock_cost = 25
 		doctrine = yes
 
-		hidden_modifier = {
-			unit_power_armour_design_cost_factor = -0.1
-			unit_power_armour_demolitions_infantry_design_cost_factor = -0.1
-			unit_power_armour_fireteam_infantry_design_cost_factor = -0.1
-			unit_spec_ops_design_cost_factor = -0.1
-			unit_spec_ops_cavalry_design_cost_factor = -0.1
-			unit_ghoul_paratrooper_design_cost_factor = -0.1
-			unit_alamo_defenders_design_cost_factor = -0.1
-			unit_paladin_unit_design_cost_factor = -0.1
-			unit_Paladin_fireteam_unit_design_cost_factor = -0.1
-			unit_Paladin_demo_unit_design_cost_factor = -0.1
-			unit_crusader_unit_design_cost_factor = -0.1
-			experience_gain_power_armour_combat_factor = 0.03
-			experience_gain_power_armour_demolitions_infantry_combat_factor = 0.03
-			experience_gain_power_armour_fireteam_infantry_combat_factor = 0.03
-			experience_gain_spec_ops_combat_factor = 0.03
-			experience_gain_spec_ops_cavalry_combat_factor = 0.03
-			experience_gain_ghoul_paratrooper_combat_factor = 0.03
-			experience_gain_alamo_defenders_combat_factor = 0.03
-			experience_gain_paladin_unit_combat_factor = 0.03
-			experience_gain_Paladin_fireteam_unit_combat_factor = 0.03
-			experience_gain_Paladin_demo_unit_combat_factor = 0.03
-			experience_gain_crusader_unit_combat_factor = 0.03
-		}
-		custom_modifier_tooltip = special_forces_perk_tech_modifier_tt
-
-		category_special_forces = {
-			supply_consumption = -0.03
-		}
-
+		research_cost = 2.25
 		folder = {
 			name = land_doctrine_folder
-			position = { x = @Row_1 y = @Col_special_forces }
+			position = { x = -9 y = -4}
+		}	
+	}
+	advanced_cnc_focus_doctrine = {
+		xp_research_type = army
+		xp_unlock_cost = 35
+		
+		enable_subunits = {
+			cnc_robot_2
+			cnc_robot_3
+		}
+
+		on_research_complete = {
+			custom_effect_tooltip = cnc_2_unlock_tech_tooltip
+		}
+
+		dependencies = {
+			robot_command_equipment_tech_1 = 1
 		}
 
 		path = {
+			leads_to_tech = internal_replicators
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = age_of_the_machine
+			research_cost_coeff = 1
+		}
+		doctrine = yes
+
+		research_cost = 2.25
+		categories = {
+			wwi_doctrine
+		}
+		folder = {
+			name = land_doctrine_folder
+			position = { x = -7 y = -2 }
+		}
+	}
+	
+	internal_replicators = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	 
+	 category_cnc_robots = {
+			max_organisation = 30
+		}
+	  category_robots = {
+			max_organisation = 5
+			initiative = 0.01
+		}
+	 path = {
+			leads_to_tech = standardised_blueprints
+			research_cost_coeff = 1
+		}	
+	 path = {
+			leads_to_tech = iron_fist
+			research_cost_coeff = 1
+		}
+	  XOR = {
+			age_of_the_machine
+		}
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = -8 y = 0 }
+		}
+	}
+	age_of_the_machine = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	 category_robots = {
+			breakthrough = 0.20
+			soft_attack = 0.20
+			hard_attack = 0.20
+		}
+	 
+	  XOR = {
+			internal_replicators
+		}
+	 path = {
+			leads_to_tech = standardised_blueprints
+			research_cost_coeff = 1
+		}	
+	 path = {
+			leads_to_tech = iron_fist
+			research_cost_coeff = 1
+		}
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = -6 y = 0 }
+		}
+	}
+	advanced_combat_protocols = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	 category_robots = {
+			breakthrough = 0.15
+			soft_attack = 0.15
+			hard_attack = 0.15
+		}
+	 path = {
+			leads_to_tech = automated_distribution
+			research_cost_coeff = 1
+		}
+	 path = {
+			leads_to_tech = the_flesh_is_weak
+			research_cost_coeff = 1
+		}
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = -11 y = -2 }
+		}
+	}
+	standardised_blueprints = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	 industrial_capacity_factory = 0.2
+	 army_fuel_consumption_factor = -0.10
+
+	 
+	 
+	  XOR = {
+			iron_fist
+		}
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = -8 y = 2 }
+		}
+	}
+	iron_fist = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	 category_robots = {
+			breakthrough = 0.15
+			soft_attack = 0.15
+			hard_attack = 0.15
+		}
+		
+	  XOR = {
+			standardised_blueprints
+		}
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = -6 y = 2}
+		}
+	}
+	
+	automated_distribution = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	  
+	 	 industrial_capacity_factory = 0.2
+         
+		
+	  path = {
+			leads_to_tech = networked_ai
+			research_cost_coeff = 1
+		}
+	  path = {
+			leads_to_tech = refined_construction
+			research_cost_coeff = 1
+		}
+	 XOR = {
+			the_flesh_is_weak
+		}
+	
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = -12 y = 0 }
+		}
+	}
+	
+	the_flesh_is_weak = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	 XOR = {
+			automated_distribution
+		}
+	category_robots = {
+			breakthrough = 0.15
+			soft_attack = 0.15
+			hard_attack = 0.15
+		}
+	 path = {
+			leads_to_tech = networked_ai
+			research_cost_coeff = 1
+		}
+	 path = {
+			leads_to_tech = refined_construction
+			research_cost_coeff = 1
+		}
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = -10 y = 0 }
+		}
+	}
+	
+	networked_ai = {
+	 xp_research_type = army
+	 xp_unlock_cost = 100
+	 doctrine = yes
+	 research_cost = 2.25
+	 XOR = {
+			refined_construction
+		}
+	 industrial_capacity_factory= 0.1
+	 
+	 category_robots = {
+			defense = 0.70
+			max_organisation = 10
+		}
+		
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = -12 y = 2 }
+		}
+	}
+	
+	refined_construction = {
+	 xp_research_type = army
+	 xp_unlock_cost = 100
+	 doctrine = yes
+	 research_cost = 2.25
+	 XOR = {
+			networked_ai
+		}
+		industrial_capacity_factory= -0.2
+	 
+	 category_robots = {
+			breakthrough= 1.5
+			
+		}
+	
+	 
+		
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = -10 y = 2 }
+		}
+	}
+	
+    infantry_perk_tech_1 = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	 
+	  category_infantry = {
+			defense = 0.05
+		}
+	 path = {
+			leads_to_tech = grand_army
+			research_cost_coeff = 1
+		}
+	 path = {
+			leads_to_tech = elite_army
+			research_cost_coeff = 1
+		}
+	 path = {
+			leads_to_tech = terror_tactics
+			research_cost_coeff = 1
+		}
+	
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = 0 y = -4 }
+		}
+	}
+	
+	grand_army = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	  max_dig_in = 5
+		category_infantry = {
+			max_organisation = 5
+			defense = 0.15
+			initiative = 0.03
+		}
+	   XOR = {
+			elite_army
+			terror_tactics
+		}
+	 path = {
+			leads_to_tech = fortified_positions_doctrine
+			research_cost_coeff = 1
+		}
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = 0 y = -2 }
+		}
+	}
+	
+	elite_army = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	 category_infantry = {
+			max_organisation = 10
+			breakthrough = 0.1
+			soft_attack = 0.15
+			hard_attack = 0.15
+			defense = 0.05
+			default_morale = 0.075
+			max_strength = -10
+		}
+		modifier = {
+			experience_gain_army_unit_factor = 0.2
+		}
+		
+	   XOR = {
+			grand_army
+			terror_tactics
+		}
+	 path = {
+			leads_to_tech =  concentration_of_force
+			research_cost_coeff = 1
+		}
+	
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = -2 y = -2 }
+		}
+	}
+	
+	terror_tactics = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	 attrition = -0.1
+	 
+		
+		land_reinforce_rate = 0.05
+		category_infantry = {
+			supply_consumption = -0.05
+			defense = 0.10
+			breakthrough = 0.2
+			max_strength = 10
+			soft_attack = 0.05
+			default_morale = 0.025
+		}
+	  XOR = {
+			grand_army
+			elite_army
+		}
+	 path = {
+			leads_to_tech = pocket_defence_doctrine
+			research_cost_coeff = 1
+		}
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = 2 y = -2 }
+		}
+	}
+	
+	fortified_positions_doctrine = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	 max_dig_in = 8
+	 coordination_bonus = 0.05
+		category_infantry = {
+			defense = 0.05
+			max_organisation = 10
+			soft_attack = 0.05
+		}
+	 path = {
+			leads_to_tech = grand_assault_doctrine
+			research_cost_coeff = 1
+		}
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = 0 y = 0 }
+		}
+	}
+	
+	concentration_of_force = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25 
+	 max_planning = 0.05
+	 category_infantry = {
+			breakthrough = 0.05
+			default_morale = 0.05
+			initiative = 0.01
+			max_organisation = 5
+		}
+		
+	 path = {
+			leads_to_tech = grand_assault_doctrine
+			research_cost_coeff = 1
+		}
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = -2 y = 0 }
+		}
+	}
+	
+	pocket_defence_doctrine = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	 
+	 supply_consumption_factor = -0.05
+     conscription = 0.05
+	 dig_in_speed_factor = 0.4
+	 org_loss_when_moving = -0.1
+	 max_dig_in = -5
+	 out_of_supply_factor = -0.1
+	 no_supply_grace = 48
+
+		category_infantry = {
+			breakthrough = 0.15
+			default_morale = 0.05
+		}
+	 path = {
+			leads_to_tech = grand_assault_doctrine
+			research_cost_coeff = 1
+		}
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = 2 y = 0 }
+		}
+	} 
+	
+	grand_assault_doctrine = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	 land_reinforce_rate = 0.02
+	 
+		category_infantry = {
+			max_organisation = 15
+		}
+		
+	 path = {
+			leads_to_tech = hail_of_lead_doctrine_tech
+			research_cost_coeff = 1
+		}
+	 path = {
+			leads_to_tech = scorched_earth 
+			research_cost_coeff = 1
+		}
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = 0 y = 2 }
+		}
+	}
+	
+	hail_of_lead_doctrine_tech = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	 	category_fireteams = {
+			breakthrough = 0.5
+			max_organisation = 40
+		}
+	  XOR = {
+			scorched_earth
+		}
+	 path = {
+			leads_to_tech = grand_battle_plan_owb
+			research_cost_coeff = 1
+		}
+	 path = {
+			leads_to_tech = concentration_of_firepower
+			research_cost_coeff = 1
+		}
+     path = {
+			leads_to_tech = forward_fire_base_doctrine_tech
+			research_cost_coeff = 1
+		}
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = 2 y = 4 }
+		}
+	}
+	
+	scorched_earth = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	 	category_demolitions = {
+			defense = 0.2
+			max_organisation = 5
+		}
+	  XOR = {
+			hail_of_lead_doctrine_tech
+		}
+     path = {
+			leads_to_tech = grand_battle_plan_owb
+			research_cost_coeff = 1
+		}
+	 path = {
+			leads_to_tech = concentration_of_firepower
+			research_cost_coeff = 1
+		}
+     path = {
+			leads_to_tech = forward_fire_base_doctrine_tech
+			research_cost_coeff = 1
+		}
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = -2 y = 4 }
+		}
+	}
+	
+	grand_battle_plan_owb = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	 max_planning = 0.05
+	  path = {
+			leads_to_tech = rapid_weapon_redeployment_doctrine_tech
+			research_cost_coeff = 1
+		}
+	 path = {
+			leads_to_tech = grunt_level_radio_integration_doctrine_tech
+			research_cost_coeff = 1
+		}
+     path = {
+			leads_to_tech = ego_gloriam_nominis
+			research_cost_coeff = 1
+		}
+	 XOR = {
+			concentration_of_firepower
+			
+		}
+	 XOR = {
+			forward_fire_base_doctrine_tech
+		}
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = 0 y = 6 }
+		}
+		
+	}
+	
+	
+	concentration_of_firepower = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	 category_anti_tank = {
+			soft_attack = 1
+		}
+		 path = {
+			leads_to_tech = rapid_weapon_redeployment_doctrine_tech
+			research_cost_coeff = 1
+		}
+	 path = {
+			leads_to_tech = ego_gloriam_nominis
+			research_cost_coeff = 1
+		}
+     path = {
+			leads_to_tech = grunt_level_radio_integration_doctrine_tech
+			research_cost_coeff = 1
+		}
+	 	XOR = {
+			grand_battle_plan_owb
+			
+		} 
+		XOR = {
+			forward_fire_base_doctrine_tech
+		}
+
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = 2 y = 6 }
+		}
+	}
+	
+	forward_fire_base_doctrine_tech = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	 max_dig_in = 5
+	 dig_in_speed_factor = 0.2
+	 on_research_complete = {
+			custom_effect_tooltip = forward_firebase_unlock_tech_tt
+			set_technology = {
+				forward_fire_base_unlock_tech = 1
+			}
+		}
+
+        path = {
+			leads_to_tech = rapid_weapon_redeployment_doctrine_tech
+			research_cost_coeff = 1
+		}
+	 path = {
+			leads_to_tech = ego_gloriam_nominis
+			research_cost_coeff = 1
+		}
+     path = {
+			leads_to_tech = grunt_level_radio_integration_doctrine_tech
+			research_cost_coeff = 1
+		}
+		
+	  XOR = {
+			grand_battle_plan_owb
+			
+		} 
+	  XOR = {
+			concentration_of_firepower
+		}
+
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = -2 y = 6 }
+		}
+	}
+	
+	rapid_weapon_redeployment_doctrine_tech = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	  org_loss_at_low_org_factor = -0.15
+	  org_loss_when_moving = -0.15
+	  enable_tactic = tactic_breakthrough
+       path = {
+			leads_to_tech = airborne_assaults
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = non_discriminatory_targeting
+			research_cost_coeff = 1
+		}
+
+	 XOR = {
+			grunt_level_radio_integration_doctrine_tech
+			
+		} 
+	  XOR = {
+			ego_gloriam_nominis
+		}
+	
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = 0 y = 8 }
+		}
+	}
+	
+	
+	grunt_level_radio_integration_doctrine_tech = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	  path = {
+			leads_to_tech = airborne_assaults
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = non_discriminatory_targeting
+			research_cost_coeff = 1
+		}
+	 XOR = {
+			rapid_weapon_redeployment_doctrine_tech
+			
+		} 
+	  XOR = {
+			ego_gloriam_nominis
+		}
+	
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = -2 y = 8 }
+		}
+	    on_research_complete = {
+			custom_effect_tooltip = doctrine_radio_equipment_deployment_tech_tt
+			set_technology = {
+				grunt_level_radio_unlock_tech = 1
+			}
+			set_temp_variable = { temp = 5 }
+			set_temp_variable = { total_unit = num_battalions_with_type@heavy_infantry }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@recon_company }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@motorized_recon_company }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@police_infantry }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@infantry }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@motorized }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@motorized_heavy_infantry }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@motorized_demoteam }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@motorized_fireteam }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@ghoul_infantry }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@dog_infantry }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@skate_infantry }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@fireteam_infantry }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@demolitions_infantry }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@anti_armor_infantry }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@spec_ops }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@spec_ops_cavalry }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@ghoul_paratrooper }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@power_armour }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@power_armour_fireteam_infantry }
+			add_to_temp_variable = {total_unit = num_battalions_with_type@power_armour_demolitions_infantry }
+
+			multiply_temp_variable = { total_unit = temp }
+			set_temp_variable = { radios_stored = num_equipment@radio_equipment }
+			custom_effect_tooltip = tooltip_2radio
+		}
+
+		heavy_infantry = {
+			need = {
+				radio_equipment = 5
+			}
+		}
+		militia = {
+			need = {
+				radio_equipment = 5
+			}
+		}
+		police_infantry = {
+			need = {
+				radio_equipment = 5
+			}
+		}
+		infantry = {
+			need = {
+				radio_equipment = 5
+			}
+		}
+		motorized = {
+			need = {
+				radio_equipment = 5
+			}
+		}
+		motorized_heavy_infantry = {
+			need = {
+				radio_equipment = 5
+			}
+		}
+		ghoul_infantry = {
+			need = {
+				radio_equipment = 5
+			}
+		}
+		dog_infantry = {
+			need = {
+				radio_equipment = 5
+			}
+		}
+		skate_infantry = {
+			need = {
+				radio_equipment = 5
+			}
+		}
+		fireteam_infantry = {
+			need = {
+				radio_equipment = 5
+			}
+		}
+		demolitions_infantry = {
+			need = {
+				radio_equipment = 5
+			}
+		}
+		anti_armor_infantry = {
+			need = {
+				radio_equipment = 5
+			}
+		}
+		spec_ops = {
+			need = {
+				radio_equipment = 5
+			}
+		}
+		spec_ops_cavalry = {
+			need = {
+				radio_equipment = 5
+			}
+		}
+		ghoul_paratrooper = {
+			need = {
+				radio_equipment = 5
+			}
+		}
+		power_armour = {
+			need = {
+				radio_equipment = 5
+			}
+		}
+		power_armour_fireteam_infantry = {
+			need = {
+				radio_equipment = 5
+			}
+		}
+		power_armour_demolitions_infantry = {
+			need = {
+				radio_equipment = 5
+			}
+		}
+
+	}
+
+	
+	
+	ego_gloriam_nominis = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	 enable_subunits={
+			dog_infantry
+		}
+		path = {
+			leads_to_tech = airborne_assaults
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = non_discriminatory_targeting
+			research_cost_coeff = 1
+		}
+	 XOR = {
+			rapid_weapon_redeployment_doctrine_tech
+			
+		} 
+	  XOR = {
+			grunt_level_radio_integration_doctrine_tech
+		}
+	
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = 2 y = 8 }
+		}
+	}
+
+	
+	airborne_assaults = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	 air_cas_present_factor = 0.10
+	 army_bonus_air_superiority_factor = 0.05
+	  XOR = {
+			non_discriminatory_targeting
+		}
+	 
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = -2 y = 10 }
+		}
+	}
+	
+		
+	
+	non_discriminatory_targeting = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	 cas_damage_reduction = 0.20
+	  XOR = {
+			airborne_assaults
+		}
+	
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = 2 y =10 }
+		}
+	}
+	
+    assault_concentration_doctrine = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	   category_vehicles = {
+			
+			soft_attack = 0.05
+			hard_attack = 0.05
+			
+		}
+	   path = {
+			leads_to_tech = old_world_thunder
+			research_cost_coeff = 1
+	    }
+	 path = {
+			leads_to_tech = old_world_tactics
+			research_cost_coeff = 1
+	    }
+	  path = {
+			leads_to_tech = mechanized_onslaught
+			research_cost_coeff = 1
+	    }
+		 
+	  path = {
+			leads_to_tech = old_world_lightning
+			research_cost_coeff = 1
+	    }
+	
+		
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = -9 y = 6 }
+		}
+	}
+	
+	old_world_tactics = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	 motorized = {
+			max_organisation = 20
+		}
+	 motorized_heavy_infantry = {
+			max_organisation = 20
+		}
+	 motorized_fireteam = {
+			max_organisation = 20
+		}
+	 motorized_demoteam = {
+			max_organisation = 20
+		}
+	 motorized_anti_tank = {
+			max_organisation = 20
+			
+		}
+	   XOR = {
+			mechanized_onslaught
+			
+		} 
+		
+
+	
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = -8 y = 10 }
+		}
+	}
+	
+	
+	old_world_thunder = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	 tank = {
+			initiative = 0.01
+			max_organisation = 2
+			default_morale = 0.12
+			
+		}
+	
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = -12 y = 10 }
+		}
+	}
+	
+	old_world_lightning = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	  tank = {
+			
+			default_morale = 0.05
+			defense = 0.10
+		}
+		
+	
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = -6 y = 10 }
+		}
+	}
+	
+	mechanized_onslaught = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	 tank = {
+			max_organisation = 2
+			breakthrough = 0.5
+			defense = 0.2
+		}
+	  XOR = {
+			old_world_tactics
+			
+		} 
+		
+	 
+	
+		
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = -10 y = 10 }
+		}
+	}
+	
+	special_forces_perk_tech_1 = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	 special_forces_min = 40
+	  XOR = {
+			automated_warfare
+			
+		} 
+	 category_special_forces = {
+			max_organisation = 5
+		
+		}
+	 path = {
 			leads_to_tech = special_forces_perk_tech_2
 			research_cost_coeff = 1
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 2
-			modifier = {
-				factor = 0
-				original_tag = TBH
-				NOT = { has_completed_focus = tbh_nf_the_long_road }
-				NOT = { has_completed_focus = tbh_nf_the_hard_road }
-				NOT = { has_completed_focus = tbh_nf_the_alamo_was_right }
-				NOT = { has_focus_tree = nf_texan_republic }
-			}
-		}
-	}
-
-	special_forces_perk_tech_2 = {
-
-		xp_research_type = army
-		xp_unlock_cost = 25
-		doctrine = yes
-
-		hidden_modifier = {
-			unit_power_armour_design_cost_factor = -0.1
-			unit_power_armour_demolitions_infantry_design_cost_factor = -0.1
-			unit_power_armour_fireteam_infantry_design_cost_factor = -0.1
-			unit_spec_ops_design_cost_factor = -0.1
-			unit_spec_ops_cavalry_design_cost_factor = -0.1
-			unit_ghoul_paratrooper_design_cost_factor = -0.1
-			unit_alamo_defenders_design_cost_factor = -0.1
-			unit_paladin_unit_design_cost_factor = -0.1
-			unit_Paladin_fireteam_unit_design_cost_factor = -0.1
-			unit_Paladin_demo_unit_design_cost_factor = -0.1
-			unit_crusader_unit_design_cost_factor = -0.1
-			experience_gain_power_armour_combat_factor = 0.03
-			experience_gain_power_armour_demolitions_infantry_combat_factor = 0.03
-			experience_gain_power_armour_fireteam_infantry_combat_factor = 0.03
-			experience_gain_spec_ops_combat_factor = 0.03
-			experience_gain_spec_ops_cavalry_combat_factor = 0.03
-			experience_gain_ghoul_paratrooper_combat_factor = 0.03
-			experience_gain_alamo_defenders_combat_factor = 0.03
-			experience_gain_paladin_unit_combat_factor = 0.03
-			experience_gain_Paladin_fireteam_unit_combat_factor = 0.03
-			experience_gain_Paladin_demo_unit_combat_factor = 0.03
-			experience_gain_crusader_unit_combat_factor = 0.03
-		}
-		custom_modifier_tooltip = special_forces_perk_tech_modifier_tt
-
-		category_special_forces = {
-			supply_consumption = -0.03
-		}
-
-		folder = {
-			name = land_doctrine_folder
-			position = { x = @Row_2 y = @Col_special_forces }
-		}
-
-		path = {
+	    }
+	 path = {
 			leads_to_tech = special_forces_perk_tech_3
 			research_cost_coeff = 1
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 2
-		}
-	}
-
-	special_forces_perk_tech_3 = {
-
-		xp_research_type = army
-		xp_unlock_cost = 50
-		doctrine = yes
-
-		hidden_modifier = {
-			unit_power_armour_design_cost_factor = -0.1
-			unit_power_armour_demolitions_infantry_design_cost_factor = -0.1
-			unit_power_armour_fireteam_infantry_design_cost_factor = -0.1
-			unit_spec_ops_design_cost_factor = -0.1
-			unit_spec_ops_cavalry_design_cost_factor = -0.1
-			unit_ghoul_paratrooper_design_cost_factor = -0.1
-			unit_alamo_defenders_design_cost_factor = -0.1
-			unit_paladin_unit_design_cost_factor = -0.1
-			unit_Paladin_fireteam_unit_design_cost_factor = -0.1
-			unit_Paladin_demo_unit_design_cost_factor = -0.1
-			unit_crusader_unit_design_cost_factor = -0.1
-			experience_gain_power_armour_combat_factor = 0.03
-			experience_gain_power_armour_demolitions_infantry_combat_factor = 0.03
-			experience_gain_power_armour_fireteam_infantry_combat_factor = 0.03
-			experience_gain_spec_ops_combat_factor = 0.03
-			experience_gain_spec_ops_cavalry_combat_factor = 0.03
-			experience_gain_ghoul_paratrooper_combat_factor = 0.03
-			experience_gain_alamo_defenders_combat_factor = 0.03
-			experience_gain_paladin_unit_combat_factor = 0.03
-			experience_gain_Paladin_fireteam_unit_combat_factor = 0.03
-			experience_gain_Paladin_demo_unit_combat_factor = 0.03
-			experience_gain_crusader_unit_combat_factor = 0.03
-		}
-		custom_modifier_tooltip = special_forces_perk_tech_modifier_tt
-
-		category_special_forces = {
-			max_organisation = 2
-		}
-
-		folder = {
-			name = land_doctrine_folder
-			position = { x = @Row_3 y = @Col_special_forces }
-		}
-
-		path = {
-			leads_to_tech = special_forces_perk_tech_4
-			research_cost_coeff = 1
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 2
-		}
-	}
-
-	special_forces_perk_tech_4 = {
-
-		xp_research_type = army
-		xp_unlock_cost = 50
-		doctrine = yes
-
-		hidden_modifier = {
-			unit_power_armour_design_cost_factor = -0.1
-			unit_power_armour_demolitions_infantry_design_cost_factor = -0.1
-			unit_power_armour_fireteam_infantry_design_cost_factor = -0.1
-			unit_spec_ops_design_cost_factor = -0.1
-			unit_spec_ops_cavalry_design_cost_factor = -0.1
-			unit_ghoul_paratrooper_design_cost_factor = -0.1
-			unit_alamo_defenders_design_cost_factor = -0.1
-			unit_paladin_unit_design_cost_factor = -0.1
-			unit_Paladin_fireteam_unit_design_cost_factor = -0.1
-			unit_Paladin_demo_unit_design_cost_factor = -0.1
-			unit_crusader_unit_design_cost_factor = -0.1
-			experience_gain_power_armour_combat_factor = 0.03
-			experience_gain_power_armour_demolitions_infantry_combat_factor = 0.03
-			experience_gain_power_armour_fireteam_infantry_combat_factor = 0.03
-			experience_gain_spec_ops_combat_factor = 0.03
-			experience_gain_spec_ops_cavalry_combat_factor = 0.03
-			experience_gain_ghoul_paratrooper_combat_factor = 0.03
-			experience_gain_alamo_defenders_combat_factor = 0.03
-			experience_gain_paladin_unit_combat_factor = 0.03
-			experience_gain_Paladin_fireteam_unit_combat_factor = 0.03
-			experience_gain_Paladin_demo_unit_combat_factor = 0.03
-			experience_gain_crusader_unit_combat_factor = 0.03
-		}
-		custom_modifier_tooltip = special_forces_perk_tech_modifier_tt
-
-		category_special_forces = {
-			max_organisation = 2
-		}
-
-		folder = {
-			name = land_doctrine_folder
-			position = { x = @Row_4 y = @Col_special_forces }
-		}
-
-		path = {
-			leads_to_tech = special_forces_perk_tech_5
-			research_cost_coeff = 1
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 2
-		}
-	}
-
-	special_forces_perk_tech_5 = {
-
-		xp_research_type = army
-		xp_unlock_cost = 75
-		doctrine = yes
-
-		hidden_modifier = {
-			unit_power_armour_design_cost_factor = -0.1
-			unit_power_armour_demolitions_infantry_design_cost_factor = -0.1
-			unit_power_armour_fireteam_infantry_design_cost_factor = -0.1
-			unit_spec_ops_design_cost_factor = -0.1
-			unit_spec_ops_cavalry_design_cost_factor = -0.1
-			unit_ghoul_paratrooper_design_cost_factor = -0.1
-			unit_alamo_defenders_design_cost_factor = -0.1
-			unit_paladin_unit_design_cost_factor = -0.1
-			unit_Paladin_fireteam_unit_design_cost_factor = -0.1
-			unit_Paladin_demo_unit_design_cost_factor = -0.1
-			unit_crusader_unit_design_cost_factor = -0.1
-			experience_gain_power_armour_combat_factor = 0.03
-			experience_gain_power_armour_demolitions_infantry_combat_factor = 0.03
-			experience_gain_power_armour_fireteam_infantry_combat_factor = 0.03
-			experience_gain_spec_ops_combat_factor = 0.03
-			experience_gain_spec_ops_cavalry_combat_factor = 0.03
-			experience_gain_ghoul_paratrooper_combat_factor = 0.03
-			experience_gain_alamo_defenders_combat_factor = 0.03
-			experience_gain_paladin_unit_combat_factor = 0.03
-			experience_gain_Paladin_fireteam_unit_combat_factor = 0.03
-			experience_gain_Paladin_demo_unit_combat_factor = 0.03
-			experience_gain_crusader_unit_combat_factor = 0.03
-		}
-		custom_modifier_tooltip = special_forces_perk_tech_modifier_tt
-
-		category_special_forces = {
-			default_morale = 0.02
-		}
-
-		folder = {
-			name = land_doctrine_folder
-			position = { x = @Row_5 y = @Col_special_forces }
-		}
-
-		path = {
+	    }
+	 path = {
 			leads_to_tech = special_forces_perk_tech_6
 			research_cost_coeff = 1
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 2
+	    }
+	
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = 11 y = -4 }
 		}
 	}
+	
+	special_forces_perk_tech_2 = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	 XOR = {
+			special_forces_perk_tech_3
+			
+		} 
+	 category_power_armour = {
+			soft_attack = 0.05
+			hard_attack = 0.05
+			
+		} 
+	  path = {
+			leads_to_tech = special_forces_perk_tech_5
+			research_cost_coeff = 1
+	    }
 
-	special_forces_perk_tech_6 = {
-
-		xp_research_type = army
-		xp_unlock_cost = 75
-		doctrine = yes
-
-		hidden_modifier = {
-			unit_power_armour_design_cost_factor = -0.1
-			unit_power_armour_demolitions_infantry_design_cost_factor = -0.1
-			unit_power_armour_fireteam_infantry_design_cost_factor = -0.1
-			unit_spec_ops_design_cost_factor = -0.1
-			unit_spec_ops_cavalry_design_cost_factor = -0.1
-			unit_ghoul_paratrooper_design_cost_factor = -0.1
-			unit_alamo_defenders_design_cost_factor = -0.1
-			unit_paladin_unit_design_cost_factor = -0.1
-			unit_Paladin_fireteam_unit_design_cost_factor = -0.1
-			unit_Paladin_demo_unit_design_cost_factor = -0.1
-			unit_crusader_unit_design_cost_factor = -0.1
-			experience_gain_power_armour_combat_factor = 0.03
-			experience_gain_power_armour_demolitions_infantry_combat_factor = 0.03
-			experience_gain_power_armour_fireteam_infantry_combat_factor = 0.03
-			experience_gain_spec_ops_combat_factor = 0.03
-			experience_gain_spec_ops_cavalry_combat_factor = 0.03
-			experience_gain_ghoul_paratrooper_combat_factor = 0.03
-			experience_gain_alamo_defenders_combat_factor = 0.03
-			experience_gain_paladin_unit_combat_factor = 0.03
-			experience_gain_Paladin_fireteam_unit_combat_factor = 0.03
-			experience_gain_Paladin_demo_unit_combat_factor = 0.03
-			experience_gain_crusader_unit_combat_factor = 0.03
-		}
-		custom_modifier_tooltip = special_forces_perk_tech_modifier_tt
-
-		category_special_forces = {
-			default_morale = 0.02
-		}
-
-		folder = {
+	 folder = {
 			name = land_doctrine_folder
-			position = { x = @Row_6 y = @Col_special_forces }
+			position = { x = 7 y = -2 }
 		}
+	}
+	
+	special_forces_perk_tech_3 = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	 XOR = {
+			special_forces_perk_tech_2
+			
+		} 
+	 category_light_special_forces= {
+	        default_morale = 0.1
+			max_organisation = 10
+	 
+	 }
+	  path = {
+			leads_to_tech = special_forces_perk_tech_4
+			research_cost_coeff = 1
+	    }
 
-		path = {
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = 15 y = -2 }
+		}
+	}
+	
+	special_forces_perk_tech_6 = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	 special_forces_min = 80
+	 category_special_forces = {
+			
+			max_organisation = 3
+			soft_attack= 0.05
+			hard_attack= 0.05
+		}
+	  
+	 path = {
 			leads_to_tech = special_forces_perk_tech_7
 			research_cost_coeff = 1
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 2
+	    }
+	
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = 11 y = -2 }
 		}
 	}
-
+	
+	special_forces_perk_tech_5 = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	 special_forces_min = 80
+	 category_power_armour = {
+			defense= 0.1
+			max_organisation = 3
+			default_morale = 0.02
+			soft_attack= 0.05
+			hard_attack= 0.05
+		}
+	  
+	  path = {
+			leads_to_tech = warrior_code_doctrine
+			research_cost_coeff = 1
+		}
+      path = {
+			leads_to_tech = combined_arms_doctrine
+			research_cost_coeff = 1
+		}
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = 7 y = 0 }
+		}
+	}
+	
+	special_forces_perk_tech_4 = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	 special_forces_min = 80
+	 category_light_special_forces = {
+			default_morale = 0.04
+			soft_attack= 0.05
+			hard_attack= 0.05
+			breakthrough= 0.05
+			defense= 0.05
+			max_organisation= 10
+		}
+	   path = {
+			leads_to_tech = exitum
+			research_cost_coeff = 1
+	    }
+	   path = {
+			leads_to_tech = terror_tactics_actual
+			research_cost_coeff = 1
+	    }
+	
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = 15 y = 0 }
+		}
+	}
+	
 	special_forces_perk_tech_7 = {
-
-		xp_research_type = army
-		xp_unlock_cost = 75
-		doctrine = yes
-
-		hidden_modifier = {
-			unit_power_armour_design_cost_factor = -0.1
-			unit_power_armour_demolitions_infantry_design_cost_factor = -0.1
-			unit_power_armour_fireteam_infantry_design_cost_factor = -0.1
-			unit_spec_ops_design_cost_factor = -0.1
-			unit_spec_ops_cavalry_design_cost_factor = -0.1
-			unit_ghoul_paratrooper_design_cost_factor = -0.1
-			unit_alamo_defenders_design_cost_factor = -0.1
-			unit_paladin_unit_design_cost_factor = -0.1
-			unit_Paladin_fireteam_unit_design_cost_factor = -0.1
-			unit_Paladin_demo_unit_design_cost_factor = -0.1
-			unit_crusader_unit_design_cost_factor = -0.1
-			experience_gain_power_armour_combat_factor = 0.03
-			experience_gain_power_armour_demolitions_infantry_combat_factor = 0.03
-			experience_gain_power_armour_fireteam_infantry_combat_factor = 0.03
-			experience_gain_spec_ops_combat_factor = 0.03
-			experience_gain_spec_ops_cavalry_combat_factor = 0.03
-			experience_gain_ghoul_paratrooper_combat_factor = 0.03
-			experience_gain_alamo_defenders_combat_factor = 0.03
-			experience_gain_paladin_unit_combat_factor = 0.03
-			experience_gain_Paladin_fireteam_unit_combat_factor = 0.03
-			experience_gain_Paladin_demo_unit_combat_factor = 0.03
-			experience_gain_crusader_unit_combat_factor = 0.03
-		}
-		custom_modifier_tooltip = special_forces_perk_tech_modifier_tt
-
-		category_special_forces = {
-			soft_attack = 0.05
-			hard_attack = 0.05
-		}
-
-		#enable_subunits = {
-		#	elite_spec_ops
-		#	elite_power_armour
-		#}
-
-		folder = {
-			name = land_doctrine_folder
-			position = { x = @Row_7 y = @Col_special_forces }
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 2
-		}
-	}
-
-	robot_perk_tech_1 = {
-
-		xp_research_type = army
-		xp_unlock_cost = 25
-		doctrine = yes
-
-		hidden_modifier = {
-			unit_combat_robot_design_cost_factor = -0.1
-			unit_support_robot_design_cost_factor = -0.1
-			unit_security_robot_design_cost_factor = -0.1
-			unit_super_heavy_robot_design_cost_factor = -0.1
-			experience_gain_combat_robot_combat_factor = 0.03
-			experience_gain_support_robot_combat_factor = 0.03
-			experience_gain_security_robot_combat_factor = 0.03
-			experience_gain_super_heavy_robot_combat_factor = 0.03
-		}
-		custom_modifier_tooltip = robot_perk_tech_modifier_tt
-
-		category_front_line_robots = {
-			supply_consumption = -0.03
-		}
-
-		folder = {
-			name = land_doctrine_folder
-			position = { x = @Row_1 y = @Col_robot }
-		}
-
-		path = {
-			leads_to_tech = robot_perk_tech_2
-			research_cost_coeff = 1
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 2
-			modifier = {
-				factor = 0
-				original_tag = TBH
-				NOT = { has_completed_focus = tbh_nf_the_long_road }
-				NOT = { has_completed_focus = tbh_nf_the_hard_road }
-				NOT = { has_completed_focus = tbh_nf_the_alamo_was_right }
-				NOT = { has_focus_tree = nf_texan_republic }
-			}
-		}
-	}
-
-	robot_perk_tech_2 = {
-
-		xp_research_type = army
-		xp_unlock_cost = 25
-		doctrine = yes
-
-		hidden_modifier = {
-			unit_combat_robot_design_cost_factor = -0.1
-			unit_support_robot_design_cost_factor = -0.1
-			unit_security_robot_design_cost_factor = -0.1
-			unit_super_heavy_robot_design_cost_factor = -0.1
-			experience_gain_combat_robot_combat_factor = 0.03
-			experience_gain_support_robot_combat_factor = 0.03
-			experience_gain_security_robot_combat_factor = 0.03
-			experience_gain_super_heavy_robot_combat_factor = 0.03
-		}
-		custom_modifier_tooltip = robot_perk_tech_modifier_tt
-
-		category_front_line_robots = {
-			supply_consumption = -0.03
-		}
-
-		folder = {
-			name = land_doctrine_folder
-			position = { x = @Row_2 y = @Col_robot }
-		}
-
-		path = {
-			leads_to_tech = robot_perk_tech_3
-			research_cost_coeff = 1
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 2
-		}
-	}
-
-	robot_perk_tech_3 = {
-
-		xp_research_type = army
-		xp_unlock_cost = 50
-		doctrine = yes
-
-		hidden_modifier = {
-			unit_combat_robot_design_cost_factor = -0.1
-			unit_support_robot_design_cost_factor = -0.1
-			unit_security_robot_design_cost_factor = -0.1
-			unit_super_heavy_robot_design_cost_factor = -0.1
-			experience_gain_combat_robot_combat_factor = 0.03
-			experience_gain_support_robot_combat_factor = 0.03
-			experience_gain_security_robot_combat_factor = 0.03
-			experience_gain_super_heavy_robot_combat_factor = 0.03
-		}
-		custom_modifier_tooltip = robot_perk_tech_modifier_tt
-
-		category_front_line_robots = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	  category_special_forces = {
+			
 			max_organisation = 2
+			initiative = 0.01
 		}
-
-		folder = {
+	 folder = {
 			name = land_doctrine_folder
-			position = { x = @Row_3 y = @Col_robot }
-		}
-
-		path = {
-			leads_to_tech = robot_perk_tech_4
-			research_cost_coeff = 1
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 2
+			position = { x = 11 y = 0 }
 		}
 	}
-
-	robot_perk_tech_4 = {
-
-		xp_research_type = army
-		xp_unlock_cost = 50
-		doctrine = yes
-
-		hidden_modifier = {
-			unit_combat_robot_design_cost_factor = -0.1
-			unit_support_robot_design_cost_factor = -0.1
-			unit_security_robot_design_cost_factor = -0.1
-			unit_super_heavy_robot_design_cost_factor = -0.1
-			experience_gain_combat_robot_combat_factor = 0.03
-			experience_gain_support_robot_combat_factor = 0.03
-			experience_gain_security_robot_combat_factor = 0.03
-			experience_gain_super_heavy_robot_combat_factor = 0.03
+	
+	
+	
+	warrior_code_doctrine = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	 category_power_armour = {
+			default_morale = 0.04
+			soft_attack= 0.15
 		}
-		custom_modifier_tooltip = robot_perk_tech_modifier_tt
-
-		category_front_line_robots = {
+	  XOR = {
+			combined_arms_doctrine
+			
+		} 
+	 path = {
+			leads_to_tech = brigades_of_steel
+			research_cost_coeff = 1
+		}
+		
+	 path = {
+			leads_to_tech = recon_in_depth
+			research_cost_coeff = 1
+		}
+		
+	 path = {
+	 		leads_to_tech = shock_and_awe_doctrine
+			research_cost_coeff = 1
+		}
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = 5 y = 2 }
+		}
+	}
+	
+	combined_arms_doctrine = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	 category_support = {
+			max_organisation = 20
+		}
+	 category_power_armour = {
 			max_organisation = 2
+			soft_attack= 0.03
 		}
-
-		folder = {
-			name = land_doctrine_folder
-			position = { x = @Row_4 y = @Col_robot }
-		}
-
-		path = {
-			leads_to_tech = robot_perk_tech_5
+	  XOR = {
+			warrior_code_doctrine
+			
+		} 
+		
+	  path = {
+			leads_to_tech = brigades_of_steel
 			research_cost_coeff = 1
 		}
-
-		categories = {
-			caf_land_doctrine_xp
+		
+	 path = {
+			leads_to_tech = recon_in_depth
+			research_cost_coeff = 1
 		}
-
-		ai_will_do = {
-			factor = 2
+		
+	 path = {
+	 		leads_to_tech = shock_and_awe_doctrine
+			research_cost_coeff = 1
+		}
+	
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = 9 y = 2}
 		}
 	}
-
-	robot_perk_tech_5 = {
-
-		xp_research_type = army
-		xp_unlock_cost = 75
-		doctrine = yes
-
-		hidden_modifier = {
-			unit_combat_robot_design_cost_factor = -0.1
-			unit_support_robot_design_cost_factor = -0.1
-			unit_security_robot_design_cost_factor = -0.1
-			unit_super_heavy_robot_design_cost_factor = -0.1
-			experience_gain_combat_robot_combat_factor = 0.03
-			experience_gain_support_robot_combat_factor = 0.03
-			experience_gain_security_robot_combat_factor = 0.03
-			experience_gain_super_heavy_robot_combat_factor = 0.03
+	
+	brigades_of_steel = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	 category_power_armour = {
+			soft_attack = 0.20
+			hard_attack = 0.20
+			breakthrough= -0.20
 		}
-		custom_modifier_tooltip = robot_perk_tech_modifier_tt
-
-		category_front_line_robots = {
-			default_morale = 0.02
-		}
-
-		folder = {
+	  XOR = {
+			shock_and_awe_doctrine
+			recon_in_depth
+		} 
+	
+	 folder = {
 			name = land_doctrine_folder
-			position = { x = @Row_5 y = @Col_robot }
-		}
-
-		path = {
-			leads_to_tech = robot_perk_tech_6
-			research_cost_coeff = 1
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 2
+			position = { x = 9 y = 4 }
 		}
 	}
-
-	robot_perk_tech_6 = {
-
-		xp_research_type = army
-		xp_unlock_cost = 75
-		doctrine = yes
-
-		hidden_modifier = {
-			unit_combat_robot_design_cost_factor = -0.1
-			unit_support_robot_design_cost_factor = -0.1
-			unit_security_robot_design_cost_factor = -0.1
-			unit_super_heavy_robot_design_cost_factor = -0.1
-			experience_gain_combat_robot_combat_factor = 0.03
-			experience_gain_support_robot_combat_factor = 0.03
-			experience_gain_security_robot_combat_factor = 0.03
-			experience_gain_super_heavy_robot_combat_factor = 0.03
-		}
-		custom_modifier_tooltip = robot_perk_tech_modifier_tt
-
-		category_front_line_robots = {
-			default_morale = 0.02
-		}
-
-		folder = {
-			name = land_doctrine_folder
-			position = { x = @Row_6 y = @Col_robot }
-		}
-
-		path = {
-			leads_to_tech = robot_perk_tech_7
-			research_cost_coeff = 1
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 2
-		}
-	}
-
-	robot_perk_tech_7 = {
-
-		xp_research_type = army
-		xp_unlock_cost = 75
-		doctrine = yes
-
-		hidden_modifier = {
-			unit_combat_robot_design_cost_factor = -0.1
-			unit_support_robot_design_cost_factor = -0.1
-			unit_security_robot_design_cost_factor = -0.1
-			unit_super_heavy_robot_design_cost_factor = -0.1
-			experience_gain_combat_robot_combat_factor = 0.03
-			experience_gain_support_robot_combat_factor = 0.03
-			experience_gain_security_robot_combat_factor = 0.03
-			experience_gain_super_heavy_robot_combat_factor = 0.03
-		}
-		custom_modifier_tooltip = robot_perk_tech_modifier_tt
-
-		category_front_line_robots = {
-			soft_attack = 0.05
-			hard_attack = 0.05
-		}
-
-		#enable_subunits = {
-		#	elite_robot
-		#}
-
-		folder = {
-			name = land_doctrine_folder
-			position = { x = @Row_7 y = @Col_robot }
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 2
-		}
-	}
-
-	vehicle_perk_tech_1 = {
-
-		xp_research_type = army
-		xp_unlock_cost = 25
-		doctrine = yes
-
-		hidden_modifier = {
-			unit_motorized_design_cost_factor = -0.1
-			unit_motorized_heavy_infantry_design_cost_factor = -0.1
-			unit_motorized_fireteam_design_cost_factor = -0.1
-			unit_motorized_demoteam_design_cost_factor = -0.1
-			unit_cybernetic_warform_design_cost_factor = -0.1
-			unit_tank_design_cost_factor = -0.1
-			unit_chariot_unit_design_cost_factor = -0.1
-			experience_gain_motorized_combat_factor = 0.03
-			experience_gain_motorized_heavy_infantry_combat_factor = 0.03
-			experience_gain_motorized_fireteam_combat_factor = 0.03
-			experience_gain_motorized_demoteam_combat_factor = 0.03
-			experience_gain_cybernetic_warform_combat_factor = 0.03
-			experience_gain_tank_combat_factor = 0.03
-			experience_gain_chariot_unit_combat_factor = 0.03
-		}
-		custom_modifier_tooltip = vehicle_perk_tech_modifier_tt
-
-		category_vehicles = {
-			supply_consumption = -0.03
-		}
-
-		folder = {
-			name = land_doctrine_folder
-			position = { x = @Row_1 y = @Col_vehicle }
-		}
-
-		path = {
-			leads_to_tech = vehicle_perk_tech_2
-			research_cost_coeff = 1
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 2
-			modifier = {
-				factor = 0
-				original_tag = TBH
-				NOT = { has_completed_focus = tbh_nf_the_long_road }
-				NOT = { has_completed_focus = tbh_nf_the_hard_road }
-				NOT = { has_completed_focus = tbh_nf_the_alamo_was_right }
-				NOT = { has_focus_tree = nf_texan_republic }
-			}
-		}
-	}
-
-	vehicle_perk_tech_2 = {
-
-		xp_research_type = army
-		xp_unlock_cost = 25
-		doctrine = yes
-
-		hidden_modifier = {
-			unit_motorized_design_cost_factor = -0.1
-			unit_motorized_heavy_infantry_design_cost_factor = -0.1
-			unit_motorized_fireteam_design_cost_factor = -0.1
-			unit_motorized_demoteam_design_cost_factor = -0.1
-			unit_cybernetic_warform_design_cost_factor = -0.1
-			unit_tank_design_cost_factor = -0.1
-			unit_chariot_unit_design_cost_factor = -0.1
-			experience_gain_motorized_combat_factor = 0.03
-			experience_gain_motorized_heavy_infantry_combat_factor = 0.03
-			experience_gain_motorized_fireteam_combat_factor = 0.03
-			experience_gain_motorized_demoteam_combat_factor = 0.03
-			experience_gain_cybernetic_warform_combat_factor = 0.03
-			experience_gain_tank_combat_factor = 0.03
-			experience_gain_chariot_unit_combat_factor = 0.03
-		}
-		custom_modifier_tooltip = vehicle_perk_tech_modifier_tt
-
-		category_vehicles = {
-			supply_consumption = -0.03
-		}
-
-		folder = {
-			name = land_doctrine_folder
-			position = { x = @Row_2 y = @Col_vehicle }
-		}
-
-		path = {
-			leads_to_tech = vehicle_perk_tech_3
-			research_cost_coeff = 1
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 2
-		}
-	}
-
-	vehicle_perk_tech_3 = {
-
-		xp_research_type = army
-		xp_unlock_cost = 50
-		doctrine = yes
-
-		hidden_modifier = {
-			unit_motorized_design_cost_factor = -0.1
-			unit_motorized_heavy_infantry_design_cost_factor = -0.1
-			unit_motorized_fireteam_design_cost_factor = -0.1
-			unit_motorized_demoteam_design_cost_factor = -0.1
-			unit_cybernetic_warform_design_cost_factor = -0.1
-			unit_tank_design_cost_factor = -0.1
-			unit_chariot_unit_design_cost_factor = -0.1
-			experience_gain_motorized_combat_factor = 0.03
-			experience_gain_motorized_heavy_infantry_combat_factor = 0.03
-			experience_gain_motorized_fireteam_combat_factor = 0.03
-			experience_gain_motorized_demoteam_combat_factor = 0.03
-			experience_gain_cybernetic_warform_combat_factor = 0.03
-			experience_gain_tank_combat_factor = 0.03
-			experience_gain_chariot_unit_combat_factor = 0.03
-		}
-		custom_modifier_tooltip = vehicle_perk_tech_modifier_tt
-
-		category_vehicles = {
-			max_organisation = 2
-		}
-
-		folder = {
-			name = land_doctrine_folder
-			position = { x = @Row_3 y = @Col_vehicle }
-		}
-
-		path = {
-			leads_to_tech = vehicle_perk_tech_4
-			research_cost_coeff = 1
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 2
-		}
-	}
-
-	vehicle_perk_tech_4 = {
-
-		xp_research_type = army
-		xp_unlock_cost = 50
-		doctrine = yes
-
-		hidden_modifier = {
-			unit_motorized_design_cost_factor = -0.1
-			unit_motorized_heavy_infantry_design_cost_factor = -0.1
-			unit_motorized_fireteam_design_cost_factor = -0.1
-			unit_motorized_demoteam_design_cost_factor = -0.1
-			unit_cybernetic_warform_design_cost_factor = -0.1
-			unit_tank_design_cost_factor = -0.1
-			unit_chariot_unit_design_cost_factor = -0.1
-			experience_gain_motorized_combat_factor = 0.03
-			experience_gain_motorized_heavy_infantry_combat_factor = 0.03
-			experience_gain_motorized_fireteam_combat_factor = 0.03
-			experience_gain_motorized_demoteam_combat_factor = 0.03
-			experience_gain_cybernetic_warform_combat_factor = 0.03
-			experience_gain_tank_combat_factor = 0.03
-			experience_gain_chariot_unit_combat_factor = 0.03
-		}
-		custom_modifier_tooltip = vehicle_perk_tech_modifier_tt
-
-		category_vehicles = {
-			max_organisation = 2
-		}
-
-		folder = {
-			name = land_doctrine_folder
-			position = { x = @Row_4 y = @Col_vehicle }
-		}
-
-		path = {
-			leads_to_tech = vehicle_perk_tech_5
-			research_cost_coeff = 1
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 2
-		}
-	}
-
-	vehicle_perk_tech_5 = {
-
-		xp_research_type = army
-		xp_unlock_cost = 75
-		doctrine = yes
-
-		hidden_modifier = {
-			unit_motorized_design_cost_factor = -0.1
-			unit_motorized_heavy_infantry_design_cost_factor = -0.1
-			unit_motorized_fireteam_design_cost_factor = -0.1
-			unit_motorized_demoteam_design_cost_factor = -0.1
-			unit_cybernetic_warform_design_cost_factor = -0.1
-			unit_tank_design_cost_factor = -0.1
-			unit_chariot_unit_design_cost_factor = -0.1
-			experience_gain_motorized_combat_factor = 0.03
-			experience_gain_motorized_heavy_infantry_combat_factor = 0.03
-			experience_gain_motorized_fireteam_combat_factor = 0.03
-			experience_gain_motorized_demoteam_combat_factor = 0.03
-			experience_gain_cybernetic_warform_combat_factor = 0.03
-			experience_gain_tank_combat_factor = 0.03
-			experience_gain_chariot_unit_combat_factor = 0.03
-		}
-		custom_modifier_tooltip = vehicle_perk_tech_modifier_tt
-
-		category_vehicles = {
-			default_morale = 0.02
-		}
-
-		folder = {
-			name = land_doctrine_folder
-			position = { x = @Row_5 y = @Col_vehicle }
-		}
-
-		path = {
-			leads_to_tech = vehicle_perk_tech_6
-			research_cost_coeff = 1
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 2
-		}
-	}
-
-	vehicle_perk_tech_6 = {
-
-		xp_research_type = army
-		xp_unlock_cost = 75
-		doctrine = yes
-
-		hidden_modifier = {
-			unit_motorized_design_cost_factor = -0.1
-			unit_motorized_heavy_infantry_design_cost_factor = -0.1
-			unit_motorized_fireteam_design_cost_factor = -0.1
-			unit_motorized_demoteam_design_cost_factor = -0.1
-			unit_cybernetic_warform_design_cost_factor = -0.1
-			unit_tank_design_cost_factor = -0.1
-			unit_chariot_unit_design_cost_factor = -0.1
-			experience_gain_motorized_combat_factor = 0.03
-			experience_gain_motorized_heavy_infantry_combat_factor = 0.03
-			experience_gain_motorized_fireteam_combat_factor = 0.03
-			experience_gain_motorized_demoteam_combat_factor = 0.03
-			experience_gain_cybernetic_warform_combat_factor = 0.03
-			experience_gain_tank_combat_factor = 0.03
-			experience_gain_chariot_unit_combat_factor = 0.03
-		}
-		custom_modifier_tooltip = vehicle_perk_tech_modifier_tt
-
-		category_vehicles = {
-			default_morale = 0.02
-		}
-
-		folder = {
-			name = land_doctrine_folder
-			position = { x = @Row_6 y = @Col_vehicle }
-		}
-
-		path = {
-			leads_to_tech = vehicle_perk_tech_7
-			research_cost_coeff = 1
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 2
-		}
-	}
-
-	vehicle_perk_tech_7 = {
-
-		xp_research_type = army
-		xp_unlock_cost = 75
-		doctrine = yes
-
-		#enable_subunits = {
-		#	elite_motorized
-		#}
-
-		hidden_modifier = {
-			unit_motorized_design_cost_factor = -0.1
-			unit_motorized_heavy_infantry_design_cost_factor = -0.1
-			unit_motorized_fireteam_design_cost_factor = -0.1
-			unit_motorized_demoteam_design_cost_factor = -0.1
-			unit_cybernetic_warform_design_cost_factor = -0.1
-			unit_tank_design_cost_factor = -0.1
-			unit_chariot_unit_design_cost_factor = -0.1
-			experience_gain_motorized_combat_factor = 0.03
-			experience_gain_motorized_heavy_infantry_combat_factor = 0.03
-			experience_gain_motorized_fireteam_combat_factor = 0.03
-			experience_gain_motorized_demoteam_combat_factor = 0.03
-			experience_gain_cybernetic_warform_combat_factor = 0.03
-			experience_gain_tank_combat_factor = 0.03
-			experience_gain_chariot_unit_combat_factor = 0.03
-		}
-		custom_modifier_tooltip = vehicle_perk_tech_modifier_tt
-
-		category_vehicles = {
-			soft_attack = 0.05
-			hard_attack = 0.05
-		}
-
-		folder = {
-			name = land_doctrine_folder
-			position = { x = @Row_7 y = @Col_vehicle }
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 2
-		}
-	}
-
-	tactics_doctrine_tech = {
-
-		experience_gain_army_factor = 0.1
-		special_forces_training_time_factor = -0.05
-
-		xp_research_type = army
-		xp_unlock_cost = 50
-		doctrine = yes
-
-		folder = {
-			name = land_doctrine_folder
-			position = { x = @Row_tactics_middle y = @Col_tactics_start }
-		}
-
-		path = {
-			leads_to_tech = terrain_mountain_tech
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = terrain_mountain_tech_2
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = terrain_mountain_tech_3
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = terrain_mountain_tech_4
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = terrain_harsh_tech
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = terrain_harsh_tech_2
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = terrain_harsh_tech_3
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = terrain_harsh_tech_4
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = terrain_plains_tech
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = terrain_plains_tech_2
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = terrain_plains_tech_3
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = terrain_plains_tech_4
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = terrain_jungle_tech
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = terrain_jungle_tech_2
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = terrain_jungle_tech_3
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = terrain_jungle_tech_4
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = tactics_spec_ops_cap_tech
-			research_cost_coeff = 1
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 10
-			modifier = {
-				factor = 2
-				has_army_experience > 100
-			}
-			modifier = {
-				factor = 10
-				has_army_experience > 150
-			}
-			modifier = {
-				factor = 0
-				original_tag = TBH
-				NOT = { has_completed_focus = tbh_nf_the_long_road }
-				NOT = { has_completed_focus = tbh_nf_the_hard_road }
-				NOT = { has_completed_focus = tbh_nf_the_alamo_was_right }
-				NOT = { has_focus_tree = nf_texan_republic }
-			}
-		}
-	}
-
-	terrain_harsh_tech = {
-
-		infantry = {
-			default_morale = 0.01
-			urban = {
-				attack = 0.05
-				defence = 0.05
-			}
-			marsh = {
-				attack = 0.05
-				defence = 0.05
-			}
-			amphibious = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		heavy_infantry = {
-			default_morale = 0.01
-			urban = {
-				attack = 0.05
-				defence = 0.05
-			}
-			marsh = {
-				attack = 0.05
-				defence = 0.05
-			}
-			amphibious = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		dog_infantry = {
-			default_morale = 0.01
-			urban = {
-				attack = 0.05
-				defence = 0.05
-			}
-			marsh = {
-				attack = 0.05
-				defence = 0.05
-			}
-			amphibious = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		ghoul_infantry = {
-			default_morale = 0.01
-			urban = {
-				attack = 0.05
-				defence = 0.05
-			}
-			marsh = {
-				attack = 0.05
-				defence = 0.05
-			}
-			amphibious = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		skate_infantry = {
-			default_morale = 0.01
-			urban = {
-				attack = 0.05
-				defence = 0.05
-			}
-			marsh = {
-				attack = 0.05
-				defence = 0.05
-			}
-			amphibious = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		super_mutant_infantry = {
-			default_morale = 0.01
-			urban = {
-				attack = 0.05
-				defence = 0.05
-			}
-			marsh = {
-				attack = 0.05
-				defence = 0.05
-			}
-			amphibious = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		super_mutant_aux_infantry = {
-			default_morale = 0.01
-			urban = {
-				attack = 0.05
-				defence = 0.05
-			}
-			marsh = {
-				attack = 0.05
-				defence = 0.05
-			}
-			amphibious = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		police_infantry = {
-			default_morale = 0.01
-			urban = {
-				attack = 0.05
-				defence = 0.05
-			}
-			marsh = {
-				attack = 0.05
-				defence = 0.05
-			}
-			amphibious = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		militia = {
-			default_morale = 0.01
-			urban = {
-				attack = 0.05
-				defence = 0.05
-			}
-			marsh = {
-				attack = 0.05
-				defence = 0.05
-			}
-			amphibious = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-
-		xp_research_type = army
-		xp_unlock_cost = 50
-		doctrine = yes
-
-		XOR = { terrain_mountain_tech terrain_plains_tech terrain_jungle_tech }
-
-		folder = {
-			name = land_doctrine_folder
-			position = { x = @Row_tactics_left_2 y = @Col_infantry }
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				factor = 0
-				has_tech = terrain_mountain_tech
-			}
-			modifier = {
-				factor = 0
-				has_tech = terrain_plains_tech
-			}
-			modifier = {
-				factor = 0
-				has_tech = terrain_jungle_tech
-			}
-		}
-	}
-
-	terrain_harsh_tech_2 = {
-
-		spec_ops = {
-			default_morale = 0.01
-			urban = {
-				attack = 0.05
-				defence = 0.05
-			}
-			marsh = {
-				attack = 0.05
-				defence = 0.05
-			}
-			amphibious = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		spec_ops_cavalry = {
-			default_morale = 0.01
-			urban = {
-				attack = 0.05
-				defence = 0.05
-			}
-			marsh = {
-				attack = 0.05
-				defence = 0.05
-			}
-			amphibious = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		power_armour = {
-			default_morale = 0.01
-			urban = {
-				attack = 0.05
-				defence = 0.05
-			}
-			marsh = {
-				attack = 0.05
-				defence = 0.05
-			}
-			amphibious = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		power_armour_fireteam_infantry = {
-			default_morale = 0.01
-			urban = {
-				attack = 0.05
-				defence = 0.05
-			}
-			marsh = {
-				attack = 0.05
-				defence = 0.05
-			}
-			amphibious = {
-				attack = 0.05
-				defence = 0.05
-			}
+	
+	recon_in_depth = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	  power_armour = {
+			combat_width = -0.2
 		}
 		power_armour_demolitions_infantry = {
-			default_morale = 0.01
-			urban = {
-				attack = 0.05
-				defence = 0.05
-			}
-			marsh = {
-				attack = 0.05
-				defence = 0.05
-			}
-			amphibious = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		ghoul_paratrooper = {
-			default_morale = 0.01
-			urban = {
-				attack = 0.05
-				defence = 0.05
-			}
-			marsh = {
-				attack = 0.05
-				defence = 0.05
-			}
-			amphibious = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		crusader_unit = {
-			default_morale = 0.01
-			urban = {
-				attack = 0.05
-				defence = 0.05
-			}
-			marsh = {
-				attack = 0.05
-				defence = 0.05
-			}
-			amphibious = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		super_mutant_nightkin_infantry = {
-			default_morale = 0.01
-			urban = {
-				attack = 0.05
-				defence = 0.05
-			}
-			marsh = {
-				attack = 0.05
-				defence = 0.05
-			}
-			amphibious = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-
-		XOR = { terrain_mountain_tech_2 terrain_plains_tech_2 terrain_jungle_tech_2 }
-
-		xp_research_type = army
-		xp_unlock_cost = 50
-		doctrine = yes
-
-		folder = {
-			name = land_doctrine_folder
-			position = { x = @Row_tactics_left_2 y = @Col_special_forces }
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				factor = 0
-				has_tech = terrain_mountain_tech_2
-			}
-			modifier = {
-				factor = 0
-				has_tech = terrain_plains_tech_2
-			}
-			modifier = {
-				factor = 0
-				has_tech = terrain_jungle_tech_2
-			}
-		}
-	}
-
-	terrain_harsh_tech_3 = {
-
-		combat_robot = {
-			default_morale = 0.01
-			urban = {
-				attack = 0.05
-				defence = 0.05
-			}
-			marsh = {
-				attack = 0.05
-				defence = 0.05
-			}
-			amphibious = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		support_robot = {
-			default_morale = 0.01
-			urban = {
-				attack = 0.05
-				defence = 0.05
-			}
-			marsh = {
-				attack = 0.05
-				defence = 0.05
-			}
-			amphibious = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		security_robot = {
-			default_morale = 0.01
-			urban = {
-				attack = 0.05
-				defence = 0.05
-			}
-			marsh = {
-				attack = 0.05
-				defence = 0.05
-			}
-			amphibious = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		super_heavy_robot = {
-			default_morale = 0.01
-			urban = {
-				attack = 0.05
-				defence = 0.05
-			}
-			marsh = {
-				attack = 0.05
-				defence = 0.05
-			}
-			amphibious = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-
-		XOR = { terrain_mountain_tech_3 terrain_plains_tech_3 terrain_jungle_tech_3 }
-
-		xp_research_type = army
-		xp_unlock_cost = 50
-		doctrine = yes
-
-		folder = {
-			name = land_doctrine_folder
-			position = { x = @Row_tactics_left_2 y = @Col_robot }
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				factor = 0
-				has_tech = terrain_mountain_tech_3
-			}
-			modifier = {
-				factor = 0
-				has_tech = terrain_plains_tech_3
-			}
-			modifier = {
-				factor = 0
-				has_tech = terrain_jungle_tech_3
-			}
-		}
-	}
-
-	terrain_harsh_tech_4 = {
-
-		motorized = {
-			default_morale = 0.01
-			urban = {
-				attack = 0.05
-				defence = 0.05
-			}
-			marsh = {
-				attack = 0.05
-				defence = 0.05
-			}
-			amphibious = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		motorized_heavy_infantry = {
-			default_morale = 0.01
-			urban = {
-				attack = 0.05
-				defence = 0.05
-			}
-			marsh = {
-				attack = 0.05
-				defence = 0.05
-			}
-			amphibious = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		motorized_fireteam = {
-			default_morale = 0.01
-			urban = {
-				attack = 0.05
-				defence = 0.05
-			}
-			marsh = {
-				attack = 0.05
-				defence = 0.05
-			}
-			amphibious = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		motorized_demoteam = {
-			default_morale = 0.01
-			urban = {
-				attack = 0.05
-				defence = 0.05
-			}
-			marsh = {
-				attack = 0.05
-				defence = 0.05
-			}
-			amphibious = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		tank = {
-			default_morale = 0.01
-			urban = {
-				attack = 0.05
-				defence = 0.05
-			}
-			marsh = {
-				attack = 0.05
-				defence = 0.05
-			}
-			amphibious = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		chariot_unit = {
-			default_morale = 0.01
-			urban = {
-				attack = 0.05
-				defence = 0.05
-			}
-			marsh = {
-				attack = 0.05
-				defence = 0.05
-			}
-			amphibious = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-
-		XOR = { terrain_mountain_tech_4 terrain_plains_tech_4 terrain_jungle_tech_4 }
-
-		xp_research_type = army
-		xp_unlock_cost = 50
-		doctrine = yes
-
-		folder = {
-			name = land_doctrine_folder
-			position = { x = @Row_tactics_left_2 y = @Col_vehicle }
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				factor = 0
-				has_tech = terrain_mountain_tech_4
-			}
-			modifier = {
-				factor = 0
-				has_tech = terrain_plains_tech_4
-			}
-			modifier = {
-				factor = 0
-				has_tech = terrain_jungle_tech_4
-			}
-		}
-	}
-
-	terrain_plains_tech = {
-
-		infantry = {
-			default_morale = 0.01
-			plains = {
-				attack = 0.05
-				defence = 0.05
-			}
-			desert = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		heavy_infantry = {
-			default_morale = 0.01
-			plains = {
-				attack = 0.05
-				defence = 0.05
-			}
-			desert = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		dog_infantry = {
-			default_morale = 0.01
-			plains = {
-				attack = 0.05
-				defence = 0.05
-			}
-			desert = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		ghoul_infantry = {
-			default_morale = 0.01
-			plains = {
-				attack = 0.05
-				defence = 0.05
-			}
-			desert = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		skate_infantry = {
-			default_morale = 0.01
-			plains = {
-				attack = 0.05
-				defence = 0.05
-			}
-			desert = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		super_mutant_infantry = {
-			default_morale = 0.01
-			plains = {
-				attack = 0.05
-				defence = 0.05
-			}
-			desert = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		super_mutant_aux_infantry = {
-			default_morale = 0.01
-			plains = {
-				attack = 0.05
-				defence = 0.05
-			}
-			desert = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		police_infantry = {
-			default_morale = 0.01
-			plains = {
-				attack = 0.05
-				defence = 0.05
-			}
-			desert = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		militia = {
-			default_morale = 0.01
-			plains = {
-				attack = 0.05
-				defence = 0.05
-			}
-			desert = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-
-		xp_research_type = army
-		xp_unlock_cost = 50
-		doctrine = yes
-
-		XOR = { terrain_jungle_tech terrain_mountain_tech terrain_harsh_tech }
-
-		folder = {
-			name = land_doctrine_folder
-			position = { x = @Row_tactics_left_1 y = @Col_infantry }
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				factor = 0
-				has_tech = terrain_mountain_tech
-			}
-			modifier = {
-				factor = 0
-				has_tech = terrain_harsh_tech
-			}
-			modifier = {
-				factor = 0
-				has_tech = terrain_jungle_tech
-			}
-		}
-	}
-
-	terrain_plains_tech_2 = {
-
-		spec_ops = {
-			default_morale = 0.01
-			plains = {
-				attack = 0.05
-				defence = 0.05
-			}
-			desert = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		spec_ops_cavalry = {
-			default_morale = 0.01
-			plains = {
-				attack = 0.05
-				defence = 0.05
-			}
-			desert = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		power_armour = {
-			default_morale = 0.01
-			plains = {
-				attack = 0.05
-				defence = 0.05
-			}
-			desert = {
-				attack = 0.05
-				defence = 0.05
-			}
+			combat_width = -0.2
 		}
 		power_armour_fireteam_infantry = {
-			default_morale = 0.01
-			plains = {
-				attack = 0.05
-				defence = 0.05
-			}
-			desert = {
-				attack = 0.05
-				defence = 0.05
-			}
+			combat_width = -0.2
 		}
-		power_armour_demolitions_infantry = {
-			default_morale = 0.01
-			plains = {
-				attack = 0.05
-				defence = 0.05
-			}
-			desert = {
-				attack = 0.05
-				defence = 0.05
-			}
+		power_armour_anti_tank_infantry = {
+			combat_width = -0.2
 		}
-		ghoul_paratrooper = {
-			default_morale = 0.01
-			plains = {
-				attack = 0.05
-				defence = 0.05
-			}
-			desert = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		crusader_unit = {
-			default_morale = 0.01
-			plains = {
-				attack = 0.05
-				defence = 0.05
-			}
-			desert = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		super_mutant_nightkin_infantry = {
-			default_morale = 0.01
-			plains = {
-				attack = 0.05
-				defence = 0.05
-			}
-			desert = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-
-		XOR = { terrain_jungle_tech_2 terrain_mountain_tech_2 terrain_harsh_tech_2 }
-
-		xp_research_type = army
-		xp_unlock_cost = 50
-		doctrine = yes
-
-		folder = {
+	  XOR = {
+			shock_and_awe_doctrine
+			brigades_of_steel
+		} 
+	
+	 folder = {
 			name = land_doctrine_folder
-			position = { x = @Row_tactics_left_1 y = @Col_special_forces }
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				factor = 0
-				has_tech = terrain_mountain_tech_2
-			}
-			modifier = {
-				factor = 0
-				has_tech = terrain_harsh_tech_2
-			}
-			modifier = {
-				factor = 0
-				has_tech = terrain_jungle_tech_2
-			}
+			position = { x = 5 y = 4 }
 		}
 	}
-
-	terrain_plains_tech_3 = {
-
-		combat_robot = {
-			default_morale = 0.01
-			plains = {
-				attack = 0.05
-				defence = 0.05
-			}
-			desert = {
-				attack = 0.05
-				defence = 0.05
-			}
+	
+	shock_and_awe_doctrine = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	 category_power_armour = {
+			initiative = 0.01
+			max_organisation = 20
+			default_morale = 0.2
+			soft_attack= 0.05
 		}
-		support_robot = {
-			default_morale = 0.01
-			plains = {
-				attack = 0.05
-				defence = 0.05
-			}
-			desert = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		security_robot = {
-			default_morale = 0.01
-			plains = {
-				attack = 0.05
-				defence = 0.05
-			}
-			desert = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		super_heavy_robot = {
-			default_morale = 0.01
-			plains = {
-				attack = 0.05
-				defence = 0.05
-			}
-			desert = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-
-		XOR = { terrain_jungle_tech_3 terrain_mountain_tech_3 terrain_harsh_tech_3 }
-
-		xp_research_type = army
-		xp_unlock_cost = 50
-		doctrine = yes
-
-		folder = {
+	  XOR = {
+			recon_in_depth
+			brigades_of_steel
+		} 
+	
+	 folder = {
 			name = land_doctrine_folder
-			position = { x = @Row_tactics_left_1 y = @Col_robot }
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				factor = 0
-				has_tech = terrain_mountain_tech_3
-			}
-			modifier = {
-				factor = 0
-				has_tech = terrain_harsh_tech_3
-			}
-			modifier = {
-				factor = 0
-				has_tech = terrain_jungle_tech_3
-			}
+			position = { x = 7 y = 4 }
 		}
 	}
-
-	terrain_plains_tech_4 = {
-
-		motorized = {
-			default_morale = 0.01
-			plains = {
-				attack = 0.05
-				defence = 0.05
-			}
-			desert = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		motorized_heavy_infantry = {
-			default_morale = 0.01
-			plains = {
-				attack = 0.05
-				defence = 0.05
-			}
-			desert = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		motorized_fireteam = {
-			default_morale = 0.01
-			plains = {
-				attack = 0.05
-				defence = 0.05
-			}
-			desert = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		motorized_demoteam = {
-			default_morale = 0.01
-			plains = {
-				attack = 0.05
-				defence = 0.05
-			}
-			desert = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		tank = {
-			default_morale = 0.01
-			plains = {
-				attack = 0.05
-				defence = 0.05
-			}
-			desert = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		chariot_unit = {
-			default_morale = 0.01
-			plains = {
-				attack = 0.05
-				defence = 0.05
-			}
-			desert = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-
-		XOR = { terrain_jungle_tech_4 terrain_mountain_tech_4 terrain_harsh_tech_4 }
-
-		xp_research_type = army
-		xp_unlock_cost = 50
-		doctrine = yes
-
-		folder = {
-			name = land_doctrine_folder
-			position = { x = @Row_tactics_left_1 y = @Col_vehicle }
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				factor = 0
-				has_tech = terrain_mountain_tech_4
-			}
-			modifier = {
-				factor = 0
-				has_tech = terrain_harsh_tech_4
-			}
-			modifier = {
-				factor = 0
-				has_tech = terrain_jungle_tech_4
-			}
-		}
-	}
-
-	terrain_mountain_tech = {
-
-		infantry = {
-			default_morale = 0.01
-			mountain = {
-				attack = 0.05
-				defence = 0.05
-			}
-			hills = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		heavy_infantry = {
-			default_morale = 0.01
-			mountain = {
-				attack = 0.05
-				defence = 0.05
-			}
-			hills = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		dog_infantry = {
-			default_morale = 0.01
-			mountain = {
-				attack = 0.05
-				defence = 0.05
-			}
-			hills = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		ghoul_infantry = {
-			default_morale = 0.01
-			mountain = {
-				attack = 0.05
-				defence = 0.05
-			}
-			hills = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		skate_infantry = {
-			default_morale = 0.01
-			mountain = {
-				attack = 0.05
-				defence = 0.05
-			}
-			hills = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		super_mutant_infantry = {
-			default_morale = 0.01
-			mountain = {
-				attack = 0.05
-				defence = 0.05
-			}
-			hills = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		super_mutant_aux_infantry = {
-			default_morale = 0.01
-			mountain = {
-				attack = 0.05
-				defence = 0.05
-			}
-			hills = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		police_infantry = {
-			default_morale = 0.01
-			mountain = {
-				attack = 0.05
-				defence = 0.05
-			}
-			hills = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		militia = {
-			default_morale = 0.01
-			mountain = {
-				attack = 0.05
-				defence = 0.05
-			}
-			hills = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-
-		xp_research_type = army
-		xp_unlock_cost = 50
-		doctrine = yes
-
-		XOR = { terrain_harsh_tech terrain_plains_tech terrain_jungle_tech }
-
-		folder = {
-			name = land_doctrine_folder
-			position = { x = @Row_tactics_right_1 y = @Col_infantry }
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				factor = 0
-				has_tech = terrain_plains_tech
-			}
-			modifier = {
-				factor = 0
-				has_tech = terrain_harsh_tech
-			}
-			modifier = {
-				factor = 0
-				has_tech = terrain_jungle_tech
-			}
-		}
-	}
-
-	terrain_mountain_tech_2 = {
-
-		spec_ops = {
-			default_morale = 0.01
-			mountain = {
-				attack = 0.05
-				defence = 0.05
-			}
-			hills = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		spec_ops_cavalry = {
-			default_morale = 0.01
-			mountain = {
-				attack = 0.05
-				defence = 0.05
-			}
-			hills = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		power_armour = {
-			default_morale = 0.01
-			mountain = {
-				attack = 0.05
-				defence = 0.05
-			}
-			hills = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		power_armour_fireteam_infantry = {
-			default_morale = 0.01
-			mountain = {
-				attack = 0.05
-				defence = 0.05
-			}
-			hills = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		power_armour_demolitions_infantry = {
-			default_morale = 0.01
-			mountain = {
-				attack = 0.05
-				defence = 0.05
-			}
-			hills = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		ghoul_paratrooper = {
-			default_morale = 0.01
-			mountain = {
-				attack = 0.05
-				defence = 0.05
-			}
-			hills = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		crusader_unit = {
-			default_morale = 0.01
-			mountain = {
-				attack = 0.05
-				defence = 0.05
-			}
-			hills = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		super_mutant_nightkin_infantry = {
-			default_morale = 0.01
-			mountain = {
-				attack = 0.05
-				defence = 0.05
-			}
-			hills = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-
-		XOR = { terrain_harsh_tech_2 terrain_plains_tech_2 terrain_jungle_tech_2 }
-
-		xp_research_type = army
-		xp_unlock_cost = 50
-		doctrine = yes
-
-		folder = {
-			name = land_doctrine_folder
-			position = { x = @Row_tactics_right_1 y = @Col_special_forces }
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				factor = 0
-				has_tech = terrain_plains_tech_2
-			}
-			modifier = {
-				factor = 0
-				has_tech = terrain_harsh_tech_2
-			}
-			modifier = {
-				factor = 0
-				has_tech = terrain_jungle_tech_2
-			}
-		}
-	}
-
-	terrain_mountain_tech_3 = {
-
-		combat_robot = {
-			default_morale = 0.01
-			mountain = {
-				attack = 0.05
-				defence = 0.05
-			}
-			hills = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		support_robot = {
-			default_morale = 0.01
-			mountain = {
-				attack = 0.05
-				defence = 0.05
-			}
-			hills = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		security_robot = {
-			default_morale = 0.01
-			mountain = {
-				attack = 0.05
-				defence = 0.05
-			}
-			hills = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		super_heavy_robot = {
-			default_morale = 0.01
-			mountain = {
-				attack = 0.05
-				defence = 0.05
-			}
-			hills = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-
-		XOR = { terrain_harsh_tech_3 terrain_plains_tech_3 terrain_jungle_tech_3 }
-
-		xp_research_type = army
-		xp_unlock_cost = 50
-		doctrine = yes
-
-		folder = {
-			name = land_doctrine_folder
-			position = { x = @Row_tactics_right_1 y = @Col_robot }
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				factor = 0
-				has_tech = terrain_plains_tech_3
-			}
-			modifier = {
-				factor = 0
-				has_tech = terrain_harsh_tech_3
-			}
-			modifier = {
-				factor = 0
-				has_tech = terrain_jungle_tech_3
-			}
-		}
-	}
-
-	terrain_mountain_tech_4 = {
-
-		motorized = {
-			default_morale = 0.01
-			mountain = {
-				attack = 0.05
-				defence = 0.05
-			}
-			hills = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		motorized_heavy_infantry = {
-			default_morale = 0.01
-			mountain = {
-				attack = 0.05
-				defence = 0.05
-			}
-			hills = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		motorized_fireteam = {
-			default_morale = 0.01
-			mountain = {
-				attack = 0.05
-				defence = 0.05
-			}
-			hills = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		motorized_demoteam = {
-			default_morale = 0.01
-			mountain = {
-				attack = 0.05
-				defence = 0.05
-			}
-			hills = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		tank = {
-			default_morale = 0.01
-			mountain = {
-				attack = 0.05
-				defence = 0.05
-			}
-			hills = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		chariot_unit = {
-			default_morale = 0.01
-			mountain = {
-				attack = 0.05
-				defence = 0.05
-			}
-			hills = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-
-		XOR = { terrain_harsh_tech_4 terrain_plains_tech_4 terrain_jungle_tech_4 }
-
-		xp_research_type = army
-		xp_unlock_cost = 50
-		doctrine = yes
-
-		folder = {
-			name = land_doctrine_folder
-			position = { x = @Row_tactics_right_1 y = @Col_vehicle }
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				factor = 0
-				has_tech = terrain_plains_tech_4
-			}
-			modifier = {
-				factor = 0
-				has_tech = terrain_harsh_tech_4
-			}
-			modifier = {
-				factor = 0
-				has_tech = terrain_jungle_tech_4
-			}
-		}
-	}
-
-	terrain_jungle_tech = {
-
-		infantry = {
-			default_morale = 0.01
-			jungle = {
-				attack = 0.05
-				defence = 0.05
-			}
-			forest = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		heavy_infantry = {
-			default_morale = 0.01
-			jungle = {
-				attack = 0.05
-				defence = 0.05
-			}
-			forest = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		dog_infantry = {
-			default_morale = 0.01
-			jungle = {
-				attack = 0.05
-				defence = 0.05
-			}
-			forest = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		ghoul_infantry = {
-			default_morale = 0.01
-			jungle = {
-				attack = 0.05
-				defence = 0.05
-			}
-			forest = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		skate_infantry = {
-			default_morale = 0.01
-			jungle = {
-				attack = 0.05
-				defence = 0.05
-			}
-			forest = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		super_mutant_infantry = {
-			default_morale = 0.01
-			jungle = {
-				attack = 0.05
-				defence = 0.05
-			}
-			forest = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		super_mutant_aux_infantry = {
-			default_morale = 0.01
-			jungle = {
-				attack = 0.05
-				defence = 0.05
-			}
-			forest = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		police_infantry = {
-			default_morale = 0.01
-			jungle = {
-				attack = 0.05
-				defence = 0.05
-			}
-			forest = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		militia = {
-			default_morale = 0.01
-			jungle = {
-				attack = 0.05
-				defence = 0.05
-			}
-			forest = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-
-		xp_research_type = army
-		xp_unlock_cost = 50
-		doctrine = yes
-
-		XOR = { terrain_plains_tech terrain_mountain_tech terrain_harsh_tech }
-
-		folder = {
-			name = land_doctrine_folder
-			position = { x = @Row_tactics_right_2 y = @Col_infantry }
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				factor = 0
-				has_tech = terrain_plains_tech
-			}
-			modifier = {
-				factor = 0
-				has_tech = terrain_harsh_tech
-			}
-			modifier = {
-				factor = 0
-				has_tech = terrain_mountain_tech
-			}
-		}
-	}
-
-	terrain_jungle_tech_2 = {
-
-		spec_ops = {
-			default_morale = 0.01
-			jungle = {
-				attack = 0.05
-				defence = 0.05
-			}
-			forest = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		spec_ops_cavalry = {
-			default_morale = 0.01
-			jungle = {
-				attack = 0.05
-				defence = 0.05
-			}
-			forest = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		power_armour = {
-			default_morale = 0.01
-			jungle = {
-				attack = 0.05
-				defence = 0.05
-			}
-			forest = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		power_armour_fireteam_infantry = {
-			default_morale = 0.01
-			jungle = {
-				attack = 0.05
-				defence = 0.05
-			}
-			forest = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		power_armour_demolitions_infantry = {
-			default_morale = 0.01
-			jungle = {
-				attack = 0.05
-				defence = 0.05
-			}
-			forest = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		ghoul_paratrooper = {
-			default_morale = 0.01
-			jungle = {
-				attack = 0.05
-				defence = 0.05
-			}
-			forest = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		crusader_unit = {
-			default_morale = 0.01
-			jungle = {
-				attack = 0.05
-				defence = 0.05
-			}
-			forest = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		super_mutant_nightkin_infantry = {
-			default_morale = 0.01
-			jungle = {
-				attack = 0.05
-				defence = 0.05
-			}
-			forest = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-
-		XOR = { terrain_plains_tech_2 terrain_mountain_tech_2 terrain_harsh_tech_2 }
-
-		xp_research_type = army
-		xp_unlock_cost = 50
-		doctrine = yes
-
-		folder = {
-			name = land_doctrine_folder
-			position = { x = @Row_tactics_right_2 y = @Col_special_forces }
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				factor = 0
-				has_tech = terrain_plains_tech_2
-			}
-			modifier = {
-				factor = 0
-				has_tech = terrain_harsh_tech_2
-			}
-			modifier = {
-				factor = 0
-				has_tech = terrain_mountain_tech_2
-			}
-		}
-	}
-
-	terrain_jungle_tech_3 = {
-
-		combat_robot = {
-			default_morale = 0.01
-			jungle = {
-				attack = 0.05
-				defence = 0.05
-			}
-			forest = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		support_robot = {
-			default_morale = 0.01
-			jungle = {
-				attack = 0.05
-				defence = 0.05
-			}
-			forest = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		security_robot = {
-			default_morale = 0.01
-			jungle = {
-				attack = 0.05
-				defence = 0.05
-			}
-			forest = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		super_heavy_robot = {
-			default_morale = 0.01
-			jungle = {
-				attack = 0.05
-				defence = 0.05
-			}
-			forest = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-
-		XOR = { terrain_plains_tech_3 terrain_mountain_tech_3 terrain_harsh_tech_3 }
-
-		xp_research_type = army
-		xp_unlock_cost = 50
-		doctrine = yes
-
-		folder = {
-			name = land_doctrine_folder
-			position = { x = @Row_tactics_right_2 y = @Col_robot }
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				factor = 0
-				has_tech = terrain_plains_tech_3
-			}
-			modifier = {
-				factor = 0
-				has_tech = terrain_harsh_tech_3
-			}
-			modifier = {
-				factor = 0
-				has_tech = terrain_mountain_tech_3
-			}
-		}
-	}
-
-	terrain_jungle_tech_4 = {
-
-		motorized = {
-			default_morale = 0.01
-			jungle = {
-				attack = 0.05
-				defence = 0.05
-			}
-			forest = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		motorized_heavy_infantry = {
-			default_morale = 0.01
-			jungle = {
-				attack = 0.05
-				defence = 0.05
-			}
-			forest = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		motorized_fireteam = {
-			default_morale = 0.01
-			jungle = {
-				attack = 0.05
-				defence = 0.05
-			}
-			forest = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		motorized_demoteam = {
-			default_morale = 0.01
-			jungle = {
-				attack = 0.05
-				defence = 0.05
-			}
-			forest = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		tank = {
-			default_morale = 0.01
-			jungle = {
-				attack = 0.05
-				defence = 0.05
-			}
-			forest = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-		chariot_unit = {
-			default_morale = 0.01
-			jungle = {
-				attack = 0.05
-				defence = 0.05
-			}
-			forest = {
-				attack = 0.05
-				defence = 0.05
-			}
-		}
-
-		XOR = { terrain_plains_tech_4 terrain_mountain_tech_4 terrain_harsh_tech_4 }
-
-		xp_research_type = army
-		xp_unlock_cost = 50
-		doctrine = yes
-
-		folder = {
-			name = land_doctrine_folder
-			position = { x = @Row_tactics_right_2 y = @Col_vehicle }
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				factor = 0
-				has_tech = terrain_plains_tech_4
-			}
-			modifier = {
-				factor = 0
-				has_tech = terrain_harsh_tech_4
-			}
-			modifier = {
-				factor = 0
-				has_tech = terrain_mountain_tech_4
-			}
-		}
-	}
-
-	tactics_spec_ops_cap_tech = {
-
-		special_forces_min  = 20
-		special_forces_training_time_factor = -0.1
-
-		xp_research_type = army
-		xp_unlock_cost = 50
-		doctrine = yes
-
-		path = {
-			leads_to_tech = tactics_spec_ops_cap_tech_2
+	
+	terror_tactics_actual = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	  category_light_special_forces= {
+			default_morale= 0.1
+			defense= 0.10
+			breakthrough= 0.05
+			max_organisation= 5
+	
+		}
+	  XOR = {
+			exitum
+		} 
+	   path = {
+			leads_to_tech = decimato_doctrine
 			research_cost_coeff = 1
 		}
-		path = {
-			leads_to_tech = tactics_spec_ops_cap_tech_3
+		
+	 path = {
+			leads_to_tech = divide_et_vincet
 			research_cost_coeff = 1
 		}
-		path = {
-			leads_to_tech = tactics_spec_ops_offense_tech
+		
+	 path = {
+	 		leads_to_tech = summa_bellum
 			research_cost_coeff = 1
 		}
-		path = {
-			leads_to_tech = tactics_spec_ops_defense_tech
-			research_cost_coeff = 1
-		}
-
-		folder = {
+	
+	 folder = {
 			name = land_doctrine_folder
-			position = { x = @Row_tactics_middle y = @Col_vehicle }
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			base = 5
-			modifier = {
-				add = 5
-				OR = {
-					has_country_flag = power_armor_doctrine_ai
-					has_country_flag = spec_ops_doctrine_ai
-				}
-			}
-			modifier = {
-				factor = 5
-				has_army_experience > 150
-			}
+			position = { x = 13 y = 2 }
 		}
 	}
-
-	tactics_spec_ops_cap_tech_2 = {
-
-		special_forces_min  = 25
-		special_forces_training_time_factor = -0.05
-
-		xor = { tactics_spec_ops_defense_tech }
-
-		xp_research_type = army
-		xp_unlock_cost = 50
-		doctrine = yes
-
-		path = {
-			leads_to_tech = tactics_spec_ops_heavy_tech
+	
+	exitum = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	  category_light_special_forces = {
+			
+			soft_attack= 0.10
+			hard_attack= 0.10
+	
+		}
+	  XOR = {
+		
+			terror_tactics_actual
+		} 
+	  path = {
+			leads_to_tech = decimato_doctrine
 			research_cost_coeff = 1
 		}
-		path = {
-			leads_to_tech = tactics_spec_ops_light_tech
+		
+	 path = {
+			leads_to_tech = summa_bellum
 			research_cost_coeff = 1
 		}
-
-
-		folder = {
+		
+	 path = {
+	 		leads_to_tech = divide_et_vincet
+			research_cost_coeff = 1
+		}
+	
+	
+	 folder = {
 			name = land_doctrine_folder
-			position = { x = @Row_tactics_left_2 y = @Col_tactics }
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				add = 5
-				OR = {
-					has_country_flag = power_armor_doctrine_ai
-					has_country_flag = spec_ops_doctrine_ai
-				}
-			}
-			modifier = {
-				factor = 5
-				has_army_experience > 150
-			}
+			position = { x = 17 y = 2 }
 		}
 	}
-
-	tactics_spec_ops_cap_tech_3 = {
-
-		special_forces_min  = 25
-		special_forces_training_time_factor = -0.05
-
-		xor = { tactics_spec_ops_offense_tech }
-
-		xp_research_type = army
-		xp_unlock_cost = 50
-		doctrine = yes
-
-		path = {
-			leads_to_tech = tactics_spec_ops_heavy_tech
-			research_cost_coeff = 1
+	
+	summa_bellum = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	 category_light_special_forces = {
+			default_morale= 0.1
+			defense= 0.10
+			max_organisation= 20
+			soft_attack= 0.05
+			initiative= 0.03
+	
 		}
-		path = {
-			leads_to_tech = tactics_spec_ops_light_tech
-			research_cost_coeff = 1
-		}
-
-
-		folder = {
+	 XOR = {
+		   divide_et_vincet
+			decimato_doctrine
+		} 
+	
+	 folder = {
 			name = land_doctrine_folder
-			position = { x = @Row_tactics_left_1 y = @Col_tactics }
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				add = 5
-				OR = {
-					has_country_flag = power_armor_doctrine_ai
-					has_country_flag = spec_ops_doctrine_ai
-				}
-			}
-			modifier = {
-				factor = 5
-				has_army_experience > 150
-			}
+			position = { x = 17 y = 4 }
 		}
 	}
-
-	tactics_spec_ops_defense_tech = {
-
-		category_special_forces = {
+	
+	decimato_doctrine = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	  category_light_special_forces = {
+			
+			max_organisation= 2
+			soft_attack= 0.15
+			hard_attack= 0.15
+	
+		}
+	 XOR = {
+		   divide_et_vincet
+			summa_bellum
+		} 
+	
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = 13 y = 4 }
+		}
+	}
+	
+	divide_et_vincet = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	   category_light_special_forces = {
+			
+			max_organisation= 5
+			soft_attack= 0.10
+			breakthrough= 0.30
+	
+		}
+	 XOR = {
+		    summa_bellum
+			decimato_doctrine
+		} 
+	
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = 15 y = 4 }
+		}
+	}
+	
+	outsider_warfare_doctrine = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	 category_behemoth = {
+			breakthrough = 0.1
 			defense = 0.1
 		}
-		special_forces_out_of_supply_factor = -0.25
-
-		xor = { tactics_spec_ops_cap_tech_2 }
-
-		xp_research_type = army
-		xp_unlock_cost = 50
-		doctrine = yes
-
-		path = {
-			leads_to_tech = tactics_spec_ops_heavy_tech
+		super_mutant_nightkin_infantry = {
+			breakthrough = 0.1
+			defense = 0.1
+		}
+		
+	 XOR = {
+			
+			
+			automated_warfare
+			
+		}
+	  path = {
+			leads_to_tech = we_are_different_doctrine
 			research_cost_coeff = 1
 		}
-		path = {
-			leads_to_tech = tactics_spec_ops_light_tech
+		
+	 path = {
+			leads_to_tech = we_are_special_doctrine
 			research_cost_coeff = 1
 		}
-
-
-		folder = {
+		
+	 path = {
+	 		leads_to_tech = we_are_perceptive_doctrine
+			research_cost_coeff = 1
+		}
+	 folder = {
 			name = land_doctrine_folder
-			position = { x = @Row_tactics_right_2 y = @Col_tactics }
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				add = 5
-				OR = {
-					has_country_flag = power_armor_doctrine_ai
-					has_country_flag = spec_ops_doctrine_ai
-				}
-			}
-			modifier = {
-				factor = 5
-				has_army_experience > 150
-			}
+			position = { x = 11 y = 6 }
 		}
 	}
-
-	tactics_spec_ops_offense_tech = {
-
-		category_special_forces = {
-			soft_attack = 0.05
-			hard_attack = 0.05
-			breakthrough = 0.05
+	we_are_different_doctrine = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	 super_mutant_nightkin_infantry = {
+			soft_attack= 0.1
+			hard_attack= 0.1
+			max_organisation= 3
+			
 		}
-
-		xor = { tactics_spec_ops_cap_tech_3 }
-
-		xp_research_type = army
-		xp_unlock_cost = 50
-		doctrine = yes
-
-		path = {
-			leads_to_tech = tactics_spec_ops_heavy_tech
+	 path = {
+			leads_to_tech = the_master_servant_doctrine
 			research_cost_coeff = 1
 		}
-		path = {
-			leads_to_tech = tactics_spec_ops_light_tech
+		
+	 path = {
+			leads_to_tech = the_chosen_ones_doctrine
 			research_cost_coeff = 1
 		}
-
-
-		folder = {
+		
+	 path = {
+	 		leads_to_tech = we_are_fortunate_doctrine
+			research_cost_coeff = 1
+		}
+	 folder = {
 			name = land_doctrine_folder
-			position = { x = @Row_tactics_right_1 y = @Col_tactics }
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				add = 5
-				OR = {
-					has_country_flag = power_armor_doctrine_ai
-					has_country_flag = spec_ops_doctrine_ai
-				}
-			}
-			modifier = {
-				factor = 5
-				has_army_experience > 150
-			}
+			position = { x = 13 y = 8 }
 		}
 	}
-
-	tactics_spec_ops_light_tech = {
-
-		category_light_special_forces = {
-			max_organisation = 5
+	we_are_special_doctrine = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	 category_behemoth = {
+			
+			breakthrough= 0.2
 		}
-
-		xor = { tactics_spec_ops_heavy_tech }
-
-		xp_research_type = army
-		xp_unlock_cost = 50
-		doctrine = yes
-
-		path = {
-			leads_to_tech = tactics_spec_ops_elite_tech
+	 path = {
+			leads_to_tech = the_master_servant_doctrine
 			research_cost_coeff = 1
 		}
-
-		folder = {
-			name = land_doctrine_folder
-			position = { x = @Row_tactics_left_1 y = @Col_tactics2 }
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				add = 5
-				has_country_flag = spec_ops_doctrine_ai
-			}
-			modifier = {
-				factor = 5
-				has_army_experience > 150
-			}
-		}
-	}
-
-	tactics_spec_ops_heavy_tech = {
-
-		category_power_armour = {
-			max_organisation = 5
-		}
-
-		xor = { tactics_spec_ops_light_tech }
-
-		xp_research_type = army
-		xp_unlock_cost = 50
-		doctrine = yes
-
-		path = {
-			leads_to_tech = tactics_spec_ops_elite_tech
+		
+	 path = {
+			leads_to_tech = the_chosen_ones_doctrine
 			research_cost_coeff = 1
 		}
-
-
-		folder = {
+		
+	 path = {
+	 		leads_to_tech = we_are_fortunate_doctrine
+			research_cost_coeff = 1
+		}
+	 folder = {
 			name = land_doctrine_folder
-			position = { x = @Row_tactics_right_1 y = @Col_tactics2 }
-		}
-
-		categories = {
-			caf_land_doctrine_xp
-		}
-
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				add = 5
-				has_country_flag = power_armor_doctrine_ai
-			}
-			modifier = {
-				factor = 5
-				has_army_experience > 150
-			}
+			position = { x = 11 y = 8 }
 		}
 	}
-
-	tactics_spec_ops_elite_tech = {
-
-		special_forces_cap = 0.1
-		category_special_forces = {
-			soft_attack = 0.05
-			hard_attack = 0.05
-			breakthrough = 0.05
+	we_are_perceptive_doctrine = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	 category_behemoth = {
+			initiative= 0.01
+			breakthrough= 0.3
+			defense= 0.3
+			soft attack= 0.3
+			hard attack= 0.3
 		}
-
-		xp_research_type = army
-		xp_unlock_cost = 75
-		doctrine = yes
-
-		folder = {
+	 path = {
+			leads_to_tech = the_master_servant_doctrine
+			research_cost_coeff = 1
+		}
+		
+	 path = {
+			leads_to_tech = the_chosen_ones_doctrine
+			research_cost_coeff = 1
+		}
+		
+	 path = {
+	 		leads_to_tech = we_are_fortunate_doctrine
+			research_cost_coeff = 1
+		}
+	 folder = {
 			name = land_doctrine_folder
-			position = { x = @Row_tactics_middle y = @Col_tactics3 }
+			position = { x = 9 y = 8 }
 		}
-
-		categories = {
-			caf_land_doctrine_xp
+	}
+	we_are_fortunate_doctrine = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	  super_mutant_nightkin_infantry = {
+	        default_morale= 0.2
+			soft_attack= 0.2
+			hard_attack= 0.2
+			max_organisation= 10
+			initiative= 0.01
 		}
-
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				add = 5
-				OR = {
-					has_country_flag = power_armor_doctrine_ai
-					has_country_flag = spec_ops_doctrine_ai
-				}
-			}
-			modifier = {
-				factor = 5
-				has_army_experience > 300
-			}
+	  XOR = {
+		    the_chosen_ones_doctrine
+			the_master_servant_doctrine
+		} 
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = 13 y = 10 }
+		}
+	}
+	the_chosen_ones_doctrine = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25 
+	 category_behemoth = {
+	        default_morale= 0.04
+	        initiative= 0.01
+			soft_attack= 0.3
+			hard_attack= 0.3
+			breakthrough= -0.2
+			max_organisation= 10
+		}
+	  XOR = {
+		    we_are_fortunate_doctrine
+			the_master_servant_doctrine
+		} 
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = 11 y = 10 }
+		}
+	}
+	the_master_servant_doctrine = {
+	 xp_research_type = army
+	 xp_unlock_cost = 35
+	 doctrine = yes
+	 research_cost = 2.25
+	 category_behemoth = {
+	        soft_attack= 0.05
+			defense= 0.4
+			breakthrough= 0.6
+			max_organisation= 5
+		}
+	  XOR = {
+		    the_chosen_ones_doctrine
+			we_are_fortunate_doctrine
+		} 
+	 folder = {
+			name = land_doctrine_folder
+			position = { x = 9 y = 10 }
 		}
 	}
 }
