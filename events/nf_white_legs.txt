@@ -718,27 +718,20 @@ country_event = {
 }
 
 country_event = {
-	id = nf_whitelegs.33
-	title = nf_whitelegs.33.t
-	desc = nf_whitelegs.33.d
+	id = wht_gifts.1
+	title = wht_gifts.1.t
+	desc = wht_gifts.1.d
 	picture = GFX_event_zion
 	is_triggered_only = yes
 	fire_only_once = yes
-
 	option = {
-		name = nf_whitelegs.33.a
-
+		name = wht_gifts.1.a
 		add_manpower = 1000
 		add_stability = -0.05
 	}
 	
 	option = {
-		name = nf_whitelegs.33.b
-
+		name = wht_gifts.1.b 
 		add_stability = 0.05
 	}
-
-	country_event = {
 		
-	}
-}

@@ -5037,7 +5037,7 @@ news_event = {
 
 	option = {
 		name = ncr_murphy.9.a
-		add_ideas = ncr_tera
+		add_ideas = NCR_ERA
 	}
 }
 country_event = {#Murphy meets with Luchas
