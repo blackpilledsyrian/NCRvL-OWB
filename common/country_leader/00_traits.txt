@@ -1524,7 +1524,7 @@ leader_traits = {
 
 	military_theorist = {
 		sprite = 14
-		experience_gain_army = 0.3
+		experience_gain_army = 0.15
 		ai_will_do = {
 			factor = 500
 		}

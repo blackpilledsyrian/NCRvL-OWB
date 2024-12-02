@@ -1,0 +1,30 @@
+state = {
+	id = 920
+	name = "STATE_920"
+	manpower = 11200
+	buildings_max_level_factor = 1.000
+	state_category = shanty
+
+	resources = {
+		water = 3
+		metal = 3
+	}
+
+	history = {
+		owner = SHA
+		add_core_of = EDN
+		victory_points = {
+			11480 10
+		}
+		buildings = {
+			infrastructure = 4
+			arms_factory = 1
+			industrial_complex = 1
+		}
+
+	}
+
+	provinces = {
+		800 2576 11422 11428 11433 11444 11445 11450 11451 11458 11460 11461 11463 11480
+	}
+}

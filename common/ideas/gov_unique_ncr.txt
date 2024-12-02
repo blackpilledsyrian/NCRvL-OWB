@@ -106,7 +106,6 @@ ideas = {
 				consumer_goods_expected_value = 0.20
 				conversion_cost_mil_to_civ_factor = -0.5
 				production_speed_infrastructure_factor = 0.1
-				production_speed_industrial_complex_factor = 0.1
 				production_speed_arms_factory_factor = -0.1
 				evolution_income_source_modifier_2 = 0.1
 				caps_node_trade_modifier = 0.1

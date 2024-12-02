@@ -3248,8 +3248,6 @@ ideas = {
 		modifier = {
 			conscription = 0.15
 			surrender_limit = 0.15
-			army_attack_factor = 0.05
-			army_defence_factor = 0.05
 			mobilization_speed = 0.15
 		}
 		cancel_if_invalid = no

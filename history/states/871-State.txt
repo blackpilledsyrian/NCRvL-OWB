@@ -1,0 +1,31 @@
+state = {
+	id = 871
+	name = "STATE_871"
+
+	manpower = 20000
+	state_category = city
+
+	resources = {
+		water = 5
+		metal = 6
+	}
+
+	history = {
+		owner = TBH
+		add_core_of = TBH
+
+		victory_points = {
+			11959 20
+		}
+		buildings = {
+			infrastructure = 4
+			arms_factory = 2
+			industrial_complex = 2
+		}
+
+	}
+
+	provinces = {
+		11947 11951 11954 11956 11958 11959 11961 11965 11972 11973 11980 11981 11982 11996
+	}
+}

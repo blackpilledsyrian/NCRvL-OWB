@@ -1683,7 +1683,7 @@ focus_tree = {
 			}
 		}
 		prerequisite = {
-			focus = mot_an_offer
+			#focus = mot_an_offer
 			focus = mot_we_can_refuse
 		}
 		x = 0

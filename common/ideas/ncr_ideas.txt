@@ -90,28 +90,7 @@ ideas = {
 				electronics = 0.1
 			}
 		}
-		ncr_tera = {
 
-			picture = generic_medicine
-
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				always = yes
-			}
-
-			removal_cost = -1
-
-			modifier = {
-				monthly_population = 0.15
-				consumer_goods_factor = -0.05
-				stability_weekly = 0.001
-				war_support_factor = -0.05
-				research_speed_factor = 0.05
-			}
-		}
 		blastfromthepast = {
 
 			picture = generic_catastrophe
@@ -165,9 +144,9 @@ ideas = {
 			modifier = {
 				stability_factor = 0.05
 				war_support_factor = -0.05
-				production_speed_industrial_complex_factor = 0.3
+				production_speed_industrial_complex_factor = 0.1
 				production_speed_arms_factory_factor = -0.05
-				production_speed_buildings_factor = 0.1
+				production_speed_buildings_factor = 0.05
 			}
 		}
 		ncr_idea_war_ready_economy_2 = {
@@ -970,7 +949,7 @@ ideas = {
 			picture = generic_military_draft
 			modifier = {
 				local_resources_factor = 0.05
-				industrial_capacity_factory = 0.2
+				industrial_capacity_factory = 0.05
 				consumer_goods_expected_value = -0.01
 			}
 		}

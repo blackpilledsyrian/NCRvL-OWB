@@ -138,4 +138,4 @@ set_truce = {
 	days = 730
 }
 
-recruit_character = IMO_juggernaut
+#recruit_character = IMO_juggernaut

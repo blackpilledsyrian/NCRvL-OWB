@@ -358,11 +358,11 @@ ideas = {
 					instant = yes
 				}
 			}
-			# medical_chem_company = {
-			# 	casualty_trickleback = 0.15
-			# 	experience_loss_factor = -0.15
-			# 	instant = yes
-			# } doesn't work need to add it as tech
+			medical_chem_company = {
+				casualty_trickleback = 0.15
+				experience_loss_factor = -0.15
+				instant = yes
+			}
 		}
 		mot_han_the_good_fight = {
 			picture = generic_medicine
