@@ -1,3 +1,8 @@
+SHA_calix = {
+	color = rgb { 12 244 155 }
+	color_ui = rgb { 12 244 155 }
+}
+
 SHA_shale = {
 	color = rgb { 26 150 20 }
 	color_ui = rgb { 26 150 20 }

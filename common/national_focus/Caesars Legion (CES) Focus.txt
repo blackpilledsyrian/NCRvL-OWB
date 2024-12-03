@@ -5607,7 +5607,7 @@ focus_tree = {
         id = ces_texas
         icon = GFX_goal_CES_texas
         cost = 15
-        x = 5
+        x = 6
         y = 0
         relative_position_id = ces_outsiders_gente
         prerequisite = {
@@ -5624,7 +5624,7 @@ focus_tree = {
         id = ces_crushers_army
         icon = GFX_goal_CES_crushers_army
         cost = 15
-        x = 0
+        x = -1
         y = 1
         relative_position_id = ces_texas
         prerequisite = {
@@ -5633,6 +5633,7 @@ focus_tree = {
         mutually_exclusive = {
             focus = ces_shales_army
             focus = ces_ironmongers
+            focus = ces_calix_host
         }
         available = {
             SHA = { 
@@ -5661,7 +5662,7 @@ focus_tree = {
         id = ces_shales_army
         icon = GFX_goal_CES_shales_army
         cost = 15
-        x = 2
+        x = 1
         y = 1
         relative_position_id = ces_texas
         prerequisite = {
@@ -5670,11 +5671,12 @@ focus_tree = {
         mutually_exclusive = {
             focus = ces_crushers_army
             focus = ces_ironmongers
+            focus = ces_calix_host
         }
         available = {
             SHA = { 
 				owns_state = 892 
-				has_completed_focus = attis_shale
+				has_completed_focus = shale_the_road_of_conquest
 			}
         }
         completion_reward = {
@@ -5695,10 +5697,48 @@ focus_tree = {
         }
     }
     focus = {
+        id = ces_calix_host
+        icon = GFX_goal_SHA_Calix
+        cost = 15
+        x = 3
+        y = 1
+        relative_position_id = ces_texas
+        prerequisite = {
+            focus = ces_texas
+        }
+        mutually_exclusive = {
+            focus = ces_crushers_army
+            focus = ces_ironmongers
+            focus = ces_shales_army
+        }
+        available = {
+            SHA = { 
+				owns_state = 892 
+				has_completed_focus = shale_calix_post_texas_1
+			}
+        }
+        completion_reward = {
+                SHA = {
+                d_join_caesars_legion = yes
+                hidden_effect = {
+                    set_technology = {
+                        habitation_tech_level_scientific = 1
+                        exploitation_tech_level_scientific = 1
+                    }
+                    add_ideas = {
+                        cultofmars
+						sentrybots
+                    }
+                }
+            }
+            custom_effect_tooltip = cescalixtt
+        }
+    }
+    focus = {
         id = ces_ironmongers
         icon = GFX_goal_CES_ironmongers
         cost = 15
-        x = -2
+        x = -3
         y = 1
         relative_position_id = ces_texas
         prerequisite = {
@@ -5707,6 +5747,7 @@ focus_tree = {
         mutually_exclusive = {
             focus = ces_shales_army
             focus = ces_crushers_army
+            focus = ces_calix_host
         }
         available = {
             SHA = { 

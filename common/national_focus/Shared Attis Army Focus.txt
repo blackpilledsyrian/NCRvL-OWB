@@ -136,7 +136,10 @@ focus_tree = {
 		available = {
 			if = {
 				limit = {
-					original_tag = SHA
+					has_country_leader = {
+						character = SHA_shale
+						ruling_only = yes
+					}	
 				}
 				has_completed_focus = shale_the_path_of_glory
 			}
@@ -451,7 +454,10 @@ focus_tree = {
 		available = {
 			if = {
 				limit = {
-					original_tag = SHA
+					has_country_leader = {
+						character = SHA_shale
+						ruling_only = yes
+					}	
 				}
 				has_completed_focus = shale_the_path_of_glory
 			}
@@ -862,7 +868,7 @@ focus_tree = {
 		id = shale_attis_era_training
 		icon = GFX_goal_SHA_Cave
 		cost = 30
-		x = -2
+		x = -3
 		y = 1
 		prerequisite = {
 			focus = shale_garb_fit_for_a_general
@@ -874,26 +880,10 @@ focus_tree = {
 	}
 
 	focus = {
-		id = shale_the_attis_born
-		icon = GFX_goal_SHA_Behemoth
-		cost = 30
-		x = 2
-		y = 1
-		prerequisite = {
-			focus = shale_garb_fit_for_a_general
-		}
-		relative_position_id = shale_garb_fit_for_a_general
-		completion_reward = {
-			set_technology = { super_mutant_behemoth = 1 }
-			add_manpower = 1200
-		}
-	}
-
-	focus = {
 		id = shale_purchase_fev
 		icon = GFX_goal_SHA_Calix_FEV
 		cost = 30
-		x = 4
+		x = 3
 		y = 1
 		prerequisite = {
 			focus = shale_garb_fit_for_a_general
@@ -907,22 +897,42 @@ focus_tree = {
 		}
 	}
 
+
 	focus = {
-		id = shale_purchase_weapon_schematics
-		icon = GFX_goal_SHA_Calix_Blueprints
+		id = shale_the_attis_born
+		icon = GFX_goal_SHA_Behemoth
 		cost = 30
-		x = -4
+		x = 1
 		y = 1
 		prerequisite = {
 			focus = shale_garb_fit_for_a_general
 		}
+		mutually_exclusive = {
+			focus = shale_purchase_weapon_schematics
+		}
 		relative_position_id = shale_garb_fit_for_a_general
 		completion_reward = {
-			add_tech_bonus = {
-				bonus = 0.5
-				uses = 1
-				category = infantry_tech_category
-			}
+			custom_effect_tooltip = SHA_shale_warning_tt
+			set_technology = { super_mutant_behemoth = 1 }
+			add_manpower = 1200
+		}
+	}
+	
+	focus = {
+		id = shale_purchase_weapon_schematics
+		icon = GFX_goal_SHA_Calix_Blueprints
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = shale_garb_fit_for_a_general
+		}
+		mutually_exclusive = {
+			focus = shale_the_attis_born
+		}
+		relative_position_id = shale_garb_fit_for_a_general
+		completion_reward = {
+			custom_effect_tooltip = SHA_calix_warning_tt
 			add_field_marshal_role = {
 				character = SHA_calix_normal
 				traits = {
@@ -944,9 +954,10 @@ focus_tree = {
 		icon = GFX_goal_BRK_night_of_horros
 		cost = 30
 		x = 0
-		y = 2
+		y = 3
 		prerequisite = {
-			focus = shale_garb_fit_for_a_general
+			focus = shale_the_attis_born
+			focus = shale_purchase_weapon_schematics
 		}
 		relative_position_id = attis_shale
 		completion_reward = {
@@ -970,7 +981,7 @@ focus_tree = {
 	focus = {
 		id = sha_taking_a_piece_of_the_pie
 		icon = GFX_goal_generic_enslave_taa
-		cost = 30
+		cost = 15
 		x = 0
 		y = 1
 		available = {
@@ -1198,14 +1209,28 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = {
-					SHA_calix = {
+					SHA_calix_normal = {
 						is_unit_leader = yes
 					}
 				}
 				hidden_effect = {
-					SHA_calix = {
-						unit_leader_event = nf_attis.39
-					}
+						remove_ideas = SHA_attis_sucessor
+						set_cosmetic_tag = SHA_calix
+						retire_country_leader = yes
+						add_country_leader_role = {
+							character = SHA_calix_normal
+							promote_leader = yes
+							country_leader = {
+								desc = SHA_secret_desc
+								ideology = warlordship
+								traits = {
+									calix_cunning
+								}
+								expire = "2294.1.1.12"
+								id = -1
+							}
+						}	
+					mark_focus_tree_layout_dirty = yes
 				}
 			}
 			add_offsite_building = {
@@ -1221,6 +1246,16 @@ focus_tree = {
 		cost = 30
 		x = -3
 		y = 1
+		allow_branch = {
+			SHA = {
+				NOT = {
+					has_country_leader = {
+						character = SHA_calix_normal
+						ruling_only = yes
+					}
+				}
+			}	
+		}	
 		available = {
 			LOS = {
 				all_core_land_owned_by_prev_sphere = yes
@@ -1262,6 +1297,16 @@ focus_tree = {
 		cost = 30
 		x = -1
 		y = 1
+		allow_branch = {
+			SHA = {
+				NOT = {
+					has_country_leader = {
+						character = SHA_calix_normal
+						ruling_only = yes
+					}
+				}
+			}	
+		}
 		available = {
 			LOS = {
 				all_core_land_owned_by_prev_sphere = yes
@@ -1300,6 +1345,16 @@ focus_tree = {
 		cost = 30
 		x = 1
 		y = 1
+		allow_branch = {
+			SHA = {
+				NOT = {
+					has_country_leader = {
+						character = SHA_calix_normal
+						ruling_only = yes
+					}
+				}
+			}	
+		}
 		available = {
 			LOS = {
 				all_core_land_owned_by_prev_sphere = yes
@@ -1341,6 +1396,16 @@ focus_tree = {
 		cost = 30
 		x = 3
 		y = 1
+		allow_branch = {
+			SHA = {
+				NOT = {
+					has_country_leader = {
+						character = SHA_calix_normal
+						ruling_only = yes
+					}
+				}
+			}	
+		}
 		available = {
 			LOS = {
 				all_core_land_owned_by_prev_sphere = yes
@@ -1884,7 +1949,7 @@ focus_tree = {
 	focus =	{
 		id = shale_the_road_of_conquest
 		icon = GFX_goal_generic_texas2
-		cost = 30
+		cost = 0
 		x = -1
 		y = 1
 		available = {
@@ -1960,183 +2025,241 @@ focus_tree = {
 			}
 		}
 	}
-	focus =	{
-		id = shale_cerberus_unity_unleashed
-		icon = GFX_goal_NEW_rebuild_cult
+	
+	focus = {
+		id = shale_calix_new_beginning
+		icon = GFX_goal_generic_vault_door_1
+		cost = 30
+		x = 1
+		y = 1
+		allow_branch = {
+			SHA = {
+				has_country_leader = {
+					character = SHA_calix_normal
+					ruling_only = yes
+				}
+			}	
+		}
+		prerequisite = {
+			focus = shale_the_secret_vault_ruins
+		}
+		relative_position_id = shale_the_secret_vault_ruins
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = shale_calix_new_ideas
+		icon = GFX_goal_generic_bot_sentry
+		cost = 30
+		x = -1
+		y = 1
+		allow_branch = {
+			SHA = {
+				has_country_leader = {
+					character = SHA_calix_normal
+					ruling_only = yes
+				}
+			}	
+		}
+		prerequisite = {
+			focus = shale_the_secret_vault_ruins
+		}
+		relative_position_id = shale_the_secret_vault_ruins
+		completion_reward = {
+			hidden_effect = {
+				set_technology = {	
+					robotics_tech_level_tribal = 1
+					robotics_tech_level_settler = 1
+					popup = no
+				}
+			}
+			set_technology = {	
+				robotics_tech_level_scientific = 1
+				air_tech_level_scientific = 1
+				electronics_tech_level_scientific = 1
+				exploitation_tech_level_scientific = 1
+				popup = no
+			}
+			remove_ideas = aeronautics_ineptitude
+		}
+	}
+	focus = {
+		id = shale_calix_new_tech
+		icon = GFX_goal_TTM_Humanoid_Robot
 		cost = 30
 		x = 0
-		y = 2
-		allow_branch = {
-			original_tag = SHA
-			has_cosmetic_tag = SHA_cosmetic
+		y = 1
+		prerequisite = {
+			focus = shale_calix_new_beginning
 		}
-		available = {
-			has_country_leader = {
-				name = "Cerberus"
-				ruling_only = yes
-			}
-			set_temp_variable = { cored_states_trigger = 25 }
-			cored_states_scripted_trigger = yes
-		}
-		relative_position_id = shale_the_road_of_conquest
+		relative_position_id = shale_calix_new_beginning
 		completion_reward = {
-			custom_effect_tooltip = 10_percent_coring_cost_tt
-			add_to_variable = { coring_cost_country_factor = -0.1 }
-			every_state = {
-				tooltip = every_new_mexican_state
+			add_ideas = attis_calix_army
+		}
+	}
+	focus = {
+		id = shale_calix_new_eco
+		icon = GFX_goal_pal_access_the_terminals
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = shale_calix_new_ideas
+		}
+		relative_position_id = shale_calix_new_ideas
+		completion_reward = {
+			add_ideas = attis_calix_industry
+		}
+	}
+	focus = {
+		id = shale_calix_new_texas
+		icon = GFX_goal_army_of_mexico_mockup
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = shale_calix_new_tech
+		}
+		prerequisite = {
+			focus = shale_calix_new_eco
+		}
+		relative_position_id = shale_calix_new_eco
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = combat_robot_equipment_3
+				amount = 550
+				producer = USA
+			}
+			add_political_power = 100
+		}
+	}
+	focus = {
+		id = shale_calix_post_texas_1
+		icon = GFX_goal_SHA_Calix
+		cost = 0
+		x = 0
+		y = 2
+		available = {
+			date > 2277.01.01 
+		}
+		prerequisite = {
+			focus = shale_calix_new_texas
+		}
+		relative_position_id = shale_calix_new_texas
+		completion_reward = {
+			hidden_effect = {
+				set_truce = {
+					target = LNS
+					days = 0
+				}
+				set_truce = {
+					target = TBH
+					days = 0
+				}
+			}
+			LUB = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			TAA = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			LNS = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			TBH = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			if = {
 				limit = {
-					OR = {
-						region = 15
-						region = 45
-						region = 46
-						region = 47
+					any_other_country = {
+						has_cosmetic_tag = TEX_provisional
 					}
+				}
+				TEX = {
+					ROOT = {
+						grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+					}
+				}
+			}
+			set_country_flag = ai_prefers_to_fight_neighbors
+			every_state = {
+				tooltip = every_texan_state
+				limit = {
+					is_texan_state = yes
 				}
 				add_claim_by = SHA
 			}
+			
 		}
 	}
-	focus =	{
-		id = shale_cerberus_mexico
-		icon = GFX_goal_unity_viola
+	focus = {
+		id = shale_calix_post_texas_2
+		icon = GFX_goal_DUN_terminator_robot
 		cost = 30
 		x = -2
 		y = 1
 		prerequisite = {
-			focus = shale_cerberus_unity_unleashed
+			focus = shale_calix_post_texas_1
 		}
-		relative_position_id = shale_cerberus_unity_unleashed
-		available = {
-			if = {
-				limit = {
-					country_exists = TLA
-				}
-				NOT = { country_exists = TLA } #DONT GET NUKED
-			}
-			set_temp_variable = { cored_states_trigger = 50 }
-			cored_states_scripted_trigger = yes
-		}
+		relative_position_id = shale_calix_post_texas_1
 		completion_reward = {
-			custom_effect_tooltip = 10_percent_coring_cost_tt
-			add_to_variable = { coring_cost_country_factor = -0.1 }
-			every_state = {
-				tooltip = every_mexican_state
-				limit = {
-					OR = {
-						is_north_mexico_state = yes
-						is_south_mexico_state = yes
+			every_owned_state = {
+				add_state_modifier = {
+					modifier = { 
+						compliance_gain = 0.05 
 					}
 				}
-				add_claim_by = SHA
+				add_state_modifier = {
+					modifier = { 
+						resistance_target = -0.1
+					}
+				}
 			}
 		}
 	}
-	focus =	{
-		id = shale_cerberus_west
-		icon = GFX_goal_unity_lasher
+	focus = {
+		id = shale_calix_post_texas_3
+		icon = GFX_goal_VEG_Vegas_Prime
 		cost = 30
 		x = 0
 		y = 1
 		prerequisite = {
-			focus = shale_cerberus_unity_unleashed
+			focus = shale_calix_post_texas_1
 		}
-		relative_position_id = shale_cerberus_unity_unleashed
-		available = {
-			set_temp_variable = { cored_states_trigger = 150 }
-			cored_states_scripted_trigger = yes
-		}
+		relative_position_id = shale_calix_post_texas_1
 		completion_reward = {
-			custom_effect_tooltip = 10_percent_coring_cost_tt
-			add_to_variable = { coring_cost_country_factor = -0.1 }
-			every_state = {
-				tooltip = every_arizonan_state
-				limit = {
-					OR = {
-						region = 29
-						region = 30
-						region = 31
-						region = 2
-						region = 28
-					}
-				}
-				add_claim_by = SHA
+			set_technology = {
+				robot_pacification_bot_tech = 1
+				robot_behemoth_robot_tech = 1
+				popup = no
 			}
 		}
 	}
-	focus =	{
-		id = shale_cerberus_the_masters_legacy
-		icon = GFX_goal_unity_morpheus
+	focus = {
+		id = shale_calix_post_texas_4
+		icon = GFX_goal_BDT_bloody_skull
 		cost = 30
 		x = 2
 		y = 1
 		prerequisite = {
-			focus = shale_cerberus_unity_unleashed
+			focus = shale_calix_post_texas_1
 		}
-		relative_position_id = shale_cerberus_unity_unleashed
-		available = {
-			set_temp_variable = { cored_states_trigger = 300 }
-			cored_states_scripted_trigger = yes
-			any_owned_state = {
-				is_on_continent = west_coast
-			}
-		}
+		relative_position_id = shale_calix_post_texas_1
 		completion_reward = {
-			custom_effect_tooltip = 10_percent_coring_cost_tt
-			add_to_variable = { coring_cost_country_factor = -0.1 }
-			every_state = {
-				tooltip = every_californian_state
-				limit = {
-					OR = {
-						region = 53
-						region = 51
-						region = 7
-						region = 8
-						region = 13
-						region = 3
-					}
-				}
-				add_claim_by = SHA
-			}
+			add_stability = 0.15
+			add_political_power = 100
 		}
 	}
-	focus =	{
-		id = shale_cerberus_the_final_flame
-		icon = GFX_goal_NEW_for_the_master
-		cost = 30
-		x = 0
-		y = 2
-		prerequisite = {
-			focus = shale_cerberus_mexico
-		}
-		prerequisite = {
-			focus = shale_cerberus_west
-		}
-		prerequisite = {
-			focus = shale_cerberus_the_masters_legacy
-		}
-		relative_position_id = shale_cerberus_unity_unleashed
-		available = {
-			set_temp_variable = { cored_states_trigger = 750 }
-			cored_states_scripted_trigger = yes
-		}
-		completion_reward = {
-			custom_effect_tooltip = 10_percent_coring_cost_tt
-			add_to_variable = { coring_cost_country_factor = -0.1 }
-			every_state = {
-				tooltip = EFFECT_EVERY_STATE_STARTS
-				limit = {
-					#Not Terra Incognita
-					check_variable = {
-						var = core_countries
-						value = 1
-						compare = greater_than_or_equals
-					}
-				}
-				add_claim_by = SHA
-			}
-		}
-	}
-
+	
 	focus = {
 		id = attis_keats
 		text = uoa_fulfilling_campaign_promises
@@ -2931,7 +3054,7 @@ focus_tree = {
 	focus = {
 		id = imo_target_practice_against_the_taa
 		icon = GFX_goal_generic_enslave_taa
-		cost = 30
+		cost = 15
 		x = 0
 		y = 2
 		available = {
@@ -2957,7 +3080,7 @@ focus_tree = {
 	focus = {
 		id = imo_crystal_city_ammo_factory
 		icon = GFX_goal_imo_ammobox
-		cost = 30
+		cost = 15
 		x = -1
 		y = 1
 		available = {
@@ -2982,7 +3105,7 @@ focus_tree = {
 	focus = {
 		id = imo_huajillo_honey
 		icon = GFX_goal_imo_distillery
-		cost = 30
+		cost = 15
 		x = 1
 		y = 1
 		available = {
@@ -3231,7 +3354,7 @@ focus_tree = {
 	focus = {
 		id = imo_ach_tbh_puppet
 		icon = GFX_goal_TBH_two_coins
-		cost = 30
+		cost = 0
 		x = 0
 		y = 2
 		#mutually_exclusive = {
@@ -3730,7 +3853,7 @@ focus_tree = {
 	focus = {
 		id = crusher_victory
 		icon = GFX_goal_mutant_supremacy
-		cost = 30
+		cost = 15
 		x = 0
 		y = 3
 		prerequisite = {
@@ -3981,7 +4104,7 @@ focus_tree = {
 	focus = {
 		id = separate_way
 		icon = GFX_goal_mutant_war_focus
-		cost = 30
+		cost = 0
 		x = 0
 		y = 9
 		prerequisite = {

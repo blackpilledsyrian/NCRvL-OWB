@@ -1,5 +1,215 @@
 ideas = {
 	country = {
+		texas_industry_suffer_0 = {
+			picture = salvaged_military_industry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			on_remove = {
+				add_timed_idea = {
+					idea = texas_industry_suffer_1
+					days = 20
+				}
+			}
+			modifier = {
+				
+			}
+		}
+		texas_industry_suffer_1 = {
+			picture = salvaged_military_industry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			on_remove = {
+				add_timed_idea = {
+					idea = texas_industry_suffer_2
+					days = 20
+				}
+			}
+			modifier = {
+				army_attack_factor = -0.05
+				army_defence_factor = -0.05
+				surrender_limit = -0.05
+			}
+		}
+		texas_industry_suffer_2 = {
+			picture = salvaged_military_industry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			on_remove = {
+				add_timed_idea = {
+					idea = texas_industry_suffer_3
+					days = 20
+				}
+			}
+			modifier = {
+				army_attack_factor = -0.1
+				army_defence_factor = -0.1
+				surrender_limit = -0.1
+			}
+		}
+		texas_industry_suffer_3 = {
+			picture = salvaged_military_industry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			on_remove = {
+				add_timed_idea = {
+					idea = texas_industry_suffer_4
+					days = 20
+				}
+			}
+			modifier = {
+				army_attack_factor = -0.15
+				army_defence_factor = -0.15
+				surrender_limit = -0.15
+			}
+		}
+		texas_industry_suffer_4 = {
+			picture = salvaged_military_industry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			on_remove = {
+				add_timed_idea = {
+					idea = texas_industry_suffer_5
+					days = 20
+				}
+			}
+			modifier = {
+				army_attack_factor = -0.2
+				army_defence_factor = -0.2
+				surrender_limit = -0.2
+			}
+		}
+		texas_industry_suffer_5 = {
+			picture = salvaged_military_industry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			on_remove = {
+				add_timed_idea = {
+					idea = texas_industry_suffer_6
+					days = 20
+				}
+			}
+			modifier = {
+				army_attack_factor = -0.25
+				army_defence_factor = -0.25
+				surrender_limit = -0.25
+			}
+		}
+		texas_industry_suffer_6 = {
+			picture = salvaged_military_industry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			on_remove = {
+				add_timed_idea = {
+					idea = texas_industry_suffer_7
+					days = 20
+				}
+			}
+			modifier = {
+				army_attack_factor = -0.3
+				army_defence_factor = -0.3
+				surrender_limit = -0.3
+			}
+		}
+		texas_industry_suffer_7 = {
+			picture = salvaged_military_industry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			on_remove = {
+				add_timed_idea = {
+					idea = texas_industry_suffer_8
+					days = 20
+				}
+			}
+			modifier = {
+				army_attack_factor = -0.35
+				army_defence_factor = -0.35
+				surrender_limit = -0.35
+			}
+		}
+		texas_industry_suffer_8 = {
+			picture = salvaged_military_industry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			on_remove = {
+				add_timed_idea = {
+					idea = texas_industry_suffer_9
+					days = 20
+				}
+			}
+			modifier = {
+				army_attack_factor = -0.4
+				army_defence_factor = -0.4
+				surrender_limit = -0.4
+			}
+		}
+		texas_industry_suffer_9 = {
+			picture = salvaged_military_industry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			on_remove = {
+				add_ideas = texas_industry_suffer_10
+			}
+			modifier = {
+				army_attack_factor = -0.45
+				army_defence_factor = -0.45
+				surrender_limit = -0.45
+			}
+		}
+		texas_industry_suffer_10 = {
+			picture = salvaged_military_industry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				army_attack_factor = -0.5
+				army_defence_factor = -0.5
+				surrender_limit = -0.5
+			}
+		}
+		attis_calix_army = {
+			picture = salvaged_military_industry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				modifier_army_sub_unit_category_robots_attack_factor = 0.1
+				modifier_army_sub_unit_category_robots_max_org_factor = 0.15
+			}
+		}
+		attis_calix_industry = {
+			picture = generic_control_robots
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.1
+				consumer_goods_expected_value = -0.025
+				research_speed_factor = 0.15
+			}
+		}
 		attis_army_remnants_idea = {
 			picture = attis_army_remnants
 			removal_cost = -1
@@ -119,7 +329,7 @@ ideas = {
 			}
 			targeted_modifier = {
                 tag = CES
-                mic_to_target_factor = 0.2
+                mic_to_target_factor = 0.25
             }
 		}
 		attis_army_supplies_civ = {
@@ -137,7 +347,7 @@ ideas = {
 			}
 			targeted_modifier = {
                 tag = CES
-                mic_to_target_factor = 0.2
+                mic_to_target_factor = 0.25
             }
 		}
 		calix_aggression_supression = {
@@ -318,7 +528,8 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				army_org_regain = 0.15
+				breakthrough_factor = 0.05
+				army_strength_factor = 0.05
 				army_org_factor = -0.05
 				country_resource_energy = 5
 				country_resource_circuitry = 5
