@@ -76,8 +76,6 @@ set_technology = {
 	tbh_lawkeepers_tech_2 = 1
 	tbh_lawkeepers_tech_3 = 1
 	resource_generator_water_tech_1 = 1
-	grand_army = 1
-	grand_battle_plan_owb = 1
 	tactics_doctrine_tech = 1
 }
 
