@@ -529,7 +529,7 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				army_org_factor = 0.1
+				army_org_factor = 0.05
 			}
 		}
 		two_invitations_imo_idea = {
@@ -547,8 +547,8 @@ ideas = {
 
 			equipment_bonus = {
 				tank_equipment = {
-					soft_attack = 0.1
-					breakthrough = 0.1
+					soft_attack = 0.05
+					breakthrough = 0.05
 					instant = yes
 				}
 			}
@@ -589,15 +589,15 @@ ideas = {
 				# terrain_penalty_reduction = 0.1
 				org_loss_at_low_org_factor = -0.05
 				attrition = -0.2
-				army_org_factor = 0.1
+				army_org_factor = 0.05
 				fuel_gain_factor = 0.1
 				fuel_gain_factor_from_states = 0.25
 			}
 
 			equipment_bonus = {
 				tank_equipment = {
-					soft_attack = 0.1
-					breakthrough = 0.1
+					soft_attack = 0.05
+					breakthrough = 0.05
 					instant = yes
 				}
 			}
@@ -762,7 +762,7 @@ ideas = {
 
 			modifier = {
 				trade_opinion_factor = 0.3
-				industrial_capacity_factory = 0.3
+				industrial_capacity_factory = 0.1
 			}
 		}
 
@@ -783,8 +783,8 @@ ideas = {
 			equipment_bonus = {
 				tank_equipment = {
 					soft_attack = 0.05
-					hard_attack = 0.15
-					ap_attack = 0.15
+					hard_attack = 0.05
+					ap_attack = 0.05
 					instant = yes
 				}
 			}

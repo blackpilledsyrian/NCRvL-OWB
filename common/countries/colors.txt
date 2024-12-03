@@ -906,8 +906,8 @@ UOA = {
 }
 
 SHA = {
-	color = rgb { 50 140 25 }
-	color_ui = rgb { 50 140 25 }
+	color = rgb { 26 150 20 }
+	color_ui = rgb { 26 150 20 }
 }
 
 DSL = {
