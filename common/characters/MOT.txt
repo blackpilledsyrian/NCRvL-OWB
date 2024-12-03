@@ -136,12 +136,13 @@ characters = {
 			traits = {
 				strong_trait
 				perceptive_trait
+				ranger_trait
 			}
 			skill = 3
 			attack_skill = 2
 			defense_skill = 2
-			planning_skill = 2
-			logistics_skill = 2
+			planning_skill = 3
+			logistics_skill = 3
 			legacy_id = 822
 		}
 	}
@@ -161,12 +162,13 @@ characters = {
 			traits = {
 				charismatic_trait
 				intelligent_trait
+				fast_metabolism
 			}
 			skill = 3
 			attack_skill = 2
 			defense_skill = 4
 			planning_skill = 2
-			logistics_skill = 2
+			logistics_skill = 4
 			legacy_id = 823
 		}
 		advisor = {
@@ -252,6 +254,7 @@ characters = {
 			traits = {
 				charismatic_trait
 				intelligent_trait
+				night_person_trait
 			}
 			skill = 5
 			attack_skill = 3
@@ -304,14 +307,17 @@ characters = {
 			}
 			traits = {
 				enduring_trait
-				agile_trait
-				bruiser_trait
+				strong_trait
+				camouflage_trait
+				ranger_trait
+				urban_assault_specialist
+				urban_assault_specialist_II
 			}
 			skill = 4
-			attack_skill = 3
-			defense_skill = 2
-			planning_skill = 3
-			logistics_skill = 2
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 1
 			legacy_id = -1
 		}
 	}

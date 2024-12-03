@@ -179,6 +179,25 @@ characters = {
 				factor = 4
 			}
 		}
+		advisor = {
+			slot = theorist
+			idea_token = NCR_air_chief
+			desc = NCR_air_chief_desc
+			ledger = air
+			allowed = {
+				original_tag = NCR
+			}
+			traits = {
+				air_warfare_theorist
+			}
+			modifier = {
+				air_doctrine_cost_factor = -0.1
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 4
+			}
+		}
 	}
 	NCR_navy_chief = {
 		name = NCR_navy_chief_name

@@ -35,21 +35,19 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 6324;6364;impassable;-1;-1;-1;-1;-1;;Tar Walkers Walls
 ;;;;;;;;;
 6314;2681;impassable;-1;-1;-1;-1;-1;;Ruby Valley to 80s
-6314;3484;impassable;-1;-1;-1;-1;-1;;Ruby Valley to 80s
-6315;3484;impassable;-1;-1;-1;-1;-1;;Ruby Valley to 80s
-6315;2680;impassable;-1;-1;-1;-1;-1;;Ruby Valley to 80s
-6315;3371;impassable;-1;-1;-1;-1;-1;;Ruby Valley to 80s
-4426;3371;impassable;-1;-1;-1;-1;-1;;Ruby Valley to 80s
-4426;2682;impassable;-1;-1;-1;-1;-1;;Ruby Valley to 80s
-6318;3370;impassable;-1;-1;-1;-1;-1;;Ruby Valley to 80s
-8908;3370;impassable;-1;-1;-1;-1;-1;;Ruby Valley to 80s
-8908;3564;impassable;-1;-1;-1;-1;-1;;Ruby Valley to 80s
-8907;3564;impassable;-1;-1;-1;-1;-1;;Ruby Valley to 80s
-8906;3339;impassable;-1;-1;-1;-1;-1;;Ruby Valley to 80s
-8906;3340;impassable;-1;-1;-1;-1;-1;;Ruby Valley to 80s
-3524;3340;impassable;-1;-1;-1;-1;-1;;Ruby Valley to 80s
-3524;8897;impassable;-1;-1;-1;-1;-1;;Ruby Valley to 80s
-3523;3340;impassable;-1;-1;-1;-1;-1;;Ruby Valley to 80s
+;;;;;;;;;
+8462;3491;impassable;-1;-1;-1;-1;-1;;Ruby Valley to Riperult NCRvLegion
+8462;3402;impassable;-1;-1;-1;-1;-1;;Ruby Valley to Riperult NCRvLegion
+3498;6312;impassable;-1;-1;-1;-1;-1;;Ruby Valley to Riperult NCRvLegion
+3346;6312;impassable;-1;-1;-1;-1;-1;;Ruby Valley to Riperult NCRvLegion
+3346;4425;impassable;-1;-1;-1;-1;-1;;Ruby Valley to Riperult NCRvLegion
+3502;4425;impassable;-1;-1;-1;-1;-1;;Ruby Valley to Riperult NCRvLegion
+;;;;;;;;;
+8890;3521;impassable;-1;-1;-1;-1;-1;;Ruby Valley to Grabbers NCRvLegion
+8890;3328;impassable;-1;-1;-1;-1;-1;;Ruby Valley to Grabbers NCRvLegion
+8895;3328;impassable;-1;-1;-1;-1;-1;;Ruby Valley to Grabbers NCRvLegion
+8895;3523;impassable;-1;-1;-1;-1;-1;;Ruby Valley to Grabbers NCRvLegion
+8896;3523;impassable;-1;-1;-1;-1;-1;;Ruby Valley to Grabbers NCRvLegion
 ;;;;;;;;;
 3521;3353;impassable;-1;-1;-1;-1;-1;;Ruby Valley to Riperult
 3525;3353;impassable;-1;-1;-1;-1;-1;;Ruby Valley to Riperult
@@ -679,6 +677,11 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 ;;;;;;;;;
 3106;6408;sea;3069;-1;-1;-1;-1;;VanBuren Grand Canyon Crossing
 ;;;;;;;;;
+5791;5315;sea;3057;-1;-1;-1;-1;;NCRvLegion Crossing
+3107;5315;sea;3057;-1;-1;-1;-1;;NCRvLegion Crossing
+3107;2047;sea;3057;-1;-1;-1;-1;;NCRvLegion Crossing
+5314;2047;sea;3057;-1;-1;-1;-1;;NCRvLegion Crossing
+;;;;;;;;;
 4651;4671;sea;535;-1;-1;-1;-1;;NCRvLegion Crossing
 4654;4671;sea;535;-1;-1;-1;-1;;NCRvLegion Crossing
 7562;4671;sea;535;-1;-1;-1;-1;;NCRvLegion Crossing
@@ -688,16 +691,12 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 7547;4671;sea;535;-1;-1;-1;-1;;NCRvLegion Crossing
 4668;7547;sea;535;-1;-1;-1;-1;;NCRvLegion Crossing
 ;;;;;;;;;
-5791;5315;sea;3057;-1;-1;-1;-1;;NCRvLegion Crossing
-3107;5315;sea;3057;-1;-1;-1;-1;;NCRvLegion Crossing
-3107;2047;sea;3057;-1;-1;-1;-1;;NCRvLegion Crossing
-5314;2047;sea;3057;-1;-1;-1;-1;;NCRvLegion Crossing
-;;;;;;;;;
 5807;8929;sea;3057;-1;-1;-1;-1;;NCRvLegion Crossing
 5807;3273;sea;3059;-1;-1;-1;-1;;NCRvLegion Crossing
 5807;5149;sea;3059;-1;-1;-1;-1;;NCRvLegion Crossing
 5640;3272;sea;3059;-1;-1;-1;-1;;NCRvLegion Crossing
 5640;5149;sea;3059;-1;-1;-1;-1;;NCRvLegion Crossing
+
 ;;;;;;;;;
 2317;1679;sea;3060;-1;-1;-1;-1;;NCRvLegion Crossing
 2317;1678;sea;3060;-1;-1;-1;-1;;NCRvLegion Crossing

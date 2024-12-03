@@ -1,0 +1,27 @@
+state = {
+	id = 219
+	name = "STATE_219"
+	manpower = 2000
+	state_category = rural
+
+	resources = {
+		metal = 6
+	}
+
+	history = {
+		owner = RIP
+		add_core_of = RIP
+		victory_points = {
+			1116 5
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+
+		}
+	}
+
+	provinces = {
+		1116 3353 3449 8461 8462
+	}
+}

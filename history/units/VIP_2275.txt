@@ -29,28 +29,28 @@ division_template = {
 units = {
     division = {
         name = "Faust's Chosen"
-        location = 8789
+        location = 3453
         division_template = "Venomguard"
         start_experience_factor = 0.2
         start_equipment_factor = 0.9
     }
     division = {
         name = "Serpent's Offspring"
-        location = 8789
+        location = 3453
         division_template = "Venomguard"
         start_experience_factor = 0.2
         start_equipment_factor = 0.6
     }
     division = {
         name = "Pit Viper Vanguard"
-        location = 8789
+        location = 3453
         division_template = "Venomguard"
         start_experience_factor = 0.2
         start_equipment_factor = 0.6
     }
     division = {
         name = "Awakened"
-        location = 8789
+        location = 3453
         division_template = "Venomguard"
         start_experience_factor = 0.2
         start_equipment_factor = 0.6
@@ -64,28 +64,28 @@ units = {
     }
     division = {
         name = "Hub's Folly"
-        location = 3456
+        location = 3453
         division_template = "Venomguard"
         start_experience_factor = 0.2
         start_equipment_factor = 0.4
     }
     division = {
         name = "Shadow Fangs"
-        location = 1659
+        location = 3453
         division_template = "Venomguard"
         start_experience_factor = 0.2
         start_equipment_factor = 0.4
     }
     division = {
         name = "Desert Shadows"
-        location = 1534
+        location = 3453
         division_template = "Venomguard"
         start_experience_factor = 0.2
         start_equipment_factor = 0.4
     }
     division = {
         name = "Sands of Treachery"
-        location = 8794
+        location = 3453
         division_template = "Venomguard"
         start_experience_factor = 0.2
         start_equipment_factor = 0.4

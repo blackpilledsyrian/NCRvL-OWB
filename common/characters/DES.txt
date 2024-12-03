@@ -221,9 +221,10 @@ characters = {
 				enduring_trait
 				bruiser_trait
 				ranger_trait
+				desert_fox
 			}
-			skill = 4
-			attack_skill = 7
+			skill = 5
+			attack_skill = 9
 			defense_skill = 1
 			planning_skill = 1
 			logistics_skill = 1
@@ -303,7 +304,7 @@ characters = {
 				DES_tactical_historian
 			}
 			research_bonus = {
-				cat_land_doctrine = 0.1
+				cat_land_doctrine = 0.05
 			}
 			cost = 150
 			ai_will_do = {
@@ -314,14 +315,14 @@ characters = {
 			traits = {
 				intelligent_trait
 				perceptive_trait
-				awareness_trait
+				gun_nut_trait
 				finesse_trait
 				ranger_trait
 			}
-			skill = 4
+			skill = 6
 			attack_skill = 1
 			defense_skill = 1
-			planning_skill = 6
+			planning_skill = 10
 			logistics_skill = 2
 		}
 	}
@@ -432,11 +433,11 @@ characters = {
 				fortress_buster
 				ranger_trait
 			}
-			skill = 4
+			skill = 5
 			attack_skill = 4
 			defense_skill = 4
-			planning_skill = 1
-			logistics_skill = 1
+			planning_skill = 3
+			logistics_skill = 3
 		}
 	}
 	DES_mark_anderson = {
@@ -470,11 +471,11 @@ characters = {
 				inspirational_trait
 				ranger_trait
 			}
-			skill = 3
-			attack_skill = 1
+			skill = 5
+			attack_skill = 3
 			defense_skill = 3
 			planning_skill = 3
-			logistics_skill = 1
+			logistics_skill = 3
 		}
 	}
 	DES_koal_morales = {
@@ -511,8 +512,8 @@ characters = {
 				pyromaniac_trait
 				ranger_trait
 			}
-			skill = 3
-			attack_skill = 2
+			skill = 5
+			attack_skill = 6
 			defense_skill = 2
 			planning_skill = 2
 			logistics_skill = 2
@@ -569,15 +570,13 @@ characters = {
 				enduring_trait
 				agile_trait
 				aqua_boy_trait
-				swamp_fox
-				swamp_fox_II
 				naval_invader
 				ranger_trait
 			}
-			skill = 3
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
+			skill = 5
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 2
 			logistics_skill = 5
 		}
 	}
@@ -614,9 +613,9 @@ characters = {
 				local_leader_trait
 				ranger_trait
 			}
-			skill = 3
+			skill = 5
 			attack_skill = 2
-			defense_skill = 2
+			defense_skill = 6
 			planning_skill = 2
 			logistics_skill = 2
 		}
@@ -650,12 +649,13 @@ characters = {
 				charismatic_trait
 				commando_trait
 				ranger_trait
+				paratrooper
 			}
-			skill = 3
-			attack_skill = 1
+			skill = 5
+			attack_skill = 3
 			defense_skill = 3
 			planning_skill = 3
-			logistics_skill = 1
+			logistics_skill = 3
 		}
 	}
 	DES_veteran_ranger_trippy = {
@@ -689,13 +689,13 @@ characters = {
 				perceptive_trait
 				agile_trait
 				night_person_trait
-				chem_reliant
+				fast_metabolism
 				camouflage_trait
 				ranger_trait
 			}
-			skill = 3
+			skill = 5
 			attack_skill = 3
-			defense_skill = 1
+			defense_skill = 5
 			planning_skill = 1
 			logistics_skill = 3
 		}
@@ -726,15 +726,17 @@ characters = {
 		corps_commander = {
 			traits = {
 				enduring_trait
+				strong_trait
 				lucky_trait
 				gunslinger_trait
+				hill_fighter
 				ranger_trait
 			}
-			skill = 3
+			skill = 5
 			attack_skill = 3
-			defense_skill = 1
+			defense_skill = 3
 			planning_skill = 3
-			logistics_skill = 1
+			logistics_skill = 5
 		}
 	}
 	DES_the_way_of_the_ranger = {

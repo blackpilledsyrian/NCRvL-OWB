@@ -646,7 +646,6 @@ eur_scavenging_category = {
 		icon = GFX_decision_t51_vb_helm
 		available = {
 			has_template = "31st Mechanized"
-			has_completed_focus = eur_power_armor_training
 		}
 		days_remove = 30
 		#modifier = {
@@ -663,7 +662,7 @@ eur_scavenging_category = {
 			hidden_effect = {
 				capital_scope = {
 					create_unit = {
-						division = "name = \"Shelled Warriors" division_template = \"31st Mechanized\" start_experience_factor = 0.8 start_equipment_factor = 1"
+						division = "name = \"Shelled Warriors\" division_template = \"31st Mechanized\" start_experience_factor = 0.8 start_equipment_factor = 1"
 						owner = EUR
 					}
 				}

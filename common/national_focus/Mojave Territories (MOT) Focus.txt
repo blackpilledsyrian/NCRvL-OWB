@@ -1502,14 +1502,15 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			VEG = { country_event = nf_mot.13 }
-			custom_effect_tooltip = mot_family_diplomacy_tt
-			effect_tooltip = {
-				VEG = {
-					add_stability = -0.15
-					add_war_support = -0.1
-				}
-			}
+			add_war_support = 0.15
+			#VEG = { country_event = nf_mot.13 }
+			#custom_effect_tooltip = mot_family_diplomacy_tt
+			#effect_tooltip = {
+			#	VEG = {
+			#		add_stability = -0.15
+			#		add_war_support = -0.1
+			#	}
+			#}
 		}
 	}
 
@@ -1605,46 +1606,46 @@ focus_tree = {
 		}
 	}
 
-	focus = {
-		id = mot_an_offer
-		icon = GFX_goal_VEG_Ring-a-Ding-Ding
-		cost = 30
-		prerequisite = {
-			focus = mot_appoint_ambassador_crocker
-		}
-		available = {
-			VEG = {
-				NOT = { is_new_california_member = yes }
-			}
-			NOT = {
-				has_country_flag = mot_crisis_in_california
-			}
-		}
-		x = -1
-		y = 1
-		bypass = {
-			VEG = { is_in_faction_with = NCR }
-		}
-		relative_position_id = mot_appoint_ambassador_crocker
-		mutually_exclusive = {
-			focus = mot_we_can_refuse
-		}
-		completion_reward = {
-			custom_effect_tooltip = mot_an_offer_tt
-			if = {
-				limit = {
-					VEG = {
-						has_country_leader = {
-							character = VEG_benny
-						}
-					}
-				}
-				VEG = {
-					invite_to_root_faction = yes
-				}
-			}
-		}
-	}
+	#focus = {
+	#	id = mot_an_offer
+	#	icon = GFX_goal_VEG_Ring-a-Ding-Ding
+	#	cost = 30
+	#	prerequisite = {
+	#		focus = mot_appoint_ambassador_crocker
+	#	}
+	#	available = {
+	#		VEG = {
+	#			NOT = { is_new_california_member = yes }
+	#		}
+	#		NOT = {
+	#			has_country_flag = mot_crisis_in_california
+	#		}
+	#	}
+	#	x = -1
+	#	y = 1
+	#	bypass = {
+	#		VEG = { is_in_faction_with = NCR }
+	#	}
+	#	relative_position_id = mot_appoint_ambassador_crocker
+	#	mutually_exclusive = {
+	#		focus = mot_we_can_refuse
+	#	}
+	#	completion_reward = {
+	#		custom_effect_tooltip = mot_an_offer_tt
+	#		if = {
+	#			limit = {
+	#				VEG = {
+	#					has_country_leader = {
+	#						character = VEG_benny
+	#					}
+	#				}
+	#			}
+	#			VEG = {
+	#				invite_to_root_faction = yes
+	#			}
+	#		}
+	#	}
+	#}
 
 	focus = {
 		id = mot_we_can_refuse
@@ -1658,12 +1659,12 @@ focus_tree = {
 		prerequisite = {
 			focus = mot_appoint_ambassador_crocker
 		}
-		x = 1
+		x = 0
 		y = 1
 		relative_position_id = mot_appoint_ambassador_crocker
-		mutually_exclusive = {
-			focus = mot_an_offer
-		}
+		#mutually_exclusive = {
+		#	focus = mot_an_offer
+		#}
 		completion_reward = {
 			set_temp_variable = {
 				caps_to_add = 150
@@ -1685,9 +1686,9 @@ focus_tree = {
 			focus = mot_an_offer
 			focus = mot_we_can_refuse
 		}
-		x = 1
+		x = 0
 		y = 1
-		relative_position_id = mot_an_offer
+		relative_position_id = mot_we_can_refuse
 		completion_reward = {
 			add_tech_bonus = {
 				category = infantry_tech_category
@@ -1709,10 +1710,11 @@ focus_tree = {
 		prerequisite = {
 			focus = mot_mp_deployments
 		}
-		x = 2
+		x = 4
 		y = 1
 		relative_position_id = mot_mp_deployments
 		completion_reward = {
+			add_political_power = 50
 			if = {
 				limit = {
 					VEG = {
@@ -1731,7 +1733,7 @@ focus_tree = {
 			custom_effect_tooltip = mot_benny_prick_tt
 		}
 	}
-
+	
 	focus = {
 		id = mot_restoring_hoover
 		icon = GFX_goal_generic_wrench
@@ -2091,8 +2093,8 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			set_temp_variable = { mot_supply_change = -60 }
-			change_mot_supply = yes
+			#set_temp_variable = { mot_supply_change = -60 }
+			#change_mot_supply = yes
 			67 = {
 				add_building_construction = {
 					type = bunker
@@ -2127,8 +2129,8 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			set_temp_variable = { mot_supply_change = -40 }
-			change_mot_supply = yes
+			#set_temp_variable = { mot_supply_change = -40 }
+			#change_mot_supply = yes
 			137 = {
 				add_building_construction = {
 					type = bunker
@@ -2476,8 +2478,12 @@ focus_tree = {
 			owns_state = 211
 		}
 		completion_reward = {
-			VEG = { country_event = nf_mot.20 }
-			custom_effect_tooltip = mot_the_hardpoint_gambit_tt
+			#VEG = { country_event = nf_mot.20 }
+			#custom_effect_tooltip = mot_the_hardpoint_gambit_tt
+			add_offsite_building = {
+				type = arms_factory
+				level = 4
+			}
 		}
 	}
 
@@ -2498,7 +2504,7 @@ focus_tree = {
 			focus = mot_the_hardpoint_gambit
 		}
 		available = {
-			set_temp_variable = { mot_supply_check = 60 }
+			set_temp_variable = { mot_supply_check = 50 }
 			custom_trigger_tooltip = {
 				tooltip = mot_supply_check_tt
 				check_variable = { var = mot_supply value = mot_supply_check compare = greater_than_or_equals }
@@ -2513,10 +2519,13 @@ focus_tree = {
 			set_temp_variable = { mot_supply_change = -60 }
 			change_mot_supply = yes
 			252 = {
+				add_dynamic_modifier = {
+					modifier = hoover_state_modifier
+				}
 				add_building_construction = {
-					type = bunker
-					level = 2
-					province = 6603
+					type = anti_air_building
+					level = 3
+					instant_build = yes
 				}
 			}
 		}

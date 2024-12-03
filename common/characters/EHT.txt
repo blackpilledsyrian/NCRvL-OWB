@@ -15,6 +15,20 @@ characters = {
 			expire = "2280.1.1.12"
 			id = -1
 		}
+		corps_commander = {
+			traits = {
+				strong_trait
+				enduring_trait
+				intelligent_trait
+				hill_fighter
+			}
+			skill = 6
+			attack_skill = 1
+			defense_skill = 7
+			planning_skill = 1
+			logistics_skill = 5
+			legacy_id = -1
+		}
 	}
 
 	EHT_THUNDERBIRD = {
@@ -41,11 +55,11 @@ characters = {
 				lead_foot_trait
 				desert_fox
 			}
-			skill = 4
-			attack_skill = 2
+			skill = 5
+			attack_skill = 3
 			defense_skill = 3
 			planning_skill = 3
-			logistics_skill = 2
+			logistics_skill = 3
 			legacy_id = -1
 		}
 	}
@@ -282,11 +296,11 @@ characters = {
 				charismatic_trait
 				desert_fox
 			}
-			skill = 2
-			attack_skill = 2
-			defense_skill = 1
-			planning_skill = 2
-			logistics_skill = 1
+			skill = 5
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 4
+			logistics_skill = 2
 			legacy_id = -1
 		}
 	}
@@ -569,7 +583,9 @@ characters = {
 				original_tag = EHT
 			}
 			available = {
-				has_country_flag = EHT_little_bear_flag
+				RIP = {
+					exists = no
+				}
 			}
 			traits = {
 				EHT_political_mastermind_eighties
@@ -595,7 +611,9 @@ characters = {
 				original_tag = EHT
 			}
 			available = {
-				has_country_flag = EHT_mecha_nick_flag
+				RIP = {
+					exists = no
+				}
 			}
 			traits = {
 				military_quartermaster

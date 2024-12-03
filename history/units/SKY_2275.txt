@@ -43,14 +43,14 @@ units = {
 	}
 	division = {
 		name = "'Delamar' Battlegroup"
-		location = 3568
+		location = 8904
 		division_template = "Reavers"
 		start_experience_factor = 0.5
 		start_equipment_factor = 1.0
 	}
 	division = {
 		name = "'Passkeepers' Battlegroup"
-		location = 3246
+		location = 8904
 		division_template = "Reavers"
 		start_experience_factor = 0.5
 		start_equipment_factor = 1.0

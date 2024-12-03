@@ -1,0 +1,23 @@
+state = {
+	id = 183
+	name = "STATE_183"
+	manpower = 7000
+	state_category = rural
+
+	history = {
+		owner = SLN
+		add_core_of = SLN
+		victory_points = {
+			3317 5
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+
+		}
+	}
+
+	provinces = {
+		1642 3317 3346 3497 3498 3502 8467
+	}
+}

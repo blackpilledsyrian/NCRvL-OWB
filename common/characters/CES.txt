@@ -1090,8 +1090,23 @@ characters = {
 			traits = {
 				settler_air_buff
 			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = CES_airforce_air_chief
+			ledger = air
+			allowed = {
+				tag = CES
+			}
+			traits = {
+				air_warfare_theorist
+			}
 			modifier = {
-				cat_elaborate_disruption_doctrine_cost_factor = -0.25
+				air_doctrine_cost_factor = -0.1
 			}
 			cost = 100
 			ai_will_do = {

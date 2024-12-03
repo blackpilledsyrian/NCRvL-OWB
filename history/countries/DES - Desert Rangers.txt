@@ -126,14 +126,15 @@ set_popularities = {
 201 = { add_claim_by = DES }
 389 = { add_claim_by = DES }
 333 = { add_claim_by = DES }
-75 = { add_claim_by = DES }
 463 = { add_claim_by = DES }
 220 = { add_claim_by = DES }
 425 = { add_claim_by = DES }
 161 = { add_claim_by = DES }
-947 = { add_claim_by = DES }
 226 = { add_claim_by = DES }
 327 = { add_claim_by = DES }
+328 = { add_claim_by = DES }
+219 = { add_claim_by = DES }
+485 = { add_claim_by = DES }
 
 add_ideas = {
 	until_dismissal_conscription
