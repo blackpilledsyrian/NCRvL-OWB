@@ -30,8 +30,7 @@ set_technology = {
 	pre_recycling_industry_tech = 1
 	basic_industry_tech = 1
 	support_weaponry = 1
-	terror_tactics = 1
-	spec_ops_equipment_tech_1 = 1
+
 }
 
 if = {

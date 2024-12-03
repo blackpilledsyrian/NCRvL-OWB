@@ -54,8 +54,6 @@ set_technology = {
 	dog_equipment_tech_1 = 1
 
 	# Doctrine
-	terror_tactics = 1
-	pocket_defence_doctrine = 1
 	pacific_fleet_navy_doctrine = 1
 
 	# Vehicles

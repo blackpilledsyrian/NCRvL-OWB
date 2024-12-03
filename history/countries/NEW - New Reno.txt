@@ -56,7 +56,7 @@ set_technology = {
 	heavy_infantry_tech_1 = 1
 	heavy_infantry_tech_2 = 1
 	heavy_infantry_tech_3 = 1
-	grand_army = 1
+
 }
 
 set_stability = 0.45

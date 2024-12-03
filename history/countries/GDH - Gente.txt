@@ -42,7 +42,7 @@ set_technology = {
 	exploitation_tech_level_settler = 1
 	electronics_tech_level_tribal = 1
 	electronics_tech_level_settler = 1
-	terror_tactics = 1
+
 }
 
 if = {

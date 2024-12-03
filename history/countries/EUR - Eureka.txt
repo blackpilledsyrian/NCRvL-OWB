@@ -52,7 +52,6 @@ set_technology = {
 	scav_pa_tech = 1
 	basic_supply_transport_tech = 1
 	pre_agriculture_industry_tech = 1
-	elite_army = 1
 	military_heritage_unlock_tech = 1
 }
 

@@ -73,7 +73,6 @@ set_technology = {
 
 	super_mutant_civilization = 1
 	#super_mutant_behemoth = 1
-	grand_army = 1
 }
 
 set_stability = 0.46

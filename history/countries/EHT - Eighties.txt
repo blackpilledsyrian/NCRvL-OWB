@@ -55,7 +55,7 @@ set_technology = {
 	light_motorized_equipment_vehicle_tech_1 = 1
 	safety_hatches_vehicle_tech = 1
 	raider_reckless_aggression = 1
-	grand_army = 1
+
 }
 
 if = {

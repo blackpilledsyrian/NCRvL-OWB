@@ -49,7 +49,6 @@ set_technology = {
 	recon_company_tech_1 = 1
 	spec_ops_equipment_tech_1 = 1
 	spec_ops_equipment_tech_2 = 1
-	terror_tactics = 1
 	super_mutant_behemoth = 1
 }
 

@@ -53,7 +53,6 @@ set_technology = {
 	support_weaponry = 1
 	raider_reckless_aggression = 1
 	demolitions_weaponry_tech = 1
-	terror_tactics = 1
 	melee_weaponry_tech_2 = 1
 	glider_tech = 1
 	cargo_plane_tech_1 = 1

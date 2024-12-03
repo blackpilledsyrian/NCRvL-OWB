@@ -62,7 +62,6 @@ set_technology = {
 	recon_company_tech_1 = 1
 	stripped_pa_tech = 1
 	glider_tech = 1
-	elite_army = 1
 	pragmatic_aviation_doctrine = 1
 }
 

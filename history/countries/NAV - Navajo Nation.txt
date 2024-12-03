@@ -48,7 +48,6 @@ set_technology = {
 	communication_engineering_1 = 1
 	communication_engineering_2 = 1
 	glider_tech = 1
-	terror_tactics = 1
 	decisive_engagement_doctrine = 1
 	ces_navajo_skin_walkers_tech = 1
 	ces_navajo_scouts_tech = 1

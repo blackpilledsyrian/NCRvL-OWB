@@ -47,7 +47,6 @@ set_technology = {
 	basic_industry_tech = 1
 	resource_generator_tech = 1
 	support_weaponry = 1
-	grand_army = 1
 	bike_tech_1 = 1
 	motorisation_vehicle_tech = 1
 	light_motorized_equipment_vehicle_tech_1 = 1

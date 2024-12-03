@@ -48,7 +48,7 @@ set_technology = {
 	fireteam_weaponry_tech = 1
 	bike_tech_1 = 1
 	raider_reckless_aggression = 1
-	terror_tactics = 1
+
 }
 
 if = {

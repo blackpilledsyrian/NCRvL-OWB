@@ -41,8 +41,7 @@ set_technology = {
 	#Legion goes BRRRRRRRRR
 	bike_tech_1 = 1
 	chariot_vehicle_tech = 1
-	terror_tactics = 1
-	pocket_defence_doctrine = 1
+
 }
 
 if = {
