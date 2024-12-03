@@ -59,14 +59,13 @@ country_event = {
 		random_owned_state = {
 			limit = {
 				is_valid_state_for_civilian_factory = yes
-				is_core_of = SHA
 			}
 			add_building_construction = {
 				type = industrial_complex
-				level = 2
+				level = 1
 				instant_build = yes
 			}
-			add_extra_state_shared_building_slots = 2
+			add_extra_state_shared_building_slots = 1
 		}
 	}
 
@@ -75,14 +74,13 @@ country_event = {
 		random_owned_state = {
 			limit = {
 				is_valid_state_for_arms_factory = yes
-				is_core_of = SHA
 			}
 			add_building_construction = {
 				type = arms_factory
-				level = 2
+				level = 1
 				instant_build = yes
 			}
-			add_extra_state_shared_building_slots = 2
+			add_extra_state_shared_building_slots = 1
 		}
 	}
 }
@@ -114,17 +112,26 @@ country_event = {
 
 	option = {
 		name = nf_attis.3.a.sha
-		complete_national_focus = attis_shale
+		trigger = {
+			original_tag = SHA
+		}
+		add_country_leader_trait = attis_loyal_general
 	}
 
 	option = {
 		name = nf_attis.3.a.uoa
-		complete_national_focus = attis_crusher
+		trigger = {
+			original_tag = UOA
+		}
+		add_country_leader_trait = attis_mayor_of_austin
 	}
 
 	option = {
 		name = nf_attis.3.a.imo
-		complete_national_focus = attis_juggernaught
+		trigger = {
+			original_tag = IMO
+		}
+		add_country_leader_trait = attis_mastersmith
 	}
 }
 
@@ -1260,21 +1267,6 @@ country_event = {
 					to_province = 11499
 				}
 			}
-			915 = {
-				teleport_armies = {
-					to_province = 11499
-				}
-			}
-			916 = {
-				teleport_armies = {
-					to_province = 11499
-				}
-			}
-			917 = {
-				teleport_armies = {
-					to_province = 11499
-				}
-			}
 			set_equipment_fraction = 0.8
 			#start_civil_war = {
 			#	ideology = ruler
@@ -1282,6 +1274,10 @@ country_event = {
 			#	states = { 924 }
 			#	keep_unit_leaders_trigger = { always = yes }
 			#}
+			set_nationality = {
+				target_country = CRH
+				character = UOA_lieutenant_crusher
+			}
 			add_field_marshal_role = {
 				character = UOA_lieutenant_crusher
 				traits = {
@@ -1296,19 +1292,11 @@ country_event = {
 				planning_skill = 2
 				logistics_skill = 2
 			}
+			promote_character = UOA_lieutenant_crusher
 			UOA = {
 				recruit_character = UOA_keats
 				create_new_owb_country = yes
 				924 = {
-					transfer_state_to = UOA
-				}
-				915 = {
-					transfer_state_to = UOA
-				}
-				916 = {
-					transfer_state_to = UOA
-				}
-				917 = {
 					transfer_state_to = UOA
 				}
 				set_country_flag = UOA_crusher_tag
@@ -1322,7 +1310,7 @@ country_event = {
 					amount = 800
 				}
 				declare_war_on = {
-					target = SHA
+					target = CRH
 					type = annex_everything
 				}
 			}
