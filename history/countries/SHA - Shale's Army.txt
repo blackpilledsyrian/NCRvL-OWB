@@ -1,4 +1,4 @@
-﻿capital = 932
+﻿capital = 915
 
 #oob = "SHA_2275"
 
@@ -121,15 +121,15 @@ add_ideas = {
 
 set_truce = {
 	target = TBH
-	days = 1460
+	days = 730
 }
 set_truce = {
 	target = LNS
-	days = 1460
+	days = 730
 }
 set_truce = {
 	target = LUB
-	days = 1460
+	days = 730
 }
 
 recruit_character = SHA_hoover_vaccuum

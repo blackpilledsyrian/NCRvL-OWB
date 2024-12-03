@@ -5,7 +5,7 @@ state = {
 		water = 3
 	}
 	history={
-		owner = TBH
+		owner = SHA
 		add_core_of = TBH
 		victory_points = {
 			11327 10
