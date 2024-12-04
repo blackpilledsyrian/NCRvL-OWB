@@ -1,0 +1,28 @@
+state = {
+	id = 873
+	name = "STATE_873"
+
+	resources = {
+		metal = 6
+	}
+
+	history={
+		owner = TBH
+		add_core_of = TBH
+		victory_points = {
+			11931 10
+		}
+		buildings = {
+			infrastructure = 4
+			arms_factory = 1
+		}
+
+	}
+
+	provinces={
+		11900 11912 11916 11917 11924 11930 11931 11935 11939 11945
+	}
+	manpower=20000
+	buildings_max_level_factor=1.000
+	state_category=shanty
+}

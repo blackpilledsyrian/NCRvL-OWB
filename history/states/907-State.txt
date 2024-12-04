@@ -1,0 +1,31 @@
+state = {
+	id = 907
+	name = "STATE_907"
+	resources = {
+		metal = 12
+		energy = 12
+		water = 8
+		circuitry = 10
+		composites = 8
+	}
+	history={
+		owner = SHA
+		add_core_of = SHA
+		add_core_of = IMO
+		victory_points = {
+			11347 15
+		}
+		buildings = {
+			infrastructure = 6
+			arms_factory = 3
+			industrial_complex = 2
+		}
+
+	}
+	provinces={
+		763 11332 11338 11339 11340 11341 11342 11343 11346 11347 11349 11350 11733
+	}
+	manpower=36000
+	buildings_max_level_factor=1.000
+	state_category=large_city
+}

@@ -1,37 +1,37 @@
-﻿capital = 932
+﻿capital = 915
 
-oob = "SHA_2275"
+#oob = "SHA_2275"
 
 ### Caps wage laws
 set_country_flag = army_wages_disabled
 
 set_technology = {
-	basic_supply_transport_tech = 1
-	infantry_tech_level_tribal = 1
-	infantry_tech_level_settler = 1
+	#basic_supply_transport_tech = 1
+	#infantry_tech_level_tribal = 1
+	#infantry_tech_level_settler = 1
 	#infantry_tech_level_scientific = 1
 
 	#power_armour_tech_level_settler = 1
 	#power_armour_tech_level_scientific = 1
 
-	special_forces_tech_level_tribal = 1
+	#special_forces_tech_level_tribal = 1
 	#special_forces_tech_level_settler = 1
 	#special_forces_tech_level_scientific = 1
 
-	support_tech_level_tribal = 1
-	support_tech_level_settler = 1
+	#support_tech_level_tribal = 1
+	#support_tech_level_settler = 1
 	#support_tech_level_scientific = 1
 
 	#vehicles_tech_level_scientific = 1
-	vehicles_tech_level_tribal = 1
-	vehicles_tech_level_settler = 1
+	#vehicles_tech_level_tribal = 1
+	#vehicles_tech_level_settler = 1
 
 	#robotics_tech_level_tribal = 1
 	#robotics_tech_level_settler = 1
 	#robotics_tech_level_scientific = 1
 
-	air_tech_level_tribal = 1
-	air_tech_level_settler = 1
+	#air_tech_level_tribal = 1
+	#air_tech_level_settler = 1
 	#air_tech_level_scientific = 1
 
 	naval_tech_level_tribal = 1
@@ -39,11 +39,11 @@ set_technology = {
 	#naval_tech_level_scientific = 1
 
 	tools_tech_level_tribal = 1
-	tools_tech_level_settler = 1
+	#tools_tech_level_settler = 1
 	#tools_tech_level_scientific = 1
 
 	exploitation_tech_level_tribal = 1
-	exploitation_tech_level_settler = 1
+	#exploitation_tech_level_settler = 1
 	#exploitation_tech_level_scientific = 1
 
 	habitation_tech_level_tribal = 1
@@ -52,7 +52,7 @@ set_technology = {
 
 	#electronics_tech_level_scientific = 1
 	electronics_tech_level_tribal = 1
-	electronics_tech_level_settler = 1
+	#electronics_tech_level_settler = 1
 
 	tool_engineering = 1
 	standard_weaponry_tech = 1
@@ -114,26 +114,26 @@ set_popularities = {
 add_ideas = {
 	sha_forceful_mutation
 	attis_army_remnants_idea
-	SHA_attis_sucessor
 	officer_law_mutant_instinct
 	mutant_wages_law
 	normies_law_none
-	aeronautics_ineptitude
 }
 
 set_truce = {
 	target = TBH
-	days = 1460
+	days = 730
 }
 set_truce = {
 	target = LNS
-	days = 1460
+	days = 730
 }
 set_truce = {
-	target = EDN
-	days = 365
+	target = LUB
+	days = 730
 }
 
+recruit_character = SHA_hoover_vaccuum
+recruit_character = IMO_juggernaut
 recruit_character = SHA_shale
 recruit_character = SHA_gond_scourge
 recruit_character = SHA_neil_sandman
@@ -143,6 +143,19 @@ recruit_character = SHA_masticator
 recruit_character = SHA_battlemasta
 recruit_character = SHA_thumbface
 recruit_character = SHA_calix
+recruit_character = SHA_calix_normal
+
+recruit_character = UOA_lieutenant_crusher
+
+
+random_character = {
+	limit = {
+		is_character = UOA_lieutenant_crusher
+	}
+	save_global_event_target_as = UOA_lieutenant_crusher_target
+}
+
+
 
 random_character = {
 	limit = {

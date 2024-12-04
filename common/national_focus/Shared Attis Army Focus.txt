@@ -54,89 +54,92 @@ focus_tree = {
 		}
 	}
 
-	focus = {
-		id = early_unification_war
-		icon = GFX_goal_attis_army
-		cost = 7
-		x = 5
-		y = 1
-		prerequisite = {
-			focus = attis_3
-		}
-		relative_position_id = attis_3
-		available = {
-			date > 2277.01.01
-		}
-		bypass = {
-			IMO = {
-				all_core_land_owned_by_prev_sphere = yes
-			}
-			UOA = {
-				all_core_land_owned_by_prev_sphere = yes
-			}
-			SHA = {
-				all_core_land_owned_by_prev_sphere = yes
-			}
-			CBN = {
-				all_core_land_owned_by_prev_sphere = yes
-			}		
-			LOS = {
-				all_core_land_owned_by_prev_sphere = yes
-			}	
-			EDN = {
-				all_core_land_owned_by_prev_sphere = yes
-			}
-		}
-		will_lead_to_war_with = UOA
-		will_lead_to_war_with = IMO
-		will_lead_to_war_with = SHA
-		will_lead_to_war_with = CBN
-		will_lead_to_war_with = LOS
-		will_lead_to_war_with = EDN
-		completion_reward = {
-			SHA = {
-				ROOT = {
-					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
-				}
-			}
-			IMO = {
-				ROOT = {
-					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
-				}
-			}
-			UOA = {
-				ROOT = {
-					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
-				}
-			}
-			CBN = {
-				ROOT = {
-					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
-				}
-			}
-			LOS = {
-				ROOT = {
-					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
-				}
-			}
-			EDN = {
-				ROOT = {
-					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
-				}
-			}
-		}
-	}
+	#focus = {
+	#	id = early_unification_war
+	#	icon = GFX_goal_attis_army
+	#	cost = 7
+	#	x = 5
+	#	y = 1
+	#	prerequisite = {
+	#		focus = attis_3
+	#	}
+	#	relative_position_id = attis_3
+	#	available = {
+	#		date > 2277.01.01
+	#	}
+	#	bypass = {
+	#		IMO = {
+	#			all_core_land_owned_by_prev_sphere = yes
+	#		}
+	#		UOA = {
+	#			all_core_land_owned_by_prev_sphere = yes
+	#		}
+	#		SHA = {
+	#			all_core_land_owned_by_prev_sphere = yes
+	#		}
+	#		CBN = {
+	#			all_core_land_owned_by_prev_sphere = yes
+	#		}		
+	#		LOS = {
+	#			all_core_land_owned_by_prev_sphere = yes
+	#		}	
+	#		EDN = {
+	#			all_core_land_owned_by_prev_sphere = yes
+	#		}
+	#	}
+	#	will_lead_to_war_with = UOA
+	#	will_lead_to_war_with = IMO
+	#	will_lead_to_war_with = SHA
+	#	will_lead_to_war_with = CBN
+	#	will_lead_to_war_with = LOS
+	#	will_lead_to_war_with = EDN
+	#	completion_reward = {
+	#		SHA = {
+	#			ROOT = {
+	#				grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+	#			}
+	#		}
+	#		IMO = {
+	#			ROOT = {
+	#				grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+	#			}
+	#		}
+	#		UOA = {
+	#			ROOT = {
+	#				grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+	#			}
+	#		}
+	#		CBN = {
+	#			ROOT = {
+	#				grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+	#			}
+	#		}
+	#		LOS = {
+	#			ROOT = {
+	#				grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+	#			}
+	#		}
+	#		EDN = {
+	#			ROOT = {
+	#				grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+	#			}
+	#		}
+	#	}
+	#}
 
 	focus = {
 		id = mutant_industry
 		icon = GFX_goal_generic_helm_mutant
 		cost = 30
-		x = -10
+		x = -18
 		y = 1
 		available = {
 			if = {
 				limit = {
-					original_tag = SHA
+					has_country_leader = {
+						character = SHA_shale
+						ruling_only = yes
+					}	
 				}
 				has_completed_focus = shale_the_path_of_glory
 			}
@@ -446,12 +449,15 @@ focus_tree = {
 		id = mutant_scavenging
 		icon = GFX_goal_generic_helm_mutant_alt
 		cost = 30
-		x = 8
+		x = 16
 		y = 1
 		available = {
 			if = {
 				limit = {
-					original_tag = SHA
+					has_country_leader = {
+						character = SHA_shale
+						ruling_only = yes
+					}	
 				}
 				has_completed_focus = shale_the_path_of_glory
 			}
@@ -747,17 +753,96 @@ focus_tree = {
 		text = shale_follow_in_attis_footsteps
 		icon = GFX_goal_SHA_Attis_and_Shale
 		cost = 30
-		x = 0
+		x = 8
 		y = 1
-		allow_branch = {
-			original_tag = SHA
-		}
+		mutually_exclusive = { focus = attis_juggernaught focus = attis_crusher }
 		prerequisite = {
 			focus = attis_3
 		}
 		relative_position_id = attis_3
 		completion_reward = {
+			set_cosmetic_tag = SHA_shale
+			add_country_leader_role = {
+				character = SHA_shale
+				promote_leader = yes
+				country_leader = {
+					desc = SHA_SHALE_DESC
+					ideology = warlordship
+					traits = {
+						isolationist
+						attis_loyal_general
+					}
+					expire = "3000.01.01.01"
+					id = -1
+				}
+			}
 			add_manpower = 1000
+			add_ideas = SHA_attis_sucessor
+			add_ideas = aeronautics_ineptitude
+			hidden_effect = {
+				set_technology = {
+					basic_supply_transport_tech = 1
+					infantry_tech_level_tribal = 1
+					infantry_tech_level_settler = 1
+					#infantry_tech_level_scientific = 1
+
+					#power_armour_tech_level_settler = 1
+					#power_armour_tech_level_scientific = 1
+
+					special_forces_tech_level_tribal = 1
+					#special_forces_tech_level_settler = 1
+					#special_forces_tech_level_scientific = 1
+
+					support_tech_level_tribal = 1
+					support_tech_level_settler = 1
+					#support_tech_level_scientific = 1
+
+					#vehicles_tech_level_scientific = 1
+					vehicles_tech_level_tribal = 1
+					vehicles_tech_level_settler = 1
+
+					#robotics_tech_level_tribal = 1
+					#robotics_tech_level_settler = 1
+					#robotics_tech_level_scientific = 1
+
+					air_tech_level_tribal = 1
+					air_tech_level_settler = 1
+					#air_tech_level_scientific = 1
+
+					naval_tech_level_tribal = 1
+					#naval_tech_level_settler = 1
+					#naval_tech_level_scientific = 1
+
+					tools_tech_level_tribal = 1
+					tools_tech_level_settler = 1
+					#tools_tech_level_scientific = 1
+
+					exploitation_tech_level_tribal = 1
+					exploitation_tech_level_settler = 1
+					#exploitation_tech_level_scientific = 1
+
+					habitation_tech_level_tribal = 1
+					#habitation_tech_level_settler = 1
+					#habitation_tech_level_scientific = 1
+
+					#electronics_tech_level_scientific = 1
+					electronics_tech_level_tribal = 1
+					electronics_tech_level_settler = 1
+
+					tool_engineering = 1
+					standard_weaponry_tech = 1
+					melee_weaponry_tech_1 = 1
+					melee_weaponry_tech_2 = 1
+					pre_construction_industry_tech = 1
+					pre_recycling_industry_tech = 1
+					basic_industry_tech = 1
+					support_weaponry = 1
+
+					super_mutant_civilization = 1
+					popup = no
+				}
+				load_oob = "SHA_2275"
+			}
 		}
 	}
 
@@ -783,7 +868,7 @@ focus_tree = {
 		id = shale_attis_era_training
 		icon = GFX_goal_SHA_Cave
 		cost = 30
-		x = -2
+		x = -3
 		y = 1
 		prerequisite = {
 			focus = shale_garb_fit_for_a_general
@@ -795,26 +880,10 @@ focus_tree = {
 	}
 
 	focus = {
-		id = shale_the_attis_born
-		icon = GFX_goal_SHA_Behemoth
-		cost = 30
-		x = 2
-		y = 1
-		prerequisite = {
-			focus = shale_garb_fit_for_a_general
-		}
-		relative_position_id = shale_garb_fit_for_a_general
-		completion_reward = {
-			set_technology = { super_mutant_behemoth = 1 }
-			add_manpower = 1200
-		}
-	}
-
-	focus = {
 		id = shale_purchase_fev
 		icon = GFX_goal_SHA_Calix_FEV
 		cost = 30
-		x = 4
+		x = 3
 		y = 1
 		prerequisite = {
 			focus = shale_garb_fit_for_a_general
@@ -828,21 +897,54 @@ focus_tree = {
 		}
 	}
 
+
 	focus = {
-		id = shale_purchase_weapon_schematics
-		icon = GFX_goal_SHA_Calix_Blueprints
+		id = shale_the_attis_born
+		icon = GFX_goal_SHA_Behemoth
 		cost = 30
-		x = -4
+		x = 1
 		y = 1
 		prerequisite = {
 			focus = shale_garb_fit_for_a_general
 		}
+		mutually_exclusive = {
+			focus = shale_purchase_weapon_schematics
+		}
 		relative_position_id = shale_garb_fit_for_a_general
 		completion_reward = {
-			add_tech_bonus = {
-				bonus = 0.5
-				uses = 1
-				category = infantry_tech_category
+			custom_effect_tooltip = SHA_shale_warning_tt
+			set_technology = { super_mutant_behemoth = 1 }
+			add_manpower = 1200
+		}
+	}
+	
+	focus = {
+		id = shale_purchase_weapon_schematics
+		icon = GFX_goal_SHA_Calix_Blueprints
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = shale_garb_fit_for_a_general
+		}
+		mutually_exclusive = {
+			focus = shale_the_attis_born
+		}
+		relative_position_id = shale_garb_fit_for_a_general
+		completion_reward = {
+			custom_effect_tooltip = SHA_calix_warning_tt
+			add_field_marshal_role = {
+				character = SHA_calix_normal
+				traits = {
+					robotics_expert_trait
+					targeting_computer_trait
+					charismatic_trait
+				}
+				skill = 4
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 10
+				logistics_skill = 1
 			}
 		}
 	}
@@ -852,9 +954,10 @@ focus_tree = {
 		icon = GFX_goal_BRK_night_of_horros
 		cost = 30
 		x = 0
-		y = 2
+		y = 3
 		prerequisite = {
-			focus = shale_garb_fit_for_a_general
+			focus = shale_the_attis_born
+			focus = shale_purchase_weapon_schematics
 		}
 		relative_position_id = attis_shale
 		completion_reward = {
@@ -878,7 +981,7 @@ focus_tree = {
 	focus = {
 		id = sha_taking_a_piece_of_the_pie
 		icon = GFX_goal_generic_enslave_taa
-		cost = 30
+		cost = 15
 		x = 0
 		y = 1
 		available = {
@@ -924,17 +1027,18 @@ focus_tree = {
 				}
 			}
 		}
-		bypass = {
-			CBN = {
-				all_core_land_owned_by_prev_sphere = yes
-			}
-		}
+		#bypass = {
+		#	CBN = {
+		#		all_core_land_owned_by_prev_sphere = yes
+		#	}
+		#}
 		will_lead_to_war_with = CBN
 		completion_reward = {
-			CBN = {
-				ROOT = {
-					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+			every_state = {
+				limit = {
+					is_core_of = CBN
 				}
+				add_compliance = -15
 			}
 		}
 	}
@@ -946,7 +1050,6 @@ focus_tree = {
 		x = -1
 		y = 1
 		available = {
-			CBN = { is_subject_of = SHA }
 		}
 		mutually_exclusive = {
 			focus = shale_sell_off_the_spoils_of_war
@@ -958,21 +1061,13 @@ focus_tree = {
 		completion_reward = {
 			every_state = {
 				limit = {
-					OR = {
-						state = 932
-						state = 931
-					}
+					is_core_of = CBN
 				}
 				add_extra_state_shared_building_slots = 3
-				CBN = {
-					set_capital = { state = 486 }
-					set_politics = {
-						ruling_party = ruler
-					}
-					set_political_party = {
-						ideology = ruler
-						popularity = 100
-					}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
 				}
 			}
 		}
@@ -1003,7 +1098,11 @@ focus_tree = {
 					is_core_of = CBN
 				}
 				add_state_modifier = { modifier = { resistance_target = -0.2 } }
+			}	
+			set_temp_variable = {
+				caps_to_add = 50
 			}
+			add_caps = yes
 		}
 	}
 
@@ -1018,19 +1117,20 @@ focus_tree = {
 		}
 		relative_position_id = shale_the_path_of_glory
 		available = {
-			ai_has_no_other_wars_or_wargoals = yes
+		#	ai_has_no_other_wars_or_wargoals = yes
 		}
-		bypass = {
-			LOS = {
-				all_core_land_owned_by_prev_sphere = yes
-			}
-		}
-		will_lead_to_war_with = LOS
+		#bypass = {
+		#	LOS = {
+		#		all_core_land_owned_by_prev_sphere = yes
+		#	}
+		#}
+		#will_lead_to_war_with = LOS
 		completion_reward = {
-			LOS = {
-				ROOT = {
-					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+			every_state = {
+				limit = {
+					is_core_of = LOS
 				}
+				add_compliance = -15
 			}
 		}
 	}
@@ -1042,10 +1142,6 @@ focus_tree = {
 		x = -1
 		y = 1
 		available = {
-			NOT = { LOS = { is_subject_of = SHA } }
-			LOS = {
-				all_core_land_owned_by_prev_sphere = yes
-			}
 		}
 		mutually_exclusive = {
 			focus = shale_puppet_the_church_of_the_lost
@@ -1055,12 +1151,7 @@ focus_tree = {
 		}
 		relative_position_id = shale_put_the_kibosh_on_los
 		completion_reward = {
-			every_state = {
-				limit = {
-					is_core_of = LOS
-				}
-				add_state_modifier = { modifier = { resistance_target = -0.2 } }
-			}
+			add_state_core = 227
 		}
 	}
 
@@ -1071,7 +1162,6 @@ focus_tree = {
 		x = 1
 		y = 1
 		available = {
-			LOS = { is_subject_of = SHA }
 		}
 		mutually_exclusive = {
 			focus = shale_sanctify_the_city
@@ -1083,21 +1173,10 @@ focus_tree = {
 		completion_reward = {
 			every_state = {
 				limit = {
-					OR = {
-						state = 932
-						state = 677
-					}
+					is_core_of = LOS
 				}
 				add_extra_state_shared_building_slots = 3
-			}
-			LOS = {
-				set_politics = {
-					ruling_party = intellectuals
-				}
-				set_political_party = {
-					ideology = intellectuals
-					popularity = 100
-				}
+				add_state_modifier = { modifier = { resistance_target = -0.2 } }
 			}
 		}
 	}
@@ -1121,6 +1200,8 @@ focus_tree = {
 		prerequisite = {
 			focus = shale_sanctify_the_city
 			focus = shale_puppet_the_church_of_the_lost
+		}
+		prerequisite = {
 			focus = shale_revive_the_raider_matrons
 			focus = shale_sell_off_the_spoils_of_war
 		}
@@ -1128,14 +1209,28 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = {
-					SHA_calix = {
+					SHA_calix_normal = {
 						is_unit_leader = yes
 					}
 				}
 				hidden_effect = {
-					SHA_calix = {
-						unit_leader_event = nf_attis.39
-					}
+						remove_ideas = SHA_attis_sucessor
+						set_cosmetic_tag = SHA_calix
+						retire_country_leader = yes
+						add_country_leader_role = {
+							character = SHA_calix_normal
+							promote_leader = yes
+							country_leader = {
+								desc = SHA_secret_desc
+								ideology = warlordship
+								traits = {
+									calix_cunning
+								}
+								expire = "2294.1.1.12"
+								id = -1
+							}
+						}	
+					mark_focus_tree_layout_dirty = yes
 				}
 			}
 			add_offsite_building = {
@@ -1151,6 +1246,16 @@ focus_tree = {
 		cost = 30
 		x = -3
 		y = 1
+		allow_branch = {
+			SHA = {
+				NOT = {
+					has_country_leader = {
+						character = SHA_calix_normal
+						ruling_only = yes
+					}
+				}
+			}	
+		}	
 		available = {
 			LOS = {
 				all_core_land_owned_by_prev_sphere = yes
@@ -1192,6 +1297,16 @@ focus_tree = {
 		cost = 30
 		x = -1
 		y = 1
+		allow_branch = {
+			SHA = {
+				NOT = {
+					has_country_leader = {
+						character = SHA_calix_normal
+						ruling_only = yes
+					}
+				}
+			}	
+		}
 		available = {
 			LOS = {
 				all_core_land_owned_by_prev_sphere = yes
@@ -1230,6 +1345,16 @@ focus_tree = {
 		cost = 30
 		x = 1
 		y = 1
+		allow_branch = {
+			SHA = {
+				NOT = {
+					has_country_leader = {
+						character = SHA_calix_normal
+						ruling_only = yes
+					}
+				}
+			}	
+		}
 		available = {
 			LOS = {
 				all_core_land_owned_by_prev_sphere = yes
@@ -1271,6 +1396,16 @@ focus_tree = {
 		cost = 30
 		x = 3
 		y = 1
+		allow_branch = {
+			SHA = {
+				NOT = {
+					has_country_leader = {
+						character = SHA_calix_normal
+						ruling_only = yes
+					}
+				}
+			}	
+		}
 		available = {
 			LOS = {
 				all_core_land_owned_by_prev_sphere = yes
@@ -1335,45 +1470,23 @@ focus_tree = {
 			focus = shale_an_unfortunate_reunion
 		}
 		available = {
-			has_war = no
-			NOT = { has_completed_focus = shale_unite_the_army }
-			country_exists = IMO
-			IMO = {
-				is_subject = no
-				has_war = no
+			LNS = {
+				has_completed_focus = lns_recall_lubbock_expedition
 			}
-			OR = {
-				AND = {
-					country_exists = RRG
-					RRG = {
-						is_subject = no
-						has_country_flag = RRG_election_held
-						is_rosado_leader = yes
-					}
-				}
-				AND = {
-					country_exists = TAA
-					TAA = {
-						is_subject = no
-						OR = {
-							has_completed_focus = TAA_favourable_terms
-							owns_state = 746
-							NOT = { country_exists = RRG }
-						}
-					}
-				}
-			}
+			
 		}
 		relative_position_id = shale_an_unfortunate_reunion
 		completion_reward = {
-			give_guarantee = IMO
-			IMO = {
-				give_guarantee = SHA
+			hidden_effect = {
+				set_truce = {
+					target = LUB
+					days = 0
+				}
 			}
-			custom_effect_tooltip = sha_make_three_way_war_harder_to_do
-			custom_effect_tooltip = new_advisor_tt
-			effect_tooltip = {
-				add_ideas = SHA_thumbface_high_command
+			LUB = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
 			}
 		}
 	}
@@ -1408,16 +1521,25 @@ focus_tree = {
 		available = {
 			ai_has_no_other_wars_or_wargoals = yes
 		}
-		bypass = {
-			EDN = {
-				all_core_land_owned_by_prev_sphere = yes
-			}
-		}
 		will_lead_to_war_with = EDN
 		completion_reward = {
+			add_manpower = 1000
 			EDN = {
 				ROOT = {
-					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+					core_owned_states_of_prev = yes
+				}
+			}
+			hidden_effect = {
+				EDN = {
+					if = {
+						limit = { is_subject_of = ROOT }
+						ROOT = {
+							annex_country = {
+								target = PREV
+								transfer_troops = yes
+							}
+						}
+					}
 				}
 			}
 		}
@@ -1500,250 +1622,250 @@ focus_tree = {
 			}
 		}
 	}
-	focus =	{
-		id = shale_unite_the_army
-		icon = GFX_goal_attis_army
-		cost = 30
-		x = 0
-		y = 2
-		prerequisite = {
-			focus = shale_fruits_of_our_labour
-		}
-		prerequisite = {
-			focus = shale_tame_the_beasts
-		}
-		available = {
-			OR = {
-				NOT = { has_completed_focus = shale_defending_against_the_monster }
-				AND = {
-					has_completed_focus = shale_defending_against_the_monster
-					OR = { NOT = { country_exists = RRG } RRG = { is_subject = yes } }
-					OR = { NOT = { country_exists = TAA } TAA = { is_subject = yes } }
-				}
-			}
-		}
-		bypass = {
-			IMO = {
-				all_core_land_owned_by_prev_sphere = yes
-			}
-			UOA = {
-				all_core_land_owned_by_prev_sphere = yes
-			}
-		}
-		relative_position_id = shale_striking_eden
-		will_lead_to_war_with = UOA
-		will_lead_to_war_with = CRH
-		will_lead_to_war_with = IMO
-		completion_reward = {
-			custom_effect_tooltip = shale_reunite_the_army_tt
-			every_country = {
-				limit = {
-					exists = yes
-					OR = {
-						original_tag = SHA
-						original_tag = UOA
-						original_tag = IMO
-						original_tag = CRH
-					}
-				}
-				country_event = nf_attis.22
-			}
-		}
-	}
-
-	focus =	{
-		id = shale_ethos_of_the_army
-		icon = GFX_goal_mutant_self_management
-		cost = 30
-		x = -3
-		y = 1
-		available = {
-			IMO = {
-				all_core_land_owned_by_prev_sphere = yes
-			}
-			UOA = {
-				all_core_land_owned_by_prev_sphere = yes
-			}
-		}
-		prerequisite = {
-			focus = shale_unite_the_army
-		}
-		relative_position_id = shale_unite_the_army
-		completion_reward = {
-			add_political_power = 250
-			if = {
-				limit = {
-					SHA_calix = {
-						is_unit_leader = yes
-					}
-				}
-				hidden_effect = {
-					SHA_calix = {
-						unit_leader_event = nf_attis.24
-					}
-				}
-			}
-		}
-	}
-	focus =	{
-		id = shale_ancient_techniques_of_the_ironmongers
-		icon = GFX_goal_imo_battlewagon
-		cost = 30
-		x = -2
-		y = 1
-		available = {
-			IMO = {
-				all_core_land_owned_by_prev_sphere = yes
-			}
-			if = {
-				limit = {
-					has_country_flag = shale_secret_path_started
-					NOT = {
-						has_country_flag = shale_calix_dismantled_flag
-						has_cosmetic_tag = SHA_cosmetic
-					}
-				}
-				custom_trigger_tooltip = {
-					tooltip = shale_purchase_completed_or_refused_tt
-					always = no
-				}
-			}
-		}
-		prerequisite = {
-			focus = shale_ethos_of_the_army
-		}
-		relative_position_id = shale_ethos_of_the_army
-		completion_reward = {
-			add_manpower = 1000
-			IMO = {
-				ROOT = {
-					core_owned_states_of_prev = yes
-				}
-			}
-			hidden_effect = {
-				IMO = {
-					if = {
-						limit = { is_subject_of = ROOT }
-						ROOT = {
-							annex_country = {
-								target = PREV
-								transfer_troops = yes
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-	focus =	{
-		id = shale_mysteries_of_the_spores
-		icon = GFX_goal_BDT_geck_corrupted
-		cost = 30
-		x = 0
-		y = 1
-		available = {
-			EDN = {
-				all_core_land_owned_by_prev_sphere = yes
-			}
-			if = {
-				limit = {
-					has_country_flag = shale_secret_path_started
-					NOT = {
-						has_country_flag = shale_calix_dismantled_flag
-						has_cosmetic_tag = SHA_cosmetic
-					}
-				}
-				custom_trigger_tooltip = {
-					tooltip = shale_purchase_completed_or_refused_tt
-					always = no
-				}
-			}
-		}
-		prerequisite = {
-			focus = shale_ethos_of_the_army
-		}
-		relative_position_id = shale_ethos_of_the_army
-		completion_reward = {
-			add_manpower = 1000
-			EDN = {
-				ROOT = {
-					core_owned_states_of_prev = yes
-				}
-			}
-			hidden_effect = {
-				EDN = {
-					if = {
-						limit = { is_subject_of = ROOT }
-						ROOT = {
-							annex_country = {
-								target = PREV
-								transfer_troops = yes
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-	focus =	{
-		id = shale_the_dreams_of_unity
-		icon = GFX_goal_unity_viola
-		cost = 30
-		x = 2
-		y = 1
-		available = {
-			UOA = {
-				all_core_land_owned_by_prev_sphere = yes
-			}
-			if = {
-				limit = {
-					has_country_flag = shale_secret_path_started
-					NOT = {
-						has_country_flag = shale_calix_dismantled_flag
-						has_cosmetic_tag = SHA_cosmetic
-					}
-				}
-				custom_trigger_tooltip = {
-					tooltip = shale_purchase_completed_or_refused_tt
-					always = no
-				}
-			}
-		}
-		prerequisite = {
-			focus = shale_ethos_of_the_army
-		}
-		relative_position_id = shale_ethos_of_the_army
-		completion_reward = {
-			add_manpower = 1000
-			UOA = {
-				ROOT = {
-					core_owned_states_of_prev = yes
-				}
-			}
-			hidden_effect = {
-				every_country = {
-					limit = {
-						original_tag = UOA
-					}
-					if = {
-						limit = { is_subject_of = ROOT }
-						ROOT = {
-							annex_country = {
-								target = PREV
-								transfer_troops = yes
-							}
-						}
-					}
-				}
-			}
-		}
-	}
+	#focus =	{
+	#	id = shale_unite_the_army
+	#	icon = GFX_goal_attis_army
+	#	cost = 30
+	#	x = 0
+	#	y = 2
+	#	prerequisite = {
+	#		focus = shale_fruits_of_our_labour
+	#	}
+	#	prerequisite = {
+	#		focus = shale_tame_the_beasts
+	#	}
+	#	available = {
+	#		OR = {
+	#			NOT = { has_completed_focus = shale_defending_against_the_monster }
+	#			AND = {
+	#				has_completed_focus = shale_defending_against_the_monster
+	#				OR = { NOT = { country_exists = RRG } RRG = { is_subject = yes } }
+	#				OR = { NOT = { country_exists = TAA } TAA = { is_subject = yes } }
+	#			}
+	#		}
+	#	}
+	#	bypass = {
+	#		IMO = {
+	#			all_core_land_owned_by_prev_sphere = yes
+	#		}
+	#		UOA = {
+	#			all_core_land_owned_by_prev_sphere = yes
+	#		}
+	#	}
+	#	relative_position_id = shale_striking_eden
+	#	will_lead_to_war_with = UOA
+	#	will_lead_to_war_with = CRH
+	#	will_lead_to_war_with = IMO
+	#	completion_reward = {
+	#		custom_effect_tooltip = shale_reunite_the_army_tt
+	#		every_country = {
+	#			limit = {
+	#				exists = yes
+	#				OR = {
+	#					original_tag = SHA
+	#					original_tag = UOA
+	#					original_tag = IMO
+	#					original_tag = CRH
+	#				}
+	#			}
+	#			country_event = nf_attis.22
+	#		}
+	#	}
+	#}
+    #
+	#focus =	{
+	#	id = shale_ethos_of_the_army
+	#	icon = GFX_goal_mutant_self_management
+	#	cost = 30
+	#	x = -4
+	#	y = 1
+	#	available = {
+	#		IMO = {
+	#			all_core_land_owned_by_prev_sphere = yes
+	#		}
+	#		UOA = {
+	#			all_core_land_owned_by_prev_sphere = yes
+	#		}
+	#	}
+	#	prerequisite = {
+	#		focus = shale_the_road_of_conquest
+	#	}
+	#	relative_position_id = shale_the_road_of_conquest
+	#	completion_reward = {
+	#		add_political_power = 250
+	#		if = {
+	#			limit = {
+	#				SHA_calix = {
+	#					is_unit_leader = yes
+	#				}
+	#			}
+	#			hidden_effect = {
+	#				SHA_calix = {
+	#					unit_leader_event = nf_attis.24
+	#				}
+	#			}
+	#		}
+	#	}
+	#}
+	#focus =	{
+	#	id = shale_ancient_techniques_of_the_ironmongers
+	#	icon = GFX_goal_imo_battlewagon
+	#	cost = 30
+	#	x = -2
+	#	y = 1
+	#	available = {
+	#		IMO = {
+	#			all_core_land_owned_by_prev_sphere = yes
+	#		}
+	#		if = {
+	#			limit = {
+	#				has_country_flag = shale_secret_path_started
+	#				NOT = {
+	#					has_country_flag = shale_calix_dismantled_flag
+	#					has_cosmetic_tag = SHA_cosmetic
+	#				}
+	#			}
+	#			custom_trigger_tooltip = {
+	#				tooltip = shale_purchase_completed_or_refused_tt
+	#				always = no
+	#			}
+	#		}
+	#	}
+	#	prerequisite = {
+	#		focus = shale_ethos_of_the_army
+	#	}
+	#	relative_position_id = shale_ethos_of_the_army
+	#	completion_reward = {
+	#		add_manpower = 1000
+	#		IMO = {
+	#			ROOT = {
+	#				core_owned_states_of_prev = yes
+	#			}
+	#		}
+	#		hidden_effect = {
+	#			IMO = {
+	#				if = {
+	#					limit = { is_subject_of = ROOT }
+	#					ROOT = {
+	#						annex_country = {
+	#							target = PREV
+	#							transfer_troops = yes
+	#						}
+	#					}
+	#				}
+	#			}
+	#		}
+	#	}
+	#}
+	#focus =	{
+	#	id = shale_mysteries_of_the_spores
+	#	icon = GFX_goal_BDT_geck_corrupted
+	#	cost = 30
+	#	x = 0
+	#	y = 1
+	#	available = {
+	#		EDN = {
+	#			all_core_land_owned_by_prev_sphere = yes
+	#		}
+	#		if = {
+	#			limit = {
+	#				has_country_flag = shale_secret_path_started
+	#				NOT = {
+	#					has_country_flag = shale_calix_dismantled_flag
+	#					has_cosmetic_tag = SHA_cosmetic
+	#				}
+	#			}
+	#			custom_trigger_tooltip = {
+	#				tooltip = shale_purchase_completed_or_refused_tt
+	#				always = no
+	#			}
+	#		}
+	#	}
+	#	prerequisite = {
+	#		focus = shale_ethos_of_the_army
+	#	}
+	#	relative_position_id = shale_ethos_of_the_army
+	#	completion_reward = {
+	#		add_manpower = 1000
+	#		EDN = {
+	#			ROOT = {
+	#				core_owned_states_of_prev = yes
+	#			}
+	#		}
+	#		hidden_effect = {
+	#			EDN = {
+	#				if = {
+	#					limit = { is_subject_of = ROOT }
+	#					ROOT = {
+	#						annex_country = {
+	#							target = PREV
+	#							transfer_troops = yes
+	#						}
+	#					}
+	#				}
+	#			}
+	#		}
+	#	}
+	#}
+	#focus =	{
+	#	id = shale_the_dreams_of_unity
+	#	icon = GFX_goal_unity_viola
+	#	cost = 30
+	#	x = 2
+	#	y = 1
+	#	available = {
+	#		UOA = {
+	#			all_core_land_owned_by_prev_sphere = yes
+	#		}
+	#		if = {
+	#			limit = {
+	#				has_country_flag = shale_secret_path_started
+	#				NOT = {
+	#					has_country_flag = shale_calix_dismantled_flag
+	#					has_cosmetic_tag = SHA_cosmetic
+	#				}
+	#			}
+	#			custom_trigger_tooltip = {
+	#				tooltip = shale_purchase_completed_or_refused_tt
+	#				always = no
+	#			}
+	#		}
+	#	}
+	#	prerequisite = {
+	#		focus = shale_ethos_of_the_army
+	#	}
+	#	relative_position_id = shale_ethos_of_the_army
+	#	completion_reward = {
+	#		add_manpower = 1000
+	#		UOA = {
+	#			ROOT = {
+	#				core_owned_states_of_prev = yes
+	#			}
+	#		}
+	#		hidden_effect = {
+	#			every_country = {
+	#				limit = {
+	#					original_tag = UOA
+	#				}
+	#				if = {
+	#					limit = { is_subject_of = ROOT }
+	#					ROOT = {
+	#						annex_country = {
+	#							target = PREV
+	#							transfer_troops = yes
+	#						}
+	#					}
+	#				}
+	#			}
+	#		}
+	#	}
+	#}
 
 	focus =	{
 		id = shale_faith_of_the_army
 		icon = GFX_goal_NEW_rebuild_cult
 		cost = 30
-		x = 3
+		x = 0
 		y = 1
 		available = {
 			IMO = {
@@ -1754,9 +1876,9 @@ focus_tree = {
 			}
 		}
 		prerequisite = {
-			focus = shale_unite_the_army
+			focus = shale_the_road_of_conquest
 		}
-		relative_position_id = shale_unite_the_army
+		relative_position_id = shale_the_road_of_conquest
 		completion_reward = {
 			custom_effect_tooltip = 10_percent_coring_cost_tt
 			add_to_variable = { coring_cost_country_factor = -0.1 }
@@ -1827,21 +1949,17 @@ focus_tree = {
 	focus =	{
 		id = shale_the_road_of_conquest
 		icon = GFX_goal_generic_texas2
-		cost = 30
-		x = 0
+		cost = 0
+		x = -1
 		y = 1
 		available = {
-			has_completed_focus = shale_ancient_techniques_of_the_ironmongers
-			has_completed_focus = shale_mysteries_of_the_spores
-			has_completed_focus = shale_the_dreams_of_unity
-			OR = {
-				has_completed_focus = shale_strength_in_supremacy
-				has_completed_focus = shale_strength_in_unity
-				has_completed_focus = shale_strength_in_insanity
-			}
+			date > 2276.11.01
 		}
 		prerequisite = {
-			focus = shale_unite_the_army
+			focus = shale_fruits_of_our_labour
+		}
+		prerequisite = {
+			focus = shale_tame_the_beasts
 		}
 		bypass = {
 			LNS = {
@@ -1861,7 +1979,7 @@ focus_tree = {
 				}
 			}
 		}
-		relative_position_id = shale_unite_the_army
+		relative_position_id = shale_tame_the_beasts
 		will_lead_to_war_with = LNS
 		will_lead_to_war_with = TBH
 		completion_reward = {
@@ -1907,183 +2025,241 @@ focus_tree = {
 			}
 		}
 	}
-	focus =	{
-		id = shale_cerberus_unity_unleashed
-		icon = GFX_goal_NEW_rebuild_cult
+	
+	focus = {
+		id = shale_calix_new_beginning
+		icon = GFX_goal_generic_vault_door_1
+		cost = 30
+		x = 1
+		y = 1
+		allow_branch = {
+			SHA = {
+				has_country_leader = {
+					character = SHA_calix_normal
+					ruling_only = yes
+				}
+			}	
+		}
+		prerequisite = {
+			focus = shale_the_secret_vault_ruins
+		}
+		relative_position_id = shale_the_secret_vault_ruins
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = shale_calix_new_ideas
+		icon = GFX_goal_generic_bot_sentry
+		cost = 30
+		x = -1
+		y = 1
+		allow_branch = {
+			SHA = {
+				has_country_leader = {
+					character = SHA_calix_normal
+					ruling_only = yes
+				}
+			}	
+		}
+		prerequisite = {
+			focus = shale_the_secret_vault_ruins
+		}
+		relative_position_id = shale_the_secret_vault_ruins
+		completion_reward = {
+			hidden_effect = {
+				set_technology = {	
+					robotics_tech_level_tribal = 1
+					robotics_tech_level_settler = 1
+					popup = no
+				}
+			}
+			set_technology = {	
+				robotics_tech_level_scientific = 1
+				air_tech_level_scientific = 1
+				electronics_tech_level_scientific = 1
+				exploitation_tech_level_scientific = 1
+				popup = no
+			}
+			remove_ideas = aeronautics_ineptitude
+		}
+	}
+	focus = {
+		id = shale_calix_new_tech
+		icon = GFX_goal_TTM_Humanoid_Robot
 		cost = 30
 		x = 0
-		y = 2
-		allow_branch = {
-			original_tag = SHA
-			has_cosmetic_tag = SHA_cosmetic
+		y = 1
+		prerequisite = {
+			focus = shale_calix_new_beginning
 		}
-		available = {
-			has_country_leader = {
-				name = "Cerberus"
-				ruling_only = yes
-			}
-			set_temp_variable = { cored_states_trigger = 25 }
-			cored_states_scripted_trigger = yes
-		}
-		relative_position_id = shale_the_road_of_conquest
+		relative_position_id = shale_calix_new_beginning
 		completion_reward = {
-			custom_effect_tooltip = 10_percent_coring_cost_tt
-			add_to_variable = { coring_cost_country_factor = -0.1 }
-			every_state = {
-				tooltip = every_new_mexican_state
+			add_ideas = attis_calix_army
+		}
+	}
+	focus = {
+		id = shale_calix_new_eco
+		icon = GFX_goal_pal_access_the_terminals
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = shale_calix_new_ideas
+		}
+		relative_position_id = shale_calix_new_ideas
+		completion_reward = {
+			add_ideas = attis_calix_industry
+		}
+	}
+	focus = {
+		id = shale_calix_new_texas
+		icon = GFX_goal_army_of_mexico_mockup
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = shale_calix_new_tech
+		}
+		prerequisite = {
+			focus = shale_calix_new_eco
+		}
+		relative_position_id = shale_calix_new_eco
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = combat_robot_equipment_3
+				amount = 550
+				producer = USA
+			}
+			add_political_power = 100
+		}
+	}
+	focus = {
+		id = shale_calix_post_texas_1
+		icon = GFX_goal_SHA_Calix
+		cost = 0
+		x = 0
+		y = 2
+		available = {
+			date > 2277.01.01 
+		}
+		prerequisite = {
+			focus = shale_calix_new_texas
+		}
+		relative_position_id = shale_calix_new_texas
+		completion_reward = {
+			hidden_effect = {
+				set_truce = {
+					target = LNS
+					days = 0
+				}
+				set_truce = {
+					target = TBH
+					days = 0
+				}
+			}
+			LUB = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			TAA = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			LNS = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			TBH = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			if = {
 				limit = {
-					OR = {
-						region = 15
-						region = 45
-						region = 46
-						region = 47
+					any_other_country = {
+						has_cosmetic_tag = TEX_provisional
 					}
+				}
+				TEX = {
+					ROOT = {
+						grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+					}
+				}
+			}
+			set_country_flag = ai_prefers_to_fight_neighbors
+			every_state = {
+				tooltip = every_texan_state
+				limit = {
+					is_texan_state = yes
 				}
 				add_claim_by = SHA
 			}
+			
 		}
 	}
-	focus =	{
-		id = shale_cerberus_mexico
-		icon = GFX_goal_unity_viola
+	focus = {
+		id = shale_calix_post_texas_2
+		icon = GFX_goal_DUN_terminator_robot
 		cost = 30
 		x = -2
 		y = 1
 		prerequisite = {
-			focus = shale_cerberus_unity_unleashed
+			focus = shale_calix_post_texas_1
 		}
-		relative_position_id = shale_cerberus_unity_unleashed
-		available = {
-			if = {
-				limit = {
-					country_exists = TLA
-				}
-				NOT = { country_exists = TLA } #DONT GET NUKED
-			}
-			set_temp_variable = { cored_states_trigger = 50 }
-			cored_states_scripted_trigger = yes
-		}
+		relative_position_id = shale_calix_post_texas_1
 		completion_reward = {
-			custom_effect_tooltip = 10_percent_coring_cost_tt
-			add_to_variable = { coring_cost_country_factor = -0.1 }
-			every_state = {
-				tooltip = every_mexican_state
-				limit = {
-					OR = {
-						is_north_mexico_state = yes
-						is_south_mexico_state = yes
+			every_owned_state = {
+				add_state_modifier = {
+					modifier = { 
+						compliance_gain = 0.05 
 					}
 				}
-				add_claim_by = SHA
+				add_state_modifier = {
+					modifier = { 
+						resistance_target = -0.1
+					}
+				}
 			}
 		}
 	}
-	focus =	{
-		id = shale_cerberus_west
-		icon = GFX_goal_unity_lasher
+	focus = {
+		id = shale_calix_post_texas_3
+		icon = GFX_goal_VEG_Vegas_Prime
 		cost = 30
 		x = 0
 		y = 1
 		prerequisite = {
-			focus = shale_cerberus_unity_unleashed
+			focus = shale_calix_post_texas_1
 		}
-		relative_position_id = shale_cerberus_unity_unleashed
-		available = {
-			set_temp_variable = { cored_states_trigger = 150 }
-			cored_states_scripted_trigger = yes
-		}
+		relative_position_id = shale_calix_post_texas_1
 		completion_reward = {
-			custom_effect_tooltip = 10_percent_coring_cost_tt
-			add_to_variable = { coring_cost_country_factor = -0.1 }
-			every_state = {
-				tooltip = every_arizonan_state
-				limit = {
-					OR = {
-						region = 29
-						region = 30
-						region = 31
-						region = 2
-						region = 28
-					}
-				}
-				add_claim_by = SHA
+			set_technology = {
+				robot_pacification_bot_tech = 1
+				robot_behemoth_robot_tech = 1
+				popup = no
 			}
 		}
 	}
-	focus =	{
-		id = shale_cerberus_the_masters_legacy
-		icon = GFX_goal_unity_morpheus
+	focus = {
+		id = shale_calix_post_texas_4
+		icon = GFX_goal_BDT_bloody_skull
 		cost = 30
 		x = 2
 		y = 1
 		prerequisite = {
-			focus = shale_cerberus_unity_unleashed
+			focus = shale_calix_post_texas_1
 		}
-		relative_position_id = shale_cerberus_unity_unleashed
-		available = {
-			set_temp_variable = { cored_states_trigger = 300 }
-			cored_states_scripted_trigger = yes
-			any_owned_state = {
-				is_on_continent = west_coast
-			}
-		}
+		relative_position_id = shale_calix_post_texas_1
 		completion_reward = {
-			custom_effect_tooltip = 10_percent_coring_cost_tt
-			add_to_variable = { coring_cost_country_factor = -0.1 }
-			every_state = {
-				tooltip = every_californian_state
-				limit = {
-					OR = {
-						region = 53
-						region = 51
-						region = 7
-						region = 8
-						region = 13
-						region = 3
-					}
-				}
-				add_claim_by = SHA
-			}
+			add_stability = 0.15
+			add_political_power = 100
 		}
 	}
-	focus =	{
-		id = shale_cerberus_the_final_flame
-		icon = GFX_goal_NEW_for_the_master
-		cost = 30
-		x = 0
-		y = 2
-		prerequisite = {
-			focus = shale_cerberus_mexico
-		}
-		prerequisite = {
-			focus = shale_cerberus_west
-		}
-		prerequisite = {
-			focus = shale_cerberus_the_masters_legacy
-		}
-		relative_position_id = shale_cerberus_unity_unleashed
-		available = {
-			set_temp_variable = { cored_states_trigger = 750 }
-			cored_states_scripted_trigger = yes
-		}
-		completion_reward = {
-			custom_effect_tooltip = 10_percent_coring_cost_tt
-			add_to_variable = { coring_cost_country_factor = -0.1 }
-			every_state = {
-				tooltip = EFFECT_EVERY_STATE_STARTS
-				limit = {
-					#Not Terra Incognita
-					check_variable = {
-						var = core_countries
-						value = 1
-						compare = greater_than_or_equals
-					}
-				}
-				add_claim_by = SHA
-			}
-		}
-	}
-
+	
 	focus = {
 		id = attis_keats
 		text = uoa_fulfilling_campaign_promises
@@ -2291,8 +2467,8 @@ focus_tree = {
 					days = 1
 				}
 			}
-		}
-	}
+		} 
+	} 
 	focus = {
 		id = uoa_volunteers_for_dallas
 		icon = GFX_goal_uoa_medal
@@ -2591,17 +2767,104 @@ focus_tree = {
 		icon = GFX_goal_imo_symbol
 		text = imo_the_steelworks
 		cost = 30
-		x = 0
+		x = -8
 		y = 1
-		allow_branch = {
-			tag = IMO
-		}
+		mutually_exclusive = { focus = attis_crusher focus = attis_shale }
 		prerequisite = {
 			focus = attis_3
 		}
 		relative_position_id = attis_3
 		completion_reward = {
-			add_research_slot = 1
+			set_cosmetic_tag = SHA_mogger
+			retire_country_leader = yes
+			add_country_leader_role = {
+				character = IMO_juggernaut
+				promote_leader = yes
+				country_leader = {
+					desc = IMO_JUGGERNAUT_DESC
+					ideology = warlordship
+					traits = {
+						dislikes_brotherhood_of_steel
+						attis_mastersmith
+					}
+					expire = "2294.1.1.12"
+					id = -1
+				}
+			}
+			add_ideas = aeronautics_ineptitude
+			add_ideas = imo_racree_infestation_4
+			hidden_effect = {
+				set_technology = {
+					basic_supply_transport_tech = 1
+					infantry_tech_level_tribal = 1
+					infantry_tech_level_settler = 1
+					#infantry_tech_level_scientific = 1
+
+					#power_armour_tech_level_settler = 1
+					#power_armour_tech_level_scientific = 1
+
+					special_forces_tech_level_tribal = 1
+					#special_forces_tech_level_settler = 1
+					#special_forces_tech_level_scientific = 1
+
+					support_tech_level_tribal = 1
+					support_tech_level_settler = 1
+					support_tech_level_scientific = 1
+
+					#vehicles_tech_level_scientific = 1
+					vehicles_tech_level_tribal = 1
+					vehicles_tech_level_settler = 1
+
+					#robotics_tech_level_tribal = 1
+					#robotics_tech_level_settler = 1
+					#robotics_tech_level_scientific = 1
+
+					air_tech_level_tribal = 1
+					air_tech_level_settler = 1
+					#air_tech_level_scientific = 1
+
+					naval_tech_level_tribal = 1
+					naval_tech_level_settler = 1
+					#naval_tech_level_scientific = 1
+
+					tools_tech_level_tribal = 1
+					tools_tech_level_settler = 1
+					tools_tech_level_scientific = 1
+
+					exploitation_tech_level_tribal = 1
+					exploitation_tech_level_settler = 1
+					#exploitation_tech_level_scientific = 1
+
+					habitation_tech_level_tribal = 1
+					habitation_tech_level_settler = 1
+					#habitation_tech_level_scientific = 1
+
+					electronics_tech_level_scientific = 1
+					electronics_tech_level_tribal = 1
+					electronics_tech_level_settler = 1
+
+					tool_engineering = 1
+					standard_weaponry_tech = 1
+					melee_weaponry_tech_1 = 1
+					pre_construction_industry_tech = 1
+					pre_agriculture_industry_tech = 1
+					pre_recycling_industry_tech = 1
+					basic_industry_tech = 1
+					support_weaponry = 1
+					naval_invasion_tech_1 = 1
+
+					bike_tech_1 = 1
+					motorisation_vehicle_tech = 1
+					heavy_motorized_equipment_vehicle_tech_1 = 1
+					tracks_vehicle_tech_1 = 1
+					tank_equipment_vehicle_tech_1 = 1
+
+					super_mutant_civilization = 1
+					#super_mutant_behemoth = 1
+					popup = no
+				}
+				load_oob = "IMO_2275"
+			}
 		}
 	}
 
@@ -2791,7 +3054,7 @@ focus_tree = {
 	focus = {
 		id = imo_target_practice_against_the_taa
 		icon = GFX_goal_generic_enslave_taa
-		cost = 30
+		cost = 15
 		x = 0
 		y = 2
 		available = {
@@ -2817,7 +3080,7 @@ focus_tree = {
 	focus = {
 		id = imo_crystal_city_ammo_factory
 		icon = GFX_goal_imo_ammobox
-		cost = 30
+		cost = 15
 		x = -1
 		y = 1
 		available = {
@@ -2842,7 +3105,7 @@ focus_tree = {
 	focus = {
 		id = imo_huajillo_honey
 		icon = GFX_goal_imo_distillery
-		cost = 30
+		cost = 15
 		x = 1
 		y = 1
 		available = {
@@ -2977,7 +3240,7 @@ focus_tree = {
 			add_research_slot = 1
 			add_timed_idea = {
 				idea = imo_industrial_fervor
-				days = 365
+				days = 260
 			}
 		}
 	}
@@ -3091,47 +3354,54 @@ focus_tree = {
 	focus = {
 		id = imo_ach_tbh_puppet
 		icon = GFX_goal_TBH_two_coins
-		cost = 30
-		x = -1
+		cost = 0
+		x = 0
 		y = 2
-		mutually_exclusive = {
-			focus = imo_ach_no_shale
-		}
+		#mutually_exclusive = {
+		#	focus = imo_ach_no_shale
+		#}
 		prerequisite = {
 			focus = imo_flames_of_the_forge
 		}
 		relative_position_id = imo_flames_of_the_forge
 		available = {
-			has_war = no #Dont use the AI one, no war is for player as well.
-			num_of_controlled_states > 15
-			if = {
-				limit = {
-					is_ai = yes
-				}
-				TBH = {
-					is_subject_of = ACH
-				}
-			}
-			is_subject = no
+			date > 2276.1.1
+		#	has_war = no #Dont use the AI one, no war is for player as well.
+		#	num_of_controlled_states > 15
+		#	if = {
+		#		limit = {
+		#			is_ai = yes
+		#		}
+		#		TBH = {
+		#			is_subject_of = ACH
+		#		}
+		#	}
+		#	is_subject = no
 		}
-		bypass = {
-			if = {
-				limit = {
-					908 = {
-						is_core_of = ACH
-					}
-				}
-				ACH = {
-					all_core_land_owned_by_prev_sphere = yes
-				}
-			}
-			else = {
-				always = no
-			}
-		}
+		#bypass = {
+		#	if = {
+		#		limit = {
+		#			908 = {
+		#				is_core_of = ACH
+		#			}
+		#		}
+		#		ACH = {
+		#			all_core_land_owned_by_prev_sphere = yes
+		#		}
+		#	}
+		#	else = {
+		#		always = no
+		#	}
+		#}
 		will_lead_to_war_with = ACH
 		completion_reward = {
-			ACH = {
+			hidden_effect = {
+				set_truce = {
+					target = TAA
+					days = 0
+				}
+			}
+			TAA = {
 				ROOT = {
 					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
 				}
@@ -3226,59 +3496,59 @@ focus_tree = {
 			factor = 5
 		}
 	}
-	focus = {
-		id = imo_ach_no_shale
-		icon = GFX_goal_TBH_flag_gear
-		cost = 30
-		x = 1
-		y = 2
-		mutually_exclusive = {
-			focus = imo_ach_tbh_puppet
-		}
-		prerequisite = {
-			focus = imo_flames_of_the_forge
-		}
-		relative_position_id = imo_flames_of_the_forge
-		available = {
-			has_war = no #Dont use the AI one, no war is for player as well.
-			ACH = {
-				exists = yes
-				is_subject = no
-			}
-			TBH = {
-				exists = yes
-				NOT = { has_completed_focus = tbh_nf_to_hell_with_texas }
-			}
-			SHA = {
-				exists = no
-				NOT = { has_completed_focus = shale_unite_the_army }
-			}
-			is_subject = no
-		}
-		bypass = {
-			if = {
-				limit = {
-					908 = {
-						is_core_of = ACH
-					}
-				}
-				ACH = {
-					all_core_land_owned_by_prev_sphere = yes
-				}
-			}
-			else = {
-				always = no
-			}
-		}
-		will_lead_to_war_with = ACH
-		completion_reward = {
-			ACH = {
-				ROOT = {
-					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
-				}
-			}
-		}
-	}
+	#focus = {
+	#	id = imo_ach_no_shale
+	#	icon = GFX_goal_TBH_flag_gear
+	#	cost = 30
+	#	x = 1
+	#	y = 2
+	#	mutually_exclusive = {
+	#		focus = imo_ach_tbh_puppet
+	#	}
+	#	prerequisite = {
+	#		focus = imo_flames_of_the_forge
+	#	}
+	#	relative_position_id = imo_flames_of_the_forge
+	#	available = {
+	#		has_war = no #Dont use the AI one, no war is for player as well.
+	#		ACH = {
+	#			exists = yes
+	#			is_subject = no
+	#		}
+	#		TBH = {
+	#			exists = yes
+	#			NOT = { has_completed_focus = tbh_nf_to_hell_with_texas }
+	#		}
+	#		SHA = {
+	#			exists = no
+	#			NOT = { has_completed_focus = shale_unite_the_army }
+	#		}
+	#		is_subject = no
+	#	}
+	#	bypass = {
+	#		if = {
+	#			limit = {
+	#				908 = {
+	#					is_core_of = ACH
+	#				}
+	#			}
+	#			ACH = {
+	#				all_core_land_owned_by_prev_sphere = yes
+	#			}
+	#		}
+	#		else = {
+	#			always = no
+	#		}
+	#	}
+	#	will_lead_to_war_with = ACH
+	#	completion_reward = {
+	#		ACH = {
+	#			ROOT = {
+	#				grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+	#			}
+	#		}
+	#	}
+	#}
 	focus =	{
 		id = imo_the_road_of_conquest
 		icon = GFX_goal_generic_texas2
@@ -3366,18 +3636,99 @@ focus_tree = {
 		cost = 7
 		x = 0
 		y = 1
-		allow_branch = {
-			tag = CRH
-		}
+		mutually_exclusive = { focus = attis_juggernaught focus = attis_shale }
 		available = {
-			date > 2275.8.28
 		}
 		prerequisite = {
 			focus = attis_3
 		}
 		relative_position_id = attis_3
-		completion_reward = {
+		completion_reward = {	
+			set_cosmetic_tag = SHA_crusher
+			retire_country_leader = yes
+			add_country_leader_role = {
+				character = UOA_lieutenant_crusher
+				promote_leader = yes
+				country_leader = {
+					desc = UOA_LIEUTENTANT_CRUSHER_DESC
+					ideology = warlordship
+					traits = {
+						paranoid
+					}
+					expire = "3000.01.01.01"
+					id = -1
+				}
+			}
 			country_event = nf_attis.40
+			hidden_effect = {
+				country_event = nf_attis.37
+				set_technology = {
+					basic_supply_transport_tech = 1
+					infantry_tech_level_tribal = 1
+					infantry_tech_level_settler = 1
+					#infantry_tech_level_scientific = 1
+
+					#power_armour_tech_level_settler = 1
+					#power_armour_tech_level_scientific = 1
+
+					special_forces_tech_level_tribal = 1
+					special_forces_tech_level_settler = 1 #Brotherhood Scouts
+					#special_forces_tech_level_scientific = 1
+
+					support_tech_level_tribal = 1
+					support_tech_level_settler = 1
+					#support_tech_level_scientific = 1
+
+					#vehicles_tech_level_scientific = 1
+					vehicles_tech_level_tribal = 1
+					#vehicles_tech_level_settler = 1
+
+					#robotics_tech_level_tribal = 1
+					#robotics_tech_level_settler = 1
+					#robotics_tech_level_scientific = 1
+
+					air_tech_level_tribal = 1
+					air_tech_level_settler = 1
+					#air_tech_level_scientific = 1
+
+					naval_tech_level_tribal = 1
+					naval_tech_level_settler = 1
+					#naval_tech_level_scientific = 1
+
+					tools_tech_level_tribal = 1
+					tools_tech_level_settler = 1
+					#tools_tech_level_scientific = 1
+
+					exploitation_tech_level_tribal = 1
+					exploitation_tech_level_settler = 1
+					#exploitation_tech_level_scientific = 1
+
+					habitation_tech_level_tribal = 1
+					habitation_tech_level_settler = 1
+					#habitation_tech_level_scientific = 1
+
+					electronics_tech_level_scientific = 1
+					electronics_tech_level_tribal = 1
+					electronics_tech_level_settler = 1 #Science Boys
+
+					super_mutant_civilization = 1
+					super_mutant_nightkin_tech = 1
+
+					tool_engineering = 1
+					standard_weaponry_tech = 1
+					melee_weaponry_tech_1 = 1
+					pre_construction_industry_tech = 1
+					pre_agriculture_industry_tech = 1
+					pre_recycling_industry_tech = 1
+					basic_industry_tech = 1
+					support_weaponry = 1
+					naval_invasion_tech_1 = 1
+					spec_ops_equipment_tech_1 = 1
+					popup = no
+								
+				}
+				load_oob = "SHA_2275"
+			}
 		}
 	}
 
@@ -3391,7 +3742,6 @@ focus_tree = {
 			focus = attis_crusher
 		}
 		available = {
-			date > 2275.8.28
 		}
 		relative_position_id = attis_crusher
 		completion_reward = {
@@ -3409,7 +3759,6 @@ focus_tree = {
 			focus = attis_crusher
 		}
 		available = {
-			date > 2275.8.28
 		}
 		relative_position_id = attis_crusher
 		completion_reward = {
@@ -3430,7 +3779,6 @@ focus_tree = {
 			focus = attis_crusher
 		}
 		available = {
-			date > 2275.8.28
 		}
 		relative_position_id = attis_crusher
 		completion_reward = {
@@ -3460,7 +3808,6 @@ focus_tree = {
 			focus = attis_crusher
 		}
 		available = {
-			date > 2275.8.28
 		}
 		relative_position_id = attis_crusher
 		completion_reward = {
@@ -3496,7 +3843,6 @@ focus_tree = {
 			focus = seize_resources
 		}
 		available = {
-			date > 2275.8.28
 		}
 		relative_position_id = attis_crusher
 		completion_reward = {
@@ -3507,7 +3853,7 @@ focus_tree = {
 	focus = {
 		id = crusher_victory
 		icon = GFX_goal_mutant_supremacy
-		cost = 30
+		cost = 15
 		x = 0
 		y = 3
 		prerequisite = {
@@ -3566,6 +3912,9 @@ focus_tree = {
 		cost = 30
 		x = 0
 		y = 5
+		available = {
+			date > 2276.1.1
+		}
 		prerequisite = {
 			focus = crushing_the_remnants
 		}
@@ -3574,9 +3923,19 @@ focus_tree = {
 		}
 		relative_position_id = attis_crusher
 		completion_reward = {
-			add_manpower = -1500
-			SHA = {
-				add_manpower = 1500
+			every_state = {
+				limit = { is_core_of = CRH }
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
 			}
 		}
 	}
@@ -3745,11 +4104,14 @@ focus_tree = {
 	focus = {
 		id = separate_way
 		icon = GFX_goal_mutant_war_focus
-		cost = 30
+		cost = 0
 		x = 0
 		y = 9
 		prerequisite = {
 			focus = united_warband
+		}
+		available = {
+			date > 2277.1.01
 		}
 		relative_position_id = attis_crusher
 		completion_reward = {
@@ -3757,6 +4119,46 @@ focus_tree = {
 			add_war_support = 0.1
 			add_political_power = 150
 			#country_event = nf_attis.45
+			hidden_effect = {
+				set_truce = {
+					target = LNS
+					days = 0
+				}
+				set_truce = {
+					target = TBH
+					days = 0
+				}
+			}
+			LNS = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			TBH = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			if = {
+				limit = {
+					any_other_country = {
+						has_cosmetic_tag = TEX_provisional
+					}
+				}
+				TEX = {
+					ROOT = {
+						grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+					}
+				}
+			}
+			set_country_flag = ai_prefers_to_fight_neighbors
+			every_state = {
+				tooltip = every_texan_state
+				limit = {
+					is_texan_state = yes
+				}
+				add_claim_by = SHA
+			}
 		}
 	}
 

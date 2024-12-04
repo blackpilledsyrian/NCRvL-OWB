@@ -1,0 +1,24 @@
+on_actions = {
+    on_war_relation_added = {
+        effect = {
+            if = {
+                limit = {
+					AND = {
+						FROM = {
+							original_tag = TBH
+						}
+						ROOT = {
+							original_tag = SHA
+						}
+					}
+                }
+                TBH = {
+					add_timed_idea = {
+						idea = texas_industry_suffer_0
+						days = 20
+					}
+                }
+            }
+        }
+    }
+}

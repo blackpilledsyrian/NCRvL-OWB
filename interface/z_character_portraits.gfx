@@ -4,4 +4,8 @@ spriteTypes = {
 		name = "GFX_portrait_doctor_xian"
 		texturefile = "gfx/leaders/SHI/portrait_xian_reformed.dds"
 	}
+	spriteType = {
+		name = "GFX_portrait_sha_vacuum"
+		texturefile = "gfx/leaders/SHA/portrait_sha_vacuum.dds"
+	}
 }
