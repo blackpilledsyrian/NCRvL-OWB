@@ -1,5 +1,20 @@
 ideas = {
 	country = {
+		attis_industry_texas_to_ces = {
+			picture = generic_legion_flag
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				
+			}
+			targeted_modifier = {
+                tag = CES
+                mic_to_target_factor = 0.25
+                cic_to_target_factor = 0.25
+            }
+		}
 		texas_industry_suffer_0 = {
 			picture = salvaged_military_industry
 			removal_cost = -1
@@ -258,10 +273,6 @@ ideas = {
 				local_resources_factor = 0.15
 				conscription = 0.02
 			}
-			targeted_modifier = {
-                tag = CES
-                cic_to_target_factor = 0.25
-            }
 		}
 		attis_army_supplies = {
 			picture = generic_mass_infantry
@@ -310,10 +321,6 @@ ideas = {
 				production_speed_buildings_factor = 0.2
 				research_speed_factor = 0.08
 			}
-			targeted_modifier = {
-                tag = CES
-                mic_to_target_factor = 0.25
-            }
 		}
 		attis_army_supplies_mil = {
 			picture = generic_mass_infantry
@@ -327,10 +334,6 @@ ideas = {
 				production_factory_max_efficiency_factor = 0.1
 				research_speed_factor = 0.1
 			}
-			targeted_modifier = {
-                tag = CES
-                mic_to_target_factor = 0.25
-            }
 		}
 		attis_army_supplies_civ = {
 			picture = generic_mass_infantry
@@ -345,10 +348,6 @@ ideas = {
 				global_building_slots_factor = 0.2
 				research_speed_factor = 0.1
 			}
-			targeted_modifier = {
-                tag = CES
-                mic_to_target_factor = 0.25
-            }
 		}
 		calix_aggression_supression = {
 			picture = generic_terminal

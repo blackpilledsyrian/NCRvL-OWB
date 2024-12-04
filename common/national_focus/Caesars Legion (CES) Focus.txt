@@ -5652,6 +5652,7 @@ focus_tree = {
                     add_ideas = {
                         cultofmars
                         nav_pathfinders
+						attis_industry_texas_to_ces
                     }
                 }
             }
@@ -5690,6 +5691,7 @@ focus_tree = {
                     add_ideas = {
                         cultofmars
                         GDH_the_generalismos_arsenal
+						attis_industry_texas_to_ces
                     }
                 }
             }
@@ -5728,6 +5730,7 @@ focus_tree = {
                     add_ideas = {
                         cultofmars
 						sentrybots
+						attis_industry_texas_to_ces
                     }
                 }
             }
@@ -5766,6 +5769,7 @@ focus_tree = {
                     add_ideas = {
                         cultofmars
                         two_masters_of_the_motor_2
+						attis_industry_texas_to_ces
                     }
                 }
             }
