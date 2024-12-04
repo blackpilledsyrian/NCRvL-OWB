@@ -1,0 +1,29 @@
+state = {
+	id = 1428
+	name = "STATE_1428"
+	manpower = 3140
+	state_category = shanty
+
+	resources = {
+		metal = 2
+	}
+
+	history = {
+		owner = TBH
+		add_core_of = TBH
+		victory_points = {
+			16440 2
+		}
+		buildings = {
+			infrastructure = 3
+			dockyard = 1
+			industrial_complex = 1
+			16448 = { naval_base = 2 }
+			16440 = { naval_base = 2 }
+		}
+	}
+
+	provinces = {
+		16440 16438 16439 16437 16436 11748 16446 16448
+	}
+}

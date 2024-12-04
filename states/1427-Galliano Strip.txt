@@ -1,0 +1,31 @@
+state = {
+	id = 1427
+	name = "STATE_1427"
+	manpower = 3871
+	state_category = town
+
+	resources = {
+		energy = 3
+		water = 5
+	}
+
+	history = {
+		owner = TBH
+		add_core_of = TBH
+		victory_points = {
+			16462 5
+		}
+		buildings = {
+			infrastructure = 4
+			dockyard = 1
+			arms_factory = 2
+			16464 = {
+				naval_base = 2
+			}
+		}
+	}
+
+	provinces = {
+		16475 16468 16462 16461 16464
+	}
+}

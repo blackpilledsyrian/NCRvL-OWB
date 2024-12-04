@@ -1,0 +1,32 @@
+
+state={
+	id=1431
+	name="STATE_1431"
+	resources={
+		water=4.000
+		metal=3.000
+		advanced=1.000
+	}
+
+	history={
+		owner = TBH
+		add_core_of = TBH
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+
+		}
+		victory_points = {
+			19983 2
+		}
+
+	}
+
+	provinces={
+		16451 16484 16485 16486 16487 16488 16489 20181
+	}
+	manpower=951
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
+}

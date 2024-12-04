@@ -1,0 +1,27 @@
+state = {
+	id = 900
+	name = "STATE_900"
+	resources = {
+		energy = 6
+		circuitry = 12
+		advanced = 6
+	}
+	history={
+		owner = TBH
+		add_core_of = TBH
+		victory_points = {
+			12035 10
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 3
+			arms_factory = 1
+		}
+	}
+	provinces={
+		11986 11995 12000 12003 12011 12013 12017 12022 12028 12035 12036 12037 12041
+	}
+	manpower=10000
+	buildings_max_level_factor=1.000
+	state_category=city
+}

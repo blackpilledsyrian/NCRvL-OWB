@@ -1,0 +1,37 @@
+
+state={
+	id=903
+	name="STATE_903"
+	resources={
+		composites=4.000
+		advanced=2.000
+	}
+
+	history={
+		owner = SHA
+		add_core_of = TBH
+		victory_points = {
+			11351 15
+		}
+		buildings = {
+			anti_air_building = 3
+			radar_station = 2
+			infrastructure = 3
+			dockyard = 1
+			2247 = {
+				naval_base = 3
+
+			}
+
+		}
+
+	}
+
+	provinces={
+		2247 2248 9652 9663 9667 11336 11337 11344 11345 11348 11351 11352 11353 11357 11359 11360 11361 11365 11366 11367 11368
+	}
+	manpower=9100
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
+}

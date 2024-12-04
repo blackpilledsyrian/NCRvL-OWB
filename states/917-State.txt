@@ -1,0 +1,23 @@
+state = {
+	id = 917
+	name = "STATE_917"
+	history={
+		owner = SHA
+		add_core_of = CRH
+		add_core_of = SHA
+		victory_points = {
+			11502 5
+		}
+		buildings = {
+			infrastructure = 4
+
+		}
+
+	}
+	provinces={
+		3138 11472 11478 11488 11498 11502 11505 11514 11517 11521 11532 11533
+	}
+	manpower=8000
+	buildings_max_level_factor=1.000
+	state_category=rural
+}
