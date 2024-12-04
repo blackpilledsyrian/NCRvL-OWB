@@ -39,9 +39,9 @@ ideas = {
             }
 			equipment_bonus = {
 				demolitions_equipment = {
-					reliability = 0.10
-					hard_attack = 0.25
-					breakthrough = 0.25
+					reliability = -0.05
+					hard_attack = 0.10
+					breakthrough = 0.10
 					instant = yes
 				}
 			}
@@ -75,9 +75,9 @@ ideas = {
 			}
 			equipment_bonus = {
 				demolitions_equipment = {
-					reliability = 0.10
-					hard_attack = 0.25
-					breakthrough = 0.25
+					reliability = -0.05
+					hard_attack = 0.10
+					breakthrough = 0.10
 					instant = yes
 				}
 			}
@@ -91,7 +91,7 @@ ideas = {
             modifier = {
                 license_production_speed = -0.025
 				equipment_capture = 0
-				research_speed_factor = 0.03
+				research_speed_factor = 0.05
             }
 			removal_cost = -1
         }
@@ -101,7 +101,7 @@ ideas = {
                 original_tag = CWB
             }
             modifier = {
-				research_speed_factor = 0.06
+				research_speed_factor = 0.1
 				equipment_capture = 0.1
             }
 			removal_cost = -1
@@ -118,10 +118,8 @@ ideas = {
             }
 			equipment_bonus = {
 				infantry_equipment = {
-					reliability = 0.05
-					soft_attack = 0.15
-					hard_attack = 0.15
-					defense = 0.15
+					soft_attack = 0.1
+					hard_attack = 0.1
 					instant = yes
 				}
 			}
@@ -139,13 +137,14 @@ ideas = {
             }
 			equipment_bonus = {
 				infantry_equipment = {
-					reliability = 0.05
-					soft_attack = 0.25
-					hard_attack = 0.25
-					defense = 0.25
+					reliability = -0.1
+					soft_attack = 0.1
+					hard_attack = 0.1
+					build_cost_ic = -0.10
 					instant = yes
 				}
 				demolitions_equipment = {
+					reliability = -0.1
 					build_cost_ic = -0.10
 					instant = yes
 				}
@@ -236,6 +235,7 @@ ideas = {
 				#army_strength_factor = 0.15
 				max_dig_in = 5
 				army_strength_factor = 0.25
+				land_reinforce_rate = 0.2
             }
 			removal_cost = -1
         }
@@ -269,8 +269,7 @@ ideas = {
                 original_tag = CWB
             }
             modifier = {
-				modifier_army_sub_unit_heavy_infantry_attack_factor = 0.05
-				modifier_army_sub_unit_heavy_infantry_defence_factor = 0.05
+				modifier_army_sub_unit_heavy_infantry_max_org_factor = 0.05
             }
 			removal_cost = -1
         }
@@ -280,13 +279,12 @@ ideas = {
                 original_tag = CWB
             }
             modifier = {
-				modifier_army_sub_unit_heavy_infantry_attack_factor = 0.05
-				modifier_army_sub_unit_heavy_infantry_defence_factor = 0.05
+				modifier_army_sub_unit_heavy_infantry_max_org_factor = 0.05
             }
 			equipment_bonus = {
 				heavy_infantry_equipment = {
 					hardness = 0.25
-					hard_attack = 0.35
+					build_cost_ic = 0.1
 					instant = yes
 				}
 			}
@@ -298,15 +296,13 @@ ideas = {
                 original_tag = CWB
             }
             modifier = {
-				modifier_army_sub_unit_heavy_infantry_attack_factor = 0.05
-				modifier_army_sub_unit_heavy_infantry_defence_factor = 0.05
+				modifier_army_sub_unit_heavy_infantry_max_org_factor = 0.05
             }
 			equipment_bonus = {
 				heavy_infantry_equipment = {
-					hardness = 0.25
-					build_cost_ic = 0.05
-					hard_attack = 0.35
-					breakthrough = 0.25
+					hardness = 0.5
+					hard_attack = 0.2
+					build_cost_ic = 0.2
 					instant = yes
 				}
 			}
@@ -319,7 +315,7 @@ ideas = {
             }
             modifier = {
 				modifier_army_sub_unit_spec_ops_attack_factor = 0.05
-				modifier_army_sub_unit_spec_ops_defence_factor = 0.05
+				modifier_army_sub_unit_spec_ops_cavalry_attack_factor = 0.05
             }
 			removal_cost = -1
         }
@@ -329,8 +325,9 @@ ideas = {
                 original_tag = CWB
             }
             modifier = {
-				modifier_army_sub_unit_spec_ops_attack_factor = 0.1
-				modifier_army_sub_unit_spec_ops_defence_factor = 0.05
+				modifier_army_sub_unit_spec_ops_attack_factor = 0.05
+				modifier_army_sub_unit_spec_ops_cavalry_attack_factor = 0.05
+				modifier_army_sub_unit_spec_ops_max_org_factor = 0.05
 				modifier_army_sub_unit_spec_ops_cavalry_max_org_factor = 0.05
             }
 			removal_cost = -1
@@ -341,9 +338,11 @@ ideas = {
                 original_tag = CWB
             }
             modifier = {
-				modifier_army_sub_unit_spec_ops_attack_factor = 0.1
-				modifier_army_sub_unit_spec_ops_defence_factor = 0.1
-				modifier_army_sub_unit_spec_ops_max_org_factor = 0.1
+				modifier_army_sub_unit_spec_ops_attack_factor = 0.05
+				modifier_army_sub_unit_spec_ops_defence_factor = 0.05
+				modifier_army_sub_unit_spec_ops_cavalry_attack_factor = 0.05
+				modifier_army_sub_unit_spec_ops_cavalry_defence_factor = 0.05
+				modifier_army_sub_unit_spec_ops_max_org_factor = 0.05
 				modifier_army_sub_unit_spec_ops_cavalry_speed_factor = 0.05
 				modifier_army_sub_unit_spec_ops_cavalry_max_org_factor = 0.05
             }
