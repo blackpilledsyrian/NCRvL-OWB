@@ -527,8 +527,7 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				breakthrough_factor = 0.05
-				army_strength_factor = 0.05
+				army_org_regain = 0.2
 				army_org_factor = -0.05
 				country_resource_energy = 5
 				country_resource_circuitry = 5
@@ -544,7 +543,7 @@ ideas = {
 				always = yes
 			}
 			modifier = {
-				industrial_capacity_factory = 0.2
+				industrial_capacity_factory = 0.1
 			}
 		}
 		uoa_nightkin_support_program_1 = {

@@ -158,7 +158,7 @@ leader_traits = {
 	}
 	DES_goods_supplier = {
 		random = no
-		consumer_goods_expected_value = -0.05
+		consumer_goods_expected_value = -0.1
 		supply_consumption_factor = -0.1
 	}
 	DES_strategic_organizer = {

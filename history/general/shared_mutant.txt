@@ -19,9 +19,15 @@ every_possible_country = {
 			visible = {
 				if = {
 					limit = {
-						original_tag = NEW
+						OR = {
+							original_tag = NEW
+							orginal_tag = VEG
+						}
 					}
-					has_cosmetic_tag = THR_cosmetic_tag
+					OR = {
+						has_completed_focus = new_mutanttech
+						has_completed_focus = veg_mutants
+					}
 				}
 				else = {
 					always = yes
@@ -49,9 +55,15 @@ every_possible_country = {
 			visible = {
 				if = {
 					limit = {
-						original_tag = NEW
+						OR = {
+							original_tag = NEW
+							orginal_tag = VEG
+						}
 					}
-					has_cosmetic_tag = THR_cosmetic_tag
+					OR = {
+						has_completed_focus = new_mutanttech
+						has_completed_focus = veg_mutants
+					}
 				}
 				else = {
 					always = yes
@@ -79,9 +91,15 @@ every_possible_country = {
 			visible = {
 				if = {
 					limit = {
-						original_tag = NEW
+						OR = {
+							original_tag = NEW
+							orginal_tag = VEG
+						}
 					}
-					has_cosmetic_tag = THR_cosmetic_tag
+					OR = {
+						has_completed_focus = new_mutanttech
+						has_completed_focus = veg_mutants
+					}
 				}
 				else = {
 					always = yes
@@ -118,9 +136,15 @@ every_possible_country = {
 			visible = {
 				if = {
 					limit = {
-						original_tag = NEW
+						OR = {
+							original_tag = NEW
+							orginal_tag = VEG
+						}
 					}
-					has_cosmetic_tag = THR_cosmetic_tag
+					OR = {
+						has_completed_focus = new_mutanttech
+						has_completed_focus = veg_mutants
+					}
 				}
 				else = {
 					always = yes
@@ -148,9 +172,15 @@ every_possible_country = {
 			visible = {
 				if = {
 					limit = {
-						original_tag = NEW
+						OR = {
+							original_tag = NEW
+							orginal_tag = VEG
+						}
 					}
-					has_cosmetic_tag = THR_cosmetic_tag
+					OR = {
+						has_completed_focus = new_mutanttech
+						has_completed_focus = veg_mutants
+					}
 				}
 				else = {
 					always = yes
@@ -178,9 +208,15 @@ every_possible_country = {
 			visible = {
 				if = {
 					limit = {
-						original_tag = NEW
+						OR = {
+							original_tag = NEW
+							orginal_tag = VEG
+						}
 					}
-					has_cosmetic_tag = THR_cosmetic_tag
+					OR = {
+						has_completed_focus = new_mutanttech
+						has_completed_focus = veg_mutants
+					}
 				}
 				else = {
 					always = yes
@@ -212,14 +248,20 @@ every_possible_country = {
 		}
 		advisor = {
 			cost = 100
-			slot = research_advisor
+			slot = theorist
 			ledger = army
 			visible = {
 				if = {
 					limit = {
-						original_tag = NEW
+						OR = {
+							original_tag = NEW
+							orginal_tag = VEG
+						}
 					}
-					has_cosmetic_tag = THR_cosmetic_tag
+					OR = {
+						has_completed_focus = new_mutanttech
+						has_completed_focus = veg_mutants
+					}
 				}
 				else = {
 					always = yes
@@ -245,14 +287,20 @@ every_possible_country = {
 		}
 		advisor = {
 			cost = 100
-			slot = research_advisor
+			slot = theorist
 			ledger = army
 			visible = {
 				if = {
 					limit = {
-						original_tag = NEW
+						OR = {
+							original_tag = NEW
+							orginal_tag = VEG
+						}
 					}
-					has_cosmetic_tag = THR_cosmetic_tag
+					OR = {
+						has_completed_focus = new_mutanttech
+						has_completed_focus = veg_mutants
+					}
 				}
 				else = {
 					always = yes
@@ -290,7 +338,7 @@ every_possible_country = {
 		}
 		advisor = {
 			cost = 100
-			slot = research_advisor
+			slot = theorist
 			ledger = air
 			available = {
 				hidden_trigger = {
@@ -333,9 +381,15 @@ every_possible_country = {
 			visible = {
 				if = {
 					limit = {
-						original_tag = NEW
+						OR = {
+							original_tag = NEW
+							orginal_tag = VEG
+						}
 					}
-					has_cosmetic_tag = THR_cosmetic_tag
+					OR = {
+						has_completed_focus = new_mutanttech
+						has_completed_focus = veg_mutants
+					}
 				}
 				else = {
 					always = yes
@@ -362,9 +416,15 @@ every_possible_country = {
 			visible = {
 				if = {
 					limit = {
-						original_tag = NEW
+						OR = {
+							original_tag = NEW
+							orginal_tag = VEG
+						}
 					}
-					has_cosmetic_tag = THR_cosmetic_tag
+					OR = {
+						has_completed_focus = new_mutanttech
+						has_completed_focus = veg_mutants
+					}
 				}
 				else = {
 					always = yes
@@ -391,9 +451,15 @@ every_possible_country = {
 			visible = {
 				if = {
 					limit = {
-						original_tag = NEW
+						OR = {
+							original_tag = NEW
+							orginal_tag = VEG
+						}
 					}
-					has_cosmetic_tag = THR_cosmetic_tag
+					OR = {
+						has_completed_focus = new_mutanttech
+						has_completed_focus = veg_mutants
+					}
 				}
 				else = {
 					always = yes
@@ -420,9 +486,15 @@ every_possible_country = {
 			visible = {
 				if = {
 					limit = {
-						original_tag = NEW
+						OR = {
+							original_tag = NEW
+							orginal_tag = VEG
+						}
 					}
-					has_cosmetic_tag = THR_cosmetic_tag
+					OR = {
+						has_completed_focus = new_mutanttech
+						has_completed_focus = veg_mutants
+					}
 				}
 				else = {
 					always = yes
@@ -449,16 +521,19 @@ every_possible_country = {
 			visible = {
 				if = {
 					limit = {
-						original_tag = NEW
+						OR = {
+							original_tag = NEW
+							orginal_tag = VEG
+						}
 					}
-					has_cosmetic_tag = THR_cosmetic_tag
+					OR = {
+						has_completed_focus = new_mutanttech
+						has_completed_focus = veg_mutants
+					}
 				}
 				else = {
 					always = yes
 				}
-			}
-			available = {
-				has_government = people
 			}
 			traits = {
 				man_of_community
@@ -481,16 +556,19 @@ every_possible_country = {
 			visible = {
 				if = {
 					limit = {
-						original_tag = NEW
+						OR = {
+							original_tag = NEW
+							orginal_tag = VEG
+						}
 					}
-					has_cosmetic_tag = THR_cosmetic_tag
+					OR = {
+						has_completed_focus = new_mutanttech
+						has_completed_focus = veg_mutants
+					}
 				}
 				else = {
 					always = yes
 				}
-			}
-			available = {
-				has_government = people
 			}
 			traits = {
 				honest_speaker
@@ -513,9 +591,15 @@ every_possible_country = {
 			visible = {
 				if = {
 					limit = {
-						original_tag = NEW
+						OR = {
+							original_tag = NEW
+							orginal_tag = VEG
+						}
 					}
-					has_cosmetic_tag = THR_cosmetic_tag
+					OR = {
+						has_completed_focus = new_mutanttech
+						has_completed_focus = veg_mutants
+					}
 				}
 				else = {
 					always = yes
@@ -552,9 +636,15 @@ every_possible_country = {
 			visible = {
 				if = {
 					limit = {
-						original_tag = NEW
+						OR = {
+							original_tag = NEW
+							orginal_tag = VEG
+						}
 					}
-					has_cosmetic_tag = THR_cosmetic_tag
+					OR = {
+						has_completed_focus = new_mutanttech
+						has_completed_focus = veg_mutants
+					}
 				}
 				else = {
 					always = yes
@@ -590,9 +680,15 @@ every_possible_country = {
 			visible = {
 				if = {
 					limit = {
-						original_tag = NEW
+						OR = {
+							original_tag = NEW
+							orginal_tag = VEG
+						}
 					}
-					has_cosmetic_tag = THR_cosmetic_tag
+					OR = {
+						has_completed_focus = new_mutanttech
+						has_completed_focus = veg_mutants
+					}
 				}
 				else = {
 					always = yes
@@ -629,9 +725,15 @@ every_possible_country = {
 			visible = {
 				if = {
 					limit = {
-						original_tag = NEW
+						OR = {
+							original_tag = NEW
+							orginal_tag = VEG
+						}
 					}
-					has_cosmetic_tag = THR_cosmetic_tag
+					OR = {
+						has_completed_focus = new_mutanttech
+						has_completed_focus = veg_mutants
+					}
 				}
 				else = {
 					always = yes
@@ -668,9 +770,15 @@ every_possible_country = {
 			visible = {
 				if = {
 					limit = {
-						original_tag = NEW
+						OR = {
+							original_tag = NEW
+							orginal_tag = VEG
+						}
 					}
-					has_cosmetic_tag = THR_cosmetic_tag
+					OR = {
+						has_completed_focus = new_mutanttech
+						has_completed_focus = veg_mutants
+					}
 				}
 				else = {
 					always = yes
