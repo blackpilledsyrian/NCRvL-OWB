@@ -1,0 +1,11 @@
+sound = {
+	name = "island_war_bigevent_sound" #name you're using for the sound
+	file = "customsound/Guerre_guerre_vente_vent.wav" ## location of the sound file
+	always_load = no
+}
+
+sound = {
+	name = "sunset_bigevent_sound" #name you're using for the sound
+	file = "customsound/Iron_lotus.wav" ## location of the sound file
+	always_load = no
+}

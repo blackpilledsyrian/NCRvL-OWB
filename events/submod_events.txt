@@ -1,0 +1,180 @@
+add_namespace = the_wounded_bear
+add_namespace = the_raging_bull
+
+country_event = {
+	id = the_wounded_bear.1
+	is_triggered_only = yes
+	fire_only_once = yes
+	hidden = yes
+	immediate = {
+		set_country_flag = wounded_bear
+		NCR = {
+			division_template = {
+				name = "NCR conscripts"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+	
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					
+
+				}
+				
+			}
+			every_controlled_state = {
+				limit = {
+					any_neighbor_state = {
+						controller = {
+							has_war_with = NCR
+						}
+					}
+				}
+				create_unit = {
+					division = "name = \"NCR conscripts\" division_template = \"NCR conscripts\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = NCR
+				}
+				create_unit = {
+					division = "name = \"NCR conscripts\" division_template = \"NCR conscripts\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = NCR
+				}
+				create_unit = {
+					division = "name = \"NCR conscripts\" division_template = \"NCR conscripts\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = NCR
+				}
+				create_unit = {
+					division = "name = \"NCR conscripts\" division_template = \"NCR conscripts\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = NCR
+				}
+				create_unit = {
+					division = "name = \"NCR conscripts\" division_template = \"NCR conscripts\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = NCR
+				}
+				create_unit = {
+					division = "name = \"NCR conscripts\" division_template = \"NCR conscripts\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = NCR
+				}
+				create_unit = {
+					division = "name = \"NCR conscripts\" division_template = \"NCR conscripts\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = NCR
+				}
+				create_unit = {
+					division = "name = \"NCR conscripts\" division_template = \"NCR conscripts\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = NCR
+				}
+				create_unit = {
+					division = "name = \"NCR conscripts\" division_template = \"NCR conscripts\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = NCR
+				}
+				create_unit = {
+					division = "name = \"NCR conscripts\" division_template = \"NCR conscripts\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = NCR
+				}
+				create_unit = {
+					division = "name = \"NCR conscripts\" division_template = \"NCR conscripts\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = NCR
+				}
+				create_unit = {
+					division = "name = \"NCR conscripts\" division_template = \"NCR conscripts\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = NCR
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = the_raging_bull.1
+	is_triggered_only = yes
+	fire_only_once = yes
+	hidden = yes
+	immediate = {
+		set_country_flag = raging_bull
+		CES = {
+			division_template = {
+				name = "Legion levies"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+	
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					
+
+				}
+				
+			}
+			every_controlled_state = {
+				limit = {
+					any_neighbor_state = {
+						controller = {
+							has_war_with = CES
+						}
+					}
+				}
+				create_unit = {
+					division = "name = \"Legion levies\" division_template = \"Legion levies\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = CES
+				}
+				create_unit = {
+					division = "name = \"Legion levies\" division_template = \"Legion levies\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = CES
+				}
+				create_unit = {
+					division = "name = \"Legion levies\" division_template = \"Legion levies\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = CES
+				}
+				create_unit = {
+					division = "name = \"Legion levies\" division_template = \"Legion levies\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = CES
+				}
+				create_unit = {
+					division = "name = \"Legion levies\" division_template = \"Legion levies\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = CES
+				}
+				create_unit = {
+					division = "name = \"Legion levies\" division_template = \"Legion levies\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = CES
+				}
+				create_unit = {
+					division = "name = \"Legion levies\" division_template = \"Legion levies\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = CES
+				}
+				create_unit = {
+					division = "name = \"Legion levies\" division_template = \"Legion levies\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = CES
+				}
+				create_unit = {
+					division = "name = \"Legion levies\" division_template = \"Legion levies\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = CES
+				}
+				create_unit = {
+					division = "name = \"Legion levies\" division_template = \"Legion levies\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = CES
+				}
+				create_unit = {
+					division = "name = \"Legion levies\" division_template = \"Legion levies\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = CES
+				}
+				create_unit = {
+					division = "name = \"Legion levies\" division_template = \"Legion levies\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = CES
+				}
+			}
+		}
+	}
+}

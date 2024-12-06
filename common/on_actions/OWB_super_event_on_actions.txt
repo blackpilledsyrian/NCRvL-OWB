@@ -1,0 +1,105 @@
+on_actions = {
+
+	on_state_control_changed = { #wounded bear
+		effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = OWB_wounded_bear_event_fired
+					}
+					
+					FROM = {
+						OR = {
+							is_in_faction_with = NCR
+							tag = NCR
+						}
+					}
+					ROOT = {
+						OR = {
+							is_in_faction_with = CES
+							tag = CES
+						}
+					}
+					FROM.FROM = {
+						OR = {
+							state = 77
+							state = 313
+							state = 591
+						
+						}
+					}
+				}
+				every_country = {
+					set_country_flag = OWB_wounded_bear
+				}
+				set_global_flag = OWB_wounded_bear_event_fired
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						has_global_flag = OWB_wounded_bear_event_fired
+					}
+					NCR = {
+						surrender_progress > 0.3
+					}
+				}
+				every_country = {
+					set_country_flag = OWB_wounded_bear
+				}
+				set_global_flag = OWB_wounded_bear_event_fired
+			}
+		}
+	}
+	
+		on_state_control_changed = { #raging bull
+		effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = OWB_raging_bull_event_fired
+					}
+					
+					FROM = {
+						OR = {
+							is_in_faction_with = CES
+							tag = CES
+						}
+					}
+					ROOT = {
+						OR = {
+							is_in_faction_with = NCR
+							tag = NCR
+						}
+					}
+					FROM.FROM = {
+						OR = {
+							state = 518
+							state = 349
+							state = 520
+							state = 388
+						
+						}
+					}
+				}
+				every_country = {
+					set_country_flag = OWB_raging_bull
+				}
+				set_global_flag = OWB_raging_bull_event_fired
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						has_global_flag = OWB_raging_bull_event_fired
+					}
+					CES = {
+						surrender_progress > 0.3
+					}
+				}
+				every_country = {
+					set_country_flag = OWB_raging_bull
+				}
+				set_global_flag = OWB_raging_bull_event_fired
+			}
+		}
+	}
+}

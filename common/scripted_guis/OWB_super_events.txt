@@ -1,0 +1,51 @@
+scripted_gui = {	
+  OWB_super_event_wounded_bear = { ### VERY IMPORTANT MAKE SURE THIS USES THE SAME NAME AS #IN THE WW_BigEvent_custom.gui FILE OR YOU'RE GONNA GET A CRASH
+		context_type = player_context
+		window_name = "OWB_super_event_wounded_bear"
+
+		visible = {
+			has_country_flag = OWB_wounded_bear ### this global flag triggers the #superevent
+		}
+	}
+
+	OWB_super_event_frame_bear_custom = { ### VERY IMPORTANT MAKE SURE THIS USES THE SAME #NAME AS IN THE WW_BigEvent_custom.gui FILE OR YOU'RE GONNA GET A CRASH
+		context_type = player_context
+		window_name = "OWB_super_event_frame_bear_custom"
+
+		visible = {
+			has_country_flag = OWB_wounded_bear
+		}
+
+		effects = {
+			Option_click = {
+				clr_country_flag = OWB_wounded_bear ### this disables the country flag #that fires the superevent (so the superevent actually goes away)
+			}
+		}
+	}
+	
+	OWB_super_event_raging_bull = { ### VERY IMPORTANT MAKE SURE THIS USES THE SAME NAME AS #IN THE WW_BigEvent_custom.gui FILE OR YOU'RE GONNA GET A CRASH
+		context_type = player_context
+		window_name = "OWB_super_event_raging_bull"
+
+		visible = {
+			has_country_flag = OWB_raging_bull ### this global flag triggers the #superevent
+		}
+	}
+
+	OWB_super_event_frame_bull_custom = { ### VERY IMPORTANT MAKE SURE THIS USES THE SAME #NAME AS IN THE WW_BigEvent_custom.gui FILE OR YOU'RE GONNA GET A CRASH
+		context_type = player_context
+		window_name = "OWB_super_event_frame_bull_custom"
+
+		visible = {
+			has_country_flag = OWB_raging_bull
+		}
+
+		effects = {
+			Option_click = {
+				clr_country_flag = OWB_raging_bull ### this disables the country flag #that fires the superevent (so the superevent actually goes away)
+			}
+		}
+	}
+
+}
+
