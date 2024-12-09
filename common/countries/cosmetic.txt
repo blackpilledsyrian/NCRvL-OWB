@@ -1,3 +1,23 @@
+SHA_calix = {
+	color = rgb { 12 244 155 }
+	color_ui = rgb { 12 244 155 }
+}
+
+SHA_shale = {
+	color = rgb { 26 150 20 }
+	color_ui = rgb { 26 150 20 }
+}
+
+SHA_crusher = {
+	color = rgb { 26 150 20 }
+	color_ui = rgb { 26 150 20 }
+}
+
+SHA_mogger = {
+	color = rgb { 77 115 38 }
+	color_ui = rgb { 77 115 38 }
+}
+
 ACH_texan_brotherhood = {
 	color = rgb { 100 115 100 }
 	color_ui = rgb { 100 115 100 }

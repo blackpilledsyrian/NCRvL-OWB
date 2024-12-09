@@ -1,0 +1,734 @@
+ideas = {
+	country = {
+		attis_industry_texas_to_ces = {
+			picture = generic_legion_flag
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				
+			}
+			targeted_modifier = {
+                tag = CES
+                mic_to_target_factor = 0.25
+                cic_to_target_factor = 0.25
+            }
+		}
+		texas_industry_suffer_0 = {
+			picture = salvaged_military_industry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			on_remove = {
+				add_timed_idea = {
+					idea = texas_industry_suffer_1
+					days = 20
+				}
+			}
+			modifier = {
+				
+			}
+		}
+		texas_industry_suffer_1 = {
+			picture = salvaged_military_industry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			on_remove = {
+				add_timed_idea = {
+					idea = texas_industry_suffer_2
+					days = 20
+				}
+			}
+			modifier = {
+				army_attack_factor = -0.05
+				army_defence_factor = -0.05
+				surrender_limit = -0.05
+			}
+		}
+		texas_industry_suffer_2 = {
+			picture = salvaged_military_industry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			on_remove = {
+				add_timed_idea = {
+					idea = texas_industry_suffer_3
+					days = 20
+				}
+			}
+			modifier = {
+				army_attack_factor = -0.1
+				army_defence_factor = -0.1
+				surrender_limit = -0.1
+			}
+		}
+		texas_industry_suffer_3 = {
+			picture = salvaged_military_industry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			on_remove = {
+				add_timed_idea = {
+					idea = texas_industry_suffer_4
+					days = 20
+				}
+			}
+			modifier = {
+				army_attack_factor = -0.15
+				army_defence_factor = -0.15
+				surrender_limit = -0.15
+			}
+		}
+		texas_industry_suffer_4 = {
+			picture = salvaged_military_industry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			on_remove = {
+				add_timed_idea = {
+					idea = texas_industry_suffer_5
+					days = 20
+				}
+			}
+			modifier = {
+				army_attack_factor = -0.2
+				army_defence_factor = -0.2
+				surrender_limit = -0.2
+			}
+		}
+		texas_industry_suffer_5 = {
+			picture = salvaged_military_industry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			on_remove = {
+				add_timed_idea = {
+					idea = texas_industry_suffer_6
+					days = 20
+				}
+			}
+			modifier = {
+				army_attack_factor = -0.25
+				army_defence_factor = -0.25
+				surrender_limit = -0.25
+			}
+		}
+		texas_industry_suffer_6 = {
+			picture = salvaged_military_industry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			on_remove = {
+				add_timed_idea = {
+					idea = texas_industry_suffer_7
+					days = 20
+				}
+			}
+			modifier = {
+				army_attack_factor = -0.3
+				army_defence_factor = -0.3
+				surrender_limit = -0.3
+			}
+		}
+		texas_industry_suffer_7 = {
+			picture = salvaged_military_industry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			on_remove = {
+				add_timed_idea = {
+					idea = texas_industry_suffer_8
+					days = 20
+				}
+			}
+			modifier = {
+				army_attack_factor = -0.35
+				army_defence_factor = -0.35
+				surrender_limit = -0.35
+			}
+		}
+		texas_industry_suffer_8 = {
+			picture = salvaged_military_industry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			on_remove = {
+				add_timed_idea = {
+					idea = texas_industry_suffer_9
+					days = 20
+				}
+			}
+			modifier = {
+				army_attack_factor = -0.4
+				army_defence_factor = -0.4
+				surrender_limit = -0.4
+			}
+		}
+		texas_industry_suffer_9 = {
+			picture = salvaged_military_industry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			on_remove = {
+				add_ideas = texas_industry_suffer_10
+			}
+			modifier = {
+				army_attack_factor = -0.45
+				army_defence_factor = -0.45
+				surrender_limit = -0.45
+			}
+		}
+		texas_industry_suffer_10 = {
+			picture = salvaged_military_industry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				army_attack_factor = -0.5
+				army_defence_factor = -0.5
+				surrender_limit = -0.5
+			}
+		}
+		attis_calix_army = {
+			picture = salvaged_military_industry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				modifier_army_sub_unit_category_robots_attack_factor = 0.1
+				modifier_army_sub_unit_category_robots_max_org_factor = 0.15
+			}
+		}
+		attis_calix_industry = {
+			picture = generic_control_robots
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.1
+				consumer_goods_expected_value = -0.025
+				research_speed_factor = 0.15
+			}
+		}
+		attis_army_remnants_idea = {
+			picture = attis_army_remnants
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				conscription_factor = 0.2
+				army_attack_factor = 0.03
+				army_defence_factor = 0.03
+				production_speed_bunker_factor = 0.05
+			}
+		}
+		fortification_teams_idea = {
+			picture = generic_military_draft
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				conscription = 0.01
+				production_speed_bunker_factor = 0.15
+			}
+		}
+		mutant_tools_idea = {
+			picture = KHA_khan_arena
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				equipment_conversion_speed = 0.05
+				production_factory_max_efficiency_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.1
+				consumer_goods_expected_value = -0.03
+			}
+		}
+		industry_behemoths_idea = {
+			picture = pre-war_industry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				global_building_slots_factor = 0.1
+				local_resources_factor = 0.15
+				conscription = 0.02
+			}
+		}
+		attis_army_supplies = {
+			picture = generic_mass_infantry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				industrial_capacity_factory = 0.04
+				production_speed_buildings_factor = 0.04
+				research_speed_factor = 0.02
+			}
+		}
+		attis_army_supplies_2 = {
+			picture = generic_mass_infantry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				industrial_capacity_factory = 0.08
+				production_speed_buildings_factor = 0.08
+				research_speed_factor = 0.04
+			}
+		}
+		attis_army_supplies_3 = {
+			picture = generic_mass_infantry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				industrial_capacity_factory = 0.12
+				production_speed_buildings_factor = 0.12
+				research_speed_factor = 0.06
+			}
+		}
+		attis_army_supplies_4 = {
+			picture = generic_mass_infantry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				industrial_capacity_factory = 0.2
+				production_speed_buildings_factor = 0.2
+				research_speed_factor = 0.08
+			}
+		}
+		attis_army_supplies_mil = {
+			picture = generic_mass_infantry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				industrial_capacity_factory = 0.2
+				production_speed_buildings_factor = 0.2
+				production_factory_max_efficiency_factor = 0.1
+				research_speed_factor = 0.1
+			}
+		}
+		attis_army_supplies_civ = {
+			picture = generic_mass_infantry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				industrial_capacity_factory = 0.2
+				production_factory_max_efficiency_factor = 0.05
+				production_speed_buildings_factor = 0.2
+				global_building_slots_factor = 0.2
+				research_speed_factor = 0.1
+			}
+		}
+		calix_aggression_supression = {
+			picture = generic_terminal
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				army_attack_factor = -0.3
+			}
+		}
+		calix_speed_supression = {
+			picture = generic_terminal
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				army_speed_factor = -0.3
+			}
+		}
+		shoptec_consumer_protocls = {
+			picture = generic_terminal
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				consumer_goods_expected_value = -0.06
+			}
+		}
+		fev_precurement = {
+			picture = generic_rad_iv
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				weekly_manpower = 20
+			}
+		}
+		the_final_purchase = {
+			picture = generic_rad_iv
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				stability_weekly = -0.01
+				war_support_weekly = -0.01
+				army_morale_factor = -0.25
+				army_attack_factor = -0.1
+				industrial_capacity_factory = -0.25
+				weekly_manpower = -50
+			}
+			on_remove = {
+				SHA_calix = {
+					unit_leader_event = nf_attis.27
+				}
+			}
+		}
+		imo_racree_infestation_4 = {
+			picture = generic_creature_racree
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				production_speed_buildings_factor = -0.16
+				industrial_capacity_factory = -0.16
+				global_building_slots_factor = -0.16
+				army_org_factor = -0.16
+			}
+		}
+		imo_racree_infestation_3 = {
+			picture = generic_creature_racree
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				production_speed_buildings_factor = -0.12
+				industrial_capacity_factory = -0.12
+				global_building_slots_factor = -0.12
+				army_org_factor = -0.12
+			}
+		}
+		imo_racree_infestation_2 = {
+			picture = generic_creature_racree
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				production_speed_buildings_factor = -0.08
+				industrial_capacity_factory = -0.08
+				global_building_slots_factor = -0.08
+				army_org_factor = -0.08
+			}
+		}
+		imo_racree_infestation_1 = {
+			picture = generic_creature_racree
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				production_speed_buildings_factor = -0.04
+				industrial_capacity_factory = -0.04
+				global_building_slots_factor = -0.04
+				army_org_factor = -0.04
+			}
+		}
+		imo_hurricane_damage = {
+			picture = generic_naval_invasion
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				industrial_capacity_factory = -0.08
+				army_attack_factor = -0.08
+			}
+		}
+		imo_flesh_shredding_bullets = {
+			picture = generic_service_rifle
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				army_attack_factor = 0.05
+				army_org_factor = -0.05
+				country_resource_energy = 5
+				country_resource_circuitry = 5
+				country_resource_water = 5
+				country_resource_composites = 5
+				country_resource_advanced = 5
+			}
+		}
+		imo_heavy_duty_weapons = {
+			picture = generic_service_rifle
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				supply_consumption_factor = -0.2
+				industrial_capacity_factory = -0.05
+				country_resource_energy = 5
+				country_resource_circuitry = 5
+				country_resource_water = 5
+				country_resource_composites = 5
+				country_resource_advanced = 5
+			}
+		}
+		imo_improved_shielding = {
+			picture = generic_bettery
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				army_defence_factor = 0.1
+				army_org_factor = -0.05
+				country_resource_energy = 5
+				country_resource_circuitry = 5
+				country_resource_water = 5
+				country_resource_composites = 5
+				country_resource_advanced = 5
+			}
+		}
+		imo_slimmed_chasis = {
+			picture = generic_bettery
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				army_org_regain = 0.2
+				army_org_factor = -0.05
+				country_resource_energy = 5
+				country_resource_circuitry = 5
+				country_resource_water = 5
+				country_resource_composites = 5
+				country_resource_advanced = 5
+			}
+		}
+		imo_industrial_fervor = {
+			picture = pre-war_industry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				industrial_capacity_factory = 0.1
+			}
+		}
+		uoa_nightkin_support_program_1 = {
+			picture = pre-war_industry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				special_forces_attack_factor = 0.05
+				special_forces_defence_factor = 0.05
+				special_forces_min = 20 #special_forces_cap = 0.05
+			}
+		}
+		uoa_nightkin_support_program_2 = {
+			picture = pre-war_industry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				special_forces_attack_factor = 0.1
+				special_forces_defence_factor = 0.1
+				special_forces_min = 40 #special_forces_cap = 0.1
+			}
+		}
+		uoa_nightkin_support_program_3 = {
+			picture = pre-war_industry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				special_forces_attack_factor = 0.15
+				special_forces_defence_factor = 0.15
+				special_forces_min = 60 #special_forces_cap = 0.15
+			}
+		}
+		uoa_nightkin_support_program_4 = {
+			picture = pre-war_industry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				special_forces_attack_factor = 0.2
+				special_forces_defence_factor = 0.2
+				special_forces_min = 80 #special_forces_cap = 0.2
+			}
+		}
+		uoa_fev_volunteer_pr_campaign = {
+			picture = pre-war_industry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				weekly_manpower = 20
+			}
+		}
+		uoa_mutant_sterility_research_1 = {
+			picture = pre-war_industry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				research_speed_factor = 0.05
+				industrial_capacity_factory = 0.05
+			}
+		}
+		uoa_mutant_sterility_research_2 = {
+			picture = pre-war_industry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				research_speed_factor = 0.1
+				industrial_capacity_factory = 0.1
+			}
+		}
+		uoa_mutant_sterility_research_3 = {
+			picture = pre-war_industry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				research_speed_factor = 0.15
+				industrial_capacity_factory = 0.15
+			}
+		}
+		uoa_mutant_sterility_research_4 = {
+			picture = pre-war_industry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				research_speed_factor = 0.2
+				industrial_capacity_factory = 0.2
+			}
+		}
+		uoa_election_troubles = {
+			picture = warband_without_a_home
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				stability_weekly = -0.01
+				ruler_drift = 0.01
+			}
+			on_remove = {
+				country_event = nf_attis.37
+			}
+		}
+		cru_crush_idea = {
+			picture = warband_without_a_home
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				production_speed_buildings_factor = -0.5
+				consumer_goods_expected_value = -0.1
+			}
+		}
+		cru_nightkin_in_army = {
+			picture = pre-war_industry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				recon_factor = 1
+			}
+		}
+		cru_nightkin_assemble_idea = {
+			picture = pre-war_industry
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				special_forces_cap = 0.15
+				modifier_army_sub_unit_super_mutant_nightkin_infantry_attack_factor = 0.15
+				modifier_army_sub_unit_super_mutant_nightkin_infantry_defence_factor = 0.15
+			}
+		}
+		cru_battle_cry_idea = {
+			picture = generic_intel_bonus
+			removal_cost = -1
+			available = {
+				has_war_with = UOA
+			}
+			targeted_modifier = {
+				tag = UOA
+				attack_bonus_against = 0.05
+			}
+			# ??? what was that supposed to do? @CGS
+			# country_event = nf_attis.41
+		}
+	}
+	hidden_ideas = {
+		uoa_crusher_join_sha = {
+			available = {
+				has_war = yes
+				SHA = {
+					exists = yes
+				}
+			}
+			removal_cost = -1
+			on_remove = {
+				if = {
+					limit = {
+						country_exists = SHA
+					}
+					SHA = {
+						country_event = nf_attis.38
+					}
+				}
+				else = {}
+			}
+		}
+	}
+}

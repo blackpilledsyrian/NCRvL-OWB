@@ -1,19 +1,27 @@
 characters = {
-	SHA_shale = {
-		name = SHA_SHALE_NAME
+	SHA_hoover_vaccuum = {
+		name = "Power Vacuum"
 		portraits = {
 			civilian = {
-				large = GFX_Portrait_Shale_Animated
+				large = GFX_portrait_sha_vacuum
 			}
 		}
 		country_leader = {
-			desc = SHA_SHALE_DESC
+			desc = ""
 			ideology = warlordship
 			traits = {
 				isolationist
 			}
 			expire = "3000.01.01.01"
 			id = -1
+		}
+	}
+	SHA_shale = {
+		name = SHA_SHALE_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Shale_Animated
+			}
 		}
 		field_marshal = {
 			traits = {
@@ -28,6 +36,38 @@ characters = {
 			defense_skill = 2
 			planning_skill = 2
 			logistics_skill = 3
+		}
+	}
+	IMO_juggernaut = {
+		name = "Juggernaut"
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Juggernaut_Animated
+			}
+		}
+		corps_commander = {
+			traits = {
+				enduring_trait
+				agile_trait
+				warchief_trait
+				fortress_buster
+			}
+			skill = 5
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 5
+		}
+	}
+	UOA_lieutenant_crusher = {
+		name = UOA_LIEUTENANT_CRUSHER_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_UOA_lieutenant_crusher
+			}
+			army = {
+				large = GFX_Portrait_UOA_lieutenant_crusher
+			}
 		}
 	}
 	SHA_gond_scourge = {
@@ -197,6 +237,19 @@ characters = {
 			}
 			civilian = {
 				large = GFX_Portrait_SHA_calix_animated
+				#small = gfx_sprite_type_name_or_file_path
+			}
+		}
+	}
+	SHA_calix_normal = {
+		name = SHA_calix_name
+		portraits = {
+			army = {
+				large = GFX_Portrait_SHA_calix_prime_animated
+				#small = gfx_sprite_type_name_or_file_path
+			}
+			civilian = {
+				large = GFX_Portrait_SHA_calix_prime_animated
 				#small = gfx_sprite_type_name_or_file_path
 			}
 		}

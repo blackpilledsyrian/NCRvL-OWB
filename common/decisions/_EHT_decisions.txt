@@ -1,0 +1,1392 @@
+
+EHT_nomadic_decisions = {
+	EHT_begin_border_raid = {
+		icon = generic_independence
+		cost = 50
+		fire_only_once = no
+		ai_will_do = {
+			factor = 45
+			modifier = {
+				factor = 0
+				ai_has_no_other_wars_or_wargoals = no
+			}
+		}
+		available = {
+		}
+		visible = {
+			check_variable = { EHT_raids < 5 }
+		}
+		days_re_enable = 50
+		complete_effect = {
+			fallout_border_war_menu_clear_variables = yes
+			if = {
+				limit = {
+					is_ai = no
+				}
+				fallout_border_war_menu_populate_owned_state_array_with_all_possible = yes
+				fallout_border_war_menu_populate_army_leader_array_with_all_possible = yes
+				fallout_border_war_menu_open_or_close_window = yes
+				custom_effect_tooltip = wht_begin_border_raid_tt
+			}
+			else = {
+				random_owned_state = {
+					limit = {
+						has_border_war = no
+						is_fully_controlled_by = ROOT
+						any_neighbor_state = {
+							has_border_war = no
+							NOT = { is_owned_by = ROOT }
+							NOT = { check_variable = { impassable_to@PREV = 1 } }
+							owner = {
+								NOT = { has_war_with = ROOT }
+								PREV = {
+									is_fully_controlled_by = PREV
+								}
+							}
+						}
+						ROOT = {
+							OR = {
+								divisions_in_state = {
+									size > 0
+									state = PREV
+								}
+								NOT = {
+									any_owned_state = {
+										has_border_war = no
+										is_fully_controlled_by = ROOT
+										any_neighbor_state = {
+											has_border_war = no
+											NOT = { is_owned_by = ROOT }
+											NOT = { check_variable = { impassable_to@PREV = 1 } }
+											owner = {
+												NOT = { has_war_with = ROOT }
+												PREV = {
+													is_fully_controlled_by = PREV
+												}
+											}
+										}
+										ROOT = {
+											divisions_in_state = {
+												size > 0
+												state = PREV
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					ROOT = {
+						set_variable = { selected_own_state_for_border_war = PREV.id }
+					}
+					random_neighbor_state = {
+						limit = {
+							NOT = { is_owned_by = ROOT }
+							NOT = { check_variable = { impassable_to@PREV = 1 } }
+							owner = {
+								NOT = { has_war_with = ROOT }
+								PREV = {
+									is_fully_controlled_by = PREV
+								}
+							}
+						}
+						ROOT = {
+							set_variable = { selected_enemy_state_for_border_war = PREV.id }
+						}
+					}
+				}
+				meta_effect = {
+					text = {
+						start_border_war = {
+							change_state_after_war = [CHANGE_STATE_AFTER_WAR]
+							attacker = {
+								state = selected_own_state_for_border_war
+								num_provinces = 4
+								on_win = [ATTACKER_WIN_EVENT]
+								on_lose = [ATTACKER_LOSE_EVENT]
+								on_cancel = [ATTACKER_CANCEL_EVENT]
+								leader_score = {
+									base = 1
+								}
+							}
+							defender = {
+								state = selected_enemy_state_for_border_war
+								num_provinces = 4
+								on_win = [DEFENDER_WIN_EVENT]
+								on_lose = [DEFENDER_LOSE_EVENT]
+								on_cancel = [DEFENDER_CANCEL_EVENT]
+							}
+						}
+					}
+					CHANGE_STATE_AFTER_WAR = "[This.GetBorderWarMenuChangeStateAfterWar]"
+					ATTACKER_WIN_EVENT = "[This.GetBorderWarMenuAttackerWinEvent]"
+					ATTACKER_LOSE_EVENT = "[This.GetBorderWarMenuAttackerLoseEvent]"
+					ATTACKER_CANCEL_EVENT = "[This.GetBorderWarMenuAttackerCancelEvent]"
+					DEFENDER_WIN_EVENT = "[This.GetBorderWarMenuDefenderWinEvent]"
+					DEFENDER_LOSE_EVENT = "[This.GetBorderWarMenuDefenderLoseEvent]"
+					DEFENDER_CANCEL_EVENT = "[This.GetBorderWarMenuDefenderCancelEvent]"
+				}
+			}
+			add_to_variable = { EHT_raids = 1 }
+		}
+	}
+	summon_ruby_valley_warband = {
+		icon = generic_independence
+		cost = 50
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 45
+		}
+		available = {
+			command_power > 25
+			has_war_with = RUB
+		}
+		visible = {
+		}
+		complete_effect = {
+			hidden_effect = { load_oob = EHT_small_warband }
+			custom_effect_tooltip = summon_small_warband
+			add_command_power = -25
+		}
+	}
+	summon_new_hammond_warband = {
+		icon = generic_independence
+		cost = 50
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 45
+		}
+		available = {
+			command_power > 25
+			has_war_with = HAM
+		}
+		visible = {
+		}
+		complete_effect = {
+			hidden_effect = { load_oob = EHT_small_warband }
+			custom_effect_tooltip = summon_small_warband
+			add_command_power = -25
+		}
+	}
+	summon_vault_city_warband = {
+		icon = generic_independence
+		cost = 50
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 45
+		}
+		available = {
+			command_power > 25
+			has_war_with = VLT
+		}
+		visible = {
+		}
+		complete_effect = {
+			hidden_effect = { load_oob = EHT_small_warband }
+			custom_effect_tooltip = summon_small_warband
+			add_command_power = -25
+		}
+	}
+	summon_reno_warband = {
+		icon = generic_independence
+		cost = 50
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 45
+		}
+		available = {
+			command_power > 25
+			has_war_with = NEW
+		}
+		visible = {
+		}
+		complete_effect = {
+			hidden_effect = { load_oob = EHT_small_warband }
+			custom_effect_tooltip = summon_small_warband
+			add_command_power = -25
+		}
+	}
+}
+EHT_sedentary_decisions = {
+	temple_of_the_road = {
+		icon =  GFX_decision_generic_civil_support
+		fire_only_once = yes
+		cost = 75
+		available = {
+			num_of_civilian_factories_available_for_projects > 1
+		}
+		modifier = { civilian_factory_use = 2 }
+		days_remove = 210
+		remove_effect = {
+			478 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			set_country_flag = EHT_temple_constructed
+			custom_effect_tooltip = temple_of_the_road_complete
+		}
+	}
+	EHT_call_of_vengeance = {
+		icon =  GFX_decision_generic_civil_support
+		fire_only_once = yes
+		available = {
+			NOT = { has_country_flag = EHT_edict_issued }
+			has_country_flag = EHT_temple_constructed
+		}
+		cost = 50
+		days_remove = 180
+		remove_effect = {
+			clr_country_flag = EHT_edict_issued
+		}
+		modifier = {
+			army_speed_factor = 0.10
+			army_attack_factor = 0.05
+		}
+	}
+	EHT_call_of_bounty = {
+		icon =  GFX_decision_generic_civil_support
+		fire_only_once = yes
+		available = {
+			NOT = { has_country_flag = EHT_edict_issued }
+			has_country_flag = EHT_temple_constructed
+		}
+		cost = 50
+		days_remove = 210
+		remove_effect = {
+			clr_country_flag = EHT_edict_issued
+		}
+		modifier = {
+			consumer_goods_expected_value = -0.025
+		}
+	}
+	EHT_call_of_desparation= {
+		icon =  GFX_decision_generic_civil_support
+		fire_only_once = yes
+		available = {
+			NOT = { has_country_flag = EHT_edict_issued }
+			has_country_flag = EHT_temple_constructed
+		}
+		cost = 50
+		days_remove = 180
+		remove_effect = {
+			clr_country_flag = EHT_edict_issued
+		}
+		modifier = {
+			army_defence_factor = 0.05
+			dig_in_speed = 0.20
+		}
+	}
+	EHT_living_exchange = {
+		icon =  GFX_decision_generic_civil_support
+		fire_only_once = yes
+		cost = 75
+		days_remove = 210
+		available = {
+			num_of_civilian_factories_available_for_projects > 1
+		}
+		modifier = { civilian_factory_use = 2 }
+		remove_effect = {
+			478 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			set_country_flag = EHT_living_exchange_constructed
+			custom_effect_tooltip = living_exchange_complete
+		}
+	}
+	EHT_buy_warrior_slaves = {
+		icon =  GFX_decision_generic_civil_support
+		fire_only_once = no
+		available = {
+			has_country_flag = EHT_living_exchange_constructed
+		}
+		cost = 100
+		days_re_enable = 180
+		complete_effect = {
+			add_manpower = 500
+		}
+	}
+	EHT_buy_scientist_slaves = {
+		icon =  GFX_decision_generic_civil_support
+		fire_only_once = no
+		available = {
+			has_country_flag = EHT_living_exchange_constructed
+		}
+		cost = 100
+		days_remove = 180
+		modifier = {
+			research_speed_factor = 0.10
+		}
+	}
+	EHT_buy_comfort_women = {
+		#gross
+		icon =  GFX_decision_generic_civil_support
+		fire_only_once = no
+		available = {
+			has_country_flag = EHT_living_exchange_constructed
+		}
+		cost = 100
+		days_remove = 210
+		modifier = {
+			consumer_goods_expected_value = -0.05
+		}
+	}
+	EHT_great_stockpile = {
+		icon =  GFX_decision_generic_civil_support
+		fire_only_once = yes
+		cost = 75
+		days_remove = 210
+		available = {
+			num_of_civilian_factories_available_for_projects > 1
+		}
+		modifier = { civilian_factory_use = 2 }
+		remove_effect = {
+			478 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			set_country_flag = great_stockpile
+			custom_effect_tooltip = great_stockpile_complete
+		}
+	}
+	stockpile_weapons = {
+		icon =  GFX_decision_generic_civil_support
+		fire_only_once = yes
+		cost = 75
+		days_remove = 90
+		available = {
+			has_country_flag = great_stockpile
+			NOT = { has_country_flag = EHT_stockpiling }
+		}
+		complete_effect = {
+			add_ideas = EHT_equipment_bonus
+			set_country_flag = great_stockpile
+		}
+		remove_effect = {
+			remove_ideas = EHT_equipment_bonus
+			clr_country_flag = great_stockpile
+		}
+	}
+	stockpile_vehicles = {
+		icon =  GFX_decision_generic_civil_support
+		fire_only_once = yes
+		cost = 75
+		days_remove = 90
+		available = {
+			has_country_flag = great_stockpile
+			NOT = { has_country_flag = EHT_stockpiling }
+		}
+		complete_effect = {
+			add_ideas = EHT_motorized_vehicle_bonus
+			set_country_flag = great_stockpile
+		}
+		remove_effect = {
+			remove_ideas = EHT_motorized_vehicle_bonus
+			clr_country_flag = EHT_stockpiling
+		}
+	}
+	stockpile_explosives = {
+		icon =  GFX_decision_generic_civil_support
+		fire_only_once = yes
+		cost = 75
+		days_remove = 90
+		available = {
+			has_country_flag = great_stockpile
+			NOT = { has_country_flag = EHT_stockpiling }
+		}
+		complete_effect = {
+			add_ideas = EHT_explosives_bonus
+			set_country_flag = great_stockpile
+		}
+		remove_effect = {
+			remove_ideas = EHT_explosives_bonus
+			clr_country_flag = EHT_stockpiling
+		}
+	}
+}
+@border_incident_escalation_countdown = 30
+@border_conflict_incident_forgotten_timer = 30
+@border_conflict_escalate_to_war_countdown = 45
+@border_conflict_time_until_cancelled = 360
+
+EHT_raid_mormons = {
+	EHT_raid_mormons1 = {
+		icon = border_war
+		allowed = {
+		}
+		available = {
+			OR = {
+				AND = {
+					NCN = {
+						any_owned_state = {
+							is_owned_and_controlled_by = NCN
+							any_neighbor_state = { # Any border state of the target
+								is_fully_controlled_by = ROOT # is controlled by us
+								set_temp_variable = { var:attacker_state_temp = id } # ID of our state is set to a temp variable
+								has_ROOT_at_least_1_div_in_current_state_scope = yes # Custom trigger - we have at least 1 division on the border
+								hidden_trigger = { NOT = { has_state_flag = border_incident_active } } # The state we own isn't already in a border conflict
+							}
+							NOT = { has_state_flag = border_incident_active } # The target state isn't already in a border conflict
+							set_temp_variable = { var:defender_state_temp = id } # ID of the target state is set to a temp variable
+						}
+					}
+				}
+			}
+			NOT = { has_non_aggression_pact_with = NCN }
+			custom_trigger_tooltip = {
+				tooltip = BRK_setting_up_raid
+				NOT = { has_global_flag = NCN_current_generic_raid }
+			}
+		}
+		visible = {
+			NCN = { exists = yes } # The target exists - handy
+			NOT = { has_war_with = NCN } # We aren't at war with the target
+			NCN = { has_not_initiated_border_incident_with_ROOT = yes } # Custom Trigger - we haven't already initiated a raid against the target
+			NCN = {
+				is_neighbor_of = ROOT
+				NOT = {
+					is_subject_of = ROOT # They aren't a subject of us
+				}
+				NOT = {
+					is_in_faction_with = ROOT # We aren't in a faction with them
+				}
+			}
+			NOT = {
+				is_subject_of = FROM # We aren't their subject
+			}
+
+			OR = {
+				NOT = { has_border_war_with = NCN } # We don't have any border wars with them
+				NCN = {
+					any_owned_state = {
+						is_owned_and_controlled_by = NCN # Is owned by them
+						hidden_trigger = { NOT = { has_state_flag = border_incident_active } } # and doesn't have a border incident
+						any_neighbor_state = {
+							hidden_trigger = { NOT = { has_state_flag = border_incident_active } } # and any state adjacent to one they own doesn't have a border incident active
+							is_fully_controlled_by = ROOT # and belongs to us
+						}
+					}
+				}
+			}
+		}
+		target_trigger = {
+			FROM = {
+				tag = NCN
+			}
+		}
+		targets = { NCN }
+		highlight_states = { # Highlights the target state
+			highlight_states_trigger = {
+				OR = {
+					state = NCN.defender_state_vs_@ROOT
+					AND = {
+						is_owned_and_controlled_by = NCN
+						hidden_trigger = { NOT = { has_state_flag = border_incident_active } }
+						any_neighbor_state = {
+							hidden_trigger = { NOT = { has_state_flag = border_incident_active } }
+							has_ROOT_at_least_1_div_in_current_state_scope = yes
+							is_fully_controlled_by = ROOT
+						}
+					}
+				}
+			}
+		}
+
+		ai_will_do = { # AI modifier shit
+			base = 10
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				has_political_power < 151
+			}
+		}
+
+		cost = 50 # Cost
+
+		fire_only_once = no # Does it fire only once?
+
+		days_remove = @border_incident_escalation_countdown # How long it takes to initiate
+		days_re_enable = 180 # How long until it comes back
+
+		war_with_target_on_remove = yes
+
+		complete_effect = { # Effect WHEN CLICKED
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] moc_flower_wars1 (decision) complete entered"
+			}
+			hidden_effect = { # is hidden. shh - I'm not here.
+				set_global_flag = EHT_current_NCN_raid
+				NCN = {
+					random_owned_controlled_state = {
+						limit = { # a random state that is owned by the target, doesn't have an active incident and is bordered by any state we have one division in and fully control:
+							hidden_trigger = { NOT = { has_state_flag = border_incident_active } }
+							any_neighbor_state = {
+								hidden_trigger = { NOT = { has_state_flag = border_incident_active } }
+								has_ROOT_at_least_1_div_in_current_state_scope = yes
+								is_fully_controlled_by = ROOT
+							}
+						}
+						save_event_target_as = defender_state # Is saved as the defender state
+						set_variable = { NCN.defender_state_vs_@ROOT = id } # The ID of the state is saved in a variable specific to the target
+						set_temp_variable = { defender_state_temp = id } # and a temp variable
+						set_state_flag = border_incident_active # and gets the state flag indicating it has a border incident
+					}
+				}
+				random_controlled_state = {
+					limit = { # a random state we fully own that doesn't have an incident active and borders the state we specified previously:
+						is_fully_controlled_by = ROOT
+						hidden_trigger = { NOT = { has_state_flag = border_incident_active } }
+						has_ROOT_at_least_1_div_in_current_state_scope = yes
+						any_neighbor_state = {
+							state = var:NCN.defender_state_vs_@ROOT
+						}
+					}
+					save_event_target_as = attacker_state # Is saved as the attacker state
+					set_variable = { FROM.attacker_state_vs_@ROOT = id } # The ID of the state is saved
+					set_temp_variable = { attacker_state_temp = id } # and again in a temp variable
+					set_state_flag = border_incident_active # and gets a fancy state flag. Oooh!
+				}
+			}
+			custom_effect_tooltip = WTT_border_incident_delay_until_new_incident_180 # tooltip here
+			FROM = {
+				country_event = { id = nf_80s.9 hours = 1 } # The target gets an event warning them about their impending doom
+				activate_targeted_decision = { target = ROOT decision = NCN_light_border_raid_defender_warning }	# Activates a mission for them visualising how long the have to move their sorry troops to the border
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] moc_flower_wars1 (decision) complete exited"
+			}
+		}
+		remove_effect = { # Effect ON timeout
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] moc_flower_wars1 (decision) remove entered"
+			}
+			hidden_effect = { # i'm hidden again. and losing my mind. help.
+				var:FROM.defender_state_vs_@ROOT = { # The defending state and attacking state are saved again as event targets, for some reason
+					save_event_target_as = defender_state
+				}
+				var:FROM.attacker_state_vs_@ROOT = {
+					save_event_target_as = attacker_state
+				}
+				NCN = {
+					random_owned_controlled_state = {
+						limit = { # Temp variable setting again?
+							hidden_trigger = { NOT = { has_state_flag = border_incident_active } }
+							any_neighbor_state = {
+								is_fully_controlled_by = ROOT
+								has_ROOT_at_least_1_div_in_current_state_scope = yes
+								hidden_trigger = { NOT = { has_state_flag = border_incident_active } }
+							}
+						}
+						set_temp_variable = { defender_state_temp = id }
+					}
+				}
+				random_controlled_state = {
+					limit = { # Temp variable setting again?
+						is_fully_controlled_by = ROOT
+						hidden_trigger = { NOT = { has_state_flag = border_incident_active } }
+						has_ROOT_at_least_1_div_in_current_state_scope = yes
+						any_neighbor_state = {
+							state = var:FROM.defender_state_vs_@ROOT
+						}
+					}
+					set_temp_variable = { attacker_state_temp = id }
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						NOT = { has_country_flag = raid_backed_down }
+						NOT = { has_country_flag = raid_stood_up }
+					}
+				}
+				custom_effect_tooltip = brk_raid_decisions
+			}
+			if = {
+				limit = {
+					has_country_flag = raid_backed_down
+				}
+				hidden_effect = {
+					set_country_flag = equip_scav
+					scavenge_randomiser = yes
+				}
+				clr_country_flag = raid_backed_down
+				country_event = { id = nf_80s.10 }
+				FROM = { country_event = { id =  nf_80s.12 } }
+			}
+			if = {
+				limit = {
+					has_country_flag = raid_stood_up
+				}
+				clr_country_flag = raid_stood_up
+				country_event = { id =  nf_80s.11 }
+				activate_targeted_decision = { target = FROM decision = moc_light_border_escalate } # Activates a decision for them to escalate the incident
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] moc_flower_wars1 (decision) remove exited"
+			}
+		}
+	}
+	# This mission visualises the time they defender has whilst the initial raid is ongoing
+	NCN_light_border_raid_defender_warning = {
+
+		icon = border_war
+
+		allowed = { always = no } #Activated from effect of the initiation event
+
+		available = {
+			hidden_trigger = { always = no }
+		}
+
+		war_with_target_on_timeout = yes # Lies to the AI by saying this will lead to war so they mobilise every last person to the border to defend it
+		ai_will_do = { # AI shit 2: Electric Boogaloo
+			base = 50
+			# modifier = {
+			# }
+		}
+
+		days_mission_timeout = @border_incident_escalation_countdown # Somehow syncs up with the previous
+
+		fire_only_once = yes
+
+		is_good = no # Makes it red and atmospheric
+
+		timeout_effect = { # What happens on timeout
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] moc_light_border_raid_defender_warning (decision) timeout entered"
+			}
+			custom_effect_tooltip = escalation_possible_tooltip_for_defender # It can escalate
+			custom_effect_tooltip = effects_if_border_conflict_is_lost # What happens if we lose?
+			effect_tooltip = { # This stuff would happen if we lost:
+				add_political_power = -100
+				var:ROOT.defender_state_vs_@FROM = { FROM = { transfer_state = PREV } } # State gets transfered
+			}
+			hidden_effect = {
+				remove_targeted_decision = { target = FROM decision = NCN_light_border_raid_defender_warning } # Removes this mission
+				activate_targeted_decision = { target = FROM decision = NCN_light_border_escalate_raid_defender_warning } # Adds a decision to warn the target we could start a border war at any time
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] moc_light_border_raid_defender_warning (decision) timeout exited"
+			}
+		}
+	}
+
+	# Mission for defender warning the target we could start a border war at any time
+	NCN_light_border_escalate_raid_defender_warning = {
+		icon = border_war
+		allowed = { always = no }
+		available = { hidden_trigger = { always = no } }
+		highlight_states = { # Highlights the involved state again
+			highlight_states_trigger = {
+				OR = {
+					state = var:defender_state_temp
+					state = var:ROOT.defender_state_vs_@FROM
+				}
+			}
+		}
+
+		war_with_target_on_timeout = yes # Reminds the AI it might lead to war and so they should keep their troops on the border
+		ai_will_do = {
+			base = 50
+			# modifier = {
+			# }
+		}
+
+		days_mission_timeout = @border_conflict_incident_forgotten_timer
+
+		fire_only_once = yes
+
+		is_good = no
+
+		timeout_effect = { # Just tells the target that we (the attacker) can start the border war, and reminds them what will happen if they fail
+			# No logging here because this timeout does literally nothing
+			custom_effect_tooltip = from_cannot_escalate
+			custom_effect_tooltip = effects_if_border_conflict_is_lost
+			effect_tooltip = {
+				add_political_power = -100
+				var:ROOT.defender_state_vs_@FROM = { FROM = { transfer_state = PREV } } # State gets transfered
+			}
+		}
+	}
+
+	NCN_light_border_escalate = {
+
+		icon = border_war
+
+		allowed = { always = no } #Activated from effect
+
+		available = { # We can only select the trigger if the attacker state is still fully controlled by us and we have a division in the state
+			var:FROM.attacker_state_vs_@ROOT = {
+				is_fully_controlled_by = ROOT
+			}
+			divisions_in_border_state = {
+				state = var:FROM.attacker_state_vs_@ROOT
+				border_state = var:FROM.defender_state_vs_@ROOT
+				size > 0
+			}
+		}
+
+		highlight_states = { # Highlights our state
+			highlight_states_trigger = {
+				state = var:FROM.attacker_state_vs_@ROOT
+			}
+		}
+
+		ai_will_do = { # I'm giving up on commenting this now
+			base = 1
+			# modifier = {
+			# }
+		}
+
+		cancel_trigger = { # The mission will bugger off if we are suddenly in a faction with them
+			is_in_faction_with = FROM
+		}
+
+		selectable_mission = yes # We can click it!
+
+		fire_only_once = yes #Reactivation handled in effect
+
+		days_mission_timeout = @border_conflict_incident_forgotten_timer # Syncs up with how many days until the incident is forgotten
+
+		timeout_effect = { # IF WE LET THE MISSION GO (BACK DOWN)
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] moc_light_border_escalate (decision) timeout entered"
+			}
+			custom_effect_tooltip = WTT_border_incident_delay_until_new_incident_120 # Some tooltip
+			hidden_effect = {
+				FROM = { remove_targeted_decision = { target = ROOT decision = moc_light_border_escalate_raid_defender_warning } } # Stops warning the target of an escalation
+				FROM = { # Clears the state flags and variables - no more incident may happen
+					var:attacker_state_vs_@ROOT = {
+						clr_state_flag = border_incident_active
+					}
+					var:defender_state_vs_@ROOT = {
+						clr_state_flag = border_incident_active
+					}
+					clear_variable = attacker_state_vs_@ROOT
+					clear_variable = defender_state_vs_@ROOT
+				}
+				clr_global_flag = NCN_current_generic_raid
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] moc_light_border_escalate (decision) timeout exited"
+			}
+		}
+		complete_effect = { # IF WE CLICK IT
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] moc_light_border_escalate (decision) complete entered"
+			}
+			start_border_war = { # A border war is started
+				change_state_after_war = no # that won't lead to the state being exchanged
+				attacker = { # Stuff for the attacker
+					state = var:FROM.attacker_state_vs_@ROOT
+					num_provinces = 4 # Only 4 provinces can be involved
+					on_win = nf_80s.14 # If we win, this event happens for us
+					on_lose = nf_80s.16 # If we lose, this event happens for us
+					on_cancel = nf_80s.17 # If the conflict is cancelled, this event happens for us
+				}
+
+				defender = { # Stuff for the attacker
+					state = var:FROM.defender_state_vs_@ROOT
+					num_provinces = 4
+					on_win = nf_80s.15
+					on_lose = nf_80s.12
+					on_cancel = nf_80s.19
+				}
+			}
+			FROM = { # The target gets two decisions:
+				activate_targeted_decision = { target = ROOT decision = EHT_escalate_conflict } # This one lets them escalate if they want
+				activate_targeted_decision = { target = ROOT decision = WTT_border_conflict_time_until_cancelled } # This shows them how long until everyone gives up and goes home
+			}
+			# The same then happens for us
+			activate_targeted_decision = { target = FROM decision = moc_escalate_conflict }
+			activate_targeted_decision = { target = FROM decision = WTT_border_conflict_time_until_cancelled }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] moc_light_border_escalate (decision) complete exited"
+			}
+		}
+	}
+	EHT_escalate_conflict = {
+
+		icon = decision_generic_ignite_civil_war
+
+		allowed = { always = no } #Activated from effect
+
+		visible = {
+			has_border_war_with = FROM
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				OR = {
+					state = var:FROM.attacker_state_vs_@ROOT
+					state = var:ROOT.defender_state_vs_@FROM
+				}
+			}
+		}
+
+		cost = 200
+
+		ai_will_do = {
+			base = 50
+			# modifier = {
+			# }
+		}
+
+		fire_only_once = yes #Reactivation handled in effect
+
+		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_escalate_conflict (decision) complete entered"
+			}
+			if = {
+				limit = { is_border_conflict_defender_vs_FROM = yes }
+				set_border_war_data = { # Updates the border war
+					attacker = var:ROOT.defender_state_vs_@FROM
+					defender = var:ROOT.defender_state_vs_@FROM
+					defender_modifier = 0.15
+					combat_width = 100
+				}
+			}
+			else = {
+				set_border_war_data = { # Updates the border war
+					attacker = var:FROM.defender_state_vs_@ROOT
+					defender = var:FROM.defender_state_vs_@ROOT
+					attacker_modifier = 0.15
+					combat_width = 100
+				}
+			}
+			FROM = {
+				set_country_flag = { # Sets a country flag after the escalation countdown is complete for the target
+					flag = EHT_escalate_conflict_to_war_cooldown_@ROOT
+					days = @border_conflict_escalate_to_war_countdown
+					value = 1
+				}
+				remove_targeted_decision = { target = ROOT decision = brk_escalate_conflict }
+			}
+			set_country_flag = { # Sets a similar flag for us
+				flag = EHT_escalate_conflict_to_war_cooldown_@FROM
+				days = @border_conflict_escalate_to_war_countdown
+				value = 1
+			}
+			custom_effect_tooltip = in_45_days # Tooltip
+			activate_targeted_decision = { target = FROM decision = brk_escalate_conflict_to_war } # Activates the escalate to war decision
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_escalate_conflict (decision) complete exited"
+			}
+		}
+	}
+	# Decision to escalate conflict further to WAR!
+	EHT_escalate_conflict_to_war = {
+
+		icon = decision_generic_ignite_civil_war
+
+		allowed = { always = no } #Activated from effect
+
+		visible = {
+			NOT = { has_country_flag = EHT_escalate_conflict_to_war_cooldown_@FROM }
+			has_border_war_with = FROM
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				OR = {
+					state = var:FROM.defender_state_vs_@ROOT
+					state = var:ROOT.attacker_state_vs_@FROM
+				}
+			}
+		}
+
+		cost = 150
+
+		ai_will_do = {
+			base = 50
+			# modifier = {
+			# }
+		}
+
+		days_remove = 15
+
+		fire_only_once = yes #Reactivation handled in effect
+
+		war_with_target_on_remove = yes
+
+		complete_effect = { # When we select the decision
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_escalate_conflict_to_war (decision) complete entered"
+			}
+			if = {
+				limit = { is_border_conflict_defender_vs_FROM = yes }
+				var:ROOT.defender_state_vs_@FROM = { save_event_target_as = their_state }
+				var:ROOT.attacker_state_vs_@FROM = { save_event_target_as = our_state }
+			}
+			else = {
+				var:FROM.defender_state_vs_@ROOT = { save_event_target_as = our_state }
+				var:FROM.attacker_state_vs_@ROOT = { save_event_target_as = their_state }
+			}
+			FROM = { # Fires an event for the target
+				country_event = { id = nf_80s.13 }
+				hidden_effect = {
+					remove_targeted_decision = { target = ROOT decision = brk_escalate_conflict_to_war } # Removes the option for them to escalate to war because we're doing it
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_escalate_conflict_to_war (decision) complete exited"
+			}
+		}
+
+		remove_effect = { # When the decision ends
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_escalate_conflict_to_war (decision) remove entered"
+			}
+			cancel_border_war = { # The border war ends without firing cancel events
+				dont_fire_events = yes
+				defender = var:FROM.defender_state_vs_@ROOT
+				attacker = var:FROM.attacker_state_vs_@ROOT
+			}
+			declare_war_on = { target = FROM type = annex_everything } # Declares war on the opponent
+			if = { # Clears variables
+				limit = { is_border_conflict_defender_vs_FROM = yes }
+				var:attacker_state_vs_@FROM = {
+					clr_state_flag = border_incident_active
+				}
+				var:defender_state_vs_@FROM = {
+					clr_state_flag = border_incident_active
+				}
+				clear_variable = attacker_state_vs_@FROM
+				clear_variable = defender_state_vs_@FROM
+			}
+			else = {
+				FROM = {
+					var:attacker_state_vs_@ROOT = {
+						clr_state_flag = border_incident_active
+					}
+					var:defender_state_vs_@ROOT = {
+						clr_state_flag = border_incident_active
+					}
+					clear_variable = attacker_state_vs_@ROOT
+					clear_variable = defender_state_vs_@ROOT
+				}
+			}
+			hidden_effect = { BRK = { clr_global_flag = BRK_current_generic_raid } }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_escalate_conflict_to_war (decision) remove exited"
+			}
+		}
+	}
+	EHT_back_out_of_conflict = {
+
+		allowed = { always = no } #Activated from effect
+
+		visible = {
+			has_border_war_with = FROM
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				OR = {
+					state = var:FROM.attacker_state_vs_@ROOT
+					state = var:ROOT.defender_state_vs_@FROM
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 50
+			# modifier = {
+			# }
+		}
+
+		fire_only_once = yes #Reactivation handled in effect
+
+		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_back_out_of_conflict (decision) complete entered"
+			}
+			if = { # Finishes the border war, so the side who back down loses
+				limit = { is_border_conflict_defender_vs_FROM = yes }
+				finalize_border_war = {
+					attacker_win = yes
+					attacker = ROOT.attacker_state_vs_@FROM
+					defender = ROOT.attacker_state_vs_@FROM
+				}
+			}
+			else = {
+				finalize_border_war = {
+					attacker = FROM.attacker_state_vs_@ROOT
+					defender = FROM.attacker_state_vs_@ROOT
+					defender_win = yes
+				}
+			}
+			hidden_effect = { EHT = { clr_global_flag = NCN_current_generic_raid } }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] moc_back_out_of_conflict (decision) complete exited"
+			}
+		}
+	}
+}
+EHT_raid_whitelegs = {
+	EHT_raid_garrison = {
+		icon = generic_ignite_civil_war
+		available = {
+			NOT = { has_war_with = WHT }
+			581 = {
+				is_fully_controlled_by = WHT
+			}
+			309	 = {
+				is_owned_and_controlled_by = EHT
+				has_ROOT_at_least_1_div_in_current_state_scope = yes
+			}
+		}
+		visible = {
+			581	 = {
+				is_owned_and_controlled_by = WHT
+				has_ROOT_at_least_1_div_in_current_state_scope = yes
+			}
+			WHT = {
+				exists = yes
+				NOT = {
+					is_subject_of = EHT
+					is_in_faction_with = EHT
+				}
+			}
+		}
+		cost = 20
+		days_remove = 30
+		highlight_states = {
+			highlight_state_targets = {
+				state = 581
+			}
+		}
+
+		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_raid_garrison (decision) complete entered"
+			}
+			ARM = { country_event = nf_arm.16 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_raid_garrison (decision) complete exited"
+			}
+		}
+
+		remove_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_raid_garrison (decision) remove entered"
+			}
+			start_border_war = {
+				change_state_after_war = no
+				attacker = {
+					state = 309
+					num_provinces = 4
+					on_win = nf_80s.14
+					on_lose = nf_80s.16
+					on_cancel = nf_80s.17
+				}
+
+				defender = {
+					state = 581
+					num_provinces = 2
+					on_win = nf_80s.15
+					on_lose = nf_80s.18
+					on_cancel = nf_80s.19
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] EHT_raid_garrison (decision) remove exited"
+			}
+		}
+	}
+}
+EHT_spawn_raiders = {
+	EHT_raiders_tumbledown = {
+		icon = generic_independence
+		cost = 20
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 45
+		}
+		available = {
+			controls_state = 168
+		}
+		visible = {
+			has_completed_focus = EHT_raider_refugees
+		}
+		# days_re_enable = 50
+		complete_effect = {
+			hidden_effect = { load_oob = EHT_tumbledown_raiders }
+			custom_effect_tooltip = tumbledown_raiders_tt
+		}
+	}
+	EHT_khan_volunteers = {
+		icon = generic_independence
+		cost = 20
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 45
+		}
+		available = {
+			controls_state = 253
+		}
+		visible = {
+			has_completed_focus = EHT_raiders_across_spine
+		}
+		# days_re_enable = 50
+		complete_effect = {
+			hidden_effect = { load_oob = EHT_khan_volunteers }
+			custom_effect_tooltip = EHT_khan_volunteers_tt
+		}
+	}
+	EHT_scorpion_volunteers = {
+		icon = generic_independence
+		cost = 20
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 45
+		}
+		available = {
+			controls_state = 589
+		}
+		visible = {
+			has_completed_focus = EHT_raiders_across_spine
+		}
+		# days_re_enable = 50
+		complete_effect = {
+			hidden_effect = { load_oob = EHT_scorpion_volunteers }
+			custom_effect_tooltip = EHT_khan_volunteers_tt
+		}
+	}
+	EHT_viper_volunteers = {
+		icon = generic_independence
+		cost = 20
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 45
+		}
+		available = {
+			controls_state = 190
+		}
+		visible = {
+			has_completed_focus = EHT_raiders_across_spine
+		}
+		# days_re_enable = 50
+		complete_effect = {
+			hidden_effect = { load_oob = EHT_california_vipers_volunteers }
+			custom_effect_tooltip = EHT_khan_volunteers_tt
+		}
+	}
+	EHT_jackal_volunteers = {
+		icon = generic_independence
+		cost = 20
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 45
+		}
+		available = {
+			controls_state = 543
+		}
+		visible = {
+			has_completed_focus = EHT_raiders_across_spine
+		}
+		# days_re_enable = 50
+		complete_effect = {
+			hidden_effect = { load_oob = EHT_california_jackals_volunteers }
+			custom_effect_tooltip = EHT_khan_volunteers_tt
+		}
+	}
+	EHT_yakuza_volunteers = {
+		icon = generic_independence
+		cost = 20
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 45
+		}
+		available = {
+			controls_state = 342
+		}
+		visible = {
+			has_completed_focus = EHT_raiders_across_spine
+		}
+		# days_re_enable = 50
+		complete_effect = {
+			hidden_effect = { load_oob = EHT_yakuza_volunteers }
+			custom_effect_tooltip = EHT_khan_volunteers_tt
+		}
+	}
+	EHT_fiend_volunteers = {
+		icon = generic_independence
+		cost = 20
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 45
+		}
+		available = {
+			controls_state = 380
+		}
+		visible = {
+			has_completed_focus = EHT_raiders_across_spine
+		}
+		# days_re_enable = 50
+		complete_effect = {
+			hidden_effect = { load_oob = EHT_fiend_volunteers }
+			custom_effect_tooltip = EHT_khan_volunteers_tt
+		}
+	}
+}
+
+EHT_hero_quest = {
+	EHT_raid_sky_reavers = {
+		icon = generic_independence
+		custom_cost_trigger = {
+			command_power > 15
+		}
+		custom_cost_text = ffi_cp_cost
+		visible = {
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 90
+		}
+		days_remove = 10
+		visible = {
+		}
+
+		remove_effect = {
+			news_event = nf_80s.43
+		}
+	}
+	EHT_timekeeper_vault_stolen = {
+		icon = generic_independence
+		custom_cost_trigger = {
+			command_power > 15
+		}
+		custom_cost_text = ffi_cp_cost
+		visible = {
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 45
+		}
+		days_remove = 10
+		visible = {
+		}
+
+		remove_effect = {
+			news_event = nf_80s.44
+		}
+	}
+	EHT_heavens_gate = {
+		icon = generic_independence
+		custom_cost_trigger = {
+			command_power > 15
+		}
+		custom_cost_text = ffi_cp_cost
+		visible = {
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 90
+		}
+		days_remove = 10
+		visible = {
+		}
+
+		remove_effect = {
+			news_event = nf_80s.45
+		}
+	}
+	EHT_van_graff_quest = {
+		icon = generic_independence
+
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 90
+		}
+		days_remove = 10
+		visible = {
+		}
+		custom_cost_trigger = {
+			command_power > 15
+		}
+		custom_cost_text = ffi_cp_cost
+		visible = {
+		}
+		remove_effect = {
+			news_event = nf_80s.46
+		}
+	}
+
+	EHT_kill_deathclaws = {
+		icon = generic_independence
+		fire_only_once = no
+		ai_will_do = {
+			factor = 0
+		}
+		days_remove = 50
+		custom_cost_trigger = {
+			command_power > 15
+		}
+		custom_cost_text = ffi_cp_cost
+		visible = {
+		}
+		complete_effect = {
+			add_command_power = -15
+		}
+		remove_effect = {
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.05
+			}
+		}
+	}
+
+}

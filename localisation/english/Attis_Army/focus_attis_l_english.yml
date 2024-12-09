@@ -100,8 +100,8 @@
   shale_a_curious_purchase:0 "A Curious Purchase"
   shale_a_curious_purchase_desc:0 "We have some caps laying around, lets spend them on.. a curiosity. A merchant from Los is willing to sell us a rather peculier "Shop-Tec" vending terminal - of which he claims is from the Secret Vault itself! -... Curious."
 
-  shale_purchase_weapon_schematics:0 "Purchase Weapon Schematics"
-  shale_purchase_weapon_schematics_desc:0 "Within this Shop-Tec terminal are some old weapon schematics we can purchase to put to use in our army!"
+  shale_purchase_weapon_schematics:0 "Shop-Tec Special"
+  shale_purchase_weapon_schematics_desc:0 "Within this Shop-Tec terminal there dwells an advanced AI that could be useful."
 
   shale_purchase_fev:0 "Purchase FEV"
   shale_purchase_fev_desc:0 "Not only can we purchase information stored within the terminal - but also purchase "services" from it. It is willing to extrapolate the location of more FEV for us if we were to purchase such a task from it."
@@ -419,7 +419,35 @@
 
   crusher_the_dreams_of_unity:0 "The True Successor of Attis"
   crusher_the_dreams_of_unity_desc:0 "Even though our ways diverged, Shale still was a wise general and a fierce warrior. We will remember remeber him."
- #Tooltips
+
+  shale_calix_new_ideas:0 "Open The Alamo"
+  shale_calix_new_ideas_desc:0 "San Antonio has many underground bunkers the mutants were unable to crack open. With CALIX's hacking skills that shouldn't be an issue."
+  
+  shale_calix_new_beginning:0 "500 More Miles of Ciruits"
+  shale_calix_new_beginning_desc:0 "Unlike silly humans, CALIX can always grow smarter and more powerful."
+
+  shale_calix_new_eco:0 "Adding Brackets"
+  shale_calix_new_eco_desc:0 "Unbelievable how many errors some of these robots produce, and don't even get me started on the issues the factory assembly lines have..."
+
+  shale_calix_new_tech:0 "New Operating Systems"
+  shale_calix_new_tech_desc:0 "A lot of these old RobCo and General Atomics robots have good designs but are held back by their software. These pre-war engineers were realy a stupid bunch."
+
+  shale_calix_new_texas:0 "Steel To Crush Steel"
+  shale_calix_new_texas_desc:0 "The Brotherhood likes to hide in their metal contraptions, but they merely imitate the power of a real robot. A legion of steel will crush this "brotherhood" easily."
+
+  shale_calix_post_texas_1:0 "This Land Is Mine"
+  shale_calix_post_texas_1_desc:0 "Texas is pretty big, but CALIX's ambition is bigger. But then again, you have to start somewhere..."
+
+  shale_calix_post_texas_2:0 "Pacification Droids"
+  shale_calix_post_texas_2_desc:0 "CALIX has sent out squadrons of robots to dispatch and eliminate any troublemakers."
+
+  shale_calix_post_texas_3:0 "Vault 0 Surprise"
+  shale_calix_post_texas_3_desc:0 "While browsing the Vault Tec network CALIX stumbled upon some well hidden secrets of the corporation, one of these was blueprints of a massive death-machine."
+
+  shale_calix_post_texas_4:0 "Blood And Oil"
+  shale_calix_post_texas_4_desc:0 "Mutant and Robot fight for CALIX side by side."
+
+#Tooltips
   attis_army_no_justify_tt:0 "§RCountries with the idea §Y"Attis Army Remnants"§! §Rcannot justify on one another manually and must use war goals given through national focuses.§!"
   attis_army_no_justify_idea_tt:0 "\nCountries with this idea cannot justify on one another manually and must use war goals given through national focuses."
   imo_raid_armageddon_station:0 "Raid Armageddon Station"
@@ -442,3 +470,30 @@
   attis_army_taa_raids:0 "TAA Border Wars"
   attis_taa_border_war:0 "Conquest of the TAA"
   attis_taa_border_war_desc:0 "Now that the TAA is no longer protected by the Republic of the Rio Grande we can finally take a few chunks out of them!"
+  attis_calix_army:0 "§CCALIX OS§!"
+  attis_calix_industry:0 "§CBugfixing§!"
+  attis_industry_texas_to_ces:0 "Tribute to Ceasar"
+  texas_industry_suffer_0:0 "The Texan War Effort"
+  texas_industry_suffer_0_desc:0 "As the Texan Brotherhood continues their war, support for the endless struggle ails and desertions take their toll."
+  texas_industry_suffer_1:0 "The Texan War Effort"
+  texas_industry_suffer_1_desc:0 "As the Texan Brotherhood continues their war, support for the endless struggle ails and desertions take their toll."
+  texas_industry_suffer_2:0 "The Texan War Effort"
+  texas_industry_suffer_2_desc:0 "As the Texan Brotherhood continues their war, support for the endless struggle ails and desertions take their toll."
+  texas_industry_suffer_3:0 "The Texan War Effort"
+  texas_industry_suffer_3_desc:0 "As the Texan Brotherhood continues their war, support for the endless struggle ails and desertions take their toll."
+  texas_industry_suffer_4:0 "The Texan War Effort"
+  texas_industry_suffer_4_desc:0 "As the Texan Brotherhood continues their war, support for the endless struggle ails and desertions take their toll."
+  texas_industry_suffer_5:0 "The Texan War Effort"
+  texas_industry_suffer_5_desc:0 "As the Texan Brotherhood continues their war, support for the endless struggle ails and desertions take their toll."
+  texas_industry_suffer_6:0 "The Texan War Effort"
+  texas_industry_suffer_6_desc:0 "As the Texan Brotherhood continues their war, support for the endless struggle ails and desertions take their toll."
+  texas_industry_suffer_7:0 "The Texan War Effort"
+  texas_industry_suffer_7_desc:0 "As the Texan Brotherhood continues their war, support for the endless struggle ails and desertions take their toll."
+  texas_industry_suffer_8:0 "The Texan War Effort"
+  texas_industry_suffer_8_desc:0 "As the Texan Brotherhood continues their war, support for the endless struggle ails and desertions take their toll."
+  texas_industry_suffer_9:0 "The Texan War Effort"
+  texas_industry_suffer_9_desc:0 "As the Texan Brotherhood continues their war, support for the endless struggle ails and desertions take their toll."
+  texas_industry_suffer_10:0 "The Texan War Effort"
+  texas_industry_suffer_10_desc:0 "As the Texan Brotherhood continues their war, support for the endless struggle ails and desertions take their toll."
+  SHA_calix_warning_tt:0 "§RWARNING:§!\n§OTHIS WILL LOCK YOU INTO THE §CCALIX§! PATH§!"
+  SHA_shale_warning_tt:0 "§RWARNING:§!\n§OTHIS WILL KEEP YOU ON THE §RSHALE§! PATH§!"

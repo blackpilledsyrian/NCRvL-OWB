@@ -35,6 +35,11 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 6324;6364;impassable;-1;-1;-1;-1;-1;;Tar Walkers Walls
 ;;;;;;;;;
 6314;2681;impassable;-1;-1;-1;-1;-1;;Ruby Valley to 80s
+6314;3484;impassable;-1;-1;-1;-1;-1;;Ruby Valley to 80s
+6315;3484;impassable;-1;-1;-1;-1;-1;;Ruby Valley to 80s
+6315;2680;impassable;-1;-1;-1;-1;-1;;Ruby Valley to 80s
+6315;3371;impassable;-1;-1;-1;-1;-1;;Ruby Valley to 80s
+4426;3371;impassable;-1;-1;-1;-1;-1;;Ruby Valley to 80s
 ;;;;;;;;;
 8462;3491;impassable;-1;-1;-1;-1;-1;;Ruby Valley to Riperult NCRvLegion
 8462;3402;impassable;-1;-1;-1;-1;-1;;Ruby Valley to Riperult NCRvLegion
@@ -48,6 +53,13 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 8895;3328;impassable;-1;-1;-1;-1;-1;;Ruby Valley to Grabbers NCRvLegion
 8895;3523;impassable;-1;-1;-1;-1;-1;;Ruby Valley to Grabbers NCRvLegion
 8896;3523;impassable;-1;-1;-1;-1;-1;;Ruby Valley to Grabbers NCRvLegion
+;;;;;;;;;
+3339;9133;impassable;-1;-1;-1;-1;-1;;Ruby Valley to White Legs NCRvLegion
+3339;8906;impassable;-1;-1;-1;-1;-1;;Ruby Valley to White Legs NCRvLegion
+3340;8906;impassable;-1;-1;-1;-1;-1;;Ruby Valley to White Legs NCRvLegion
+3340;3524;impassable;-1;-1;-1;-1;-1;;Ruby Valley to White Legs NCRvLegion
+8897;3524;impassable;-1;-1;-1;-1;-1;;Ruby Valley to White Legs NCRvLegion
+8897;3523;impassable;-1;-1;-1;-1;-1;;Ruby Valley to White Legs NCRvLegion
 ;;;;;;;;;
 3521;3353;impassable;-1;-1;-1;-1;-1;;Ruby Valley to Riperult
 3525;3353;impassable;-1;-1;-1;-1;-1;;Ruby Valley to Riperult

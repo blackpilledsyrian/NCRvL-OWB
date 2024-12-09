@@ -1,0 +1,21 @@
+state = {
+	id = 486
+	name = "STATE_486"
+	manpower = 8486
+	state_category = town
+
+	history = {
+		owner = SHA
+		add_core_of = CBN
+		victory_points = {
+			11528 5
+		}
+		buildings = {
+			infrastructure = 2
+		}
+	}
+
+	provinces = {
+		2842 5609 11528 11601 11672
+	}
+}

@@ -1,0 +1,188 @@
+﻿division_template = {
+	name = "Human Slaves"
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Attis Army Remnants"
+	regiments = {
+		super_mutant_infantry = { x = 0 y = 0 }
+		super_mutant_infantry = { x = 0 y = 1 }
+		super_mutant_infantry = { x = 0 y = 2 }
+		super_mutant_infantry = { x = 1 y = 0 }
+		super_mutant_infantry = { x = 1 y = 1 }
+		super_mutant_infantry = { x = 2 y = 0 }
+	}
+}
+
+#division_template = {
+#	name = "FEV Mutants"
+#	template_counter= 35
+#	regiments = {
+#		behemoth = { x = 0 y = 0 }
+#		behemoth = { x = 0 y = 1 }
+#		behemoth = { x = 1 y = 0 }
+#		behemoth = { x = 1 y = 1 }
+#	}
+#}
+
+units = {
+	division = {
+		name = "Crushers"
+		location = 11634
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Slammers"
+		location = 11738
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Stompers"
+		location = 11549
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Blasters"
+		location = 11738
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Demolishers"
+		location = 11634
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Smashers"
+		location = 11549
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "The Warband"
+		location = 2989
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Attis's Finest"
+		location = 11531
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Dum Dums"
+		location = 11531
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Dum Dums"
+		location = 11531
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Dum Dums"
+		location = 11531
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Dum Dums"
+		location = 11531
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Dum Dums"
+		location = 11531
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Dum Dums"
+		location = 11531
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Dum Dums"
+		location = 11531
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Dum Dums"
+		location = 11531
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Dum Dums"
+		location = 11531
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Dum Dums"
+		location = 11531
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Dum Dums"
+		location = 11531
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Dum Dums"
+		location = 11531
+		division_template = "Attis Army Remnants"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+}
+
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = melee_equipment_2
+			creator = "SHA"
+		}
+		requested_factories = 6
+		progress = 0.75
+		efficiency = 100
+	}
+}

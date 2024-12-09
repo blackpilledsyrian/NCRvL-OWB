@@ -1,0 +1,875 @@
+﻿add_namespace = nf_tbh
+
+country_event = { # tbh intro Rhombus Chase
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_tbh.1" }
+	id = nf_tbh.1
+	title = nf_tbh.1.t
+	desc = nf_tbh.1.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_MOJ_contact_the_west
+
+
+	option = { # Rhombus Assembled only Paladins
+		name = nf_tbh.1.a
+		add_ideas = tbh_paladins_start
+		ai_chance = {
+			base = 25
+		}
+	}
+	option = { # Rhombus took a balanced cohort with him?
+		name = nf_tbh.1.b
+		add_ideas = tbh_balanced
+		ai_chance = {
+			base = 25
+		}
+	}
+	option = { # Rhombus took the families of his soldiers with him
+		name = nf_tbh.1.c
+		TBH = {
+			every_owned_state = {
+				set_temp_variable = {
+					pop_add = 1000
+				}
+				add_state_population_no_state_name = yes
+			}
+			add_political_power = 25
+		}
+		ai_chance = {
+			base = 25
+		}
+	}
+	option = { # Rhombus traveled with just a few elites.
+		name = nf_tbh.1.d
+		add_ideas = tbh_elites
+
+		ai_chance = {
+			base = 25
+		}
+	}
+}
+
+country_event = { # tbh meets the national guard
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_tbh.2" }
+	id = nf_tbh.2
+	title = nf_tbh.2.t
+	desc = nf_tbh.2.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_BOS_desert_patrol
+
+
+	option = { # absorbs them, most of them having kept military drills going
+		name = nf_tbh.2.a
+		add_stability = -0.1
+		army_experience = 50
+		ai_chance = {
+			base = 25
+		}
+	}
+	option = { # absorbs them, most of them having settled, and become farmers
+		name = nf_tbh.2.b
+		add_stability = -0.1
+		892 = {
+			if = {
+				limit = {
+					is_valid_state_for_2_civilian_factories = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	option = { # absorbs them, they had become gunsmiths.
+		name = nf_tbh.2.c
+		add_stability = -0.1
+		892 = {
+			if = {
+				limit = {
+					is_valid_state_for_2_arms_factories = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		ai_chance = {
+			base = 25
+		}
+	}
+	option = { # rejected them
+		name = nf_tbh.2.d
+		add_stability = 0.1
+		TBH = {
+			# every_owned_state = {
+			# 	set_temp_variable = {
+			# 		pop_add = -250
+			# 	}
+			# 	add_state_population_no_state_name = yes
+			# }
+			add_manpower = -500
+		}
+		ai_chance = {
+			base = 10	# Stability is fairly easy to come by for TBH, even as an AI
+		}
+	}
+}
+
+country_event = { # tbh meets the Texas Ranger Remnants
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_tbh.3" }
+	id = nf_tbh.3
+	title = nf_tbh.3.t
+	desc = nf_tbh.3.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_desert_rangers_marching
+
+
+	option = { # The rangers proved themselves invaluable
+		name = nf_tbh.3.a
+		add_ideas = tbh_texas_rangers
+		ai_chance = {
+			base = 25
+		}
+	}
+}
+
+country_event = { # Attis Army was crushed, their leader dead
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_tbh.4" }
+	id = nf_tbh.4
+	title = nf_tbh.4.t
+	desc = nf_tbh.4.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_attis_2
+
+
+	option = { # Rhombus survived
+		name = nf_tbh.4.a
+		set_rule = { can_send_volunteers = yes }
+		add_ideas = tbh_victorious_heroes
+		ai_chance = {
+			base = 25
+		}
+	}
+	option = { # Rhombus died
+		name = nf_tbh.4.b
+		add_ideas = tbh_mourning_survivors
+		ai_chance = {
+			base = 25
+			# RRG is most likely place to send volunteers to (likeliness depends on leader path), otherwise AI rarely if ever would
+			modifier = {
+				factor = 3
+				RRG = { RRG_has_ai_behavior_mora = yes }
+			}
+			modifier = {
+				factor = 1.5
+				RRG = { RRG_has_ai_behavior_rosado = yes }
+			}
+		}
+	}
+}
+
+
+country_event = { # Mister Entertainment make contact, start relations.
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_tbh.5" }
+	id = nf_tbh.5
+	title = nf_tbh.5.t
+	desc = nf_tbh.5.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_radio_new_vegas
+
+
+	option = { # Rhombus survived
+		name = nf_tbh.5.a
+		TUB = { country_event = { id = nf_tbh.51 } }
+		ai_chance = {
+			base = 25
+		}
+	}
+}
+
+country_event = { # Event for Tubeheads
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_tbh.51" }
+	id = nf_tbh.51
+	title = nf_tbh.51.t
+	desc = nf_tbh.51.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_radio_new_vegas
+
+
+	option = { # Accept
+		name = nf_tbh.51.a
+		TBH = { country_event = { id = nf_tbh.52 } }
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = { # Deny
+		name = nf_tbh.51.b
+		TBH = { country_event = { id = nf_tbh.53 } }
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+country_event = { # Accept
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_tbh.52" }
+	id = nf_tbh.52
+	title = nf_tbh.52.t
+	desc = nf_tbh.52.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_radio_new_vegas
+
+
+	option = { # Accept
+		name = nf_tbh.52.a
+		puppet = TUB
+		TUB = {
+			add_ideas = {
+				tbh_advisors
+			}
+			set_popularities = {
+				people = 100
+			}
+			set_politics = {
+				ruling_party = people
+			}
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = { # Denied
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_tbh.53" }
+	id = nf_tbh.53
+	title = nf_tbh.53.t
+	desc = nf_tbh.53.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_radio_new_vegas
+
+
+	option = { # Accept
+		name = nf_tbh.53.a
+		TUB = {
+			ROOT = {
+				grant_wargoals_on_core_states_of_prev = yes
+			}
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = { # Assasin City. Send event to Tubeheads, chance to forge deal before war happens.
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_tbh.7" }
+	id = nf_tbh.7
+	title = nf_tbh.7.t
+	desc = nf_tbh.7.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_car_2
+
+
+	option = { # Negotiate a deal
+		name = nf_tbh.7.a
+		ASS = { country_event = { id = nf_tbh.71 } }
+		ai_chance = {
+			base = 80
+		}
+	}
+
+	option = { # Just kill em.
+		name = nf_tbh.7.b
+		ASS = {
+			TBH = {
+				grant_wargoals_on_core_states_of_prev = yes
+			}
+		}
+		ai_chance = {
+			base = 20
+		}
+	}
+}
+
+country_event = { # Event Assasin city deal, from tubeheads
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_tbh.71" }
+	id = nf_tbh.71
+	title = nf_tbh.71.t
+	desc = nf_tbh.71.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_car_2
+
+
+	option = { # Accept
+		name = nf_tbh.71.a
+		TBH = { country_event = { id = nf_tbh.72 } }
+		ai_chance = {
+			base = 90
+		}
+	}
+	option = { # Deny
+		name = nf_tbh.71.b
+		TBH = { country_event = { id = nf_tbh.73 } }
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+country_event = { # Ass chooses alliance
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_tbh.72" }
+	id = nf_tbh.72
+	title = nf_tbh.72.t
+	desc = nf_tbh.72.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_car_2
+
+
+	option = {
+		name = nf_tbh.72.a
+		ASS = {
+			join_texan_economic_union = yes
+			add_ideas = {
+				tbh_tithe
+				tbh_advisors
+			}
+		}
+		ai_chance = {
+			base = 25
+		}
+	}
+}
+
+country_event = { # Ass choses war
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_tbh.73" }
+	id = nf_tbh.73
+	title = nf_tbh.73.t
+	desc = nf_tbh.73.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_car_2
+
+
+	option = {
+		name = nf_tbh.73.a
+		ASS = {
+			TBH = {
+				grant_wargoals_on_core_states_of_prev = yes
+			}
+		}
+		ai_chance = {
+			base = 25
+		}
+	}
+}
+
+country_event = { # The Question of Carthage
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_tbh.8" }
+	id = nf_tbh.8
+	title = nf_tbh.8.t
+	desc = nf_tbh.8.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_rrg_ruins
+
+
+	option = {
+		name = nf_tbh.8.a
+		CAR = { country_event = { id = nf_tbh.81 } }
+		ai_chance = {
+			base = 25
+		}
+	}
+}
+
+country_event = { # Event Carthage
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_tbh.81" }
+	id = nf_tbh.81
+	title = nf_tbh.81.t
+	desc = nf_tbh.81.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_rrg_ruins
+
+
+	option = { # Accept
+		name = nf_tbh.81.a
+		TBH = { country_event = { id = nf_tbh.82 } }
+		ai_chance = {
+			base = 0
+			modifier = {
+				set_temp_variable = { divided_opinion = opinion@TBH }
+				divide_temp_variable = { divided_opinion = 10 }
+				divide_temp_variable = { divided_opinion = 10 }
+				add = divided_opinion
+				always = yes
+			}
+			modifier = {
+
+				# Apparently this is also strength ratio actually does according to
+				# shultays.
+				set_temp_variable = { strength_comp = TBH.num_battalions }
+				divide_temp_variable = { strength_comp = num_battalions?1 }
+				factor = strength_comp
+				always = yes
+			}
+		}
+	}
+	option = { # Deny
+		name = nf_tbh.81.b
+		TBH = { country_event = { id = nf_tbh.83 } }
+		ai_chance = {
+			# Telling TBH to fuck off is the default option.
+			base = 10
+			# If the target has 100 opinion towards the TBH, they will never tell them
+			# to fuck off. Otherwise it simply reduces the odds that they will say no.
+			modifier = {
+				set_temp_variable = { divided_opinion = opinion@TBH }
+				divide_temp_variable = { divided_opinion = -10 }
+				add = divided_opinion
+				always = yes
+			}
+			modifier = {
+				# Apparently this is also strength ratio actually does according to
+				# shultays.
+				set_temp_variable = { strength_comp = num_battalions }
+				divide_temp_variable = { strength_comp = TBH.num_battalions?1 }
+				factor = strength_comp
+				always = yes
+			}
+		}
+	}
+}
+
+country_event = { # Accept
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_tbh.82" }
+	id = nf_tbh.82
+	title = nf_tbh.82.t
+	desc = nf_tbh.82.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_rrg_ruins
+
+
+	option = { # Accept
+		name = nf_tbh.82.a
+		CAR = {
+			join_texan_economic_union = yes
+			add_ideas = {
+				tbh_tithe
+				tbh_advisors
+			}
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = { # Denied
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_tbh.83" }
+	id = nf_tbh.83
+	title = nf_tbh.83.t
+	desc = nf_tbh.83.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_rrg_ruins
+
+
+	option = { # Accept
+		name = nf_tbh.83.a
+		CAR = {
+			ROOT = {
+				grant_wargoals_on_core_states_of_prev = yes
+			}
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = { # Patrolmen
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_tbh.9" }
+	id = nf_tbh.9
+	title = nf_tbh.9.t
+	desc = nf_tbh.9.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_rrg_raiders
+
+
+	option = {
+		name = nf_tbh.9.a
+		TPM = { country_event = { id = nf_tbh.91 } }
+		ai_chance = {
+			base = 25
+		}
+	}
+}
+
+country_event = { # Event TPM
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_tbh.91" }
+	id = nf_tbh.91
+	title = nf_tbh.91.t
+	desc = nf_tbh.91.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_rrg_raiders
+
+
+	option = { # Accept
+		name = nf_tbh.91.a
+		TBH = { country_event = { id = nf_tbh.92 } }
+		ai_chance = {
+			base = 0
+			modifier = {
+				set_temp_variable = { divided_opinion = opinion@TBH }
+				divide_temp_variable = { divided_opinion = 10 }
+				divide_temp_variable = { divided_opinion = 10 }
+				add = divided_opinion
+				always = yes
+			}
+			modifier = {
+
+				# Apparently this is also strength ratio actually does according to
+				# shultays.
+				set_temp_variable = { strength_comp = TBH.num_battalions }
+				divide_temp_variable = { strength_comp = num_battalions?1 }
+				factor = strength_comp
+				always = yes
+			}
+		}
+	}
+	option = { # Deny
+		name = nf_tbh.91.b
+		TBH = { country_event = { id = nf_tbh.93 } }
+		ai_chance = {
+			# Telling TBH to fuck off is the default option.
+			base = 10
+			# If the target has 100 opinion towards the TBH, they will never tell them
+			# to fuck off. Otherwise it simply reduces the odds that they will say no.
+			modifier = {
+				set_temp_variable = { divided_opinion = opinion@TBH }
+				divide_temp_variable = { divided_opinion = -10 }
+				add = divided_opinion
+				always = yes
+			}
+			modifier = {
+				# Apparently this is also strength ratio actually does according to
+				# shultays.
+				set_temp_variable = { strength_comp = num_battalions }
+				divide_temp_variable = { strength_comp = TBH.num_battalions?1 }
+				factor = strength_comp
+				always = yes
+			}
+		}
+	}
+}
+
+country_event = { # Accept
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_tbh.92" }
+	id = nf_tbh.92
+	title = nf_tbh.92.t
+	desc = nf_tbh.92.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_rrg_raiders
+
+
+	option = { # Accept
+		name = nf_tbh.92.a
+		TPM = {
+			join_texan_economic_union = yes
+			add_ideas = {
+				tbh_tithe
+				tbh_advisors
+			}
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = { # Denied
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_tbh.93" }
+	id = nf_tbh.93
+	title = nf_tbh.93.t
+	desc = nf_tbh.93.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_rrg_raiders
+
+
+	option = { # Accept
+		name = nf_tbh.93.a
+		TPM = {
+			ROOT = {
+				grant_wargoals_on_core_states_of_prev = yes
+			}
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = { # TAA wants to be buddies :3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_tbh.323" }
+	id = nf_tbh.323
+	title = nf_tbh.323.t
+	desc = nf_tbh.323.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_rrg_raiders
+
+
+	option = { # Accept
+		name = nf_tbh.132.a
+		TBH = { add_to_faction = TAA }
+		ai_chance = {
+			base = 50
+			modifier = {
+				TAA = {
+					is_ai = no
+				}
+				factor = 100
+			}
+		}
+	}
+	option = { # no
+		name = nf_tbh.132.b
+		TAA = { country_event = nf_taa.132 }
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+country_event = { # Split ACH off
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_tbh.25" }
+	id = nf_tbh.25
+	title = nf_tbh.25.t
+	desc = nf_tbh.25.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_MOJ_contact_the_west
+	immediate = {
+		hidden_effect = {
+			add_ideas = tbh_torn_leadership
+			complete_national_focus = tbh_nf_broken_apart
+			set_popularities = {
+				people = 10
+				elites = 6
+				intellectuals = 4
+				ruler = 80
+			}
+			#add_resource = {
+			#	type = composites
+			#	amount = -3
+			#	state = 892
+			#}
+			#add_resource = {
+			#	type = advanced
+			#	amount = -3
+			#	state = 892
+			#}
+			#add_resource = {
+			#	type = composites
+			#	amount = 3
+			#	state = 908
+			#}
+			#add_resource = {
+			#	type = advanced
+			#	amount = 3
+			#	state = 908
+			#}
+			#add_resource = {
+			#	type = metal
+			#	amount = 8
+			#	state = 908
+			#}
+			#add_resource = {
+			#	type = water
+			#	amount = 6
+			#	state = 908
+			#}
+			#add_resource = {
+			#	type = energy
+			#	amount = 2
+			#	state = 908
+			#}
+			#892 = {
+			#	remove_building = { type = arms_factory level = 2 }
+			#	remove_building = { type = industrial_complex level = 1 }
+			#	set_temp_variable = {
+			#		pop_add = -1500
+			#	}
+			#	add_state_population = yes
+			#}
+			#908 = {
+			#	add_core_of = ACH
+			#	set_state_flag = do_not_exodus
+			#	if = {
+			#		limit = {
+			#			is_valid_state_for_arms_factory = yes
+			#		}
+			#		add_extra_state_shared_building_slots = 2
+			#		add_building_construction = {
+			#			type = arms_factory
+			#			level = 2
+			#			instant_build = yes
+			#		}
+			#	}
+			#	if = {
+			#		limit = {
+			#			is_valid_state_for_civilian_factory = yes
+			#		}
+			#		add_extra_state_shared_building_slots = 1
+			#		add_building_construction = {
+			#			type = industrial_complex
+			#			level = 1
+			#			instant_build = yes
+			#		}
+			#	}
+			#}
+			#910 = {
+			#	add_core_of = ACH
+			#	set_state_flag = do_not_exodus
+			#	add_extra_state_shared_building_slots = 2
+			#}
+			#903 = {
+			#	add_core_of = ACH
+			#	set_state_flag = do_not_exodus
+			#	add_extra_state_shared_building_slots = 2
+			#}
+			#909 = {
+			#	add_core_of = ACH
+			#	set_state_flag = do_not_exodus
+			#	add_extra_state_shared_building_slots = 2
+			#}
+			#799 = {
+			#	add_core_of = ACH
+			#	set_state_flag = do_not_exodus
+			#	add_extra_state_shared_building_slots = 2
+			#}
+			#release = ACH
+			#ACH = { inherit_technology = TBH }
+			#set_province_name = {
+			#	id = 11427
+			#	name = VICTORY_POINTS_11427_ACH
+			#}
+			#set_province_name = {
+			#	id = 11429
+			#	name = VICTORY_POINTS_11429_ACH
+			#}
+			#set_truce = {
+			#	target = ACH
+			#	days = 360
+			#}
+			##ACH = {
+			#	set_truce = {
+			#		target = PREV
+			#		days = 425
+			#	}
+			#	every_owned_state = {
+			#		clr_state_flag = do_not_exodus
+			#	}
+			#	create_new_owb_country = yes
+			#}
+			#set_global_flag = ACH_split_from_TBH
+		}
+	}
+	option = { # Stay TBH
+		name = nf_tbh.25.a
+		effect_tooltip = {
+			TBH = {
+				add_ideas = tbh_torn_leadership
+				complete_national_focus = tbh_nf_broken_apart
+			}
+		}
+	}
+	option = { # Switch ACH
+		name = nf_tbh.25.b
+		effect_tooltip = {
+			TBH = {
+				add_ideas = tbh_torn_leadership
+				complete_national_focus = tbh_nf_broken_apart
+			}
+		}
+		ACH = { change_tag_from = ROOT }
+	}
+}
+
+country_event = { # ach Demands Richmond
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_tbh.26" }
+	id = nf_tbh.26
+	title = nf_tbh.26.t
+	desc = nf_tbh.26.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_MOJ_contact_the_west
+
+
+	option = { # Accept
+		name = nf_tbh.26.a
+		ACH = {
+			Add_timed_idea = {
+				idea = ach_payments
+				days = 360
+			}
+			904 = {
+				add_core_of = ACH
+			}
+			904 = {
+				remove_core_of = TBH
+			}
+			transfer_state = 904
+		}
+		set_temp_variable = { caps_to_add = 500 }
+		add_caps = yes
+		ai_chance = {
+			base = 100
+		}
+	}
+
+	option = { # Refuse
+		name = nf_tbh.26.b
+		ACH = {
+			add_manpower = -500
+			904 = {
+				add_core_of = ACH
+			}
+			904 = {
+				remove_core_of = TBH
+			}
+			transfer_state = 904
+		}
+		TBH = { add_manpower = -1500 }
+		ai_chance = {
+			base = 0
+		}
+	}
+}

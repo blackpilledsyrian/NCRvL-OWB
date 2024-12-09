@@ -8946,6 +8946,8 @@ focus = {
 		relative_position_id = ncr_dissolution_of_the_union
 		completion_reward = {
 			add_stability = -0.20
+			retire_character = NCR_alice_mclafferty
+			retire_character = NCR_mama_van_graff
 			#country_event = ncr_crisis.4
 			# hidden_effect = {
 			# 	leave_new_california = yes
@@ -9055,7 +9057,6 @@ focus = {
 			# 			picture = GFX_Portrait_NCR_allgood
 			# 			expire = "3000.1.1"
 			# 			ideology = constitutional_republic
-
 			# 			traits = {
 			# 				political_workhorse
 			# 				well_liked_leader

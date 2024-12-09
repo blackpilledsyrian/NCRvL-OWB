@@ -1,0 +1,79 @@
+characters = {
+	UOA_keats = {
+		name = UOA_KEATS_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Keats_Animated
+			}
+			army = {
+				large = GFX_Portrait_Keats_Animated
+			}
+		}
+		country_leader = {
+			desc = UOA_KEATS_DESC
+			ideology = town_hall_democracy
+			expire = "3000.01.01.01"
+			id = -1
+		}
+		corps_commander = {
+			traits = {
+				intelligent_trait
+				charismatic_trait
+				vat_skin
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+	UOA_lieutenant_crusher = {
+		name = UOA_LIEUTENANT_CRUSHER_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_UOA_lieutenant_crusher
+			}
+			army = {
+				large = GFX_Portrait_UOA_lieutenant_crusher
+			}
+		}
+	}
+	UOA_chauncey_ferocious = {
+		name = UOA_CHAUNCEY_FEROCIOUS_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Supermutant_Generic_2
+			}
+			army = {
+				large = GFX_Portrait_Supermutant_Generic_2
+			}
+		}
+		country_leader = {
+			desc = UOA_CHAUNCEY_FEROCIOUS_DESC
+			ideology = meritocracy
+			expire = "2291.1.1.12"
+			id = -1
+		}
+	}
+	UOA_numbers_scars = {
+		name = UOA_NUMBERS_SCARS_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Supermutant_Generic_1
+			}
+			army = {
+				large = GFX_Portrait_Supermutant_Generic_1
+			}
+		}
+		country_leader = {
+			desc = UOA_NUMBERS_SCARS_DESC
+			ideology = tribalism
+			traits = {
+				armaments_organizer
+			}
+			expire = "3000.1.1.12"
+			id = -1
+		}
+	}
+}
