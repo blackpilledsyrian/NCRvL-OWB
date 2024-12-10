@@ -1,11 +1,11 @@
 sound = {
-	name = "island_war_bigevent_sound" #name you're using for the sound
-	file = "customsound/Guerre_guerre_vente_vent.wav" ## location of the sound file
+	name = "raging_bull_super_sound" #name you're using for the sound
+	file = "customsound/Cult_of_personality.wav" ## location of the sound file
 	always_load = no
 }
 
 sound = {
-	name = "sunset_bigevent_sound" #name you're using for the sound
-	file = "customsound/Iron_lotus.wav" ## location of the sound file
+	name = "wounded_bear_super_sound" #name you're using for the sound
+	file = "customsound/California_dreaming.wav" ## location of the sound file
 	always_load = no
 }

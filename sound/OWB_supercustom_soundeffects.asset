@@ -1,9 +1,9 @@
 
 soundeffect = {
-	name = sunset_bigevent
+	name = wounded_bear_super
 	loop = no
 	sounds = {
-		sound = sunset_bigevent_sound
+		sound = wounded_bear_super_sound
 		}
 	is3d = no # do not use this shit, it caused me to only hear on the left ear
 	max_audible = 1 #no idea what this is, but keep it as is so you dont have problems
@@ -11,10 +11,10 @@ soundeffect = {
 	volume = 1.5
 }
 soundeffect = {
-	name = mountain_bigevent
+	name = raging_bull_super
 	loop = no
 	sounds = {
-		sound = mountain_bigevent_sound
+		sound = raging_bull_super_sound
 		}
 	is3d = no # do not use this shit, it caused me to only hear on the left ear
 	max_audible = 1 #no idea what this is, but keep it as is so you dont have problems

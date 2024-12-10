@@ -517,7 +517,7 @@ sub_units = {
 		air_attack = -0.8
 
 		casualty_trickleback = 0.15
-		experience_loss_factor = -0.15
+		experience_loss_factor = -0.25
 
 		essential = {
 			support_equipment
@@ -528,10 +528,6 @@ sub_units = {
 			defence = 0.05
 		}
 
-		desert = {
-			attack = 0.05
-			defence = 0.05
-		}
 
 		need = {
 			support_equipment = 15
@@ -584,7 +580,7 @@ sub_units = {
 		air_attack = -0.8
 
 		casualty_trickleback = 0.2
-		experience_loss_factor = -0.15
+		experience_loss_factor = -0.25
 
 		essential = {
 			support_equipment
@@ -596,10 +592,8 @@ sub_units = {
 			defence = 0.05
 		}
 
-		desert = {
-			attack = 0.05
-			defence = 0.05
-		}
+
+
 
 		need = {
 			support_equipment = 15

@@ -22,13 +22,115 @@ country_event = {
 					infantry = { x = 1 y = 2 }
 					infantry = { x = 1 y = 3 }
 					
+					
 					infantry = { x = 2 y = 0 }
 					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+					infantry = { x = 2 y = 3 }
+					
+					fireteam_infantry  = { x = 3 y = 0 }
+					fireteam_infantry  = { x = 3 y = 1 }
+					fireteam_infantry  = { x = 3 y = 2 }
+					fireteam_infantry  = { x = 3 y = 3 } 
+					
+					fireteam_infantry  = { x = 4 y = 0 }
+					fireteam_infantry  = { x = 4 y = 1 }
+					fireteam_infantry  = { x = 4 y = 2 }
+					fireteam_infantry  = { x = 4 y = 3 } 
 					
 
 				}
-				
 			}
+			
+			 division_template = {
+				name = "NCR Rangers"
+				regiments = {
+					spec_ops = { x = 0 y = 0 }
+					spec_ops = { x = 0 y = 1 }
+					spec_ops = { x = 0 y = 2 }
+					spec_ops = { x = 0 y = 3 }
+	
+					spec_ops = { x = 1 y = 0 }
+					spec_ops = { x = 1 y = 1 }
+					spec_ops = { x = 1 y = 2 }
+					spec_ops = { x = 1 y = 3 }
+
+					spec_ops = { x = 2 y = 0 }
+					spec_ops = { x = 2 y = 1 }
+					spec_ops = { x = 2 y = 2 }
+					spec_ops = { x = 2 y = 3 }
+
+					spec_ops = { x = 3 y = 0 }
+					spec_ops = { x = 3 y = 1 }
+					spec_ops = { x = 3 y = 2 }
+					spec_ops = { x = 3 y = 3 }
+
+					spec_ops = { x = 4 y = 0 }
+					spec_ops = { x = 4 y = 1 }
+					spec_ops = { x = 4 y = 2 }
+					spec_ops = { x = 4 y = 3 }
+				}
+				support = {
+					logistics_company = { x = 0 y = 0 }
+					fireteam_support = { x = 1 y = 0 }
+					anti_air_support = { x = 2 y = 0 }
+					demolitions_support = { x = 3 y = 0 }
+					medical_chem_company = { x = 4 y = 0 }
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 3 }
+				create_unit = {
+					division = "name = \"NCR Rangers\" division_template = \"NCR Rangers\" start_experience_factor = 1 start_equipment_factor = 1"
+					owner = NCR
+				}
+				create_unit = {
+					division = "name = \"NCR Rangers\" division_template = \"NCR Rangers\" start_experience_factor = 1 start_equipment_factor = 1"
+					owner = NCR
+				}
+				create_unit = {
+					division = "name = \"NCR Rangers\" division_template = \"NCR Rangers\" start_experience_factor = 1 start_equipment_factor = 1"
+					owner = NCR
+				}
+				create_unit = {
+					division = "name = \"NCR Rangers\" division_template = \"NCR Rangers\" start_experience_factor = 1 start_equipment_factor = 1"
+					owner = NCR
+				}
+				create_unit = {
+					division = "name = \"NCR Rangers\" division_template = \"NCR Rangers\" start_experience_factor = 1 start_equipment_factor = 1"
+					owner = NCR
+				}
+				create_unit = {
+					division = "name = \"NCR Rangers\" division_template = \"NCR Rangers\" start_experience_factor = 1 start_equipment_factor = 1"
+					owner = NCR
+				}
+				create_unit = {
+					division = "name = \"NCR Rangers\" division_template = \"NCR Rangers\" start_experience_factor = 1  start_equipment_factor = 1"
+					owner = NCR
+				}
+				create_unit = {
+					division = "name = \"NCR Rangers\" division_template = \"NCR Rangers\" start_experience_factor = 1  start_equipment_factor = 1"
+					owner = NCR
+				}
+				create_unit = {
+					division = "name = \"NCR Rangers\" division_template = \"NCR Rangers\" start_experience_factor = 1  start_equipment_factor = 1"
+					owner = NCR
+				}
+				create_unit = {
+					division = "name = \"NCR Rangers\" division_template = \"NCR Rangers\" start_experience_factor = 1  start_equipment_factor = 1"
+					owner = NCR
+				}
+				create_unit = {
+					division = "name = \"NCR Rangers\" division_template = \"NCR Rangers\" start_experience_factor = 1  start_equipment_factor = 1"
+					owner = NCR
+				}
+				create_unit = {
+					division = "name = \"NCR Rangers\" division_template = \"NCR Rangers\" start_experience_factor = 1  start_equipment_factor = 1"
+					owner = NCR
+				}
+			}	
+		
+			
 			every_controlled_state = {
 				limit = {
 					any_neighbor_state = {
@@ -113,16 +215,68 @@ country_event = {
 					
 					infantry = { x = 2 y = 0 }
 					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+					infantry = { x = 2 y = 3 }
+					
+					fireteam_infantry  = { x = 3 y = 0 }
+					fireteam_infantry  = { x = 3 y = 1 }
+					fireteam_infantry  = { x = 3 y = 2 }
+					fireteam_infantry  = { x = 3 y = 3 } 
+					
+					fireteam_infantry  = { x = 4 y = 0 }
+					fireteam_infantry  = { x = 4 y = 1 }
+					fireteam_infantry  = { x = 4 y = 2 }
+					fireteam_infantry  = { x = 4 y = 3 } 
+					
 					
 
 				}
 				
 			}
+			
+			 division_template = {
+				name = "Praetorian"
+				regiments = {
+					spec_ops = { x = 0 y = 0 }
+					spec_ops = { x = 0 y = 1 }
+					spec_ops = { x = 0 y = 2 }
+					spec_ops = { x = 0 y = 3 }
+	
+					spec_ops = { x = 1 y = 0 }
+					spec_ops = { x = 1 y = 1 }
+					spec_ops = { x = 1 y = 2 }
+					spec_ops = { x = 1 y = 3 }
+
+					spec_ops = { x = 2 y = 0 }
+					spec_ops = { x = 2 y = 1 }
+					spec_ops = { x = 2 y = 2 }
+					spec_ops = { x = 2 y = 3 }
+
+					spec_ops = { x = 3 y = 0 }
+					spec_ops = { x = 3 y = 1 }
+					spec_ops = { x = 3 y = 2 }
+					spec_ops = { x = 3 y = 3 }
+
+					spec_ops = { x = 4 y = 0 }
+					spec_ops = { x = 4 y = 1 }
+					spec_ops = { x = 4 y = 2 }
+					spec_ops = { x = 4 y = 3 }
+				}
+				support = {
+					logistics_company = { x = 0 y = 0 }
+					fireteam_support = { x = 1 y = 0 }
+					anti_air_support = { x = 2 y = 0 }
+					demolitions_support = { x = 3 y = 0 }
+					medical_chem_company = { x = 4 y = 0 }
+					
+				}
+			}
+			
 			every_controlled_state = {
 				limit = {
 					any_neighbor_state = {
 						controller = {
-							has_war_with = CES
+							has_war_with = NCR
 						}
 					}
 				}
@@ -175,6 +329,57 @@ country_event = {
 					owner = CES
 				}
 			}
+			
+			random_owned_controlled_state = {
+				prioritize = { 3 }
+				create_unit = {
+					division = "name = \"Praetorian\" division_template = \"Praetorian\" start_experience_factor = 1 start_equipment_factor = 1"
+					owner = CES
+				}
+				create_unit = {
+					division = "name = \"Praetorian\" division_template = \"Praetorian\" start_experience_factor = 1 start_equipment_factor = 1"
+					owner = CES
+				}
+				create_unit = {
+					division = "name = \"Praetorian\" division_template = \"Praetorian\" start_experience_factor = 1 start_equipment_factor = 1"
+					owner = CES
+				}
+				create_unit = {
+					division = "name = \"Praetorian\" division_template = \"Praetorian\" start_experience_factor = 1 start_equipment_factor = 1"
+					owner = CES				}
+				create_unit = {
+					division = "name = \"Praetorian\" division_template = \"Praetorian\" start_experience_factor = 1 start_equipment_factor = 1"
+					owner = CES
+				}
+				create_unit = {
+					division = "name = \"Praetorian\" division_template = \"Praetorian\" start_experience_factor = 1 start_equipment_factor = 1"
+					owner = CES
+				}
+				create_unit = {
+					division = "name = \"Praetorian\" division_template = \"Praetorian\" start_experience_factor = 1  start_equipment_factor = 1"
+					owner = CES
+				}
+				create_unit = {
+					division = "name = \"Praetorian\" division_template = \"Praetorian\" start_experience_factor = 1  start_equipment_factor = 1"
+					owner = CES
+				}
+				create_unit = {
+					division = "name = \"Praetorian\" division_template = \"Praetorian\" start_experience_factor = 1  start_equipment_factor = 1"
+					owner = CES
+				}
+				create_unit = {
+					division = "name = \"Praetorian\" division_template = \"Praetorian\" start_experience_factor = 1  start_equipment_factor = 1"
+					owner = CES
+				}
+				create_unit = {
+					division = "name = \"Praetorian\" division_template = \"Praetorian\" start_experience_factor = 1  start_equipment_factor = 1"
+					owner = CES
+				}
+				create_unit = {
+					division = "name = \"Praetorian\" division_template = \"Praetorian\" start_experience_factor = 1  start_equipment_factor = 1"
+					owner = CES
+				}
+			}	
 		}
 	}
 }

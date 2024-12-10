@@ -77,7 +77,7 @@ on_actions = {
 					}
 				}
 				CES = {
-					the_raging_bull.1
+					country_event = the_raging_bull.1
 				}
 				
 			}
@@ -89,7 +89,7 @@ on_actions = {
 				}
 				
 				CES = {
-					the_raging_bull.1
+					country_event = the_raging_bull.1
 				}
 				
 			}

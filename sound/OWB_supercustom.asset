@@ -1,9 +1,8 @@
 
-
-category = { #Sunset Returns
- 	name = "EoF_super3"
+category = { 
+ 	name = "OWB_super_1"
 	soundeffects = {
-		sunset_bigevent
+		wounded_bear_super
 	}
  	compressor = {
 		enabled = yes
@@ -15,10 +14,10 @@ category = { #Sunset Returns
 		releasetime = 1.2
  	}
 }
-category = { #Mountain Awakes
- 	name = "EoF_super4"
+category = { 
+ 	name = "OWB_super_2"
 	soundeffects = {
-		mountain_bigevent
+		raging_bull_super
 	}
  	compressor = {
 		enabled = yes

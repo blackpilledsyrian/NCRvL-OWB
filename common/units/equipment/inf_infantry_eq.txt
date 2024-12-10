@@ -144,7 +144,7 @@ equipments = {
 		reliability = 0.80
 
 		# Defensive Abilities
-		defense = 28
+		defense = 22
 		breakthrough = 7
 		hardness = 0
 		armor_value = 0
@@ -204,7 +204,7 @@ equipments = {
 		visual_level = 5
 
 		#Defensive Abilities
-		defense = 35
+		defense = 30
 		breakthrough = 9
 
 		#Offensive Abilities
@@ -230,7 +230,7 @@ equipments = {
 		reliability = 0.80
 
 		# Defensive Abilities
-		defense = 35
+		defense = 30
 		breakthrough = 9
 
 		# Offensive Abilities
@@ -287,7 +287,7 @@ equipments = {
 		visual_level = 8
 
 		#Defensive Abilities
-		defense = 42
+		defense = 36
 		breakthrough = 12
 
 		#Offensive Abilities
@@ -313,7 +313,7 @@ equipments = {
 		reliability = 0.80
 
 		# Defensive Abilities
-		defense = 42
+		defense = 36
 		breakthrough = 12
 
 		# Offensive Abilities
@@ -339,7 +339,7 @@ equipments = {
 		visual_level = 9
 
 		#Defensive Abilities
-		defense = 48
+		defense = 40
 		breakthrough = 16
 
 		#Offensive Abilities
@@ -365,7 +365,7 @@ equipments = {
 		reliability = 0.80
 
 		# Defensive Abilities
-		defense = 48
+		defense = 40
 		breakthrough = 16
 
 		# Offensive Abilities

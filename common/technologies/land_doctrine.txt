@@ -2,7 +2,7 @@ technologies = {
 
 	automated_warfare = {
 		xp_research_type = army
-		xp_unlock_cost = 35
+		xp_unlock_cost = 60
         XOR = {
 		
 			special_forces_perk_tech_1
@@ -14,9 +14,10 @@ technologies = {
 			max_organisation = 5
 		}
 		category_front_line_robots = {
-			max_organisation = 5
+			max_organisation = 20
 			soft_attack = 0.05
 			hard_attack = 0.05
+			
 		}
 		
 		army_fuel_consumption_factor = -0.15
@@ -39,7 +40,7 @@ technologies = {
 	}
 	advanced_cnc_focus_doctrine = {
 		xp_research_type = army
-		xp_unlock_cost = 35
+		xp_unlock_cost = 60
 		
 		enable_subunits = {
 			cnc_robot_2
@@ -74,12 +75,12 @@ technologies = {
 	
 	internal_replicators = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 60
 	 doctrine = yes
 	 research_cost = 2.25
 	 
 	 category_cnc_robots = {
-			max_organisation = 30
+			max_organisation = 60
 		}
 	  category_robots = {
 			max_organisation = 5
@@ -103,7 +104,7 @@ technologies = {
 	}
 	age_of_the_machine = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 60
 	 doctrine = yes
 	 research_cost = 2.25
 	 category_robots = {
@@ -130,7 +131,7 @@ technologies = {
 	}
 	advanced_combat_protocols = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 60
 	 doctrine = yes
 	 research_cost = 2.25
 	 category_robots = {
@@ -153,7 +154,7 @@ technologies = {
 	}
 	standardised_blueprints = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 60
 	 doctrine = yes
 	 research_cost = 2.25
 	 industrial_capacity_factory = 0.2
@@ -171,7 +172,7 @@ technologies = {
 	}
 	iron_fist = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 60
 	 doctrine = yes
 	 research_cost = 2.25
 	 category_robots = {
@@ -191,7 +192,7 @@ technologies = {
 	
 	automated_distribution = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 60
 	 doctrine = yes
 	 research_cost = 2.25
 	  
@@ -218,7 +219,7 @@ technologies = {
 	
 	the_flesh_is_weak = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 60
 	 doctrine = yes
 	 research_cost = 2.25
 	 XOR = {
@@ -289,7 +290,7 @@ technologies = {
 	
     infantry_perk_tech_1 = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 30
 	 doctrine = yes
 	 research_cost = 2.25
 	 
@@ -317,7 +318,7 @@ technologies = {
 	
 	grand_army = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 40
 	 doctrine = yes
 	 research_cost = 2.25
 	  max_dig_in = 5
@@ -342,7 +343,7 @@ technologies = {
 	
 	elite_army = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 40
 	 doctrine = yes
 	 research_cost = 2.25
 	 category_infantry = {
@@ -375,7 +376,7 @@ technologies = {
 	
 	terror_tactics = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 40
 	 doctrine = yes
 	 research_cost = 2.25
 	 attrition = -0.1
@@ -406,7 +407,7 @@ technologies = {
 	
 	fortified_positions_doctrine = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 40
 	 doctrine = yes
 	 research_cost = 2.25
 	 max_dig_in = 8
@@ -428,10 +429,11 @@ technologies = {
 	
 	concentration_of_force = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 40
 	 doctrine = yes
 	 research_cost = 2.25 
 	 max_planning = 0.05
+	 experience_loss_factor = -0.1
 	 category_infantry = {
 			breakthrough = 0.05
 			default_morale = 0.05
@@ -451,7 +453,7 @@ technologies = {
 	
 	pocket_defence_doctrine = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 40
 	 doctrine = yes
 	 research_cost = 2.25
 	 
@@ -479,7 +481,7 @@ technologies = {
 	
 	grand_assault_doctrine = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 60
 	 doctrine = yes
 	 research_cost = 2.25
 	 land_reinforce_rate = 0.02
@@ -504,7 +506,7 @@ technologies = {
 	
 	hail_of_lead_doctrine_tech = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 60
 	 doctrine = yes
 	 research_cost = 2.25
 	 	category_fireteams = {
@@ -534,12 +536,13 @@ technologies = {
 	
 	scorched_earth = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 60
 	 doctrine = yes
 	 research_cost = 2.25
+	 max_planning = 0.025
 	 	category_demolitions = {
 			defense = 0.2
-			max_organisation = 5
+			max_organisation = 15
 		}
 	  XOR = {
 			hail_of_lead_doctrine_tech
@@ -564,7 +567,7 @@ technologies = {
 	
 	grand_battle_plan_owb = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 60
 	 doctrine = yes
 	 research_cost = 2.25
 	 max_planning = 0.05
@@ -597,7 +600,7 @@ technologies = {
 	
 	concentration_of_firepower = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 60
 	 doctrine = yes
 	 research_cost = 2.25
 	 category_anti_tank = {
@@ -631,7 +634,7 @@ technologies = {
 	
 	forward_fire_base_doctrine_tech = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 60
 	 doctrine = yes
 	 research_cost = 2.25
 	 max_dig_in = 5
@@ -672,11 +675,13 @@ technologies = {
 	
 	rapid_weapon_redeployment_doctrine_tech = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 100
 	 doctrine = yes
 	 research_cost = 2.25
-	  org_loss_at_low_org_factor = -0.15
-	  org_loss_when_moving = -0.15
+	  max_planning = 0.025
+	
+	  org_loss_at_low_org_factor = -0.10
+	  org_loss_when_moving = -0.10
 	  enable_tactic = tactic_breakthrough
        path = {
 			leads_to_tech = airborne_assaults
@@ -704,7 +709,7 @@ technologies = {
 	
 	grunt_level_radio_integration_doctrine_tech = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 100
 	 doctrine = yes
 	 research_cost = 2.25
 	  path = {
@@ -857,7 +862,7 @@ technologies = {
 	
 	ego_gloriam_nominis = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 100
 	 doctrine = yes
 	 research_cost = 2.25
 	 enable_subunits={
@@ -888,7 +893,7 @@ technologies = {
 	
 	airborne_assaults = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 100
 	 doctrine = yes
 	 research_cost = 2.25
 	 air_cas_present_factor = 0.10
@@ -907,7 +912,7 @@ technologies = {
 	
 	non_discriminatory_targeting = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 100
 	 doctrine = yes
 	 research_cost = 2.25
 	 cas_damage_reduction = 0.20
@@ -923,7 +928,7 @@ technologies = {
 	
     assault_concentration_doctrine = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 60
 	 doctrine = yes
 	 research_cost = 2.25
 	   category_vehicles = {
@@ -959,7 +964,7 @@ technologies = {
 	
 	old_world_tactics = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 60
 	 doctrine = yes
 	 research_cost = 2.25
 	 motorized = {
@@ -994,14 +999,15 @@ technologies = {
 	
 	old_world_thunder = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 60
 	 doctrine = yes
 	 research_cost = 2.25
 	 tank = {
 			initiative = 0.01
 			max_organisation = 2
 			default_morale = 0.12
-			
+			soft_attack = 0.1
+			hard_attack = 0.1
 		}
 	
 	 folder = {
@@ -1012,13 +1018,13 @@ technologies = {
 	
 	old_world_lightning = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 60
 	 doctrine = yes
 	 research_cost = 2.25
 	  tank = {
 			
 			default_morale = 0.05
-			defense = 0.10
+			defense = 0.20
 		}
 		
 	
@@ -1030,7 +1036,7 @@ technologies = {
 	
 	mechanized_onslaught = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 60
 	 doctrine = yes
 	 research_cost = 2.25
 	 tank = {
@@ -1087,7 +1093,7 @@ technologies = {
 	
 	special_forces_perk_tech_2 = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 50
 	 doctrine = yes
 	 research_cost = 2.25
 	 XOR = {
@@ -1112,7 +1118,7 @@ technologies = {
 	
 	special_forces_perk_tech_3 = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 50
 	 doctrine = yes
 	 research_cost = 2.25
 	 XOR = {
@@ -1137,7 +1143,7 @@ technologies = {
 	
 	special_forces_perk_tech_6 = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 80
 	 doctrine = yes
 	 research_cost = 2.25
 	 special_forces_min = 80
@@ -1161,7 +1167,7 @@ technologies = {
 	
 	special_forces_perk_tech_5 = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 50
 	 doctrine = yes
 	 research_cost = 2.25
 	 special_forces_min = 80
@@ -1189,7 +1195,7 @@ technologies = {
 	
 	special_forces_perk_tech_4 = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 50
 	 doctrine = yes
 	 research_cost = 2.25
 	 special_forces_min = 80
@@ -1218,7 +1224,7 @@ technologies = {
 	
 	special_forces_perk_tech_7 = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 50
 	 doctrine = yes
 	 research_cost = 2.25
 	  category_special_forces = {
@@ -1236,7 +1242,7 @@ technologies = {
 	
 	warrior_code_doctrine = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 80
 	 doctrine = yes
 	 research_cost = 2.25
 	 category_power_armour = {
@@ -1269,7 +1275,7 @@ technologies = {
 	
 	combined_arms_doctrine = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 80
 	 doctrine = yes
 	 research_cost = 2.25
 	 category_support = {
@@ -1307,7 +1313,7 @@ technologies = {
 	
 	brigades_of_steel = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 100
 	 doctrine = yes
 	 research_cost = 2.25
 	 category_power_armour = {
@@ -1328,7 +1334,7 @@ technologies = {
 	
 	recon_in_depth = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 100
 	 doctrine = yes
 	 research_cost = 2.25
 	  power_armour = {
@@ -1356,7 +1362,7 @@ technologies = {
 	
 	shock_and_awe_doctrine = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 100
 	 doctrine = yes
 	 research_cost = 2.25
 	 category_power_armour = {
@@ -1378,7 +1384,7 @@ technologies = {
 	
 	terror_tactics_actual = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 80
 	 doctrine = yes
 	 research_cost = 2.25
 	  category_light_special_forces= {
@@ -1414,7 +1420,7 @@ technologies = {
 	
 	exitum = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 80
 	 doctrine = yes
 	 research_cost = 2.25
 	  category_light_special_forces = {
@@ -1451,7 +1457,7 @@ technologies = {
 	
 	summa_bellum = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 100
 	 doctrine = yes
 	 research_cost = 2.25
 	 category_light_special_forces = {
@@ -1475,7 +1481,7 @@ technologies = {
 	
 	decimato_doctrine = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 100
 	 doctrine = yes
 	 research_cost = 2.25
 	  category_light_special_forces = {
@@ -1498,7 +1504,7 @@ technologies = {
 	
 	divide_et_vincet = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 100
 	 doctrine = yes
 	 research_cost = 2.25
 	   category_light_special_forces = {
@@ -1521,7 +1527,7 @@ technologies = {
 	
 	outsider_warfare_doctrine = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 50
 	 doctrine = yes
 	 research_cost = 2.25
 	 category_behemoth = {
@@ -1560,7 +1566,7 @@ technologies = {
 	}
 	we_are_different_doctrine = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 80
 	 doctrine = yes
 	 research_cost = 2.25
 	 super_mutant_nightkin_infantry = {
@@ -1590,7 +1596,7 @@ technologies = {
 	}
 	we_are_special_doctrine = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 80
 	 doctrine = yes
 	 research_cost = 2.25
 	 category_behemoth = {
@@ -1618,7 +1624,7 @@ technologies = {
 	}
 	we_are_perceptive_doctrine = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 80
 	 doctrine = yes
 	 research_cost = 2.25
 	 category_behemoth = {
@@ -1649,7 +1655,7 @@ technologies = {
 	}
 	we_are_fortunate_doctrine = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 100
 	 doctrine = yes
 	 research_cost = 2.25
 	  super_mutant_nightkin_infantry = {
@@ -1670,7 +1676,7 @@ technologies = {
 	}
 	the_chosen_ones_doctrine = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 100
 	 doctrine = yes
 	 research_cost = 2.25 
 	 category_behemoth = {
@@ -1692,7 +1698,7 @@ technologies = {
 	}
 	the_master_servant_doctrine = {
 	 xp_research_type = army
-	 xp_unlock_cost = 35
+	 xp_unlock_cost = 199
 	 doctrine = yes
 	 research_cost = 2.25
 	 category_behemoth = {

@@ -7,7 +7,7 @@ guiTypes = {
 		Orientation = center
 		Origo = center
 		clipping = no
-		show_sound = sunset_bigevent ### SOUND EFFECT GOES HERE, MAKE SURE YOU'RE USING SOUND #EFFECT AND NOT SOUND!!!!!
+		show_sound = wounded_bear_super ### SOUND EFFECT GOES HERE, MAKE SURE YOU'RE USING SOUND #EFFECT AND NOT SOUND!!!!!
 
 		background = {
 			name = "Background"
@@ -78,7 +78,7 @@ guiTypes = {
 		Orientation = center
 		Origo = center
 		clipping = no
-		show_sound = sunset_bigevent ### SOUND EFFECT GOES HERE, MAKE SURE YOU'RE USING SOUND #EFFECT AND NOT SOUND!!!!!
+		show_sound = raging_bull_super ### SOUND EFFECT GOES HERE, MAKE SURE YOU'RE USING SOUND #EFFECT AND NOT SOUND!!!!!
 
 		background = {
 			name = "Background"
