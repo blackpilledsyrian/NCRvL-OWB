@@ -1,19 +1,28 @@
-
 state={
 	id=1162
 	name="STATE_1162"
-
-	history={
+	resources = {
+		metal = 2
+	}
+	history = {
+		owner = DSP
+		add_core_of = DSP
 		buildings = {
-			infrastructure = 2
+			infrastructure = 3
+			industrial_complex = 1
+		}
+		victory_points = {
+			16845 5
+		}
+		victory_points = {
+			16868 2
 		}
 	}
-
 	provinces={
-		17206
+		16838 16845 16868 16886 16893 16906 16907 16953 18588 18589 18613 18619 18620
 	}
-	manpower=100
+	manpower=5432
 	buildings_max_level_factor=1.000
-	state_category=rural
+	state_category=shanty
 	local_supplies=0.000
 }

@@ -1,0 +1,26 @@
+state={
+	id=717
+	name="STATE_717"
+	resources = {
+		metal = 7.000
+		circuitry = 4.000
+		advanced = 4.000
+	}
+	history={
+		victory_points = {
+			17428 10
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 2
+			industrial_complex = 1
+		}
+	}
+	provinces={
+		17393 17394 17400 17415 17416 17417 17419 17420 17422 17425 17426 17428 17429 17430 17438 17447 17449
+	}
+	manpower=7311
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
+}

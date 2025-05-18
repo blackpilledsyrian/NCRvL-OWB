@@ -1,7 +1,7 @@
 state = {
 	id = 350
 	name = "STATE_350"
-	manpower = 49350
+	manpower = 61350
 	state_category = prewar_megacity
 
 	resources = {
@@ -16,15 +16,25 @@ state = {
 		owner = NCR
 		add_core_of = NCR
 		victory_points = {
-			2405 30
+			2404 30 # Angel's Boneyard
+		}
+		victory_points = {
+			2402 15 # New Adytum
+		}
+		victory_points = {
+			904 5 # Oxnard
+		}
+		victory_points = {
+			2398 5 # Riverside
 		}
 		buildings = {
 			infrastructure = 5
-			arms_factory = 5
+			arms_factory = 3
 			industrial_complex = 4
 			dockyard = 3
 			radar_station = 1
-			2407 = { naval_base = 10 }
+			2402 = { naval_base = 10 }
+			904 = { naval_base = 5 }
 		}
 		add_dynamic_modifier = {
 			modifier = caps_ncr_start_modifier
@@ -33,6 +43,6 @@ state = {
 	}
 
 	provinces = {
-		890 892 898 903 907 1782 1998 1999 2002 2258 2398 2399 2400 2401 2402 2403 2404 2405 2407 2408 4713
+		890 892 898 907 1998 1999 2398 2399 2400 2401 2402 2403 2404 2405 2407 2408 4963 2406 904 905 9627
 	}
 }

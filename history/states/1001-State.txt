@@ -3,18 +3,19 @@ state={
 	name="STATE_1001"
 
 	history={
+
 		buildings = {
 			infrastructure = 2
 		}
 		victory_points = {
-			3736 5
+			3744 5
 		}
 	}
-
 	provinces={
-		3736 3738 3744 3988
+		4 3744 3988 8164
 	}
-	manpower = 3125
-	state_category = rural
+	manpower=3125
 	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
 }

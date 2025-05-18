@@ -13,7 +13,7 @@ state = {
 		owner = EHT
 		add_core_of = EHT
 		victory_points = {
-			3313 10 #Maybe it has its own infrastructural and religious value, but it doesn't deserve 10VP, @McGebe
+			3483 5 #Maybe it has its own infrastructural and religious value, but it doesn't deserve 10VP, @McGebe
 		}
 		buildings = {
 			infrastructure = 10
@@ -21,6 +21,6 @@ state = {
 	}
 
 	provinces = {
-		3313 3458 3459
+		1219 1707 2681 3313 3338 3483
 	}
 }

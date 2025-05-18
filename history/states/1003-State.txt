@@ -25,7 +25,7 @@ state={
 	}
 
 	provinces={
-		2128 3806 7244 2096 3950 3989 7246
+		2096 3806 3950 3989 7244 7246
 	}
 	manpower = 16590
 	state_category = large_city

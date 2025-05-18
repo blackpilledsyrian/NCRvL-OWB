@@ -22,8 +22,8 @@ state = {
 
 	}
 
-	provinces={
-		782 2049 4649 4650 4651 4652 4653 4671
+	provinces = {
+		782 2049 4649 4650 4651 4652 4653 4654 4655 4671
 	}
 	manpower=11000
 	buildings_max_level_factor=1.000

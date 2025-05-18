@@ -1,5 +1,5 @@
 state = {
-	id = 866
+	id =  866
 	name = "STATE_866"
 	resources={
 		water = 4
@@ -21,7 +21,7 @@ state = {
 	}
 
 	provinces={
-		839 2621 2622 4817 4818 7157
+		839 2621 2622 4817 4818 7157 2650 16069 16277 15473 15605 16267
 	}
 	manpower=20000
 	buildings_max_level_factor=1.000

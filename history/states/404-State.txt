@@ -1,0 +1,20 @@
+state = {
+	id = 404
+	name = "STATE_404"
+	manpower = 970
+	state_category = rural
+
+	history = {
+
+		victory_points = {
+			12977 5
+		}
+		buildings = {
+			infrastructure = 2
+		}
+	}
+
+	provinces = {
+		12970 12976 12977 12987
+	}
+}

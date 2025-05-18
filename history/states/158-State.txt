@@ -1,0 +1,26 @@
+state={
+	id=158
+	name="STATE_158"
+	resources = {
+		metal = 6.000
+		water = 5.000
+		composites = 4.000
+	}
+	history={
+		victory_points = {
+			17531 10
+		}
+		buildings = {
+			infrastructure = 4
+			arms_factory = 2
+			industrial_complex = 3
+		}
+	}
+	provinces={
+		1206 17467 17484 17489 17490 17491 17492 17513 17528 17531 17535 17544
+	}
+	manpower=18676
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=0.000
+}

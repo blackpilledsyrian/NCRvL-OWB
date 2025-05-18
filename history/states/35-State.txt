@@ -15,10 +15,10 @@ state = {
 		add_core_of = CES
 		add_core_of = TSI
 		victory_points = {
-			2746 20
+			  20
 		}
 		victory_points = {
-			2798 5
+			  5
 		}
 		buildings = {
 			infrastructure = 3
@@ -29,7 +29,7 @@ state = {
 	}
 
 	provinces = {
-		865 866 1670 2031 2033 2034 2742 2743 2746 2798 2886 2887 2920 2923 3154 4399 5192 5193 5224 5239 5240 5241 5335 5340
+		865 1671 2030 2031 2033 2034 2039 2333 2923 2924 3154 5188 5191 5192 5239 5240 5241 5335
 	}
 	buildings_max_level_factor=1.000
 }

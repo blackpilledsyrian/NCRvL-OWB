@@ -11,8 +11,8 @@ state={
 			arms_factory = 1
 		}
 	}
-	provinces={
-		13056 13069 13060 13073 13067 13075 13082 13087 13085
+	provinces = {
+		13056 13069 13060 13073 13087 13085
 	}
 	manpower = 1500
 	state_category = rural

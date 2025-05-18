@@ -1,16 +1,8 @@
-
 state={
 	id=1235
 	name="STATE_1235"
-
-	history={
-		buildings = {
-			infrastructure = 2
-		}
-	}
-
 	provinces={
-		2826
+		1240 1615 5338 17064 17067 17068 17069 17073 17076 17151 17155 17802 18216 21209 21273
 	}
 	manpower=100
 	buildings_max_level_factor=1.000

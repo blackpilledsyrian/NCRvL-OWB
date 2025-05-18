@@ -2,16 +2,17 @@ state = {
 	id = 24
 	name = "STATE_24"
 	manpower = 400
-	state_category = rural
+	state_category = wasteland
 	impassable = yes
 	history = {
-		owner = BVC
-		add_core_of = BVC
+		owner = NCR
+		add_core_of = NCR
+		victory_points = {
+			2620 1
+		}
 	}
 
 	provinces = {
-		4708
+		4708 2620
 	}
-	buildings_max_level_factor=1.000
-	local_supplies=0.000
 }

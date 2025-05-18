@@ -1,3 +1,4 @@
+
 state={
 	id=1123
 	name="STATE_1123"
@@ -6,7 +7,9 @@ state={
 		water=1.000
 		advanced=3.000
 	}
-	history = {
+
+	history={
+
 		victory_points = {
 			13942 5
 		}
@@ -28,9 +31,10 @@ state={
 	}
 
 	provinces={
-		13911 13912 13916 13921 13923 13924 13925 13928 13930 13931 13932 13935 13941 13942 13943 13944 13945 13947 13985 13986 14002 14003 14005 14007
+		13911 13912 13916 13921 13923 13924 13925 13928 13930 13931 13932 13935 13941 13942 13943 13944 13945 13947 13985 14002 14003 14005 14007
 	}
-	state_category = city
-	manpower = 711
+	manpower=5016
 	buildings_max_level_factor=1.000
+	state_category=large_city
+	local_supplies=0.000
 }

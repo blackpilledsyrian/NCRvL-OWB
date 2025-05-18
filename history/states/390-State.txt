@@ -3,7 +3,6 @@ state = {
 	name = "STATE_390"
 	manpower = 4390
 	state_category = shanty
-
 	resources = {
 		water = 2
 		metal = 6
@@ -13,12 +12,20 @@ state = {
 		owner = LUM
 		add_core_of = LUM
 		victory_points = {
-			8168 5
+			8168 8
+		}
+		victory_points = {
+			8171 2
 		}
 		buildings = {
 			infrastructure = 2
 			industrial_complex = 1
 			arms_factory = 1
+			6778 = {
+				naval_base = 1
+				bunker = 1
+				coastal_bunker = 1
+			}
 		}
 	}
 

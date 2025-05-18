@@ -1,29 +1,44 @@
+
 state = {
 	id = 532
 	name = "STATE_532"
 	manpower = 3986
-	state_category = pastoral
+	state_category = town
 
 	resources = {
-		metal = 10
-		water = 4
+		metal = 8
+		water = 2
+		energy = 2
 	}
 
-	history = {
-		owner = YMP
-		add_core_of = YMP
+	history={
+		owner = BLC
+		add_core_of = BLC
+		add_core_of = VLS
+        #Map devs - do not move this state without checking how it impacts BCR revolt.
+        set_state_flag = dont_give_to_BCR_in_BLC_civil_war
 		victory_points = {
-			6700 5
+			8002 1
+		}
+		victory_points = {
+			13986 1
 		}
 		victory_points = {
 			6824 15
 		}
 		buildings = {
-			infrastructure = 1
+			infrastructure = 3
+			industrial_complex = 1
+			arms_factory = 1
 		}
+
 	}
 
-	provinces = {
-		6699 6700 6702 6824 9160
+	provinces={
+		4352 6824 7995 8002 13986 15087
 	}
+	manpower=3027
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
 }

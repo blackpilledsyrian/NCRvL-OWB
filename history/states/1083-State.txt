@@ -6,6 +6,7 @@ state={
 		energy = 2
 	}
 	history={
+
 		victory_points = {
 			13109 5
 		}
@@ -16,7 +17,7 @@ state={
 	}
 
 	provinces={
-		13115 13114 13112 13109 13111 13106 13104 13103 13108
+		13115 13114 13112 13109 13111 13106 13104 13103
 	}
 	manpower = 1700
 	state_category = rural

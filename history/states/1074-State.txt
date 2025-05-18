@@ -9,11 +9,9 @@ state = {
 	}
 
 	history = {
+
 		victory_points = {
-			13018 5
-		}
-		victory_points = {
-			12976 3
+			13007 5
 		}
 		buildings = {
 			infrastructure = 2
@@ -22,6 +20,6 @@ state = {
 	}
 
 	provinces = {
-		12970 12976 12987 12993 12995 13003 13007 13018 13022
+		12993 12995 13003 13007 13018 13022
 	}
 }

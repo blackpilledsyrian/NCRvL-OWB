@@ -5,6 +5,6 @@ tags={
 dependencies={
 	"Old World Blues"
 }
-name="Dev OWB Official NCR versus Caesar's Legion submod"
+name="Cumpilled Syrian's OWB"
 supported_version="1.15.**"
 remote_file_id="3357289857"

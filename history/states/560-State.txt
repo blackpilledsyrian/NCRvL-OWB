@@ -2,20 +2,22 @@ state = {
 	id = 560
 	name = "STATE_560"
 	manpower = 2560
-	state_category = rural
+	state_category = pastoral
 
 	resources = {
 		water = 4
 	}
 
 	history = {
-		owner = YMP
+		owner = BLC
+		add_core_of = BLC
 		add_core_of = YMP
 		victory_points = {
 			8182 5
 		}
 		buildings = {
 			infrastructure = 2
+			industrial_complex = 1
 		}
 	}
 

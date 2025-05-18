@@ -1,28 +1,24 @@
-
 state={
 	id=999
 	name="STATE_999"
 	resources={
 		water=6.000
 	}
-
 	history={
+
 		victory_points = {
-			3731 5
+			3760 5
 		}
 		buildings = {
 			infrastructure = 2
 			industrial_complex = 2
 			arms_factory = 1
-
 		}
-
 	}
-
 	provinces={
-		3715 3731 3760 4413 5124 7292 16977 16980 16981 16982 16983 16988 16990 16991 16992
+		3731 3736 3738 3760 16977 16980 16990 16992
 	}
-	manpower=8460
+	manpower=3460
 	buildings_max_level_factor=1.000
 	state_category=town
 	local_supplies=0.000

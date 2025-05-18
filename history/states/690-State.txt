@@ -1,0 +1,26 @@
+state={
+	id=690
+	name="STATE_690"
+	resources = {
+		metal = 2.000
+		water = 1.000
+		energy = 3.000
+	}
+	history={
+		victory_points = {
+			17456 5
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 1
+		}
+	}
+	provinces={
+		17439 17450 17453 17455 17456 17459 17463 17472 17533 17542 17559
+	}
+	manpower=4999
+	buildings_max_level_factor=1.000
+	state_category=shanty
+	local_supplies=0.000
+}

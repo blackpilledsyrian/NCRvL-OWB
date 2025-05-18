@@ -5,11 +5,12 @@ state={
 	state_category = megalopolis
 
 	history={
-		owner = RES
-		add_core_of = RES
+		owner = TOB
+		add_core_of = TOB
 	}
-	provinces={
-		6625
+	provinces = {
+		1726 3091 7459 7460 7461 7465 7469
 	}
 	buildings_max_level_factor=1.000
+	
 }

@@ -1,15 +1,26 @@
 state={
 	id=994
 	name="STATE_994"
-
-	resources = {
-		circuitry = 4
-		advanced = 3
+	resources={
+		circuitry=4.000
+		advanced=3.000
 	}
-
 	history={
+
 		victory_points = {
 			3975 5
+		}
+		victory_points = {
+			3697 5
+		}
+		victory_points = {
+			3725 5
+		}
+		victory_points = {
+			2157 5
+		}
+		victory_points = {
+			7283 5
 		}
 		buildings = {
 			infrastructure = 3
@@ -17,11 +28,11 @@ state={
 			industrial_complex = 1
 		}
 	}
-
 	provinces={
-		3725 2567 2157 3975 7424 7430 3746 3697 7425
+		2157 2567 3725 3734 3746 3768 3975 7266 7283 7288 7424
 	}
-	manpower = 8552
-	state_category = shanty
+	manpower=5552
 	buildings_max_level_factor=1.000
+	state_category=shanty
+	local_supplies=0.000
 }
