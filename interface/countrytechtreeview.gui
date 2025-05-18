@@ -1,4 +1,4 @@
-	guiTypes = {
+guiTypes = {
 	positionType = {
 		name = "special_project_tech_icon_offset"
 		position = { x = -10 y = -10 }
@@ -347,28 +347,7 @@
 			}
 
 			gridboxtype = {
-				name = "mirelurk_infantry_unlock_tech_tree"
-				position = { x = 0 y = 150 }
-				slotsize = { width = 70 height = 70 }
-				format = "LEFT"
-			}
-
-			gridboxtype = {
 				name = "super_mutant_behemoth_tree"
-				position = { x = 0 y = 150 }
-				slotsize = { width = 70 height = 70 }
-				format = "LEFT"
-			}
-
-			gridboxtype = {
-				name = "radroach_infantry_unlock_tech_tree"
-				position = { x = 0 y = 150 }
-				slotsize = { width = 70 height = 70 }
-				format = "LEFT"
-			}
-
-			gridboxtype = {
-				name = "molerat_infantry_unlock_tech_tree"
 				position = { x = 0 y = 150 }
 				slotsize = { width = 70 height = 70 }
 				format = "LEFT"
@@ -542,6 +521,19 @@
 					Orientation = "UPPER_LEFT"
 				}
 
+				instantTextBoxType = {
+					name = "header_artillery"
+					position = { x = 50 y = 1950 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_SUPPORT_ARTILLERY"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
 				# Column Headers
 				instantTextBoxType = {
 					name = "tribal_column_header"
@@ -598,7 +590,7 @@
 			containerWindowType = {
 				name = "tribal_tiled_research_bg"
 				position = { x = 460 y=0 }
-				size = { width = 875 height = 1900 }
+				size = { width = 875 height = 2200 }
 				clipping = no
 
 				background = {
@@ -609,8 +601,8 @@
 
 			containerWindowType = {
 				name = "civilized_tiled_research_bg"
-				position = { x = 1335 y=0 }
-				size = { width = 765 height = 1900 }
+				position = { x = 1330 y=0 }
+				size = { width = 775 height = 2200 }
 				clipping = no
 
 				background = {
@@ -622,7 +614,7 @@
 			containerWindowType = {
 				name = "advanced_tiled_research_bg"
 				position = { x = 2100 y=0 }
-				size = { width = 535 height = 1900 }
+				size = { width = 535 height = 2200 }
 				clipping = no
 
 				background = {
@@ -634,7 +626,7 @@
 			containerWindowType = {
 				name = "unique_tiled_research_bg"
 				position = { x = 2635 y=0 }
-				size = { width = 300 height = 1900 }
+				size = { width = 300 height = 2200 }
 				clipping = no
 
 				background = {
@@ -664,9 +656,10 @@
 				slotsize = { width = 70 height = 70 }
 				format = "LEFT"
 			}
+
 			gridboxtype = {
-				name = "juggle_special_tree"
-				position = { x=10 y=20 }
+				name = "railway_gun_unlock_tech_tree"
+				position = { x = 0 y = 150 }
 				slotsize = { width = 70 height = 70 }
 				format = "LEFT"
 			}
@@ -2782,7 +2775,370 @@
 				position = { x=1933 y=14 }
 			}
 
-			
+			instantTextBoxType = {
+				name = "automated_warfare_title"
+				position = { x = 43 y = 26 }
+
+				font = "monofont_24"
+				borderSize = { x = 0 y = 4 }
+				text = "AUTOMATED_WARFARE_DOCTRINE_LABEL"
+				maxWidth = 400
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+
+			instantTextBoxType = {
+				name = "elite_army_title"
+				position = { x = 523 y = 26 }
+
+				font = "monofont_24"
+				borderSize = { x = 0 y = 4 }
+				text = "ELITE_ARMY_DOCTRINE_LABEL"
+				maxWidth = 400
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+
+			instantTextBoxType = {
+				name = "grand_army_title"
+				position = { x = 1003 y = 26 }
+
+				font = "monofont_24"
+				borderSize = { x = 0 y = 4 }
+				text = "GRAND_ARMY_DOCTRINE_LABEL"
+				maxWidth = 400
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+
+			instantTextBoxType = {
+				name = "terror_tactics_title"
+				position = { x = 1483 y = 26 }
+
+				font = "monofont_24"
+				borderSize = { x = 0 y = 4 }
+				text = "TERROR_TACTICS_DOCTRINE_LABEL"
+				maxWidth = 400
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+
+			instantTextBoxType = {
+				name = "outsider_doctrine_header"
+				position = { x = 1971 y = 35 }
+				font = "monofont_24"
+				borderSize = { x = 0 y = 4 }
+				text = "HEADER_OUTSIDER_DOCTRINE"
+				maxWidth = 400
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+
+			instantTextBoxType = {
+				name = "outsider_doctrine_desc"
+				position = { x = 1971 y = 81 }
+				font = "monofont_16"
+				borderSize = { x = 0 y = 4 }
+				text = "OUTSIDER_DOCTRINE_DESC"
+				maxWidth = 400
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+
+			instantTextBoxType = {
+				name = "automated_warfare_desc"
+				position = { x = 43 y = 81 }
+
+				font = "monofont_16"
+				borderSize = { x = 0 y = 4 }
+				text = "AUTOMATED_WARFARE_DOCTRINE_DESC"
+				maxWidth = 400
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+
+			instantTextBoxType = {
+				name = "elite_army_desc"
+				position = { x = 523 y = 81 }
+
+				font = "monofont_16"
+				borderSize = { x = 0 y = 4 }
+				text = "ELITE_ARMY_DOCTRINE_DESC"
+				maxWidth = 400
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+
+			instantTextBoxType = {
+				name = "grand_army_desc"
+				position = { x = 1003 y = 81 }
+
+				font = "monofont_16"
+				borderSize = { x = 0 y = 4 }
+				text = "GRAND_ARMY_DOCTRINE_DESC"
+				maxWidth = 400
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+
+			instantTextBoxType = {
+				name = "terror_tactics_desc"
+				position = { x = 1483 y = 81 }
+
+				font = "monofont_16"
+				borderSize = { x = 0 y = 4 }
+				text = "TERROR_TACTICS_DOCTRINE_DESC"
+				maxWidth = 400
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+
+			instantTextBoxType = {
+				name = "mob_warfare_subtitle1"
+				position = { x = 33 y = 496 }
+
+				font = "monofont_16"
+				borderSize = { x = 0 y = 4 }
+				text = "AUTOMATED_WARFARE_LABEL"
+				maxWidth = 150
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+				pdx_tooltip = "AUTOMATED_WARFARE_LABEL_TT"
+			}
+
+			instantTextBoxType = {
+				name = "mob_warfare_subtitle2"
+				position = { x = 278 y = 496 }
+
+				font = "monofont_16"
+				borderSize = { x = 0 y = 4 }
+				text = "AUTOMATED_WARFARE_LABEL_1"
+				maxWidth = 200
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+				pdx_tooltip = "AUTOMATED_WARFARE_LABEL_1_TT"
+			}
+
+			instantTextBoxType = {
+				name = "mob_warfare_subtitle3"
+				position = { x = 33 y = 960 }
+
+				font = "monofont_16"
+				borderSize = { x = 0 y = 4 }
+				text = "AUTOMATED_WARFARE_LABEL_2"
+				maxWidth = 150
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+				pdx_tooltip = "AUTOMATED_WARFARE_LABEL_2_TT"
+			}
+
+			instantTextBoxType = {
+				name = "mob_warfare_subtitle4"
+				position = { x = 283 y = 960 }
+
+				font = "monofont_16"
+				borderSize = { x = 0 y = 4 }
+				text = "AUTOMATED_WARFARE_LABEL_3"
+				maxWidth = 180
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+				pdx_tooltip = "AUTOMATED_WARFARE_LABEL_3_TT"
+			}
+
+			instantTextBoxType = {
+				name = "elite_army_subtitle1"
+				position = { x = 523 y = 476 }
+
+				font = "monofont_16"
+				borderSize = { x = 0 y = 4 }
+				text = "ELITE_ARMY_LABEL"
+				maxWidth = 150
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+				pdx_tooltip = "ELITE_ARMY_LABEL_TT"
+			}
+
+			instantTextBoxType = {
+				name = "elite_army_subtitle2"
+				position = { x = 763 y = 476 }
+
+				font = "monofont_16"
+				borderSize = { x = 0 y = 4 }
+				text = "ELITE_ARMY_LABEL_1"
+				maxWidth = 170
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+				pdx_tooltip = "ELITE_ARMY_LABEL_1_TT"
+			}
+
+			instantTextBoxType = {
+				name = "elite_army_subtitle3"
+				position = { x = 523 y = 836 }
+
+				font = "monofont_16"
+				borderSize = { x = 0 y = 4 }
+				text = "ELITE_ARMY_LABEL_2"
+				maxWidth = 150
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+				pdx_tooltip = "ELITE_ARMY_LABEL_2_TT"
+			}
+
+			instantTextBoxType = {
+				name = "elite_army_subtitle4"
+				position = { x = 763 y = 836 }
+
+				font = "monofont_16"
+				borderSize = { x = 0 y = 4 }
+				text = "ELITE_ARMY_LABEL_3"
+				maxWidth = 170
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+				pdx_tooltip = "ELITE_ARMY_LABEL_3_TT"
+			}
+
+			instantTextBoxType = {
+				name = "grand_army_subtitle1"
+				position = { x = 993 y = 616 }
+
+				font = "monofont_16"
+				borderSize = { x = 0 y = 4 }
+				text = "GRAND_ARMY_LABEL"
+				maxWidth = 170
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+				pdx_tooltip = "GRAND_ARMY_LABEL_TT"
+			}
+
+			instantTextBoxType = {
+				name = "grand_army_subtitle2"
+				position = { x = 1233 y = 616 }
+
+				font = "monofont_16"
+				borderSize = { x = 0 y = 4 }
+				text = "GRAND_ARMY_LABEL_1"
+				maxWidth = 200
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+				pdx_tooltip = "GRAND_ARMY_LABEL_1_TT"
+			}
+
+			instantTextBoxType = {
+				name = "terror_tactics_subtitle1"
+				position = { x = 1483 y = 476 }
+
+				font = "monofont_16"
+				borderSize = { x = 0 y = 4 }
+				text = "TERROR_TACTICS_LABEL"
+				maxWidth = 150
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+				pdx_tooltip = "TERROR_TACTICS_LABEL_TT"
+			}
+
+			instantTextBoxType = {
+				name = "terror_tactics_subtitle2"
+				position = { x = 1739 y = 476 }
+
+				font = "monofont_16"
+				borderSize = { x = 0 y = 4 }
+				text = "TERROR_TACTICS_LABEL_1"
+				maxWidth = 150
+				maxHeight = 122
+				format = center
+				Orientation = "UPPER_LEFT"
+				pdx_tooltip = "TERROR_TACTICS_LABEL_1_TT"
+			}
+
+			gridboxtype = {
+				name = "automated_warfare_tree"
+				position = { x=3 y=153 }
+				size = { width = 478 height = 1430 }
+				slotsize = { width=60 height= 60 }
+				format = "UP"
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_blue_tiled_research_bg"
+					position = { x=0 y=-150 }
+				}
+			}
+
+			gridboxtype = {
+				name = "elite_army_tree"
+				position = { x=483 y=153 }
+				size = { width = 480 height = 1430 }
+				slotsize = { width=60 height= 60 }
+				format = "UP"
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_red_tiled_research_bg"
+					position = { x=0 y=-150 }
+				}
+			}
+
+			gridboxtype = {
+				name = "grand_army_tree"
+				position = { x=963 y=153 }
+				size = { width = 480 height = 1430 }
+				slotsize = { width=60 height= 60 }
+				format = "UP"
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_green_tiled_research_bg"
+					position = { x=0 y=-150 }
+				}
+			}
+
+			gridboxtype = {
+				name = "terror_tactics_tree"
+				position = { x=1443 y=153 }
+				size = { width = 480 height = 1430 }
+				slotsize = { width=60 height= 60 }
+				format = "UP"
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_purple_tiled_research_bg"
+					position = { x=0 y=-150 }
+				}
+			}
+
+			gridboxtype = {
+				name = "outsider_warfare_doctrine_tree"
+				position = { x=1923 y=153 }
+				size = { width = 480 height = 1430 }
+				slotsize = { width=60 height= 60 }
+				format = "UP"
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_orange_tiled_research_bg"
+					position = { x=0 y=-150 }
+				}
+			}
 		}
 
 		#------------------------------------------
@@ -2834,7 +3190,7 @@
 
 				instantTextBoxType = {
 					name = "header_doctrine_techs"
-					position = { x = 50 y = 270 }
+					position = { x = 50 y = 410 }
 
 					font = "pipboy_32"
 					borderSize = { x = 0 y = 0 }
@@ -3257,6 +3613,13 @@
 
 			gridboxtype = {
 				name = "ncr_railway_construction_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "bag_steelrangers_tree"
 				position = { x = 0 y = 150 }
 				slotsize = { width = 70 height = 70 }
 				format = "LEFT"
@@ -3738,6 +4101,27 @@
 			}
 
 			gridboxtype = {
+				name = "whd_dragoon_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "whd_combined_arms_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "whd_ghoul_synergy_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
 				name = "robco_security_protectrons_tech_tree"
 				position = { x = 0 y = 150 }
 				slotsize = { width = 70 height = 70 }
@@ -3753,10 +4137,10 @@
 		}
 
 		#------------------------------------------
-		# Beast Tree Techs Folder
+		# Creature Tree Techs Folder
 		#------------------------------------------
 		containerWindowType = {
-			name = "fallout_tech_beast_folder"
+			name = "fallout_tech_creatures_folder"
 			position = { x=0 y=47 }
 			size = { width = 100%% height = 100%% }
 			margin = { top = 13 left = 13 bottom = 24 right = 25 }
@@ -3779,22 +4163,163 @@
 				clipping = no
 
 				iconType = {
-					name ="beast_techtree_bg"
-					spriteType = "GFX_beast_tech_bg"
+					name ="creatures_techtree_bg"
+					spriteType = "GFX_creatures_tech_bg"
 					position = { x=0 y=0 }
 					alwaystransparent = yes
 				}
 
 				# Row Headers
+
 				instantTextBoxType = {
-					name = "header_tech_levels"
-					position = { x = 50 y = 130 }
+					name = "header_burrowing"
+					position = { x = 50 y = 205 }
 
 					font = "pipboy_32"
 					borderSize = { x = 0 y = 0 }
-					text = "HEADER_TECH_LEVEL"
+					text = "HEADER_BURROWING"
 					maxWidth = 600
 					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_insects"
+					position = { x = 50 y = 485 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_INSECTS"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_amphibious"
+					position = { x = 50 y = 760 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_AMPHIBIOUS"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_deathclaws"
+					position = { x = 50 y = 1045 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_DEATHCLAWS"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_ferals"
+					position = { x = 50 y = 1320 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_FERALS"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_beasts"
+					position = { x = 50 y = 1750 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_BEASTS"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_war_beasts"
+					position = { x = 50 y = 1605 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_WAR_BEASTS"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "header_geckos"
+					position = { x = 50 y = 1955 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_GECKOS"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				# Column Headers
+				instantTextBoxType = {
+					name = "tribal_column_header"
+					position = { x = 490 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "TRIBAL_HEADER"
+					maxWidth = 200
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "civilized_column_header"
+					position = { x = 1140 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "CIVILIZED_HEADER"
+					maxWidth = 200
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "advanced_column_header"
+					position = { x = 1780 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "ADVANCED_HEADER"
+					maxWidth = 210
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "unique_column_header"
+					position = { x = 2425 y = 20 }
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "SPECIAL_HEADER"
+					maxWidth = 200
+					maxHeight = 32
 					format = left
 					Orientation = "UPPER_LEFT"
 				}
@@ -3805,7 +4330,7 @@
 			containerWindowType = {
 				name = "tribal_tiled_research_bg"
 				position = { x = 460 y=0 }
-				size = { width = 835 height = 1100 }
+				size = { width = 650 height = 2200 }
 				clipping = no
 
 				background = {
@@ -3816,8 +4341,8 @@
 
 			containerWindowType = {
 				name = "civilized_tiled_research_bg"
-				position = { x = 1295 y=0 }
-				size = { width = 835 height = 1100 }
+				position = { x = 1110 y=0 }
+				size = { width = 640 height = 2200 }
 				clipping = no
 
 				background = {
@@ -3828,8 +4353,8 @@
 
 			containerWindowType = {
 				name = "advanced_tiled_research_bg"
-				position = { x = 2130 y=0 }
-				size = { width = 1114 height = 1100 }
+				position = { x = 1750 y=0 }
+				size = { width = 650 height = 2200 }
 				clipping = no
 
 				background = {
@@ -3840,8 +4365,8 @@
 
 			containerWindowType = {
 				name = "unique_tiled_research_bg"
-				position = { x = 3244 y=0 }
-				size = { width = 571 height = 1100 }
+				position = { x = 2400 y=0 }
+				size = { width = 571 height = 2200 }
 				clipping = no
 
 				background = {
@@ -3852,7 +4377,49 @@
 
 			# Trees
 			gridboxtype = {
-				name = "horse_tech_tree"
+				name = "burrowing_beast_unlock_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "insect_creature_unlock_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "amphibious_beast_unlock_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "deathclaw_unlock_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "feral_ghouls_unlock_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "war_beasts_unlock_tech_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "bb_chitin_plating_tree"
 				position = { x = 0 y = 150 }
 				slotsize = { width = 70 height = 70 }
 				format = "LEFT"
@@ -4079,6 +4646,19 @@
 				}
 
 				instantTextBoxType = {
+					name = "header_creatures_level"
+					position = { x = 25 y = 970 }
+
+					font = "pipboy_32"
+					borderSize = { x = 0 y = 0 }
+					text = "HEADER_CREATURES_LEVEL"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
 					name = "header_air_level"
 					position = { x = 950 y = 130 }
 
@@ -4163,7 +4743,7 @@
 			containerWindowType = {
 				name = "tribal_tiled_research_bg"
 				position = { x = 250 y= 50 }
-				size = { width = 190 height = 900 }
+				size = { width = 190 height = 1050 }
 				clipping = no
 
 				background = {
@@ -4175,7 +4755,7 @@
 			containerWindowType = {
 				name = "civilized_tiled_research_bg"
 				position = { x = 440 y= 50 }
-				size = { width = 190 height = 900 }
+				size = { width = 190 height = 1050 }
 				clipping = no
 
 				background = {
@@ -4187,7 +4767,7 @@
 			containerWindowType = {
 				name = "advanced_tiled_research_bg"
 				position = { x = 630 y= 50 }
-				size = { width = 190 height = 900 }
+				size = { width = 190 height = 1050 }
 				clipping = no
 
 				background = {
@@ -4256,6 +4836,13 @@
 
 			gridboxtype = {
 				name = "robotics_tech_level_tribal_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "creatures_tech_level_tribal_tree"
 				position = { x = 0 y = 150 }
 				slotsize = { width = 70 height = 70 }
 				format = "LEFT"
@@ -4646,8 +5233,16 @@
 			}
 
 			buttonType = {
-				name = "fallout_land_doctrine_folder_tab"
+				name = "fallout_tech_creatures_folder_tab"
 				position = { x = 345 y = 0 }
+				quadTextureSprite = "GFX_fallout_tech_creatures_folder_tab"
+				frame = 1
+				clicksound = click_default
+			}
+
+			buttonType = {
+				name = "fallout_land_doctrine_folder_tab"
+				position = { x = 430 y = 0 }
 				quadTextureSprite = "GFX_fallout_land_doctrine_folder_tab"
 				frame = 1
 				clicksound = click_default
@@ -4663,7 +5258,7 @@
 
 			buttonType = {
 				name = "fallout_air_folder_tab"
-				position = { x = 450 y = 0 }
+				position = { x = 535 y = 0 }
 				quadTextureSprite = "GFX_fallout_air_techs_folder_tab"
 				frame = 1
 				clicksound = click_default
@@ -4672,7 +5267,7 @@
 			iconType = {
 				name = "highlight_fallout_air_folder"
 				spriteType = "GFX_tutorial_research_folder_icon_glow"
-				position = { x=636 y=-5 }
+				position = { x=721 y=-5 }
 				hide = yes
 				alwaystransparent = yes
 			}
@@ -4681,7 +5276,7 @@
 
 			buttonType = {
 				name = "fallout_naval_folder_tab"
-				position = { x = 555 y = 0 }
+				position = { x = 640 y = 0 }
 				quadTextureSprite = "GFX_fallout_naval_folder_tab"
 				frame = 1
 				clicksound = click_default
@@ -4689,7 +5284,7 @@
 
 			buttonType = {
 				name = "fallout_naval_modules_folder_tab"
-				position = { x = 640 y = 0 }
+				position = { x = 725 y = 0 }
 				quadTextureSprite = "GFX_fallout_naval_modules_folder_tab"
 				frame = 1
 				clicksound = click_default
@@ -4697,7 +5292,7 @@
 
 			buttonType = {
 				name = "fallout_naval_non_mtg_folder_tab"
-				position = { x = 597 y = 0 }
+				position = { x = 682 y = 0 }
 				quadTextureSprite = "GFX_fallout_naval_folder_tab"
 				frame = 1
 				clicksound = click_default
@@ -4706,7 +5301,7 @@
 
 			buttonType = {
 				name = "fallout_industry_folder_tab"
-				position = { x = 745 y = 0 }
+				position = { x = 830 y = 0 }
 				quadTextureSprite = "GFX_fallout_industry_folder_tab"
 				frame = 1
 				clicksound = click_default
@@ -4714,7 +5309,7 @@
 
 			buttonType = {
 				name = "fallout_engineering_folder_tab"
-				position = { x = 830 y = 0 }
+				position = { x = 915 y = 0 }
 				quadTextureSprite = "GFX_fallout_techtree_engineering_tab"
 				frame = 1
 				clicksound = click_default
@@ -4722,7 +5317,7 @@
 
 			buttonType = {
 				name = "fallout_focus_tree_folder_tab"
-				position = { x = 935 y = 0 }
+				position = { x = 1020 y = 0 }
 				quadTextureSprite = "GFX_fallout_focus_tree_folder_tab"
 				frame = 1
 				clicksound = click_default
@@ -4730,7 +5325,7 @@
 
 			buttonType = {
 				name = "fallout_tech_level_folder_tab"
-				position = { x = 1020 y = 0 }
+				position = { x = 1105 y = 0 }
 				quadTextureSprite = "GFX_fallout_tech_level_folder_tab"
 				frame = 1
 				clicksound = click_default
@@ -4738,7 +5333,7 @@
 
 			buttonType = {
 				name = "fallout_horse_tech_folder_tab"
-				position = { x = 1120 y = 0 }
+				position = { x = 1205 y = 0 }
 				quadTextureSprite = "GFX_horse_tree_folder_tab"
 				frame = 1
 				clicksound = click_horse
@@ -4746,23 +5341,15 @@
 
 			buttonType = {
 				name = "fallout_tech_tribal_folder_tab"
-				position = { x = 1120 y = 0 }
+				position = { x = 1205 y = 0 }
 				quadTextureSprite = "GFX_fallout_tech_tribal_folder_tab"
 				frame = 1
 				clicksound = click_default
 			}
 
 			buttonType = {
-				name = "fallout_tech_beast_folder_tab"
-				position = { x = 1180 y = 0 }
-				quadTextureSprite = "GFX_fallout_tech_beast_folder_tab"
-				frame = 1
-				clicksound = click_default
-			}
-
-			buttonType = {
 				name = "fallout_tech_implant_folder_tab"
-				position = { x = 1240 y = 0 }
+				position = { x = 1325 y = 0 }
 				quadTextureSprite = "GFX_fallout_tech_implant_folder_tab"
 				frame = 1
 				clicksound = click_default
@@ -6507,7 +7094,7 @@
 
 			iconType = {
 				name = "picture"
-				position = { x=4 y=2 }
+				position = { x=2 y=2 }
 				spriteType = "GFX_subtech_icon"
 				alwaystransparent = yes
 			}
@@ -6520,10 +7107,10 @@
 	}
 
 	#------------------------------------------
-	# Horse Tree
+	# Creature Tree
 	#------------------------------------------
 	containerWindowType = {
-		name = "techtree_fallout_tech_beast_folder_small_item"
+		name = "techtree_fallout_tech_creatures_folder_small_item"
 		position = { x=0 y=0 }
 		size = { width = 72 height = 72 }
 		clipping = no
@@ -6557,6 +7144,7 @@
 			maxHeight = 20
 			format = right
 		}
+
 		iconType = {
 			name = "can_assign_design_team_icon"
 			position = { x=0 y=42 }
@@ -6565,7 +7153,7 @@
 	}
 
 	containerWindowType = {
-		name = "techtree_fallout_tech_beast_folder_item"
+		name = "techtree_fallout_tech_creatures_folder_item"
 		position = { x=-56 y=-7 }
 		size = { width = 183 height = 84 }
 		clipping = no
@@ -6615,8 +7203,8 @@
 
 		containerWindowType = {
 			name = "sub_technology_slot_0"
-			position = { x=50 y=80 }
-			size = { width = 35 height = 26 }
+			position = { x=30 y=80 }
+			size = { width = 26 height = 26 }
 			clipping = no
 
 			background = {
@@ -6634,8 +7222,8 @@
 
 		containerWindowType = {
 			name = "sub_technology_slot_1"
-			position = { x=100 y=80 }
-			size = { width = 35 height = 26 }
+			position = { x=73 y=80 }
+			size = { width = 26 height = 26 }
 			clipping = no
 
 			background = {
@@ -6653,8 +7241,8 @@
 
 		containerWindowType = {
 			name = "sub_technology_slot_2"
-			position = { x=141 y=55 }
-			size = { width = 35 height = 26 }
+			position = { x=115 y=80 }
+			size = { width = 26 height = 26 }
 			clipping = no
 
 			background = {
