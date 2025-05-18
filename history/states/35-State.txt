@@ -2,7 +2,7 @@ state = {
 	id = 35
 	name = "STATE_35"
 	manpower = 10289
-	state_category = megalopolis
+	state_category = city
 
 	resources = {
 		water = 2
@@ -10,26 +10,23 @@ state = {
 		circuitry = 2
 	}
 
-	history={
+	history = {
 		owner = CES
 		add_core_of = CES
 		add_core_of = TSI
 		victory_points = {
-			  20
+			2031 5
 		}
 		victory_points = {
-			  5
+			865 1
 		}
 		buildings = {
 			infrastructure = 3
 			arms_factory = 1
-
 		}
-
 	}
 
 	provinces = {
 		865 1671 2030 2031 2033 2034 2039 2333 2923 2924 3154 5188 5191 5192 5239 5240 5241 5335
 	}
-	buildings_max_level_factor=1.000
 }

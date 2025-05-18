@@ -9,10 +9,6 @@ state = {
 	history={
 		buildings = {
 			infrastructure = 2
-			arms_factory = 2
-			10166 = {
-				naval_base = 2
-			}
 		}
 		victory_points = {
 			10166 10

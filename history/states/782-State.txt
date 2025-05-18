@@ -18,24 +18,6 @@ state = {
 			arms_factory = 1
 			industrial_complex = 1
 			radar_station = 1
-			dockyard = 2
-			11000 = {
-				bunker = 2
-
-			}
-			9274 = {
-				bunker = 2
-
-			}
-			9371 = {
-				bunker = 2
-
-			}
-			9567 = {
-				coastal_bunker = 8
-				naval_base = 4
-			}
-
 		}
 
 	}

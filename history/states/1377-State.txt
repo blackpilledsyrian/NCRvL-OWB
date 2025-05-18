@@ -8,6 +8,7 @@ state={
 	}
 
 	history={
+
 		victory_points = {
 			15239 5
 		}
@@ -20,6 +21,7 @@ state={
 			industrial_complex = 1
 			14665 = {
 				naval_base = 1
+				coastal_bunker = 2
 			}
 			14664 = {
 				bunker = 2
@@ -32,6 +34,7 @@ state={
 			}
 			14666 = {
 				bunker = 2
+				coastal_bunker = 2
 			}
 			15240 = {
 				bunker = 2
@@ -44,12 +47,6 @@ state={
 			}
 			14656 = {
 				bunker = 2
-			}
-			14665 = {
-				coastal_bunker = 2
-			}
-			14666 = {
-				coastal_bunker = 2
 			}
 		}
 	}
